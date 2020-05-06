@@ -195,10 +195,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
-   *     .addAllRequests(requests)
-   *     .build();
+   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder().build();
    *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(request);
    * }
    * </code></pre>
@@ -218,10 +215,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
-   *     .addAllRequests(requests)
-   *     .build();
+   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder().build();
    *   ApiFuture&lt;BatchAnnotateImagesResponse&gt; future = imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
    *   // Do something
    *   BatchAnnotateImagesResponse response = future.get();

@@ -63,10 +63,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   ProductSet productSet = ProductSet.newBuilder().build();
- *   String productSetId = "";
- *   ProductSet response = productSearchClient.createProductSet(parent, productSet, productSetId);
+ *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+ *   productSearchClient.deleteProductSet(name);
  * }
  * </code>
  * </pre>
@@ -190,6 +188,517 @@ public class ProductSearchClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
+   * deleted.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+   *   productSearchClient.deleteProductSet(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the ProductSet to delete.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProductSet(ProductSetName name) {
+    DeleteProductSetRequest request =
+        DeleteProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteProductSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
+   * deleted.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+   *   productSearchClient.deleteProductSet(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the ProductSet to delete.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProductSet(String name) {
+    DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder().setName(name).build();
+    deleteProductSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
+   * deleted.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   productSearchClient.deleteProductSet(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProductSet(DeleteProductSetRequest request) {
+    deleteProductSetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
+   * deleted.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductSetCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
+    return stub.deleteProductSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a product and its reference images.
+   *
+   * <p>Metadata of the product and all its images will be deleted right away, but search queries
+   * against ProductSets containing the product may still work until all related caches are
+   * refreshed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   productSearchClient.deleteProduct(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of product to delete.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProduct(ProductName name) {
+    DeleteProductRequest request =
+        DeleteProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteProduct(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a product and its reference images.
+   *
+   * <p>Metadata of the product and all its images will be deleted right away, but search queries
+   * against ProductSets containing the product may still work until all related caches are
+   * refreshed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   productSearchClient.deleteProduct(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of product to delete.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProduct(String name) {
+    DeleteProductRequest request = DeleteProductRequest.newBuilder().setName(name).build();
+    deleteProduct(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a product and its reference images.
+   *
+   * <p>Metadata of the product and all its images will be deleted right away, but search queries
+   * against ProductSets containing the product may still work until all related caches are
+   * refreshed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   productSearchClient.deleteProduct(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProduct(DeleteProductRequest request) {
+    deleteProductCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a product and its reference images.
+   *
+   * <p>Metadata of the product and all its images will be deleted right away, but search queries
+   * against ProductSets containing the product may still work until all related caches are
+   * refreshed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
+    return stub.deleteProductCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a reference image.
+   *
+   * <p>The image metadata will be deleted right away, but search queries against ProductSets
+   * containing the image may still work until all related caches are refreshed.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+   *   productSearchClient.deleteReferenceImage(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the reference image to delete.
+   *     <p>Format is:
+   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReferenceImage(ReferenceImageName name) {
+    DeleteReferenceImageRequest request =
+        DeleteReferenceImageRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteReferenceImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a reference image.
+   *
+   * <p>The image metadata will be deleted right away, but search queries against ProductSets
+   * containing the image may still work until all related caches are refreshed.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+   *   productSearchClient.deleteReferenceImage(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the reference image to delete.
+   *     <p>Format is:
+   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReferenceImage(String name) {
+    DeleteReferenceImageRequest request =
+        DeleteReferenceImageRequest.newBuilder().setName(name).build();
+    deleteReferenceImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a reference image.
+   *
+   * <p>The image metadata will be deleted right away, but search queries against ProductSets
+   * containing the image may still work until all related caches are refreshed.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   productSearchClient.deleteReferenceImage(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReferenceImage(DeleteReferenceImageRequest request) {
+    deleteReferenceImageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a reference image.
+   *
+   * <p>The image metadata will be deleted right away, but search queries against ProductSets
+   * containing the image may still work until all related caches are refreshed.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteReferenceImageCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
+    return stub.deleteReferenceImageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
+   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(parent, inputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The project in which the ProductSets should be imported.
+   *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
+   * @param inputConfig Required. The input content for the list of requests.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig) {
+    ImportProductSetsRequest request =
+        ImportProductSetsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setInputConfig(inputConfig)
+            .build();
+    return importProductSetsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
+   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(parent.toString(), inputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The project in which the ProductSets should be imported.
+   *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
+   * @param inputConfig Required. The input content for the list of requests.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsAsync(String parent, ImportProductSetsInputConfig inputConfig) {
+    ImportProductSetsRequest request =
+        ImportProductSetsRequest.newBuilder().setParent(parent).setInputConfig(inputConfig).build();
+    return importProductSetsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
+   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setInputConfig(inputConfig)
+   *     .build();
+   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsAsync(ImportProductSetsRequest request) {
+    return importProductSetsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
+   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setInputConfig(inputConfig)
+   *     .build();
+   *   OperationFuture&lt;ImportProductSetsResponse, BatchOperationMetadata&gt; future = productSearchClient.importProductSetsOperationCallable().futureCall(request);
+   *   // Do something
+   *   ImportProductSetsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationCallable() {
+    return stub.importProductSetsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Asynchronous API that imports a list of reference images to specified product sets based on a
+   * list of image information.
+   *
+   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
+   * track of the progress and results of the request. `Operation.metadata` contains
+   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
+   * (results)
+   *
+   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
+   * csv file please see
+   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
+   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setInputConfig(inputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = productSearchClient.importProductSetsCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
+    return stub.importProductSetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates and returns a new ProductSet resource.
    *
    * <p>Possible errors:
@@ -283,11 +792,9 @@ public class ProductSearchClient implements BackgroundResource {
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   String productSetId = "";
    *   CreateProductSetRequest request = CreateProductSetRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .setProductSet(productSet)
-   *     .setProductSetId(productSetId)
    *     .build();
    *   ProductSet response = productSearchClient.createProductSet(request);
    * }
@@ -315,11 +822,9 @@ public class ProductSearchClient implements BackgroundResource {
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   String productSetId = "";
    *   CreateProductSetRequest request = CreateProductSetRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .setProductSet(productSet)
-   *     .setProductSetId(productSetId)
    *     .build();
    *   ApiFuture&lt;ProductSet&gt; future = productSearchClient.createProductSetCallable().futureCall(request);
    *   // Do something
@@ -640,10 +1145,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateProductSetRequest request = UpdateProductSetRequest.newBuilder()
    *     .setProductSet(productSet)
-   *     .setUpdateMask(updateMask)
    *     .build();
    *   ProductSet response = productSearchClient.updateProductSet(request);
    * }
@@ -671,10 +1174,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSet productSet = ProductSet.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateProductSetRequest request = UpdateProductSetRequest.newBuilder()
    *     .setProductSet(productSet)
-   *     .setUpdateMask(updateMask)
    *     .build();
    *   ApiFuture&lt;ProductSet&gt; future = productSearchClient.updateProductSetCallable().futureCall(request);
    *   // Do something
@@ -684,108 +1185,6 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateProductSetRequest, ProductSet> updateProductSetCallable() {
     return stub.updateProductSetCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
-   * deleted.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   productSearchClient.deleteProductSet(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the ProductSet to delete.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProductSet(ProductSetName name) {
-    DeleteProductSetRequest request =
-        DeleteProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteProductSet(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
-   * deleted.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   productSearchClient.deleteProductSet(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the ProductSet to delete.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProductSet(String name) {
-    DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder().setName(name).build();
-    deleteProductSet(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
-   * deleted.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteProductSet(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProductSet(DeleteProductSetRequest request) {
-    deleteProductSetCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a ProductSet. Products and ReferenceImages in the ProductSet are not
-   * deleted.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductSetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
-    return stub.deleteProductSetCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -884,11 +1283,9 @@ public class ProductSearchClient implements BackgroundResource {
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Product product = Product.newBuilder().build();
-   *   String productId = "";
    *   CreateProductRequest request = CreateProductRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .setProduct(product)
-   *     .setProductId(productId)
    *     .build();
    *   Product response = productSearchClient.createProduct(request);
    * }
@@ -917,11 +1314,9 @@ public class ProductSearchClient implements BackgroundResource {
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Product product = Product.newBuilder().build();
-   *   String productId = "";
    *   CreateProductRequest request = CreateProductRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .setProduct(product)
-   *     .setProductId(productId)
    *     .build();
    *   ApiFuture&lt;Product&gt; future = productSearchClient.createProductCallable().futureCall(request);
    *   // Do something
@@ -1251,10 +1646,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   Product product = Product.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateProductRequest request = UpdateProductRequest.newBuilder()
    *     .setProduct(product)
-   *     .setUpdateMask(updateMask)
    *     .build();
    *   Product response = productSearchClient.updateProduct(request);
    * }
@@ -1288,10 +1681,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   Product product = Product.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   UpdateProductRequest request = UpdateProductRequest.newBuilder()
    *     .setProduct(product)
-   *     .setUpdateMask(updateMask)
    *     .build();
    *   ApiFuture&lt;Product&gt; future = productSearchClient.updateProductCallable().futureCall(request);
    *   // Do something
@@ -1301,112 +1692,6 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateProductRequest, Product> updateProductCallable() {
     return stub.updateProductCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a product and its reference images.
-   *
-   * <p>Metadata of the product and all its images will be deleted right away, but search queries
-   * against ProductSets containing the product may still work until all related caches are
-   * refreshed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.deleteProduct(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of product to delete.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProduct(ProductName name) {
-    DeleteProductRequest request =
-        DeleteProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteProduct(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a product and its reference images.
-   *
-   * <p>Metadata of the product and all its images will be deleted right away, but search queries
-   * against ProductSets containing the product may still work until all related caches are
-   * refreshed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.deleteProduct(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of product to delete.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProduct(String name) {
-    DeleteProductRequest request = DeleteProductRequest.newBuilder().setName(name).build();
-    deleteProduct(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a product and its reference images.
-   *
-   * <p>Metadata of the product and all its images will be deleted right away, but search queries
-   * against ProductSets containing the product may still work until all related caches are
-   * refreshed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteProduct(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProduct(DeleteProductRequest request) {
-    deleteProductCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a product and its reference images.
-   *
-   * <p>Metadata of the product and all its images will be deleted right away, but search queries
-   * against ProductSets containing the product may still work until all related caches are
-   * refreshed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
-    return stub.deleteProductCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1539,11 +1824,9 @@ public class ProductSearchClient implements BackgroundResource {
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
    *   ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-   *   String referenceImageId = "";
    *   CreateReferenceImageRequest request = CreateReferenceImageRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .setReferenceImage(referenceImage)
-   *     .setReferenceImageId(referenceImageId)
    *     .build();
    *   ReferenceImage response = productSearchClient.createReferenceImage(request);
    * }
@@ -1582,11 +1865,9 @@ public class ProductSearchClient implements BackgroundResource {
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
    *   ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-   *   String referenceImageId = "";
    *   CreateReferenceImageRequest request = CreateReferenceImageRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .setReferenceImage(referenceImage)
-   *     .setReferenceImageId(referenceImageId)
    *     .build();
    *   ApiFuture&lt;ReferenceImage&gt; future = productSearchClient.createReferenceImageCallable().futureCall(request);
    *   // Do something
@@ -1597,121 +1878,6 @@ public class ProductSearchClient implements BackgroundResource {
   public final UnaryCallable<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageCallable() {
     return stub.createReferenceImageCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a reference image.
-   *
-   * <p>The image metadata will be deleted right away, but search queries against ProductSets
-   * containing the image may still work until all related caches are refreshed.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   productSearchClient.deleteReferenceImage(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the reference image to delete.
-   *     <p>Format is:
-   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReferenceImage(ReferenceImageName name) {
-    DeleteReferenceImageRequest request =
-        DeleteReferenceImageRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteReferenceImage(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a reference image.
-   *
-   * <p>The image metadata will be deleted right away, but search queries against ProductSets
-   * containing the image may still work until all related caches are refreshed.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   productSearchClient.deleteReferenceImage(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the reference image to delete.
-   *     <p>Format is:
-   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReferenceImage(String name) {
-    DeleteReferenceImageRequest request =
-        DeleteReferenceImageRequest.newBuilder().setName(name).build();
-    deleteReferenceImage(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a reference image.
-   *
-   * <p>The image metadata will be deleted right away, but search queries against ProductSets
-   * containing the image may still work until all related caches are refreshed.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteReferenceImage(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReferenceImage(DeleteReferenceImageRequest request) {
-    deleteReferenceImageCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a reference image.
-   *
-   * <p>The image metadata will be deleted right away, but search queries against ProductSets
-   * containing the image may still work until all related caches are refreshed.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteReferenceImageCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
-    return stub.deleteReferenceImageCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2000,7 +2166,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   String product = "";
+   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
    *   productSearchClient.addProductToProductSet(name, product);
    * }
    * </code></pre>
@@ -2011,11 +2177,11 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void addProductToProductSet(ProductSetName name, String product) {
+  public final void addProductToProductSet(ProductSetName name, ProductName product) {
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
-            .setProduct(product)
+            .setProduct(product == null ? null : product.toString())
             .build();
     addProductToProductSet(request);
   }
@@ -2036,8 +2202,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   String product = "";
-   *   productSearchClient.addProductToProductSet(name.toString(), product);
+   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   productSearchClient.addProductToProductSet(name.toString(), product.toString());
    * }
    * </code></pre>
    *
@@ -2069,10 +2235,10 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   String product = "";
+   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
    *   AddProductToProductSetRequest request = AddProductToProductSetRequest.newBuilder()
    *     .setName(name.toString())
-   *     .setProduct(product)
+   *     .setProduct(product.toString())
    *     .build();
    *   productSearchClient.addProductToProductSet(request);
    * }
@@ -2101,10 +2267,10 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   String product = "";
+   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
    *   AddProductToProductSetRequest request = AddProductToProductSetRequest.newBuilder()
    *     .setName(name.toString())
-   *     .setProduct(product)
+   *     .setProduct(product.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = productSearchClient.addProductToProductSetCallable().futureCall(request);
    *   // Do something
@@ -2126,7 +2292,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   String product = "";
+   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
    *   productSearchClient.removeProductFromProductSet(name, product);
    * }
    * </code></pre>
@@ -2137,11 +2303,11 @@ public class ProductSearchClient implements BackgroundResource {
    *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void removeProductFromProductSet(ProductSetName name, String product) {
+  public final void removeProductFromProductSet(ProductSetName name, ProductName product) {
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
-            .setProduct(product)
+            .setProduct(product == null ? null : product.toString())
             .build();
     removeProductFromProductSet(request);
   }
@@ -2155,8 +2321,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   String product = "";
-   *   productSearchClient.removeProductFromProductSet(name.toString(), product);
+   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   productSearchClient.removeProductFromProductSet(name.toString(), product.toString());
    * }
    * </code></pre>
    *
@@ -2181,10 +2347,10 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   String product = "";
+   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
    *   RemoveProductFromProductSetRequest request = RemoveProductFromProductSetRequest.newBuilder()
    *     .setName(name.toString())
-   *     .setProduct(product)
+   *     .setProduct(product.toString())
    *     .build();
    *   productSearchClient.removeProductFromProductSet(request);
    * }
@@ -2206,10 +2372,10 @@ public class ProductSearchClient implements BackgroundResource {
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   String product = "";
+   *   ProductName product = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
    *   RemoveProductFromProductSetRequest request = RemoveProductFromProductSetRequest.newBuilder()
    *     .setName(name.toString())
-   *     .setProduct(product)
+   *     .setProduct(product.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = productSearchClient.removeProductFromProductSetCallable().futureCall(request);
    *   // Do something
@@ -2384,108 +2550,132 @@ public class ProductSearchClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
    *
    * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
    * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   * `BatchOperationMetadata`. (progress)
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(parent, inputConfig).get();
+   *   productSearchClient.purgeProductsAsync(parent).get();
    * }
    * </code></pre>
    *
-   * @param parent Required. The project in which the ProductSets should be imported.
+   * @param parent Required. The project and location in which the Products should be deleted.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param inputConfig Required. The input content for the list of requests.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig) {
-    ImportProductSetsRequest request =
-        ImportProductSetsRequest.newBuilder()
+  public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(
+      LocationName parent) {
+    PurgeProductsRequest request =
+        PurgeProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
-            .setInputConfig(inputConfig)
             .build();
-    return importProductSetsAsync(request);
+    return purgeProductsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
    *
    * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
    * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   * `BatchOperationMetadata`. (progress)
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(parent.toString(), inputConfig).get();
+   *   productSearchClient.purgeProductsAsync(parent.toString()).get();
    * }
    * </code></pre>
    *
-   * @param parent Required. The project in which the ProductSets should be imported.
+   * @param parent Required. The project and location in which the Products should be deleted.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param inputConfig Required. The input content for the list of requests.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsAsync(String parent, ImportProductSetsInputConfig inputConfig) {
-    ImportProductSetsRequest request =
-        ImportProductSetsRequest.newBuilder().setParent(parent).setInputConfig(inputConfig).build();
-    return importProductSetsAsync(request);
+  public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(String parent) {
+    PurgeProductsRequest request = PurgeProductsRequest.newBuilder().setParent(parent).build();
+    return purgeProductsAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
    *
    * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
    * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   * `BatchOperationMetadata`. (progress)
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
+   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
    *     .build();
-   *   ImportProductSetsResponse response = productSearchClient.importProductSetsAsync(request).get();
+   *   productSearchClient.purgeProductsAsync(request).get();
    * }
    * </code></pre>
    *
@@ -2494,156 +2684,92 @@ public class ProductSearchClient implements BackgroundResource {
    */
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsAsync(ImportProductSetsRequest request) {
-    return importProductSetsOperationCallable().futureCall(request);
+  public final OperationFuture<Empty, BatchOperationMetadata> purgeProductsAsync(
+      PurgeProductsRequest request) {
+    return purgeProductsOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
    *
    * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
    * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   * `BatchOperationMetadata`. (progress)
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
+   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
    *     .build();
-   *   OperationFuture&lt;ImportProductSetsResponse, BatchOperationMetadata&gt; future = productSearchClient.importProductSetsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, BatchOperationMetadata&gt; future = productSearchClient.purgeProductsOperationCallable().futureCall(request);
    *   // Do something
-   *   ImportProductSetsResponse response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationCallable() {
-    return stub.importProductSetsOperationCallable();
+  public final OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable() {
+    return stub.purgeProductsOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Asynchronous API that imports a list of reference images to specified product sets based on a
-   * list of image information.
+   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
+   * ProductSet.
+   *
+   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
+   * Product will still be deleted.
+   *
+   * <p>It is recommended to not delete the specified ProductSet until after this operation has
+   * completed. It is also recommended to not add any of the Products involved in the batch delete
+   * to a new ProductSet while this operation is running because those Products may still end up
+   * deleted.
+   *
+   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
+   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
+   * before starting PurgeProducts, in case you need to re-import the data after deletion.
+   *
+   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
+   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
+   * PurgeProducts operation has finished for that ProductSet.
    *
    * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
    * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) `Operation.response` contains `ImportProductSetsResponse`.
-   * (results)
-   *
-   * <p>The input source of this method is a csv file on Google Cloud Storage. For the format of the
-   * csv file please see
-   * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
+   * `BatchOperationMetadata`. (progress)
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ImportProductSetsInputConfig inputConfig = ImportProductSetsInputConfig.newBuilder().build();
-   *   ImportProductSetsRequest request = ImportProductSetsRequest.newBuilder()
+   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder()
    *     .setParent(parent.toString())
-   *     .setInputConfig(inputConfig)
    *     .build();
-   *   ApiFuture&lt;Operation&gt; future = productSearchClient.importProductSetsCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
-    return stub.importProductSetsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
-   * ProductSet.
-   *
-   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
-   * Product will still be deleted.
-   *
-   * <p>It is recommended to not delete the specified ProductSet until after this operation has
-   * completed. It is also recommended to not add any of the Products involved in the batch delete
-   * to a new ProductSet while this operation is running because those Products may still end up
-   * deleted.
-   *
-   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
-   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
-   * before starting PurgeProducts, in case you need to re-import the data after deletion.
-   *
-   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
-   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
-   * PurgeProducts operation has finished for that ProductSet.
-   *
-   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
-   * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress)
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder().build();
-   *   Operation response = productSearchClient.purgeProducts(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation purgeProducts(PurgeProductsRequest request) {
-    return purgeProductsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Asynchronous API to delete all Products in a ProductSet or all Products that are in no
-   * ProductSet.
-   *
-   * <p>If a Product is a member of the specified ProductSet in addition to other ProductSets, the
-   * Product will still be deleted.
-   *
-   * <p>It is recommended to not delete the specified ProductSet until after this operation has
-   * completed. It is also recommended to not add any of the Products involved in the batch delete
-   * to a new ProductSet while this operation is running because those Products may still end up
-   * deleted.
-   *
-   * <p>It's not possible to undo the PurgeProducts operation. Therefore, it is recommended to keep
-   * the csv files used in ImportProductSets (if that was how you originally built the Product Set)
-   * before starting PurgeProducts, in case you need to re-import the data after deletion.
-   *
-   * <p>If the plan is to purge all of the Products from a ProductSet and then re-use the empty
-   * ProductSet to re-import new Products into the empty ProductSet, you must wait until the
-   * PurgeProducts operation has finished for that ProductSet.
-   *
-   * <p>The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep
-   * track of the progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress)
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   PurgeProductsRequest request = PurgeProductsRequest.newBuilder().build();
    *   ApiFuture&lt;Operation&gt; future = productSearchClient.purgeProductsCallable().futureCall(request);
    *   // Do something
-   *   Operation response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

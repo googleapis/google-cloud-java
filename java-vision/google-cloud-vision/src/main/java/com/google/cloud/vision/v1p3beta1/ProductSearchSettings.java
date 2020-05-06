@@ -54,16 +54,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createProductSet to 30 seconds:
+ * <p>For example, to set the total timeout of deleteProductSet to 30 seconds:
  *
  * <pre>
  * <code>
  * ProductSearchSettings.Builder productSearchSettingsBuilder =
  *     ProductSearchSettings.newBuilder();
  * productSearchSettingsBuilder
- *     .createProductSetSettings()
+ *     .deleteProductSetSettings()
  *     .setRetrySettings(
- *         productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
+ *         productSearchSettingsBuilder.deleteProductSetSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProductSearchSettings productSearchSettings = productSearchSettingsBuilder.build();
@@ -73,6 +73,35 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ProductSearchSettings extends ClientSettings<ProductSearchSettings> {
+  /** Returns the object with the settings used for calls to deleteProductSet. */
+  public UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).deleteProductSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteProduct. */
+  public UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).deleteProductSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteReferenceImage. */
+  public UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).deleteReferenceImageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importProductSets. */
+  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importProductSets. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createProductSet. */
   public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).createProductSetSettings();
@@ -93,11 +122,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
   /** Returns the object with the settings used for calls to updateProductSet. */
   public UnaryCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).updateProductSetSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteProductSet. */
-  public UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).deleteProductSetSettings();
   }
 
   /** Returns the object with the settings used for calls to createProduct. */
@@ -121,20 +145,10 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
     return ((ProductSearchStubSettings) getStubSettings()).updateProductSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteProduct. */
-  public UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).deleteProductSettings();
-  }
-
   /** Returns the object with the settings used for calls to createReferenceImage. */
   public UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).createReferenceImageSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteReferenceImage. */
-  public UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).deleteReferenceImageSettings();
   }
 
   /** Returns the object with the settings used for calls to listReferenceImages. */
@@ -167,20 +181,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
           ListProductsInProductSetPagedResponse>
       listProductsInProductSetSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).listProductsInProductSetSettings();
-  }
-
-  /** Returns the object with the settings used for calls to importProductSets. */
-  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to importProductSets. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsOperationSettings();
   }
 
   public static final ProductSearchSettings create(ProductSearchStubSettings stub)
@@ -280,6 +280,37 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteProductSet. */
+    public UnaryCallSettings.Builder<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
+      return getStubSettingsBuilder().deleteProductSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProduct. */
+    public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
+      return getStubSettingsBuilder().deleteProductSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReferenceImage. */
+    public UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
+        deleteReferenceImageSettings() {
+      return getStubSettingsBuilder().deleteReferenceImageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
+        importProductSetsSettings() {
+      return getStubSettingsBuilder().importProductSetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+        importProductSetsOperationSettings() {
+      return getStubSettingsBuilder().importProductSetsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createProductSet. */
     public UnaryCallSettings.Builder<CreateProductSetRequest, ProductSet>
         createProductSetSettings() {
@@ -304,11 +335,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
       return getStubSettingsBuilder().updateProductSetSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteProductSet. */
-    public UnaryCallSettings.Builder<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
-      return getStubSettingsBuilder().deleteProductSetSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createProduct. */
     public UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings() {
       return getStubSettingsBuilder().createProductSettings();
@@ -331,21 +357,10 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
       return getStubSettingsBuilder().updateProductSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteProduct. */
-    public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
-      return getStubSettingsBuilder().deleteProductSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createReferenceImage. */
     public UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageSettings() {
       return getStubSettingsBuilder().createReferenceImageSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReferenceImage. */
-    public UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
-        deleteReferenceImageSettings() {
-      return getStubSettingsBuilder().deleteReferenceImageSettings();
     }
 
     /** Returns the builder for the settings used for calls to listReferenceImages. */
@@ -382,21 +397,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings() {
       return getStubSettingsBuilder().listProductsInProductSetSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
-        importProductSetsSettings() {
-      return getStubSettingsBuilder().importProductSetsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-        importProductSetsOperationSettings() {
-      return getStubSettingsBuilder().importProductSetsOperationSettings();
     }
 
     @Override

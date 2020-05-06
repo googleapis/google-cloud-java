@@ -100,16 +100,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createProductSet to 30 seconds:
+ * <p>For example, to set the total timeout of deleteProductSet to 30 seconds:
  *
  * <pre>
  * <code>
  * ProductSearchStubSettings.Builder productSearchSettingsBuilder =
  *     ProductSearchStubSettings.newBuilder();
  * productSearchSettingsBuilder
- *     .createProductSetSettings()
+ *     .deleteProductSetSettings()
  *     .setRetrySettings(
- *         productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
+ *         productSearchSettingsBuilder.deleteProductSetSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProductSearchStubSettings productSearchSettings = productSearchSettingsBuilder.build();
@@ -126,23 +126,27 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           .add("https://www.googleapis.com/auth/cloud-vision")
           .build();
 
+  private final UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings;
+  private final UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings;
+  private final UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings;
+  private final UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings;
+  private final OperationCallSettings<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationSettings;
   private final UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings;
   private final PagedCallSettings<
           ListProductSetsRequest, ListProductSetsResponse, ListProductSetsPagedResponse>
       listProductSetsSettings;
   private final UnaryCallSettings<GetProductSetRequest, ProductSet> getProductSetSettings;
   private final UnaryCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetSettings;
-  private final UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings;
   private final UnaryCallSettings<CreateProductRequest, Product> createProductSettings;
   private final PagedCallSettings<
           ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
       listProductsSettings;
   private final UnaryCallSettings<GetProductRequest, Product> getProductSettings;
   private final UnaryCallSettings<UpdateProductRequest, Product> updateProductSettings;
-  private final UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings;
   private final UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageSettings;
-  private final UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings;
   private final PagedCallSettings<
           ListReferenceImagesRequest, ListReferenceImagesResponse, ListReferenceImagesPagedResponse>
       listReferenceImagesSettings;
@@ -157,11 +161,37 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           ListProductsInProductSetResponse,
           ListProductsInProductSetPagedResponse>
       listProductsInProductSetSettings;
-  private final UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings;
-  private final OperationCallSettings<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationSettings;
   private final UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings;
+  private final OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationSettings;
+
+  /** Returns the object with the settings used for calls to deleteProductSet. */
+  public UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
+    return deleteProductSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteProduct. */
+  public UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings() {
+    return deleteProductSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteReferenceImage. */
+  public UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings() {
+    return deleteReferenceImageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importProductSets. */
+  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
+    return importProductSetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importProductSets. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationSettings() {
+    return importProductSetsOperationSettings;
+  }
 
   /** Returns the object with the settings used for calls to createProductSet. */
   public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
@@ -185,11 +215,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     return updateProductSetSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteProductSet. */
-  public UnaryCallSettings<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
-    return deleteProductSetSettings;
-  }
-
   /** Returns the object with the settings used for calls to createProduct. */
   public UnaryCallSettings<CreateProductRequest, Product> createProductSettings() {
     return createProductSettings;
@@ -211,20 +236,10 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     return updateProductSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteProduct. */
-  public UnaryCallSettings<DeleteProductRequest, Empty> deleteProductSettings() {
-    return deleteProductSettings;
-  }
-
   /** Returns the object with the settings used for calls to createReferenceImage. */
   public UnaryCallSettings<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageSettings() {
     return createReferenceImageSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteReferenceImage. */
-  public UnaryCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageSettings() {
-    return deleteReferenceImageSettings;
   }
 
   /** Returns the object with the settings used for calls to listReferenceImages. */
@@ -259,22 +274,16 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     return listProductsInProductSetSettings;
   }
 
-  /** Returns the object with the settings used for calls to importProductSets. */
-  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
-    return importProductSetsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to importProductSets. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationSettings() {
-    return importProductSetsOperationSettings;
-  }
-
   /** Returns the object with the settings used for calls to purgeProducts. */
   public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
     return purgeProductsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationSettings() {
+    return purgeProductsOperationSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -346,28 +355,29 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   protected ProductSearchStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteProductSetSettings = settingsBuilder.deleteProductSetSettings().build();
+    deleteProductSettings = settingsBuilder.deleteProductSettings().build();
+    deleteReferenceImageSettings = settingsBuilder.deleteReferenceImageSettings().build();
+    importProductSetsSettings = settingsBuilder.importProductSetsSettings().build();
+    importProductSetsOperationSettings =
+        settingsBuilder.importProductSetsOperationSettings().build();
     createProductSetSettings = settingsBuilder.createProductSetSettings().build();
     listProductSetsSettings = settingsBuilder.listProductSetsSettings().build();
     getProductSetSettings = settingsBuilder.getProductSetSettings().build();
     updateProductSetSettings = settingsBuilder.updateProductSetSettings().build();
-    deleteProductSetSettings = settingsBuilder.deleteProductSetSettings().build();
     createProductSettings = settingsBuilder.createProductSettings().build();
     listProductsSettings = settingsBuilder.listProductsSettings().build();
     getProductSettings = settingsBuilder.getProductSettings().build();
     updateProductSettings = settingsBuilder.updateProductSettings().build();
-    deleteProductSettings = settingsBuilder.deleteProductSettings().build();
     createReferenceImageSettings = settingsBuilder.createReferenceImageSettings().build();
-    deleteReferenceImageSettings = settingsBuilder.deleteReferenceImageSettings().build();
     listReferenceImagesSettings = settingsBuilder.listReferenceImagesSettings().build();
     getReferenceImageSettings = settingsBuilder.getReferenceImageSettings().build();
     addProductToProductSetSettings = settingsBuilder.addProductToProductSetSettings().build();
     removeProductFromProductSetSettings =
         settingsBuilder.removeProductFromProductSetSettings().build();
     listProductsInProductSetSettings = settingsBuilder.listProductsInProductSetSettings().build();
-    importProductSetsSettings = settingsBuilder.importProductSetsSettings().build();
-    importProductSetsOperationSettings =
-        settingsBuilder.importProductSetsOperationSettings().build();
     purgeProductsSettings = settingsBuilder.purgeProductsSettings().build();
+    purgeProductsOperationSettings = settingsBuilder.purgeProductsOperationSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -613,6 +623,16 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   public static class Builder extends StubSettings.Builder<ProductSearchStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteProductSetRequest, Empty>
+        deleteProductSetSettings;
+    private final UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings;
+    private final UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
+        deleteReferenceImageSettings;
+    private final UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
+        importProductSetsSettings;
+    private final OperationCallSettings.Builder<
+            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+        importProductSetsOperationSettings;
     private final UnaryCallSettings.Builder<CreateProductSetRequest, ProductSet>
         createProductSetSettings;
     private final PagedCallSettings.Builder<
@@ -621,19 +641,14 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     private final UnaryCallSettings.Builder<GetProductSetRequest, ProductSet> getProductSetSettings;
     private final UnaryCallSettings.Builder<UpdateProductSetRequest, ProductSet>
         updateProductSetSettings;
-    private final UnaryCallSettings.Builder<DeleteProductSetRequest, Empty>
-        deleteProductSetSettings;
     private final UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings;
     private final PagedCallSettings.Builder<
             ListProductsRequest, ListProductsResponse, ListProductsPagedResponse>
         listProductsSettings;
     private final UnaryCallSettings.Builder<GetProductRequest, Product> getProductSettings;
     private final UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings;
-    private final UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings;
     private final UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageSettings;
-    private final UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
-        deleteReferenceImageSettings;
     private final PagedCallSettings.Builder<
             ListReferenceImagesRequest,
             ListReferenceImagesResponse,
@@ -650,12 +665,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
             ListProductsInProductSetResponse,
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings;
-    private final UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
-        importProductSetsSettings;
-    private final OperationCallSettings.Builder<
-            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-        importProductSetsOperationSettings;
     private final UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings;
+    private final OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
+        purgeProductsOperationSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -698,6 +710,16 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      importProductSetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      importProductSetsOperationSettings = OperationCallSettings.newBuilder();
+
       createProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listProductSetsSettings = PagedCallSettings.newBuilder(LIST_PRODUCT_SETS_PAGE_STR_FACT);
@@ -705,8 +727,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       getProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteProductSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -716,11 +736,7 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
       updateProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteReferenceImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listReferenceImagesSettings =
           PagedCallSettings.newBuilder(LIST_REFERENCE_IMAGES_PAGE_STR_FACT);
@@ -734,32 +750,30 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       listProductsInProductSetSettings =
           PagedCallSettings.newBuilder(LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_FACT);
 
-      importProductSetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      importProductSetsOperationSettings = OperationCallSettings.newBuilder();
-
       purgeProductsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      purgeProductsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteProductSetSettings,
+              deleteProductSettings,
+              deleteReferenceImageSettings,
+              importProductSetsSettings,
               createProductSetSettings,
               listProductSetsSettings,
               getProductSetSettings,
               updateProductSetSettings,
-              deleteProductSetSettings,
               createProductSettings,
               listProductsSettings,
               getProductSettings,
               updateProductSettings,
-              deleteProductSettings,
               createReferenceImageSettings,
-              deleteReferenceImageSettings,
               listReferenceImagesSettings,
               getReferenceImageSettings,
               addProductToProductSetSettings,
               removeProductFromProductSetSettings,
               listProductsInProductSetSettings,
-              importProductSetsSettings,
               purgeProductsSettings);
 
       initDefaults(this);
@@ -775,6 +789,26 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteProductSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteProductSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteReferenceImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .importProductSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createProductSetSettings()
@@ -794,11 +828,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       builder
           .updateProductSetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteProductSetSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -822,18 +851,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteProductSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createReferenceImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteReferenceImageSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -859,11 +878,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       builder
           .listProductsInProductSetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .importProductSetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -894,6 +908,29 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
                       .setTotalTimeout(Duration.ofMillis(86400000L))
                       .build()));
+      builder
+          .purgeProductsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PurgeProductsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BatchOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -901,48 +938,49 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     protected Builder(ProductSearchStubSettings settings) {
       super(settings);
 
+      deleteProductSetSettings = settings.deleteProductSetSettings.toBuilder();
+      deleteProductSettings = settings.deleteProductSettings.toBuilder();
+      deleteReferenceImageSettings = settings.deleteReferenceImageSettings.toBuilder();
+      importProductSetsSettings = settings.importProductSetsSettings.toBuilder();
+      importProductSetsOperationSettings = settings.importProductSetsOperationSettings.toBuilder();
       createProductSetSettings = settings.createProductSetSettings.toBuilder();
       listProductSetsSettings = settings.listProductSetsSettings.toBuilder();
       getProductSetSettings = settings.getProductSetSettings.toBuilder();
       updateProductSetSettings = settings.updateProductSetSettings.toBuilder();
-      deleteProductSetSettings = settings.deleteProductSetSettings.toBuilder();
       createProductSettings = settings.createProductSettings.toBuilder();
       listProductsSettings = settings.listProductsSettings.toBuilder();
       getProductSettings = settings.getProductSettings.toBuilder();
       updateProductSettings = settings.updateProductSettings.toBuilder();
-      deleteProductSettings = settings.deleteProductSettings.toBuilder();
       createReferenceImageSettings = settings.createReferenceImageSettings.toBuilder();
-      deleteReferenceImageSettings = settings.deleteReferenceImageSettings.toBuilder();
       listReferenceImagesSettings = settings.listReferenceImagesSettings.toBuilder();
       getReferenceImageSettings = settings.getReferenceImageSettings.toBuilder();
       addProductToProductSetSettings = settings.addProductToProductSetSettings.toBuilder();
       removeProductFromProductSetSettings =
           settings.removeProductFromProductSetSettings.toBuilder();
       listProductsInProductSetSettings = settings.listProductsInProductSetSettings.toBuilder();
-      importProductSetsSettings = settings.importProductSetsSettings.toBuilder();
-      importProductSetsOperationSettings = settings.importProductSetsOperationSettings.toBuilder();
       purgeProductsSettings = settings.purgeProductsSettings.toBuilder();
+      purgeProductsOperationSettings = settings.purgeProductsOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteProductSetSettings,
+              deleteProductSettings,
+              deleteReferenceImageSettings,
+              importProductSetsSettings,
               createProductSetSettings,
               listProductSetsSettings,
               getProductSetSettings,
               updateProductSetSettings,
-              deleteProductSetSettings,
               createProductSettings,
               listProductsSettings,
               getProductSettings,
               updateProductSettings,
-              deleteProductSettings,
               createReferenceImageSettings,
-              deleteReferenceImageSettings,
               listReferenceImagesSettings,
               getReferenceImageSettings,
               addProductToProductSetSettings,
               removeProductFromProductSetSettings,
               listProductsInProductSetSettings,
-              importProductSetsSettings,
               purgeProductsSettings);
     }
 
@@ -960,6 +998,37 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProductSet. */
+    public UnaryCallSettings.Builder<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
+      return deleteProductSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProduct. */
+    public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
+      return deleteProductSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReferenceImage. */
+    public UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
+        deleteReferenceImageSettings() {
+      return deleteReferenceImageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
+        importProductSetsSettings() {
+      return importProductSetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+        importProductSetsOperationSettings() {
+      return importProductSetsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createProductSet. */
@@ -986,11 +1055,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       return updateProductSetSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteProductSet. */
-    public UnaryCallSettings.Builder<DeleteProductSetRequest, Empty> deleteProductSetSettings() {
-      return deleteProductSetSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createProduct. */
     public UnaryCallSettings.Builder<CreateProductRequest, Product> createProductSettings() {
       return createProductSettings;
@@ -1013,21 +1077,10 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       return updateProductSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteProduct. */
-    public UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings() {
-      return deleteProductSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createReferenceImage. */
     public UnaryCallSettings.Builder<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageSettings() {
       return createReferenceImageSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReferenceImage. */
-    public UnaryCallSettings.Builder<DeleteReferenceImageRequest, Empty>
-        deleteReferenceImageSettings() {
-      return deleteReferenceImageSettings;
     }
 
     /** Returns the builder for the settings used for calls to listReferenceImages. */
@@ -1066,24 +1119,17 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
       return listProductsInProductSetSettings;
     }
 
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
-        importProductSetsSettings() {
-      return importProductSetsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-        importProductSetsOperationSettings() {
-      return importProductSetsOperationSettings;
-    }
-
     /** Returns the builder for the settings used for calls to purgeProducts. */
     public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
       return purgeProductsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
+        purgeProductsOperationSettings() {
+      return purgeProductsOperationSettings;
     }
 
     @Override

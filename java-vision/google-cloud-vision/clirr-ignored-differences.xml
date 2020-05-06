@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/vision/v1p3beta1/ProductSearchClient</className>
+    <method>void *ProductSet(com.google.cloud.vision.v1p3beta1.ProductSetName, java.lang.String)</method>
+    <to>void *ProductSet(com.google.cloud.vision.v1p3beta1.ProductSetName, com.google.cloud.vision.v1p3beta1.ProductName)</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/vision/v1p4beta1/ProductSearchClient</className>
+    <method>void *ProductSet(com.google.cloud.vision.v1p4beta1.ProductSetName, java.lang.String)</method>
+    <to>void *ProductSet(com.google.cloud.vision.v1p4beta1.ProductSetName, com.google.cloud.vision.v1p4beta1.ProductName)</to>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/vision/v1p4beta1/ProductSearchClient</className>
+    <method>com.google.longrunning.Operation purgeProducts(com.google.cloud.vision.v1p4beta1.PurgeProductsRequest)</method>
+  </difference>
+</differences>
