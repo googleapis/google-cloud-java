@@ -18,7 +18,9 @@ package com.google.cloud.bigtable.data.v2.stub.readrows;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
+import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.EvictingQueue;
 import com.google.protobuf.ByteString;
 import java.util.List;
 
@@ -77,6 +79,14 @@ final class StateMachine<RowT> {
   private State currentState;
   private ByteString lastCompleteRowKey;
 
+  // debug stats
+  private int numScannedNotifications = 0;
+  private int numRowsCommitted = 0;
+  private int numChunksProcessed = 0;
+  private int numCellsInRow = 0;
+  private int numCellsInLastRow = 0;
+  private EvictingQueue<ByteString> lastSeenKeys = EvictingQueue.create(5);
+
   // Track current cell attributes: protocol omits them when they are repeated
   private ByteString rowKey;
   private String familyName;
@@ -120,6 +130,7 @@ final class StateMachine<RowT> {
    */
   void handleLastScannedRow(ByteString key) {
     try {
+      numScannedNotifications++;
       currentState = currentState.handleLastScannedRow(key);
     } catch (RuntimeException e) {
       currentState = null;
@@ -148,6 +159,7 @@ final class StateMachine<RowT> {
    */
   void handleChunk(CellChunk chunk) {
     try {
+      numChunksProcessed++;
       currentState = currentState.handleChunk(chunk);
     } catch (RuntimeException e) {
       currentState = null;
@@ -191,6 +203,7 @@ final class StateMachine<RowT> {
     expectedCellSize = 0;
     remainingCellBytes = 0;
     completeRow = null;
+    numCellsInRow = 0;
 
     adapter.reset();
   }
@@ -326,6 +339,7 @@ final class StateMachine<RowT> {
             return AWAITING_CELL_VALUE;
           }
           adapter.finishCell();
+          numCellsInRow++;
 
           if (!chunk.getCommitRow()) {
             return AWAITING_NEW_CELL;
@@ -374,6 +388,7 @@ final class StateMachine<RowT> {
             return AWAITING_CELL_VALUE;
           }
           adapter.finishCell();
+          numCellsInRow++;
 
           if (!chunk.getCommitRow()) {
             return AWAITING_NEW_CELL;
@@ -416,12 +431,31 @@ final class StateMachine<RowT> {
     validate(remainingCellBytes == 0, "Can't commit with remaining bytes");
     completeRow = adapter.finishRow();
     lastCompleteRowKey = rowKey;
+
+    lastSeenKeys.add(rowKey);
+    numRowsCommitted++;
+    numCellsInLastRow = numCellsInRow;
     return AWAITING_ROW_CONSUME;
   }
 
-  private static void validate(boolean condition, String message) {
+  private void validate(boolean condition, String message) {
     if (!condition) {
-      throw new InvalidInputException(message);
+      throw new InvalidInputException(
+          message
+              + ". numScannedNotifications: "
+              + numScannedNotifications
+              + ", numRowsCommitted: "
+              + numRowsCommitted
+              + ", numChunksProcessed: "
+              + numChunksProcessed
+              + ", numCellsInRow: "
+              + numCellsInRow
+              + ", numCellsInLastRow: "
+              + numCellsInLastRow
+              + ", rowKey: "
+              + rowKey
+              + ", last5Keys: "
+              + Joiner.on(",").join(lastSeenKeys));
     }
   }
 
