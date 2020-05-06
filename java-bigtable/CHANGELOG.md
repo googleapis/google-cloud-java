@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.12.0](https://www.github.com/googleapis/java-bigtable/compare/v1.11.0...v1.12.0) (2020-05-06)
+
+
+### Features
+
+* add more context to row merging errors ([#281](https://www.github.com/googleapis/java-bigtable/issues/281)) ([d88547c](https://www.github.com/googleapis/java-bigtable/commit/d88547cb55e9e2df09471df62074165266847c6d))
+
+
+### Bug Fixes
+
+* **build:** fix version update flag in samples pom.xml ([#285](https://www.github.com/googleapis/java-bigtable/issues/285)) ([6a1f970](https://www.github.com/googleapis/java-bigtable/commit/6a1f9701574fcdd41bc8300115e21ebe31b6f426))
+
+
+### Dependencies
+
+* update autovalue.version to v1.7.1 ([#278](https://www.github.com/googleapis/java-bigtable/issues/278)) ([e2f4e9e](https://www.github.com/googleapis/java-bigtable/commit/e2f4e9e84277dd242bf2fc454ab3243ff557f1ca))
+* update core dependencies ([#215](https://www.github.com/googleapis/java-bigtable/issues/215)) ([ad7aab4](https://www.github.com/googleapis/java-bigtable/commit/ad7aab435aa31541535e4e202f01a79484f007a5))
+* update core dependencies for google-cloud-core and gax ([#240](https://www.github.com/googleapis/java-bigtable/issues/240)) ([8f384f4](https://www.github.com/googleapis/java-bigtable/commit/8f384f48e984c69b10a515d15324227b40130d83))
+* update dependency com.google.api:api-common to v1.9.0 ([#231](https://www.github.com/googleapis/java-bigtable/issues/231)) ([9a0f983](https://www.github.com/googleapis/java-bigtable/commit/9a0f9838c9a96ae1108da36f79bf1a4cdf4b5749))
+* update dependency com.google.api:gax-bom to v1.55.0 ([#234](https://www.github.com/googleapis/java-bigtable/issues/234)) ([f910a32](https://www.github.com/googleapis/java-bigtable/commit/f910a32abef5b24a093c1ecef71d47811c458b41))
+* update dependency com.google.cloud:google-cloud-conformance-tests to v0.0.10 ([#271](https://www.github.com/googleapis/java-bigtable/issues/271)) ([2bf6195](https://www.github.com/googleapis/java-bigtable/commit/2bf6195e8c215b8a6a72b66711fb24e98f3ab5a2))
+* update dependency com.google.cloud:google-cloud-conformance-tests to v0.0.8 ([#216](https://www.github.com/googleapis/java-bigtable/issues/216)) ([423cb6b](https://www.github.com/googleapis/java-bigtable/commit/423cb6b395aa67986993f7d6c9dbd588e93faca6))
+* update dependency com.google.cloud:google-cloud-conformance-tests to v0.0.9 ([#230](https://www.github.com/googleapis/java-bigtable/issues/230)) ([a84c689](https://www.github.com/googleapis/java-bigtable/commit/a84c689150990fe39ccc8055941ffb237cd499f5))
+* update dependency com.google.cloud:google-cloud-core-bom to v1.93.3 ([#219](https://www.github.com/googleapis/java-bigtable/issues/219)) ([92f2755](https://www.github.com/googleapis/java-bigtable/commit/92f2755ca3b5218daa286556ce2c8b2f5b79fad6))
+* update dependency com.google.cloud.samples:shared-configuration to v1.0.15 ([#246](https://www.github.com/googleapis/java-bigtable/issues/246)) ([3348210](https://www.github.com/googleapis/java-bigtable/commit/33482104496856dc849fe9858c429266a6caf4da))
+* update dependency com.google.guava:guava-bom to v29 ([#244](https://www.github.com/googleapis/java-bigtable/issues/244)) ([0f7bd45](https://www.github.com/googleapis/java-bigtable/commit/0f7bd45bf15ebe25e2b5dd75134885e43b2604f0))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#272](https://www.github.com/googleapis/java-bigtable/issues/272)) ([af0874b](https://www.github.com/googleapis/java-bigtable/commit/af0874bcbab22366514b89d8e567cbeeed4789f8))
+* update dependency io.grpc:grpc-bom to v1.28.1 ([#236](https://www.github.com/googleapis/java-bigtable/issues/236)) ([4a72205](https://www.github.com/googleapis/java-bigtable/commit/4a72205018b39d71cfa54466fe44630c0e4202aa))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#267](https://www.github.com/googleapis/java-bigtable/issues/267)) ([2e6393b](https://www.github.com/googleapis/java-bigtable/commit/2e6393b2bf4899ab603dfc6de9128df76d4ecb2d))
+* update dependency org.threeten:threetenbp to v1.4.2 ([#225](https://www.github.com/googleapis/java-bigtable/issues/225)) ([5b94b02](https://www.github.com/googleapis/java-bigtable/commit/5b94b02ddc53c98d4a59e5457bdecc949d177c84))
+* update dependency org.threeten:threetenbp to v1.4.3 ([#237](https://www.github.com/googleapis/java-bigtable/issues/237)) ([86fab5c](https://www.github.com/googleapis/java-bigtable/commit/86fab5cb90b1ca83c494f6787ca9d10d930ca1ff))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#270](https://www.github.com/googleapis/java-bigtable/issues/270)) ([6eba2af](https://www.github.com/googleapis/java-bigtable/commit/6eba2aff251fd3930a971d6270f297d449f21320))
+* update google.common-protos.version to v1.18.0 ([#279](https://www.github.com/googleapis/java-bigtable/issues/279)) ([1571dd9](https://www.github.com/googleapis/java-bigtable/commit/1571dd939c24484309b8f484f73f29e602fce27c))
+* update opencensus.version to v0.26.0 ([#223](https://www.github.com/googleapis/java-bigtable/issues/223)) ([1a00982](https://www.github.com/googleapis/java-bigtable/commit/1a00982eead27d3e3b13bc0c3942459618408e53))
+
 ## [1.11.0](https://www.github.com/googleapis/java-bigtable/compare/v1.10.0...v1.11.0) (2020-03-03)
 
 
