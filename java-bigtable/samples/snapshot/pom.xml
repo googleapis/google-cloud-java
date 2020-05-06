@@ -30,6 +30,7 @@
       <artifactId>google-cloud-bigtable</artifactId>
       <version>1.11.0</version>
     </dependency>
+  <!-- {x-version-update-end} -->
 
     <dependency>
       <groupId>junit</groupId>
@@ -44,7 +45,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
 
   <!-- compile and run all snippet tests -->
   <build>
