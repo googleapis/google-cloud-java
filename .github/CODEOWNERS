@@ -9,3 +9,4 @@ google-cloud-clients/google-cloud-contrib/src/*   @pongad @jean-philippe-martin
 google-cloud-clients/google-cloud-firestore/src/* @schmidt-sebastian
 google-cloud-clients/google-cloud-pubsub/src/*    @pongad @googleapis/yoshi-java
 google-cloud-clients/google-cloud-spanner/src/*   @snehashah16
+google-cloud-clients/google-cloud-storage/*       @GoogleCloudPlatform/storage-dpe
