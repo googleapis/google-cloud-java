@@ -5109,7 +5109,9 @@ public final class Storage {
      * be billed for usage.
      * </pre>
      *
-     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -5123,7 +5125,9 @@ public final class Storage {
      * be billed for usage.
      * </pre>
      *
-     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -5511,7 +5515,9 @@ public final class Storage {
      * be billed for usage.
      * </pre>
      *
-     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -5535,7 +5541,9 @@ public final class Storage {
      * be billed for usage.
      * </pre>
      *
-     * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -6453,7 +6461,9 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The parent.
        */
@@ -6477,7 +6487,9 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for parent.
        */
@@ -6501,7 +6513,9 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -6524,7 +6538,9 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -6543,7 +6559,9 @@ public final class Storage {
        * be billed for usage.
        * </pre>
        *
-       * <code>string parent = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for parent to set.
        * @return This builder for chaining.
@@ -8146,8 +8164,6 @@ public final class Storage {
      *
      * <pre>
      * Represents the progress of the current stream.
-     * Note: This value is under development and should not be used. Use
-     * `fraction_consumed` instead.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -8160,8 +8176,6 @@ public final class Storage {
      *
      * <pre>
      * Represents the progress of the current stream.
-     * Note: This value is under development and should not be used. Use
-     * `fraction_consumed` instead.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -8174,8 +8188,6 @@ public final class Storage {
      *
      * <pre>
      * Represents the progress of the current stream.
-     * Note: This value is under development and should not be used. Use
-     * `fraction_consumed` instead.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -8364,8 +8376,6 @@ public final class Storage {
      *
      * <pre>
      * Represents the progress of the current stream.
-     * Note: This value is under development and should not be used. Use
-     * `fraction_consumed` instead.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -8380,8 +8390,6 @@ public final class Storage {
      *
      * <pre>
      * Represents the progress of the current stream.
-     * Note: This value is under development and should not be used. Use
-     * `fraction_consumed` instead.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -8398,8 +8406,6 @@ public final class Storage {
      *
      * <pre>
      * Represents the progress of the current stream.
-     * Note: This value is under development and should not be used. Use
-     * `fraction_consumed` instead.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -8949,8 +8955,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -8965,8 +8969,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -8987,8 +8989,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -9011,8 +9011,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -9033,8 +9031,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -9062,8 +9058,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -9084,8 +9078,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -9101,8 +9093,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -9122,8 +9112,6 @@ public final class Storage {
        *
        * <pre>
        * Represents the progress of the current stream.
-       * Note: This value is under development and should not be used. Use
-       * `fraction_consumed` instead.
        * </pre>
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
@@ -14604,10 +14592,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to finalize.
+     * Required. Stream to finalize.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the stream field is set.
      */
@@ -14616,10 +14606,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to finalize.
+     * Required. Stream to finalize.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The stream.
      */
@@ -14628,10 +14620,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to finalize.
+     * Required. Stream to finalize.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder();
   }
@@ -14743,10 +14737,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to finalize.
+     * Required. Stream to finalize.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the stream field is set.
      */
@@ -14757,10 +14753,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to finalize.
+     * Required. Stream to finalize.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The stream.
      */
@@ -14773,10 +14771,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to finalize.
+     * Required. Stream to finalize.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder() {
       return getStream();
@@ -15141,10 +15141,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the stream field is set.
        */
@@ -15155,10 +15157,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The stream.
        */
@@ -15175,10 +15179,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setStream(com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
         if (streamBuilder_ == null) {
@@ -15197,10 +15203,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setStream(
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder builderForValue) {
@@ -15217,10 +15225,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergeStream(com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
         if (streamBuilder_ == null) {
@@ -15243,10 +15253,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearStream() {
         if (streamBuilder_ == null) {
@@ -15263,10 +15275,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder getStreamBuilder() {
 
@@ -15277,10 +15291,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
           getStreamOrBuilder() {
@@ -15296,10 +15312,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to finalize.
+       * Required. Stream to finalize.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 2;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
@@ -15383,10 +15401,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to split.
+     * Required. Stream to split.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the originalStream field is set.
      */
@@ -15395,10 +15415,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to split.
+     * Required. Stream to split.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The originalStream.
      */
@@ -15407,10 +15429,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to split.
+     * Required. Stream to split.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getOriginalStreamOrBuilder();
 
@@ -15546,10 +15570,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to split.
+     * Required. Stream to split.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the originalStream field is set.
      */
@@ -15560,10 +15586,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to split.
+     * Required. Stream to split.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The originalStream.
      */
@@ -15576,10 +15604,12 @@ public final class Storage {
      *
      *
      * <pre>
-     * Stream to split.
+     * Required. Stream to split.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+     * <code>
+     * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
         getOriginalStreamOrBuilder() {
@@ -15989,10 +16019,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the originalStream field is set.
        */
@@ -16003,10 +16035,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The originalStream.
        */
@@ -16023,10 +16057,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setOriginalStream(
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
@@ -16046,10 +16082,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setOriginalStream(
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder builderForValue) {
@@ -16066,10 +16104,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergeOriginalStream(
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
@@ -16093,10 +16133,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearOriginalStream() {
         if (originalStreamBuilder_ == null) {
@@ -16113,10 +16155,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder
           getOriginalStreamBuilder() {
@@ -16128,10 +16172,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
           getOriginalStreamOrBuilder() {
@@ -16147,10 +16193,12 @@ public final class Storage {
        *
        *
        * <pre>
-       * Stream to split.
+       * Required. Stream to split.
        * </pre>
        *
-       * <code>.google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1;</code>
+       * <code>
+       * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.bigquery.storage.v1beta1.Storage.Stream,
@@ -17543,94 +17591,95 @@ public final class Storage {
           + "gStrategy:k\352Ah\n*bigquerystorage.googleap"
           + "is.com/ReadSession\022:projects/{project}/l"
           + "ocations/{location}/sessions/{session}B\010"
-          + "\n\006schema\"\325\003\n\030CreateReadSessionRequest\022S\n"
+          + "\n\006schema\"\205\004\n\030CreateReadSessionRequest\022S\n"
           + "\017table_reference\030\001 \001(\01325.google.cloud.bi"
           + "gquery.storage.v1beta1.TableReferenceB\003\340"
-          + "A\002\022\023\n\006parent\030\006 \001(\tB\003\340A\002\022N\n\017table_modifie"
-          + "rs\030\002 \001(\01325.google.cloud.bigquery.storage"
-          + ".v1beta1.TableModifiers\022\031\n\021requested_str"
-          + "eams\030\003 \001(\005\022M\n\014read_options\030\004 \001(\01327.googl"
-          + "e.cloud.bigquery.storage.v1beta1.TableRe"
-          + "adOptions\022A\n\006format\030\005 \001(\01621.google.cloud"
-          + ".bigquery.storage.v1beta1.DataFormat\022R\n\021"
-          + "sharding_strategy\030\007 \001(\01627.google.cloud.b"
-          + "igquery.storage.v1beta1.ShardingStrategy"
-          + "\"d\n\017ReadRowsRequest\022Q\n\rread_position\030\001 \001"
-          + "(\01325.google.cloud.bigquery.storage.v1bet"
-          + "a1.StreamPositionB\003\340A\002\"\240\001\n\014StreamStatus\022"
-          + "\033\n\023estimated_row_count\030\001 \001(\003\022\031\n\021fraction"
-          + "_consumed\030\002 \001(\002\022A\n\010progress\030\004 \001(\0132/.goog"
-          + "le.cloud.bigquery.storage.v1beta1.Progre"
-          + "ss\022\025\n\ris_splittable\030\003 \001(\010\">\n\010Progress\022\031\n"
-          + "\021at_response_start\030\001 \001(\002\022\027\n\017at_response_"
-          + "end\030\002 \001(\002\"*\n\016ThrottleStatus\022\030\n\020throttle_"
-          + "percent\030\001 \001(\005\"\337\002\n\020ReadRowsResponse\022D\n\tav"
-          + "ro_rows\030\003 \001(\0132/.google.cloud.bigquery.st"
-          + "orage.v1beta1.AvroRowsH\000\022U\n\022arrow_record"
-          + "_batch\030\004 \001(\01327.google.cloud.bigquery.sto"
-          + "rage.v1beta1.ArrowRecordBatchH\000\022\021\n\trow_c"
-          + "ount\030\006 \001(\003\022C\n\006status\030\002 \001(\01323.google.clou"
-          + "d.bigquery.storage.v1beta1.StreamStatus\022"
-          + "N\n\017throttle_status\030\005 \001(\01325.google.cloud."
-          + "bigquery.storage.v1beta1.ThrottleStatusB"
-          + "\006\n\004rows\"\220\001\n$BatchCreateReadSessionStream"
-          + "sRequest\022H\n\007session\030\001 \001(\01322.google.cloud"
-          + ".bigquery.storage.v1beta1.ReadSessionB\003\340"
-          + "A\002\022\036\n\021requested_streams\030\002 \001(\005B\003\340A\002\"g\n%Ba"
-          + "tchCreateReadSessionStreamsResponse\022>\n\007s"
-          + "treams\030\001 \003(\0132-.google.cloud.bigquery.sto"
-          + "rage.v1beta1.Stream\"V\n\025FinalizeStreamReq"
-          + "uest\022=\n\006stream\030\002 \001(\0132-.google.cloud.bigq"
-          + "uery.storage.v1beta1.Stream\"r\n\026SplitRead"
-          + "StreamRequest\022F\n\017original_stream\030\001 \001(\0132-"
-          + ".google.cloud.bigquery.storage.v1beta1.S"
-          + "tream\022\020\n\010fraction\030\002 \001(\002\"\251\001\n\027SplitReadStr"
-          + "eamResponse\022E\n\016primary_stream\030\001 \001(\0132-.go"
-          + "ogle.cloud.bigquery.storage.v1beta1.Stre"
-          + "am\022G\n\020remainder_stream\030\002 \001(\0132-.google.cl"
-          + "oud.bigquery.storage.v1beta1.Stream*>\n\nD"
-          + "ataFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010"
-          + "\n\004AVRO\020\001\022\t\n\005ARROW\020\003*O\n\020ShardingStrategy\022"
-          + "!\n\035SHARDING_STRATEGY_UNSPECIFIED\020\000\022\n\n\006LI"
-          + "QUID\020\001\022\014\n\010BALANCED\020\0022\353\n\n\017BigQueryStorage"
-          + "\022\263\002\n\021CreateReadSession\022?.google.cloud.bi"
-          + "gquery.storage.v1beta1.CreateReadSession"
-          + "Request\0322.google.cloud.bigquery.storage."
-          + "v1beta1.ReadSession\"\250\001\202\323\344\223\002w\"0/v1beta1/{"
-          + "table_reference.project_id=projects/*}:\001"
-          + "*Z@\";/v1beta1/{table_reference.dataset_i"
-          + "d=projects/*/datasets/*}:\001*\332A(table_refe"
-          + "rence,parent,requested_streams\022\320\001\n\010ReadR"
-          + "ows\0226.google.cloud.bigquery.storage.v1be"
-          + "ta1.ReadRowsRequest\0327.google.cloud.bigqu"
-          + "ery.storage.v1beta1.ReadRowsResponse\"Q\202\323"
-          + "\344\223\002;\0229/v1beta1/{read_position.stream.nam"
-          + "e=projects/*/streams/*}\332A\rread_position0"
-          + "\001\022\220\002\n\035BatchCreateReadSessionStreams\022K.go"
-          + "ogle.cloud.bigquery.storage.v1beta1.Batc"
-          + "hCreateReadSessionStreamsRequest\032L.googl"
-          + "e.cloud.bigquery.storage.v1beta1.BatchCr"
-          + "eateReadSessionStreamsResponse\"T\202\323\344\223\0022\"-"
-          + "/v1beta1/{session.name=projects/*/sessio"
-          + "ns/*}:\001*\332A\031session,requested_streams\022\247\001\n"
-          + "\016FinalizeStream\022<.google.cloud.bigquery."
-          + "storage.v1beta1.FinalizeStreamRequest\032\026."
-          + "google.protobuf.Empty\"?\202\323\344\223\0020\"+/v1beta1/"
-          + "{stream.name=projects/*/streams/*}:\001*\332A\006"
-          + "stream\022\340\001\n\017SplitReadStream\022=.google.clou"
-          + "d.bigquery.storage.v1beta1.SplitReadStre"
-          + "amRequest\032>.google.cloud.bigquery.storag"
-          + "e.v1beta1.SplitReadStreamResponse\"N\202\323\344\223\002"
-          + "6\0224/v1beta1/{original_stream.name=projec"
-          + "ts/*/streams/*}\332A\017original_stream\032\256\001\312A\036b"
-          + "igquerystorage.googleapis.com\322A\211\001https:/"
-          + "/www.googleapis.com/auth/bigquery,https:"
-          + "//www.googleapis.com/auth/bigquery.reado"
-          + "nly,https://www.googleapis.com/auth/clou"
-          + "d-platformBy\n)com.google.cloud.bigquery."
-          + "storage.v1beta1ZLgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/bigquery/storage/v1"
-          + "beta1;storageb\006proto3"
+          + "A\002\022C\n\006parent\030\006 \001(\tB3\340A\002\372A-\n+cloudresourc"
+          + "emanager.googleapis.com/Project\022N\n\017table"
+          + "_modifiers\030\002 \001(\01325.google.cloud.bigquery"
+          + ".storage.v1beta1.TableModifiers\022\031\n\021reque"
+          + "sted_streams\030\003 \001(\005\022M\n\014read_options\030\004 \001(\013"
+          + "27.google.cloud.bigquery.storage.v1beta1"
+          + ".TableReadOptions\022A\n\006format\030\005 \001(\01621.goog"
+          + "le.cloud.bigquery.storage.v1beta1.DataFo"
+          + "rmat\022R\n\021sharding_strategy\030\007 \001(\01627.google"
+          + ".cloud.bigquery.storage.v1beta1.Sharding"
+          + "Strategy\"d\n\017ReadRowsRequest\022Q\n\rread_posi"
+          + "tion\030\001 \001(\01325.google.cloud.bigquery.stora"
+          + "ge.v1beta1.StreamPositionB\003\340A\002\"\240\001\n\014Strea"
+          + "mStatus\022\033\n\023estimated_row_count\030\001 \001(\003\022\031\n\021"
+          + "fraction_consumed\030\002 \001(\002\022A\n\010progress\030\004 \001("
+          + "\0132/.google.cloud.bigquery.storage.v1beta"
+          + "1.Progress\022\025\n\ris_splittable\030\003 \001(\010\">\n\010Pro"
+          + "gress\022\031\n\021at_response_start\030\001 \001(\002\022\027\n\017at_r"
+          + "esponse_end\030\002 \001(\002\"*\n\016ThrottleStatus\022\030\n\020t"
+          + "hrottle_percent\030\001 \001(\005\"\337\002\n\020ReadRowsRespon"
+          + "se\022D\n\tavro_rows\030\003 \001(\0132/.google.cloud.big"
+          + "query.storage.v1beta1.AvroRowsH\000\022U\n\022arro"
+          + "w_record_batch\030\004 \001(\01327.google.cloud.bigq"
+          + "uery.storage.v1beta1.ArrowRecordBatchH\000\022"
+          + "\021\n\trow_count\030\006 \001(\003\022C\n\006status\030\002 \001(\01323.goo"
+          + "gle.cloud.bigquery.storage.v1beta1.Strea"
+          + "mStatus\022N\n\017throttle_status\030\005 \001(\01325.googl"
+          + "e.cloud.bigquery.storage.v1beta1.Throttl"
+          + "eStatusB\006\n\004rows\"\220\001\n$BatchCreateReadSessi"
+          + "onStreamsRequest\022H\n\007session\030\001 \001(\01322.goog"
+          + "le.cloud.bigquery.storage.v1beta1.ReadSe"
+          + "ssionB\003\340A\002\022\036\n\021requested_streams\030\002 \001(\005B\003\340"
+          + "A\002\"g\n%BatchCreateReadSessionStreamsRespo"
+          + "nse\022>\n\007streams\030\001 \003(\0132-.google.cloud.bigq"
+          + "uery.storage.v1beta1.Stream\"[\n\025FinalizeS"
+          + "treamRequest\022B\n\006stream\030\002 \001(\0132-.google.cl"
+          + "oud.bigquery.storage.v1beta1.StreamB\003\340A\002"
+          + "\"w\n\026SplitReadStreamRequest\022K\n\017original_s"
+          + "tream\030\001 \001(\0132-.google.cloud.bigquery.stor"
+          + "age.v1beta1.StreamB\003\340A\002\022\020\n\010fraction\030\002 \001("
+          + "\002\"\251\001\n\027SplitReadStreamResponse\022E\n\016primary"
+          + "_stream\030\001 \001(\0132-.google.cloud.bigquery.st"
+          + "orage.v1beta1.Stream\022G\n\020remainder_stream"
+          + "\030\002 \001(\0132-.google.cloud.bigquery.storage.v"
+          + "1beta1.Stream*>\n\nDataFormat\022\033\n\027DATA_FORM"
+          + "AT_UNSPECIFIED\020\000\022\010\n\004AVRO\020\001\022\t\n\005ARROW\020\003*O\n"
+          + "\020ShardingStrategy\022!\n\035SHARDING_STRATEGY_U"
+          + "NSPECIFIED\020\000\022\n\n\006LIQUID\020\001\022\014\n\010BALANCED\020\0022\353"
+          + "\n\n\017BigQueryStorage\022\263\002\n\021CreateReadSession"
+          + "\022?.google.cloud.bigquery.storage.v1beta1"
+          + ".CreateReadSessionRequest\0322.google.cloud"
+          + ".bigquery.storage.v1beta1.ReadSession\"\250\001"
+          + "\202\323\344\223\002w\"0/v1beta1/{table_reference.projec"
+          + "t_id=projects/*}:\001*Z@\";/v1beta1/{table_r"
+          + "eference.dataset_id=projects/*/datasets/"
+          + "*}:\001*\332A(table_reference,parent,requested"
+          + "_streams\022\320\001\n\010ReadRows\0226.google.cloud.big"
+          + "query.storage.v1beta1.ReadRowsRequest\0327."
+          + "google.cloud.bigquery.storage.v1beta1.Re"
+          + "adRowsResponse\"Q\202\323\344\223\002;\0229/v1beta1/{read_p"
+          + "osition.stream.name=projects/*/streams/*"
+          + "}\332A\rread_position0\001\022\220\002\n\035BatchCreateReadS"
+          + "essionStreams\022K.google.cloud.bigquery.st"
+          + "orage.v1beta1.BatchCreateReadSessionStre"
+          + "amsRequest\032L.google.cloud.bigquery.stora"
+          + "ge.v1beta1.BatchCreateReadSessionStreams"
+          + "Response\"T\202\323\344\223\0022\"-/v1beta1/{session.name"
+          + "=projects/*/sessions/*}:\001*\332A\031session,req"
+          + "uested_streams\022\247\001\n\016FinalizeStream\022<.goog"
+          + "le.cloud.bigquery.storage.v1beta1.Finali"
+          + "zeStreamRequest\032\026.google.protobuf.Empty\""
+          + "?\202\323\344\223\0020\"+/v1beta1/{stream.name=projects/"
+          + "*/streams/*}:\001*\332A\006stream\022\340\001\n\017SplitReadSt"
+          + "ream\022=.google.cloud.bigquery.storage.v1b"
+          + "eta1.SplitReadStreamRequest\032>.google.clo"
+          + "ud.bigquery.storage.v1beta1.SplitReadStr"
+          + "eamResponse\"N\202\323\344\223\0026\0224/v1beta1/{original_"
+          + "stream.name=projects/*/streams/*}\332A\017orig"
+          + "inal_stream\032\256\001\312A\036bigquerystorage.googlea"
+          + "pis.com\322A\211\001https://www.googleapis.com/au"
+          + "th/bigquery,https://www.googleapis.com/a"
+          + "uth/bigquery.readonly,https://www.google"
+          + "apis.com/auth/cloud-platformBy\n)com.goog"
+          + "le.cloud.bigquery.storage.v1beta1ZLgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/b"
+          + "igquery/storage/v1beta1;storageb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -17781,6 +17830,7 @@ public final class Storage {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();

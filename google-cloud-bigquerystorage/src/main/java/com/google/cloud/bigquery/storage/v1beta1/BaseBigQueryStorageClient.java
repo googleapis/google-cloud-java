@@ -413,7 +413,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param stream Stream to finalize.
+   * @param stream Required. Stream to finalize.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void finalizeStream(Stream stream) {
@@ -509,7 +509,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param originalStream Stream to split.
+   * @param originalStream Required. Stream to split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SplitReadStreamResponse splitReadStream(Stream originalStream) {
