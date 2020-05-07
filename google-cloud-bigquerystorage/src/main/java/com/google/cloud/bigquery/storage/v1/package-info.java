@@ -30,7 +30,7 @@
  * <pre>
  * <code>
  * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
- *   String parent = "";
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   ReadSession readSession = ReadSession.newBuilder().build();
  *   int maxStreamCount = 0;
  *   ReadSession response = baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);

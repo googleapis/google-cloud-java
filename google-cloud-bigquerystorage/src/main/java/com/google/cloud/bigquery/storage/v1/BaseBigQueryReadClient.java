@@ -37,7 +37,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
- *   String parent = "";
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   ReadSession readSession = ReadSession.newBuilder().build();
  *   int maxStreamCount = 0;
  *   ReadSession response = baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
@@ -173,10 +173,62 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   String parent = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ReadSession readSession = ReadSession.newBuilder().build();
    *   int maxStreamCount = 0;
    *   ReadSession response = baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The request project that owns the session, in the form of
+   *     `projects/{project_id}`.
+   * @param readSession Required. Session to be created.
+   * @param maxStreamCount Max initial number of streams. If unset or zero, the server will provide
+   *     a value of streams so as to produce reasonable throughput. Must be non-negative. The number
+   *     of streams may be lower than the requested number, depending on the amount parallelism that
+   *     is reasonable for the table. Error will be returned if the max count is greater than the
+   *     current system max limit of 1,000.
+   *     <p>Streams must be read starting from offset 0.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadSession createReadSession(
+      ProjectName parent, ReadSession readSession, int maxStreamCount) {
+    CreateReadSessionRequest request =
+        CreateReadSessionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setReadSession(readSession)
+            .setMaxStreamCount(maxStreamCount)
+            .build();
+    return createReadSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new read session. A read session divides the contents of a BigQuery table into one or
+   * more streams, which can then be used to read data from the table. The read session also
+   * specifies properties of the data to be read, such as a list of columns or a push-down filter
+   * describing the rows to be returned.
+   *
+   * <p>A particular row can be read by at most one stream. When the caller has reached the end of
+   * each stream in the session, then all the data in the table has been read.
+   *
+   * <p>Data is assigned to each stream such that roughly the same number of rows can be read from
+   * each stream. Because the server-side unit for assigning data is collections of rows, the API
+   * does not guarantee that each stream will return the same number or rows. Additionally, the
+   * limits are enforced based on the number of pre-filtered rows, so some filters can lead to
+   * lopsided assignments.
+   *
+   * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
+   * clean-up by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ReadSession readSession = ReadSession.newBuilder().build();
+   *   int maxStreamCount = 0;
+   *   ReadSession response = baseBigQueryReadClient.createReadSession(parent.toString(), readSession, maxStreamCount);
    * }
    * </code></pre>
    *
@@ -225,7 +277,12 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ReadSession readSession = ReadSession.newBuilder().build();
+   *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setReadSession(readSession)
+   *     .build();
    *   ReadSession response = baseBigQueryReadClient.createReadSession(request);
    * }
    * </code></pre>
@@ -260,7 +317,12 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ReadSession readSession = ReadSession.newBuilder().build();
+   *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setReadSession(readSession)
+   *     .build();
    *   ApiFuture&lt;ReadSession&gt; future = baseBigQueryReadClient.createReadSessionCallable().futureCall(request);
    *   // Do something
    *   ReadSession response = future.get();
@@ -284,7 +346,10 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   ReadRowsRequest request = ReadRowsRequest.newBuilder().build();
+   *   ReadStreamName readStream = ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
+   *   ReadRowsRequest request = ReadRowsRequest.newBuilder()
+   *     .setReadStream(readStream.toString())
+   *     .build();
    *
    *   ServerStream&lt;ReadRowsResponse&gt; stream = baseBigQueryReadClient.readRowsCallable().call(request);
    *   for (ReadRowsResponse response : stream) {
@@ -314,7 +379,10 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder().build();
+   *   ReadStreamName name = ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
+   *   SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   SplitReadStreamResponse response = baseBigQueryReadClient.splitReadStream(request);
    * }
    * </code></pre>
@@ -343,7 +411,10 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
-   *   SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder().build();
+   *   ReadStreamName name = ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
+   *   SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;SplitReadStreamResponse&gt; future = baseBigQueryReadClient.splitReadStreamCallable().futureCall(request);
    *   // Do something
    *   SplitReadStreamResponse response = future.get();

@@ -91,21 +91,24 @@ public class BigQueryWriteClientTest {
   @Test
   @SuppressWarnings("all")
   public void createWriteStreamTest() {
-    String name = "name3373707";
+    WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
     String externalId = "externalId-1153075697";
     WriteStream expectedResponse =
-        WriteStream.newBuilder().setName(name).setExternalId(externalId).build();
+        WriteStream.newBuilder().setName(name.toString()).setExternalId(externalId).build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
-    CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder().build();
+    TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+    WriteStream writeStream = WriteStream.newBuilder().build();
 
-    WriteStream actualResponse = client.createWriteStream(request);
+    WriteStream actualResponse = client.createWriteStream(parent, writeStream);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateWriteStreamRequest actualRequest = (CreateWriteStreamRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, TableName.parse(actualRequest.getParent()));
+    Assert.assertEquals(writeStream, actualRequest.getWriteStream());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -119,9 +122,10 @@ public class BigQueryWriteClientTest {
     mockBigQueryWrite.addException(exception);
 
     try {
-      CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder().build();
+      TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+      WriteStream writeStream = WriteStream.newBuilder().build();
 
-      client.createWriteStream(request);
+      client.createWriteStream(parent, writeStream);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -134,7 +138,10 @@ public class BigQueryWriteClientTest {
     long offset = 1019779949L;
     AppendRowsResponse expectedResponse = AppendRowsResponse.newBuilder().setOffset(offset).build();
     mockBigQueryWrite.addResponse(expectedResponse);
-    AppendRowsRequest request = AppendRowsRequest.newBuilder().build();
+    WriteStreamName writeStream =
+        WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+    AppendRowsRequest request =
+        AppendRowsRequest.newBuilder().setWriteStream(writeStream.toString()).build();
 
     MockStreamObserver<AppendRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -156,7 +163,10 @@ public class BigQueryWriteClientTest {
   public void appendRowsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigQueryWrite.addException(exception);
-    AppendRowsRequest request = AppendRowsRequest.newBuilder().build();
+    WriteStreamName writeStream =
+        WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+    AppendRowsRequest request =
+        AppendRowsRequest.newBuilder().setWriteStream(writeStream.toString()).build();
 
     MockStreamObserver<AppendRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -180,21 +190,22 @@ public class BigQueryWriteClientTest {
   @Test
   @SuppressWarnings("all")
   public void getWriteStreamTest() {
-    String name = "name3373707";
+    WriteStreamName name2 = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
     String externalId = "externalId-1153075697";
     WriteStream expectedResponse =
-        WriteStream.newBuilder().setName(name).setExternalId(externalId).build();
+        WriteStream.newBuilder().setName(name2.toString()).setExternalId(externalId).build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
-    GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder().build();
+    WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
 
-    WriteStream actualResponse = client.getWriteStream(request);
+    WriteStream actualResponse = client.getWriteStream(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetWriteStreamRequest actualRequest = (GetWriteStreamRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, WriteStreamName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -208,9 +219,9 @@ public class BigQueryWriteClientTest {
     mockBigQueryWrite.addException(exception);
 
     try {
-      GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder().build();
+      WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
 
-      client.getWriteStream(request);
+      client.getWriteStream(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -225,15 +236,16 @@ public class BigQueryWriteClientTest {
         FinalizeWriteStreamResponse.newBuilder().setRowCount(rowCount).build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
-    FinalizeWriteStreamRequest request = FinalizeWriteStreamRequest.newBuilder().build();
+    WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
 
-    FinalizeWriteStreamResponse actualResponse = client.finalizeWriteStream(request);
+    FinalizeWriteStreamResponse actualResponse = client.finalizeWriteStream(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     FinalizeWriteStreamRequest actualRequest = (FinalizeWriteStreamRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, WriteStreamName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -247,9 +259,9 @@ public class BigQueryWriteClientTest {
     mockBigQueryWrite.addException(exception);
 
     try {
-      FinalizeWriteStreamRequest request = FinalizeWriteStreamRequest.newBuilder().build();
+      WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
 
-      client.finalizeWriteStream(request);
+      client.finalizeWriteStream(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -263,9 +275,9 @@ public class BigQueryWriteClientTest {
         BatchCommitWriteStreamsResponse.newBuilder().build();
     mockBigQueryWrite.addResponse(expectedResponse);
 
-    BatchCommitWriteStreamsRequest request = BatchCommitWriteStreamsRequest.newBuilder().build();
+    TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
 
-    BatchCommitWriteStreamsResponse actualResponse = client.batchCommitWriteStreams(request);
+    BatchCommitWriteStreamsResponse actualResponse = client.batchCommitWriteStreams(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
@@ -273,6 +285,7 @@ public class BigQueryWriteClientTest {
     BatchCommitWriteStreamsRequest actualRequest =
         (BatchCommitWriteStreamsRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, TableName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -286,9 +299,9 @@ public class BigQueryWriteClientTest {
     mockBigQueryWrite.addException(exception);
 
     try {
-      BatchCommitWriteStreamsRequest request = BatchCommitWriteStreamsRequest.newBuilder().build();
+      TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
 
-      client.batchCommitWriteStreams(request);
+      client.batchCommitWriteStreams(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

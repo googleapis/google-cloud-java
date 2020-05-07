@@ -81,12 +81,13 @@ public class BaseBigQueryReadClientTest {
   @Test
   @SuppressWarnings("all")
   public void createReadSessionTest() {
-    String name = "name3373707";
-    String table = "table110115790";
-    ReadSession expectedResponse = ReadSession.newBuilder().setName(name).setTable(table).build();
+    ReadSessionName name = ReadSessionName.of("[PROJECT]", "[LOCATION]", "[SESSION]");
+    TableName table = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+    ReadSession expectedResponse =
+        ReadSession.newBuilder().setName(name.toString()).setTable(table.toString()).build();
     mockBigQueryRead.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    ProjectName parent = ProjectName.of("[PROJECT]");
     ReadSession readSession = ReadSession.newBuilder().build();
     int maxStreamCount = 940837515;
 
@@ -97,7 +98,7 @@ public class BaseBigQueryReadClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateReadSessionRequest actualRequest = (CreateReadSessionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(readSession, actualRequest.getReadSession());
     Assert.assertEquals(maxStreamCount, actualRequest.getMaxStreamCount());
     Assert.assertTrue(
@@ -113,7 +114,7 @@ public class BaseBigQueryReadClientTest {
     mockBigQueryRead.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      ProjectName parent = ProjectName.of("[PROJECT]");
       ReadSession readSession = ReadSession.newBuilder().build();
       int maxStreamCount = 940837515;
 
@@ -130,7 +131,10 @@ public class BaseBigQueryReadClientTest {
     long rowCount = 1340416618L;
     ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
     mockBigQueryRead.addResponse(expectedResponse);
-    ReadRowsRequest request = ReadRowsRequest.newBuilder().build();
+    ReadStreamName readStream =
+        ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
+    ReadRowsRequest request =
+        ReadRowsRequest.newBuilder().setReadStream(readStream.toString()).build();
 
     MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -147,7 +151,10 @@ public class BaseBigQueryReadClientTest {
   public void readRowsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigQueryRead.addException(exception);
-    ReadRowsRequest request = ReadRowsRequest.newBuilder().build();
+    ReadStreamName readStream =
+        ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
+    ReadRowsRequest request =
+        ReadRowsRequest.newBuilder().setReadStream(readStream.toString()).build();
 
     MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -170,7 +177,9 @@ public class BaseBigQueryReadClientTest {
     SplitReadStreamResponse expectedResponse = SplitReadStreamResponse.newBuilder().build();
     mockBigQueryRead.addResponse(expectedResponse);
 
-    SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder().build();
+    ReadStreamName name = ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
+    SplitReadStreamRequest request =
+        SplitReadStreamRequest.newBuilder().setName(name.toString()).build();
 
     SplitReadStreamResponse actualResponse = client.splitReadStream(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -179,6 +188,7 @@ public class BaseBigQueryReadClientTest {
     Assert.assertEquals(1, actualRequests.size());
     SplitReadStreamRequest actualRequest = (SplitReadStreamRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, ReadStreamName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -192,7 +202,9 @@ public class BaseBigQueryReadClientTest {
     mockBigQueryRead.addException(exception);
 
     try {
-      SplitReadStreamRequest request = SplitReadStreamRequest.newBuilder().build();
+      ReadStreamName name = ReadStreamName.of("[PROJECT]", "[LOCATION]", "[SESSION]", "[STREAM]");
+      SplitReadStreamRequest request =
+          SplitReadStreamRequest.newBuilder().setName(name.toString()).build();
 
       client.splitReadStream(request);
       Assert.fail("No exception raised");

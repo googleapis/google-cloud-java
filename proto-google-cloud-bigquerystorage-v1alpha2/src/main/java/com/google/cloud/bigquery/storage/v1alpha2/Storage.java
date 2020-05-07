@@ -37,10 +37,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Reference to the table to which the stream belongs, in the format
-     * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -50,10 +52,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Reference to the table to which the stream belongs, in the format
-     * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -220,10 +224,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Reference to the table to which the stream belongs, in the format
-     * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -243,10 +249,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Reference to the table to which the stream belongs, in the format
-     * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -691,10 +699,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Reference to the table to which the stream belongs, in the format
-       * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * of `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The parent.
        */
@@ -714,10 +724,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Reference to the table to which the stream belongs, in the format
-       * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * of `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for parent.
        */
@@ -737,10 +749,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Reference to the table to which the stream belongs, in the format
-       * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * of `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -759,10 +773,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Reference to the table to which the stream belongs, in the format
-       * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * of `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -777,10 +793,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Reference to the table to which the stream belongs, in the format
-       * of `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * of `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for parent to set.
        * @return This builder for chaining.
@@ -1075,7 +1093,9 @@ public final class Storage {
      * stream name, it must equal to the value provided in the first request.
      * </pre>
      *
-     * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The writeStream.
      */
@@ -1089,7 +1109,9 @@ public final class Storage {
      * stream name, it must equal to the value provided in the first request.
      * </pre>
      *
-     * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for writeStream.
      */
@@ -2484,7 +2506,9 @@ public final class Storage {
      * stream name, it must equal to the value provided in the first request.
      * </pre>
      *
-     * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The writeStream.
      */
@@ -2508,7 +2532,9 @@ public final class Storage {
      * stream name, it must equal to the value provided in the first request.
      * </pre>
      *
-     * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for writeStream.
      */
@@ -3059,7 +3085,9 @@ public final class Storage {
        * stream name, it must equal to the value provided in the first request.
        * </pre>
        *
-       * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The writeStream.
        */
@@ -3083,7 +3111,9 @@ public final class Storage {
        * stream name, it must equal to the value provided in the first request.
        * </pre>
        *
-       * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for writeStream.
        */
@@ -3107,7 +3137,9 @@ public final class Storage {
        * stream name, it must equal to the value provided in the first request.
        * </pre>
        *
-       * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The writeStream to set.
        * @return This builder for chaining.
@@ -3130,7 +3162,9 @@ public final class Storage {
        * stream name, it must equal to the value provided in the first request.
        * </pre>
        *
-       * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -3149,7 +3183,9 @@ public final class Storage {
        * stream name, it must equal to the value provided in the first request.
        * </pre>
        *
-       * <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for writeStream to set.
        * @return This builder for chaining.
@@ -4619,10 +4655,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Name of the stream to get, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -4632,10 +4670,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Name of the stream to get, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -4742,10 +4782,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Name of the stream to get, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -4765,10 +4807,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Name of the stream to get, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -5132,10 +5176,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to get, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The name.
        */
@@ -5155,10 +5201,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to get, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for name.
        */
@@ -5178,10 +5226,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to get, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The name to set.
        * @return This builder for chaining.
@@ -5200,10 +5250,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to get, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -5218,10 +5270,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to get, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -5303,10 +5357,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -5316,10 +5372,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -5495,10 +5553,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -5518,10 +5578,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -5989,10 +6051,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Parent table that all the streams should belong to, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The parent.
        */
@@ -6012,10 +6076,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Parent table that all the streams should belong to, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for parent.
        */
@@ -6035,10 +6101,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Parent table that all the streams should belong to, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -6057,10 +6125,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Parent table that all the streams should belong to, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -6075,10 +6145,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Parent table that all the streams should belong to, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}`.
        * </pre>
        *
-       * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for parent to set.
        * @return This builder for chaining.
@@ -7120,10 +7192,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Name of the stream to finalize, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -7133,10 +7207,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Name of the stream to finalize, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -7244,10 +7320,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Name of the stream to finalize, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -7267,10 +7345,12 @@ public final class Storage {
      *
      * <pre>
      * Required. Name of the stream to finalize, in the form of
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -7637,10 +7717,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to finalize, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The name.
        */
@@ -7660,10 +7742,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to finalize, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for name.
        */
@@ -7683,10 +7767,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to finalize, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The name to set.
        * @return This builder for chaining.
@@ -7705,10 +7791,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to finalize, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -7723,10 +7811,12 @@ public final class Storage {
        *
        * <pre>
        * Required. Name of the stream to finalize, in the form of
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -8429,70 +8519,80 @@ public final class Storage {
           + "/storage.proto\022&google.cloud.bigquery.st"
           + "orage.v1alpha2\032\034google/api/annotations.p"
           + "roto\032\027google/api/client.proto\032\037google/ap"
-          + "i/field_behavior.proto\0325google/cloud/big"
-          + "query/storage/v1alpha2/protobuf.proto\0323g"
-          + "oogle/cloud/bigquery/storage/v1alpha2/st"
-          + "ream.proto\032\033google/protobuf/empty.proto\032"
-          + "\037google/protobuf/timestamp.proto\032\036google"
-          + "/protobuf/wrappers.proto\032\027google/rpc/sta"
-          + "tus.proto\"\177\n\030CreateWriteStreamRequest\022\023\n"
-          + "\006parent\030\001 \001(\tB\003\340A\002\022N\n\014write_stream\030\002 \001(\013"
-          + "23.google.cloud.bigquery.storage.v1alpha"
-          + "2.WriteStreamB\003\340A\002\"\336\002\n\021AppendRowsRequest"
-          + "\022\031\n\014write_stream\030\001 \001(\tB\003\340A\002\0220\n\006offset\030\002 "
-          + "\001(\0132\033.google.protobuf.Int64ValueB\003\340A\001\022Y\n"
-          + "\nproto_rows\030\004 \001(\0132C.google.cloud.bigquer"
-          + "y.storage.v1alpha2.AppendRowsRequest.Pro"
-          + "toDataH\000\032\230\001\n\tProtoData\022J\n\rwriter_schema\030"
-          + "\001 \001(\01323.google.cloud.bigquery.storage.v1"
-          + "alpha2.ProtoSchema\022?\n\004rows\030\002 \001(\01321.googl"
-          + "e.cloud.bigquery.storage.v1alpha2.ProtoR"
-          + "owsB\006\n\004rows\"W\n\022AppendRowsResponse\022\020\n\006off"
-          + "set\030\001 \001(\003H\000\022#\n\005error\030\002 \001(\0132\022.google.rpc."
-          + "StatusH\000B\n\n\010response\"*\n\025GetWriteStreamRe"
-          + "quest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"Q\n\036BatchCommitW"
-          + "riteStreamsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022"
-          + "\032\n\rwrite_streams\030\002 \003(\tB\003\340A\002\"R\n\037BatchComm"
-          + "itWriteStreamsResponse\022/\n\013commit_time\030\001 "
-          + "\001(\0132\032.google.protobuf.Timestamp\"/\n\032Final"
-          + "izeWriteStreamRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002"
-          + "\"0\n\033FinalizeWriteStreamResponse\022\021\n\trow_c"
-          + "ount\030\001 \001(\0032\201\n\n\rBigQueryWrite\022\310\001\n\021CreateW"
-          + "riteStream\022@.google.cloud.bigquery.stora"
-          + "ge.v1alpha2.CreateWriteStreamRequest\0323.g"
-          + "oogle.cloud.bigquery.storage.v1alpha2.Wr"
-          + "iteStream\"<\202\323\344\223\0026\"1/v1alpha2/{parent=pro"
-          + "jects/*/datasets/*/tables/*}:\001*\022\325\001\n\nAppe"
-          + "ndRows\0229.google.cloud.bigquery.storage.v"
-          + "1alpha2.AppendRowsRequest\032:.google.cloud"
-          + ".bigquery.storage.v1alpha2.AppendRowsRes"
-          + "ponse\"L\202\323\344\223\002F\"A/v1alpha2/{write_stream=p"
+          + "i/field_behavior.proto\032\031google/api/resou"
+          + "rce.proto\0325google/cloud/bigquery/storage"
+          + "/v1alpha2/protobuf.proto\0323google/cloud/b"
+          + "igquery/storage/v1alpha2/stream.proto\0322g"
+          + "oogle/cloud/bigquery/storage/v1alpha2/ta"
+          + "ble.proto\032\033google/protobuf/empty.proto\032\037"
+          + "google/protobuf/timestamp.proto\032\036google/"
+          + "protobuf/wrappers.proto\032\027google/rpc/stat"
+          + "us.proto\"\250\001\n\030CreateWriteStreamRequest\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n$bigquerystorage.g"
+          + "oogleapis.com/Table\022N\n\014write_stream\030\002 \001("
+          + "\01323.google.cloud.bigquery.storage.v1alph"
+          + "a2.WriteStreamB\003\340A\002\"\215\003\n\021AppendRowsReques"
+          + "t\022H\n\014write_stream\030\001 \001(\tB2\340A\002\372A,\n*bigquer"
+          + "ystorage.googleapis.com/WriteStream\0220\n\006o"
+          + "ffset\030\002 \001(\0132\033.google.protobuf.Int64Value"
+          + "B\003\340A\001\022Y\n\nproto_rows\030\004 \001(\0132C.google.cloud"
+          + ".bigquery.storage.v1alpha2.AppendRowsReq"
+          + "uest.ProtoDataH\000\032\230\001\n\tProtoData\022J\n\rwriter"
+          + "_schema\030\001 \001(\01323.google.cloud.bigquery.st"
+          + "orage.v1alpha2.ProtoSchema\022?\n\004rows\030\002 \001(\013"
+          + "21.google.cloud.bigquery.storage.v1alpha"
+          + "2.ProtoRowsB\006\n\004rows\"W\n\022AppendRowsRespons"
+          + "e\022\020\n\006offset\030\001 \001(\003H\000\022#\n\005error\030\002 \001(\0132\022.goo"
+          + "gle.rpc.StatusH\000B\n\n\010response\"Y\n\025GetWrite"
+          + "StreamRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*big"
+          + "querystorage.googleapis.com/WriteStream\""
+          + "z\n\036BatchCommitWriteStreamsRequest\022<\n\006par"
+          + "ent\030\001 \001(\tB,\340A\002\372A&\n$bigquerystorage.googl"
+          + "eapis.com/Table\022\032\n\rwrite_streams\030\002 \003(\tB\003"
+          + "\340A\002\"R\n\037BatchCommitWriteStreamsResponse\022/"
+          + "\n\013commit_time\030\001 \001(\0132\032.google.protobuf.Ti"
+          + "mestamp\"^\n\032FinalizeWriteStreamRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\340A\002\372A,\n*bigquerystorage.goo"
+          + "gleapis.com/WriteStream\"0\n\033FinalizeWrite"
+          + "StreamResponse\022\021\n\trow_count\030\001 \001(\0032\310\n\n\rBi"
+          + "gQueryWrite\022\351\001\n\021CreateWriteStream\022@.goog"
+          + "le.cloud.bigquery.storage.v1alpha2.Creat"
+          + "eWriteStreamRequest\0323.google.cloud.bigqu"
+          + "ery.storage.v1alpha2.WriteStream\"]\202\323\344\223\002A"
+          + "\"1/v1alpha2/{parent=projects/*/datasets/"
+          + "*/tables/*}:\014write_stream\332A\023parent,write"
+          + "_stream\022\344\001\n\nAppendRows\0229.google.cloud.bi"
+          + "gquery.storage.v1alpha2.AppendRowsReques"
+          + "t\032:.google.cloud.bigquery.storage.v1alph"
+          + "a2.AppendRowsResponse\"[\202\323\344\223\002F\"A/v1alpha2"
+          + "/{write_stream=projects/*/datasets/*/tab"
+          + "les/*/streams/*}:\001*\332A\014write_stream(\0010\001\022\321"
+          + "\001\n\016GetWriteStream\022=.google.cloud.bigquer"
+          + "y.storage.v1alpha2.GetWriteStreamRequest"
+          + "\0323.google.cloud.bigquery.storage.v1alpha"
+          + "2.WriteStream\"K\202\323\344\223\002>\"9/v1alpha2/{name=p"
           + "rojects/*/datasets/*/tables/*/streams/*}"
-          + ":\001*(\0010\001\022\312\001\n\016GetWriteStream\022=.google.clou"
-          + "d.bigquery.storage.v1alpha2.GetWriteStre"
-          + "amRequest\0323.google.cloud.bigquery.storag"
-          + "e.v1alpha2.WriteStream\"D\202\323\344\223\002>\"9/v1alpha"
-          + "2/{name=projects/*/datasets/*/tables/*/s"
-          + "treams/*}:\001*\022\344\001\n\023FinalizeWriteStream\022B.g"
-          + "oogle.cloud.bigquery.storage.v1alpha2.Fi"
-          + "nalizeWriteStreamRequest\032C.google.cloud."
-          + "bigquery.storage.v1alpha2.FinalizeWriteS"
-          + "treamResponse\"D\202\323\344\223\002>\"9/v1alpha2/{name=p"
-          + "rojects/*/datasets/*/tables/*/streams/*}"
-          + ":\001*\022\345\001\n\027BatchCommitWriteStreams\022F.google"
-          + ".cloud.bigquery.storage.v1alpha2.BatchCo"
-          + "mmitWriteStreamsRequest\032G.google.cloud.b"
-          + "igquery.storage.v1alpha2.BatchCommitWrit"
-          + "eStreamsResponse\"9\202\323\344\223\0023\0221/v1alpha2/{par"
-          + "ent=projects/*/datasets/*/tables/*}\032\260\001\312A"
-          + "\036bigquerystorage.googleapis.com\322A\213\001https"
-          + "://www.googleapis.com/auth/bigquery,http"
-          + "s://www.googleapis.com/auth/bigquery.ins"
-          + "ertdata,https://www.googleapis.com/auth/"
-          + "cloud-platformB{\n*com.google.cloud.bigqu"
-          + "ery.storage.v1alpha2ZMgoogle.golang.org/"
-          + "genproto/googleapis/cloud/bigquery/stora"
-          + "ge/v1alpha2;storageb\006proto3"
+          + ":\001*\332A\004name\022\353\001\n\023FinalizeWriteStream\022B.goo"
+          + "gle.cloud.bigquery.storage.v1alpha2.Fina"
+          + "lizeWriteStreamRequest\032C.google.cloud.bi"
+          + "gquery.storage.v1alpha2.FinalizeWriteStr"
+          + "eamResponse\"K\202\323\344\223\002>\"9/v1alpha2/{name=pro"
+          + "jects/*/datasets/*/tables/*/streams/*}:\001"
+          + "*\332A\004name\022\356\001\n\027BatchCommitWriteStreams\022F.g"
+          + "oogle.cloud.bigquery.storage.v1alpha2.Ba"
+          + "tchCommitWriteStreamsRequest\032G.google.cl"
+          + "oud.bigquery.storage.v1alpha2.BatchCommi"
+          + "tWriteStreamsResponse\"B\202\323\344\223\0023\0221/v1alpha2"
+          + "/{parent=projects/*/datasets/*/tables/*}"
+          + "\332A\006parent\032\260\001\312A\036bigquerystorage.googleapi"
+          + "s.com\322A\213\001https://www.googleapis.com/auth"
+          + "/bigquery,https://www.googleapis.com/aut"
+          + "h/bigquery.insertdata,https://www.google"
+          + "apis.com/auth/cloud-platformB{\n*com.goog"
+          + "le.cloud.bigquery.storage.v1alpha2ZMgoog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "bigquery/storage/v1alpha2;storageb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -8501,8 +8601,10 @@ public final class Storage {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.getDescriptor(),
               com.google.cloud.bigquery.storage.v1alpha2.Stream.getDescriptor(),
+              com.google.cloud.bigquery.storage.v1alpha2.Table.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
@@ -8587,14 +8689,18 @@ public final class Storage {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1alpha2.Stream.getDescriptor();
+    com.google.cloud.bigquery.storage.v1alpha2.Table.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();

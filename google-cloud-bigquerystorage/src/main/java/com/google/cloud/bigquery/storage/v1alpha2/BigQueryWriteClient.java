@@ -46,8 +46,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
- *   CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder().build();
- *   WriteStream response = bigQueryWriteClient.createWriteStream(request);
+ *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+ *   WriteStream writeStream = WriteStream.newBuilder().build();
+ *   WriteStream response = bigQueryWriteClient.createWriteStream(parent, writeStream);
  * }
  * </code>
  * </pre>
@@ -164,7 +165,65 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder().build();
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   WriteStream writeStream = WriteStream.newBuilder().build();
+   *   WriteStream response = bigQueryWriteClient.createWriteStream(parent, writeStream);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Reference to the table to which the stream belongs, in the format of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * @param writeStream Required. Stream to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteStream createWriteStream(TableName parent, WriteStream writeStream) {
+    CreateWriteStreamRequest request =
+        CreateWriteStreamRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setWriteStream(writeStream)
+            .build();
+    return createWriteStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a write stream to the given table.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   WriteStream writeStream = WriteStream.newBuilder().build();
+   *   WriteStream response = bigQueryWriteClient.createWriteStream(parent.toString(), writeStream);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Reference to the table to which the stream belongs, in the format of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * @param writeStream Required. Stream to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteStream createWriteStream(String parent, WriteStream writeStream) {
+    CreateWriteStreamRequest request =
+        CreateWriteStreamRequest.newBuilder().setParent(parent).setWriteStream(writeStream).build();
+    return createWriteStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a write stream to the given table.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   WriteStream writeStream = WriteStream.newBuilder().build();
+   *   CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setWriteStream(writeStream)
+   *     .build();
    *   WriteStream response = bigQueryWriteClient.createWriteStream(request);
    * }
    * </code></pre>
@@ -184,7 +243,12 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder().build();
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   WriteStream writeStream = WriteStream.newBuilder().build();
+   *   CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setWriteStream(writeStream)
+   *     .build();
    *   ApiFuture&lt;WriteStream&gt; future = bigQueryWriteClient.createWriteStreamCallable().futureCall(request);
    *   // Do something
    *   WriteStream response = future.get();
@@ -221,7 +285,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *   BidiStream&lt;AppendRowsRequest, AppendRowsResponse&gt; bidiStream =
    *       bigQueryWriteClient.appendRowsCallable().call();
    *
-   *   AppendRowsRequest request = AppendRowsRequest.newBuilder().build();
+   *   WriteStreamName writeStream = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   AppendRowsRequest request = AppendRowsRequest.newBuilder()
+   *     .setWriteStream(writeStream.toString())
+   *     .build();
    *   bidiStream.send(request);
    *   for (AppendRowsResponse response : bidiStream) {
    *     // Do something when receive a response
@@ -241,7 +308,55 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder().build();
+   *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   WriteStream response = bigQueryWriteClient.getWriteStream(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the stream to get, in the form of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteStream getWriteStream(WriteStreamName name) {
+    GetWriteStreamRequest request =
+        GetWriteStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getWriteStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a write stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   WriteStream response = bigQueryWriteClient.getWriteStream(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the stream to get, in the form of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteStream getWriteStream(String name) {
+    GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder().setName(name).build();
+    return getWriteStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a write stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   WriteStream response = bigQueryWriteClient.getWriteStream(request);
    * }
    * </code></pre>
@@ -261,7 +376,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder().build();
+   *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   GetWriteStreamRequest request = GetWriteStreamRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;WriteStream&gt; future = bigQueryWriteClient.getWriteStreamCallable().futureCall(request);
    *   // Do something
    *   WriteStream response = future.get();
@@ -280,7 +398,58 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   FinalizeWriteStreamRequest request = FinalizeWriteStreamRequest.newBuilder().build();
+   *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   FinalizeWriteStreamResponse response = bigQueryWriteClient.finalizeWriteStream(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the stream to finalize, in the form of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FinalizeWriteStreamResponse finalizeWriteStream(WriteStreamName name) {
+    FinalizeWriteStreamRequest request =
+        FinalizeWriteStreamRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return finalizeWriteStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finalize a write stream so that no new data can be appended to the stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   FinalizeWriteStreamResponse response = bigQueryWriteClient.finalizeWriteStream(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the stream to finalize, in the form of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FinalizeWriteStreamResponse finalizeWriteStream(String name) {
+    FinalizeWriteStreamRequest request =
+        FinalizeWriteStreamRequest.newBuilder().setName(name).build();
+    return finalizeWriteStream(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Finalize a write stream so that no new data can be appended to the stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   FinalizeWriteStreamRequest request = FinalizeWriteStreamRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   FinalizeWriteStreamResponse response = bigQueryWriteClient.finalizeWriteStream(request);
    * }
    * </code></pre>
@@ -300,7 +469,10 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   FinalizeWriteStreamRequest request = FinalizeWriteStreamRequest.newBuilder().build();
+   *   WriteStreamName name = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   FinalizeWriteStreamRequest request = FinalizeWriteStreamRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;FinalizeWriteStreamResponse&gt; future = bigQueryWriteClient.finalizeWriteStreamCallable().futureCall(request);
    *   // Do something
    *   FinalizeWriteStreamResponse response = future.get();
@@ -322,7 +494,64 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   BatchCommitWriteStreamsRequest request = BatchCommitWriteStreamsRequest.newBuilder().build();
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   BatchCommitWriteStreamsResponse response = bigQueryWriteClient.batchCommitWriteStreams(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Parent table that all the streams should belong to, in the form of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCommitWriteStreamsResponse batchCommitWriteStreams(TableName parent) {
+    BatchCommitWriteStreamsRequest request =
+        BatchCommitWriteStreamsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return batchCommitWriteStreams(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Atomically commits a group of `PENDING` streams that belong to the same `parent` table. Streams
+   * must be finalized before commit and cannot be committed multiple times. Once a stream is
+   * committed, data in the stream becomes available for read operations.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   BatchCommitWriteStreamsResponse response = bigQueryWriteClient.batchCommitWriteStreams(parent.toString());
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Parent table that all the streams should belong to, in the form of
+   *     `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCommitWriteStreamsResponse batchCommitWriteStreams(String parent) {
+    BatchCommitWriteStreamsRequest request =
+        BatchCommitWriteStreamsRequest.newBuilder().setParent(parent).build();
+    return batchCommitWriteStreams(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Atomically commits a group of `PENDING` streams that belong to the same `parent` table. Streams
+   * must be finalized before commit and cannot be committed multiple times. Once a stream is
+   * committed, data in the stream becomes available for read operations.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   List&lt;String&gt; writeStreams = new ArrayList&lt;&gt;();
+   *   BatchCommitWriteStreamsRequest request = BatchCommitWriteStreamsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllWriteStreams(writeStreams)
+   *     .build();
    *   BatchCommitWriteStreamsResponse response = bigQueryWriteClient.batchCommitWriteStreams(request);
    * }
    * </code></pre>
@@ -345,7 +574,12 @@ public class BigQueryWriteClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
-   *   BatchCommitWriteStreamsRequest request = BatchCommitWriteStreamsRequest.newBuilder().build();
+   *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+   *   List&lt;String&gt; writeStreams = new ArrayList&lt;&gt;();
+   *   BatchCommitWriteStreamsRequest request = BatchCommitWriteStreamsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .addAllWriteStreams(writeStreams)
+   *     .build();
    *   ApiFuture&lt;BatchCommitWriteStreamsResponse&gt; future = bigQueryWriteClient.batchCommitWriteStreamsCallable().futureCall(request);
    *   // Do something
    *   BatchCommitWriteStreamsResponse response = future.get();

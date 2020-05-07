@@ -37,7 +37,7 @@ public final class Stream {
      *
      * <pre>
      * Output only. Name of the stream, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -50,7 +50,7 @@ public final class Stream {
      *
      * <pre>
      * Output only. Name of the stream, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -432,6 +432,16 @@ public final class Stream {
        * <code>PENDING = 2;</code>
        */
       PENDING(2),
+      /**
+       *
+       *
+       * <pre>
+       * Data is only visible up to the offset to which it was flushed.
+       * </pre>
+       *
+       * <code>BUFFERED = 3;</code>
+       */
+      BUFFERED(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -466,6 +476,16 @@ public final class Stream {
        * <code>PENDING = 2;</code>
        */
       public static final int PENDING_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Data is only visible up to the offset to which it was flushed.
+       * </pre>
+       *
+       * <code>BUFFERED = 3;</code>
+       */
+      public static final int BUFFERED_VALUE = 3;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -497,6 +517,8 @@ public final class Stream {
             return COMMITTED;
           case 2:
             return PENDING;
+          case 3:
+            return BUFFERED;
           default:
             return null;
         }
@@ -555,7 +577,7 @@ public final class Stream {
      *
      * <pre>
      * Output only. Name of the stream, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -578,7 +600,7 @@ public final class Stream {
      *
      * <pre>
      * Output only. Name of the stream, in the form
-     * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1292,7 +1314,7 @@ public final class Stream {
        *
        * <pre>
        * Output only. Name of the stream, in the form
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1315,7 +1337,7 @@ public final class Stream {
        *
        * <pre>
        * Output only. Name of the stream, in the form
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1338,7 +1360,7 @@ public final class Stream {
        *
        * <pre>
        * Output only. Name of the stream, in the form
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1360,7 +1382,7 @@ public final class Stream {
        *
        * <pre>
        * Output only. Name of the stream, in the form
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1378,7 +1400,7 @@ public final class Stream {
        *
        * <pre>
        * Output only. Name of the stream, in the form
-       * `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}/streams/{stream_id}`.
+       * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2314,28 +2336,35 @@ public final class Stream {
       "\n3google/cloud/bigquery/storage/v1alpha2"
           + "/stream.proto\022&google.cloud.bigquery.sto"
           + "rage.v1alpha2\032\037google/api/field_behavior"
-          + ".proto\0322google/cloud/bigquery/storage/v1"
-          + "alpha2/table.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\370\002\n\013WriteStream\022\021\n\004name\030\001 \001("
-          + "\tB\003\340A\003\022K\n\004type\030\002 \001(\01628.google.cloud.bigq"
-          + "uery.storage.v1alpha2.WriteStream.TypeB\003"
-          + "\340A\005\0224\n\013create_time\030\003 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\0224\n\013commit_time\030\004 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\003\022N\n\014table"
-          + "_schema\030\005 \001(\01323.google.cloud.bigquery.st"
-          + "orage.v1alpha2.TableSchemaB\003\340A\003\022\023\n\013exter"
-          + "nal_id\030\006 \001(\t\"8\n\004Type\022\024\n\020TYPE_UNSPECIFIED"
-          + "\020\000\022\r\n\tCOMMITTED\020\001\022\013\n\007PENDING\020\002B{\n*com.go"
-          + "ogle.cloud.bigquery.storage.v1alpha2ZMgo"
-          + "ogle.golang.org/genproto/googleapis/clou"
-          + "d/bigquery/storage/v1alpha2;storageb\006pro"
-          + "to3"
+          + ".proto\032\031google/api/resource.proto\0322googl"
+          + "e/cloud/bigquery/storage/v1alpha2/table."
+          + "proto\032\037google/protobuf/timestamp.proto\"\376"
+          + "\003\n\013WriteStream\022\021\n\004name\030\001 \001(\tB\003\340A\003\022K\n\004typ"
+          + "e\030\002 \001(\01628.google.cloud.bigquery.storage."
+          + "v1alpha2.WriteStream.TypeB\003\340A\005\0224\n\013create"
+          + "_time\030\003 \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003\0224\n\013commit_time\030\004 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\022N\n\014table_schema\030\005 \001(\013"
+          + "23.google.cloud.bigquery.storage.v1alpha"
+          + "2.TableSchemaB\003\340A\003\022\023\n\013external_id\030\006 \001(\t\""
+          + "F\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n\tCOMMITT"
+          + "ED\020\001\022\013\n\007PENDING\020\002\022\014\n\010BUFFERED\020\003:v\352As\n*bi"
+          + "gquerystorage.googleapis.com/WriteStream"
+          + "\022Eprojects/{project}/datasets/{dataset}/"
+          + "tables/{table}/streams/{stream}B\332\001\n*com."
+          + "google.cloud.bigquery.storage.v1alpha2ZM"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/bigquery/storage/v1alpha2;storage\352A\\"
+          + "\n$bigquerystorage.googleapis.com/Table\0224"
+          + "projects/{project}/datasets/{dataset}/ta"
+          + "bles/{table}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.bigquery.storage.v1alpha2.Table.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -2350,9 +2379,12 @@ public final class Stream {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.bigquery.storage.v1alpha2.Table.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

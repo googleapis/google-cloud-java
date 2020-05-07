@@ -30,8 +30,9 @@
  * <pre>
  * <code>
  * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
- *   CreateWriteStreamRequest request = CreateWriteStreamRequest.newBuilder().build();
- *   WriteStream response = bigQueryWriteClient.createWriteStream(request);
+ *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+ *   WriteStream writeStream = WriteStream.newBuilder().build();
+ *   WriteStream response = bigQueryWriteClient.createWriteStream(parent, writeStream);
  * }
  * </code>
  * </pre>
