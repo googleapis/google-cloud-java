@@ -1,5 +1,22 @@
 # Changelog
 
+### [1.105.1](https://www.github.com/googleapis/java-pubsub/compare/v1.105.0...v1.105.1) (2020-05-07)
+
+
+### Bug Fixes
+
+* changing integration test push endpoint to be valid https ([#170](https://www.github.com/googleapis/java-pubsub/issues/170)) ([71f15a4](https://www.github.com/googleapis/java-pubsub/commit/71f15a4a90475c8e82c6cc6393d4232228273656)), closes [#6784](https://www.github.com/googleapis/java-pubsub/issues/6784) [#11](https://www.github.com/googleapis/java-pubsub/issues/11)
+
+
+### Dependencies
+
+* update autovalue.version to v1.7.1 ([#173](https://www.github.com/googleapis/java-pubsub/issues/173)) ([77884f8](https://www.github.com/googleapis/java-pubsub/commit/77884f8c816bb189a1d5ecad3ab860b19df2804d))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#176](https://www.github.com/googleapis/java-pubsub/issues/176)) ([486ed41](https://www.github.com/googleapis/java-pubsub/commit/486ed4130a17a0fa411a30e7c48bd04082e68458))
+* update dependency com.google.guava:guava-bom to v29 ([#146](https://www.github.com/googleapis/java-pubsub/issues/146)) ([16f1dbb](https://www.github.com/googleapis/java-pubsub/commit/16f1dbb3226af119cdbc234e8672608244d0a7fd))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#169](https://www.github.com/googleapis/java-pubsub/issues/169)) ([6346042](https://www.github.com/googleapis/java-pubsub/commit/6346042b09c5f7e302f75ad8e48cc2d08b6f8e64))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#162](https://www.github.com/googleapis/java-pubsub/issues/162)) ([b883b45](https://www.github.com/googleapis/java-pubsub/commit/b883b452676eeb7bd5a178cd1bb357e965a26ee8))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#167](https://www.github.com/googleapis/java-pubsub/issues/167)) ([78ead3a](https://www.github.com/googleapis/java-pubsub/commit/78ead3a69ce493fdf57a372c1e135e71b8b5cb7c))
+
 ## [1.105.0](https://www.github.com/googleapis/java-pubsub/compare/v1.104.1...v1.105.0) (2020-04-13)
 
 
