@@ -18,6 +18,8 @@ package com.google.cloud.bigtable.data.v2.stub;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
@@ -61,11 +63,14 @@ public class HeadersTest {
   private static final String TABLE_NAME =
       NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
   private static final String APP_PROFILE_ID = "fake-profile";
+  private static final String TEST_FIXED_HEADER_STRING = "test_fixed_header";
 
   private static final Metadata.Key<String> X_GOOG_REQUEST_PARAMS_KEY =
       Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
   private static final Metadata.Key<String> API_CLIENT_HEADER_KEY =
       Metadata.Key.of("x-goog-api-client", Metadata.ASCII_STRING_MARSHALLER);
+  private static final Metadata.Key<String> TEST_FIXED_HEADER =
+      Metadata.Key.of(TEST_FIXED_HEADER_STRING, Metadata.ASCII_STRING_MARSHALLER);
 
   private Server server;
   private BlockingQueue<Metadata> sentMetadata = new ArrayBlockingQueue<>(10);
@@ -91,9 +96,13 @@ public class HeadersTest {
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID);
 
+    HeaderProvider headerProvider =
+        FixedHeaderProvider.create(TEST_FIXED_HEADER_STRING, "test_header_value");
+
     // Force immediate flush
     settings
         .stubSettings()
+        .setHeaderProvider(headerProvider)
         .bulkMutateRowsSettings()
         .setBatchingSettings(
             settings
@@ -172,6 +181,9 @@ public class HeadersTest {
     assertThat(apiClientValue).containsMatch("gl-java/[.\\d_]+");
     assertThat(apiClientValue).containsMatch("gax/[.\\d_]+");
     assertThat(apiClientValue).containsMatch("grpc/[.\\d_]+");
+
+    String fixedHeader = metadata.get(TEST_FIXED_HEADER);
+    assertThat(fixedHeader).isEqualTo("test_header_value");
   }
 
   private class MetadataInterceptor implements ServerInterceptor {
