@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.131.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.131.1...v0.131.2) (2020-05-08)
+
+
+### Bug Fixes
+
+* Avoid setting error on response future twice ([#261](https://www.github.com/googleapis/java-bigquerystorage/issues/261)) ([35ef0ed](https://www.github.com/googleapis/java-bigquerystorage/commit/35ef0ed80d55fd4ca015e3a9b6b631d3d893aa1a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.3.0 ([#256](https://www.github.com/googleapis/java-bigquerystorage/issues/256)) ([252440a](https://www.github.com/googleapis/java-bigquerystorage/commit/252440a84d45d9c13e468e7b59fe4702499143a9))
+
 ### [0.131.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.131.0...v0.131.1) (2020-05-04)
 
 

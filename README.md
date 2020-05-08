@@ -50,11 +50,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerystorage:0.131.1-beta'
+compile 'com.google.cloud:google-cloud-bigquerystorage:0.131.2-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "0.131.1-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "0.131.2-beta"
 ```
 [//]: # ({x-version-update-end})
 

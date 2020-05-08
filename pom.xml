@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.131.2-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+  <version>0.131.2-beta</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
   <name>BigQuery Storage Parent</name>
   <url>https://github.com/googleapis/java-bigquerystorage</url>
   <description>
@@ -103,47 +103,47 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerystorage-v1alpha2</artifactId>
-        <version>0.96.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1alpha2:current} -->
+        <version>0.96.2</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1alpha2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerystorage-v1beta1</artifactId>
-        <version>0.96.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta1:current} -->
+        <version>0.96.2</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerystorage-v1beta2</artifactId>
-        <version>0.96.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta2:current} -->
+        <version>0.96.2</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
-        <version>0.96.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
+        <version>0.96.2</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerystorage-v1alpha2</artifactId>
-        <version>0.96.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1alpha2:current} -->
+        <version>0.96.2</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1alpha2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
-        <version>0.96.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
+        <version>0.96.2</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerystorage-v1beta2</artifactId>
-        <version>0.96.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta2:current} -->
+        <version>0.96.2</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerystorage-v1</artifactId>
-        <version>0.96.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1:current} -->
+        <version>0.96.2</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerystorage</artifactId>
-        <version>0.131.2-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+        <version>0.131.2-beta</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
