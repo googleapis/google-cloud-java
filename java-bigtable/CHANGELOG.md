@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.12.1](https://www.github.com/googleapis/java-bigtable/compare/v1.12.0...v1.12.1) (2020-05-08)
+
+
+### Bug Fixes
+
+* add missing api-client header ([#290](https://www.github.com/googleapis/java-bigtable/issues/290)) ([656684b](https://www.github.com/googleapis/java-bigtable/commit/656684b7f0fff003bb582977beb828f83da9a135))
+
 ## [1.12.0](https://www.github.com/googleapis/java-bigtable/compare/v1.11.0...v1.12.0) (2020-05-06)
 
 
