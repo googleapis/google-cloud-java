@@ -250,10 +250,15 @@ public class StreamWriter implements AutoCloseable {
    * @throws IOException
    */
   public void refreshAppend() throws IOException, InterruptedException {
+    LOG.info("Establish a write connection.");
     synchronized (this) {
-      Preconditions.checkState(!shutdown.get(), "Cannot shut down on a shut-down writer.");
+      if (shutdown.get()) {
+        LOG.warning("Cannot refresh on a already shutdown writer.");
+        return;
+      }
       // There could be a moment, stub is not yet initialized.
       if (clientStream != null) {
+        LOG.info("Closing the stream");
         clientStream.closeSend();
       }
       messagesBatch.resetAttachSchema();
@@ -348,13 +353,15 @@ public class StreamWriter implements AutoCloseable {
     final List<AppendRequestAndFutureResponse> inflightRequests;
     // A list tracks expected offset for each AppendRequest. Used to reconstruct the Response
     // future.
-    final ArrayList<Long> offsetList;
-    final long creationTime;
-    int attempt;
-    long batchSizeBytes;
-    long expectedOffset;
-    Boolean attachSchema;
-    String streamName;
+    private final ArrayList<Long> offsetList;
+    private final long creationTime;
+    private int attempt;
+    private long batchSizeBytes;
+    private long expectedOffset;
+    private Boolean attachSchema;
+    private String streamName;
+
+    private final AtomicBoolean failed;
 
     InflightBatch(
         List<AppendRequestAndFutureResponse> inflightRequests,
@@ -376,6 +383,7 @@ public class StreamWriter implements AutoCloseable {
       this.batchSizeBytes = batchSizeBytes;
       this.attachSchema = attachSchema;
       this.streamName = streamName;
+      this.failed = new AtomicBoolean(false);
     }
 
     int count() {
@@ -417,6 +425,13 @@ public class StreamWriter implements AutoCloseable {
     }
 
     private void onFailure(Throwable t) {
+      if (failed.getAndSet(true)) {
+        // Error has been set already.
+        LOG.warning("Ignore " + t.toString() + " since error has already been set");
+        return;
+      } else {
+        LOG.fine("Setting " + t.toString() + " on response");
+      }
       for (AppendRequestAndFutureResponse request : inflightRequests) {
         request.appendResult.setException(t);
       }
@@ -838,8 +853,10 @@ public class StreamWriter implements AutoCloseable {
           }
           inflightBatch.onFailure(t);
           try {
-            // Establish a new connection.
-            streamWriter.refreshAppend();
+            if (!streamWriter.shutdown.get()) {
+              // Establish a new connection.
+              streamWriter.refreshAppend();
+            }
           } catch (IOException | InterruptedException e) {
             LOG.info("Failed to establish a new connection");
           }

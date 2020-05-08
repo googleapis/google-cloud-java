@@ -424,18 +424,25 @@ public class StreamWriterTest {
                             .build())
                     .build())
             .build()) {
+      assertEquals(
+          1L,
+          writer
+              .getBatchingSettings()
+              .getFlowControlSettings()
+              .getMaxOutstandingElementCount()
+              .longValue());
 
       testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().setOffset(1L).build());
+      testBigQueryWrite.setResponseDelay(Duration.ofSeconds(10));
       ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
       ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+      // Wait is necessary for response to be scheduled before timer is advanced.
+      Thread.sleep(5000L);
+      fakeExecutor.advanceTime(Duration.ofSeconds(10));
       try {
         appendFuture2.get();
         Assert.fail("This should fail");
       } catch (Exception e) {
-        if (!e.getMessage().equals("The maximum number of batch elements: 1 have been reached.")) {
-          LOG.info("More error info:");
-          e.printStackTrace();
-        }
         assertEquals(
             "java.util.concurrent.ExecutionException: The maximum number of batch elements: 1 have been reached.",
             e.toString());
@@ -505,6 +512,7 @@ public class StreamWriterTest {
                     .setMaxAttempts(1)
                     .build())
             .build();
+    assertEquals(1, writer.getRetrySettings().getMaxAttempts());
     StatusRuntimeException transientError = new StatusRuntimeException(Status.UNAVAILABLE);
     testBigQueryWrite.addException(transientError);
     testBigQueryWrite.addException(transientError);
@@ -818,7 +826,7 @@ public class StreamWriterTest {
     testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     writer.shutdown();
-    assertTrue(writer.awaitTermination(1, TimeUnit.MINUTES));
+    assertTrue(writer.awaitTermination(2, TimeUnit.MINUTES));
   }
 
   @Test
