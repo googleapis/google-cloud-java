@@ -519,6 +519,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       setTransportChannelProvider(defaultTransportChannelProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
+      setHeaderProvider(BigtableStubSettings.defaultApiClientHeaderProviderBuilder().build());
 
       setTracerFactory(
           new OpencensusTracerFactory(
