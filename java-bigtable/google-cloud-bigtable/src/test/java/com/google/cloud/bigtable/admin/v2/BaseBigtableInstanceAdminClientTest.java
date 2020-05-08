@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.bigtable.admin.v2.AppProfile;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.Cluster;
@@ -70,6 +71,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
@@ -499,12 +501,12 @@ public class BaseBigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateClusterTest() throws Exception {
-    ClusterName name2 = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+    ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
     LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
     int serveNodes2 = 1623486220;
     Cluster expectedResponse =
         Cluster.newBuilder()
-            .setName(name2.toString())
+            .setName(name.toString())
             .setLocation(location.toString())
             .setServeNodes(serveNodes2)
             .build();
@@ -516,10 +518,8 @@ public class BaseBigtableInstanceAdminClientTest {
             .build();
     mockBigtableInstanceAdmin.addResponse(resultOperation);
 
-    ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
     int serveNodes = 1288838783;
-    Cluster request =
-        Cluster.newBuilder().setName(name.toString()).setServeNodes(serveNodes).build();
+    Cluster request = Cluster.newBuilder().setServeNodes(serveNodes).build();
 
     Cluster actualResponse = client.updateClusterAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -528,7 +528,6 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     Cluster actualRequest = (Cluster) actualRequests.get(0);
 
-    Assert.assertEquals(name, ClusterName.parse(actualRequest.getName()));
     Assert.assertEquals(serveNodes, actualRequest.getServeNodes());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -543,10 +542,8 @@ public class BaseBigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      ClusterName name = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
       int serveNodes = 1288838783;
-      Cluster request =
-          Cluster.newBuilder().setName(name.toString()).setServeNodes(serveNodes).build();
+      Cluster request = Cluster.newBuilder().setServeNodes(serveNodes).build();
 
       client.updateClusterAsync(request).get();
       Assert.fail("No exception raised");
@@ -597,11 +594,15 @@ public class BaseBigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void createAppProfileTest() {
-    String name = "name3373707";
+    AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
     String etag = "etag3123477";
     String description = "description-1724546052";
     AppProfile expectedResponse =
-        AppProfile.newBuilder().setName(name).setEtag(etag).setDescription(description).build();
+        AppProfile.newBuilder()
+            .setName(name.toString())
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
     InstanceName parent = InstanceName.of("[PROJECT]", "[INSTANCE]");
@@ -645,11 +646,15 @@ public class BaseBigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAppProfileTest() {
-    String name2 = "name2-1052831874";
+    AppProfileName name2 = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
     String etag = "etag3123477";
     String description = "description-1724546052";
     AppProfile expectedResponse =
-        AppProfile.newBuilder().setName(name2).setEtag(etag).setDescription(description).build();
+        AppProfile.newBuilder()
+            .setName(name2.toString())
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
     AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
@@ -735,11 +740,15 @@ public class BaseBigtableInstanceAdminClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateAppProfileTest() throws Exception {
-    String name = "name3373707";
+    AppProfileName name = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
     String etag = "etag3123477";
     String description = "description-1724546052";
     AppProfile expectedResponse =
-        AppProfile.newBuilder().setName(name).setEtag(etag).setDescription(description).build();
+        AppProfile.newBuilder()
+            .setName(name.toString())
+            .setEtag(etag)
+            .setDescription(description)
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("updateAppProfileTest")
@@ -830,16 +839,16 @@ public class BaseBigtableInstanceAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
 
-    Policy actualResponse = client.getIamPolicy(formattedResource);
+    Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -853,9 +862,9 @@ public class BaseBigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
 
-      client.getIamPolicy(formattedResource);
+      client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -870,17 +879,17 @@ public class BaseBigtableInstanceAdminClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
     Policy policy = Policy.newBuilder().build();
 
-    Policy actualResponse = client.setIamPolicy(formattedResource, policy);
+    Policy actualResponse = client.setIamPolicy(resource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(policy, actualRequest.getPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -895,10 +904,10 @@ public class BaseBigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
       Policy policy = Policy.newBuilder().build();
 
-      client.setIamPolicy(formattedResource, policy);
+      client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -911,18 +920,17 @@ public class BaseBigtableInstanceAdminClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
-    String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+    ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
     List<String> permissions = new ArrayList<>();
 
-    TestIamPermissionsResponse actualResponse =
-        client.testIamPermissions(formattedResource, permissions);
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedResource, actualRequest.getResource());
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -937,10 +945,10 @@ public class BaseBigtableInstanceAdminClientTest {
     mockBigtableInstanceAdmin.addException(exception);
 
     try {
-      String formattedResource = InstanceName.format("[PROJECT]", "[INSTANCE]");
+      ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
       List<String> permissions = new ArrayList<>();
 
-      client.testIamPermissions(formattedResource, permissions);
+      client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

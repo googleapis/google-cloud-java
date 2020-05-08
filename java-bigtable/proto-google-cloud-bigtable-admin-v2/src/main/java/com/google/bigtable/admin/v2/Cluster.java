@@ -501,8 +501,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The number of nodes allocated to this cluster. More nodes enable higher
-   * throughput and more consistent performance.
+   * Required. The number of nodes allocated to this cluster. More nodes enable
+   * higher throughput and more consistent performance.
    * </pre>
    *
    * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1269,8 +1269,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of nodes allocated to this cluster. More nodes enable higher
-     * throughput and more consistent performance.
+     * Required. The number of nodes allocated to this cluster. More nodes enable
+     * higher throughput and more consistent performance.
      * </pre>
      *
      * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1284,8 +1284,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of nodes allocated to this cluster. More nodes enable higher
-     * throughput and more consistent performance.
+     * Required. The number of nodes allocated to this cluster. More nodes enable
+     * higher throughput and more consistent performance.
      * </pre>
      *
      * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1303,8 +1303,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of nodes allocated to this cluster. More nodes enable higher
-     * throughput and more consistent performance.
+     * Required. The number of nodes allocated to this cluster. More nodes enable
+     * higher throughput and more consistent performance.
      * </pre>
      *
      * <code>int32 serve_nodes = 4 [(.google.api.field_behavior) = REQUIRED];</code>

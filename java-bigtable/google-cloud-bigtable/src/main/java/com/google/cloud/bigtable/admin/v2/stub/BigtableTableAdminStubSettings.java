@@ -439,14 +439,12 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
 
             @Override
             public ListTablesRequest injectPageSize(ListTablesRequest payload, int pageSize) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
+              return ListTablesRequest.newBuilder(payload).setPageSize(pageSize).build();
             }
 
             @Override
             public Integer extractPageSize(ListTablesRequest payload) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
+              return payload.getPageSize();
             }
 
             @Override

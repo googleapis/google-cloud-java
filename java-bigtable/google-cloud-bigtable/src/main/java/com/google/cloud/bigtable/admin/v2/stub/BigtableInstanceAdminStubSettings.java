@@ -410,14 +410,12 @@ public class BigtableInstanceAdminStubSettings
             @Override
             public ListAppProfilesRequest injectPageSize(
                 ListAppProfilesRequest payload, int pageSize) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
+              return ListAppProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
             }
 
             @Override
             public Integer extractPageSize(ListAppProfilesRequest payload) {
-              throw new UnsupportedOperationException(
-                  "page size is not supported by this API method");
+              return payload.getPageSize();
             }
 
             @Override

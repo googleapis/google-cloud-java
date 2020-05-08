@@ -28,6 +28,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.BackupName;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
@@ -1163,8 +1164,34 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
-   *   Policy response = baseBigtableTableAdminClient.getIamPolicy(formattedResource);
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   Policy response = baseBigtableTableAdminClient.getIamPolicy(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(ResourceName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * but does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   Policy response = baseBigtableTableAdminClient.getIamPolicy(resource.toString());
    * }
    * </code></pre>
    *
@@ -1186,9 +1213,9 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .build();
    *   Policy response = baseBigtableTableAdminClient.getIamPolicy(request);
    * }
@@ -1210,9 +1237,9 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = baseBigtableTableAdminClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
@@ -1232,9 +1259,39 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = baseBigtableTableAdminClient.setIamPolicy(formattedResource, policy);
+   *   Policy response = baseBigtableTableAdminClient.setIamPolicy(resource, policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = baseBigtableTableAdminClient.setIamPolicy(resource.toString(), policy);
    * }
    * </code></pre>
    *
@@ -1259,10 +1316,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .setPolicy(policy)
    *     .build();
    *   Policy response = baseBigtableTableAdminClient.setIamPolicy(request);
@@ -1284,10 +1341,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .setPolicy(policy)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = baseBigtableTableAdminClient.setIamPolicyCallable().futureCall(request);
@@ -1308,9 +1365,40 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = baseBigtableTableAdminClient.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = baseBigtableTableAdminClient.testIamPermissions(resource, permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      ResourceName resource, List<String> permissions) {
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that the caller has on the specified table resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = baseBigtableTableAdminClient.testIamPermissions(resource.toString(), permissions);
    * }
    * </code></pre>
    *
@@ -1339,10 +1427,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .addAllPermissions(permissions)
    *     .build();
    *   TestIamPermissionsResponse response = baseBigtableTableAdminClient.testIamPermissions(request);
@@ -1364,10 +1452,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String formattedResource = TableName.format("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   ResourceName resource = AppProfileName.of("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(formattedResource)
+   *     .setResource(resource.toString())
    *     .addAllPermissions(permissions)
    *     .build();
    *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = baseBigtableTableAdminClient.testIamPermissionsCallable().futureCall(request);
@@ -1397,7 +1485,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
    *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ClusterName cluster = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   SnapshotName snapshotId = SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
+   *   String snapshotId = "";
    *   String description = "";
    *   Snapshot response = baseBigtableTableAdminClient.snapshotTableAsync(name, cluster, snapshotId, description).get();
    * }
@@ -1416,12 +1504,12 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
   @BetaApi(
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Snapshot, SnapshotTableMetadata> snapshotTableAsync(
-      TableName name, ClusterName cluster, SnapshotName snapshotId, String description) {
+      TableName name, ClusterName cluster, String snapshotId, String description) {
     SnapshotTableRequest request =
         SnapshotTableRequest.newBuilder()
             .setName(name == null ? null : name.toString())
             .setCluster(cluster == null ? null : cluster.toString())
-            .setSnapshotId(snapshotId == null ? null : snapshotId.toString())
+            .setSnapshotId(snapshotId)
             .setDescription(description)
             .build();
     return snapshotTableAsync(request);
@@ -1443,9 +1531,9 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
    *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ClusterName cluster = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   SnapshotName snapshotId = SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
+   *   String snapshotId = "";
    *   String description = "";
-   *   Snapshot response = baseBigtableTableAdminClient.snapshotTableAsync(name.toString(), cluster.toString(), snapshotId.toString(), description).get();
+   *   Snapshot response = baseBigtableTableAdminClient.snapshotTableAsync(name.toString(), cluster.toString(), snapshotId, description).get();
    * }
    * </code></pre>
    *
@@ -1489,13 +1577,11 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
    *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ClusterName cluster = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   SnapshotName snapshotId = SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
-   *   String description = "";
+   *   String snapshotId = "";
    *   SnapshotTableRequest request = SnapshotTableRequest.newBuilder()
    *     .setName(name.toString())
    *     .setCluster(cluster.toString())
-   *     .setSnapshotId(snapshotId.toString())
-   *     .setDescription(description)
+   *     .setSnapshotId(snapshotId)
    *     .build();
    *   Snapshot response = baseBigtableTableAdminClient.snapshotTableAsync(request).get();
    * }
@@ -1527,13 +1613,11 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
    *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ClusterName cluster = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   SnapshotName snapshotId = SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
-   *   String description = "";
+   *   String snapshotId = "";
    *   SnapshotTableRequest request = SnapshotTableRequest.newBuilder()
    *     .setName(name.toString())
    *     .setCluster(cluster.toString())
-   *     .setSnapshotId(snapshotId.toString())
-   *     .setDescription(description)
+   *     .setSnapshotId(snapshotId)
    *     .build();
    *   OperationFuture&lt;Snapshot, SnapshotTableMetadata&gt; future = baseBigtableTableAdminClient.snapshotTableOperationCallable().futureCall(request);
    *   // Do something
@@ -1563,13 +1647,11 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
    *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
    *   ClusterName cluster = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
-   *   SnapshotName snapshotId = SnapshotName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]", "[SNAPSHOT]");
-   *   String description = "";
+   *   String snapshotId = "";
    *   SnapshotTableRequest request = SnapshotTableRequest.newBuilder()
    *     .setName(name.toString())
    *     .setCluster(cluster.toString())
-   *     .setSnapshotId(snapshotId.toString())
-   *     .setDescription(description)
+   *     .setSnapshotId(snapshotId)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = baseBigtableTableAdminClient.snapshotTableCallable().futureCall(request);
    *   // Do something
@@ -2564,10 +2646,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String parent = "";
-   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder().build();
    *   Table response = baseBigtableTableAdminClient.restoreTableAsync(request).get();
    * }
    * </code></pre>
@@ -2596,10 +2675,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String parent = "";
-   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder().build();
    *   OperationFuture&lt;Table, RestoreTableMetadata&gt; future = baseBigtableTableAdminClient.restoreTableOperationCallable().futureCall(request);
    *   // Do something
    *   Table response = future.get();
@@ -2626,10 +2702,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient = BaseBigtableTableAdminClient.create()) {
-   *   String parent = "";
-   *   RestoreTableRequest request = RestoreTableRequest.newBuilder()
-   *     .setParent(parent)
-   *     .build();
+   *   RestoreTableRequest request = RestoreTableRequest.newBuilder().build();
    *   ApiFuture&lt;Operation&gt; future = baseBigtableTableAdminClient.restoreTableCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
