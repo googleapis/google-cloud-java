@@ -26,12 +26,19 @@ import org.junit.Test;
 
 public class TimePartitioningTest {
 
-  private static final Type TYPE = Type.DAY;
+  private static final Type TYPE_DAY = Type.DAY;
+  private static final Type TYPE_HOUR = Type.HOUR;
   private static final long EXPIRATION_MS = 42;
   private static final boolean REQUIRE_PARTITION_FILTER = false;
   private static final String FIELD = "field";
-  private static final TimePartitioning TIME_PARTITIONING =
-      TimePartitioning.newBuilder(TYPE)
+  private static final TimePartitioning TIME_PARTITIONING_DAY =
+      TimePartitioning.newBuilder(TYPE_DAY)
+          .setExpirationMs(EXPIRATION_MS)
+          .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
+          .setField(FIELD)
+          .build();
+  private static final TimePartitioning TIME_PARTITIONING_HOUR =
+      TimePartitioning.newBuilder(TYPE_HOUR)
           .setExpirationMs(EXPIRATION_MS)
           .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
           .setField(FIELD)
@@ -39,24 +46,25 @@ public class TimePartitioningTest {
 
   @Test
   public void testOf() {
-    assertEquals(TYPE, TIME_PARTITIONING.getType());
-    assertEquals(EXPIRATION_MS, TIME_PARTITIONING.getExpirationMs().longValue());
-    assertEquals(REQUIRE_PARTITION_FILTER, TIME_PARTITIONING.getRequirePartitionFilter());
-    assertEquals(FIELD, TIME_PARTITIONING.getField());
-    TimePartitioning partitioning = TimePartitioning.of(TYPE);
-    assertEquals(TYPE, partitioning.getType());
+    assertEquals(TYPE_DAY, TIME_PARTITIONING_DAY.getType());
+    assertEquals(TYPE_HOUR, TIME_PARTITIONING_HOUR.getType());
+    assertEquals(EXPIRATION_MS, TIME_PARTITIONING_DAY.getExpirationMs().longValue());
+    assertEquals(REQUIRE_PARTITION_FILTER, TIME_PARTITIONING_DAY.getRequirePartitionFilter());
+    assertEquals(FIELD, TIME_PARTITIONING_DAY.getField());
+    TimePartitioning partitioning = TimePartitioning.of(TYPE_DAY);
+    assertEquals(TYPE_DAY, partitioning.getType());
     assertNull(partitioning.getExpirationMs());
   }
 
   @Test
   public void testBuilder() {
-    TimePartitioning partitioning = TimePartitioning.newBuilder(TYPE).build();
-    assertEquals(TYPE, partitioning.getType());
+    TimePartitioning partitioning = TimePartitioning.newBuilder(TYPE_DAY).build();
+    assertEquals(TYPE_DAY, partitioning.getType());
     assertNull(partitioning.getExpirationMs());
     assertNull(partitioning.getRequirePartitionFilter());
     assertNull(partitioning.getField());
-    partitioning = TimePartitioning.newBuilder(TYPE).setExpirationMs(100L).build();
-    assertEquals(TYPE, partitioning.getType());
+    partitioning = TimePartitioning.newBuilder(TYPE_DAY).setExpirationMs(100L).build();
+    assertEquals(TYPE_DAY, partitioning.getType());
     assertEquals(100, (long) partitioning.getExpirationMs());
     assertNull(partitioning.getRequirePartitionFilter());
     assertNull(partitioning.getField());
@@ -84,8 +92,9 @@ public class TimePartitioningTest {
 
   @Test
   public void testToAndFromPb() {
-    compareTimePartitioning(TIME_PARTITIONING, TimePartitioning.fromPb(TIME_PARTITIONING.toPb()));
-    TimePartitioning partitioning = TimePartitioning.of(TYPE);
+    compareTimePartitioning(
+        TIME_PARTITIONING_DAY, TimePartitioning.fromPb(TIME_PARTITIONING_DAY.toPb()));
+    TimePartitioning partitioning = TimePartitioning.of(TYPE_DAY);
     compareTimePartitioning(partitioning, TimePartitioning.fromPb(partitioning.toPb()));
   }
 

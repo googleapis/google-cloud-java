@@ -37,23 +37,23 @@ public abstract class TimePartitioning implements Serializable {
   private static final long serialVersionUID = -8565064035346940951L;
 
   /**
-   * The type of time partitioning. Currently, the only type supported is {@code DAY}, which will
-   * generate one partition per day based on data loading time.
+   * The supported types are DAY, which will generate one partition per day, and HOUR, which will
+   * generate one partition per hour. (Providing an empty string used to cause an error, but in
+   * OnePlatform the field will be treated as unset.)
    */
   public enum Type {
 
     /** Table is partitioned per day, based on data loading time. */
-    DAY
+    DAY,
+    /** Table is partitioned per hour, based on data loading time. */
+    HOUR
   }
 
   TimePartitioning() {
     // Users cannot extend this, but AutoValue can.
   }
 
-  /**
-   * Returns the time partitioning type. Currently, the only type supported is {@link Type#DAY},
-   * which will generate one partition per day based on data loading time.
-   */
+  /** Returns the time partitioning type. */
   public abstract Type getType();
 
   /**
@@ -96,19 +96,14 @@ public abstract class TimePartitioning implements Serializable {
     public abstract TimePartitioning build();
   }
 
-  /**
-   * Returns a {@code TimePartitioning} object given the time partitioning type. Currently, the only
-   * type supported is {@link Type#DAY}, which will generate one partition per day based on data
-   * loading time.
-   */
+  /** Returns a {@code TimePartitioning} object given the time partitioning type. */
   public static Builder newBuilder(Type type) {
     return new AutoValue_TimePartitioning.Builder().setType(type);
   }
 
   /**
-   * Returns a {@code TimePartitioning} object given the time partitioning type. Currently, the only
-   * type supported is {@link Type#DAY}, which will generate one partition per day based on data
-   * loading time. The partitions will not expire.
+   * Returns a {@code TimePartitioning} object given the time partitioning type. The partitions will
+   * not expire.
    */
   public static TimePartitioning of(Type type) {
     return newBuilder(type).build();
@@ -118,8 +113,7 @@ public abstract class TimePartitioning implements Serializable {
    * Returns a {@code TimePartitioning} object given the time partitioning type and the partition's
    * expiration in milliseconds.
    *
-   * @param type the time partitioning type. Currently, the only type supported is {@link Type#DAY},
-   *     which will generate one partition per day based on data loading time.
+   * @param type the time partitioning type.
    * @param expirationMs the number of milliseconds for which to keep the storage for a partition
    */
   public static TimePartitioning of(Type type, long expirationMs) {
