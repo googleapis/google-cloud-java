@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.12.2](https://www.github.com/googleapis/java-bigtable/compare/v1.12.1...v1.12.2) (2020-05-11)
+
+
+### Bug Fixes
+
+* set x-goog-api-client as internal header ([#293](https://www.github.com/googleapis/java-bigtable/issues/293)) ([3b58a4f](https://www.github.com/googleapis/java-bigtable/commit/3b58a4fa82e7a1e003bf119ce3b8b52b6eb52e47))
+
 ### [1.12.1](https://www.github.com/googleapis/java-bigtable/compare/v1.12.0...v1.12.1) (2020-05-08)
 
 
