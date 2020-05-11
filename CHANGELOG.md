@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.114.0](https://www.github.com/googleapis/java-bigquery/compare/v1.113.0...v1.114.0) (2020-05-11)
+
+
+### Features
+
+* add hourly partitioning support ([#336](https://www.github.com/googleapis/java-bigquery/issues/336)) ([90f9980](https://www.github.com/googleapis/java-bigquery/commit/90f998040bbca5882ac3dbcdb4b157f26f48eb01))
+
 ## [1.113.0](https://www.github.com/googleapis/java-bigquery/compare/v1.112.0...v1.113.0) (2020-05-05)
 
 
