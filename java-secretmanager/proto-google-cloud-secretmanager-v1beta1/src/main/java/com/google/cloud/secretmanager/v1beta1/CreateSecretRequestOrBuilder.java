@@ -89,10 +89,12 @@ public interface CreateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+   * <code>
+   * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the secret field is set.
    */
@@ -101,10 +103,12 @@ public interface CreateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+   * <code>
+   * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The secret.
    */
@@ -113,10 +117,12 @@ public interface CreateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+   * <code>
+   * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.secretmanager.v1beta1.SecretOrBuilder getSecretOrBuilder();
 }

@@ -247,10 +247,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+   * <code>
+   * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the secret field is set.
    */
@@ -261,10 +263,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+   * <code>
+   * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The secret.
    */
@@ -277,10 +281,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
-   * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+   * <code>
+   * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   public com.google.cloud.secretmanager.v1beta1.SecretOrBuilder getSecretOrBuilder() {
     return getSecret();
@@ -901,10 +907,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the secret field is set.
      */
@@ -915,10 +923,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The secret.
      */
@@ -935,10 +945,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSecret(com.google.cloud.secretmanager.v1beta1.Secret value) {
       if (secretBuilder_ == null) {
@@ -957,10 +969,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSecret(
         com.google.cloud.secretmanager.v1beta1.Secret.Builder builderForValue) {
@@ -977,10 +991,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeSecret(com.google.cloud.secretmanager.v1beta1.Secret value) {
       if (secretBuilder_ == null) {
@@ -1003,10 +1019,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSecret() {
       if (secretBuilder_ == null) {
@@ -1023,10 +1041,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.secretmanager.v1beta1.Secret.Builder getSecretBuilder() {
 
@@ -1037,10 +1057,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.secretmanager.v1beta1.SecretOrBuilder getSecretOrBuilder() {
       if (secretBuilder_ != null) {
@@ -1055,10 +1077,12 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+     * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
      * </pre>
      *
-     * <code>.google.cloud.secrets.v1beta1.Secret secret = 3;</code>
+     * <code>
+     * .google.cloud.secrets.v1beta1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.secretmanager.v1beta1.Secret,

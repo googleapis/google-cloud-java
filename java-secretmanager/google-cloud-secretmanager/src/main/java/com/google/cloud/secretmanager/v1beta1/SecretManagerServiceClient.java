@@ -323,7 +323,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     <p>A secret ID is a string with a maximum length of 255 characters and can contain
    *     uppercase and lowercase letters, numerals, and the hyphen (`-`) and underscore (`_`)
    *     characters.
-   * @param secret A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+   * @param secret Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field
+   *     values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Secret createSecret(ProjectName parent, String secretId, Secret secret) {
@@ -358,7 +359,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     <p>A secret ID is a string with a maximum length of 255 characters and can contain
    *     uppercase and lowercase letters, numerals, and the hyphen (`-`) and underscore (`_`)
    *     characters.
-   * @param secret A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
+   * @param secret Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field
+   *     values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Secret createSecret(String parent, String secretId, Secret secret) {
@@ -382,9 +384,11 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * try (SecretManagerServiceClient secretManagerServiceClient = SecretManagerServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String secretId = "";
+   *   Secret secret = Secret.newBuilder().build();
    *   CreateSecretRequest request = CreateSecretRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .setSecretId(secretId)
+   *     .setSecret(secret)
    *     .build();
    *   Secret response = secretManagerServiceClient.createSecret(request);
    * }
@@ -408,9 +412,11 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * try (SecretManagerServiceClient secretManagerServiceClient = SecretManagerServiceClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   String secretId = "";
+   *   Secret secret = Secret.newBuilder().build();
    *   CreateSecretRequest request = CreateSecretRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .setSecretId(secretId)
+   *     .setSecret(secret)
    *     .build();
    *   ApiFuture&lt;Secret&gt; future = secretManagerServiceClient.createSecretCallable().futureCall(request);
    *   // Do something
