@@ -2,11 +2,11 @@
 # This file controls who is tagged for review for any given pull request.
 
 # Owners per module.
-google-cloud-clients/google-cloud-bigquery/src/*  @tswast
-google-cloud-clients/google-cloud-bigtable/src/*  @igorbernstein2
-google-cloud-clients/google-cloud-compute/src/*   @andreamlin
-google-cloud-clients/google-cloud-contrib/src/*   @pongad @jean-philippe-martin
-google-cloud-clients/google-cloud-firestore/src/* @schmidt-sebastian
-google-cloud-clients/google-cloud-pubsub/src/*    @pongad @googleapis/yoshi-java
-google-cloud-clients/google-cloud-spanner/src/*   @snehashah16
-google-cloud-clients/google-cloud-storage/*       @googleapis/storage-dpe
+google-cloud-clients/google-cloud-bigquery/src/*                                                @tswast
+google-cloud-clients/google-cloud-bigtable/src/*                                                @igorbernstein2
+google-cloud-clients/google-cloud-compute/src/*                                                 @andreamlin
+google-cloud-clients/google-cloud-contrib/src/*                                                 @pongad @jean-philippe-martin
+google-cloud-clients/google-cloud-firestore/src/*                                               @schmidt-sebastian
+google-cloud-clients/google-cloud-pubsub/src/*                                                  @pongad @googleapis/yoshi-java
+google-cloud-clients/google-cloud-spanner/src/*                                                 @snehashah16
+google-cloud-clients/google-cloud-examples/src/test/java/com/google/cloud/examples/storage/*    @googleapis/storage-dpe
