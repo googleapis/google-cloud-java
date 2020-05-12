@@ -149,9 +149,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Resource name of organization and deidentify template to be
-   * updated, for example
-   * `organizations/433245324/deidentifyTemplates/432452342` or
+   * Required. Resource name of organization and deidentify template to be updated, for
+   * example `organizations/433245324/deidentifyTemplates/432452342` or
    * projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
@@ -176,9 +175,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Resource name of organization and deidentify template to be
-   * updated, for example
-   * `organizations/433245324/deidentifyTemplates/432452342` or
+   * Required. Resource name of organization and deidentify template to be updated, for
+   * example `organizations/433245324/deidentifyTemplates/432452342` or
    * projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
@@ -668,9 +666,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be
-     * updated, for example
-     * `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be updated, for
+     * example `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
@@ -695,9 +692,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be
-     * updated, for example
-     * `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be updated, for
+     * example `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
@@ -722,9 +718,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be
-     * updated, for example
-     * `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be updated, for
+     * example `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
@@ -748,9 +743,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be
-     * updated, for example
-     * `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be updated, for
+     * example `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
@@ -770,9 +764,8 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be
-     * updated, for example
-     * `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be updated, for
+     * example `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *

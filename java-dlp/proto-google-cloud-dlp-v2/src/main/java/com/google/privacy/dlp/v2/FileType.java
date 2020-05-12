@@ -70,11 +70,34 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * Included file extensions:
    *   bmp, gif, jpg, jpeg, jpe, png.
    * bytes_limit_per_file has no effect on image files.
+   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>IMAGE = 3;</code>
    */
   IMAGE(3),
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   docx, dotx, docm, dotm
+   * </pre>
+   *
+   * <code>WORD = 5;</code>
+   */
+  WORD(5),
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   pdf
+   * </pre>
+   *
+   * <code>PDF = 6;</code>
+   */
+  PDF(6),
   /**
    *
    *
@@ -131,11 +154,34 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * Included file extensions:
    *   bmp, gif, jpg, jpeg, jpe, png.
    * bytes_limit_per_file has no effect on image files.
+   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>IMAGE = 3;</code>
    */
   public static final int IMAGE_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   docx, dotx, docm, dotm
+   * </pre>
+   *
+   * <code>WORD = 5;</code>
+   */
+  public static final int WORD_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   pdf
+   * </pre>
+   *
+   * <code>PDF = 6;</code>
+   */
+  public static final int PDF_VALUE = 6;
   /**
    *
    *
@@ -180,6 +226,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
         return TEXT_FILE;
       case 3:
         return IMAGE;
+      case 5:
+        return WORD;
+      case 6:
+        return PDF;
       case 7:
         return AVRO;
       default:

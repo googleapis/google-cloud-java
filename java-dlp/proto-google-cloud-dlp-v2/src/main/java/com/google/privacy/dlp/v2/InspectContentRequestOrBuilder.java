@@ -160,6 +160,8 @@ public interface InspectContentRequestOrBuilder
    * <pre>
    * The geographic location to process content inspection. Reserved for future
    * extensions.
+   * When inspecting images location is restricted to 'global', 'us', 'asia',
+   * and 'europe'.
    * </pre>
    *
    * <code>string location_id = 5;</code>
@@ -173,6 +175,8 @@ public interface InspectContentRequestOrBuilder
    * <pre>
    * The geographic location to process content inspection. Reserved for future
    * extensions.
+   * When inspecting images location is restricted to 'global', 'us', 'asia',
+   * and 'europe'.
    * </pre>
    *
    * <code>string location_id = 5;</code>

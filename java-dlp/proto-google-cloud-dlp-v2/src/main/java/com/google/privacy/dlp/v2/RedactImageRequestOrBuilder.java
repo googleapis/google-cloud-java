@@ -54,6 +54,7 @@ public interface RedactImageRequestOrBuilder
    * <pre>
    * The geographic location to process the request. Reserved for future
    * extensions.
+   * Location is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>string location_id = 8;</code>
@@ -67,6 +68,7 @@ public interface RedactImageRequestOrBuilder
    * <pre>
    * The geographic location to process the request. Reserved for future
    * extensions.
+   * Location is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>string location_id = 8;</code>

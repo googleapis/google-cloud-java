@@ -113,7 +113,12 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The zero-based index of the row where the finding is located.
+   * The zero-based index of the row where the finding is located. Only
+   * populated for resources that have a natural ordering, not BigQuery. In
+   * BigQuery, to identify the row a finding came from, populate
+   * BigQueryOptions.identifying_fields with your primary key column names and
+   * when you store the findings the value of those columns will be stored
+   * inside of Finding.
    * </pre>
    *
    * <code>int64 row_index = 1;</code>
@@ -443,7 +448,12 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The zero-based index of the row where the finding is located.
+     * The zero-based index of the row where the finding is located. Only
+     * populated for resources that have a natural ordering, not BigQuery. In
+     * BigQuery, to identify the row a finding came from, populate
+     * BigQueryOptions.identifying_fields with your primary key column names and
+     * when you store the findings the value of those columns will be stored
+     * inside of Finding.
      * </pre>
      *
      * <code>int64 row_index = 1;</code>
@@ -457,7 +467,12 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The zero-based index of the row where the finding is located.
+     * The zero-based index of the row where the finding is located. Only
+     * populated for resources that have a natural ordering, not BigQuery. In
+     * BigQuery, to identify the row a finding came from, populate
+     * BigQueryOptions.identifying_fields with your primary key column names and
+     * when you store the findings the value of those columns will be stored
+     * inside of Finding.
      * </pre>
      *
      * <code>int64 row_index = 1;</code>
@@ -475,7 +490,12 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The zero-based index of the row where the finding is located.
+     * The zero-based index of the row where the finding is located. Only
+     * populated for resources that have a natural ordering, not BigQuery. In
+     * BigQuery, to identify the row a finding came from, populate
+     * BigQueryOptions.identifying_fields with your primary key column names and
+     * when you store the findings the value of those columns will be stored
+     * inside of Finding.
      * </pre>
      *
      * <code>int64 row_index = 1;</code>

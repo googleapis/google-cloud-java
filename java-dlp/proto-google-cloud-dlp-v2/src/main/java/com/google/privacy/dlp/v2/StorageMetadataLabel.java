@@ -22,30 +22,29 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Request message for DeleteDeidentifyTemplate.
+ * Storage metadata label to indicate which metadata entry contains findings.
  * </pre>
  *
- * Protobuf type {@code google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest}
+ * Protobuf type {@code google.privacy.dlp.v2.StorageMetadataLabel}
  */
-public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.GeneratedMessageV3
+public final class StorageMetadataLabel extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest)
-    DeleteDeidentifyTemplateRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StorageMetadataLabel)
+    StorageMetadataLabelOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use DeleteDeidentifyTemplateRequest.newBuilder() to construct.
-  private DeleteDeidentifyTemplateRequest(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use StorageMetadataLabel.newBuilder() to construct.
+  private StorageMetadataLabel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private DeleteDeidentifyTemplateRequest() {
-    name_ = "";
+  private StorageMetadataLabel() {
+    key_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new DeleteDeidentifyTemplateRequest();
+    return new StorageMetadataLabel();
   }
 
   @java.lang.Override
@@ -53,7 +52,7 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private DeleteDeidentifyTemplateRequest(
+  private StorageMetadataLabel(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -75,7 +74,7 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              key_ = s;
               break;
             }
           default:
@@ -99,68 +98,48 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
-        .internal_static_google_privacy_dlp_v2_DeleteDeidentifyTemplateRequest_descriptor;
+        .internal_static_google_privacy_dlp_v2_StorageMetadataLabel_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.privacy.dlp.v2.DlpProto
-        .internal_static_google_privacy_dlp_v2_DeleteDeidentifyTemplateRequest_fieldAccessorTable
+        .internal_static_google_privacy_dlp_v2_StorageMetadataLabel_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest.class,
-            com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest.Builder.class);
+            com.google.privacy.dlp.v2.StorageMetadataLabel.class,
+            com.google.privacy.dlp.v2.StorageMetadataLabel.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int KEY_FIELD_NUMBER = 1;
+  private volatile java.lang.Object key_;
   /**
+   * <code>string key = 1;</code>
    *
-   *
-   * <pre>
-   * Required. Resource name of the organization and deidentify template to be deleted,
-   * for example `organizations/433245324/deidentifyTemplates/432452342` or
-   * projects/project-id/deidentifyTemplates/432452342.
-   * </pre>
-   *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The name.
+   * @return The key.
    */
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getKey() {
+    java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      key_ = s;
       return s;
     }
   }
   /**
+   * <code>string key = 1;</code>
    *
-   *
-   * <pre>
-   * Required. Resource name of the organization and deidentify template to be deleted,
-   * for example `organizations/433245324/deidentifyTemplates/432452342` or
-   * projects/project-id/deidentifyTemplates/432452342.
-   * </pre>
-   *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The bytes for name.
+   * @return The bytes for key.
    */
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getKeyBytes() {
+    java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      key_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -181,8 +160,8 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
     }
     unknownFields.writeTo(output);
   }
@@ -193,8 +172,8 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -206,13 +185,13 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest)) {
+    if (!(obj instanceof com.google.privacy.dlp.v2.StorageMetadataLabel)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest other =
-        (com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest) obj;
+    com.google.privacy.dlp.v2.StorageMetadataLabel other =
+        (com.google.privacy.dlp.v2.StorageMetadataLabel) obj;
 
-    if (!getName().equals(other.getName())) return false;
+    if (!getKey().equals(other.getKey())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -224,78 +203,78 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(byte[] data)
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseDelimitedFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseDelimitedFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parseFrom(
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -312,8 +291,7 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(
-      com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest prototype) {
+  public static Builder newBuilder(com.google.privacy.dlp.v2.StorageMetadataLabel prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -331,31 +309,31 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request message for DeleteDeidentifyTemplate.
+   * Storage metadata label to indicate which metadata entry contains findings.
    * </pre>
    *
-   * Protobuf type {@code google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest}
+   * Protobuf type {@code google.privacy.dlp.v2.StorageMetadataLabel}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest)
-      com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.StorageMetadataLabel)
+      com.google.privacy.dlp.v2.StorageMetadataLabelOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
-          .internal_static_google_privacy_dlp_v2_DeleteDeidentifyTemplateRequest_descriptor;
+          .internal_static_google_privacy_dlp_v2_StorageMetadataLabel_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.privacy.dlp.v2.DlpProto
-          .internal_static_google_privacy_dlp_v2_DeleteDeidentifyTemplateRequest_fieldAccessorTable
+          .internal_static_google_privacy_dlp_v2_StorageMetadataLabel_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest.class,
-              com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest.Builder.class);
+              com.google.privacy.dlp.v2.StorageMetadataLabel.class,
+              com.google.privacy.dlp.v2.StorageMetadataLabel.Builder.class);
     }
 
-    // Construct using com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest.newBuilder()
+    // Construct using com.google.privacy.dlp.v2.StorageMetadataLabel.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -372,7 +350,7 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      key_ = "";
 
       return this;
     }
@@ -380,17 +358,17 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.privacy.dlp.v2.DlpProto
-          .internal_static_google_privacy_dlp_v2_DeleteDeidentifyTemplateRequest_descriptor;
+          .internal_static_google_privacy_dlp_v2_StorageMetadataLabel_descriptor;
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest getDefaultInstanceForType() {
-      return com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest.getDefaultInstance();
+    public com.google.privacy.dlp.v2.StorageMetadataLabel getDefaultInstanceForType() {
+      return com.google.privacy.dlp.v2.StorageMetadataLabel.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest build() {
-      com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest result = buildPartial();
+    public com.google.privacy.dlp.v2.StorageMetadataLabel build() {
+      com.google.privacy.dlp.v2.StorageMetadataLabel result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -398,10 +376,10 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest buildPartial() {
-      com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest result =
-          new com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest(this);
-      result.name_ = name_;
+    public com.google.privacy.dlp.v2.StorageMetadataLabel buildPartial() {
+      com.google.privacy.dlp.v2.StorageMetadataLabel result =
+          new com.google.privacy.dlp.v2.StorageMetadataLabel(this);
+      result.key_ = key_;
       onBuilt();
       return result;
     }
@@ -441,19 +419,18 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest) {
-        return mergeFrom((com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest) other);
+      if (other instanceof com.google.privacy.dlp.v2.StorageMetadataLabel) {
+        return mergeFrom((com.google.privacy.dlp.v2.StorageMetadataLabel) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest other) {
-      if (other == com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest.getDefaultInstance())
-        return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+    public Builder mergeFrom(com.google.privacy.dlp.v2.StorageMetadataLabel other) {
+      if (other == com.google.privacy.dlp.v2.StorageMetadataLabel.getDefaultInstance()) return this;
+      if (!other.getKey().isEmpty()) {
+        key_ = other.key_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -471,12 +448,11 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest parsedMessage = null;
+      com.google.privacy.dlp.v2.StorageMetadataLabel parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.privacy.dlp.v2.StorageMetadataLabel) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -486,128 +462,78 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object key_ = "";
     /**
+     * <code>string key = 1;</code>
      *
-     *
-     * <pre>
-     * Required. Resource name of the organization and deidentify template to be deleted,
-     * for example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The name.
+     * @return The key.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        key_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
+     * <code>string key = 1;</code>
      *
-     *
-     * <pre>
-     * Required. Resource name of the organization and deidentify template to be deleted,
-     * for example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The bytes for name.
+     * @return The bytes for key.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getKeyBytes() {
+      java.lang.Object ref = key_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        key_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
+     * <code>string key = 1;</code>
      *
-     *
-     * <pre>
-     * Required. Resource name of the organization and deidentify template to be deleted,
-     * for example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The name to set.
+     * @param value The key to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setKey(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      name_ = value;
+      key_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. Resource name of the organization and deidentify template to be deleted,
-     * for example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string key = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearKey() {
 
-      name_ = getDefaultInstance().getName();
+      key_ = getDefaultInstance().getKey();
       onChanged();
       return this;
     }
     /**
+     * <code>string key = 1;</code>
      *
-     *
-     * <pre>
-     * Required. Resource name of the organization and deidentify template to be deleted,
-     * for example `organizations/433245324/deidentifyTemplates/432452342` or
-     * projects/project-id/deidentifyTemplates/432452342.
-     * </pre>
-     *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The bytes for name to set.
+     * @param value The bytes for key to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      name_ = value;
+      key_ = value;
       onChanged();
       return this;
     }
@@ -623,42 +549,42 @@ public final class DeleteDeidentifyTemplateRequest extends com.google.protobuf.G
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest)
+    // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.StorageMetadataLabel)
   }
 
-  // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest)
-  private static final com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.StorageMetadataLabel)
+  private static final com.google.privacy.dlp.v2.StorageMetadataLabel DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest();
+    DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.StorageMetadataLabel();
   }
 
-  public static com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest getDefaultInstance() {
+  public static com.google.privacy.dlp.v2.StorageMetadataLabel getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteDeidentifyTemplateRequest> PARSER =
-      new com.google.protobuf.AbstractParser<DeleteDeidentifyTemplateRequest>() {
+  private static final com.google.protobuf.Parser<StorageMetadataLabel> PARSER =
+      new com.google.protobuf.AbstractParser<StorageMetadataLabel>() {
         @java.lang.Override
-        public DeleteDeidentifyTemplateRequest parsePartialFrom(
+        public StorageMetadataLabel parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeleteDeidentifyTemplateRequest(input, extensionRegistry);
+          return new StorageMetadataLabel(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<DeleteDeidentifyTemplateRequest> parser() {
+  public static com.google.protobuf.Parser<StorageMetadataLabel> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteDeidentifyTemplateRequest> getParserForType() {
+  public com.google.protobuf.Parser<StorageMetadataLabel> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest getDefaultInstanceForType() {
+  public com.google.privacy.dlp.v2.StorageMetadataLabel getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

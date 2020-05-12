@@ -259,8 +259,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource name in format
-   * projects/{project}/locations/{location}/findings/{finding}
-   * Populated only when viewing persisted findings.
+   * projects/{project}/locations/{location}/findings/{finding} Populated only
+   * when viewing persisted findings.
    * </pre>
    *
    * <code>string name = 14;</code>
@@ -283,8 +283,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource name in format
-   * projects/{project}/locations/{location}/findings/{finding}
-   * Populated only when viewing persisted findings.
+   * projects/{project}/locations/{location}/findings/{finding} Populated only
+   * when viewing persisted findings.
    * </pre>
    *
    * <code>string name = 14;</code>
@@ -629,10 +629,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Job trigger name, if applicable, for this finding.
-   * (-- api-linter: core::0122::name-suffix=disabled
-   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-   *     resource names, but this has existed as part of the bigquery schema
-   *     before this rule existed. --)
    * </pre>
    *
    * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
@@ -655,10 +651,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Job trigger name, if applicable, for this finding.
-   * (-- api-linter: core::0122::name-suffix=disabled
-   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-   *     resource names, but this has existed as part of the bigquery schema
-   *     before this rule existed. --)
    * </pre>
    *
    * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
@@ -706,7 +698,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The labels associated with this `InspectFinding`.
+   * The labels associated with this `Finding`.
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
    * Label values must be between 0 and 63 characters long and must conform
@@ -734,7 +726,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The labels associated with this `InspectFinding`.
+   * The labels associated with this `Finding`.
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
    * Label values must be between 0 and 63 characters long and must conform
@@ -754,7 +746,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The labels associated with this `InspectFinding`.
+   * The labels associated with this `Finding`.
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
    * Label values must be between 0 and 63 characters long and must conform
@@ -778,7 +770,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The labels associated with this `InspectFinding`.
+   * The labels associated with this `Finding`.
    * Label keys must be between 1 and 63 characters long and must conform
    * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
    * Label values must be between 0 and 63 characters long and must conform
@@ -854,10 +846,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The job that stored the finding.
-   * (-- api-linter: core::0122::name-suffix=disabled
-   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-   *     resource names, but this has existed as part of the bigquery schema
-   *     before this rule existed. --)
    * </pre>
    *
    * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
@@ -880,10 +868,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The job that stored the finding.
-   * (-- api-linter: core::0122::name-suffix=disabled
-   *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-   *     resource names, but this has existed as part of the bigquery schema
-   *     before this rule existed. --)
    * </pre>
    *
    * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
@@ -1484,8 +1468,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -1508,8 +1492,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -1532,8 +1516,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -1555,8 +1539,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -1574,8 +1558,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name in format
-     * projects/{project}/locations/{location}/findings/{finding}
-     * Populated only when viewing persisted findings.
+     * projects/{project}/locations/{location}/findings/{finding} Populated only
+     * when viewing persisted findings.
      * </pre>
      *
      * <code>string name = 14;</code>
@@ -2685,10 +2669,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Job trigger name, if applicable, for this finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
@@ -2711,10 +2691,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Job trigger name, if applicable, for this finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
@@ -2737,10 +2713,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Job trigger name, if applicable, for this finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
@@ -2762,10 +2734,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Job trigger name, if applicable, for this finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
@@ -2783,10 +2751,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Job trigger name, if applicable, for this finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string trigger_name = 9 [(.google.api.resource_reference) = { ... }</code>
@@ -2834,7 +2798,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The labels associated with this `InspectFinding`.
+     * The labels associated with this `Finding`.
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
@@ -2862,7 +2826,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The labels associated with this `InspectFinding`.
+     * The labels associated with this `Finding`.
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
@@ -2882,7 +2846,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The labels associated with this `InspectFinding`.
+     * The labels associated with this `Finding`.
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
@@ -2907,7 +2871,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The labels associated with this `InspectFinding`.
+     * The labels associated with this `Finding`.
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
@@ -2939,7 +2903,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The labels associated with this `InspectFinding`.
+     * The labels associated with this `Finding`.
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
@@ -2968,7 +2932,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The labels associated with this `InspectFinding`.
+     * The labels associated with this `Finding`.
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
@@ -2995,7 +2959,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The labels associated with this `InspectFinding`.
+     * The labels associated with this `Finding`.
      * Label keys must be between 1 and 63 characters long and must conform
      * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
      * Label values must be between 0 and 63 characters long and must conform
@@ -3204,10 +3168,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job that stored the finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
@@ -3230,10 +3190,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job that stored the finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
@@ -3256,10 +3212,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job that stored the finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
@@ -3281,10 +3233,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job that stored the finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>
@@ -3302,10 +3250,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The job that stored the finding.
-     * (-- api-linter: core::0122::name-suffix=disabled
-     *     aip.dev/not-precedent: AIP-122 discourages _name suffixes for
-     *     resource names, but this has existed as part of the bigquery schema
-     *     before this rule existed. --)
      * </pre>
      *
      * <code>string job_name = 13 [(.google.api.resource_reference) = { ... }</code>

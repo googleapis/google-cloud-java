@@ -149,6 +149,22 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
               containerVersion_ = s;
               break;
             }
+          case 66:
+            {
+              com.google.privacy.dlp.v2.MetadataLocation.Builder subBuilder = null;
+              if (locationCase_ == 8) {
+                subBuilder = ((com.google.privacy.dlp.v2.MetadataLocation) location_).toBuilder();
+              }
+              location_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.MetadataLocation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.MetadataLocation) location_);
+                location_ = subBuilder.buildPartial();
+              }
+              locationCase_ = 8;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -193,6 +209,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     RECORD_LOCATION(2),
     IMAGE_LOCATION(3),
     DOCUMENT_LOCATION(5),
+    METADATA_LOCATION(8),
     LOCATION_NOT_SET(0);
     private final int value;
 
@@ -217,6 +234,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
           return IMAGE_LOCATION;
         case 5:
           return DOCUMENT_LOCATION;
+        case 8:
+          return METADATA_LOCATION;
         case 0:
           return LOCATION_NOT_SET;
         default:
@@ -438,6 +457,54 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     return com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance();
   }
 
+  public static final int METADATA_LOCATION_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Location within the metadata for inspected content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+   *
+   * @return Whether the metadataLocation field is set.
+   */
+  public boolean hasMetadataLocation() {
+    return locationCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Location within the metadata for inspected content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+   *
+   * @return The metadataLocation.
+   */
+  public com.google.privacy.dlp.v2.MetadataLocation getMetadataLocation() {
+    if (locationCase_ == 8) {
+      return (com.google.privacy.dlp.v2.MetadataLocation) location_;
+    }
+    return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Location within the metadata for inspected content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+   */
+  public com.google.privacy.dlp.v2.MetadataLocationOrBuilder getMetadataLocationOrBuilder() {
+    if (locationCase_ == 8) {
+      return (com.google.privacy.dlp.v2.MetadataLocation) location_;
+    }
+    return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
+  }
+
   public static final int CONTAINER_TIMESTAMP_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp containerTimestamp_;
   /**
@@ -573,6 +640,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     if (!getContainerVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, containerVersion_);
     }
+    if (locationCase_ == 8) {
+      output.writeMessage(8, (com.google.privacy.dlp.v2.MetadataLocation) location_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -606,6 +676,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     if (!getContainerVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, containerVersion_);
     }
+    if (locationCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.privacy.dlp.v2.MetadataLocation) location_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -638,6 +713,9 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         break;
       case 5:
         if (!getDocumentLocation().equals(other.getDocumentLocation())) return false;
+        break;
+      case 8:
+        if (!getMetadataLocation().equals(other.getMetadataLocation())) return false;
         break;
       case 0:
       default:
@@ -673,6 +751,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       case 5:
         hash = (37 * hash) + DOCUMENT_LOCATION_FIELD_NUMBER;
         hash = (53 * hash) + getDocumentLocation().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + METADATA_LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadataLocation().hashCode();
         break;
       case 0:
       default:
@@ -884,6 +966,13 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
           result.location_ = documentLocationBuilder_.build();
         }
       }
+      if (locationCase_ == 8) {
+        if (metadataLocationBuilder_ == null) {
+          result.location_ = location_;
+        } else {
+          result.location_ = metadataLocationBuilder_.build();
+        }
+      }
       if (containerTimestampBuilder_ == null) {
         result.containerTimestamp_ = containerTimestamp_;
       } else {
@@ -965,6 +1054,11 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         case DOCUMENT_LOCATION:
           {
             mergeDocumentLocation(other.getDocumentLocation());
+            break;
+          }
+        case METADATA_LOCATION:
+          {
+            mergeMetadataLocation(other.getMetadataLocation());
             break;
           }
         case LOCATION_NOT_SET:
@@ -1772,6 +1866,212 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return documentLocationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.MetadataLocation,
+            com.google.privacy.dlp.v2.MetadataLocation.Builder,
+            com.google.privacy.dlp.v2.MetadataLocationOrBuilder>
+        metadataLocationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     *
+     * @return Whether the metadataLocation field is set.
+     */
+    public boolean hasMetadataLocation() {
+      return locationCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     *
+     * @return The metadataLocation.
+     */
+    public com.google.privacy.dlp.v2.MetadataLocation getMetadataLocation() {
+      if (metadataLocationBuilder_ == null) {
+        if (locationCase_ == 8) {
+          return (com.google.privacy.dlp.v2.MetadataLocation) location_;
+        }
+        return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
+      } else {
+        if (locationCase_ == 8) {
+          return metadataLocationBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     */
+    public Builder setMetadataLocation(com.google.privacy.dlp.v2.MetadataLocation value) {
+      if (metadataLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        onChanged();
+      } else {
+        metadataLocationBuilder_.setMessage(value);
+      }
+      locationCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     */
+    public Builder setMetadataLocation(
+        com.google.privacy.dlp.v2.MetadataLocation.Builder builderForValue) {
+      if (metadataLocationBuilder_ == null) {
+        location_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataLocationBuilder_.setMessage(builderForValue.build());
+      }
+      locationCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     */
+    public Builder mergeMetadataLocation(com.google.privacy.dlp.v2.MetadataLocation value) {
+      if (metadataLocationBuilder_ == null) {
+        if (locationCase_ == 8
+            && location_ != com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance()) {
+          location_ =
+              com.google.privacy.dlp.v2.MetadataLocation.newBuilder(
+                      (com.google.privacy.dlp.v2.MetadataLocation) location_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          location_ = value;
+        }
+        onChanged();
+      } else {
+        if (locationCase_ == 8) {
+          metadataLocationBuilder_.mergeFrom(value);
+        }
+        metadataLocationBuilder_.setMessage(value);
+      }
+      locationCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     */
+    public Builder clearMetadataLocation() {
+      if (metadataLocationBuilder_ == null) {
+        if (locationCase_ == 8) {
+          locationCase_ = 0;
+          location_ = null;
+          onChanged();
+        }
+      } else {
+        if (locationCase_ == 8) {
+          locationCase_ = 0;
+          location_ = null;
+        }
+        metadataLocationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.MetadataLocation.Builder getMetadataLocationBuilder() {
+      return getMetadataLocationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.MetadataLocationOrBuilder getMetadataLocationOrBuilder() {
+      if ((locationCase_ == 8) && (metadataLocationBuilder_ != null)) {
+        return metadataLocationBuilder_.getMessageOrBuilder();
+      } else {
+        if (locationCase_ == 8) {
+          return (com.google.privacy.dlp.v2.MetadataLocation) location_;
+        }
+        return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location within the metadata for inspected content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.MetadataLocation,
+            com.google.privacy.dlp.v2.MetadataLocation.Builder,
+            com.google.privacy.dlp.v2.MetadataLocationOrBuilder>
+        getMetadataLocationFieldBuilder() {
+      if (metadataLocationBuilder_ == null) {
+        if (!(locationCase_ == 8)) {
+          location_ = com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
+        }
+        metadataLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.MetadataLocation,
+                com.google.privacy.dlp.v2.MetadataLocation.Builder,
+                com.google.privacy.dlp.v2.MetadataLocationOrBuilder>(
+                (com.google.privacy.dlp.v2.MetadataLocation) location_,
+                getParentForChildren(),
+                isClean());
+        location_ = null;
+      }
+      locationCase_ = 8;
+      onChanged();
+      ;
+      return metadataLocationBuilder_;
     }
 
     private com.google.protobuf.Timestamp containerTimestamp_;

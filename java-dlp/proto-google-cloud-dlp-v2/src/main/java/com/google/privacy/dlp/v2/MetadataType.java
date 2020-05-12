@@ -22,12 +22,12 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * An enum to represent the various types of DLP jobs.
+ * Type of metadata containing the finding.
  * </pre>
  *
- * Protobuf enum {@code google.privacy.dlp.v2.DlpJobType}
+ * Protobuf enum {@code google.privacy.dlp.v2.MetadataType}
  */
-public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
+public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
    *
@@ -35,29 +35,19 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
    * Unused
    * </pre>
    *
-   * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
+   * <code>METADATATYPE_UNSPECIFIED = 0;</code>
    */
-  DLP_JOB_TYPE_UNSPECIFIED(0),
+  METADATATYPE_UNSPECIFIED(0),
   /**
    *
    *
    * <pre>
-   * The job inspected Google Cloud for sensitive data.
+   * General file metadata provided by GCS.
    * </pre>
    *
-   * <code>INSPECT_JOB = 1;</code>
+   * <code>STORAGE_METADATA = 2;</code>
    */
-  INSPECT_JOB(1),
-  /**
-   *
-   *
-   * <pre>
-   * The job executed a Risk Analysis computation.
-   * </pre>
-   *
-   * <code>RISK_ANALYSIS_JOB = 2;</code>
-   */
-  RISK_ANALYSIS_JOB(2),
+  STORAGE_METADATA(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -68,29 +58,19 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
    * Unused
    * </pre>
    *
-   * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
+   * <code>METADATATYPE_UNSPECIFIED = 0;</code>
    */
-  public static final int DLP_JOB_TYPE_UNSPECIFIED_VALUE = 0;
+  public static final int METADATATYPE_UNSPECIFIED_VALUE = 0;
   /**
    *
    *
    * <pre>
-   * The job inspected Google Cloud for sensitive data.
+   * General file metadata provided by GCS.
    * </pre>
    *
-   * <code>INSPECT_JOB = 1;</code>
+   * <code>STORAGE_METADATA = 2;</code>
    */
-  public static final int INSPECT_JOB_VALUE = 1;
-  /**
-   *
-   *
-   * <pre>
-   * The job executed a Risk Analysis computation.
-   * </pre>
-   *
-   * <code>RISK_ANALYSIS_JOB = 2;</code>
-   */
-  public static final int RISK_ANALYSIS_JOB_VALUE = 2;
+  public static final int STORAGE_METADATA_VALUE = 2;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -106,7 +86,7 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static DlpJobType valueOf(int value) {
+  public static MetadataType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -114,27 +94,25 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static DlpJobType forNumber(int value) {
+  public static MetadataType forNumber(int value) {
     switch (value) {
       case 0:
-        return DLP_JOB_TYPE_UNSPECIFIED;
-      case 1:
-        return INSPECT_JOB;
+        return METADATATYPE_UNSPECIFIED;
       case 2:
-        return RISK_ANALYSIS_JOB;
+        return STORAGE_METADATA;
       default:
         return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<DlpJobType> internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<MetadataType> internalGetValueMap() {
     return internalValueMap;
   }
 
-  private static final com.google.protobuf.Internal.EnumLiteMap<DlpJobType> internalValueMap =
-      new com.google.protobuf.Internal.EnumLiteMap<DlpJobType>() {
-        public DlpJobType findValueByNumber(int number) {
-          return DlpJobType.forNumber(number);
+  private static final com.google.protobuf.Internal.EnumLiteMap<MetadataType> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<MetadataType>() {
+        public MetadataType findValueByNumber(int number) {
+          return MetadataType.forNumber(number);
         }
       };
 
@@ -147,12 +125,12 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(5);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(3);
   }
 
-  private static final DlpJobType[] VALUES = values();
+  private static final MetadataType[] VALUES = values();
 
-  public static DlpJobType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static MetadataType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
@@ -164,9 +142,9 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
 
   private final int value;
 
-  private DlpJobType(int value) {
+  private MetadataType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.DlpJobType)
+  // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.MetadataType)
 }

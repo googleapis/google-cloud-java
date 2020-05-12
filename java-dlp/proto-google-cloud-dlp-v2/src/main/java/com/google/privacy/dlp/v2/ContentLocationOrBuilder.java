@@ -171,6 +171,41 @@ public interface ContentLocationOrBuilder
    *
    *
    * <pre>
+   * Location within the metadata for inspected content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+   *
+   * @return Whether the metadataLocation field is set.
+   */
+  boolean hasMetadataLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Location within the metadata for inspected content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+   *
+   * @return The metadataLocation.
+   */
+  com.google.privacy.dlp.v2.MetadataLocation getMetadataLocation();
+  /**
+   *
+   *
+   * <pre>
+   * Location within the metadata for inspected content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
+   */
+  com.google.privacy.dlp.v2.MetadataLocationOrBuilder getMetadataLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Findings container modification timestamp, if applicable.
    * For Google Cloud Storage contains last file modification timestamp.
    * For BigQuery table contains last_modified_time property.

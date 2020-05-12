@@ -1462,6 +1462,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * If empty, all files are scanned and available data format processors
    * are applied. In addition, the binary content of the selected files
    * is always scanned as well.
+   * Images are scanned only as binary if the specified region
+   * does not support image inspection and no file_types were specified.
+   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -1480,6 +1483,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * If empty, all files are scanned and available data format processors
    * are applied. In addition, the binary content of the selected files
    * is always scanned as well.
+   * Images are scanned only as binary if the specified region
+   * does not support image inspection and no file_types were specified.
+   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -1497,6 +1503,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * If empty, all files are scanned and available data format processors
    * are applied. In addition, the binary content of the selected files
    * is always scanned as well.
+   * Images are scanned only as binary if the specified region
+   * does not support image inspection and no file_types were specified.
+   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -1515,6 +1524,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * If empty, all files are scanned and available data format processors
    * are applied. In addition, the binary content of the selected files
    * is always scanned as well.
+   * Images are scanned only as binary if the specified region
+   * does not support image inspection and no file_types were specified.
+   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -1532,6 +1544,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * If empty, all files are scanned and available data format processors
    * are applied. In addition, the binary content of the selected files
    * is always scanned as well.
+   * Images are scanned only as binary if the specified region
+   * does not support image inspection and no file_types were specified.
+   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2345,6 +2360,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2363,6 +2381,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2380,6 +2401,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2398,6 +2422,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2423,6 +2450,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2447,6 +2477,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2471,6 +2504,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2491,6 +2527,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2508,6 +2547,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2526,6 +2568,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2548,6 +2593,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2569,6 +2617,9 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * If empty, all files are scanned and available data format processors
      * are applied. In addition, the binary content of the selected files
      * is always scanned as well.
+     * Images are scanned only as binary if the specified region
+     * does not support image inspection and no file_types were specified.
+     * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>

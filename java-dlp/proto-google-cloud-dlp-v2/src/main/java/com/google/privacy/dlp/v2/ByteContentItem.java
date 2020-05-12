@@ -121,7 +121,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The type of data being sent to in data.
+   * The type of data being sent for inspection.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.ByteContentItem.BytesType}
@@ -197,6 +197,26 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * <code>TEXT_UTF8 = 5;</code>
      */
     TEXT_UTF8(5),
+    /**
+     *
+     *
+     * <pre>
+     * docx, docm, dotx, dotm
+     * </pre>
+     *
+     * <code>WORD_DOCUMENT = 7;</code>
+     */
+    WORD_DOCUMENT(7),
+    /**
+     *
+     *
+     * <pre>
+     * pdf
+     * </pre>
+     *
+     * <code>PDF = 8;</code>
+     */
+    PDF(8),
     /**
      *
      *
@@ -284,6 +304,26 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
+     * docx, docm, dotx, dotm
+     * </pre>
+     *
+     * <code>WORD_DOCUMENT = 7;</code>
+     */
+    public static final int WORD_DOCUMENT_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * pdf
+     * </pre>
+     *
+     * <code>PDF = 8;</code>
+     */
+    public static final int PDF_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
      * avro
      * </pre>
      *
@@ -329,6 +369,10 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
           return IMAGE_SVG;
         case 5:
           return TEXT_UTF8;
+        case 7:
+          return WORD_DOCUMENT;
+        case 8:
+          return PDF;
         case 11:
           return AVRO;
         default:

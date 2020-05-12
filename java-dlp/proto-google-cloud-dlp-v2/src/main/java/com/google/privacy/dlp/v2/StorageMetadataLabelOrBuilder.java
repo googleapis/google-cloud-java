@@ -18,26 +18,21 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface TableLocationOrBuilder
+public interface StorageMetadataLabelOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.TableLocation)
+    // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.StorageMetadataLabel)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <code>string key = 1;</code>
    *
-   *
-   * <pre>
-   * The zero-based index of the row where the finding is located. Only
-   * populated for resources that have a natural ordering, not BigQuery. In
-   * BigQuery, to identify the row a finding came from, populate
-   * BigQueryOptions.identifying_fields with your primary key column names and
-   * when you store the findings the value of those columns will be stored
-   * inside of Finding.
-   * </pre>
-   *
-   * <code>int64 row_index = 1;</code>
-   *
-   * @return The rowIndex.
+   * @return The key.
    */
-  long getRowIndex();
+  java.lang.String getKey();
+  /**
+   * <code>string key = 1;</code>
+   *
+   * @return The bytes for key.
+   */
+  com.google.protobuf.ByteString getKeyBytes();
 }
