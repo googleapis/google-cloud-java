@@ -38,6 +38,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   private static final long serialVersionUID = 4147749733166593761L;
 
   private final TableId sourceTable;
+  private final ModelId sourceModel;
   private final List<String> destinationUris;
   private final Boolean printHeader;
   private final String fieldDelimiter;
@@ -51,6 +52,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       extends JobConfiguration.Builder<ExtractJobConfiguration, Builder> {
 
     private TableId sourceTable;
+    private ModelId sourceModel;
     private List<String> destinationUris;
     private Boolean printHeader;
     private String fieldDelimiter;
@@ -67,6 +69,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     private Builder(ExtractJobConfiguration jobInfo) {
       this();
       this.sourceTable = jobInfo.sourceTable;
+      this.sourceModel = jobInfo.sourceModel;
       this.destinationUris = jobInfo.destinationUris;
       this.printHeader = jobInfo.printHeader;
       this.fieldDelimiter = jobInfo.fieldDelimiter;
@@ -80,7 +83,12 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
       this();
       JobConfigurationExtract extractConfigurationPb = configurationPb.getExtract();
-      this.sourceTable = TableId.fromPb(extractConfigurationPb.getSourceTable());
+      if (extractConfigurationPb.getSourceTable() != null) {
+        this.sourceTable = TableId.fromPb(extractConfigurationPb.getSourceTable());
+      }
+      if (extractConfigurationPb.getSourceModel() != null) {
+        this.sourceModel = ModelId.fromPb(extractConfigurationPb.getSourceModel());
+      }
       this.destinationUris = extractConfigurationPb.getDestinationUris();
       this.printHeader = extractConfigurationPb.getPrintHeader();
       this.fieldDelimiter = extractConfigurationPb.getFieldDelimiter();
@@ -98,6 +106,12 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     /** Sets the table to export. */
     public Builder setSourceTable(TableId sourceTable) {
       this.sourceTable = sourceTable;
+      return this;
+    }
+
+    /** Sets the model to export. */
+    public Builder setSourceModel(ModelId sourceModel) {
+      this.sourceModel = sourceModel;
       return this;
     }
 
@@ -191,7 +205,8 @@ public final class ExtractJobConfiguration extends JobConfiguration {
 
   private ExtractJobConfiguration(Builder builder) {
     super(builder);
-    this.sourceTable = checkNotNull(builder.sourceTable);
+    this.sourceTable = builder.sourceTable;
+    this.sourceModel = builder.sourceModel;
     this.destinationUris = checkNotNull(builder.destinationUris);
     this.printHeader = builder.printHeader;
     this.fieldDelimiter = builder.fieldDelimiter;
@@ -205,6 +220,11 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   /** Returns the table to export. */
   public TableId getSourceTable() {
     return sourceTable;
+  }
+
+  /** Returns the model to export. */
+  public ModelId getSourceModel() {
+    return sourceModel;
   }
 
   /**
@@ -263,6 +283,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("sourceTable", sourceTable)
+        .add("sourceModel", sourceModel)
         .add("destinationUris", destinationUris)
         .add("format", format)
         .add("printHeader", printHeader)
@@ -284,6 +305,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return Objects.hash(
         baseHashCode(),
         sourceTable,
+        sourceModel,
         destinationUris,
         printHeader,
         fieldDelimiter,
@@ -296,8 +318,11 @@ public final class ExtractJobConfiguration extends JobConfiguration {
 
   @Override
   ExtractJobConfiguration setProjectId(String projectId) {
-    if (Strings.isNullOrEmpty(getSourceTable().getProject())) {
+    if (getSourceTable() != null && Strings.isNullOrEmpty(getSourceTable().getProject())) {
       return toBuilder().setSourceTable(getSourceTable().setProjectId(projectId)).build();
+    }
+    if (getSourceModel() != null && Strings.isNullOrEmpty(getSourceModel().getProject())) {
+      return toBuilder().setSourceModel(getSourceModel().setProjectId(projectId)).build();
     }
     return this;
   }
@@ -308,7 +333,12 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     com.google.api.services.bigquery.model.JobConfiguration jobConfiguration =
         new com.google.api.services.bigquery.model.JobConfiguration();
     extractConfigurationPb.setDestinationUris(destinationUris);
-    extractConfigurationPb.setSourceTable(sourceTable.toPb());
+    if (sourceTable != null) {
+      extractConfigurationPb.setSourceTable(sourceTable.toPb());
+    }
+    if (sourceModel != null) {
+      extractConfigurationPb.setSourceModel(sourceModel.toPb());
+    }
     extractConfigurationPb.setPrintHeader(printHeader);
     extractConfigurationPb.setFieldDelimiter(fieldDelimiter);
     extractConfigurationPb.setDestinationFormat(format);
@@ -334,11 +364,28 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   }
 
   /**
+   * Creates a builder for a BigQuery Extract Job configuration given source model and destination
+   * URI.
+   */
+  public static Builder newBuilder(ModelId sourceModel, String destinationUri) {
+    checkArgument(!isNullOrEmpty(destinationUri), "Provided destinationUri is null or empty");
+    return newBuilder(sourceModel, ImmutableList.of(destinationUri));
+  }
+
+  /**
    * Creates a builder for a BigQuery Extract Job configuration given source table and destination
    * URIs.
    */
   public static Builder newBuilder(TableId sourceTable, List<String> destinationUris) {
     return new Builder().setSourceTable(sourceTable).setDestinationUris(destinationUris);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Extract Job configuration given source model and destination
+   * URIs.
+   */
+  public static Builder newBuilder(ModelId sourceModel, List<String> destinationUris) {
+    return new Builder().setSourceModel(sourceModel).setDestinationUris(destinationUris);
   }
 
   /**
@@ -349,10 +396,24 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   }
 
   /**
+   * Returns a BigQuery Extract Job configuration for the given source model and destination URI.
+   */
+  public static ExtractJobConfiguration of(ModelId sourceModel, String destinationUri) {
+    return newBuilder(sourceModel, destinationUri).build();
+  }
+
+  /**
    * Returns a BigQuery Extract Job configuration for the given source table and destination URIs.
    */
   public static ExtractJobConfiguration of(TableId sourceTable, List<String> destinationUris) {
     return newBuilder(sourceTable, destinationUris).build();
+  }
+
+  /**
+   * Returns a BigQuery Extract Job configuration for the given source model and destination URIs.
+   */
+  public static ExtractJobConfiguration of(ModelId sourceModel, List<String> destinationUris) {
+    return newBuilder(sourceModel, destinationUris).build();
   }
 
   /**
@@ -366,6 +427,16 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   }
 
   /**
+   * Returns a BigQuery Extract Job configuration for the given source model, format and destination
+   * URI.
+   */
+  public static ExtractJobConfiguration of(
+      ModelId sourceTable, String destinationUri, String format) {
+    checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
+    return newBuilder(sourceTable, destinationUri).setFormat(format).build();
+  }
+
+  /**
    * Returns a BigQuery Extract Job configuration for the given source table, format and destination
    * URIs.
    */
@@ -373,6 +444,16 @@ public final class ExtractJobConfiguration extends JobConfiguration {
       TableId sourceTable, List<String> destinationUris, String format) {
     checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
     return newBuilder(sourceTable, destinationUris).setFormat(format).build();
+  }
+
+  /**
+   * Returns a BigQuery Extract Job configuration for the given source table, format and destination
+   * URIs.
+   */
+  public static ExtractJobConfiguration of(
+      ModelId sourceModel, List<String> destinationUris, String format) {
+    checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
+    return newBuilder(sourceModel, destinationUris).setFormat(format).build();
   }
 
   @SuppressWarnings("unchecked")

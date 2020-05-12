@@ -32,6 +32,7 @@ public class ExtractJobConfigurationTest {
   private static final List<String> DESTINATION_URIS = ImmutableList.of("uri1", "uri2");
   private static final String DESTINATION_URI = "uri1";
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
+  private static final ModelId MODEL_ID = ModelId.of("dataset", "model");
   private static final String FIELD_DELIMITER = ",";
   private static final String FORMAT = "CSV";
   private static final String AVRO_FORMAT = "AVRO";
@@ -70,6 +71,16 @@ public class ExtractJobConfigurationTest {
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
           .build();
+  private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_MODEL =
+      ExtractJobConfiguration.newBuilder(MODEL_ID, DESTINATION_URIS)
+          .setPrintHeader(PRINT_HEADER)
+          .setFieldDelimiter(FIELD_DELIMITER)
+          .setCompression(COMPRESSION)
+          .setFormat(FORMAT)
+          .setUseAvroLogicalTypes(USEAVROLOGICALTYPES)
+          .setLabels(LABELS)
+          .setJobTimeoutMs(TIMEOUT)
+          .build();
 
   @Test
   public void testToBuilder() {
@@ -78,6 +89,14 @@ public class ExtractJobConfigurationTest {
     ExtractJobConfiguration job =
         EXTRACT_CONFIGURATION.toBuilder().setSourceTable(TableId.of("dataset", "newTable")).build();
     assertEquals("newTable", job.getSourceTable().getTable());
+    compareExtractJobConfiguration(
+        EXTRACT_CONFIGURATION_MODEL, EXTRACT_CONFIGURATION_MODEL.toBuilder().build());
+    ExtractJobConfiguration modelJob =
+        EXTRACT_CONFIGURATION_MODEL
+            .toBuilder()
+            .setSourceModel(ModelId.of("dataset", "newModel"))
+            .build();
+    assertEquals("newModel", modelJob.getSourceModel().getModel());
     job = job.toBuilder().setSourceTable(TABLE_ID).build();
     compareExtractJobConfiguration(EXTRACT_CONFIGURATION, job);
     compareExtractJobConfiguration(
@@ -108,12 +127,28 @@ public class ExtractJobConfigurationTest {
     assertEquals(TABLE_ID, job.getSourceTable());
     assertEquals(ImmutableList.of(DESTINATION_URI), job.getDestinationUris());
     assertEquals(JSON_FORMAT, job.getFormat());
+    ExtractJobConfiguration modelJob = ExtractJobConfiguration.of(MODEL_ID, DESTINATION_URIS);
+    assertEquals(MODEL_ID, modelJob.getSourceModel());
+    assertEquals(DESTINATION_URIS, modelJob.getDestinationUris());
+    modelJob = ExtractJobConfiguration.of(MODEL_ID, DESTINATION_URI);
+    assertEquals(MODEL_ID, modelJob.getSourceModel());
+    assertEquals(ImmutableList.of(DESTINATION_URI), modelJob.getDestinationUris());
+    modelJob = ExtractJobConfiguration.of(MODEL_ID, DESTINATION_URIS, JSON_FORMAT);
+    assertEquals(MODEL_ID, modelJob.getSourceModel());
+    assertEquals(DESTINATION_URIS, modelJob.getDestinationUris());
+    assertEquals(JSON_FORMAT, modelJob.getFormat());
+    modelJob = ExtractJobConfiguration.of(MODEL_ID, DESTINATION_URI, JSON_FORMAT);
+    assertEquals(MODEL_ID, modelJob.getSourceModel());
+    assertEquals(ImmutableList.of(DESTINATION_URI), modelJob.getDestinationUris());
+    assertEquals(JSON_FORMAT, modelJob.getFormat());
   }
 
   @Test
   public void testToBuilderIncomplete() {
     ExtractJobConfiguration job = ExtractJobConfiguration.of(TABLE_ID, DESTINATION_URIS);
     compareExtractJobConfiguration(job, job.toBuilder().build());
+    ExtractJobConfiguration modelJob = ExtractJobConfiguration.of(MODEL_ID, DESTINATION_URIS);
+    compareExtractJobConfiguration(modelJob, modelJob.toBuilder().build());
   }
 
   @Test
@@ -144,6 +179,14 @@ public class ExtractJobConfigurationTest {
     assertEquals(USEAVROLOGICALTYPES, EXTRACT_CONFIGURATION_AVRO.getUseAvroLogicalTypes());
     assertEquals(LABELS, EXTRACT_CONFIGURATION_AVRO.getLabels());
     assertEquals(TIMEOUT, EXTRACT_CONFIGURATION_AVRO.getJobTimeoutMs());
+    assertEquals(MODEL_ID, EXTRACT_CONFIGURATION_MODEL.getSourceModel());
+    assertEquals(DESTINATION_URIS, EXTRACT_CONFIGURATION_MODEL.getDestinationUris());
+    assertEquals(FIELD_DELIMITER, EXTRACT_CONFIGURATION_MODEL.getFieldDelimiter());
+    assertEquals(COMPRESSION, EXTRACT_CONFIGURATION_MODEL.getCompression());
+    assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION_MODEL.printHeader());
+    assertEquals(FORMAT, EXTRACT_CONFIGURATION_MODEL.getFormat());
+    assertEquals(LABELS, EXTRACT_CONFIGURATION_MODEL.getLabels());
+    assertEquals(TIMEOUT, EXTRACT_CONFIGURATION_MODEL.getJobTimeoutMs());
   }
 
   @Test
@@ -164,12 +207,17 @@ public class ExtractJobConfigurationTest {
         ExtractJobConfiguration.fromPb(EXTRACT_CONFIGURATION_AVRO.toPb()));
     ExtractJobConfiguration job = ExtractJobConfiguration.of(TABLE_ID, DESTINATION_URIS);
     compareExtractJobConfiguration(job, ExtractJobConfiguration.fromPb(job.toPb()));
+    ExtractJobConfiguration modelJob = ExtractJobConfiguration.of(MODEL_ID, DESTINATION_URIS);
+    compareExtractJobConfiguration(modelJob, ExtractJobConfiguration.fromPb(modelJob.toPb()));
   }
 
   @Test
   public void testSetProjectId() {
     ExtractJobConfiguration configuration = EXTRACT_CONFIGURATION.setProjectId(TEST_PROJECT_ID);
     assertEquals(TEST_PROJECT_ID, configuration.getSourceTable().getProject());
+    ExtractJobConfiguration modelConfiguration =
+        EXTRACT_CONFIGURATION_MODEL.setProjectId(TEST_PROJECT_ID);
+    assertEquals(TEST_PROJECT_ID, modelConfiguration.getSourceModel().getProject());
   }
 
   @Test
@@ -181,6 +229,13 @@ public class ExtractJobConfigurationTest {
             .build()
             .setProjectId("do-not-update");
     assertEquals(TEST_PROJECT_ID, configuration.getSourceTable().getProject());
+    ExtractJobConfiguration modelConfiguration =
+        EXTRACT_CONFIGURATION_MODEL
+            .toBuilder()
+            .setSourceModel(MODEL_ID.setProjectId(TEST_PROJECT_ID))
+            .build()
+            .setProjectId("do-not-update");
+    assertEquals(TEST_PROJECT_ID, modelConfiguration.getSourceModel().getProject());
   }
 
   @Test
@@ -188,6 +243,7 @@ public class ExtractJobConfigurationTest {
     assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION.getType());
     assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION_ONE_URI.getType());
     assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION_AVRO.getType());
+    assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION_MODEL.getType());
   }
 
   private void compareExtractJobConfiguration(
@@ -196,6 +252,7 @@ public class ExtractJobConfigurationTest {
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
     assertEquals(expected.getSourceTable(), value.getSourceTable());
+    assertEquals(expected.getSourceModel(), value.getSourceModel());
     assertEquals(expected.getDestinationUris(), value.getDestinationUris());
     assertEquals(expected.getCompression(), value.getCompression());
     assertEquals(expected.printHeader(), value.printHeader());

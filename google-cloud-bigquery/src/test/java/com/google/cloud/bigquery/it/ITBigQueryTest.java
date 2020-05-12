@@ -254,6 +254,7 @@ public class ITBigQueryTest {
   private static final String LOAD_FILE = "load.csv";
   private static final String JSON_LOAD_FILE = "load.json";
   private static final String EXTRACT_FILE = "extract.csv";
+  private static final String EXTRACT_MODEL_FILE = "extract_model.csv";
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final TableId TABLE_ID = TableId.of(DATASET, "testing_table");
   private static final String CSV_CONTENT = "StringValue1\nStringValue2\n";
@@ -1943,6 +1944,43 @@ public class ITBigQueryTest {
     assertEquals(
         Sets.newHashSet(CSV_CONTENT.split("\n")), Sets.newHashSet(extractedCsv.split("\n")));
     assertTrue(bigquery.delete(destinationTable));
+  }
+
+  @Test
+  public void testExtractJobWithModel() throws InterruptedException {
+    String modelName = RemoteBigQueryHelper.generateModelName();
+    String sql =
+        "CREATE MODEL `"
+            + MODEL_DATASET
+            + "."
+            + modelName
+            + "`"
+            + "OPTIONS ( "
+            + "model_type='linear_reg', "
+            + "max_iteration=1, "
+            + "learn_rate=0.4, "
+            + "learn_rate_strategy='constant' "
+            + ") AS ( "
+            + "	SELECT 'a' AS f1, 2.0 AS label "
+            + "UNION ALL "
+            + "SELECT 'b' AS f1, 3.8 AS label "
+            + ")";
+
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(sql).build();
+    Job job = bigquery.create(JobInfo.of(JobId.of(), config));
+    job.waitFor();
+    assertNull(job.getStatus().getError());
+    ModelId destinationModel = ModelId.of(MODEL_DATASET, modelName);
+    assertNotNull(destinationModel);
+    ExtractJobConfiguration extractConfiguration =
+        ExtractJobConfiguration.newBuilder(
+                destinationModel, "gs://" + BUCKET + "/" + EXTRACT_MODEL_FILE)
+            .setPrintHeader(false)
+            .build();
+    Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
+    remoteExtractJob = remoteExtractJob.waitFor();
+    assertNull(remoteExtractJob.getStatus().getError());
+    assertTrue(bigquery.delete(destinationModel));
   }
 
   @Test
