@@ -53,8 +53,7 @@ public class StreamingAutoMlClassificationIT {
   public void testStreamingAutoMlClassification() {
     StreamingAutoMlClassification.streamingAutoMlClassification(
         "resources/cat.mp4", PROJECT_ID, MODEL_ID);
-    String got = bout.toString();
 
-    assertThat(got).contains("brush_hair");
+    assertThat(bout.toString()).contains("Video streamed successfully.");
   }
 }

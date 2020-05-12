@@ -105,6 +105,7 @@ class StreamingAutoMlClassification {
           System.out.format("%fs: %s (%f)\n", offset, entity, confidence);
         }
       }
+      System.out.println("Video streamed successfully.");
     } catch (Exception e) {
       e.printStackTrace();
     }
