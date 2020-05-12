@@ -28,9 +28,9 @@ public interface ListAssignmentsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name e.g.:
-   * projects/myproject/locations/US/reservations/team1-prod
+   * `projects/myproject/locations/US/reservations/team1-prod`
    * Or:
-   * projects/myproject/locations/US/reservations/-
+   * `projects/myproject/locations/US/reservations/-`
    * </pre>
    *
    * <code>
@@ -45,9 +45,9 @@ public interface ListAssignmentsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name e.g.:
-   * projects/myproject/locations/US/reservations/team1-prod
+   * `projects/myproject/locations/US/reservations/team1-prod`
    * Or:
-   * projects/myproject/locations/US/reservations/-
+   * `projects/myproject/locations/US/reservations/-`
    * </pre>
    *
    * <code>
@@ -62,7 +62,7 @@ public interface ListAssignmentsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of items to return.
+   * The maximum number of items to return per page.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

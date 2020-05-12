@@ -28,12 +28,12 @@
  * computational power in BigQuery, and serves as the basic unit of parallelism. In a scan of a
  * multi-partitioned table, a single slot operates on a single partition of the table. A reservation
  * resource exists as a child resource of the admin project and location, e.g.:
- * projects/myproject/locations/US/reservations/reservationName.
+ * `projects/myproject/locations/US/reservations/reservationName`.
  *
  * <p>A capacity commitment is a way to purchase compute capacity for BigQuery jobs (in the form of
  * slots) with some committed period of usage. A capacity commitment resource exists as a child
  * resource of the admin project and location, e.g.:
- * projects/myproject/locations/US/capacityCommitments/id.
+ * `projects/myproject/locations/US/capacityCommitments/id`.
  *
  * <p>Sample for ReservationServiceClient:
  *

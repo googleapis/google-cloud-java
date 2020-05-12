@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1.ReservationService.CreateReservation].
+ * The request for
+ * [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1.ReservationService.CreateReservation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.CreateReservationRequest}
@@ -143,7 +144,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Project, location. E.g.,
-   *    projects/myproject/locations/US
+   * `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -168,7 +169,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Project, location. E.g.,
-   *    projects/myproject/locations/US
+   * `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -244,7 +245,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Content of the new reservation to create.
+   * Definition of the new reservation to create.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -258,7 +259,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Content of the new reservation to create.
+   * Definition of the new reservation to create.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -274,7 +275,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Content of the new reservation to create.
+   * Definition of the new reservation to create.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -471,7 +472,8 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request for [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1.ReservationService.CreateReservation].
+   * The request for
+   * [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1.ReservationService.CreateReservation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.CreateReservationRequest}
@@ -658,7 +660,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Project, location. E.g.,
-     *    projects/myproject/locations/US
+     * `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -683,7 +685,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Project, location. E.g.,
-     *    projects/myproject/locations/US
+     * `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -708,7 +710,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Project, location. E.g.,
-     *    projects/myproject/locations/US
+     * `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -732,7 +734,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Project, location. E.g.,
-     *    projects/myproject/locations/US
+     * `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -752,7 +754,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Project, location. E.g.,
-     *    projects/myproject/locations/US
+     * `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -894,7 +896,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -908,7 +910,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -928,7 +930,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -950,7 +952,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -970,7 +972,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -996,7 +998,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -1016,7 +1018,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -1030,7 +1032,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -1048,7 +1050,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Content of the new reservation to create.
+     * Definition of the new reservation to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>

@@ -24,9 +24,10 @@ package com.google.cloud.bigquery.reservation.v1;
  * <pre>
  * The request for
  * [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1.ReservationService.MoveAssignment].
- * Note: "bigquery.reservationAssignments.create" permission is required on the
- * destination_id. Note: "bigquery.reservationAssignments.create" and
- * "bigquery.reservationAssignments.delete" permission is required on the
+ * **Note**: "bigquery.reservationAssignments.create" permission is required on
+ * the destination_id.
+ * **Note**: "bigquery.reservationAssignments.create" and
+ * "bigquery.reservationAssignments.delete" permission are required on the
  * related assignee.
  * </pre>
  *
@@ -131,8 +132,8 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The resource name of the assignment,
-   * e.g.:
-   *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+   * e.g.
+   * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
    * </pre>
    *
    * <code>
@@ -157,8 +158,8 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The resource name of the assignment,
-   * e.g.:
-   *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+   * e.g.
+   * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
    * </pre>
    *
    * <code>
@@ -186,7 +187,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The new reservation ID, e.g.:
-   *   projects/myotherproject/locations/US/reservations/team2-prod
+   *   `projects/myotherproject/locations/US/reservations/team2-prod`
    * </pre>
    *
    * <code>string destination_id = 3;</code>
@@ -209,7 +210,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The new reservation ID, e.g.:
-   *   projects/myotherproject/locations/US/reservations/team2-prod
+   *   `projects/myotherproject/locations/US/reservations/team2-prod`
    * </pre>
    *
    * <code>string destination_id = 3;</code>
@@ -403,9 +404,10 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * The request for
    * [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1.ReservationService.MoveAssignment].
-   * Note: "bigquery.reservationAssignments.create" permission is required on the
-   * destination_id. Note: "bigquery.reservationAssignments.create" and
-   * "bigquery.reservationAssignments.delete" permission is required on the
+   * **Note**: "bigquery.reservationAssignments.create" permission is required on
+   * the destination_id.
+   * **Note**: "bigquery.reservationAssignments.create" and
+   * "bigquery.reservationAssignments.delete" permission are required on the
    * related assignee.
    * </pre>
    *
@@ -577,8 +579,8 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the assignment,
-     * e.g.:
-     *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+     * e.g.
+     * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
      * </pre>
      *
      * <code>
@@ -603,8 +605,8 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the assignment,
-     * e.g.:
-     *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+     * e.g.
+     * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
      * </pre>
      *
      * <code>
@@ -629,8 +631,8 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the assignment,
-     * e.g.:
-     *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+     * e.g.
+     * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
      * </pre>
      *
      * <code>
@@ -654,8 +656,8 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the assignment,
-     * e.g.:
-     *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+     * e.g.
+     * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
      * </pre>
      *
      * <code>
@@ -675,8 +677,8 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The resource name of the assignment,
-     * e.g.:
-     *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+     * e.g.
+     * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
      * </pre>
      *
      * <code>
@@ -703,7 +705,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The new reservation ID, e.g.:
-     *   projects/myotherproject/locations/US/reservations/team2-prod
+     *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
      * <code>string destination_id = 3;</code>
@@ -726,7 +728,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The new reservation ID, e.g.:
-     *   projects/myotherproject/locations/US/reservations/team2-prod
+     *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
      * <code>string destination_id = 3;</code>
@@ -749,7 +751,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The new reservation ID, e.g.:
-     *   projects/myotherproject/locations/US/reservations/team2-prod
+     *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
      * <code>string destination_id = 3;</code>
@@ -771,7 +773,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The new reservation ID, e.g.:
-     *   projects/myotherproject/locations/US/reservations/team2-prod
+     *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
      * <code>string destination_id = 3;</code>
@@ -789,7 +791,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The new reservation ID, e.g.:
-     *   projects/myotherproject/locations/US/reservations/team2-prod
+     *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
      * <code>string destination_id = 3;</code>

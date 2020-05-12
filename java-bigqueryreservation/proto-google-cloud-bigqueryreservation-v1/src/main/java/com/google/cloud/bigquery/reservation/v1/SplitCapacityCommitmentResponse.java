@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The response for [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
+ * The response for
+ * [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse}
@@ -412,7 +413,8 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The response for [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
+   * The response for
+   * [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse}

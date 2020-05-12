@@ -33,12 +33,12 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * parallelism. In a scan of a multi-partitioned table, a single slot operates
  * on a single partition of the table. A reservation resource exists as a child
  * resource of the admin project and location, e.g.:
- *   projects/myproject/locations/US/reservations/reservationName.
+ *   `projects/myproject/locations/US/reservations/reservationName`.
  * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
  * (in the form of slots) with some committed period of usage. A capacity
  * commitment resource exists as a child resource of the admin project and
  * location, e.g.:
- *   projects/myproject/locations/US/capacityCommitments/id.
+ *   `projects/myproject/locations/US/capacityCommitments/id`.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -1040,12 +1040,12 @@ public final class ReservationServiceGrpc {
    * parallelism. In a scan of a multi-partitioned table, a single slot operates
    * on a single partition of the table. A reservation resource exists as a child
    * resource of the admin project and location, e.g.:
-   *   projects/myproject/locations/US/reservations/reservationName.
+   *   `projects/myproject/locations/US/reservations/reservationName`.
    * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
    * (in the form of slots) with some committed period of usage. A capacity
    * commitment resource exists as a child resource of the admin project and
    * location, e.g.:
-   *   projects/myproject/locations/US/capacityCommitments/id.
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
    * </pre>
    */
   public abstract static class ReservationServiceImplBase implements io.grpc.BindableService {
@@ -1185,7 +1185,7 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Updates an existing capacity commitment.
-     * Only plan and renewal_plan fields can be updated.
+     * Only `plan` and `renewal_plan` fields can be updated.
      * Plan can only be changed to a plan of a longer commitment period.
      * Attempting to change to a plan with shorter commitment period will fail
      * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
@@ -1203,10 +1203,11 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Splits capacity commitment to two commitments of the same plan and
-     * commitment_end_time. A common use case to do that is to perform a downgrade
-     * e.g., in order to downgrade from 10000 slots to 8000, one might split 10000
-     * capacity commitment to 2000 and 8000, change the plan of the first one to
-     * flex and then delete it.
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you would change the plan of the first one to `FLEX` and then delete it.
      * </pre>
      */
     public void splitCapacityCommitment(
@@ -1221,10 +1222,11 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Merges capacity commitments of the same plan into one. Resulting capacity
-     * commitment has the longer commitment_end_time out of the two. Attempting to
-     * merge capacity commitments of different plan will fail with the error code
-     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
      * </pre>
      */
     public void mergeCapacityCommitments(
@@ -1238,18 +1240,24 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Creates an object which allows the given project to submit jobs
-     * of a certain type using slots from the specified reservation. Currently a
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
      * resource (project, folder, organization) can only have one assignment per
-     * {job_type, location}, and that reservation will be used for all jobs of the
-     * matching type. Within the organization, different assignments can be
-     * created on projects, folders or organization level. During query execution,
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
      * the assignment is looked up at the project, folder and organization levels
-     * in that order. The first assignment found is applied to the query. When
-     * creating assignments, it does not matter if other assignments exist at
-     * higher levels. E.g: organizationA contains project1, project2. Assignments
-     * for organizationA, project1 and project2 could all be created, mapping to
-     * the same or different reservations.
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
      * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
      * 'bigquery.admin' permissions on the project using the reservation
      * and the project that owns this reservation.
@@ -1269,17 +1277,20 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Lists assignments.
-     * Only explicitly created assignments will be returned. E.g:
-     * organizationA contains project1 and project2. Reservation res1 exists.
-     * CreateAssignment was invoked previously and following assignments were
-     * created explicitly:
-     *   &lt;organizationA, res1&gt;
-     *   &lt;project1, res1&gt;
-     * Then this API will just return the above two assignments for reservation
-     * res1, and no expansion/merge will happen. Wildcard "-" can be used for
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
      * reservations in the request. In that case all assignments belongs to the
-     * specified project and location will be listed. Note
-     * "-" cannot be used for projects nor locations.
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
      * </pre>
      */
     public void listAssignments(
@@ -1295,15 +1306,17 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Deletes a assignment. No expansion will happen.
-     * E.g:
-     * organizationA contains project1 and project2. Reservation res1 exists.
-     * CreateAssignment was invoked previously and following assignments were
-     * created explicitly:
-     *   &lt;organizationA, res1&gt;
-     *   &lt;project1, res1&gt;
-     * Then deletion of &lt;organizationA, res1&gt; won't affect &lt;project1, res1&gt;. After
-     * deletion of &lt;organizationA, res1&gt;, queries from project1 will still use
-     * res1, while queries from project2 will use on-demand mode.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
      * </pre>
      */
     public void deleteAssignment(
@@ -1318,19 +1331,20 @@ public final class ReservationServiceGrpc {
      * <pre>
      * Looks up assignments for a specified resource for a particular region.
      * If the request is about a project:
-     *   1) Assignments created on the project will be returned if they exist.
-     *   2) Otherwise assignments created on the closest ancestor will be
-     *   returned. 3) Assignments for different JobTypes will all be returned.
-     * Same logic applies if the request is about a folder.
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
      * If the request is about an organization, then assignments created on the
      * organization will be returned (organization doesn't have ancestors).
      * Comparing to ListAssignments, there are some behavior
      * differences:
-     *   1) permission on the assignee will be verified in this API.
-     *   2) Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
-     *   3) Parent here is projects/&#42;&#47;locations/&#42;, instead of
-     *   projects/&#42;&#47;locations/&#42;reservations/&#42;.
-     * Note "-" cannot be used for projects
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
      * nor locations.
      * </pre>
      */
@@ -1346,12 +1360,10 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Moves a assignment under a new reservation. Customers can do this by
-     * deleting the existing assignment followed by creating another assignment
-     * under the new reservation, but this method provides a transactional way to
-     * do so, to make sure the assignee always has an associated reservation.
-     * Without the method customers might see some queries run on-demand which
-     * might be unexpected.
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
      * </pre>
      */
     public void moveAssignment(
@@ -1380,8 +1392,8 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Updates a BI reservation.
-     * Only fields specified in the field_mask are updated.
-     * Singleton BI reservation always exists with default size 0.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
      * In order to reserve BI capacity it needs to be updated to an amount
      * greater than 0. In order to release BI capacity reservation size
      * must be set to 0.
@@ -1542,12 +1554,12 @@ public final class ReservationServiceGrpc {
    * parallelism. In a scan of a multi-partitioned table, a single slot operates
    * on a single partition of the table. A reservation resource exists as a child
    * resource of the admin project and location, e.g.:
-   *   projects/myproject/locations/US/reservations/reservationName.
+   *   `projects/myproject/locations/US/reservations/reservationName`.
    * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
    * (in the form of slots) with some committed period of usage. A capacity
    * commitment resource exists as a child resource of the admin project and
    * location, e.g.:
-   *   projects/myproject/locations/US/capacityCommitments/id.
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
    * </pre>
    */
   public static final class ReservationServiceStub
@@ -1724,7 +1736,7 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Updates an existing capacity commitment.
-     * Only plan and renewal_plan fields can be updated.
+     * Only `plan` and `renewal_plan` fields can be updated.
      * Plan can only be changed to a plan of a longer commitment period.
      * Attempting to change to a plan with shorter commitment period will fail
      * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
@@ -1745,10 +1757,11 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Splits capacity commitment to two commitments of the same plan and
-     * commitment_end_time. A common use case to do that is to perform a downgrade
-     * e.g., in order to downgrade from 10000 slots to 8000, one might split 10000
-     * capacity commitment to 2000 and 8000, change the plan of the first one to
-     * flex and then delete it.
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you would change the plan of the first one to `FLEX` and then delete it.
      * </pre>
      */
     public void splitCapacityCommitment(
@@ -1766,10 +1779,11 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Merges capacity commitments of the same plan into one. Resulting capacity
-     * commitment has the longer commitment_end_time out of the two. Attempting to
-     * merge capacity commitments of different plan will fail with the error code
-     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
      * </pre>
      */
     public void mergeCapacityCommitments(
@@ -1786,18 +1800,24 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Creates an object which allows the given project to submit jobs
-     * of a certain type using slots from the specified reservation. Currently a
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
      * resource (project, folder, organization) can only have one assignment per
-     * {job_type, location}, and that reservation will be used for all jobs of the
-     * matching type. Within the organization, different assignments can be
-     * created on projects, folders or organization level. During query execution,
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
      * the assignment is looked up at the project, folder and organization levels
-     * in that order. The first assignment found is applied to the query. When
-     * creating assignments, it does not matter if other assignments exist at
-     * higher levels. E.g: organizationA contains project1, project2. Assignments
-     * for organizationA, project1 and project2 could all be created, mapping to
-     * the same or different reservations.
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
      * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
      * 'bigquery.admin' permissions on the project using the reservation
      * and the project that owns this reservation.
@@ -1820,17 +1840,20 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Lists assignments.
-     * Only explicitly created assignments will be returned. E.g:
-     * organizationA contains project1 and project2. Reservation res1 exists.
-     * CreateAssignment was invoked previously and following assignments were
-     * created explicitly:
-     *   &lt;organizationA, res1&gt;
-     *   &lt;project1, res1&gt;
-     * Then this API will just return the above two assignments for reservation
-     * res1, and no expansion/merge will happen. Wildcard "-" can be used for
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
      * reservations in the request. In that case all assignments belongs to the
-     * specified project and location will be listed. Note
-     * "-" cannot be used for projects nor locations.
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
      * </pre>
      */
     public void listAssignments(
@@ -1849,15 +1872,17 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Deletes a assignment. No expansion will happen.
-     * E.g:
-     * organizationA contains project1 and project2. Reservation res1 exists.
-     * CreateAssignment was invoked previously and following assignments were
-     * created explicitly:
-     *   &lt;organizationA, res1&gt;
-     *   &lt;project1, res1&gt;
-     * Then deletion of &lt;organizationA, res1&gt; won't affect &lt;project1, res1&gt;. After
-     * deletion of &lt;organizationA, res1&gt;, queries from project1 will still use
-     * res1, while queries from project2 will use on-demand mode.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
      * </pre>
      */
     public void deleteAssignment(
@@ -1875,19 +1900,20 @@ public final class ReservationServiceGrpc {
      * <pre>
      * Looks up assignments for a specified resource for a particular region.
      * If the request is about a project:
-     *   1) Assignments created on the project will be returned if they exist.
-     *   2) Otherwise assignments created on the closest ancestor will be
-     *   returned. 3) Assignments for different JobTypes will all be returned.
-     * Same logic applies if the request is about a folder.
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
      * If the request is about an organization, then assignments created on the
      * organization will be returned (organization doesn't have ancestors).
      * Comparing to ListAssignments, there are some behavior
      * differences:
-     *   1) permission on the assignee will be verified in this API.
-     *   2) Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
-     *   3) Parent here is projects/&#42;&#47;locations/&#42;, instead of
-     *   projects/&#42;&#47;locations/&#42;reservations/&#42;.
-     * Note "-" cannot be used for projects
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
      * nor locations.
      * </pre>
      */
@@ -1906,12 +1932,10 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Moves a assignment under a new reservation. Customers can do this by
-     * deleting the existing assignment followed by creating another assignment
-     * under the new reservation, but this method provides a transactional way to
-     * do so, to make sure the assignee always has an associated reservation.
-     * Without the method customers might see some queries run on-demand which
-     * might be unexpected.
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
      * </pre>
      */
     public void moveAssignment(
@@ -1946,8 +1970,8 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Updates a BI reservation.
-     * Only fields specified in the field_mask are updated.
-     * Singleton BI reservation always exists with default size 0.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
      * In order to reserve BI capacity it needs to be updated to an amount
      * greater than 0. In order to release BI capacity reservation size
      * must be set to 0.
@@ -1975,12 +1999,12 @@ public final class ReservationServiceGrpc {
    * parallelism. In a scan of a multi-partitioned table, a single slot operates
    * on a single partition of the table. A reservation resource exists as a child
    * resource of the admin project and location, e.g.:
-   *   projects/myproject/locations/US/reservations/reservationName.
+   *   `projects/myproject/locations/US/reservations/reservationName`.
    * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
    * (in the form of slots) with some committed period of usage. A capacity
    * commitment resource exists as a child resource of the admin project and
    * location, e.g.:
-   *   projects/myproject/locations/US/capacityCommitments/id.
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
    * </pre>
    */
   public static final class ReservationServiceBlockingStub
@@ -2122,7 +2146,7 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Updates an existing capacity commitment.
-     * Only plan and renewal_plan fields can be updated.
+     * Only `plan` and `renewal_plan` fields can be updated.
      * Plan can only be changed to a plan of a longer commitment period.
      * Attempting to change to a plan with shorter commitment period will fail
      * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
@@ -2139,10 +2163,11 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Splits capacity commitment to two commitments of the same plan and
-     * commitment_end_time. A common use case to do that is to perform a downgrade
-     * e.g., in order to downgrade from 10000 slots to 8000, one might split 10000
-     * capacity commitment to 2000 and 8000, change the plan of the first one to
-     * flex and then delete it.
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you would change the plan of the first one to `FLEX` and then delete it.
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse
@@ -2156,10 +2181,11 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Merges capacity commitments of the same plan into one. Resulting capacity
-     * commitment has the longer commitment_end_time out of the two. Attempting to
-     * merge capacity commitments of different plan will fail with the error code
-     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment mergeCapacityCommitments(
@@ -2172,18 +2198,24 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Creates an object which allows the given project to submit jobs
-     * of a certain type using slots from the specified reservation. Currently a
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
      * resource (project, folder, organization) can only have one assignment per
-     * {job_type, location}, and that reservation will be used for all jobs of the
-     * matching type. Within the organization, different assignments can be
-     * created on projects, folders or organization level. During query execution,
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
      * the assignment is looked up at the project, folder and organization levels
-     * in that order. The first assignment found is applied to the query. When
-     * creating assignments, it does not matter if other assignments exist at
-     * higher levels. E.g: organizationA contains project1, project2. Assignments
-     * for organizationA, project1 and project2 could all be created, mapping to
-     * the same or different reservations.
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
      * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
      * 'bigquery.admin' permissions on the project using the reservation
      * and the project that owns this reservation.
@@ -2202,17 +2234,20 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Lists assignments.
-     * Only explicitly created assignments will be returned. E.g:
-     * organizationA contains project1 and project2. Reservation res1 exists.
-     * CreateAssignment was invoked previously and following assignments were
-     * created explicitly:
-     *   &lt;organizationA, res1&gt;
-     *   &lt;project1, res1&gt;
-     * Then this API will just return the above two assignments for reservation
-     * res1, and no expansion/merge will happen. Wildcard "-" can be used for
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
      * reservations in the request. In that case all assignments belongs to the
-     * specified project and location will be listed. Note
-     * "-" cannot be used for projects nor locations.
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse listAssignments(
@@ -2225,15 +2260,17 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Deletes a assignment. No expansion will happen.
-     * E.g:
-     * organizationA contains project1 and project2. Reservation res1 exists.
-     * CreateAssignment was invoked previously and following assignments were
-     * created explicitly:
-     *   &lt;organizationA, res1&gt;
-     *   &lt;project1, res1&gt;
-     * Then deletion of &lt;organizationA, res1&gt; won't affect &lt;project1, res1&gt;. After
-     * deletion of &lt;organizationA, res1&gt;, queries from project1 will still use
-     * res1, while queries from project2 will use on-demand mode.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
      * </pre>
      */
     public com.google.protobuf.Empty deleteAssignment(
@@ -2248,19 +2285,20 @@ public final class ReservationServiceGrpc {
      * <pre>
      * Looks up assignments for a specified resource for a particular region.
      * If the request is about a project:
-     *   1) Assignments created on the project will be returned if they exist.
-     *   2) Otherwise assignments created on the closest ancestor will be
-     *   returned. 3) Assignments for different JobTypes will all be returned.
-     * Same logic applies if the request is about a folder.
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
      * If the request is about an organization, then assignments created on the
      * organization will be returned (organization doesn't have ancestors).
      * Comparing to ListAssignments, there are some behavior
      * differences:
-     *   1) permission on the assignee will be verified in this API.
-     *   2) Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
-     *   3) Parent here is projects/&#42;&#47;locations/&#42;, instead of
-     *   projects/&#42;&#47;locations/&#42;reservations/&#42;.
-     * Note "-" cannot be used for projects
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
      * nor locations.
      * </pre>
      */
@@ -2274,12 +2312,10 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Moves a assignment under a new reservation. Customers can do this by
-     * deleting the existing assignment followed by creating another assignment
-     * under the new reservation, but this method provides a transactional way to
-     * do so, to make sure the assignee always has an associated reservation.
-     * Without the method customers might see some queries run on-demand which
-     * might be unexpected.
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
      * </pre>
      */
     public com.google.cloud.bigquery.reservation.v1.Assignment moveAssignment(
@@ -2305,8 +2341,8 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Updates a BI reservation.
-     * Only fields specified in the field_mask are updated.
-     * Singleton BI reservation always exists with default size 0.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
      * In order to reserve BI capacity it needs to be updated to an amount
      * greater than 0. In order to release BI capacity reservation size
      * must be set to 0.
@@ -2330,12 +2366,12 @@ public final class ReservationServiceGrpc {
    * parallelism. In a scan of a multi-partitioned table, a single slot operates
    * on a single partition of the table. A reservation resource exists as a child
    * resource of the admin project and location, e.g.:
-   *   projects/myproject/locations/US/reservations/reservationName.
+   *   `projects/myproject/locations/US/reservations/reservationName`.
    * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
    * (in the form of slots) with some committed period of usage. A capacity
    * commitment resource exists as a child resource of the admin project and
    * location, e.g.:
-   *   projects/myproject/locations/US/capacityCommitments/id.
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
    * </pre>
    */
   public static final class ReservationServiceFutureStub
@@ -2490,7 +2526,7 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Updates an existing capacity commitment.
-     * Only plan and renewal_plan fields can be updated.
+     * Only `plan` and `renewal_plan` fields can be updated.
      * Plan can only be changed to a plan of a longer commitment period.
      * Attempting to change to a plan with shorter commitment period will fail
      * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
@@ -2509,10 +2545,11 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Splits capacity commitment to two commitments of the same plan and
-     * commitment_end_time. A common use case to do that is to perform a downgrade
-     * e.g., in order to downgrade from 10000 slots to 8000, one might split 10000
-     * capacity commitment to 2000 and 8000, change the plan of the first one to
-     * flex and then delete it.
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you would change the plan of the first one to `FLEX` and then delete it.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2527,10 +2564,11 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Merges capacity commitments of the same plan into one. Resulting capacity
-     * commitment has the longer commitment_end_time out of the two. Attempting to
-     * merge capacity commitments of different plan will fail with the error code
-     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2545,18 +2583,24 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Creates an object which allows the given project to submit jobs
-     * of a certain type using slots from the specified reservation. Currently a
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
      * resource (project, folder, organization) can only have one assignment per
-     * {job_type, location}, and that reservation will be used for all jobs of the
-     * matching type. Within the organization, different assignments can be
-     * created on projects, folders or organization level. During query execution,
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
      * the assignment is looked up at the project, folder and organization levels
-     * in that order. The first assignment found is applied to the query. When
-     * creating assignments, it does not matter if other assignments exist at
-     * higher levels. E.g: organizationA contains project1, project2. Assignments
-     * for organizationA, project1 and project2 could all be created, mapping to
-     * the same or different reservations.
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
      * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
      * 'bigquery.admin' permissions on the project using the reservation
      * and the project that owns this reservation.
@@ -2576,17 +2620,20 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Lists assignments.
-     * Only explicitly created assignments will be returned. E.g:
-     * organizationA contains project1 and project2. Reservation res1 exists.
-     * CreateAssignment was invoked previously and following assignments were
-     * created explicitly:
-     *   &lt;organizationA, res1&gt;
-     *   &lt;project1, res1&gt;
-     * Then this API will just return the above two assignments for reservation
-     * res1, and no expansion/merge will happen. Wildcard "-" can be used for
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
      * reservations in the request. In that case all assignments belongs to the
-     * specified project and location will be listed. Note
-     * "-" cannot be used for projects nor locations.
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2601,15 +2648,17 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Deletes a assignment. No expansion will happen.
-     * E.g:
-     * organizationA contains project1 and project2. Reservation res1 exists.
-     * CreateAssignment was invoked previously and following assignments were
-     * created explicitly:
-     *   &lt;organizationA, res1&gt;
-     *   &lt;project1, res1&gt;
-     * Then deletion of &lt;organizationA, res1&gt; won't affect &lt;project1, res1&gt;. After
-     * deletion of &lt;organizationA, res1&gt;, queries from project1 will still use
-     * res1, while queries from project2 will use on-demand mode.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2624,19 +2673,20 @@ public final class ReservationServiceGrpc {
      * <pre>
      * Looks up assignments for a specified resource for a particular region.
      * If the request is about a project:
-     *   1) Assignments created on the project will be returned if they exist.
-     *   2) Otherwise assignments created on the closest ancestor will be
-     *   returned. 3) Assignments for different JobTypes will all be returned.
-     * Same logic applies if the request is about a folder.
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
      * If the request is about an organization, then assignments created on the
      * organization will be returned (organization doesn't have ancestors).
      * Comparing to ListAssignments, there are some behavior
      * differences:
-     *   1) permission on the assignee will be verified in this API.
-     *   2) Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
-     *   3) Parent here is projects/&#42;&#47;locations/&#42;, instead of
-     *   projects/&#42;&#47;locations/&#42;reservations/&#42;.
-     * Note "-" cannot be used for projects
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
      * nor locations.
      * </pre>
      */
@@ -2652,12 +2702,10 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
-     * Moves a assignment under a new reservation. Customers can do this by
-     * deleting the existing assignment followed by creating another assignment
-     * under the new reservation, but this method provides a transactional way to
-     * do so, to make sure the assignee always has an associated reservation.
-     * Without the method customers might see some queries run on-demand which
-     * might be unexpected.
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2686,8 +2734,8 @@ public final class ReservationServiceGrpc {
      *
      * <pre>
      * Updates a BI reservation.
-     * Only fields specified in the field_mask are updated.
-     * Singleton BI reservation always exists with default size 0.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
      * In order to reserve BI capacity it needs to be updated to an amount
      * greater than 0. In order to release BI capacity reservation size
      * must be set to 0.

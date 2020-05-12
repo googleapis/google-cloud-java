@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
+ * The request for
+ * [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.GetReservationRequest}
@@ -118,7 +119,7 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Resource name of the reservation to retrieve. E.g.,
-   *    projects/myproject/locations/US/reservations/team1-prod
+   *    `projects/myproject/locations/US/reservations/team1-prod`
    * </pre>
    *
    * <code>
@@ -143,7 +144,7 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Resource name of the reservation to retrieve. E.g.,
-   *    projects/myproject/locations/US/reservations/team1-prod
+   *    `projects/myproject/locations/US/reservations/team1-prod`
    * </pre>
    *
    * <code>
@@ -328,7 +329,8 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request for [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
+   * The request for
+   * [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.GetReservationRequest}
@@ -492,7 +494,7 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>
@@ -517,7 +519,7 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>
@@ -542,7 +544,7 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>
@@ -566,7 +568,7 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>
@@ -586,7 +588,7 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>

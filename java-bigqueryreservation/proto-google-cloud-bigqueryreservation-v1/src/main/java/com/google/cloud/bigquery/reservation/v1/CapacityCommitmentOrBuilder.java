@@ -28,7 +28,7 @@ public interface CapacityCommitmentOrBuilder
    *
    * <pre>
    * Output only. The resource name of the capacity commitment, e.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   * `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +41,7 @@ public interface CapacityCommitmentOrBuilder
    *
    * <pre>
    * Output only. The resource name of the capacity commitment, e.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   * `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -121,8 +121,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -136,8 +136,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -151,8 +151,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -205,7 +205,7 @@ public interface CapacityCommitmentOrBuilder
    * <pre>
    * The plan this capacity commitment is converted to after commitment_end_time
    * passes. Once the plan is changed, committed period is extended according to
-   * commitment plan. Only applicable for ANNUAL commitments.
+   * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
@@ -220,7 +220,7 @@ public interface CapacityCommitmentOrBuilder
    * <pre>
    * The plan this capacity commitment is converted to after commitment_end_time
    * passes. Once the plan is changed, committed period is extended according to
-   * commitment plan. Only applicable for ANNUAL commitments.
+   * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;

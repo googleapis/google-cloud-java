@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
+ * The request for
+ * [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest}
@@ -428,7 +429,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The request for [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
+   * The request for
+   * [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest}

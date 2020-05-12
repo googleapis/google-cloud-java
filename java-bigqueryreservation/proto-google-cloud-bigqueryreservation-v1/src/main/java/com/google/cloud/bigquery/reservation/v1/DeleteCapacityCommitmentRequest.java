@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
+ * The request for
+ * [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest}
@@ -331,7 +332,8 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The request for [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
+   * The request for
+   * [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest}

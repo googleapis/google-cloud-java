@@ -27,8 +27,8 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the admin project(containing project and location),
-   * e.g.:
+   * Required. The resource name of the admin project(containing project and
+   * location), e.g.:
    *   "projects/myproject/locations/US".
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the admin project(containing project and location),
-   * e.g.:
+   * Required. The resource name of the admin project(containing project and
+   * location), e.g.:
    *   "projects/myproject/locations/US".
    * </pre>
    *
@@ -61,9 +61,10 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    * <pre>
    * Please specify resource name as assignee in the query.
-   * e.g., "assignee=projects/myproject"
-   *       "assignee=folders/123"
-   *       "assignee=organizations/456"
+   * Examples:
+   * * `assignee=projects/myproject`
+   * * `assignee=folders/123`
+   * * `assignee=organizations/456`
    * </pre>
    *
    * <code>string query = 2;</code>
@@ -76,9 +77,10 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    * <pre>
    * Please specify resource name as assignee in the query.
-   * e.g., "assignee=projects/myproject"
-   *       "assignee=folders/123"
-   *       "assignee=organizations/456"
+   * Examples:
+   * * `assignee=projects/myproject`
+   * * `assignee=folders/123`
+   * * `assignee=organizations/456`
    * </pre>
    *
    * <code>string query = 2;</code>
@@ -91,7 +93,7 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of items to return.
+   * The maximum number of items to return per page.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>

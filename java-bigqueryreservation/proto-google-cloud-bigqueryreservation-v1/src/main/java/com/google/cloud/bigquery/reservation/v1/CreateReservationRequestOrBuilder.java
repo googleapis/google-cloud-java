@@ -28,7 +28,7 @@ public interface CreateReservationRequestOrBuilder
    *
    * <pre>
    * Required. Project, location. E.g.,
-   *    projects/myproject/locations/US
+   * `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateReservationRequestOrBuilder
    *
    * <pre>
    * Required. Project, location. E.g.,
-   *    projects/myproject/locations/US
+   * `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -85,7 +85,7 @@ public interface CreateReservationRequestOrBuilder
    *
    *
    * <pre>
-   * Content of the new reservation to create.
+   * Definition of the new reservation to create.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -97,7 +97,7 @@ public interface CreateReservationRequestOrBuilder
    *
    *
    * <pre>
-   * Content of the new reservation to create.
+   * Definition of the new reservation to create.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
@@ -109,7 +109,7 @@ public interface CreateReservationRequestOrBuilder
    *
    *
    * <pre>
-   * Content of the new reservation to create.
+   * Definition of the new reservation to create.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>

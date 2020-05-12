@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
+ * The request for
+ * [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.ListReservationsRequest}
@@ -183,7 +184,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The maximum number of items to return.
+   * The maximum number of items to return per page.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -423,7 +424,8 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
+   * The request for
+   * [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.ListReservationsRequest}
@@ -721,7 +723,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -735,7 +737,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -753,7 +755,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

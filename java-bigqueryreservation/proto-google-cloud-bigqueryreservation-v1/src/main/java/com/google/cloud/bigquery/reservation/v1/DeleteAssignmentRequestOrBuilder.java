@@ -27,8 +27,8 @@ public interface DeleteAssignmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the resource, e.g.:
-   *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+   * Required. Name of the resource, e.g.
+   *   `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface DeleteAssignmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the resource, e.g.:
-   *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+   * Required. Name of the resource, e.g.
+   *   `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
    * </pre>
    *
    * <code>

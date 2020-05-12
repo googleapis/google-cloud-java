@@ -25,8 +25,9 @@ package com.google.cloud.bigquery.reservation.v1;
  * Capacity commitment is a way to purchase compute capacity for BigQuery jobs
  * (in the form of slots) with some committed period of usage. Annual
  * commitments renew by default. Commitments can be removed after their
- * commitment end time passes. In order to remove annual commitment, its plan
- * needs to be changed to monthly or flex first.
+ * commitment end time passes.
+ * In order to remove annual commitment, its plan needs to be changed
+ * to monthly or flex first.
  * A capacity commitment resource exists as a child resource of the admin
  * project.
  * </pre>
@@ -213,6 +214,19 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Trial commitments have a committed period of 182 days after becoming
+     * ACTIVE. After that, they are converted to a new commitment based on the
+     * `renewal_plan`. Default `renewal_plan` for Trial commitment is Flex so
+     * that it can be deleted right after committed period ends.
+     * </pre>
+     *
+     * <code>TRIAL = 5;</code>
+     */
+    TRIAL(5),
+    /**
+     *
+     *
+     * <pre>
      * Monthly commitments have a committed period of 30 days after becoming
      * ACTIVE. After that, they are not in a committed period anymore and can be
      * removed any time.
@@ -259,6 +273,19 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>FLEX = 3;</code>
      */
     public static final int FLEX_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Trial commitments have a committed period of 182 days after becoming
+     * ACTIVE. After that, they are converted to a new commitment based on the
+     * `renewal_plan`. Default `renewal_plan` for Trial commitment is Flex so
+     * that it can be deleted right after committed period ends.
+     * </pre>
+     *
+     * <code>TRIAL = 5;</code>
+     */
+    public static final int TRIAL_VALUE = 5;
     /**
      *
      *
@@ -312,6 +339,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
           return COMMITMENT_PLAN_UNSPECIFIED;
         case 3:
           return FLEX;
+        case 5:
+          return TRIAL;
         case 2:
           return MONTHLY;
         case 4:
@@ -556,7 +585,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The resource name of the capacity commitment, e.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   * `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -579,7 +608,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The resource name of the capacity commitment, e.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   * `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -697,8 +726,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -714,8 +743,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -733,8 +762,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -799,7 +828,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The plan this capacity commitment is converted to after commitment_end_time
    * passes. Once the plan is changed, committed period is extended according to
-   * commitment plan. Only applicable for ANNUAL commitments.
+   * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
@@ -816,7 +845,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The plan this capacity commitment is converted to after commitment_end_time
    * passes. Once the plan is changed, committed period is extended according to
-   * commitment plan. Only applicable for ANNUAL commitments.
+   * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
    * </pre>
    *
    * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan renewal_plan = 8;
@@ -1082,8 +1111,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * Capacity commitment is a way to purchase compute capacity for BigQuery jobs
    * (in the form of slots) with some committed period of usage. Annual
    * commitments renew by default. Commitments can be removed after their
-   * commitment end time passes. In order to remove annual commitment, its plan
-   * needs to be changed to monthly or flex first.
+   * commitment end time passes.
+   * In order to remove annual commitment, its plan needs to be changed
+   * to monthly or flex first.
    * A capacity commitment resource exists as a child resource of the admin
    * project.
    * </pre>
@@ -1298,7 +1328,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     * `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1321,7 +1351,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     * `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1344,7 +1374,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     * `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1366,7 +1396,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     * `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1384,7 +1414,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The resource name of the capacity commitment, e.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     * `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1661,8 +1691,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1678,8 +1708,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1701,8 +1731,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1726,8 +1756,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1748,8 +1778,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1777,8 +1807,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1800,8 +1830,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1817,8 +1847,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1838,8 +1868,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2054,7 +2084,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The plan this capacity commitment is converted to after commitment_end_time
      * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL commitments.
+     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
      * </pre>
      *
      * <code>
@@ -2072,7 +2102,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The plan this capacity commitment is converted to after commitment_end_time
      * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL commitments.
+     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
      * </pre>
      *
      * <code>
@@ -2093,7 +2123,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The plan this capacity commitment is converted to after commitment_end_time
      * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL commitments.
+     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
      * </pre>
      *
      * <code>
@@ -2118,7 +2148,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The plan this capacity commitment is converted to after commitment_end_time
      * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL commitments.
+     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
      * </pre>
      *
      * <code>
@@ -2144,7 +2174,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The plan this capacity commitment is converted to after commitment_end_time
      * passes. Once the plan is changed, committed period is extended according to
-     * commitment plan. Only applicable for ANNUAL commitments.
+     * commitment plan. Only applicable for ANNUAL and TRIAL commitments.
      * </pre>
      *
      * <code>

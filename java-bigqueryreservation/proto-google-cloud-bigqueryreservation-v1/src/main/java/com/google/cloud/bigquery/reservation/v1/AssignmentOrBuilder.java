@@ -28,7 +28,7 @@ public interface AssignmentOrBuilder
    *
    * <pre>
    * Output only. Name of the resource. E.g.:
-   * projects/myproject/locations/US/reservations/team1-prod/assignments/123.
+   * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +41,7 @@ public interface AssignmentOrBuilder
    *
    * <pre>
    * Output only. Name of the resource. E.g.:
-   * projects/myproject/locations/US/reservations/team1-prod/assignments/123.
+   * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -55,7 +55,7 @@ public interface AssignmentOrBuilder
    *
    * <pre>
    * The resource which will use the reservation. E.g.
-   * projects/myproject, folders/123, organizations/456.
+   * `projects/myproject`, `folders/123`, or `organizations/456`.
    * </pre>
    *
    * <code>string assignee = 4;</code>
@@ -68,7 +68,7 @@ public interface AssignmentOrBuilder
    *
    * <pre>
    * The resource which will use the reservation. E.g.
-   * projects/myproject, folders/123, organizations/456.
+   * `projects/myproject`, `folders/123`, or `organizations/456`.
    * </pre>
    *
    * <code>string assignee = 4;</code>

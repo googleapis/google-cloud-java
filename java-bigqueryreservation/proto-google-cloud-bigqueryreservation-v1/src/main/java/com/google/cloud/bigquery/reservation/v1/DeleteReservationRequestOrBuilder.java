@@ -28,7 +28,7 @@ public interface DeleteReservationRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the reservation to retrieve. E.g.,
-   *    projects/myproject/locations/US/reservations/team1-prod
+   *    `projects/myproject/locations/US/reservations/team1-prod`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteReservationRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the reservation to retrieve. E.g.,
-   *    projects/myproject/locations/US/reservations/team1-prod
+   *    `projects/myproject/locations/US/reservations/team1-prod`
    * </pre>
    *
    * <code>

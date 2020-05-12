@@ -58,7 +58,7 @@ public interface ListReservationsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of items to return.
+   * The maximum number of items to return per page.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

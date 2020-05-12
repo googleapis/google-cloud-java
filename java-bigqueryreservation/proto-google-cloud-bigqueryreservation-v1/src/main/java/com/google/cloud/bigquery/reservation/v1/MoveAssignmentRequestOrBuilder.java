@@ -28,8 +28,8 @@ public interface MoveAssignmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the assignment,
-   * e.g.:
-   *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+   * e.g.
+   * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
    * </pre>
    *
    * <code>
@@ -44,8 +44,8 @@ public interface MoveAssignmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the assignment,
-   * e.g.:
-   *   projects/myproject/locations/US/reservations/team1-prod/assignments/123
+   * e.g.
+   * `projects/myproject/locations/US/reservations/team1-prod/assignments/123`
    * </pre>
    *
    * <code>
@@ -61,7 +61,7 @@ public interface MoveAssignmentRequestOrBuilder
    *
    * <pre>
    * The new reservation ID, e.g.:
-   *   projects/myotherproject/locations/US/reservations/team2-prod
+   *   `projects/myotherproject/locations/US/reservations/team2-prod`
    * </pre>
    *
    * <code>string destination_id = 3;</code>
@@ -74,7 +74,7 @@ public interface MoveAssignmentRequestOrBuilder
    *
    * <pre>
    * The new reservation ID, e.g.:
-   *   projects/myotherproject/locations/US/reservations/team2-prod
+   *   `projects/myotherproject/locations/US/reservations/team2-prod`
    * </pre>
    *
    * <code>string destination_id = 3;</code>

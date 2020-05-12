@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
+ * The request for
+ * [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.DeleteReservationRequest}
@@ -118,7 +119,7 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Resource name of the reservation to retrieve. E.g.,
-   *    projects/myproject/locations/US/reservations/team1-prod
+   *    `projects/myproject/locations/US/reservations/team1-prod`
    * </pre>
    *
    * <code>
@@ -143,7 +144,7 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. Resource name of the reservation to retrieve. E.g.,
-   *    projects/myproject/locations/US/reservations/team1-prod
+   *    `projects/myproject/locations/US/reservations/team1-prod`
    * </pre>
    *
    * <code>
@@ -329,7 +330,8 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request for [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
+   * The request for
+   * [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.DeleteReservationRequest}
@@ -495,7 +497,7 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>
@@ -520,7 +522,7 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>
@@ -545,7 +547,7 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>
@@ -569,7 +571,7 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>
@@ -589,7 +591,7 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. Resource name of the reservation to retrieve. E.g.,
-     *    projects/myproject/locations/US/reservations/team1-prod
+     *    `projects/myproject/locations/US/reservations/team1-prod`
      * </pre>
      *
      * <code>

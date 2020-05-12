@@ -28,7 +28,7 @@ public interface ReservationOrBuilder
    *
    * <pre>
    * The resource name of the reservation, e.g.,
-   * "projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod".
+   * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface ReservationOrBuilder
    *
    * <pre>
    * The resource name of the reservation, e.g.,
-   * "projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod".
+   * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
    * </pre>
    *
    * <code>string name = 1;</code>

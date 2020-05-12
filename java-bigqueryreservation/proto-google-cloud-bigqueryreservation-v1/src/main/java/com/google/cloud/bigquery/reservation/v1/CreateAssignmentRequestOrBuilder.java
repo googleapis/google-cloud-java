@@ -28,7 +28,7 @@ public interface CreateAssignmentRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name of the assignment
-   * E.g.: projects/myproject/locations/US/reservations/team1-prod
+   * E.g. `projects/myproject/locations/US/reservations/team1-prod`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateAssignmentRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name of the assignment
-   * E.g.: projects/myproject/locations/US/reservations/team1-prod
+   * E.g. `projects/myproject/locations/US/reservations/team1-prod`
    * </pre>
    *
    * <code>
