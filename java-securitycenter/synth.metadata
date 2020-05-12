@@ -4,38 +4,38 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-securitycenter.git",
-        "sha": "b60fe6bf72fbcb81bdb3e052efa9e3be9f3dd4dd"
+        "sha": "760ebf4cf4bd26b10451113bd7141f8303cf238f"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "862cd840dbb0101a0630913217bf8b6d4101c84c",
-        "internalRef": "307739946"
+        "sha": "aed11c01e52921613b9ee469c2d85f5f33175fb7",
+        "internalRef": "310660461"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "862cd840dbb0101a0630913217bf8b6d4101c84c",
-        "internalRef": "307739946"
+        "sha": "aed11c01e52921613b9ee469c2d85f5f33175fb7",
+        "internalRef": "310660461"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "862cd840dbb0101a0630913217bf8b6d4101c84c",
-        "internalRef": "307739946"
+        "sha": "aed11c01e52921613b9ee469c2d85f5f33175fb7",
+        "internalRef": "310660461"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f8a9933e5e98202b04ef427f28d1d79221190fa4"
+        "sha": "98c50772ec23295c64cf0d2ddf199ea52961fd4c"
       }
     }
   ],
