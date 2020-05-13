@@ -12,39 +12,39 @@ Java idiomatic client for [Stackdriver Logging][product-docs].
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
 ```xml
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>libraries-bom</artifactId>
-        <version>4.1.1</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
+<dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-logging</artifactId>
+      <artifactId>libraries-bom</artifactId>
+      <version>5.3.0</version>
+      <type>pom</type>
+      <scope>import</scope>
     </dependency>
   </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-logging</artifactId>
+  </dependency>
+</dependencies>
 
 ```
-
-[//]: # ({x-version-update-start:google-cloud-logging:released})
 
 If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-logging</artifactId>
-      <version>1.101.1</version>
-    </dependency>
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-logging</artifactId>
+  <version>1.101.2-SNAPSHOT</version>
+</dependency>
 
 ```
+
+[//]: # ({x-version-update-start:google-cloud-logging:released})
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
@@ -218,8 +218,8 @@ Java 7 or above is required for using this client.
 
 ## Versioning
 
-This library follows [Semantic Versioning](http://semver.org/).
 
+This library follows [Semantic Versioning](http://semver.org/).
 
 
 ## Contributing
