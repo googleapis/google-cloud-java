@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.132.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.131.2...v0.132.0) (2020-05-13)
+
+
+### Features
+
+* add a Flush API to enable finer grained data commit needs for dataflow. ([#272](https://www.github.com/googleapis/java-bigquerystorage/issues/272)) ([b1c827f](https://www.github.com/googleapis/java-bigquerystorage/commit/b1c827f8d60f747ce71e2288935439b7c16c0076))
+
+
+### Documentation
+
+* update CONTRIBUTING.md to include code formatting ([#534](https://www.github.com/googleapis/java-bigquerystorage/issues/534)) ([#273](https://www.github.com/googleapis/java-bigquerystorage/issues/273)) ([9f071d0](https://www.github.com/googleapis/java-bigquerystorage/commit/9f071d006972f40992284fff1f39162d5b521c5e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.114.0 ([#269](https://www.github.com/googleapis/java-bigquerystorage/issues/269)) ([d71e6b7](https://www.github.com/googleapis/java-bigquerystorage/commit/d71e6b7166bc17579c33400c443ef7c5eec7ee8c))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.3.1 ([#274](https://www.github.com/googleapis/java-bigquerystorage/issues/274)) ([9c9471a](https://www.github.com/googleapis/java-bigquerystorage/commit/9c9471a141db069b40e93d76d5632c5cf8ab6257))
+
 ### [0.131.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.131.1...v0.131.2) (2020-05-08)
 
 
