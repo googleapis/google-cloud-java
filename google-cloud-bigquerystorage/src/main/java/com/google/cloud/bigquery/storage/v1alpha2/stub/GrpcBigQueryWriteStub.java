@@ -31,6 +31,8 @@ import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStream
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
 import com.google.common.collect.ImmutableMap;
@@ -103,6 +105,14 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCommitWriteStreamsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<FlushRowsRequest, FlushRowsResponse>
+      flushRowsMethodDescriptor =
+          MethodDescriptor.<FlushRowsRequest, FlushRowsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.bigquery.storage.v1alpha2.BigQueryWrite/FlushRows")
+              .setRequestMarshaller(ProtoUtils.marshaller(FlushRowsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FlushRowsResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -113,6 +123,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
       finalizeWriteStreamCallable;
   private final UnaryCallable<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsCallable;
+  private final UnaryCallable<FlushRowsRequest, FlushRowsResponse> flushRowsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -212,6 +223,19 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsTransportSettings =
+        GrpcCallSettings.<FlushRowsRequest, FlushRowsResponse>newBuilder()
+            .setMethodDescriptor(flushRowsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<FlushRowsRequest>() {
+                  @Override
+                  public Map<String, String> extract(FlushRowsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("write_stream", String.valueOf(request.getWriteStream()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.createWriteStreamCallable =
         callableFactory.createUnaryCallable(
@@ -234,6 +258,9 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
             batchCommitWriteStreamsTransportSettings,
             settings.batchCommitWriteStreamsSettings(),
             clientContext);
+    this.flushRowsCallable =
+        callableFactory.createUnaryCallable(
+            flushRowsTransportSettings, settings.flushRowsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -258,6 +285,10 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
   public UnaryCallable<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsCallable() {
     return batchCommitWriteStreamsCallable;
+  }
+
+  public UnaryCallable<FlushRowsRequest, FlushRowsResponse> flushRowsCallable() {
+    return flushRowsCallable;
   }
 
   @Override

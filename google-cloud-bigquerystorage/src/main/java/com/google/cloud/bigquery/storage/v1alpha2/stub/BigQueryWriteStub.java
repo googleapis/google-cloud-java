@@ -26,6 +26,8 @@ import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStream
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
 import javax.annotation.Generated;
@@ -60,6 +62,10 @@ public abstract class BigQueryWriteStub implements BackgroundResource {
   public UnaryCallable<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsCallable() {
     throw new UnsupportedOperationException("Not implemented: batchCommitWriteStreamsCallable()");
+  }
+
+  public UnaryCallable<FlushRowsRequest, FlushRowsResponse> flushRowsCallable() {
+    throw new UnsupportedOperationException("Not implemented: flushRowsCallable()");
   }
 
   @Override

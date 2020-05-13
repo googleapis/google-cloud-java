@@ -26,6 +26,8 @@ import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStream
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
 import com.google.cloud.bigquery.storage.v1alpha2.stub.BigQueryWriteStub;
@@ -589,6 +591,108 @@ public class BigQueryWriteClient implements BackgroundResource {
   public final UnaryCallable<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsCallable() {
     return stub.batchCommitWriteStreamsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Flushes rows to a BUFFERED stream. If users are appending rows to BUFFERED stream, flush
+   * operation is required in order for the rows to become available for reading. A Flush operation
+   * flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   WriteStreamName writeStream = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   FlushRowsResponse response = bigQueryWriteClient.flushRows(writeStream);
+   * }
+   * </code></pre>
+   *
+   * @param writeStream Required. The stream that is the target of the flush operation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FlushRowsResponse flushRows(WriteStreamName writeStream) {
+    FlushRowsRequest request =
+        FlushRowsRequest.newBuilder()
+            .setWriteStream(writeStream == null ? null : writeStream.toString())
+            .build();
+    return flushRows(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Flushes rows to a BUFFERED stream. If users are appending rows to BUFFERED stream, flush
+   * operation is required in order for the rows to become available for reading. A Flush operation
+   * flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   WriteStreamName writeStream = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   FlushRowsResponse response = bigQueryWriteClient.flushRows(writeStream.toString());
+   * }
+   * </code></pre>
+   *
+   * @param writeStream Required. The stream that is the target of the flush operation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FlushRowsResponse flushRows(String writeStream) {
+    FlushRowsRequest request = FlushRowsRequest.newBuilder().setWriteStream(writeStream).build();
+    return flushRows(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Flushes rows to a BUFFERED stream. If users are appending rows to BUFFERED stream, flush
+   * operation is required in order for the rows to become available for reading. A Flush operation
+   * flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   WriteStreamName writeStream = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   FlushRowsRequest request = FlushRowsRequest.newBuilder()
+   *     .setWriteStream(writeStream.toString())
+   *     .build();
+   *   FlushRowsResponse response = bigQueryWriteClient.flushRows(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FlushRowsResponse flushRows(FlushRowsRequest request) {
+    return flushRowsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Flushes rows to a BUFFERED stream. If users are appending rows to BUFFERED stream, flush
+   * operation is required in order for the rows to become available for reading. A Flush operation
+   * flushes up to any previously flushed offset in a BUFFERED stream, to the offset specified in
+   * the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+   *   WriteStreamName writeStream = WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+   *   FlushRowsRequest request = FlushRowsRequest.newBuilder()
+   *     .setWriteStream(writeStream.toString())
+   *     .build();
+   *   ApiFuture&lt;FlushRowsResponse&gt; future = bigQueryWriteClient.flushRowsCallable().futureCall(request);
+   *   // Do something
+   *   FlushRowsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<FlushRowsRequest, FlushRowsResponse> flushRowsCallable() {
+    return stub.flushRowsCallable();
   }
 
   @Override

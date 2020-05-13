@@ -8470,6 +8470,1353 @@ public final class Storage {
     }
   }
 
+  public interface FlushRowsRequestOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1alpha2.FlushRowsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The stream that is the target of the flush operation.
+     * </pre>
+     *
+     * <code>
+     * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The writeStream.
+     */
+    java.lang.String getWriteStream();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The stream that is the target of the flush operation.
+     * </pre>
+     *
+     * <code>
+     * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for writeStream.
+     */
+    com.google.protobuf.ByteString getWriteStreamBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Ending offset of the flush operation. Rows before this offset(including
+     * this offset) will be flushed.
+     * </pre>
+     *
+     * <code>int64 offset = 2;</code>
+     *
+     * @return The offset.
+     */
+    long getOffset();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Request message for `FlushRows`.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.bigquery.storage.v1alpha2.FlushRowsRequest}
+   */
+  public static final class FlushRowsRequest extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha2.FlushRowsRequest)
+      FlushRowsRequestOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FlushRowsRequest.newBuilder() to construct.
+    private FlushRowsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FlushRowsRequest() {
+      writeStream_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FlushRowsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private FlushRowsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                writeStream_ = s;
+                break;
+              }
+            case 16:
+              {
+                offset_ = input.readInt64();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1alpha2.Storage
+          .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.bigquery.storage.v1alpha2.Storage
+          .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest.class,
+              com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest.Builder.class);
+    }
+
+    public static final int WRITE_STREAM_FIELD_NUMBER = 1;
+    private volatile java.lang.Object writeStream_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The stream that is the target of the flush operation.
+     * </pre>
+     *
+     * <code>
+     * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The writeStream.
+     */
+    public java.lang.String getWriteStream() {
+      java.lang.Object ref = writeStream_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        writeStream_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The stream that is the target of the flush operation.
+     * </pre>
+     *
+     * <code>
+     * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for writeStream.
+     */
+    public com.google.protobuf.ByteString getWriteStreamBytes() {
+      java.lang.Object ref = writeStream_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        writeStream_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 2;
+    private long offset_;
+    /**
+     *
+     *
+     * <pre>
+     * Ending offset of the flush operation. Rows before this offset(including
+     * this offset) will be flushed.
+     * </pre>
+     *
+     * <code>int64 offset = 2;</code>
+     *
+     * @return The offset.
+     */
+    public long getOffset() {
+      return offset_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getWriteStreamBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, writeStream_);
+      }
+      if (offset_ != 0L) {
+        output.writeInt64(2, offset_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getWriteStreamBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, writeStream_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, offset_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest other =
+          (com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest) obj;
+
+      if (!getWriteStream().equals(other.getWriteStream())) return false;
+      if (getOffset() != other.getOffset()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WRITE_STREAM_FIELD_NUMBER;
+      hash = (53 * hash) + getWriteStream().hashCode();
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Request message for `FlushRows`.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.bigquery.storage.v1alpha2.FlushRowsRequest}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1alpha2.FlushRowsRequest)
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1alpha2.Storage
+            .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.storage.v1alpha2.Storage
+            .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest.class,
+                com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        writeStream_ = "";
+
+        offset_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1alpha2.Storage
+            .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest build() {
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest buildPartial() {
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest result =
+            new com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest(this);
+        result.writeStream_ = writeStream_;
+        result.offset_ = offset_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+                .getDefaultInstance()) return this;
+        if (!other.getWriteStream().isEmpty()) {
+          writeStream_ = other.writeStream_;
+          onChanged();
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object writeStream_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The stream that is the target of the flush operation.
+       * </pre>
+       *
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The writeStream.
+       */
+      public java.lang.String getWriteStream() {
+        java.lang.Object ref = writeStream_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          writeStream_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The stream that is the target of the flush operation.
+       * </pre>
+       *
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for writeStream.
+       */
+      public com.google.protobuf.ByteString getWriteStreamBytes() {
+        java.lang.Object ref = writeStream_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          writeStream_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The stream that is the target of the flush operation.
+       * </pre>
+       *
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The writeStream to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWriteStream(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        writeStream_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The stream that is the target of the flush operation.
+       * </pre>
+       *
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWriteStream() {
+
+        writeStream_ = getDefaultInstance().getWriteStream();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The stream that is the target of the flush operation.
+       * </pre>
+       *
+       * <code>
+       * string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for writeStream to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWriteStreamBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        writeStream_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long offset_;
+      /**
+       *
+       *
+       * <pre>
+       * Ending offset of the flush operation. Rows before this offset(including
+       * this offset) will be flushed.
+       * </pre>
+       *
+       * <code>int64 offset = 2;</code>
+       *
+       * @return The offset.
+       */
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ending offset of the flush operation. Rows before this offset(including
+       * this offset) will be flushed.
+       * </pre>
+       *
+       * <code>int64 offset = 2;</code>
+       *
+       * @param value The offset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffset(long value) {
+
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Ending offset of the flush operation. Rows before this offset(including
+       * this offset) will be flushed.
+       * </pre>
+       *
+       * <code>int64 offset = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOffset() {
+
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1alpha2.FlushRowsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1alpha2.FlushRowsRequest)
+    private static final com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest();
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FlushRowsRequest> PARSER =
+        new com.google.protobuf.AbstractParser<FlushRowsRequest>() {
+          @java.lang.Override
+          public FlushRowsRequest parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new FlushRowsRequest(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<FlushRowsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FlushRowsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface FlushRowsResponseOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1alpha2.FlushRowsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The rows before this offset (including this offset) are flushed.
+     * </pre>
+     *
+     * <code>int64 offset = 1;</code>
+     *
+     * @return The offset.
+     */
+    long getOffset();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Respond message for `FlushRows`.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.bigquery.storage.v1alpha2.FlushRowsResponse}
+   */
+  public static final class FlushRowsResponse extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha2.FlushRowsResponse)
+      FlushRowsResponseOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FlushRowsResponse.newBuilder() to construct.
+    private FlushRowsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FlushRowsResponse() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FlushRowsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private FlushRowsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                offset_ = input.readInt64();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1alpha2.Storage
+          .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.bigquery.storage.v1alpha2.Storage
+          .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse.class,
+              com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse.Builder.class);
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 1;
+    private long offset_;
+    /**
+     *
+     *
+     * <pre>
+     * The rows before this offset (including this offset) are flushed.
+     * </pre>
+     *
+     * <code>int64 offset = 1;</code>
+     *
+     * @return The offset.
+     */
+    public long getOffset() {
+      return offset_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (offset_ != 0L) {
+        output.writeInt64(1, offset_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, offset_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse other =
+          (com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse) obj;
+
+      if (getOffset() != other.getOffset()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Respond message for `FlushRows`.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.bigquery.storage.v1alpha2.FlushRowsResponse}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1alpha2.FlushRowsResponse)
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1alpha2.Storage
+            .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.storage.v1alpha2.Storage
+            .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse.class,
+                com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        offset_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1alpha2.Storage
+            .internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse build() {
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse buildPartial() {
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse result =
+            new com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse(this);
+        result.offset_ = offset_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+                .getDefaultInstance()) return this;
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long offset_;
+      /**
+       *
+       *
+       * <pre>
+       * The rows before this offset (including this offset) are flushed.
+       * </pre>
+       *
+       * <code>int64 offset = 1;</code>
+       *
+       * @return The offset.
+       */
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The rows before this offset (including this offset) are flushed.
+       * </pre>
+       *
+       * <code>int64 offset = 1;</code>
+       *
+       * @param value The offset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffset(long value) {
+
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The rows before this offset (including this offset) are flushed.
+       * </pre>
+       *
+       * <code>int64 offset = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOffset() {
+
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1alpha2.FlushRowsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1alpha2.FlushRowsResponse)
+    private static final com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse();
+    }
+
+    public static com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FlushRowsResponse> PARSER =
+        new com.google.protobuf.AbstractParser<FlushRowsResponse>() {
+          @java.lang.Override
+          public FlushRowsResponse parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new FlushRowsResponse(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<FlushRowsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FlushRowsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_storage_v1alpha2_CreateWriteStreamRequest_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8506,6 +9853,14 @@ public final class Storage {
       internal_static_google_cloud_bigquery_storage_v1alpha2_FinalizeWriteStreamResponse_descriptor;
   private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1alpha2_FinalizeWriteStreamResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -8554,45 +9909,54 @@ public final class Storage {
           + "mestamp\"^\n\032FinalizeWriteStreamRequest\022@\n"
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n*bigquerystorage.goo"
           + "gleapis.com/WriteStream\"0\n\033FinalizeWrite"
-          + "StreamResponse\022\021\n\trow_count\030\001 \001(\0032\310\n\n\rBi"
-          + "gQueryWrite\022\351\001\n\021CreateWriteStream\022@.goog"
-          + "le.cloud.bigquery.storage.v1alpha2.Creat"
-          + "eWriteStreamRequest\0323.google.cloud.bigqu"
-          + "ery.storage.v1alpha2.WriteStream\"]\202\323\344\223\002A"
-          + "\"1/v1alpha2/{parent=projects/*/datasets/"
-          + "*/tables/*}:\014write_stream\332A\023parent,write"
-          + "_stream\022\344\001\n\nAppendRows\0229.google.cloud.bi"
-          + "gquery.storage.v1alpha2.AppendRowsReques"
-          + "t\032:.google.cloud.bigquery.storage.v1alph"
-          + "a2.AppendRowsResponse\"[\202\323\344\223\002F\"A/v1alpha2"
-          + "/{write_stream=projects/*/datasets/*/tab"
-          + "les/*/streams/*}:\001*\332A\014write_stream(\0010\001\022\321"
-          + "\001\n\016GetWriteStream\022=.google.cloud.bigquer"
-          + "y.storage.v1alpha2.GetWriteStreamRequest"
-          + "\0323.google.cloud.bigquery.storage.v1alpha"
-          + "2.WriteStream\"K\202\323\344\223\002>\"9/v1alpha2/{name=p"
-          + "rojects/*/datasets/*/tables/*/streams/*}"
-          + ":\001*\332A\004name\022\353\001\n\023FinalizeWriteStream\022B.goo"
-          + "gle.cloud.bigquery.storage.v1alpha2.Fina"
-          + "lizeWriteStreamRequest\032C.google.cloud.bi"
-          + "gquery.storage.v1alpha2.FinalizeWriteStr"
-          + "eamResponse\"K\202\323\344\223\002>\"9/v1alpha2/{name=pro"
-          + "jects/*/datasets/*/tables/*/streams/*}:\001"
-          + "*\332A\004name\022\356\001\n\027BatchCommitWriteStreams\022F.g"
-          + "oogle.cloud.bigquery.storage.v1alpha2.Ba"
-          + "tchCommitWriteStreamsRequest\032G.google.cl"
-          + "oud.bigquery.storage.v1alpha2.BatchCommi"
-          + "tWriteStreamsResponse\"B\202\323\344\223\0023\0221/v1alpha2"
-          + "/{parent=projects/*/datasets/*/tables/*}"
-          + "\332A\006parent\032\260\001\312A\036bigquerystorage.googleapi"
-          + "s.com\322A\213\001https://www.googleapis.com/auth"
-          + "/bigquery,https://www.googleapis.com/aut"
-          + "h/bigquery.insertdata,https://www.google"
-          + "apis.com/auth/cloud-platformB{\n*com.goog"
-          + "le.cloud.bigquery.storage.v1alpha2ZMgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "bigquery/storage/v1alpha2;storageb\006proto"
-          + "3"
+          + "StreamResponse\022\021\n\trow_count\030\001 \001(\003\"l\n\020Flu"
+          + "shRowsRequest\022H\n\014write_stream\030\001 \001(\tB2\340A\002"
+          + "\372A,\n*bigquerystorage.googleapis.com/Writ"
+          + "eStream\022\016\n\006offset\030\002 \001(\003\"#\n\021FlushRowsResp"
+          + "onse\022\016\n\006offset\030\001 \001(\0032\250\014\n\rBigQueryWrite\022\351"
+          + "\001\n\021CreateWriteStream\022@.google.cloud.bigq"
+          + "uery.storage.v1alpha2.CreateWriteStreamR"
+          + "equest\0323.google.cloud.bigquery.storage.v"
+          + "1alpha2.WriteStream\"]\202\323\344\223\002A\"1/v1alpha2/{"
+          + "parent=projects/*/datasets/*/tables/*}:\014"
+          + "write_stream\332A\023parent,write_stream\022\344\001\n\nA"
+          + "ppendRows\0229.google.cloud.bigquery.storag"
+          + "e.v1alpha2.AppendRowsRequest\032:.google.cl"
+          + "oud.bigquery.storage.v1alpha2.AppendRows"
+          + "Response\"[\202\323\344\223\002F\"A/v1alpha2/{write_strea"
+          + "m=projects/*/datasets/*/tables/*/streams"
+          + "/*}:\001*\332A\014write_stream(\0010\001\022\321\001\n\016GetWriteSt"
+          + "ream\022=.google.cloud.bigquery.storage.v1a"
+          + "lpha2.GetWriteStreamRequest\0323.google.clo"
+          + "ud.bigquery.storage.v1alpha2.WriteStream"
+          + "\"K\202\323\344\223\002>\"9/v1alpha2/{name=projects/*/dat"
+          + "asets/*/tables/*/streams/*}:\001*\332A\004name\022\353\001"
+          + "\n\023FinalizeWriteStream\022B.google.cloud.big"
+          + "query.storage.v1alpha2.FinalizeWriteStre"
+          + "amRequest\032C.google.cloud.bigquery.storag"
+          + "e.v1alpha2.FinalizeWriteStreamResponse\"K"
+          + "\202\323\344\223\002>\"9/v1alpha2/{name=projects/*/datas"
+          + "ets/*/tables/*/streams/*}:\001*\332A\004name\022\356\001\n\027"
+          + "BatchCommitWriteStreams\022F.google.cloud.b"
+          + "igquery.storage.v1alpha2.BatchCommitWrit"
+          + "eStreamsRequest\032G.google.cloud.bigquery."
+          + "storage.v1alpha2.BatchCommitWriteStreams"
+          + "Response\"B\202\323\344\223\0023\0221/v1alpha2/{parent=proj"
+          + "ects/*/datasets/*/tables/*}\332A\006parent\022\335\001\n"
+          + "\tFlushRows\0228.google.cloud.bigquery.stora"
+          + "ge.v1alpha2.FlushRowsRequest\0329.google.cl"
+          + "oud.bigquery.storage.v1alpha2.FlushRowsR"
+          + "esponse\"[\202\323\344\223\002F\"A/v1alpha2/{write_stream"
+          + "=projects/*/datasets/*/tables/*/streams/"
+          + "*}:\001*\332A\014write_stream\032\260\001\312A\036bigquerystorag"
+          + "e.googleapis.com\322A\213\001https://www.googleap"
+          + "is.com/auth/bigquery,https://www.googlea"
+          + "pis.com/auth/bigquery.insertdata,https:/"
+          + "/www.googleapis.com/auth/cloud-platformB"
+          + "{\n*com.google.cloud.bigquery.storage.v1a"
+          + "lpha2ZMgoogle.golang.org/genproto/google"
+          + "apis/cloud/bigquery/storage/v1alpha2;sto"
+          + "rageb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -8683,6 +10047,22 @@ public final class Storage {
             internal_static_google_cloud_bigquery_storage_v1alpha2_FinalizeWriteStreamResponse_descriptor,
             new java.lang.String[] {
               "RowCount",
+            });
+    internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsRequest_descriptor,
+            new java.lang.String[] {
+              "WriteStream", "Offset",
+            });
+    internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1alpha2_FlushRowsResponse_descriptor,
+            new java.lang.String[] {
+              "Offset",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

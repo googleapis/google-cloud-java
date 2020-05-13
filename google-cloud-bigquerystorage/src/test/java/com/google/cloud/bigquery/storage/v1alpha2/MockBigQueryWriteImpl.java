@@ -24,6 +24,8 @@ import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStream
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
 import com.google.protobuf.AbstractMessage;
@@ -150,6 +152,21 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
     if (response instanceof BatchCommitWriteStreamsResponse) {
       requests.add(request);
       responseObserver.onNext((BatchCommitWriteStreamsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void flushRows(
+      FlushRowsRequest request, StreamObserver<FlushRowsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof FlushRowsResponse) {
+      requests.add(request);
+      responseObserver.onNext((FlushRowsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

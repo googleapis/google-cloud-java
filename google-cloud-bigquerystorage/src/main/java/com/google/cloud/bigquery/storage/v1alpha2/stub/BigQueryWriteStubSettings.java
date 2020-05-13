@@ -38,6 +38,8 @@ import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStream
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
 import com.google.common.collect.ImmutableList;
@@ -99,6 +101,7 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
       finalizeWriteStreamSettings;
   private final UnaryCallSettings<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsSettings;
+  private final UnaryCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsSettings;
 
   /** Returns the object with the settings used for calls to createWriteStream. */
   public UnaryCallSettings<CreateWriteStreamRequest, WriteStream> createWriteStreamSettings() {
@@ -125,6 +128,11 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
   public UnaryCallSettings<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsSettings() {
     return batchCommitWriteStreamsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to flushRows. */
+  public UnaryCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsSettings() {
+    return flushRowsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -201,6 +209,7 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
     getWriteStreamSettings = settingsBuilder.getWriteStreamSettings().build();
     finalizeWriteStreamSettings = settingsBuilder.finalizeWriteStreamSettings().build();
     batchCommitWriteStreamsSettings = settingsBuilder.batchCommitWriteStreamsSettings().build();
+    flushRowsSettings = settingsBuilder.flushRowsSettings().build();
   }
 
   /** Builder for BigQueryWriteStubSettings. */
@@ -218,6 +227,7 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
     private final UnaryCallSettings.Builder<
             BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
         batchCommitWriteStreamsSettings;
+    private final UnaryCallSettings.Builder<FlushRowsRequest, FlushRowsResponse> flushRowsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -270,12 +280,15 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
 
       batchCommitWriteStreamsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      flushRowsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createWriteStreamSettings,
               getWriteStreamSettings,
               finalizeWriteStreamSettings,
-              batchCommitWriteStreamsSettings);
+              batchCommitWriteStreamsSettings,
+              flushRowsSettings);
 
       initDefaults(this);
     }
@@ -311,6 +324,11 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .flushRowsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -322,13 +340,15 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
       getWriteStreamSettings = settings.getWriteStreamSettings.toBuilder();
       finalizeWriteStreamSettings = settings.finalizeWriteStreamSettings.toBuilder();
       batchCommitWriteStreamsSettings = settings.batchCommitWriteStreamsSettings.toBuilder();
+      flushRowsSettings = settings.flushRowsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createWriteStreamSettings,
               getWriteStreamSettings,
               finalizeWriteStreamSettings,
-              batchCommitWriteStreamsSettings);
+              batchCommitWriteStreamsSettings,
+              flushRowsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -375,6 +395,11 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
             BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
         batchCommitWriteStreamsSettings() {
       return batchCommitWriteStreamsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to flushRows. */
+    public UnaryCallSettings.Builder<FlushRowsRequest, FlushRowsResponse> flushRowsSettings() {
+      return flushRowsSettings;
     }
 
     @Override

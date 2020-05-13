@@ -33,6 +33,8 @@ import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStream
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
 import com.google.cloud.bigquery.storage.v1alpha2.stub.BigQueryWriteStubSettings;
@@ -100,6 +102,11 @@ public class BigQueryWriteSettings extends ClientSettings<BigQueryWriteSettings>
   public UnaryCallSettings<BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsSettings() {
     return ((BigQueryWriteStubSettings) getStubSettings()).batchCommitWriteStreamsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to flushRows. */
+  public UnaryCallSettings<FlushRowsRequest, FlushRowsResponse> flushRowsSettings() {
+    return ((BigQueryWriteStubSettings) getStubSettings()).flushRowsSettings();
   }
 
   public static final BigQueryWriteSettings create(BigQueryWriteStubSettings stub)
@@ -227,6 +234,11 @@ public class BigQueryWriteSettings extends ClientSettings<BigQueryWriteSettings>
             BatchCommitWriteStreamsRequest, BatchCommitWriteStreamsResponse>
         batchCommitWriteStreamsSettings() {
       return getStubSettingsBuilder().batchCommitWriteStreamsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to flushRows. */
+    public UnaryCallSettings.Builder<FlushRowsRequest, FlushRowsResponse> flushRowsSettings() {
+      return getStubSettingsBuilder().flushRowsSettings();
     }
 
     @Override

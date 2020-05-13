@@ -291,6 +291,52 @@ public final class BigQueryWriteGrpc {
     return getBatchCommitWriteStreamsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest,
+          com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>
+      getFlushRowsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FlushRows",
+      requestType = com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest.class,
+      responseType = com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest,
+          com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>
+      getFlushRowsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest,
+            com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>
+        getFlushRowsMethod;
+    if ((getFlushRowsMethod = BigQueryWriteGrpc.getFlushRowsMethod) == null) {
+      synchronized (BigQueryWriteGrpc.class) {
+        if ((getFlushRowsMethod = BigQueryWriteGrpc.getFlushRowsMethod) == null) {
+          BigQueryWriteGrpc.getFlushRowsMethod =
+              getFlushRowsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest,
+                          com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FlushRows"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new BigQueryWriteMethodDescriptorSupplier("FlushRows"))
+                      .build();
+        }
+      }
+    }
+    return getFlushRowsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BigQueryWriteStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BigQueryWriteStub> factory =
@@ -436,6 +482,25 @@ public final class BigQueryWriteGrpc {
       asyncUnimplementedUnaryCall(getBatchCommitWriteStreamsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Flushes rows to a BUFFERED stream.
+     * If users are appending rows to BUFFERED stream, flush operation is
+     * required in order for the rows to become available for reading. A
+     * Flush operation flushes up to any previously flushed offset in a BUFFERED
+     * stream, to the offset specified in the request.
+     * </pre>
+     */
+    public void flushRows(
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getFlushRowsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -476,6 +541,13 @@ public final class BigQueryWriteGrpc {
                       com.google.cloud.bigquery.storage.v1alpha2.Storage
                           .BatchCommitWriteStreamsResponse>(
                       this, METHODID_BATCH_COMMIT_WRITE_STREAMS)))
+          .addMethod(
+              getFlushRowsMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest,
+                      com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>(
+                      this, METHODID_FLUSH_ROWS)))
           .build();
     }
   }
@@ -605,6 +677,26 @@ public final class BigQueryWriteGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Flushes rows to a BUFFERED stream.
+     * If users are appending rows to BUFFERED stream, flush operation is
+     * required in order for the rows to become available for reading. A
+     * Flush operation flushes up to any previously flushed offset in a BUFFERED
+     * stream, to the offset specified in the request.
+     * </pre>
+     */
+    public void flushRows(
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getFlushRowsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -684,6 +776,22 @@ public final class BigQueryWriteGrpc {
                 request) {
       return blockingUnaryCall(
           getChannel(), getBatchCommitWriteStreamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Flushes rows to a BUFFERED stream.
+     * If users are appending rows to BUFFERED stream, flush operation is
+     * required in order for the rows to become available for reading. A
+     * Flush operation flushes up to any previously flushed offset in a BUFFERED
+     * stream, to the offset specified in the request.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse flushRows(
+        com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest request) {
+      return blockingUnaryCall(getChannel(), getFlushRowsMethod(), getCallOptions(), request);
     }
   }
 
@@ -772,13 +880,31 @@ public final class BigQueryWriteGrpc {
       return futureUnaryCall(
           getChannel().newCall(getBatchCommitWriteStreamsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Flushes rows to a BUFFERED stream.
+     * If users are appending rows to BUFFERED stream, flush operation is
+     * required in order for the rows to become available for reading. A
+     * Flush operation flushes up to any previously flushed offset in a BUFFERED
+     * stream, to the offset specified in the request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>
+        flushRows(com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest request) {
+      return futureUnaryCall(getChannel().newCall(getFlushRowsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_WRITE_STREAM = 0;
   private static final int METHODID_GET_WRITE_STREAM = 1;
   private static final int METHODID_FINALIZE_WRITE_STREAM = 2;
   private static final int METHODID_BATCH_COMMIT_WRITE_STREAMS = 3;
-  private static final int METHODID_APPEND_ROWS = 4;
+  private static final int METHODID_FLUSH_ROWS = 4;
+  private static final int METHODID_APPEND_ROWS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -827,6 +953,13 @@ public final class BigQueryWriteGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.bigquery.storage.v1alpha2.Storage
                           .BatchCommitWriteStreamsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FLUSH_ROWS:
+          serviceImpl.flushRows(
+              (com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse>)
                   responseObserver);
           break;
         default:
@@ -904,6 +1037,7 @@ public final class BigQueryWriteGrpc {
                       .addMethod(getGetWriteStreamMethod())
                       .addMethod(getFinalizeWriteStreamMethod())
                       .addMethod(getBatchCommitWriteStreamsMethod())
+                      .addMethod(getFlushRowsMethod())
                       .build();
         }
       }

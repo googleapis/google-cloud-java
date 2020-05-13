@@ -33,6 +33,8 @@ import com.google.cloud.bigquery.storage.v1alpha2.Storage.BatchCommitWriteStream
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsRequest;
+import com.google.cloud.bigquery.storage.v1alpha2.Storage.FlushRowsResponse;
 import com.google.cloud.bigquery.storage.v1alpha2.Storage.GetWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream;
 import com.google.protobuf.AbstractMessage;
@@ -302,6 +304,47 @@ public class BigQueryWriteClientTest {
       TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
 
       client.batchCommitWriteStreams(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void flushRowsTest() {
+    long offset = 1019779949L;
+    FlushRowsResponse expectedResponse = FlushRowsResponse.newBuilder().setOffset(offset).build();
+    mockBigQueryWrite.addResponse(expectedResponse);
+
+    WriteStreamName writeStream =
+        WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+
+    FlushRowsResponse actualResponse = client.flushRows(writeStream);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigQueryWrite.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FlushRowsRequest actualRequest = (FlushRowsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(writeStream, WriteStreamName.parse(actualRequest.getWriteStream()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void flushRowsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockBigQueryWrite.addException(exception);
+
+    try {
+      WriteStreamName writeStream =
+          WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]");
+
+      client.flushRows(writeStream);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
