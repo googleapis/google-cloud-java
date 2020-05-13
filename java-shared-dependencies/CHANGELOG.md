@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.3.0...v0.3.1) (2020-05-13)
+
+
+### Dependencies
+
+* update autovalue.version to v1.7.2 ([#35](https://www.github.com/googleapis/java-shared-dependencies/issues/35)) ([50a1511](https://www.github.com/googleapis/java-shared-dependencies/commit/50a1511a47362a2de5cce26de0f0fbd6ea31c7cb))
+
+
+### Documentation
+
+* update CONTRIBUTING.md to include code formatting ([#534](https://www.github.com/googleapis/java-shared-dependencies/issues/534)) ([#34](https://www.github.com/googleapis/java-shared-dependencies/issues/34)) ([c916354](https://www.github.com/googleapis/java-shared-dependencies/commit/c91635446a457e01aa38e2cc384d3fd5d43c1b3b))
+
 ## [0.3.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.2.0...v0.3.0) (2020-05-05)
 
 
