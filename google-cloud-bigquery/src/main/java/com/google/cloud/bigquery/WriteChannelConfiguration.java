@@ -28,6 +28,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -53,6 +54,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final TimePartitioning timePartitioning;
   private final Clustering clustering;
   private final Boolean useAvroLogicalTypes;
+  private final Map<String, String> labels;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -70,6 +72,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private TimePartitioning timePartitioning;
     private Clustering clustering;
     private Boolean useAvroLogicalTypes;
+    private Map<String, String> labels;
 
     private Builder() {}
 
@@ -89,6 +92,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.timePartitioning = writeChannelConfiguration.timePartitioning;
       this.clustering = writeChannelConfiguration.clustering;
       this.useAvroLogicalTypes = writeChannelConfiguration.useAvroLogicalTypes;
+      this.labels = writeChannelConfiguration.labels;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -162,6 +166,9 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         this.clustering = Clustering.fromPb(loadConfigurationPb.getClustering());
       }
       this.useAvroLogicalTypes = loadConfigurationPb.getUseAvroLogicalTypes();
+      if (configurationPb.getLabels() != null) {
+        this.labels = configurationPb.getLabels();
+      }
     }
 
     @Override
@@ -250,6 +257,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
+    public Builder setLabels(Map<String, String> labels) {
+      this.labels = labels;
+      return this;
+    }
+
     @Override
     public WriteChannelConfiguration build() {
       return new WriteChannelConfiguration(this);
@@ -271,6 +283,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.timePartitioning = builder.timePartitioning;
     this.clustering = builder.clustering;
     this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
+    this.labels = builder.labels;
   }
 
   @Override
@@ -355,6 +368,10 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     return useAvroLogicalTypes;
   }
 
+  public Map<String, String> getLabels() {
+    return labels;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -375,7 +392,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         .add("autodetect", autodetect)
         .add("timePartitioning", timePartitioning)
         .add("clustering", clustering)
-        .add("useAvroLogicalTypes", useAvroLogicalTypes);
+        .add("useAvroLogicalTypes", useAvroLogicalTypes)
+        .add("labels", labels);
   }
 
   @Override
@@ -405,7 +423,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         autodetect,
         timePartitioning,
         clustering,
-        useAvroLogicalTypes);
+        useAvroLogicalTypes,
+        labels);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -416,6 +435,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
+    com.google.api.services.bigquery.model.JobConfiguration jobConfiguration =
+        new com.google.api.services.bigquery.model.JobConfiguration();
     JobConfigurationLoad loadConfigurationPb = new JobConfigurationLoad();
     loadConfigurationPb.setDestinationTable(destinationTable.toPb());
     if (createDisposition != null) {
@@ -471,8 +492,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       loadConfigurationPb.setClustering(clustering.toPb());
     }
     loadConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
-    return new com.google.api.services.bigquery.model.JobConfiguration()
-        .setLoad(loadConfigurationPb);
+    if (labels != null) {
+      jobConfiguration.setLabels(labels);
+    }
+    jobConfiguration.setLoad(loadConfigurationPb);
+    return jobConfiguration;
   }
 
   static WriteChannelConfiguration fromPb(

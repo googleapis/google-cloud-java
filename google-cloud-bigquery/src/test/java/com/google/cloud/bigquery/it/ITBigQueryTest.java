@@ -2106,6 +2106,40 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testInsertFromFileWithLabels()
+      throws InterruptedException, IOException, TimeoutException {
+    String destinationTableName = "test_insert_from_file_table_with_labels";
+    TableId tableId = TableId.of(DATASET, destinationTableName);
+    WriteChannelConfiguration configuration =
+        WriteChannelConfiguration.newBuilder(tableId)
+            .setFormatOptions(FormatOptions.json())
+            .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+            .setSchema(TABLE_SCHEMA)
+            .setLabels(LABELS)
+            .build();
+    TableDataWriteChannel channel = bigquery.writer(configuration);
+    try {
+      // A zero byte write should not throw an exception.
+      assertEquals(0, channel.write(ByteBuffer.wrap("".getBytes(StandardCharsets.UTF_8))));
+    } finally {
+      // Force the channel to flush by calling `close`.
+      channel.close();
+    }
+    channel = bigquery.writer(configuration);
+    try {
+      channel.write(ByteBuffer.wrap(JSON_CONTENT.getBytes(StandardCharsets.UTF_8)));
+    } finally {
+      channel.close();
+    }
+    Job job = channel.getJob().waitFor();
+    LoadJobConfiguration jobConfiguration = job.getConfiguration();
+    assertEquals(TABLE_SCHEMA, jobConfiguration.getSchema());
+    assertEquals(LABELS, jobConfiguration.getLabels());
+    assertNull(job.getStatus().getError());
+    assertTrue(bigquery.delete(tableId));
+  }
+
+  @Test
   public void testLocation() throws Exception {
     String location = "EU";
     String wrongLocation = "US";

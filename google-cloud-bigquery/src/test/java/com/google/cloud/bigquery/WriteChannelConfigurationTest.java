@@ -23,8 +23,10 @@ import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 import org.junit.Test;
 
 public class WriteChannelConfigurationTest {
@@ -55,6 +57,8 @@ public class WriteChannelConfigurationTest {
   private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
   private static final Clustering CLUSTERING =
       Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
+  private static final Map<String, String> LABELS =
+      ImmutableMap.of("test-job-name", "test-write-channel");
   private static final WriteChannelConfiguration LOAD_CONFIGURATION_CSV =
       WriteChannelConfiguration.newBuilder(TABLE_ID)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -68,6 +72,7 @@ public class WriteChannelConfigurationTest {
           .setAutodetect(AUTODETECT)
           .setTimePartitioning(TIME_PARTITIONING)
           .setClustering(CLUSTERING)
+          .setLabels(LABELS)
           .build();
 
   private static final DatastoreBackupOptions BACKUP_OPTIONS =
@@ -151,6 +156,7 @@ public class WriteChannelConfigurationTest {
     assertEquals(IGNORE_UNKNOWN_VALUES, LOAD_CONFIGURATION_CSV.ignoreUnknownValues());
     assertEquals(MAX_BAD_RECORDS, LOAD_CONFIGURATION_CSV.getMaxBadRecords());
     assertEquals(TABLE_SCHEMA, LOAD_CONFIGURATION_CSV.getSchema());
+    assertEquals(LABELS, LOAD_CONFIGURATION_CSV.getLabels());
     assertEquals(BACKUP_OPTIONS, LOAD_CONFIGURATION_BACKUP.getDatastoreBackupOptions());
     assertEquals(SCHEMA_UPDATE_OPTIONS, LOAD_CONFIGURATION_CSV.getSchemaUpdateOptions());
     assertEquals(SCHEMA_UPDATE_OPTIONS, LOAD_CONFIGURATION_BACKUP.getSchemaUpdateOptions());
@@ -218,5 +224,6 @@ public class WriteChannelConfigurationTest {
     assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
     assertEquals(expected.getClustering(), value.getClustering());
     assertEquals(expected.getUseAvroLogicalTypes(), value.getUseAvroLogicalTypes());
+    assertEquals(expected.getLabels(), value.getLabels());
   }
 }
