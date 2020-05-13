@@ -69,7 +69,7 @@
     </google-api-services-bigquery.version>
     <auto-value.version>1.7.2</auto-value.version>
     <auto-value-annotations.version>${auto-value.version}</auto-value-annotations.version>
-    <auto-service-annotations.version>1.0-rc6</auto-service-annotations.version>
+    <auto-service-annotations.version>1.0-rc7</auto-service-annotations.version>
   </properties>
 
   <dependencyManagement>
