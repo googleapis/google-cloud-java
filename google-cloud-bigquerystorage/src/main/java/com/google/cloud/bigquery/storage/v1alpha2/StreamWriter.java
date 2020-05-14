@@ -146,7 +146,6 @@ public class StreamWriter implements AutoCloseable {
       stubSettings =
           BigQueryWriteSettings.newBuilder()
               .setCredentialsProvider(builder.credentialsProvider)
-              .setExecutorProvider(builder.executorProvider)
               .setTransportChannelProvider(builder.channelProvider)
               .setEndpoint(builder.endpoint)
               .build();
@@ -250,7 +249,6 @@ public class StreamWriter implements AutoCloseable {
    * @throws IOException
    */
   public void refreshAppend() throws IOException, InterruptedException {
-    LOG.info("Establish a write connection.");
     synchronized (this) {
       if (shutdown.get()) {
         LOG.warning("Cannot refresh on a already shutdown writer.");
@@ -258,7 +256,7 @@ public class StreamWriter implements AutoCloseable {
       }
       // There could be a moment, stub is not yet initialized.
       if (clientStream != null) {
-        LOG.info("Closing the stream");
+        LOG.info("Closing the stream " + streamName);
         clientStream.closeSend();
       }
       messagesBatch.resetAttachSchema();

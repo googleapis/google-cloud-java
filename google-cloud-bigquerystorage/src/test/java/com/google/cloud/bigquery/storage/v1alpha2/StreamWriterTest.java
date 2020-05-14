@@ -516,7 +516,7 @@ public class StreamWriterTest {
     StatusRuntimeException transientError = new StatusRuntimeException(Status.UNAVAILABLE);
     testBigQueryWrite.addException(transientError);
     testBigQueryWrite.addException(transientError);
-    ApiFuture<AppendRowsResponse> future3 = sendTestMessage(writer, new String[] {"m3"});
+    ApiFuture<AppendRowsResponse> future3 = sendTestMessage(writer, new String[] {"toomanyretry"});
     try {
       future3.get();
       Assert.fail("This should fail.");
@@ -821,12 +821,11 @@ public class StreamWriterTest {
 
   @Test
   public void testAwaitTermination() throws Exception {
-    StreamWriter writer =
-        getTestStreamWriterBuilder().setExecutorProvider(SINGLE_THREAD_EXECUTOR).build();
+    StreamWriter writer = getTestStreamWriterBuilder().build();
     testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     writer.shutdown();
-    assertTrue(writer.awaitTermination(2, TimeUnit.MINUTES));
+    assertTrue(writer.awaitTermination(1, TimeUnit.MINUTES));
   }
 
   @Test
