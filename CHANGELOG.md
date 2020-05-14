@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.115.0](https://www.github.com/googleapis/java-bigquery/compare/v1.114.0...v1.115.0) (2020-05-13)
+
+
+### Features
+
+* add extract model for extractjobconfiguration ([#227](https://www.github.com/googleapis/java-bigquery/issues/227)) ([9e8cd76](https://www.github.com/googleapis/java-bigquery/commit/9e8cd76759e584d743a1d5c310d8cd7299b3a39d))
+* add labels for writechannelconfiguration ([#347](https://www.github.com/googleapis/java-bigquery/issues/347)) ([7dbd0df](https://www.github.com/googleapis/java-bigquery/commit/7dbd0df6e46a0760c28925ea65eed9c306c22f21))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20200429-1.30.9 ([#349](https://www.github.com/googleapis/java-bigquery/issues/349)) ([cf276d0](https://www.github.com/googleapis/java-bigquery/commit/cf276d02fe4006dc8b8e7fa3f6d062587bf626fa))
+* update dependency com.google.auto.service:auto-service-annotations to v1.0-rc7 ([#352](https://www.github.com/googleapis/java-bigquery/issues/352)) ([f66c082](https://www.github.com/googleapis/java-bigquery/commit/f66c08200c1b7847bfe8b5036ae3c89f4ed9aefa))
+* update dependency com.google.auto.value:auto-value to v1.7.2 ([#350](https://www.github.com/googleapis/java-bigquery/issues/350)) ([a6ae45f](https://www.github.com/googleapis/java-bigquery/commit/a6ae45f11a5fca33d066d08b0975e0b9c1c4fca9))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.3.1 ([#351](https://www.github.com/googleapis/java-bigquery/issues/351)) ([002d863](https://www.github.com/googleapis/java-bigquery/commit/002d863c88916f196685f06d16822f6824a7eb84))
+
+
+### Documentation
+
+* update CONTRIBUTING.md to include code formatting ([#534](https://www.github.com/googleapis/java-bigquery/issues/534)) ([#346](https://www.github.com/googleapis/java-bigquery/issues/346)) ([df0c3e6](https://www.github.com/googleapis/java-bigquery/commit/df0c3e6767890e1b1cc164a6d06ce4fabc8edd7a))
+
 ## [1.114.0](https://www.github.com/googleapis/java-bigquery/compare/v1.113.0...v1.114.0) (2020-05-11)
 
 
