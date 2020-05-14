@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
@@ -112,6 +113,26 @@ public final class BulkMutation implements Serializable, Cloneable {
         .setTableName(tableName)
         .setAppProfileId(requestContext.getAppProfileId())
         .build();
+  }
+
+  /**
+   * Wraps the protobuf {@link MutateRowsRequest}.
+   *
+   * <p>This is meant for advanced usage only. Please ensure that the MutateRowsRequest does not use
+   * server side timestamps. The BigtableDataClient assumes that mutation present in BulkMutation
+   * are idempotent and is configured to enable retries by default. If serverside timestamps are
+   * enabled then that can lead to duplicate mutations.
+   *
+   * <p>WARNING: when applied, the resulting mutation object will ignore the project id and instance
+   * id in the table_name and instead apply the configuration in the client.
+   */
+  @BetaApi
+  public static BulkMutation fromProto(@Nonnull MutateRowsRequest request) {
+    BulkMutation bulkMutation =
+        BulkMutation.create(NameUtil.extractTableIdFromTableName(request.getTableName()));
+    bulkMutation.builder = request.toBuilder();
+
+    return bulkMutation;
   }
 
   /** Creates a copy of {@link BulkMutation}. */

@@ -162,4 +162,29 @@ public class ConditionalRowMutationTest {
     ConditionalRowMutation actual = (ConditionalRowMutation) ois.readObject();
     assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
   }
+
+  @Test
+  public void fromProtoTest() {
+    ConditionalRowMutation mutation =
+        ConditionalRowMutation.create(TABLE_ID, TEST_KEY)
+            .condition(Filters.FILTERS.key().regex("test"))
+            .then(Mutation.create().setCell("family1", "qualifier1", 10_000L, "value"))
+            .otherwise(Mutation.create().deleteFamily("family"));
+
+    CheckAndMutateRowRequest protoRequest = mutation.toProto(REQUEST_CONTEXT);
+    ConditionalRowMutation actualRequest = ConditionalRowMutation.fromProto(protoRequest);
+
+    assertThat(actualRequest.toProto(REQUEST_CONTEXT)).isEqualTo(protoRequest);
+
+    String projectId = "fresh-project";
+    String instanceId = "fresh-instance";
+    String appProfile = "fresh-app-profile";
+    CheckAndMutateRowRequest overriddenRequest =
+        actualRequest.toProto(RequestContext.create(projectId, instanceId, appProfile));
+
+    assertThat(overriddenRequest).isNotEqualTo(protoRequest);
+    assertThat(overriddenRequest.getTableName())
+        .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID));
+    assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
+  }
 }

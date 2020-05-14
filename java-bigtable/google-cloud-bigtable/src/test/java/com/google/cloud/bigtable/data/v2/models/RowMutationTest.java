@@ -139,4 +139,28 @@ public class RowMutationTest {
                 .setValue(ByteString.copyFrom(Longs.toByteArray(100_000L)))
                 .build());
   }
+
+  @Test
+  public void fromProtoTest() {
+    RowMutation rowMutation =
+        RowMutation.create("fake-table", "fake-key")
+            .setCell("fake-family", "fake-qualifier-1", "fake-value")
+            .setCell("fake-family", "fake-qualifier-2", 30_000L, "fake-value-2");
+
+    MutateRowRequest protoRequest = rowMutation.toProto(REQUEST_CONTEXT);
+    RowMutation actualRequest = RowMutation.fromProto(protoRequest);
+
+    assertThat(actualRequest.toProto(REQUEST_CONTEXT)).isEqualTo(protoRequest);
+
+    String projectId = "fresh-project";
+    String instanceId = "fresh-instance";
+    String appProfile = "fresh-app-profile";
+    MutateRowRequest overriddenRequest =
+        actualRequest.toProto(RequestContext.create(projectId, instanceId, appProfile));
+
+    assertThat(overriddenRequest).isNotEqualTo(protoRequest);
+    assertThat(overriddenRequest.getTableName())
+        .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID));
+    assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
+  }
 }

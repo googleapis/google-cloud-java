@@ -87,6 +87,22 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     return mutation;
   }
 
+  /**
+   * Constructs a row mutation from an existing protobuf object.
+   *
+   * <p>Callers must ensure that the protobuf argument is not using serverside timestamps. The
+   * client assumes that all mutations are idempotent and will retry in case of transient errors.
+   * This can lead to row duplication.
+   *
+   * <p>When applied, the resulting Mutation object will ignore the project id and instance id in
+   * the table_name and instead apply the configuration in the client
+   */
+  static Mutation fromProto(List<com.google.bigtable.v2.Mutation> protos) {
+    Mutation mutation = new Mutation(false);
+    mutation.mutations.addAll(protos);
+    return mutation;
+  }
+
   private Mutation(boolean allowServersideTimestamp) {
     this.allowServersideTimestamp = allowServersideTimestamp;
   }

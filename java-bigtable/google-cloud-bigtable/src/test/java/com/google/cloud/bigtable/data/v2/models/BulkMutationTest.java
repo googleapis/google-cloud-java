@@ -147,4 +147,29 @@ public class BulkMutationTest {
     bulkMutation.add(entry);
     assertThat(bulkMutation.toProto(REQUEST_CONTEXT).getEntriesList()).contains(entry.toProto());
   }
+
+  @Test
+  public void fromProtoTest() {
+    BulkMutation expected =
+        BulkMutation.create(TABLE_ID)
+            .add(
+                "key",
+                Mutation.create().setCell("fake-family", "fake-qualifier", 10_000L, "fake-value"));
+
+    MutateRowsRequest protoRequest = expected.toProto(REQUEST_CONTEXT);
+    BulkMutation actualBulkMutation = BulkMutation.fromProto(protoRequest);
+
+    assertThat(actualBulkMutation.toProto(REQUEST_CONTEXT)).isEqualTo(protoRequest);
+
+    String projectId = "fresh-project";
+    String instanceId = "fresh-instance";
+    String appProfile = "fresh-app-profile";
+    MutateRowsRequest overriddenRequest =
+        actualBulkMutation.toProto(RequestContext.create(projectId, instanceId, appProfile));
+
+    assertThat(overriddenRequest).isNotEqualTo(protoRequest);
+    assertThat(overriddenRequest.getTableName())
+        .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID));
+    assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
+  }
 }

@@ -113,4 +113,28 @@ public class ReadModifyWriteRowTest {
     ReadModifyWriteRow actual = (ReadModifyWriteRow) ois.readObject();
     assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
   }
+
+  @Test
+  public void fromProtoTest() {
+    ReadModifyWriteRow expected =
+        ReadModifyWriteRow.create(TABLE_ID, "row-key")
+            .increment("fake-family", ByteString.copyFromUtf8("fake-qualifier"), 1)
+            .append("fake-family", "fake-qualifier", "fake-value");
+
+    ReadModifyWriteRowRequest protoRequest = expected.toProto(REQUEST_CONTEXT);
+    ReadModifyWriteRow actualRequest = ReadModifyWriteRow.fromProto(protoRequest);
+
+    assertThat(actualRequest.toProto(REQUEST_CONTEXT)).isEqualTo(protoRequest);
+
+    String projectId = "fresh-project";
+    String instanceId = "fresh-instance";
+    String appProfile = "fresh-app-profile";
+    ReadModifyWriteRowRequest overriddenRequest =
+        actualRequest.toProto(RequestContext.create(projectId, instanceId, appProfile));
+
+    assertThat(overriddenRequest).isNotEqualTo(protoRequest);
+    assertThat(overriddenRequest.getTableName())
+        .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID));
+    assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
+  }
 }

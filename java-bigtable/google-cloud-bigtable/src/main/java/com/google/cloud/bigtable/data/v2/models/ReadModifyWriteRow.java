@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRule;
@@ -136,5 +137,21 @@ public final class ReadModifyWriteRow implements Serializable {
         .setTableName(tableName)
         .setAppProfileId(requestContext.getAppProfileId())
         .build();
+  }
+
+  /**
+   * Wraps the protobuf {@link ReadModifyWriteRowRequest}.
+   *
+   * <p>WARNING: Please note that the table_name will be overwritten by the configuration in the
+   * BigtableDataClient.
+   */
+  @BetaApi
+  public static ReadModifyWriteRow fromProto(@Nonnull ReadModifyWriteRowRequest request) {
+    String tableId = NameUtil.extractTableIdFromTableName(request.getTableName());
+
+    ReadModifyWriteRow row = ReadModifyWriteRow.create(tableId, request.getRowKey());
+    row.builder = request.toBuilder();
+
+    return row;
   }
 }

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
@@ -213,5 +214,24 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
         .addEntries(
             Entry.newBuilder().setRowKey(key).addAllMutations(mutation.getMutations()).build())
         .build();
+  }
+
+  /**
+   * Wraps the protobuf {@link MutateRowRequest}.
+   *
+   * <p>This is meant for advanced usage only. Please ensure that the MutateRowRequest does not use
+   * server side timestamps. The BigtableDataClient assumes that RowMutations are idempotent and is
+   * configured to enable retries by default. If serverside timestamps are enabled, this can lead to
+   * duplicate mutations.
+   *
+   * <p>WARNING: when applied, the resulting mutation object will ignore the project id and instance
+   * id in the table_name and instead apply the configuration in the client.
+   */
+  @BetaApi
+  public static RowMutation fromProto(@Nonnull MutateRowRequest request) {
+    String tableId = NameUtil.extractTableIdFromTableName(request.getTableName());
+
+    return RowMutation.create(
+        tableId, request.getRowKey(), Mutation.fromProto(request.getMutationsList()));
   }
 }

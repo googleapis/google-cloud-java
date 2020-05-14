@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
@@ -135,5 +136,21 @@ public final class ConditionalRowMutation implements Serializable {
         .setTableName(tableName.toString())
         .setAppProfileId(requestContext.getAppProfileId())
         .build();
+  }
+
+  /**
+   * Wraps the protobuf {@link CheckAndMutateRowRequest}.
+   *
+   * <p>WARNING: Please note that the table_name will be overwritten by the configuration in the
+   * BigtableDataClient.
+   */
+  @BetaApi
+  public static ConditionalRowMutation fromProto(@Nonnull CheckAndMutateRowRequest request) {
+    String tableId = NameUtil.extractTableIdFromTableName(request.getTableName());
+    ConditionalRowMutation rowMutation =
+        ConditionalRowMutation.create(tableId, request.getRowKey());
+    rowMutation.builder = request.toBuilder();
+
+    return rowMutation;
   }
 }
