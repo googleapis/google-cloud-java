@@ -242,7 +242,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   }
 
   /**
-   * Stops the Datastore emulator. The same as {@link stop(Duration)} but with timeout duration of
+   * Stops the Datastore emulator. The same as {@link #stop(Duration)} but with timeout duration of
    * 20 seconds.
    *
    * <p>It is important to stop the emulator. Since the emulator runs in its own process, not
