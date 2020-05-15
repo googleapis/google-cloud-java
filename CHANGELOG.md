@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.133.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.132.0...v0.133.0) (2020-05-15)
+
+
+### Features
+
+* Add flush API to StreamWriter ([#278](https://www.github.com/googleapis/java-bigquerystorage/issues/278)) ([f617259](https://www.github.com/googleapis/java-bigquerystorage/commit/f61725995fdc905581dca1109f30afed54d2da8e))
+
+
+### Bug Fixes
+
+* try to make test run a bit faster, and update some logs. ([#279](https://www.github.com/googleapis/java-bigquerystorage/issues/279)) ([4749b85](https://www.github.com/googleapis/java-bigquerystorage/commit/4749b8516b8f5802091eb21fa349b1c5c58fb48a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.115.0 ([#283](https://www.github.com/googleapis/java-bigquerystorage/issues/283)) ([873d787](https://www.github.com/googleapis/java-bigquerystorage/commit/873d78765eafed471f175d02450c4a107a801219))
+
 ## [0.132.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.131.2...v0.132.0) (2020-05-13)
 
 
