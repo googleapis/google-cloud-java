@@ -399,4 +399,39 @@ public class ITBigQueryWriteManualClientTest {
     }
     DirectWriter.clearCache();
   }
+
+  @Test
+  public void testFlushRows() throws IOException, InterruptedException, ExecutionException {
+    String tableName = "BufferTable";
+    TableInfo tableInfo =
+        TableInfo.newBuilder(
+                TableId.of(DATASET, tableName),
+                StandardTableDefinition.of(
+                    Schema.of(
+                        com.google.cloud.bigquery.Field.newBuilder("foo", LegacySQLTypeName.STRING)
+                            .build())))
+            .build();
+    bigquery.create(tableInfo);
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(parent.toString())
+                .setWriteStream(WriteStream.newBuilder().setType(WriteStream.Type.BUFFERED).build())
+                .build());
+    try (StreamWriter streamWriter = StreamWriter.newBuilder(writeStream.getName()).build()) {
+      ApiFuture<AppendRowsResponse> response =
+          streamWriter.append(
+              createAppendRequest(writeStream.getName(), new String[] {"aaa"})
+                  .setOffset(Int64Value.of(0L))
+                  .build());
+      assertEquals(0L, response.get().getOffset());
+      streamWriter.flush(0);
+    }
+    TableResult result =
+        bigquery.listTableData(tableInfo.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
+    Iterator<FieldValueList> iter = result.getValues().iterator();
+    assertEquals("aaa", iter.next().get(0).getStringValue());
+    assertEquals(false, iter.hasNext());
+  }
 }

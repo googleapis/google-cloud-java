@@ -244,6 +244,29 @@ public class StreamWriter implements AutoCloseable {
   }
 
   /**
+   * Flush the rows on a BUFFERED stream, up to the specified offset. After flush, rows will be
+   * available for read. If no exception is thrown, it means the flush happened.
+   *
+   * <p>NOTE: Currently the implementation is void, BUFFERED steam acts like COMMITTED stream. It is
+   * just for Dataflow team to mock the usage.
+   *
+   * @param offset Offset to which the rows will be committed to the system. It must fall within the
+   *     row counts on the stream.
+   * @throws IllegalArgumentException if offset is invalid
+   */
+  public void flush(long offset) {
+    if (offset < 0) {
+      throw new IllegalArgumentException("Invalid offset: " + offset);
+    }
+    // TODO: Once we persisted stream type, we should check the call can only be issued on BUFFERED
+    // stream here.
+    Storage.FlushRowsRequest request =
+        Storage.FlushRowsRequest.newBuilder().setWriteStream(streamName).setOffset(offset).build();
+    stub.flushRows(request);
+    // TODO: We will verify if the returned offset is equal to requested offset.
+  }
+
+  /**
    * Re-establishes a stream connection.
    *
    * @throws IOException

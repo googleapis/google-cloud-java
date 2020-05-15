@@ -38,9 +38,11 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   private final LinkedBlockingQueue<AppendRowsRequest> requests = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<GetWriteStreamRequest> writeRequests =
       new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<FlushRowsRequest> flushRequests = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<Response> responses = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<Stream.WriteStream> writeResponses =
       new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<FlushRowsResponse> flushResponses = new LinkedBlockingQueue<>();
   private final AtomicInteger nextMessageId = new AtomicInteger(1);
   private boolean autoPublishResponse;
   private ScheduledExecutorService executor = null;
@@ -89,6 +91,21 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
     if (response instanceof Stream.WriteStream) {
       writeRequests.add(request);
       responseObserver.onNext((Stream.WriteStream) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void flushRows(
+      FlushRowsRequest request, StreamObserver<FlushRowsResponse> responseObserver) {
+    Object response = writeResponses.remove();
+    if (response instanceof FlushRowsResponse) {
+      flushRequests.add(request);
+      responseObserver.onNext((FlushRowsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
@@ -170,6 +187,11 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
 
   public FakeBigQueryWriteImpl addWriteStreamResponse(Stream.WriteStream response) {
     writeResponses.add(response);
+    return this;
+  }
+
+  public FakeBigQueryWriteImpl addFlushRowsResponse(FlushRowsResponse response) {
+    flushResponses.add(response);
     return this;
   }
 

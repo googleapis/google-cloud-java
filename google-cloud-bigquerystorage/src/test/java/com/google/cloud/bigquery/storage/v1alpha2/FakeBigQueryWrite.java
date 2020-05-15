@@ -54,6 +54,8 @@ public class FakeBigQueryWrite implements MockGrpcService {
       serviceImpl.addResponse((AppendRowsResponse) response);
     } else if (response instanceof Stream.WriteStream) {
       serviceImpl.addWriteStreamResponse((Stream.WriteStream) response);
+    } else if (response instanceof FlushRowsResponse) {
+      serviceImpl.addFlushRowsResponse((FlushRowsResponse) response);
     } else {
       throw new IllegalStateException("Unsupported service");
     }
