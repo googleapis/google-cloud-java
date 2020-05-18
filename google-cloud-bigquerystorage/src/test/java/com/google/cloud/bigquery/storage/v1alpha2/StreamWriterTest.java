@@ -94,11 +94,15 @@ public class StreamWriterTest {
     serviceHelper.stop();
   }
 
-  private StreamWriter.Builder getTestStreamWriterBuilder() {
-    return StreamWriter.newBuilder(TEST_STREAM)
+  private StreamWriter.Builder getTestStreamWriterBuilder(String testStream) {
+    return StreamWriter.newBuilder(testStream)
         .setChannelProvider(channelProvider)
         .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
         .setCredentialsProvider(NoCredentialsProvider.create());
+  }
+
+  private StreamWriter.Builder getTestStreamWriterBuilder() {
+    return getTestStreamWriterBuilder(TEST_STREAM);
   }
 
   private AppendRowsRequest createAppendRequest(String[] messages, long offset) {
@@ -821,9 +825,10 @@ public class StreamWriterTest {
 
   @Test
   public void testAwaitTermination() throws Exception {
-    StreamWriter writer = getTestStreamWriterBuilder().build();
+    StreamWriter writer =
+        getTestStreamWriterBuilder("projects/p/datasets/d/tables/t/streams/await").build();
     testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"AWAIT"});
     writer.shutdown();
     assertTrue(writer.awaitTermination(1, TimeUnit.MINUTES));
   }
