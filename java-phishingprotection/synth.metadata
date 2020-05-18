@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-phishingprotection.git",
-        "sha": "1546fd69d9336ae9a4d9cb820a9b8084f4263d00"
+        "sha": "720fd0cecac1eeea24d12526ee68a744c7a81f13"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "98c50772ec23295c64cf0d2ddf199ea52961fd4c"
+        "sha": "5b48b0716a36ca069db3038da7e205c87a22ed19"
       }
     }
   ],
