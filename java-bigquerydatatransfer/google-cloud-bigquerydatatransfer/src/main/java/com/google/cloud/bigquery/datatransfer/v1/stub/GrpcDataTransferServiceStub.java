@@ -71,6 +71,37 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
 
+  private static final MethodDescriptor<DeleteTransferConfigRequest, Empty>
+      deleteTransferConfigMethodDescriptor =
+          MethodDescriptor.<DeleteTransferConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/DeleteTransferConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTransferConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteTransferRunRequest, Empty>
+      deleteTransferRunMethodDescriptor =
+          MethodDescriptor.<DeleteTransferRunRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/DeleteTransferRun")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTransferRunRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CheckValidCredsRequest, CheckValidCredsResponse>
+      checkValidCredsMethodDescriptor =
+          MethodDescriptor.<CheckValidCredsRequest, CheckValidCredsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/CheckValidCreds")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CheckValidCredsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<GetDataSourceRequest, DataSource>
       getDataSourceMethodDescriptor =
           MethodDescriptor.<GetDataSourceRequest, DataSource>newBuilder()
@@ -111,16 +142,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferConfig.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteTransferConfigRequest, Empty>
-      deleteTransferConfigMethodDescriptor =
-          MethodDescriptor.<DeleteTransferConfigRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/DeleteTransferConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteTransferConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<GetTransferConfigRequest, TransferConfig>
       getTransferConfigMethodDescriptor =
@@ -177,16 +198,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(GetTransferRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferRun.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteTransferRunRequest, Empty>
-      deleteTransferRunMethodDescriptor =
-          MethodDescriptor.<DeleteTransferRunRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/DeleteTransferRun")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteTransferRunRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsMethodDescriptor =
           MethodDescriptor.<ListTransferRunsRequest, ListTransferRunsResponse>newBuilder()
@@ -209,20 +220,13 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferLogsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<CheckValidCredsRequest, CheckValidCredsResponse>
-      checkValidCredsMethodDescriptor =
-          MethodDescriptor.<CheckValidCredsRequest, CheckValidCredsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/CheckValidCreds")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CheckValidCredsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteTransferConfigRequest, Empty> deleteTransferConfigCallable;
+  private final UnaryCallable<DeleteTransferRunRequest, Empty> deleteTransferRunCallable;
+  private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
+      checkValidCredsCallable;
   private final UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable;
   private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesCallable;
@@ -232,7 +236,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
       createTransferConfigCallable;
   private final UnaryCallable<UpdateTransferConfigRequest, TransferConfig>
       updateTransferConfigCallable;
-  private final UnaryCallable<DeleteTransferConfigRequest, Empty> deleteTransferConfigCallable;
   private final UnaryCallable<GetTransferConfigRequest, TransferConfig> getTransferConfigCallable;
   private final UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsCallable;
@@ -243,7 +246,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   private final UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
       startManualTransferRunsCallable;
   private final UnaryCallable<GetTransferRunRequest, TransferRun> getTransferRunCallable;
-  private final UnaryCallable<DeleteTransferRunRequest, Empty> deleteTransferRunCallable;
   private final UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsCallable;
   private final UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
@@ -252,8 +254,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
       listTransferLogsCallable;
   private final UnaryCallable<ListTransferLogsRequest, ListTransferLogsPagedResponse>
       listTransferLogsPagedCallable;
-  private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
-      checkValidCredsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -296,6 +296,46 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigTransportSettings =
+        GrpcCallSettings.<DeleteTransferConfigRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTransferConfigMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTransferConfigRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTransferConfigRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunTransportSettings =
+        GrpcCallSettings.<DeleteTransferRunRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTransferRunMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTransferRunRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTransferRunRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
+        checkValidCredsTransportSettings =
+            GrpcCallSettings.<CheckValidCredsRequest, CheckValidCredsResponse>newBuilder()
+                .setMethodDescriptor(checkValidCredsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CheckValidCredsRequest>() {
+                      @Override
+                      public Map<String, String> extract(CheckValidCredsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<GetDataSourceRequest, DataSource> getDataSourceTransportSettings =
         GrpcCallSettings.<GetDataSourceRequest, DataSource>newBuilder()
             .setMethodDescriptor(getDataSourceMethodDescriptor)
@@ -353,19 +393,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigTransportSettings =
-        GrpcCallSettings.<DeleteTransferConfigRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteTransferConfigMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTransferConfigRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTransferConfigRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<GetTransferConfigRequest, TransferConfig> getTransferConfigTransportSettings =
         GrpcCallSettings.<GetTransferConfigRequest, TransferConfig>newBuilder()
             .setMethodDescriptor(getTransferConfigMethodDescriptor)
@@ -435,19 +462,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunTransportSettings =
-        GrpcCallSettings.<DeleteTransferRunRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteTransferRunMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTransferRunRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTransferRunRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListTransferRunsRequest, ListTransferRunsResponse>
         listTransferRunsTransportSettings =
             GrpcCallSettings.<ListTransferRunsRequest, ListTransferRunsResponse>newBuilder()
@@ -476,21 +490,20 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
-        checkValidCredsTransportSettings =
-            GrpcCallSettings.<CheckValidCredsRequest, CheckValidCredsResponse>newBuilder()
-                .setMethodDescriptor(checkValidCredsMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<CheckValidCredsRequest>() {
-                      @Override
-                      public Map<String, String> extract(CheckValidCredsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
 
+    this.deleteTransferConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteTransferConfigTransportSettings,
+            settings.deleteTransferConfigSettings(),
+            clientContext);
+    this.deleteTransferRunCallable =
+        callableFactory.createUnaryCallable(
+            deleteTransferRunTransportSettings,
+            settings.deleteTransferRunSettings(),
+            clientContext);
+    this.checkValidCredsCallable =
+        callableFactory.createUnaryCallable(
+            checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
     this.getDataSourceCallable =
         callableFactory.createUnaryCallable(
             getDataSourceTransportSettings, settings.getDataSourceSettings(), clientContext);
@@ -509,11 +522,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
         callableFactory.createUnaryCallable(
             updateTransferConfigTransportSettings,
             settings.updateTransferConfigSettings(),
-            clientContext);
-    this.deleteTransferConfigCallable =
-        callableFactory.createUnaryCallable(
-            deleteTransferConfigTransportSettings,
-            settings.deleteTransferConfigSettings(),
             clientContext);
     this.getTransferConfigCallable =
         callableFactory.createUnaryCallable(
@@ -543,11 +551,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     this.getTransferRunCallable =
         callableFactory.createUnaryCallable(
             getTransferRunTransportSettings, settings.getTransferRunSettings(), clientContext);
-    this.deleteTransferRunCallable =
-        callableFactory.createUnaryCallable(
-            deleteTransferRunTransportSettings,
-            settings.deleteTransferRunSettings(),
-            clientContext);
     this.listTransferRunsCallable =
         callableFactory.createUnaryCallable(
             listTransferRunsTransportSettings, settings.listTransferRunsSettings(), clientContext);
@@ -560,11 +563,20 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     this.listTransferLogsPagedCallable =
         callableFactory.createPagedCallable(
             listTransferLogsTransportSettings, settings.listTransferLogsSettings(), clientContext);
-    this.checkValidCredsCallable =
-        callableFactory.createUnaryCallable(
-            checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteTransferConfigRequest, Empty> deleteTransferConfigCallable() {
+    return deleteTransferConfigCallable;
+  }
+
+  public UnaryCallable<DeleteTransferRunRequest, Empty> deleteTransferRunCallable() {
+    return deleteTransferRunCallable;
+  }
+
+  public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
+    return checkValidCredsCallable;
   }
 
   public UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable() {
@@ -586,10 +598,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
 
   public UnaryCallable<UpdateTransferConfigRequest, TransferConfig> updateTransferConfigCallable() {
     return updateTransferConfigCallable;
-  }
-
-  public UnaryCallable<DeleteTransferConfigRequest, Empty> deleteTransferConfigCallable() {
-    return deleteTransferConfigCallable;
   }
 
   public UnaryCallable<GetTransferConfigRequest, TransferConfig> getTransferConfigCallable() {
@@ -620,10 +628,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     return getTransferRunCallable;
   }
 
-  public UnaryCallable<DeleteTransferRunRequest, Empty> deleteTransferRunCallable() {
-    return deleteTransferRunCallable;
-  }
-
   public UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
       listTransferRunsPagedCallable() {
     return listTransferRunsPagedCallable;
@@ -642,10 +646,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   public UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsCallable() {
     return listTransferLogsCallable;
-  }
-
-  public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
-    return checkValidCredsCallable;
   }
 
   @Override

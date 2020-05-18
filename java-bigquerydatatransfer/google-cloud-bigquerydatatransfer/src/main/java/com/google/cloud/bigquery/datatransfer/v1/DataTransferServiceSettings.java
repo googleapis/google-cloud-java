@@ -53,16 +53,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDataSource to 30 seconds:
+ * <p>For example, to set the total timeout of deleteTransferConfig to 30 seconds:
  *
  * <pre>
  * <code>
  * DataTransferServiceSettings.Builder dataTransferServiceSettingsBuilder =
  *     DataTransferServiceSettings.newBuilder();
  * dataTransferServiceSettingsBuilder
- *     .getDataSourceSettings()
+ *     .deleteTransferConfigSettings()
  *     .setRetrySettings(
- *         dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
+ *         dataTransferServiceSettingsBuilder.deleteTransferConfigSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataTransferServiceSettings dataTransferServiceSettings = dataTransferServiceSettingsBuilder.build();
@@ -72,6 +72,22 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class DataTransferServiceSettings extends ClientSettings<DataTransferServiceSettings> {
+  /** Returns the object with the settings used for calls to deleteTransferConfig. */
+  public UnaryCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).deleteTransferConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTransferRun. */
+  public UnaryCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).deleteTransferRunSettings();
+  }
+
+  /** Returns the object with the settings used for calls to checkValidCreds. */
+  public UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
+      checkValidCredsSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).checkValidCredsSettings();
+  }
+
   /** Returns the object with the settings used for calls to getDataSource. */
   public UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).getDataSourceSettings();
@@ -94,11 +110,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   public UnaryCallSettings<UpdateTransferConfigRequest, TransferConfig>
       updateTransferConfigSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).updateTransferConfigSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteTransferConfig. */
-  public UnaryCallSettings<DeleteTransferConfigRequest, Empty> deleteTransferConfigSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings()).deleteTransferConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to getTransferConfig. */
@@ -130,11 +141,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return ((DataTransferServiceStubSettings) getStubSettings()).getTransferRunSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteTransferRun. */
-  public UnaryCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings()).deleteTransferRunSettings();
-  }
-
   /** Returns the object with the settings used for calls to listTransferRuns. */
   public PagedCallSettings<
           ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
@@ -147,12 +153,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
           ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
       listTransferLogsSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).listTransferLogsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to checkValidCreds. */
-  public UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
-      checkValidCredsSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings()).checkValidCredsSettings();
   }
 
   public static final DataTransferServiceSettings create(DataTransferServiceStubSettings stub)
@@ -252,6 +252,23 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteTransferConfig. */
+    public UnaryCallSettings.Builder<DeleteTransferConfigRequest, Empty>
+        deleteTransferConfigSettings() {
+      return getStubSettingsBuilder().deleteTransferConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTransferRun. */
+    public UnaryCallSettings.Builder<DeleteTransferRunRequest, Empty> deleteTransferRunSettings() {
+      return getStubSettingsBuilder().deleteTransferRunSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to checkValidCreds. */
+    public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
+        checkValidCredsSettings() {
+      return getStubSettingsBuilder().checkValidCredsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getDataSource. */
     public UnaryCallSettings.Builder<GetDataSourceRequest, DataSource> getDataSourceSettings() {
       return getStubSettingsBuilder().getDataSourceSettings();
@@ -274,12 +291,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     public UnaryCallSettings.Builder<UpdateTransferConfigRequest, TransferConfig>
         updateTransferConfigSettings() {
       return getStubSettingsBuilder().updateTransferConfigSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteTransferConfig. */
-    public UnaryCallSettings.Builder<DeleteTransferConfigRequest, Empty>
-        deleteTransferConfigSettings() {
-      return getStubSettingsBuilder().deleteTransferConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to getTransferConfig. */
@@ -315,11 +326,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
       return getStubSettingsBuilder().getTransferRunSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteTransferRun. */
-    public UnaryCallSettings.Builder<DeleteTransferRunRequest, Empty> deleteTransferRunSettings() {
-      return getStubSettingsBuilder().deleteTransferRunSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listTransferRuns. */
     public PagedCallSettings.Builder<
             ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
@@ -332,12 +338,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
             ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
         listTransferLogsSettings() {
       return getStubSettingsBuilder().listTransferLogsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to checkValidCreds. */
-    public UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
-        checkValidCredsSettings() {
-      return getStubSettingsBuilder().checkValidCredsSettings();
     }
 
     @Override
