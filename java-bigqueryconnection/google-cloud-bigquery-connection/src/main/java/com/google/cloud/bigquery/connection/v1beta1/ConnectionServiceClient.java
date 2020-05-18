@@ -54,10 +54,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   Connection connection = Connection.newBuilder().build();
- *   String connectionId = "";
- *   Connection response = connectionServiceClient.createConnection(parent, connection, connectionId);
+ *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+ *   connectionServiceClient.deleteConnection(name);
  * }
  * </code>
  * </pre>
@@ -165,6 +163,96 @@ public class ConnectionServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ConnectionServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes connection and associated credential.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   connectionServiceClient.deleteConnection(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the deleted connection, for example:
+   *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConnection(ConnectionName name) {
+    DeleteConnectionRequest request =
+        DeleteConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes connection and associated credential.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   connectionServiceClient.deleteConnection(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the deleted connection, for example:
+   *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConnection(String name) {
+    DeleteConnectionRequest request = DeleteConnectionRequest.newBuilder().setName(name).build();
+    deleteConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes connection and associated credential.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   DeleteConnectionRequest request = DeleteConnectionRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   connectionServiceClient.deleteConnection(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConnection(DeleteConnectionRequest request) {
+    deleteConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes connection and associated credential.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   DeleteConnectionRequest request = DeleteConnectionRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = connectionServiceClient.deleteConnectionCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
+    return stub.deleteConnectionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -671,96 +759,6 @@ public class ConnectionServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialCallable() {
     return stub.updateConnectionCredentialCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes connection and associated credential.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
-   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
-   *   connectionServiceClient.deleteConnection(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Name of the deleted connection, for example:
-   *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteConnection(ConnectionName name) {
-    DeleteConnectionRequest request =
-        DeleteConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteConnection(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes connection and associated credential.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
-   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
-   *   connectionServiceClient.deleteConnection(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Name of the deleted connection, for example:
-   *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteConnection(String name) {
-    DeleteConnectionRequest request = DeleteConnectionRequest.newBuilder().setName(name).build();
-    deleteConnection(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes connection and associated credential.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
-   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
-   *   DeleteConnectionRequest request = DeleteConnectionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   connectionServiceClient.deleteConnection(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteConnection(DeleteConnectionRequest request) {
-    deleteConnectionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes connection and associated credential.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
-   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
-   *   DeleteConnectionRequest request = DeleteConnectionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = connectionServiceClient.deleteConnectionCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
-    return stub.deleteConnectionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
