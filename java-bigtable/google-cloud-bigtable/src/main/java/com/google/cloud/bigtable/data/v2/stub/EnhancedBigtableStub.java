@@ -20,6 +20,8 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcRawCallableFactory;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
@@ -32,6 +34,7 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.api.gax.tracing.SpanName;
 import com.google.api.gax.tracing.TracedServerStreamingCallable;
 import com.google.api.gax.tracing.TracedUnaryCallable;
@@ -59,9 +62,9 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
-import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredMutateRowsCallable;
-import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredReadRowsCallable;
-import com.google.cloud.bigtable.data.v2.stub.metrics.MeasuredUnaryCallable;
+import com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerFactory;
+import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsTracerFactory;
+import com.google.cloud.bigtable.data.v2.stub.metrics.RpcMeasureConstants;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
@@ -73,10 +76,13 @@ import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
 import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import io.opencensus.stats.Stats;
 import io.opencensus.stats.StatsRecorder;
+import io.opencensus.tags.TagKey;
+import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tagger;
 import io.opencensus.tags.Tags;
 import java.io.IOException;
@@ -98,15 +104,11 @@ import javax.annotation.Nonnull;
  */
 @InternalApi
 public class EnhancedBigtableStub implements AutoCloseable {
-  private static final String TRACING_OUTER_CLIENT_NAME = "Bigtable";
+  private static final String CLIENT_NAME = "Bigtable";
 
   private final EnhancedBigtableStubSettings settings;
   private final ClientContext clientContext;
   private final RequestContext requestContext;
-
-  // TODO: This should probably move to ClientContext
-  private final Tagger tagger;
-  private final StatsRecorder statsRecorder;
 
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
   private final UnaryCallable<Query, Row> readRowCallable;
@@ -125,15 +127,58 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   @InternalApi("Visible for testing")
-  private EnhancedBigtableStub(
+  public EnhancedBigtableStub(
       EnhancedBigtableStubSettings settings,
       ClientContext clientContext,
       Tagger tagger,
       StatsRecorder statsRecorder) {
     this.settings = settings;
-    this.clientContext = clientContext;
-    this.tagger = tagger;
-    this.statsRecorder = statsRecorder;
+
+    this.clientContext =
+        clientContext
+            .toBuilder()
+            .setTracerFactory(
+                new CompositeTracerFactory(
+                    ImmutableList.of(
+                        // Add OpenCensus Tracing
+                        new OpencensusTracerFactory(
+                            ImmutableMap.<String, String>builder()
+                                // Annotate traces with the same tags as metrics
+                                .put(
+                                    RpcMeasureConstants.BIGTABLE_PROJECT_ID.getName(),
+                                    settings.getProjectId())
+                                .put(
+                                    RpcMeasureConstants.BIGTABLE_INSTANCE_ID.getName(),
+                                    settings.getInstanceId())
+                                .put(
+                                    RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID.getName(),
+                                    settings.getAppProfileId())
+                                // Also annotate traces with library versions
+                                .put("gax", GaxGrpcProperties.getGaxGrpcVersion())
+                                .put("grpc", GaxGrpcProperties.getGrpcVersion())
+                                .put(
+                                    "gapic",
+                                    GaxProperties.getLibraryVersion(
+                                        EnhancedBigtableStubSettings.class))
+                                .build()),
+                        // Add OpenCensus Metrics
+                        MetricsTracerFactory.create(
+                            tagger,
+                            statsRecorder,
+                            ImmutableMap.<TagKey, TagValue>builder()
+                                .put(
+                                    RpcMeasureConstants.BIGTABLE_PROJECT_ID,
+                                    TagValue.create(settings.getProjectId()))
+                                .put(
+                                    RpcMeasureConstants.BIGTABLE_INSTANCE_ID,
+                                    TagValue.create(settings.getInstanceId()))
+                                .put(
+                                    RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID,
+                                    TagValue.create(settings.getAppProfileId()))
+                                .build()),
+                        // Add user configured tracer
+                        clientContext.getTracerFactory())))
+            .build();
     this.requestContext =
         RequestContext.create(
             settings.getProjectId(), settings.getInstanceId(), settings.getAppProfileId());
@@ -196,17 +241,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedServerStreamingCallable<>(
             readRowsUserCallable,
             clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows"));
+            SpanName.of(CLIENT_NAME, "ReadRows"));
 
-    ServerStreamingCallable<Query, RowT> measured =
-        new MeasuredReadRowsCallable<>(
-            traced,
-            TRACING_OUTER_CLIENT_NAME + ".ReadRows",
-            tagger,
-            statsRecorder,
-            clientContext.getClock());
-
-    return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -393,19 +430,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     UnaryCallable<BulkMutation, Void> traced =
         new TracedUnaryCallable<>(
-            userFacing,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "MutateRows"));
+            userFacing, clientContext.getTracerFactory(), SpanName.of(CLIENT_NAME, "MutateRows"));
 
-    UnaryCallable<BulkMutation, Void> measured =
-        new MeasuredMutateRowsCallable(
-            traced,
-            TRACING_OUTER_CLIENT_NAME + ".MutateRows",
-            tagger,
-            statsRecorder,
-            clientContext.getClock());
-
-    return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -578,19 +605,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     UnaryCallable<RequestT, ResponseT> traced =
         new TracedUnaryCallable<>(
-            inner,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, methodName));
+            inner, clientContext.getTracerFactory(), SpanName.of(CLIENT_NAME, methodName));
 
-    UnaryCallable<RequestT, ResponseT> measured =
-        new MeasuredUnaryCallable<>(
-            traced,
-            TRACING_OUTER_CLIENT_NAME + "." + methodName,
-            tagger,
-            statsRecorder,
-            clientContext.getClock());
-
-    return measured.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
   // </editor-fold>
 

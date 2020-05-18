@@ -15,53 +15,63 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import io.opencensus.stats.Measure;
-import io.opencensus.stats.Measure.MeasureDouble;
+import com.google.api.core.InternalApi;
 import io.opencensus.stats.Measure.MeasureLong;
 import io.opencensus.tags.TagKey;
 
-class RpcMeasureConstants {
-  /**
-   * Tag key that represents a Bigtable operation name.
-   *
-   * <p>A Bigtable operation consists of 1 or more RPCs. By comparing metrics tagged with {@link
-   * io.opencensus.contrib.grpc.metrics.RpcMeasureConstants#GRPC_CLIENT_METHOD} to methods tagged
-   * with {@link RpcMeasureConstants#BIGTABLE_OP}, the end user can get a sense how many attempts an
-   * operation took.
-   */
-  public static final TagKey BIGTABLE_OP = TagKey.create("bigtable_op");
+@InternalApi("For internal use only")
+public class RpcMeasureConstants {
+  // TagKeys
+  public static final TagKey BIGTABLE_PROJECT_ID = TagKey.create("bigtable_project_id");
+  public static final TagKey BIGTABLE_INSTANCE_ID = TagKey.create("bigtable_instance_id");
+  public static final TagKey BIGTABLE_APP_PROFILE_ID = TagKey.create("bigtable_app_profile_id");
+
+  /** Tag key that represents a Bigtable operation name. */
+  static final TagKey BIGTABLE_OP = TagKey.create("bigtable_op");
 
   /** Tag key that represents the final status of the Bigtable operation. */
-  public static final TagKey BIGTABLE_STATUS = TagKey.create("bigtable_status");
+  static final TagKey BIGTABLE_STATUS = TagKey.create("bigtable_status");
 
+  // Units
   /** Unit to represent counts. */
   private static final String COUNT = "1";
 
   /** Unit to represent milliseconds. */
   private static final String MILLISECOND = "ms";
 
-  static final MeasureDouble BIGTABLE_OP_LATENCY =
-      Measure.MeasureDouble.create(
+  // Measurements
+  /**
+   * Latency for a logic operation, which will include latencies for each attempt and exponential
+   * backoff delays.
+   */
+  static final MeasureLong BIGTABLE_OP_LATENCY =
+      MeasureLong.create(
           "cloud.google.com/java/bigtable/op_latency",
           "Time between request being sent to last row received, "
               + "or terminal error of the last retry attempt.",
           MILLISECOND);
 
-  static final MeasureDouble BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY =
-      MeasureDouble.create(
+  /**
+   * Number of attempts a logical operation took to complete. Under normal circumstances should be
+   * 1.
+   */
+  static final MeasureLong BIGTABLE_OP_ATTEMPT_COUNT =
+      MeasureLong.MeasureLong.create(
+          "cloud.google.com/java/bigtable/op_attempt_count",
+          "Number of attempts per operation",
+          COUNT);
+
+  /** Latency that a single attempt (RPC) took to complete. */
+  static final MeasureLong BIGTABLE_ATTEMPT_LATENCY =
+      MeasureLong.create(
+          "cloud.google.com/java/bigtable/attempt_latency",
+          "Duration of an individual operation attempt",
+          MILLISECOND);
+
+  /** Latency for the caller to see the first row in a ReadRows stream. */
+  static final MeasureLong BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY =
+      MeasureLong.create(
           "cloud.google.com/java/bigtable/read_rows_first_row_latency",
           "Time between request being sent to the first row received",
           MILLISECOND);
-
-  static final MeasureLong BIGTABLE_ROWS_READ_PER_OP =
-      Measure.MeasureLong.create(
-          "cloud.google.com/java/bigtable/rows_read_per_op",
-          "Number of rows received per ReadRows operation",
-          COUNT);
-
-  static final MeasureLong BIGTABLE_MUTATE_ROWS_ENTRIES_PER_BATCH =
-      Measure.MeasureLong.create(
-          "cloud.google.com/java/bigtable/mutations_per_batch",
-          "Number of mutations per MutateRows request",
-          COUNT);
 }

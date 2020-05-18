@@ -176,13 +176,13 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-impl</artifactId>
-  <version>0.24.0</version>
+  <version>0.26.0</version>
   <scope>runtime</scope>
 </dependency>
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
-  <version>0.24.0</version>
+  <version>0.26.0</version>
   <exclusions>
     <exclusion>
       <groupId>io.grpc</groupId>
@@ -197,13 +197,13 @@ If you are using Maven, add this to your pom.xml file
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'io.opencensus:opencensus-impl:0.24.0'
-compile 'io.opencensus:opencensus-exporter-trace-stackdriver:0.24.0'
+compile 'io.opencensus:opencensus-impl:0.26.0'
+compile 'io.opencensus:opencensus-exporter-trace-stackdriver:0.26.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.24.0"
-libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.24.0"
+libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.26.0"
+libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.26.0"
 ```
 
 At the start of your application configure the exporter:
@@ -236,30 +236,37 @@ Tracing.getTraceConfig().updateActiveTraceParams(
 
 Cloud Bigtable client supports [Opencensus Metrics](https://opencensus.io/stats/),
 which gives insight into the client internals and aids in debugging production issues.
-Metrics prefixed with `cloud.google.com/java/bigtable/` focus on operation level
-metrics across all of the retry attempts that occurred during that operation. RPC
-level metrics can be gleaned from gRPC's metrics, which are prefixed with
-`grpc.io/client/`.
+All Cloud Bigtable Metrics are prefixed with `cloud.google.com/java/bigtable/`. The
+metrics will be tagged with:
+ * `bigtable_project_id`: the project that contains the target Bigtable instance.
+   Please note that this id could be different from project that the client is running
+   in and different from the project where the metrics are exported to.
+* `bigtable_instance_id`: the instance id of the target Bigtable instance
+* `bigtable_app_profile_id`: the app profile id that is being used to access the target
+  Bigtable instance  
 
 ### Available operation level metric views:
 
-* `cloud.google.com/java/bigtable/op_latency`: A distribution latency of
+* `cloud.google.com/java/bigtable/op_latency`: A distribution of latency of
   each client method call, across all of it's RPC attempts. Tagged by
-  method name and final response status.
+  operation name and final response status.
 
 * `cloud.google.com/java/bigtable/completed_ops`: The total count of
-  method invocations. Tagged by method name. Can be compared to
-  `grpc.io/client/completed_rpcs` to visualize retry attempts.
+  method invocations. Tagged by operation name and final response status.
 
 * `cloud.google.com/java/bigtable/read_rows_first_row_latency`: A
   distribution of the latency of receiving the first row in a ReadRows
   operation.
 
-* `cloud.google.com/java/bigtable/rows_per_op`: A distribution of rows
-  read per ReadRows operation across all retry attempts.
+* `cloud.google.com/java/bigtable/attempt_latency`: A distribution of latency of
+  each client RPC, tagged by operation name and the attempt status. Under normal
+  circumstances, this will be identical to op_latency. However, when the client
+  receives transient errors, op_latency will be the sum of all attempt_latencies
+  and the exponential delays
 
-* `cloud.google.com/java/bigtable/mutations_per_batch`: A distribution
-  of mutations per BulkMutation.
+* `cloud.google.com/java/bigtable/attempts_per_op`: A distribution of attempts that
+  each operation required, tagged by operation name and final operation status.
+  Under normal circumstances, this will be 1.
 
 
 By default, the functionality is disabled. For example to enable metrics using
@@ -273,13 +280,13 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-impl</artifactId>
-  <version>0.24.0</version>
+  <version>0.26.0</version>
   <scope>runtime</scope>
 </dependency>
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
-  <version>0.24.0</version>
+  <version>0.26.0</version>
   <exclusions>
     <exclusion>
       <groupId>io.grpc</groupId>
@@ -294,13 +301,13 @@ If you are using Maven, add this to your pom.xml file
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'io.opencensus:opencensus-impl:0.24.0'
-compile 'io.opencensus:opencensus-exporter-stats-stackdriver:0.24.0'
+compile 'io.opencensus:opencensus-impl:0.26.0'
+compile 'io.opencensus:opencensus-exporter-stats-stackdriver:0.26.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.24.0"
-libraryDependencies += "io.opencensus" % "opencensus-exporter-stats-stackdriver" % "0.24.0"
+libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.26.0"
+libraryDependencies += "io.opencensus" % "opencensus-exporter-stats-stackdriver" % "0.26.0"
 ```
 
 At the start of your application configure the exporter and enable the Bigtable stats views:
@@ -337,7 +344,7 @@ Add the following to your project's pom.xml.
         <dependency>
           <groupId>io.grpc</groupId>
           <artifactId>grpc-bom</artifactId>
-          <version>1.27.0</version>
+          <version>1.28.0</version>
           <type>pom</type>
           <scope>import</scope>
         </dependency>

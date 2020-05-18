@@ -20,9 +20,7 @@ import com.google.api.gax.batching.BatchingCallSettings;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
@@ -30,7 +28,6 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.cloud.bigtable.data.v2.internal.RefreshChannel;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
@@ -42,7 +39,6 @@ import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescr
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import java.util.Set;
@@ -521,13 +517,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
       setInternalHeaderProvider(
           BigtableStubSettings.defaultApiClientHeaderProviderBuilder().build());
-
-      setTracerFactory(
-          new OpencensusTracerFactory(
-              ImmutableMap.of(
-                  "gax", GaxGrpcProperties.getGaxGrpcVersion(),
-                  "grpc", GaxGrpcProperties.getGrpcVersion(),
-                  "gapic", GaxProperties.getLibraryVersion(EnhancedBigtableStubSettings.class))));
 
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();

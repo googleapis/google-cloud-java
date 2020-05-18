@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,36 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.gaxx.tracing;
+package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.SpanName;
+import com.google.common.collect.ImmutableList;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Simple wrapper around {@link ApiTracerFactory} to augment the client name of the generated
- * traces.
- *
- * <p>This is used to disambiguate traces in underlying GAPIC client from the manually written
- * overlay.
- *
- * <p>For internal use, public for technical reasons.
- */
-@InternalApi
-public class WrappedTracerFactory implements ApiTracerFactory {
-  private final ApiTracerFactory innerFactory;
-  private final String clientName;
+/** Combines multiple {@link ApiTracerFactory} into a single {@link ApiTracerFactory}. */
+@InternalApi("For internal use only")
+public class CompositeTracerFactory implements ApiTracerFactory {
+  private final List<ApiTracerFactory> apiTracerFactories;
 
-  public WrappedTracerFactory(ApiTracerFactory tracerFactory, String clientName) {
-    this.innerFactory = tracerFactory;
-    this.clientName = clientName;
+  public CompositeTracerFactory(List<ApiTracerFactory> apiTracerFactories) {
+    this.apiTracerFactories = ImmutableList.copyOf(apiTracerFactories);
   }
 
   @Override
   public ApiTracer newTracer(ApiTracer parent, SpanName spanName, OperationType operationType) {
-    spanName = SpanName.of(clientName, spanName.getMethodName());
+    List<ApiTracer> children = new ArrayList<>(apiTracerFactories.size());
 
-    return innerFactory.newTracer(parent, spanName, operationType);
+    for (ApiTracerFactory factory : apiTracerFactories) {
+      children.add(factory.newTracer(parent, spanName, operationType));
+    }
+    return new CompositeTracer(children);
   }
 }

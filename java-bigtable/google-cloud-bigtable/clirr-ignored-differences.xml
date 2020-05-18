@@ -7,4 +7,20 @@
         <method>*snapshot*</method>
         <to>*snapshot*</to>
     </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredMutateRowsCallable*</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredReadRowsCallable*</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredUnaryCallable*</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/tracing/WrappedTracerFactory*</className>
+    </difference>
 </differences>

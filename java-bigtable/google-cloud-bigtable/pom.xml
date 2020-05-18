@@ -172,12 +172,6 @@
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
-    <!-- // TODO(igorbernstein): Enable grpc views once we upgrade to grpc-java 1.24.0 -->
-<!--    <dependency>-->
-<!--      <groupId>io.opencensus</groupId>-->
-<!--      <artifactId>opencensus-contrib-grpc-metrics</artifactId>-->
-<!--      <version>${opencensus.version}</version>-->
-<!--    </dependency>-->
 
     <!-- Test dependencies -->
     <dependency>
@@ -216,6 +210,11 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-impl</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -385,8 +384,12 @@
           <!--
             grpc-grpclb is used at runtime using reflection
             grpc-auth is not directly used transitively, but is pulled to align with other grpc parts
+            opencensus-impl-core is brought in transitively through opencensus-impl
             -->
           <usedDependencies>io.grpc:grpc-auth,io.grpc:grpc-grpclb,com.google.auto.value:auto-value</usedDependencies>
+          <ignoredUsedUndeclaredDependencies>
+            <ignoredUsedUndeclaredDependency>io.opencensus:opencensus-impl-core</ignoredUsedUndeclaredDependency>
+          </ignoredUsedUndeclaredDependencies>
         </configuration>
       </plugin>
 
