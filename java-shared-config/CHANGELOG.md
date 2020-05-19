@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-shared-config/compare/v0.5.0...v0.6.0) (2020-05-19)
+
+
+### Features
+
+* add new configuration necessary to support auto-value ([#136](https://www.github.com/googleapis/java-shared-config/issues/136)) ([c14689b](https://www.github.com/googleapis/java-shared-config/commit/c14689b8791c173687f719d73156a989aedd7ba6))
+
 ## [0.5.0](https://www.github.com/googleapis/java-shared-config/compare/v0.4.0...v0.5.0) (2020-04-07)
 
 
