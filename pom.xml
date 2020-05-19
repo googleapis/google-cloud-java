@@ -152,52 +152,23 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-datastore-parent</site.installationModule>
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
-    <google.core.version>1.93.4</google.core.version>
-    <google.api-common.version>1.9.0</google.api-common.version>
-    <google.common-protos.version>1.18.0</google.common-protos.version>
-    <gax.version>1.56.0</gax.version>
-    <grpc.version>1.29.0</grpc.version>
-    <protobuf.version>3.12.0</protobuf.version>
-    <junit.version>4.13</junit.version>
-    <guava.version>29.0-android</guava.version>
-    <threeten.version>1.4.4</threeten.version>
     <javax.annotations.version>1.3.2</javax.annotations.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>0.4.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-v1</artifactId>
         <version>0.85.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
-      </dependency>
-
-      <dependency>
-        <groupId>io.grpc</groupId>
-        <artifactId>grpc-bom</artifactId>
-        <version>${grpc.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>gax-bom</artifactId>
-        <version>${gax.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava-bom</artifactId>
-        <version>${guava.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core-http</artifactId>
-        <version>${google.core.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.cloud.datastore</groupId>
@@ -211,69 +182,21 @@
         </exclusions>
       </dependency>
       <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-java</artifactId>
-        <version>${protobuf.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api</groupId>
-        <artifactId>api-common</artifactId>
-        <version>${google.api-common.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-common-protos</artifactId>
-        <version>${google.common-protos.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core</artifactId>
-        <version>${google.core.version}</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-oauth2-http</artifactId>
         <version>0.20.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client</artifactId>
-        <version>1.35.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client-jackson2</artifactId>
-        <version>1.35.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.oauth-client</groupId>
         <artifactId>google-oauth-client</artifactId>
         <version>1.30.6</version>
       </dependency>
-      <dependency>
-        <groupId>org.threeten</groupId>
-        <artifactId>threetenbp</artifactId>
-        <version>${threeten.version}</version>
-      </dependency>
 
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${junit.version}</version>
-        <scope>test</scope>
-      </dependency>
       <dependency>
         <groupId>org.easymock</groupId>
         <artifactId>easymock</artifactId>
         <version>3.6</version>
         <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core</artifactId>
-        <type>test-jar</type>
-        <scope>test</scope>
-        <version>${google.core.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
