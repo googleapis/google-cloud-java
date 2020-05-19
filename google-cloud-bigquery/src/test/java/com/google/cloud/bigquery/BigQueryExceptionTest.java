@@ -16,15 +16,15 @@
 
 package com.google.cloud.bigquery;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
@@ -33,7 +33,10 @@ import com.google.cloud.RetryHelper.RetryHelperException;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class BigQueryExceptionTest {
 
   @Test
@@ -128,9 +131,8 @@ public class BigQueryExceptionTest {
   @Test
   public void testTranslateAndThrow() throws Exception {
     Exception cause = new BigQueryException(503, "message");
-    RetryHelperException exceptionMock = createMock(RetryHelperException.class);
-    expect(exceptionMock.getCause()).andReturn(cause).times(2);
-    replay(exceptionMock);
+    RetryHelperException exceptionMock = mock(RetryHelperException.class);
+    when(exceptionMock.getCause()).thenReturn(cause);
     try {
       BigQueryException.translateAndThrow(exceptionMock);
     } catch (BaseServiceException ex) {
@@ -138,13 +140,12 @@ public class BigQueryExceptionTest {
       assertEquals("message", ex.getMessage());
       assertTrue(ex.isRetryable());
     } finally {
-      verify(exceptionMock);
+      verify(exceptionMock, times(2)).getCause();
     }
     cause = new IllegalArgumentException("message");
-    exceptionMock = createMock(RetryHelperException.class);
-    expect(exceptionMock.getMessage()).andReturn("message").times(1);
-    expect(exceptionMock.getCause()).andReturn(cause).times(2);
-    replay(exceptionMock);
+    exceptionMock = mock(RetryHelperException.class);
+    when(exceptionMock.getMessage()).thenReturn("message");
+    when(exceptionMock.getCause()).thenReturn(cause);
     try {
       BigQueryException.translateAndThrow(exceptionMock);
     } catch (BaseServiceException ex) {
@@ -153,7 +154,8 @@ public class BigQueryExceptionTest {
       assertFalse(ex.isRetryable());
       assertSame(cause, ex.getCause());
     } finally {
-      verify(exceptionMock);
+      verify(exceptionMock).getMessage();
+      verify(exceptionMock, times(2)).getCause();
     }
   }
 }

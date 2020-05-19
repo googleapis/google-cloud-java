@@ -15,18 +15,27 @@
  */
 package com.google.cloud.bigquery;
 
-import static org.easymock.EasyMock.*;
-import static org.easymock.EasyMock.replay;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.MockitoRule;
 
+@RunWith(MockitoJUnitRunner.class)
 public class RoutineTest {
-
-  private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
-  private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
 
   private static final RoutineId ROUTINE_ID = RoutineId.of("dataset", "routine");
   private static final String ETAG = "etag";
@@ -64,32 +73,26 @@ public class RoutineTest {
           .setBody(BODY)
           .build();
 
+  @Rule public MockitoRule rule;
+
   private BigQuery bigquery;
+  private BigQueryOptions mockOptions;
   private Routine expectedRoutine;
   private Routine routine;
 
-  private void initializeExpectedRoutine(int optionsCalls) {
-    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
-    replay(serviceMockReturnsOptions);
-    bigquery = createStrictMock(BigQuery.class);
-    expectedRoutine =
-        new Routine(serviceMockReturnsOptions, new RoutineInfo.BuilderImpl(ROUTINE_INFO));
-  }
-
-  private void initializeRoutine() {
+  @Before
+  public void setUp() {
+    bigquery = mock(BigQuery.class);
+    mockOptions = mock(BigQueryOptions.class);
+    when(bigquery.getOptions()).thenReturn(mockOptions);
+    expectedRoutine = new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO));
     routine = new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO));
-  }
-
-  private void tearDown() throws Exception {
-    verify(bigquery, serviceMockReturnsOptions);
   }
 
   @Test
   public void testBuilder() {
-    initializeExpectedRoutine(2);
-    replay(bigquery);
     Routine builtRoutine =
-        new Routine.Builder(serviceMockReturnsOptions, ROUTINE_ID)
+        new Routine.Builder(bigquery, ROUTINE_ID)
             .setEtag(ETAG)
             .setRoutineType(ROUTINE_TYPE)
             .setCreationTime(CREATION_TIME)
@@ -101,106 +104,79 @@ public class RoutineTest {
             .setBody(BODY)
             .build();
     assertEquals(ETAG, builtRoutine.getEtag());
-    assertSame(serviceMockReturnsOptions, builtRoutine.getBigQuery());
+    assertSame(bigquery, builtRoutine.getBigQuery());
   }
 
   @Test
   public void testToBuilder() {
-    initializeExpectedRoutine(2);
-    replay(bigquery);
     compareRoutineInfo(expectedRoutine, expectedRoutine.toBuilder().build());
   }
 
   @Test
-  public void testExists_True() throws Exception {
-    initializeExpectedRoutine(1);
+  public void testExists_True() {
     BigQuery.RoutineOption[] expectedOptions = {BigQuery.RoutineOption.fields()};
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions)).andReturn(null);
-    replay(bigquery);
-    initializeRoutine();
+    when(bigquery.getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions)).thenReturn(null);
     assertFalse(routine.exists());
+    verify(bigquery).getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions);
   }
 
   @Test
-  public void testExists_False() throws Exception {
-    initializeExpectedRoutine(1);
+  public void testExists_False() {
     BigQuery.RoutineOption[] expectedOptions = {BigQuery.RoutineOption.fields()};
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions))
-        .andReturn(expectedRoutine);
-    replay(bigquery);
-    initializeRoutine();
+    when(bigquery.getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions))
+        .thenReturn(expectedRoutine);
     assertTrue(routine.exists());
+    verify(bigquery).getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions);
   }
 
   @Test
-  public void testReload() throws Exception {
-    initializeExpectedRoutine(4);
+  public void testReload() {
     RoutineInfo updatedInfo = ROUTINE_INFO.toBuilder().setBody("body2").build();
-    Routine expectedRoutine =
-        new Routine(serviceMockReturnsOptions, new RoutineInfo.BuilderImpl(updatedInfo));
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getRoutine(ROUTINE_INFO.getRoutineId())).andReturn(expectedRoutine);
-    replay(bigquery);
-    initializeRoutine();
+    Routine expectedRoutine = new Routine(bigquery, new RoutineInfo.BuilderImpl(updatedInfo));
+    when(bigquery.getRoutine(ROUTINE_INFO.getRoutineId())).thenReturn(expectedRoutine);
     Routine updatedRoutine = routine.reload();
     compareRoutine(expectedRoutine, updatedRoutine);
+    verify(bigquery).getRoutine(ROUTINE_INFO.getRoutineId());
   }
 
   @Test
-  public void testReload_Null() throws Exception {
-    initializeExpectedRoutine(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getRoutine(ROUTINE_INFO.getRoutineId())).andReturn(null);
-    replay(bigquery);
-    initializeRoutine();
+  public void testReload_Null() {
+    when(bigquery.getRoutine(ROUTINE_INFO.getRoutineId())).thenReturn(null);
     assertNull(routine.reload());
+    verify(bigquery).getRoutine(ROUTINE_INFO.getRoutineId());
   }
 
   @Test
   public void testUpdate() {
-    initializeExpectedRoutine(4);
     Routine expectedUpdatedRoutine = expectedRoutine.toBuilder().setBody("body2").build();
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.update(eq(expectedRoutine))).andReturn(expectedUpdatedRoutine);
-    replay(bigquery);
-    initializeRoutine();
+    when(bigquery.update(eq(expectedRoutine))).thenReturn(expectedUpdatedRoutine);
     Routine actualUpdatedRoutine = routine.update();
     compareRoutine(expectedUpdatedRoutine, actualUpdatedRoutine);
+    verify(bigquery).update(eq(expectedRoutine));
   }
 
   @Test
   public void testUpdateWithOptions() {
-    initializeExpectedRoutine(4);
     Routine expectedUpdatedRoutine = expectedRoutine.toBuilder().setBody("body2").build();
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.update(eq(expectedRoutine), eq(BigQuery.RoutineOption.fields())))
-        .andReturn(expectedUpdatedRoutine);
-    replay(bigquery);
-    initializeRoutine();
+    when(bigquery.update(eq(expectedRoutine), eq(BigQuery.RoutineOption.fields())))
+        .thenReturn(expectedUpdatedRoutine);
     Routine actualUpdatedRoutine = routine.update(BigQuery.RoutineOption.fields());
     compareRoutine(expectedUpdatedRoutine, actualUpdatedRoutine);
+    verify(bigquery).update(eq(expectedRoutine), eq(BigQuery.RoutineOption.fields()));
   }
 
   @Test
   public void testDeleteTrue() {
-    initializeExpectedRoutine(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.delete(ROUTINE_INFO.getRoutineId())).andReturn(true);
-    replay(bigquery);
-    initializeRoutine();
+    when(bigquery.delete(ROUTINE_INFO.getRoutineId())).thenReturn(true);
     assertTrue(routine.delete());
+    verify(bigquery).delete(ROUTINE_INFO.getRoutineId());
   }
 
   @Test
   public void testDeleteFalse() {
-    initializeExpectedRoutine(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.delete(ROUTINE_INFO.getRoutineId())).andReturn(false);
-    replay(bigquery);
-    initializeRoutine();
+    when(bigquery.delete(ROUTINE_INFO.getRoutineId())).thenReturn(false);
     assertFalse(routine.delete());
+    verify(bigquery).delete(ROUTINE_INFO.getRoutineId());
   }
 
   private void compareRoutine(Routine expected, Routine value) {

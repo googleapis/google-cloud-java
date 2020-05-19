@@ -16,12 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.createStrictMock;
-import static org.easymock.EasyMock.eq;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -29,6 +23,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
@@ -37,9 +35,14 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import java.util.List;
 import java.util.Map;
-import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.MockitoRule;
 
+@RunWith(MockitoJUnitRunner.class)
 public class DatasetTest {
 
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
@@ -74,34 +77,26 @@ public class DatasetTest {
   private static final TableInfo TABLE_INFO3 =
       TableInfo.newBuilder(TableId.of("dataset", "table3"), EXTERNAL_TABLE_DEFINITION).build();
 
-  private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
-  private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
+  @Rule public MockitoRule rule;
+
   private BigQuery bigquery;
+  private BigQueryOptions mockOptions;
   private Dataset expectedDataset;
   private Dataset dataset;
 
-  private void initializeExpectedDataset(int optionsCalls) {
-    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
-    replay(serviceMockReturnsOptions);
-    bigquery = createStrictMock(BigQuery.class);
-    expectedDataset = new Dataset(serviceMockReturnsOptions, new Dataset.BuilderImpl(DATASET_INFO));
-  }
-
-  private void initializeDataset() {
+  @Before
+  public void setUp() {
+    bigquery = mock(BigQuery.class);
+    mockOptions = mock(BigQueryOptions.class);
+    when(bigquery.getOptions()).thenReturn(mockOptions);
+    expectedDataset = new Dataset(bigquery, new Dataset.BuilderImpl(DATASET_INFO));
     dataset = new Dataset(bigquery, new Dataset.BuilderImpl(DATASET_INFO));
-  }
-
-  @After
-  public void tearDown() throws Exception {
-    verify(bigquery, serviceMockReturnsOptions);
   }
 
   @Test
   public void testBuilder() {
-    initializeExpectedDataset(2);
-    replay(bigquery);
     Dataset builtDataset =
-        new Dataset.Builder(serviceMockReturnsOptions, DATASET_ID)
+        new Dataset.Builder(bigquery, DATASET_ID)
             .setAcl(ACCESS_RULES)
             .setCreationTime(CREATION_TIME)
             .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
@@ -130,242 +125,181 @@ public class DatasetTest {
 
   @Test
   public void testToBuilder() {
-    initializeExpectedDataset(4);
-    replay(bigquery);
     compareDataset(expectedDataset, expectedDataset.toBuilder().build());
   }
 
   @Test
-  public void testExists_True() throws Exception {
-    initializeExpectedDataset(1);
+  public void testExists_True() {
     BigQuery.DatasetOption[] expectedOptions = {BigQuery.DatasetOption.fields()};
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getDataset(DATASET_INFO.getDatasetId(), expectedOptions))
-        .andReturn(expectedDataset);
-    replay(bigquery);
-    initializeDataset();
+    when(bigquery.getDataset(DATASET_INFO.getDatasetId(), expectedOptions))
+        .thenReturn(expectedDataset);
     assertTrue(dataset.exists());
+    verify(bigquery).getDataset(DATASET_INFO.getDatasetId(), expectedOptions);
   }
 
   @Test
-  public void testExists_False() throws Exception {
-    initializeExpectedDataset(1);
+  public void testExists_False() {
     BigQuery.DatasetOption[] expectedOptions = {BigQuery.DatasetOption.fields()};
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getDataset(DATASET_INFO.getDatasetId(), expectedOptions)).andReturn(null);
-    replay(bigquery);
-    initializeDataset();
+    when(bigquery.getDataset(DATASET_INFO.getDatasetId(), expectedOptions)).thenReturn(null);
     assertFalse(dataset.exists());
+    verify(bigquery).getDataset(DATASET_INFO.getDatasetId(), expectedOptions);
   }
 
   @Test
-  public void testReload() throws Exception {
-    initializeExpectedDataset(4);
+  public void testReload() {
     DatasetInfo updatedInfo = DATASET_INFO.toBuilder().setDescription("Description").build();
-    Dataset expectedDataset =
-        new Dataset(serviceMockReturnsOptions, new DatasetInfo.BuilderImpl(updatedInfo));
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset()))
-        .andReturn(expectedDataset);
-    replay(bigquery);
-    initializeDataset();
+    Dataset expectedDataset = new Dataset(bigquery, new DatasetInfo.BuilderImpl(updatedInfo));
+    when(bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset())).thenReturn(expectedDataset);
     Dataset updatedDataset = dataset.reload();
     compareDataset(expectedDataset, updatedDataset);
+    verify(bigquery).getDataset(DATASET_INFO.getDatasetId().getDataset());
   }
 
   @Test
-  public void testReloadNull() throws Exception {
-    initializeExpectedDataset(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset())).andReturn(null);
-    replay(bigquery);
-    initializeDataset();
+  public void testReloadNull() {
+    when(bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset())).thenReturn(null);
     assertNull(dataset.reload());
+    verify(bigquery).getDataset(DATASET_INFO.getDatasetId().getDataset());
   }
 
   @Test
-  public void testReloadWithOptions() throws Exception {
-    initializeExpectedDataset(4);
+  public void testReloadWithOptions() {
     DatasetInfo updatedInfo = DATASET_INFO.toBuilder().setDescription("Description").build();
-    Dataset expectedDataset =
-        new Dataset(serviceMockReturnsOptions, new DatasetInfo.BuilderImpl(updatedInfo));
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(
-            bigquery.getDataset(
-                DATASET_INFO.getDatasetId().getDataset(), BigQuery.DatasetOption.fields()))
-        .andReturn(expectedDataset);
-    replay(bigquery);
-    initializeDataset();
+    Dataset expectedDataset = new Dataset(bigquery, new DatasetInfo.BuilderImpl(updatedInfo));
+    when(bigquery.getDataset(
+            DATASET_INFO.getDatasetId().getDataset(), BigQuery.DatasetOption.fields()))
+        .thenReturn(expectedDataset);
     Dataset updatedDataset = dataset.reload(BigQuery.DatasetOption.fields());
     compareDataset(expectedDataset, updatedDataset);
+    verify(bigquery)
+        .getDataset(DATASET_INFO.getDatasetId().getDataset(), BigQuery.DatasetOption.fields());
   }
 
   @Test
   public void testUpdate() {
-    initializeExpectedDataset(4);
     Dataset expectedUpdatedDataset =
         expectedDataset.toBuilder().setDescription("Description").build();
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.update(eq(expectedDataset))).andReturn(expectedUpdatedDataset);
-    replay(bigquery);
-    initializeDataset();
+    when(bigquery.update(eq(expectedDataset))).thenReturn(expectedUpdatedDataset);
     Dataset actualUpdatedDataset = dataset.update();
     compareDataset(expectedUpdatedDataset, actualUpdatedDataset);
+    verify(bigquery).update(eq(expectedDataset));
   }
 
   @Test
   public void testUpdateWithOptions() {
-    initializeExpectedDataset(4);
     Dataset expectedUpdatedDataset =
         expectedDataset.toBuilder().setDescription("Description").build();
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.update(eq(expectedDataset), eq(BigQuery.DatasetOption.fields())))
-        .andReturn(expectedUpdatedDataset);
-    replay(bigquery);
-    initializeDataset();
+    when(bigquery.update(eq(expectedDataset), eq(BigQuery.DatasetOption.fields())))
+        .thenReturn(expectedUpdatedDataset);
     Dataset actualUpdatedDataset = dataset.update(BigQuery.DatasetOption.fields());
     compareDataset(expectedUpdatedDataset, actualUpdatedDataset);
+    verify(bigquery).update(eq(expectedDataset), eq(BigQuery.DatasetOption.fields()));
   }
 
   @Test
   public void testDeleteTrue() {
-    initializeExpectedDataset(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.delete(DATASET_INFO.getDatasetId())).andReturn(true);
-    replay(bigquery);
-    initializeDataset();
+    when(bigquery.delete(DATASET_INFO.getDatasetId())).thenReturn(true);
     assertTrue(dataset.delete());
+    verify(bigquery).delete(DATASET_INFO.getDatasetId());
   }
 
   @Test
   public void testDeleteFalse() {
-    initializeExpectedDataset(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.delete(DATASET_INFO.getDatasetId())).andReturn(false);
-    replay(bigquery);
-    initializeDataset();
+    when(bigquery.delete(DATASET_INFO.getDatasetId())).thenReturn(false);
     assertFalse(dataset.delete());
+    verify(bigquery).delete(DATASET_INFO.getDatasetId());
   }
 
   @Test
-  public void testList() throws Exception {
-    initializeExpectedDataset(4);
+  public void testList() {
     List<Table> tableResults =
         ImmutableList.of(
-            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO1)),
-            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO2)),
-            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
+            new Table(bigquery, new Table.BuilderImpl(TABLE_INFO1)),
+            new Table(bigquery, new Table.BuilderImpl(TABLE_INFO2)),
+            new Table(bigquery, new Table.BuilderImpl(TABLE_INFO3)));
     PageImpl<Table> expectedPage = new PageImpl<>(null, "c", tableResults);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.listTables(DATASET_INFO.getDatasetId())).andReturn(expectedPage);
-    replay(bigquery);
-    initializeDataset();
+    when(bigquery.listTables(DATASET_INFO.getDatasetId())).thenReturn(expectedPage);
     Page<Table> tablePage = dataset.list();
     assertArrayEquals(
         tableResults.toArray(), Iterables.toArray(tablePage.getValues(), Table.class));
     assertEquals(expectedPage.getNextPageToken(), tablePage.getNextPageToken());
+    verify(bigquery).listTables(DATASET_INFO.getDatasetId());
   }
 
   @Test
-  public void testListWithOptions() throws Exception {
-    initializeExpectedDataset(4);
+  public void testListWithOptions() {
     List<Table> tableResults =
         ImmutableList.of(
-            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO1)),
-            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO2)),
-            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
+            new Table(bigquery, new Table.BuilderImpl(TABLE_INFO1)),
+            new Table(bigquery, new Table.BuilderImpl(TABLE_INFO2)),
+            new Table(bigquery, new Table.BuilderImpl(TABLE_INFO3)));
     PageImpl<Table> expectedPage = new PageImpl<>(null, "c", tableResults);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.listTables(DATASET_INFO.getDatasetId(), BigQuery.TableListOption.pageSize(10L)))
-        .andReturn(expectedPage);
-    replay(bigquery);
-    initializeDataset();
+    when(bigquery.listTables(DATASET_INFO.getDatasetId(), BigQuery.TableListOption.pageSize(10L)))
+        .thenReturn(expectedPage);
     Page<Table> tablePage = dataset.list(BigQuery.TableListOption.pageSize(10L));
     assertArrayEquals(
         tableResults.toArray(), Iterables.toArray(tablePage.getValues(), Table.class));
     assertEquals(expectedPage.getNextPageToken(), tablePage.getNextPageToken());
+    verify(bigquery)
+        .listTables(DATASET_INFO.getDatasetId(), BigQuery.TableListOption.pageSize(10L));
   }
 
   @Test
-  public void testGet() throws Exception {
-    initializeExpectedDataset(2);
-    Table expectedTable =
-        new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO1));
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getTable(TABLE_INFO1.getTableId())).andReturn(expectedTable);
-    replay(bigquery);
-    initializeDataset();
+  public void testGet() {
+    Table expectedTable = new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO1));
+    when(bigquery.getTable(TABLE_INFO1.getTableId())).thenReturn(expectedTable);
     Table table = dataset.get(TABLE_INFO1.getTableId().getTable());
     assertNotNull(table);
     assertEquals(expectedTable, table);
+    verify(bigquery).getTable(TABLE_INFO1.getTableId());
   }
 
   @Test
-  public void testGetNull() throws Exception {
-    initializeExpectedDataset(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getTable(TABLE_INFO1.getTableId())).andReturn(null);
-    replay(bigquery);
-    initializeDataset();
+  public void testGetNull() {
+    when(bigquery.getTable(TABLE_INFO1.getTableId())).thenReturn(null);
     assertNull(dataset.get(TABLE_INFO1.getTableId().getTable()));
+    verify(bigquery).getTable(TABLE_INFO1.getTableId());
   }
 
   @Test
-  public void testGetWithOptions() throws Exception {
-    initializeExpectedDataset(2);
-    Table expectedTable =
-        new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO1));
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getTable(TABLE_INFO1.getTableId(), BigQuery.TableOption.fields()))
-        .andReturn(expectedTable);
-    replay(bigquery);
-    initializeDataset();
+  public void testGetWithOptions() {
+    Table expectedTable = new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO1));
+    when(bigquery.getTable(TABLE_INFO1.getTableId(), BigQuery.TableOption.fields()))
+        .thenReturn(expectedTable);
     Table table = dataset.get(TABLE_INFO1.getTableId().getTable(), BigQuery.TableOption.fields());
     assertNotNull(table);
     assertEquals(expectedTable, table);
+    verify(bigquery).getTable(TABLE_INFO1.getTableId(), BigQuery.TableOption.fields());
   }
 
   @Test
-  public void testCreateTable() throws Exception {
-    initializeExpectedDataset(2);
-    Table expectedTable =
-        new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO1));
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.create(TABLE_INFO1)).andReturn(expectedTable);
-    replay(bigquery);
-    initializeDataset();
+  public void testCreateTable() {
+    Table expectedTable = new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO1));
+    when(bigquery.create(TABLE_INFO1)).thenReturn(expectedTable);
     Table table = dataset.create(TABLE_INFO1.getTableId().getTable(), TABLE_DEFINITION);
     assertEquals(expectedTable, table);
+    verify(bigquery).create(TABLE_INFO1);
   }
 
   @Test
-  public void testCreateTableWithOptions() throws Exception {
-    initializeExpectedDataset(2);
-    Table expectedTable =
-        new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO1));
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.create(TABLE_INFO1, BigQuery.TableOption.fields())).andReturn(expectedTable);
-    replay(bigquery);
-    initializeDataset();
+  public void testCreateTableWithOptions() {
+    Table expectedTable = new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO1));
+    when(bigquery.create(TABLE_INFO1, BigQuery.TableOption.fields())).thenReturn(expectedTable);
     Table table =
         dataset.create(
             TABLE_INFO1.getTableId().getTable(), TABLE_DEFINITION, BigQuery.TableOption.fields());
     assertEquals(expectedTable, table);
+    verify(bigquery).create(TABLE_INFO1, BigQuery.TableOption.fields());
   }
 
   @Test
   public void testBigQuery() {
-    initializeExpectedDataset(1);
-    replay(bigquery);
-    assertSame(serviceMockReturnsOptions, expectedDataset.getBigQuery());
+    assertSame(bigquery, expectedDataset.getBigQuery());
   }
 
   @Test
   public void testToAndFromPb() {
-    initializeExpectedDataset(4);
-    replay(bigquery);
-    compareDataset(
-        expectedDataset, Dataset.fromPb(serviceMockReturnsOptions, expectedDataset.toPb()));
+    compareDataset(expectedDataset, Dataset.fromPb(bigquery, expectedDataset.toPb()));
   }
 
   private void compareDataset(Dataset expected, Dataset value) {

@@ -17,17 +17,19 @@
 package com.google.cloud.bigquery;
 
 import com.google.cloud.TransportOptions;
-import org.easymock.EasyMock;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class BigQueryOptionsTest {
 
   @Test
   public void testInvalidTransport() {
     try {
-      BigQueryOptions.newBuilder()
-          .setTransportOptions(EasyMock.<TransportOptions>createMock(TransportOptions.class));
+      BigQueryOptions.newBuilder().setTransportOptions(Mockito.mock(TransportOptions.class));
       Assert.fail();
     } catch (IllegalArgumentException expected) {
       Assert.assertNotNull(expected.getMessage());

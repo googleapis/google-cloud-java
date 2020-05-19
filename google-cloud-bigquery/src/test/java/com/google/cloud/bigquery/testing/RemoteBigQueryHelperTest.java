@@ -26,10 +26,13 @@ import com.google.cloud.http.HttpTransportOptions;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
-import org.easymock.EasyMock;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.threeten.bp.Duration;
 
+@RunWith(MockitoJUnitRunner.class)
 public class RemoteBigQueryHelperTest {
 
   private static final String DATASET_NAME = "dataset-name";
@@ -65,12 +68,11 @@ public class RemoteBigQueryHelperTest {
 
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
-    BigQuery bigqueryMock = EasyMock.createMock(BigQuery.class);
-    EasyMock.expect(bigqueryMock.delete(DATASET_NAME, DatasetDeleteOption.deleteContents()))
-        .andReturn(true);
-    EasyMock.replay(bigqueryMock);
+    BigQuery bigqueryMock = Mockito.mock(BigQuery.class);
+    Mockito.when(bigqueryMock.delete(DATASET_NAME, DatasetDeleteOption.deleteContents()))
+        .thenReturn(true);
     assertTrue(RemoteBigQueryHelper.forceDelete(bigqueryMock, DATASET_NAME));
-    EasyMock.verify(bigqueryMock);
+    Mockito.verify(bigqueryMock).delete(DATASET_NAME, DatasetDeleteOption.deleteContents());
   }
 
   @Test

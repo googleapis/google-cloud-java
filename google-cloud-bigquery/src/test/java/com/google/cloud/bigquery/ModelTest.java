@@ -16,25 +16,25 @@
 
 package com.google.cloud.bigquery;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.createStrictMock;
-import static org.easymock.EasyMock.eq;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
-import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.MockitoRule;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ModelTest {
-
-  private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
-  private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
 
   private static final ModelId MODEL_ID = ModelId.of("dataset", "model");
   private static final String ETAG = "etag";
@@ -54,32 +54,26 @@ public class ModelTest {
           .setFriendlyName(FRIENDLY_NAME)
           .build();
 
+  @Rule public MockitoRule rule;
+
   private BigQuery bigquery;
+  private BigQueryOptions mockOptions;
   private Model expectedModel;
   private Model model;
 
-  private void initializeExpectedModel(int optionsCalls) {
-    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
-    replay(serviceMockReturnsOptions);
-    bigquery = createStrictMock(BigQuery.class);
-    expectedModel = new Model(serviceMockReturnsOptions, new ModelInfo.BuilderImpl(MODEL_INFO));
-  }
-
-  private void initializeModel() {
+  @Before
+  public void setUp() {
+    bigquery = mock(BigQuery.class);
+    mockOptions = mock(BigQueryOptions.class);
+    when(bigquery.getOptions()).thenReturn(mockOptions);
+    expectedModel = new Model(bigquery, new ModelInfo.BuilderImpl(MODEL_INFO));
     model = new Model(bigquery, new ModelInfo.BuilderImpl(MODEL_INFO));
-  }
-
-  @After
-  public void tearDown() throws Exception {
-    verify(bigquery, serviceMockReturnsOptions);
   }
 
   @Test
   public void testBuilder() {
-    initializeExpectedModel(2);
-    replay(bigquery);
     Model builtModel =
-        new Model.Builder(serviceMockReturnsOptions, MODEL_ID)
+        new Model.Builder(bigquery, MODEL_ID)
             .setEtag(ETAG)
             .setCreationTime(CREATION_TIME)
             .setExpirationTime(EXPIRATION_TIME)
@@ -88,105 +82,78 @@ public class ModelTest {
             .setFriendlyName(FRIENDLY_NAME)
             .build();
     assertEquals(ETAG, builtModel.getEtag());
-    assertSame(serviceMockReturnsOptions, builtModel.getBigQuery());
+    assertSame(bigquery, builtModel.getBigQuery());
   }
 
   @Test
   public void testToBuilder() {
-    initializeExpectedModel(2);
-    replay(bigquery);
     compareModelInfo(expectedModel, expectedModel.toBuilder().build());
   }
 
   @Test
-  public void testExists_True() throws Exception {
-    initializeExpectedModel(1);
+  public void testExists_True() {
     BigQuery.ModelOption[] expectedOptions = {BigQuery.ModelOption.fields()};
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getModel(MODEL_INFO.getModelId(), expectedOptions)).andReturn(expectedModel);
-    replay(bigquery);
-    initializeModel();
+    when(bigquery.getModel(MODEL_INFO.getModelId(), expectedOptions)).thenReturn(expectedModel);
     assertTrue(model.exists());
+    verify(bigquery).getModel(MODEL_INFO.getModelId(), expectedOptions);
   }
 
   @Test
-  public void testExists_False() throws Exception {
-    initializeExpectedModel(1);
+  public void testExists_False() {
     BigQuery.ModelOption[] expectedOptions = {BigQuery.ModelOption.fields()};
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getModel(MODEL_INFO.getModelId(), expectedOptions)).andReturn(null);
-    replay(bigquery);
-    initializeModel();
+    when(bigquery.getModel(MODEL_INFO.getModelId(), expectedOptions)).thenReturn(null);
     assertFalse(model.exists());
+    verify(bigquery).getModel(MODEL_INFO.getModelId(), expectedOptions);
   }
 
   @Test
-  public void testReload() throws Exception {
-    initializeExpectedModel(4);
+  public void testReload() {
     ModelInfo updatedInfo = MODEL_INFO.toBuilder().setDescription("Description").build();
-    Model expectedModel =
-        new Model(serviceMockReturnsOptions, new ModelInfo.BuilderImpl(updatedInfo));
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getModel(MODEL_INFO.getModelId())).andReturn(expectedModel);
-    replay(bigquery);
-    initializeModel();
+    Model expectedModel = new Model(bigquery, new ModelInfo.BuilderImpl(updatedInfo));
+    when(bigquery.getModel(MODEL_INFO.getModelId())).thenReturn(expectedModel);
     Model updatedModel = model.reload();
     compareModel(expectedModel, updatedModel);
+    verify(bigquery).getModel(MODEL_INFO.getModelId());
   }
 
   @Test
-  public void testReloadNull() throws Exception {
-    initializeExpectedModel(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getModel(MODEL_INFO.getModelId())).andReturn(null);
-    replay(bigquery);
-    initializeModel();
+  public void testReloadNull() {
+    when(bigquery.getModel(MODEL_INFO.getModelId())).thenReturn(null);
     assertNull(model.reload());
+    verify(bigquery).getModel(MODEL_INFO.getModelId());
   }
 
   @Test
   public void testUpdate() {
-    initializeExpectedModel(4);
     Model expectedUpdatedModel = expectedModel.toBuilder().setDescription("Description").build();
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.update(eq(expectedModel))).andReturn(expectedUpdatedModel);
-    replay(bigquery);
-    initializeModel();
+    when(bigquery.update(eq(expectedModel))).thenReturn(expectedUpdatedModel);
     Model actualUpdatedModel = model.update();
     compareModel(expectedUpdatedModel, actualUpdatedModel);
+    verify(bigquery).update(eq(expectedModel));
   }
 
   @Test
   public void testUpdateWithOptions() {
-    initializeExpectedModel(4);
     Model expectedUpdatedModel = expectedModel.toBuilder().setDescription("Description").build();
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.update(eq(expectedModel), eq(BigQuery.ModelOption.fields())))
-        .andReturn(expectedUpdatedModel);
-    replay(bigquery);
-    initializeModel();
+    when(bigquery.update(eq(expectedModel), eq(BigQuery.ModelOption.fields())))
+        .thenReturn(expectedUpdatedModel);
     Model actualUpdatedModel = model.update(BigQuery.ModelOption.fields());
     compareModel(expectedUpdatedModel, actualUpdatedModel);
+    verify(bigquery).update(eq(expectedModel), eq(BigQuery.ModelOption.fields()));
   }
 
   @Test
   public void testDeleteTrue() {
-    initializeExpectedModel(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.delete(MODEL_INFO.getModelId())).andReturn(true);
-    replay(bigquery);
-    initializeModel();
+    when(bigquery.delete(MODEL_INFO.getModelId())).thenReturn(true);
     assertTrue(model.delete());
+    verify(bigquery).delete(MODEL_INFO.getModelId());
   }
 
   @Test
   public void testDeleteFalse() {
-    initializeExpectedModel(1);
-    expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.delete(MODEL_INFO.getModelId())).andReturn(false);
-    replay(bigquery);
-    initializeModel();
+    when(bigquery.delete(MODEL_INFO.getModelId())).thenReturn(false);
     assertFalse(model.delete());
+    verify(bigquery).delete(MODEL_INFO.getModelId());
   }
 
   private void compareModel(Model expected, Model value) {
