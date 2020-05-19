@@ -60,6 +60,7 @@
     <site.installationModule>${project.artifactId}</site.installationModule>
     <report.jxr.inherited>false</report.jxr.inherited>
     <skipITs>true</skipITs>
+    <auto-value-annotation.version>1.7.2</auto-value-annotation.version>
   </properties>
 
   <build>
@@ -486,6 +487,21 @@
     </plugins>
   </reporting>
 
+  <dependencyManagement>
+    <dependencies>
+      <!--
+      We would prefer this be defined in our shared-dependencies, however due to
+      auto value being part of the compiler annotation processor, we are defining
+      it here to reduce the locations for version management.
+      -->
+      <dependency>
+        <groupId>com.google.auto.value</groupId>
+        <artifactId>auto-value-annotations</artifactId>
+        <version>${auto-value-annotation.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <profiles>
     <profile>
       <id>release</id>
@@ -712,5 +728,91 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <id>autovalue-java7</id>
+      <activation>
+        <jdk>1.7</jdk>
+        <file>
+          <exists>${basedir}/EnableAutoValue.txt</exists>
+        </file>
+      </activation>
+      <properties>
+        <!--
+        We need to back pin to 1.4 because it is the last version of auto-value
+        that was compiled for java 1.7.
+        -->
+        <auto-value.version>1.4</auto-value.version>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <annotationProcessorPaths>
+                <path>
+                  <groupId>com.google.auto.value</groupId>
+                  <artifactId>auto-value</artifactId>
+                  <version>${auto-value.version}</version>
+                </path>
+                <!--
+                There is currently no available version of auto-service-annotations
+                in maven central compiled for java 1.7, so we can't include it here.
+
+                If you're using IntelliJ please use a newer jdk and set the language
+                level to 1.7 for your dev work.
+                -->
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>autovalue-java8</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+        <file>
+          <exists>${basedir}/EnableAutoValue.txt</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <annotationProcessorPaths>
+                <path>
+                  <groupId>com.google.auto.value</groupId>
+                  <artifactId>auto-value</artifactId>
+                  <version>${auto-value-annotation.version}</version>
+                </path>
+                <!--
+                Manually pull in auto-service-annotations so that it is part of the
+                processor path because auto-value has it set to provided scope.
+
+                This dependency is needed due to the retention change in
+                https://github.com/google/auto/commit/628df548685b4fc0f2a9af856f97cc2a68da246b
+                where the RetentionPolicy changed from SOURCE to CLASS.
+
+                Due to the RetentionPolicy change to CLASS we must have the
+                annotations available on the processor path otherwise the following
+                error will be thrown. (This is a particular problem with the
+                annotation processor configuration in IntelliJ)
+
+                Error:java: java.lang.NoClassDefFoundError: com/google/auto/service/AutoService
+                  com.google.auto.service.AutoService
+                -->
+                <path>
+                  <groupId>com.google.auto.service</groupId>
+                  <artifactId>auto-service-annotations</artifactId>
+                  <version>1.0-rc7</version>
+                </path>
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
   </profiles>
 </project>
