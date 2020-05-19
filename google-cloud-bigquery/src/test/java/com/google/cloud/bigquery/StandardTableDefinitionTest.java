@@ -16,9 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import static org.hamcrest.CoreMatchers.allOf;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -29,6 +26,7 @@ import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 import com.google.common.collect.ImmutableList;
+import com.google.common.truth.Truth;
 import org.junit.Test;
 
 public class StandardTableDefinitionTest {
@@ -139,14 +137,9 @@ public class StandardTableDefinitionTest {
     try {
       StandardTableDefinition.fromPb(invalidTable);
     } catch (IllegalArgumentException ie) {
-      assertThat(
-          ie.getMessage(),
-          allOf(
-              containsString("Illegal Argument - Got unexpected time partitioning"),
-              containsString("GHURRY"),
-              containsString("ILLEGAL_ARG_TEST_PROJECT"),
-              containsString("ILLEGAL_ARG_TEST_DATASET"),
-              containsString("ILLEGAL_ARG_TEST_TABLE")));
+      Truth.assertThat(ie.getMessage())
+          .contains(
+              "Illegal Argument - Got unexpected time partitioning GHURRY in project ILLEGAL_ARG_TEST_PROJECT in dataset ILLEGAL_ARG_TEST_DATASET in table ILLEGAL_ARG_TEST_TABLE");
       return;
     }
     fail("testFromPb illegal argument exception did not throw!");

@@ -277,7 +277,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
       } catch (IllegalArgumentException e) {
         throw new IllegalArgumentException(
             "Illegal Argument - Got unexpected time partitioning "
-                + tablePb.getTimePartitioning().toString()
+                + tablePb.getTimePartitioning().getType()
                 + " in project "
                 + tablePb.getTableReference().getProjectId()
                 + " in dataset "
