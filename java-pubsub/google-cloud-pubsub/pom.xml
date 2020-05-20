@@ -111,7 +111,6 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${google.core.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -127,7 +126,6 @@
     <dependency>
       <groupId>io.opencensus</groupId>
       <artifactId>opencensus-impl</artifactId>
-      <version>${opencensus.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
@@ -183,6 +181,7 @@
         <dependency>
           <groupId>javax.annotation</groupId>
           <artifactId>javax.annotation-api</artifactId>
+          <version>${javax.annotations.version}</version>
         </dependency>
       </dependencies>
     </profile>
