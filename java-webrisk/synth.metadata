@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-webrisk.git",
-        "sha": "83ba9a67103a63cc011c77f7271e99415eebbce3"
+        "sha": "f74cead95a1663b7a620127a731e9d31dc9680e5"
       }
     },
     {
