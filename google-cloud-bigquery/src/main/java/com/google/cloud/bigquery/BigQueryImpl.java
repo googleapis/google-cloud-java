@@ -753,7 +753,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               EXCEPTION_HANDLER,
               getOptions().getClock());
       if (getOptions().getThrowNotFound() && answer == null) {
-        throw new BigQueryException(HTTP_NOT_FOUND, "Model not found");
+        throw new BigQueryException(HTTP_NOT_FOUND, "Routine not found");
       }
       return answer == null ? null : Routine.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
