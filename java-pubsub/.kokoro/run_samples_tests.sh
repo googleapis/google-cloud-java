@@ -28,6 +28,10 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
+# Setup required env variables
+source ${KOKORO_GFILE_DIR}/pubsub_secrets.txt
+echo "********** Successfully Set All Environment Variables **********"
+
 # Attempt to install 3 times with exponential backoff (starting with 10 seconds)
 retry_with_backoff 3 10 \
   mvn install -B -V \
