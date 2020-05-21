@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.116.0](https://www.github.com/googleapis/java-bigquery/compare/v1.115.1...v1.116.0) (2020-05-21)
+
+
+### Features
+
+* remove autovalue profile as it has moved to shared-config ([#370](https://www.github.com/googleapis/java-bigquery/issues/370)) ([57982a0](https://www.github.com/googleapis/java-bigquery/commit/57982a052c7849becbadbed773f951f0e7870a56))
+
+
+### Bug Fixes
+
+* error message for get routine ([#372](https://www.github.com/googleapis/java-bigquery/issues/372)) ([5966733](https://www.github.com/googleapis/java-bigquery/commit/596673346f9b5540cece041e63019227522062be))
+
 ### [1.115.1](https://www.github.com/googleapis/java-bigquery/compare/v1.115.0...v1.115.1) (2020-05-19)
 
 
