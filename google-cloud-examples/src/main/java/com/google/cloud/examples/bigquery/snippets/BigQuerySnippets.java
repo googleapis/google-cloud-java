@@ -31,6 +31,7 @@ import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.Clustering;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -57,7 +58,9 @@ import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TableResult;
+import com.google.cloud.bigquery.TimePartitioning;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.channels.Channels;
@@ -421,6 +424,31 @@ public class BigQuerySnippets {
     TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
     Table table = bigquery.create(tableInfo);
     // [END bigquery_create_table]
+    return table;
+  }
+
+  /** Example of creating a clustered table. */
+  // [TARGET create(TableInfo, TableOption...)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE "fields"]
+  public Table createClusteredTable(String datasetName, String tableName,
+                           List<Field> fields) {
+    // [START bigquery_create_clustered_table]
+    TableId tableId = TableId.of("dataset", "table");
+    TimePartitioning partitioning = TimePartitioning.of(TimePartitioning.Type.DAY);
+    List<String> clusteringColumns = ImmutableList.of("cookieId");
+    Clustering clustering = Clustering.newBuilder().setFields(clusteringColumns).build();
+    // Table schema definition
+    Schema schema = Schema.of(fields);
+    TableDefinition tableDefinition = StandardTableDefinition.newBuilder()
+            .setSchema(schema)
+            .setTimePartitioning(partitioning)
+            .setClustering(clustering)
+            .build();
+    TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
+    Table table = bigquery.create(tableInfo);
+    // [END bigquery_create_clustered_table]
     return table;
   }
 

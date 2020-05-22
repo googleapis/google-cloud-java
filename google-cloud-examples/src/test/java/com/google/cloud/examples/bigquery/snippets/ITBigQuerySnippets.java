@@ -43,6 +43,7 @@ import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.common.io.Resources;
@@ -53,6 +54,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
@@ -165,6 +167,21 @@ public class ITBigQuerySnippets {
     }
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
     assertFalse(bigquerySnippets.deleteTableFromId(tableId.getProject(), DATASET, tableName));
+  }
+
+  @Test
+  public void testCreateCluseredTable() throws InterruptedException {
+    List<Field> fields = ImmutableList.of(
+            Field.of("name", LegacySQLTypeName.STRING),
+            Field.of("cookieId", LegacySQLTypeName.STRING)
+    );
+    String tableName = "test_create_clustered";
+    Table table = bigquerySnippets.createClusteredTable(DATASET, tableName, fields);
+    assertNotNull(table);
+    TableId tableId = TableId.of(bigquery.getOptions().getProjectId(), DATASET, tableName);
+    assertEquals(
+            tableId,
+            bigquerySnippets.getTable(tableId.getDataset(), tableId.getTable()).getTableId());
   }
 
   @Test
