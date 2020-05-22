@@ -61,6 +61,7 @@
     <report.jxr.inherited>false</report.jxr.inherited>
     <skipITs>true</skipITs>
     <auto-value-annotation.version>1.7.2</auto-value-annotation.version>
+    <docRoot>/java/reference/</docRoot>
   </properties>
 
   <build>
@@ -647,7 +648,7 @@
             <!-- Generate API docs using Doclava for the developer site. -->
             <artifactId>maven-javadoc-plugin</artifactId>
             <!-- Note: version 3.x.x uses additionalOption instead of additionalparam. -->
-            <version>3.1.1</version>
+            <version>3.2.0</version>
             <executions>
               <execution>
                 <phase>site</phase>
@@ -680,13 +681,13 @@
                 <additionalOption>/java/_project.yaml</additionalOption>
                 <additionalOption>-hdf</additionalOption>
                 <additionalOption>devsite.path</additionalOption>
-                <additionalOption>/java/reference/</additionalOption>
+                <additionalOption>${docRoot}</additionalOption>
                 <additionalOption>-d</additionalOption>
                 <additionalOption>${project.build.directory}/devsite</additionalOption>
                 <additionalOption>-templatedir</additionalOption>
                 <additionalOption>${devsite.template}</additionalOption>
                 <additionalOption>-toroot</additionalOption>
-                <additionalOption>/java/reference/</additionalOption>
+                <additionalOption>${docRoot}</additionalOption>
                 <additionalOption>-yaml</additionalOption>
                 <additionalOption>_toc.yaml</additionalOption>
                 <additionalOption>-warning</additionalOption>
@@ -709,9 +710,9 @@
                   <target>
                     <echo message="Updating relative links in API docs" />
                     <!-- TODO: What is the right behavior for io* and google*? -->
-                    <replace dir="${project.build.directory}/devsite" token="href=&quot;com" value="href=&quot;/java/reference/com" />
-                    <replace dir="${project.build.directory}/devsite" token="href=&quot;io" value="href=&quot;/java/reference/io" />
-                    <replace dir="${project.build.directory}/devsite" token="href=&quot;google" value="href=&quot;/java/reference/google" />
+                    <replace dir="${project.build.directory}/devsite" token="href=&quot;com" value="href=&quot;${docRoot}com" />
+                    <replace dir="${project.build.directory}/devsite" token="href=&quot;io" value="href=&quot;${docRoot}io" />
+                    <replace dir="${project.build.directory}/devsite" token="href=&quot;google" value="href=&quot;${docRoot}google" />
                     <copy file="${project.build.directory}/devsite/assets/_toc.yaml" todir="${project.build.directory}/devsite/reference" />
                     <echo message="Removing files not needed by Devsite" />
                     <delete file="${project.build.directory}/devsite/reference/classes.html" />
