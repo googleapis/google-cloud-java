@@ -16,4 +16,14 @@
     <className>com/google/pubsub/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/pubsub/v1/TopicName</className>
+    <method>java.util.List toStrings(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/pubsub/v1/TopicName</className>
+    <method>java.util.List parse(*)</method>
+  </difference>
 </differences>
