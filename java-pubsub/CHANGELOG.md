@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.106.0](https://www.github.com/googleapis/java-pubsub/compare/v1.105.1...v1.106.0) (2020-05-20)
+
+
+### Features
+
+* implement google-cloud-shared-dependencies BOM ([#198](https://www.github.com/googleapis/java-pubsub/issues/198)) ([55bdc26](https://www.github.com/googleapis/java-pubsub/commit/55bdc2647f4f9949d015497ed4a35c24a3ecdfab))
+* set up repo for samples ([#196](https://www.github.com/googleapis/java-pubsub/issues/196)) ([3e1b136](https://www.github.com/googleapis/java-pubsub/commit/3e1b1360250ed8fa91b9fa6f36bc1d051aa38e2c))
+
+
+### Documentation
+
+* **fix:** update client documentation link ([#192](https://www.github.com/googleapis/java-pubsub/issues/192)) ([e6f0533](https://www.github.com/googleapis/java-pubsub/commit/e6f053399c45d02c7d641c4b2a84bff96b634e34))
+
+
+### Dependencies
+
+* update autovalue.version to v1.7.2 ([#184](https://www.github.com/googleapis/java-pubsub/issues/184)) ([040ff0b](https://www.github.com/googleapis/java-pubsub/commit/040ff0b7ce0a323a0e1ee575eb1c021dd644608b))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#188](https://www.github.com/googleapis/java-pubsub/issues/188)) ([87e036e](https://www.github.com/googleapis/java-pubsub/commit/87e036ed6929dfa8f6d8e2eb099833276aa17a91))
+
 ### [1.105.1](https://www.github.com/googleapis/java-pubsub/compare/v1.105.0...v1.105.1) (2020-05-07)
 
 
