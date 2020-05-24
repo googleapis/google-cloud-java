@@ -15,6 +15,7 @@
  */
 package com.google.cloud.pubsub.v1.stub;
 
+import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
 
@@ -60,6 +61,8 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
+import com.google.pubsub.v1.ListTopicSnapshotsRequest;
+import com.google.pubsub.v1.ListTopicSnapshotsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
@@ -126,6 +129,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings;
+  private final PagedCallSettings<
+          ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
+      listTopicSnapshotsSettings;
   private final UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -165,6 +171,13 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings() {
     return listTopicSubscriptionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTopicSnapshots. */
+  public PagedCallSettings<
+          ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
+      listTopicSnapshotsSettings() {
+    return listTopicSnapshotsSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteTopic. */
@@ -262,6 +275,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     getTopicSettings = settingsBuilder.getTopicSettings().build();
     listTopicsSettings = settingsBuilder.listTopicsSettings().build();
     listTopicSubscriptionsSettings = settingsBuilder.listTopicSubscriptionsSettings().build();
+    listTopicSnapshotsSettings = settingsBuilder.listTopicSnapshotsSettings().build();
     deleteTopicSettings = settingsBuilder.deleteTopicSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
@@ -346,6 +360,45 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String>
+      LIST_TOPIC_SNAPSHOTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTopicSnapshotsRequest injectToken(
+                ListTopicSnapshotsRequest payload, String token) {
+              return ListTopicSnapshotsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTopicSnapshotsRequest injectPageSize(
+                ListTopicSnapshotsRequest payload, int pageSize) {
+              return ListTopicSnapshotsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTopicSnapshotsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTopicSnapshotsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<String> extractResources(ListTopicSnapshotsResponse payload) {
+              return payload.getSnapshotsList() != null
+                  ? payload.getSnapshotsList()
+                  : ImmutableList.<String>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       LIST_TOPICS_PAGE_STR_FACT =
@@ -384,6 +437,27 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
                       PageContext.create(
                           callable, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
               return ListTopicSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
+      LIST_TOPIC_SNAPSHOTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTopicSnapshotsRequest,
+              ListTopicSnapshotsResponse,
+              ListTopicSnapshotsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTopicSnapshotsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse> callable,
+                ListTopicSnapshotsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTopicSnapshotsResponse> futureResponse) {
+              PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TOPIC_SNAPSHOTS_PAGE_STR_DESC, request, context);
+              return ListTopicSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -469,6 +543,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
             ListTopicSubscriptionsResponse,
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings;
+    private final PagedCallSettings.Builder<
+            ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
+        listTopicSnapshotsSettings;
     private final UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -489,6 +566,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       definitions.put(
           "non_idempotent",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "idempotent2",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put("none", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "publish",
@@ -556,6 +638,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       listTopicSubscriptionsSettings =
           PagedCallSettings.newBuilder(LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT);
 
+      listTopicSnapshotsSettings = PagedCallSettings.newBuilder(LIST_TOPIC_SNAPSHOTS_PAGE_STR_FACT);
+
       deleteTopicSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -572,6 +656,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               getTopicSettings,
               listTopicsSettings,
               listTopicSubscriptionsSettings,
+              listTopicSnapshotsSettings,
               deleteTopicSettings,
               setIamPolicySettings,
               getIamPolicySettings,
@@ -634,6 +719,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .listTopicSnapshotsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .deleteTopicSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -665,6 +755,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       getTopicSettings = settings.getTopicSettings.toBuilder();
       listTopicsSettings = settings.listTopicsSettings.toBuilder();
       listTopicSubscriptionsSettings = settings.listTopicSubscriptionsSettings.toBuilder();
+      listTopicSnapshotsSettings = settings.listTopicSnapshotsSettings.toBuilder();
       deleteTopicSettings = settings.deleteTopicSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
@@ -678,6 +769,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               getTopicSettings,
               listTopicsSettings,
               listTopicSubscriptionsSettings,
+              listTopicSnapshotsSettings,
               deleteTopicSettings,
               setIamPolicySettings,
               getIamPolicySettings,
@@ -733,6 +825,13 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings() {
       return listTopicSubscriptionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTopicSnapshots. */
+    public PagedCallSettings.Builder<
+            ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
+        listTopicSnapshotsSettings() {
+      return listTopicSnapshotsSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteTopic. */

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.pubsub.v1;
 
+import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSnapshotsPagedResponse;
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
 
@@ -39,6 +40,8 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
+import com.google.pubsub.v1.ListTopicSnapshotsRequest;
+import com.google.pubsub.v1.ListTopicSnapshotsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
@@ -117,6 +120,13 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings() {
     return ((PublisherStubSettings) getStubSettings()).listTopicSubscriptionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTopicSnapshots. */
+  /* package-private */ PagedCallSettings<
+          ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
+      listTopicSnapshotsSettings() {
+    return ((PublisherStubSettings) getStubSettings()).listTopicSnapshotsSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteTopic. */
@@ -270,6 +280,13 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings() {
       return getStubSettingsBuilder().listTopicSubscriptionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTopicSnapshots. */
+    /* package-private */ PagedCallSettings.Builder<
+            ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, ListTopicSnapshotsPagedResponse>
+        listTopicSnapshotsSettings() {
+      return getStubSettingsBuilder().listTopicSnapshotsSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteTopic. */

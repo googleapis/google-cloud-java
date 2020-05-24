@@ -41,6 +41,7 @@ import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
+import com.google.pubsub.v1.GetSnapshotRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ListSnapshotsRequest;
 import com.google.pubsub.v1.ListSnapshotsResponse;
@@ -120,6 +121,11 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
   /** Returns the object with the settings used for calls to deleteSubscription. */
   public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
     return ((SubscriberStubSettings) getStubSettings()).deleteSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSnapshot. */
+  /* package-private */ UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+    return ((SubscriberStubSettings) getStubSettings()).getSnapshotSettings();
   }
 
   /** Returns the object with the settings used for calls to modifyAckDeadline. */
@@ -316,6 +322,12 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
     public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings() {
       return getStubSettingsBuilder().deleteSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSnapshot. */
+    /* package-private */ UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot>
+        getSnapshotSettings() {
+      return getStubSettingsBuilder().getSnapshotSettings();
     }
 
     /** Returns the builder for the settings used for calls to modifyAckDeadline. */

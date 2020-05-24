@@ -38,6 +38,8 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
+import com.google.pubsub.v1.ListTopicSnapshotsRequest;
+import com.google.pubsub.v1.ListTopicSnapshotsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
@@ -885,6 +887,157 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
+   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
+   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
+   * state of messages in an existing subscription to the state captured by a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   for (String element : topicAdminClient.listTopicSnapshots(topic).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param topic Required. The name of the topic that snapshots are attached to. Format is
+   *     `projects/{project}/topics/{topic}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  /* package-private */ final ListTopicSnapshotsPagedResponse listTopicSnapshots(TopicName topic) {
+    ListTopicSnapshotsRequest request =
+        ListTopicSnapshotsRequest.newBuilder()
+            .setTopic(topic == null ? null : topic.toString())
+            .build();
+    return listTopicSnapshots(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
+   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
+   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
+   * state of messages in an existing subscription to the state captured by a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   for (String element : topicAdminClient.listTopicSnapshots(topic.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param topic Required. The name of the topic that snapshots are attached to. Format is
+   *     `projects/{project}/topics/{topic}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  /* package-private */ final ListTopicSnapshotsPagedResponse listTopicSnapshots(String topic) {
+    ListTopicSnapshotsRequest request =
+        ListTopicSnapshotsRequest.newBuilder().setTopic(topic).build();
+    return listTopicSnapshots(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
+   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
+   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
+   * state of messages in an existing subscription to the state captured by a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   ListTopicSnapshotsRequest request = ListTopicSnapshotsRequest.newBuilder()
+   *     .setTopic(topic.toString())
+   *     .build();
+   *   for (String element : topicAdminClient.listTopicSnapshots(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  /* package-private */ final ListTopicSnapshotsPagedResponse listTopicSnapshots(
+      ListTopicSnapshotsRequest request) {
+    return listTopicSnapshotsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
+   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
+   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
+   * state of messages in an existing subscription to the state captured by a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   ListTopicSnapshotsRequest request = ListTopicSnapshotsRequest.newBuilder()
+   *     .setTopic(topic.toString())
+   *     .build();
+   *   ApiFuture&lt;ListTopicSnapshotsPagedResponse&gt; future = topicAdminClient.listTopicSnapshotsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (String element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  /* package-private */ final UnaryCallable<
+          ListTopicSnapshotsRequest, ListTopicSnapshotsPagedResponse>
+      listTopicSnapshotsPagedCallable() {
+    return stub.listTopicSnapshotsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the names of the snapshots on this topic. Snapshots are used in &lt;a
+   * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
+   * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
+   * state of messages in an existing subscription to the state captured by a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   ListTopicSnapshotsRequest request = ListTopicSnapshotsRequest.newBuilder()
+   *     .setTopic(topic.toString())
+   *     .build();
+   *   while (true) {
+   *     ListTopicSnapshotsResponse response = topicAdminClient.listTopicSnapshotsCallable().call(request);
+   *     for (String element : response.getSnapshotsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  /* package-private */ final UnaryCallable<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse>
+      listTopicSnapshotsCallable() {
+    return stub.listTopicSnapshotsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic does not exist. After a
    * topic is deleted, a new topic may be created with the same name; this is an entirely new topic
    * with none of the old configuration or subscriptions. Existing subscriptions to this topic are
@@ -1016,7 +1169,7 @@ public class TopicAdminClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
    * <p>Sample code:
    *
@@ -1073,7 +1226,7 @@ public class TopicAdminClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
    * <p>Sample code:
    *
@@ -1169,7 +1322,7 @@ public class TopicAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
    *
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without
@@ -1236,7 +1389,7 @@ public class TopicAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
    *
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without
@@ -1499,6 +1652,88 @@ public class TopicAdminClient implements BackgroundResource {
               return ProjectSubscriptionName.parse(arg0);
             }
           });
+    }
+  }
+
+  public static class ListTopicSnapshotsPagedResponse
+      extends AbstractPagedListResponse<
+          ListTopicSnapshotsRequest,
+          ListTopicSnapshotsResponse,
+          String,
+          ListTopicSnapshotsPage,
+          ListTopicSnapshotsFixedSizeCollection> {
+
+    public static ApiFuture<ListTopicSnapshotsPagedResponse> createAsync(
+        PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
+        ApiFuture<ListTopicSnapshotsResponse> futureResponse) {
+      ApiFuture<ListTopicSnapshotsPage> futurePage =
+          ListTopicSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListTopicSnapshotsPage, ListTopicSnapshotsPagedResponse>() {
+            @Override
+            public ListTopicSnapshotsPagedResponse apply(ListTopicSnapshotsPage input) {
+              return new ListTopicSnapshotsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListTopicSnapshotsPagedResponse(ListTopicSnapshotsPage page) {
+      super(page, ListTopicSnapshotsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTopicSnapshotsPage
+      extends AbstractPage<
+          ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String, ListTopicSnapshotsPage> {
+
+    private ListTopicSnapshotsPage(
+        PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
+        ListTopicSnapshotsResponse response) {
+      super(context, response);
+    }
+
+    private static ListTopicSnapshotsPage createEmptyPage() {
+      return new ListTopicSnapshotsPage(null, null);
+    }
+
+    @Override
+    protected ListTopicSnapshotsPage createPage(
+        PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
+        ListTopicSnapshotsResponse response) {
+      return new ListTopicSnapshotsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTopicSnapshotsPage> createPageAsync(
+        PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
+        ApiFuture<ListTopicSnapshotsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTopicSnapshotsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTopicSnapshotsRequest,
+          ListTopicSnapshotsResponse,
+          String,
+          ListTopicSnapshotsPage,
+          ListTopicSnapshotsFixedSizeCollection> {
+
+    private ListTopicSnapshotsFixedSizeCollection(
+        List<ListTopicSnapshotsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTopicSnapshotsFixedSizeCollection createEmptyCollection() {
+      return new ListTopicSnapshotsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTopicSnapshotsFixedSizeCollection createCollection(
+        List<ListTopicSnapshotsPage> pages, int collectionSize) {
+      return new ListTopicSnapshotsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -55,6 +55,7 @@ import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
+import com.google.pubsub.v1.GetSnapshotRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ListSnapshotsRequest;
 import com.google.pubsub.v1.ListSnapshotsResponse;
@@ -125,6 +126,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
       listSubscriptionsSettings;
   private final UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
+  private final UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings;
   private final UnaryCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings;
   private final UnaryCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings;
   private final UnaryCallSettings<PullRequest, PullResponse> pullSettings;
@@ -168,6 +170,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
   /** Returns the object with the settings used for calls to deleteSubscription. */
   public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
     return deleteSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSnapshot. */
+  public UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+    return getSnapshotSettings;
   }
 
   /** Returns the object with the settings used for calls to modifyAckDeadline. */
@@ -311,6 +318,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     updateSubscriptionSettings = settingsBuilder.updateSubscriptionSettings().build();
     listSubscriptionsSettings = settingsBuilder.listSubscriptionsSettings().build();
     deleteSubscriptionSettings = settingsBuilder.deleteSubscriptionSettings().build();
+    getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
     modifyAckDeadlineSettings = settingsBuilder.modifyAckDeadlineSettings().build();
     acknowledgeSettings = settingsBuilder.acknowledgeSettings().build();
     pullSettings = settingsBuilder.pullSettings().build();
@@ -454,6 +462,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
         listSubscriptionsSettings;
     private final UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings;
+    private final UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings;
     private final UnaryCallSettings.Builder<ModifyAckDeadlineRequest, Empty>
         modifyAckDeadlineSettings;
     private final UnaryCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
@@ -488,6 +497,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       definitions.put(
           "non_idempotent",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "idempotent2",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "streaming_pull",
           ImmutableSet.copyOf(
@@ -558,6 +572,8 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
       deleteSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       modifyAckDeadlineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       acknowledgeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -591,6 +607,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               updateSubscriptionSettings,
               listSubscriptionsSettings,
               deleteSubscriptionSettings,
+              getSnapshotSettings,
               modifyAckDeadlineSettings,
               acknowledgeSettings,
               pullSettings,
@@ -641,6 +658,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       builder
           .deleteSubscriptionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -714,6 +736,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       updateSubscriptionSettings = settings.updateSubscriptionSettings.toBuilder();
       listSubscriptionsSettings = settings.listSubscriptionsSettings.toBuilder();
       deleteSubscriptionSettings = settings.deleteSubscriptionSettings.toBuilder();
+      getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
       modifyAckDeadlineSettings = settings.modifyAckDeadlineSettings.toBuilder();
       acknowledgeSettings = settings.acknowledgeSettings.toBuilder();
       pullSettings = settings.pullSettings.toBuilder();
@@ -735,6 +758,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               updateSubscriptionSettings,
               listSubscriptionsSettings,
               deleteSubscriptionSettings,
+              getSnapshotSettings,
               modifyAckDeadlineSettings,
               acknowledgeSettings,
               pullSettings,
@@ -793,6 +817,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings() {
       return deleteSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSnapshot. */
+    public UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+      return getSnapshotSettings;
     }
 
     /** Returns the builder for the settings used for calls to modifyAckDeadline. */

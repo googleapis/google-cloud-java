@@ -20,6 +20,8 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
+import com.google.pubsub.v1.ListTopicSnapshotsRequest;
+import com.google.pubsub.v1.ListTopicSnapshotsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
@@ -146,6 +148,22 @@ public class MockPublisherImpl extends PublisherImplBase {
     if (response instanceof ListTopicSubscriptionsResponse) {
       requests.add(request);
       responseObserver.onNext((ListTopicSubscriptionsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listTopicSnapshots(
+      ListTopicSnapshotsRequest request,
+      StreamObserver<ListTopicSnapshotsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListTopicSnapshotsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListTopicSnapshotsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

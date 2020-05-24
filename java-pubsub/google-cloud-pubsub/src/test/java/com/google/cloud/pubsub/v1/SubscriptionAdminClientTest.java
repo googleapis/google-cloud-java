@@ -45,6 +45,7 @@ import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
+import com.google.pubsub.v1.GetSnapshotRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ListSnapshotsRequest;
 import com.google.pubsub.v1.ListSnapshotsResponse;
@@ -398,6 +399,47 @@ public class SubscriptionAdminClientTest {
           ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
 
       client.deleteSubscription(subscription);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getSnapshotTest() {
+    ProjectSnapshotName name = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+    TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+    Snapshot expectedResponse =
+        Snapshot.newBuilder().setName(name.toString()).setTopic(topic.toString()).build();
+    mockSubscriber.addResponse(expectedResponse);
+
+    ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+
+    Snapshot actualResponse = client.getSnapshot(snapshot);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSubscriber.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSnapshotRequest actualRequest = (GetSnapshotRequest) actualRequests.get(0);
+
+    Assert.assertEquals(snapshot, ProjectSnapshotName.parse(actualRequest.getSnapshot()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockSubscriber.addException(exception);
+
+    try {
+      ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+
+      client.getSnapshot(snapshot);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

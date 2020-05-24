@@ -32,6 +32,7 @@ import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
+import com.google.pubsub.v1.GetSnapshotRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ListSnapshotsRequest;
 import com.google.pubsub.v1.ListSnapshotsResponse;
@@ -85,6 +86,10 @@ public abstract class SubscriberStub implements BackgroundResource {
 
   public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSubscriptionCallable()");
+  }
+
+  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSnapshotCallable()");
   }
 
   public UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {

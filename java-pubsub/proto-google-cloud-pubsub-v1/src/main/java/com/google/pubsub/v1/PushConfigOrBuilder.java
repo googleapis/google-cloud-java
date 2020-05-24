@@ -28,7 +28,7 @@ public interface PushConfigOrBuilder
    *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
-   * For example, a Webhook endpoint might use "https://example.com/push".
+   * For example, a Webhook endpoint might use `https://example.com/push`.
    * </pre>
    *
    * <code>string push_endpoint = 1;</code>
@@ -41,7 +41,7 @@ public interface PushConfigOrBuilder
    *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
-   * For example, a Webhook endpoint might use "https://example.com/push".
+   * For example, a Webhook endpoint might use `https://example.com/push`.
    * </pre>
    *
    * <code>string push_endpoint = 1;</code>

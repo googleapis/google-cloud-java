@@ -1140,7 +1140,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
-   * For example, a Webhook endpoint might use "https://example.com/push".
+   * For example, a Webhook endpoint might use `https://example.com/push`.
    * </pre>
    *
    * <code>string push_endpoint = 1;</code>
@@ -1163,7 +1163,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
-   * For example, a Webhook endpoint might use "https://example.com/push".
+   * For example, a Webhook endpoint might use `https://example.com/push`.
    * </pre>
    *
    * <code>string push_endpoint = 1;</code>
@@ -1808,7 +1808,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
-     * For example, a Webhook endpoint might use "https://example.com/push".
+     * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
@@ -1831,7 +1831,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
-     * For example, a Webhook endpoint might use "https://example.com/push".
+     * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
@@ -1854,7 +1854,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
-     * For example, a Webhook endpoint might use "https://example.com/push".
+     * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
@@ -1876,7 +1876,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
-     * For example, a Webhook endpoint might use "https://example.com/push".
+     * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>
@@ -1894,7 +1894,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
-     * For example, a Webhook endpoint might use "https://example.com/push".
+     * For example, a Webhook endpoint might use `https://example.com/push`.
      * </pre>
      *
      * <code>string push_endpoint = 1;</code>

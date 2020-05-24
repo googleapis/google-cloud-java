@@ -38,6 +38,7 @@ import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
 import com.google.pubsub.v1.DeleteSnapshotRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
+import com.google.pubsub.v1.GetSnapshotRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
 import com.google.pubsub.v1.ListSnapshotsRequest;
 import com.google.pubsub.v1.ListSnapshotsResponse;
@@ -117,6 +118,13 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   ProtoUtils.marshaller(DeleteSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetSnapshotRequest, Snapshot> getSnapshotMethodDescriptor =
+      MethodDescriptor.<GetSnapshotRequest, Snapshot>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.pubsub.v1.Subscriber/GetSnapshot")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSnapshotRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<ModifyAckDeadlineRequest, Empty>
       modifyAckDeadlineMethodDescriptor =
           MethodDescriptor.<ModifyAckDeadlineRequest, Empty>newBuilder()
@@ -238,6 +246,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
   private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
       listSubscriptionsPagedCallable;
   private final UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable;
+  private final UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable;
   private final UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable;
   private final UnaryCallable<AcknowledgeRequest, Empty> acknowledgeCallable;
   private final UnaryCallable<PullRequest, PullResponse> pullCallable;
@@ -358,6 +367,19 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   public Map<String, String> extract(DeleteSubscriptionRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("subscription", String.valueOf(request.getSubscription()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
+        GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
+            .setMethodDescriptor(getSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetSnapshotRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetSnapshotRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("snapshot", String.valueOf(request.getSnapshot()));
                     return params.build();
                   }
                 })
@@ -552,6 +574,9 @@ public class GrpcSubscriberStub extends SubscriberStub {
             deleteSubscriptionTransportSettings,
             settings.deleteSubscriptionSettings(),
             clientContext);
+    this.getSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            getSnapshotTransportSettings, settings.getSnapshotSettings(), clientContext);
     this.modifyAckDeadlineCallable =
         callableFactory.createUnaryCallable(
             modifyAckDeadlineTransportSettings,
@@ -626,6 +651,10 @@ public class GrpcSubscriberStub extends SubscriberStub {
 
   public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
     return deleteSubscriptionCallable;
+  }
+
+  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    return getSnapshotCallable;
   }
 
   public UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {

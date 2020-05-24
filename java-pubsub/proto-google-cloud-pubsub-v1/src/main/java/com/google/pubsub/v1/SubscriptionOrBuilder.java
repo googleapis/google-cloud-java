@@ -406,9 +406,6 @@ public interface SubscriptionOrBuilder
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
    * permission to Acknowledge() messages on this subscription.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
@@ -427,9 +424,6 @@ public interface SubscriptionOrBuilder
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
    * permission to Acknowledge() messages on this subscription.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
@@ -448,9 +442,6 @@ public interface SubscriptionOrBuilder
    * parent project (i.e.,
    * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com) must have
    * permission to Acknowledge() messages on this subscription.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
