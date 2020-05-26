@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.4.0...v0.5.0) (2020-05-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove certain test deps and autovalue (#49)
+* remove mockito-core (#44)
+
+### Features
+
+* remove certain test deps and autovalue ([#49](https://www.github.com/googleapis/java-shared-dependencies/issues/49)) ([0bcf1a0](https://www.github.com/googleapis/java-shared-dependencies/commit/0bcf1a064ab37e1fbb304640f714ad841762949c))
+* remove mockito-core ([#44](https://www.github.com/googleapis/java-shared-dependencies/issues/44)) ([b690f8d](https://www.github.com/googleapis/java-shared-dependencies/commit/b690f8d742cb954744fdb394e3978407561179ca))
+
+
+### Bug Fixes
+
+* remove grpc-testing since it's in grpc-bom ([#50](https://www.github.com/googleapis/java-shared-dependencies/issues/50)) ([d7df346](https://www.github.com/googleapis/java-shared-dependencies/commit/d7df346f8f54301c6113f4bb997b84df5d4f45c7))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-bom to v3.12.1 ([#48](https://www.github.com/googleapis/java-shared-dependencies/issues/48)) ([d367a31](https://www.github.com/googleapis/java-shared-dependencies/commit/d367a3122b94ec33f804200c38067ae0eac6ddc0))
+
 ## [0.4.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.3.1...v0.4.0) (2020-05-18)
 
 
