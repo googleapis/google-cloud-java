@@ -32,6 +32,8 @@ import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.TableId;
 import com.google.common.collect.ImmutableList;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class AddColumnLoadAppend {
@@ -41,30 +43,34 @@ public class AddColumnLoadAppend {
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
     String sourceUri = "/path/to/file.csv";
-    addColumnLoadAppend(datasetName, tableName, sourceUri);
+    // Add a new column to a BigQuery table while appending rows via a load job.
+    // 'REQUIRED' fields cannot  be added to an existing schema, so the additional column must be
+    // 'NULLABLE'.
+    Schema schema =
+      Schema.of(
+        Field.newBuilder("name", LegacySQLTypeName.STRING)
+                .setMode(Field.Mode.REQUIRED)
+                .build());
+
+    List<Field> fields = schema.getFields();
+    // Adding below additional column during the load job
+    Field newField = Field.newBuilder("post_abbr", LegacySQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .build();
+    List<Field> newFields = new ArrayList<>(fields);
+    newFields.add(newField);
+    Schema newSchema = Schema.of(newFields);
+    addColumnLoadAppend(datasetName, tableName, sourceUri, newSchema);
   }
 
-  public static void addColumnLoadAppend(String datasetName, String tableName, String sourceUri)
-      throws Exception {
+  public static void addColumnLoadAppend(String datasetName, String tableName,
+     String sourceUri, Schema newSchema) throws Exception {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
       TableId tableId = TableId.of(datasetName, tableName);
-
-      // Add a new column to a BigQuery table while appending rows via a load job.
-      // 'REQUIRED' fields cannot  be added to an existing schema, so the additional column must be
-      // 'NULLABLE'.
-      Schema newSchema =
-          Schema.of(
-              Field.newBuilder("name", LegacySQLTypeName.STRING)
-                  .setMode(Field.Mode.REQUIRED)
-                  .build(),
-              // Adding below additional column during the load job
-              Field.newBuilder("post_abbr", LegacySQLTypeName.STRING)
-                  .setMode(Field.Mode.NULLABLE)
-                  .build());
 
       LoadJobConfiguration loadJobConfig =
           LoadJobConfiguration.builder(tableId, sourceUri)

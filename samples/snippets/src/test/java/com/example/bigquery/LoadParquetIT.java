@@ -57,7 +57,9 @@ public class LoadParquetIT {
 
   @Test
   public void loadParquet() {
-    LoadParquet.loadParquet(BIGQUERY_DATASET_NAME);
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
+    String tableName = "us_states";
+    LoadParquet.loadParquet(BIGQUERY_DATASET_NAME, tableName, sourceUri);
     assertThat(bout.toString()).contains("GCS parquet loaded successfully.");
   }
 }

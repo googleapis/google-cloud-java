@@ -21,6 +21,7 @@ import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -59,7 +60,8 @@ public class UpdateTableExpirationIT {
   public void updateTableExpiration() {
     String tableName = "update_expiration_table";
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, null);
-    UpdateTableExpiration.updateTableExpiration(BIGQUERY_DATASET_NAME, tableName);
+    Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
+    UpdateTableExpiration.updateTableExpiration(BIGQUERY_DATASET_NAME, tableName, newExpiration);
     assertThat(bout.toString()).contains("Table expiration updated successfully");
 
     // Clean up

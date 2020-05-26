@@ -24,6 +24,8 @@ import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
@@ -70,8 +72,13 @@ public class TableInsertRowsIT {
     // Create table in dataset for testing
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
 
+    // Create a row to insert
+    Map<String, Object> rowContent = new HashMap<>();
+    rowContent.put("booleanField", true);
+    rowContent.put("numericField", "3.14");
+
     // Testing
-    TableInsertRows.tableInsertRows(BIGQUERY_DATASET_NAME, tableName);
+    TableInsertRows.tableInsertRows(BIGQUERY_DATASET_NAME, tableName, rowContent);
     assertThat(bout.toString()).contains("Rows successfully inserted into table");
 
     // Clean up

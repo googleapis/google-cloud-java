@@ -34,10 +34,13 @@ public class LoadParquetReplaceTable {
   public static void runLoadParquetReplaceTable() {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
-    loadParquetReplaceTable(datasetName);
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
+    String tableName = "us_states";
+    loadParquetReplaceTable(datasetName, tableName, sourceUri);
   }
 
-  public static void loadParquetReplaceTable(String datasetName) {
+  public static void loadParquetReplaceTable(String datasetName, String tableName,
+     String sourceUri) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -46,8 +49,7 @@ public class LoadParquetReplaceTable {
       // Imports a GCS file into a table and overwrites table data if table already exists.
       // This sample loads CSV file at:
       // https://storage.googleapis.com/cloud-samples-data/bigquery/us-states/us-states.csv
-      String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
-      TableId tableId = TableId.of(datasetName, "us_states");
+      TableId tableId = TableId.of(datasetName, tableName);
 
       // For more information on LoadJobConfiguration see:
       // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/LoadJobConfiguration.Builder.html

@@ -29,17 +29,17 @@ public class UpdateTableExpiration {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-    updateTableExpiration(datasetName, tableName);
+    // Update table expiration to one day.
+    Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
+    updateTableExpiration(datasetName, tableName, newExpiration);
   }
 
-  public static void updateTableExpiration(String datasetName, String tableName) {
+  public static void updateTableExpiration(String datasetName, String tableName,
+     Long newExpiration) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-
-      // Update table expiration to one day
-      Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
 
       Table table = bigquery.getTable(datasetName, tableName);
       bigquery.update(table.toBuilder().setExpirationTime(newExpiration).build());

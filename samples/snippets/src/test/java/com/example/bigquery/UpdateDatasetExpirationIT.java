@@ -22,6 +22,7 @@ import static junit.framework.TestCase.assertNotNull;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -62,8 +63,9 @@ public class UpdateDatasetExpirationIT {
     // Create a dataset in order to modify its expiration
     CreateDataset.createDataset(generatedDatasetName);
 
+    Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
     // Modify dataset's expiration
-    UpdateDatasetExpiration.updateDatasetExpiration(generatedDatasetName);
+    UpdateDatasetExpiration.updateDatasetExpiration(generatedDatasetName, newExpiration);
     assertThat(bout.toString()).contains("Dataset description updated successfully");
 
     // Clean up

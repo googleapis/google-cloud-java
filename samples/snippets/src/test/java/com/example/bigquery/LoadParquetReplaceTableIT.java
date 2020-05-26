@@ -57,7 +57,9 @@ public class LoadParquetReplaceTableIT {
 
   @Test
   public void testLoadParquetReplaceTable() {
-    LoadParquetReplaceTable.loadParquetReplaceTable(BIGQUERY_DATASET_NAME);
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
+    String tableName = "us_states";
+    LoadParquetReplaceTable.loadParquetReplaceTable(BIGQUERY_DATASET_NAME, tableName, sourceUri);
     assertThat(bout.toString()).contains("GCS parquet overwrote existing table successfully.");
   }
 }

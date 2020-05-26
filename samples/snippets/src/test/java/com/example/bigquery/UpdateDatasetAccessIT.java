@@ -19,6 +19,9 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Acl;
+import com.google.cloud.bigquery.Acl.Role;
+import com.google.cloud.bigquery.Acl.User;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -62,8 +65,9 @@ public class UpdateDatasetAccessIT {
     // Create a dataset in order to modify its ACL
     CreateDataset.createDataset(generatedDatasetName);
 
+    Acl newEntry = Acl.of(new User("sample.bigquery.dev@gmail.com"), Role.READER);
     // Modify dataset's ACL
-    UpdateDatasetAccess.updateDatasetAccess(generatedDatasetName);
+    UpdateDatasetAccess.updateDatasetAccess(generatedDatasetName, newEntry);
     assertThat(bout.toString()).contains("Dataset Access Control updated successfully");
 
     // Clean up

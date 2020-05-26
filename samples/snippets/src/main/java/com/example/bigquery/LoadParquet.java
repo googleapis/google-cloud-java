@@ -32,17 +32,18 @@ public class LoadParquet {
   public static void runLoadParquet() {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
-    loadParquet(datasetName);
+    String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
+    String tableName = "us_states";
+    loadParquet(datasetName, tableName, sourceUri);
   }
 
-  public static void loadParquet(String datasetName) {
+  public static void loadParquet(String datasetName, String tableName, String sourceUri) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-      String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
-      TableId tableId = TableId.of(datasetName, "us_states");
+      TableId tableId = TableId.of(datasetName, tableName);
 
       LoadJobConfiguration configuration =
           LoadJobConfiguration.builder(tableId, sourceUri)

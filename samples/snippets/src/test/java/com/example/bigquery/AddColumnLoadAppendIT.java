@@ -24,6 +24,8 @@ import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -71,7 +73,16 @@ public class AddColumnLoadAppendIT {
 
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, originalSchema);
 
-    AddColumnLoadAppend.addColumnLoadAppend(BIGQUERY_DATASET_NAME, tableName, sourceUri);
+    List<Field> fields = originalSchema.getFields();
+    // Adding below additional column during the load job
+    Field newField = Field.newBuilder("post_abbr", LegacySQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .build();
+    List<Field> newFields = new ArrayList<>(fields);
+    newFields.add(newField);
+    Schema newSchema = Schema.of(newFields);
+
+    AddColumnLoadAppend.addColumnLoadAppend(BIGQUERY_DATASET_NAME, tableName, sourceUri, newSchema);
 
     assertThat(bout.toString()).contains("Column successfully added during load append job");
 

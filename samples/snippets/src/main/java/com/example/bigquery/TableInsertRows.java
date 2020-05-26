@@ -34,10 +34,16 @@ public class TableInsertRows {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-    tableInsertRows(datasetName, tableName);
+    // Create a row to insert
+    Map<String, Object> rowContent = new HashMap<>();
+    rowContent.put("booleanField", true);
+    rowContent.put("numericField", "3.14");
+
+    tableInsertRows(datasetName, tableName, rowContent);
   }
 
-  public static void tableInsertRows(String datasetName, String tableName) {
+  public static void tableInsertRows(String datasetName, String tableName,
+     Map<String, Object> rowContent) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -45,11 +51,6 @@ public class TableInsertRows {
 
       // Get table
       TableId tableId = TableId.of(datasetName, tableName);
-
-      // Create a row to insert
-      Map<String, Object> rowContent = new HashMap<>();
-      rowContent.put("booleanField", true);
-      rowContent.put("numericField", "3.14");
 
       // Inserts rowContent into datasetName:tableId.
       InsertAllResponse response =
