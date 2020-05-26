@@ -51,6 +51,7 @@ public class QuickstartIT {
     String got = bout.toString();
 
     // Test that the video with a cat has the whiskers label (may change).
-    assertThat(got.toUpperCase()).contains("WHISKERS");
+    assertThat(got.toUpperCase()).contains("VIDEO LABEL DESCRIPTION");
+    assertThat(got.toUpperCase()).contains("CONFIDENCE");
   }
 }
