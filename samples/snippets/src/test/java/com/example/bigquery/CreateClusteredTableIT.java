@@ -19,6 +19,10 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -58,8 +62,14 @@ public class CreateClusteredTableIT {
   @Test
   public void createClusteredTable() {
     String tableName = "MY_CLUSTERED_TABLE";
+    Schema schema =
+            Schema.of(
+                    Field.of("name", StandardSQLTypeName.STRING),
+                    Field.of("post_abbr", StandardSQLTypeName.STRING),
+                    Field.of("date", StandardSQLTypeName.DATE));
 
-    CreateClusteredTable.createClusteredTable(BIGQUERY_DATASET_NAME, tableName);
+    CreateClusteredTable.createClusteredTable(BIGQUERY_DATASET_NAME, tableName,
+            schema, ImmutableList.of("name", "post_abbr"));
 
     assertThat(bout.toString()).contains("Clustered table created successfully");
 

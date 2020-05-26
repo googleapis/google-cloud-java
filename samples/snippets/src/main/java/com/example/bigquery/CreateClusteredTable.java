@@ -29,16 +29,25 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TimePartitioning;
 import com.google.common.collect.ImmutableList;
+import java.util.List;
 
 public class CreateClusteredTable {
   public static void runCreateClusteredTable() {
     // TODO(developer): Replace these variables before running the sample.
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-    createClusteredTable(datasetName, tableName);
+    Schema schema =
+            Schema.of(
+                    Field.of("name", StandardSQLTypeName.STRING),
+                    Field.of("post_abbr", StandardSQLTypeName.STRING),
+                    Field.of("date", StandardSQLTypeName.DATE));
+    createClusteredTable(datasetName, tableName,
+            schema, ImmutableList.of("name", "post_abbr"));
   }
 
-  public static void createClusteredTable(String datasetName, String tableName) {
+  public static void createClusteredTable(
+          String datasetName, String tableName,
+          Schema schema, List<String> clusteringFields) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -47,15 +56,10 @@ public class CreateClusteredTable {
       TableId tableId = TableId.of(datasetName, tableName);
 
       TimePartitioning partitioning = TimePartitioning.of(TimePartitioning.Type.DAY);
-
-      Schema schema =
-          Schema.of(
-              Field.of("name", StandardSQLTypeName.STRING),
-              Field.of("post_abbr", StandardSQLTypeName.STRING),
-              Field.of("date", StandardSQLTypeName.DATE));
-
+      // Clustering fields will be consisted of fields mentioned in the schema.
+      // As of now, another condition is that the table should be partitioned.
       Clustering clustering =
-          Clustering.newBuilder().setFields(ImmutableList.of("name", "post_abbr")).build();
+          Clustering.newBuilder().setFields(clusteringFields).build();
 
       StandardTableDefinition tableDefinition =
           StandardTableDefinition.newBuilder()
