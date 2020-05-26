@@ -151,8 +151,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-core-parent</site.installationModule>
-    <auto-value.version>1.7</auto-value.version>
-    <auto-value-annotations.version>1.7</auto-value-annotations.version>
     <gax.version>1.56.0</gax.version>
     <google.api-common.version>1.9.0</google.api-common.version>
     <google.common-protos.version>1.18.0</google.common-protos.version>
@@ -231,12 +229,6 @@
         <version>${guava.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.auto.value</groupId>
-        <artifactId>auto-value-annotations</artifactId>
-        <version>${auto-value-annotations.version}</version>
-        <optional>true</optional>
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
@@ -318,33 +310,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <annotationProcessorPaths>
-              <path>
-                <groupId>com.google.auto.value</groupId>
-                <artifactId>auto-value</artifactId>
-                <version>${auto-value.version}</version>
-              </path>
-            </annotationProcessorPaths>
-          </configuration>
-        </plugin>
-      </plugins>
-
-    </pluginManagement>
-  </build>
 
   <modules>
     <module>google-cloud-core</module>
