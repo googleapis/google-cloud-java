@@ -31,6 +31,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TimePartitioning;
 import com.google.common.collect.ImmutableList;
+import java.util.List;
 
 public class LoadTableClustered {
 
@@ -39,10 +40,17 @@ public class LoadTableClustered {
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
     String sourceUri = "/path/to/file.csv";
-    loadTableClustered(datasetName, tableName, sourceUri);
+    Schema schema =
+            Schema.of(
+                    Field.of("name", StandardSQLTypeName.STRING),
+                    Field.of("post_abbr", StandardSQLTypeName.STRING),
+                    Field.of("date", StandardSQLTypeName.DATE));
+    loadTableClustered(datasetName, tableName, sourceUri,
+            schema, ImmutableList.of("name", "post_abbr"));
   }
 
-  public static void loadTableClustered(String datasetName, String tableName, String sourceUri)
+  public static void loadTableClustered(String datasetName, String tableName, String sourceUri,
+                                        Schema schema, List<String> clusteringFields)
       throws Exception {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
@@ -51,16 +59,11 @@ public class LoadTableClustered {
 
       TableId tableId = TableId.of(datasetName, tableName);
 
-      Schema schema =
-          Schema.of(
-              Field.of("name", StandardSQLTypeName.STRING),
-              Field.of("post_abbr", StandardSQLTypeName.STRING),
-              Field.of("date", StandardSQLTypeName.DATE));
-
       TimePartitioning partitioning = TimePartitioning.of(TimePartitioning.Type.DAY);
-
+      // Clustering fields will be consisted of fields mentioned in the schema.
+      // As of now, another condition is that the table should be partitioned.
       Clustering clustering =
-          Clustering.newBuilder().setFields(ImmutableList.of("name", "post_abbr")).build();
+          Clustering.newBuilder().setFields(clusteringFields).build();
 
       LoadJobConfiguration loadJobConfig =
           LoadJobConfiguration.builder(tableId, sourceUri)

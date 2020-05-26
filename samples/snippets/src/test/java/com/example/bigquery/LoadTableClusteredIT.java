@@ -19,6 +19,10 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -61,7 +65,14 @@ public class LoadTableClusteredIT {
 
     String tableName = "LOAD_CLUSTERED_TABLE_TEST";
 
-    LoadTableClustered.loadTableClustered(BIGQUERY_DATASET_NAME, tableName, sourceUri);
+    Schema schema =
+            Schema.of(
+                    Field.of("name", StandardSQLTypeName.STRING),
+                    Field.of("post_abbr", StandardSQLTypeName.STRING),
+                    Field.of("date", StandardSQLTypeName.DATE));
+
+    LoadTableClustered.loadTableClustered(BIGQUERY_DATASET_NAME, tableName, sourceUri,
+            schema, ImmutableList.of("name", "post_abbr"));
 
     assertThat(bout.toString())
         .contains("Data successfully loaded into clustered table during load job");
