@@ -223,4 +223,31 @@ public interface ResourceOrBuilder
    * <code>.google.protobuf.Struct data = 6;</code>
    */
   com.google.protobuf.StructOrBuilder getDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The location of the resource in Google Cloud, such as its zone and region.
+   * For more information, see https://cloud.google.com/about/locations/.
+   * </pre>
+   *
+   * <code>string location = 8;</code>
+   *
+   * @return The location.
+   */
+  java.lang.String getLocation();
+  /**
+   *
+   *
+   * <pre>
+   * The location of the resource in Google Cloud, such as its zone and region.
+   * For more information, see https://cloud.google.com/about/locations/.
+   * </pre>
+   *
+   * <code>string location = 8;</code>
+   *
+   * @return The bytes for location.
+   */
+  com.google.protobuf.ByteString getLocationBytes();
 }

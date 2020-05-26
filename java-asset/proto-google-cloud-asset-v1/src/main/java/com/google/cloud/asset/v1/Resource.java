@@ -43,6 +43,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     discoveryName_ = "";
     resourceUrl_ = "";
     parent_ = "";
+    location_ = "";
   }
 
   @java.lang.Override
@@ -121,6 +122,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
                 data_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              location_ = s;
               break;
             }
           default:
@@ -476,6 +484,55 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     return getData();
   }
 
+  public static final int LOCATION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object location_;
+  /**
+   *
+   *
+   * <pre>
+   * The location of the resource in Google Cloud, such as its zone and region.
+   * For more information, see https://cloud.google.com/about/locations/.
+   * </pre>
+   *
+   * <code>string location = 8;</code>
+   *
+   * @return The location.
+   */
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The location of the resource in Google Cloud, such as its zone and region.
+   * For more information, see https://cloud.google.com/about/locations/.
+   * </pre>
+   *
+   * <code>string location = 8;</code>
+   *
+   * @return The bytes for location.
+   */
+  public com.google.protobuf.ByteString getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      location_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -508,6 +565,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (data_ != null) {
       output.writeMessage(6, getData());
     }
+    if (!getLocationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, location_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -535,6 +595,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getData());
     }
+    if (!getLocationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, location_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -559,6 +622,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     if (hasData()) {
       if (!getData().equals(other.getData())) return false;
     }
+    if (!getLocation().equals(other.getLocation())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -584,6 +648,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
     }
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -744,6 +810,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         data_ = null;
         dataBuilder_ = null;
       }
+      location_ = "";
+
       return this;
     }
 
@@ -780,6 +848,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.data_ = dataBuilder_.build();
       }
+      result.location_ = location_;
       onBuilt();
       return result;
     }
@@ -851,6 +920,10 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasData()) {
         mergeData(other.getData());
+      }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1690,6 +1763,117 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         data_ = null;
       }
       return dataBuilder_;
+    }
+
+    private java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The location of the resource in Google Cloud, such as its zone and region.
+     * For more information, see https://cloud.google.com/about/locations/.
+     * </pre>
+     *
+     * <code>string location = 8;</code>
+     *
+     * @return The location.
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The location of the resource in Google Cloud, such as its zone and region.
+     * For more information, see https://cloud.google.com/about/locations/.
+     * </pre>
+     *
+     * <code>string location = 8;</code>
+     *
+     * @return The bytes for location.
+     */
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The location of the resource in Google Cloud, such as its zone and region.
+     * For more information, see https://cloud.google.com/about/locations/.
+     * </pre>
+     *
+     * <code>string location = 8;</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      location_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The location of the resource in Google Cloud, such as its zone and region.
+     * For more information, see https://cloud.google.com/about/locations/.
+     * </pre>
+     *
+     * <code>string location = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocation() {
+
+      location_ = getDefaultInstance().getLocation();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The location of the resource in Google Cloud, such as its zone and region.
+     * For more information, see https://cloud.google.com/about/locations/.
+     * </pre>
+     *
+     * <code>string location = 8;</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      location_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

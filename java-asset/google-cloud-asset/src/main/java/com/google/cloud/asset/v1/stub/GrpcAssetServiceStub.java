@@ -15,6 +15,9 @@
  */
 package com.google.cloud.asset.v1.stub;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -34,6 +37,10 @@ import com.google.cloud.asset.v1.Feed;
 import com.google.cloud.asset.v1.GetFeedRequest;
 import com.google.cloud.asset.v1.ListFeedsRequest;
 import com.google.cloud.asset.v1.ListFeedsResponse;
+import com.google.cloud.asset.v1.SearchAllIamPoliciesRequest;
+import com.google.cloud.asset.v1.SearchAllIamPoliciesResponse;
+import com.google.cloud.asset.v1.SearchAllResourcesRequest;
+import com.google.cloud.asset.v1.SearchAllResourcesResponse;
 import com.google.cloud.asset.v1.UpdateFeedRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -110,6 +117,26 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<SearchAllResourcesRequest, SearchAllResourcesResponse>
+      searchAllResourcesMethodDescriptor =
+          MethodDescriptor.<SearchAllResourcesRequest, SearchAllResourcesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/SearchAllResources")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchAllResourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchAllResourcesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
+      searchAllIamPoliciesMethodDescriptor =
+          MethodDescriptor.<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/SearchAllIamPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchAllIamPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchAllIamPoliciesResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -124,6 +151,14 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   private final UnaryCallable<GetFeedRequest, Feed> getFeedCallable;
   private final UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable;
   private final UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable;
+  private final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
+      searchAllResourcesCallable;
+  private final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
+      searchAllResourcesPagedCallable;
+  private final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
+      searchAllIamPoliciesCallable;
+  private final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
+      searchAllIamPoliciesPagedCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -258,6 +293,34 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<SearchAllResourcesRequest, SearchAllResourcesResponse>
+        searchAllResourcesTransportSettings =
+            GrpcCallSettings.<SearchAllResourcesRequest, SearchAllResourcesResponse>newBuilder()
+                .setMethodDescriptor(searchAllResourcesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<SearchAllResourcesRequest>() {
+                      @Override
+                      public Map<String, String> extract(SearchAllResourcesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("scope", String.valueOf(request.getScope()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
+        searchAllIamPoliciesTransportSettings =
+            GrpcCallSettings.<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>newBuilder()
+                .setMethodDescriptor(searchAllIamPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<SearchAllIamPoliciesRequest>() {
+                      @Override
+                      public Map<String, String> extract(SearchAllIamPoliciesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("scope", String.valueOf(request.getScope()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.deleteFeedCallable =
         callableFactory.createUnaryCallable(
@@ -288,6 +351,26 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     this.updateFeedCallable =
         callableFactory.createUnaryCallable(
             updateFeedTransportSettings, settings.updateFeedSettings(), clientContext);
+    this.searchAllResourcesCallable =
+        callableFactory.createUnaryCallable(
+            searchAllResourcesTransportSettings,
+            settings.searchAllResourcesSettings(),
+            clientContext);
+    this.searchAllResourcesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchAllResourcesTransportSettings,
+            settings.searchAllResourcesSettings(),
+            clientContext);
+    this.searchAllIamPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            searchAllIamPoliciesTransportSettings,
+            settings.searchAllIamPoliciesSettings(),
+            clientContext);
+    this.searchAllIamPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchAllIamPoliciesTransportSettings,
+            settings.searchAllIamPoliciesSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -330,6 +413,26 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
 
   public UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     return updateFeedCallable;
+  }
+
+  public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
+      searchAllResourcesPagedCallable() {
+    return searchAllResourcesPagedCallable;
+  }
+
+  public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
+      searchAllResourcesCallable() {
+    return searchAllResourcesCallable;
+  }
+
+  public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
+      searchAllIamPoliciesPagedCallable() {
+    return searchAllIamPoliciesPagedCallable;
+  }
+
+  public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
+      searchAllIamPoliciesCallable() {
+    return searchAllIamPoliciesCallable;
   }
 
   @Override

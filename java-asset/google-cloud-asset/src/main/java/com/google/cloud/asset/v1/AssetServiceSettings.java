@@ -15,6 +15,9 @@
  */
 package com.google.cloud.asset.v1;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllResourcesPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -24,6 +27,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.asset.v1.stub.AssetServiceStubSettings;
@@ -109,6 +113,22 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
   /** Returns the object with the settings used for calls to updateFeed. */
   public UnaryCallSettings<UpdateFeedRequest, Feed> updateFeedSettings() {
     return ((AssetServiceStubSettings) getStubSettings()).updateFeedSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchAllResources. */
+  public PagedCallSettings<
+          SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
+      searchAllResourcesSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).searchAllResourcesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchAllIamPolicies. */
+  public PagedCallSettings<
+          SearchAllIamPoliciesRequest,
+          SearchAllIamPoliciesResponse,
+          SearchAllIamPoliciesPagedResponse>
+      searchAllIamPoliciesSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).searchAllIamPoliciesSettings();
   }
 
   public static final AssetServiceSettings create(AssetServiceStubSettings stub)
@@ -251,6 +271,22 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
     /** Returns the builder for the settings used for calls to updateFeed. */
     public UnaryCallSettings.Builder<UpdateFeedRequest, Feed> updateFeedSettings() {
       return getStubSettingsBuilder().updateFeedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchAllResources. */
+    public PagedCallSettings.Builder<
+            SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
+        searchAllResourcesSettings() {
+      return getStubSettingsBuilder().searchAllResourcesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchAllIamPolicies. */
+    public PagedCallSettings.Builder<
+            SearchAllIamPoliciesRequest,
+            SearchAllIamPoliciesResponse,
+            SearchAllIamPoliciesPagedResponse>
+        searchAllIamPoliciesSettings() {
+      return getStubSettingsBuilder().searchAllIamPoliciesSettings();
     }
 
     @Override

@@ -15,17 +15,26 @@
  */
 package com.google.cloud.asset.v1;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1.stub.AssetServiceStub;
 import com.google.cloud.asset.v1.stub.AssetServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -704,6 +713,291 @@ public class AssetServiceClient implements BackgroundResource {
     return stub.updateFeedCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches all the resources within the given accessible scope (e.g., a project, a folder or an
+   * organization). Callers should have cloud.assets.SearchAllResources permission upon the
+   * requested scope, otherwise the request will be rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "";
+   *   String query = "";
+   *   List&lt;String&gt; assetTypes = new ArrayList&lt;&gt;();
+   *   for (ResourceSearchResult element : assetServiceClient.searchAllResources(scope, query, assetTypes).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param scope Required. A scope can be a project, a folder or an organization. The search is
+   *     limited to the resources within the `scope`.
+   *     <p>The allowed values are:
+   *     <p>&#42; projects/{PROJECT_ID} &#42; projects/{PROJECT_NUMBER} &#42;
+   *     folders/{FOLDER_NUMBER} &#42; organizations/{ORGANIZATION_NUMBER}
+   * @param query Optional. The query statement. An empty query can be specified to search all the
+   *     resources of certain `asset_types` within the given `scope`.
+   *     <p>Examples:
+   *     <p>&#42; `name : "Important"` to find Cloud resources whose name contains "Important" as a
+   *     word. &#42; `displayName : "Impor&#42;"` to find Cloud resources whose display name
+   *     contains "Impor" as a word prefix. &#42; `description : "&#42;por&#42;"` to find Cloud
+   *     resources whose description contains "por" as a substring. &#42; `location :
+   *     "us-west&#42;"` to find Cloud resources whose location is prefixed with "us-west". &#42;
+   *     `labels : "prod"` to find Cloud resources whose labels contain "prod" as a key or value.
+   *     &#42; `labels.env : "prod"` to find Cloud resources which have a label "env" and its value
+   *     is "prod". &#42; `labels.env : &#42;` to find Cloud resources which have a label "env".
+   *     &#42; `"Important"` to find Cloud resources which contain "Important" as a word in any of
+   *     the searchable fields. &#42; `"Impor&#42;"` to find Cloud resources which contain "Impor"
+   *     as a word prefix in any of the searchable fields. &#42; `"&#42;por&#42;"` to find Cloud
+   *     resources which contain "por" as a substring in any of the searchable fields. &#42;
+   *     `("Important" AND location : ("us-west1" OR "global"))` to find Cloud resources which
+   *     contain "Important" as a word in any of the searchable fields and are also located in the
+   *     "us-west1" region or the "global" location.
+   *     <p>See [how to construct a
+   *     query](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)
+   *     for more details.
+   * @param assetTypes Optional. A list of asset types that this request searches for. If empty, it
+   *     will search all the [searchable asset
+   *     types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAllResourcesPagedResponse searchAllResources(
+      String scope, String query, List<String> assetTypes) {
+    SearchAllResourcesRequest request =
+        SearchAllResourcesRequest.newBuilder()
+            .setScope(scope)
+            .setQuery(query)
+            .addAllAssetTypes(assetTypes)
+            .build();
+    return searchAllResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches all the resources within the given accessible scope (e.g., a project, a folder or an
+   * organization). Callers should have cloud.assets.SearchAllResources permission upon the
+   * requested scope, otherwise the request will be rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "";
+   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
+   *     .setScope(scope)
+   *     .build();
+   *   for (ResourceSearchResult element : assetServiceClient.searchAllResources(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAllResourcesPagedResponse searchAllResources(
+      SearchAllResourcesRequest request) {
+    return searchAllResourcesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches all the resources within the given accessible scope (e.g., a project, a folder or an
+   * organization). Callers should have cloud.assets.SearchAllResources permission upon the
+   * requested scope, otherwise the request will be rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "";
+   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
+   *     .setScope(scope)
+   *     .build();
+   *   ApiFuture&lt;SearchAllResourcesPagedResponse&gt; future = assetServiceClient.searchAllResourcesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (ResourceSearchResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
+      searchAllResourcesPagedCallable() {
+    return stub.searchAllResourcesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches all the resources within the given accessible scope (e.g., a project, a folder or an
+   * organization). Callers should have cloud.assets.SearchAllResources permission upon the
+   * requested scope, otherwise the request will be rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "";
+   *   SearchAllResourcesRequest request = SearchAllResourcesRequest.newBuilder()
+   *     .setScope(scope)
+   *     .build();
+   *   while (true) {
+   *     SearchAllResourcesResponse response = assetServiceClient.searchAllResourcesCallable().call(request);
+   *     for (ResourceSearchResult element : response.getResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
+      searchAllResourcesCallable() {
+    return stub.searchAllResourcesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches all the IAM policies within the given accessible scope (e.g., a project, a folder or
+   * an organization). Callers should have cloud.assets.SearchAllIamPolicies permission upon the
+   * requested scope, otherwise the request will be rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "";
+   *   String query = "";
+   *   for (IamPolicySearchResult element : assetServiceClient.searchAllIamPolicies(scope, query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param scope Required. A scope can be a project, a folder or an organization. The search is
+   *     limited to the IAM policies within the `scope`.
+   *     <p>The allowed values are:
+   *     <p>&#42; projects/{PROJECT_ID} &#42; projects/{PROJECT_NUMBER} &#42;
+   *     folders/{FOLDER_NUMBER} &#42; organizations/{ORGANIZATION_NUMBER}
+   * @param query Optional. The query statement. An empty query can be specified to search all the
+   *     IAM policies within the given `scope`.
+   *     <p>Examples:
+   *     <p>&#42; `policy : "amy{@literal @}gmail.com"` to find Cloud IAM policy bindings that
+   *     specify user "amy{@literal @}gmail.com". &#42; `policy : "roles/compute.admin"` to find
+   *     Cloud IAM policy bindings that specify the Compute Admin role. &#42;
+   *     `policy.role.permissions : "storage.buckets.update"` to find Cloud IAM policy bindings that
+   *     specify a role containing "storage.buckets.update" permission. &#42; `resource :
+   *     "organizations/123"` to find Cloud IAM policy bindings that are set on "organizations/123".
+   *     &#42; `(resource : ("organizations/123" OR "folders/1234") AND policy : "amy")` to find
+   *     Cloud IAM policy bindings that are set on "organizations/123" or "folders/1234", and also
+   *     specify user "amy".
+   *     <p>See [how to construct a
+   *     query](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)
+   *     for more details.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAllIamPoliciesPagedResponse searchAllIamPolicies(String scope, String query) {
+    SearchAllIamPoliciesRequest request =
+        SearchAllIamPoliciesRequest.newBuilder().setScope(scope).setQuery(query).build();
+    return searchAllIamPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches all the IAM policies within the given accessible scope (e.g., a project, a folder or
+   * an organization). Callers should have cloud.assets.SearchAllIamPolicies permission upon the
+   * requested scope, otherwise the request will be rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "";
+   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
+   *     .setScope(scope)
+   *     .build();
+   *   for (IamPolicySearchResult element : assetServiceClient.searchAllIamPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchAllIamPoliciesPagedResponse searchAllIamPolicies(
+      SearchAllIamPoliciesRequest request) {
+    return searchAllIamPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches all the IAM policies within the given accessible scope (e.g., a project, a folder or
+   * an organization). Callers should have cloud.assets.SearchAllIamPolicies permission upon the
+   * requested scope, otherwise the request will be rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "";
+   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
+   *     .setScope(scope)
+   *     .build();
+   *   ApiFuture&lt;SearchAllIamPoliciesPagedResponse&gt; future = assetServiceClient.searchAllIamPoliciesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (IamPolicySearchResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
+      searchAllIamPoliciesPagedCallable() {
+    return stub.searchAllIamPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Searches all the IAM policies within the given accessible scope (e.g., a project, a folder or
+   * an organization). Callers should have cloud.assets.SearchAllIamPolicies permission upon the
+   * requested scope, otherwise the request will be rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "";
+   *   SearchAllIamPoliciesRequest request = SearchAllIamPoliciesRequest.newBuilder()
+   *     .setScope(scope)
+   *     .build();
+   *   while (true) {
+   *     SearchAllIamPoliciesResponse response = assetServiceClient.searchAllIamPoliciesCallable().call(request);
+   *     for (IamPolicySearchResult element : response.getResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
+      searchAllIamPoliciesCallable() {
+    return stub.searchAllIamPoliciesCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -732,5 +1026,187 @@ public class AssetServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class SearchAllResourcesPagedResponse
+      extends AbstractPagedListResponse<
+          SearchAllResourcesRequest,
+          SearchAllResourcesResponse,
+          ResourceSearchResult,
+          SearchAllResourcesPage,
+          SearchAllResourcesFixedSizeCollection> {
+
+    public static ApiFuture<SearchAllResourcesPagedResponse> createAsync(
+        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
+            context,
+        ApiFuture<SearchAllResourcesResponse> futureResponse) {
+      ApiFuture<SearchAllResourcesPage> futurePage =
+          SearchAllResourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<SearchAllResourcesPage, SearchAllResourcesPagedResponse>() {
+            @Override
+            public SearchAllResourcesPagedResponse apply(SearchAllResourcesPage input) {
+              return new SearchAllResourcesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchAllResourcesPagedResponse(SearchAllResourcesPage page) {
+      super(page, SearchAllResourcesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchAllResourcesPage
+      extends AbstractPage<
+          SearchAllResourcesRequest,
+          SearchAllResourcesResponse,
+          ResourceSearchResult,
+          SearchAllResourcesPage> {
+
+    private SearchAllResourcesPage(
+        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
+            context,
+        SearchAllResourcesResponse response) {
+      super(context, response);
+    }
+
+    private static SearchAllResourcesPage createEmptyPage() {
+      return new SearchAllResourcesPage(null, null);
+    }
+
+    @Override
+    protected SearchAllResourcesPage createPage(
+        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
+            context,
+        SearchAllResourcesResponse response) {
+      return new SearchAllResourcesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchAllResourcesPage> createPageAsync(
+        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
+            context,
+        ApiFuture<SearchAllResourcesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchAllResourcesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchAllResourcesRequest,
+          SearchAllResourcesResponse,
+          ResourceSearchResult,
+          SearchAllResourcesPage,
+          SearchAllResourcesFixedSizeCollection> {
+
+    private SearchAllResourcesFixedSizeCollection(
+        List<SearchAllResourcesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchAllResourcesFixedSizeCollection createEmptyCollection() {
+      return new SearchAllResourcesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchAllResourcesFixedSizeCollection createCollection(
+        List<SearchAllResourcesPage> pages, int collectionSize) {
+      return new SearchAllResourcesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchAllIamPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          SearchAllIamPoliciesRequest,
+          SearchAllIamPoliciesResponse,
+          IamPolicySearchResult,
+          SearchAllIamPoliciesPage,
+          SearchAllIamPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<SearchAllIamPoliciesPagedResponse> createAsync(
+        PageContext<
+                SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
+            context,
+        ApiFuture<SearchAllIamPoliciesResponse> futureResponse) {
+      ApiFuture<SearchAllIamPoliciesPage> futurePage =
+          SearchAllIamPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<SearchAllIamPoliciesPage, SearchAllIamPoliciesPagedResponse>() {
+            @Override
+            public SearchAllIamPoliciesPagedResponse apply(SearchAllIamPoliciesPage input) {
+              return new SearchAllIamPoliciesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchAllIamPoliciesPagedResponse(SearchAllIamPoliciesPage page) {
+      super(page, SearchAllIamPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchAllIamPoliciesPage
+      extends AbstractPage<
+          SearchAllIamPoliciesRequest,
+          SearchAllIamPoliciesResponse,
+          IamPolicySearchResult,
+          SearchAllIamPoliciesPage> {
+
+    private SearchAllIamPoliciesPage(
+        PageContext<
+                SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
+            context,
+        SearchAllIamPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static SearchAllIamPoliciesPage createEmptyPage() {
+      return new SearchAllIamPoliciesPage(null, null);
+    }
+
+    @Override
+    protected SearchAllIamPoliciesPage createPage(
+        PageContext<
+                SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
+            context,
+        SearchAllIamPoliciesResponse response) {
+      return new SearchAllIamPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchAllIamPoliciesPage> createPageAsync(
+        PageContext<
+                SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
+            context,
+        ApiFuture<SearchAllIamPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchAllIamPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchAllIamPoliciesRequest,
+          SearchAllIamPoliciesResponse,
+          IamPolicySearchResult,
+          SearchAllIamPoliciesPage,
+          SearchAllIamPoliciesFixedSizeCollection> {
+
+    private SearchAllIamPoliciesFixedSizeCollection(
+        List<SearchAllIamPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchAllIamPoliciesFixedSizeCollection createEmptyCollection() {
+      return new SearchAllIamPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchAllIamPoliciesFixedSizeCollection createCollection(
+        List<SearchAllIamPoliciesPage> pages, int collectionSize) {
+      return new SearchAllIamPoliciesFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

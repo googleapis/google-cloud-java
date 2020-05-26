@@ -330,6 +330,102 @@ public final class AssetServiceGrpc {
     return getDeleteFeedMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.SearchAllResourcesRequest,
+          com.google.cloud.asset.v1.SearchAllResourcesResponse>
+      getSearchAllResourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchAllResources",
+      requestType = com.google.cloud.asset.v1.SearchAllResourcesRequest.class,
+      responseType = com.google.cloud.asset.v1.SearchAllResourcesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.SearchAllResourcesRequest,
+          com.google.cloud.asset.v1.SearchAllResourcesResponse>
+      getSearchAllResourcesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.SearchAllResourcesRequest,
+            com.google.cloud.asset.v1.SearchAllResourcesResponse>
+        getSearchAllResourcesMethod;
+    if ((getSearchAllResourcesMethod = AssetServiceGrpc.getSearchAllResourcesMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getSearchAllResourcesMethod = AssetServiceGrpc.getSearchAllResourcesMethod) == null) {
+          AssetServiceGrpc.getSearchAllResourcesMethod =
+              getSearchAllResourcesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.SearchAllResourcesRequest,
+                          com.google.cloud.asset.v1.SearchAllResourcesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchAllResources"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.SearchAllResourcesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.SearchAllResourcesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("SearchAllResources"))
+                      .build();
+        }
+      }
+    }
+    return getSearchAllResourcesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.SearchAllIamPoliciesRequest,
+          com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>
+      getSearchAllIamPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchAllIamPolicies",
+      requestType = com.google.cloud.asset.v1.SearchAllIamPoliciesRequest.class,
+      responseType = com.google.cloud.asset.v1.SearchAllIamPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.SearchAllIamPoliciesRequest,
+          com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>
+      getSearchAllIamPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.SearchAllIamPoliciesRequest,
+            com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>
+        getSearchAllIamPoliciesMethod;
+    if ((getSearchAllIamPoliciesMethod = AssetServiceGrpc.getSearchAllIamPoliciesMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getSearchAllIamPoliciesMethod = AssetServiceGrpc.getSearchAllIamPoliciesMethod)
+            == null) {
+          AssetServiceGrpc.getSearchAllIamPoliciesMethod =
+              getSearchAllIamPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.SearchAllIamPoliciesRequest,
+                          com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SearchAllIamPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.SearchAllIamPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.SearchAllIamPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("SearchAllIamPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getSearchAllIamPoliciesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub> factory =
@@ -386,8 +482,9 @@ public final class AssetServiceGrpc {
      * <pre>
      * Exports assets with time and resource types to a given Cloud Storage
      * location. The output format is newline-delimited JSON.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API allowing you
-     * to keep track of the export.
+     * This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API allowing
+     * you to keep track of the export.
      * </pre>
      */
     public void exportAssets(
@@ -482,6 +579,40 @@ public final class AssetServiceGrpc {
       asyncUnimplementedUnaryCall(getDeleteFeedMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Searches all the resources within the given accessible scope (e.g., a
+     * project, a folder or an organization). Callers should have
+     * cloud.assets.SearchAllResources permission upon the requested scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public void searchAllResources(
+        com.google.cloud.asset.v1.SearchAllResourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SearchAllResourcesResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getSearchAllResourcesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all the IAM policies within the given accessible scope (e.g., a
+     * project, a folder or an organization). Callers should have
+     * cloud.assets.SearchAllIamPolicies permission upon the requested scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public void searchAllIamPolicies(
+        com.google.cloud.asset.v1.SearchAllIamPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getSearchAllIamPoliciesMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -528,6 +659,20 @@ public final class AssetServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.asset.v1.DeleteFeedRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_FEED)))
+          .addMethod(
+              getSearchAllResourcesMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.SearchAllResourcesRequest,
+                      com.google.cloud.asset.v1.SearchAllResourcesResponse>(
+                      this, METHODID_SEARCH_ALL_RESOURCES)))
+          .addMethod(
+              getSearchAllIamPoliciesMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.SearchAllIamPoliciesRequest,
+                      com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>(
+                      this, METHODID_SEARCH_ALL_IAM_POLICIES)))
           .build();
     }
   }
@@ -556,8 +701,9 @@ public final class AssetServiceGrpc {
      * <pre>
      * Exports assets with time and resource types to a given Cloud Storage
      * location. The output format is newline-delimited JSON.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API allowing you
-     * to keep track of the export.
+     * This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API allowing
+     * you to keep track of the export.
      * </pre>
      */
     public void exportAssets(
@@ -662,6 +808,46 @@ public final class AssetServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getDeleteFeedMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all the resources within the given accessible scope (e.g., a
+     * project, a folder or an organization). Callers should have
+     * cloud.assets.SearchAllResources permission upon the requested scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public void searchAllResources(
+        com.google.cloud.asset.v1.SearchAllResourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SearchAllResourcesResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSearchAllResourcesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all the IAM policies within the given accessible scope (e.g., a
+     * project, a folder or an organization). Callers should have
+     * cloud.assets.SearchAllIamPolicies permission upon the requested scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public void searchAllIamPolicies(
+        com.google.cloud.asset.v1.SearchAllIamPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSearchAllIamPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -689,8 +875,9 @@ public final class AssetServiceGrpc {
      * <pre>
      * Exports assets with time and resource types to a given Cloud Storage
      * location. The output format is newline-delimited JSON.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API allowing you
-     * to keep track of the export.
+     * This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API allowing
+     * you to keep track of the export.
      * </pre>
      */
     public com.google.longrunning.Operation exportAssets(
@@ -777,6 +964,38 @@ public final class AssetServiceGrpc {
         com.google.cloud.asset.v1.DeleteFeedRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteFeedMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all the resources within the given accessible scope (e.g., a
+     * project, a folder or an organization). Callers should have
+     * cloud.assets.SearchAllResources permission upon the requested scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SearchAllResourcesResponse searchAllResources(
+        com.google.cloud.asset.v1.SearchAllResourcesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSearchAllResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all the IAM policies within the given accessible scope (e.g., a
+     * project, a folder or an organization). Callers should have
+     * cloud.assets.SearchAllIamPolicies permission upon the requested scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.SearchAllIamPoliciesResponse searchAllIamPolicies(
+        com.google.cloud.asset.v1.SearchAllIamPoliciesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSearchAllIamPoliciesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -804,8 +1023,9 @@ public final class AssetServiceGrpc {
      * <pre>
      * Exports assets with time and resource types to a given Cloud Storage
      * location. The output format is newline-delimited JSON.
-     * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API allowing you
-     * to keep track of the export.
+     * This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API allowing
+     * you to keep track of the export.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -898,6 +1118,40 @@ public final class AssetServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteFeedMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all the resources within the given accessible scope (e.g., a
+     * project, a folder or an organization). Callers should have
+     * cloud.assets.SearchAllResources permission upon the requested scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.SearchAllResourcesResponse>
+        searchAllResources(com.google.cloud.asset.v1.SearchAllResourcesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSearchAllResourcesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches all the IAM policies within the given accessible scope (e.g., a
+     * project, a folder or an organization). Callers should have
+     * cloud.assets.SearchAllIamPolicies permission upon the requested scope,
+     * otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>
+        searchAllIamPolicies(com.google.cloud.asset.v1.SearchAllIamPoliciesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSearchAllIamPoliciesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_EXPORT_ASSETS = 0;
@@ -907,6 +1161,8 @@ public final class AssetServiceGrpc {
   private static final int METHODID_LIST_FEEDS = 4;
   private static final int METHODID_UPDATE_FEED = 5;
   private static final int METHODID_DELETE_FEED = 6;
+  private static final int METHODID_SEARCH_ALL_RESOURCES = 7;
+  private static final int METHODID_SEARCH_ALL_IAM_POLICIES = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -961,6 +1217,18 @@ public final class AssetServiceGrpc {
           serviceImpl.deleteFeed(
               (com.google.cloud.asset.v1.DeleteFeedRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_SEARCH_ALL_RESOURCES:
+          serviceImpl.searchAllResources(
+              (com.google.cloud.asset.v1.SearchAllResourcesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SearchAllResourcesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_ALL_IAM_POLICIES:
+          serviceImpl.searchAllIamPolicies(
+              (com.google.cloud.asset.v1.SearchAllIamPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.SearchAllIamPoliciesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1033,6 +1301,8 @@ public final class AssetServiceGrpc {
                       .addMethod(getListFeedsMethod())
                       .addMethod(getUpdateFeedMethod())
                       .addMethod(getDeleteFeedMethod())
+                      .addMethod(getSearchAllResourcesMethod())
+                      .addMethod(getSearchAllIamPoliciesMethod())
                       .build();
         }
       }
