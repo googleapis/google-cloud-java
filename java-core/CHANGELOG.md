@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.93.5](https://www.github.com/googleapis/java-core/compare/v1.93.4...v1.93.5) (2020-05-26)
+
+
+### Dependencies
+
+* rely on shared-config for auto-value configuration ([#222](https://www.github.com/googleapis/java-core/issues/222)) ([22adbcf](https://www.github.com/googleapis/java-core/commit/22adbcf307cf5ef4819bad9afa91c4c83a9f31bb))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#215](https://www.github.com/googleapis/java-core/issues/215)) ([488a351](https://www.github.com/googleapis/java-core/commit/488a351ab41adafb1d969740bfbd3a6d2ddfd36d))
+* update dependency com.google.guava:guava-bom to v29 ([#205](https://www.github.com/googleapis/java-core/issues/205)) ([48d3f97](https://www.github.com/googleapis/java-core/commit/48d3f970bd931ee5f04205ab939c318c69cbcf3f))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#211](https://www.github.com/googleapis/java-core/issues/211)) ([e56b3ef](https://www.github.com/googleapis/java-core/commit/e56b3ef0e2ea5c96b36f8aae851fd26efe1337c1))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.0 ([#218](https://www.github.com/googleapis/java-core/issues/218)) ([b2c6f15](https://www.github.com/googleapis/java-core/commit/b2c6f15ae63302dbeea16ecb7d7b89404907516f))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#209](https://www.github.com/googleapis/java-core/issues/209)) ([e63cb7c](https://www.github.com/googleapis/java-core/commit/e63cb7ca69e49afae50af1f2cf4fe3601984be49))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#210](https://www.github.com/googleapis/java-core/issues/210)) ([a837fa4](https://www.github.com/googleapis/java-core/commit/a837fa441fbbf83494709b1779e0ef35ef13b345))
+
 ### [1.93.4](https://www.github.com/googleapis/java-core/compare/v1.93.3...v1.93.4) (2020-04-06)
 
 
