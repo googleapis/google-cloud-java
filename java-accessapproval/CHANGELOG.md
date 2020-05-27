@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.1.3](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.2...v0.1.3) (2020-05-27)
+
+
+### Reverts
+
+* Revert "changes without context (#94)" (#101) ([e65c8f0](https://www.github.com/googleapis/java-accessapproval/commit/e65c8f0bfe0ef03ddcd3e943b92cb69a3a244b9b)), closes [#94](https://www.github.com/googleapis/java-accessapproval/issues/94) [#101](https://www.github.com/googleapis/java-accessapproval/issues/101) [#98](https://www.github.com/googleapis/java-accessapproval/issues/98)
+
+
+### Dependencies
+
+* bump shared-deps version and add back certain test deps ([#102](https://www.github.com/googleapis/java-accessapproval/issues/102)) ([1563783](https://www.github.com/googleapis/java-accessapproval/commit/15637839de3e30f9d882ee1be797bb144d4202a6))
+* flatten dependencies ([#82](https://www.github.com/googleapis/java-accessapproval/issues/82)) ([9f0e4ad](https://www.github.com/googleapis/java-accessapproval/commit/9f0e4adc1516be76491ab7047f066056ab865b75))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.3.1 ([#89](https://www.github.com/googleapis/java-accessapproval/issues/89)) ([d07ace1](https://www.github.com/googleapis/java-accessapproval/commit/d07ace150a708792fb314d6ca40f5d4ff78abf9c))
+* update dependency com.google.guava:guava-bom to v29 ([#59](https://www.github.com/googleapis/java-accessapproval/issues/59)) ([561a76c](https://www.github.com/googleapis/java-accessapproval/commit/561a76caae2bd5d3798935417b0154daa82883ae))
+
 ### [0.1.2](https://www.github.com/googleapis/java-accessapproval/compare/v0.1.1...v0.1.2) (2020-04-08)
 
 
