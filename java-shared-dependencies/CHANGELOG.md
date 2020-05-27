@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.5.0...v0.6.0) (2020-05-27)
+
+
+### Features
+
+* add grpc-iam-v1 to keep version consistent w proto-iam-v1 ([#55](https://www.github.com/googleapis/java-shared-dependencies/issues/55)) ([0fe26dd](https://www.github.com/googleapis/java-shared-dependencies/commit/0fe26dd73e7c3ada31e53c5f5a84ef4d3c4f3956))
+
+
+### Dependencies
+
+* update core dependencies to v1.93.5 ([#53](https://www.github.com/googleapis/java-shared-dependencies/issues/53)) ([9d8d4d6](https://www.github.com/googleapis/java-shared-dependencies/commit/9d8d4d602128e6e32486288cbbec117b80f3fbc6))
+* update dependency com.google.api:api-common to v1.9.1 ([#51](https://www.github.com/googleapis/java-shared-dependencies/issues/51)) ([40276df](https://www.github.com/googleapis/java-shared-dependencies/commit/40276df393e34fb72eead8499968792852a880c7))
+
 ## [0.5.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.4.0...v0.5.0) (2020-05-26)
 
 
