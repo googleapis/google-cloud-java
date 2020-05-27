@@ -223,6 +223,11 @@
 
       <!-- Following test deps are kept to keep them consistent with versions above -->
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-iam-v1</artifactId>
+        <version>${iam.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
         <version>${gax.version}</version>
