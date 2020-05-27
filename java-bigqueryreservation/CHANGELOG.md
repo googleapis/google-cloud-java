@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.1.1...v0.1.2) (2020-05-27)
+
+
+### Dependencies
+
+* bump shared-deps version and add back certain test deps ([#35](https://www.github.com/googleapis/java-bigqueryreservation/issues/35)) ([9eefaf1](https://www.github.com/googleapis/java-bigqueryreservation/commit/9eefaf11bb18487714c59a718154519269b125dc))
+
 ### [0.1.1](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.1.0...v0.1.1) (2020-05-14)
 
 
