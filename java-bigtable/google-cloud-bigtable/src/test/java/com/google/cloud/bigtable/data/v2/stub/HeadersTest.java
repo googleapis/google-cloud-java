@@ -175,7 +175,7 @@ public class HeadersTest {
     String requestParamsvalue = metadata.get(X_GOOG_REQUEST_PARAMS_KEY);
     assertThat(requestParamsvalue).containsMatch("(^|.*&)table_name=" + TABLE_NAME + "($|&.*)");
     assertThat(requestParamsvalue)
-        .containsMatch("(^|.*&)app_profile_id=" + APP_PROFILE_ID + "($|&.*)");
+        .containsMatch("(^|.*&)app_profile=" + APP_PROFILE_ID + "($|&.*)");
 
     String apiClientValue = metadata.get(API_CLIENT_HEADER_KEY);
     assertThat(apiClientValue).containsMatch("gl-java/[.\\d_]+");
