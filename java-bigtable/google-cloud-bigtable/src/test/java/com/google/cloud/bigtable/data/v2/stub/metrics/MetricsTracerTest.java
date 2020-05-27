@@ -237,7 +237,10 @@ public class MetricsTracerTest {
         getAggregationValueAsLong(
             RpcViewConstants.BIGTABLE_READ_ROWS_FIRST_ROW_LATENCY_VIEW,
             ImmutableMap.<TagKey, TagValue>of());
-    assertThat(firstRowLatency).isIn(Range.closed(beforeSleep, elapsed - afterSleep));
+
+    // adding buffer time to the upper range to allow for a race between the emulator and the client
+    // recording the duration
+    assertThat(firstRowLatency).isIn(Range.closed(beforeSleep, elapsed - afterSleep / 2));
   }
 
   @Test
