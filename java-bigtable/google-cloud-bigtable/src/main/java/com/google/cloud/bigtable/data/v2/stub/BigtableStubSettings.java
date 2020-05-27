@@ -311,13 +311,13 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
 
       builder
           .readRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("read_rows_params"));
 
       builder
           .sampleRowKeysSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("idempotent_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("non_idempotent_params"));
 
       builder
           .mutateRowSettings()
@@ -326,7 +326,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
 
       builder
           .mutateRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("mutate_rows_params"));
 
       builder
