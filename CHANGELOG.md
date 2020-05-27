@@ -1,5 +1,20 @@
 # Changelog
 
+### [0.133.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.0...v0.133.1) (2020-05-27)
+
+
+### Bug Fixes
+
+* add retry logic for readrows ([#263](https://www.github.com/googleapis/java-bigquerystorage/issues/263)) ([50345b6](https://www.github.com/googleapis/java-bigquerystorage/commit/50345b653d59209b7912b56b76c6d41e289ecb30))
+
+
+### Dependencies
+
+* bump shared-deps version and add back certain test deps ([#300](https://www.github.com/googleapis/java-bigquerystorage/issues/300)) ([edfa26b](https://www.github.com/googleapis/java-bigquerystorage/commit/edfa26bb5bfa506004a6d3e39775f9f66b956db9))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.115.1 ([#294](https://www.github.com/googleapis/java-bigquerystorage/issues/294)) ([75a08c3](https://www.github.com/googleapis/java-bigquerystorage/commit/75a08c3683fde88264d310f965a0c973b54dfd9e))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.116.0 ([#296](https://www.github.com/googleapis/java-bigquerystorage/issues/296)) ([d243ece](https://www.github.com/googleapis/java-bigquerystorage/commit/d243ece29dd1494531f623b69e609fb833e970dc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.4.0 ([#291](https://www.github.com/googleapis/java-bigquerystorage/issues/291)) ([20b2963](https://www.github.com/googleapis/java-bigquerystorage/commit/20b2963bbf315951d1607bee63a7aa083cdb6c86))
+
 ## [0.133.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.132.0...v0.133.0) (2020-05-15)
 
 
