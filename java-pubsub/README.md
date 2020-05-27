@@ -38,7 +38,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>1.105.1</version>
+  <version>1.106.0</version>
 </dependency>
 
 ```
@@ -47,11 +47,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-pubsub:1.105.1'
+compile 'com.google.cloud:google-cloud-pubsub:1.106.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.105.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.106.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -265,7 +265,8 @@ Apache 2.0 - See [LICENSE][license] for more information.
 
 Java Version | Status
 ------------ | ------
-Java 7 | [![Kokoro CI][kokoro-badge-image-1]][kokoro-badge-link-1]Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
+Java 7 | [![Kokoro CI][kokoro-badge-image-1]][kokoro-badge-link-1]
+Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
 Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
