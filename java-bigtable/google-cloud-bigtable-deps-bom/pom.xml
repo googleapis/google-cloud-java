@@ -76,7 +76,7 @@
     <gax.version>1.56.0</gax.version>
     <google.api-common.version>1.9.1</google.api-common.version>
     <google.common-protos.version>1.18.0</google.common-protos.version>
-    <google.core.version>1.93.4</google.core.version>
+    <google.core.version>1.93.5</google.core.version>
     <google.auth.version>0.20.0</google.auth.version>
     <google-http-client.version>1.35.0</google-http-client.version>
     <!-- make sure to update the grpc version in README -->
