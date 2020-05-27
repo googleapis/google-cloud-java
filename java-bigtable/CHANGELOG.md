@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.13.0](https://www.github.com/googleapis/java-bigtable/compare/v1.12.2...v1.13.0) (2020-05-27)
+
+
+### Features
+
+* adding utility to transform protobuf into model object ([#299](https://www.github.com/googleapis/java-bigtable/issues/299)) ([00f6d2d](https://www.github.com/googleapis/java-bigtable/commit/00f6d2da4179eb3f4f55a1fe1da04047697c5999))
+* expose new API with ReadRowsRequest in EnhancedBigtableStub ([#276](https://www.github.com/googleapis/java-bigtable/issues/276)) ([394efe4](https://www.github.com/googleapis/java-bigtable/commit/394efe459ebe34030bf1d09116eebb4ec4f311e9))
+* Update opencensus metrics to include bigtable resource ids and rpc level metrics ([#214](https://www.github.com/googleapis/java-bigtable/issues/214)) ([7214ef6](https://www.github.com/googleapis/java-bigtable/commit/7214ef6853fc6892401b55bd1beeccbe896e4f33))
+
+
+### Bug Fixes
+
+* bigtable v2 retry config settings to disable streaming RPC retries ([#315](https://www.github.com/googleapis/java-bigtable/issues/315)) ([a7e43f0](https://www.github.com/googleapis/java-bigtable/commit/a7e43f07dc0b93c6702992d45444e815200bf202))
+* change app_profile_id to the correct header app_profile ([#318](https://www.github.com/googleapis/java-bigtable/issues/318)) ([237b15d](https://www.github.com/googleapis/java-bigtable/commit/237b15d14b420005d32f227e1a76e7d308db0a42))
+
+
+### Dependencies
+
+* update autovalue.version to v1.7.2 ([#306](https://www.github.com/googleapis/java-bigtable/issues/306)) ([bc215c5](https://www.github.com/googleapis/java-bigtable/commit/bc215c5883b16727c28893b4a13b3387f0a04ac9))
+* update dependency com.google.api:api-common to v1.9.1 ([#316](https://www.github.com/googleapis/java-bigtable/issues/316)) ([482603a](https://www.github.com/googleapis/java-bigtable/commit/482603acd4c3db461b0e5f489a8c55213b9f3326))
+* update dependency com.google.cloud:google-cloud-conformance-tests to v0.0.11 ([#307](https://www.github.com/googleapis/java-bigtable/issues/307)) ([50a19a6](https://www.github.com/googleapis/java-bigtable/commit/50a19a6aded1b313390ff78b52d9ffc4f4cc7fdd))
+* update dependency com.google.cloud:google-cloud-core-bom to v1.93.5 ([#317](https://www.github.com/googleapis/java-bigtable/issues/317)) ([7f61f90](https://www.github.com/googleapis/java-bigtable/commit/7f61f903abc16554c88850061faf03e6b8beb3b9))
+* update protobuf.version to v3.12.1 ([#308](https://www.github.com/googleapis/java-bigtable/issues/308)) ([99e3a95](https://www.github.com/googleapis/java-bigtable/commit/99e3a95d456bb79841720e8ecbdcb0d47017535e))
+
+
+### Documentation
+
+* **fix:** update client documentation link ([#312](https://www.github.com/googleapis/java-bigtable/issues/312)) ([7e04c7a](https://www.github.com/googleapis/java-bigtable/commit/7e04c7a69a80d71303ce62b4320153facd3cfad8))
+
 ### [1.12.2](https://www.github.com/googleapis/java-bigtable/compare/v1.12.1...v1.12.2) (2020-05-11)
 
 
