@@ -70,7 +70,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>0.4.0</version>
+        <version>0.5.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -88,6 +88,14 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerydatatransfer</artifactId>
         <version>0.127.3-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+      </dependency>
+
+      <!-- Test dependencies -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13</version>
+        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
