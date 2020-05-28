@@ -239,6 +239,12 @@
         <version>${google.core.version}</version>
         <type>test-jar</type>
       </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>${google.core.version}</version>
+        <classifier>tests</classifier>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>
