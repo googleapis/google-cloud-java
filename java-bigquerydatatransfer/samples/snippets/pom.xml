@@ -44,6 +44,7 @@
     </dependency>
     <!-- [END bigquerydatatransfer_install_with_bom] -->
 
+    <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
