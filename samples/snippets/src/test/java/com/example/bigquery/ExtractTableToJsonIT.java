@@ -61,10 +61,12 @@ public class ExtractTableToJsonIT {
     String datasetName = "samples";
     String tableName = "shakespeare";
     String destinationUri = "gs://" + GCS_BUCKET + "/extractTest.csv";
+    String dataFormat = "CSV";
 
     // Extract table content to GCS in CSV format
-    ExtractTableToJson.extractTableToJson(projectId, datasetName, tableName, destinationUri);
+    ExtractTableToJson.extractTableToJson(projectId, datasetName, tableName, destinationUri,
+            dataFormat);
     assertThat(bout.toString())
-        .contains("Table export successful. Check in GCS bucket for the CSV file.");
+        .contains("Table export successful. Check in GCS bucket for the " + dataFormat + " file.");
   }
 }

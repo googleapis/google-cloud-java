@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
@@ -76,7 +77,7 @@ public class LoadLocalFileIT {
 
     Path csvPath = FileSystems.getDefault().getPath("src/test/resources", "bigquery_noheader.csv");
 
-    LoadLocalFile.loadLocalFile(BIGQUERY_DATASET_NAME, tableName, csvPath);
+    LoadLocalFile.loadLocalFile(BIGQUERY_DATASET_NAME, tableName, csvPath, FormatOptions.csv());
 
     assertThat(bout.toString()).contains("Successfully loaded");
 
