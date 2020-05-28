@@ -234,6 +234,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the avroRows field is set.
    */
+  @java.lang.Override
   public boolean hasAvroRows() {
     return rowsCase_ == 3;
   }
@@ -248,6 +249,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The avroRows.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.AvroRows getAvroRows() {
     if (rowsCase_ == 3) {
       return (com.google.cloud.bigquery.storage.v1.AvroRows) rows_;
@@ -263,6 +265,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.bigquery.storage.v1.AvroRows avro_rows = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.AvroRowsOrBuilder getAvroRowsOrBuilder() {
     if (rowsCase_ == 3) {
       return (com.google.cloud.bigquery.storage.v1.AvroRows) rows_;
@@ -282,6 +285,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the arrowRecordBatch field is set.
    */
+  @java.lang.Override
   public boolean hasArrowRecordBatch() {
     return rowsCase_ == 4;
   }
@@ -296,6 +300,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The arrowRecordBatch.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ArrowRecordBatch getArrowRecordBatch() {
     if (rowsCase_ == 4) {
       return (com.google.cloud.bigquery.storage.v1.ArrowRecordBatch) rows_;
@@ -311,6 +316,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.bigquery.storage.v1.ArrowRecordBatch arrow_record_batch = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ArrowRecordBatchOrBuilder
       getArrowRecordBatchOrBuilder() {
     if (rowsCase_ == 4) {
@@ -332,6 +338,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The rowCount.
    */
+  @java.lang.Override
   public long getRowCount() {
     return rowCount_;
   }
@@ -349,6 +356,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the stats field is set.
    */
+  @java.lang.Override
   public boolean hasStats() {
     return stats_ != null;
   }
@@ -363,6 +371,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The stats.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.StreamStats getStats() {
     return stats_ == null
         ? com.google.cloud.bigquery.storage.v1.StreamStats.getDefaultInstance()
@@ -377,6 +386,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.bigquery.storage.v1.StreamStats stats = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.StreamStatsOrBuilder getStatsOrBuilder() {
     return getStats();
   }
@@ -395,6 +405,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the throttleState field is set.
    */
+  @java.lang.Override
   public boolean hasThrottleState() {
     return throttleState_ != null;
   }
@@ -410,6 +421,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The throttleState.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ThrottleState getThrottleState() {
     return throttleState_ == null
         ? com.google.cloud.bigquery.storage.v1.ThrottleState.getDefaultInstance()
@@ -425,6 +437,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.bigquery.storage.v1.ThrottleState throttle_state = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ThrottleStateOrBuilder getThrottleStateOrBuilder() {
     return getThrottleState();
   }
@@ -906,6 +919,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the avroRows field is set.
      */
+    @java.lang.Override
     public boolean hasAvroRows() {
       return rowsCase_ == 3;
     }
@@ -920,6 +934,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * @return The avroRows.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1.AvroRows getAvroRows() {
       if (avroRowsBuilder_ == null) {
         if (rowsCase_ == 3) {
@@ -1052,6 +1067,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.cloud.bigquery.storage.v1.AvroRows avro_rows = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1.AvroRowsOrBuilder getAvroRowsOrBuilder() {
       if ((rowsCase_ == 3) && (avroRowsBuilder_ != null)) {
         return avroRowsBuilder_.getMessageOrBuilder();
@@ -1112,6 +1128,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the arrowRecordBatch field is set.
      */
+    @java.lang.Override
     public boolean hasArrowRecordBatch() {
       return rowsCase_ == 4;
     }
@@ -1126,6 +1143,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * @return The arrowRecordBatch.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1.ArrowRecordBatch getArrowRecordBatch() {
       if (arrowRecordBatchBuilder_ == null) {
         if (rowsCase_ == 4) {
@@ -1262,6 +1280,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.cloud.bigquery.storage.v1.ArrowRecordBatch arrow_record_batch = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1.ArrowRecordBatchOrBuilder
         getArrowRecordBatchOrBuilder() {
       if ((rowsCase_ == 4) && (arrowRecordBatchBuilder_ != null)) {
@@ -1319,6 +1338,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
      *
      * @return The rowCount.
      */
+    @java.lang.Override
     public long getRowCount() {
       return rowCount_;
     }

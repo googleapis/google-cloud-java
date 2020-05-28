@@ -536,6 +536,10 @@ public final class Stream {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -584,6 +588,7 @@ public final class Stream {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -607,6 +612,7 @@ public final class Stream {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -628,6 +634,7 @@ public final class Stream {
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -638,6 +645,7 @@ public final class Stream {
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream.Type result =
@@ -662,6 +670,7 @@ public final class Stream {
      *
      * @return Whether the createTime field is set.
      */
+    @java.lang.Override
     public boolean hasCreateTime() {
       return createTime_ != null;
     }
@@ -678,6 +687,7 @@ public final class Stream {
      *
      * @return The createTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getCreateTime() {
       return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
@@ -692,6 +702,7 @@ public final class Stream {
      * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       return getCreateTime();
     }
@@ -714,6 +725,7 @@ public final class Stream {
      *
      * @return Whether the commitTime field is set.
      */
+    @java.lang.Override
     public boolean hasCommitTime() {
       return commitTime_ != null;
     }
@@ -733,6 +745,7 @@ public final class Stream {
      *
      * @return The commitTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getCommitTime() {
       return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
     }
@@ -750,6 +763,7 @@ public final class Stream {
      * .google.protobuf.Timestamp commit_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder() {
       return getCommitTime();
     }
@@ -772,6 +786,7 @@ public final class Stream {
      *
      * @return Whether the tableSchema field is set.
      */
+    @java.lang.Override
     public boolean hasTableSchema() {
       return tableSchema_ != null;
     }
@@ -791,6 +806,7 @@ public final class Stream {
      *
      * @return The tableSchema.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema getTableSchema() {
       return tableSchema_ == null
           ? com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchema.getDefaultInstance()
@@ -810,6 +826,7 @@ public final class Stream {
      * .google.cloud.bigquery.storage.v1alpha2.TableSchema table_schema = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Table.TableSchemaOrBuilder
         getTableSchemaOrBuilder() {
       return getTableSchema();
@@ -828,6 +845,7 @@ public final class Stream {
      *
      * @return The externalId.
      */
+    @java.lang.Override
     public java.lang.String getExternalId() {
       java.lang.Object ref = externalId_;
       if (ref instanceof java.lang.String) {
@@ -850,6 +868,7 @@ public final class Stream {
      *
      * @return The bytes for externalId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getExternalIdBytes() {
       java.lang.Object ref = externalId_;
       if (ref instanceof java.lang.String) {
@@ -1427,6 +1446,7 @@ public final class Stream {
        *
        * @return The enum numeric value on the wire for type.
        */
+      @java.lang.Override
       public int getTypeValue() {
         return type_;
       }
@@ -1439,6 +1459,7 @@ public final class Stream {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+
         type_ = value;
         onChanged();
         return this;
@@ -1450,6 +1471,7 @@ public final class Stream {
        *
        * @return The type.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream.Type getType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream.Type result =

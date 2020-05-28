@@ -203,6 +203,7 @@ public final class Table {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema>
         getFieldsList() {
       return fields_;
@@ -216,6 +217,7 @@ public final class Table {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchemaOrBuilder>
         getFieldsOrBuilderList() {
@@ -230,6 +232,7 @@ public final class Table {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 1;</code>
      */
+    @java.lang.Override
     public int getFieldsCount() {
       return fields_.size();
     }
@@ -242,6 +245,7 @@ public final class Table {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema getFields(int index) {
       return fields_.get(index);
     }
@@ -254,6 +258,7 @@ public final class Table {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchemaOrBuilder
         getFieldsOrBuilder(int index) {
       return fields_.get(index);
@@ -1708,6 +1713,10 @@ public final class Table {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -1829,6 +1838,10 @@ public final class Table {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -1878,6 +1891,7 @@ public final class Table {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1902,6 +1916,7 @@ public final class Table {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1929,6 +1944,7 @@ public final class Table {
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1945,6 +1961,7 @@ public final class Table {
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema.Type result =
@@ -1969,6 +1986,7 @@ public final class Table {
      *
      * @return The enum numeric value on the wire for mode.
      */
+    @java.lang.Override
     public int getModeValue() {
       return mode_;
     }
@@ -1985,6 +2003,7 @@ public final class Table {
      *
      * @return The mode.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema.Mode getMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema.Mode result =
@@ -2008,6 +2027,7 @@ public final class Table {
      * repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema>
         getFieldsList() {
       return fields_;
@@ -2023,6 +2043,7 @@ public final class Table {
      * repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchemaOrBuilder>
         getFieldsOrBuilderList() {
@@ -2039,6 +2060,7 @@ public final class Table {
      * repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public int getFieldsCount() {
       return fields_.size();
     }
@@ -2053,6 +2075,7 @@ public final class Table {
      * repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema getFields(int index) {
       return fields_.get(index);
     }
@@ -2067,6 +2090,7 @@ public final class Table {
      * repeated .google.cloud.bigquery.storage.v1alpha2.TableFieldSchema fields = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchemaOrBuilder
         getFieldsOrBuilder(int index) {
       return fields_.get(index);
@@ -2085,6 +2109,7 @@ public final class Table {
      *
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -2107,6 +2132,7 @@ public final class Table {
      *
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -2692,6 +2718,7 @@ public final class Table {
        *
        * @return The enum numeric value on the wire for type.
        */
+      @java.lang.Override
       public int getTypeValue() {
         return type_;
       }
@@ -2710,6 +2737,7 @@ public final class Table {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+
         type_ = value;
         onChanged();
         return this;
@@ -2727,6 +2755,7 @@ public final class Table {
        *
        * @return The type.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema.Type getType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema.Type result =
@@ -2793,6 +2822,7 @@ public final class Table {
        *
        * @return The enum numeric value on the wire for mode.
        */
+      @java.lang.Override
       public int getModeValue() {
         return mode_;
       }
@@ -2811,6 +2841,7 @@ public final class Table {
        * @return This builder for chaining.
        */
       public Builder setModeValue(int value) {
+
         mode_ = value;
         onChanged();
         return this;
@@ -2828,6 +2859,7 @@ public final class Table {
        *
        * @return The mode.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema.Mode getMode() {
         @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.storage.v1alpha2.Table.TableFieldSchema.Mode result =

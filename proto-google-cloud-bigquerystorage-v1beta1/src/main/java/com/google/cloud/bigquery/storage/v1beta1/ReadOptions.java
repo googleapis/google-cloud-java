@@ -332,6 +332,7 @@ public final class ReadOptions {
      *
      * @return The rowRestriction.
      */
+    @java.lang.Override
     public java.lang.String getRowRestriction() {
       java.lang.Object ref = rowRestriction_;
       if (ref instanceof java.lang.String) {
@@ -360,6 +361,7 @@ public final class ReadOptions {
      *
      * @return The bytes for rowRestriction.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRowRestrictionBytes() {
       java.lang.Object ref = rowRestriction_;
       if (ref instanceof java.lang.String) {

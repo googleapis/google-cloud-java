@@ -387,6 +387,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the snapshotTime field is set.
      */
+    @java.lang.Override
     public boolean hasSnapshotTime() {
       return snapshotTime_ != null;
     }
@@ -401,6 +402,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The snapshotTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getSnapshotTime() {
       return snapshotTime_ == null
           ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -415,6 +417,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder() {
       return getSnapshotTime();
     }
@@ -1370,6 +1373,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The rowRestriction.
      */
+    @java.lang.Override
     public java.lang.String getRowRestriction() {
       java.lang.Object ref = rowRestriction_;
       if (ref instanceof java.lang.String) {
@@ -1398,6 +1402,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for rowRestriction.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRowRestrictionBytes() {
       java.lang.Object ref = rowRestriction_;
       if (ref instanceof java.lang.String) {
@@ -1426,6 +1431,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the arrowSerializationOptions field is set.
      */
+    @java.lang.Override
     public boolean hasArrowSerializationOptions() {
       return arrowSerializationOptions_ != null;
     }
@@ -1442,6 +1448,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The arrowSerializationOptions.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions
         getArrowSerializationOptions() {
       return arrowSerializationOptions_ == null
@@ -1459,6 +1466,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptionsOrBuilder
         getArrowSerializationOptionsOrBuilder() {
       return getArrowSerializationOptions();
@@ -2528,6 +2536,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -2551,6 +2560,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -2579,6 +2589,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the expireTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpireTime() {
     return expireTime_ != null;
   }
@@ -2596,6 +2607,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
@@ -2611,6 +2623,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
     return getExpireTime();
   }
@@ -2630,6 +2643,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for dataFormat.
    */
+  @java.lang.Override
   public int getDataFormatValue() {
     return dataFormat_;
   }
@@ -2646,6 +2660,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataFormat.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.DataFormat getDataFormat() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1beta2.DataFormat result =
@@ -2669,6 +2684,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the avroSchema field is set.
    */
+  @java.lang.Override
   public boolean hasAvroSchema() {
     return schemaCase_ == 4;
   }
@@ -2685,6 +2701,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The avroSchema.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.AvroSchema getAvroSchema() {
     if (schemaCase_ == 4) {
       return (com.google.cloud.bigquery.storage.v1beta2.AvroSchema) schema_;
@@ -2702,6 +2719,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.bigquery.storage.v1beta2.AvroSchema avro_schema = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.AvroSchemaOrBuilder getAvroSchemaOrBuilder() {
     if (schemaCase_ == 4) {
       return (com.google.cloud.bigquery.storage.v1beta2.AvroSchema) schema_;
@@ -2723,6 +2741,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the arrowSchema field is set.
    */
+  @java.lang.Override
   public boolean hasArrowSchema() {
     return schemaCase_ == 5;
   }
@@ -2739,6 +2758,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The arrowSchema.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ArrowSchema getArrowSchema() {
     if (schemaCase_ == 5) {
       return (com.google.cloud.bigquery.storage.v1beta2.ArrowSchema) schema_;
@@ -2756,6 +2776,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.bigquery.storage.v1beta2.ArrowSchema arrow_schema = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ArrowSchemaOrBuilder getArrowSchemaOrBuilder() {
     if (schemaCase_ == 5) {
       return (com.google.cloud.bigquery.storage.v1beta2.ArrowSchema) schema_;
@@ -2779,6 +2800,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The table.
    */
+  @java.lang.Override
   public java.lang.String getTable() {
     java.lang.Object ref = table_;
     if (ref instanceof java.lang.String) {
@@ -2804,6 +2826,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for table.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableBytes() {
     java.lang.Object ref = table_;
     if (ref instanceof java.lang.String) {
@@ -2831,6 +2854,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the tableModifiers field is set.
    */
+  @java.lang.Override
   public boolean hasTableModifiers() {
     return tableModifiers_ != null;
   }
@@ -2847,6 +2871,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tableModifiers.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers getTableModifiers() {
     return tableModifiers_ == null
         ? com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers.getDefaultInstance()
@@ -2863,6 +2888,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiersOrBuilder
       getTableModifiersOrBuilder() {
     return getTableModifiers();
@@ -2883,6 +2909,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the readOptions field is set.
    */
+  @java.lang.Override
   public boolean hasReadOptions() {
     return readOptions_ != null;
   }
@@ -2899,6 +2926,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The readOptions.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions getReadOptions() {
     return readOptions_ == null
         ? com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions
@@ -2916,6 +2944,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions read_options = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptionsOrBuilder
       getReadOptionsOrBuilder() {
     return getReadOptions();
@@ -2938,6 +2967,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.bigquery.storage.v1beta2.ReadStream streams = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.storage.v1beta2.ReadStream> getStreamsList() {
     return streams_;
   }
@@ -2956,6 +2986,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.bigquery.storage.v1beta2.ReadStream streams = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.bigquery.storage.v1beta2.ReadStreamOrBuilder>
       getStreamsOrBuilderList() {
     return streams_;
@@ -2975,6 +3006,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.bigquery.storage.v1beta2.ReadStream streams = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getStreamsCount() {
     return streams_.size();
   }
@@ -2993,6 +3025,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.bigquery.storage.v1beta2.ReadStream streams = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadStream getStreams(int index) {
     return streams_.get(index);
   }
@@ -3011,6 +3044,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.bigquery.storage.v1beta2.ReadStream streams = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadStreamOrBuilder getStreamsOrBuilder(
       int index) {
     return streams_.get(index);
@@ -3942,6 +3976,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for dataFormat.
      */
+    @java.lang.Override
     public int getDataFormatValue() {
       return dataFormat_;
     }
@@ -3960,6 +3995,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataFormatValue(int value) {
+
       dataFormat_ = value;
       onChanged();
       return this;
@@ -3977,6 +4013,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dataFormat.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.DataFormat getDataFormat() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta2.DataFormat result =
@@ -4046,6 +4083,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the avroSchema field is set.
      */
+    @java.lang.Override
     public boolean hasAvroSchema() {
       return schemaCase_ == 4;
     }
@@ -4062,6 +4100,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The avroSchema.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.AvroSchema getAvroSchema() {
       if (avroSchemaBuilder_ == null) {
         if (schemaCase_ == 4) {
@@ -4207,6 +4246,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.bigquery.storage.v1beta2.AvroSchema avro_schema = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.AvroSchemaOrBuilder getAvroSchemaOrBuilder() {
       if ((schemaCase_ == 4) && (avroSchemaBuilder_ != null)) {
         return avroSchemaBuilder_.getMessageOrBuilder();
@@ -4271,6 +4311,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the arrowSchema field is set.
      */
+    @java.lang.Override
     public boolean hasArrowSchema() {
       return schemaCase_ == 5;
     }
@@ -4287,6 +4328,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The arrowSchema.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSchema getArrowSchema() {
       if (arrowSchemaBuilder_ == null) {
         if (schemaCase_ == 5) {
@@ -4432,6 +4474,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.bigquery.storage.v1beta2.ArrowSchema arrow_schema = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSchemaOrBuilder
         getArrowSchemaOrBuilder() {
       if ((schemaCase_ == 5) && (arrowSchemaBuilder_ != null)) {

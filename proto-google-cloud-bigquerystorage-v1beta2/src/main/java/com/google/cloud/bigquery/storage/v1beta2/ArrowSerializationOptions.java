@@ -232,6 +232,10 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -280,6 +284,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
    *
    * @return The enum numeric value on the wire for format.
    */
+  @java.lang.Override
   public int getFormatValue() {
     return format_;
   }
@@ -295,6 +300,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
    *
    * @return The format.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format getFormat() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format result =
@@ -649,6 +655,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      *
      * @return The enum numeric value on the wire for format.
      */
+    @java.lang.Override
     public int getFormatValue() {
       return format_;
     }
@@ -666,6 +673,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
+
       format_ = value;
       onChanged();
       return this;
@@ -682,6 +690,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      *
      * @return The format.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format getFormat() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format result =

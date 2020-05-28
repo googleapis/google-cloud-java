@@ -230,6 +230,7 @@ public final class TableReferenceProto {
      *
      * @return The projectId.
      */
+    @java.lang.Override
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (ref instanceof java.lang.String) {
@@ -252,6 +253,7 @@ public final class TableReferenceProto {
      *
      * @return The bytes for projectId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof java.lang.String) {
@@ -277,6 +279,7 @@ public final class TableReferenceProto {
      *
      * @return The datasetId.
      */
+    @java.lang.Override
     public java.lang.String getDatasetId() {
       java.lang.Object ref = datasetId_;
       if (ref instanceof java.lang.String) {
@@ -299,6 +302,7 @@ public final class TableReferenceProto {
      *
      * @return The bytes for datasetId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDatasetIdBytes() {
       java.lang.Object ref = datasetId_;
       if (ref instanceof java.lang.String) {
@@ -324,6 +328,7 @@ public final class TableReferenceProto {
      *
      * @return The tableId.
      */
+    @java.lang.Override
     public java.lang.String getTableId() {
       java.lang.Object ref = tableId_;
       if (ref instanceof java.lang.String) {
@@ -346,6 +351,7 @@ public final class TableReferenceProto {
      *
      * @return The bytes for tableId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTableIdBytes() {
       java.lang.Object ref = tableId_;
       if (ref instanceof java.lang.String) {
@@ -1262,6 +1268,7 @@ public final class TableReferenceProto {
      *
      * @return Whether the snapshotTime field is set.
      */
+    @java.lang.Override
     public boolean hasSnapshotTime() {
       return snapshotTime_ != null;
     }
@@ -1276,6 +1283,7 @@ public final class TableReferenceProto {
      *
      * @return The snapshotTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getSnapshotTime() {
       return snapshotTime_ == null
           ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1290,6 +1298,7 @@ public final class TableReferenceProto {
      *
      * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder() {
       return getSnapshotTime();
     }

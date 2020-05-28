@@ -122,6 +122,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serializedBinaryRows.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSerializedBinaryRows() {
     return serializedBinaryRows_;
   }
@@ -456,6 +457,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The serializedBinaryRows.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSerializedBinaryRows() {
       return serializedBinaryRows_;
     }

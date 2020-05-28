@@ -149,6 +149,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +175,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
    *
    * @return Whether the readSession field is set.
    */
+  @java.lang.Override
   public boolean hasReadSession() {
     return readSession_ != null;
   }
@@ -217,6 +220,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
    *
    * @return The readSession.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadSession getReadSession() {
     return readSession_ == null
         ? com.google.cloud.bigquery.storage.v1beta2.ReadSession.getDefaultInstance()
@@ -233,6 +237,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
    * .google.cloud.bigquery.storage.v1beta2.ReadSession read_session = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.ReadSessionOrBuilder getReadSessionOrBuilder() {
     return getReadSession();
   }
@@ -256,6 +261,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
    *
    * @return The maxStreamCount.
    */
+  @java.lang.Override
   public int getMaxStreamCount() {
     return maxStreamCount_;
   }
@@ -974,6 +980,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
      *
      * @return The maxStreamCount.
      */
+    @java.lang.Override
     public int getMaxStreamCount() {
       return maxStreamCount_;
     }

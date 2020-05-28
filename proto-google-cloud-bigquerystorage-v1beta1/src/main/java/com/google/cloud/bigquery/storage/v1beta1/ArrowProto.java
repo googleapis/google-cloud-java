@@ -149,6 +149,7 @@ public final class ArrowProto {
      *
      * @return The serializedSchema.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSerializedSchema() {
       return serializedSchema_;
     }
@@ -496,6 +497,7 @@ public final class ArrowProto {
        *
        * @return The serializedSchema.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSerializedSchema() {
         return serializedSchema_;
       }
@@ -733,6 +735,7 @@ public final class ArrowProto {
      *
      * @return The serializedRecordBatch.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSerializedRecordBatch() {
       return serializedRecordBatch_;
     }
@@ -750,6 +753,7 @@ public final class ArrowProto {
      *
      * @return The rowCount.
      */
+    @java.lang.Override
     public long getRowCount() {
       return rowCount_;
     }
@@ -1115,6 +1119,7 @@ public final class ArrowProto {
        *
        * @return The serializedRecordBatch.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSerializedRecordBatch() {
         return serializedRecordBatch_;
       }
@@ -1169,6 +1174,7 @@ public final class ArrowProto {
        *
        * @return The rowCount.
        */
+      @java.lang.Override
       public long getRowCount() {
         return rowCount_;
       }

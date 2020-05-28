@@ -122,6 +122,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The serializedRecordBatch.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSerializedRecordBatch() {
     return serializedRecordBatch_;
   }
@@ -457,6 +458,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The serializedRecordBatch.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSerializedRecordBatch() {
       return serializedRecordBatch_;
     }

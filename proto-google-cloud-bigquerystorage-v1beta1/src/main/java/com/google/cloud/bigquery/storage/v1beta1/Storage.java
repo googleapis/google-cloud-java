@@ -133,6 +133,10 @@ public final class Storage {
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -305,6 +309,10 @@ public final class Storage {
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -479,6 +487,7 @@ public final class Storage {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -502,6 +511,7 @@ public final class Storage {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1172,6 +1182,7 @@ public final class Storage {
      *
      * @return Whether the stream field is set.
      */
+    @java.lang.Override
     public boolean hasStream() {
       return stream_ != null;
     }
@@ -1186,6 +1197,7 @@ public final class Storage {
      *
      * @return The stream.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream() {
       return stream_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
@@ -1200,6 +1212,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder() {
       return getStream();
     }
@@ -1217,6 +1230,7 @@ public final class Storage {
      *
      * @return The offset.
      */
+    @java.lang.Override
     public long getOffset() {
       return offset_;
     }
@@ -1778,6 +1792,7 @@ public final class Storage {
        *
        * @return The offset.
        */
+      @java.lang.Override
       public long getOffset() {
         return offset_;
       }
@@ -2444,6 +2459,7 @@ public final class Storage {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2467,6 +2483,7 @@ public final class Storage {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2493,6 +2510,7 @@ public final class Storage {
      *
      * @return Whether the expireTime field is set.
      */
+    @java.lang.Override
     public boolean hasExpireTime() {
       return expireTime_ != null;
     }
@@ -2508,6 +2526,7 @@ public final class Storage {
      *
      * @return The expireTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getExpireTime() {
       return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
     }
@@ -2521,6 +2540,7 @@ public final class Storage {
      *
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
       return getExpireTime();
     }
@@ -2537,6 +2557,7 @@ public final class Storage {
      *
      * @return Whether the avroSchema field is set.
      */
+    @java.lang.Override
     public boolean hasAvroSchema() {
       return schemaCase_ == 5;
     }
@@ -2551,6 +2572,7 @@ public final class Storage {
      *
      * @return The avroSchema.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getAvroSchema() {
       if (schemaCase_ == 5) {
         return (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) schema_;
@@ -2566,6 +2588,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder
         getAvroSchemaOrBuilder() {
       if (schemaCase_ == 5) {
@@ -2586,6 +2609,7 @@ public final class Storage {
      *
      * @return Whether the arrowSchema field is set.
      */
+    @java.lang.Override
     public boolean hasArrowSchema() {
       return schemaCase_ == 6;
     }
@@ -2600,6 +2624,7 @@ public final class Storage {
      *
      * @return The arrowSchema.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema() {
       if (schemaCase_ == 6) {
         return (com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema) schema_;
@@ -2615,6 +2640,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder
         getArrowSchemaOrBuilder() {
       if (schemaCase_ == 6) {
@@ -2634,6 +2660,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>
         getStreamsList() {
       return streams_;
@@ -2647,6 +2674,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder>
         getStreamsOrBuilderList() {
@@ -2661,6 +2689,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 4;</code>
      */
+    @java.lang.Override
     public int getStreamsCount() {
       return streams_.size();
     }
@@ -2673,6 +2702,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStreams(int index) {
       return streams_.get(index);
     }
@@ -2685,6 +2715,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamsOrBuilder(
         int index) {
       return streams_.get(index);
@@ -2704,6 +2735,7 @@ public final class Storage {
      *
      * @return Whether the tableReference field is set.
      */
+    @java.lang.Override
     public boolean hasTableReference() {
       return tableReference_ != null;
     }
@@ -2718,6 +2750,7 @@ public final class Storage {
      *
      * @return The tableReference.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
         getTableReference() {
       return tableReference_ == null
@@ -2734,6 +2767,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReferenceOrBuilder
         getTableReferenceOrBuilder() {
       return getTableReference();
@@ -2753,6 +2787,7 @@ public final class Storage {
      *
      * @return Whether the tableModifiers field is set.
      */
+    @java.lang.Override
     public boolean hasTableModifiers() {
       return tableModifiers_ != null;
     }
@@ -2767,6 +2802,7 @@ public final class Storage {
      *
      * @return The tableModifiers.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
         getTableModifiers() {
       return tableModifiers_ == null
@@ -2783,6 +2819,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 8;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiersOrBuilder
         getTableModifiersOrBuilder() {
       return getTableModifiers();
@@ -2801,6 +2838,7 @@ public final class Storage {
      *
      * @return The enum numeric value on the wire for shardingStrategy.
      */
+    @java.lang.Override
     public int getShardingStrategyValue() {
       return shardingStrategy_;
     }
@@ -2815,6 +2853,7 @@ public final class Storage {
      *
      * @return The shardingStrategy.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
         getShardingStrategy() {
       @SuppressWarnings("deprecation")
@@ -3725,6 +3764,7 @@ public final class Storage {
        *
        * @return Whether the avroSchema field is set.
        */
+      @java.lang.Override
       public boolean hasAvroSchema() {
         return schemaCase_ == 5;
       }
@@ -3739,6 +3779,7 @@ public final class Storage {
        *
        * @return The avroSchema.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getAvroSchema() {
         if (avroSchemaBuilder_ == null) {
           if (schemaCase_ == 5) {
@@ -3878,6 +3919,7 @@ public final class Storage {
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.AvroSchema avro_schema = 5;</code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder
           getAvroSchemaOrBuilder() {
         if ((schemaCase_ == 5) && (avroSchemaBuilder_ != null)) {
@@ -3941,6 +3983,7 @@ public final class Storage {
        *
        * @return Whether the arrowSchema field is set.
        */
+      @java.lang.Override
       public boolean hasArrowSchema() {
         return schemaCase_ == 6;
       }
@@ -3955,6 +3998,7 @@ public final class Storage {
        *
        * @return The arrowSchema.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchema getArrowSchema() {
         if (arrowSchemaBuilder_ == null) {
           if (schemaCase_ == 6) {
@@ -4095,6 +4139,7 @@ public final class Storage {
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.ArrowSchema arrow_schema = 6;</code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowSchemaOrBuilder
           getArrowSchemaOrBuilder() {
         if ((schemaCase_ == 6) && (arrowSchemaBuilder_ != null)) {
@@ -4916,6 +4961,7 @@ public final class Storage {
        *
        * @return The enum numeric value on the wire for shardingStrategy.
        */
+      @java.lang.Override
       public int getShardingStrategyValue() {
         return shardingStrategy_;
       }
@@ -4932,6 +4978,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder setShardingStrategyValue(int value) {
+
         shardingStrategy_ = value;
         onChanged();
         return this;
@@ -4947,6 +4994,7 @@ public final class Storage {
        *
        * @return The shardingStrategy.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
           getShardingStrategy() {
         @SuppressWarnings("deprecation")
@@ -5465,6 +5513,7 @@ public final class Storage {
      *
      * @return Whether the tableReference field is set.
      */
+    @java.lang.Override
     public boolean hasTableReference() {
       return tableReference_ != null;
     }
@@ -5481,6 +5530,7 @@ public final class Storage {
      *
      * @return The tableReference.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
         getTableReference() {
       return tableReference_ == null
@@ -5499,6 +5549,7 @@ public final class Storage {
      * .google.cloud.bigquery.storage.v1beta1.TableReference table_reference = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReferenceOrBuilder
         getTableReferenceOrBuilder() {
       return getTableReference();
@@ -5521,6 +5572,7 @@ public final class Storage {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -5547,6 +5599,7 @@ public final class Storage {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -5573,6 +5626,7 @@ public final class Storage {
      *
      * @return Whether the tableModifiers field is set.
      */
+    @java.lang.Override
     public boolean hasTableModifiers() {
       return tableModifiers_ != null;
     }
@@ -5587,6 +5641,7 @@ public final class Storage {
      *
      * @return The tableModifiers.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
         getTableModifiers() {
       return tableModifiers_ == null
@@ -5603,6 +5658,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableModifiers table_modifiers = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiersOrBuilder
         getTableModifiersOrBuilder() {
       return getTableModifiers();
@@ -5626,6 +5682,7 @@ public final class Storage {
      *
      * @return The requestedStreams.
      */
+    @java.lang.Override
     public int getRequestedStreams() {
       return requestedStreams_;
     }
@@ -5643,6 +5700,7 @@ public final class Storage {
      *
      * @return Whether the readOptions field is set.
      */
+    @java.lang.Override
     public boolean hasReadOptions() {
       return readOptions_ != null;
     }
@@ -5657,6 +5715,7 @@ public final class Storage {
      *
      * @return The readOptions.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions getReadOptions() {
       return readOptions_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
@@ -5672,6 +5731,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.TableReadOptions read_options = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptionsOrBuilder
         getReadOptionsOrBuilder() {
       return getReadOptions();
@@ -5690,6 +5750,7 @@ public final class Storage {
      *
      * @return The enum numeric value on the wire for format.
      */
+    @java.lang.Override
     public int getFormatValue() {
       return format_;
     }
@@ -5704,6 +5765,7 @@ public final class Storage {
      *
      * @return The format.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat result =
@@ -5727,6 +5789,7 @@ public final class Storage {
      *
      * @return The enum numeric value on the wire for shardingStrategy.
      */
+    @java.lang.Override
     public int getShardingStrategyValue() {
       return shardingStrategy_;
     }
@@ -5742,6 +5805,7 @@ public final class Storage {
      *
      * @return The shardingStrategy.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
         getShardingStrategy() {
       @SuppressWarnings("deprecation")
@@ -6792,6 +6856,7 @@ public final class Storage {
        *
        * @return The requestedStreams.
        */
+      @java.lang.Override
       public int getRequestedStreams() {
         return requestedStreams_;
       }
@@ -7048,6 +7113,7 @@ public final class Storage {
        *
        * @return The enum numeric value on the wire for format.
        */
+      @java.lang.Override
       public int getFormatValue() {
         return format_;
       }
@@ -7064,6 +7130,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder setFormatValue(int value) {
+
         format_ = value;
         onChanged();
         return this;
@@ -7079,6 +7146,7 @@ public final class Storage {
        *
        * @return The format.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat() {
         @SuppressWarnings("deprecation")
         com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat result =
@@ -7139,6 +7207,7 @@ public final class Storage {
        *
        * @return The enum numeric value on the wire for shardingStrategy.
        */
+      @java.lang.Override
       public int getShardingStrategyValue() {
         return shardingStrategy_;
       }
@@ -7156,6 +7225,7 @@ public final class Storage {
        * @return This builder for chaining.
        */
       public Builder setShardingStrategyValue(int value) {
+
         shardingStrategy_ = value;
         onChanged();
         return this;
@@ -7172,6 +7242,7 @@ public final class Storage {
        *
        * @return The shardingStrategy.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.Storage.ShardingStrategy
           getShardingStrategy() {
         @SuppressWarnings("deprecation")
@@ -7452,6 +7523,7 @@ public final class Storage {
      *
      * @return Whether the readPosition field is set.
      */
+    @java.lang.Override
     public boolean hasReadPosition() {
       return readPosition_ != null;
     }
@@ -7470,6 +7542,7 @@ public final class Storage {
      *
      * @return The readPosition.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition getReadPosition() {
       return readPosition_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition.getDefaultInstance()
@@ -7488,6 +7561,7 @@ public final class Storage {
      * .google.cloud.bigquery.storage.v1beta1.StreamPosition read_position = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPositionOrBuilder
         getReadPositionOrBuilder() {
       return getReadPosition();
@@ -8343,6 +8417,7 @@ public final class Storage {
      *
      * @return The estimatedRowCount.
      */
+    @java.lang.Override
     public long getEstimatedRowCount() {
       return estimatedRowCount_;
     }
@@ -8365,6 +8440,7 @@ public final class Storage {
      *
      * @return The fractionConsumed.
      */
+    @java.lang.Override
     public float getFractionConsumed() {
       return fractionConsumed_;
     }
@@ -8382,6 +8458,7 @@ public final class Storage {
      *
      * @return Whether the progress field is set.
      */
+    @java.lang.Override
     public boolean hasProgress() {
       return progress_ != null;
     }
@@ -8396,6 +8473,7 @@ public final class Storage {
      *
      * @return The progress.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Progress getProgress() {
       return progress_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.Progress.getDefaultInstance()
@@ -8410,6 +8488,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Progress progress = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ProgressOrBuilder
         getProgressOrBuilder() {
       return getProgress();
@@ -8432,6 +8511,7 @@ public final class Storage {
      *
      * @return The isSplittable.
      */
+    @java.lang.Override
     public boolean getIsSplittable() {
       return isSplittable_;
     }
@@ -8835,6 +8915,7 @@ public final class Storage {
        *
        * @return The estimatedRowCount.
        */
+      @java.lang.Override
       public long getEstimatedRowCount() {
         return estimatedRowCount_;
       }
@@ -8895,6 +8976,7 @@ public final class Storage {
        *
        * @return The fractionConsumed.
        */
+      @java.lang.Override
       public float getFractionConsumed() {
         return fractionConsumed_;
       }
@@ -9149,6 +9231,7 @@ public final class Storage {
        *
        * @return The isSplittable.
        */
+      @java.lang.Override
       public boolean getIsSplittable() {
         return isSplittable_;
       }
@@ -9398,6 +9481,7 @@ public final class Storage {
      *
      * @return The atResponseStart.
      */
+    @java.lang.Override
     public float getAtResponseStart() {
       return atResponseStart_;
     }
@@ -9416,6 +9500,7 @@ public final class Storage {
      *
      * @return The atResponseEnd.
      */
+    @java.lang.Override
     public float getAtResponseEnd() {
       return atResponseEnd_;
     }
@@ -9773,6 +9858,7 @@ public final class Storage {
        *
        * @return The atResponseStart.
        */
+      @java.lang.Override
       public float getAtResponseStart() {
         return atResponseStart_;
       }
@@ -9841,6 +9927,7 @@ public final class Storage {
        *
        * @return The atResponseEnd.
        */
+      @java.lang.Override
       public float getAtResponseEnd() {
         return atResponseEnd_;
       }
@@ -10057,6 +10144,7 @@ public final class Storage {
      *
      * @return The throttlePercent.
      */
+    @java.lang.Override
     public int getThrottlePercent() {
       return throttlePercent_;
     }
@@ -10404,6 +10492,7 @@ public final class Storage {
        *
        * @return The throttlePercent.
        */
+      @java.lang.Override
       public int getThrottlePercent() {
         return throttlePercent_;
       }
@@ -10899,6 +10988,7 @@ public final class Storage {
      *
      * @return Whether the avroRows field is set.
      */
+    @java.lang.Override
     public boolean hasAvroRows() {
       return rowsCase_ == 3;
     }
@@ -10913,6 +11003,7 @@ public final class Storage {
      *
      * @return The avroRows.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows getAvroRows() {
       if (rowsCase_ == 3) {
         return (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) rows_;
@@ -10928,6 +11019,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.AvroRows avro_rows = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRowsOrBuilder
         getAvroRowsOrBuilder() {
       if (rowsCase_ == 3) {
@@ -10948,6 +11040,7 @@ public final class Storage {
      *
      * @return Whether the arrowRecordBatch field is set.
      */
+    @java.lang.Override
     public boolean hasArrowRecordBatch() {
       return rowsCase_ == 4;
     }
@@ -10962,6 +11055,7 @@ public final class Storage {
      *
      * @return The arrowRecordBatch.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
         getArrowRecordBatch() {
       if (rowsCase_ == 4) {
@@ -10979,6 +11073,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatchOrBuilder
         getArrowRecordBatchOrBuilder() {
       if (rowsCase_ == 4) {
@@ -11004,6 +11099,7 @@ public final class Storage {
      *
      * @return The rowCount.
      */
+    @java.lang.Override
     public long getRowCount() {
       return rowCount_;
     }
@@ -11021,6 +11117,7 @@ public final class Storage {
      *
      * @return Whether the status field is set.
      */
+    @java.lang.Override
     public boolean hasStatus() {
       return status_ != null;
     }
@@ -11035,6 +11132,7 @@ public final class Storage {
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus getStatus() {
       return status_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatus.getDefaultInstance()
@@ -11049,6 +11147,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.StreamStatus status = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamStatusOrBuilder
         getStatusOrBuilder() {
       return getStatus();
@@ -11068,6 +11167,7 @@ public final class Storage {
      *
      * @return Whether the throttleStatus field is set.
      */
+    @java.lang.Override
     public boolean hasThrottleStatus() {
       return throttleStatus_ != null;
     }
@@ -11083,6 +11183,7 @@ public final class Storage {
      *
      * @return The throttleStatus.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus getThrottleStatus() {
       return throttleStatus_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatus.getDefaultInstance()
@@ -11098,6 +11199,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.ThrottleStatus throttle_status = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ThrottleStatusOrBuilder
         getThrottleStatusOrBuilder() {
       return getThrottleStatus();
@@ -11594,6 +11696,7 @@ public final class Storage {
        *
        * @return Whether the avroRows field is set.
        */
+      @java.lang.Override
       public boolean hasAvroRows() {
         return rowsCase_ == 3;
       }
@@ -11608,6 +11711,7 @@ public final class Storage {
        *
        * @return The avroRows.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows getAvroRows() {
         if (avroRowsBuilder_ == null) {
           if (rowsCase_ == 3) {
@@ -11745,6 +11849,7 @@ public final class Storage {
        *
        * <code>.google.cloud.bigquery.storage.v1beta1.AvroRows avro_rows = 3;</code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRowsOrBuilder
           getAvroRowsOrBuilder() {
         if ((rowsCase_ == 3) && (avroRowsBuilder_ != null)) {
@@ -11808,6 +11913,7 @@ public final class Storage {
        *
        * @return Whether the arrowRecordBatch field is set.
        */
+      @java.lang.Override
       public boolean hasArrowRecordBatch() {
         return rowsCase_ == 4;
       }
@@ -11823,6 +11929,7 @@ public final class Storage {
        *
        * @return The arrowRecordBatch.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatch
           getArrowRecordBatch() {
         if (arrowRecordBatchBuilder_ == null) {
@@ -11971,6 +12078,7 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch arrow_record_batch = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.ArrowProto.ArrowRecordBatchOrBuilder
           getArrowRecordBatchOrBuilder() {
         if ((rowsCase_ == 4) && (arrowRecordBatchBuilder_ != null)) {
@@ -12035,6 +12143,7 @@ public final class Storage {
        *
        * @return The rowCount.
        */
+      @java.lang.Override
       public long getRowCount() {
         return rowCount_;
       }
@@ -12721,6 +12830,7 @@ public final class Storage {
      *
      * @return Whether the session field is set.
      */
+    @java.lang.Override
     public boolean hasSession() {
       return session_ != null;
     }
@@ -12738,6 +12848,7 @@ public final class Storage {
      *
      * @return The session.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession getSession() {
       return session_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.getDefaultInstance()
@@ -12755,6 +12866,7 @@ public final class Storage {
      * .google.cloud.bigquery.storage.v1beta1.ReadSession session = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSessionOrBuilder
         getSessionOrBuilder() {
       return getSession();
@@ -12775,6 +12887,7 @@ public final class Storage {
      *
      * @return The requestedStreams.
      */
+    @java.lang.Override
     public int getRequestedStreams() {
       return requestedStreams_;
     }
@@ -13407,6 +13520,7 @@ public final class Storage {
        *
        * @return The requestedStreams.
        */
+      @java.lang.Override
       public int getRequestedStreams() {
         return requestedStreams_;
       }
@@ -13688,6 +13802,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.bigquery.storage.v1beta1.Storage.Stream>
         getStreamsList() {
       return streams_;
@@ -13701,6 +13816,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder>
         getStreamsOrBuilderList() {
@@ -13715,6 +13831,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 1;</code>
      */
+    @java.lang.Override
     public int getStreamsCount() {
       return streams_.size();
     }
@@ -13727,6 +13844,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStreams(int index) {
       return streams_.get(index);
     }
@@ -13739,6 +13857,7 @@ public final class Storage {
      *
      * <code>repeated .google.cloud.bigquery.storage.v1beta1.Stream streams = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamsOrBuilder(
         int index) {
       return streams_.get(index);
@@ -14746,6 +14865,7 @@ public final class Storage {
      *
      * @return Whether the stream field is set.
      */
+    @java.lang.Override
     public boolean hasStream() {
       return stream_ != null;
     }
@@ -14762,6 +14882,7 @@ public final class Storage {
      *
      * @return The stream.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream() {
       return stream_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
@@ -14778,6 +14899,7 @@ public final class Storage {
      * .google.cloud.bigquery.storage.v1beta1.Stream stream = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder() {
       return getStream();
     }
@@ -15579,6 +15701,7 @@ public final class Storage {
      *
      * @return Whether the originalStream field is set.
      */
+    @java.lang.Override
     public boolean hasOriginalStream() {
       return originalStream_ != null;
     }
@@ -15595,6 +15718,7 @@ public final class Storage {
      *
      * @return The originalStream.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getOriginalStream() {
       return originalStream_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
@@ -15611,6 +15735,7 @@ public final class Storage {
      * .google.cloud.bigquery.storage.v1beta1.Stream original_stream = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
         getOriginalStreamOrBuilder() {
       return getOriginalStream();
@@ -15635,6 +15760,7 @@ public final class Storage {
      *
      * @return The fraction.
      */
+    @java.lang.Override
     public float getFraction() {
       return fraction_;
     }
@@ -16235,6 +16361,7 @@ public final class Storage {
        *
        * @return The fraction.
        */
+      @java.lang.Override
       public float getFraction() {
         return fraction_;
       }
@@ -16560,6 +16687,7 @@ public final class Storage {
      *
      * @return Whether the primaryStream field is set.
      */
+    @java.lang.Override
     public boolean hasPrimaryStream() {
       return primaryStream_ != null;
     }
@@ -16576,6 +16704,7 @@ public final class Storage {
      *
      * @return The primaryStream.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getPrimaryStream() {
       return primaryStream_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
@@ -16592,6 +16721,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream primary_stream = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
         getPrimaryStreamOrBuilder() {
       return getPrimaryStream();
@@ -16611,6 +16741,7 @@ public final class Storage {
      *
      * @return Whether the remainderStream field is set.
      */
+    @java.lang.Override
     public boolean hasRemainderStream() {
       return remainderStream_ != null;
     }
@@ -16626,6 +16757,7 @@ public final class Storage {
      *
      * @return The remainderStream.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getRemainderStream() {
       return remainderStream_ == null
           ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance()
@@ -16641,6 +16773,7 @@ public final class Storage {
      *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream remainder_stream = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder
         getRemainderStreamOrBuilder() {
       return getRemainderStream();

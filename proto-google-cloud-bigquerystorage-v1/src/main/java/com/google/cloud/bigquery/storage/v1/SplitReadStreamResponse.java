@@ -149,6 +149,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
    *
    * @return Whether the primaryStream field is set.
    */
+  @java.lang.Override
   public boolean hasPrimaryStream() {
     return primaryStream_ != null;
   }
@@ -165,6 +166,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
    *
    * @return The primaryStream.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ReadStream getPrimaryStream() {
     return primaryStream_ == null
         ? com.google.cloud.bigquery.storage.v1.ReadStream.getDefaultInstance()
@@ -181,6 +183,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.bigquery.storage.v1.ReadStream primary_stream = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ReadStreamOrBuilder getPrimaryStreamOrBuilder() {
     return getPrimaryStream();
   }
@@ -199,6 +202,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
    *
    * @return Whether the remainderStream field is set.
    */
+  @java.lang.Override
   public boolean hasRemainderStream() {
     return remainderStream_ != null;
   }
@@ -214,6 +218,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
    *
    * @return The remainderStream.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ReadStream getRemainderStream() {
     return remainderStream_ == null
         ? com.google.cloud.bigquery.storage.v1.ReadStream.getDefaultInstance()
@@ -229,6 +234,7 @@ public final class SplitReadStreamResponse extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.bigquery.storage.v1.ReadStream remainder_stream = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1.ReadStreamOrBuilder getRemainderStreamOrBuilder() {
     return getRemainderStream();
   }

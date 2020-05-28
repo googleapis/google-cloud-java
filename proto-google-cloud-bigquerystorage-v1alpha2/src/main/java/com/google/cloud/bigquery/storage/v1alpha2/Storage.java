@@ -233,6 +233,7 @@ public final class Storage {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -258,6 +259,7 @@ public final class Storage {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -285,6 +287,7 @@ public final class Storage {
      *
      * @return Whether the writeStream field is set.
      */
+    @java.lang.Override
     public boolean hasWriteStream() {
       return writeStream_ != null;
     }
@@ -301,6 +304,7 @@ public final class Storage {
      *
      * @return The writeStream.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream getWriteStream() {
       return writeStream_ == null
           ? com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStream.getDefaultInstance()
@@ -317,6 +321,7 @@ public final class Storage {
      * .google.cloud.bigquery.storage.v1alpha2.WriteStream write_stream = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Stream.WriteStreamOrBuilder
         getWriteStreamOrBuilder() {
       return getWriteStream();
@@ -1527,6 +1532,7 @@ public final class Storage {
        *
        * @return Whether the writerSchema field is set.
        */
+      @java.lang.Override
       public boolean hasWriterSchema() {
         return writerSchema_ != null;
       }
@@ -1541,6 +1547,7 @@ public final class Storage {
        *
        * @return The writerSchema.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.ProtoSchema
           getWriterSchema() {
         return writerSchema_ == null
@@ -1557,6 +1564,7 @@ public final class Storage {
        *
        * <code>.google.cloud.bigquery.storage.v1alpha2.ProtoSchema writer_schema = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.ProtoSchemaOrBuilder
           getWriterSchemaOrBuilder() {
         return getWriterSchema();
@@ -1575,6 +1583,7 @@ public final class Storage {
        *
        * @return Whether the rows field is set.
        */
+      @java.lang.Override
       public boolean hasRows() {
         return rows_ != null;
       }
@@ -1589,6 +1598,7 @@ public final class Storage {
        *
        * @return The rows.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.ProtoRows getRows() {
         return rows_ == null
             ? com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.ProtoRows
@@ -1604,6 +1614,7 @@ public final class Storage {
        *
        * <code>.google.cloud.bigquery.storage.v1alpha2.ProtoRows rows = 2;</code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.ProtoBufProto.ProtoRowsOrBuilder
           getRowsOrBuilder() {
         return getRows();
@@ -2512,6 +2523,7 @@ public final class Storage {
      *
      * @return The writeStream.
      */
+    @java.lang.Override
     public java.lang.String getWriteStream() {
       java.lang.Object ref = writeStream_;
       if (ref instanceof java.lang.String) {
@@ -2538,6 +2550,7 @@ public final class Storage {
      *
      * @return The bytes for writeStream.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getWriteStreamBytes() {
       java.lang.Object ref = writeStream_;
       if (ref instanceof java.lang.String) {
@@ -2566,6 +2579,7 @@ public final class Storage {
      *
      * @return Whether the offset field is set.
      */
+    @java.lang.Override
     public boolean hasOffset() {
       return offset_ != null;
     }
@@ -2583,6 +2597,7 @@ public final class Storage {
      *
      * @return The offset.
      */
+    @java.lang.Override
     public com.google.protobuf.Int64Value getOffset() {
       return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
     }
@@ -2598,6 +2613,7 @@ public final class Storage {
      * <code>.google.protobuf.Int64Value offset = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.Int64ValueOrBuilder getOffsetOrBuilder() {
       return getOffset();
     }
@@ -2609,6 +2625,7 @@ public final class Storage {
      *
      * @return Whether the protoRows field is set.
      */
+    @java.lang.Override
     public boolean hasProtoRows() {
       return rowsCase_ == 4;
     }
@@ -2618,6 +2635,7 @@ public final class Storage {
      *
      * @return The protoRows.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest.ProtoData
         getProtoRows() {
       if (rowsCase_ == 4) {
@@ -2631,6 +2649,7 @@ public final class Storage {
      * <code>.google.cloud.bigquery.storage.v1alpha2.AppendRowsRequest.ProtoData proto_rows = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest.ProtoDataOrBuilder
         getProtoRowsOrBuilder() {
       if (rowsCase_ == 4) {
@@ -2649,7 +2668,7 @@ public final class Storage {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (rowsCase_ == 4) {
+      if (hasProtoRows()) {
         if (!getProtoRows().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
@@ -3032,7 +3051,7 @@ public final class Storage {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (rowsCase_ == 4) {
+        if (hasProtoRows()) {
           if (!getProtoRows().isInitialized()) {
             return false;
           }
@@ -3420,6 +3439,7 @@ public final class Storage {
        *
        * @return Whether the protoRows field is set.
        */
+      @java.lang.Override
       public boolean hasProtoRows() {
         return rowsCase_ == 4;
       }
@@ -3429,6 +3449,7 @@ public final class Storage {
        *
        * @return The protoRows.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest.ProtoData
           getProtoRows() {
         if (protoRowsBuilder_ == null) {
@@ -3544,6 +3565,7 @@ public final class Storage {
        * <code>.google.cloud.bigquery.storage.v1alpha2.AppendRowsRequest.ProtoData proto_rows = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.storage.v1alpha2.Storage.AppendRowsRequest.ProtoDataOrBuilder
           getProtoRowsOrBuilder() {
         if ((rowsCase_ == 4) && (protoRowsBuilder_ != null)) {
@@ -3870,6 +3892,7 @@ public final class Storage {
      *
      * @return The offset.
      */
+    @java.lang.Override
     public long getOffset() {
       if (responseCase_ == 1) {
         return (java.lang.Long) response_;
@@ -3890,6 +3913,7 @@ public final class Storage {
      *
      * @return Whether the error field is set.
      */
+    @java.lang.Override
     public boolean hasError() {
       return responseCase_ == 2;
     }
@@ -3905,6 +3929,7 @@ public final class Storage {
      *
      * @return The error.
      */
+    @java.lang.Override
     public com.google.rpc.Status getError() {
       if (responseCase_ == 2) {
         return (com.google.rpc.Status) response_;
@@ -3921,6 +3946,7 @@ public final class Storage {
      *
      * <code>.google.rpc.Status error = 2;</code>
      */
+    @java.lang.Override
     public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
       if (responseCase_ == 2) {
         return (com.google.rpc.Status) response_;
@@ -4398,6 +4424,7 @@ public final class Storage {
        *
        * @return Whether the error field is set.
        */
+      @java.lang.Override
       public boolean hasError() {
         return responseCase_ == 2;
       }
@@ -4413,6 +4440,7 @@ public final class Storage {
        *
        * @return The error.
        */
+      @java.lang.Override
       public com.google.rpc.Status getError() {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2) {
@@ -4548,6 +4576,7 @@ public final class Storage {
        *
        * <code>.google.rpc.Status error = 2;</code>
        */
+      @java.lang.Override
       public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
         if ((responseCase_ == 2) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();
@@ -4791,6 +4820,7 @@ public final class Storage {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -4816,6 +4846,7 @@ public final class Storage {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -5562,6 +5593,7 @@ public final class Storage {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -5587,6 +5619,7 @@ public final class Storage {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -6547,6 +6580,7 @@ public final class Storage {
      *
      * @return Whether the commitTime field is set.
      */
+    @java.lang.Override
     public boolean hasCommitTime() {
       return commitTime_ != null;
     }
@@ -6561,6 +6595,7 @@ public final class Storage {
      *
      * @return The commitTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getCommitTime() {
       return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
     }
@@ -6573,6 +6608,7 @@ public final class Storage {
      *
      * <code>.google.protobuf.Timestamp commit_time = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder() {
       return getCommitTime();
     }
@@ -7329,6 +7365,7 @@ public final class Storage {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -7354,6 +7391,7 @@ public final class Storage {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -8011,6 +8049,7 @@ public final class Storage {
      *
      * @return The rowCount.
      */
+    @java.lang.Override
     public long getRowCount() {
       return rowCount_;
     }
@@ -8374,6 +8413,7 @@ public final class Storage {
        *
        * @return The rowCount.
        */
+      @java.lang.Override
       public long getRowCount() {
         return rowCount_;
       }
@@ -8631,6 +8671,7 @@ public final class Storage {
      *
      * @return The writeStream.
      */
+    @java.lang.Override
     public java.lang.String getWriteStream() {
       java.lang.Object ref = writeStream_;
       if (ref instanceof java.lang.String) {
@@ -8655,6 +8696,7 @@ public final class Storage {
      *
      * @return The bytes for writeStream.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getWriteStreamBytes() {
       java.lang.Object ref = writeStream_;
       if (ref instanceof java.lang.String) {
@@ -8681,6 +8723,7 @@ public final class Storage {
      *
      * @return The offset.
      */
+    @java.lang.Override
     public long getOffset() {
       return offset_;
     }
@@ -9160,6 +9203,7 @@ public final class Storage {
        *
        * @return The offset.
        */
+      @java.lang.Override
       public long getOffset() {
         return offset_;
       }
@@ -9376,6 +9420,7 @@ public final class Storage {
      *
      * @return The offset.
      */
+    @java.lang.Override
     public long getOffset() {
       return offset_;
     }
@@ -9723,6 +9768,7 @@ public final class Storage {
        *
        * @return The offset.
        */
+      @java.lang.Override
       public long getOffset() {
         return offset_;
       }

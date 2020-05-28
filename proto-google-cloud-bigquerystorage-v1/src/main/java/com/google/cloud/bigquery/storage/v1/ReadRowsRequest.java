@@ -131,6 +131,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The readStream.
    */
+  @java.lang.Override
   public java.lang.String getReadStream() {
     java.lang.Object ref = readStream_;
     if (ref instanceof java.lang.String) {
@@ -155,6 +156,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for readStream.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getReadStreamBytes() {
     java.lang.Object ref = readStream_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +184,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The offset.
    */
+  @java.lang.Override
   public long getOffset() {
     return offset_;
   }
@@ -649,6 +652,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The offset.
      */
+    @java.lang.Override
     public long getOffset() {
       return offset_;
     }

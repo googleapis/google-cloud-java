@@ -126,6 +126,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serializedSchema.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSerializedSchema() {
     return serializedSchema_;
   }
@@ -464,6 +465,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The serializedSchema.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSerializedSchema() {
       return serializedSchema_;
     }

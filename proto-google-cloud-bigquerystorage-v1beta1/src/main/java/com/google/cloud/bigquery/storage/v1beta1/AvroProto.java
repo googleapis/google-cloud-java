@@ -166,6 +166,7 @@ public final class AvroProto {
      *
      * @return The schema.
      */
+    @java.lang.Override
     public java.lang.String getSchema() {
       java.lang.Object ref = schema_;
       if (ref instanceof java.lang.String) {
@@ -189,6 +190,7 @@ public final class AvroProto {
      *
      * @return The bytes for schema.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSchemaBytes() {
       java.lang.Object ref = schema_;
       if (ref instanceof java.lang.String) {
@@ -834,6 +836,7 @@ public final class AvroProto {
      *
      * @return The serializedBinaryRows.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSerializedBinaryRows() {
       return serializedBinaryRows_;
     }
@@ -851,6 +854,7 @@ public final class AvroProto {
      *
      * @return The rowCount.
      */
+    @java.lang.Override
     public long getRowCount() {
       return rowCount_;
     }
@@ -1208,6 +1212,7 @@ public final class AvroProto {
        *
        * @return The serializedBinaryRows.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSerializedBinaryRows() {
         return serializedBinaryRows_;
       }
@@ -1262,6 +1267,7 @@ public final class AvroProto {
        *
        * @return The rowCount.
        */
+      @java.lang.Override
       public long getRowCount() {
         return rowCount_;
       }

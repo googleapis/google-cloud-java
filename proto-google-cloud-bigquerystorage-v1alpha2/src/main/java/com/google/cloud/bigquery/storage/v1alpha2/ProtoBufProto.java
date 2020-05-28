@@ -197,6 +197,7 @@ public final class ProtoBufProto {
      *
      * @return Whether the protoDescriptor field is set.
      */
+    @java.lang.Override
     public boolean hasProtoDescriptor() {
       return protoDescriptor_ != null;
     }
@@ -215,6 +216,7 @@ public final class ProtoBufProto {
      *
      * @return The protoDescriptor.
      */
+    @java.lang.Override
     public com.google.protobuf.DescriptorProtos.DescriptorProto getProtoDescriptor() {
       return protoDescriptor_ == null
           ? com.google.protobuf.DescriptorProtos.DescriptorProto.getDefaultInstance()
@@ -233,6 +235,7 @@ public final class ProtoBufProto {
      *
      * <code>.google.protobuf.DescriptorProto proto_descriptor = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder
         getProtoDescriptorOrBuilder() {
       return getProtoDescriptor();
@@ -1037,6 +1040,7 @@ public final class ProtoBufProto {
      *
      * @return A list containing the serializedRows.
      */
+    @java.lang.Override
     public java.util.List<com.google.protobuf.ByteString> getSerializedRowsList() {
       return serializedRows_;
     }

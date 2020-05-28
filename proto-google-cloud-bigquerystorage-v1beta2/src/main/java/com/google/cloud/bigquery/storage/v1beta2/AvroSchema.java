@@ -125,6 +125,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The schema.
    */
+  @java.lang.Override
   public java.lang.String getSchema() {
     java.lang.Object ref = schema_;
     if (ref instanceof java.lang.String) {
@@ -148,6 +149,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for schema.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSchemaBytes() {
     java.lang.Object ref = schema_;
     if (ref instanceof java.lang.String) {

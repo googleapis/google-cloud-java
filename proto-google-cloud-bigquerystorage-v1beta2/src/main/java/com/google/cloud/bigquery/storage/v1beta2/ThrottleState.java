@@ -121,6 +121,7 @@ public final class ThrottleState extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The throttlePercent.
    */
+  @java.lang.Override
   public int getThrottlePercent() {
     return throttlePercent_;
   }
@@ -456,6 +457,7 @@ public final class ThrottleState extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The throttlePercent.
      */
+    @java.lang.Override
     public int getThrottlePercent() {
       return throttlePercent_;
     }

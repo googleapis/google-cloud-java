@@ -269,6 +269,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The atResponseStart.
      */
+    @java.lang.Override
     public double getAtResponseStart() {
       return atResponseStart_;
     }
@@ -287,6 +288,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The atResponseEnd.
      */
+    @java.lang.Override
     public double getAtResponseEnd() {
       return atResponseEnd_;
     }
@@ -653,6 +655,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The atResponseStart.
        */
+      @java.lang.Override
       public double getAtResponseStart() {
         return atResponseStart_;
       }
@@ -723,6 +726,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The atResponseEnd.
        */
+      @java.lang.Override
       public double getAtResponseEnd() {
         return atResponseEnd_;
       }
@@ -832,6 +836,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the progress field is set.
    */
+  @java.lang.Override
   public boolean hasProgress() {
     return progress_ != null;
   }
@@ -846,6 +851,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The progress.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress getProgress() {
     return progress_ == null
         ? com.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress.getDefaultInstance()
@@ -860,6 +866,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.bigquery.storage.v1beta2.StreamStats.Progress progress = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.storage.v1beta2.StreamStats.ProgressOrBuilder
       getProgressOrBuilder() {
     return getProgress();
