@@ -300,6 +300,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The index.
      */
+    @java.lang.Override
     public long getIndex() {
       return index_;
     }
@@ -320,6 +321,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the status field is set.
      */
+    @java.lang.Override
     public boolean hasStatus() {
       return status_ != null;
     }
@@ -337,6 +339,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
@@ -352,6 +355,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.rpc.Status status = 2;</code>
      */
+    @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
       return getStatus();
     }
@@ -718,6 +722,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
        *
        * @return The index.
        */
+      @java.lang.Override
       public long getIndex() {
         return index_;
       }
@@ -1022,6 +1027,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.v2.MutateRowsResponse.Entry> getEntriesList() {
     return entries_;
   }
@@ -1034,6 +1040,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.v2.MutateRowsResponse.EntryOrBuilder>
       getEntriesOrBuilderList() {
     return entries_;
@@ -1047,6 +1054,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
+  @java.lang.Override
   public int getEntriesCount() {
     return entries_.size();
   }
@@ -1059,6 +1067,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.MutateRowsResponse.Entry getEntries(int index) {
     return entries_.get(index);
   }
@@ -1071,6 +1080,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.MutateRowsResponse.EntryOrBuilder getEntriesOrBuilder(int index) {
     return entries_.get(index);
   }

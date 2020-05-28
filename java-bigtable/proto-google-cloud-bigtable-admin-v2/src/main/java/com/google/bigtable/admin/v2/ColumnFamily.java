@@ -135,6 +135,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcRule field is set.
    */
+  @java.lang.Override
   public boolean hasGcRule() {
     return gcRule_ != null;
   }
@@ -153,6 +154,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcRule.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.GcRule getGcRule() {
     return gcRule_ == null ? com.google.bigtable.admin.v2.GcRule.getDefaultInstance() : gcRule_;
   }
@@ -169,6 +171,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.admin.v2.GcRule gc_rule = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.GcRuleOrBuilder getGcRuleOrBuilder() {
     return getGcRule();
   }

@@ -125,6 +125,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTimestampMicros.
    */
+  @java.lang.Override
   public long getStartTimestampMicros() {
     return startTimestampMicros_;
   }
@@ -142,6 +143,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTimestampMicros.
    */
+  @java.lang.Override
   public long getEndTimestampMicros() {
     return endTimestampMicros_;
   }
@@ -486,6 +488,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The startTimestampMicros.
      */
+    @java.lang.Override
     public long getStartTimestampMicros() {
       return startTimestampMicros_;
     }
@@ -537,6 +540,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The endTimestampMicros.
      */
+    @java.lang.Override
     public long getEndTimestampMicros() {
       return endTimestampMicros_;
     }

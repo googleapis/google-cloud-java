@@ -152,6 +152,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.admin.v2.AppProfile> getAppProfilesList() {
     return appProfiles_;
   }
@@ -164,6 +165,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.admin.v2.AppProfileOrBuilder>
       getAppProfilesOrBuilderList() {
     return appProfiles_;
@@ -177,6 +179,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
+  @java.lang.Override
   public int getAppProfilesCount() {
     return appProfiles_.size();
   }
@@ -189,6 +192,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfile getAppProfiles(int index) {
     return appProfiles_.get(index);
   }
@@ -201,6 +205,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfilesOrBuilder(int index) {
     return appProfiles_.get(index);
   }
@@ -220,6 +225,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +250,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

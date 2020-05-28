@@ -140,6 +140,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The qualifier.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQualifier() {
     return qualifier_;
   }
@@ -155,6 +156,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Cell cells = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.v2.Cell> getCellsList() {
     return cells_;
   }
@@ -167,6 +169,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Cell cells = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.v2.CellOrBuilder> getCellsOrBuilderList() {
     return cells_;
   }
@@ -179,6 +182,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Cell cells = 2;</code>
    */
+  @java.lang.Override
   public int getCellsCount() {
     return cells_.size();
   }
@@ -191,6 +195,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Cell cells = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Cell getCells(int index) {
     return cells_.get(index);
   }
@@ -203,6 +208,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Cell cells = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.CellOrBuilder getCellsOrBuilder(int index) {
     return cells_.get(index);
   }
@@ -591,6 +597,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The qualifier.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getQualifier() {
       return qualifier_;
     }

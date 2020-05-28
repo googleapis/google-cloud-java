@@ -143,6 +143,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.v2.Column> getColumnsList() {
     return columns_;
   }
@@ -205,6 +208,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.v2.ColumnOrBuilder>
       getColumnsOrBuilderList() {
     return columns_;
@@ -218,6 +222,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
+  @java.lang.Override
   public int getColumnsCount() {
     return columns_.size();
   }
@@ -230,6 +235,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Column getColumns(int index) {
     return columns_.get(index);
   }
@@ -242,6 +248,7 @@ public final class Family extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.ColumnOrBuilder getColumnsOrBuilder(int index) {
     return columns_.get(index);
   }

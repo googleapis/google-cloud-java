@@ -152,6 +152,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +207,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The clusterId.
    */
+  @java.lang.Override
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +232,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for clusterId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
@@ -256,6 +260,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the cluster field is set.
    */
+  @java.lang.Override
   public boolean hasCluster() {
     return cluster_ != null;
   }
@@ -272,6 +277,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The cluster.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Cluster getCluster() {
     return cluster_ == null ? com.google.bigtable.admin.v2.Cluster.getDefaultInstance() : cluster_;
   }
@@ -286,6 +292,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    * <code>.google.bigtable.admin.v2.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.ClusterOrBuilder getClusterOrBuilder() {
     return getCluster();
   }

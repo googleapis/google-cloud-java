@@ -133,6 +133,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The rowKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRowKey() {
     return rowKey_;
   }
@@ -153,6 +154,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The offsetBytes.
    */
+  @java.lang.Override
   public long getOffsetBytes() {
     return offsetBytes_;
   }
@@ -505,6 +507,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      *
      * @return The rowKey.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRowKey() {
       return rowKey_;
     }
@@ -574,6 +577,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
      *
      * @return The offsetBytes.
      */
+    @java.lang.Override
     public long getOffsetBytes() {
       return offsetBytes_;
     }

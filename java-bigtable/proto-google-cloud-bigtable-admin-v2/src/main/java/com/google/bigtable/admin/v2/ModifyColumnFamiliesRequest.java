@@ -449,6 +449,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -471,6 +472,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -496,6 +498,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * @return Whether the create field is set.
      */
+    @java.lang.Override
     public boolean hasCreate() {
       return modCase_ == 2;
     }
@@ -511,6 +514,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * @return The create.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ColumnFamily getCreate() {
       if (modCase_ == 2) {
         return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
@@ -527,6 +531,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * <code>.google.bigtable.admin.v2.ColumnFamily create = 2;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ColumnFamilyOrBuilder getCreateOrBuilder() {
       if (modCase_ == 2) {
         return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
@@ -547,6 +552,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * @return Whether the update field is set.
      */
+    @java.lang.Override
     public boolean hasUpdate() {
       return modCase_ == 3;
     }
@@ -562,6 +568,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * @return The update.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ColumnFamily getUpdate() {
       if (modCase_ == 3) {
         return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
@@ -578,6 +585,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * <code>.google.bigtable.admin.v2.ColumnFamily update = 3;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ColumnFamilyOrBuilder getUpdateOrBuilder() {
       if (modCase_ == 3) {
         return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
@@ -598,6 +606,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      *
      * @return The drop.
      */
+    @java.lang.Override
     public boolean getDrop() {
       if (modCase_ == 4) {
         return (java.lang.Boolean) mod_;
@@ -1171,6 +1180,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
        *
        * @return Whether the create field is set.
        */
+      @java.lang.Override
       public boolean hasCreate() {
         return modCase_ == 2;
       }
@@ -1186,6 +1196,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
        *
        * @return The create.
        */
+      @java.lang.Override
       public com.google.bigtable.admin.v2.ColumnFamily getCreate() {
         if (createBuilder_ == null) {
           if (modCase_ == 2) {
@@ -1323,6 +1334,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
        *
        * <code>.google.bigtable.admin.v2.ColumnFamily create = 2;</code>
        */
+      @java.lang.Override
       public com.google.bigtable.admin.v2.ColumnFamilyOrBuilder getCreateOrBuilder() {
         if ((modCase_ == 2) && (createBuilder_ != null)) {
           return createBuilder_.getMessageOrBuilder();
@@ -1385,6 +1397,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
        *
        * @return Whether the update field is set.
        */
+      @java.lang.Override
       public boolean hasUpdate() {
         return modCase_ == 3;
       }
@@ -1400,6 +1413,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
        *
        * @return The update.
        */
+      @java.lang.Override
       public com.google.bigtable.admin.v2.ColumnFamily getUpdate() {
         if (updateBuilder_ == null) {
           if (modCase_ == 3) {
@@ -1537,6 +1551,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
        *
        * <code>.google.bigtable.admin.v2.ColumnFamily update = 3;</code>
        */
+      @java.lang.Override
       public com.google.bigtable.admin.v2.ColumnFamilyOrBuilder getUpdateOrBuilder() {
         if ((modCase_ == 3) && (updateBuilder_ != null)) {
           return updateBuilder_.getMessageOrBuilder();
@@ -1713,6 +1728,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1739,6 +1755,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1768,6 +1785,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
       getModificationsList() {
     return modifications_;
@@ -1786,6 +1804,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>
       getModificationsOrBuilderList() {
@@ -1805,6 +1824,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getModificationsCount() {
     return modifications_.size();
   }
@@ -1822,6 +1842,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(
       int index) {
     return modifications_.get(index);
@@ -1840,6 +1861,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
    * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder
       getModificationsOrBuilder(int index) {
     return modifications_.get(index);

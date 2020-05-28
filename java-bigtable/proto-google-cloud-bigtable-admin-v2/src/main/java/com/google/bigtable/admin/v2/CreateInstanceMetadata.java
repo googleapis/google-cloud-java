@@ -162,6 +162,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the originalRequest field is set.
    */
+  @java.lang.Override
   public boolean hasOriginalRequest() {
     return originalRequest_ != null;
   }
@@ -176,6 +177,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The originalRequest.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.CreateInstanceRequest getOriginalRequest() {
     return originalRequest_ == null
         ? com.google.bigtable.admin.v2.CreateInstanceRequest.getDefaultInstance()
@@ -190,6 +192,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.bigtable.admin.v2.CreateInstanceRequest original_request = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.CreateInstanceRequestOrBuilder getOriginalRequestOrBuilder() {
     return getOriginalRequest();
   }
@@ -207,6 +210,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the requestTime field is set.
    */
+  @java.lang.Override
   public boolean hasRequestTime() {
     return requestTime_ != null;
   }
@@ -221,6 +225,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The requestTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getRequestTime() {
     return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
@@ -233,6 +238,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp request_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestTimeOrBuilder() {
     return getRequestTime();
   }
@@ -250,6 +256,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the finishTime field is set.
    */
+  @java.lang.Override
   public boolean hasFinishTime() {
     return finishTime_ != null;
   }
@@ -264,6 +271,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The finishTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getFinishTime() {
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
@@ -276,6 +284,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp finish_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder() {
     return getFinishTime();
   }

@@ -191,6 +191,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    *
    * @return The familyName.
    */
+  @java.lang.Override
   public java.lang.String getFamilyName() {
     java.lang.Object ref = familyName_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +215,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for familyName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFamilyNameBytes() {
     java.lang.Object ref = familyName_;
     if (ref instanceof java.lang.String) {
@@ -241,6 +243,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    *
    * @return The columnQualifier.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getColumnQualifier() {
     return columnQualifier_;
   }
@@ -259,6 +262,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    *
    * @return The appendValue.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAppendValue() {
     if (ruleCase_ == 3) {
       return (com.google.protobuf.ByteString) rule_;
@@ -281,6 +285,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
    *
    * @return The incrementAmount.
    */
+  @java.lang.Override
   public long getIncrementAmount() {
     if (ruleCase_ == 4) {
       return (java.lang.Long) rule_;
@@ -823,6 +828,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
      *
      * @return The columnQualifier.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getColumnQualifier() {
       return columnQualifier_;
     }

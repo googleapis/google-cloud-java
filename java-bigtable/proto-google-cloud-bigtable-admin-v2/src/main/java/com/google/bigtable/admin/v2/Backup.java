@@ -300,6 +300,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -353,6 +357,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -383,6 +388,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -412,6 +418,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sourceTable.
    */
+  @java.lang.Override
   public java.lang.String getSourceTable() {
     java.lang.Object ref = sourceTable_;
     if (ref instanceof java.lang.String) {
@@ -438,6 +445,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for sourceTable.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceTableBytes() {
     java.lang.Object ref = sourceTable_;
     if (ref instanceof java.lang.String) {
@@ -468,6 +476,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the expireTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpireTime() {
     return expireTime_ != null;
   }
@@ -487,6 +496,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
@@ -504,6 +514,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
     return getExpireTime();
   }
@@ -526,6 +537,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -545,6 +557,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -562,6 +575,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -581,6 +595,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -597,6 +612,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -611,6 +627,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -628,6 +645,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sizeBytes.
    */
+  @java.lang.Override
   public long getSizeBytes() {
     return sizeBytes_;
   }
@@ -647,6 +665,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -663,6 +682,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Backup.State getState() {
     @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.Backup.State result =
@@ -2046,6 +2066,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sizeBytes.
      */
+    @java.lang.Override
     public long getSizeBytes() {
       return sizeBytes_;
     }
@@ -2099,6 +2120,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -2117,6 +2139,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -2134,6 +2157,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Backup.State getState() {
       @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Backup.State result =

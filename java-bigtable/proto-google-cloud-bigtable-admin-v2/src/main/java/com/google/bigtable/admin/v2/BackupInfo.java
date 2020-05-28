@@ -162,6 +162,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The backup.
    */
+  @java.lang.Override
   public java.lang.String getBackup() {
     java.lang.Object ref = backup_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +185,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for backup.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBackupBytes() {
     java.lang.Object ref = backup_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +213,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -227,6 +230,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -241,6 +245,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -260,6 +265,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -276,6 +282,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -290,6 +297,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -307,6 +315,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sourceTable.
    */
+  @java.lang.Override
   public java.lang.String getSourceTable() {
     java.lang.Object ref = sourceTable_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +338,7 @@ public final class BackupInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for sourceTable.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceTableBytes() {
     java.lang.Object ref = sourceTable_;
     if (ref instanceof java.lang.String) {

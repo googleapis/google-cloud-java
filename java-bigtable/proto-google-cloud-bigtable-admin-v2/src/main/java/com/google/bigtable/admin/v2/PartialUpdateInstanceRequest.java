@@ -148,6 +148,7 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    * @return Whether the instance field is set.
    */
+  @java.lang.Override
   public boolean hasInstance() {
     return instance_ != null;
   }
@@ -164,6 +165,7 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    * @return The instance.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Instance getInstance() {
     return instance_ == null
         ? com.google.bigtable.admin.v2.Instance.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    * .google.bigtable.admin.v2.Instance instance = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.InstanceOrBuilder getInstanceOrBuilder() {
     return getInstance();
   }
@@ -199,6 +202,7 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -215,6 +219,7 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -229,6 +234,7 @@ public final class PartialUpdateInstanceRequest extends com.google.protobuf.Gene
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

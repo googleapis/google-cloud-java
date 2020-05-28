@@ -143,6 +143,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -165,6 +166,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +192,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
    *
    * @return Whether the progress field is set.
    */
+  @java.lang.Override
   public boolean hasProgress() {
     return progress_ != null;
   }
@@ -204,6 +207,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
    *
    * @return The progress.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.OperationProgress getProgress() {
     return progress_ == null
         ? com.google.bigtable.admin.v2.OperationProgress.getDefaultInstance()
@@ -218,6 +222,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
    *
    * <code>.google.bigtable.admin.v2.OperationProgress progress = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.OperationProgressOrBuilder getProgressOrBuilder() {
     return getProgress();
   }

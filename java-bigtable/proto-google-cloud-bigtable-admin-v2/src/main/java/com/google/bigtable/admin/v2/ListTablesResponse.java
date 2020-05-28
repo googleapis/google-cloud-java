@@ -139,6 +139,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.admin.v2.Table> getTablesList() {
     return tables_;
   }
@@ -151,6 +152,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.admin.v2.TableOrBuilder>
       getTablesOrBuilderList() {
     return tables_;
@@ -164,6 +166,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
+  @java.lang.Override
   public int getTablesCount() {
     return tables_.size();
   }
@@ -176,6 +179,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Table getTables(int index) {
     return tables_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.TableOrBuilder getTablesOrBuilder(int index) {
     return tables_.get(index);
   }
@@ -207,6 +212,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class ListTablesResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

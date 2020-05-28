@@ -217,6 +217,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +240,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +266,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for sourceType.
    */
+  @java.lang.Override
   public int getSourceTypeValue() {
     return sourceType_;
   }
@@ -278,6 +281,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The sourceType.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.RestoreSourceType getSourceType() {
     @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.RestoreSourceType result =
@@ -291,6 +295,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the backupInfo field is set.
    */
+  @java.lang.Override
   public boolean hasBackupInfo() {
     return sourceInfoCase_ == 3;
   }
@@ -299,6 +304,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The backupInfo.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.BackupInfo getBackupInfo() {
     if (sourceInfoCase_ == 3) {
       return (com.google.bigtable.admin.v2.BackupInfo) sourceInfo_;
@@ -306,6 +312,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     return com.google.bigtable.admin.v2.BackupInfo.getDefaultInstance();
   }
   /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.BackupInfoOrBuilder getBackupInfoOrBuilder() {
     if (sourceInfoCase_ == 3) {
       return (com.google.bigtable.admin.v2.BackupInfo) sourceInfo_;
@@ -334,6 +341,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The optimizeTableOperationName.
    */
+  @java.lang.Override
   public java.lang.String getOptimizeTableOperationName() {
     java.lang.Object ref = optimizeTableOperationName_;
     if (ref instanceof java.lang.String) {
@@ -364,6 +372,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for optimizeTableOperationName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOptimizeTableOperationNameBytes() {
     java.lang.Object ref = optimizeTableOperationName_;
     if (ref instanceof java.lang.String) {
@@ -391,6 +400,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the progress field is set.
    */
+  @java.lang.Override
   public boolean hasProgress() {
     return progress_ != null;
   }
@@ -407,6 +417,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The progress.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.OperationProgress getProgress() {
     return progress_ == null
         ? com.google.bigtable.admin.v2.OperationProgress.getDefaultInstance()
@@ -423,6 +434,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.bigtable.admin.v2.OperationProgress progress = 5;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.OperationProgressOrBuilder getProgressOrBuilder() {
     return getProgress();
   }
@@ -988,6 +1000,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for sourceType.
      */
+    @java.lang.Override
     public int getSourceTypeValue() {
       return sourceType_;
     }
@@ -1004,6 +1017,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSourceTypeValue(int value) {
+
       sourceType_ = value;
       onChanged();
       return this;
@@ -1019,6 +1033,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      * @return The sourceType.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.RestoreSourceType getSourceType() {
       @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.RestoreSourceType result =
@@ -1074,6 +1089,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the backupInfo field is set.
      */
+    @java.lang.Override
     public boolean hasBackupInfo() {
       return sourceInfoCase_ == 3;
     }
@@ -1082,6 +1098,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
      *
      * @return The backupInfo.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.BackupInfo getBackupInfo() {
       if (backupInfoBuilder_ == null) {
         if (sourceInfoCase_ == 3) {
@@ -1165,6 +1182,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       return getBackupInfoFieldBuilder().getBuilder();
     }
     /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.BackupInfoOrBuilder getBackupInfoOrBuilder() {
       if ((sourceInfoCase_ == 3) && (backupInfoBuilder_ != null)) {
         return backupInfoBuilder_.getMessageOrBuilder();

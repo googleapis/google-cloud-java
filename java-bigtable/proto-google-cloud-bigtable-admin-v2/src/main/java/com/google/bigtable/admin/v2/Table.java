@@ -292,6 +292,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -492,6 +496,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -854,6 +862,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -903,6 +915,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for replicationState.
      */
+    @java.lang.Override
     public int getReplicationStateValue() {
       return replicationState_;
     }
@@ -918,6 +931,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The replicationState.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState() {
       @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState result =
@@ -1266,6 +1280,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for replicationState.
        */
+      @java.lang.Override
       public int getReplicationStateValue() {
         return replicationState_;
       }
@@ -1283,6 +1298,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setReplicationStateValue(int value) {
+
         replicationState_ = value;
         onChanged();
         return this;
@@ -1299,6 +1315,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The replicationState.
        */
+      @java.lang.Override
       public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState
           getReplicationState() {
         @SuppressWarnings("deprecation")
@@ -1418,6 +1435,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1442,6 +1460,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1502,6 +1521,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
    * </code>
    */
+  @java.lang.Override
   public boolean containsClusterStates(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1509,6 +1529,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     return internalGetClusterStates().getMap().containsKey(key);
   }
   /** Use {@link #getClusterStatesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
       getClusterStates() {
@@ -1528,6 +1549,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
       getClusterStatesMap() {
     return internalGetClusterStates().getMap();
@@ -1546,6 +1568,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrDefault(
       java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState defaultValue) {
     if (key == null) {
@@ -1569,6 +1592,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -1624,6 +1648,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
+  @java.lang.Override
   public boolean containsColumnFamilies(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1631,6 +1656,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     return internalGetColumnFamilies().getMap().containsKey(key);
   }
   /** Use {@link #getColumnFamiliesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
       getColumnFamilies() {
@@ -1647,6 +1673,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
       getColumnFamiliesMap() {
     return internalGetColumnFamilies().getMap();
@@ -1662,6 +1689,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrDefault(
       java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily defaultValue) {
     if (key == null) {
@@ -1682,6 +1710,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1711,6 +1740,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for granularity.
    */
+  @java.lang.Override
   public int getGranularityValue() {
     return granularity_;
   }
@@ -1729,6 +1759,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The granularity.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity() {
     @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.Table.TimestampGranularity result =
@@ -1752,6 +1783,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the restoreInfo field is set.
    */
+  @java.lang.Override
   public boolean hasRestoreInfo() {
     return restoreInfo_ != null;
   }
@@ -1767,6 +1799,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The restoreInfo.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.RestoreInfo getRestoreInfo() {
     return restoreInfo_ == null
         ? com.google.bigtable.admin.v2.RestoreInfo.getDefaultInstance()
@@ -1782,6 +1815,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.admin.v2.RestoreInfo restore_info = 6;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.RestoreInfoOrBuilder getRestoreInfoOrBuilder() {
     return getRestoreInfo();
   }
@@ -2381,6 +2415,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
      * </code>
      */
+    @java.lang.Override
     public boolean containsClusterStates(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2388,6 +2423,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return internalGetClusterStates().getMap().containsKey(key);
     }
     /** Use {@link #getClusterStatesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
         getClusterStates() {
@@ -2407,6 +2443,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
         getClusterStatesMap() {
       return internalGetClusterStates().getMap();
@@ -2425,6 +2462,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrDefault(
         java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState defaultValue) {
       if (key == null) {
@@ -2448,6 +2486,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(
         java.lang.String key) {
       if (key == null) {
@@ -2580,6 +2619,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
+    @java.lang.Override
     public boolean containsColumnFamilies(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2587,6 +2627,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return internalGetColumnFamilies().getMap().containsKey(key);
     }
     /** Use {@link #getColumnFamiliesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
         getColumnFamilies() {
@@ -2603,6 +2644,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
         getColumnFamiliesMap() {
       return internalGetColumnFamilies().getMap();
@@ -2618,6 +2660,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrDefault(
         java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily defaultValue) {
       if (key == null) {
@@ -2638,6 +2681,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(
         java.lang.String key) {
       if (key == null) {
@@ -2734,6 +2778,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for granularity.
      */
+    @java.lang.Override
     public int getGranularityValue() {
       return granularity_;
     }
@@ -2754,6 +2799,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGranularityValue(int value) {
+
       granularity_ = value;
       onChanged();
       return this;
@@ -2773,6 +2819,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The granularity.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity() {
       @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Table.TimestampGranularity result =

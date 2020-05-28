@@ -159,6 +159,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +187,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +240,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -287,6 +290,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +333,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The orderBy.
    */
+  @java.lang.Override
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -368,6 +373,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for orderBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -394,6 +400,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -415,6 +422,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -441,6 +449,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -1410,6 +1419,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

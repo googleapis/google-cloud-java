@@ -151,6 +151,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the backup field is set.
    */
+  @java.lang.Override
   public boolean hasBackup() {
     return backup_ != null;
   }
@@ -169,6 +170,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The backup.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Backup getBackup() {
     return backup_ == null ? com.google.bigtable.admin.v2.Backup.getDefaultInstance() : backup_;
   }
@@ -185,6 +187,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    * <code>.google.bigtable.admin.v2.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.BackupOrBuilder getBackupOrBuilder() {
     return getBackup();
   }
@@ -207,6 +210,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -226,6 +230,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -243,6 +248,7 @@ public final class UpdateBackupRequest extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

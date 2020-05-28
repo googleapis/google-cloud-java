@@ -232,6 +232,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startValueClosed.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartValueClosed() {
     if (startValueCase_ == 1) {
       return (com.google.protobuf.ByteString) startValue_;
@@ -251,6 +252,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startValueOpen.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartValueOpen() {
     if (startValueCase_ == 2) {
       return (com.google.protobuf.ByteString) startValue_;
@@ -270,6 +272,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endValueClosed.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndValueClosed() {
     if (endValueCase_ == 3) {
       return (com.google.protobuf.ByteString) endValue_;
@@ -289,6 +292,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endValueOpen.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndValueOpen() {
     if (endValueCase_ == 4) {
       return (com.google.protobuf.ByteString) endValue_;

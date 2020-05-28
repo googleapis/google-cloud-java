@@ -145,6 +145,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timestampMicros.
    */
+  @java.lang.Override
   public long getTimestampMicros() {
     return timestampMicros_;
   }
@@ -164,6 +165,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValue() {
     return value_;
   }
@@ -606,6 +608,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timestampMicros.
      */
+    @java.lang.Override
     public long getTimestampMicros() {
       return timestampMicros_;
     }
@@ -669,6 +672,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }

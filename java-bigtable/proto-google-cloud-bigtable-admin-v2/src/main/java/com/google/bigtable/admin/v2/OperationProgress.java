@@ -152,6 +152,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
    *
    * @return The progressPercent.
    */
+  @java.lang.Override
   public int getProgressPercent() {
     return progressPercent_;
   }
@@ -169,6 +170,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -183,6 +185,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -195,6 +198,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp start_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -213,6 +217,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -228,6 +233,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -241,6 +247,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -630,6 +637,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
      *
      * @return The progressPercent.
      */
+    @java.lang.Override
     public int getProgressPercent() {
       return progressPercent_;
     }

@@ -137,6 +137,7 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -163,6 +164,7 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for view.
    */
+  @java.lang.Override
   public int getViewValue() {
     return view_;
   }
@@ -204,6 +207,7 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The view.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Table.View getView() {
     @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.Table.View result =
@@ -682,6 +686,7 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for view.
      */
+    @java.lang.Override
     public int getViewValue() {
       return view_;
     }
@@ -699,6 +704,7 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
+
       view_ = value;
       onChanged();
       return this;
@@ -715,6 +721,7 @@ public final class GetTableRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The view.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Table.View getView() {
       @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Table.View result =

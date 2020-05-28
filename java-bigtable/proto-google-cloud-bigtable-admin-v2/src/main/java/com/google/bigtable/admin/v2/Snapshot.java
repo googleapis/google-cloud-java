@@ -307,6 +307,10 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -354,6 +358,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -378,6 +383,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -403,6 +409,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sourceTable field is set.
    */
+  @java.lang.Override
   public boolean hasSourceTable() {
     return sourceTable_ != null;
   }
@@ -417,6 +424,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sourceTable.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Table getSourceTable() {
     return sourceTable_ == null
         ? com.google.bigtable.admin.v2.Table.getDefaultInstance()
@@ -431,6 +439,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.TableOrBuilder getSourceTableOrBuilder() {
     return getSourceTable();
   }
@@ -451,6 +460,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataSizeBytes.
    */
+  @java.lang.Override
   public long getDataSizeBytes() {
     return dataSizeBytes_;
   }
@@ -468,6 +478,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -482,6 +493,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -494,6 +506,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -513,6 +526,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deleteTime field is set.
    */
+  @java.lang.Override
   public boolean hasDeleteTime() {
     return deleteTime_ != null;
   }
@@ -529,6 +543,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deleteTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
@@ -543,6 +558,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp delete_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
     return getDeleteTime();
   }
@@ -560,6 +576,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -574,6 +591,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Snapshot.State getState() {
     @SuppressWarnings("deprecation")
     com.google.bigtable.admin.v2.Snapshot.State result =
@@ -594,6 +612,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -616,6 +635,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1393,6 +1413,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dataSizeBytes.
      */
+    @java.lang.Override
     public long getDataSizeBytes() {
       return dataSizeBytes_;
     }
@@ -1834,6 +1855,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1850,6 +1872,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1865,6 +1888,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.Snapshot.State getState() {
       @SuppressWarnings("deprecation")
       com.google.bigtable.admin.v2.Snapshot.State result =

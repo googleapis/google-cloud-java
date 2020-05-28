@@ -188,6 +188,7 @@ public final class DropRowRangeRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +215,7 @@ public final class DropRowRangeRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +241,7 @@ public final class DropRowRangeRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The rowKeyPrefix.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRowKeyPrefix() {
     if (targetCase_ == 2) {
       return (com.google.protobuf.ByteString) target_;
@@ -258,6 +261,7 @@ public final class DropRowRangeRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The deleteAllDataFromTable.
    */
+  @java.lang.Override
   public boolean getDeleteAllDataFromTable() {
     if (targetCase_ == 3) {
       return (java.lang.Boolean) target_;

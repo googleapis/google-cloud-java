@@ -149,6 +149,7 @@ public final class CreateTableFromSnapshotRequest extends com.google.protobuf.Ge
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +175,7 @@ public final class CreateTableFromSnapshotRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +202,7 @@ public final class CreateTableFromSnapshotRequest extends com.google.protobuf.Ge
    *
    * @return The tableId.
    */
+  @java.lang.Override
   public java.lang.String getTableId() {
     java.lang.Object ref = tableId_;
     if (ref instanceof java.lang.String) {
@@ -223,6 +226,7 @@ public final class CreateTableFromSnapshotRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for tableId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableIdBytes() {
     java.lang.Object ref = tableId_;
     if (ref instanceof java.lang.String) {
@@ -253,6 +257,7 @@ public final class CreateTableFromSnapshotRequest extends com.google.protobuf.Ge
    *
    * @return The sourceSnapshot.
    */
+  @java.lang.Override
   public java.lang.String getSourceSnapshot() {
     java.lang.Object ref = sourceSnapshot_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +285,7 @@ public final class CreateTableFromSnapshotRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for sourceSnapshot.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceSnapshotBytes() {
     java.lang.Object ref = sourceSnapshot_;
     if (ref instanceof java.lang.String) {

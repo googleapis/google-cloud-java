@@ -159,6 +159,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    *
    * @return The tableName.
    */
+  @java.lang.Override
   public java.lang.String getTableName() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +187,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for tableName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableNameBytes() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +214,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    *
    * @return The appProfileId.
    */
+  @java.lang.Override
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -235,6 +238,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for appProfileId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +264,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    *
    * @return The rowKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRowKey() {
     return rowKey_;
   }
@@ -279,6 +284,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    * repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.v2.ReadModifyWriteRule> getRulesList() {
     return rules_;
   }
@@ -295,6 +301,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    * repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>
       getRulesOrBuilderList() {
     return rules_;
@@ -312,6 +319,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    * repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getRulesCount() {
     return rules_.size();
   }
@@ -328,6 +336,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    * repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.ReadModifyWriteRule getRules(int index) {
     return rules_.get(index);
   }
@@ -344,6 +353,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    * repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder getRulesOrBuilder(int index) {
     return rules_.get(index);
   }
@@ -1008,6 +1018,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
      *
      * @return The rowKey.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRowKey() {
       return rowKey_;
     }

@@ -481,6 +481,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.bigtable.v2.RowFilter> getFiltersList() {
       return filters_;
     }
@@ -495,6 +496,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.bigtable.v2.RowFilterOrBuilder>
         getFiltersOrBuilderList() {
       return filters_;
@@ -510,6 +512,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public int getFiltersCount() {
       return filters_.size();
     }
@@ -524,6 +527,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter getFilters(int index) {
       return filters_.get(index);
     }
@@ -538,6 +542,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilterOrBuilder getFiltersOrBuilder(int index) {
       return filters_.get(index);
     }
@@ -1640,6 +1645,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.bigtable.v2.RowFilter> getFiltersList() {
       return filters_;
     }
@@ -1674,6 +1680,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.bigtable.v2.RowFilterOrBuilder>
         getFiltersOrBuilderList() {
       return filters_;
@@ -1709,6 +1716,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public int getFiltersCount() {
       return filters_.size();
     }
@@ -1743,6 +1751,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter getFilters(int index) {
       return filters_.get(index);
     }
@@ -1777,6 +1786,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.v2.RowFilter filters = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilterOrBuilder getFiltersOrBuilder(int index) {
       return filters_.get(index);
     }
@@ -3210,6 +3220,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the predicateFilter field is set.
      */
+    @java.lang.Override
     public boolean hasPredicateFilter() {
       return predicateFilter_ != null;
     }
@@ -3225,6 +3236,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The predicateFilter.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter getPredicateFilter() {
       return predicateFilter_ == null
           ? com.google.bigtable.v2.RowFilter.getDefaultInstance()
@@ -3240,6 +3252,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.RowFilter predicate_filter = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilterOrBuilder getPredicateFilterOrBuilder() {
       return getPredicateFilter();
     }
@@ -3258,6 +3271,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the trueFilter field is set.
      */
+    @java.lang.Override
     public boolean hasTrueFilter() {
       return trueFilter_ != null;
     }
@@ -3273,6 +3287,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The trueFilter.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter getTrueFilter() {
       return trueFilter_ == null
           ? com.google.bigtable.v2.RowFilter.getDefaultInstance()
@@ -3288,6 +3303,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.RowFilter true_filter = 2;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilterOrBuilder getTrueFilterOrBuilder() {
       return getTrueFilter();
     }
@@ -3307,6 +3323,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the falseFilter field is set.
      */
+    @java.lang.Override
     public boolean hasFalseFilter() {
       return falseFilter_ != null;
     }
@@ -3323,6 +3340,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The falseFilter.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter getFalseFilter() {
       return falseFilter_ == null
           ? com.google.bigtable.v2.RowFilter.getDefaultInstance()
@@ -3339,6 +3357,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.RowFilter false_filter = 3;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilterOrBuilder getFalseFilterOrBuilder() {
       return getFalseFilter();
     }
@@ -4490,6 +4509,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the chain field is set.
    */
+  @java.lang.Override
   public boolean hasChain() {
     return filterCase_ == 1;
   }
@@ -4505,6 +4525,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The chain.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowFilter.Chain getChain() {
     if (filterCase_ == 1) {
       return (com.google.bigtable.v2.RowFilter.Chain) filter_;
@@ -4521,6 +4542,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.RowFilter.Chain chain = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowFilter.ChainOrBuilder getChainOrBuilder() {
     if (filterCase_ == 1) {
       return (com.google.bigtable.v2.RowFilter.Chain) filter_;
@@ -4541,6 +4563,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the interleave field is set.
    */
+  @java.lang.Override
   public boolean hasInterleave() {
     return filterCase_ == 2;
   }
@@ -4556,6 +4579,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The interleave.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowFilter.Interleave getInterleave() {
     if (filterCase_ == 2) {
       return (com.google.bigtable.v2.RowFilter.Interleave) filter_;
@@ -4572,6 +4596,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.RowFilter.Interleave interleave = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowFilter.InterleaveOrBuilder getInterleaveOrBuilder() {
     if (filterCase_ == 2) {
       return (com.google.bigtable.v2.RowFilter.Interleave) filter_;
@@ -4592,6 +4617,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the condition field is set.
    */
+  @java.lang.Override
   public boolean hasCondition() {
     return filterCase_ == 3;
   }
@@ -4607,6 +4633,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The condition.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowFilter.Condition getCondition() {
     if (filterCase_ == 3) {
       return (com.google.bigtable.v2.RowFilter.Condition) filter_;
@@ -4623,6 +4650,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.RowFilter.Condition condition = 3;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowFilter.ConditionOrBuilder getConditionOrBuilder() {
     if (filterCase_ == 3) {
       return (com.google.bigtable.v2.RowFilter.Condition) filter_;
@@ -4695,6 +4723,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sink.
    */
+  @java.lang.Override
   public boolean getSink() {
     if (filterCase_ == 16) {
       return (java.lang.Boolean) filter_;
@@ -4715,6 +4744,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The passAllFilter.
    */
+  @java.lang.Override
   public boolean getPassAllFilter() {
     if (filterCase_ == 17) {
       return (java.lang.Boolean) filter_;
@@ -4735,6 +4765,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The blockAllFilter.
    */
+  @java.lang.Override
   public boolean getBlockAllFilter() {
     if (filterCase_ == 18) {
       return (java.lang.Boolean) filter_;
@@ -4760,6 +4791,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rowKeyRegexFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRowKeyRegexFilter() {
     if (filterCase_ == 4) {
       return (com.google.protobuf.ByteString) filter_;
@@ -4780,6 +4812,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rowSampleFilter.
    */
+  @java.lang.Override
   public double getRowSampleFilter() {
     if (filterCase_ == 14) {
       return (java.lang.Double) filter_;
@@ -4870,6 +4903,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The columnQualifierRegexFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getColumnQualifierRegexFilter() {
     if (filterCase_ == 6) {
       return (com.google.protobuf.ByteString) filter_;
@@ -4889,6 +4923,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the columnRangeFilter field is set.
    */
+  @java.lang.Override
   public boolean hasColumnRangeFilter() {
     return filterCase_ == 7;
   }
@@ -4903,6 +4938,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The columnRangeFilter.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.ColumnRange getColumnRangeFilter() {
     if (filterCase_ == 7) {
       return (com.google.bigtable.v2.ColumnRange) filter_;
@@ -4918,6 +4954,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.ColumnRange column_range_filter = 7;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.ColumnRangeOrBuilder getColumnRangeFilterOrBuilder() {
     if (filterCase_ == 7) {
       return (com.google.bigtable.v2.ColumnRange) filter_;
@@ -4937,6 +4974,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timestampRangeFilter field is set.
    */
+  @java.lang.Override
   public boolean hasTimestampRangeFilter() {
     return filterCase_ == 8;
   }
@@ -4951,6 +4989,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timestampRangeFilter.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.TimestampRange getTimestampRangeFilter() {
     if (filterCase_ == 8) {
       return (com.google.bigtable.v2.TimestampRange) filter_;
@@ -4966,6 +5005,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.TimestampRange timestamp_range_filter = 8;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.TimestampRangeOrBuilder getTimestampRangeFilterOrBuilder() {
     if (filterCase_ == 8) {
       return (com.google.bigtable.v2.TimestampRange) filter_;
@@ -4989,6 +5029,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The valueRegexFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValueRegexFilter() {
     if (filterCase_ == 9) {
       return (com.google.protobuf.ByteString) filter_;
@@ -5008,6 +5049,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the valueRangeFilter field is set.
    */
+  @java.lang.Override
   public boolean hasValueRangeFilter() {
     return filterCase_ == 15;
   }
@@ -5022,6 +5064,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The valueRangeFilter.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.ValueRange getValueRangeFilter() {
     if (filterCase_ == 15) {
       return (com.google.bigtable.v2.ValueRange) filter_;
@@ -5037,6 +5080,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.ValueRange value_range_filter = 15;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.ValueRangeOrBuilder getValueRangeFilterOrBuilder() {
     if (filterCase_ == 15) {
       return (com.google.bigtable.v2.ValueRange) filter_;
@@ -5058,6 +5102,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cellsPerRowOffsetFilter.
    */
+  @java.lang.Override
   public int getCellsPerRowOffsetFilter() {
     if (filterCase_ == 10) {
       return (java.lang.Integer) filter_;
@@ -5079,6 +5124,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cellsPerRowLimitFilter.
    */
+  @java.lang.Override
   public int getCellsPerRowLimitFilter() {
     if (filterCase_ == 11) {
       return (java.lang.Integer) filter_;
@@ -5103,6 +5149,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cellsPerColumnLimitFilter.
    */
+  @java.lang.Override
   public int getCellsPerColumnLimitFilter() {
     if (filterCase_ == 12) {
       return (java.lang.Integer) filter_;
@@ -5122,6 +5169,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stripValueTransformer.
    */
+  @java.lang.Override
   public boolean getStripValueTransformer() {
     if (filterCase_ == 13) {
       return (java.lang.Boolean) filter_;
@@ -6044,6 +6092,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the chain field is set.
      */
+    @java.lang.Override
     public boolean hasChain() {
       return filterCase_ == 1;
     }
@@ -6059,6 +6108,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The chain.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter.Chain getChain() {
       if (chainBuilder_ == null) {
         if (filterCase_ == 1) {
@@ -6196,6 +6246,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.RowFilter.Chain chain = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter.ChainOrBuilder getChainOrBuilder() {
       if ((filterCase_ == 1) && (chainBuilder_ != null)) {
         return chainBuilder_.getMessageOrBuilder();
@@ -6258,6 +6309,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the interleave field is set.
      */
+    @java.lang.Override
     public boolean hasInterleave() {
       return filterCase_ == 2;
     }
@@ -6273,6 +6325,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The interleave.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter.Interleave getInterleave() {
       if (interleaveBuilder_ == null) {
         if (filterCase_ == 2) {
@@ -6411,6 +6464,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.RowFilter.Interleave interleave = 2;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter.InterleaveOrBuilder getInterleaveOrBuilder() {
       if ((filterCase_ == 2) && (interleaveBuilder_ != null)) {
         return interleaveBuilder_.getMessageOrBuilder();
@@ -6473,6 +6527,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the condition field is set.
      */
+    @java.lang.Override
     public boolean hasCondition() {
       return filterCase_ == 3;
     }
@@ -6488,6 +6543,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The condition.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter.Condition getCondition() {
       if (conditionBuilder_ == null) {
         if (filterCase_ == 3) {
@@ -6626,6 +6682,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.RowFilter.Condition condition = 3;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.RowFilter.ConditionOrBuilder getConditionOrBuilder() {
       if ((filterCase_ == 3) && (conditionBuilder_ != null)) {
         return conditionBuilder_.getMessageOrBuilder();
@@ -7151,6 +7208,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The familyNameRegexFilter.
      */
+    @java.lang.Override
     public java.lang.String getFamilyNameRegexFilter() {
       java.lang.Object ref = "";
       if (filterCase_ == 5) {
@@ -7183,6 +7241,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for familyNameRegexFilter.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFamilyNameRegexFilterBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 5) {
@@ -7366,6 +7425,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the columnRangeFilter field is set.
      */
+    @java.lang.Override
     public boolean hasColumnRangeFilter() {
       return filterCase_ == 7;
     }
@@ -7380,6 +7440,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The columnRangeFilter.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.ColumnRange getColumnRangeFilter() {
       if (columnRangeFilterBuilder_ == null) {
         if (filterCase_ == 7) {
@@ -7512,6 +7573,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.ColumnRange column_range_filter = 7;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.ColumnRangeOrBuilder getColumnRangeFilterOrBuilder() {
       if ((filterCase_ == 7) && (columnRangeFilterBuilder_ != null)) {
         return columnRangeFilterBuilder_.getMessageOrBuilder();
@@ -7570,6 +7632,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timestampRangeFilter field is set.
      */
+    @java.lang.Override
     public boolean hasTimestampRangeFilter() {
       return filterCase_ == 8;
     }
@@ -7584,6 +7647,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timestampRangeFilter.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.TimestampRange getTimestampRangeFilter() {
       if (timestampRangeFilterBuilder_ == null) {
         if (filterCase_ == 8) {
@@ -7716,6 +7780,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.TimestampRange timestamp_range_filter = 8;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.TimestampRangeOrBuilder getTimestampRangeFilterOrBuilder() {
       if ((filterCase_ == 8) && (timestampRangeFilterBuilder_ != null)) {
         return timestampRangeFilterBuilder_.getMessageOrBuilder();
@@ -7844,6 +7909,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the valueRangeFilter field is set.
      */
+    @java.lang.Override
     public boolean hasValueRangeFilter() {
       return filterCase_ == 15;
     }
@@ -7858,6 +7924,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The valueRangeFilter.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.ValueRange getValueRangeFilter() {
       if (valueRangeFilterBuilder_ == null) {
         if (filterCase_ == 15) {
@@ -7989,6 +8056,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.ValueRange value_range_filter = 15;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.ValueRangeOrBuilder getValueRangeFilterOrBuilder() {
       if ((filterCase_ == 15) && (valueRangeFilterBuilder_ != null)) {
         return valueRangeFilterBuilder_.getMessageOrBuilder();
@@ -8299,6 +8367,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The applyLabelTransformer.
      */
+    @java.lang.Override
     public java.lang.String getApplyLabelTransformer() {
       java.lang.Object ref = "";
       if (filterCase_ == 19) {
@@ -8336,6 +8405,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for applyLabelTransformer.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getApplyLabelTransformerBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 19) {

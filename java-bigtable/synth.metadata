@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigtable.git",
-        "sha": "b17e39f2d8ca84335ab85d80372d6a0309a684c6"
+        "sha": "ce3bbba103568c49a1edb1d432b497e4fec13d5d"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "a175708acd7a367ab3ed120fa562331e1761d825",
-        "internalRef": "312558019"
+        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
+        "internalRef": "313460921"
       }
     },
     {

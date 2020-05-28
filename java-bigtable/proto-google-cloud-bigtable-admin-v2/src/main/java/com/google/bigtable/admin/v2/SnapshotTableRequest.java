@@ -171,6 +171,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +198,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +228,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The cluster.
    */
+  @java.lang.Override
   public java.lang.String getCluster() {
     java.lang.Object ref = cluster_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +255,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for cluster.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterBytes() {
     java.lang.Object ref = cluster_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +284,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The snapshotId.
    */
+  @java.lang.Override
   public java.lang.String getSnapshotId() {
     java.lang.Object ref = snapshotId_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +310,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for snapshotId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSnapshotIdBytes() {
     java.lang.Object ref = snapshotId_;
     if (ref instanceof java.lang.String) {
@@ -333,6 +339,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the ttl field is set.
    */
+  @java.lang.Override
   public boolean hasTtl() {
     return ttl_ != null;
   }
@@ -350,6 +357,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The ttl.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTtl() {
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
   }
@@ -365,6 +373,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Duration ttl = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
     return getTtl();
   }
@@ -382,6 +391,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -404,6 +414,7 @@ public final class SnapshotTableRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {

@@ -138,6 +138,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The key.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKey() {
     return key_;
   }
@@ -154,6 +155,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.v2.Family> getFamiliesList() {
     return families_;
   }
@@ -167,6 +169,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.v2.FamilyOrBuilder>
       getFamiliesOrBuilderList() {
     return families_;
@@ -181,6 +184,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
+  @java.lang.Override
   public int getFamiliesCount() {
     return families_.size();
   }
@@ -194,6 +198,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Family getFamilies(int index) {
     return families_.get(index);
   }
@@ -207,6 +212,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.FamilyOrBuilder getFamiliesOrBuilder(int index) {
     return families_.get(index);
   }
@@ -593,6 +599,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }

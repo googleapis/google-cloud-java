@@ -129,6 +129,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
    *
    * @return Whether the row field is set.
    */
+  @java.lang.Override
   public boolean hasRow() {
     return row_ != null;
   }
@@ -143,6 +144,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
    *
    * @return The row.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Row getRow() {
     return row_ == null ? com.google.bigtable.v2.Row.getDefaultInstance() : row_;
   }
@@ -155,6 +157,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
    *
    * <code>.google.bigtable.v2.Row row = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowOrBuilder getRowOrBuilder() {
     return getRow();
   }

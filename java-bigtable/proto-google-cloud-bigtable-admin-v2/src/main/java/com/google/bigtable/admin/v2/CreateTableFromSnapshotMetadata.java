@@ -168,6 +168,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * @return Whether the originalRequest field is set.
    */
+  @java.lang.Override
   public boolean hasOriginalRequest() {
     return originalRequest_ != null;
   }
@@ -183,6 +184,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * @return The originalRequest.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest getOriginalRequest() {
     return originalRequest_ == null
         ? com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.getDefaultInstance()
@@ -198,6 +200,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder
       getOriginalRequestOrBuilder() {
     return getOriginalRequest();
@@ -216,6 +219,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * @return Whether the requestTime field is set.
    */
+  @java.lang.Override
   public boolean hasRequestTime() {
     return requestTime_ != null;
   }
@@ -230,6 +234,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * @return The requestTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getRequestTime() {
     return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
@@ -242,6 +247,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * <code>.google.protobuf.Timestamp request_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestTimeOrBuilder() {
     return getRequestTime();
   }
@@ -259,6 +265,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * @return Whether the finishTime field is set.
    */
+  @java.lang.Override
   public boolean hasFinishTime() {
     return finishTime_ != null;
   }
@@ -273,6 +280,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * @return The finishTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getFinishTime() {
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
@@ -285,6 +293,7 @@ public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.G
    *
    * <code>.google.protobuf.Timestamp finish_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder() {
     return getFinishTime();
   }

@@ -153,6 +153,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +180,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +211,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The backupId.
    */
+  @java.lang.Override
   public java.lang.String getBackupId() {
     java.lang.Object ref = backupId_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +239,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for backupId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBackupIdBytes() {
     java.lang.Object ref = backupId_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +266,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the backup field is set.
    */
+  @java.lang.Override
   public boolean hasBackup() {
     return backup_ != null;
   }
@@ -277,6 +282,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The backup.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Backup getBackup() {
     return backup_ == null ? com.google.bigtable.admin.v2.Backup.getDefaultInstance() : backup_;
   }
@@ -290,6 +296,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * <code>.google.bigtable.admin.v2.Backup backup = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.BackupOrBuilder getBackupOrBuilder() {
     return getBackup();
   }

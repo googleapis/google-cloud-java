@@ -163,6 +163,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The sourceTable.
    */
+  @java.lang.Override
   public java.lang.String getSourceTable() {
     java.lang.Object ref = sourceTable_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +235,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for sourceTable.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceTableBytes() {
     java.lang.Object ref = sourceTable_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +261,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -271,6 +276,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -283,6 +289,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -300,6 +307,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -314,6 +322,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -326,6 +335,7 @@ public final class CreateBackupMetadata extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp end_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }

@@ -170,6 +170,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The tableName.
    */
+  @java.lang.Override
   public java.lang.String getTableName() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +197,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for tableName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableNameBytes() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The appProfileId.
    */
+  @java.lang.Override
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -245,6 +248,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for appProfileId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -270,6 +274,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the rows field is set.
    */
+  @java.lang.Override
   public boolean hasRows() {
     return rows_ != null;
   }
@@ -284,6 +289,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The rows.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowSet getRows() {
     return rows_ == null ? com.google.bigtable.v2.RowSet.getDefaultInstance() : rows_;
   }
@@ -296,6 +302,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.bigtable.v2.RowSet rows = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowSetOrBuilder getRowsOrBuilder() {
     return getRows();
   }
@@ -314,6 +321,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the filter field is set.
    */
+  @java.lang.Override
   public boolean hasFilter() {
     return filter_ != null;
   }
@@ -329,6 +337,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The filter.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowFilter getFilter() {
     return filter_ == null ? com.google.bigtable.v2.RowFilter.getDefaultInstance() : filter_;
   }
@@ -342,6 +351,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.bigtable.v2.RowFilter filter = 3;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowFilterOrBuilder getFilterOrBuilder() {
     return getFilter();
   }
@@ -360,6 +370,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The rowsLimit.
    */
+  @java.lang.Override
   public long getRowsLimit() {
     return rowsLimit_;
   }
@@ -1382,6 +1393,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The rowsLimit.
      */
+    @java.lang.Override
     public long getRowsLimit() {
       return rowsLimit_;
     }

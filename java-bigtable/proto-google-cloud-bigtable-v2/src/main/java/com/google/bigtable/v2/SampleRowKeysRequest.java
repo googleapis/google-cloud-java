@@ -136,6 +136,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The tableName.
    */
+  @java.lang.Override
   public java.lang.String getTableName() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for tableName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableNameBytes() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +190,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The appProfileId.
    */
+  @java.lang.Override
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +214,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for appProfileId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {

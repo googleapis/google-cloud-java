@@ -796,6 +796,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The clusterId.
      */
+    @java.lang.Override
     public java.lang.String getClusterId() {
       java.lang.Object ref = clusterId_;
       if (ref instanceof java.lang.String) {
@@ -818,6 +819,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for clusterId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getClusterIdBytes() {
       java.lang.Object ref = clusterId_;
       if (ref instanceof java.lang.String) {
@@ -845,6 +847,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The allowTransactionalWrites.
      */
+    @java.lang.Override
     public boolean getAllowTransactionalWrites() {
       return allowTransactionalWrites_;
     }
@@ -1312,6 +1315,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The allowTransactionalWrites.
        */
+      @java.lang.Override
       public boolean getAllowTransactionalWrites() {
         return allowTransactionalWrites_;
       }
@@ -1472,6 +1476,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1496,6 +1501,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1528,6 +1534,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1557,6 +1564,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1582,6 +1590,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1604,6 +1613,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1630,6 +1640,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the multiClusterRoutingUseAny field is set.
    */
+  @java.lang.Override
   public boolean hasMultiClusterRoutingUseAny() {
     return routingPolicyCase_ == 5;
   }
@@ -1646,6 +1657,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The multiClusterRoutingUseAny.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
       getMultiClusterRoutingUseAny() {
     if (routingPolicyCase_ == 5) {
@@ -1664,6 +1676,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAnyOrBuilder
       getMultiClusterRoutingUseAnyOrBuilder() {
     if (routingPolicyCase_ == 5) {
@@ -1685,6 +1698,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the singleClusterRouting field is set.
    */
+  @java.lang.Override
   public boolean hasSingleClusterRouting() {
     return routingPolicyCase_ == 6;
   }
@@ -1700,6 +1714,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The singleClusterRouting.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getSingleClusterRouting() {
     if (routingPolicyCase_ == 6) {
       return (com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting) routingPolicy_;
@@ -1716,6 +1731,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfile.SingleClusterRoutingOrBuilder
       getSingleClusterRoutingOrBuilder() {
     if (routingPolicyCase_ == 6) {
@@ -2543,6 +2559,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the multiClusterRoutingUseAny field is set.
      */
+    @java.lang.Override
     public boolean hasMultiClusterRoutingUseAny() {
       return routingPolicyCase_ == 5;
     }
@@ -2559,6 +2576,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The multiClusterRoutingUseAny.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
         getMultiClusterRoutingUseAny() {
       if (multiClusterRoutingUseAnyBuilder_ == null) {
@@ -2712,6 +2730,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAnyOrBuilder
         getMultiClusterRoutingUseAnyOrBuilder() {
       if ((routingPolicyCase_ == 5) && (multiClusterRoutingUseAnyBuilder_ != null)) {
@@ -2779,6 +2798,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the singleClusterRouting field is set.
      */
+    @java.lang.Override
     public boolean hasSingleClusterRouting() {
       return routingPolicyCase_ == 6;
     }
@@ -2794,6 +2814,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The singleClusterRouting.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getSingleClusterRouting() {
       if (singleClusterRoutingBuilder_ == null) {
         if (routingPolicyCase_ == 6) {
@@ -2937,6 +2958,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
      * </code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.AppProfile.SingleClusterRoutingOrBuilder
         getSingleClusterRoutingOrBuilder() {
       if ((routingPolicyCase_ == 6) && (singleClusterRoutingBuilder_ != null)) {

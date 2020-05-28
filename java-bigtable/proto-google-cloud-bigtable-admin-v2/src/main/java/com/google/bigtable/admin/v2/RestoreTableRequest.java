@@ -186,6 +186,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +211,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +240,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The tableId.
    */
+  @java.lang.Override
   public java.lang.String getTableId() {
     java.lang.Object ref = tableId_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +266,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for tableId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableIdBytes() {
     java.lang.Object ref = tableId_;
     if (ref instanceof java.lang.String) {
@@ -971,6 +975,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The backup.
      */
+    @java.lang.Override
     public java.lang.String getBackup() {
       java.lang.Object ref = "";
       if (sourceCase_ == 3) {
@@ -999,6 +1004,7 @@ public final class RestoreTableRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The bytes for backup.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBackupBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 3) {

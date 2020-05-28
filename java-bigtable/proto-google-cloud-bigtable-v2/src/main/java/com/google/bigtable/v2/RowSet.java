@@ -142,6 +142,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the rowKeys.
    */
+  @java.lang.Override
   public java.util.List<com.google.protobuf.ByteString> getRowKeysList() {
     return rowKeys_;
   }
@@ -186,6 +187,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.v2.RowRange> getRowRangesList() {
     return rowRanges_;
   }
@@ -198,6 +200,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.v2.RowRangeOrBuilder>
       getRowRangesOrBuilderList() {
     return rowRanges_;
@@ -211,6 +214,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
+  @java.lang.Override
   public int getRowRangesCount() {
     return rowRanges_.size();
   }
@@ -223,6 +227,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowRange getRowRanges(int index) {
     return rowRanges_.get(index);
   }
@@ -235,6 +240,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.RowRangeOrBuilder getRowRangesOrBuilder(int index) {
     return rowRanges_.get(index);
   }

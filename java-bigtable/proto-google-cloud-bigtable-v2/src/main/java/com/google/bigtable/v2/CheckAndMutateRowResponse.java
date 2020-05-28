@@ -121,6 +121,7 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
    *
    * @return The predicateMatched.
    */
+  @java.lang.Override
   public boolean getPredicateMatched() {
     return predicateMatched_;
   }
@@ -454,6 +455,7 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
      *
      * @return The predicateMatched.
      */
+    @java.lang.Override
     public boolean getPredicateMatched() {
       return predicateMatched_;
     }

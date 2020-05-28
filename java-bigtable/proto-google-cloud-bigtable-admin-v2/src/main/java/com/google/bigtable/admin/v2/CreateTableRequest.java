@@ -276,6 +276,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -614,6 +615,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
        *
        * @return The key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
@@ -724,6 +726,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -749,6 +752,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -776,6 +780,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The tableId.
    */
+  @java.lang.Override
   public java.lang.String getTableId() {
     java.lang.Object ref = tableId_;
     if (ref instanceof java.lang.String) {
@@ -800,6 +805,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for tableId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableIdBytes() {
     java.lang.Object ref = tableId_;
     if (ref instanceof java.lang.String) {
@@ -826,6 +832,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the table field is set.
    */
+  @java.lang.Override
   public boolean hasTable() {
     return table_ != null;
   }
@@ -841,6 +848,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The table.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.Table getTable() {
     return table_ == null ? com.google.bigtable.admin.v2.Table.getDefaultInstance() : table_;
   }
@@ -854,6 +862,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    * <code>.google.bigtable.admin.v2.Table table = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.TableOrBuilder getTableOrBuilder() {
     return getTable();
   }
@@ -882,6 +891,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.admin.v2.CreateTableRequest.Split>
       getInitialSplitsList() {
     return initialSplits_;
@@ -908,6 +918,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.admin.v2.CreateTableRequest.SplitOrBuilder>
       getInitialSplitsOrBuilderList() {
     return initialSplits_;
@@ -934,6 +945,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
+  @java.lang.Override
   public int getInitialSplitsCount() {
     return initialSplits_.size();
   }
@@ -959,6 +971,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.CreateTableRequest.Split getInitialSplits(int index) {
     return initialSplits_.get(index);
   }
@@ -984,6 +997,7 @@ public final class CreateTableRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.CreateTableRequest.SplitOrBuilder getInitialSplitsOrBuilder(
       int index) {
     return initialSplits_.get(index);

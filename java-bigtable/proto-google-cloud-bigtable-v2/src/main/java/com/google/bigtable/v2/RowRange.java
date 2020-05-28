@@ -230,6 +230,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startKeyClosed.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartKeyClosed() {
     if (startKeyCase_ == 1) {
       return (com.google.protobuf.ByteString) startKey_;
@@ -249,6 +250,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startKeyOpen.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartKeyOpen() {
     if (startKeyCase_ == 2) {
       return (com.google.protobuf.ByteString) startKey_;
@@ -268,6 +270,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endKeyOpen.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndKeyOpen() {
     if (endKeyCase_ == 3) {
       return (com.google.protobuf.ByteString) endKey_;
@@ -287,6 +290,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endKeyClosed.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndKeyClosed() {
     if (endKeyCase_ == 4) {
       return (com.google.protobuf.ByteString) endKey_;

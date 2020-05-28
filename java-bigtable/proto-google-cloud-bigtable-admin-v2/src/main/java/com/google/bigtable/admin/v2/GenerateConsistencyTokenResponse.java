@@ -126,6 +126,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
    *
    * @return The consistencyToken.
    */
+  @java.lang.Override
   public java.lang.String getConsistencyToken() {
     java.lang.Object ref = consistencyToken_;
     if (ref instanceof java.lang.String) {
@@ -148,6 +149,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
    *
    * @return The bytes for consistencyToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getConsistencyTokenBytes() {
     java.lang.Object ref = consistencyToken_;
     if (ref instanceof java.lang.String) {

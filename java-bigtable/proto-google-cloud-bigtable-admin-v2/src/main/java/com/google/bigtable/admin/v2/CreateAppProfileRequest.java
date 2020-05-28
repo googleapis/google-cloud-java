@@ -157,6 +157,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +184,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    * @return The appProfileId.
    */
+  @java.lang.Override
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +237,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for appProfileId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +266,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    * @return Whether the appProfile field is set.
    */
+  @java.lang.Override
   public boolean hasAppProfile() {
     return appProfile_ != null;
   }
@@ -279,6 +284,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    * @return The appProfile.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfile getAppProfile() {
     return appProfile_ == null
         ? com.google.bigtable.admin.v2.AppProfile.getDefaultInstance()
@@ -296,6 +302,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    * .google.bigtable.admin.v2.AppProfile app_profile = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder() {
     return getAppProfile();
   }
@@ -313,6 +320,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
    *
    * @return The ignoreWarnings.
    */
+  @java.lang.Override
   public boolean getIgnoreWarnings() {
     return ignoreWarnings_;
   }
@@ -1160,6 +1168,7 @@ public final class CreateAppProfileRequest extends com.google.protobuf.Generated
      *
      * @return The ignoreWarnings.
      */
+    @java.lang.Override
     public boolean getIgnoreWarnings() {
       return ignoreWarnings_;
     }

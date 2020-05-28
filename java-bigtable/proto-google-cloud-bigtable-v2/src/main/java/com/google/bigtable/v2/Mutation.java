@@ -367,6 +367,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The familyName.
      */
+    @java.lang.Override
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
       if (ref instanceof java.lang.String) {
@@ -390,6 +391,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for familyName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
       if (ref instanceof java.lang.String) {
@@ -416,6 +418,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The columnQualifier.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getColumnQualifier() {
       return columnQualifier_;
     }
@@ -437,6 +440,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timestampMicros.
      */
+    @java.lang.Override
     public long getTimestampMicros() {
       return timestampMicros_;
     }
@@ -454,6 +458,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
@@ -947,6 +952,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The columnQualifier.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getColumnQualifier() {
         return columnQualifier_;
       }
@@ -1007,6 +1013,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The timestampMicros.
        */
+      @java.lang.Override
       public long getTimestampMicros() {
         return timestampMicros_;
       }
@@ -1066,6 +1073,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The value.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getValue() {
         return value_;
       }
@@ -1371,6 +1379,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The familyName.
      */
+    @java.lang.Override
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
       if (ref instanceof java.lang.String) {
@@ -1394,6 +1403,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for familyName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
       if (ref instanceof java.lang.String) {
@@ -1420,6 +1430,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The columnQualifier.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getColumnQualifier() {
       return columnQualifier_;
     }
@@ -1437,6 +1448,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timeRange field is set.
      */
+    @java.lang.Override
     public boolean hasTimeRange() {
       return timeRange_ != null;
     }
@@ -1451,6 +1463,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timeRange.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.TimestampRange getTimeRange() {
       return timeRange_ == null
           ? com.google.bigtable.v2.TimestampRange.getDefaultInstance()
@@ -1465,6 +1478,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.TimestampRange time_range = 3;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.TimestampRangeOrBuilder getTimeRangeOrBuilder() {
       return getTimeRange();
     }
@@ -1960,6 +1974,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The columnQualifier.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getColumnQualifier() {
         return columnQualifier_;
       }
@@ -2380,6 +2395,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The familyName.
      */
+    @java.lang.Override
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
       if (ref instanceof java.lang.String) {
@@ -2403,6 +2419,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for familyName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
       if (ref instanceof java.lang.String) {
@@ -3410,6 +3427,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the setCell field is set.
    */
+  @java.lang.Override
   public boolean hasSetCell() {
     return mutationCase_ == 1;
   }
@@ -3424,6 +3442,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The setCell.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation.SetCell getSetCell() {
     if (mutationCase_ == 1) {
       return (com.google.bigtable.v2.Mutation.SetCell) mutation_;
@@ -3439,6 +3458,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.Mutation.SetCell set_cell = 1;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation.SetCellOrBuilder getSetCellOrBuilder() {
     if (mutationCase_ == 1) {
       return (com.google.bigtable.v2.Mutation.SetCell) mutation_;
@@ -3458,6 +3478,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deleteFromColumn field is set.
    */
+  @java.lang.Override
   public boolean hasDeleteFromColumn() {
     return mutationCase_ == 2;
   }
@@ -3472,6 +3493,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deleteFromColumn.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation.DeleteFromColumn getDeleteFromColumn() {
     if (mutationCase_ == 2) {
       return (com.google.bigtable.v2.Mutation.DeleteFromColumn) mutation_;
@@ -3487,6 +3509,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromColumn delete_from_column = 2;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation.DeleteFromColumnOrBuilder getDeleteFromColumnOrBuilder() {
     if (mutationCase_ == 2) {
       return (com.google.bigtable.v2.Mutation.DeleteFromColumn) mutation_;
@@ -3506,6 +3529,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deleteFromFamily field is set.
    */
+  @java.lang.Override
   public boolean hasDeleteFromFamily() {
     return mutationCase_ == 3;
   }
@@ -3520,6 +3544,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deleteFromFamily.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation.DeleteFromFamily getDeleteFromFamily() {
     if (mutationCase_ == 3) {
       return (com.google.bigtable.v2.Mutation.DeleteFromFamily) mutation_;
@@ -3535,6 +3560,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromFamily delete_from_family = 3;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation.DeleteFromFamilyOrBuilder getDeleteFromFamilyOrBuilder() {
     if (mutationCase_ == 3) {
       return (com.google.bigtable.v2.Mutation.DeleteFromFamily) mutation_;
@@ -3554,6 +3580,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deleteFromRow field is set.
    */
+  @java.lang.Override
   public boolean hasDeleteFromRow() {
     return mutationCase_ == 4;
   }
@@ -3568,6 +3595,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deleteFromRow.
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation.DeleteFromRow getDeleteFromRow() {
     if (mutationCase_ == 4) {
       return (com.google.bigtable.v2.Mutation.DeleteFromRow) mutation_;
@@ -3583,6 +3611,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.v2.Mutation.DeleteFromRow delete_from_row = 4;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation.DeleteFromRowOrBuilder getDeleteFromRowOrBuilder() {
     if (mutationCase_ == 4) {
       return (com.google.bigtable.v2.Mutation.DeleteFromRow) mutation_;
@@ -4042,6 +4071,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the setCell field is set.
      */
+    @java.lang.Override
     public boolean hasSetCell() {
       return mutationCase_ == 1;
     }
@@ -4056,6 +4086,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The setCell.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.Mutation.SetCell getSetCell() {
       if (setCellBuilder_ == null) {
         if (mutationCase_ == 1) {
@@ -4187,6 +4218,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.Mutation.SetCell set_cell = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.Mutation.SetCellOrBuilder getSetCellOrBuilder() {
       if ((mutationCase_ == 1) && (setCellBuilder_ != null)) {
         return setCellBuilder_.getMessageOrBuilder();
@@ -4247,6 +4279,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the deleteFromColumn field is set.
      */
+    @java.lang.Override
     public boolean hasDeleteFromColumn() {
       return mutationCase_ == 2;
     }
@@ -4261,6 +4294,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The deleteFromColumn.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.Mutation.DeleteFromColumn getDeleteFromColumn() {
       if (deleteFromColumnBuilder_ == null) {
         if (mutationCase_ == 2) {
@@ -4393,6 +4427,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromColumn delete_from_column = 2;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.Mutation.DeleteFromColumnOrBuilder
         getDeleteFromColumnOrBuilder() {
       if ((mutationCase_ == 2) && (deleteFromColumnBuilder_ != null)) {
@@ -4454,6 +4489,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the deleteFromFamily field is set.
      */
+    @java.lang.Override
     public boolean hasDeleteFromFamily() {
       return mutationCase_ == 3;
     }
@@ -4468,6 +4504,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The deleteFromFamily.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.Mutation.DeleteFromFamily getDeleteFromFamily() {
       if (deleteFromFamilyBuilder_ == null) {
         if (mutationCase_ == 3) {
@@ -4600,6 +4637,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromFamily delete_from_family = 3;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.Mutation.DeleteFromFamilyOrBuilder
         getDeleteFromFamilyOrBuilder() {
       if ((mutationCase_ == 3) && (deleteFromFamilyBuilder_ != null)) {
@@ -4661,6 +4699,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the deleteFromRow field is set.
      */
+    @java.lang.Override
     public boolean hasDeleteFromRow() {
       return mutationCase_ == 4;
     }
@@ -4675,6 +4714,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The deleteFromRow.
      */
+    @java.lang.Override
     public com.google.bigtable.v2.Mutation.DeleteFromRow getDeleteFromRow() {
       if (deleteFromRowBuilder_ == null) {
         if (mutationCase_ == 4) {
@@ -4807,6 +4847,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.v2.Mutation.DeleteFromRow delete_from_row = 4;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.v2.Mutation.DeleteFromRowOrBuilder getDeleteFromRowOrBuilder() {
       if ((mutationCase_ == 4) && (deleteFromRowBuilder_ != null)) {
         return deleteFromRowBuilder_.getMessageOrBuilder();

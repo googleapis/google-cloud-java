@@ -122,6 +122,7 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
    *
    * @return The consistent.
    */
+  @java.lang.Override
   public boolean getConsistent() {
     return consistent_;
   }
@@ -458,6 +459,7 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
      *
      * @return The consistent.
      */
+    @java.lang.Override
     public boolean getConsistent() {
       return consistent_;
     }

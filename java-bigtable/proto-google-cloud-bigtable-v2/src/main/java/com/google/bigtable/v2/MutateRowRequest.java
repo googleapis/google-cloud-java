@@ -157,6 +157,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The tableName.
    */
+  @java.lang.Override
   public java.lang.String getTableName() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +184,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for tableName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableNameBytes() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +211,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The appProfileId.
    */
+  @java.lang.Override
   public java.lang.String getAppProfileId() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +235,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for appProfileId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +261,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The rowKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRowKey() {
     return rowKey_;
   }
@@ -276,6 +281,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    * repeated .google.bigtable.v2.Mutation mutations = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.bigtable.v2.Mutation> getMutationsList() {
     return mutations_;
   }
@@ -292,6 +298,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    * repeated .google.bigtable.v2.Mutation mutations = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder>
       getMutationsOrBuilderList() {
     return mutations_;
@@ -309,6 +316,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    * repeated .google.bigtable.v2.Mutation mutations = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getMutationsCount() {
     return mutations_.size();
   }
@@ -325,6 +333,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    * repeated .google.bigtable.v2.Mutation mutations = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.Mutation getMutations(int index) {
     return mutations_.get(index);
   }
@@ -341,6 +350,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
    * repeated .google.bigtable.v2.Mutation mutations = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.bigtable.v2.MutationOrBuilder getMutationsOrBuilder(int index) {
     return mutations_.get(index);
   }
@@ -998,6 +1008,7 @@ public final class MutateRowRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The rowKey.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRowKey() {
       return rowKey_;
     }

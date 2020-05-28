@@ -322,6 +322,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.bigtable.admin.v2.GcRule> getRulesList() {
       return rules_;
     }
@@ -334,6 +335,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.bigtable.admin.v2.GcRuleOrBuilder>
         getRulesOrBuilderList() {
       return rules_;
@@ -347,6 +349,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public int getRulesCount() {
       return rules_.size();
     }
@@ -359,6 +362,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.GcRule getRules(int index) {
       return rules_.get(index);
     }
@@ -371,6 +375,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.GcRuleOrBuilder getRulesOrBuilder(int index) {
       return rules_.get(index);
     }
@@ -1307,6 +1312,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.bigtable.admin.v2.GcRule> getRulesList() {
       return rules_;
     }
@@ -1319,6 +1325,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.bigtable.admin.v2.GcRuleOrBuilder>
         getRulesOrBuilderList() {
       return rules_;
@@ -1332,6 +1339,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public int getRulesCount() {
       return rules_.size();
     }
@@ -1344,6 +1352,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.GcRule getRules(int index) {
       return rules_.get(index);
     }
@@ -1356,6 +1365,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.bigtable.admin.v2.GcRule rules = 1;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.GcRuleOrBuilder getRulesOrBuilder(int index) {
       return rules_.get(index);
     }
@@ -2187,6 +2197,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxNumVersions.
    */
+  @java.lang.Override
   public int getMaxNumVersions() {
     if (ruleCase_ == 1) {
       return (java.lang.Integer) rule_;
@@ -2208,6 +2219,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the maxAge field is set.
    */
+  @java.lang.Override
   public boolean hasMaxAge() {
     return ruleCase_ == 2;
   }
@@ -2224,6 +2236,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxAge.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getMaxAge() {
     if (ruleCase_ == 2) {
       return (com.google.protobuf.Duration) rule_;
@@ -2241,6 +2254,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration max_age = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMaxAgeOrBuilder() {
     if (ruleCase_ == 2) {
       return (com.google.protobuf.Duration) rule_;
@@ -2260,6 +2274,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the intersection field is set.
    */
+  @java.lang.Override
   public boolean hasIntersection() {
     return ruleCase_ == 3;
   }
@@ -2274,6 +2289,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The intersection.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.GcRule.Intersection getIntersection() {
     if (ruleCase_ == 3) {
       return (com.google.bigtable.admin.v2.GcRule.Intersection) rule_;
@@ -2289,6 +2305,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.admin.v2.GcRule.Intersection intersection = 3;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.GcRule.IntersectionOrBuilder getIntersectionOrBuilder() {
     if (ruleCase_ == 3) {
       return (com.google.bigtable.admin.v2.GcRule.Intersection) rule_;
@@ -2308,6 +2325,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the union field is set.
    */
+  @java.lang.Override
   public boolean hasUnion() {
     return ruleCase_ == 4;
   }
@@ -2322,6 +2340,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The union.
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.GcRule.Union getUnion() {
     if (ruleCase_ == 4) {
       return (com.google.bigtable.admin.v2.GcRule.Union) rule_;
@@ -2337,6 +2356,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.bigtable.admin.v2.GcRule.Union union = 4;</code>
    */
+  @java.lang.Override
   public com.google.bigtable.admin.v2.GcRule.UnionOrBuilder getUnionOrBuilder() {
     if (ruleCase_ == 4) {
       return (com.google.bigtable.admin.v2.GcRule.Union) rule_;
@@ -2850,6 +2870,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the maxAge field is set.
      */
+    @java.lang.Override
     public boolean hasMaxAge() {
       return ruleCase_ == 2;
     }
@@ -2866,6 +2887,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxAge.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getMaxAge() {
       if (maxAgeBuilder_ == null) {
         if (ruleCase_ == 2) {
@@ -3007,6 +3029,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Duration max_age = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMaxAgeOrBuilder() {
       if ((ruleCase_ == 2) && (maxAgeBuilder_ != null)) {
         return maxAgeBuilder_.getMessageOrBuilder();
@@ -3067,6 +3090,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the intersection field is set.
      */
+    @java.lang.Override
     public boolean hasIntersection() {
       return ruleCase_ == 3;
     }
@@ -3081,6 +3105,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The intersection.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.GcRule.Intersection getIntersection() {
       if (intersectionBuilder_ == null) {
         if (ruleCase_ == 3) {
@@ -3213,6 +3238,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.admin.v2.GcRule.Intersection intersection = 3;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.GcRule.IntersectionOrBuilder getIntersectionOrBuilder() {
       if ((ruleCase_ == 3) && (intersectionBuilder_ != null)) {
         return intersectionBuilder_.getMessageOrBuilder();
@@ -3273,6 +3299,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the union field is set.
      */
+    @java.lang.Override
     public boolean hasUnion() {
       return ruleCase_ == 4;
     }
@@ -3287,6 +3314,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The union.
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.GcRule.Union getUnion() {
       if (unionBuilder_ == null) {
         if (ruleCase_ == 4) {
@@ -3418,6 +3446,7 @@ public final class GcRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.bigtable.admin.v2.GcRule.Union union = 4;</code>
      */
+    @java.lang.Override
     public com.google.bigtable.admin.v2.GcRule.UnionOrBuilder getUnionOrBuilder() {
       if ((ruleCase_ == 4) && (unionBuilder_ != null)) {
         return unionBuilder_.getMessageOrBuilder();

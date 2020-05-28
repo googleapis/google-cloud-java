@@ -245,6 +245,7 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The familyName.
    */
+  @java.lang.Override
   public java.lang.String getFamilyName() {
     java.lang.Object ref = familyName_;
     if (ref instanceof java.lang.String) {
@@ -267,6 +268,7 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for familyName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFamilyNameBytes() {
     java.lang.Object ref = familyName_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +293,7 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startQualifierClosed.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartQualifierClosed() {
     if (startQualifierCase_ == 2) {
       return (com.google.protobuf.ByteString) startQualifier_;
@@ -310,6 +313,7 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startQualifierOpen.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartQualifierOpen() {
     if (startQualifierCase_ == 3) {
       return (com.google.protobuf.ByteString) startQualifier_;
@@ -329,6 +333,7 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endQualifierClosed.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndQualifierClosed() {
     if (endQualifierCase_ == 4) {
       return (com.google.protobuf.ByteString) endQualifier_;
@@ -348,6 +353,7 @@ public final class ColumnRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endQualifierOpen.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndQualifierOpen() {
     if (endQualifierCase_ == 5) {
       return (com.google.protobuf.ByteString) endQualifier_;
