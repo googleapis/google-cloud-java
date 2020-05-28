@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.6.0...v0.7.0) (2020-05-28)
+
+
+### Features
+
+* add core test classifier (needed by BQ) ([#59](https://www.github.com/googleapis/java-shared-dependencies/issues/59)) ([a634d18](https://www.github.com/googleapis/java-shared-dependencies/commit/a634d1886072793f3143f8c5af51008a6d9c857e))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-bom to v3.12.2 ([#57](https://www.github.com/googleapis/java-shared-dependencies/issues/57)) ([751f170](https://www.github.com/googleapis/java-shared-dependencies/commit/751f1709b9f6bca6e5a22bf42feadc7373bceef7))
+
 ## [0.6.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.5.0...v0.6.0) (2020-05-27)
 
 
