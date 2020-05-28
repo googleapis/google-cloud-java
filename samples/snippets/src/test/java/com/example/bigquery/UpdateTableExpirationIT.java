@@ -19,8 +19,12 @@ package com.example.bigquery;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
@@ -58,8 +62,13 @@ public class UpdateTableExpirationIT {
 
   @Test
   public void updateTableExpiration() {
-    String tableName = "update_expiration_table";
-    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, null);
+    String suffix = UUID.randomUUID().toString().replace('-', '_');
+    String tableName = "update_expiration_table_" + suffix;
+    Schema schema =
+            Schema.of(
+                    Field.of("stringField", StandardSQLTypeName.STRING),
+                    Field.of("booleanField", StandardSQLTypeName.BOOL));
+    CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
     Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
     UpdateTableExpiration.updateTableExpiration(BIGQUERY_DATASET_NAME, tableName, newExpiration);
     assertThat(bout.toString()).contains("Table expiration updated successfully");
