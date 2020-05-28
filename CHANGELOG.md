@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.133.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.1...v0.133.2) (2020-05-28)
+
+
+### Documentation
+
+* **samples:** migrate samples into client ([#308](https://www.github.com/googleapis/java-bigquerystorage/issues/308)) ([c2161fb](https://www.github.com/googleapis/java-bigquerystorage/commit/c2161fbccb6043b0fec7b25eb3de1a0f4f61e7a1))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.7.0 ([#302](https://www.github.com/googleapis/java-bigquerystorage/issues/302)) ([5d22cb0](https://www.github.com/googleapis/java-bigquerystorage/commit/5d22cb09c85c7f4f8cf4f999e23747ac636023ab))
+
 ### [0.133.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.0...v0.133.1) (2020-05-27)
 
 
