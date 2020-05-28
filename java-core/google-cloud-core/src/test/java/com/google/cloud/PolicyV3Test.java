@@ -42,28 +42,25 @@ public class PolicyV3Test {
   private static final String VIEWER = "roles/viewer";
   private static final String EDITOR = "roles/editor";
   private static final String OWNER = "roles/owner";
-  private static final List<String> MEMBERS_LIST_1 =
+  private static final ImmutableList<String> MEMBERS_LIST_1 =
       ImmutableList.of(USER, SERVICE_ACCOUNT, ALL_USERS);
-  private static final List<String> MEMBERS_LIST_2 =
+  private static final ImmutableList<String> MEMBERS_LIST_2 =
       ImmutableList.of(ALL_AUTH_USERS, GROUP, DOMAIN);
-  private static final List<Binding> BINDINGS_NO_CONDITIONS =
-      ImmutableList.of(
-          Binding.newBuilder().setRole(VIEWER).setMembers(MEMBERS_LIST_1).build(),
-          Binding.newBuilder().setRole(EDITOR).setMembers(MEMBERS_LIST_2).build());
-  private static final List<Binding> BINDINGS_WITH_CONDITIONS =
-      ImmutableList.copyOf(BINDINGS_NO_CONDITIONS)
-          .of(
-              Binding.newBuilder()
-                  .setRole(VIEWER)
-                  .setMembers(MEMBERS_LIST_1)
-                  .setCondition(
-                      Condition.newBuilder()
-                          .setTitle("Condition")
-                          .setDescription("Condition")
-                          .setExpression("Expr")
-                          .build())
-                  .build(),
-              Binding.newBuilder().setRole(EDITOR).setMembers(MEMBERS_LIST_2).build());
+
+  private static final Binding VIEWER_BINDING =
+      Binding.newBuilder().setRole(VIEWER).setMembers(MEMBERS_LIST_1).build();
+  private static final Binding EDITOR_BINDING =
+      Binding.newBuilder().setRole(EDITOR).setMembers(MEMBERS_LIST_2).build();
+  private static final ImmutableList<Binding> BINDINGS_NO_CONDITIONS =
+      ImmutableList.of(VIEWER_BINDING, EDITOR_BINDING);
+  private static final Condition CONDITION =
+      Condition.newBuilder()
+          .setTitle("Condition")
+          .setDescription("Condition")
+          .setExpression("Expr")
+          .build();
+  private static final ImmutableList<Binding> BINDINGS_WITH_CONDITIONS =
+      ImmutableList.of(VIEWER_BINDING.toBuilder().setCondition(CONDITION).build(), EDITOR_BINDING);
   private static final Policy FULL_POLICY_V1 =
       Policy.newBuilder().setBindings(BINDINGS_NO_CONDITIONS).setEtag("etag").setVersion(1).build();
 
