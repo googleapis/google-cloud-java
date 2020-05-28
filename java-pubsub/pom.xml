@@ -114,12 +114,6 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-iam-v1</artifactId>
-        <version>0.13.0</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
         <groupId>org.easymock</groupId>
         <artifactId>easymock</artifactId>
         <version>${easymock.version}</version>
