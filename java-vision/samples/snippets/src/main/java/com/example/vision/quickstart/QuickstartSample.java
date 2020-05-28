@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.vision;
+package com.example.vision.quickstart;
 
 // [START vision_quickstart]
 // Imports the Google Cloud client library
@@ -36,7 +36,9 @@ import java.util.List;
 
 public class QuickstartSample {
   public static void main(String... args) throws Exception {
-    // Instantiates a client
+    // Initialize client that will be used to send requests. This client only needs to be created
+    // once, and can be reused for multiple requests. After completing all of your requests, call
+    // the "close" method on the client to safely clean up any remaining background resources.
     try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
 
       // The path to the image file to annotate
@@ -61,14 +63,14 @@ public class QuickstartSample {
 
       for (AnnotateImageResponse res : responses) {
         if (res.hasError()) {
-          System.out.printf("Error: %s\n", res.getError().getMessage());
+          System.out.format("Error: %s%n", res.getError().getMessage());
           return;
         }
 
         for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
           annotation
               .getAllFields()
-              .forEach((k, v) -> System.out.printf("%s : %s\n", k, v.toString()));
+              .forEach((k, v) -> System.out.format("%s : %s%n", k, v.toString()));
         }
       }
     }

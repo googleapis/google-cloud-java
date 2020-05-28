@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,8 @@ package com.example.vision;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.example.vision.snippets.SetEndpoint;
+import com.example.vision.snippets.DetectFacesGcs;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
@@ -28,10 +27,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for Vision Set Endpoint */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class SetEndpointIT {
+public class DetectFacesGcsTest {
+
+  private static final String ASSET_BUCKET = "cloud-samples-data";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -49,14 +49,14 @@ public class SetEndpointIT {
   }
 
   @Test
-  public void testSetEndpoint() throws IOException {
+  public void testFaces() throws Exception {
     // Act
-    SetEndpoint.setEndpoint();
+    DetectFacesGcs.detectFacesGcs("gs://" + ASSET_BUCKET + "/vision/face/face_no_surprise.jpg");
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("System Software Update");
-    assertThat(got).contains("x:");
-    assertThat(got).contains("y:");
+    assertThat(got).contains("anger:");
+    assertThat(got).contains("joy:");
+    assertThat(got).contains("surprise:");
   }
 }

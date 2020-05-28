@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.vision;
+package com.example.vision.snippets;
 
 // [START vision_async_batch_annotate_images]
 import com.google.cloud.vision.v1.AnnotateImageRequest;
@@ -82,7 +82,7 @@ public class AsyncBatchAnnotateImages {
 
       // The output is written to GCS with the provided output_uri as prefix
       String gcsOutputUri = response.getOutputConfig().getGcsDestination().getUri();
-      System.out.printf("Output written to GCS with prefix: %s\n", gcsOutputUri);
+      System.out.format("Output written to GCS with prefix: %s%n", gcsOutputUri);
     }
   }
 }

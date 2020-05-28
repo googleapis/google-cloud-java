@@ -19,6 +19,7 @@ package com.example.vision;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
+import com.example.vision.snippets.AsyncBatchAnnotateImages;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;

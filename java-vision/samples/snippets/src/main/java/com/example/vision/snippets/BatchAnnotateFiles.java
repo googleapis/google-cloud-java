@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.vision;
+package com.example.vision.snippets;
 
 // [START vision_batch_annotate_files]
 import com.google.cloud.vision.v1.AnnotateFileRequest;
@@ -90,17 +90,17 @@ public class BatchAnnotateFiles {
       // sample.
       for (AnnotateImageResponse imageResponse :
           response.getResponsesList().get(0).getResponsesList()) {
-        System.out.printf("Full text: %s\n", imageResponse.getFullTextAnnotation().getText());
+        System.out.format("Full text: %s%n", imageResponse.getFullTextAnnotation().getText());
         for (Page page : imageResponse.getFullTextAnnotation().getPagesList()) {
           for (Block block : page.getBlocksList()) {
-            System.out.printf("\nBlock confidence: %s\n", block.getConfidence());
+            System.out.format("%nBlock confidence: %s%n", block.getConfidence());
             for (Paragraph par : block.getParagraphsList()) {
-              System.out.printf("\tParagraph confidence: %s\n", par.getConfidence());
+              System.out.format("\tParagraph confidence: %s%n", par.getConfidence());
               for (Word word : par.getWordsList()) {
-                System.out.printf("\t\tWord confidence: %s\n", word.getConfidence());
+                System.out.format("\t\tWord confidence: %s%n", word.getConfidence());
                 for (Symbol symbol : word.getSymbolsList()) {
-                  System.out.printf(
-                      "\t\t\tSymbol: %s, (confidence: %s)\n",
+                  System.out.format(
+                      "\t\t\tSymbol: %s, (confidence: %s)%n",
                       symbol.getText(), symbol.getConfidence());
                 }
               }
