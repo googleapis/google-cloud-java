@@ -67,6 +67,13 @@ public class LoadJobConfigurationTest {
       RangePartitioning.Range.newBuilder().setStart(1L).setInterval(2L).setEnd(10L).build();
   private static final RangePartitioning RANGE_PARTITIONING =
       RangePartitioning.newBuilder().setField("IntegerField").setRange(RANGE).build();
+  private static final String MODE = "STRING";
+  private static final String SOURCE_URI_PREFIX = "gs://bucket/path_to_table";
+  private static final HivePartitioningOptions HIVE_PARTITIONING_OPTIONS =
+      HivePartitioningOptions.newBuilder()
+          .setMode(MODE)
+          .setSourceUriPrefix(SOURCE_URI_PREFIX)
+          .build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION_CSV =
       LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -83,6 +90,8 @@ public class LoadJobConfigurationTest {
           .setLabels(LABELS)
           .setJobTimeoutMs(TIMEOUT)
           .setRangePartitioning(RANGE_PARTITIONING)
+          .setNullMarker("nullMarker")
+          .setHivePartitioningOptions(HIVE_PARTITIONING_OPTIONS)
           .build();
 
   private static final DatastoreBackupOptions BACKUP_OPTIONS =
@@ -238,5 +247,7 @@ public class LoadJobConfigurationTest {
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.getJobTimeoutMs(), value.getJobTimeoutMs());
     assertEquals(expected.getRangePartitioning(), value.getRangePartitioning());
+    assertEquals(expected.getNullMarker(), value.getNullMarker());
+    assertEquals(expected.getHivePartitioningOptions(), value.getHivePartitioningOptions());
   }
 }

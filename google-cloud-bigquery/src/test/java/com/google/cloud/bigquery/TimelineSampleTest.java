@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
@@ -37,6 +38,12 @@ public class TimelineSampleTest {
           .build();
 
   @Test
+  public void testToBuilder() {
+    TimelineSample sample = TIMELINE_SAMPLE.toBuilder().setPendingUnits(15L).build();
+    assertEquals(15L, sample.getPendingUnits().longValue());
+  }
+
+  @Test
   public void testTimelineSampleBuilder() {
     assertEquals(ELAPSED_MS, TIMELINE_SAMPLE.getElapsedMs());
     assertEquals(ACTIVE_UNITS, TIMELINE_SAMPLE.getActiveUnits());
@@ -48,5 +55,8 @@ public class TimelineSampleTest {
   @Test
   public void TestEquals() {
     assertEquals(TIMELINE_SAMPLE, TIMELINE_SAMPLE);
+    assertNotEquals(TIMELINE_SAMPLE, SLOT_MILLIS);
+    assertEquals(TIMELINE_SAMPLE.toString(), TIMELINE_SAMPLE.toString());
+    assertEquals(TIMELINE_SAMPLE.hashCode(), TIMELINE_SAMPLE.hashCode());
   }
 }

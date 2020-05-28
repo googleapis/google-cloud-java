@@ -53,6 +53,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Collections;
 import java.util.List;
@@ -78,6 +79,15 @@ public class BigQueryImplTest {
   private static final String JOB = "job";
   private static final String OTHER_TABLE = "otherTable";
   private static final String OTHER_DATASET = "otherDataset";
+  private static final String ROUTINE = "routine";
+  private static final RoutineId ROUTINE_ID = RoutineId.of(DATASET, ROUTINE);
+  private static final String ETAG = "etag";
+  private static final String ROUTINE_TYPE = "SCALAR_FUNCTION";
+  private static final Long CREATION_TIME = 10L;
+  private static final Long LAST_MODIFIED_TIME = 20L;
+  private static final String LANGUAGE = "SQL";
+  private static final String UPLOAD_ID = "uploadid";
+  private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final List<Acl> ACCESS_RULES =
       ImmutableList.of(
           Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
@@ -439,6 +449,43 @@ public class BigQueryImplTest {
           BigQueryRpc.Option.PAGE_TOKEN, CURSOR,
           BigQueryRpc.Option.MAX_RESULTS, 0L);
 
+  private static final RoutineArgument ARG_1 =
+      RoutineArgument.newBuilder()
+          .setDataType(StandardSQLDataType.newBuilder("STRING").build())
+          .setName("arg1")
+          .build();
+
+  private static final List<RoutineArgument> ARGUMENT_LIST = ImmutableList.of(ARG_1);
+
+  private static final StandardSQLDataType RETURN_TYPE =
+      StandardSQLDataType.newBuilder("FLOAT64").build();
+
+  private static final List<String> IMPORTED_LIBRARIES =
+      ImmutableList.of("gs://foo", "gs://bar", "gs://baz");
+
+  private static final String BODY = "body";
+
+  private static final RoutineInfo ROUTINE_INFO =
+      RoutineInfo.newBuilder(ROUTINE_ID)
+          .setEtag(ETAG)
+          .setRoutineType(ROUTINE_TYPE)
+          .setCreationTime(CREATION_TIME)
+          .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setLanguage(LANGUAGE)
+          .setArguments(ARGUMENT_LIST)
+          .setReturnType(RETURN_TYPE)
+          .setImportedLibraries(IMPORTED_LIBRARIES)
+          .setBody(BODY)
+          .build();
+  private static final WriteChannelConfiguration LOAD_CONFIGURATION =
+      WriteChannelConfiguration.newBuilder(TABLE_ID)
+          .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+          .setWriteDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+          .setFormatOptions(FormatOptions.json())
+          .setIgnoreUnknownValues(true)
+          .setMaxBadRecords(10)
+          .build();
+
   private BigQueryOptions options;
   private BigQueryRpcFactory rpcFactoryMock;
   private BigQueryRpc bigqueryRpcMock;
@@ -446,6 +493,9 @@ public class BigQueryImplTest {
 
   @Captor private ArgumentCaptor<Map<BigQueryRpc.Option, Object>> capturedOptions;
   @Captor private ArgumentCaptor<com.google.api.services.bigquery.model.Job> jobCapture;
+  @Captor private ArgumentCaptor<byte[]> capturedBuffer;
+
+  private TableDataWriteChannel writer;
 
   private BigQueryOptions createBigQueryOptionsForProject(
       String project, BigQueryRpcFactory rpcFactory) {
@@ -535,6 +585,7 @@ public class BigQueryImplTest {
   @Test
   public void testGetDatasetNotFoundWhenThrowIsEnabled() {
     when(bigqueryRpcMock.getDataset(PROJECT, "dataset-not-found", EMPTY_RPC_OPTIONS))
+        .thenReturn(null)
         .thenThrow(new BigQueryException(404, "Dataset not found"));
     options.setThrowNotFound(true);
     bigquery = options.getService();
@@ -783,6 +834,22 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testGetModelNotFoundWhenThrowIsEnabled() {
+    String expected = "Model not found";
+    when(bigqueryRpcMock.getModel(PROJECT, DATASET, MODEL, EMPTY_RPC_OPTIONS))
+        .thenReturn(null)
+        .thenThrow(new BigQueryException(404, expected));
+    options.setThrowNotFound(true);
+    bigquery = options.getService();
+    try {
+      bigquery.getModel(DATASET, MODEL);
+    } catch (BigQueryException ex) {
+      assertEquals(expected, ex.getMessage());
+    }
+    verify(bigqueryRpcMock).getModel(PROJECT, DATASET, MODEL, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
   public void testListPartition() {
     when(bigqueryRpcMock.getTable(
             PROJECT, DATASET, "table$__PARTITIONS_SUMMARY__", EMPTY_RPC_OPTIONS))
@@ -811,6 +878,7 @@ public class BigQueryImplTest {
   @Test
   public void testGetTableNotFoundWhenThrowIsEnabled() {
     when(bigqueryRpcMock.getTable(PROJECT, DATASET, "table-not-found", EMPTY_RPC_OPTIONS))
+        .thenReturn(null)
         .thenThrow(new BigQueryException(404, "Table not found"));
     options.setThrowNotFound(true);
     bigquery = options.getService();
@@ -1002,6 +1070,22 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testListModelsWithModelId() {
+    bigquery = options.getService();
+    ImmutableList<Model> modelList =
+        ImmutableList.of(
+            new Model(bigquery, new ModelInfo.BuilderImpl(MODEL_INFO_WITH_PROJECT)),
+            new Model(bigquery, new ModelInfo.BuilderImpl(OTHER_MODEL_INFO)));
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Model>> result =
+        Tuple.of(CURSOR, Iterables.transform(modelList, ModelInfo.TO_PB_FUNCTION));
+    when(bigqueryRpcMock.listModels(PROJECT, DATASET, EMPTY_RPC_OPTIONS)).thenReturn(result);
+    Page<Model> page = bigquery.listModels(DatasetId.of(DATASET));
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(modelList.toArray(), Iterables.toArray(page.getValues(), Model.class));
+    verify(bigqueryRpcMock).listModels(PROJECT, DATASET, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
   public void testDeleteTable() {
     when(bigqueryRpcMock.deleteTable(PROJECT, DATASET, TABLE)).thenReturn(true);
     bigquery = options.getService();
@@ -1044,6 +1128,24 @@ public class BigQueryImplTest {
     bigquery = options.getService();
     assertTrue(bigquery.delete(ModelId.of(DATASET, MODEL)));
     verify(bigqueryRpcMock).deleteModel(PROJECT, DATASET, MODEL);
+  }
+
+  @Test
+  public void testUpdateModel() {
+    ModelInfo updateModelInfo =
+        MODEL_INFO_WITH_PROJECT
+            .setProjectId(OTHER_PROJECT)
+            .toBuilder()
+            .setDescription("newDescription")
+            .build();
+    when(bigqueryRpcMock.patch(updateModelInfo.toPb(), EMPTY_RPC_OPTIONS))
+        .thenReturn(updateModelInfo.toPb());
+    BigQueryOptions bigQueryOptions =
+        createBigQueryOptionsForProject(OTHER_PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    Model actualModel = bigquery.update(updateModelInfo);
+    assertEquals(new Model(bigquery, new ModelInfo.BuilderImpl(updateModelInfo)), actualModel);
+    verify(bigqueryRpcMock).patch(updateModelInfo.toPb(), EMPTY_RPC_OPTIONS);
   }
 
   @Test
@@ -1487,6 +1589,7 @@ public class BigQueryImplTest {
   @Test
   public void testGetJobNotFoundWhenThrowIsEnabled() {
     when(bigqueryRpcMock.getJob(PROJECT, "job-not-found", null, EMPTY_RPC_OPTIONS))
+        .thenReturn(null)
         .thenThrow(new BigQueryException(404, "Job not found"));
     options.setThrowNotFound(true);
     bigquery = options.getService();
@@ -1900,7 +2003,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  public void testRetryableException() {
+  public void testGetDatasetRetryableException() {
     when(bigqueryRpcMock.getDataset(PROJECT, DATASET, EMPTY_RPC_OPTIONS))
         .thenThrow(new BigQueryException(500, "InternalError"))
         .thenReturn(DATASET_INFO_WITH_PROJECT.toPb());
@@ -1970,5 +2073,158 @@ public class BigQueryImplTest {
     } catch (UnsupportedOperationException ex) {
       Assert.assertNotNull(ex.getMessage());
     }
+  }
+
+  @Test
+  public void testCreateRoutine() {
+    RoutineInfo routineInfo = ROUTINE_INFO.setProjectId(OTHER_PROJECT);
+    when(bigqueryRpcMock.create(routineInfo.toPb(), EMPTY_RPC_OPTIONS))
+        .thenReturn(routineInfo.toPb());
+    BigQueryOptions bigQueryOptions =
+        createBigQueryOptionsForProject(OTHER_PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    Routine actualRoutine = bigquery.create(routineInfo);
+    assertEquals(new Routine(bigquery, new RoutineInfo.BuilderImpl(routineInfo)), actualRoutine);
+    verify(bigqueryRpcMock).create(routineInfo.toPb(), EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testGetRoutine() {
+    when(bigqueryRpcMock.getRoutine(PROJECT, DATASET, ROUTINE, EMPTY_RPC_OPTIONS))
+        .thenReturn(ROUTINE_INFO.toPb());
+    bigquery = options.getService();
+    Routine routine = bigquery.getRoutine(DATASET, ROUTINE);
+    assertEquals(new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO)), routine);
+    verify(bigqueryRpcMock).getRoutine(PROJECT, DATASET, ROUTINE, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testGetRoutineWithRountineId() {
+    when(bigqueryRpcMock.getRoutine(PROJECT, DATASET, ROUTINE, EMPTY_RPC_OPTIONS))
+        .thenReturn(ROUTINE_INFO.toPb());
+    bigquery = options.getService();
+    Routine routine = bigquery.getRoutine(ROUTINE_ID);
+    assertEquals(new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO)), routine);
+    verify(bigqueryRpcMock).getRoutine(PROJECT, DATASET, ROUTINE, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testGetRoutineWithEnabledThrowNotFoundException() {
+    when(bigqueryRpcMock.getRoutine(PROJECT, DATASET, ROUTINE, EMPTY_RPC_OPTIONS))
+        .thenReturn(null)
+        .thenThrow(new BigQueryException(404, "Routine not found"));
+    options.setThrowNotFound(true);
+    bigquery = options.getService();
+    try {
+      Routine routine = bigquery.getRoutine(ROUTINE_ID);
+      fail();
+    } catch (BigQueryException ex) {
+      assertEquals("Routine not found", ex.getMessage());
+    }
+    verify(bigqueryRpcMock).getRoutine(PROJECT, DATASET, ROUTINE, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testUpdateRoutine() {
+    RoutineInfo updatedRoutineInfo =
+        ROUTINE_INFO
+            .setProjectId(OTHER_PROJECT)
+            .toBuilder()
+            .setDescription("newDescription")
+            .build();
+    when(bigqueryRpcMock.update(updatedRoutineInfo.toPb(), EMPTY_RPC_OPTIONS))
+        .thenReturn(updatedRoutineInfo.toPb());
+    BigQueryOptions bigQueryOptions =
+        createBigQueryOptionsForProject(OTHER_PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    Routine routine = bigquery.update(updatedRoutineInfo);
+    assertEquals(new Routine(bigquery, new RoutineInfo.BuilderImpl(updatedRoutineInfo)), routine);
+    verify(bigqueryRpcMock).update(updatedRoutineInfo.toPb(), EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testListRoutines() {
+    bigquery = options.getService();
+    ImmutableList<Routine> routineList =
+        ImmutableList.of(new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO)));
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Routine>> result =
+        Tuple.of(CURSOR, Iterables.transform(routineList, RoutineInfo.TO_PB_FUNCTION));
+    when(bigqueryRpcMock.listRoutines(PROJECT, DATASET, EMPTY_RPC_OPTIONS)).thenReturn(result);
+    Page<Routine> page = bigquery.listRoutines(DATASET);
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(routineList.toArray(), Iterables.toArray(page.getValues(), Routine.class));
+    verify(bigqueryRpcMock).listRoutines(PROJECT, DATASET, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testListRoutinesWithDatasetId() {
+    bigquery = options.getService();
+    ImmutableList<Routine> routineList =
+        ImmutableList.of(new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO)));
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Routine>> result =
+        Tuple.of(CURSOR, Iterables.transform(routineList, RoutineInfo.TO_PB_FUNCTION));
+    when(bigqueryRpcMock.listRoutines(PROJECT, DATASET, EMPTY_RPC_OPTIONS)).thenReturn(result);
+    Page<Routine> page = bigquery.listRoutines(DatasetId.of(PROJECT, DATASET));
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(routineList.toArray(), Iterables.toArray(page.getValues(), Routine.class));
+    verify(bigqueryRpcMock).listRoutines(PROJECT, DATASET, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  public void testDeleteRoutine() {
+    when(bigqueryRpcMock.deleteRoutine(PROJECT, DATASET, ROUTINE)).thenReturn(true);
+    bigquery = options.getService();
+    assertTrue(bigquery.delete(ROUTINE_ID));
+    verify(bigqueryRpcMock).deleteRoutine(PROJECT, DATASET, ROUTINE);
+  }
+
+  @Test
+  public void testWriteWithJob() throws IOException {
+    bigquery = options.getService();
+    Job job = new Job(bigquery, new JobInfo.BuilderImpl(JOB_INFO));
+    when(bigqueryRpcMock.open(
+            new com.google.api.services.bigquery.model.Job()
+                .setJobReference(JOB_INFO.getJobId().toPb())
+                .setConfiguration(LOAD_CONFIGURATION.toPb())))
+        .thenReturn(UPLOAD_ID);
+    when(bigqueryRpcMock.write(
+            eq(UPLOAD_ID), capturedBuffer.capture(), eq(0), eq(0L), eq(0), eq(true)))
+        .thenReturn(job.toPb());
+    writer = new TableDataWriteChannel(options, JOB_INFO.getJobId(), LOAD_CONFIGURATION);
+    writer.close();
+    assertEquals(job, writer.getJob());
+    bigquery.writer(JOB_INFO.getJobId(), LOAD_CONFIGURATION);
+    verify(bigqueryRpcMock)
+        .open(
+            new com.google.api.services.bigquery.model.Job()
+                .setJobReference(JOB_INFO.getJobId().toPb())
+                .setConfiguration(LOAD_CONFIGURATION.toPb()));
+    verify(bigqueryRpcMock)
+        .write(eq(UPLOAD_ID), capturedBuffer.capture(), eq(0), eq(0L), eq(0), eq(true));
+  }
+
+  @Test
+  public void testWriteChannel() throws IOException {
+    bigquery = options.getService();
+    Job job = new Job(bigquery, new JobInfo.BuilderImpl(JOB_INFO));
+    when(bigqueryRpcMock.open(
+            new com.google.api.services.bigquery.model.Job()
+                .setJobReference(JOB_INFO.getJobId().toPb())
+                .setConfiguration(LOAD_CONFIGURATION.toPb())))
+        .thenReturn(UPLOAD_ID);
+    when(bigqueryRpcMock.write(
+            eq(UPLOAD_ID), capturedBuffer.capture(), eq(0), eq(0L), eq(0), eq(true)))
+        .thenReturn(job.toPb());
+    writer = new TableDataWriteChannel(options, JOB_INFO.getJobId(), LOAD_CONFIGURATION);
+    writer.close();
+    assertEquals(job, writer.getJob());
+    bigquery.writer(LOAD_CONFIGURATION);
+    verify(bigqueryRpcMock)
+        .open(
+            new com.google.api.services.bigquery.model.Job()
+                .setJobReference(JOB_INFO.getJobId().toPb())
+                .setConfiguration(LOAD_CONFIGURATION.toPb()));
+    verify(bigqueryRpcMock)
+        .write(eq(UPLOAD_ID), capturedBuffer.capture(), eq(0), eq(0L), eq(0), eq(true));
   }
 }

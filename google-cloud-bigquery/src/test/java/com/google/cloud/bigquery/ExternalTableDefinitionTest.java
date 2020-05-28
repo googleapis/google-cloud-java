@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -80,6 +82,15 @@ public class ExternalTableDefinitionTest {
   }
 
   @Test
+  public void testTypeNullPointerException() {
+    try {
+      EXTERNAL_TABLE_DEFINITION.toBuilder().setType(null).build();
+    } catch (NullPointerException ex) {
+      assertNotNull(ex.getMessage());
+    }
+  }
+
+  @Test
   public void testBuilder() {
     assertEquals(TableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.getType());
     assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.getCompression());
@@ -90,6 +101,7 @@ public class ExternalTableDefinitionTest {
     assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.getSourceUris());
     assertEquals(AUTODETECT, EXTERNAL_TABLE_DEFINITION.getAutodetect());
     assertEquals(HIVE_PARTITIONING_OPTIONS, EXTERNAL_TABLE_DEFINITION.getHivePartitioningOptions());
+    assertNotEquals(EXTERNAL_TABLE_DEFINITION, TableDefinition.Type.EXTERNAL);
   }
 
   @Test

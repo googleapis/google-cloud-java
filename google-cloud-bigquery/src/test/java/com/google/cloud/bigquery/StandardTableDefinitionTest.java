@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -95,6 +97,17 @@ public class StandardTableDefinitionTest {
     assertEquals(STREAMING_BUFFER, TABLE_DEFINITION.getStreamingBuffer());
     assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.getTimePartitioning());
     assertEquals(CLUSTERING, TABLE_DEFINITION.getClustering());
+    assertNotEquals(TABLE_DEFINITION, TableDefinition.Type.TABLE);
+  }
+
+  @Test
+  public void testTypeNullPointerException() {
+    try {
+      TABLE_DEFINITION.toBuilder().setType(null).build();
+      fail();
+    } catch (NullPointerException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test

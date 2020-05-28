@@ -32,6 +32,7 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.math.BigInteger;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Rule;
@@ -51,8 +52,14 @@ public class TableTest {
   private static final Long CREATION_TIME = 10L;
   private static final Long EXPIRATION_TIME = 100L;
   private static final Long LAST_MODIFIED_TIME = 20L;
+  private static final Long NUM_BYTES = 42L;
+  private static final Long NUM_LONG_TERM_BYTES = 21L;
+  private static final Long NUM_ROWS = 43L;
   private static final TableId TABLE_ID1 = TableId.of("dataset", "table1");
   private static final TableId TABLE_ID2 = TableId.of("dataset", "table2");
+  private static final Boolean REQUIRE_PARTITION_FILTER = true;
+  private static final EncryptionConfiguration ENCRYPTION_CONFIGURATION =
+      EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION =
       CopyJobConfiguration.of(TABLE_ID2, TABLE_ID1);
   private static final JobInfo COPY_JOB_INFO = JobInfo.of(COPY_JOB_CONFIGURATION);
@@ -118,6 +125,10 @@ public class TableTest {
             .setGeneratedId(GENERATED_ID)
             .setLastModifiedTime(LAST_MODIFIED_TIME)
             .setSelfLink(SELF_LINK)
+            .setNumBytes(NUM_BYTES)
+            .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
+            .setNumRows(BigInteger.valueOf(NUM_ROWS))
+            .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
             .build();
     assertEquals(TABLE_ID1, builtTable.getTableId());
     assertEquals(CREATION_TIME, builtTable.getCreationTime());
@@ -129,6 +140,10 @@ public class TableTest {
     assertEquals(LAST_MODIFIED_TIME, builtTable.getLastModifiedTime());
     assertEquals(TABLE_DEFINITION, builtTable.getDefinition());
     assertEquals(SELF_LINK, builtTable.getSelfLink());
+    assertEquals(NUM_BYTES, builtTable.getNumBytes());
+    assertEquals(NUM_LONG_TERM_BYTES, builtTable.getNumLongTermBytes());
+    assertEquals(BigInteger.valueOf(NUM_ROWS), builtTable.getNumRows());
+    assertEquals(REQUIRE_PARTITION_FILTER, builtTable.getRequirePartitionFilter());
     assertSame(bigquery, builtTable.getBigQuery());
   }
 

@@ -128,5 +128,6 @@ public class RoutineInfoTest {
     assertEquals(expected.getImportedLibraries(), value.getImportedLibraries());
     assertEquals(expected.getBody(), value.getBody());
     assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), value.toString());
   }
 }

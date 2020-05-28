@@ -20,6 +20,7 @@ import static com.google.common.collect.ObjectArrays.concat;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
@@ -471,6 +472,7 @@ public class JobTest {
 
   @Test
   public void testToAndFromPbWithoutConfiguration() {
+    assertNotEquals(expectedJob, bigquery);
     compareJob(expectedJob, Job.fromPb(bigquery, expectedJob.toPb()));
   }
 

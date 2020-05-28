@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import com.google.api.services.bigquery.model.ExplainQueryStep;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
@@ -152,6 +153,12 @@ public class QueryStageTest {
     compareQueryStep(QUERY_STEP1, QUERY_STEP1);
     compareQueryStep(QUERY_STEP2, QUERY_STEP2);
     compareQueryStage(QUERY_STAGE, QUERY_STAGE);
+  }
+
+  @Test
+  public void testNotEquals() {
+    assertNotEquals(QUERY_STAGE, QUERY_STEP1);
+    assertNotEquals(QUERY_STEP1, QUERY_STAGE);
   }
 
   private void compareQueryStage(QueryStage expected, QueryStage value) {

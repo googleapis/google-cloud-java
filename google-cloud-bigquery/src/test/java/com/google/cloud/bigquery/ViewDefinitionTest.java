@@ -18,8 +18,11 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -31,7 +34,7 @@ public class ViewDefinitionTest {
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
       ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final ViewDefinition VIEW_DEFINITION =
-      ViewDefinition.newBuilder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
+      ViewDefinition.newBuilder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).setSchema(Schema.of()).build();
 
   @Test
   public void testToBuilder() {
@@ -43,6 +46,17 @@ public class ViewDefinitionTest {
 
     viewDefinition = viewDefinition.toBuilder().setUseLegacySql(true).build();
     assertTrue(viewDefinition.useLegacySql());
+    assertNotEquals(VIEW_DEFINITION, VIEW_QUERY);
+  }
+
+  @Test
+  public void testTypeNullPointerException() {
+    try {
+      VIEW_DEFINITION.toBuilder().setType(null).build();
+      fail();
+    } catch (NullPointerException ex) {
+      assertNotNull(ex.getMessage());
+    }
   }
 
   @Test

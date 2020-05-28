@@ -30,6 +30,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.Assert;
 import org.junit.Test;
 import org.threeten.bp.Instant;
 import org.threeten.bp.ZoneOffset;
@@ -57,6 +58,34 @@ public class QueryParameterValueTest {
           .optionalEnd()
           .toFormatter()
           .withZone(ZoneOffset.UTC);
+
+  private static final QueryParameterValue QUERY_PARAMETER_VALUE =
+      QueryParameterValue.newBuilder()
+          .setType(StandardSQLTypeName.STRING)
+          .setValue("test-string")
+          .build();
+
+  @Test
+  public void testBuilder() {
+    QueryParameterValue value = QUERY_PARAMETER_VALUE.toBuilder().build();
+    assertThat(value).isEqualTo(QUERY_PARAMETER_VALUE);
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.STRING);
+    assertThat(value.getValue()).isEqualTo("test-string");
+    assertThat(value.toString()).isEqualTo(QUERY_PARAMETER_VALUE.toString());
+    assertThat(value.hashCode()).isEqualTo(QUERY_PARAMETER_VALUE.hashCode());
+    assertThat(value.equals(value)).isTrue();
+    assertThat(QUERY_PARAMETER_VALUE).isNotEqualTo(StandardSQLTypeName.STRING);
+  }
+
+  @Test
+  public void testTypeNullPointerException() {
+    try {
+      QUERY_PARAMETER_VALUE.toBuilder().setType(null).build();
+      Assert.fail();
+    } catch (NullPointerException ex) {
+      assertThat(ex).isNotNull();
+    }
+  }
 
   @Test
   public void testBool() {
