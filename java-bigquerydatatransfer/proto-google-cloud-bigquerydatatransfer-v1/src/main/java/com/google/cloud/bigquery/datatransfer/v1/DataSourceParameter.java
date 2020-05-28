@@ -463,6 +463,10 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -510,6 +514,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The paramId.
    */
+  @java.lang.Override
   public java.lang.String getParamId() {
     java.lang.Object ref = paramId_;
     if (ref instanceof java.lang.String) {
@@ -532,6 +537,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for paramId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParamIdBytes() {
     java.lang.Object ref = paramId_;
     if (ref instanceof java.lang.String) {
@@ -557,6 +563,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -579,6 +586,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -604,6 +612,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -626,6 +635,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -651,6 +661,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -665,6 +676,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type result =
@@ -687,6 +699,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The required.
    */
+  @java.lang.Override
   public boolean getRequired() {
     return required_;
   }
@@ -704,6 +717,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The repeated.
    */
+  @java.lang.Override
   public boolean getRepeated() {
     return repeated_;
   }
@@ -721,6 +735,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The validationRegex.
    */
+  @java.lang.Override
   public java.lang.String getValidationRegex() {
     java.lang.Object ref = validationRegex_;
     if (ref instanceof java.lang.String) {
@@ -743,6 +758,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for validationRegex.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValidationRegexBytes() {
     java.lang.Object ref = validationRegex_;
     if (ref instanceof java.lang.String) {
@@ -829,6 +845,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the minValue field is set.
    */
+  @java.lang.Override
   public boolean hasMinValue() {
     return minValue_ != null;
   }
@@ -843,6 +860,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The minValue.
    */
+  @java.lang.Override
   public com.google.protobuf.DoubleValue getMinValue() {
     return minValue_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : minValue_;
   }
@@ -855,6 +873,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.DoubleValue min_value = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DoubleValueOrBuilder getMinValueOrBuilder() {
     return getMinValue();
   }
@@ -872,6 +891,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the maxValue field is set.
    */
+  @java.lang.Override
   public boolean hasMaxValue() {
     return maxValue_ != null;
   }
@@ -886,6 +906,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The maxValue.
    */
+  @java.lang.Override
   public com.google.protobuf.DoubleValue getMaxValue() {
     return maxValue_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : maxValue_;
   }
@@ -898,6 +919,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DoubleValueOrBuilder getMaxValueOrBuilder() {
     return getMaxValue();
   }
@@ -913,6 +935,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>
       getFieldsList() {
     return fields_;
@@ -926,6 +949,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
       getFieldsOrBuilderList() {
@@ -940,6 +964,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
    */
+  @java.lang.Override
   public int getFieldsCount() {
     return fields_.size();
   }
@@ -952,6 +977,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getFields(int index) {
     return fields_.get(index);
   }
@@ -964,6 +990,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter fields = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder getFieldsOrBuilder(
       int index) {
     return fields_.get(index);
@@ -983,6 +1010,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The validationDescription.
    */
+  @java.lang.Override
   public java.lang.String getValidationDescription() {
     java.lang.Object ref = validationDescription_;
     if (ref instanceof java.lang.String) {
@@ -1006,6 +1034,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for validationDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValidationDescriptionBytes() {
     java.lang.Object ref = validationDescription_;
     if (ref instanceof java.lang.String) {
@@ -1031,6 +1060,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The validationHelpUrl.
    */
+  @java.lang.Override
   public java.lang.String getValidationHelpUrl() {
     java.lang.Object ref = validationHelpUrl_;
     if (ref instanceof java.lang.String) {
@@ -1053,6 +1083,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for validationHelpUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValidationHelpUrlBytes() {
     java.lang.Object ref = validationHelpUrl_;
     if (ref instanceof java.lang.String) {
@@ -1078,6 +1109,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The immutable.
    */
+  @java.lang.Override
   public boolean getImmutable() {
     return immutable_;
   }
@@ -1095,6 +1127,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The recurse.
    */
+  @java.lang.Override
   public boolean getRecurse() {
     return recurse_;
   }
@@ -1113,6 +1146,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    * @return The deprecated.
    */
+  @java.lang.Override
   public boolean getDeprecated() {
     return deprecated_;
   }
@@ -2095,6 +2129,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -2111,6 +2146,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -2126,6 +2162,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Type result =
@@ -2186,6 +2223,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      * @return The required.
      */
+    @java.lang.Override
     public boolean getRequired() {
       return required_;
     }
@@ -2237,6 +2275,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      * @return The repeated.
      */
+    @java.lang.Override
     public boolean getRepeated() {
       return repeated_;
     }
@@ -3503,6 +3542,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      * @return The immutable.
      */
+    @java.lang.Override
     public boolean getImmutable() {
       return immutable_;
     }
@@ -3554,6 +3594,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      * @return The recurse.
      */
+    @java.lang.Override
     public boolean getRecurse() {
       return recurse_;
     }
@@ -3606,6 +3647,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      * @return The deprecated.
      */
+    @java.lang.Override
     public boolean getDeprecated() {
       return deprecated_;
     }

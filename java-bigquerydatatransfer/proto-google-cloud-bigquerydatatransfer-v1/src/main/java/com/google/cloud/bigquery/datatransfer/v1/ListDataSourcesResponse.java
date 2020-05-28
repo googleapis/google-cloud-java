@@ -140,6 +140,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource> getDataSourcesList() {
     return dataSources_;
   }
@@ -152,6 +153,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>
       getDataSourcesOrBuilderList() {
     return dataSources_;
@@ -165,6 +167,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
+  @java.lang.Override
   public int getDataSourcesCount() {
     return dataSources_.size();
   }
@@ -177,6 +180,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSource getDataSources(int index) {
     return dataSources_.get(index);
   }
@@ -189,6 +193,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder getDataSourcesOrBuilder(
       int index) {
     return dataSources_.get(index);
@@ -210,6 +215,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -235,6 +241,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

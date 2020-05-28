@@ -327,6 +327,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -355,6 +356,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -436,6 +438,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -458,6 +461,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -483,6 +487,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataSourceId.
    */
+  @java.lang.Override
   public java.lang.String getDataSourceId() {
     java.lang.Object ref = dataSourceId_;
     if (ref instanceof java.lang.String) {
@@ -505,6 +510,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for dataSourceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDataSourceIdBytes() {
     java.lang.Object ref = dataSourceId_;
     if (ref instanceof java.lang.String) {
@@ -530,6 +536,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the params field is set.
    */
+  @java.lang.Override
   public boolean hasParams() {
     return params_ != null;
   }
@@ -544,6 +551,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The params.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getParams() {
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
   }
@@ -556,6 +564,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Struct params = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParamsOrBuilder() {
     return getParams();
   }
@@ -584,6 +593,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The schedule.
    */
+  @java.lang.Override
   public java.lang.String getSchedule() {
     java.lang.Object ref = schedule_;
     if (ref instanceof java.lang.String) {
@@ -617,6 +627,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for schedule.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getScheduleBytes() {
     java.lang.Object ref = schedule_;
     if (ref instanceof java.lang.String) {
@@ -642,6 +653,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the scheduleOptions field is set.
    */
+  @java.lang.Override
   public boolean hasScheduleOptions() {
     return scheduleOptions_ != null;
   }
@@ -656,6 +668,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The scheduleOptions.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions getScheduleOptions() {
     return scheduleOptions_ == null
         ? com.google.cloud.bigquery.datatransfer.v1.ScheduleOptions.getDefaultInstance()
@@ -670,6 +683,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptions schedule_options = 24;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsOrBuilder
       getScheduleOptionsOrBuilder() {
     return getScheduleOptions();
@@ -693,6 +707,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataRefreshWindowDays.
    */
+  @java.lang.Override
   public int getDataRefreshWindowDays() {
     return dataRefreshWindowDays_;
   }
@@ -711,6 +726,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The disabled.
    */
+  @java.lang.Override
   public boolean getDisabled() {
     return disabled_;
   }
@@ -729,6 +745,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -744,6 +761,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -757,6 +775,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -776,6 +795,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the nextRunTime field is set.
    */
+  @java.lang.Override
   public boolean hasNextRunTime() {
     return nextRunTime_ != null;
   }
@@ -792,6 +812,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nextRunTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getNextRunTime() {
     return nextRunTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : nextRunTime_;
   }
@@ -806,6 +827,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.protobuf.Timestamp next_run_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getNextRunTimeOrBuilder() {
     return getNextRunTime();
   }
@@ -825,6 +847,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -841,6 +864,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferState getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.datatransfer.v1.TransferState result =
@@ -863,6 +887,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userId.
    */
+  @java.lang.Override
   public long getUserId() {
     return userId_;
   }
@@ -880,6 +905,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The datasetRegion.
    */
+  @java.lang.Override
   public java.lang.String getDatasetRegion() {
     java.lang.Object ref = datasetRegion_;
     if (ref instanceof java.lang.String) {
@@ -902,6 +928,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for datasetRegion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDatasetRegionBytes() {
     java.lang.Object ref = datasetRegion_;
     if (ref instanceof java.lang.String) {
@@ -928,6 +955,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The notificationPubsubTopic.
    */
+  @java.lang.Override
   public java.lang.String getNotificationPubsubTopic() {
     java.lang.Object ref = notificationPubsubTopic_;
     if (ref instanceof java.lang.String) {
@@ -951,6 +979,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for notificationPubsubTopic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNotificationPubsubTopicBytes() {
     java.lang.Object ref = notificationPubsubTopic_;
     if (ref instanceof java.lang.String) {
@@ -977,6 +1006,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the emailPreferences field is set.
    */
+  @java.lang.Override
   public boolean hasEmailPreferences() {
     return emailPreferences_ != null;
   }
@@ -992,6 +1022,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The emailPreferences.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.EmailPreferences getEmailPreferences() {
     return emailPreferences_ == null
         ? com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.getDefaultInstance()
@@ -1007,6 +1038,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 18;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder
       getEmailPreferencesOrBuilder() {
     return getEmailPreferences();
@@ -1823,6 +1855,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The destinationDatasetId.
      */
+    @java.lang.Override
     public java.lang.String getDestinationDatasetId() {
       java.lang.Object ref = "";
       if (destinationCase_ == 2) {
@@ -1850,6 +1883,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for destinationDatasetId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDestinationDatasetIdBytes() {
       java.lang.Object ref = "";
       if (destinationCase_ == 2) {
@@ -2687,6 +2721,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dataRefreshWindowDays.
      */
+    @java.lang.Override
     public int getDataRefreshWindowDays() {
       return dataRefreshWindowDays_;
     }
@@ -2749,6 +2784,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The disabled.
      */
+    @java.lang.Override
     public boolean getDisabled() {
       return disabled_;
     }
@@ -3208,6 +3244,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -3226,6 +3263,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -3243,6 +3281,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.TransferState getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.datatransfer.v1.TransferState result =
@@ -3306,6 +3345,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The userId.
      */
+    @java.lang.Override
     public long getUserId() {
       return userId_;
     }

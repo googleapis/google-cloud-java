@@ -410,6 +410,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -575,6 +579,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -623,6 +631,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -645,6 +654,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -670,6 +680,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataSourceId.
    */
+  @java.lang.Override
   public java.lang.String getDataSourceId() {
     java.lang.Object ref = dataSourceId_;
     if (ref instanceof java.lang.String) {
@@ -692,6 +703,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for dataSourceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDataSourceIdBytes() {
     java.lang.Object ref = dataSourceId_;
     if (ref instanceof java.lang.String) {
@@ -717,6 +729,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -739,6 +752,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -764,6 +778,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -786,6 +801,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -811,6 +827,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clientId.
    */
+  @java.lang.Override
   public java.lang.String getClientId() {
     java.lang.Object ref = clientId_;
     if (ref instanceof java.lang.String) {
@@ -833,6 +850,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clientId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClientIdBytes() {
     java.lang.Object ref = clientId_;
     if (ref instanceof java.lang.String) {
@@ -929,6 +947,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for transferType.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public int getTransferTypeValue() {
     return transferType_;
@@ -946,6 +965,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The transferType.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
     @SuppressWarnings("deprecation")
@@ -969,6 +989,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The supportsMultipleTransfers.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean getSupportsMultipleTransfers() {
     return supportsMultipleTransfers_;
@@ -988,6 +1009,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateDeadlineSeconds.
    */
+  @java.lang.Override
   public int getUpdateDeadlineSeconds() {
     return updateDeadlineSeconds_;
   }
@@ -1009,6 +1031,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The defaultSchedule.
    */
+  @java.lang.Override
   public java.lang.String getDefaultSchedule() {
     java.lang.Object ref = defaultSchedule_;
     if (ref instanceof java.lang.String) {
@@ -1035,6 +1058,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for defaultSchedule.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDefaultScheduleBytes() {
     java.lang.Object ref = defaultSchedule_;
     if (ref instanceof java.lang.String) {
@@ -1062,6 +1086,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The supportsCustomSchedule.
    */
+  @java.lang.Override
   public boolean getSupportsCustomSchedule() {
     return supportsCustomSchedule_;
   }
@@ -1078,6 +1103,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>
       getParametersList() {
     return parameters_;
@@ -1092,6 +1118,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
       getParametersOrBuilderList() {
@@ -1107,6 +1134,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
    * </code>
    */
+  @java.lang.Override
   public int getParametersCount() {
     return parameters_.size();
   }
@@ -1120,6 +1148,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getParameters(int index) {
     return parameters_.get(index);
   }
@@ -1133,6 +1162,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder
       getParametersOrBuilder(int index) {
     return parameters_.get(index);
@@ -1151,6 +1181,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The helpUrl.
    */
+  @java.lang.Override
   public java.lang.String getHelpUrl() {
     java.lang.Object ref = helpUrl_;
     if (ref instanceof java.lang.String) {
@@ -1173,6 +1204,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for helpUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHelpUrlBytes() {
     java.lang.Object ref = helpUrl_;
     if (ref instanceof java.lang.String) {
@@ -1200,6 +1232,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for authorizationType.
    */
+  @java.lang.Override
   public int getAuthorizationTypeValue() {
     return authorizationType_;
   }
@@ -1216,6 +1249,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The authorizationType.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
       getAuthorizationType() {
     @SuppressWarnings("deprecation")
@@ -1244,6 +1278,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for dataRefreshType.
    */
+  @java.lang.Override
   public int getDataRefreshTypeValue() {
     return dataRefreshType_;
   }
@@ -1262,6 +1297,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataRefreshType.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType getDataRefreshType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType result =
@@ -1286,6 +1322,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The defaultDataRefreshWindowDays.
    */
+  @java.lang.Override
   public int getDefaultDataRefreshWindowDays() {
     return defaultDataRefreshWindowDays_;
   }
@@ -1304,6 +1341,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The manualRunsDisabled.
    */
+  @java.lang.Override
   public boolean getManualRunsDisabled() {
     return manualRunsDisabled_;
   }
@@ -1321,6 +1359,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the minimumScheduleInterval field is set.
    */
+  @java.lang.Override
   public boolean hasMinimumScheduleInterval() {
     return minimumScheduleInterval_ != null;
   }
@@ -1335,6 +1374,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The minimumScheduleInterval.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getMinimumScheduleInterval() {
     return minimumScheduleInterval_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -1349,6 +1389,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMinimumScheduleIntervalOrBuilder() {
     return getMinimumScheduleInterval();
   }
@@ -2756,6 +2797,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for transferType.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public int getTransferTypeValue() {
       return transferType_;
@@ -2776,6 +2818,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder setTransferTypeValue(int value) {
+
       transferType_ = value;
       onChanged();
       return this;
@@ -2793,6 +2836,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The transferType.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
       @SuppressWarnings("deprecation")
@@ -2859,6 +2903,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The supportsMultipleTransfers.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public boolean getSupportsMultipleTransfers() {
       return supportsMultipleTransfers_;
@@ -2914,6 +2959,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The updateDeadlineSeconds.
      */
+    @java.lang.Override
     public int getUpdateDeadlineSeconds() {
       return updateDeadlineSeconds_;
     }
@@ -3095,6 +3141,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The supportsCustomSchedule.
      */
+    @java.lang.Override
     public boolean getSupportsCustomSchedule() {
       return supportsCustomSchedule_;
     }
@@ -3643,6 +3690,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for authorizationType.
      */
+    @java.lang.Override
     public int getAuthorizationTypeValue() {
       return authorizationType_;
     }
@@ -3661,6 +3709,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAuthorizationTypeValue(int value) {
+
       authorizationType_ = value;
       onChanged();
       return this;
@@ -3678,6 +3727,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The authorizationType.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
         getAuthorizationType() {
       @SuppressWarnings("deprecation")
@@ -3749,6 +3799,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for dataRefreshType.
      */
+    @java.lang.Override
     public int getDataRefreshTypeValue() {
       return dataRefreshType_;
     }
@@ -3770,6 +3821,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataRefreshTypeValue(int value) {
+
       dataRefreshType_ = value;
       onChanged();
       return this;
@@ -3790,6 +3842,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dataRefreshType.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType
         getDataRefreshType() {
       @SuppressWarnings("deprecation")
@@ -3863,6 +3916,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The defaultDataRefreshWindowDays.
      */
+    @java.lang.Override
     public int getDefaultDataRefreshWindowDays() {
       return defaultDataRefreshWindowDays_;
     }
@@ -3917,6 +3971,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The manualRunsDisabled.
      */
+    @java.lang.Override
     public boolean getManualRunsDisabled() {
       return manualRunsDisabled_;
     }

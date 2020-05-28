@@ -121,6 +121,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
    *
    * @return The enableFailureEmail.
    */
+  @java.lang.Override
   public boolean getEnableFailureEmail() {
     return enableFailureEmail_;
   }
@@ -456,6 +457,7 @@ public final class EmailPreferences extends com.google.protobuf.GeneratedMessage
      *
      * @return The enableFailureEmail.
      */
+    @java.lang.Override
     public boolean getEnableFailureEmail() {
       return enableFailureEmail_;
     }

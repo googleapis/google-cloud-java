@@ -143,6 +143,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun>
       getTransferRunsList() {
     return transferRuns_;
@@ -158,6 +159,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder>
       getTransferRunsOrBuilderList() {
     return transferRuns_;
@@ -173,6 +175,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getTransferRunsCount() {
     return transferRuns_.size();
   }
@@ -187,6 +190,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRuns(int index) {
     return transferRuns_.get(index);
   }
@@ -201,6 +205,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferRun transfer_runs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder getTransferRunsOrBuilder(
       int index) {
     return transferRuns_.get(index);
@@ -222,6 +227,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +253,7 @@ public final class ListTransferRunsResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -143,6 +143,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
       getTransferConfigsList() {
     return transferConfigs_;
@@ -158,6 +159,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder>
       getTransferConfigsOrBuilderList() {
     return transferConfigs_;
@@ -173,6 +175,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getTransferConfigsCount() {
     return transferConfigs_.size();
   }
@@ -187,6 +190,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfigs(int index) {
     return transferConfigs_.get(index);
   }
@@ -201,6 +205,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
       getTransferConfigsOrBuilder(int index) {
     return transferConfigs_.get(index);
@@ -222,6 +227,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +253,7 @@ public final class ListTransferConfigsResponse extends com.google.protobuf.Gener
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

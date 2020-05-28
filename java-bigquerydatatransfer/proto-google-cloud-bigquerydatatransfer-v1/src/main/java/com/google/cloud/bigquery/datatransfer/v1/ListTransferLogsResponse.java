@@ -144,6 +144,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage>
       getTransferMessagesList() {
     return transferMessages_;
@@ -159,6 +160,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.bigquery.datatransfer.v1.TransferMessageOrBuilder>
       getTransferMessagesOrBuilderList() {
@@ -175,6 +177,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getTransferMessagesCount() {
     return transferMessages_.size();
   }
@@ -189,6 +192,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessage getTransferMessages(int index) {
     return transferMessages_.get(index);
   }
@@ -203,6 +207,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessageOrBuilder
       getTransferMessagesOrBuilder(int index) {
     return transferMessages_.get(index);
@@ -224,6 +229,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -249,6 +255,7 @@ public final class ListTransferLogsResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

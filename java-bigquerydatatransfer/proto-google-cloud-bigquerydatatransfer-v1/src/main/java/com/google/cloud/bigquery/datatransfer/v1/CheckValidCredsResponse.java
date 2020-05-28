@@ -120,6 +120,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
    *
    * @return The hasValidCreds.
    */
+  @java.lang.Override
   public boolean getHasValidCreds() {
     return hasValidCreds_;
   }
@@ -460,6 +461,7 @@ public final class CheckValidCredsResponse extends com.google.protobuf.Generated
      *
      * @return The hasValidCreds.
      */
+    @java.lang.Override
     public boolean getHasValidCreds() {
       return hasValidCreds_;
     }

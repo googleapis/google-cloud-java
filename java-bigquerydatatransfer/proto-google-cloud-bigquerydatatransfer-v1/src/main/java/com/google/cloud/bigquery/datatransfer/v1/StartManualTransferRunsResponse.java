@@ -135,6 +135,7 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> getRunsList() {
     return runs_;
   }
@@ -147,6 +148,7 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder>
       getRunsOrBuilderList() {
     return runs_;
@@ -160,6 +162,7 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
+  @java.lang.Override
   public int getRunsCount() {
     return runs_.size();
   }
@@ -172,6 +175,7 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferRun getRuns(int index) {
     return runs_.get(index);
   }
@@ -184,6 +188,7 @@ public final class StartManualTransferRunsResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder getRunsOrBuilder(
       int index) {
     return runs_.get(index);

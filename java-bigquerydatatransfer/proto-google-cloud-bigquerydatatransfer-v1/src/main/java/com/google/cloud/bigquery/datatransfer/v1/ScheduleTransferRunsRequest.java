@@ -158,6 +158,7 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +185,7 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +213,7 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -227,6 +230,7 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -241,6 +245,7 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -259,6 +264,7 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -274,6 +280,7 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -287,6 +294,7 @@ public final class ScheduleTransferRunsRequest extends com.google.protobuf.Gener
    *
    * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }

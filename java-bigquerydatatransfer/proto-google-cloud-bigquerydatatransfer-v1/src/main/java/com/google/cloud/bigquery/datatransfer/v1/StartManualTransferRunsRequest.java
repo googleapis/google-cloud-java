@@ -380,6 +380,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * @return Whether the startTime field is set.
      */
+    @java.lang.Override
     public boolean hasStartTime() {
       return startTime_ != null;
     }
@@ -397,6 +398,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * @return The startTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
@@ -412,6 +414,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       return getStartTime();
     }
@@ -432,6 +435,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * @return Whether the endTime field is set.
      */
+    @java.lang.Override
     public boolean hasEndTime() {
       return endTime_ != null;
     }
@@ -449,6 +453,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * @return The endTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
@@ -464,6 +469,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       return getEndTime();
     }
@@ -1398,6 +1404,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -1422,6 +1429,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -1448,6 +1456,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    * @return Whether the requestedTimeRange field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedTimeRange() {
     return timeCase_ == 3;
   }
@@ -1464,6 +1473,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    * @return The requestedTimeRange.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange
       getRequestedTimeRange() {
     if (timeCase_ == 3) {
@@ -1484,6 +1494,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    * .google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRangeOrBuilder
       getRequestedTimeRangeOrBuilder() {
     if (timeCase_ == 3) {
@@ -1507,6 +1518,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    * @return Whether the requestedRunTime field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedRunTime() {
     return timeCase_ == 4;
   }
@@ -1522,6 +1534,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    * @return The requestedRunTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getRequestedRunTime() {
     if (timeCase_ == 4) {
       return (com.google.protobuf.Timestamp) time_;
@@ -1538,6 +1551,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestedRunTimeOrBuilder() {
     if (timeCase_ == 4) {
       return (com.google.protobuf.Timestamp) time_;
@@ -2103,6 +2117,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * @return Whether the requestedTimeRange field is set.
      */
+    @java.lang.Override
     public boolean hasRequestedTimeRange() {
       return timeCase_ == 3;
     }
@@ -2119,6 +2134,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * @return The requestedTimeRange.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange
         getRequestedTimeRange() {
       if (requestedTimeRangeBuilder_ == null) {
@@ -2278,6 +2294,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      * .google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest
             .TimeRangeOrBuilder
         getRequestedTimeRangeOrBuilder() {
@@ -2353,6 +2370,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * @return Whether the requestedRunTime field is set.
      */
+    @java.lang.Override
     public boolean hasRequestedRunTime() {
       return timeCase_ == 4;
     }
@@ -2368,6 +2386,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * @return The requestedRunTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getRequestedRunTime() {
       if (requestedRunTimeBuilder_ == null) {
         if (timeCase_ == 4) {
@@ -2503,6 +2522,7 @@ public final class StartManualTransferRunsRequest extends com.google.protobuf.Ge
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getRequestedRunTimeOrBuilder() {
       if ((timeCase_ == 4) && (requestedRunTimeBuilder_ != null)) {
         return requestedRunTimeBuilder_.getMessageOrBuilder();

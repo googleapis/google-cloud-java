@@ -175,6 +175,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +203,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +231,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return Whether the transferConfig field is set.
    */
+  @java.lang.Override
   public boolean hasTransferConfig() {
     return transferConfig_ != null;
   }
@@ -245,6 +248,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The transferConfig.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
     return transferConfig_ == null
         ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance()
@@ -261,6 +265,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    * .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
       getTransferConfigOrBuilder() {
     return getTransferConfig();
@@ -293,6 +298,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The authorizationCode.
    */
+  @java.lang.Override
   public java.lang.String getAuthorizationCode() {
     java.lang.Object ref = authorizationCode_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +335,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for authorizationCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAuthorizationCodeBytes() {
     java.lang.Object ref = authorizationCode_;
     if (ref instanceof java.lang.String) {
@@ -359,6 +366,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The versionInfo.
    */
+  @java.lang.Override
   public java.lang.String getVersionInfo() {
     java.lang.Object ref = versionInfo_;
     if (ref instanceof java.lang.String) {
@@ -386,6 +394,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for versionInfo.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionInfoBytes() {
     java.lang.Object ref = versionInfo_;
     if (ref instanceof java.lang.String) {
@@ -414,6 +423,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The serviceAccountName.
    */
+  @java.lang.Override
   public java.lang.String getServiceAccountName() {
     java.lang.Object ref = serviceAccountName_;
     if (ref instanceof java.lang.String) {
@@ -439,6 +449,7 @@ public final class CreateTransferConfigRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for serviceAccountName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceAccountNameBytes() {
     java.lang.Object ref = serviceAccountName_;
     if (ref instanceof java.lang.String) {

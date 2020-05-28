@@ -171,6 +171,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +198,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +228,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +255,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -277,6 +281,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -316,6 +321,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * @return A list containing the messageTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity>
       getMessageTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -337,6 +343,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * @return The count of messageTypes.
    */
+  @java.lang.Override
   public int getMessageTypesCount() {
     return messageTypes_.size();
   }
@@ -355,6 +362,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * @param index The index of the element to return.
    * @return The messageTypes at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getMessageTypes(
       int index) {
     return messageTypes_converter_.convert(messageTypes_.get(index));
@@ -373,6 +381,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    *
    * @return A list containing the enum numeric values on the wire for messageTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getMessageTypesValueList() {
     return messageTypes_;
   }
@@ -391,6 +400,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of messageTypes at the given index.
    */
+  @java.lang.Override
   public int getMessageTypesValue(int index) {
     return messageTypes_.get(index);
   }
@@ -1063,6 +1073,7 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

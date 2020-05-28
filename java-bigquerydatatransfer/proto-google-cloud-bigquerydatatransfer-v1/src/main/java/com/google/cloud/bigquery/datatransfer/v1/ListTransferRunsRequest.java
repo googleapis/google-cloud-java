@@ -263,6 +263,10 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -315,6 +319,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -342,6 +347,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -382,6 +388,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return A list containing the states.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferState> getStatesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.bigquery.datatransfer.v1.TransferState>(
@@ -398,6 +405,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return The count of states.
    */
+  @java.lang.Override
   public int getStatesCount() {
     return states_.size();
   }
@@ -413,6 +421,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * @param index The index of the element to return.
    * @return The states at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.TransferState getStates(int index) {
     return states_converter_.convert(states_.get(index));
   }
@@ -427,6 +436,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return A list containing the enum numeric values on the wire for states.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getStatesValueList() {
     return states_;
   }
@@ -442,6 +452,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of states at the given index.
    */
+  @java.lang.Override
   public int getStatesValue(int index) {
     return states_.get(index);
   }
@@ -465,6 +476,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -491,6 +503,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -516,6 +529,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -535,6 +549,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return The enum numeric value on the wire for runAttempt.
    */
+  @java.lang.Override
   public int getRunAttemptValue() {
     return runAttempt_;
   }
@@ -551,6 +566,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
    *
    * @return The runAttempt.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
       getRunAttempt() {
     @SuppressWarnings("deprecation")
@@ -1478,6 +1494,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -1531,6 +1548,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      *
      * @return The enum numeric value on the wire for runAttempt.
      */
+    @java.lang.Override
     public int getRunAttemptValue() {
       return runAttempt_;
     }
@@ -1549,6 +1567,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setRunAttemptValue(int value) {
+
       runAttempt_ = value;
       onChanged();
       return this;
@@ -1566,6 +1585,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
      *
      * @return The runAttempt.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
         getRunAttempt() {
       @SuppressWarnings("deprecation")

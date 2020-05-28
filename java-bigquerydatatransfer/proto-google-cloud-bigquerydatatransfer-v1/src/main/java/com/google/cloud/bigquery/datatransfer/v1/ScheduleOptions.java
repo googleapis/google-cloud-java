@@ -153,6 +153,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return The disableAutoScheduling.
    */
+  @java.lang.Override
   public boolean getDisableAutoScheduling() {
     return disableAutoScheduling_;
   }
@@ -174,6 +175,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -192,6 +194,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -208,6 +211,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -228,6 +232,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -245,6 +250,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -260,6 +266,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -653,6 +660,7 @@ public final class ScheduleOptions extends com.google.protobuf.GeneratedMessageV
      *
      * @return The disableAutoScheduling.
      */
+    @java.lang.Override
     public boolean getDisableAutoScheduling() {
       return disableAutoScheduling_;
     }
