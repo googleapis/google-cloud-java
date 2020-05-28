@@ -276,6 +276,10 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -321,6 +325,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the entity field is set.
    */
+  @java.lang.Override
   public boolean hasEntity() {
     return entity_ != null;
   }
@@ -335,6 +340,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The entity.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Entity getEntity() {
     return entity_ == null ? com.google.datastore.v1.Entity.getDefaultInstance() : entity_;
   }
@@ -347,6 +353,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Entity entity = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityOrBuilder getEntityOrBuilder() {
     return getEntity();
   }
@@ -370,6 +377,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public long getVersion() {
     return version_;
   }
@@ -388,6 +396,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cursor.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCursor() {
     return cursor_;
   }
@@ -944,6 +953,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The version.
      */
+    @java.lang.Override
     public long getVersion() {
       return version_;
     }
@@ -1008,6 +1018,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The cursor.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCursor() {
       return cursor_;
     }

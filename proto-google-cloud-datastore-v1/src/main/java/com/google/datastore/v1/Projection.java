@@ -131,6 +131,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the property field is set.
    */
+  @java.lang.Override
   public boolean hasProperty() {
     return property_ != null;
   }
@@ -145,6 +146,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The property.
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyReference getProperty() {
     return property_ == null
         ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
@@ -159,6 +161,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {
     return getProperty();
   }

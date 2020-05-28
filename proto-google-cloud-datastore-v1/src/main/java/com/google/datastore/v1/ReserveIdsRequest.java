@@ -146,6 +146,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The databaseId.
    */
+  @java.lang.Override
   public java.lang.String getDatabaseId() {
     java.lang.Object ref = databaseId_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +218,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for databaseId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDatabaseIdBytes() {
     java.lang.Object ref = databaseId_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +244,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.Key> getKeysList() {
     return keys_;
   }
@@ -254,6 +259,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
@@ -268,6 +274,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getKeysCount() {
     return keys_.size();
   }
@@ -282,6 +289,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Key getKeys(int index) {
     return keys_.get(index);
   }
@@ -296,6 +304,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
     return keys_.get(index);
   }

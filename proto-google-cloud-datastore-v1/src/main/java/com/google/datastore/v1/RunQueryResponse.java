@@ -145,6 +145,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the batch field is set.
    */
+  @java.lang.Override
   public boolean hasBatch() {
     return batch_ != null;
   }
@@ -159,6 +160,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The batch.
    */
+  @java.lang.Override
   public com.google.datastore.v1.QueryResultBatch getBatch() {
     return batch_ == null ? com.google.datastore.v1.QueryResultBatch.getDefaultInstance() : batch_;
   }
@@ -171,6 +173,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.QueryResultBatchOrBuilder getBatchOrBuilder() {
     return getBatch();
   }
@@ -188,6 +191,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the query field is set.
    */
+  @java.lang.Override
   public boolean hasQuery() {
     return query_ != null;
   }
@@ -202,6 +206,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The query.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Query getQuery() {
     return query_ == null ? com.google.datastore.v1.Query.getDefaultInstance() : query_;
   }
@@ -214,6 +219,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.datastore.v1.Query query = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder() {
     return getQuery();
   }

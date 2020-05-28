@@ -182,6 +182,7 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the value field is set.
    */
+  @java.lang.Override
   public boolean hasValue() {
     return parameterTypeCase_ == 2;
   }
@@ -196,6 +197,7 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return The value.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Value getValue() {
     if (parameterTypeCase_ == 2) {
       return (com.google.datastore.v1.Value) parameterType_;
@@ -211,6 +213,7 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.datastore.v1.Value value = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.ValueOrBuilder getValueOrBuilder() {
     if (parameterTypeCase_ == 2) {
       return (com.google.datastore.v1.Value) parameterType_;
@@ -231,6 +234,7 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return The cursor.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCursor() {
     if (parameterTypeCase_ == 3) {
       return (com.google.protobuf.ByteString) parameterType_;
@@ -636,6 +640,7 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the value field is set.
      */
+    @java.lang.Override
     public boolean hasValue() {
       return parameterTypeCase_ == 2;
     }
@@ -650,6 +655,7 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
      *
      * @return The value.
      */
+    @java.lang.Override
     public com.google.datastore.v1.Value getValue() {
       if (valueBuilder_ == null) {
         if (parameterTypeCase_ == 2) {
@@ -781,6 +787,7 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.datastore.v1.Value value = 2;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.ValueOrBuilder getValueOrBuilder() {
       if ((parameterTypeCase_ == 2) && (valueBuilder_ != null)) {
         return valueBuilder_.getMessageOrBuilder();

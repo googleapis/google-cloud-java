@@ -130,6 +130,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +180,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The transaction.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTransaction() {
     return transaction_;
   }
@@ -631,6 +634,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The transaction.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTransaction() {
       return transaction_;
     }

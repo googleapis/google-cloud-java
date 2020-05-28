@@ -140,6 +140,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the key field is set.
    */
+  @java.lang.Override
   public boolean hasKey() {
     return key_ != null;
   }
@@ -155,6 +156,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The key.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Key getKey() {
     return key_ == null ? com.google.datastore.v1.Key.getDefaultInstance() : key_;
   }
@@ -168,6 +170,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Key key = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KeyOrBuilder getKeyOrBuilder() {
     return getKey();
   }
@@ -189,6 +192,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public long getVersion() {
     return version_;
   }
@@ -207,6 +211,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The conflictDetected.
    */
+  @java.lang.Override
   public boolean getConflictDetected() {
     return conflictDetected_;
   }
@@ -770,6 +775,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The version.
      */
+    @java.lang.Override
     public long getVersion() {
       return version_;
     }
@@ -830,6 +836,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The conflictDetected.
      */
+    @java.lang.Override
     public boolean getConflictDetected() {
       return conflictDetected_;
     }

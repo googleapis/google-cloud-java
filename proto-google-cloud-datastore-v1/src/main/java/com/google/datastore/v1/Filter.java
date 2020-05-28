@@ -191,6 +191,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the compositeFilter field is set.
    */
+  @java.lang.Override
   public boolean hasCompositeFilter() {
     return filterTypeCase_ == 1;
   }
@@ -205,6 +206,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The compositeFilter.
    */
+  @java.lang.Override
   public com.google.datastore.v1.CompositeFilter getCompositeFilter() {
     if (filterTypeCase_ == 1) {
       return (com.google.datastore.v1.CompositeFilter) filterType_;
@@ -220,6 +222,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.CompositeFilter composite_filter = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.CompositeFilterOrBuilder getCompositeFilterOrBuilder() {
     if (filterTypeCase_ == 1) {
       return (com.google.datastore.v1.CompositeFilter) filterType_;
@@ -239,6 +242,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the propertyFilter field is set.
    */
+  @java.lang.Override
   public boolean hasPropertyFilter() {
     return filterTypeCase_ == 2;
   }
@@ -253,6 +257,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The propertyFilter.
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyFilter getPropertyFilter() {
     if (filterTypeCase_ == 2) {
       return (com.google.datastore.v1.PropertyFilter) filterType_;
@@ -268,6 +273,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.PropertyFilter property_filter = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyFilterOrBuilder getPropertyFilterOrBuilder() {
     if (filterTypeCase_ == 2) {
       return (com.google.datastore.v1.PropertyFilter) filterType_;
@@ -673,6 +679,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the compositeFilter field is set.
      */
+    @java.lang.Override
     public boolean hasCompositeFilter() {
       return filterTypeCase_ == 1;
     }
@@ -687,6 +694,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The compositeFilter.
      */
+    @java.lang.Override
     public com.google.datastore.v1.CompositeFilter getCompositeFilter() {
       if (compositeFilterBuilder_ == null) {
         if (filterTypeCase_ == 1) {
@@ -819,6 +827,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.datastore.v1.CompositeFilter composite_filter = 1;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.CompositeFilterOrBuilder getCompositeFilterOrBuilder() {
       if ((filterTypeCase_ == 1) && (compositeFilterBuilder_ != null)) {
         return compositeFilterBuilder_.getMessageOrBuilder();
@@ -879,6 +888,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the propertyFilter field is set.
      */
+    @java.lang.Override
     public boolean hasPropertyFilter() {
       return filterTypeCase_ == 2;
     }
@@ -893,6 +903,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The propertyFilter.
      */
+    @java.lang.Override
     public com.google.datastore.v1.PropertyFilter getPropertyFilter() {
       if (propertyFilterBuilder_ == null) {
         if (filterTypeCase_ == 2) {
@@ -1025,6 +1036,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.datastore.v1.PropertyFilter property_filter = 2;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.PropertyFilterOrBuilder getPropertyFilterOrBuilder() {
       if ((filterTypeCase_ == 2) && (propertyFilterBuilder_ != null)) {
         return propertyFilterBuilder_.getMessageOrBuilder();

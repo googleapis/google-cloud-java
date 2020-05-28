@@ -154,6 +154,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the readOptions field is set.
    */
+  @java.lang.Override
   public boolean hasReadOptions() {
     return readOptions_ != null;
   }
@@ -215,6 +218,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The readOptions.
    */
+  @java.lang.Override
   public com.google.datastore.v1.ReadOptions getReadOptions() {
     return readOptions_ == null
         ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
@@ -229,6 +233,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.ReadOptionsOrBuilder getReadOptionsOrBuilder() {
     return getReadOptions();
   }
@@ -245,6 +250,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.Key> getKeysList() {
     return keys_;
   }
@@ -258,6 +264,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
@@ -271,6 +278,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getKeysCount() {
     return keys_.size();
   }
@@ -284,6 +292,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Key getKeys(int index) {
     return keys_.get(index);
   }
@@ -297,6 +306,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.datastore.v1.Key keys = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
     return keys_.get(index);
   }

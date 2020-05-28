@@ -233,6 +233,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +256,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -283,6 +285,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the partitionId field is set.
    */
+  @java.lang.Override
   public boolean hasPartitionId() {
     return partitionId_ != null;
   }
@@ -300,6 +303,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The partitionId.
    */
+  @java.lang.Override
   public com.google.datastore.v1.PartitionId getPartitionId() {
     return partitionId_ == null
         ? com.google.datastore.v1.PartitionId.getDefaultInstance()
@@ -317,6 +321,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.PartitionIdOrBuilder getPartitionIdOrBuilder() {
     return getPartitionId();
   }
@@ -334,6 +339,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the readOptions field is set.
    */
+  @java.lang.Override
   public boolean hasReadOptions() {
     return readOptions_ != null;
   }
@@ -348,6 +354,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The readOptions.
    */
+  @java.lang.Override
   public com.google.datastore.v1.ReadOptions getReadOptions() {
     return readOptions_ == null
         ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
@@ -362,6 +369,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.ReadOptionsOrBuilder getReadOptionsOrBuilder() {
     return getReadOptions();
   }
@@ -378,6 +386,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the query field is set.
    */
+  @java.lang.Override
   public boolean hasQuery() {
     return queryTypeCase_ == 3;
   }
@@ -392,6 +401,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The query.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Query getQuery() {
     if (queryTypeCase_ == 3) {
       return (com.google.datastore.v1.Query) queryType_;
@@ -407,6 +417,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.datastore.v1.Query query = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder() {
     if (queryTypeCase_ == 3) {
       return (com.google.datastore.v1.Query) queryType_;
@@ -426,6 +437,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the gqlQuery field is set.
    */
+  @java.lang.Override
   public boolean hasGqlQuery() {
     return queryTypeCase_ == 7;
   }
@@ -440,6 +452,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The gqlQuery.
    */
+  @java.lang.Override
   public com.google.datastore.v1.GqlQuery getGqlQuery() {
     if (queryTypeCase_ == 7) {
       return (com.google.datastore.v1.GqlQuery) queryType_;
@@ -455,6 +468,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.GqlQueryOrBuilder getGqlQueryOrBuilder() {
     if (queryTypeCase_ == 7) {
       return (com.google.datastore.v1.GqlQuery) queryType_;
@@ -1438,6 +1452,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the query field is set.
      */
+    @java.lang.Override
     public boolean hasQuery() {
       return queryTypeCase_ == 3;
     }
@@ -1452,6 +1467,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The query.
      */
+    @java.lang.Override
     public com.google.datastore.v1.Query getQuery() {
       if (queryBuilder_ == null) {
         if (queryTypeCase_ == 3) {
@@ -1582,6 +1598,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.datastore.v1.Query query = 3;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder() {
       if ((queryTypeCase_ == 3) && (queryBuilder_ != null)) {
         return queryBuilder_.getMessageOrBuilder();
@@ -1640,6 +1657,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the gqlQuery field is set.
      */
+    @java.lang.Override
     public boolean hasGqlQuery() {
       return queryTypeCase_ == 7;
     }
@@ -1654,6 +1672,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The gqlQuery.
      */
+    @java.lang.Override
     public com.google.datastore.v1.GqlQuery getGqlQuery() {
       if (gqlQueryBuilder_ == null) {
         if (queryTypeCase_ == 7) {
@@ -1785,6 +1804,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.GqlQueryOrBuilder getGqlQueryOrBuilder() {
       if ((queryTypeCase_ == 7) && (gqlQueryBuilder_ != null)) {
         return gqlQueryBuilder_.getMessageOrBuilder();

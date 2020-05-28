@@ -325,6 +325,10 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -371,6 +375,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The skippedResults.
    */
+  @java.lang.Override
   public int getSkippedResults() {
     return skippedResults_;
   }
@@ -389,6 +394,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The skippedCursor.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSkippedCursor() {
     return skippedCursor_;
   }
@@ -406,6 +412,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for entityResultType.
    */
+  @java.lang.Override
   public int getEntityResultTypeValue() {
     return entityResultType_;
   }
@@ -420,6 +427,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The entityResultType.
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityResult.ResultType getEntityResultType() {
     @SuppressWarnings("deprecation")
     com.google.datastore.v1.EntityResult.ResultType result =
@@ -438,6 +446,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.datastore.v1.EntityResult entity_results = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.EntityResult> getEntityResultsList() {
     return entityResults_;
   }
@@ -450,6 +459,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.datastore.v1.EntityResult entity_results = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder>
       getEntityResultsOrBuilderList() {
     return entityResults_;
@@ -463,6 +473,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.datastore.v1.EntityResult entity_results = 2;</code>
    */
+  @java.lang.Override
   public int getEntityResultsCount() {
     return entityResults_.size();
   }
@@ -475,6 +486,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.datastore.v1.EntityResult entity_results = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityResult getEntityResults(int index) {
     return entityResults_.get(index);
   }
@@ -487,6 +499,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.datastore.v1.EntityResult entity_results = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityResultOrBuilder getEntityResultsOrBuilder(int index) {
     return entityResults_.get(index);
   }
@@ -504,6 +517,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The endCursor.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndCursor() {
     return endCursor_;
   }
@@ -521,6 +535,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for moreResults.
    */
+  @java.lang.Override
   public int getMoreResultsValue() {
     return moreResults_;
   }
@@ -535,6 +550,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The moreResults.
    */
+  @java.lang.Override
   public com.google.datastore.v1.QueryResultBatch.MoreResultsType getMoreResults() {
     @SuppressWarnings("deprecation")
     com.google.datastore.v1.QueryResultBatch.MoreResultsType result =
@@ -564,6 +580,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    *
    * @return The snapshotVersion.
    */
+  @java.lang.Override
   public long getSnapshotVersion() {
     return snapshotVersion_;
   }
@@ -1033,6 +1050,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The skippedResults.
      */
+    @java.lang.Override
     public int getSkippedResults() {
       return skippedResults_;
     }
@@ -1085,6 +1103,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The skippedCursor.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSkippedCursor() {
       return skippedCursor_;
     }
@@ -1141,6 +1160,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for entityResultType.
      */
+    @java.lang.Override
     public int getEntityResultTypeValue() {
       return entityResultType_;
     }
@@ -1157,6 +1177,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEntityResultTypeValue(int value) {
+
       entityResultType_ = value;
       onChanged();
       return this;
@@ -1172,6 +1193,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The entityResultType.
      */
+    @java.lang.Override
     public com.google.datastore.v1.EntityResult.ResultType getEntityResultType() {
       @SuppressWarnings("deprecation")
       com.google.datastore.v1.EntityResult.ResultType result =
@@ -1582,6 +1604,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The endCursor.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEndCursor() {
       return endCursor_;
     }
@@ -1636,6 +1659,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for moreResults.
      */
+    @java.lang.Override
     public int getMoreResultsValue() {
       return moreResults_;
     }
@@ -1652,6 +1676,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setMoreResultsValue(int value) {
+
       moreResults_ = value;
       onChanged();
       return this;
@@ -1667,6 +1692,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The moreResults.
      */
+    @java.lang.Override
     public com.google.datastore.v1.QueryResultBatch.MoreResultsType getMoreResults() {
       @SuppressWarnings("deprecation")
       com.google.datastore.v1.QueryResultBatch.MoreResultsType result =
@@ -1733,6 +1759,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      *
      * @return The snapshotVersion.
      */
+    @java.lang.Override
     public long getSnapshotVersion() {
       return snapshotVersion_;
     }

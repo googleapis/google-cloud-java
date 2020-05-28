@@ -237,6 +237,10 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -375,6 +379,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The transaction.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTransaction() {
     if (consistencyTypeCase_ == 2) {
       return (com.google.protobuf.ByteString) consistencyType_;
@@ -769,6 +774,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for readConsistency.
      */
+    @java.lang.Override
     public int getReadConsistencyValue() {
       if (consistencyTypeCase_ == 1) {
         return ((java.lang.Integer) consistencyType_).intValue();
@@ -806,6 +812,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The readConsistency.
      */
+    @java.lang.Override
     public com.google.datastore.v1.ReadOptions.ReadConsistency getReadConsistency() {
       if (consistencyTypeCase_ == 1) {
         @SuppressWarnings("deprecation")

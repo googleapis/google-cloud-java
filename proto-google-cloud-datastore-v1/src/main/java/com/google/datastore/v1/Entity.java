@@ -163,6 +163,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the key field is set.
    */
+  @java.lang.Override
   public boolean hasKey() {
     return key_ != null;
   }
@@ -181,6 +182,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The key.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Key getKey() {
     return key_ == null ? com.google.datastore.v1.Key.getDefaultInstance() : key_;
   }
@@ -197,6 +199,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Key key = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KeyOrBuilder getKeyOrBuilder() {
     return getKey();
   }
@@ -243,6 +246,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
    */
+  @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -250,6 +254,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     return internalGetProperties().getMap().containsKey(key);
   }
   /** Use {@link #getPropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.datastore.v1.Value> getProperties() {
     return getPropertiesMap();
@@ -268,6 +273,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.datastore.v1.Value> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
@@ -285,6 +291,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Value getPropertiesOrDefault(
       java.lang.String key, com.google.datastore.v1.Value defaultValue) {
     if (key == null) {
@@ -308,6 +315,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Value getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -947,6 +955,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
      */
+    @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -954,6 +963,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       return internalGetProperties().getMap().containsKey(key);
     }
     /** Use {@link #getPropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.datastore.v1.Value> getProperties() {
       return getPropertiesMap();
@@ -972,6 +982,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.datastore.v1.Value> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
@@ -989,6 +1000,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.Value getPropertiesOrDefault(
         java.lang.String key, com.google.datastore.v1.Value defaultValue) {
       if (key == null) {
@@ -1012,6 +1024,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.Value getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

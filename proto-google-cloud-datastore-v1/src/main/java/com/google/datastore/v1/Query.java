@@ -220,6 +220,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.Projection> getProjectionList() {
     return projection_;
   }
@@ -232,6 +233,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.ProjectionOrBuilder>
       getProjectionOrBuilderList() {
     return projection_;
@@ -245,6 +247,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
+  @java.lang.Override
   public int getProjectionCount() {
     return projection_.size();
   }
@@ -257,6 +260,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Projection getProjection(int index) {
     return projection_.get(index);
   }
@@ -269,6 +273,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.ProjectionOrBuilder getProjectionOrBuilder(int index) {
     return projection_.get(index);
   }
@@ -285,6 +290,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.KindExpression> getKindList() {
     return kind_;
   }
@@ -298,6 +304,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.KindExpressionOrBuilder>
       getKindOrBuilderList() {
     return kind_;
@@ -312,6 +319,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
+  @java.lang.Override
   public int getKindCount() {
     return kind_.size();
   }
@@ -325,6 +333,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KindExpression getKind(int index) {
     return kind_.get(index);
   }
@@ -338,6 +347,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KindExpressionOrBuilder getKindOrBuilder(int index) {
     return kind_.get(index);
   }
@@ -355,6 +365,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the filter field is set.
    */
+  @java.lang.Override
   public boolean hasFilter() {
     return filter_ != null;
   }
@@ -369,6 +380,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The filter.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Filter getFilter() {
     return filter_ == null ? com.google.datastore.v1.Filter.getDefaultInstance() : filter_;
   }
@@ -381,6 +393,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Filter filter = 4;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.FilterOrBuilder getFilterOrBuilder() {
     return getFilter();
   }
@@ -396,6 +409,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.PropertyOrder> getOrderList() {
     return order_;
   }
@@ -408,6 +422,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.PropertyOrderOrBuilder>
       getOrderOrBuilderList() {
     return order_;
@@ -421,6 +436,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
+  @java.lang.Override
   public int getOrderCount() {
     return order_.size();
   }
@@ -433,6 +449,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyOrder getOrder(int index) {
     return order_.get(index);
   }
@@ -445,6 +462,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyOrderOrBuilder getOrderOrBuilder(int index) {
     return order_.get(index);
   }
@@ -462,6 +480,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.PropertyReference> getDistinctOnList() {
     return distinctOn_;
   }
@@ -476,6 +495,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.PropertyReferenceOrBuilder>
       getDistinctOnOrBuilderList() {
     return distinctOn_;
@@ -491,6 +511,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
+  @java.lang.Override
   public int getDistinctOnCount() {
     return distinctOn_.size();
   }
@@ -505,6 +526,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyReference getDistinctOn(int index) {
     return distinctOn_.get(index);
   }
@@ -519,6 +541,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyReferenceOrBuilder getDistinctOnOrBuilder(int index) {
     return distinctOn_.get(index);
   }
@@ -539,6 +562,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startCursor.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartCursor() {
     return startCursor_;
   }
@@ -559,6 +583,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endCursor.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndCursor() {
     return endCursor_;
   }
@@ -577,6 +602,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The offset.
    */
+  @java.lang.Override
   public int getOffset() {
     return offset_;
   }
@@ -597,6 +623,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the limit field is set.
    */
+  @java.lang.Override
   public boolean hasLimit() {
     return limit_ != null;
   }
@@ -614,6 +641,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The limit.
    */
+  @java.lang.Override
   public com.google.protobuf.Int32Value getLimit() {
     return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
   }
@@ -629,6 +657,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Int32Value limit = 12;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Int32ValueOrBuilder getLimitOrBuilder() {
     return getLimit();
   }
@@ -2893,6 +2922,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The startCursor.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getStartCursor() {
       return startCursor_;
     }
@@ -2956,6 +2986,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The endCursor.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEndCursor() {
       return endCursor_;
     }
@@ -3017,6 +3048,7 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The offset.
      */
+    @java.lang.Override
     public int getOffset() {
       return offset_;
     }

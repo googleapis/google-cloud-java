@@ -137,6 +137,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.MutationResult mutation_results = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.MutationResult> getMutationResultsList() {
     return mutationResults_;
   }
@@ -150,6 +151,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.MutationResult mutation_results = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.MutationResultOrBuilder>
       getMutationResultsOrBuilderList() {
     return mutationResults_;
@@ -164,6 +166,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.MutationResult mutation_results = 3;</code>
    */
+  @java.lang.Override
   public int getMutationResultsCount() {
     return mutationResults_.size();
   }
@@ -177,6 +180,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.MutationResult mutation_results = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.MutationResult getMutationResults(int index) {
     return mutationResults_.get(index);
   }
@@ -190,6 +194,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.MutationResult mutation_results = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.MutationResultOrBuilder getMutationResultsOrBuilder(int index) {
     return mutationResults_.get(index);
   }
@@ -208,6 +213,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The indexUpdates.
    */
+  @java.lang.Override
   public int getIndexUpdates() {
     return indexUpdates_;
   }
@@ -969,6 +975,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The indexUpdates.
      */
+    @java.lang.Override
     public int getIndexUpdates() {
       return indexUpdates_;
     }

@@ -177,6 +177,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The queryString.
    */
+  @java.lang.Override
   public java.lang.String getQueryString() {
     java.lang.Object ref = queryString_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +201,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for queryString.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQueryStringBytes() {
     java.lang.Object ref = queryString_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +230,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The allowLiterals.
    */
+  @java.lang.Override
   public boolean getAllowLiterals() {
     return allowLiterals_;
   }
@@ -275,6 +278,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
+  @java.lang.Override
   public boolean containsNamedBindings(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -282,6 +286,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
     return internalGetNamedBindings().getMap().containsKey(key);
   }
   /** Use {@link #getNamedBindingsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
       getNamedBindings() {
@@ -299,6 +304,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
       getNamedBindingsMap() {
     return internalGetNamedBindings().getMap();
@@ -315,6 +321,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrDefault(
       java.lang.String key, com.google.datastore.v1.GqlQueryParameter defaultValue) {
     if (key == null) {
@@ -336,6 +343,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -362,6 +370,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.GqlQueryParameter> getPositionalBindingsList() {
     return positionalBindings_;
   }
@@ -377,6 +386,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.GqlQueryParameterOrBuilder>
       getPositionalBindingsOrBuilderList() {
     return positionalBindings_;
@@ -393,6 +403,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
    */
+  @java.lang.Override
   public int getPositionalBindingsCount() {
     return positionalBindings_.size();
   }
@@ -408,6 +419,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.GqlQueryParameter getPositionalBindings(int index) {
     return positionalBindings_.get(index);
   }
@@ -423,6 +435,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.GqlQueryParameterOrBuilder getPositionalBindingsOrBuilder(
       int index) {
     return positionalBindings_.get(index);
@@ -984,6 +997,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The allowLiterals.
      */
+    @java.lang.Override
     public boolean getAllowLiterals() {
       return allowLiterals_;
     }
@@ -1073,6 +1087,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
+    @java.lang.Override
     public boolean containsNamedBindings(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1080,6 +1095,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
       return internalGetNamedBindings().getMap().containsKey(key);
     }
     /** Use {@link #getNamedBindingsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
         getNamedBindings() {
@@ -1097,6 +1113,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
         getNamedBindingsMap() {
       return internalGetNamedBindings().getMap();
@@ -1113,6 +1130,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrDefault(
         java.lang.String key, com.google.datastore.v1.GqlQueryParameter defaultValue) {
       if (key == null) {
@@ -1134,6 +1152,7 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

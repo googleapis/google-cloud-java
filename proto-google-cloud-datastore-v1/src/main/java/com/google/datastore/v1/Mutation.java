@@ -277,6 +277,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the insert field is set.
    */
+  @java.lang.Override
   public boolean hasInsert() {
     return operationCase_ == 4;
   }
@@ -292,6 +293,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The insert.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Entity getInsert() {
     if (operationCase_ == 4) {
       return (com.google.datastore.v1.Entity) operation_;
@@ -308,6 +310,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Entity insert = 4;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityOrBuilder getInsertOrBuilder() {
     if (operationCase_ == 4) {
       return (com.google.datastore.v1.Entity) operation_;
@@ -328,6 +331,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the update field is set.
    */
+  @java.lang.Override
   public boolean hasUpdate() {
     return operationCase_ == 5;
   }
@@ -343,6 +347,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The update.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Entity getUpdate() {
     if (operationCase_ == 5) {
       return (com.google.datastore.v1.Entity) operation_;
@@ -359,6 +364,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Entity update = 5;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityOrBuilder getUpdateOrBuilder() {
     if (operationCase_ == 5) {
       return (com.google.datastore.v1.Entity) operation_;
@@ -379,6 +385,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the upsert field is set.
    */
+  @java.lang.Override
   public boolean hasUpsert() {
     return operationCase_ == 6;
   }
@@ -394,6 +401,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The upsert.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Entity getUpsert() {
     if (operationCase_ == 6) {
       return (com.google.datastore.v1.Entity) operation_;
@@ -410,6 +418,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Entity upsert = 6;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityOrBuilder getUpsertOrBuilder() {
     if (operationCase_ == 6) {
       return (com.google.datastore.v1.Entity) operation_;
@@ -430,6 +439,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the delete field is set.
    */
+  @java.lang.Override
   public boolean hasDelete() {
     return operationCase_ == 7;
   }
@@ -445,6 +455,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The delete.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Key getDelete() {
     if (operationCase_ == 7) {
       return (com.google.datastore.v1.Key) operation_;
@@ -461,6 +472,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Key delete = 7;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KeyOrBuilder getDeleteOrBuilder() {
     if (operationCase_ == 7) {
       return (com.google.datastore.v1.Key) operation_;
@@ -481,6 +493,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The baseVersion.
    */
+  @java.lang.Override
   public long getBaseVersion() {
     if (conflictDetectionStrategyCase_ == 8) {
       return (java.lang.Long) conflictDetectionStrategy_;
@@ -998,6 +1011,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the insert field is set.
      */
+    @java.lang.Override
     public boolean hasInsert() {
       return operationCase_ == 4;
     }
@@ -1013,6 +1027,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The insert.
      */
+    @java.lang.Override
     public com.google.datastore.v1.Entity getInsert() {
       if (insertBuilder_ == null) {
         if (operationCase_ == 4) {
@@ -1149,6 +1164,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.datastore.v1.Entity insert = 4;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.EntityOrBuilder getInsertOrBuilder() {
       if ((operationCase_ == 4) && (insertBuilder_ != null)) {
         return insertBuilder_.getMessageOrBuilder();
@@ -1209,6 +1225,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the update field is set.
      */
+    @java.lang.Override
     public boolean hasUpdate() {
       return operationCase_ == 5;
     }
@@ -1224,6 +1241,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The update.
      */
+    @java.lang.Override
     public com.google.datastore.v1.Entity getUpdate() {
       if (updateBuilder_ == null) {
         if (operationCase_ == 5) {
@@ -1360,6 +1378,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.datastore.v1.Entity update = 5;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.EntityOrBuilder getUpdateOrBuilder() {
       if ((operationCase_ == 5) && (updateBuilder_ != null)) {
         return updateBuilder_.getMessageOrBuilder();
@@ -1420,6 +1439,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the upsert field is set.
      */
+    @java.lang.Override
     public boolean hasUpsert() {
       return operationCase_ == 6;
     }
@@ -1435,6 +1455,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The upsert.
      */
+    @java.lang.Override
     public com.google.datastore.v1.Entity getUpsert() {
       if (upsertBuilder_ == null) {
         if (operationCase_ == 6) {
@@ -1571,6 +1592,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.datastore.v1.Entity upsert = 6;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.EntityOrBuilder getUpsertOrBuilder() {
       if ((operationCase_ == 6) && (upsertBuilder_ != null)) {
         return upsertBuilder_.getMessageOrBuilder();
@@ -1631,6 +1653,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the delete field is set.
      */
+    @java.lang.Override
     public boolean hasDelete() {
       return operationCase_ == 7;
     }
@@ -1646,6 +1669,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The delete.
      */
+    @java.lang.Override
     public com.google.datastore.v1.Key getDelete() {
       if (deleteBuilder_ == null) {
         if (operationCase_ == 7) {
@@ -1781,6 +1805,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.datastore.v1.Key delete = 7;</code>
      */
+    @java.lang.Override
     public com.google.datastore.v1.KeyOrBuilder getDeleteOrBuilder() {
       if ((operationCase_ == 7) && (deleteBuilder_ != null)) {
         return deleteBuilder_.getMessageOrBuilder();

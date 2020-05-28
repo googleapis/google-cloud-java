@@ -265,6 +265,10 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -354,6 +358,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -376,6 +381,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -401,6 +407,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for mode.
    */
+  @java.lang.Override
   public int getModeValue() {
     return mode_;
   }
@@ -415,6 +422,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mode.
    */
+  @java.lang.Override
   public com.google.datastore.v1.CommitRequest.Mode getMode() {
     @SuppressWarnings("deprecation")
     com.google.datastore.v1.CommitRequest.Mode result =
@@ -436,6 +444,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The transaction.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTransaction() {
     if (transactionSelectorCase_ == 1) {
       return (com.google.protobuf.ByteString) transactionSelector_;
@@ -463,6 +472,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.Mutation> getMutationsList() {
     return mutations_;
   }
@@ -484,6 +494,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.MutationOrBuilder>
       getMutationsOrBuilderList() {
     return mutations_;
@@ -506,6 +517,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
+  @java.lang.Override
   public int getMutationsCount() {
     return mutations_.size();
   }
@@ -527,6 +539,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Mutation getMutations(int index) {
     return mutations_.get(index);
   }
@@ -548,6 +561,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.MutationOrBuilder getMutationsOrBuilder(int index) {
     return mutations_.get(index);
   }
@@ -1112,6 +1126,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for mode.
      */
+    @java.lang.Override
     public int getModeValue() {
       return mode_;
     }
@@ -1128,6 +1143,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
+
       mode_ = value;
       onChanged();
       return this;
@@ -1143,6 +1159,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mode.
      */
+    @java.lang.Override
     public com.google.datastore.v1.CommitRequest.Mode getMode() {
       @SuppressWarnings("deprecation")
       com.google.datastore.v1.CommitRequest.Mode result =

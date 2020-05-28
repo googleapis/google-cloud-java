@@ -161,6 +161,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.EntityResult> getFoundList() {
     return found_;
   }
@@ -175,6 +176,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder>
       getFoundOrBuilderList() {
     return found_;
@@ -190,6 +192,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
+  @java.lang.Override
   public int getFoundCount() {
     return found_.size();
   }
@@ -204,6 +207,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityResult getFound(int index) {
     return found_.get(index);
   }
@@ -218,6 +222,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityResultOrBuilder getFoundOrBuilder(int index) {
     return found_.get(index);
   }
@@ -235,6 +240,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.EntityResult> getMissingList() {
     return missing_;
   }
@@ -249,6 +255,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder>
       getMissingOrBuilderList() {
     return missing_;
@@ -264,6 +271,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
+  @java.lang.Override
   public int getMissingCount() {
     return missing_.size();
   }
@@ -278,6 +286,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityResult getMissing(int index) {
     return missing_.get(index);
   }
@@ -292,6 +301,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.EntityResultOrBuilder getMissingOrBuilder(int index) {
     return missing_.get(index);
   }
@@ -309,6 +319,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.Key> getDeferredList() {
     return deferred_;
   }
@@ -323,6 +334,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getDeferredOrBuilderList() {
     return deferred_;
   }
@@ -337,6 +349,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
+  @java.lang.Override
   public int getDeferredCount() {
     return deferred_.size();
   }
@@ -351,6 +364,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Key getDeferred(int index) {
     return deferred_.get(index);
   }
@@ -365,6 +379,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KeyOrBuilder getDeferredOrBuilder(int index) {
     return deferred_.get(index);
   }

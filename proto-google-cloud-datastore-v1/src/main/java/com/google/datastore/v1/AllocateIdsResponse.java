@@ -129,6 +129,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.Key> getKeysList() {
     return keys_;
   }
@@ -142,6 +143,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
@@ -155,6 +157,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public int getKeysCount() {
     return keys_.size();
   }
@@ -168,6 +171,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Key getKeys(int index) {
     return keys_.get(index);
   }
@@ -181,6 +185,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
     return keys_.get(index);
   }

@@ -225,6 +225,10 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -270,6 +274,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for op.
    */
+  @java.lang.Override
   public int getOpValue() {
     return op_;
   }
@@ -284,6 +289,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The op.
    */
+  @java.lang.Override
   public com.google.datastore.v1.CompositeFilter.Operator getOp() {
     @SuppressWarnings("deprecation")
     com.google.datastore.v1.CompositeFilter.Operator result =
@@ -303,6 +309,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.datastore.v1.Filter> getFiltersList() {
     return filters_;
   }
@@ -316,6 +323,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.datastore.v1.FilterOrBuilder>
       getFiltersOrBuilderList() {
     return filters_;
@@ -330,6 +338,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
+  @java.lang.Override
   public int getFiltersCount() {
     return filters_.size();
   }
@@ -343,6 +352,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.Filter getFilters(int index) {
     return filters_.get(index);
   }
@@ -356,6 +366,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.FilterOrBuilder getFiltersOrBuilder(int index) {
     return filters_.get(index);
   }
@@ -744,6 +755,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for op.
      */
+    @java.lang.Override
     public int getOpValue() {
       return op_;
     }
@@ -760,6 +772,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setOpValue(int value) {
+
       op_ = value;
       onChanged();
       return this;
@@ -775,6 +788,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * @return The op.
      */
+    @java.lang.Override
     public com.google.datastore.v1.CompositeFilter.Operator getOp() {
       @SuppressWarnings("deprecation")
       com.google.datastore.v1.CompositeFilter.Operator result =

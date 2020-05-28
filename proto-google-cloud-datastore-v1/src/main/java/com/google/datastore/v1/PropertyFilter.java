@@ -350,6 +350,10 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -395,6 +399,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the property field is set.
    */
+  @java.lang.Override
   public boolean hasProperty() {
     return property_ != null;
   }
@@ -409,6 +414,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The property.
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyReference getProperty() {
     return property_ == null
         ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
@@ -423,6 +429,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {
     return getProperty();
   }
@@ -440,6 +447,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for op.
    */
+  @java.lang.Override
   public int getOpValue() {
     return op_;
   }
@@ -454,6 +462,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The op.
    */
+  @java.lang.Override
   public com.google.datastore.v1.PropertyFilter.Operator getOp() {
     @SuppressWarnings("deprecation")
     com.google.datastore.v1.PropertyFilter.Operator result =
@@ -474,6 +483,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the value field is set.
    */
+  @java.lang.Override
   public boolean hasValue() {
     return value_ != null;
   }
@@ -488,6 +498,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public com.google.datastore.v1.Value getValue() {
     return value_ == null ? com.google.datastore.v1.Value.getDefaultInstance() : value_;
   }
@@ -500,6 +511,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.datastore.v1.Value value = 3;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.ValueOrBuilder getValueOrBuilder() {
     return getValue();
   }
@@ -1071,6 +1083,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for op.
      */
+    @java.lang.Override
     public int getOpValue() {
       return op_;
     }
@@ -1087,6 +1100,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOpValue(int value) {
+
       op_ = value;
       onChanged();
       return this;
@@ -1102,6 +1116,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The op.
      */
+    @java.lang.Override
     public com.google.datastore.v1.PropertyFilter.Operator getOp() {
       @SuppressWarnings("deprecation")
       com.google.datastore.v1.PropertyFilter.Operator result =

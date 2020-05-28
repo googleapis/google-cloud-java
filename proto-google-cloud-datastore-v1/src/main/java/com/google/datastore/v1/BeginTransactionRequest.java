@@ -140,6 +140,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    * @return Whether the transactionOptions field is set.
    */
+  @java.lang.Override
   public boolean hasTransactionOptions() {
     return transactionOptions_ != null;
   }
@@ -201,6 +204,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    * @return The transactionOptions.
    */
+  @java.lang.Override
   public com.google.datastore.v1.TransactionOptions getTransactionOptions() {
     return transactionOptions_ == null
         ? com.google.datastore.v1.TransactionOptions.getDefaultInstance()
@@ -215,6 +219,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    * <code>.google.datastore.v1.TransactionOptions transaction_options = 10;</code>
    */
+  @java.lang.Override
   public com.google.datastore.v1.TransactionOptionsOrBuilder getTransactionOptionsOrBuilder() {
     return getTransactionOptions();
   }
