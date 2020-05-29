@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage</artifactId>
-  <version>0.133.0-beta</version>
+  <version>0.133.2-beta</version>
 </dependency>
 
 ```
@@ -89,6 +89,17 @@ use this BigQuery Storage Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-bigquerystorage/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Storage Arrow Sample | [source code](https://github.com/googleapis/java-bigquerystorage/blob/master/samples/snippets/src/main/java/com/example/bigquerystorage/StorageArrowSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/StorageArrowSample.java) |
+| Storage Sample | [source code](https://github.com/googleapis/java-bigquerystorage/blob/master/samples/snippets/src/main/java/com/example/bigquerystorage/StorageSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerystorage&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerystorage/StorageSample.java) |
 
 
 
