@@ -63,7 +63,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquery-parent</site.installationModule>
-    <javax.annotations.version>1.3.2</javax.annotations.version>
     <google-api-services-bigquery.version>v2-rev20200429-1.30.9
     </google-api-services-bigquery.version>
   </properties>
@@ -217,5 +216,4 @@
       </modules>
     </profile>
   </profiles>
-
 </project>
