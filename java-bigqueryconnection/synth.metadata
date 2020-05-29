@@ -3,23 +3,31 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-bigqueryconnection.git",
-        "sha": "7bb7a4b179b61d3b93988189b0643a570174585b"
+        "remote": "git@github.com:stephaniewang526/java-bigqueryconnection.git",
+        "sha": "51741de087d29a3b272f0f74548eaf0633ca7d17"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5a90d467aa65e7f038f87585e8fbb45d74475e7c",
-        "internalRef": "312088359"
+        "sha": "9309ee73424d2798a2557d607dfb3e91c8a433fb",
+        "internalRef": "313826599"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "9309ee73424d2798a2557d607dfb3e91c8a433fb",
+        "internalRef": "313826599"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b48b0716a36ca069db3038da7e205c87a22ed19"
+        "sha": "385d537832113984af2d033aaf353f0432256527"
       }
     }
   ],
@@ -29,6 +37,15 @@
         "source": "googleapis",
         "apiName": "bigquery-connection",
         "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "bigquery-connection",
+        "apiVersion": "v1",
         "language": "java",
         "generator": "bazel"
       }

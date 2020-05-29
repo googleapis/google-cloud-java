@@ -268,6 +268,7 @@ public final class ConnectionProto {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -293,6 +294,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -318,6 +320,7 @@ public final class ConnectionProto {
      *
      * @return The connectionId.
      */
+    @java.lang.Override
     public java.lang.String getConnectionId() {
       java.lang.Object ref = connectionId_;
       if (ref instanceof java.lang.String) {
@@ -340,6 +343,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for connectionId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getConnectionIdBytes() {
       java.lang.Object ref = connectionId_;
       if (ref instanceof java.lang.String) {
@@ -367,6 +371,7 @@ public final class ConnectionProto {
      *
      * @return Whether the connection field is set.
      */
+    @java.lang.Override
     public boolean hasConnection() {
       return connection_ != null;
     }
@@ -383,6 +388,7 @@ public final class ConnectionProto {
      *
      * @return The connection.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection getConnection() {
       return connection_ == null
           ? com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection
@@ -400,6 +406,7 @@ public final class ConnectionProto {
      * .google.cloud.bigquery.connection.v1beta1.Connection connection = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder
         getConnectionOrBuilder() {
       return getConnection();
@@ -1460,6 +1467,7 @@ public final class ConnectionProto {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1485,6 +1493,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2257,6 +2266,7 @@ public final class ConnectionProto {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -2282,6 +2292,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -2308,6 +2319,7 @@ public final class ConnectionProto {
      *
      * @return Whether the maxResults field is set.
      */
+    @java.lang.Override
     public boolean hasMaxResults() {
       return maxResults_ != null;
     }
@@ -2323,6 +2335,7 @@ public final class ConnectionProto {
      *
      * @return The maxResults.
      */
+    @java.lang.Override
     public com.google.protobuf.UInt32Value getMaxResults() {
       return maxResults_ == null
           ? com.google.protobuf.UInt32Value.getDefaultInstance()
@@ -2338,6 +2351,7 @@ public final class ConnectionProto {
      * <code>.google.protobuf.UInt32Value max_results = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.UInt32ValueOrBuilder getMaxResultsOrBuilder() {
       return getMaxResults();
     }
@@ -2355,6 +2369,7 @@ public final class ConnectionProto {
      *
      * @return The pageToken.
      */
+    @java.lang.Override
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof java.lang.String) {
@@ -2377,6 +2392,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for pageToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof java.lang.String) {
@@ -3500,6 +3516,7 @@ public final class ConnectionProto {
      *
      * @return The nextPageToken.
      */
+    @java.lang.Override
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof java.lang.String) {
@@ -3522,6 +3539,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for nextPageToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof java.lang.String) {
@@ -3546,6 +3564,7 @@ public final class ConnectionProto {
      *
      * <code>repeated .google.cloud.bigquery.connection.v1beta1.Connection connections = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>
         getConnectionsList() {
       return connections_;
@@ -3559,6 +3578,7 @@ public final class ConnectionProto {
      *
      * <code>repeated .google.cloud.bigquery.connection.v1beta1.Connection connections = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder>
@@ -3574,6 +3594,7 @@ public final class ConnectionProto {
      *
      * <code>repeated .google.cloud.bigquery.connection.v1beta1.Connection connections = 2;</code>
      */
+    @java.lang.Override
     public int getConnectionsCount() {
       return connections_.size();
     }
@@ -3586,6 +3607,7 @@ public final class ConnectionProto {
      *
      * <code>repeated .google.cloud.bigquery.connection.v1beta1.Connection connections = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection getConnections(
         int index) {
       return connections_.get(index);
@@ -3599,6 +3621,7 @@ public final class ConnectionProto {
      *
      * <code>repeated .google.cloud.bigquery.connection.v1beta1.Connection connections = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder
         getConnectionsOrBuilder(int index) {
       return connections_.get(index);
@@ -4836,6 +4859,7 @@ public final class ConnectionProto {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -4861,6 +4885,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -4888,6 +4913,7 @@ public final class ConnectionProto {
      *
      * @return Whether the connection field is set.
      */
+    @java.lang.Override
     public boolean hasConnection() {
       return connection_ != null;
     }
@@ -4904,6 +4930,7 @@ public final class ConnectionProto {
      *
      * @return The connection.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection getConnection() {
       return connection_ == null
           ? com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection
@@ -4921,6 +4948,7 @@ public final class ConnectionProto {
      * .google.cloud.bigquery.connection.v1beta1.Connection connection = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionOrBuilder
         getConnectionOrBuilder() {
       return getConnection();
@@ -4940,6 +4968,7 @@ public final class ConnectionProto {
      *
      * @return Whether the updateMask field is set.
      */
+    @java.lang.Override
     public boolean hasUpdateMask() {
       return updateMask_ != null;
     }
@@ -4955,6 +4984,7 @@ public final class ConnectionProto {
      *
      * @return The updateMask.
      */
+    @java.lang.Override
     public com.google.protobuf.FieldMask getUpdateMask() {
       return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
     }
@@ -4968,6 +4998,7 @@ public final class ConnectionProto {
      * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       return getUpdateMask();
     }
@@ -6187,6 +6218,7 @@ public final class ConnectionProto {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -6210,6 +6242,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -6238,6 +6271,7 @@ public final class ConnectionProto {
      *
      * @return Whether the credential field is set.
      */
+    @java.lang.Override
     public boolean hasCredential() {
       return credential_ != null;
     }
@@ -6254,6 +6288,7 @@ public final class ConnectionProto {
      *
      * @return The credential.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ConnectionCredential
         getCredential() {
       return credential_ == null
@@ -6272,6 +6307,7 @@ public final class ConnectionProto {
      * .google.cloud.bigquery.connection.v1beta1.ConnectionCredential credential = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
             .ConnectionCredentialOrBuilder
         getCredentialOrBuilder() {
@@ -7226,6 +7262,7 @@ public final class ConnectionProto {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -7251,6 +7288,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -8179,6 +8217,7 @@ public final class ConnectionProto {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -8202,6 +8241,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -8227,6 +8267,7 @@ public final class ConnectionProto {
      *
      * @return The friendlyName.
      */
+    @java.lang.Override
     public java.lang.String getFriendlyName() {
       java.lang.Object ref = friendlyName_;
       if (ref instanceof java.lang.String) {
@@ -8249,6 +8290,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for friendlyName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFriendlyNameBytes() {
       java.lang.Object ref = friendlyName_;
       if (ref instanceof java.lang.String) {
@@ -8274,6 +8316,7 @@ public final class ConnectionProto {
      *
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -8296,6 +8339,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -8320,6 +8364,7 @@ public final class ConnectionProto {
      *
      * @return Whether the cloudSql field is set.
      */
+    @java.lang.Override
     public boolean hasCloudSql() {
       return propertiesCase_ == 4;
     }
@@ -8334,6 +8379,7 @@ public final class ConnectionProto {
      *
      * @return The cloudSql.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
         getCloudSql() {
       if (propertiesCase_ == 4) {
@@ -8352,6 +8398,7 @@ public final class ConnectionProto {
      *
      * <code>.google.cloud.bigquery.connection.v1beta1.CloudSqlProperties cloud_sql = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlPropertiesOrBuilder
         getCloudSqlOrBuilder() {
       if (propertiesCase_ == 4) {
@@ -8375,6 +8422,7 @@ public final class ConnectionProto {
      *
      * @return The creationTime.
      */
+    @java.lang.Override
     public long getCreationTime() {
       return creationTime_;
     }
@@ -8392,6 +8440,7 @@ public final class ConnectionProto {
      *
      * @return The lastModifiedTime.
      */
+    @java.lang.Override
     public long getLastModifiedTime() {
       return lastModifiedTime_;
     }
@@ -8409,6 +8458,7 @@ public final class ConnectionProto {
      *
      * @return The hasCredential.
      */
+    @java.lang.Override
     public boolean getHasCredential() {
       return hasCredential_;
     }
@@ -9233,6 +9283,7 @@ public final class ConnectionProto {
        *
        * @return Whether the cloudSql field is set.
        */
+      @java.lang.Override
       public boolean hasCloudSql() {
         return propertiesCase_ == 4;
       }
@@ -9247,6 +9298,7 @@ public final class ConnectionProto {
        *
        * @return The cloudSql.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
           getCloudSql() {
         if (cloudSqlBuilder_ == null) {
@@ -9392,6 +9444,7 @@ public final class ConnectionProto {
        *
        * <code>.google.cloud.bigquery.connection.v1beta1.CloudSqlProperties cloud_sql = 4;</code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
               .CloudSqlPropertiesOrBuilder
           getCloudSqlOrBuilder() {
@@ -9459,6 +9512,7 @@ public final class ConnectionProto {
        *
        * @return The creationTime.
        */
+      @java.lang.Override
       public long getCreationTime() {
         return creationTime_;
       }
@@ -9510,6 +9564,7 @@ public final class ConnectionProto {
        *
        * @return The lastModifiedTime.
        */
+      @java.lang.Override
       public long getLastModifiedTime() {
         return lastModifiedTime_;
       }
@@ -9561,6 +9616,7 @@ public final class ConnectionProto {
        *
        * @return The hasCredential.
        */
+      @java.lang.Override
       public boolean getHasCredential() {
         return hasCredential_;
       }
@@ -9870,6 +9926,7 @@ public final class ConnectionProto {
      *
      * @return Whether the cloudSql field is set.
      */
+    @java.lang.Override
     public boolean hasCloudSql() {
       return credentialCase_ == 1;
     }
@@ -9884,6 +9941,7 @@ public final class ConnectionProto {
      *
      * @return The cloudSql.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential
         getCloudSql() {
       if (credentialCase_ == 1) {
@@ -9902,6 +9960,7 @@ public final class ConnectionProto {
      *
      * <code>.google.cloud.bigquery.connection.v1beta1.CloudSqlCredential cloud_sql = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredentialOrBuilder
         getCloudSqlOrBuilder() {
       if (credentialCase_ == 1) {
@@ -10327,6 +10386,7 @@ public final class ConnectionProto {
        *
        * @return Whether the cloudSql field is set.
        */
+      @java.lang.Override
       public boolean hasCloudSql() {
         return credentialCase_ == 1;
       }
@@ -10341,6 +10401,7 @@ public final class ConnectionProto {
        *
        * @return The cloudSql.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential
           getCloudSql() {
         if (cloudSqlBuilder_ == null) {
@@ -10486,6 +10547,7 @@ public final class ConnectionProto {
        *
        * <code>.google.cloud.bigquery.connection.v1beta1.CloudSqlCredential cloud_sql = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
               .CloudSqlCredentialOrBuilder
           getCloudSqlOrBuilder() {
@@ -10975,6 +11037,10 @@ public final class ConnectionProto {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -11023,6 +11089,7 @@ public final class ConnectionProto {
      *
      * @return The instanceId.
      */
+    @java.lang.Override
     public java.lang.String getInstanceId() {
       java.lang.Object ref = instanceId_;
       if (ref instanceof java.lang.String) {
@@ -11045,6 +11112,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for instanceId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getInstanceIdBytes() {
       java.lang.Object ref = instanceId_;
       if (ref instanceof java.lang.String) {
@@ -11070,6 +11138,7 @@ public final class ConnectionProto {
      *
      * @return The database.
      */
+    @java.lang.Override
     public java.lang.String getDatabase() {
       java.lang.Object ref = database_;
       if (ref instanceof java.lang.String) {
@@ -11092,6 +11161,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for database.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDatabaseBytes() {
       java.lang.Object ref = database_;
       if (ref instanceof java.lang.String) {
@@ -11118,6 +11188,7 @@ public final class ConnectionProto {
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -11133,6 +11204,7 @@ public final class ConnectionProto {
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
             .DatabaseType
         getType() {
@@ -11163,6 +11235,7 @@ public final class ConnectionProto {
      *
      * @return Whether the credential field is set.
      */
+    @java.lang.Override
     public boolean hasCredential() {
       return credential_ != null;
     }
@@ -11179,6 +11252,7 @@ public final class ConnectionProto {
      *
      * @return The credential.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredential
         getCredential() {
       return credential_ == null
@@ -11197,6 +11271,7 @@ public final class ConnectionProto {
      * .google.cloud.bigquery.connection.v1beta1.CloudSqlCredential credential = 4 [(.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredentialOrBuilder
         getCredentialOrBuilder() {
       return getCredential();
@@ -11840,6 +11915,7 @@ public final class ConnectionProto {
        *
        * @return The enum numeric value on the wire for type.
        */
+      @java.lang.Override
       public int getTypeValue() {
         return type_;
       }
@@ -11857,6 +11933,7 @@ public final class ConnectionProto {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+
         type_ = value;
         onChanged();
         return this;
@@ -11873,6 +11950,7 @@ public final class ConnectionProto {
        *
        * @return The type.
        */
+      @java.lang.Override
       public com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlProperties
               .DatabaseType
           getType() {
@@ -12378,6 +12456,7 @@ public final class ConnectionProto {
      *
      * @return The username.
      */
+    @java.lang.Override
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
@@ -12400,6 +12479,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for username.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUsernameBytes() {
       java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
@@ -12425,6 +12505,7 @@ public final class ConnectionProto {
      *
      * @return The password.
      */
+    @java.lang.Override
     public java.lang.String getPassword() {
       java.lang.Object ref = password_;
       if (ref instanceof java.lang.String) {
@@ -12447,6 +12528,7 @@ public final class ConnectionProto {
      *
      * @return The bytes for password.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPasswordBytes() {
       java.lang.Object ref = password_;
       if (ref instanceof java.lang.String) {

@@ -55,6 +55,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcConnectionServiceStub extends ConnectionServiceStub {
 
+  private static final MethodDescriptor<DeleteConnectionRequest, Empty>
+      deleteConnectionMethodDescriptor =
+          MethodDescriptor.<DeleteConnectionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.connection.v1beta1.ConnectionService/DeleteConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<CreateConnectionRequest, Connection>
       createConnectionMethodDescriptor =
           MethodDescriptor.<CreateConnectionRequest, Connection>newBuilder()
@@ -106,16 +116,6 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(UpdateConnectionCredentialRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteConnectionRequest, Empty>
-      deleteConnectionMethodDescriptor =
-          MethodDescriptor.<DeleteConnectionRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.bigquery.connection.v1beta1.ConnectionService/DeleteConnection")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -146,6 +146,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable;
   private final UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable;
   private final UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable;
   private final UnaryCallable<ListConnectionsRequest, ListConnectionsResponse>
@@ -153,7 +154,6 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
   private final UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable;
   private final UnaryCallable<UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialCallable;
-  private final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -200,6 +200,19 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteConnectionRequest, Empty> deleteConnectionTransportSettings =
+        GrpcCallSettings.<DeleteConnectionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteConnectionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteConnectionRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteConnectionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateConnectionRequest, Connection> createConnectionTransportSettings =
         GrpcCallSettings.<CreateConnectionRequest, Connection>newBuilder()
             .setMethodDescriptor(createConnectionMethodDescriptor)
@@ -268,19 +281,6 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteConnectionRequest, Empty> deleteConnectionTransportSettings =
-        GrpcCallSettings.<DeleteConnectionRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteConnectionMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteConnectionRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteConnectionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
@@ -322,6 +322,9 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                     })
                 .build();
 
+    this.deleteConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteConnectionTransportSettings, settings.deleteConnectionSettings(), clientContext);
     this.createConnectionCallable =
         callableFactory.createUnaryCallable(
             createConnectionTransportSettings, settings.createConnectionSettings(), clientContext);
@@ -339,9 +342,6 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
             updateConnectionCredentialTransportSettings,
             settings.updateConnectionCredentialSettings(),
             clientContext);
-    this.deleteConnectionCallable =
-        callableFactory.createUnaryCallable(
-            deleteConnectionTransportSettings, settings.deleteConnectionSettings(), clientContext);
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
@@ -355,6 +355,10 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
+    return deleteConnectionCallable;
   }
 
   public UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
@@ -376,10 +380,6 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
   public UnaryCallable<UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialCallable() {
     return updateConnectionCredentialCallable;
-  }
-
-  public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
-    return deleteConnectionCallable;
   }
 
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
