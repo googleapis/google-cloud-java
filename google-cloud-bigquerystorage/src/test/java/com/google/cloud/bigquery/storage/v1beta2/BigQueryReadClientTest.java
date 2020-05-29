@@ -162,4 +162,24 @@ public class BigQueryReadClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  @SuppressWarnings("all")
+  public void readRowsRetryingExceptionTest() throws ExecutionException, InterruptedException {
+    StatusRuntimeException exception =
+        new StatusRuntimeException(
+            Status.INTERNAL.withDescription("Received unexpected EOS on DATA frame from server"));
+    mockBigQueryRead.addException(exception);
+    long rowCount = 1340416618L;
+    ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
+    mockBigQueryRead.addResponse(expectedResponse);
+    ReadRowsRequest request = ReadRowsRequest.newBuilder().build();
+
+    MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
+    callable.serverStreamingCall(request, responseObserver);
+    List<ReadRowsResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+  }
 }
