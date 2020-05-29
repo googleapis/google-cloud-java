@@ -17,9 +17,20 @@ package com.google.cloud.bigquery.storage.v1beta1.stub;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcRawCallableFactory;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.ScheduledRetryingExecutor;
+import com.google.api.gax.retrying.StreamingRetryAlgorithm;
+import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.gax.tracing.SpanName;
+import com.google.api.gax.tracing.TracedServerStreamingCallable;
+import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageGrpc;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest;
@@ -29,8 +40,12 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse;
+import com.google.cloud.bigquery.storage.v1beta1.stub.readrows.ApiResultRetryAlgorithm;
+import com.google.cloud.bigquery.storage.v1beta1.stub.readrows.ReadRowsRetryingCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -40,7 +55,10 @@ import java.util.concurrent.TimeUnit;
  */
 public class EnhancedBigQueryStorageStub implements BackgroundResource {
 
+  private static final String TRACING_OUTER_CLIENT_NAME = "BigQueryStorage";
   private final GrpcBigQueryStorageStub stub;
+  private final BigQueryStorageStubSettings stubSettings;
+  private final ClientContext context;
 
   public static EnhancedBigQueryStorageStub create(EnhancedBigQueryStorageStubSettings settings)
       throws IOException {
@@ -89,12 +107,17 @@ public class EnhancedBigQueryStorageStub implements BackgroundResource {
     BigQueryStorageStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
     GrpcBigQueryStorageStub stub = new GrpcBigQueryStorageStub(baseSettings, clientContext);
-    return new EnhancedBigQueryStorageStub(stub);
+    return new EnhancedBigQueryStorageStub(stub, baseSettings, clientContext);
   }
 
   @InternalApi("Visible for testing")
-  EnhancedBigQueryStorageStub(GrpcBigQueryStorageStub stub) {
+  EnhancedBigQueryStorageStub(
+      GrpcBigQueryStorageStub stub,
+      BigQueryStorageStubSettings stubSettings,
+      ClientContext context) {
     this.stub = stub;
+    this.stubSettings = stubSettings;
+    this.context = context;
   }
 
   public UnaryCallable<CreateReadSessionRequest, ReadSession> createReadSessionCallable() {
@@ -102,7 +125,49 @@ public class EnhancedBigQueryStorageStub implements BackgroundResource {
   }
 
   public ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable() {
-    return stub.readRowsCallable();
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> innerCallable =
+        GrpcRawCallableFactory.createServerStreamingCallable(
+            GrpcCallSettings.<ReadRowsRequest, ReadRowsResponse>newBuilder()
+                .setMethodDescriptor(BigQueryStorageGrpc.getReadRowsMethod())
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ReadRowsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ReadRowsRequest request) {
+                        return ImmutableMap.of(
+                            "read_position.stream.name",
+                            String.valueOf(request.getReadPosition().getStream().getName()));
+                      }
+                    })
+                .build(),
+            stubSettings.readRowsSettings().getRetryableCodes());
+    ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> callSettings =
+        stubSettings.readRowsSettings();
+
+    StreamingRetryAlgorithm<Void> retryAlgorithm =
+        new StreamingRetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<Void>(),
+            new ExponentialRetryAlgorithm(callSettings.getRetrySettings(), context.getClock()));
+
+    ScheduledRetryingExecutor<Void> retryingExecutor =
+        new ScheduledRetryingExecutor<>(retryAlgorithm, context.getExecutor());
+
+    if (context.getStreamWatchdog() != null) {
+      innerCallable = Callables.watched(innerCallable, callSettings, context);
+    }
+
+    ReadRowsRetryingCallable outerCallable =
+        new ReadRowsRetryingCallable(
+            context.getDefaultCallContext(),
+            innerCallable,
+            retryingExecutor,
+            callSettings.getResumptionStrategy());
+
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> traced =
+        new TracedServerStreamingCallable<>(
+            outerCallable,
+            context.getTracerFactory(),
+            SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows"));
+    return traced.withDefaultCallContext(context.getDefaultCallContext());
   }
 
   public UnaryCallable<BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
