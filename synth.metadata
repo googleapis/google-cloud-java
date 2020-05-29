@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/google-cloud-java.git",
-        "sha": "80ba5dd65212190ce3f629fae9fb195b2aa804be"
+        "sha": "7cc543dc97b86ecbc7695b2e5ee7857d48b5817e"
       }
     }
   ]
