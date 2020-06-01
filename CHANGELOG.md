@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.116.1](https://www.github.com/googleapis/java-bigquery/compare/v1.116.0...v1.116.1) (2020-06-01)
+
+
+### Dependencies
+
+* remove google-cloud-core classiier=test since it is managed by … ([#396](https://www.github.com/googleapis/java-bigquery/issues/396)) ([bafd8ae](https://www.github.com/googleapis/java-bigquery/commit/bafd8ae780121ee968bca7b3eb68bb0f0a438124))
+* restrict -annotation deps ([#402](https://www.github.com/googleapis/java-bigquery/issues/402)) ([db41581](https://www.github.com/googleapis/java-bigquery/commit/db4158186b99d0bed68fd70bef5918b1820e5dd1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.6.0 ([#392](https://www.github.com/googleapis/java-bigquery/issues/392)) ([3f13ccb](https://www.github.com/googleapis/java-bigquery/commit/3f13ccbbf1ca8f179c48a69c8e456bdf45c43af5))
+* update shared-deps and add back certain test deps ([#390](https://www.github.com/googleapis/java-bigquery/issues/390)) ([7e21be2](https://www.github.com/googleapis/java-bigquery/commit/7e21be2506cdaf065cd32e3aed403890929b93e7))
+
+
+### Documentation
+
+* **samples:** Convert tightly coupled local variable inside of method into method arguments ([#386](https://www.github.com/googleapis/java-bigquery/issues/386)) ([7c02cd3](https://www.github.com/googleapis/java-bigquery/commit/7c02cd3ca7238d24bb2914ae2262a3b2e2d4bda7)), closes [#387](https://www.github.com/googleapis/java-bigquery/issues/387)
+* **samples:** Convert tightly coupled local variable involved options inside of method into method arguments ([#393](https://www.github.com/googleapis/java-bigquery/issues/393)) ([a11f3cb](https://www.github.com/googleapis/java-bigquery/commit/a11f3cb4733215a9c4a65936b05f9cc2ed75656f)), closes [#394](https://www.github.com/googleapis/java-bigquery/issues/394)
+* **samples:** Fix flaky test ([#397](https://www.github.com/googleapis/java-bigquery/issues/397)) ([64847d1](https://www.github.com/googleapis/java-bigquery/commit/64847d1e5137e811e7f462fc058908fa9fcc55fb))
+* **samples:** update revierwers for samples module changes ([#401](https://www.github.com/googleapis/java-bigquery/issues/401)) ([69b9d84](https://www.github.com/googleapis/java-bigquery/commit/69b9d8417d5b910286aaa855f4a83fc151a81cec))
+
 ## [1.116.0](https://www.github.com/googleapis/java-bigquery/compare/v1.115.1...v1.116.0) (2020-05-21)
 
 
