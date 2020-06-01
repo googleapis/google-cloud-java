@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-texttospeech.git",
-        "sha": "1695b41e392adb2418abb481d526797985762313"
+        "sha": "43527120358f77f2696813448b049384f1a18e9f"
       }
     },
     {
