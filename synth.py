@@ -102,9 +102,11 @@ REPO_EXCLUSION = [
     'googleapis/java-bigtable-emulator',
     'googleapis/java-cloud-bom',
     'googleapis/java-conformance-tests',
+    'googleapis/java-common-protos',
     'googleapis/java-core',
     'googleapis/java-gcloud-maven-plugin',
     'googleapis/java-grafeas',
+    'googleapis/java-iam',
     'googleapis/java-notification',
     'googleapis/java-shared-config',
 ]
