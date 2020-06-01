@@ -37,6 +37,8 @@ import org.junit.runners.JUnit4;
 public class RedactTests {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String INPUT_FILE = "src/test/resources/test.png";
+  private static final String OUTPUT_FILE = "redacted.png";
   private ByteArrayOutputStream bout;
 
   private static void requireEnvVar(String varName) {
@@ -65,13 +67,13 @@ public class RedactTests {
 
   @After
   public void cleanUp() throws IOException {
-    Path outputFile = Paths.get("redacted.png");
+    Path outputFile = Paths.get(OUTPUT_FILE);
     Files.delete(outputFile);
   }
 
   @Test
   public void testRedactImage() {
-    RedactImageFile.redactImageFile(PROJECT_ID, "src/test/resources/test.png");
+    RedactImageFile.redactImageFile(PROJECT_ID, INPUT_FILE, OUTPUT_FILE);
 
     String output = bout.toString();
     assertThat(output, containsString("Redacted image written"));

@@ -26,6 +26,10 @@ import java.io.IOException;
 
 public class InfoTypesList {
 
+  public static void main(String[] args) throws IOException {
+    listInfoTypes();
+  }
+
   // Lists the types of sensitive information the DLP API supports.
   public static void listInfoTypes() throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
