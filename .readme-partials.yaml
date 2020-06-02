@@ -1,0 +1,47 @@
+custom_content: |
+  ### Usage
+  Add the appender to your [Logback configuration](https://logback.qos.ch/manual/configuration.html) `logback.xml`.
+  See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter) for information on filtering log output and
+   [encoders](https://logback.qos.ch/manual/encoders.html) for information on formatting.
+
+
+  ```xml
+  <configuration>
+    <appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender">
+      <!-- Optional : filter logs at or above a level -->
+      <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+        <level>INFO</level>
+      </filter>
+      <log>application.log</log> <!-- Optional : default java.log -->
+      <!-- Optional : will use the default credentials of the environment if this property is not set -->
+      <credentialsFile>/path/to/credentials.json</credentialsFile>
+      <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer> <!-- Optional -->
+      <enhancer>com.example.enhancers.AnotherEnhancer</enhancer> <!-- Optional -->
+      <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
+    </appender>
+
+    <root level="info">
+      <appender-ref ref="CLOUD" />
+    </root>
+  </configuration>
+  ```
+
+  In your code :
+
+  ```java
+  import org.slf4j.Logger;
+  import org.slf4j.LoggerFactory;
+
+  public class TestLogger {
+      private final Logger logger = LoggerFactory.getLogger(TestLogger.class);
+
+      public void log(String name) {
+          logger.info("This is a test");
+      }
+
+      public static void main(String[] args) {
+          TestLogger testLogger = new TestLogger();
+          testLogger.log("test");
+      }
+  }
+  ```
