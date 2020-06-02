@@ -16,6 +16,7 @@
 
 package dlp.snippets;
 
+import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertNotNull;
@@ -25,6 +26,7 @@ import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
@@ -90,6 +92,18 @@ public class InspectTests {
 
     String output = bout.toString();
     assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+  }
+
+
+  @Test
+  public void testInspectStringWithExclusionDict() {
+    InspectStringWithExclusionDict.inspectStringWithExclusionDict(PROJECT_ID,
+        "Some email addresses: gary@example.com, example@example.com",
+        Arrays.asList("example@example.com"));
+
+    String output = bout.toString();
+    assertThat(output, containsString("gary@example.com"));
+    assertThat(output, not(containsString("example@example.com")));
   }
 
   @Test
