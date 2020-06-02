@@ -99,6 +99,14 @@ public class JobsTests {
   }
 
   @Test
+  public void testCreateJobs() throws Exception {
+    // Call createJobs to create a Dlp job from project id and gcs path.
+    JobsCreate.createJobs(PROJECT_ID, GCS_PATH);
+    String output = bout.toString();
+    assertThat(output, CoreMatchers.containsString("Job created successfully."));
+  }
+
+  @Test
   public void testListJobs() throws Exception {
     // Call listJobs to print out a list of jobIds
     JobsList.listJobs(PROJECT_ID);
