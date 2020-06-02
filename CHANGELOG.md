@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.102.0](https://www.github.com/googleapis/java-datastore/compare/v1.101.4...v1.102.0) (2020-06-02)
+
+
+### Features
+
+* add flatten plugin to client and proto modules ([#108](https://www.github.com/googleapis/java-datastore/issues/108)) ([fb3566d](https://www.github.com/googleapis/java-datastore/commit/fb3566d31600b9ed629a2daa46c5202a894181b2))
+* Create CODEOWNERS ([#122](https://www.github.com/googleapis/java-datastore/issues/122)) ([8082369](https://www.github.com/googleapis/java-datastore/commit/80823698416bbe08e2d22fbc81ec3709ad2552c8))
+* implement google-cloud-shared-dependencies BOM ([#135](https://www.github.com/googleapis/java-datastore/issues/135)) ([72e29ff](https://www.github.com/googleapis/java-datastore/commit/72e29ff3460b12436e76d445aad7b8ae0e4ee82d))
+
+
+### Bug Fixes
+
+* update retry logic for operations that can be associated with a transaction ([#144](https://www.github.com/googleapis/java-datastore/issues/144)) ([82ee74e](https://www.github.com/googleapis/java-datastore/commit/82ee74ed4487f90f97856bc766edb53b66474378))
+
+
+### Dependencies
+
+* bump shared-deps version and add back certain test deps ([#139](https://www.github.com/googleapis/java-datastore/issues/139)) ([660f216](https://www.github.com/googleapis/java-datastore/commit/660f216302fedaf2f5fe0f4c76cdab8fca65cbd1))
+* update core transport dependencies to v1.35.0 ([#114](https://www.github.com/googleapis/java-datastore/issues/114)) ([cad3bfb](https://www.github.com/googleapis/java-datastore/commit/cad3bfbbe739ab3ed5ebea89bee620ef8bbefd95))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#117](https://www.github.com/googleapis/java-datastore/issues/117)) ([b484256](https://www.github.com/googleapis/java-datastore/commit/b484256c30ac9117eb82688c801966b6ace856df))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.6.0 ([#140](https://www.github.com/googleapis/java-datastore/issues/140)) ([712779c](https://www.github.com/googleapis/java-datastore/commit/712779c4a25bd5f74b9557931a84bd4a812279c7))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.7.0 ([#142](https://www.github.com/googleapis/java-datastore/issues/142)) ([e1a5a65](https://www.github.com/googleapis/java-datastore/commit/e1a5a65d2ae2d45c4871e3e7b2e9089ad5cdc542))
+* update dependency com.google.guava:guava-bom to v29 ([#95](https://www.github.com/googleapis/java-datastore/issues/95)) ([32d5e37](https://www.github.com/googleapis/java-datastore/commit/32d5e37f244969ba980cd94a8eaa8165b368ebc6))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#127](https://www.github.com/googleapis/java-datastore/issues/127)) ([8a310f3](https://www.github.com/googleapis/java-datastore/commit/8a310f313e53fac802ca75ea539fc4656337c6ee))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#110](https://www.github.com/googleapis/java-datastore/issues/110)) ([ad6b880](https://www.github.com/googleapis/java-datastore/commit/ad6b8803d4cd55fa37ba57fd3edafad256c41aed))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#112](https://www.github.com/googleapis/java-datastore/issues/112)) ([41d571d](https://www.github.com/googleapis/java-datastore/commit/41d571d1e18f1400f7975a6e82646417ed39ee84))
+
+
+### Documentation
+
+* fix java doc link of LocalDatastoreHelper#stop ([#126](https://www.github.com/googleapis/java-datastore/issues/126)) ([ed9b895](https://www.github.com/googleapis/java-datastore/commit/ed9b895d57db302a731e38bc6708310baa69cd67))
+* update CONTRIBUTING.md to include code formatting ([#534](https://www.github.com/googleapis/java-datastore/issues/534)) ([#124](https://www.github.com/googleapis/java-datastore/issues/124)) ([147197d](https://www.github.com/googleapis/java-datastore/commit/147197d0655a509a11f906e95d5f81d57193c562))
+
 ### [1.101.4](https://www.github.com/googleapis/java-datastore/compare/v1.101.3...v1.101.4) (2020-04-08)
 
 
