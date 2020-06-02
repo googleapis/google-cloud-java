@@ -77,6 +77,14 @@ public class InspectTests {
   }
 
   @Test
+  public void testInspectPhoneNumber() {
+    InspectString.inspectString(PROJECT_ID, "My phone number is (415) 555-0890");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Info type: PHONE_NUMBER"));
+  }
+
+  @Test
   public void testInspectString() {
     InspectString.inspectString(PROJECT_ID, "I'm Gary and my email is gary@example.com");
 
