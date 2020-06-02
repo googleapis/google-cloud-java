@@ -175,7 +175,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    *
    * @return The modelType.
    */
-  @java.lang.Override
   public java.lang.String getModelType() {
     java.lang.Object ref = modelType_;
     if (ref instanceof java.lang.String) {
@@ -220,7 +219,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    *
    * @return The bytes for modelType.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getModelTypeBytes() {
     java.lang.Object ref = modelType_;
     if (ref instanceof java.lang.String) {
@@ -248,7 +246,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    *
    * @return The nodeCount.
    */
-  @java.lang.Override
   public long getNodeCount() {
     return nodeCount_;
   }
@@ -267,7 +264,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    *
    * @return The nodeQps.
    */
-  @java.lang.Override
   public double getNodeQps() {
     return nodeQps_;
   }
@@ -286,7 +282,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    *
    * @return The stopReason.
    */
-  @java.lang.Override
   public java.lang.String getStopReason() {
     java.lang.Object ref = stopReason_;
     if (ref instanceof java.lang.String) {
@@ -310,7 +305,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    *
    * @return The bytes for stopReason.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getStopReasonBytes() {
     java.lang.Object ref = stopReason_;
     if (ref instanceof java.lang.String) {
@@ -350,7 +344,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    *
    * @return The trainBudgetMilliNodeHours.
    */
-  @java.lang.Override
   public long getTrainBudgetMilliNodeHours() {
     return trainBudgetMilliNodeHours_;
   }
@@ -370,7 +363,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
    *
    * @return The trainCostMilliNodeHours.
    */
-  @java.lang.Override
   public long getTrainCostMilliNodeHours() {
     return trainCostMilliNodeHours_;
   }
@@ -1006,7 +998,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
      *
      * @return The nodeCount.
      */
-    @java.lang.Override
     public long getNodeCount() {
       return nodeCount_;
     }
@@ -1063,7 +1054,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
      *
      * @return The nodeQps.
      */
-    @java.lang.Override
     public double getNodeQps() {
       return nodeQps_;
     }
@@ -1242,7 +1232,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
      *
      * @return The trainBudgetMilliNodeHours.
      */
-    @java.lang.Override
     public long getTrainBudgetMilliNodeHours() {
       return trainBudgetMilliNodeHours_;
     }
@@ -1324,7 +1313,6 @@ public final class ImageObjectDetectionModelMetadata extends com.google.protobuf
      *
      * @return The trainCostMilliNodeHours.
      */
-    @java.lang.Override
     public long getTrainCostMilliNodeHours() {
       return trainCostMilliNodeHours_;
     }

@@ -16,9 +16,4 @@
     <className>com/google/cloud/automl/v1/AutoMlClient</className>
     <method>com.google.longrunning.Operation createDataset(com.google.cloud.automl.v1.CreateDatasetRequest)</method>
   </difference>
-  <!-- 8001 (Class removed): className -->
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/automl/v1beta1/**</className>
-  </difference>
 </differences>

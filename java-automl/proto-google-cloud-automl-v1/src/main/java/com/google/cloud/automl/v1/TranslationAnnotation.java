@@ -131,7 +131,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the translatedContent field is set.
    */
-  @java.lang.Override
   public boolean hasTranslatedContent() {
     return translatedContent_ != null;
   }
@@ -146,7 +145,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
    *
    * @return The translatedContent.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.TextSnippet getTranslatedContent() {
     return translatedContent_ == null
         ? com.google.cloud.automl.v1.TextSnippet.getDefaultInstance()
@@ -161,7 +159,6 @@ public final class TranslationAnnotation extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.automl.v1.TextSnippet translated_content = 1;</code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.TextSnippetOrBuilder getTranslatedContentOrBuilder() {
     return getTranslatedContent();
   }

@@ -417,7 +417,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *
    * @return Whether the gcsDestination field is set.
    */
-  @java.lang.Override
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
@@ -435,7 +434,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *
    * @return The gcsDestination.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.GcsDestination getGcsDestination() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.automl.v1.GcsDestination) destination_;
@@ -454,7 +452,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.automl.v1.GcsDestination) destination_;
@@ -1082,7 +1079,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      * @return Whether the gcsDestination field is set.
      */
-    @java.lang.Override
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
@@ -1100,7 +1096,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      *
      * @return The gcsDestination.
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.GcsDestination getGcsDestination() {
       if (gcsDestinationBuilder_ == null) {
         if (destinationCase_ == 1) {
@@ -1251,7 +1246,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
      * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
       if ((destinationCase_ == 1) && (gcsDestinationBuilder_ != null)) {
         return gcsDestinationBuilder_.getMessageOrBuilder();

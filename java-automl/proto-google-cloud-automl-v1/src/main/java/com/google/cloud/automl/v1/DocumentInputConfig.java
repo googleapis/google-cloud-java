@@ -134,7 +134,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the gcsSource field is set.
    */
-  @java.lang.Override
   public boolean hasGcsSource() {
     return gcsSource_ != null;
   }
@@ -152,7 +151,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The gcsSource.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.GcsSource getGcsSource() {
     return gcsSource_ == null
         ? com.google.cloud.automl.v1.GcsSource.getDefaultInstance()
@@ -170,7 +168,6 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     return getGcsSource();
   }

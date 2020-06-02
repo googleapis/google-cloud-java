@@ -263,7 +263,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      * @return The gcsOutputDirectory.
      */
-    @java.lang.Override
     public java.lang.String getGcsOutputDirectory() {
       java.lang.Object ref = gcsOutputDirectory_;
       if (ref instanceof java.lang.String) {
@@ -287,7 +286,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      * @return The bytes for gcsOutputDirectory.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
       java.lang.Object ref = gcsOutputDirectory_;
       if (ref instanceof java.lang.String) {
@@ -832,7 +830,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    *
    * @return Whether the outputInfo field is set.
    */
-  @java.lang.Override
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
   }
@@ -850,7 +847,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    *
    * @return The outputInfo.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo
       getOutputInfo() {
     return outputInfo_ == null
@@ -870,7 +866,6 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    * .google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfo output_info = 2;
    * </code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.ExportModelOperationMetadata.ExportModelOutputInfoOrBuilder
       getOutputInfoOrBuilder() {
     return getOutputInfo();

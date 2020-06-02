@@ -125,7 +125,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
    *
    * @return The bleuScore.
    */
-  @java.lang.Override
   public double getBleuScore() {
     return bleuScore_;
   }
@@ -143,7 +142,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
    *
    * @return The baseBleuScore.
    */
-  @java.lang.Override
   public double getBaseBleuScore() {
     return baseBleuScore_;
   }
@@ -501,7 +499,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      *
      * @return The bleuScore.
      */
-    @java.lang.Override
     public double getBleuScore() {
       return bleuScore_;
     }
@@ -553,7 +550,6 @@ public final class TranslationEvaluationMetrics extends com.google.protobuf.Gene
      *
      * @return The baseBleuScore.
      */
-    @java.lang.Override
     public double getBaseBleuScore() {
       return baseBleuScore_;
     }

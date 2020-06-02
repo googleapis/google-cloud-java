@@ -175,7 +175,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageBytes.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getImageBytes() {
     if (dataCase_ == 1) {
       return (com.google.protobuf.ByteString) data_;
@@ -196,7 +195,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The thumbnailUri.
    */
-  @java.lang.Override
   public java.lang.String getThumbnailUri() {
     java.lang.Object ref = thumbnailUri_;
     if (ref instanceof java.lang.String) {
@@ -219,7 +217,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for thumbnailUri.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getThumbnailUriBytes() {
     java.lang.Object ref = thumbnailUri_;
     if (ref instanceof java.lang.String) {

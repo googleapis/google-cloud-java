@@ -126,7 +126,6 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
-  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -151,7 +150,6 @@ public final class GetDatasetRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {

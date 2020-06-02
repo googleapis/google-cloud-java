@@ -138,7 +138,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.automl.v1.Dataset datasets = 1;</code>
    */
-  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1.Dataset> getDatasetsList() {
     return datasets_;
   }
@@ -151,7 +150,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.automl.v1.Dataset datasets = 1;</code>
    */
-  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1.DatasetOrBuilder>
       getDatasetsOrBuilderList() {
     return datasets_;
@@ -165,7 +163,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.automl.v1.Dataset datasets = 1;</code>
    */
-  @java.lang.Override
   public int getDatasetsCount() {
     return datasets_.size();
   }
@@ -178,7 +175,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.automl.v1.Dataset datasets = 1;</code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.Dataset getDatasets(int index) {
     return datasets_.get(index);
   }
@@ -191,7 +187,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.automl.v1.Dataset datasets = 1;</code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.DatasetOrBuilder getDatasetsOrBuilder(int index) {
     return datasets_.get(index);
   }
@@ -210,7 +205,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
-  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,7 +228,6 @@ public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

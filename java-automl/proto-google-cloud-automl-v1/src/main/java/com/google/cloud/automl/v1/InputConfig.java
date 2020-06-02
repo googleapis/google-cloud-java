@@ -671,7 +671,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsSource field is set.
    */
-  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
@@ -688,7 +687,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsSource.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.automl.v1.GcsSource) source_;
@@ -706,7 +704,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.automl.v1.GcsSource) source_;
@@ -756,7 +753,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
-  @java.lang.Override
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -764,7 +760,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return internalGetParams().getMap().containsKey(key);
   }
   /** Use {@link #getParamsMap()} instead. */
-  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
@@ -786,7 +781,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
-  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
@@ -807,7 +801,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
-  @java.lang.Override
   public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -832,7 +825,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
-  @java.lang.Override
   public java.lang.String getParamsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1734,7 +1726,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsSource field is set.
      */
-    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
@@ -1751,7 +1742,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsSource.
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -1895,7 +1885,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1.GcsSource gcs_source = 1;</code>
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();
@@ -1982,7 +1971,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
-    @java.lang.Override
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1990,7 +1978,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetParams().getMap().containsKey(key);
     }
     /** Use {@link #getParamsMap()} instead. */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
@@ -2012,7 +1999,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
-    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
@@ -2033,7 +2019,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
-    @java.lang.Override
     public java.lang.String getParamsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2059,7 +2044,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
-    @java.lang.Override
     public java.lang.String getParamsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

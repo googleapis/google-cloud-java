@@ -23,7 +23,7 @@ AUTOSYNTH_MULTIPLE_COMMITS = True
 gapic = gcp.GAPICGenerator()
 
 service = 'automl'
-versions = ['v1']
+versions = ['v1beta1', 'v1']
 
 for version in versions:
   library = java.bazel_library(

@@ -10,27 +10,44 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:stephaniewang526/java-automl.git",
-        "sha": "a78541a3f9314ea24e9e37a239ef1d207abdc1d5"
+        "remote": "https://github.com/googleapis/java-automl.git",
+        "sha": "45e55ecb207da3ad0d1fe6548228b172fbb526df"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "907754d70ec714ab0e8282fe6ff4988221c64130",
-        "internalRef": "314217336"
+        "sha": "aed11c01e52921613b9ee469c2d85f5f33175fb7",
+        "internalRef": "310660461"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "aed11c01e52921613b9ee469c2d85f5f33175fb7",
+        "internalRef": "310660461"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "cb3c683e958a4b5c016bb3734436fc1cb887eb7b"
+        "sha": "5b48b0716a36ca069db3038da7e205c87a22ed19"
       }
     }
   ],
   "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "automl",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
     {
       "client": {
         "source": "googleapis",

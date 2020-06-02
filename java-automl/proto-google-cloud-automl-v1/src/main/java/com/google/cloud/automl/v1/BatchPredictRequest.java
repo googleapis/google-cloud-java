@@ -185,7 +185,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The name.
    */
-  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -210,7 +209,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for name.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -238,7 +236,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the inputConfig field is set.
    */
-  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -255,7 +252,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The inputConfig.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictInputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.automl.v1.BatchPredictInputConfig.getDefaultInstance()
@@ -272,7 +268,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.automl.v1.BatchPredictInputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictInputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -293,7 +288,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the outputConfig field is set.
    */
-  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -311,7 +305,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The outputConfig.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictOutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.automl.v1.BatchPredictOutputConfig.getDefaultInstance()
@@ -329,7 +322,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.automl.v1.BatchPredictOutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictOutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }
@@ -432,7 +424,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; params = 5;</code>
    */
-  @java.lang.Override
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -440,7 +431,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     return internalGetParams().getMap().containsKey(key);
   }
   /** Use {@link #getParamsMap()} instead. */
-  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
@@ -518,7 +508,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; params = 5;</code>
    */
-  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
@@ -595,7 +584,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; params = 5;</code>
    */
-  @java.lang.Override
   public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -676,7 +664,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; params = 5;</code>
    */
-  @java.lang.Override
   public java.lang.String getParamsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1735,7 +1722,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; params = 5;</code>
      */
-    @java.lang.Override
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1743,7 +1729,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       return internalGetParams().getMap().containsKey(key);
     }
     /** Use {@link #getParamsMap()} instead. */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
@@ -1821,7 +1806,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; params = 5;</code>
      */
-    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
@@ -1898,7 +1882,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; params = 5;</code>
      */
-    @java.lang.Override
     public java.lang.String getParamsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1980,7 +1963,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; params = 5;</code>
      */
-    @java.lang.Override
     public java.lang.String getParamsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

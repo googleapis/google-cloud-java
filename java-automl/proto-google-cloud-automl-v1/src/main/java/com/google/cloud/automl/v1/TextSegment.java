@@ -134,7 +134,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The content.
    */
-  @java.lang.Override
   public java.lang.String getContent() {
     java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
@@ -157,7 +156,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for content.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
@@ -184,7 +182,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startOffset.
    */
-  @java.lang.Override
   public long getStartOffset() {
     return startOffset_;
   }
@@ -204,7 +201,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endOffset.
    */
-  @java.lang.Override
   public long getEndOffset() {
     return endOffset_;
   }
@@ -673,7 +669,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The startOffset.
      */
-    @java.lang.Override
     public long getStartOffset() {
       return startOffset_;
     }
@@ -729,7 +724,6 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The endOffset.
      */
-    @java.lang.Override
     public long getEndOffset() {
       return endOffset_;
     }

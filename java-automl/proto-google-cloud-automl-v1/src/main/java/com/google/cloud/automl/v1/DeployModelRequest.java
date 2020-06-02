@@ -220,7 +220,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the imageObjectDetectionModelDeploymentMetadata field is set.
    */
-  @java.lang.Override
   public boolean hasImageObjectDetectionModelDeploymentMetadata() {
     return modelDeploymentMetadataCase_ == 2;
   }
@@ -237,7 +236,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The imageObjectDetectionModelDeploymentMetadata.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata
       getImageObjectDetectionModelDeploymentMetadata() {
     if (modelDeploymentMetadataCase_ == 2) {
@@ -258,7 +256,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    * .google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
    * </code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadataOrBuilder
       getImageObjectDetectionModelDeploymentMetadataOrBuilder() {
     if (modelDeploymentMetadataCase_ == 2) {
@@ -283,7 +280,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the imageClassificationModelDeploymentMetadata field is set.
    */
-  @java.lang.Override
   public boolean hasImageClassificationModelDeploymentMetadata() {
     return modelDeploymentMetadataCase_ == 4;
   }
@@ -300,7 +296,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The imageClassificationModelDeploymentMetadata.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata
       getImageClassificationModelDeploymentMetadata() {
     if (modelDeploymentMetadataCase_ == 4) {
@@ -321,7 +316,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    * .google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
    * </code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadataOrBuilder
       getImageClassificationModelDeploymentMetadataOrBuilder() {
     if (modelDeploymentMetadataCase_ == 4) {
@@ -347,7 +341,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The name.
    */
-  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -372,7 +365,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for name.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -822,7 +814,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the imageObjectDetectionModelDeploymentMetadata field is set.
      */
-    @java.lang.Override
     public boolean hasImageObjectDetectionModelDeploymentMetadata() {
       return modelDeploymentMetadataCase_ == 2;
     }
@@ -839,7 +830,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The imageObjectDetectionModelDeploymentMetadata.
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata
         getImageObjectDetectionModelDeploymentMetadata() {
       if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
@@ -995,7 +985,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * .google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
      * </code>
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.ImageObjectDetectionModelDeploymentMetadataOrBuilder
         getImageObjectDetectionModelDeploymentMetadataOrBuilder() {
       if ((modelDeploymentMetadataCase_ == 2)
@@ -1067,7 +1056,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the imageClassificationModelDeploymentMetadata field is set.
      */
-    @java.lang.Override
     public boolean hasImageClassificationModelDeploymentMetadata() {
       return modelDeploymentMetadataCase_ == 4;
     }
@@ -1084,7 +1072,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The imageClassificationModelDeploymentMetadata.
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata
         getImageClassificationModelDeploymentMetadata() {
       if (imageClassificationModelDeploymentMetadataBuilder_ == null) {
@@ -1240,7 +1227,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * .google.cloud.automl.v1.ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
      * </code>
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.ImageClassificationModelDeploymentMetadataOrBuilder
         getImageClassificationModelDeploymentMetadataOrBuilder() {
       if ((modelDeploymentMetadataCase_ == 4)

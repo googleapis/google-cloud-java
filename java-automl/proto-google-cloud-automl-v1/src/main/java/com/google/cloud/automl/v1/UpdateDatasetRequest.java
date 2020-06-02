@@ -146,7 +146,6 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the dataset field is set.
    */
-  @java.lang.Override
   public boolean hasDataset() {
     return dataset_ != null;
   }
@@ -162,7 +161,6 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The dataset.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.Dataset getDataset() {
     return dataset_ == null ? com.google.cloud.automl.v1.Dataset.getDefaultInstance() : dataset_;
   }
@@ -176,7 +174,6 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    * <code>.google.cloud.automl.v1.Dataset dataset = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.DatasetOrBuilder getDatasetOrBuilder() {
     return getDataset();
   }
@@ -195,7 +192,6 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the updateMask field is set.
    */
-  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -211,7 +207,6 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The updateMask.
    */
-  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -225,7 +220,6 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

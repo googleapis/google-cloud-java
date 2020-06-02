@@ -131,7 +131,6 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
    *
    * @return The sentiment.
    */
-  @java.lang.Override
   public int getSentiment() {
     return sentiment_;
   }
@@ -476,7 +475,6 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
      *
      * @return The sentiment.
      */
-    @java.lang.Override
     public int getSentiment() {
       return sentiment_;
     }

@@ -381,7 +381,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * @return Whether the gcsSource field is set.
    */
-  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
@@ -398,7 +397,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * @return The gcsSource.
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.automl.v1.GcsSource) source_;
@@ -416,7 +414,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * .google.cloud.automl.v1.GcsSource gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.automl.v1.GcsSource) source_;
@@ -1008,7 +1005,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      *
      * @return Whether the gcsSource field is set.
      */
-    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
@@ -1025,7 +1021,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      *
      * @return The gcsSource.
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -1169,7 +1164,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      * .google.cloud.automl.v1.GcsSource gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    @java.lang.Override
     public com.google.cloud.automl.v1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();

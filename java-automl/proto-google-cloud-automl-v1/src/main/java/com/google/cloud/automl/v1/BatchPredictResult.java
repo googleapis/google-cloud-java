@@ -171,7 +171,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
-  @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -179,7 +178,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     return internalGetMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getMetadataMap()} instead. */
-  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
@@ -199,7 +197,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
-  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
@@ -218,7 +215,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
-  @java.lang.Override
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -242,7 +238,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
-  @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -641,7 +636,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; metadata = 1;</code>
      */
-    @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -649,7 +643,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
       return internalGetMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getMetadataMap()} instead. */
-    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
@@ -669,7 +662,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; metadata = 1;</code>
      */
-    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
@@ -688,7 +680,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; metadata = 1;</code>
      */
-    @java.lang.Override
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -712,7 +703,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; metadata = 1;</code>
      */
-    @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

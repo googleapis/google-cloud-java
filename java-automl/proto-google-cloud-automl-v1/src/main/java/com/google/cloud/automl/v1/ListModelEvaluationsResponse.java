@@ -139,7 +139,6 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.automl.v1.ModelEvaluation model_evaluation = 1;</code>
    */
-  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1.ModelEvaluation> getModelEvaluationList() {
     return modelEvaluation_;
   }
@@ -152,7 +151,6 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.automl.v1.ModelEvaluation model_evaluation = 1;</code>
    */
-  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1.ModelEvaluationOrBuilder>
       getModelEvaluationOrBuilderList() {
     return modelEvaluation_;
@@ -166,7 +164,6 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.automl.v1.ModelEvaluation model_evaluation = 1;</code>
    */
-  @java.lang.Override
   public int getModelEvaluationCount() {
     return modelEvaluation_.size();
   }
@@ -179,7 +176,6 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.automl.v1.ModelEvaluation model_evaluation = 1;</code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.ModelEvaluation getModelEvaluation(int index) {
     return modelEvaluation_.get(index);
   }
@@ -192,7 +188,6 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.automl.v1.ModelEvaluation model_evaluation = 1;</code>
    */
-  @java.lang.Override
   public com.google.cloud.automl.v1.ModelEvaluationOrBuilder getModelEvaluationOrBuilder(
       int index) {
     return modelEvaluation_.get(index);
@@ -213,7 +208,6 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * @return The nextPageToken.
    */
-  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -238,7 +232,6 @@ public final class ListModelEvaluationsResponse extends com.google.protobuf.Gene
    *
    * @return The bytes for nextPageToken.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
