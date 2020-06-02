@@ -39,6 +39,10 @@
     <url>https://github.com/googleapis/java-memcache</url>
   </scm>
 
+  <properties>
+    <maven.antrun.skip>true</maven.antrun.skip>
+  </properties>
+  
   <distributionManagement>
     <snapshotRepository>
       <id>sonatype-nexus-snapshots</id>
