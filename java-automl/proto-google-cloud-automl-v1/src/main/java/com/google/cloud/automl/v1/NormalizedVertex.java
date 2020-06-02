@@ -129,6 +129,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
    *
    * @return The x.
    */
+  @java.lang.Override
   public float getX() {
     return x_;
   }
@@ -146,6 +147,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
    *
    * @return The y.
    */
+  @java.lang.Override
   public float getY() {
     return y_;
   }
@@ -498,6 +500,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      *
      * @return The x.
      */
+    @java.lang.Override
     public float getX() {
       return x_;
     }
@@ -549,6 +552,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      *
      * @return The y.
      */
+    @java.lang.Override
     public float getY() {
       return y_;
     }

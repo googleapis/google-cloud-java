@@ -440,6 +440,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -544,6 +548,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the translationModelMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasTranslationModelMetadata() {
     return modelMetadataCase_ == 15;
   }
@@ -558,6 +563,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The translationModelMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TranslationModelMetadata getTranslationModelMetadata() {
     if (modelMetadataCase_ == 15) {
       return (com.google.cloud.automl.v1.TranslationModelMetadata) modelMetadata_;
@@ -573,6 +579,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1.TranslationModelMetadata translation_model_metadata = 15;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TranslationModelMetadataOrBuilder
       getTranslationModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 15) {
@@ -595,6 +602,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the imageClassificationModelMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasImageClassificationModelMetadata() {
     return modelMetadataCase_ == 13;
   }
@@ -611,6 +619,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageClassificationModelMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ImageClassificationModelMetadata
       getImageClassificationModelMetadata() {
     if (modelMetadataCase_ == 13) {
@@ -629,6 +638,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ImageClassificationModelMetadataOrBuilder
       getImageClassificationModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 13) {
@@ -651,6 +661,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the textClassificationModelMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasTextClassificationModelMetadata() {
     return modelMetadataCase_ == 14;
   }
@@ -667,6 +678,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The textClassificationModelMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextClassificationModelMetadata
       getTextClassificationModelMetadata() {
     if (modelMetadataCase_ == 14) {
@@ -685,6 +697,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextClassificationModelMetadataOrBuilder
       getTextClassificationModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 14) {
@@ -707,6 +720,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the imageObjectDetectionModelMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasImageObjectDetectionModelMetadata() {
     return modelMetadataCase_ == 20;
   }
@@ -723,6 +737,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageObjectDetectionModelMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata
       getImageObjectDetectionModelMetadata() {
     if (modelMetadataCase_ == 20) {
@@ -741,6 +756,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadataOrBuilder
       getImageObjectDetectionModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 20) {
@@ -762,6 +778,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the textExtractionModelMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasTextExtractionModelMetadata() {
     return modelMetadataCase_ == 19;
   }
@@ -777,6 +794,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The textExtractionModelMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextExtractionModelMetadata getTextExtractionModelMetadata() {
     if (modelMetadataCase_ == 19) {
       return (com.google.cloud.automl.v1.TextExtractionModelMetadata) modelMetadata_;
@@ -793,6 +811,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextExtractionModelMetadataOrBuilder
       getTextExtractionModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 19) {
@@ -814,6 +833,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the textSentimentModelMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasTextSentimentModelMetadata() {
     return modelMetadataCase_ == 22;
   }
@@ -829,6 +849,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The textSentimentModelMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextSentimentModelMetadata getTextSentimentModelMetadata() {
     if (modelMetadataCase_ == 22) {
       return (com.google.cloud.automl.v1.TextSentimentModelMetadata) modelMetadata_;
@@ -845,6 +866,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextSentimentModelMetadataOrBuilder
       getTextSentimentModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 22) {
@@ -867,6 +889,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -890,6 +913,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -918,6 +942,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -943,6 +968,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -969,6 +995,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The datasetId.
    */
+  @java.lang.Override
   public java.lang.String getDatasetId() {
     java.lang.Object ref = datasetId_;
     if (ref instanceof java.lang.String) {
@@ -992,6 +1019,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for datasetId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDatasetIdBytes() {
     java.lang.Object ref = datasetId_;
     if (ref instanceof java.lang.String) {
@@ -1017,6 +1045,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -1031,6 +1060,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -1043,6 +1073,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1060,6 +1091,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -1074,6 +1106,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -1086,6 +1119,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -1104,6 +1138,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for deploymentState.
    */
+  @java.lang.Override
   public int getDeploymentStateValue() {
     return deploymentState_;
   }
@@ -1119,6 +1154,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deploymentState.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.Model.DeploymentState getDeploymentState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.automl.v1.Model.DeploymentState result =
@@ -1140,6 +1176,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1163,6 +1200,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1214,6 +1252,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1221,6 +1260,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -1239,6 +1279,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -1256,6 +1297,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1277,6 +1319,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1990,6 +2033,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the translationModelMetadata field is set.
      */
+    @java.lang.Override
     public boolean hasTranslationModelMetadata() {
       return modelMetadataCase_ == 15;
     }
@@ -2005,6 +2049,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The translationModelMetadata.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TranslationModelMetadata getTranslationModelMetadata() {
       if (translationModelMetadataBuilder_ == null) {
         if (modelMetadataCase_ == 15) {
@@ -2147,6 +2192,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1.TranslationModelMetadata translation_model_metadata = 15;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TranslationModelMetadataOrBuilder
         getTranslationModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 15) && (translationModelMetadataBuilder_ != null)) {
@@ -2211,6 +2257,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the imageClassificationModelMetadata field is set.
      */
+    @java.lang.Override
     public boolean hasImageClassificationModelMetadata() {
       return modelMetadataCase_ == 13;
     }
@@ -2227,6 +2274,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The imageClassificationModelMetadata.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ImageClassificationModelMetadata
         getImageClassificationModelMetadata() {
       if (imageClassificationModelMetadataBuilder_ == null) {
@@ -2377,6 +2425,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.automl.v1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ImageClassificationModelMetadataOrBuilder
         getImageClassificationModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 13) && (imageClassificationModelMetadataBuilder_ != null)) {
@@ -2443,6 +2492,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textClassificationModelMetadata field is set.
      */
+    @java.lang.Override
     public boolean hasTextClassificationModelMetadata() {
       return modelMetadataCase_ == 14;
     }
@@ -2459,6 +2509,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textClassificationModelMetadata.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextClassificationModelMetadata
         getTextClassificationModelMetadata() {
       if (textClassificationModelMetadataBuilder_ == null) {
@@ -2609,6 +2660,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.automl.v1.TextClassificationModelMetadata text_classification_model_metadata = 14;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextClassificationModelMetadataOrBuilder
         getTextClassificationModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 14) && (textClassificationModelMetadataBuilder_ != null)) {
@@ -2675,6 +2727,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the imageObjectDetectionModelMetadata field is set.
      */
+    @java.lang.Override
     public boolean hasImageObjectDetectionModelMetadata() {
       return modelMetadataCase_ == 20;
     }
@@ -2691,6 +2744,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The imageObjectDetectionModelMetadata.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata
         getImageObjectDetectionModelMetadata() {
       if (imageObjectDetectionModelMetadataBuilder_ == null) {
@@ -2841,6 +2895,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.automl.v1.ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ImageObjectDetectionModelMetadataOrBuilder
         getImageObjectDetectionModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 20) && (imageObjectDetectionModelMetadataBuilder_ != null)) {
@@ -2907,6 +2962,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textExtractionModelMetadata field is set.
      */
+    @java.lang.Override
     public boolean hasTextExtractionModelMetadata() {
       return modelMetadataCase_ == 19;
     }
@@ -2923,6 +2979,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textExtractionModelMetadata.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextExtractionModelMetadata getTextExtractionModelMetadata() {
       if (textExtractionModelMetadataBuilder_ == null) {
         if (modelMetadataCase_ == 19) {
@@ -3071,6 +3128,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.automl.v1.TextExtractionModelMetadata text_extraction_model_metadata = 19;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextExtractionModelMetadataOrBuilder
         getTextExtractionModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 19) && (textExtractionModelMetadataBuilder_ != null)) {
@@ -3136,6 +3194,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textSentimentModelMetadata field is set.
      */
+    @java.lang.Override
     public boolean hasTextSentimentModelMetadata() {
       return modelMetadataCase_ == 22;
     }
@@ -3151,6 +3210,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textSentimentModelMetadata.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextSentimentModelMetadata getTextSentimentModelMetadata() {
       if (textSentimentModelMetadataBuilder_ == null) {
         if (modelMetadataCase_ == 22) {
@@ -3293,6 +3353,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1.TextSentimentModelMetadata text_sentiment_model_metadata = 22;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextSentimentModelMetadataOrBuilder
         getTextSentimentModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 22) && (textSentimentModelMetadataBuilder_ != null)) {
@@ -4062,6 +4123,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for deploymentState.
      */
+    @java.lang.Override
     public int getDeploymentStateValue() {
       return deploymentState_;
     }
@@ -4079,6 +4141,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDeploymentStateValue(int value) {
+
       deploymentState_ = value;
       onChanged();
       return this;
@@ -4095,6 +4158,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The deploymentState.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.Model.DeploymentState getDeploymentState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1.Model.DeploymentState result =
@@ -4294,6 +4358,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -4301,6 +4366,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -4319,6 +4385,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -4336,6 +4403,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -4358,6 +4426,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 34;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

@@ -217,6 +217,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    *
    * @return Whether the gcsDestination field is set.
    */
+  @java.lang.Override
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
@@ -240,6 +241,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    *
    * @return The gcsDestination.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.GcsDestination getGcsDestination() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.automl.v1.GcsDestination) destination_;
@@ -264,6 +266,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.automl.v1.GcsDestination) destination_;
@@ -311,6 +314,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    *
    * @return The modelFormat.
    */
+  @java.lang.Override
   public java.lang.String getModelFormat() {
     java.lang.Object ref = modelFormat_;
     if (ref instanceof java.lang.String) {
@@ -360,6 +364,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    *
    * @return The bytes for modelFormat.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelFormatBytes() {
     java.lang.Object ref = modelFormat_;
     if (ref instanceof java.lang.String) {
@@ -411,6 +416,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
+  @java.lang.Override
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -418,6 +424,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
     return internalGetParams().getMap().containsKey(key);
   }
   /** Use {@link #getParamsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
@@ -436,6 +443,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
@@ -453,6 +461,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -474,6 +483,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getParamsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -931,6 +941,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      *
      * @return Whether the gcsDestination field is set.
      */
+    @java.lang.Override
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
@@ -954,6 +965,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      *
      * @return The gcsDestination.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.GcsDestination getGcsDestination() {
       if (gcsDestinationBuilder_ == null) {
         if (destinationCase_ == 1) {
@@ -1140,6 +1152,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      * .google.cloud.automl.v1.GcsDestination gcs_destination = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
       if ((destinationCase_ == 1) && (gcsDestinationBuilder_ != null)) {
         return gcsDestinationBuilder_.getMessageOrBuilder();
@@ -1473,6 +1486,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
+    @java.lang.Override
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1480,6 +1494,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
       return internalGetParams().getMap().containsKey(key);
     }
     /** Use {@link #getParamsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
@@ -1498,6 +1513,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
@@ -1515,6 +1531,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getParamsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1537,6 +1554,7 @@ public final class ModelExportOutputConfig extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getParamsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

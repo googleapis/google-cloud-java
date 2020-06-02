@@ -129,6 +129,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The outputUriPrefix.
    */
+  @java.lang.Override
   public java.lang.String getOutputUriPrefix() {
     java.lang.Object ref = outputUriPrefix_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for outputUriPrefix.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutputUriPrefixBytes() {
     java.lang.Object ref = outputUriPrefix_;
     if (ref instanceof java.lang.String) {

@@ -174,6 +174,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1.AnnotationPayload> getPayloadList() {
     return payload_;
   }
@@ -188,6 +189,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1.AnnotationPayloadOrBuilder>
       getPayloadOrBuilderList() {
     return payload_;
@@ -203,6 +205,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
    */
+  @java.lang.Override
   public int getPayloadCount() {
     return payload_.size();
   }
@@ -217,6 +220,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.AnnotationPayload getPayload(int index) {
     return payload_.get(index);
   }
@@ -231,6 +235,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.automl.v1.AnnotationPayload payload = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.AnnotationPayloadOrBuilder getPayloadOrBuilder(int index) {
     return payload_.get(index);
   }
@@ -254,6 +259,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the preprocessedInput field is set.
    */
+  @java.lang.Override
   public boolean hasPreprocessedInput() {
     return preprocessedInput_ != null;
   }
@@ -274,6 +280,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The preprocessedInput.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ExamplePayload getPreprocessedInput() {
     return preprocessedInput_ == null
         ? com.google.cloud.automl.v1.ExamplePayload.getDefaultInstance()
@@ -294,6 +301,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.automl.v1.ExamplePayload preprocessed_input = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ExamplePayloadOrBuilder getPreprocessedInputOrBuilder() {
     return getPreprocessedInput();
   }
@@ -345,6 +353,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
+  @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -352,6 +361,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     return internalGetMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
@@ -378,6 +388,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
@@ -403,6 +414,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -433,6 +445,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1545,6 +1558,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
      */
+    @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1552,6 +1566,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       return internalGetMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
@@ -1578,6 +1593,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
@@ -1603,6 +1619,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1633,6 +1650,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, string&gt; metadata = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

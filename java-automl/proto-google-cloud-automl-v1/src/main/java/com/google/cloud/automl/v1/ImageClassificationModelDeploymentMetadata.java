@@ -126,6 +126,7 @@ public final class ImageClassificationModelDeploymentMetadata
    *
    * @return The nodeCount.
    */
+  @java.lang.Override
   public long getNodeCount() {
     return nodeCount_;
   }
@@ -472,6 +473,7 @@ public final class ImageClassificationModelDeploymentMetadata
      *
      * @return The nodeCount.
      */
+    @java.lang.Override
     public long getNodeCount() {
       return nodeCount_;
     }

@@ -774,6 +774,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
        *
        * @return The gcsOutputDirectory.
        */
+      @java.lang.Override
       public java.lang.String getGcsOutputDirectory() {
         java.lang.Object ref = "";
         if (outputLocationCase_ == 1) {
@@ -802,6 +803,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
        *
        * @return The bytes for gcsOutputDirectory.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
         java.lang.Object ref = "";
         if (outputLocationCase_ == 1) {
@@ -955,6 +957,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -970,6 +973,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictInputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.automl.v1.BatchPredictInputConfig.getDefaultInstance()
@@ -985,6 +989,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictInputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -1005,6 +1010,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    *
    * @return Whether the outputInfo field is set.
    */
+  @java.lang.Override
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
   }
@@ -1021,6 +1027,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    *
    * @return The outputInfo.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo
       getOutputInfo() {
     return outputInfo_ == null
@@ -1039,6 +1046,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    * .google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo output_info = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfoOrBuilder
       getOutputInfoOrBuilder() {
     return getOutputInfo();

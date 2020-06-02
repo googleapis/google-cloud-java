@@ -44,10 +44,6 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-automl-v1beta1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-automl-v1</artifactId>
     </dependency>
     <dependency>
@@ -74,11 +70,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-automl-v1beta1</artifactId>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-automl-v1</artifactId>

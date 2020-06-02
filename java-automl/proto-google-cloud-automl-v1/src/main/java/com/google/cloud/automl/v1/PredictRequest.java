@@ -167,6 +167,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +192,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -219,6 +221,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the payload field is set.
    */
+  @java.lang.Override
   public boolean hasPayload() {
     return payload_ != null;
   }
@@ -236,6 +239,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The payload.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ExamplePayload getPayload() {
     return payload_ == null
         ? com.google.cloud.automl.v1.ExamplePayload.getDefaultInstance()
@@ -253,6 +257,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.automl.v1.ExamplePayload payload = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ExamplePayloadOrBuilder getPayloadOrBuilder() {
     return getPayload();
   }
@@ -313,6 +318,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
+  @java.lang.Override
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -320,6 +326,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     return internalGetParams().getMap().containsKey(key);
   }
   /** Use {@link #getParamsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
@@ -355,6 +362,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
@@ -389,6 +397,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -427,6 +436,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getParamsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1210,6 +1220,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
+    @java.lang.Override
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1217,6 +1228,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       return internalGetParams().getMap().containsKey(key);
     }
     /** Use {@link #getParamsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
@@ -1252,6 +1264,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
@@ -1286,6 +1299,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getParamsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1325,6 +1339,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getParamsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

@@ -321,6 +321,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the classificationEvaluationMetrics field is set.
    */
+  @java.lang.Override
   public boolean hasClassificationEvaluationMetrics() {
     return metricsCase_ == 8;
   }
@@ -340,6 +341,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The classificationEvaluationMetrics.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ClassificationEvaluationMetrics
       getClassificationEvaluationMetrics() {
     if (metricsCase_ == 8) {
@@ -361,6 +363,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder
       getClassificationEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 8) {
@@ -382,6 +385,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the translationEvaluationMetrics field is set.
    */
+  @java.lang.Override
   public boolean hasTranslationEvaluationMetrics() {
     return metricsCase_ == 9;
   }
@@ -397,6 +401,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The translationEvaluationMetrics.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TranslationEvaluationMetrics getTranslationEvaluationMetrics() {
     if (metricsCase_ == 9) {
       return (com.google.cloud.automl.v1.TranslationEvaluationMetrics) metrics_;
@@ -413,6 +418,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * <code>.google.cloud.automl.v1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TranslationEvaluationMetricsOrBuilder
       getTranslationEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 9) {
@@ -435,6 +441,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the imageObjectDetectionEvaluationMetrics field is set.
    */
+  @java.lang.Override
   public boolean hasImageObjectDetectionEvaluationMetrics() {
     return metricsCase_ == 12;
   }
@@ -451,6 +458,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The imageObjectDetectionEvaluationMetrics.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
       getImageObjectDetectionEvaluationMetrics() {
     if (metricsCase_ == 12) {
@@ -469,6 +477,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder
       getImageObjectDetectionEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 12) {
@@ -491,6 +500,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the textSentimentEvaluationMetrics field is set.
    */
+  @java.lang.Override
   public boolean hasTextSentimentEvaluationMetrics() {
     return metricsCase_ == 11;
   }
@@ -507,6 +517,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The textSentimentEvaluationMetrics.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextSentimentEvaluationMetrics
       getTextSentimentEvaluationMetrics() {
     if (metricsCase_ == 11) {
@@ -525,6 +536,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder
       getTextSentimentEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 11) {
@@ -547,6 +559,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the textExtractionEvaluationMetrics field is set.
    */
+  @java.lang.Override
   public boolean hasTextExtractionEvaluationMetrics() {
     return metricsCase_ == 13;
   }
@@ -563,6 +576,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The textExtractionEvaluationMetrics.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextExtractionEvaluationMetrics
       getTextExtractionEvaluationMetrics() {
     if (metricsCase_ == 13) {
@@ -581,6 +595,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder
       getTextExtractionEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 13) {
@@ -604,6 +619,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -628,6 +644,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -660,6 +677,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The annotationSpecId.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationSpecId() {
     java.lang.Object ref = annotationSpecId_;
     if (ref instanceof java.lang.String) {
@@ -689,6 +707,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for annotationSpecId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationSpecIdBytes() {
     java.lang.Object ref = annotationSpecId_;
     if (ref instanceof java.lang.String) {
@@ -723,6 +742,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -754,6 +774,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -779,6 +800,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -793,6 +815,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -805,6 +828,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -829,6 +853,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The evaluatedExampleCount.
    */
+  @java.lang.Override
   public int getEvaluatedExampleCount() {
     return evaluatedExampleCount_;
   }
@@ -1420,6 +1445,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the classificationEvaluationMetrics field is set.
      */
+    @java.lang.Override
     public boolean hasClassificationEvaluationMetrics() {
       return metricsCase_ == 8;
     }
@@ -1439,6 +1465,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The classificationEvaluationMetrics.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ClassificationEvaluationMetrics
         getClassificationEvaluationMetrics() {
       if (classificationEvaluationMetricsBuilder_ == null) {
@@ -1607,6 +1634,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * .google.cloud.automl.v1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ClassificationEvaluationMetricsOrBuilder
         getClassificationEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 8) && (classificationEvaluationMetricsBuilder_ != null)) {
@@ -1676,6 +1704,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the translationEvaluationMetrics field is set.
      */
+    @java.lang.Override
     public boolean hasTranslationEvaluationMetrics() {
       return metricsCase_ == 9;
     }
@@ -1692,6 +1721,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The translationEvaluationMetrics.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TranslationEvaluationMetrics
         getTranslationEvaluationMetrics() {
       if (translationEvaluationMetricsBuilder_ == null) {
@@ -1841,6 +1871,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * .google.cloud.automl.v1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TranslationEvaluationMetricsOrBuilder
         getTranslationEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 9) && (translationEvaluationMetricsBuilder_ != null)) {
@@ -1906,6 +1937,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the imageObjectDetectionEvaluationMetrics field is set.
      */
+    @java.lang.Override
     public boolean hasImageObjectDetectionEvaluationMetrics() {
       return metricsCase_ == 12;
     }
@@ -1922,6 +1954,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The imageObjectDetectionEvaluationMetrics.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
         getImageObjectDetectionEvaluationMetrics() {
       if (imageObjectDetectionEvaluationMetricsBuilder_ == null) {
@@ -2074,6 +2107,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * .google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics image_object_detection_evaluation_metrics = 12;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetricsOrBuilder
         getImageObjectDetectionEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 12) && (imageObjectDetectionEvaluationMetricsBuilder_ != null)) {
@@ -2141,6 +2175,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the textSentimentEvaluationMetrics field is set.
      */
+    @java.lang.Override
     public boolean hasTextSentimentEvaluationMetrics() {
       return metricsCase_ == 11;
     }
@@ -2157,6 +2192,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The textSentimentEvaluationMetrics.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextSentimentEvaluationMetrics
         getTextSentimentEvaluationMetrics() {
       if (textSentimentEvaluationMetricsBuilder_ == null) {
@@ -2306,6 +2342,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * .google.cloud.automl.v1.TextSentimentEvaluationMetrics text_sentiment_evaluation_metrics = 11;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextSentimentEvaluationMetricsOrBuilder
         getTextSentimentEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 11) && (textSentimentEvaluationMetricsBuilder_ != null)) {
@@ -2371,6 +2408,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the textExtractionEvaluationMetrics field is set.
      */
+    @java.lang.Override
     public boolean hasTextExtractionEvaluationMetrics() {
       return metricsCase_ == 13;
     }
@@ -2387,6 +2425,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The textExtractionEvaluationMetrics.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextExtractionEvaluationMetrics
         getTextExtractionEvaluationMetrics() {
       if (textExtractionEvaluationMetricsBuilder_ == null) {
@@ -2537,6 +2576,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      * .google.cloud.automl.v1.TextExtractionEvaluationMetrics text_extraction_evaluation_metrics = 13;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextExtractionEvaluationMetricsOrBuilder
         getTextExtractionEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 13) && (textExtractionEvaluationMetricsBuilder_ != null)) {
@@ -3195,6 +3235,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The evaluatedExampleCount.
      */
+    @java.lang.Override
     public int getEvaluatedExampleCount() {
       return evaluatedExampleCount_;
     }
