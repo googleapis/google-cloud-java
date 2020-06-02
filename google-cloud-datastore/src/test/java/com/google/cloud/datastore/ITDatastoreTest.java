@@ -1136,6 +1136,56 @@ public class ITDatastoreTest {
   }
 
   @Test
+  public void testRetryableExceptionForOperationWithTxn() {
+    ByteString txnBytes = ByteString.copyFromUtf8("txn1");
+    LookupRequest requestPb =
+        LookupRequest.newBuilder()
+            .addKeys(KEY1.toPb())
+            .setReadOptions(ReadOptions.newBuilder().setTransaction(txnBytes).build())
+            .build();
+    LookupResponse responsePb =
+        LookupResponse.newBuilder()
+            .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
+            .build();
+    EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
+        .andReturn(BeginTransactionResponse.newBuilder().setTransaction(txnBytes).build());
+    EasyMock.expect(rpcMock.lookup(requestPb))
+        .andThrow(new DatastoreException(14, "UNAVAILABLE", "UNAVAILABLE", null))
+        .andReturn(responsePb);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    Datastore datastore = rpcMockOptions.getService();
+    Transaction transaction = datastore.newTransaction();
+    Entity entity = transaction.get(KEY1);
+    assertEquals(ENTITY1, entity);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testNonRetryableExceptionForOperationWithTxn() {
+    ByteString txnBytes = ByteString.copyFromUtf8("txn1");
+    LookupRequest requestPb =
+        LookupRequest.newBuilder()
+            .addKeys(KEY1.toPb())
+            .setReadOptions(ReadOptions.newBuilder().setTransaction(txnBytes).build())
+            .build();
+    EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
+        .andReturn(BeginTransactionResponse.newBuilder().setTransaction(txnBytes).build());
+    EasyMock.expect(rpcMock.lookup(requestPb))
+        .andThrow(new DatastoreException(10, "ABORTED", "ABORTED", null))
+        .times(1);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    try {
+      Datastore datastore = rpcMockOptions.getService();
+      Transaction transaction = datastore.newTransaction();
+      transaction.get(KEY1);
+      Assert.fail();
+      EasyMock.verify(rpcFactoryMock, rpcMock);
+    } catch (DatastoreException ex) {
+      assertEquals("ABORTED", ex.getMessage());
+    }
+  }
+
+  @Test
   public void testNonRetryableException() {
     LookupRequest requestPb = LookupRequest.newBuilder().addKeys(KEY1.toPb()).build();
     EasyMock.expect(rpcMock.lookup(requestPb))

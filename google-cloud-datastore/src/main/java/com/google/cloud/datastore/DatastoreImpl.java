@@ -51,6 +51,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   private final RetrySettings retrySettings;
   private static final ExceptionHandler TRANSACTION_EXCEPTION_HANDLER =
       TransactionExceptionHandler.build();
+  private static final ExceptionHandler TRANSACTION_OPERATION_EXCEPTION_HANDLER =
+      TransactionOperationExceptionHandler.build();
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
@@ -182,7 +184,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retrySettings,
-          EXCEPTION_HANDLER,
+          requestPb.getReadOptions().getTransaction().isEmpty()
+              ? EXCEPTION_HANDLER
+              : TRANSACTION_OPERATION_EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
@@ -394,7 +398,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retrySettings,
-          EXCEPTION_HANDLER,
+          requestPb.getReadOptions().getTransaction().isEmpty()
+              ? EXCEPTION_HANDLER
+              : TRANSACTION_OPERATION_EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
@@ -532,7 +538,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retrySettings,
-          EXCEPTION_HANDLER,
+          requestPb.getTransaction().isEmpty()
+              ? EXCEPTION_HANDLER
+              : TRANSACTION_OPERATION_EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
