@@ -51,6 +51,10 @@ public final class BudgetModel {
       internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_billing_budgets_v1beta1_Filter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_billing_budgets_v1beta1_Filter_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_billing_budgets_v1beta1_Filter_LabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -63,42 +67,47 @@ public final class BudgetModel {
       "\n7google/cloud/billing/budgets/v1beta1/b"
           + "udget_model.proto\022$google.cloud.billing."
           + "budgets.v1beta1\032\037google/api/field_behavi"
-          + "or.proto\032\031google/api/resource.proto\032\027goo"
-          + "gle/type/money.proto\"\336\003\n\006Budget\022\021\n\004name\030"
-          + "\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\002 \001(\t\022H\n\rbudg"
-          + "et_filter\030\003 \001(\0132,.google.cloud.billing.b"
-          + "udgets.v1beta1.FilterB\003\340A\001\022G\n\006amount\030\004 \001"
-          + "(\01322.google.cloud.billing.budgets.v1beta"
-          + "1.BudgetAmountB\003\340A\002\022Q\n\017threshold_rules\030\005"
-          + " \003(\01323.google.cloud.billing.budgets.v1be"
-          + "ta1.ThresholdRuleB\003\340A\001\022S\n\020all_updates_ru"
-          + "le\030\006 \001(\01324.google.cloud.billing.budgets."
-          + "v1beta1.AllUpdatesRuleB\003\340A\001\022\021\n\004etag\030\007 \001("
-          + "\tB\003\340A\001:]\352AZ\n$billingbudgets.googleapis.c"
-          + "om/Budget\0222billingAccounts/{billing_acco"
-          + "unt}/budgets/{budget}\"\245\001\n\014BudgetAmount\022."
-          + "\n\020specified_amount\030\001 \001(\0132\022.google.type.M"
-          + "oneyH\000\022T\n\022last_period_amount\030\002 \001(\01326.goo"
-          + "gle.cloud.billing.budgets.v1beta1.LastPe"
-          + "riodAmountH\000B\017\n\rbudget_amount\"\022\n\020LastPer"
-          + "iodAmount\"\315\001\n\rThresholdRule\022\036\n\021threshold"
-          + "_percent\030\001 \001(\001B\003\340A\002\022S\n\013spend_basis\030\002 \001(\016"
-          + "29.google.cloud.billing.budgets.v1beta1."
-          + "ThresholdRule.BasisB\003\340A\001\"G\n\005Basis\022\025\n\021BAS"
-          + "IS_UNSPECIFIED\020\000\022\021\n\rCURRENT_SPEND\020\001\022\024\n\020F"
-          + "ORECASTED_SPEND\020\002\"H\n\016AllUpdatesRule\022\031\n\014p"
-          + "ubsub_topic\030\001 \001(\tB\003\340A\002\022\033\n\016schema_version"
-          + "\030\002 \001(\tB\003\340A\002\"\220\002\n\006Filter\022\025\n\010projects\030\001 \003(\t"
-          + "B\003\340A\001\022f\n\026credit_types_treatment\030\004 \001(\0162A."
-          + "google.cloud.billing.budgets.v1beta1.Fil"
-          + "ter.CreditTypesTreatmentB\003\340A\001\022\025\n\010service"
-          + "s\030\003 \003(\tB\003\340A\001\"p\n\024CreditTypesTreatment\022&\n\""
-          + "CREDIT_TYPES_TREATMENT_UNSPECIFIED\020\000\022\027\n\023"
-          + "INCLUDE_ALL_CREDITS\020\001\022\027\n\023EXCLUDE_ALL_CRE"
-          + "DITS\020\002By\n(com.google.cloud.billing.budge"
-          + "ts.v1beta1P\001ZKgoogle.golang.org/genproto"
-          + "/googleapis/cloud/billing/budgets/v1beta"
-          + "1;budgetsb\006proto3"
+          + "or.proto\032\031google/api/resource.proto\032\034goo"
+          + "gle/protobuf/struct.proto\032\027google/type/m"
+          + "oney.proto\"\336\003\n\006Budget\022\021\n\004name\030\001 \001(\tB\003\340A\003"
+          + "\022\024\n\014display_name\030\002 \001(\t\022H\n\rbudget_filter\030"
+          + "\003 \001(\0132,.google.cloud.billing.budgets.v1b"
+          + "eta1.FilterB\003\340A\001\022G\n\006amount\030\004 \001(\01322.googl"
+          + "e.cloud.billing.budgets.v1beta1.BudgetAm"
+          + "ountB\003\340A\002\022Q\n\017threshold_rules\030\005 \003(\01323.goo"
+          + "gle.cloud.billing.budgets.v1beta1.Thresh"
+          + "oldRuleB\003\340A\001\022S\n\020all_updates_rule\030\006 \001(\01324"
+          + ".google.cloud.billing.budgets.v1beta1.Al"
+          + "lUpdatesRuleB\003\340A\001\022\021\n\004etag\030\007 \001(\tB\003\340A\001:]\352A"
+          + "Z\n$billingbudgets.googleapis.com/Budget\022"
+          + "2billingAccounts/{billing_account}/budge"
+          + "ts/{budget}\"\245\001\n\014BudgetAmount\022.\n\020specifie"
+          + "d_amount\030\001 \001(\0132\022.google.type.MoneyH\000\022T\n\022"
+          + "last_period_amount\030\002 \001(\01326.google.cloud."
+          + "billing.budgets.v1beta1.LastPeriodAmount"
+          + "H\000B\017\n\rbudget_amount\"\022\n\020LastPeriodAmount\""
+          + "\315\001\n\rThresholdRule\022\036\n\021threshold_percent\030\001"
+          + " \001(\001B\003\340A\002\022S\n\013spend_basis\030\002 \001(\01629.google."
+          + "cloud.billing.budgets.v1beta1.ThresholdR"
+          + "ule.BasisB\003\340A\001\"G\n\005Basis\022\025\n\021BASIS_UNSPECI"
+          + "FIED\020\000\022\021\n\rCURRENT_SPEND\020\001\022\024\n\020FORECASTED_"
+          + "SPEND\020\002\"H\n\016AllUpdatesRule\022\031\n\014pubsub_topi"
+          + "c\030\001 \001(\tB\003\340A\002\022\033\n\016schema_version\030\002 \001(\tB\003\340A"
+          + "\002\"\304\003\n\006Filter\022\025\n\010projects\030\001 \003(\tB\003\340A\001\022f\n\026c"
+          + "redit_types_treatment\030\004 \001(\0162A.google.clo"
+          + "ud.billing.budgets.v1beta1.Filter.Credit"
+          + "TypesTreatmentB\003\340A\001\022\025\n\010services\030\003 \003(\tB\003\340"
+          + "A\001\022\030\n\013subaccounts\030\005 \003(\tB\003\340A\001\022M\n\006labels\030\006"
+          + " \003(\01328.google.cloud.billing.budgets.v1be"
+          + "ta1.Filter.LabelsEntryB\003\340A\001\032I\n\013LabelsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.google."
+          + "protobuf.ListValue:\0028\001\"p\n\024CreditTypesTre"
+          + "atment\022&\n\"CREDIT_TYPES_TREATMENT_UNSPECI"
+          + "FIED\020\000\022\027\n\023INCLUDE_ALL_CREDITS\020\001\022\027\n\023EXCLU"
+          + "DE_ALL_CREDITS\020\002By\n(com.google.cloud.bil"
+          + "ling.budgets.v1beta1P\001ZKgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/billing/budg"
+          + "ets/v1beta1;budgetsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -106,6 +115,7 @@ public final class BudgetModel {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.type.MoneyProto.getDescriptor(),
             });
     internal_static_google_cloud_billing_budgets_v1beta1_Budget_descriptor =
@@ -158,7 +168,17 @@ public final class BudgetModel {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor,
             new java.lang.String[] {
-              "Projects", "CreditTypesTreatment", "Services",
+              "Projects", "CreditTypesTreatment", "Services", "Subaccounts", "Labels",
+            });
+    internal_static_google_cloud_billing_budgets_v1beta1_Filter_LabelsEntry_descriptor =
+        internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_billing_budgets_v1beta1_Filter_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_billing_budgets_v1beta1_Filter_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -168,6 +188,7 @@ public final class BudgetModel {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.type.MoneyProto.getDescriptor();
   }
 

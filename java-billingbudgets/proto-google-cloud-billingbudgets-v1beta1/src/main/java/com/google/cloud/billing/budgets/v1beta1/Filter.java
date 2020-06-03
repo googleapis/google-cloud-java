@@ -41,6 +41,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     projects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     creditTypesTreatment_ = 0;
     services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -100,6 +101,31 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
               creditTypesTreatment_ = rawValue;
               break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                subaccounts_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              subaccounts_.add(s);
+              break;
+            }
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ListValue>
+                  labels__ =
+                      input.readMessage(
+                          LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -120,6 +146,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         services_ = services_.getUnmodifiableView();
       }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        subaccounts_ = subaccounts_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -128,6 +157,17 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.budgets.v1beta1.BudgetModel
         .internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 6:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -485,6 +525,202 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     return services_.getByteString(index);
   }
 
+  public static final int SUBACCOUNTS_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList subaccounts_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+   * that usage from only this set of subaccounts should be included in the
+   * budget. If a subaccount is set to the name of the master account, usage
+   * from the master account will be included. If omitted, the report will
+   * include usage from the master account and all subaccounts, if they exist.
+   * </pre>
+   *
+   * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the subaccounts.
+   */
+  public com.google.protobuf.ProtocolStringList getSubaccountsList() {
+    return subaccounts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+   * that usage from only this set of subaccounts should be included in the
+   * budget. If a subaccount is set to the name of the master account, usage
+   * from the master account will be included. If omitted, the report will
+   * include usage from the master account and all subaccounts, if they exist.
+   * </pre>
+   *
+   * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of subaccounts.
+   */
+  public int getSubaccountsCount() {
+    return subaccounts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+   * that usage from only this set of subaccounts should be included in the
+   * budget. If a subaccount is set to the name of the master account, usage
+   * from the master account will be included. If omitted, the report will
+   * include usage from the master account and all subaccounts, if they exist.
+   * </pre>
+   *
+   * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The subaccounts at the given index.
+   */
+  public java.lang.String getSubaccounts(int index) {
+    return subaccounts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+   * that usage from only this set of subaccounts should be included in the
+   * budget. If a subaccount is set to the name of the master account, usage
+   * from the master account will be included. If omitted, the report will
+   * include usage from the master account and all subaccounts, if they exist.
+   * </pre>
+   *
+   * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the subaccounts at the given index.
+   */
+  public com.google.protobuf.ByteString getSubaccountsBytes(int index) {
+    return subaccounts_.getByteString(index);
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 6;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ListValue>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.protobuf.ListValue>newDefaultInstance(
+                    com.google.cloud.billing.budgets.v1beta1.BudgetModel
+                        .internal_static_google_cloud_billing_budgets_v1beta1_Filter_LabelsEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.protobuf.ListValue.getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ListValue> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ListValue>
+      internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A single label and value pair specifying that usage from only this set of
+   * labeled resources should be included in the budget. Multiple entries or
+   * multiple values per entry are not allowed. If omitted, the report will
+   * include all labeled and unlabeled usage.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A single label and value pair specifying that usage from only this set of
+   * labeled resources should be included in the budget. Multiple entries or
+   * multiple values per entry are not allowed. If omitted, the report will
+   * include all labeled and unlabeled usage.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A single label and value pair specifying that usage from only this set of
+   * labeled resources should be included in the budget. Multiple entries or
+   * multiple values per entry are not allowed. If omitted, the report will
+   * include all labeled and unlabeled usage.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public com.google.protobuf.ListValue getLabelsOrDefault(
+      java.lang.String key, com.google.protobuf.ListValue defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.protobuf.ListValue> map =
+        internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A single label and value pair specifying that usage from only this set of
+   * labeled resources should be included in the budget. Multiple entries or
+   * multiple values per entry are not allowed. If omitted, the report will
+   * include all labeled and unlabeled usage.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  public com.google.protobuf.ListValue getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, com.google.protobuf.ListValue> map =
+        internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -511,6 +747,11 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(4, creditTypesTreatment_);
     }
+    for (int i = 0; i < subaccounts_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, subaccounts_.getRaw(i));
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 6);
     unknownFields.writeTo(output);
   }
 
@@ -542,6 +783,24 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, creditTypesTreatment_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < subaccounts_.size(); i++) {
+        dataSize += computeStringSizeNoTag(subaccounts_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSubaccountsList().size();
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ListValue> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ListValue> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, labels__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -561,6 +820,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     if (!getProjectsList().equals(other.getProjectsList())) return false;
     if (creditTypesTreatment_ != other.creditTypesTreatment_) return false;
     if (!getServicesList().equals(other.getServicesList())) return false;
+    if (!getSubaccountsList().equals(other.getSubaccountsList())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -581,6 +842,14 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     if (getServicesCount() > 0) {
       hash = (37 * hash) + SERVICES_FIELD_NUMBER;
       hash = (53 * hash) + getServicesList().hashCode();
+    }
+    if (getSubaccountsCount() > 0) {
+      hash = (37 * hash) + SUBACCOUNTS_FIELD_NUMBER;
+      hash = (53 * hash) + getSubaccountsList().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -700,6 +969,26 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 6:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -733,6 +1022,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableLabels().clear();
       return this;
     }
 
@@ -772,6 +1064,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.services_ = services_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        subaccounts_ = subaccounts_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.subaccounts_ = subaccounts_;
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -845,6 +1144,17 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.subaccounts_.isEmpty()) {
+        if (subaccounts_.isEmpty()) {
+          subaccounts_ = other.subaccounts_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureSubaccountsIsMutable();
+          subaccounts_.addAll(other.subaccounts_);
+        }
+        onChanged();
+      }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1393,6 +1703,401 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       ensureServicesIsMutable();
       services_.add(value);
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList subaccounts_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureSubaccountsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        subaccounts_ = new com.google.protobuf.LazyStringArrayList(subaccounts_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the subaccounts.
+     */
+    public com.google.protobuf.ProtocolStringList getSubaccountsList() {
+      return subaccounts_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of subaccounts.
+     */
+    public int getSubaccountsCount() {
+      return subaccounts_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The subaccounts at the given index.
+     */
+    public java.lang.String getSubaccounts(int index) {
+      return subaccounts_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the subaccounts at the given index.
+     */
+    public com.google.protobuf.ByteString getSubaccountsBytes(int index) {
+      return subaccounts_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The subaccounts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubaccounts(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSubaccountsIsMutable();
+      subaccounts_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The subaccounts to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSubaccounts(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSubaccountsIsMutable();
+      subaccounts_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The subaccounts to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSubaccounts(java.lang.Iterable<java.lang.String> values) {
+      ensureSubaccountsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subaccounts_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubaccounts() {
+      subaccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying
+     * that usage from only this set of subaccounts should be included in the
+     * budget. If a subaccount is set to the name of the master account, usage
+     * from the master account will be included. If omitted, the report will
+     * include usage from the master account and all subaccounts, if they exist.
+     * </pre>
+     *
+     * <code>repeated string subaccounts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the subaccounts to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSubaccountsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSubaccountsIsMutable();
+      subaccounts_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ListValue> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ListValue>
+        internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ListValue>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. Multiple entries or
+     * multiple values per entry are not allowed. If omitted, the report will
+     * include all labeled and unlabeled usage.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. Multiple entries or
+     * multiple values per entry are not allowed. If omitted, the report will
+     * include all labeled and unlabeled usage.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. Multiple entries or
+     * multiple values per entry are not allowed. If omitted, the report will
+     * include all labeled and unlabeled usage.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.ListValue getLabelsOrDefault(
+        java.lang.String key, com.google.protobuf.ListValue defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.protobuf.ListValue> map =
+          internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. Multiple entries or
+     * multiple values per entry are not allowed. If omitted, the report will
+     * include all labeled and unlabeled usage.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.ListValue getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.protobuf.ListValue> map =
+          internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. Multiple entries or
+     * multiple values per entry are not allowed. If omitted, the report will
+     * include all labeled and unlabeled usage.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. Multiple entries or
+     * multiple values per entry are not allowed. If omitted, the report will
+     * include all labeled and unlabeled usage.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putLabels(java.lang.String key, com.google.protobuf.ListValue value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A single label and value pair specifying that usage from only this set of
+     * labeled resources should be included in the budget. Multiple entries or
+     * multiple values per entry are not allowed. If omitted, the report will
+     * include all labeled and unlabeled usage.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllLabels(
+        java.util.Map<java.lang.String, com.google.protobuf.ListValue> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
