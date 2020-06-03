@@ -92,12 +92,12 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
   private final UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings;
   private final UnaryCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeySettings;
-  private final UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings;
-  private final UnaryCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeySettings;
   private final UnaryCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeySettings;
   private final UnaryCallSettings<UpdateSshPublicKeyRequest, SshPublicKey>
       updateSshPublicKeySettings;
+  private final UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings;
+  private final UnaryCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeySettings;
 
   /** Returns the object with the settings used for calls to deletePosixAccount. */
   public UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings() {
@@ -109,16 +109,6 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     return deleteSshPublicKeySettings;
   }
 
-  /** Returns the object with the settings used for calls to getLoginProfile. */
-  public UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings() {
-    return getLoginProfileSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getSshPublicKey. */
-  public UnaryCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeySettings() {
-    return getSshPublicKeySettings;
-  }
-
   /** Returns the object with the settings used for calls to importSshPublicKey. */
   public UnaryCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeySettings() {
@@ -128,6 +118,16 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
   /** Returns the object with the settings used for calls to updateSshPublicKey. */
   public UnaryCallSettings<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeySettings() {
     return updateSshPublicKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLoginProfile. */
+  public UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings() {
+    return getLoginProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSshPublicKey. */
+  public UnaryCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeySettings() {
+    return getSshPublicKeySettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -201,10 +201,10 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
     deletePosixAccountSettings = settingsBuilder.deletePosixAccountSettings().build();
     deleteSshPublicKeySettings = settingsBuilder.deleteSshPublicKeySettings().build();
-    getLoginProfileSettings = settingsBuilder.getLoginProfileSettings().build();
-    getSshPublicKeySettings = settingsBuilder.getSshPublicKeySettings().build();
     importSshPublicKeySettings = settingsBuilder.importSshPublicKeySettings().build();
     updateSshPublicKeySettings = settingsBuilder.updateSshPublicKeySettings().build();
+    getLoginProfileSettings = settingsBuilder.getLoginProfileSettings().build();
+    getSshPublicKeySettings = settingsBuilder.getSshPublicKeySettings().build();
   }
 
   /** Builder for OsLoginServiceStubSettings. */
@@ -215,14 +215,14 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
         deletePosixAccountSettings;
     private final UnaryCallSettings.Builder<DeleteSshPublicKeyRequest, Empty>
         deleteSshPublicKeySettings;
-    private final UnaryCallSettings.Builder<GetLoginProfileRequest, LoginProfile>
-        getLoginProfileSettings;
-    private final UnaryCallSettings.Builder<GetSshPublicKeyRequest, SshPublicKey>
-        getSshPublicKeySettings;
     private final UnaryCallSettings.Builder<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
         importSshPublicKeySettings;
     private final UnaryCallSettings.Builder<UpdateSshPublicKeyRequest, SshPublicKey>
         updateSshPublicKeySettings;
+    private final UnaryCallSettings.Builder<GetLoginProfileRequest, LoginProfile>
+        getLoginProfileSettings;
+    private final UnaryCallSettings.Builder<GetSshPublicKeyRequest, SshPublicKey>
+        getSshPublicKeySettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -249,9 +249,9 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(10000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(10000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
@@ -269,22 +269,22 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
       deleteSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getLoginProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       importSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getLoginProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deletePosixAccountSettings,
               deleteSshPublicKeySettings,
-              getLoginProfileSettings,
-              getSshPublicKeySettings,
               importSshPublicKeySettings,
-              updateSshPublicKeySettings);
+              updateSshPublicKeySettings,
+              getLoginProfileSettings,
+              getSshPublicKeySettings);
 
       initDefaults(this);
     }
@@ -302,12 +302,22 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
       builder
           .deletePosixAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteSshPublicKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .importSshPublicKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateSshPublicKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -320,16 +330,6 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .importSshPublicKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateSshPublicKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
@@ -338,19 +338,19 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
       deletePosixAccountSettings = settings.deletePosixAccountSettings.toBuilder();
       deleteSshPublicKeySettings = settings.deleteSshPublicKeySettings.toBuilder();
-      getLoginProfileSettings = settings.getLoginProfileSettings.toBuilder();
-      getSshPublicKeySettings = settings.getSshPublicKeySettings.toBuilder();
       importSshPublicKeySettings = settings.importSshPublicKeySettings.toBuilder();
       updateSshPublicKeySettings = settings.updateSshPublicKeySettings.toBuilder();
+      getLoginProfileSettings = settings.getLoginProfileSettings.toBuilder();
+      getSshPublicKeySettings = settings.getSshPublicKeySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deletePosixAccountSettings,
               deleteSshPublicKeySettings,
-              getLoginProfileSettings,
-              getSshPublicKeySettings,
               importSshPublicKeySettings,
-              updateSshPublicKeySettings);
+              updateSshPublicKeySettings,
+              getLoginProfileSettings,
+              getSshPublicKeySettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -381,18 +381,6 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
       return deleteSshPublicKeySettings;
     }
 
-    /** Returns the builder for the settings used for calls to getLoginProfile. */
-    public UnaryCallSettings.Builder<GetLoginProfileRequest, LoginProfile>
-        getLoginProfileSettings() {
-      return getLoginProfileSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getSshPublicKey. */
-    public UnaryCallSettings.Builder<GetSshPublicKeyRequest, SshPublicKey>
-        getSshPublicKeySettings() {
-      return getSshPublicKeySettings;
-    }
-
     /** Returns the builder for the settings used for calls to importSshPublicKey. */
     public UnaryCallSettings.Builder<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
         importSshPublicKeySettings() {
@@ -403,6 +391,18 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     public UnaryCallSettings.Builder<UpdateSshPublicKeyRequest, SshPublicKey>
         updateSshPublicKeySettings() {
       return updateSshPublicKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLoginProfile. */
+    public UnaryCallSettings.Builder<GetLoginProfileRequest, LoginProfile>
+        getLoginProfileSettings() {
+      return getLoginProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSshPublicKey. */
+    public UnaryCallSettings.Builder<GetSshPublicKeyRequest, SshPublicKey>
+        getSshPublicKeySettings() {
+      return getSshPublicKeySettings;
     }
 
     @Override

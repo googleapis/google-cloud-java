@@ -69,24 +69,6 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   ProtoUtils.marshaller(DeleteSshPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<GetLoginProfileRequest, LoginProfile>
-      getLoginProfileMethodDescriptor =
-          MethodDescriptor.<GetLoginProfileRequest, LoginProfile>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.oslogin.v1.OsLoginService/GetLoginProfile")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetLoginProfileRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(LoginProfile.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<GetSshPublicKeyRequest, SshPublicKey>
-      getSshPublicKeyMethodDescriptor =
-          MethodDescriptor.<GetSshPublicKeyRequest, SshPublicKey>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.oslogin.v1.OsLoginService/GetSshPublicKey")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetSshPublicKeyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(SshPublicKey.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeyMethodDescriptor =
           MethodDescriptor.<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>newBuilder()
@@ -106,16 +88,34 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   ProtoUtils.marshaller(UpdateSshPublicKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SshPublicKey.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetLoginProfileRequest, LoginProfile>
+      getLoginProfileMethodDescriptor =
+          MethodDescriptor.<GetLoginProfileRequest, LoginProfile>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oslogin.v1.OsLoginService/GetLoginProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetLoginProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(LoginProfile.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetSshPublicKeyRequest, SshPublicKey>
+      getSshPublicKeyMethodDescriptor =
+          MethodDescriptor.<GetSshPublicKeyRequest, SshPublicKey>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oslogin.v1.OsLoginService/GetSshPublicKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSshPublicKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SshPublicKey.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeletePosixAccountRequest, Empty> deletePosixAccountCallable;
   private final UnaryCallable<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyCallable;
-  private final UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable;
-  private final UnaryCallable<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyCallable;
   private final UnaryCallable<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeyCallable;
   private final UnaryCallable<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeyCallable;
+  private final UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable;
+  private final UnaryCallable<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -184,32 +184,6 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileTransportSettings =
-        GrpcCallSettings.<GetLoginProfileRequest, LoginProfile>newBuilder()
-            .setMethodDescriptor(getLoginProfileMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetLoginProfileRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetLoginProfileRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyTransportSettings =
-        GrpcCallSettings.<GetSshPublicKeyRequest, SshPublicKey>newBuilder()
-            .setMethodDescriptor(getSshPublicKeyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetSshPublicKeyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSshPublicKeyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
         importSshPublicKeyTransportSettings =
             GrpcCallSettings.<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>newBuilder()
@@ -237,6 +211,32 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileTransportSettings =
+        GrpcCallSettings.<GetLoginProfileRequest, LoginProfile>newBuilder()
+            .setMethodDescriptor(getLoginProfileMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetLoginProfileRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetLoginProfileRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyTransportSettings =
+        GrpcCallSettings.<GetSshPublicKeyRequest, SshPublicKey>newBuilder()
+            .setMethodDescriptor(getSshPublicKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetSshPublicKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetSshPublicKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.deletePosixAccountCallable =
         callableFactory.createUnaryCallable(
@@ -248,12 +248,6 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
             deleteSshPublicKeyTransportSettings,
             settings.deleteSshPublicKeySettings(),
             clientContext);
-    this.getLoginProfileCallable =
-        callableFactory.createUnaryCallable(
-            getLoginProfileTransportSettings, settings.getLoginProfileSettings(), clientContext);
-    this.getSshPublicKeyCallable =
-        callableFactory.createUnaryCallable(
-            getSshPublicKeyTransportSettings, settings.getSshPublicKeySettings(), clientContext);
     this.importSshPublicKeyCallable =
         callableFactory.createUnaryCallable(
             importSshPublicKeyTransportSettings,
@@ -264,6 +258,12 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
             updateSshPublicKeyTransportSettings,
             settings.updateSshPublicKeySettings(),
             clientContext);
+    this.getLoginProfileCallable =
+        callableFactory.createUnaryCallable(
+            getLoginProfileTransportSettings, settings.getLoginProfileSettings(), clientContext);
+    this.getSshPublicKeyCallable =
+        callableFactory.createUnaryCallable(
+            getSshPublicKeyTransportSettings, settings.getSshPublicKeySettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -276,14 +276,6 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
     return deleteSshPublicKeyCallable;
   }
 
-  public UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable() {
-    return getLoginProfileCallable;
-  }
-
-  public UnaryCallable<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyCallable() {
-    return getSshPublicKeyCallable;
-  }
-
   public UnaryCallable<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeyCallable() {
     return importSshPublicKeyCallable;
@@ -291,6 +283,14 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
 
   public UnaryCallable<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeyCallable() {
     return updateSshPublicKeyCallable;
+  }
+
+  public UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable() {
+    return getLoginProfileCallable;
+  }
+
+  public UnaryCallable<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyCallable() {
+    return getSshPublicKeyCallable;
   }
 
   @Override
