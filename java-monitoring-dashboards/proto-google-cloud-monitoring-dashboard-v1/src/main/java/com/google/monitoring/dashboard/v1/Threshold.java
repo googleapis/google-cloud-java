@@ -255,6 +255,10 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -413,6 +417,10 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -458,6 +466,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The label.
    */
+  @java.lang.Override
   public java.lang.String getLabel() {
     java.lang.Object ref = label_;
     if (ref instanceof java.lang.String) {
@@ -480,6 +489,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for label.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLabelBytes() {
     java.lang.Object ref = label_;
     if (ref instanceof java.lang.String) {
@@ -506,6 +516,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public double getValue() {
     return value_;
   }
@@ -523,6 +534,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for color.
    */
+  @java.lang.Override
   public int getColorValue() {
     return color_;
   }
@@ -537,6 +549,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The color.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Threshold.Color getColor() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Threshold.Color result =
@@ -560,6 +573,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for direction.
    */
+  @java.lang.Override
   public int getDirectionValue() {
     return direction_;
   }
@@ -575,6 +589,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The direction.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Threshold.Direction getDirection() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Threshold.Direction result =
@@ -1073,6 +1088,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public double getValue() {
       return value_;
     }
@@ -1126,6 +1142,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for color.
      */
+    @java.lang.Override
     public int getColorValue() {
       return color_;
     }
@@ -1142,6 +1159,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setColorValue(int value) {
+
       color_ = value;
       onChanged();
       return this;
@@ -1157,6 +1175,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The color.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Threshold.Color getColor() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Threshold.Color result =
@@ -1217,6 +1236,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for direction.
      */
+    @java.lang.Override
     public int getDirectionValue() {
       return direction_;
     }
@@ -1234,6 +1254,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDirectionValue(int value) {
+
       direction_ = value;
       onChanged();
       return this;
@@ -1250,6 +1271,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The direction.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Threshold.Direction getDirection() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Threshold.Direction result =

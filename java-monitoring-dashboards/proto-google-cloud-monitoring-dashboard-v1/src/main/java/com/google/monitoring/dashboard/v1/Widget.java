@@ -240,6 +240,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +263,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -286,6 +288,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the xyChart field is set.
    */
+  @java.lang.Override
   public boolean hasXyChart() {
     return contentCase_ == 2;
   }
@@ -300,6 +303,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The xyChart.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart getXyChart() {
     if (contentCase_ == 2) {
       return (com.google.monitoring.dashboard.v1.XyChart) content_;
@@ -315,6 +319,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.XyChart xy_chart = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChartOrBuilder getXyChartOrBuilder() {
     if (contentCase_ == 2) {
       return (com.google.monitoring.dashboard.v1.XyChart) content_;
@@ -334,6 +339,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the scorecard field is set.
    */
+  @java.lang.Override
   public boolean hasScorecard() {
     return contentCase_ == 3;
   }
@@ -348,6 +354,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The scorecard.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Scorecard getScorecard() {
     if (contentCase_ == 3) {
       return (com.google.monitoring.dashboard.v1.Scorecard) content_;
@@ -363,6 +370,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.Scorecard scorecard = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ScorecardOrBuilder getScorecardOrBuilder() {
     if (contentCase_ == 3) {
       return (com.google.monitoring.dashboard.v1.Scorecard) content_;
@@ -382,6 +390,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the text field is set.
    */
+  @java.lang.Override
   public boolean hasText() {
     return contentCase_ == 4;
   }
@@ -396,6 +405,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Text getText() {
     if (contentCase_ == 4) {
       return (com.google.monitoring.dashboard.v1.Text) content_;
@@ -411,6 +421,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.Text text = 4;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TextOrBuilder getTextOrBuilder() {
     if (contentCase_ == 4) {
       return (com.google.monitoring.dashboard.v1.Text) content_;
@@ -430,6 +441,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the blank field is set.
    */
+  @java.lang.Override
   public boolean hasBlank() {
     return contentCase_ == 5;
   }
@@ -444,6 +456,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The blank.
    */
+  @java.lang.Override
   public com.google.protobuf.Empty getBlank() {
     if (contentCase_ == 5) {
       return (com.google.protobuf.Empty) content_;
@@ -459,6 +472,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Empty blank = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.EmptyOrBuilder getBlankOrBuilder() {
     if (contentCase_ == 5) {
       return (com.google.protobuf.Empty) content_;
@@ -1045,6 +1059,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the xyChart field is set.
      */
+    @java.lang.Override
     public boolean hasXyChart() {
       return contentCase_ == 2;
     }
@@ -1059,6 +1074,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The xyChart.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.XyChart getXyChart() {
       if (xyChartBuilder_ == null) {
         if (contentCase_ == 2) {
@@ -1190,6 +1206,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.XyChart xy_chart = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.XyChartOrBuilder getXyChartOrBuilder() {
       if ((contentCase_ == 2) && (xyChartBuilder_ != null)) {
         return xyChartBuilder_.getMessageOrBuilder();
@@ -1250,6 +1267,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the scorecard field is set.
      */
+    @java.lang.Override
     public boolean hasScorecard() {
       return contentCase_ == 3;
     }
@@ -1264,6 +1282,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The scorecard.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Scorecard getScorecard() {
       if (scorecardBuilder_ == null) {
         if (contentCase_ == 3) {
@@ -1396,6 +1415,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.Scorecard scorecard = 3;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.ScorecardOrBuilder getScorecardOrBuilder() {
       if ((contentCase_ == 3) && (scorecardBuilder_ != null)) {
         return scorecardBuilder_.getMessageOrBuilder();
@@ -1456,6 +1476,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the text field is set.
      */
+    @java.lang.Override
     public boolean hasText() {
       return contentCase_ == 4;
     }
@@ -1470,6 +1491,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The text.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Text getText() {
       if (textBuilder_ == null) {
         if (contentCase_ == 4) {
@@ -1601,6 +1623,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.Text text = 4;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.TextOrBuilder getTextOrBuilder() {
       if ((contentCase_ == 4) && (textBuilder_ != null)) {
         return textBuilder_.getMessageOrBuilder();
@@ -1661,6 +1684,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the blank field is set.
      */
+    @java.lang.Override
     public boolean hasBlank() {
       return contentCase_ == 5;
     }
@@ -1675,6 +1699,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The blank.
      */
+    @java.lang.Override
     public com.google.protobuf.Empty getBlank() {
       if (blankBuilder_ == null) {
         if (contentCase_ == 5) {
@@ -1804,6 +1829,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Empty blank = 5;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.EmptyOrBuilder getBlankOrBuilder() {
       if ((contentCase_ == 5) && (blankBuilder_ != null)) {
         return blankBuilder_.getMessageOrBuilder();

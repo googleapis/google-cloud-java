@@ -806,6 +806,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -1286,6 +1290,10 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -1338,6 +1346,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the alignmentPeriod field is set.
    */
+  @java.lang.Override
   public boolean hasAlignmentPeriod() {
     return alignmentPeriod_ != null;
   }
@@ -1359,6 +1368,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The alignmentPeriod.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getAlignmentPeriod() {
     return alignmentPeriod_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -1380,6 +1390,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getAlignmentPeriodOrBuilder() {
     return getAlignmentPeriod();
   }
@@ -1406,6 +1417,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for perSeriesAligner.
    */
+  @java.lang.Override
   public int getPerSeriesAlignerValue() {
     return perSeriesAligner_;
   }
@@ -1429,6 +1441,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The perSeriesAligner.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Aggregation.Aligner getPerSeriesAligner() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Aggregation.Aligner result =
@@ -1460,6 +1473,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for crossSeriesReducer.
    */
+  @java.lang.Override
   public int getCrossSeriesReducerValue() {
     return crossSeriesReducer_;
   }
@@ -1483,6 +1497,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The crossSeriesReducer.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Aggregation.Reducer getCrossSeriesReducer() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Aggregation.Reducer result =
@@ -2277,6 +2292,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for perSeriesAligner.
      */
+    @java.lang.Override
     public int getPerSeriesAlignerValue() {
       return perSeriesAligner_;
     }
@@ -2302,6 +2318,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPerSeriesAlignerValue(int value) {
+
       perSeriesAligner_ = value;
       onChanged();
       return this;
@@ -2326,6 +2343,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The perSeriesAligner.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Aggregation.Aligner getPerSeriesAligner() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Aggregation.Aligner result =
@@ -2413,6 +2431,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for crossSeriesReducer.
      */
+    @java.lang.Override
     public int getCrossSeriesReducerValue() {
       return crossSeriesReducer_;
     }
@@ -2438,6 +2457,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCrossSeriesReducerValue(int value) {
+
       crossSeriesReducer_ = value;
       onChanged();
       return this;
@@ -2462,6 +2482,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The crossSeriesReducer.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Aggregation.Reducer getCrossSeriesReducer() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Aggregation.Reducer result =

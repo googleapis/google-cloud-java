@@ -318,6 +318,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The weight.
      */
+    @java.lang.Override
     public long getWeight() {
       return weight_;
     }
@@ -333,6 +334,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.monitoring.dashboard.v1.Widget> getWidgetsList() {
       return widgets_;
     }
@@ -345,6 +347,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.monitoring.dashboard.v1.WidgetOrBuilder>
         getWidgetsOrBuilderList() {
       return widgets_;
@@ -358,6 +361,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public int getWidgetsCount() {
       return widgets_.size();
     }
@@ -370,6 +374,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Widget getWidgets(int index) {
       return widgets_.get(index);
     }
@@ -382,6 +387,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.WidgetOrBuilder getWidgetsOrBuilder(int index) {
       return widgets_.get(index);
     }
@@ -781,6 +787,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The weight.
        */
+      @java.lang.Override
       public long getWeight() {
         return weight_;
       }
@@ -1238,6 +1245,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.ColumnLayout.Column columns = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.dashboard.v1.ColumnLayout.Column> getColumnsList() {
     return columns_;
   }
@@ -1250,6 +1258,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.ColumnLayout.Column columns = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.dashboard.v1.ColumnLayout.ColumnOrBuilder>
       getColumnsOrBuilderList() {
     return columns_;
@@ -1263,6 +1272,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.ColumnLayout.Column columns = 1;</code>
    */
+  @java.lang.Override
   public int getColumnsCount() {
     return columns_.size();
   }
@@ -1275,6 +1285,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.ColumnLayout.Column columns = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ColumnLayout.Column getColumns(int index) {
     return columns_.get(index);
   }
@@ -1287,6 +1298,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.ColumnLayout.Column columns = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ColumnLayout.ColumnOrBuilder getColumnsOrBuilder(
       int index) {
     return columns_.get(index);

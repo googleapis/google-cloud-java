@@ -232,6 +232,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +256,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -282,6 +284,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the aggregation field is set.
    */
+  @java.lang.Override
   public boolean hasAggregation() {
     return aggregation_ != null;
   }
@@ -298,6 +301,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return The aggregation.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Aggregation getAggregation() {
     return aggregation_ == null
         ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
@@ -314,6 +318,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.monitoring.dashboard.v1.Aggregation aggregation = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.AggregationOrBuilder getAggregationOrBuilder() {
     return getAggregation();
   }
@@ -330,6 +335,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the pickTimeSeriesFilter field is set.
    */
+  @java.lang.Override
   public boolean hasPickTimeSeriesFilter() {
     return outputFilterCase_ == 4;
   }
@@ -344,6 +350,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return The pickTimeSeriesFilter.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter getPickTimeSeriesFilter() {
     if (outputFilterCase_ == 4) {
       return (com.google.monitoring.dashboard.v1.PickTimeSeriesFilter) outputFilter_;
@@ -359,6 +366,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter pick_time_series_filter = 4;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.PickTimeSeriesFilterOrBuilder
       getPickTimeSeriesFilterOrBuilder() {
     if (outputFilterCase_ == 4) {
@@ -381,6 +389,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the statisticalTimeSeriesFilter field is set.
    */
+  @java.lang.Override
   public boolean hasStatisticalTimeSeriesFilter() {
     return outputFilterCase_ == 5;
   }
@@ -397,6 +406,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return The statisticalTimeSeriesFilter.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter
       getStatisticalTimeSeriesFilter() {
     if (outputFilterCase_ == 5) {
@@ -415,6 +425,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
       getStatisticalTimeSeriesFilterOrBuilder() {
     if (outputFilterCase_ == 5) {
@@ -1193,6 +1204,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the pickTimeSeriesFilter field is set.
      */
+    @java.lang.Override
     public boolean hasPickTimeSeriesFilter() {
       return outputFilterCase_ == 4;
     }
@@ -1208,6 +1220,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * @return The pickTimeSeriesFilter.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter getPickTimeSeriesFilter() {
       if (pickTimeSeriesFilterBuilder_ == null) {
         if (outputFilterCase_ == 4) {
@@ -1350,6 +1363,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter pick_time_series_filter = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilterOrBuilder
         getPickTimeSeriesFilterOrBuilder() {
       if ((outputFilterCase_ == 4) && (pickTimeSeriesFilterBuilder_ != null)) {
@@ -1415,6 +1429,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the statisticalTimeSeriesFilter field is set.
      */
+    @java.lang.Override
     public boolean hasStatisticalTimeSeriesFilter() {
       return outputFilterCase_ == 5;
     }
@@ -1431,6 +1446,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * @return The statisticalTimeSeriesFilter.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter
         getStatisticalTimeSeriesFilter() {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -1582,6 +1598,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
         getStatisticalTimeSeriesFilterOrBuilder() {
       if ((outputFilterCase_ == 5) && (statisticalTimeSeriesFilterBuilder_ != null)) {

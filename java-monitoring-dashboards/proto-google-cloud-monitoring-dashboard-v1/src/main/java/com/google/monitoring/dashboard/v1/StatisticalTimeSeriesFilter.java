@@ -216,6 +216,10 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -268,6 +272,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
    *
    * @return The enum numeric value on the wire for rankingMethod.
    */
+  @java.lang.Override
   public int getRankingMethodValue() {
     return rankingMethod_;
   }
@@ -287,6 +292,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
    *
    * @return The rankingMethod.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method getRankingMethod() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method result =
@@ -310,6 +316,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
    *
    * @return The numTimeSeries.
    */
+  @java.lang.Override
   public int getNumTimeSeries() {
     return numTimeSeries_;
   }
@@ -672,6 +679,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
      *
      * @return The enum numeric value on the wire for rankingMethod.
      */
+    @java.lang.Override
     public int getRankingMethodValue() {
       return rankingMethod_;
     }
@@ -693,6 +701,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setRankingMethodValue(int value) {
+
       rankingMethod_ = value;
       onChanged();
       return this;
@@ -713,6 +722,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
      *
      * @return The rankingMethod.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method
         getRankingMethod() {
       @SuppressWarnings("deprecation")
@@ -785,6 +795,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
      *
      * @return The numTimeSeries.
      */
+    @java.lang.Override
     public int getNumTimeSeries() {
       return numTimeSeries_;
     }

@@ -133,6 +133,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the dashboard field is set.
    */
+  @java.lang.Override
   public boolean hasDashboard() {
     return dashboard_ != null;
   }
@@ -149,6 +150,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * @return The dashboard.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Dashboard getDashboard() {
     return dashboard_ == null
         ? com.google.monitoring.dashboard.v1.Dashboard.getDefaultInstance()
@@ -165,6 +167,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
    * .google.monitoring.dashboard.v1.Dashboard dashboard = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.DashboardOrBuilder getDashboardOrBuilder() {
     return getDashboard();
   }

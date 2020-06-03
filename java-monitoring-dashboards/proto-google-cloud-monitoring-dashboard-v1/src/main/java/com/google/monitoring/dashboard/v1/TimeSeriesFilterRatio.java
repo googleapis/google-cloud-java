@@ -394,6 +394,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * @return The filter.
      */
+    @java.lang.Override
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
@@ -417,6 +418,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * @return The bytes for filter.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
@@ -444,6 +446,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the aggregation field is set.
      */
+    @java.lang.Override
     public boolean hasAggregation() {
       return aggregation_ != null;
     }
@@ -460,6 +463,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * @return The aggregation.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Aggregation getAggregation() {
       return aggregation_ == null
           ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
@@ -476,6 +480,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.monitoring.dashboard.v1.Aggregation aggregation = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.AggregationOrBuilder getAggregationOrBuilder() {
       return getAggregation();
     }
@@ -1270,6 +1275,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the numerator field is set.
    */
+  @java.lang.Override
   public boolean hasNumerator() {
     return numerator_ != null;
   }
@@ -1284,6 +1290,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return The numerator.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart getNumerator() {
     return numerator_ == null
         ? com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart.getDefaultInstance()
@@ -1298,6 +1305,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart numerator = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPartOrBuilder
       getNumeratorOrBuilder() {
     return getNumerator();
@@ -1316,6 +1324,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the denominator field is set.
    */
+  @java.lang.Override
   public boolean hasDenominator() {
     return denominator_ != null;
   }
@@ -1330,6 +1339,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return The denominator.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart getDenominator() {
     return denominator_ == null
         ? com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart.getDefaultInstance()
@@ -1344,6 +1354,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart denominator = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPartOrBuilder
       getDenominatorOrBuilder() {
     return getDenominator();
@@ -1362,6 +1373,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the secondaryAggregation field is set.
    */
+  @java.lang.Override
   public boolean hasSecondaryAggregation() {
     return secondaryAggregation_ != null;
   }
@@ -1376,6 +1388,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return The secondaryAggregation.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Aggregation getSecondaryAggregation() {
     return secondaryAggregation_ == null
         ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
@@ -1390,6 +1403,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.AggregationOrBuilder
       getSecondaryAggregationOrBuilder() {
     return getSecondaryAggregation();
@@ -1407,6 +1421,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the pickTimeSeriesFilter field is set.
    */
+  @java.lang.Override
   public boolean hasPickTimeSeriesFilter() {
     return outputFilterCase_ == 4;
   }
@@ -1421,6 +1436,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return The pickTimeSeriesFilter.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter getPickTimeSeriesFilter() {
     if (outputFilterCase_ == 4) {
       return (com.google.monitoring.dashboard.v1.PickTimeSeriesFilter) outputFilter_;
@@ -1436,6 +1452,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter pick_time_series_filter = 4;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.PickTimeSeriesFilterOrBuilder
       getPickTimeSeriesFilterOrBuilder() {
     if (outputFilterCase_ == 4) {
@@ -1458,6 +1475,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the statisticalTimeSeriesFilter field is set.
    */
+  @java.lang.Override
   public boolean hasStatisticalTimeSeriesFilter() {
     return outputFilterCase_ == 5;
   }
@@ -1474,6 +1492,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * @return The statisticalTimeSeriesFilter.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter
       getStatisticalTimeSeriesFilter() {
     if (outputFilterCase_ == 5) {
@@ -1492,6 +1511,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
       getStatisticalTimeSeriesFilterOrBuilder() {
     if (outputFilterCase_ == 5) {
@@ -2571,6 +2591,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the pickTimeSeriesFilter field is set.
      */
+    @java.lang.Override
     public boolean hasPickTimeSeriesFilter() {
       return outputFilterCase_ == 4;
     }
@@ -2586,6 +2607,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * @return The pickTimeSeriesFilter.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter getPickTimeSeriesFilter() {
       if (pickTimeSeriesFilterBuilder_ == null) {
         if (outputFilterCase_ == 4) {
@@ -2728,6 +2750,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter pick_time_series_filter = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilterOrBuilder
         getPickTimeSeriesFilterOrBuilder() {
       if ((outputFilterCase_ == 4) && (pickTimeSeriesFilterBuilder_ != null)) {
@@ -2793,6 +2816,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the statisticalTimeSeriesFilter field is set.
      */
+    @java.lang.Override
     public boolean hasStatisticalTimeSeriesFilter() {
       return outputFilterCase_ == 5;
     }
@@ -2809,6 +2833,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * @return The statisticalTimeSeriesFilter.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter
         getStatisticalTimeSeriesFilter() {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -2960,6 +2985,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
         getStatisticalTimeSeriesFilterOrBuilder() {
       if ((outputFilterCase_ == 5) && (statisticalTimeSeriesFilterBuilder_ != null)) {

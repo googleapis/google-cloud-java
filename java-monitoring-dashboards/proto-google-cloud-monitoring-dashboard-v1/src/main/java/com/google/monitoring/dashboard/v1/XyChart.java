@@ -666,6 +666,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -714,6 +718,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timeSeriesQuery field is set.
      */
+    @java.lang.Override
     public boolean hasTimeSeriesQuery() {
       return timeSeriesQuery_ != null;
     }
@@ -729,6 +734,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timeSeriesQuery.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesQuery getTimeSeriesQuery() {
       return timeSeriesQuery_ == null
           ? com.google.monitoring.dashboard.v1.TimeSeriesQuery.getDefaultInstance()
@@ -744,6 +750,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder
         getTimeSeriesQueryOrBuilder() {
       return getTimeSeriesQuery();
@@ -762,6 +769,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for plotType.
      */
+    @java.lang.Override
     public int getPlotTypeValue() {
       return plotType_;
     }
@@ -776,6 +784,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The plotType.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.XyChart.DataSet.PlotType getPlotType() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.XyChart.DataSet.PlotType result =
@@ -800,6 +809,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The legendTemplate.
      */
+    @java.lang.Override
     public java.lang.String getLegendTemplate() {
       java.lang.Object ref = legendTemplate_;
       if (ref instanceof java.lang.String) {
@@ -824,6 +834,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for legendTemplate.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLegendTemplateBytes() {
       java.lang.Object ref = legendTemplate_;
       if (ref instanceof java.lang.String) {
@@ -855,6 +866,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the minAlignmentPeriod field is set.
      */
+    @java.lang.Override
     public boolean hasMinAlignmentPeriod() {
       return minAlignmentPeriod_ != null;
     }
@@ -875,6 +887,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The minAlignmentPeriod.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getMinAlignmentPeriod() {
       return minAlignmentPeriod_ == null
           ? com.google.protobuf.Duration.getDefaultInstance()
@@ -895,6 +908,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      * .google.protobuf.Duration min_alignment_period = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMinAlignmentPeriodOrBuilder() {
       return getMinAlignmentPeriod();
     }
@@ -1507,6 +1521,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for plotType.
        */
+      @java.lang.Override
       public int getPlotTypeValue() {
         return plotType_;
       }
@@ -1523,6 +1538,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setPlotTypeValue(int value) {
+
         plotType_ = value;
         onChanged();
         return this;
@@ -1538,6 +1554,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The plotType.
        */
+      @java.lang.Override
       public com.google.monitoring.dashboard.v1.XyChart.DataSet.PlotType getPlotType() {
         @SuppressWarnings("deprecation")
         com.google.monitoring.dashboard.v1.XyChart.DataSet.PlotType result =
@@ -2270,6 +2287,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -2317,6 +2338,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The label.
      */
+    @java.lang.Override
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
       if (ref instanceof java.lang.String) {
@@ -2339,6 +2361,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for label.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLabelBytes() {
       java.lang.Object ref = label_;
       if (ref instanceof java.lang.String) {
@@ -2364,6 +2387,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for scale.
      */
+    @java.lang.Override
     public int getScaleValue() {
       return scale_;
     }
@@ -2378,6 +2402,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The scale.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.XyChart.Axis.Scale getScale() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.XyChart.Axis.Scale result =
@@ -2844,6 +2869,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for scale.
        */
+      @java.lang.Override
       public int getScaleValue() {
         return scale_;
       }
@@ -2860,6 +2886,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setScaleValue(int value) {
+
         scale_ = value;
         onChanged();
         return this;
@@ -2875,6 +2902,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The scale.
        */
+      @java.lang.Override
       public com.google.monitoring.dashboard.v1.XyChart.Axis.Scale getScale() {
         @SuppressWarnings("deprecation")
         com.google.monitoring.dashboard.v1.XyChart.Axis.Scale result =
@@ -2985,6 +3013,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.dashboard.v1.XyChart.DataSet> getDataSetsList() {
     return dataSets_;
   }
@@ -2997,6 +3026,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder>
       getDataSetsOrBuilderList() {
     return dataSets_;
@@ -3010,6 +3040,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
    */
+  @java.lang.Override
   public int getDataSetsCount() {
     return dataSets_.size();
   }
@@ -3022,6 +3053,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart.DataSet getDataSets(int index) {
     return dataSets_.get(index);
   }
@@ -3034,6 +3066,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder getDataSetsOrBuilder(
       int index) {
     return dataSets_.get(index);
@@ -3056,6 +3089,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeshiftDuration field is set.
    */
+  @java.lang.Override
   public boolean hasTimeshiftDuration() {
     return timeshiftDuration_ != null;
   }
@@ -3074,6 +3108,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeshiftDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeshiftDuration() {
     return timeshiftDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -3092,6 +3127,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration timeshift_duration = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeshiftDurationOrBuilder() {
     return getTimeshiftDuration();
   }
@@ -3107,6 +3143,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.dashboard.v1.Threshold> getThresholdsList() {
     return thresholds_;
   }
@@ -3119,6 +3156,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.dashboard.v1.ThresholdOrBuilder>
       getThresholdsOrBuilderList() {
     return thresholds_;
@@ -3132,6 +3170,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 5;</code>
    */
+  @java.lang.Override
   public int getThresholdsCount() {
     return thresholds_.size();
   }
@@ -3144,6 +3183,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 5;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Threshold getThresholds(int index) {
     return thresholds_.get(index);
   }
@@ -3156,6 +3196,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 5;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ThresholdOrBuilder getThresholdsOrBuilder(int index) {
     return thresholds_.get(index);
   }
@@ -3173,6 +3214,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the xAxis field is set.
    */
+  @java.lang.Override
   public boolean hasXAxis() {
     return xAxis_ != null;
   }
@@ -3187,6 +3229,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The xAxis.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart.Axis getXAxis() {
     return xAxis_ == null
         ? com.google.monitoring.dashboard.v1.XyChart.Axis.getDefaultInstance()
@@ -3201,6 +3244,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis x_axis = 6;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder getXAxisOrBuilder() {
     return getXAxis();
   }
@@ -3218,6 +3262,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the yAxis field is set.
    */
+  @java.lang.Override
   public boolean hasYAxis() {
     return yAxis_ != null;
   }
@@ -3232,6 +3277,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The yAxis.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart.Axis getYAxis() {
     return yAxis_ == null
         ? com.google.monitoring.dashboard.v1.XyChart.Axis.getDefaultInstance()
@@ -3246,6 +3292,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.XyChart.Axis y_axis = 7;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart.AxisOrBuilder getYAxisOrBuilder() {
     return getYAxis();
   }
@@ -3263,6 +3310,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the chartOptions field is set.
    */
+  @java.lang.Override
   public boolean hasChartOptions() {
     return chartOptions_ != null;
   }
@@ -3277,6 +3325,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The chartOptions.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ChartOptions getChartOptions() {
     return chartOptions_ == null
         ? com.google.monitoring.dashboard.v1.ChartOptions.getDefaultInstance()
@@ -3291,6 +3340,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.ChartOptions chart_options = 8;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ChartOptionsOrBuilder getChartOptionsOrBuilder() {
     return getChartOptions();
   }

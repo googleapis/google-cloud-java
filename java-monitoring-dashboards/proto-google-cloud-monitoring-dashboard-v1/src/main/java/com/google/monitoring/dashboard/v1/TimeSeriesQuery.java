@@ -209,6 +209,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the timeSeriesFilter field is set.
    */
+  @java.lang.Override
   public boolean hasTimeSeriesFilter() {
     return sourceCase_ == 1;
   }
@@ -223,6 +224,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    * @return The timeSeriesFilter.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilter getTimeSeriesFilter() {
     if (sourceCase_ == 1) {
       return (com.google.monitoring.dashboard.v1.TimeSeriesFilter) source_;
@@ -238,6 +240,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.monitoring.dashboard.v1.TimeSeriesFilter time_series_filter = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterOrBuilder
       getTimeSeriesFilterOrBuilder() {
     if (sourceCase_ == 1) {
@@ -259,6 +262,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the timeSeriesFilterRatio field is set.
    */
+  @java.lang.Override
   public boolean hasTimeSeriesFilterRatio() {
     return sourceCase_ == 2;
   }
@@ -274,6 +278,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    * @return The timeSeriesFilterRatio.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio getTimeSeriesFilterRatio() {
     if (sourceCase_ == 2) {
       return (com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio) source_;
@@ -290,6 +295,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    * <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio time_series_filter_ratio = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatioOrBuilder
       getTimeSeriesFilterRatioOrBuilder() {
     if (sourceCase_ == 2) {
@@ -315,6 +321,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    * @return The unitOverride.
    */
+  @java.lang.Override
   public java.lang.String getUnitOverride() {
     java.lang.Object ref = unitOverride_;
     if (ref instanceof java.lang.String) {
@@ -341,6 +348,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for unitOverride.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUnitOverrideBytes() {
     java.lang.Object ref = unitOverride_;
     if (ref instanceof java.lang.String) {
@@ -774,6 +782,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the timeSeriesFilter field is set.
      */
+    @java.lang.Override
     public boolean hasTimeSeriesFilter() {
       return sourceCase_ == 1;
     }
@@ -788,6 +797,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      * @return The timeSeriesFilter.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesFilter getTimeSeriesFilter() {
       if (timeSeriesFilterBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -923,6 +933,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.monitoring.dashboard.v1.TimeSeriesFilter time_series_filter = 1;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesFilterOrBuilder
         getTimeSeriesFilterOrBuilder() {
       if ((sourceCase_ == 1) && (timeSeriesFilterBuilder_ != null)) {
@@ -985,6 +996,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the timeSeriesFilterRatio field is set.
      */
+    @java.lang.Override
     public boolean hasTimeSeriesFilterRatio() {
       return sourceCase_ == 2;
     }
@@ -1000,6 +1012,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      * @return The timeSeriesFilterRatio.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio getTimeSeriesFilterRatio() {
       if (timeSeriesFilterRatioBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -1142,6 +1155,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      * <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio time_series_filter_ratio = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatioOrBuilder
         getTimeSeriesFilterRatioOrBuilder() {
       if ((sourceCase_ == 2) && (timeSeriesFilterRatioBuilder_ != null)) {

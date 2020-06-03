@@ -260,6 +260,10 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -305,6 +309,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for mode.
    */
+  @java.lang.Override
   public int getModeValue() {
     return mode_;
   }
@@ -319,6 +324,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mode.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ChartOptions.Mode getMode() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.ChartOptions.Mode result =
@@ -658,6 +664,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for mode.
      */
+    @java.lang.Override
     public int getModeValue() {
       return mode_;
     }
@@ -674,6 +681,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
+
       mode_ = value;
       onChanged();
       return this;
@@ -689,6 +697,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mode.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.ChartOptions.Mode getMode() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.ChartOptions.Mode result =

@@ -240,6 +240,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +263,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -287,6 +289,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -309,6 +312,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -340,6 +344,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -368,6 +373,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -393,6 +399,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gridLayout field is set.
    */
+  @java.lang.Override
   public boolean hasGridLayout() {
     return layoutCase_ == 5;
   }
@@ -408,6 +415,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gridLayout.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.GridLayout getGridLayout() {
     if (layoutCase_ == 5) {
       return (com.google.monitoring.dashboard.v1.GridLayout) layout_;
@@ -424,6 +432,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.GridLayout grid_layout = 5;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.GridLayoutOrBuilder getGridLayoutOrBuilder() {
     if (layoutCase_ == 5) {
       return (com.google.monitoring.dashboard.v1.GridLayout) layout_;
@@ -444,6 +453,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the rowLayout field is set.
    */
+  @java.lang.Override
   public boolean hasRowLayout() {
     return layoutCase_ == 8;
   }
@@ -459,6 +469,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rowLayout.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.RowLayout getRowLayout() {
     if (layoutCase_ == 8) {
       return (com.google.monitoring.dashboard.v1.RowLayout) layout_;
@@ -475,6 +486,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.RowLayout row_layout = 8;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.RowLayoutOrBuilder getRowLayoutOrBuilder() {
     if (layoutCase_ == 8) {
       return (com.google.monitoring.dashboard.v1.RowLayout) layout_;
@@ -495,6 +507,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the columnLayout field is set.
    */
+  @java.lang.Override
   public boolean hasColumnLayout() {
     return layoutCase_ == 9;
   }
@@ -510,6 +523,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The columnLayout.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ColumnLayout getColumnLayout() {
     if (layoutCase_ == 9) {
       return (com.google.monitoring.dashboard.v1.ColumnLayout) layout_;
@@ -526,6 +540,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.ColumnLayout column_layout = 9;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ColumnLayoutOrBuilder getColumnLayoutOrBuilder() {
     if (layoutCase_ == 9) {
       return (com.google.monitoring.dashboard.v1.ColumnLayout) layout_;
@@ -1360,6 +1375,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gridLayout field is set.
      */
+    @java.lang.Override
     public boolean hasGridLayout() {
       return layoutCase_ == 5;
     }
@@ -1375,6 +1391,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gridLayout.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.GridLayout getGridLayout() {
       if (gridLayoutBuilder_ == null) {
         if (layoutCase_ == 5) {
@@ -1513,6 +1530,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.GridLayout grid_layout = 5;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.GridLayoutOrBuilder getGridLayoutOrBuilder() {
       if ((layoutCase_ == 5) && (gridLayoutBuilder_ != null)) {
         return gridLayoutBuilder_.getMessageOrBuilder();
@@ -1575,6 +1593,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the rowLayout field is set.
      */
+    @java.lang.Override
     public boolean hasRowLayout() {
       return layoutCase_ == 8;
     }
@@ -1590,6 +1609,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The rowLayout.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.RowLayout getRowLayout() {
       if (rowLayoutBuilder_ == null) {
         if (layoutCase_ == 8) {
@@ -1728,6 +1748,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.RowLayout row_layout = 8;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.RowLayoutOrBuilder getRowLayoutOrBuilder() {
       if ((layoutCase_ == 8) && (rowLayoutBuilder_ != null)) {
         return rowLayoutBuilder_.getMessageOrBuilder();
@@ -1790,6 +1811,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the columnLayout field is set.
      */
+    @java.lang.Override
     public boolean hasColumnLayout() {
       return layoutCase_ == 9;
     }
@@ -1805,6 +1827,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The columnLayout.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.ColumnLayout getColumnLayout() {
       if (columnLayoutBuilder_ == null) {
         if (layoutCase_ == 9) {
@@ -1943,6 +1966,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.ColumnLayout column_layout = 9;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.ColumnLayoutOrBuilder getColumnLayoutOrBuilder() {
       if ((layoutCase_ == 9) && (columnLayoutBuilder_ != null)) {
         return columnLayoutBuilder_.getMessageOrBuilder();

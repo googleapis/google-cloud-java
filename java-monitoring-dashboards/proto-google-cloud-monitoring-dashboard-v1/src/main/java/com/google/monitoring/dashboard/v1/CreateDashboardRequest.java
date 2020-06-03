@@ -142,6 +142,7 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -166,6 +167,7 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the dashboard field is set.
    */
+  @java.lang.Override
   public boolean hasDashboard() {
     return dashboard_ != null;
   }
@@ -209,6 +212,7 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
    *
    * @return The dashboard.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Dashboard getDashboard() {
     return dashboard_ == null
         ? com.google.monitoring.dashboard.v1.Dashboard.getDefaultInstance()
@@ -225,6 +229,7 @@ public final class CreateDashboardRequest extends com.google.protobuf.GeneratedM
    * .google.monitoring.dashboard.v1.Dashboard dashboard = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.DashboardOrBuilder getDashboardOrBuilder() {
     return getDashboard();
   }

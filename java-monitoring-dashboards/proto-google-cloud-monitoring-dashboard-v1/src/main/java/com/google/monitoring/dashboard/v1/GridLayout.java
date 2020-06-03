@@ -139,6 +139,7 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The columns.
    */
+  @java.lang.Override
   public long getColumns() {
     return columns_;
   }
@@ -154,6 +155,7 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.dashboard.v1.Widget> getWidgetsList() {
     return widgets_;
   }
@@ -166,6 +168,7 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.dashboard.v1.WidgetOrBuilder>
       getWidgetsOrBuilderList() {
     return widgets_;
@@ -179,6 +182,7 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
    */
+  @java.lang.Override
   public int getWidgetsCount() {
     return widgets_.size();
   }
@@ -191,6 +195,7 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Widget getWidgets(int index) {
     return widgets_.get(index);
   }
@@ -203,6 +208,7 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.WidgetOrBuilder getWidgetsOrBuilder(int index) {
     return widgets_.get(index);
   }
@@ -594,6 +600,7 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The columns.
      */
+    @java.lang.Override
     public long getColumns() {
       return columns_;
     }

@@ -240,6 +240,10 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -285,6 +289,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The content.
    */
+  @java.lang.Override
   public java.lang.String getContent() {
     java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
@@ -307,6 +312,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for content.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
@@ -332,6 +338,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for format.
    */
+  @java.lang.Override
   public int getFormatValue() {
     return format_;
   }
@@ -346,6 +353,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The format.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Text.Format getFormat() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Text.Format result =
@@ -801,6 +809,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for format.
      */
+    @java.lang.Override
     public int getFormatValue() {
       return format_;
     }
@@ -817,6 +826,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
+
       format_ = value;
       onChanged();
       return this;
@@ -832,6 +842,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The format.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Text.Format getFormat() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Text.Format result =

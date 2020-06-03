@@ -313,6 +313,10 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -468,6 +472,10 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -516,6 +524,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for rankingMethod.
    */
+  @java.lang.Override
   public int getRankingMethodValue() {
     return rankingMethod_;
   }
@@ -531,6 +540,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The rankingMethod.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method getRankingMethod() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method result =
@@ -553,6 +563,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The numTimeSeries.
    */
+  @java.lang.Override
   public int getNumTimeSeries() {
     return numTimeSeries_;
   }
@@ -570,6 +581,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for direction.
    */
+  @java.lang.Override
   public int getDirectionValue() {
     return direction_;
   }
@@ -584,6 +596,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The direction.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction getDirection() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction result =
@@ -964,6 +977,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for rankingMethod.
      */
+    @java.lang.Override
     public int getRankingMethodValue() {
       return rankingMethod_;
     }
@@ -981,6 +995,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setRankingMethodValue(int value) {
+
       rankingMethod_ = value;
       onChanged();
       return this;
@@ -997,6 +1012,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      * @return The rankingMethod.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method getRankingMethod() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method result =
@@ -1059,6 +1075,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      * @return The numTimeSeries.
      */
+    @java.lang.Override
     public int getNumTimeSeries() {
       return numTimeSeries_;
     }
@@ -1110,6 +1127,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for direction.
      */
+    @java.lang.Override
     public int getDirectionValue() {
       return direction_;
     }
@@ -1126,6 +1144,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setDirectionValue(int value) {
+
       direction_ = value;
       onChanged();
       return this;
@@ -1141,6 +1160,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      * @return The direction.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction getDirection() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction result =

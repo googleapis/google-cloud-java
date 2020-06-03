@@ -321,6 +321,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The lowerBound.
      */
+    @java.lang.Override
     public double getLowerBound() {
       return lowerBound_;
     }
@@ -339,6 +340,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The upperBound.
      */
+    @java.lang.Override
     public double getUpperBound() {
       return upperBound_;
     }
@@ -703,6 +705,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The lowerBound.
        */
+      @java.lang.Override
       public double getLowerBound() {
         return lowerBound_;
       }
@@ -757,6 +760,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The upperBound.
        */
+      @java.lang.Override
       public double getUpperBound() {
         return upperBound_;
       }
@@ -1051,6 +1055,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for sparkChartType.
      */
+    @java.lang.Override
     public int getSparkChartTypeValue() {
       return sparkChartType_;
     }
@@ -1065,6 +1070,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sparkChartType.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.SparkChartType getSparkChartType() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.SparkChartType result =
@@ -1091,6 +1097,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the minAlignmentPeriod field is set.
      */
+    @java.lang.Override
     public boolean hasMinAlignmentPeriod() {
       return minAlignmentPeriod_ != null;
     }
@@ -1109,6 +1116,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The minAlignmentPeriod.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getMinAlignmentPeriod() {
       return minAlignmentPeriod_ == null
           ? com.google.protobuf.Duration.getDefaultInstance()
@@ -1127,6 +1135,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Duration min_alignment_period = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMinAlignmentPeriodOrBuilder() {
       return getMinAlignmentPeriod();
     }
@@ -1504,6 +1513,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for sparkChartType.
        */
+      @java.lang.Override
       public int getSparkChartTypeValue() {
         return sparkChartType_;
       }
@@ -1520,6 +1530,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setSparkChartTypeValue(int value) {
+
         sparkChartType_ = value;
         onChanged();
         return this;
@@ -1535,6 +1546,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The sparkChartType.
        */
+      @java.lang.Override
       public com.google.monitoring.dashboard.v1.SparkChartType getSparkChartType() {
         @SuppressWarnings("deprecation")
         com.google.monitoring.dashboard.v1.SparkChartType result =
@@ -1917,6 +1929,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeSeriesQuery field is set.
    */
+  @java.lang.Override
   public boolean hasTimeSeriesQuery() {
     return timeSeriesQuery_ != null;
   }
@@ -1932,6 +1945,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeSeriesQuery.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesQuery getTimeSeriesQuery() {
     return timeSeriesQuery_ == null
         ? com.google.monitoring.dashboard.v1.TimeSeriesQuery.getDefaultInstance()
@@ -1947,6 +1961,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder getTimeSeriesQueryOrBuilder() {
     return getTimeSeriesQuery();
   }
@@ -1963,6 +1978,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gaugeView field is set.
    */
+  @java.lang.Override
   public boolean hasGaugeView() {
     return dataViewCase_ == 4;
   }
@@ -1977,6 +1993,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gaugeView.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Scorecard.GaugeView getGaugeView() {
     if (dataViewCase_ == 4) {
       return (com.google.monitoring.dashboard.v1.Scorecard.GaugeView) dataView_;
@@ -1992,6 +2009,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.Scorecard.GaugeView gauge_view = 4;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Scorecard.GaugeViewOrBuilder getGaugeViewOrBuilder() {
     if (dataViewCase_ == 4) {
       return (com.google.monitoring.dashboard.v1.Scorecard.GaugeView) dataView_;
@@ -2011,6 +2029,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sparkChartView field is set.
    */
+  @java.lang.Override
   public boolean hasSparkChartView() {
     return dataViewCase_ == 5;
   }
@@ -2025,6 +2044,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sparkChartView.
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Scorecard.SparkChartView getSparkChartView() {
     if (dataViewCase_ == 5) {
       return (com.google.monitoring.dashboard.v1.Scorecard.SparkChartView) dataView_;
@@ -2040,6 +2060,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.dashboard.v1.Scorecard.SparkChartView spark_chart_view = 5;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Scorecard.SparkChartViewOrBuilder
       getSparkChartViewOrBuilder() {
     if (dataViewCase_ == 5) {
@@ -2091,6 +2112,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.dashboard.v1.Threshold> getThresholdsList() {
     return thresholds_;
   }
@@ -2135,6 +2157,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.dashboard.v1.ThresholdOrBuilder>
       getThresholdsOrBuilderList() {
     return thresholds_;
@@ -2180,6 +2203,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 6;</code>
    */
+  @java.lang.Override
   public int getThresholdsCount() {
     return thresholds_.size();
   }
@@ -2224,6 +2248,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 6;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.Threshold getThresholds(int index) {
     return thresholds_.get(index);
   }
@@ -2268,6 +2293,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 6;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.ThresholdOrBuilder getThresholdsOrBuilder(int index) {
     return thresholds_.get(index);
   }
@@ -2958,6 +2984,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gaugeView field is set.
      */
+    @java.lang.Override
     public boolean hasGaugeView() {
       return dataViewCase_ == 4;
     }
@@ -2972,6 +2999,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gaugeView.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Scorecard.GaugeView getGaugeView() {
       if (gaugeViewBuilder_ == null) {
         if (dataViewCase_ == 4) {
@@ -3105,6 +3133,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.Scorecard.GaugeView gauge_view = 4;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Scorecard.GaugeViewOrBuilder getGaugeViewOrBuilder() {
       if ((dataViewCase_ == 4) && (gaugeViewBuilder_ != null)) {
         return gaugeViewBuilder_.getMessageOrBuilder();
@@ -3165,6 +3194,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the sparkChartView field is set.
      */
+    @java.lang.Override
     public boolean hasSparkChartView() {
       return dataViewCase_ == 5;
     }
@@ -3179,6 +3209,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sparkChartView.
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Scorecard.SparkChartView getSparkChartView() {
       if (sparkChartViewBuilder_ == null) {
         if (dataViewCase_ == 5) {
@@ -3316,6 +3347,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.dashboard.v1.Scorecard.SparkChartView spark_chart_view = 5;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Scorecard.SparkChartViewOrBuilder
         getSparkChartViewOrBuilder() {
       if ((dataViewCase_ == 5) && (sparkChartViewBuilder_ != null)) {

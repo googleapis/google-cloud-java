@@ -316,6 +316,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The weight.
      */
+    @java.lang.Override
     public long getWeight() {
       return weight_;
     }
@@ -331,6 +332,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.monitoring.dashboard.v1.Widget> getWidgetsList() {
       return widgets_;
     }
@@ -343,6 +345,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.monitoring.dashboard.v1.WidgetOrBuilder>
         getWidgetsOrBuilderList() {
       return widgets_;
@@ -356,6 +359,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public int getWidgetsCount() {
       return widgets_.size();
     }
@@ -368,6 +372,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.Widget getWidgets(int index) {
       return widgets_.get(index);
     }
@@ -380,6 +385,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.dashboard.v1.WidgetOrBuilder getWidgetsOrBuilder(int index) {
       return widgets_.get(index);
     }
@@ -778,6 +784,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The weight.
        */
+      @java.lang.Override
       public long getWeight() {
         return weight_;
       }
@@ -1235,6 +1242,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.dashboard.v1.RowLayout.Row> getRowsList() {
     return rows_;
   }
@@ -1247,6 +1255,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.dashboard.v1.RowLayout.RowOrBuilder>
       getRowsOrBuilderList() {
     return rows_;
@@ -1260,6 +1269,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
+  @java.lang.Override
   public int getRowsCount() {
     return rows_.size();
   }
@@ -1272,6 +1282,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.RowLayout.Row getRows(int index) {
     return rows_.get(index);
   }
@@ -1284,6 +1295,7 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.dashboard.v1.RowLayout.RowOrBuilder getRowsOrBuilder(int index) {
     return rows_.get(index);
   }
