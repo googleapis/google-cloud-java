@@ -181,6 +181,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the effectiveTime field is set.
    */
+  @java.lang.Override
   public boolean hasEffectiveTime() {
     return effectiveTime_ != null;
   }
@@ -200,6 +201,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The effectiveTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEffectiveTime() {
     return effectiveTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -219,6 +221,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp effective_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEffectiveTimeOrBuilder() {
     return getEffectiveTime();
   }
@@ -237,6 +240,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The summary.
    */
+  @java.lang.Override
   public java.lang.String getSummary() {
     java.lang.Object ref = summary_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +264,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for summary.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSummaryBytes() {
     java.lang.Object ref = summary_;
     if (ref instanceof java.lang.String) {
@@ -285,6 +290,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pricingExpression field is set.
    */
+  @java.lang.Override
   public boolean hasPricingExpression() {
     return pricingExpression_ != null;
   }
@@ -299,6 +305,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pricingExpression.
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.PricingExpression getPricingExpression() {
     return pricingExpression_ == null
         ? com.google.cloud.billing.v1.PricingExpression.getDefaultInstance()
@@ -313,6 +320,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.billing.v1.PricingExpression pricing_expression = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.PricingExpressionOrBuilder getPricingExpressionOrBuilder() {
     return getPricingExpression();
   }
@@ -331,6 +339,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the aggregationInfo field is set.
    */
+  @java.lang.Override
   public boolean hasAggregationInfo() {
     return aggregationInfo_ != null;
   }
@@ -346,6 +355,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The aggregationInfo.
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.AggregationInfo getAggregationInfo() {
     return aggregationInfo_ == null
         ? com.google.cloud.billing.v1.AggregationInfo.getDefaultInstance()
@@ -361,6 +371,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.billing.v1.AggregationInfo aggregation_info = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.AggregationInfoOrBuilder getAggregationInfoOrBuilder() {
     return getAggregationInfo();
   }
@@ -382,6 +393,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The currencyConversionRate.
    */
+  @java.lang.Override
   public double getCurrencyConversionRate() {
     return currencyConversionRate_;
   }
@@ -1542,6 +1554,7 @@ public final class PricingInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The currencyConversionRate.
      */
+    @java.lang.Override
     public double getCurrencyConversionRate() {
       return currencyConversionRate_;
     }

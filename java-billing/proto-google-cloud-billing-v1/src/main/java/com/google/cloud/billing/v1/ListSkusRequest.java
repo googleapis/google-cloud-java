@@ -178,6 +178,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +204,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +235,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -252,6 +255,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -269,6 +273,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp start_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -291,6 +296,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -310,6 +316,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -327,6 +334,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -346,6 +354,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The currencyCode.
    */
+  @java.lang.Override
   public java.lang.String getCurrencyCode() {
     java.lang.Object ref = currencyCode_;
     if (ref instanceof java.lang.String) {
@@ -370,6 +379,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for currencyCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCurrencyCodeBytes() {
     java.lang.Object ref = currencyCode_;
     if (ref instanceof java.lang.String) {
@@ -395,6 +405,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -414,6 +425,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -438,6 +450,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -1566,6 +1579,7 @@ public final class ListSkusRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

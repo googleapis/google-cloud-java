@@ -141,6 +141,7 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.billing.v1.ProjectBillingInfo>
       getProjectBillingInfoList() {
     return projectBillingInfo_;
@@ -155,6 +156,7 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.billing.v1.ProjectBillingInfoOrBuilder>
       getProjectBillingInfoOrBuilderList() {
     return projectBillingInfo_;
@@ -169,6 +171,7 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 1;</code>
    */
+  @java.lang.Override
   public int getProjectBillingInfoCount() {
     return projectBillingInfo_.size();
   }
@@ -182,6 +185,7 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.ProjectBillingInfo getProjectBillingInfo(int index) {
     return projectBillingInfo_.get(index);
   }
@@ -195,6 +199,7 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.ProjectBillingInfoOrBuilder getProjectBillingInfoOrBuilder(
       int index) {
     return projectBillingInfo_.get(index);
@@ -215,6 +220,7 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +245,7 @@ public final class ListProjectBillingInfoResponse extends com.google.protobuf.Ge
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

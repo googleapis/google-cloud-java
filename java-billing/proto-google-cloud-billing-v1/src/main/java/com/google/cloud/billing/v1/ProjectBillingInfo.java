@@ -150,6 +150,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -175,6 +176,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +204,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +229,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +256,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    *
    * @return The billingAccountName.
    */
+  @java.lang.Override
   public java.lang.String getBillingAccountName() {
     java.lang.Object ref = billingAccountName_;
     if (ref instanceof java.lang.String) {
@@ -275,6 +280,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for billingAccountName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBillingAccountNameBytes() {
     java.lang.Object ref = billingAccountName_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +309,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    *
    * @return The billingEnabled.
    */
+  @java.lang.Override
   public boolean getBillingEnabled() {
     return billingEnabled_;
   }
@@ -1035,6 +1042,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      *
      * @return The billingEnabled.
      */
+    @java.lang.Override
     public boolean getBillingEnabled() {
       return billingEnabled_;
     }

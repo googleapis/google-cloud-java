@@ -200,6 +200,10 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -310,6 +314,10 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -350,6 +358,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for aggregationLevel.
    */
+  @java.lang.Override
   public int getAggregationLevelValue() {
     return aggregationLevel_;
   }
@@ -358,6 +367,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The aggregationLevel.
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.AggregationInfo.AggregationLevel getAggregationLevel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.billing.v1.AggregationInfo.AggregationLevel result =
@@ -375,6 +385,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for aggregationInterval.
    */
+  @java.lang.Override
   public int getAggregationIntervalValue() {
     return aggregationInterval_;
   }
@@ -384,6 +395,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The aggregationInterval.
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.AggregationInfo.AggregationInterval getAggregationInterval() {
     @SuppressWarnings("deprecation")
     com.google.cloud.billing.v1.AggregationInfo.AggregationInterval result =
@@ -409,6 +421,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
    *
    * @return The aggregationCount.
    */
+  @java.lang.Override
   public int getAggregationCount() {
     return aggregationCount_;
   }
@@ -776,6 +789,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for aggregationLevel.
      */
+    @java.lang.Override
     public int getAggregationLevelValue() {
       return aggregationLevel_;
     }
@@ -786,6 +800,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setAggregationLevelValue(int value) {
+
       aggregationLevel_ = value;
       onChanged();
       return this;
@@ -795,6 +810,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      *
      * @return The aggregationLevel.
      */
+    @java.lang.Override
     public com.google.cloud.billing.v1.AggregationInfo.AggregationLevel getAggregationLevel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.billing.v1.AggregationInfo.AggregationLevel result =
@@ -838,6 +854,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for aggregationInterval.
      */
+    @java.lang.Override
     public int getAggregationIntervalValue() {
       return aggregationInterval_;
     }
@@ -849,6 +866,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setAggregationIntervalValue(int value) {
+
       aggregationInterval_ = value;
       onChanged();
       return this;
@@ -859,6 +877,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      *
      * @return The aggregationInterval.
      */
+    @java.lang.Override
     public com.google.cloud.billing.v1.AggregationInfo.AggregationInterval
         getAggregationInterval() {
       @SuppressWarnings("deprecation")
@@ -913,6 +932,7 @@ public final class AggregationInfo extends com.google.protobuf.GeneratedMessageV
      *
      * @return The aggregationCount.
      */
+    @java.lang.Override
     public int getAggregationCount() {
       return aggregationCount_;
     }

@@ -194,6 +194,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +218,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -243,6 +245,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The skuId.
    */
+  @java.lang.Override
   public java.lang.String getSkuId() {
     java.lang.Object ref = skuId_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +269,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for skuId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSkuIdBytes() {
     java.lang.Object ref = skuId_;
     if (ref instanceof java.lang.String) {
@@ -292,6 +296,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -315,6 +320,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -340,6 +346,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the category field is set.
    */
+  @java.lang.Override
   public boolean hasCategory() {
     return category_ != null;
   }
@@ -354,6 +361,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The category.
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.Category getCategory() {
     return category_ == null
         ? com.google.cloud.billing.v1.Category.getDefaultInstance()
@@ -368,6 +376,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.billing.v1.Category category = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.CategoryOrBuilder getCategoryOrBuilder() {
     return getCategory();
   }
@@ -452,6 +461,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.billing.v1.PricingInfo pricing_info = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.billing.v1.PricingInfo> getPricingInfoList() {
     return pricingInfo_;
   }
@@ -464,6 +474,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.billing.v1.PricingInfo pricing_info = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.billing.v1.PricingInfoOrBuilder>
       getPricingInfoOrBuilderList() {
     return pricingInfo_;
@@ -477,6 +488,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.billing.v1.PricingInfo pricing_info = 6;</code>
    */
+  @java.lang.Override
   public int getPricingInfoCount() {
     return pricingInfo_.size();
   }
@@ -489,6 +501,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.billing.v1.PricingInfo pricing_info = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.PricingInfo getPricingInfo(int index) {
     return pricingInfo_.get(index);
   }
@@ -501,6 +514,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.billing.v1.PricingInfo pricing_info = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.PricingInfoOrBuilder getPricingInfoOrBuilder(int index) {
     return pricingInfo_.get(index);
   }
@@ -519,6 +533,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serviceProviderName.
    */
+  @java.lang.Override
   public java.lang.String getServiceProviderName() {
     java.lang.Object ref = serviceProviderName_;
     if (ref instanceof java.lang.String) {
@@ -542,6 +557,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for serviceProviderName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceProviderNameBytes() {
     java.lang.Object ref = serviceProviderName_;
     if (ref instanceof java.lang.String) {

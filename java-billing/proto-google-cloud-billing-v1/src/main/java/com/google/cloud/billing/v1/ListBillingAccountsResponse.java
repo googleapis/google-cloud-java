@@ -139,6 +139,7 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.billing.v1.BillingAccount billing_accounts = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.billing.v1.BillingAccount> getBillingAccountsList() {
     return billingAccounts_;
   }
@@ -151,6 +152,7 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.billing.v1.BillingAccount billing_accounts = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.billing.v1.BillingAccountOrBuilder>
       getBillingAccountsOrBuilderList() {
     return billingAccounts_;
@@ -164,6 +166,7 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.billing.v1.BillingAccount billing_accounts = 1;</code>
    */
+  @java.lang.Override
   public int getBillingAccountsCount() {
     return billingAccounts_.size();
   }
@@ -176,6 +179,7 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.billing.v1.BillingAccount billing_accounts = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.BillingAccount getBillingAccounts(int index) {
     return billingAccounts_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.billing.v1.BillingAccount billing_accounts = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.BillingAccountOrBuilder getBillingAccountsOrBuilder(
       int index) {
     return billingAccounts_.get(index);
@@ -208,6 +213,7 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +238,7 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

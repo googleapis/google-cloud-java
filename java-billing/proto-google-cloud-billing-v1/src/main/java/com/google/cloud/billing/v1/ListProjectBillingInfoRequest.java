@@ -140,6 +140,7 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -165,6 +166,7 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -210,6 +213,7 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +238,7 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -730,6 +735,7 @@ public final class ListProjectBillingInfoRequest extends com.google.protobuf.Gen
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

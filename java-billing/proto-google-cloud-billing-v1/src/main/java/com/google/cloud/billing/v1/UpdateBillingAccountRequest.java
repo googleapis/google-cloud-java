@@ -157,6 +157,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +182,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +210,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * @return Whether the account field is set.
    */
+  @java.lang.Override
   public boolean hasAccount() {
     return account_ != null;
   }
@@ -224,6 +227,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * @return The account.
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.BillingAccount getAccount() {
     return account_ == null
         ? com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()
@@ -240,6 +244,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    * .google.cloud.billing.v1.BillingAccount account = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.BillingAccountOrBuilder getAccountOrBuilder() {
     return getAccount();
   }
@@ -258,6 +263,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -273,6 +279,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -286,6 +293,7 @@ public final class UpdateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

@@ -347,6 +347,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      *
      * @return The startUsageAmount.
      */
+    @java.lang.Override
     public double getStartUsageAmount() {
       return startUsageAmount_;
     }
@@ -365,6 +366,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the unitPrice field is set.
      */
+    @java.lang.Override
     public boolean hasUnitPrice() {
       return unitPrice_ != null;
     }
@@ -380,6 +382,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      *
      * @return The unitPrice.
      */
+    @java.lang.Override
     public com.google.type.Money getUnitPrice() {
       return unitPrice_ == null ? com.google.type.Money.getDefaultInstance() : unitPrice_;
     }
@@ -393,6 +396,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.type.Money unit_price = 2;</code>
      */
+    @java.lang.Override
     public com.google.type.MoneyOrBuilder getUnitPriceOrBuilder() {
       return getUnitPrice();
     }
@@ -765,6 +769,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
        *
        * @return The startUsageAmount.
        */
+      @java.lang.Override
       public double getStartUsageAmount() {
         return startUsageAmount_;
       }
@@ -1058,6 +1063,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The usageUnit.
    */
+  @java.lang.Override
   public java.lang.String getUsageUnit() {
     java.lang.Object ref = usageUnit_;
     if (ref instanceof java.lang.String) {
@@ -1081,6 +1087,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for usageUnit.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUsageUnitBytes() {
     java.lang.Object ref = usageUnit_;
     if (ref instanceof java.lang.String) {
@@ -1107,6 +1114,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The usageUnitDescription.
    */
+  @java.lang.Override
   public java.lang.String getUsageUnitDescription() {
     java.lang.Object ref = usageUnitDescription_;
     if (ref instanceof java.lang.String) {
@@ -1130,6 +1138,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for usageUnitDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUsageUnitDescriptionBytes() {
     java.lang.Object ref = usageUnitDescription_;
     if (ref instanceof java.lang.String) {
@@ -1156,6 +1165,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The baseUnit.
    */
+  @java.lang.Override
   public java.lang.String getBaseUnit() {
     java.lang.Object ref = baseUnit_;
     if (ref instanceof java.lang.String) {
@@ -1179,6 +1189,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for baseUnit.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBaseUnitBytes() {
     java.lang.Object ref = baseUnit_;
     if (ref instanceof java.lang.String) {
@@ -1205,6 +1216,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The baseUnitDescription.
    */
+  @java.lang.Override
   public java.lang.String getBaseUnitDescription() {
     java.lang.Object ref = baseUnitDescription_;
     if (ref instanceof java.lang.String) {
@@ -1228,6 +1240,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for baseUnitDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBaseUnitDescriptionBytes() {
     java.lang.Object ref = baseUnitDescription_;
     if (ref instanceof java.lang.String) {
@@ -1257,6 +1270,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The baseUnitConversionFactor.
    */
+  @java.lang.Override
   public double getBaseUnitConversionFactor() {
     return baseUnitConversionFactor_;
   }
@@ -1281,6 +1295,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * @return The displayQuantity.
    */
+  @java.lang.Override
   public double getDisplayQuantity() {
     return displayQuantity_;
   }
@@ -1298,6 +1313,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate>
       getTieredRatesList() {
     return tieredRates_;
@@ -1313,6 +1329,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder>
       getTieredRatesOrBuilderList() {
     return tieredRates_;
@@ -1328,6 +1345,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
    */
+  @java.lang.Override
   public int getTieredRatesCount() {
     return tieredRates_.size();
   }
@@ -1342,6 +1360,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.PricingExpression.TierRate getTieredRates(int index) {
     return tieredRates_.get(index);
   }
@@ -1356,6 +1375,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder getTieredRatesOrBuilder(
       int index) {
     return tieredRates_.get(index);
@@ -2288,6 +2308,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      *
      * @return The baseUnitConversionFactor.
      */
+    @java.lang.Override
     public double getBaseUnitConversionFactor() {
       return baseUnitConversionFactor_;
     }
@@ -2354,6 +2375,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
      *
      * @return The displayQuantity.
      */
+    @java.lang.Override
     public double getDisplayQuantity() {
       return displayQuantity_;
     }

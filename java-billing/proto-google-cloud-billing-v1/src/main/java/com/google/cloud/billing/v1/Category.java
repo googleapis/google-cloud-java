@@ -148,6 +148,7 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serviceDisplayName.
    */
+  @java.lang.Override
   public java.lang.String getServiceDisplayName() {
     java.lang.Object ref = serviceDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for serviceDisplayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceDisplayNameBytes() {
     java.lang.Object ref = serviceDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resourceFamily.
    */
+  @java.lang.Override
   public java.lang.String getResourceFamily() {
     java.lang.Object ref = resourceFamily_;
     if (ref instanceof java.lang.String) {
@@ -219,6 +222,7 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for resourceFamily.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceFamilyBytes() {
     java.lang.Object ref = resourceFamily_;
     if (ref instanceof java.lang.String) {
@@ -245,6 +249,7 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resourceGroup.
    */
+  @java.lang.Override
   public java.lang.String getResourceGroup() {
     java.lang.Object ref = resourceGroup_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +273,7 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for resourceGroup.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceGroupBytes() {
     java.lang.Object ref = resourceGroup_;
     if (ref instanceof java.lang.String) {
@@ -294,6 +300,7 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The usageType.
    */
+  @java.lang.Override
   public java.lang.String getUsageType() {
     java.lang.Object ref = usageType_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +324,7 @@ public final class Category extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for usageType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUsageTypeBytes() {
     java.lang.Object ref = usageType_;
     if (ref instanceof java.lang.String) {

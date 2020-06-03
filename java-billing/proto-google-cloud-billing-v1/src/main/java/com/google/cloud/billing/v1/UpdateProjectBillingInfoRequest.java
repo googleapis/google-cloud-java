@@ -142,6 +142,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -165,6 +166,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    *
    * @return Whether the projectBillingInfo field is set.
    */
+  @java.lang.Override
   public boolean hasProjectBillingInfo() {
     return projectBillingInfo_ != null;
   }
@@ -206,6 +209,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    *
    * @return The projectBillingInfo.
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.ProjectBillingInfo getProjectBillingInfo() {
     return projectBillingInfo_ == null
         ? com.google.cloud.billing.v1.ProjectBillingInfo.getDefaultInstance()
@@ -221,6 +225,7 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    *
    * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.ProjectBillingInfoOrBuilder getProjectBillingInfoOrBuilder() {
     return getProjectBillingInfo();
   }

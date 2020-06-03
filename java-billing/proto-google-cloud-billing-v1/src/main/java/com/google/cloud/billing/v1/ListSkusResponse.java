@@ -137,6 +137,7 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.billing.v1.Sku> getSkusList() {
     return skus_;
   }
@@ -149,6 +150,7 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.billing.v1.SkuOrBuilder> getSkusOrBuilderList() {
     return skus_;
   }
@@ -161,6 +163,7 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
+  @java.lang.Override
   public int getSkusCount() {
     return skus_.size();
   }
@@ -173,6 +176,7 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.Sku getSkus(int index) {
     return skus_.get(index);
   }
@@ -185,6 +189,7 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.SkuOrBuilder getSkusOrBuilder(int index) {
     return skus_.get(index);
   }
@@ -204,6 +209,7 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +234,7 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

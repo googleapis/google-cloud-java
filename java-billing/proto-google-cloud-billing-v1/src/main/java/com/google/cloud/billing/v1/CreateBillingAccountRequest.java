@@ -136,6 +136,7 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * @return Whether the billingAccount field is set.
    */
+  @java.lang.Override
   public boolean hasBillingAccount() {
     return billingAccount_ != null;
   }
@@ -155,6 +156,7 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
    *
    * @return The billingAccount.
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.BillingAccount getBillingAccount() {
     return billingAccount_ == null
         ? com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()
@@ -174,6 +176,7 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
    * .google.cloud.billing.v1.BillingAccount billing_account = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.v1.BillingAccountOrBuilder getBillingAccountOrBuilder() {
     return getBillingAccount();
   }

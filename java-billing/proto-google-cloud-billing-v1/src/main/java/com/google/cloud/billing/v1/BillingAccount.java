@@ -149,6 +149,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +175,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The open.
    */
+  @java.lang.Override
   public boolean getOpen() {
     return open_;
   }
@@ -219,6 +222,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +246,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -271,6 +276,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The masterBillingAccount.
    */
+  @java.lang.Override
   public java.lang.String getMasterBillingAccount() {
     java.lang.Object ref = masterBillingAccount_;
     if (ref instanceof java.lang.String) {
@@ -297,6 +303,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for masterBillingAccount.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMasterBillingAccountBytes() {
     java.lang.Object ref = masterBillingAccount_;
     if (ref instanceof java.lang.String) {
@@ -808,6 +815,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The open.
      */
+    @java.lang.Override
     public boolean getOpen() {
       return open_;
     }

@@ -149,6 +149,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serviceId.
    */
+  @java.lang.Override
   public java.lang.String getServiceId() {
     java.lang.Object ref = serviceId_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +224,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for serviceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceIdBytes() {
     java.lang.Object ref = serviceId_;
     if (ref instanceof java.lang.String) {
@@ -246,6 +250,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +273,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -294,6 +300,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The businessEntityName.
    */
+  @java.lang.Override
   public java.lang.String getBusinessEntityName() {
     java.lang.Object ref = businessEntityName_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +324,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for businessEntityName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBusinessEntityNameBytes() {
     java.lang.Object ref = businessEntityName_;
     if (ref instanceof java.lang.String) {
