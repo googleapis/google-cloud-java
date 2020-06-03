@@ -167,6 +167,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +191,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The address.
    */
+  @java.lang.Override
   public java.lang.String getAddress() {
     java.lang.Object ref = address_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +254,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for address.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAddressBytes() {
     java.lang.Object ref = address_;
     if (ref instanceof java.lang.String) {
@@ -276,6 +280,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The port.
    */
+  @java.lang.Override
   public int getPort() {
     return port_;
   }
@@ -317,6 +322,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -324,6 +330,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     return internalGetMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
@@ -340,6 +347,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
@@ -355,6 +363,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -375,6 +384,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1045,6 +1055,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The port.
      */
+    @java.lang.Override
     public int getPort() {
       return port_;
     }
@@ -1123,6 +1134,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1130,6 +1142,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return internalGetMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
@@ -1147,6 +1160,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
@@ -1163,6 +1177,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1184,6 +1199,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

@@ -126,6 +126,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
    *
    * @return Whether the service field is set.
    */
+  @java.lang.Override
   public boolean hasService() {
     return service_ != null;
   }
@@ -134,12 +135,14 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
    *
    * @return The service.
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.Service getService() {
     return service_ == null
         ? com.google.cloud.servicedirectory.v1beta1.Service.getDefaultInstance()
         : service_;
   }
   /** <code>.google.cloud.servicedirectory.v1beta1.Service service = 1;</code> */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.ServiceOrBuilder getServiceOrBuilder() {
     return getService();
   }

@@ -149,6 +149,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the namespace field is set.
    */
+  @java.lang.Override
   public boolean hasNamespace() {
     return namespace_ != null;
   }
@@ -165,6 +166,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The namespace.
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.Namespace getNamespace() {
     return namespace_ == null
         ? com.google.cloud.servicedirectory.v1beta1.Namespace.getDefaultInstance()
@@ -181,6 +183,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    * .google.cloud.servicedirectory.v1beta1.Namespace namespace = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.NamespaceOrBuilder getNamespaceOrBuilder() {
     return getNamespace();
   }
@@ -199,6 +202,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -214,6 +218,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -227,6 +232,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

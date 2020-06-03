@@ -151,6 +151,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -175,6 +176,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +208,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The endpointId.
    */
+  @java.lang.Override
   public java.lang.String getEndpointId() {
     java.lang.Object ref = endpointId_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +237,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for endpointId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndpointIdBytes() {
     java.lang.Object ref = endpointId_;
     if (ref instanceof java.lang.String) {
@@ -261,6 +265,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the endpoint field is set.
    */
+  @java.lang.Override
   public boolean hasEndpoint() {
     return endpoint_ != null;
   }
@@ -277,6 +282,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The endpoint.
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.Endpoint getEndpoint() {
     return endpoint_ == null
         ? com.google.cloud.servicedirectory.v1beta1.Endpoint.getDefaultInstance()
@@ -293,6 +299,7 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.servicedirectory.v1beta1.Endpoint endpoint = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.EndpointOrBuilder getEndpointOrBuilder() {
     return getEndpoint();
   }

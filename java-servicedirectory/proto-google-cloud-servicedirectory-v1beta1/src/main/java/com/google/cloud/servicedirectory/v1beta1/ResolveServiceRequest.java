@@ -140,6 +140,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -164,6 +165,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The maxEndpoints.
    */
+  @java.lang.Override
   public int getMaxEndpoints() {
     return maxEndpoints_;
   }
@@ -223,6 +226,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The endpointFilter.
    */
+  @java.lang.Override
   public java.lang.String getEndpointFilter() {
     java.lang.Object ref = endpointFilter_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +264,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for endpointFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndpointFilterBytes() {
     java.lang.Object ref = endpointFilter_;
     if (ref instanceof java.lang.String) {
@@ -757,6 +762,7 @@ public final class ResolveServiceRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The maxEndpoints.
      */
+    @java.lang.Override
     public int getMaxEndpoints() {
       return maxEndpoints_;
     }

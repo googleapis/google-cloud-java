@@ -149,6 +149,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the service field is set.
    */
+  @java.lang.Override
   public boolean hasService() {
     return service_ != null;
   }
@@ -165,6 +166,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The service.
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.Service getService() {
     return service_ == null
         ? com.google.cloud.servicedirectory.v1beta1.Service.getDefaultInstance()
@@ -181,6 +183,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.servicedirectory.v1beta1.Service service = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.ServiceOrBuilder getServiceOrBuilder() {
     return getService();
   }
@@ -199,6 +202,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -214,6 +218,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -227,6 +232,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

@@ -140,6 +140,7 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Endpoint endpoints = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.servicedirectory.v1beta1.Endpoint> getEndpointsList() {
     return endpoints_;
   }
@@ -152,6 +153,7 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Endpoint endpoints = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.servicedirectory.v1beta1.EndpointOrBuilder>
       getEndpointsOrBuilderList() {
     return endpoints_;
@@ -165,6 +167,7 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Endpoint endpoints = 1;</code>
    */
+  @java.lang.Override
   public int getEndpointsCount() {
     return endpoints_.size();
   }
@@ -177,6 +180,7 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Endpoint endpoints = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.Endpoint getEndpoints(int index) {
     return endpoints_.get(index);
   }
@@ -189,6 +193,7 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Endpoint endpoints = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.EndpointOrBuilder getEndpointsOrBuilder(
       int index) {
     return endpoints_.get(index);
@@ -208,6 +213,7 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

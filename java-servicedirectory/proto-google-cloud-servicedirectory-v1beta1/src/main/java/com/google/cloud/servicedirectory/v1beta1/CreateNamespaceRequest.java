@@ -152,6 +152,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +210,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The namespaceId.
    */
+  @java.lang.Override
   public java.lang.String getNamespaceId() {
     java.lang.Object ref = namespaceId_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +239,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for namespaceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNamespaceIdBytes() {
     java.lang.Object ref = namespaceId_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +267,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the namespace field is set.
    */
+  @java.lang.Override
   public boolean hasNamespace() {
     return namespace_ != null;
   }
@@ -279,6 +284,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The namespace.
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.Namespace getNamespace() {
     return namespace_ == null
         ? com.google.cloud.servicedirectory.v1beta1.Namespace.getDefaultInstance()
@@ -295,6 +301,7 @@ public final class CreateNamespaceRequest extends com.google.protobuf.GeneratedM
    * .google.cloud.servicedirectory.v1beta1.Namespace namespace = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.NamespaceOrBuilder getNamespaceOrBuilder() {
     return getNamespace();
   }

@@ -149,6 +149,7 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the endpoint field is set.
    */
+  @java.lang.Override
   public boolean hasEndpoint() {
     return endpoint_ != null;
   }
@@ -165,6 +166,7 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The endpoint.
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.Endpoint getEndpoint() {
     return endpoint_ == null
         ? com.google.cloud.servicedirectory.v1beta1.Endpoint.getDefaultInstance()
@@ -181,6 +183,7 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.servicedirectory.v1beta1.Endpoint endpoint = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.EndpointOrBuilder getEndpointOrBuilder() {
     return getEndpoint();
   }
@@ -199,6 +202,7 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -214,6 +218,7 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -227,6 +232,7 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
