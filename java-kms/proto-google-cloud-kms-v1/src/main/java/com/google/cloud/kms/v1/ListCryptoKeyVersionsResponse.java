@@ -144,6 +144,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.kms.v1.CryptoKeyVersion> getCryptoKeyVersionsList() {
     return cryptoKeyVersions_;
   }
@@ -156,6 +157,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder>
       getCryptoKeyVersionsOrBuilderList() {
     return cryptoKeyVersions_;
@@ -169,6 +171,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
+  @java.lang.Override
   public int getCryptoKeyVersionsCount() {
     return cryptoKeyVersions_.size();
   }
@@ -181,6 +184,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersions(int index) {
     return cryptoKeyVersions_.get(index);
   }
@@ -193,6 +197,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionsOrBuilder(
       int index) {
     return cryptoKeyVersions_.get(index);
@@ -213,6 +218,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -237,6 +243,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +270,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -1144,6 +1152,7 @@ public final class ListCryptoKeyVersionsResponse extends com.google.protobuf.Gen
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

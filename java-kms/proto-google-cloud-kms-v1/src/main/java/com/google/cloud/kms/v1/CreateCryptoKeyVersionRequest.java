@@ -143,6 +143,7 @@ public final class CreateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class CreateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class CreateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    *
    * @return Whether the cryptoKeyVersion field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoKeyVersion() {
     return cryptoKeyVersion_ != null;
   }
@@ -211,6 +214,7 @@ public final class CreateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    *
    * @return The cryptoKeyVersion.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion() {
     return cryptoKeyVersion_ == null
         ? com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()
@@ -227,6 +231,7 @@ public final class CreateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
     return getCryptoKeyVersion();
   }

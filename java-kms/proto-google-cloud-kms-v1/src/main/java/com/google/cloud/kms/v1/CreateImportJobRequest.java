@@ -150,6 +150,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -175,6 +176,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    * @return The importJobId.
    */
+  @java.lang.Override
   public java.lang.String getImportJobId() {
     java.lang.Object ref = importJobId_;
     if (ref instanceof java.lang.String) {
@@ -224,6 +227,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for importJobId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImportJobIdBytes() {
     java.lang.Object ref = importJobId_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +254,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the importJob field is set.
    */
+  @java.lang.Override
   public boolean hasImportJob() {
     return importJob_ != null;
   }
@@ -265,6 +270,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    *
    * @return The importJob.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.ImportJob getImportJob() {
     return importJob_ == null ? com.google.cloud.kms.v1.ImportJob.getDefaultInstance() : importJob_;
   }
@@ -278,6 +284,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    * <code>.google.cloud.kms.v1.ImportJob import_job = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobOrBuilder() {
     return getImportJob();
   }

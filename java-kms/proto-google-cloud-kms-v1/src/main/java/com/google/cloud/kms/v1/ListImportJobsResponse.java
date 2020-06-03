@@ -142,6 +142,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.kms.v1.ImportJob> getImportJobsList() {
     return importJobs_;
   }
@@ -154,6 +155,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.kms.v1.ImportJobOrBuilder>
       getImportJobsOrBuilderList() {
     return importJobs_;
@@ -167,6 +169,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
+  @java.lang.Override
   public int getImportJobsCount() {
     return importJobs_.size();
   }
@@ -179,6 +182,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.ImportJob getImportJobs(int index) {
     return importJobs_.get(index);
   }
@@ -191,6 +195,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobsOrBuilder(int index) {
     return importJobs_.get(index);
   }
@@ -209,6 +214,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +238,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +264,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -1121,6 +1129,7 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

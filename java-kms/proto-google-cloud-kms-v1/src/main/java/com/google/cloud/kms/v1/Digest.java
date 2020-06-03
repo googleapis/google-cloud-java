@@ -180,6 +180,7 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sha256.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSha256() {
     if (digestCase_ == 1) {
       return (com.google.protobuf.ByteString) digest_;
@@ -199,6 +200,7 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sha384.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSha384() {
     if (digestCase_ == 2) {
       return (com.google.protobuf.ByteString) digest_;
@@ -218,6 +220,7 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sha512.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSha512() {
     if (digestCase_ == 3) {
       return (com.google.protobuf.ByteString) digest_;

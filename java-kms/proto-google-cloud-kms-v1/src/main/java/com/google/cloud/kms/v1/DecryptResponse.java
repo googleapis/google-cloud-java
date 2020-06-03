@@ -122,6 +122,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The plaintext.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPlaintext() {
     return plaintext_;
   }
@@ -452,6 +453,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      * @return The plaintext.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPlaintext() {
       return plaintext_;
     }

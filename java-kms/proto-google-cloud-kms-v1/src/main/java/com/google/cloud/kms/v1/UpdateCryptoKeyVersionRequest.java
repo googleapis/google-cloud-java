@@ -148,6 +148,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    *
    * @return Whether the cryptoKeyVersion field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoKeyVersion() {
     return cryptoKeyVersion_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    *
    * @return The cryptoKeyVersion.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion() {
     return cryptoKeyVersion_ == null
         ? com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * .google.cloud.kms.v1.CryptoKeyVersion crypto_key_version = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
     return getCryptoKeyVersion();
   }
@@ -198,6 +201,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -213,6 +217,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -226,6 +231,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

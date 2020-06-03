@@ -122,6 +122,7 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
    *
    * @return The plaintext.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPlaintext() {
     return plaintext_;
   }
@@ -455,6 +456,7 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
      *
      * @return The plaintext.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPlaintext() {
       return plaintext_;
     }

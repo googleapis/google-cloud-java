@@ -146,6 +146,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the cryptoKey field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
   }
@@ -161,6 +162,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return The cryptoKey.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKey getCryptoKey() {
     return cryptoKey_ == null ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
   }
@@ -174,6 +176,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
   }
@@ -192,6 +195,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -207,6 +211,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -220,6 +225,7 @@ public final class UpdateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

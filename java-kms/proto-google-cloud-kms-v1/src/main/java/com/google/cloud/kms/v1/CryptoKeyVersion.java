@@ -721,6 +721,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -1011,6 +1015,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -1152,6 +1160,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -1199,6 +1211,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1222,6 +1235,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1247,6 +1261,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -1261,6 +1276,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState result =
@@ -1286,6 +1302,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for protectionLevel.
    */
+  @java.lang.Override
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
@@ -1303,6 +1320,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The protectionLevel.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
@@ -1326,6 +1344,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for algorithm.
    */
+  @java.lang.Override
   public int getAlgorithmValue() {
     return algorithm_;
   }
@@ -1343,6 +1362,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The algorithm.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
     @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
@@ -1370,6 +1390,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the attestation field is set.
    */
+  @java.lang.Override
   public boolean hasAttestation() {
     return attestation_ != null;
   }
@@ -1389,6 +1410,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The attestation.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.KeyOperationAttestation getAttestation() {
     return attestation_ == null
         ? com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance()
@@ -1408,6 +1430,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * .google.cloud.kms.v1.KeyOperationAttestation attestation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder getAttestationOrBuilder() {
     return getAttestation();
   }
@@ -1426,6 +1449,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -1441,6 +1465,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -1454,6 +1479,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1474,6 +1500,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the generateTime field is set.
    */
+  @java.lang.Override
   public boolean hasGenerateTime() {
     return generateTime_ != null;
   }
@@ -1491,6 +1518,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The generateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getGenerateTime() {
     return generateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1508,6 +1536,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * .google.protobuf.Timestamp generate_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getGenerateTimeOrBuilder() {
     return getGenerateTime();
   }
@@ -1528,6 +1557,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the destroyTime field is set.
    */
+  @java.lang.Override
   public boolean hasDestroyTime() {
     return destroyTime_ != null;
   }
@@ -1545,6 +1575,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The destroyTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDestroyTime() {
     return destroyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : destroyTime_;
   }
@@ -1560,6 +1591,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Timestamp destroy_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDestroyTimeOrBuilder() {
     return getDestroyTime();
   }
@@ -1581,6 +1613,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the destroyEventTime field is set.
    */
+  @java.lang.Override
   public boolean hasDestroyEventTime() {
     return destroyEventTime_ != null;
   }
@@ -1599,6 +1632,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The destroyEventTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDestroyEventTime() {
     return destroyEventTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1617,6 +1651,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * .google.protobuf.Timestamp destroy_event_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDestroyEventTimeOrBuilder() {
     return getDestroyEventTime();
   }
@@ -1636,6 +1671,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The importJob.
    */
+  @java.lang.Override
   public java.lang.String getImportJob() {
     java.lang.Object ref = importJob_;
     if (ref instanceof java.lang.String) {
@@ -1660,6 +1696,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for importJob.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImportJobBytes() {
     java.lang.Object ref = importJob_;
     if (ref instanceof java.lang.String) {
@@ -1687,6 +1724,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the importTime field is set.
    */
+  @java.lang.Override
   public boolean hasImportTime() {
     return importTime_ != null;
   }
@@ -1703,6 +1741,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The importTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getImportTime() {
     return importTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : importTime_;
   }
@@ -1717,6 +1756,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Timestamp import_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getImportTimeOrBuilder() {
     return getImportTime();
   }
@@ -1736,6 +1776,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The importFailureReason.
    */
+  @java.lang.Override
   public java.lang.String getImportFailureReason() {
     java.lang.Object ref = importFailureReason_;
     if (ref instanceof java.lang.String) {
@@ -1760,6 +1801,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for importFailureReason.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImportFailureReasonBytes() {
     java.lang.Object ref = importFailureReason_;
     if (ref instanceof java.lang.String) {
@@ -1789,6 +1831,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the externalProtectionLevelOptions field is set.
    */
+  @java.lang.Override
   public boolean hasExternalProtectionLevelOptions() {
     return externalProtectionLevelOptions_ != null;
   }
@@ -1807,6 +1850,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * @return The externalProtectionLevelOptions.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.ExternalProtectionLevelOptions
       getExternalProtectionLevelOptions() {
     return externalProtectionLevelOptions_ == null
@@ -1826,6 +1870,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * .google.cloud.kms.v1.ExternalProtectionLevelOptions external_protection_level_options = 17;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.ExternalProtectionLevelOptionsOrBuilder
       getExternalProtectionLevelOptionsOrBuilder() {
     return getExternalProtectionLevelOptions();
@@ -2567,6 +2612,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -2583,6 +2629,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -2598,6 +2645,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState result =
@@ -2660,6 +2708,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for protectionLevel.
      */
+    @java.lang.Override
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
@@ -2679,6 +2728,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
+
       protectionLevel_ = value;
       onChanged();
       return this;
@@ -2697,6 +2747,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * @return The protectionLevel.
      */
+    @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
@@ -2763,6 +2814,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for algorithm.
      */
+    @java.lang.Override
     public int getAlgorithmValue() {
       return algorithm_;
     }
@@ -2782,6 +2834,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
+
       algorithm_ = value;
       onChanged();
       return this;
@@ -2800,6 +2853,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * @return The algorithm.
      */
+    @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
       @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =

@@ -383,6 +383,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -474,6 +478,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -497,6 +502,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -531,6 +537,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the primary field is set.
    */
+  @java.lang.Override
   public boolean hasPrimary() {
     return primary_ != null;
   }
@@ -554,6 +561,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The primary.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion getPrimary() {
     return primary_ == null
         ? com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()
@@ -577,6 +585,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.kms.v1.CryptoKeyVersion primary = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getPrimaryOrBuilder() {
     return getPrimary();
   }
@@ -596,6 +605,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for purpose.
    */
+  @java.lang.Override
   public int getPurposeValue() {
     return purpose_;
   }
@@ -612,6 +622,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The purpose.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose getPurpose() {
     @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose result =
@@ -635,6 +646,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -650,6 +662,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -663,6 +676,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -689,6 +703,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the nextRotationTime field is set.
    */
+  @java.lang.Override
   public boolean hasNextRotationTime() {
     return nextRotationTime_ != null;
   }
@@ -712,6 +727,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nextRotationTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getNextRotationTime() {
     return nextRotationTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -735,6 +751,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getNextRotationTimeOrBuilder() {
     return getNextRotationTime();
   }
@@ -757,6 +774,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the rotationPeriod field is set.
    */
+  @java.lang.Override
   public boolean hasRotationPeriod() {
     return rotationScheduleCase_ == 8;
   }
@@ -777,6 +795,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rotationPeriod.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getRotationPeriod() {
     if (rotationScheduleCase_ == 8) {
       return (com.google.protobuf.Duration) rotationSchedule_;
@@ -798,6 +817,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration rotation_period = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getRotationPeriodOrBuilder() {
     if (rotationScheduleCase_ == 8) {
       return (com.google.protobuf.Duration) rotationSchedule_;
@@ -821,6 +841,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the versionTemplate field is set.
    */
+  @java.lang.Override
   public boolean hasVersionTemplate() {
     return versionTemplate_ != null;
   }
@@ -838,6 +859,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The versionTemplate.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionTemplate getVersionTemplate() {
     return versionTemplate_ == null
         ? com.google.cloud.kms.v1.CryptoKeyVersionTemplate.getDefaultInstance()
@@ -855,6 +877,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder getVersionTemplateOrBuilder() {
     return getVersionTemplate();
   }
@@ -894,6 +917,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -901,6 +925,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -915,6 +940,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -928,6 +954,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -945,6 +972,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1897,6 +1925,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for purpose.
      */
+    @java.lang.Override
     public int getPurposeValue() {
       return purpose_;
     }
@@ -1915,6 +1944,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPurposeValue(int value) {
+
       purpose_ = value;
       onChanged();
       return this;
@@ -1932,6 +1962,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The purpose.
      */
+    @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose getPurpose() {
       @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose result =
@@ -2472,6 +2503,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the rotationPeriod field is set.
      */
+    @java.lang.Override
     public boolean hasRotationPeriod() {
       return rotationScheduleCase_ == 8;
     }
@@ -2492,6 +2524,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The rotationPeriod.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getRotationPeriod() {
       if (rotationPeriodBuilder_ == null) {
         if (rotationScheduleCase_ == 8) {
@@ -2659,6 +2692,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Duration rotation_period = 8;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getRotationPeriodOrBuilder() {
       if ((rotationScheduleCase_ == 8) && (rotationPeriodBuilder_ != null)) {
         return rotationPeriodBuilder_.getMessageOrBuilder();
@@ -2957,6 +2991,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2964,6 +2999,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2978,6 +3014,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2991,6 +3028,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -3009,6 +3047,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

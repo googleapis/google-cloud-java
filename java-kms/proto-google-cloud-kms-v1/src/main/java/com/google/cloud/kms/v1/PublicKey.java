@@ -137,6 +137,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pem.
    */
+  @java.lang.Override
   public java.lang.String getPem() {
     java.lang.Object ref = pem_;
     if (ref instanceof java.lang.String) {
@@ -163,6 +164,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for pem.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPemBytes() {
     java.lang.Object ref = pem_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for algorithm.
    */
+  @java.lang.Override
   public int getAlgorithmValue() {
     return algorithm_;
   }
@@ -204,6 +207,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The algorithm.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
     @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
@@ -687,6 +691,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for algorithm.
      */
+    @java.lang.Override
     public int getAlgorithmValue() {
       return algorithm_;
     }
@@ -704,6 +709,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
+
       algorithm_ = value;
       onChanged();
       return this;
@@ -720,6 +726,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The algorithm.
      */
+    @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
       @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =

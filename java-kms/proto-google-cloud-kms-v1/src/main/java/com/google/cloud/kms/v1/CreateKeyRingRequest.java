@@ -150,6 +150,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -175,6 +176,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The keyRingId.
    */
+  @java.lang.Override
   public java.lang.String getKeyRingId() {
     java.lang.Object ref = keyRingId_;
     if (ref instanceof java.lang.String) {
@@ -224,6 +227,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for keyRingId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyRingIdBytes() {
     java.lang.Object ref = keyRingId_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +254,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the keyRing field is set.
    */
+  @java.lang.Override
   public boolean hasKeyRing() {
     return keyRing_ != null;
   }
@@ -265,6 +270,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The keyRing.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.KeyRing getKeyRing() {
     return keyRing_ == null ? com.google.cloud.kms.v1.KeyRing.getDefaultInstance() : keyRing_;
   }
@@ -278,6 +284,7 @@ public final class CreateKeyRingRequest extends com.google.protobuf.GeneratedMes
    * <code>.google.cloud.kms.v1.KeyRing key_ring = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingOrBuilder() {
     return getKeyRing();
   }

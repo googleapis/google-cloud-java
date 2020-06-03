@@ -136,6 +136,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    * @return The enum numeric value on the wire for protectionLevel.
    */
+  @java.lang.Override
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
@@ -151,6 +152,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    * @return The protectionLevel.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
@@ -177,6 +179,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    * @return The enum numeric value on the wire for algorithm.
    */
+  @java.lang.Override
   public int getAlgorithmValue() {
     return algorithm_;
   }
@@ -197,6 +200,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    * @return The algorithm.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
     @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
@@ -561,6 +565,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      * @return The enum numeric value on the wire for protectionLevel.
      */
+    @java.lang.Override
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
@@ -578,6 +583,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
+
       protectionLevel_ = value;
       onChanged();
       return this;
@@ -594,6 +600,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      * @return The protectionLevel.
      */
+    @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
@@ -659,6 +666,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      * @return The enum numeric value on the wire for algorithm.
      */
+    @java.lang.Override
     public int getAlgorithmValue() {
       return algorithm_;
     }
@@ -681,6 +689,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
+
       algorithm_ = value;
       onChanged();
       return this;
@@ -702,6 +711,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      * @return The algorithm.
      */
+    @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
       @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =

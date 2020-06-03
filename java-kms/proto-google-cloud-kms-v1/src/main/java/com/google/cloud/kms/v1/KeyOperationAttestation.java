@@ -246,6 +246,10 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -294,6 +298,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    *
    * @return The enum numeric value on the wire for format.
    */
+  @java.lang.Override
   public int getFormatValue() {
     return format_;
   }
@@ -310,6 +315,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    *
    * @return The format.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat() {
     @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat result =
@@ -333,6 +339,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    *
    * @return The content.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContent() {
     return content_;
   }
@@ -690,6 +697,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      *
      * @return The enum numeric value on the wire for format.
      */
+    @java.lang.Override
     public int getFormatValue() {
       return format_;
     }
@@ -708,6 +716,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
+
       format_ = value;
       onChanged();
       return this;
@@ -725,6 +734,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      *
      * @return The format.
      */
+    @java.lang.Override
     public com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat() {
       @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat result =
@@ -790,6 +800,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      *
      * @return The content.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }

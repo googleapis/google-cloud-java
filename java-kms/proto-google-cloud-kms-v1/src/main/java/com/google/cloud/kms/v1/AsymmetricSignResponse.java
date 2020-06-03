@@ -122,6 +122,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    *
    * @return The signature.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignature() {
     return signature_;
   }
@@ -453,6 +454,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      *
      * @return The signature.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }

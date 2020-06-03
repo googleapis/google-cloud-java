@@ -127,6 +127,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The hsmAvailable.
    */
+  @java.lang.Override
   public boolean getHsmAvailable() {
     return hsmAvailable_;
   }
@@ -146,6 +147,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The ekmAvailable.
    */
+  @java.lang.Override
   public boolean getEkmAvailable() {
     return ekmAvailable_;
   }
@@ -493,6 +495,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      * @return The hsmAvailable.
      */
+    @java.lang.Override
     public boolean getHsmAvailable() {
       return hsmAvailable_;
     }
@@ -550,6 +553,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      *
      * @return The ekmAvailable.
      */
+    @java.lang.Override
     public boolean getEkmAvailable() {
       return ekmAvailable_;
     }

@@ -127,6 +127,7 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
    *
    * @return The externalKeyUri.
    */
+  @java.lang.Override
   public java.lang.String getExternalKeyUri() {
     java.lang.Object ref = externalKeyUri_;
     if (ref instanceof java.lang.String) {
@@ -149,6 +150,7 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
    *
    * @return The bytes for externalKeyUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExternalKeyUriBytes() {
     java.lang.Object ref = externalKeyUri_;
     if (ref instanceof java.lang.String) {

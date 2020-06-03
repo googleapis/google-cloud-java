@@ -155,6 +155,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +181,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +208,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return The cryptoKeyId.
    */
+  @java.lang.Override
   public java.lang.String getCryptoKeyId() {
     java.lang.Object ref = cryptoKeyId_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +232,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for cryptoKeyId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCryptoKeyIdBytes() {
     java.lang.Object ref = cryptoKeyId_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +259,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the cryptoKey field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
   }
@@ -270,6 +275,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return The cryptoKey.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKey getCryptoKey() {
     return cryptoKey_ == null ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
   }
@@ -283,6 +289,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
   }
@@ -304,6 +311,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    *
    * @return The skipInitialVersionCreation.
    */
+  @java.lang.Override
   public boolean getSkipInitialVersionCreation() {
     return skipInitialVersionCreation_;
   }
@@ -1134,6 +1142,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      *
      * @return The skipInitialVersionCreation.
      */
+    @java.lang.Override
     public boolean getSkipInitialVersionCreation() {
       return skipInitialVersionCreation_;
     }

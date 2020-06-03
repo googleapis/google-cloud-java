@@ -141,6 +141,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -165,6 +166,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +194,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the digest field is set.
    */
+  @java.lang.Override
   public boolean hasDigest() {
     return digest_ != null;
   }
@@ -208,6 +211,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The digest.
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.Digest getDigest() {
     return digest_ == null ? com.google.cloud.kms.v1.Digest.getDefaultInstance() : digest_;
   }
@@ -222,6 +226,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.kms.v1.Digest digest = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.DigestOrBuilder getDigestOrBuilder() {
     return getDigest();
   }

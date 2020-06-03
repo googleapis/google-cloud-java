@@ -142,6 +142,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.kms.v1.KeyRing> getKeyRingsList() {
     return keyRings_;
   }
@@ -154,6 +155,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.kms.v1.KeyRingOrBuilder>
       getKeyRingsOrBuilderList() {
     return keyRings_;
@@ -167,6 +169,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
+  @java.lang.Override
   public int getKeyRingsCount() {
     return keyRings_.size();
   }
@@ -179,6 +182,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.KeyRing getKeyRings(int index) {
     return keyRings_.get(index);
   }
@@ -191,6 +195,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingsOrBuilder(int index) {
     return keyRings_.get(index);
   }
@@ -209,6 +214,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +238,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +264,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -1119,6 +1127,7 @@ public final class ListKeyRingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }
