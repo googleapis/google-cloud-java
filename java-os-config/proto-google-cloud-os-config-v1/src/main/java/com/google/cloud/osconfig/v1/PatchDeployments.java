@@ -738,6 +738,7 @@ public final class PatchDeployments {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -763,6 +764,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -789,6 +791,7 @@ public final class PatchDeployments {
      *
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -812,6 +815,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -839,6 +843,7 @@ public final class PatchDeployments {
      *
      * @return Whether the instanceFilter field is set.
      */
+    @java.lang.Override
     public boolean hasInstanceFilter() {
       return instanceFilter_ != null;
     }
@@ -855,6 +860,7 @@ public final class PatchDeployments {
      *
      * @return The instanceFilter.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter getInstanceFilter() {
       return instanceFilter_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.getDefaultInstance()
@@ -871,6 +877,7 @@ public final class PatchDeployments {
      * .google.cloud.osconfig.v1.PatchInstanceFilter instance_filter = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilterOrBuilder
         getInstanceFilterOrBuilder() {
       return getInstanceFilter();
@@ -891,6 +898,7 @@ public final class PatchDeployments {
      *
      * @return Whether the patchConfig field is set.
      */
+    @java.lang.Override
     public boolean hasPatchConfig() {
       return patchConfig_ != null;
     }
@@ -907,6 +915,7 @@ public final class PatchDeployments {
      *
      * @return The patchConfig.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchConfig getPatchConfig() {
       return patchConfig_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.getDefaultInstance()
@@ -923,6 +932,7 @@ public final class PatchDeployments {
      * .google.cloud.osconfig.v1.PatchConfig patch_config = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchConfigOrBuilder getPatchConfigOrBuilder() {
       return getPatchConfig();
     }
@@ -941,6 +951,7 @@ public final class PatchDeployments {
      *
      * @return Whether the duration field is set.
      */
+    @java.lang.Override
     public boolean hasDuration() {
       return duration_ != null;
     }
@@ -956,6 +967,7 @@ public final class PatchDeployments {
      *
      * @return The duration.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getDuration() {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
@@ -969,6 +981,7 @@ public final class PatchDeployments {
      * <code>.google.protobuf.Duration duration = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
       return getDuration();
     }
@@ -987,6 +1000,7 @@ public final class PatchDeployments {
      *
      * @return Whether the oneTimeSchedule field is set.
      */
+    @java.lang.Override
     public boolean hasOneTimeSchedule() {
       return scheduleCase_ == 6;
     }
@@ -1003,6 +1017,7 @@ public final class PatchDeployments {
      *
      * @return The oneTimeSchedule.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.OneTimeSchedule getOneTimeSchedule() {
       if (scheduleCase_ == 6) {
         return (com.google.cloud.osconfig.v1.PatchDeployments.OneTimeSchedule) schedule_;
@@ -1020,6 +1035,7 @@ public final class PatchDeployments {
      * .google.cloud.osconfig.v1.OneTimeSchedule one_time_schedule = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.OneTimeScheduleOrBuilder
         getOneTimeScheduleOrBuilder() {
       if (scheduleCase_ == 6) {
@@ -1042,6 +1058,7 @@ public final class PatchDeployments {
      *
      * @return Whether the recurringSchedule field is set.
      */
+    @java.lang.Override
     public boolean hasRecurringSchedule() {
       return scheduleCase_ == 7;
     }
@@ -1058,6 +1075,7 @@ public final class PatchDeployments {
      *
      * @return The recurringSchedule.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.RecurringSchedule getRecurringSchedule() {
       if (scheduleCase_ == 7) {
         return (com.google.cloud.osconfig.v1.PatchDeployments.RecurringSchedule) schedule_;
@@ -1075,6 +1093,7 @@ public final class PatchDeployments {
      * .google.cloud.osconfig.v1.RecurringSchedule recurring_schedule = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.RecurringScheduleOrBuilder
         getRecurringScheduleOrBuilder() {
       if (scheduleCase_ == 7) {
@@ -1099,6 +1118,7 @@ public final class PatchDeployments {
      *
      * @return Whether the createTime field is set.
      */
+    @java.lang.Override
     public boolean hasCreateTime() {
       return createTime_ != null;
     }
@@ -1116,6 +1136,7 @@ public final class PatchDeployments {
      *
      * @return The createTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getCreateTime() {
       return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
@@ -1131,6 +1152,7 @@ public final class PatchDeployments {
      * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       return getCreateTime();
     }
@@ -1151,6 +1173,7 @@ public final class PatchDeployments {
      *
      * @return Whether the updateTime field is set.
      */
+    @java.lang.Override
     public boolean hasUpdateTime() {
       return updateTime_ != null;
     }
@@ -1168,6 +1191,7 @@ public final class PatchDeployments {
      *
      * @return The updateTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
@@ -1183,6 +1207,7 @@ public final class PatchDeployments {
      * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       return getUpdateTime();
     }
@@ -1204,6 +1229,7 @@ public final class PatchDeployments {
      *
      * @return Whether the lastExecuteTime field is set.
      */
+    @java.lang.Override
     public boolean hasLastExecuteTime() {
       return lastExecuteTime_ != null;
     }
@@ -1222,6 +1248,7 @@ public final class PatchDeployments {
      *
      * @return The lastExecuteTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getLastExecuteTime() {
       return lastExecuteTime_ == null
           ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1240,6 +1267,7 @@ public final class PatchDeployments {
      * .google.protobuf.Timestamp last_execute_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLastExecuteTimeOrBuilder() {
       return getLastExecuteTime();
     }
@@ -2698,6 +2726,7 @@ public final class PatchDeployments {
        *
        * @return Whether the oneTimeSchedule field is set.
        */
+      @java.lang.Override
       public boolean hasOneTimeSchedule() {
         return scheduleCase_ == 6;
       }
@@ -2714,6 +2743,7 @@ public final class PatchDeployments {
        *
        * @return The oneTimeSchedule.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.OneTimeSchedule getOneTimeSchedule() {
         if (oneTimeScheduleBuilder_ == null) {
           if (scheduleCase_ == 6) {
@@ -2863,6 +2893,7 @@ public final class PatchDeployments {
        * .google.cloud.osconfig.v1.OneTimeSchedule one_time_schedule = 6 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.OneTimeScheduleOrBuilder
           getOneTimeScheduleOrBuilder() {
         if ((scheduleCase_ == 6) && (oneTimeScheduleBuilder_ != null)) {
@@ -2929,6 +2960,7 @@ public final class PatchDeployments {
        *
        * @return Whether the recurringSchedule field is set.
        */
+      @java.lang.Override
       public boolean hasRecurringSchedule() {
         return scheduleCase_ == 7;
       }
@@ -2945,6 +2977,7 @@ public final class PatchDeployments {
        *
        * @return The recurringSchedule.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.RecurringSchedule
           getRecurringSchedule() {
         if (recurringScheduleBuilder_ == null) {
@@ -3097,6 +3130,7 @@ public final class PatchDeployments {
        * .google.cloud.osconfig.v1.RecurringSchedule recurring_schedule = 7 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.RecurringScheduleOrBuilder
           getRecurringScheduleOrBuilder() {
         if ((scheduleCase_ == 7) && (recurringScheduleBuilder_ != null)) {
@@ -4004,6 +4038,7 @@ public final class PatchDeployments {
      *
      * @return Whether the executeTime field is set.
      */
+    @java.lang.Override
     public boolean hasExecuteTime() {
       return executeTime_ != null;
     }
@@ -4019,6 +4054,7 @@ public final class PatchDeployments {
      *
      * @return The executeTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getExecuteTime() {
       return executeTime_ == null
           ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -4034,6 +4070,7 @@ public final class PatchDeployments {
      * <code>.google.protobuf.Timestamp execute_time = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getExecuteTimeOrBuilder() {
       return getExecuteTime();
     }
@@ -5348,6 +5385,10 @@ public final class PatchDeployments {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -5443,6 +5484,7 @@ public final class PatchDeployments {
      *
      * @return Whether the timeZone field is set.
      */
+    @java.lang.Override
     public boolean hasTimeZone() {
       return timeZone_ != null;
     }
@@ -5458,6 +5500,7 @@ public final class PatchDeployments {
      *
      * @return The timeZone.
      */
+    @java.lang.Override
     public com.google.type.TimeZone getTimeZone() {
       return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
     }
@@ -5471,6 +5514,7 @@ public final class PatchDeployments {
      *
      * <code>.google.type.TimeZone time_zone = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
+    @java.lang.Override
     public com.google.type.TimeZoneOrBuilder getTimeZoneOrBuilder() {
       return getTimeZone();
     }
@@ -5490,6 +5534,7 @@ public final class PatchDeployments {
      *
      * @return Whether the startTime field is set.
      */
+    @java.lang.Override
     public boolean hasStartTime() {
       return startTime_ != null;
     }
@@ -5506,6 +5551,7 @@ public final class PatchDeployments {
      *
      * @return The startTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
@@ -5520,6 +5566,7 @@ public final class PatchDeployments {
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       return getStartTime();
     }
@@ -5539,6 +5586,7 @@ public final class PatchDeployments {
      *
      * @return Whether the endTime field is set.
      */
+    @java.lang.Override
     public boolean hasEndTime() {
       return endTime_ != null;
     }
@@ -5555,6 +5603,7 @@ public final class PatchDeployments {
      *
      * @return The endTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
@@ -5569,6 +5618,7 @@ public final class PatchDeployments {
      * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       return getEndTime();
     }
@@ -5587,6 +5637,7 @@ public final class PatchDeployments {
      *
      * @return Whether the timeOfDay field is set.
      */
+    @java.lang.Override
     public boolean hasTimeOfDay() {
       return timeOfDay_ != null;
     }
@@ -5602,6 +5653,7 @@ public final class PatchDeployments {
      *
      * @return The timeOfDay.
      */
+    @java.lang.Override
     public com.google.type.TimeOfDay getTimeOfDay() {
       return timeOfDay_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : timeOfDay_;
     }
@@ -5615,6 +5667,7 @@ public final class PatchDeployments {
      * <code>.google.type.TimeOfDay time_of_day = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.type.TimeOfDayOrBuilder getTimeOfDayOrBuilder() {
       return getTimeOfDay();
     }
@@ -5634,6 +5687,7 @@ public final class PatchDeployments {
      *
      * @return The enum numeric value on the wire for frequency.
      */
+    @java.lang.Override
     public int getFrequencyValue() {
       return frequency_;
     }
@@ -5650,6 +5704,7 @@ public final class PatchDeployments {
      *
      * @return The frequency.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.RecurringSchedule.Frequency
         getFrequency() {
       @SuppressWarnings("deprecation")
@@ -5675,6 +5730,7 @@ public final class PatchDeployments {
      *
      * @return Whether the weekly field is set.
      */
+    @java.lang.Override
     public boolean hasWeekly() {
       return scheduleConfigCase_ == 6;
     }
@@ -5691,6 +5747,7 @@ public final class PatchDeployments {
      *
      * @return The weekly.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.WeeklySchedule getWeekly() {
       if (scheduleConfigCase_ == 6) {
         return (com.google.cloud.osconfig.v1.PatchDeployments.WeeklySchedule) scheduleConfig_;
@@ -5708,6 +5765,7 @@ public final class PatchDeployments {
      * .google.cloud.osconfig.v1.WeeklySchedule weekly = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.WeeklyScheduleOrBuilder
         getWeeklyOrBuilder() {
       if (scheduleConfigCase_ == 6) {
@@ -5730,6 +5788,7 @@ public final class PatchDeployments {
      *
      * @return Whether the monthly field is set.
      */
+    @java.lang.Override
     public boolean hasMonthly() {
       return scheduleConfigCase_ == 7;
     }
@@ -5746,6 +5805,7 @@ public final class PatchDeployments {
      *
      * @return The monthly.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.MonthlySchedule getMonthly() {
       if (scheduleConfigCase_ == 7) {
         return (com.google.cloud.osconfig.v1.PatchDeployments.MonthlySchedule) scheduleConfig_;
@@ -5763,6 +5823,7 @@ public final class PatchDeployments {
      * .google.cloud.osconfig.v1.MonthlySchedule monthly = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.MonthlyScheduleOrBuilder
         getMonthlyOrBuilder() {
       if (scheduleConfigCase_ == 7) {
@@ -5786,6 +5847,7 @@ public final class PatchDeployments {
      *
      * @return Whether the lastExecuteTime field is set.
      */
+    @java.lang.Override
     public boolean hasLastExecuteTime() {
       return lastExecuteTime_ != null;
     }
@@ -5802,6 +5864,7 @@ public final class PatchDeployments {
      *
      * @return The lastExecuteTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getLastExecuteTime() {
       return lastExecuteTime_ == null
           ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -5818,6 +5881,7 @@ public final class PatchDeployments {
      * .google.protobuf.Timestamp last_execute_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLastExecuteTimeOrBuilder() {
       return getLastExecuteTime();
     }
@@ -5837,6 +5901,7 @@ public final class PatchDeployments {
      *
      * @return Whether the nextExecuteTime field is set.
      */
+    @java.lang.Override
     public boolean hasNextExecuteTime() {
       return nextExecuteTime_ != null;
     }
@@ -5853,6 +5918,7 @@ public final class PatchDeployments {
      *
      * @return The nextExecuteTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getNextExecuteTime() {
       return nextExecuteTime_ == null
           ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -5869,6 +5935,7 @@ public final class PatchDeployments {
      * .google.protobuf.Timestamp next_execute_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getNextExecuteTimeOrBuilder() {
       return getNextExecuteTime();
     }
@@ -7253,6 +7320,7 @@ public final class PatchDeployments {
        *
        * @return The enum numeric value on the wire for frequency.
        */
+      @java.lang.Override
       public int getFrequencyValue() {
         return frequency_;
       }
@@ -7271,6 +7339,7 @@ public final class PatchDeployments {
        * @return This builder for chaining.
        */
       public Builder setFrequencyValue(int value) {
+
         frequency_ = value;
         onChanged();
         return this;
@@ -7288,6 +7357,7 @@ public final class PatchDeployments {
        *
        * @return The frequency.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.RecurringSchedule.Frequency
           getFrequency() {
         @SuppressWarnings("deprecation")
@@ -7360,6 +7430,7 @@ public final class PatchDeployments {
        *
        * @return Whether the weekly field is set.
        */
+      @java.lang.Override
       public boolean hasWeekly() {
         return scheduleConfigCase_ == 6;
       }
@@ -7376,6 +7447,7 @@ public final class PatchDeployments {
        *
        * @return The weekly.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.WeeklySchedule getWeekly() {
         if (weeklyBuilder_ == null) {
           if (scheduleConfigCase_ == 6) {
@@ -7525,6 +7597,7 @@ public final class PatchDeployments {
        * .google.cloud.osconfig.v1.WeeklySchedule weekly = 6 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.WeeklyScheduleOrBuilder
           getWeeklyOrBuilder() {
         if ((scheduleConfigCase_ == 6) && (weeklyBuilder_ != null)) {
@@ -7591,6 +7664,7 @@ public final class PatchDeployments {
        *
        * @return Whether the monthly field is set.
        */
+      @java.lang.Override
       public boolean hasMonthly() {
         return scheduleConfigCase_ == 7;
       }
@@ -7607,6 +7681,7 @@ public final class PatchDeployments {
        *
        * @return The monthly.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.MonthlySchedule getMonthly() {
         if (monthlyBuilder_ == null) {
           if (scheduleConfigCase_ == 7) {
@@ -7757,6 +7832,7 @@ public final class PatchDeployments {
        * .google.cloud.osconfig.v1.MonthlySchedule monthly = 7 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.MonthlyScheduleOrBuilder
           getMonthlyOrBuilder() {
         if ((scheduleConfigCase_ == 7) && (monthlyBuilder_ != null)) {
@@ -8405,6 +8481,7 @@ public final class PatchDeployments {
      *
      * @return The enum numeric value on the wire for dayOfWeek.
      */
+    @java.lang.Override
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
@@ -8420,6 +8497,7 @@ public final class PatchDeployments {
      *
      * @return The dayOfWeek.
      */
+    @java.lang.Override
     public com.google.type.DayOfWeek getDayOfWeek() {
       @SuppressWarnings("deprecation")
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
@@ -8764,6 +8842,7 @@ public final class PatchDeployments {
        *
        * @return The enum numeric value on the wire for dayOfWeek.
        */
+      @java.lang.Override
       public int getDayOfWeekValue() {
         return dayOfWeek_;
       }
@@ -8781,6 +8860,7 @@ public final class PatchDeployments {
        * @return This builder for chaining.
        */
       public Builder setDayOfWeekValue(int value) {
+
         dayOfWeek_ = value;
         onChanged();
         return this;
@@ -8797,6 +8877,7 @@ public final class PatchDeployments {
        *
        * @return The dayOfWeek.
        */
+      @java.lang.Override
       public com.google.type.DayOfWeek getDayOfWeek() {
         @SuppressWarnings("deprecation")
         com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
@@ -9137,6 +9218,7 @@ public final class PatchDeployments {
      *
      * @return Whether the weekDayOfMonth field is set.
      */
+    @java.lang.Override
     public boolean hasWeekDayOfMonth() {
       return dayOfMonthCase_ == 1;
     }
@@ -9153,6 +9235,7 @@ public final class PatchDeployments {
      *
      * @return The weekDayOfMonth.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.WeekDayOfMonth getWeekDayOfMonth() {
       if (dayOfMonthCase_ == 1) {
         return (com.google.cloud.osconfig.v1.PatchDeployments.WeekDayOfMonth) dayOfMonth_;
@@ -9170,6 +9253,7 @@ public final class PatchDeployments {
      * .google.cloud.osconfig.v1.WeekDayOfMonth week_day_of_month = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.WeekDayOfMonthOrBuilder
         getWeekDayOfMonthOrBuilder() {
       if (dayOfMonthCase_ == 1) {
@@ -9193,6 +9277,7 @@ public final class PatchDeployments {
      *
      * @return The monthDay.
      */
+    @java.lang.Override
     public int getMonthDay() {
       if (dayOfMonthCase_ == 2) {
         return (java.lang.Integer) dayOfMonth_;
@@ -9613,6 +9698,7 @@ public final class PatchDeployments {
        *
        * @return Whether the weekDayOfMonth field is set.
        */
+      @java.lang.Override
       public boolean hasWeekDayOfMonth() {
         return dayOfMonthCase_ == 1;
       }
@@ -9629,6 +9715,7 @@ public final class PatchDeployments {
        *
        * @return The weekDayOfMonth.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.WeekDayOfMonth getWeekDayOfMonth() {
         if (weekDayOfMonthBuilder_ == null) {
           if (dayOfMonthCase_ == 1) {
@@ -9778,6 +9865,7 @@ public final class PatchDeployments {
        * .google.cloud.osconfig.v1.WeekDayOfMonth week_day_of_month = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchDeployments.WeekDayOfMonthOrBuilder
           getWeekDayOfMonthOrBuilder() {
         if ((dayOfMonthCase_ == 1) && (weekDayOfMonthBuilder_ != null)) {
@@ -10103,6 +10191,7 @@ public final class PatchDeployments {
      *
      * @return The weekOrdinal.
      */
+    @java.lang.Override
     public int getWeekOrdinal() {
       return weekOrdinal_;
     }
@@ -10121,6 +10210,7 @@ public final class PatchDeployments {
      *
      * @return The enum numeric value on the wire for dayOfWeek.
      */
+    @java.lang.Override
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
@@ -10136,6 +10226,7 @@ public final class PatchDeployments {
      *
      * @return The dayOfWeek.
      */
+    @java.lang.Override
     public com.google.type.DayOfWeek getDayOfWeek() {
       @SuppressWarnings("deprecation")
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
@@ -10495,6 +10586,7 @@ public final class PatchDeployments {
        *
        * @return The weekOrdinal.
        */
+      @java.lang.Override
       public int getWeekOrdinal() {
         return weekOrdinal_;
       }
@@ -10549,6 +10641,7 @@ public final class PatchDeployments {
        *
        * @return The enum numeric value on the wire for dayOfWeek.
        */
+      @java.lang.Override
       public int getDayOfWeekValue() {
         return dayOfWeek_;
       }
@@ -10566,6 +10659,7 @@ public final class PatchDeployments {
        * @return This builder for chaining.
        */
       public Builder setDayOfWeekValue(int value) {
+
         dayOfWeek_ = value;
         onChanged();
         return this;
@@ -10582,6 +10676,7 @@ public final class PatchDeployments {
        *
        * @return The dayOfWeek.
        */
+      @java.lang.Override
       public com.google.type.DayOfWeek getDayOfWeek() {
         @SuppressWarnings("deprecation")
         com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
@@ -10933,6 +11028,7 @@ public final class PatchDeployments {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -10957,6 +11053,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -10988,6 +11085,7 @@ public final class PatchDeployments {
      *
      * @return The patchDeploymentId.
      */
+    @java.lang.Override
     public java.lang.String getPatchDeploymentId() {
       java.lang.Object ref = patchDeploymentId_;
       if (ref instanceof java.lang.String) {
@@ -11016,6 +11114,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for patchDeploymentId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPatchDeploymentIdBytes() {
       java.lang.Object ref = patchDeploymentId_;
       if (ref instanceof java.lang.String) {
@@ -11043,6 +11142,7 @@ public final class PatchDeployments {
      *
      * @return Whether the patchDeployment field is set.
      */
+    @java.lang.Override
     public boolean hasPatchDeployment() {
       return patchDeployment_ != null;
     }
@@ -11059,6 +11159,7 @@ public final class PatchDeployments {
      *
      * @return The patchDeployment.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment getPatchDeployment() {
       return patchDeployment_ == null
           ? com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment.getDefaultInstance()
@@ -11075,6 +11176,7 @@ public final class PatchDeployments {
      * .google.cloud.osconfig.v1.PatchDeployment patch_deployment = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder
         getPatchDeploymentOrBuilder() {
       return getPatchDeployment();
@@ -12129,6 +12231,7 @@ public final class PatchDeployments {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -12154,6 +12257,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -12877,6 +12981,7 @@ public final class PatchDeployments {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -12901,6 +13006,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -12926,6 +13032,7 @@ public final class PatchDeployments {
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -12944,6 +13051,7 @@ public final class PatchDeployments {
      *
      * @return The pageToken.
      */
+    @java.lang.Override
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof java.lang.String) {
@@ -12967,6 +13075,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for pageToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof java.lang.String) {
@@ -13480,6 +13589,7 @@ public final class PatchDeployments {
        *
        * @return The pageSize.
        */
+      @java.lang.Override
       public int getPageSize() {
         return pageSize_;
       }
@@ -13899,6 +14009,7 @@ public final class PatchDeployments {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchDeployment patch_deployments = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment>
         getPatchDeploymentsList() {
       return patchDeployments_;
@@ -13912,6 +14023,7 @@ public final class PatchDeployments {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchDeployment patch_deployments = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder>
         getPatchDeploymentsOrBuilderList() {
@@ -13926,6 +14038,7 @@ public final class PatchDeployments {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchDeployment patch_deployments = 1;</code>
      */
+    @java.lang.Override
     public int getPatchDeploymentsCount() {
       return patchDeployments_.size();
     }
@@ -13938,6 +14051,7 @@ public final class PatchDeployments {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchDeployment patch_deployments = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeployment getPatchDeployments(
         int index) {
       return patchDeployments_.get(index);
@@ -13951,6 +14065,7 @@ public final class PatchDeployments {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchDeployment patch_deployments = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchDeployments.PatchDeploymentOrBuilder
         getPatchDeploymentsOrBuilder(int index) {
       return patchDeployments_.get(index);
@@ -13970,6 +14085,7 @@ public final class PatchDeployments {
      *
      * @return The nextPageToken.
      */
+    @java.lang.Override
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof java.lang.String) {
@@ -13993,6 +14109,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for nextPageToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof java.lang.String) {
@@ -15093,6 +15210,7 @@ public final class PatchDeployments {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -15118,6 +15236,7 @@ public final class PatchDeployments {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {

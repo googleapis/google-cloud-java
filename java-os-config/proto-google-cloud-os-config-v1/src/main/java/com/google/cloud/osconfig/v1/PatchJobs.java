@@ -428,6 +428,7 @@ public final class PatchJobs {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -452,6 +453,7 @@ public final class PatchJobs {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -478,6 +480,7 @@ public final class PatchJobs {
      *
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -501,6 +504,7 @@ public final class PatchJobs {
      *
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -529,6 +533,7 @@ public final class PatchJobs {
      *
      * @return Whether the instanceFilter field is set.
      */
+    @java.lang.Override
     public boolean hasInstanceFilter() {
       return instanceFilter_ != null;
     }
@@ -546,6 +551,7 @@ public final class PatchJobs {
      *
      * @return The instanceFilter.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter getInstanceFilter() {
       return instanceFilter_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.getDefaultInstance()
@@ -563,6 +569,7 @@ public final class PatchJobs {
      * .google.cloud.osconfig.v1.PatchInstanceFilter instance_filter = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilterOrBuilder
         getInstanceFilterOrBuilder() {
       return getInstanceFilter();
@@ -582,6 +589,7 @@ public final class PatchJobs {
      *
      * @return Whether the patchConfig field is set.
      */
+    @java.lang.Override
     public boolean hasPatchConfig() {
       return patchConfig_ != null;
     }
@@ -597,6 +605,7 @@ public final class PatchJobs {
      *
      * @return The patchConfig.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchConfig getPatchConfig() {
       return patchConfig_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.getDefaultInstance()
@@ -612,6 +621,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.PatchConfig patch_config = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchConfigOrBuilder getPatchConfigOrBuilder() {
       return getPatchConfig();
     }
@@ -630,6 +640,7 @@ public final class PatchJobs {
      *
      * @return Whether the duration field is set.
      */
+    @java.lang.Override
     public boolean hasDuration() {
       return duration_ != null;
     }
@@ -645,6 +656,7 @@ public final class PatchJobs {
      *
      * @return The duration.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getDuration() {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
@@ -658,6 +670,7 @@ public final class PatchJobs {
      *
      * <code>.google.protobuf.Duration duration = 5;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
       return getDuration();
     }
@@ -676,6 +689,7 @@ public final class PatchJobs {
      *
      * @return The dryRun.
      */
+    @java.lang.Override
     public boolean getDryRun() {
       return dryRun_;
     }
@@ -693,6 +707,7 @@ public final class PatchJobs {
      *
      * @return The displayName.
      */
+    @java.lang.Override
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -715,6 +730,7 @@ public final class PatchJobs {
      *
      * @return The bytes for displayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -2027,6 +2043,7 @@ public final class PatchJobs {
        *
        * @return The dryRun.
        */
+      @java.lang.Override
       public boolean getDryRun() {
         return dryRun_;
       }
@@ -2371,6 +2388,7 @@ public final class PatchJobs {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2395,6 +2413,7 @@ public final class PatchJobs {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -3133,6 +3152,7 @@ public final class PatchJobs {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -3157,6 +3177,7 @@ public final class PatchJobs {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -3182,6 +3203,7 @@ public final class PatchJobs {
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -3200,6 +3222,7 @@ public final class PatchJobs {
      *
      * @return The pageToken.
      */
+    @java.lang.Override
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof java.lang.String) {
@@ -3223,6 +3246,7 @@ public final class PatchJobs {
      *
      * @return The bytes for pageToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof java.lang.String) {
@@ -3250,6 +3274,7 @@ public final class PatchJobs {
      *
      * @return The filter.
      */
+    @java.lang.Override
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
@@ -3274,6 +3299,7 @@ public final class PatchJobs {
      *
      * @return The bytes for filter.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
@@ -3803,6 +3829,7 @@ public final class PatchJobs {
        *
        * @return The pageSize.
        */
+      @java.lang.Override
       public int getPageSize() {
         return pageSize_;
       }
@@ -4351,6 +4378,7 @@ public final class PatchJobs {
      * repeated .google.cloud.osconfig.v1.PatchJobInstanceDetails patch_job_instance_details = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails>
         getPatchJobInstanceDetailsList() {
       return patchJobInstanceDetails_;
@@ -4366,6 +4394,7 @@ public final class PatchJobs {
      * repeated .google.cloud.osconfig.v1.PatchJobInstanceDetails patch_job_instance_details = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetailsOrBuilder>
         getPatchJobInstanceDetailsOrBuilderList() {
@@ -4382,6 +4411,7 @@ public final class PatchJobs {
      * repeated .google.cloud.osconfig.v1.PatchJobInstanceDetails patch_job_instance_details = 1;
      * </code>
      */
+    @java.lang.Override
     public int getPatchJobInstanceDetailsCount() {
       return patchJobInstanceDetails_.size();
     }
@@ -4396,6 +4426,7 @@ public final class PatchJobs {
      * repeated .google.cloud.osconfig.v1.PatchJobInstanceDetails patch_job_instance_details = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails
         getPatchJobInstanceDetails(int index) {
       return patchJobInstanceDetails_.get(index);
@@ -4411,6 +4442,7 @@ public final class PatchJobs {
      * repeated .google.cloud.osconfig.v1.PatchJobInstanceDetails patch_job_instance_details = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetailsOrBuilder
         getPatchJobInstanceDetailsOrBuilder(int index) {
       return patchJobInstanceDetails_.get(index);
@@ -4429,6 +4461,7 @@ public final class PatchJobs {
      *
      * @return The nextPageToken.
      */
+    @java.lang.Override
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof java.lang.String) {
@@ -4451,6 +4484,7 @@ public final class PatchJobs {
      *
      * @return The bytes for nextPageToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof java.lang.String) {
@@ -5698,6 +5732,7 @@ public final class PatchJobs {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -5720,6 +5755,7 @@ public final class PatchJobs {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -5746,6 +5782,7 @@ public final class PatchJobs {
      *
      * @return The instanceSystemId.
      */
+    @java.lang.Override
     public java.lang.String getInstanceSystemId() {
       java.lang.Object ref = instanceSystemId_;
       if (ref instanceof java.lang.String) {
@@ -5769,6 +5806,7 @@ public final class PatchJobs {
      *
      * @return The bytes for instanceSystemId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getInstanceSystemIdBytes() {
       java.lang.Object ref = instanceSystemId_;
       if (ref instanceof java.lang.String) {
@@ -5794,6 +5832,7 @@ public final class PatchJobs {
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -5808,6 +5847,7 @@ public final class PatchJobs {
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.Instance.PatchState getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.PatchJobs.Instance.PatchState result =
@@ -5830,6 +5870,7 @@ public final class PatchJobs {
      *
      * @return The failureReason.
      */
+    @java.lang.Override
     public java.lang.String getFailureReason() {
       java.lang.Object ref = failureReason_;
       if (ref instanceof java.lang.String) {
@@ -5852,6 +5893,7 @@ public final class PatchJobs {
      *
      * @return The bytes for failureReason.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFailureReasonBytes() {
       java.lang.Object ref = failureReason_;
       if (ref instanceof java.lang.String) {
@@ -5877,6 +5919,7 @@ public final class PatchJobs {
      *
      * @return The attemptCount.
      */
+    @java.lang.Override
     public long getAttemptCount() {
       return attemptCount_;
     }
@@ -6506,6 +6549,7 @@ public final class PatchJobs {
        *
        * @return The enum numeric value on the wire for state.
        */
+      @java.lang.Override
       public int getStateValue() {
         return state_;
       }
@@ -6522,6 +6566,7 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+
         state_ = value;
         onChanged();
         return this;
@@ -6537,6 +6582,7 @@ public final class PatchJobs {
        *
        * @return The state.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchJobs.Instance.PatchState getState() {
         @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1.PatchJobs.Instance.PatchState result =
@@ -6702,6 +6748,7 @@ public final class PatchJobs {
        *
        * @return The attemptCount.
        */
+      @java.lang.Override
       public long getAttemptCount() {
         return attemptCount_;
       }
@@ -7028,6 +7075,7 @@ public final class PatchJobs {
      *
      * @return The parent.
      */
+    @java.lang.Override
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -7052,6 +7100,7 @@ public final class PatchJobs {
      *
      * @return The bytes for parent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof java.lang.String) {
@@ -7077,6 +7126,7 @@ public final class PatchJobs {
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -7095,6 +7145,7 @@ public final class PatchJobs {
      *
      * @return The pageToken.
      */
+    @java.lang.Override
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof java.lang.String) {
@@ -7118,6 +7169,7 @@ public final class PatchJobs {
      *
      * @return The bytes for pageToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof java.lang.String) {
@@ -7145,6 +7197,7 @@ public final class PatchJobs {
      *
      * @return The filter.
      */
+    @java.lang.Override
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
@@ -7169,6 +7222,7 @@ public final class PatchJobs {
      *
      * @return The bytes for filter.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
@@ -7682,6 +7736,7 @@ public final class PatchJobs {
        *
        * @return The pageSize.
        */
+      @java.lang.Override
       public int getPageSize() {
         return pageSize_;
       }
@@ -8205,6 +8260,7 @@ public final class PatchJobs {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchJob patch_jobs = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchJob> getPatchJobsList() {
       return patchJobs_;
     }
@@ -8217,6 +8273,7 @@ public final class PatchJobs {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchJob patch_jobs = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.cloud.osconfig.v1.PatchJobs.PatchJobOrBuilder>
         getPatchJobsOrBuilderList() {
       return patchJobs_;
@@ -8230,6 +8287,7 @@ public final class PatchJobs {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchJob patch_jobs = 1;</code>
      */
+    @java.lang.Override
     public int getPatchJobsCount() {
       return patchJobs_.size();
     }
@@ -8242,6 +8300,7 @@ public final class PatchJobs {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchJob patch_jobs = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchJob getPatchJobs(int index) {
       return patchJobs_.get(index);
     }
@@ -8254,6 +8313,7 @@ public final class PatchJobs {
      *
      * <code>repeated .google.cloud.osconfig.v1.PatchJob patch_jobs = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchJobOrBuilder getPatchJobsOrBuilder(
         int index) {
       return patchJobs_.get(index);
@@ -8272,6 +8332,7 @@ public final class PatchJobs {
      *
      * @return The nextPageToken.
      */
+    @java.lang.Override
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof java.lang.String) {
@@ -8294,6 +8355,7 @@ public final class PatchJobs {
      *
      * @return The bytes for nextPageToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof java.lang.String) {
@@ -10100,6 +10162,10 @@ public final class PatchJobs {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -10513,6 +10579,7 @@ public final class PatchJobs {
        *
        * @return The pendingInstanceCount.
        */
+      @java.lang.Override
       public long getPendingInstanceCount() {
         return pendingInstanceCount_;
       }
@@ -10530,6 +10597,7 @@ public final class PatchJobs {
        *
        * @return The inactiveInstanceCount.
        */
+      @java.lang.Override
       public long getInactiveInstanceCount() {
         return inactiveInstanceCount_;
       }
@@ -10547,6 +10615,7 @@ public final class PatchJobs {
        *
        * @return The notifiedInstanceCount.
        */
+      @java.lang.Override
       public long getNotifiedInstanceCount() {
         return notifiedInstanceCount_;
       }
@@ -10564,6 +10633,7 @@ public final class PatchJobs {
        *
        * @return The startedInstanceCount.
        */
+      @java.lang.Override
       public long getStartedInstanceCount() {
         return startedInstanceCount_;
       }
@@ -10581,6 +10651,7 @@ public final class PatchJobs {
        *
        * @return The downloadingPatchesInstanceCount.
        */
+      @java.lang.Override
       public long getDownloadingPatchesInstanceCount() {
         return downloadingPatchesInstanceCount_;
       }
@@ -10598,6 +10669,7 @@ public final class PatchJobs {
        *
        * @return The applyingPatchesInstanceCount.
        */
+      @java.lang.Override
       public long getApplyingPatchesInstanceCount() {
         return applyingPatchesInstanceCount_;
       }
@@ -10615,6 +10687,7 @@ public final class PatchJobs {
        *
        * @return The rebootingInstanceCount.
        */
+      @java.lang.Override
       public long getRebootingInstanceCount() {
         return rebootingInstanceCount_;
       }
@@ -10632,6 +10705,7 @@ public final class PatchJobs {
        *
        * @return The succeededInstanceCount.
        */
+      @java.lang.Override
       public long getSucceededInstanceCount() {
         return succeededInstanceCount_;
       }
@@ -10649,6 +10723,7 @@ public final class PatchJobs {
        *
        * @return The succeededRebootRequiredInstanceCount.
        */
+      @java.lang.Override
       public long getSucceededRebootRequiredInstanceCount() {
         return succeededRebootRequiredInstanceCount_;
       }
@@ -10666,6 +10741,7 @@ public final class PatchJobs {
        *
        * @return The failedInstanceCount.
        */
+      @java.lang.Override
       public long getFailedInstanceCount() {
         return failedInstanceCount_;
       }
@@ -10683,6 +10759,7 @@ public final class PatchJobs {
        *
        * @return The ackedInstanceCount.
        */
+      @java.lang.Override
       public long getAckedInstanceCount() {
         return ackedInstanceCount_;
       }
@@ -10700,6 +10777,7 @@ public final class PatchJobs {
        *
        * @return The timedOutInstanceCount.
        */
+      @java.lang.Override
       public long getTimedOutInstanceCount() {
         return timedOutInstanceCount_;
       }
@@ -10717,6 +10795,7 @@ public final class PatchJobs {
        *
        * @return The prePatchStepInstanceCount.
        */
+      @java.lang.Override
       public long getPrePatchStepInstanceCount() {
         return prePatchStepInstanceCount_;
       }
@@ -10734,6 +10813,7 @@ public final class PatchJobs {
        *
        * @return The postPatchStepInstanceCount.
        */
+      @java.lang.Override
       public long getPostPatchStepInstanceCount() {
         return postPatchStepInstanceCount_;
       }
@@ -10753,6 +10833,7 @@ public final class PatchJobs {
        *
        * @return The noAgentDetectedInstanceCount.
        */
+      @java.lang.Override
       public long getNoAgentDetectedInstanceCount() {
         return noAgentDetectedInstanceCount_;
       }
@@ -11351,6 +11432,7 @@ public final class PatchJobs {
          *
          * @return The pendingInstanceCount.
          */
+        @java.lang.Override
         public long getPendingInstanceCount() {
           return pendingInstanceCount_;
         }
@@ -11402,6 +11484,7 @@ public final class PatchJobs {
          *
          * @return The inactiveInstanceCount.
          */
+        @java.lang.Override
         public long getInactiveInstanceCount() {
           return inactiveInstanceCount_;
         }
@@ -11453,6 +11536,7 @@ public final class PatchJobs {
          *
          * @return The notifiedInstanceCount.
          */
+        @java.lang.Override
         public long getNotifiedInstanceCount() {
           return notifiedInstanceCount_;
         }
@@ -11504,6 +11588,7 @@ public final class PatchJobs {
          *
          * @return The startedInstanceCount.
          */
+        @java.lang.Override
         public long getStartedInstanceCount() {
           return startedInstanceCount_;
         }
@@ -11555,6 +11640,7 @@ public final class PatchJobs {
          *
          * @return The downloadingPatchesInstanceCount.
          */
+        @java.lang.Override
         public long getDownloadingPatchesInstanceCount() {
           return downloadingPatchesInstanceCount_;
         }
@@ -11606,6 +11692,7 @@ public final class PatchJobs {
          *
          * @return The applyingPatchesInstanceCount.
          */
+        @java.lang.Override
         public long getApplyingPatchesInstanceCount() {
           return applyingPatchesInstanceCount_;
         }
@@ -11657,6 +11744,7 @@ public final class PatchJobs {
          *
          * @return The rebootingInstanceCount.
          */
+        @java.lang.Override
         public long getRebootingInstanceCount() {
           return rebootingInstanceCount_;
         }
@@ -11708,6 +11796,7 @@ public final class PatchJobs {
          *
          * @return The succeededInstanceCount.
          */
+        @java.lang.Override
         public long getSucceededInstanceCount() {
           return succeededInstanceCount_;
         }
@@ -11759,6 +11848,7 @@ public final class PatchJobs {
          *
          * @return The succeededRebootRequiredInstanceCount.
          */
+        @java.lang.Override
         public long getSucceededRebootRequiredInstanceCount() {
           return succeededRebootRequiredInstanceCount_;
         }
@@ -11810,6 +11900,7 @@ public final class PatchJobs {
          *
          * @return The failedInstanceCount.
          */
+        @java.lang.Override
         public long getFailedInstanceCount() {
           return failedInstanceCount_;
         }
@@ -11861,6 +11952,7 @@ public final class PatchJobs {
          *
          * @return The ackedInstanceCount.
          */
+        @java.lang.Override
         public long getAckedInstanceCount() {
           return ackedInstanceCount_;
         }
@@ -11912,6 +12004,7 @@ public final class PatchJobs {
          *
          * @return The timedOutInstanceCount.
          */
+        @java.lang.Override
         public long getTimedOutInstanceCount() {
           return timedOutInstanceCount_;
         }
@@ -11963,6 +12056,7 @@ public final class PatchJobs {
          *
          * @return The prePatchStepInstanceCount.
          */
+        @java.lang.Override
         public long getPrePatchStepInstanceCount() {
           return prePatchStepInstanceCount_;
         }
@@ -12014,6 +12108,7 @@ public final class PatchJobs {
          *
          * @return The postPatchStepInstanceCount.
          */
+        @java.lang.Override
         public long getPostPatchStepInstanceCount() {
           return postPatchStepInstanceCount_;
         }
@@ -12067,6 +12162,7 @@ public final class PatchJobs {
          *
          * @return The noAgentDetectedInstanceCount.
          */
+        @java.lang.Override
         public long getNoAgentDetectedInstanceCount() {
           return noAgentDetectedInstanceCount_;
         }
@@ -12180,6 +12276,7 @@ public final class PatchJobs {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -12203,6 +12300,7 @@ public final class PatchJobs {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -12228,6 +12326,7 @@ public final class PatchJobs {
      *
      * @return The displayName.
      */
+    @java.lang.Override
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -12250,6 +12349,7 @@ public final class PatchJobs {
      *
      * @return The bytes for displayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -12276,6 +12376,7 @@ public final class PatchJobs {
      *
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -12299,6 +12400,7 @@ public final class PatchJobs {
      *
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -12324,6 +12426,7 @@ public final class PatchJobs {
      *
      * @return Whether the createTime field is set.
      */
+    @java.lang.Override
     public boolean hasCreateTime() {
       return createTime_ != null;
     }
@@ -12338,6 +12441,7 @@ public final class PatchJobs {
      *
      * @return The createTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getCreateTime() {
       return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
@@ -12350,6 +12454,7 @@ public final class PatchJobs {
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       return getCreateTime();
     }
@@ -12367,6 +12472,7 @@ public final class PatchJobs {
      *
      * @return Whether the updateTime field is set.
      */
+    @java.lang.Override
     public boolean hasUpdateTime() {
       return updateTime_ != null;
     }
@@ -12381,6 +12487,7 @@ public final class PatchJobs {
      *
      * @return The updateTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
@@ -12393,6 +12500,7 @@ public final class PatchJobs {
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       return getUpdateTime();
     }
@@ -12410,6 +12518,7 @@ public final class PatchJobs {
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -12424,6 +12533,7 @@ public final class PatchJobs {
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchJob.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.PatchJobs.PatchJob.State result =
@@ -12446,6 +12556,7 @@ public final class PatchJobs {
      *
      * @return Whether the instanceFilter field is set.
      */
+    @java.lang.Override
     public boolean hasInstanceFilter() {
       return instanceFilter_ != null;
     }
@@ -12460,6 +12571,7 @@ public final class PatchJobs {
      *
      * @return The instanceFilter.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter getInstanceFilter() {
       return instanceFilter_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.getDefaultInstance()
@@ -12474,6 +12586,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.PatchInstanceFilter instance_filter = 13;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilterOrBuilder
         getInstanceFilterOrBuilder() {
       return getInstanceFilter();
@@ -12492,6 +12605,7 @@ public final class PatchJobs {
      *
      * @return Whether the patchConfig field is set.
      */
+    @java.lang.Override
     public boolean hasPatchConfig() {
       return patchConfig_ != null;
     }
@@ -12506,6 +12620,7 @@ public final class PatchJobs {
      *
      * @return The patchConfig.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchConfig getPatchConfig() {
       return patchConfig_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.getDefaultInstance()
@@ -12520,6 +12635,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.PatchConfig patch_config = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchConfigOrBuilder getPatchConfigOrBuilder() {
       return getPatchConfig();
     }
@@ -12538,6 +12654,7 @@ public final class PatchJobs {
      *
      * @return Whether the duration field is set.
      */
+    @java.lang.Override
     public boolean hasDuration() {
       return duration_ != null;
     }
@@ -12553,6 +12670,7 @@ public final class PatchJobs {
      *
      * @return The duration.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getDuration() {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
@@ -12566,6 +12684,7 @@ public final class PatchJobs {
      *
      * <code>.google.protobuf.Duration duration = 8;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
       return getDuration();
     }
@@ -12585,6 +12704,7 @@ public final class PatchJobs {
      *
      * @return Whether the instanceDetailsSummary field is set.
      */
+    @java.lang.Override
     public boolean hasInstanceDetailsSummary() {
       return instanceDetailsSummary_ != null;
     }
@@ -12600,6 +12720,7 @@ public final class PatchJobs {
      *
      * @return The instanceDetailsSummary.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchJob.InstanceDetailsSummary
         getInstanceDetailsSummary() {
       return instanceDetailsSummary_ == null
@@ -12617,6 +12738,7 @@ public final class PatchJobs {
      * <code>.google.cloud.osconfig.v1.PatchJob.InstanceDetailsSummary instance_details_summary = 9;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchJob.InstanceDetailsSummaryOrBuilder
         getInstanceDetailsSummaryOrBuilder() {
       return getInstanceDetailsSummary();
@@ -12636,6 +12758,7 @@ public final class PatchJobs {
      *
      * @return The dryRun.
      */
+    @java.lang.Override
     public boolean getDryRun() {
       return dryRun_;
     }
@@ -12654,6 +12777,7 @@ public final class PatchJobs {
      *
      * @return The errorMessage.
      */
+    @java.lang.Override
     public java.lang.String getErrorMessage() {
       java.lang.Object ref = errorMessage_;
       if (ref instanceof java.lang.String) {
@@ -12677,6 +12801,7 @@ public final class PatchJobs {
      *
      * @return The bytes for errorMessage.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getErrorMessageBytes() {
       java.lang.Object ref = errorMessage_;
       if (ref instanceof java.lang.String) {
@@ -12703,6 +12828,7 @@ public final class PatchJobs {
      *
      * @return The percentComplete.
      */
+    @java.lang.Override
     public double getPercentComplete() {
       return percentComplete_;
     }
@@ -12722,6 +12848,7 @@ public final class PatchJobs {
      *
      * @return The patchDeployment.
      */
+    @java.lang.Override
     public java.lang.String getPatchDeployment() {
       java.lang.Object ref = patchDeployment_;
       if (ref instanceof java.lang.String) {
@@ -12746,6 +12873,7 @@ public final class PatchJobs {
      *
      * @return The bytes for patchDeployment.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPatchDeploymentBytes() {
       java.lang.Object ref = patchDeployment_;
       if (ref instanceof java.lang.String) {
@@ -14081,6 +14209,7 @@ public final class PatchJobs {
        *
        * @return The enum numeric value on the wire for state.
        */
+      @java.lang.Override
       public int getStateValue() {
         return state_;
       }
@@ -14097,6 +14226,7 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+
         state_ = value;
         onChanged();
         return this;
@@ -14112,6 +14242,7 @@ public final class PatchJobs {
        *
        * @return The state.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchJobs.PatchJob.State getState() {
         @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1.PatchJobs.PatchJob.State result =
@@ -14951,6 +15082,7 @@ public final class PatchJobs {
        *
        * @return The dryRun.
        */
+      @java.lang.Override
       public boolean getDryRun() {
         return dryRun_;
       }
@@ -15116,6 +15248,7 @@ public final class PatchJobs {
        *
        * @return The percentComplete.
        */
+      @java.lang.Override
       public double getPercentComplete() {
         return percentComplete_;
       }
@@ -15976,6 +16109,10 @@ public final class PatchJobs {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -16023,6 +16160,7 @@ public final class PatchJobs {
      *
      * @return The enum numeric value on the wire for rebootConfig.
      */
+    @java.lang.Override
     public int getRebootConfigValue() {
       return rebootConfig_;
     }
@@ -16037,6 +16175,7 @@ public final class PatchJobs {
      *
      * @return The rebootConfig.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.RebootConfig getRebootConfig() {
       @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.RebootConfig result =
@@ -16060,6 +16199,7 @@ public final class PatchJobs {
      *
      * @return Whether the apt field is set.
      */
+    @java.lang.Override
     public boolean hasApt() {
       return apt_ != null;
     }
@@ -16075,6 +16215,7 @@ public final class PatchJobs {
      *
      * @return The apt.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.AptSettings getApt() {
       return apt_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.AptSettings.getDefaultInstance()
@@ -16090,6 +16231,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.AptSettings apt = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.AptSettingsOrBuilder getAptOrBuilder() {
       return getApt();
     }
@@ -16108,6 +16250,7 @@ public final class PatchJobs {
      *
      * @return Whether the yum field is set.
      */
+    @java.lang.Override
     public boolean hasYum() {
       return yum_ != null;
     }
@@ -16123,6 +16266,7 @@ public final class PatchJobs {
      *
      * @return The yum.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.YumSettings getYum() {
       return yum_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.YumSettings.getDefaultInstance()
@@ -16138,6 +16282,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.YumSettings yum = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.YumSettingsOrBuilder getYumOrBuilder() {
       return getYum();
     }
@@ -16156,6 +16301,7 @@ public final class PatchJobs {
      *
      * @return Whether the goo field is set.
      */
+    @java.lang.Override
     public boolean hasGoo() {
       return goo_ != null;
     }
@@ -16171,6 +16317,7 @@ public final class PatchJobs {
      *
      * @return The goo.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.GooSettings getGoo() {
       return goo_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.GooSettings.getDefaultInstance()
@@ -16186,6 +16333,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.GooSettings goo = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.GooSettingsOrBuilder getGooOrBuilder() {
       return getGoo();
     }
@@ -16204,6 +16352,7 @@ public final class PatchJobs {
      *
      * @return Whether the zypper field is set.
      */
+    @java.lang.Override
     public boolean hasZypper() {
       return zypper_ != null;
     }
@@ -16219,6 +16368,7 @@ public final class PatchJobs {
      *
      * @return The zypper.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ZypperSettings getZypper() {
       return zypper_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.ZypperSettings.getDefaultInstance()
@@ -16234,6 +16384,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.ZypperSettings zypper = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ZypperSettingsOrBuilder getZypperOrBuilder() {
       return getZypper();
     }
@@ -16251,6 +16402,7 @@ public final class PatchJobs {
      *
      * @return Whether the windowsUpdate field is set.
      */
+    @java.lang.Override
     public boolean hasWindowsUpdate() {
       return windowsUpdate_ != null;
     }
@@ -16265,6 +16417,7 @@ public final class PatchJobs {
      *
      * @return The windowsUpdate.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings getWindowsUpdate() {
       return windowsUpdate_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.getDefaultInstance()
@@ -16279,6 +16432,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.WindowsUpdateSettings windows_update = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettingsOrBuilder
         getWindowsUpdateOrBuilder() {
       return getWindowsUpdate();
@@ -16297,6 +16451,7 @@ public final class PatchJobs {
      *
      * @return Whether the preStep field is set.
      */
+    @java.lang.Override
     public boolean hasPreStep() {
       return preStep_ != null;
     }
@@ -16311,6 +16466,7 @@ public final class PatchJobs {
      *
      * @return The preStep.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStep getPreStep() {
       return preStep_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.ExecStep.getDefaultInstance()
@@ -16325,6 +16481,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.ExecStep pre_step = 8;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStepOrBuilder getPreStepOrBuilder() {
       return getPreStep();
     }
@@ -16342,6 +16499,7 @@ public final class PatchJobs {
      *
      * @return Whether the postStep field is set.
      */
+    @java.lang.Override
     public boolean hasPostStep() {
       return postStep_ != null;
     }
@@ -16356,6 +16514,7 @@ public final class PatchJobs {
      *
      * @return The postStep.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStep getPostStep() {
       return postStep_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.ExecStep.getDefaultInstance()
@@ -16370,6 +16529,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.ExecStep post_step = 9;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStepOrBuilder getPostStepOrBuilder() {
       return getPostStep();
     }
@@ -16910,6 +17070,7 @@ public final class PatchJobs {
        *
        * @return The enum numeric value on the wire for rebootConfig.
        */
+      @java.lang.Override
       public int getRebootConfigValue() {
         return rebootConfig_;
       }
@@ -16926,6 +17087,7 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder setRebootConfigValue(int value) {
+
         rebootConfig_ = value;
         onChanged();
         return this;
@@ -16941,6 +17103,7 @@ public final class PatchJobs {
        *
        * @return The rebootConfig.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.RebootConfig getRebootConfig() {
         @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.RebootConfig result =
@@ -18883,6 +19046,10 @@ public final class PatchJobs {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -19417,6 +19584,7 @@ public final class PatchJobs {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -19441,6 +19609,7 @@ public final class PatchJobs {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -20340,6 +20509,10 @@ public final class PatchJobs {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -20388,6 +20561,7 @@ public final class PatchJobs {
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -20403,6 +20577,7 @@ public final class PatchJobs {
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.AptSettings.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.PatchJobs.AptSettings.Type result =
@@ -20952,6 +21127,7 @@ public final class PatchJobs {
        *
        * @return The enum numeric value on the wire for type.
        */
+      @java.lang.Override
       public int getTypeValue() {
         return type_;
       }
@@ -20969,6 +21145,7 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+
         type_ = value;
         onChanged();
         return this;
@@ -20985,6 +21162,7 @@ public final class PatchJobs {
        *
        * @return The type.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchJobs.AptSettings.Type getType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1.PatchJobs.AptSettings.Type result =
@@ -21739,6 +21917,7 @@ public final class PatchJobs {
      *
      * @return The security.
      */
+    @java.lang.Override
     public boolean getSecurity() {
       return security_;
     }
@@ -21756,6 +21935,7 @@ public final class PatchJobs {
      *
      * @return The minimal.
      */
+    @java.lang.Override
     public boolean getMinimal() {
       return minimal_;
     }
@@ -22318,6 +22498,7 @@ public final class PatchJobs {
        *
        * @return The security.
        */
+      @java.lang.Override
       public boolean getSecurity() {
         return security_;
       }
@@ -22371,6 +22552,7 @@ public final class PatchJobs {
        *
        * @return The minimal.
        */
+      @java.lang.Override
       public boolean getMinimal() {
         return minimal_;
       }
@@ -23697,6 +23879,7 @@ public final class PatchJobs {
      *
      * @return The withOptional.
      */
+    @java.lang.Override
     public boolean getWithOptional() {
       return withOptional_;
     }
@@ -23714,6 +23897,7 @@ public final class PatchJobs {
      *
      * @return The withUpdate.
      */
+    @java.lang.Override
     public boolean getWithUpdate() {
       return withUpdate_;
     }
@@ -24463,6 +24647,7 @@ public final class PatchJobs {
        *
        * @return The withOptional.
        */
+      @java.lang.Override
       public boolean getWithOptional() {
         return withOptional_;
       }
@@ -24514,6 +24699,7 @@ public final class PatchJobs {
        *
        * @return The withUpdate.
        */
+      @java.lang.Override
       public boolean getWithUpdate() {
         return withUpdate_;
       }
@@ -25963,6 +26149,10 @@ public final class PatchJobs {
               };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -26033,6 +26223,7 @@ public final class PatchJobs {
      *
      * @return A list containing the classifications.
      */
+    @java.lang.Override
     public java.util.List<
             com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.Classification>
         getClassificationsList() {
@@ -26055,6 +26246,7 @@ public final class PatchJobs {
      *
      * @return The count of classifications.
      */
+    @java.lang.Override
     public int getClassificationsCount() {
       return classifications_.size();
     }
@@ -26073,6 +26265,7 @@ public final class PatchJobs {
      * @param index The index of the element to return.
      * @return The classifications at the given index.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.Classification
         getClassifications(int index) {
       return classifications_converter_.convert(classifications_.get(index));
@@ -26091,6 +26284,7 @@ public final class PatchJobs {
      *
      * @return A list containing the enum numeric values on the wire for classifications.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer> getClassificationsValueList() {
       return classifications_;
     }
@@ -26109,6 +26303,7 @@ public final class PatchJobs {
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of classifications at the given index.
      */
+    @java.lang.Override
     public int getClassificationsValue(int index) {
       return classifications_.get(index);
     }
@@ -27553,6 +27748,7 @@ public final class PatchJobs {
      *
      * @return Whether the linuxExecStepConfig field is set.
      */
+    @java.lang.Override
     public boolean hasLinuxExecStepConfig() {
       return linuxExecStepConfig_ != null;
     }
@@ -27567,6 +27763,7 @@ public final class PatchJobs {
      *
      * @return The linuxExecStepConfig.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig getLinuxExecStepConfig() {
       return linuxExecStepConfig_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.getDefaultInstance()
@@ -27581,6 +27778,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.ExecStepConfig linux_exec_step_config = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfigOrBuilder
         getLinuxExecStepConfigOrBuilder() {
       return getLinuxExecStepConfig();
@@ -27599,6 +27797,7 @@ public final class PatchJobs {
      *
      * @return Whether the windowsExecStepConfig field is set.
      */
+    @java.lang.Override
     public boolean hasWindowsExecStepConfig() {
       return windowsExecStepConfig_ != null;
     }
@@ -27613,6 +27812,7 @@ public final class PatchJobs {
      *
      * @return The windowsExecStepConfig.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig getWindowsExecStepConfig() {
       return windowsExecStepConfig_ == null
           ? com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.getDefaultInstance()
@@ -27627,6 +27827,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.ExecStepConfig windows_exec_step_config = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfigOrBuilder
         getWindowsExecStepConfigOrBuilder() {
       return getWindowsExecStepConfig();
@@ -28845,6 +29046,10 @@ public final class PatchJobs {
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -28994,6 +29199,7 @@ public final class PatchJobs {
      *
      * @return Whether the gcsObject field is set.
      */
+    @java.lang.Override
     public boolean hasGcsObject() {
       return executableCase_ == 2;
     }
@@ -29008,6 +29214,7 @@ public final class PatchJobs {
      *
      * @return The gcsObject.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.GcsObject getGcsObject() {
       if (executableCase_ == 2) {
         return (com.google.cloud.osconfig.v1.PatchJobs.GcsObject) executable_;
@@ -29023,6 +29230,7 @@ public final class PatchJobs {
      *
      * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.GcsObjectOrBuilder getGcsObjectOrBuilder() {
       if (executableCase_ == 2) {
         return (com.google.cloud.osconfig.v1.PatchJobs.GcsObject) executable_;
@@ -29044,6 +29252,7 @@ public final class PatchJobs {
      *
      * @return A list containing the allowedSuccessCodes.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer> getAllowedSuccessCodesList() {
       return allowedSuccessCodes_;
     }
@@ -29097,6 +29306,7 @@ public final class PatchJobs {
      *
      * @return The enum numeric value on the wire for interpreter.
      */
+    @java.lang.Override
     public int getInterpreterValue() {
       return interpreter_;
     }
@@ -29114,6 +29324,7 @@ public final class PatchJobs {
      *
      * @return The interpreter.
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.Interpreter getInterpreter() {
       @SuppressWarnings("deprecation")
       com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.Interpreter result =
@@ -29591,6 +29802,7 @@ public final class PatchJobs {
        *
        * @return The localPath.
        */
+      @java.lang.Override
       public java.lang.String getLocalPath() {
         java.lang.Object ref = "";
         if (executableCase_ == 1) {
@@ -29618,6 +29830,7 @@ public final class PatchJobs {
        *
        * @return The bytes for localPath.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getLocalPathBytes() {
         java.lang.Object ref = "";
         if (executableCase_ == 1) {
@@ -29713,6 +29926,7 @@ public final class PatchJobs {
        *
        * @return Whether the gcsObject field is set.
        */
+      @java.lang.Override
       public boolean hasGcsObject() {
         return executableCase_ == 2;
       }
@@ -29727,6 +29941,7 @@ public final class PatchJobs {
        *
        * @return The gcsObject.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchJobs.GcsObject getGcsObject() {
         if (gcsObjectBuilder_ == null) {
           if (executableCase_ == 2) {
@@ -29860,6 +30075,7 @@ public final class PatchJobs {
        *
        * <code>.google.cloud.osconfig.v1.GcsObject gcs_object = 2;</code>
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchJobs.GcsObjectOrBuilder getGcsObjectOrBuilder() {
         if ((executableCase_ == 2) && (gcsObjectBuilder_ != null)) {
           return gcsObjectBuilder_.getMessageOrBuilder();
@@ -30053,6 +30269,7 @@ public final class PatchJobs {
        *
        * @return The enum numeric value on the wire for interpreter.
        */
+      @java.lang.Override
       public int getInterpreterValue() {
         return interpreter_;
       }
@@ -30072,6 +30289,7 @@ public final class PatchJobs {
        * @return This builder for chaining.
        */
       public Builder setInterpreterValue(int value) {
+
         interpreter_ = value;
         onChanged();
         return this;
@@ -30090,6 +30308,7 @@ public final class PatchJobs {
        *
        * @return The interpreter.
        */
+      @java.lang.Override
       public com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.Interpreter getInterpreter() {
         @SuppressWarnings("deprecation")
         com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.Interpreter result =
@@ -30384,6 +30603,7 @@ public final class PatchJobs {
      *
      * @return The bucket.
      */
+    @java.lang.Override
     public java.lang.String getBucket() {
       java.lang.Object ref = bucket_;
       if (ref instanceof java.lang.String) {
@@ -30406,6 +30626,7 @@ public final class PatchJobs {
      *
      * @return The bytes for bucket.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBucketBytes() {
       java.lang.Object ref = bucket_;
       if (ref instanceof java.lang.String) {
@@ -30431,6 +30652,7 @@ public final class PatchJobs {
      *
      * @return The object.
      */
+    @java.lang.Override
     public java.lang.String getObject() {
       java.lang.Object ref = object_;
       if (ref instanceof java.lang.String) {
@@ -30453,6 +30675,7 @@ public final class PatchJobs {
      *
      * @return The bytes for object.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getObjectBytes() {
       java.lang.Object ref = object_;
       if (ref instanceof java.lang.String) {
@@ -30479,6 +30702,7 @@ public final class PatchJobs {
      *
      * @return The generationNumber.
      */
+    @java.lang.Override
     public long getGenerationNumber() {
       return generationNumber_;
     }
@@ -31061,6 +31285,7 @@ public final class PatchJobs {
        *
        * @return The generationNumber.
        */
+      @java.lang.Override
       public long getGenerationNumber() {
         return generationNumber_;
       }
@@ -31789,6 +32014,7 @@ public final class PatchJobs {
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
+      @java.lang.Override
       public boolean containsLabels(java.lang.String key) {
         if (key == null) {
           throw new java.lang.NullPointerException();
@@ -31796,6 +32022,7 @@ public final class PatchJobs {
         return internalGetLabels().getMap().containsKey(key);
       }
       /** Use {@link #getLabelsMap()} instead. */
+      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getLabels() {
         return getLabelsMap();
@@ -31810,6 +32037,7 @@ public final class PatchJobs {
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
+      @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
         return internalGetLabels().getMap();
       }
@@ -31823,6 +32051,7 @@ public final class PatchJobs {
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
+      @java.lang.Override
       public java.lang.String getLabelsOrDefault(
           java.lang.String key, java.lang.String defaultValue) {
         if (key == null) {
@@ -31841,6 +32070,7 @@ public final class PatchJobs {
        *
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
+      @java.lang.Override
       public java.lang.String getLabelsOrThrow(java.lang.String key) {
         if (key == null) {
           throw new java.lang.NullPointerException();
@@ -32262,6 +32492,7 @@ public final class PatchJobs {
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
          */
+        @java.lang.Override
         public boolean containsLabels(java.lang.String key) {
           if (key == null) {
             throw new java.lang.NullPointerException();
@@ -32269,6 +32500,7 @@ public final class PatchJobs {
           return internalGetLabels().getMap().containsKey(key);
         }
         /** Use {@link #getLabelsMap()} instead. */
+        @java.lang.Override
         @java.lang.Deprecated
         public java.util.Map<java.lang.String, java.lang.String> getLabels() {
           return getLabelsMap();
@@ -32283,6 +32515,7 @@ public final class PatchJobs {
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
          */
+        @java.lang.Override
         public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
           return internalGetLabels().getMap();
         }
@@ -32296,6 +32529,7 @@ public final class PatchJobs {
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
          */
+        @java.lang.Override
         public java.lang.String getLabelsOrDefault(
             java.lang.String key, java.lang.String defaultValue) {
           if (key == null) {
@@ -32314,6 +32548,7 @@ public final class PatchJobs {
          *
          * <code>map&lt;string, string&gt; labels = 1;</code>
          */
+        @java.lang.Override
         public java.lang.String getLabelsOrThrow(java.lang.String key) {
           if (key == null) {
             throw new java.lang.NullPointerException();
@@ -32456,6 +32691,7 @@ public final class PatchJobs {
      *
      * @return The all.
      */
+    @java.lang.Override
     public boolean getAll() {
       return all_;
     }
@@ -32474,6 +32710,7 @@ public final class PatchJobs {
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabel>
         getGroupLabelsList() {
       return groupLabels_;
@@ -32489,6 +32726,7 @@ public final class PatchJobs {
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabelOrBuilder>
@@ -32506,6 +32744,7 @@ public final class PatchJobs {
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
      * </code>
      */
+    @java.lang.Override
     public int getGroupLabelsCount() {
       return groupLabels_.size();
     }
@@ -32520,6 +32759,7 @@ public final class PatchJobs {
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabel getGroupLabels(
         int index) {
       return groupLabels_.get(index);
@@ -32535,6 +32775,7 @@ public final class PatchJobs {
      * <code>repeated .google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel group_labels = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabelOrBuilder
         getGroupLabelsOrBuilder(int index) {
       return groupLabels_.get(index);
@@ -33245,6 +33486,7 @@ public final class PatchJobs {
        *
        * @return The all.
        */
+      @java.lang.Override
       public boolean getAll() {
         return all_;
       }
