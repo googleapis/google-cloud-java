@@ -106,6 +106,33 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  public UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDatasetCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<
+          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportDataOperationCallable()");
+  }
+
+  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportDataCallable()");
+  }
+
+  public UnaryCallable<DeleteAnnotationSpecSetRequest, Empty> deleteAnnotationSpecSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAnnotationSpecSetCallable()");
+  }
+
+  public UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteInstructionCallable()");
+  }
+
+  public UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEvaluationJobCallable()");
+  }
+
   public UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable() {
     throw new UnsupportedOperationException("Not implemented: createDatasetCallable()");
   }
@@ -122,10 +149,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listDatasetsCallable()");
   }
 
-  public UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteDatasetCallable()");
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
@@ -135,17 +158,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     throw new UnsupportedOperationException("Not implemented: importDataCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: exportDataOperationCallable()");
-  }
-
-  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
-    throw new UnsupportedOperationException("Not implemented: exportDataCallable()");
   }
 
   public UnaryCallable<GetDataItemRequest, DataItem> getDataItemCallable() {
@@ -243,10 +255,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listAnnotationSpecSetsCallable()");
   }
 
-  public UnaryCallable<DeleteAnnotationSpecSetRequest, Empty> deleteAnnotationSpecSetCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteAnnotationSpecSetCallable()");
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
       createInstructionOperationCallable() {
@@ -270,10 +278,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
   public UnaryCallable<ListInstructionsRequest, ListInstructionsResponse>
       listInstructionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstructionsCallable()");
-  }
-
-  public UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteInstructionCallable()");
   }
 
   public UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
@@ -319,10 +323,6 @@ public abstract class DataLabelingServiceStub implements BackgroundResource {
 
   public UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable() {
     throw new UnsupportedOperationException("Not implemented: resumeEvaluationJobCallable()");
-  }
-
-  public UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteEvaluationJobCallable()");
   }
 
   public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>

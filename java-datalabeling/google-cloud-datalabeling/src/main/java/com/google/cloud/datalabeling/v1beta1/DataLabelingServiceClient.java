@@ -49,9 +49,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Dataset dataset = Dataset.newBuilder().build();
- *   Dataset response = dataLabelingServiceClient.createDataset(parent, dataset);
+ *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+ *   dataLabelingServiceClient.deleteDataset(name);
  * }
  * </code>
  * </pre>
@@ -172,6 +171,543 @@ public class DataLabelingServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   dataLabelingServiceClient.deleteDataset(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Dataset resource name, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataset(DatasetName name) {
+    DeleteDatasetRequest request =
+        DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   dataLabelingServiceClient.deleteDataset(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Dataset resource name, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataset(String name) {
+    DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder().setName(name).build();
+    deleteDataset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dataLabelingServiceClient.deleteDataset(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataset(DeleteDatasetRequest request) {
+    deleteDatasetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a dataset by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteDatasetCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable() {
+    return stub.deleteDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports data and annotations from dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   String filter = "";
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Dataset resource name, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param annotatedDataset Required. Annotated dataset resource name. DataItem in Dataset and
+   *     their annotations in specified annotated dataset will be exported. It's in format of
+   *     projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
+   * @param filter Optional. Filter is not supported at this moment.
+   * @param outputConfig Required. Specify the output destination.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataAsync(
+          DatasetName name,
+          AnnotatedDatasetName annotatedDataset,
+          String filter,
+          OutputConfig outputConfig) {
+    ExportDataRequest request =
+        ExportDataRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setAnnotatedDataset(annotatedDataset == null ? null : annotatedDataset.toString())
+            .setFilter(filter)
+            .setOutputConfig(outputConfig)
+            .build();
+    return exportDataAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports data and annotations from dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   String filter = "";
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(name.toString(), annotatedDataset.toString(), filter, outputConfig).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Dataset resource name, format:
+   *     projects/{project_id}/datasets/{dataset_id}
+   * @param annotatedDataset Required. Annotated dataset resource name. DataItem in Dataset and
+   *     their annotations in specified annotated dataset will be exported. It's in format of
+   *     projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
+   * @param filter Optional. Filter is not supported at this moment.
+   * @param outputConfig Required. Specify the output destination.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataAsync(
+          String name, String annotatedDataset, String filter, OutputConfig outputConfig) {
+    ExportDataRequest request =
+        ExportDataRequest.newBuilder()
+            .setName(name)
+            .setAnnotatedDataset(annotatedDataset)
+            .setFilter(filter)
+            .setOutputConfig(outputConfig)
+            .build();
+    return exportDataAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports data and annotations from dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportDataRequest request = ExportDataRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setAnnotatedDataset(annotatedDataset.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataAsync(ExportDataRequest request) {
+    return exportDataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports data and annotations from dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportDataRequest request = ExportDataRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setAnnotatedDataset(annotatedDataset.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   OperationFuture&lt;ExportDataOperationResponse, ExportDataOperationMetadata&gt; future = dataLabelingServiceClient.exportDataOperationCallable().futureCall(request);
+   *   // Do something
+   *   ExportDataOperationResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<
+          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataOperationCallable() {
+    return stub.exportDataOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports data and annotations from dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
+   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
+   *   ExportDataRequest request = ExportDataRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setAnnotatedDataset(annotatedDataset.toString())
+   *     .setOutputConfig(outputConfig)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = dataLabelingServiceClient.exportDataCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    return stub.exportDataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an annotation spec set by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   dataLabelingServiceClient.deleteAnnotationSpecSet(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. AnnotationSpec resource name, format:
+   *     `projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAnnotationSpecSet(AnnotationSpecSetName name) {
+    DeleteAnnotationSpecSetRequest request =
+        DeleteAnnotationSpecSetRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAnnotationSpecSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an annotation spec set by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   dataLabelingServiceClient.deleteAnnotationSpecSet(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. AnnotationSpec resource name, format:
+   *     `projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAnnotationSpecSet(String name) {
+    DeleteAnnotationSpecSetRequest request =
+        DeleteAnnotationSpecSetRequest.newBuilder().setName(name).build();
+    deleteAnnotationSpecSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an annotation spec set by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   DeleteAnnotationSpecSetRequest request = DeleteAnnotationSpecSetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dataLabelingServiceClient.deleteAnnotationSpecSet(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAnnotationSpecSet(DeleteAnnotationSpecSetRequest request) {
+    deleteAnnotationSpecSetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an annotation spec set by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
+   *   DeleteAnnotationSpecSetRequest request = DeleteAnnotationSpecSetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteAnnotationSpecSetCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAnnotationSpecSetRequest, Empty>
+      deleteAnnotationSpecSetCallable() {
+    return stub.deleteAnnotationSpecSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an instruction object by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+   *   dataLabelingServiceClient.deleteInstruction(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Instruction resource name, format:
+   *     projects/{project_id}/instructions/{instruction_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteInstruction(InstructionName name) {
+    DeleteInstructionRequest request =
+        DeleteInstructionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteInstruction(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an instruction object by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+   *   dataLabelingServiceClient.deleteInstruction(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Instruction resource name, format:
+   *     projects/{project_id}/instructions/{instruction_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteInstruction(String name) {
+    DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder().setName(name).build();
+    deleteInstruction(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an instruction object by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+   *   DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dataLabelingServiceClient.deleteInstruction(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteInstruction(DeleteInstructionRequest request) {
+    deleteInstructionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an instruction object by resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
+   *   DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteInstructionCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
+    return stub.deleteInstructionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops and deletes an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.deleteEvaluationJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job that is going to be deleted. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEvaluationJob(EvaluationJobName name) {
+    DeleteEvaluationJobRequest request =
+        DeleteEvaluationJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops and deletes an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   dataLabelingServiceClient.deleteEvaluationJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the evaluation job that is going to be deleted. Format:
+   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEvaluationJob(String name) {
+    DeleteEvaluationJobRequest request =
+        DeleteEvaluationJobRequest.newBuilder().setName(name).build();
+    deleteEvaluationJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops and deletes an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   DeleteEvaluationJobRequest request = DeleteEvaluationJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dataLabelingServiceClient.deleteEvaluationJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteEvaluationJob(DeleteEvaluationJobRequest request) {
+    deleteEvaluationJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops and deletes an evaluation job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
+   *   DeleteEvaluationJobRequest request = DeleteEvaluationJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteEvaluationJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
+    return stub.deleteEvaluationJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -502,96 +1038,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a dataset by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   dataLabelingServiceClient.deleteDataset(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Dataset resource name, format:
-   *     projects/{project_id}/datasets/{dataset_id}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDataset(DatasetName name) {
-    DeleteDatasetRequest request =
-        DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteDataset(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a dataset by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   dataLabelingServiceClient.deleteDataset(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Dataset resource name, format:
-   *     projects/{project_id}/datasets/{dataset_id}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDataset(String name) {
-    DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder().setName(name).build();
-    deleteDataset(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a dataset by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dataLabelingServiceClient.deleteDataset(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDataset(DeleteDatasetRequest request) {
-    deleteDatasetCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a dataset by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteDatasetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable() {
-    return stub.deleteDatasetCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Imports data into dataset based on source locations defined in request. It can be called
    * multiple times for the same dataset. Each dataset can only have one long running operation
    * running on it. For example, no labeling task (also long running operation) can be started while
@@ -741,174 +1187,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return stub.importDataCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports data and annotations from dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
-   *   String filter = "";
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(name, annotatedDataset, filter, outputConfig).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Dataset resource name, format:
-   *     projects/{project_id}/datasets/{dataset_id}
-   * @param annotatedDataset Required. Annotated dataset resource name. DataItem in Dataset and
-   *     their annotations in specified annotated dataset will be exported. It's in format of
-   *     projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
-   * @param filter Optional. Filter is not supported at this moment.
-   * @param outputConfig Required. Specify the output destination.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataAsync(
-          DatasetName name,
-          AnnotatedDatasetName annotatedDataset,
-          String filter,
-          OutputConfig outputConfig) {
-    ExportDataRequest request =
-        ExportDataRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setAnnotatedDataset(annotatedDataset == null ? null : annotatedDataset.toString())
-            .setFilter(filter)
-            .setOutputConfig(outputConfig)
-            .build();
-    return exportDataAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports data and annotations from dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
-   *   String filter = "";
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(name.toString(), annotatedDataset.toString(), filter, outputConfig).get();
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Dataset resource name, format:
-   *     projects/{project_id}/datasets/{dataset_id}
-   * @param annotatedDataset Required. Annotated dataset resource name. DataItem in Dataset and
-   *     their annotations in specified annotated dataset will be exported. It's in format of
-   *     projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
-   * @param filter Optional. Filter is not supported at this moment.
-   * @param outputConfig Required. Specify the output destination.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataAsync(
-          String name, String annotatedDataset, String filter, OutputConfig outputConfig) {
-    ExportDataRequest request =
-        ExportDataRequest.newBuilder()
-            .setName(name)
-            .setAnnotatedDataset(annotatedDataset)
-            .setFilter(filter)
-            .setOutputConfig(outputConfig)
-            .build();
-    return exportDataAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports data and annotations from dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setAnnotatedDataset(annotatedDataset.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ExportDataOperationResponse response = dataLabelingServiceClient.exportDataAsync(request).get();
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public final OperationFuture<ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataAsync(ExportDataRequest request) {
-    return exportDataOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports data and annotations from dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setAnnotatedDataset(annotatedDataset.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   OperationFuture&lt;ExportDataOperationResponse, ExportDataOperationMetadata&gt; future = dataLabelingServiceClient.exportDataOperationCallable().futureCall(request);
-   *   // Do something
-   *   ExportDataOperationResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public final OperationCallable<
-          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataOperationCallable() {
-    return stub.exportDataOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Exports data and annotations from dataset.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   DatasetName name = DatasetName.of("[PROJECT]", "[DATASET]");
-   *   AnnotatedDatasetName annotatedDataset = AnnotatedDatasetName.of("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
-   *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   ExportDataRequest request = ExportDataRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setAnnotatedDataset(annotatedDataset.toString())
-   *     .setOutputConfig(outputConfig)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = dataLabelingServiceClient.exportDataCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
-    return stub.exportDataCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2491,100 +2769,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an annotation spec set by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
-   *   dataLabelingServiceClient.deleteAnnotationSpecSet(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. AnnotationSpec resource name, format:
-   *     `projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAnnotationSpecSet(AnnotationSpecSetName name) {
-    DeleteAnnotationSpecSetRequest request =
-        DeleteAnnotationSpecSetRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteAnnotationSpecSet(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an annotation spec set by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
-   *   dataLabelingServiceClient.deleteAnnotationSpecSet(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. AnnotationSpec resource name, format:
-   *     `projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAnnotationSpecSet(String name) {
-    DeleteAnnotationSpecSetRequest request =
-        DeleteAnnotationSpecSetRequest.newBuilder().setName(name).build();
-    deleteAnnotationSpecSet(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an annotation spec set by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
-   *   DeleteAnnotationSpecSetRequest request = DeleteAnnotationSpecSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dataLabelingServiceClient.deleteAnnotationSpecSet(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAnnotationSpecSet(DeleteAnnotationSpecSetRequest request) {
-    deleteAnnotationSpecSetCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an annotation spec set by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   AnnotationSpecSetName name = AnnotationSpecSetName.of("[PROJECT]", "[ANNOTATION_SPEC_SET]");
-   *   DeleteAnnotationSpecSetRequest request = DeleteAnnotationSpecSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteAnnotationSpecSetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteAnnotationSpecSetRequest, Empty>
-      deleteAnnotationSpecSetCallable() {
-    return stub.deleteAnnotationSpecSetCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Creates an instruction for how data should be labeled.
    *
    * <p>Sample code:
@@ -2943,98 +3127,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
   public final UnaryCallable<ListInstructionsRequest, ListInstructionsResponse>
       listInstructionsCallable() {
     return stub.listInstructionsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an instruction object by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
-   *   dataLabelingServiceClient.deleteInstruction(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Instruction resource name, format:
-   *     projects/{project_id}/instructions/{instruction_id}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteInstruction(InstructionName name) {
-    DeleteInstructionRequest request =
-        DeleteInstructionRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteInstruction(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an instruction object by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
-   *   dataLabelingServiceClient.deleteInstruction(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Instruction resource name, format:
-   *     projects/{project_id}/instructions/{instruction_id}
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteInstruction(String name) {
-    DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder().setName(name).build();
-    deleteInstruction(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an instruction object by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
-   *   DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dataLabelingServiceClient.deleteInstruction(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteInstruction(DeleteInstructionRequest request) {
-    deleteInstructionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an instruction object by resource name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   InstructionName name = InstructionName.of("[PROJECT]", "[INSTRUCTION]");
-   *   DeleteInstructionRequest request = DeleteInstructionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteInstructionCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
-    return stub.deleteInstructionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -3953,99 +4045,6 @@ public class DataLabelingServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable() {
     return stub.resumeEvaluationJobCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Stops and deletes an evaluation job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
-   *   dataLabelingServiceClient.deleteEvaluationJob(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Name of the evaluation job that is going to be deleted. Format:
-   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEvaluationJob(EvaluationJobName name) {
-    DeleteEvaluationJobRequest request =
-        DeleteEvaluationJobRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteEvaluationJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Stops and deletes an evaluation job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
-   *   dataLabelingServiceClient.deleteEvaluationJob(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Name of the evaluation job that is going to be deleted. Format:
-   *     <p>"projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEvaluationJob(String name) {
-    DeleteEvaluationJobRequest request =
-        DeleteEvaluationJobRequest.newBuilder().setName(name).build();
-    deleteEvaluationJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Stops and deletes an evaluation job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
-   *   DeleteEvaluationJobRequest request = DeleteEvaluationJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   dataLabelingServiceClient.deleteEvaluationJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteEvaluationJob(DeleteEvaluationJobRequest request) {
-    deleteEvaluationJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Stops and deletes an evaluation job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
-   *   EvaluationJobName name = EvaluationJobName.of("[PROJECT]", "[EVALUATION_JOB]");
-   *   DeleteEvaluationJobRequest request = DeleteEvaluationJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = dataLabelingServiceClient.deleteEvaluationJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
-    return stub.deleteEvaluationJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

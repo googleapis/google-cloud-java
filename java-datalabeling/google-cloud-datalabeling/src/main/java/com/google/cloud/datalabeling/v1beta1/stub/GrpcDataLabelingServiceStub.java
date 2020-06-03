@@ -112,6 +112,50 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
 
+  private static final MethodDescriptor<DeleteDatasetRequest, Empty> deleteDatasetMethodDescriptor =
+      MethodDescriptor.<DeleteDatasetRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteDataset")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
+      MethodDescriptor.<ExportDataRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/ExportData")
+          .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteAnnotationSpecSetRequest, Empty>
+      deleteAnnotationSpecSetMethodDescriptor =
+          MethodDescriptor.<DeleteAnnotationSpecSetRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteAnnotationSpecSet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAnnotationSpecSetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteInstructionRequest, Empty>
+      deleteInstructionMethodDescriptor =
+          MethodDescriptor.<DeleteInstructionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteInstruction")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteInstructionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteEvaluationJobRequest, Empty>
+      deleteEvaluationJobMethodDescriptor =
+          MethodDescriptor.<DeleteEvaluationJobRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteEvaluationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEvaluationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<CreateDatasetRequest, Dataset>
       createDatasetMethodDescriptor =
           MethodDescriptor.<CreateDatasetRequest, Dataset>newBuilder()
@@ -139,25 +183,11 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteDatasetRequest, Empty> deleteDatasetMethodDescriptor =
-      MethodDescriptor.<DeleteDatasetRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteDataset")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
       MethodDescriptor.<ImportDataRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/ImportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
-      MethodDescriptor.<ExportDataRequest, Operation>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.datalabeling.v1beta1.DataLabelingService/ExportData")
-          .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
   private static final MethodDescriptor<GetDataItemRequest, DataItem> getDataItemMethodDescriptor =
@@ -280,16 +310,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnnotationSpecSetsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteAnnotationSpecSetRequest, Empty>
-      deleteAnnotationSpecSetMethodDescriptor =
-          MethodDescriptor.<DeleteAnnotationSpecSetRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteAnnotationSpecSet")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteAnnotationSpecSetRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<CreateInstructionRequest, Operation>
       createInstructionMethodDescriptor =
           MethodDescriptor.<CreateInstructionRequest, Operation>newBuilder()
@@ -320,16 +340,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ListInstructionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstructionsResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteInstructionRequest, Empty>
-      deleteInstructionMethodDescriptor =
-          MethodDescriptor.<DeleteInstructionRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteInstruction")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteInstructionRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<GetEvaluationRequest, Evaluation>
       getEvaluationMethodDescriptor =
@@ -415,16 +425,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   ProtoUtils.marshaller(ResumeEvaluationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteEvaluationJobRequest, Empty>
-      deleteEvaluationJobMethodDescriptor =
-          MethodDescriptor.<DeleteEvaluationJobRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.datalabeling.v1beta1.DataLabelingService/DeleteEvaluationJob")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteEvaluationJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
       listEvaluationJobsMethodDescriptor =
           MethodDescriptor.<ListEvaluationJobsRequest, ListEvaluationJobsResponse>newBuilder()
@@ -440,20 +440,24 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
+  private final UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable;
+  private final UnaryCallable<ExportDataRequest, Operation> exportDataCallable;
+  private final OperationCallable<
+          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataOperationCallable;
+  private final UnaryCallable<DeleteAnnotationSpecSetRequest, Empty>
+      deleteAnnotationSpecSetCallable;
+  private final UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable;
+  private final UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable;
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;
   private final UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse>
       listDatasetsPagedCallable;
-  private final UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable;
   private final UnaryCallable<ImportDataRequest, Operation> importDataCallable;
   private final OperationCallable<
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataOperationCallable;
-  private final UnaryCallable<ExportDataRequest, Operation> exportDataCallable;
-  private final OperationCallable<
-          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataOperationCallable;
   private final UnaryCallable<GetDataItemRequest, DataItem> getDataItemCallable;
   private final UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable;
   private final UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
@@ -486,8 +490,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
       listAnnotationSpecSetsCallable;
   private final UnaryCallable<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsPagedResponse>
       listAnnotationSpecSetsPagedCallable;
-  private final UnaryCallable<DeleteAnnotationSpecSetRequest, Empty>
-      deleteAnnotationSpecSetCallable;
   private final UnaryCallable<CreateInstructionRequest, Operation> createInstructionCallable;
   private final OperationCallable<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
       createInstructionOperationCallable;
@@ -496,7 +498,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
       listInstructionsCallable;
   private final UnaryCallable<ListInstructionsRequest, ListInstructionsPagedResponse>
       listInstructionsPagedCallable;
-  private final UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable;
   private final UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable;
   private final UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsResponse>
       searchEvaluationsCallable;
@@ -514,7 +515,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
   private final UnaryCallable<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobCallable;
   private final UnaryCallable<PauseEvaluationJobRequest, Empty> pauseEvaluationJobCallable;
   private final UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable;
-  private final UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable;
   private final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
       listEvaluationJobsCallable;
   private final UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
@@ -562,6 +562,72 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
+        GrpcCallSettings.<DeleteDatasetRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDatasetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteDatasetRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteDatasetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
+        GrpcCallSettings.<ExportDataRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportDataMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ExportDataRequest>() {
+                  @Override
+                  public Map<String, String> extract(ExportDataRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteAnnotationSpecSetRequest, Empty>
+        deleteAnnotationSpecSetTransportSettings =
+            GrpcCallSettings.<DeleteAnnotationSpecSetRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteAnnotationSpecSetMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeleteAnnotationSpecSetRequest>() {
+                      @Override
+                      public Map<String, String> extract(DeleteAnnotationSpecSetRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<DeleteInstructionRequest, Empty> deleteInstructionTransportSettings =
+        GrpcCallSettings.<DeleteInstructionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteInstructionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteInstructionRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteInstructionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobTransportSettings =
+        GrpcCallSettings.<DeleteEvaluationJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEvaluationJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEvaluationJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEvaluationJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateDatasetRequest, Dataset> createDatasetTransportSettings =
         GrpcCallSettings.<CreateDatasetRequest, Dataset>newBuilder()
             .setMethodDescriptor(createDatasetMethodDescriptor)
@@ -601,19 +667,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
-        GrpcCallSettings.<DeleteDatasetRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteDatasetMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteDatasetRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteDatasetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
             .setMethodDescriptor(importDataMethodDescriptor)
@@ -621,19 +674,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                 new RequestParamsExtractor<ImportDataRequest>() {
                   @Override
                   public Map<String, String> extract(ImportDataRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
-        GrpcCallSettings.<ExportDataRequest, Operation>newBuilder()
-            .setMethodDescriptor(exportDataMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ExportDataRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportDataRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
                     return params.build();
@@ -816,20 +856,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteAnnotationSpecSetRequest, Empty>
-        deleteAnnotationSpecSetTransportSettings =
-            GrpcCallSettings.<DeleteAnnotationSpecSetRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteAnnotationSpecSetMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteAnnotationSpecSetRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteAnnotationSpecSetRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<CreateInstructionRequest, Operation> createInstructionTransportSettings =
         GrpcCallSettings.<CreateInstructionRequest, Operation>newBuilder()
             .setMethodDescriptor(createInstructionMethodDescriptor)
@@ -870,19 +896,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteInstructionRequest, Empty> deleteInstructionTransportSettings =
-        GrpcCallSettings.<DeleteInstructionRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteInstructionMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteInstructionRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteInstructionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
             .setMethodDescriptor(getEvaluationMethodDescriptor)
@@ -994,19 +1007,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobTransportSettings =
-        GrpcCallSettings.<DeleteEvaluationJobRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteEvaluationJobMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEvaluationJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEvaluationJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
         listEvaluationJobsTransportSettings =
             GrpcCallSettings.<ListEvaluationJobsRequest, ListEvaluationJobsResponse>newBuilder()
@@ -1022,6 +1022,33 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
                     })
                 .build();
 
+    this.deleteDatasetCallable =
+        callableFactory.createUnaryCallable(
+            deleteDatasetTransportSettings, settings.deleteDatasetSettings(), clientContext);
+    this.exportDataCallable =
+        callableFactory.createUnaryCallable(
+            exportDataTransportSettings, settings.exportDataSettings(), clientContext);
+    this.exportDataOperationCallable =
+        callableFactory.createOperationCallable(
+            exportDataTransportSettings,
+            settings.exportDataOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.deleteAnnotationSpecSetCallable =
+        callableFactory.createUnaryCallable(
+            deleteAnnotationSpecSetTransportSettings,
+            settings.deleteAnnotationSpecSetSettings(),
+            clientContext);
+    this.deleteInstructionCallable =
+        callableFactory.createUnaryCallable(
+            deleteInstructionTransportSettings,
+            settings.deleteInstructionSettings(),
+            clientContext);
+    this.deleteEvaluationJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteEvaluationJobTransportSettings,
+            settings.deleteEvaluationJobSettings(),
+            clientContext);
     this.createDatasetCallable =
         callableFactory.createUnaryCallable(
             createDatasetTransportSettings, settings.createDatasetSettings(), clientContext);
@@ -1034,9 +1061,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     this.listDatasetsPagedCallable =
         callableFactory.createPagedCallable(
             listDatasetsTransportSettings, settings.listDatasetsSettings(), clientContext);
-    this.deleteDatasetCallable =
-        callableFactory.createUnaryCallable(
-            deleteDatasetTransportSettings, settings.deleteDatasetSettings(), clientContext);
     this.importDataCallable =
         callableFactory.createUnaryCallable(
             importDataTransportSettings, settings.importDataSettings(), clientContext);
@@ -1044,15 +1068,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
         callableFactory.createOperationCallable(
             importDataTransportSettings,
             settings.importDataOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.exportDataCallable =
-        callableFactory.createUnaryCallable(
-            exportDataTransportSettings, settings.exportDataSettings(), clientContext);
-    this.exportDataOperationCallable =
-        callableFactory.createOperationCallable(
-            exportDataTransportSettings,
-            settings.exportDataOperationSettings(),
             clientContext,
             this.operationsStub);
     this.getDataItemCallable =
@@ -1140,11 +1155,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             listAnnotationSpecSetsTransportSettings,
             settings.listAnnotationSpecSetsSettings(),
             clientContext);
-    this.deleteAnnotationSpecSetCallable =
-        callableFactory.createUnaryCallable(
-            deleteAnnotationSpecSetTransportSettings,
-            settings.deleteAnnotationSpecSetSettings(),
-            clientContext);
     this.createInstructionCallable =
         callableFactory.createUnaryCallable(
             createInstructionTransportSettings,
@@ -1165,11 +1175,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     this.listInstructionsPagedCallable =
         callableFactory.createPagedCallable(
             listInstructionsTransportSettings, settings.listInstructionsSettings(), clientContext);
-    this.deleteInstructionCallable =
-        callableFactory.createUnaryCallable(
-            deleteInstructionTransportSettings,
-            settings.deleteInstructionSettings(),
-            clientContext);
     this.getEvaluationCallable =
         callableFactory.createUnaryCallable(
             getEvaluationTransportSettings, settings.getEvaluationSettings(), clientContext);
@@ -1216,11 +1221,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
             resumeEvaluationJobTransportSettings,
             settings.resumeEvaluationJobSettings(),
             clientContext);
-    this.deleteEvaluationJobCallable =
-        callableFactory.createUnaryCallable(
-            deleteEvaluationJobTransportSettings,
-            settings.deleteEvaluationJobSettings(),
-            clientContext);
     this.listEvaluationJobsCallable =
         callableFactory.createUnaryCallable(
             listEvaluationJobsTransportSettings,
@@ -1240,6 +1240,33 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return operationsStub;
   }
 
+  public UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable() {
+    return deleteDatasetCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<
+          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataOperationCallable() {
+    return exportDataOperationCallable;
+  }
+
+  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
+    return exportDataCallable;
+  }
+
+  public UnaryCallable<DeleteAnnotationSpecSetRequest, Empty> deleteAnnotationSpecSetCallable() {
+    return deleteAnnotationSpecSetCallable;
+  }
+
+  public UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
+    return deleteInstructionCallable;
+  }
+
+  public UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
+    return deleteEvaluationJobCallable;
+  }
+
   public UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable() {
     return createDatasetCallable;
   }
@@ -1256,10 +1283,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return listDatasetsCallable;
   }
 
-  public UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable() {
-    return deleteDatasetCallable;
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
@@ -1269,17 +1292,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
 
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return importDataCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataOperationCallable() {
-    return exportDataOperationCallable;
-  }
-
-  public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
-    return exportDataCallable;
   }
 
   public UnaryCallable<GetDataItemRequest, DataItem> getDataItemCallable() {
@@ -1375,10 +1387,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return listAnnotationSpecSetsCallable;
   }
 
-  public UnaryCallable<DeleteAnnotationSpecSetRequest, Empty> deleteAnnotationSpecSetCallable() {
-    return deleteAnnotationSpecSetCallable;
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
       createInstructionOperationCallable() {
@@ -1401,10 +1409,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
   public UnaryCallable<ListInstructionsRequest, ListInstructionsResponse>
       listInstructionsCallable() {
     return listInstructionsCallable;
-  }
-
-  public UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
-    return deleteInstructionCallable;
   }
 
   public UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
@@ -1449,10 +1453,6 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
 
   public UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable() {
     return resumeEvaluationJobCallable;
-  }
-
-  public UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
-    return deleteEvaluationJobCallable;
   }
 
   public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>

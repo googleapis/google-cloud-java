@@ -59,16 +59,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createDataset to 30 seconds:
+ * <p>For example, to set the total timeout of deleteDataset to 30 seconds:
  *
  * <pre>
  * <code>
  * DataLabelingServiceSettings.Builder dataLabelingServiceSettingsBuilder =
  *     DataLabelingServiceSettings.newBuilder();
  * dataLabelingServiceSettingsBuilder
- *     .createDatasetSettings()
+ *     .deleteDatasetSettings()
  *     .setRetrySettings(
- *         dataLabelingServiceSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
+ *         dataLabelingServiceSettingsBuilder.deleteDatasetSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataLabelingServiceSettings dataLabelingServiceSettings = dataLabelingServiceSettingsBuilder.build();
@@ -78,6 +78,41 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServiceSettings> {
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).exportDataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+      exportDataOperationSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).exportDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAnnotationSpecSet. */
+  public UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
+      deleteAnnotationSpecSetSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteAnnotationSpecSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteInstruction. */
+  public UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteInstructionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEvaluationJob. */
+  public UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings() {
+    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteEvaluationJobSettings();
+  }
+
   /** Returns the object with the settings used for calls to createDataset. */
   public UnaryCallSettings<CreateDatasetRequest, Dataset> createDatasetSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).createDatasetSettings();
@@ -94,11 +129,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     return ((DataLabelingServiceStubSettings) getStubSettings()).listDatasetsSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteDataset. */
-  public UnaryCallSettings<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteDatasetSettings();
-  }
-
   /** Returns the object with the settings used for calls to importData. */
   public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).importDataSettings();
@@ -111,20 +141,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataOperationSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).importDataOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to exportData. */
-  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).exportDataSettings();
-  }
-
-  /** Returns the object with the settings used for calls to exportData. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-      exportDataOperationSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).exportDataOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getDataItem. */
@@ -229,12 +245,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     return ((DataLabelingServiceStubSettings) getStubSettings()).listAnnotationSpecSetsSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteAnnotationSpecSet. */
-  public UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
-      deleteAnnotationSpecSetSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteAnnotationSpecSetSettings();
-  }
-
   /** Returns the object with the settings used for calls to createInstruction. */
   public UnaryCallSettings<CreateInstructionRequest, Operation> createInstructionSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).createInstructionSettings();
@@ -259,11 +269,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
           ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
       listInstructionsSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).listInstructionsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteInstruction. */
-  public UnaryCallSettings<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteInstructionSettings();
   }
 
   /** Returns the object with the settings used for calls to getEvaluation. */
@@ -312,11 +317,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
   /** Returns the object with the settings used for calls to resumeEvaluationJob. */
   public UnaryCallSettings<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).resumeEvaluationJobSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteEvaluationJob. */
-  public UnaryCallSettings<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobSettings() {
-    return ((DataLabelingServiceStubSettings) getStubSettings()).deleteEvaluationJobSettings();
   }
 
   /** Returns the object with the settings used for calls to listEvaluationJobs. */
@@ -423,6 +423,42 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    public UnaryCallSettings.Builder<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
+      return getStubSettingsBuilder().deleteDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings() {
+      return getStubSettingsBuilder().exportDataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
+        exportDataOperationSettings() {
+      return getStubSettingsBuilder().exportDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAnnotationSpecSet. */
+    public UnaryCallSettings.Builder<DeleteAnnotationSpecSetRequest, Empty>
+        deleteAnnotationSpecSetSettings() {
+      return getStubSettingsBuilder().deleteAnnotationSpecSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteInstruction. */
+    public UnaryCallSettings.Builder<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
+      return getStubSettingsBuilder().deleteInstructionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEvaluationJob. */
+    public UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
+        deleteEvaluationJobSettings() {
+      return getStubSettingsBuilder().deleteEvaluationJobSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createDataset. */
     public UnaryCallSettings.Builder<CreateDatasetRequest, Dataset> createDatasetSettings() {
       return getStubSettingsBuilder().createDatasetSettings();
@@ -440,11 +476,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
       return getStubSettingsBuilder().listDatasetsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataset. */
-    public UnaryCallSettings.Builder<DeleteDatasetRequest, Empty> deleteDatasetSettings() {
-      return getStubSettingsBuilder().deleteDatasetSettings();
-    }
-
     /** Returns the builder for the settings used for calls to importData. */
     public UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings() {
       return getStubSettingsBuilder().importDataSettings();
@@ -457,20 +488,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
             ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
         importDataOperationSettings() {
       return getStubSettingsBuilder().importDataOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to exportData. */
-    public UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings() {
-      return getStubSettingsBuilder().exportDataSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to exportData. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
-        exportDataOperationSettings() {
-      return getStubSettingsBuilder().exportDataOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getDataItem. */
@@ -580,12 +597,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
       return getStubSettingsBuilder().listAnnotationSpecSetsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteAnnotationSpecSet. */
-    public UnaryCallSettings.Builder<DeleteAnnotationSpecSetRequest, Empty>
-        deleteAnnotationSpecSetSettings() {
-      return getStubSettingsBuilder().deleteAnnotationSpecSetSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createInstruction. */
     public UnaryCallSettings.Builder<CreateInstructionRequest, Operation>
         createInstructionSettings() {
@@ -611,11 +622,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
             ListInstructionsRequest, ListInstructionsResponse, ListInstructionsPagedResponse>
         listInstructionsSettings() {
       return getStubSettingsBuilder().listInstructionsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteInstruction. */
-    public UnaryCallSettings.Builder<DeleteInstructionRequest, Empty> deleteInstructionSettings() {
-      return getStubSettingsBuilder().deleteInstructionSettings();
     }
 
     /** Returns the builder for the settings used for calls to getEvaluation. */
@@ -667,12 +673,6 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
     public UnaryCallSettings.Builder<ResumeEvaluationJobRequest, Empty>
         resumeEvaluationJobSettings() {
       return getStubSettingsBuilder().resumeEvaluationJobSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteEvaluationJob. */
-    public UnaryCallSettings.Builder<DeleteEvaluationJobRequest, Empty>
-        deleteEvaluationJobSettings() {
-      return getStubSettingsBuilder().deleteEvaluationJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to listEvaluationJobs. */
