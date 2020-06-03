@@ -17,13 +17,14 @@
 package dlp.snippets;
 
 // [START dlp_redact_image]
+
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.ByteContentItem.BytesType;
 import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.Likelihood;
-import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.protobuf.ByteString;
@@ -47,9 +48,6 @@ class RedactImageFile {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
-      // Specify the project used for request.
-      ProjectName project = ProjectName.of(projectId);
-
       // Specify the content to be inspected.
       ByteString fileBytes = ByteString.readFrom(new FileInputStream(inputPath));
       ByteContentItem byteItem =
@@ -70,7 +68,7 @@ class RedactImageFile {
       // Construct the Redact request to be sent by the client.
       RedactImageRequest request =
           RedactImageRequest.newBuilder()
-              .setParent(project.toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setByteItem(byteItem)
               .setInspectConfig(config)
               .build();

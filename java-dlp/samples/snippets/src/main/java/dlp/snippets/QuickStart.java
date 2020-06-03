@@ -28,7 +28,7 @@ import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectResult;
 import com.google.privacy.dlp.v2.Likelihood;
-import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
@@ -84,7 +84,7 @@ public class QuickStart {
       // Create the request from previous configs
       InspectContentRequest request =
           InspectContentRequest.newBuilder()
-              .setParent(ProjectName.of(projectId).toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setInspectConfig(inspectConfig)
               .setItem(contentItem)
               .build();

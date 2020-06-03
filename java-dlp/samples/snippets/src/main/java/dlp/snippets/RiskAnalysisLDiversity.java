@@ -33,9 +33,9 @@ import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FieldId;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.PrivacyMetric;
 import com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig;
-import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.RiskAnalysisJobConfig;
 import com.google.privacy.dlp.v2.Value;
 import com.google.privacy.dlp.v2.ValueFrequency;
@@ -113,7 +113,7 @@ class RiskAnalysisLDiversity {
       // Build the request to be sent by the client
       CreateDlpJobRequest createDlpJobRequest =
           CreateDlpJobRequest.newBuilder()
-              .setParent(ProjectName.of(projectId).toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setRiskJob(riskAnalysisJobConfig)
               .build();
 

@@ -17,10 +17,11 @@
 package dlp.snippets;
 
 // [START dlp_list_triggers]
+
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
-import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.LocationName;
 
 class TriggersList {
   public static void listTriggers() throws Exception {
@@ -37,7 +38,7 @@ class TriggersList {
       // Build the request to be sent by the client
       ListJobTriggersRequest listJobTriggersRequest =
           ListJobTriggersRequest.newBuilder()
-              .setParent(ProjectName.of(projectId).toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .build();
 
       // Use the client to send the API request.

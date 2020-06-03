@@ -17,6 +17,7 @@
 package dlp.snippets;
 
 // [START dlp_inspect_string]
+
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.ByteContentItem.BytesType;
@@ -26,7 +27,7 @@ import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
-import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,9 +47,6 @@ public class InspectString {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
-      // Specify the project used for request.
-      ProjectName project = ProjectName.of(projectId);
-
       // Specify the type and content to be inspected.
       ByteContentItem byteItem =
           ByteContentItem.newBuilder()
@@ -71,7 +69,7 @@ public class InspectString {
       // Construct the Inspect request to be sent by the client.
       InspectContentRequest request =
           InspectContentRequest.newBuilder()
-              .setParent(project.toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setItem(item)
               .setInspectConfig(config)
               .build();

@@ -33,10 +33,10 @@ import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FieldId;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.InfoType;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.PrivacyMetric;
 import com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig;
 import com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField;
-import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.RiskAnalysisJobConfig;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
@@ -131,7 +131,7 @@ class RiskAnalysisKMap {
       // Build the request to be sent by the client
       CreateDlpJobRequest createDlpJobRequest =
           CreateDlpJobRequest.newBuilder()
-              .setParent(ProjectName.of(projectId).toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setRiskJob(riskAnalysisJobConfig)
               .build();
 

@@ -21,14 +21,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import com.google.cloud.dlp.v2.DlpServiceClient;
-import com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectTemplate;
-import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
-import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.LocationName;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -38,7 +36,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -72,7 +69,7 @@ public class TemplatesTests {
 
       CreateInspectTemplateRequest createInspectTemplateRequest =
           CreateInspectTemplateRequest.newBuilder()
-              .setParent(ProjectName.of(PROJECT_ID).toString())
+              .setParent(LocationName.of(PROJECT_ID, "global").toString())
               .setInspectTemplate(inspectTemplate)
               .build();
 

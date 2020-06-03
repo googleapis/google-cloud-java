@@ -25,7 +25,7 @@ import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectJobConfig;
 import com.google.privacy.dlp.v2.JobTrigger;
-import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.Schedule;
 import com.google.privacy.dlp.v2.StorageConfig;
 import com.google.privacy.dlp.v2.StorageConfig.TimespanConfig;
@@ -106,7 +106,7 @@ public class TriggersCreate {
       // Create scan request to be sent by client
       CreateJobTriggerRequest createJobTriggerRequest =
           CreateJobTriggerRequest.newBuilder()
-              .setParent(ProjectName.of(projectId).toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setJobTrigger(jobTrigger)
               .build();
 

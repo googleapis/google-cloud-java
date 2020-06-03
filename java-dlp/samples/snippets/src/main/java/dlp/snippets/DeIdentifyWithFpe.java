@@ -32,8 +32,8 @@ import com.google.privacy.dlp.v2.InfoTypeTransformations;
 import com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.KmsWrappedCryptoKey;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.PrimitiveTransformation;
-import com.google.privacy.dlp.v2.ProjectName;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.Arrays;
@@ -104,7 +104,7 @@ public class DeIdentifyWithFpe {
       // Combine configurations into a request for the service.
       DeidentifyContentRequest request =
           DeidentifyContentRequest.newBuilder()
-              .setParent(ProjectName.of(projectId).toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setItem(contentItem)
               .setInspectConfig(inspectConfig)
               .setDeidentifyConfig(deidentifyConfig)

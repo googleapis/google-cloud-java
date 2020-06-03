@@ -32,8 +32,8 @@ import com.google.privacy.dlp.v2.InfoTypeTransformations;
 import com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.KmsWrappedCryptoKey;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.PrimitiveTransformation;
-import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.protobuf.ByteString;
@@ -111,7 +111,7 @@ public class ReIdentifyWithFpe {
       // Combine configurations into a request for the service.
       ReidentifyContentRequest request =
           ReidentifyContentRequest.newBuilder()
-              .setParent(ProjectName.of(projectId).toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setItem(contentItem)
               .setInspectConfig(inspectConfig)
               .setReidentifyConfig(reidentifyConfig)

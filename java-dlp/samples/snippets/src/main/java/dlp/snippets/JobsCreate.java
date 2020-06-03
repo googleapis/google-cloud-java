@@ -27,7 +27,7 @@ import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectJobConfig;
 import com.google.privacy.dlp.v2.Likelihood;
-import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.StorageConfig;
 import com.google.privacy.dlp.v2.StorageConfig.TimespanConfig;
 import java.io.IOException;
@@ -106,7 +106,7 @@ public class JobsCreate {
       // Construct the job creation request to be sent by the client.
       CreateDlpJobRequest createDlpJobRequest =
           CreateDlpJobRequest.newBuilder()
-              .setParent(ProjectName.of(projectId).toString())
+              .setParent(LocationName.of(projectId, "global").toString())
               .setInspectJob(inspectJobConfig)
               .build();
 
