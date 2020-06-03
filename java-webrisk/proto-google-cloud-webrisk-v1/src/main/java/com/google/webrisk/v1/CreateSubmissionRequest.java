@@ -142,6 +142,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    * @return Whether the submission field is set.
    */
+  @java.lang.Override
   public boolean hasSubmission() {
     return submission_ != null;
   }
@@ -210,6 +213,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    *
    * @return The submission.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.Submission getSubmission() {
     return submission_ == null
         ? com.google.webrisk.v1.Submission.getDefaultInstance()
@@ -226,6 +230,7 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
    * .google.cloud.webrisk.v1.Submission submission = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.SubmissionOrBuilder getSubmissionOrBuilder() {
     return getSubmission();
   }

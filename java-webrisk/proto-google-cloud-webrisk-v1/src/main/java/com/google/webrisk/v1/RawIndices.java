@@ -143,6 +143,7 @@ public final class RawIndices extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the indices.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getIndicesList() {
     return indices_;
   }

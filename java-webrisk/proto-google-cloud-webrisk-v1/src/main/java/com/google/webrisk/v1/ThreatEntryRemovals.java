@@ -146,6 +146,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the rawIndices field is set.
    */
+  @java.lang.Override
   public boolean hasRawIndices() {
     return rawIndices_ != null;
   }
@@ -160,6 +161,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    *
    * @return The rawIndices.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.RawIndices getRawIndices() {
     return rawIndices_ == null
         ? com.google.webrisk.v1.RawIndices.getDefaultInstance()
@@ -174,6 +176,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.webrisk.v1.RawIndices raw_indices = 1;</code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.RawIndicesOrBuilder getRawIndicesOrBuilder() {
     return getRawIndices();
   }
@@ -194,6 +197,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the riceIndices field is set.
    */
+  @java.lang.Override
   public boolean hasRiceIndices() {
     return riceIndices_ != null;
   }
@@ -211,6 +215,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    *
    * @return The riceIndices.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.RiceDeltaEncoding getRiceIndices() {
     return riceIndices_ == null
         ? com.google.webrisk.v1.RiceDeltaEncoding.getDefaultInstance()
@@ -228,6 +233,7 @@ public final class ThreatEntryRemovals extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.webrisk.v1.RiceDeltaEncoding rice_indices = 2;</code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.RiceDeltaEncodingOrBuilder getRiceIndicesOrBuilder() {
     return getRiceIndices();
   }

@@ -140,6 +140,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
    *
    * @return The firstValue.
    */
+  @java.lang.Override
   public long getFirstValue() {
     return firstValue_;
   }
@@ -158,6 +159,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
    *
    * @return The riceParameter.
    */
+  @java.lang.Override
   public int getRiceParameter() {
     return riceParameter_;
   }
@@ -177,6 +179,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
    *
    * @return The entryCount.
    */
+  @java.lang.Override
   public int getEntryCount() {
     return entryCount_;
   }
@@ -194,6 +197,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
    *
    * @return The encodedData.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEncodedData() {
     return encodedData_;
   }
@@ -573,6 +577,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
      *
      * @return The firstValue.
      */
+    @java.lang.Override
     public long getFirstValue() {
       return firstValue_;
     }
@@ -629,6 +634,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
      *
      * @return The riceParameter.
      */
+    @java.lang.Override
     public int getRiceParameter() {
       return riceParameter_;
     }
@@ -684,6 +690,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
      *
      * @return The entryCount.
      */
+    @java.lang.Override
     public int getEntryCount() {
       return entryCount_;
     }
@@ -739,6 +746,7 @@ public final class RiceDeltaEncoding extends com.google.protobuf.GeneratedMessag
      *
      * @return The encodedData.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEncodedData() {
       return encodedData_;
     }

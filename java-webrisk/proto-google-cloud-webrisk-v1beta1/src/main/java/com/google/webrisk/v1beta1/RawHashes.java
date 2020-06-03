@@ -134,6 +134,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The prefixSize.
    */
+  @java.lang.Override
   public int getPrefixSize() {
     return prefixSize_;
   }
@@ -153,6 +154,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rawHashes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRawHashes() {
     return rawHashes_;
   }
@@ -503,6 +505,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The prefixSize.
      */
+    @java.lang.Override
     public int getPrefixSize() {
       return prefixSize_;
     }
@@ -558,6 +561,7 @@ public final class RawHashes extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The rawHashes.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRawHashes() {
       return rawHashes_;
     }

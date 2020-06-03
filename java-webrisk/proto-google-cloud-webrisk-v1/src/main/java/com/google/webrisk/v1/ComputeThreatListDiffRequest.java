@@ -373,6 +373,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * @return The maxDiffEntries.
      */
+    @java.lang.Override
     public int getMaxDiffEntries() {
       return maxDiffEntries_;
     }
@@ -392,6 +393,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * @return The maxDatabaseEntries.
      */
+    @java.lang.Override
     public int getMaxDatabaseEntries() {
       return maxDatabaseEntries_;
     }
@@ -421,6 +423,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * @return A list containing the supportedCompressions.
      */
+    @java.lang.Override
     public java.util.List<com.google.webrisk.v1.CompressionType> getSupportedCompressionsList() {
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.webrisk.v1.CompressionType>(
@@ -437,6 +440,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * @return The count of supportedCompressions.
      */
+    @java.lang.Override
     public int getSupportedCompressionsCount() {
       return supportedCompressions_.size();
     }
@@ -452,6 +456,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * @param index The index of the element to return.
      * @return The supportedCompressions at the given index.
      */
+    @java.lang.Override
     public com.google.webrisk.v1.CompressionType getSupportedCompressions(int index) {
       return supportedCompressions_converter_.convert(supportedCompressions_.get(index));
     }
@@ -466,6 +471,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * @return A list containing the enum numeric values on the wire for supportedCompressions.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer> getSupportedCompressionsValueList() {
       return supportedCompressions_;
     }
@@ -481,6 +487,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of supportedCompressions at the given index.
      */
+    @java.lang.Override
     public int getSupportedCompressionsValue(int index) {
       return supportedCompressions_.get(index);
     }
@@ -889,6 +896,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * @return The maxDiffEntries.
        */
+      @java.lang.Override
       public int getMaxDiffEntries() {
         return maxDiffEntries_;
       }
@@ -946,6 +954,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * @return The maxDatabaseEntries.
        */
+      @java.lang.Override
       public int getMaxDatabaseEntries() {
         return maxDatabaseEntries_;
       }
@@ -1284,6 +1293,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    * @return The enum numeric value on the wire for threatType.
    */
+  @java.lang.Override
   public int getThreatTypeValue() {
     return threatType_;
   }
@@ -1300,6 +1310,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    * @return The threatType.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ThreatType getThreatType() {
     @SuppressWarnings("deprecation")
     com.google.webrisk.v1.ThreatType result = com.google.webrisk.v1.ThreatType.valueOf(threatType_);
@@ -1323,6 +1334,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    * @return The versionToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionToken() {
     return versionToken_;
   }
@@ -1342,6 +1354,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    * @return Whether the constraints field is set.
    */
+  @java.lang.Override
   public boolean hasConstraints() {
     return constraints_ != null;
   }
@@ -1358,6 +1371,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    *
    * @return The constraints.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ComputeThreatListDiffRequest.Constraints getConstraints() {
     return constraints_ == null
         ? com.google.webrisk.v1.ComputeThreatListDiffRequest.Constraints.getDefaultInstance()
@@ -1374,6 +1388,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
    * .google.cloud.webrisk.v1.ComputeThreatListDiffRequest.Constraints constraints = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ComputeThreatListDiffRequest.ConstraintsOrBuilder
       getConstraintsOrBuilder() {
     return getConstraints();
@@ -1753,6 +1768,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * @return The enum numeric value on the wire for threatType.
      */
+    @java.lang.Override
     public int getThreatTypeValue() {
       return threatType_;
     }
@@ -1771,6 +1787,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setThreatTypeValue(int value) {
+
       threatType_ = value;
       onChanged();
       return this;
@@ -1788,6 +1805,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * @return The threatType.
      */
+    @java.lang.Override
     public com.google.webrisk.v1.ThreatType getThreatType() {
       @SuppressWarnings("deprecation")
       com.google.webrisk.v1.ThreatType result =
@@ -1853,6 +1871,7 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      *
      * @return The versionToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getVersionToken() {
       return versionToken_;
     }

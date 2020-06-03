@@ -416,6 +416,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      *
      * @return A list containing the threatTypes.
      */
+    @java.lang.Override
     public java.util.List<com.google.webrisk.v1beta1.ThreatType> getThreatTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.webrisk.v1beta1.ThreatType>(
@@ -433,6 +434,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The count of threatTypes.
      */
+    @java.lang.Override
     public int getThreatTypesCount() {
       return threatTypes_.size();
     }
@@ -449,6 +451,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @param index The index of the element to return.
      * @return The threatTypes at the given index.
      */
+    @java.lang.Override
     public com.google.webrisk.v1beta1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
     }
@@ -464,6 +467,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      *
      * @return A list containing the enum numeric values on the wire for threatTypes.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return threatTypes_;
     }
@@ -480,6 +484,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of threatTypes at the given index.
      */
+    @java.lang.Override
     public int getThreatTypesValue(int index) {
       return threatTypes_.get(index);
     }
@@ -500,6 +505,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The hash.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getHash() {
       return hash_;
     }
@@ -518,6 +524,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the expireTime field is set.
      */
+    @java.lang.Override
     public boolean hasExpireTime() {
       return expireTime_ != null;
     }
@@ -533,6 +540,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The expireTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getExpireTime() {
       return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
     }
@@ -546,6 +554,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
       return getExpireTime();
     }
@@ -1194,6 +1203,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The hash.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getHash() {
         return hash_;
       }
@@ -1498,6 +1508,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.webrisk.v1beta1.SearchHashesResponse.ThreatHash threats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash>
       getThreatsList() {
     return threats_;
@@ -1513,6 +1524,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.webrisk.v1beta1.SearchHashesResponse.ThreatHash threats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHashOrBuilder>
       getThreatsOrBuilderList() {
@@ -1529,6 +1541,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.webrisk.v1beta1.SearchHashesResponse.ThreatHash threats = 1;
    * </code>
    */
+  @java.lang.Override
   public int getThreatsCount() {
     return threats_.size();
   }
@@ -1543,6 +1556,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.webrisk.v1beta1.SearchHashesResponse.ThreatHash threats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash getThreats(int index) {
     return threats_.get(index);
   }
@@ -1557,6 +1571,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.webrisk.v1beta1.SearchHashesResponse.ThreatHash threats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHashOrBuilder getThreatsOrBuilder(
       int index) {
     return threats_.get(index);
@@ -1576,6 +1591,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the negativeExpireTime field is set.
    */
+  @java.lang.Override
   public boolean hasNegativeExpireTime() {
     return negativeExpireTime_ != null;
   }
@@ -1591,6 +1607,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The negativeExpireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getNegativeExpireTime() {
     return negativeExpireTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1606,6 +1623,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp negative_expire_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getNegativeExpireTimeOrBuilder() {
     return getNegativeExpireTime();
   }

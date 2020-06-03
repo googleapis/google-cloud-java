@@ -154,6 +154,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +217,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return A list containing the threatTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.webrisk.v1.ThreatType> getThreatTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.webrisk.v1.ThreatType>(threatTypes_, threatTypes_converter_);
@@ -232,6 +235,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The count of threatTypes.
    */
+  @java.lang.Override
   public int getThreatTypesCount() {
     return threatTypes_.size();
   }
@@ -249,6 +253,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * @param index The index of the element to return.
    * @return The threatTypes at the given index.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ThreatType getThreatTypes(int index) {
     return threatTypes_converter_.convert(threatTypes_.get(index));
   }
@@ -265,6 +270,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return A list containing the enum numeric values on the wire for threatTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getThreatTypesValueList() {
     return threatTypes_;
   }
@@ -282,6 +288,7 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of threatTypes at the given index.
    */
+  @java.lang.Override
   public int getThreatTypesValue(int index) {
     return threatTypes_.get(index);
   }

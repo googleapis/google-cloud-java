@@ -153,6 +153,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The hashPrefix.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHashPrefix() {
     return hashPrefix_;
   }
@@ -184,6 +185,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return A list containing the threatTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.webrisk.v1.ThreatType> getThreatTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.webrisk.v1.ThreatType>(threatTypes_, threatTypes_converter_);
@@ -201,6 +203,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The count of threatTypes.
    */
+  @java.lang.Override
   public int getThreatTypesCount() {
     return threatTypes_.size();
   }
@@ -218,6 +221,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * @param index The index of the element to return.
    * @return The threatTypes at the given index.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ThreatType getThreatTypes(int index) {
     return threatTypes_converter_.convert(threatTypes_.get(index));
   }
@@ -234,6 +238,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return A list containing the enum numeric values on the wire for threatTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getThreatTypesValueList() {
     return threatTypes_;
   }
@@ -251,6 +256,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of threatTypes at the given index.
    */
+  @java.lang.Override
   public int getThreatTypesValue(int index) {
     return threatTypes_.get(index);
   }
@@ -630,6 +636,7 @@ public final class SearchHashesRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The hashPrefix.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getHashPrefix() {
       return hashPrefix_;
     }

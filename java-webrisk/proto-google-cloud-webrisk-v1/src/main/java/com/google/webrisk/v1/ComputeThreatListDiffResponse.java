@@ -299,6 +299,10 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -457,6 +461,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      * @return The sha256.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSha256() {
       return sha256_;
     }
@@ -799,6 +804,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
        *
        * @return The sha256.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSha256() {
         return sha256_;
       }
@@ -913,6 +919,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return The enum numeric value on the wire for responseType.
    */
+  @java.lang.Override
   public int getResponseTypeValue() {
     return responseType_;
   }
@@ -929,6 +936,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return The responseType.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ComputeThreatListDiffResponse.ResponseType getResponseType() {
     @SuppressWarnings("deprecation")
     com.google.webrisk.v1.ComputeThreatListDiffResponse.ResponseType result =
@@ -951,6 +959,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return Whether the additions field is set.
    */
+  @java.lang.Override
   public boolean hasAdditions() {
     return additions_ != null;
   }
@@ -965,6 +974,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return The additions.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ThreatEntryAdditions getAdditions() {
     return additions_ == null
         ? com.google.webrisk.v1.ThreatEntryAdditions.getDefaultInstance()
@@ -979,6 +989,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.webrisk.v1.ThreatEntryAdditions additions = 5;</code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ThreatEntryAdditionsOrBuilder getAdditionsOrBuilder() {
     return getAdditions();
   }
@@ -997,6 +1008,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return Whether the removals field is set.
    */
+  @java.lang.Override
   public boolean hasRemovals() {
     return removals_ != null;
   }
@@ -1012,6 +1024,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return The removals.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ThreatEntryRemovals getRemovals() {
     return removals_ == null
         ? com.google.webrisk.v1.ThreatEntryRemovals.getDefaultInstance()
@@ -1027,6 +1040,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.webrisk.v1.ThreatEntryRemovals removals = 6;</code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ThreatEntryRemovalsOrBuilder getRemovalsOrBuilder() {
     return getRemovals();
   }
@@ -1046,6 +1060,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return The newVersionToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNewVersionToken() {
     return newVersionToken_;
   }
@@ -1066,6 +1081,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return Whether the checksum field is set.
    */
+  @java.lang.Override
   public boolean hasChecksum() {
     return checksum_ != null;
   }
@@ -1083,6 +1099,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return The checksum.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ComputeThreatListDiffResponse.Checksum getChecksum() {
     return checksum_ == null
         ? com.google.webrisk.v1.ComputeThreatListDiffResponse.Checksum.getDefaultInstance()
@@ -1100,6 +1117,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.webrisk.v1.ComputeThreatListDiffResponse.Checksum checksum = 8;</code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.ComputeThreatListDiffResponse.ChecksumOrBuilder
       getChecksumOrBuilder() {
     return getChecksum();
@@ -1121,6 +1139,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return Whether the recommendedNextDiff field is set.
    */
+  @java.lang.Override
   public boolean hasRecommendedNextDiff() {
     return recommendedNextDiff_ != null;
   }
@@ -1138,6 +1157,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * @return The recommendedNextDiff.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getRecommendedNextDiff() {
     return recommendedNextDiff_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1155,6 +1175,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
    *
    * <code>.google.protobuf.Timestamp recommended_next_diff = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRecommendedNextDiffOrBuilder() {
     return getRecommendedNextDiff();
   }
@@ -1615,6 +1636,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      * @return The enum numeric value on the wire for responseType.
      */
+    @java.lang.Override
     public int getResponseTypeValue() {
       return responseType_;
     }
@@ -1633,6 +1655,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setResponseTypeValue(int value) {
+
       responseType_ = value;
       onChanged();
       return this;
@@ -1650,6 +1673,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      * @return The responseType.
      */
+    @java.lang.Override
     public com.google.webrisk.v1.ComputeThreatListDiffResponse.ResponseType getResponseType() {
       @SuppressWarnings("deprecation")
       com.google.webrisk.v1.ComputeThreatListDiffResponse.ResponseType result =
@@ -2096,6 +2120,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
      *
      * @return The newVersionToken.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNewVersionToken() {
       return newVersionToken_;
     }

@@ -147,6 +147,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.webrisk.v1.RawHashes raw_hashes = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.webrisk.v1.RawHashes> getRawHashesList() {
     return rawHashes_;
   }
@@ -160,6 +161,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.webrisk.v1.RawHashes raw_hashes = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.webrisk.v1.RawHashesOrBuilder>
       getRawHashesOrBuilderList() {
     return rawHashes_;
@@ -174,6 +176,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.webrisk.v1.RawHashes raw_hashes = 1;</code>
    */
+  @java.lang.Override
   public int getRawHashesCount() {
     return rawHashes_.size();
   }
@@ -187,6 +190,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.webrisk.v1.RawHashes raw_hashes = 1;</code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.RawHashes getRawHashes(int index) {
     return rawHashes_.get(index);
   }
@@ -200,6 +204,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.webrisk.v1.RawHashes raw_hashes = 1;</code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.RawHashesOrBuilder getRawHashesOrBuilder(int index) {
     return rawHashes_.get(index);
   }
@@ -219,6 +224,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the riceHashes field is set.
    */
+  @java.lang.Override
   public boolean hasRiceHashes() {
     return riceHashes_ != null;
   }
@@ -235,6 +241,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    *
    * @return The riceHashes.
    */
+  @java.lang.Override
   public com.google.webrisk.v1.RiceDeltaEncoding getRiceHashes() {
     return riceHashes_ == null
         ? com.google.webrisk.v1.RiceDeltaEncoding.getDefaultInstance()
@@ -251,6 +258,7 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.webrisk.v1.RiceDeltaEncoding rice_hashes = 2;</code>
    */
+  @java.lang.Override
   public com.google.webrisk.v1.RiceDeltaEncodingOrBuilder getRiceHashesOrBuilder() {
     return getRiceHashes();
   }
