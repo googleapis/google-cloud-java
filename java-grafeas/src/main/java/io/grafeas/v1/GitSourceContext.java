@@ -131,6 +131,7 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
    *
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -153,6 +154,7 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +180,7 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
    *
    * @return The revisionId.
    */
+  @java.lang.Override
   public java.lang.String getRevisionId() {
     java.lang.Object ref = revisionId_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +203,7 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for revisionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRevisionIdBytes() {
     java.lang.Object ref = revisionId_;
     if (ref instanceof java.lang.String) {

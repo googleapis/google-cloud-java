@@ -142,6 +142,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resourceUrl.
    */
+  @java.lang.Override
   public java.lang.String getResourceUrl() {
     java.lang.Object ref = resourceUrl_;
     if (ref instanceof java.lang.String) {
@@ -165,6 +166,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for resourceUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceUrlBytes() {
     java.lang.Object ref = resourceUrl_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +192,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the fingerprint field is set.
    */
+  @java.lang.Override
   public boolean hasFingerprint() {
     return fingerprint_ != null;
   }
@@ -204,6 +207,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The fingerprint.
    */
+  @java.lang.Override
   public io.grafeas.v1.Fingerprint getFingerprint() {
     return fingerprint_ == null ? io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
   }
@@ -216,6 +220,7 @@ public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.FingerprintOrBuilder getFingerprintOrBuilder() {
     return getFingerprint();
   }

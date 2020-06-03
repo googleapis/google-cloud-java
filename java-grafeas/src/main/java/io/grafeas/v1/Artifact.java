@@ -146,6 +146,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The checksum.
    */
+  @java.lang.Override
   public java.lang.String getChecksum() {
     java.lang.Object ref = checksum_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for checksum.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getChecksumBytes() {
     java.lang.Object ref = checksum_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +221,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {

@@ -129,6 +129,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Note> getNotesList() {
     return notes_;
   }
@@ -141,6 +142,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.NoteOrBuilder> getNotesOrBuilderList() {
     return notes_;
   }
@@ -153,6 +155,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public int getNotesCount() {
     return notes_.size();
   }
@@ -165,6 +168,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Note getNotes(int index) {
     return notes_.get(index);
   }
@@ -177,6 +181,7 @@ public final class BatchCreateNotesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.NoteOrBuilder getNotesOrBuilder(int index) {
     return notes_.get(index);
   }

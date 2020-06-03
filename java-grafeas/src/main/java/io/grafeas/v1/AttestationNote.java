@@ -266,6 +266,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      *
      * @return The humanReadableName.
      */
+    @java.lang.Override
     public java.lang.String getHumanReadableName() {
       java.lang.Object ref = humanReadableName_;
       if (ref instanceof java.lang.String) {
@@ -289,6 +290,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      *
      * @return The bytes for humanReadableName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getHumanReadableNameBytes() {
       java.lang.Object ref = humanReadableName_;
       if (ref instanceof java.lang.String) {
@@ -798,6 +800,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the hint field is set.
    */
+  @java.lang.Override
   public boolean hasHint() {
     return hint_ != null;
   }
@@ -812,6 +815,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
    *
    * @return The hint.
    */
+  @java.lang.Override
   public io.grafeas.v1.AttestationNote.Hint getHint() {
     return hint_ == null ? io.grafeas.v1.AttestationNote.Hint.getDefaultInstance() : hint_;
   }
@@ -824,6 +828,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.AttestationNote.HintOrBuilder getHintOrBuilder() {
     return getHint();
   }

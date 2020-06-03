@@ -169,6 +169,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The package.
    */
+  @java.lang.Override
   public java.lang.String getPackage() {
     java.lang.Object ref = package_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +192,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for package.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPackageBytes() {
     java.lang.Object ref = package_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +219,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the version field is set.
    */
+  @java.lang.Override
   public boolean hasVersion() {
     return version_ != null;
   }
@@ -232,6 +235,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public io.grafeas.v1.Version getVersion() {
     return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
@@ -245,6 +249,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.Version version = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.VersionOrBuilder getVersionOrBuilder() {
     return getVersion();
   }
@@ -260,6 +265,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.UpgradeDistribution> getDistributionsList() {
     return distributions_;
   }
@@ -272,6 +278,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.UpgradeDistributionOrBuilder>
       getDistributionsOrBuilderList() {
     return distributions_;
@@ -285,6 +292,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
+  @java.lang.Override
   public int getDistributionsCount() {
     return distributions_.size();
   }
@@ -297,6 +305,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.UpgradeDistribution getDistributions(int index) {
     return distributions_.get(index);
   }
@@ -309,6 +318,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionsOrBuilder(int index) {
     return distributions_.get(index);
   }
@@ -326,6 +336,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the windowsUpdate field is set.
    */
+  @java.lang.Override
   public boolean hasWindowsUpdate() {
     return windowsUpdate_ != null;
   }
@@ -340,6 +351,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The windowsUpdate.
    */
+  @java.lang.Override
   public io.grafeas.v1.WindowsUpdate getWindowsUpdate() {
     return windowsUpdate_ == null
         ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
@@ -354,6 +366,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.WindowsUpdateOrBuilder getWindowsUpdateOrBuilder() {
     return getWindowsUpdate();
   }

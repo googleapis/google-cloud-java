@@ -323,6 +323,10 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -368,6 +372,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The userEmail.
    */
+  @java.lang.Override
   public java.lang.String getUserEmail() {
     java.lang.Object ref = userEmail_;
     if (ref instanceof java.lang.String) {
@@ -390,6 +395,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for userEmail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserEmailBytes() {
     java.lang.Object ref = userEmail_;
     if (ref instanceof java.lang.String) {
@@ -415,6 +421,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the deployTime field is set.
    */
+  @java.lang.Override
   public boolean hasDeployTime() {
     return deployTime_ != null;
   }
@@ -429,6 +436,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The deployTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDeployTime() {
     return deployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deployTime_;
   }
@@ -441,6 +449,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeployTimeOrBuilder() {
     return getDeployTime();
   }
@@ -458,6 +467,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the undeployTime field is set.
    */
+  @java.lang.Override
   public boolean hasUndeployTime() {
     return undeployTime_ != null;
   }
@@ -472,6 +482,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The undeployTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUndeployTime() {
     return undeployTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -486,6 +497,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUndeployTimeOrBuilder() {
     return getUndeployTime();
   }
@@ -503,6 +515,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The config.
    */
+  @java.lang.Override
   public java.lang.String getConfig() {
     java.lang.Object ref = config_;
     if (ref instanceof java.lang.String) {
@@ -525,6 +538,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for config.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getConfigBytes() {
     java.lang.Object ref = config_;
     if (ref instanceof java.lang.String) {
@@ -550,6 +564,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The address.
    */
+  @java.lang.Override
   public java.lang.String getAddress() {
     java.lang.Object ref = address_;
     if (ref instanceof java.lang.String) {
@@ -572,6 +587,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for address.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAddressBytes() {
     java.lang.Object ref = address_;
     if (ref instanceof java.lang.String) {
@@ -662,6 +678,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for platform.
    */
+  @java.lang.Override
   public int getPlatformValue() {
     return platform_;
   }
@@ -676,6 +693,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
    *
    * @return The platform.
    */
+  @java.lang.Override
   public io.grafeas.v1.DeploymentOccurrence.Platform getPlatform() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.DeploymentOccurrence.Platform result =
@@ -2008,6 +2026,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for platform.
      */
+    @java.lang.Override
     public int getPlatformValue() {
       return platform_;
     }
@@ -2024,6 +2043,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setPlatformValue(int value) {
+
       platform_ = value;
       onChanged();
       return this;
@@ -2039,6 +2059,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      *
      * @return The platform.
      */
+    @java.lang.Override
     public io.grafeas.v1.DeploymentOccurrence.Platform getPlatform() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.DeploymentOccurrence.Platform result =

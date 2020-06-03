@@ -128,6 +128,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public java.lang.String getType() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -150,6 +151,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for type.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -175,6 +177,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValue() {
     return value_;
   }
@@ -620,6 +623,7 @@ public final class Hash extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }

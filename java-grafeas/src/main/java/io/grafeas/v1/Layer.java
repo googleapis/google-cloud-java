@@ -131,6 +131,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The directive.
    */
+  @java.lang.Override
   public java.lang.String getDirective() {
     java.lang.Object ref = directive_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for directive.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDirectiveBytes() {
     java.lang.Object ref = directive_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +181,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The arguments.
    */
+  @java.lang.Override
   public java.lang.String getArguments() {
     java.lang.Object ref = arguments_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +204,7 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for arguments.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getArgumentsBytes() {
     java.lang.Object ref = arguments_;
     if (ref instanceof java.lang.String) {

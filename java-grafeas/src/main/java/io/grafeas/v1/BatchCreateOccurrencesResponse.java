@@ -131,6 +131,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Occurrence> getOccurrencesList() {
     return occurrences_;
   }
@@ -143,6 +144,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> getOccurrencesOrBuilderList() {
     return occurrences_;
   }
@@ -155,6 +157,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public int getOccurrencesCount() {
     return occurrences_.size();
   }
@@ -167,6 +170,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Occurrence getOccurrences(int index) {
     return occurrences_.get(index);
   }
@@ -179,6 +183,7 @@ public final class BatchCreateOccurrencesResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
     return occurrences_.get(index);
   }

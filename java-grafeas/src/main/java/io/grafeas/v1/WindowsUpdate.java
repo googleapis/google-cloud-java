@@ -342,6 +342,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The updateId.
      */
+    @java.lang.Override
     public java.lang.String getUpdateId() {
       java.lang.Object ref = updateId_;
       if (ref instanceof java.lang.String) {
@@ -364,6 +365,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for updateId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUpdateIdBytes() {
       java.lang.Object ref = updateId_;
       if (ref instanceof java.lang.String) {
@@ -389,6 +391,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The revision.
      */
+    @java.lang.Override
     public int getRevision() {
       return revision_;
     }
@@ -843,6 +846,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The revision.
        */
+      @java.lang.Override
       public int getRevision() {
         return revision_;
       }
@@ -1102,6 +1106,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The categoryId.
      */
+    @java.lang.Override
     public java.lang.String getCategoryId() {
       java.lang.Object ref = categoryId_;
       if (ref instanceof java.lang.String) {
@@ -1124,6 +1129,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for categoryId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCategoryIdBytes() {
       java.lang.Object ref = categoryId_;
       if (ref instanceof java.lang.String) {
@@ -1149,6 +1155,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1171,6 +1178,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1793,6 +1801,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the identity field is set.
    */
+  @java.lang.Override
   public boolean hasIdentity() {
     return identity_ != null;
   }
@@ -1807,6 +1816,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The identity.
    */
+  @java.lang.Override
   public io.grafeas.v1.WindowsUpdate.Identity getIdentity() {
     return identity_ == null
         ? io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance()
@@ -1821,6 +1831,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.WindowsUpdate.IdentityOrBuilder getIdentityOrBuilder() {
     return getIdentity();
   }
@@ -1838,6 +1849,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -1860,6 +1872,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -1885,6 +1898,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1907,6 +1921,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1930,6 +1945,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.WindowsUpdate.Category> getCategoriesList() {
     return categories_;
   }
@@ -1942,6 +1958,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>
       getCategoriesOrBuilderList() {
     return categories_;
@@ -1955,6 +1972,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
+  @java.lang.Override
   public int getCategoriesCount() {
     return categories_.size();
   }
@@ -1967,6 +1985,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.WindowsUpdate.Category getCategories(int index) {
     return categories_.get(index);
   }
@@ -1979,6 +1998,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.WindowsUpdate.CategoryOrBuilder getCategoriesOrBuilder(int index) {
     return categories_.get(index);
   }
@@ -2061,6 +2081,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The supportUrl.
    */
+  @java.lang.Override
   public java.lang.String getSupportUrl() {
     java.lang.Object ref = supportUrl_;
     if (ref instanceof java.lang.String) {
@@ -2083,6 +2104,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for supportUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSupportUrlBytes() {
     java.lang.Object ref = supportUrl_;
     if (ref instanceof java.lang.String) {
@@ -2108,6 +2130,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastPublishedTimestamp field is set.
    */
+  @java.lang.Override
   public boolean hasLastPublishedTimestamp() {
     return lastPublishedTimestamp_ != null;
   }
@@ -2122,6 +2145,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastPublishedTimestamp.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastPublishedTimestamp() {
     return lastPublishedTimestamp_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -2136,6 +2160,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastPublishedTimestampOrBuilder() {
     return getLastPublishedTimestamp();
   }

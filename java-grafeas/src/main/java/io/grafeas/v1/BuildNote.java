@@ -123,6 +123,7 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The builderVersion.
    */
+  @java.lang.Override
   public java.lang.String getBuilderVersion() {
     java.lang.Object ref = builderVersion_;
     if (ref instanceof java.lang.String) {
@@ -145,6 +146,7 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for builderVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBuilderVersionBytes() {
     java.lang.Object ref = builderVersion_;
     if (ref instanceof java.lang.String) {

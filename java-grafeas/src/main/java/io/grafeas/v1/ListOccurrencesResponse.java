@@ -138,6 +138,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Occurrence> getOccurrencesList() {
     return occurrences_;
   }
@@ -150,6 +151,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> getOccurrencesOrBuilderList() {
     return occurrences_;
   }
@@ -162,6 +164,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public int getOccurrencesCount() {
     return occurrences_.size();
   }
@@ -174,6 +177,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Occurrence getOccurrences(int index) {
     return occurrences_.get(index);
   }
@@ -186,6 +190,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
     return occurrences_.get(index);
   }
@@ -205,6 +210,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +235,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

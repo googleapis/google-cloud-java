@@ -139,6 +139,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +186,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Distribution> getDistributionList() {
     return distribution_;
   }
@@ -196,6 +199,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.DistributionOrBuilder>
       getDistributionOrBuilderList() {
     return distribution_;
@@ -209,6 +213,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public int getDistributionCount() {
     return distribution_.size();
   }
@@ -221,6 +226,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Distribution getDistribution(int index) {
     return distribution_.get(index);
   }
@@ -233,6 +239,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.DistributionOrBuilder getDistributionOrBuilder(int index) {
     return distribution_.get(index);
   }

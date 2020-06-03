@@ -279,6 +279,10 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -502,6 +506,10 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -547,6 +555,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for continuousAnalysis.
    */
+  @java.lang.Override
   public int getContinuousAnalysisValue() {
     return continuousAnalysis_;
   }
@@ -561,6 +570,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return The continuousAnalysis.
    */
+  @java.lang.Override
   public io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis getContinuousAnalysis() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis result =
@@ -583,6 +593,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for analysisStatus.
    */
+  @java.lang.Override
   public int getAnalysisStatusValue() {
     return analysisStatus_;
   }
@@ -597,6 +608,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return The analysisStatus.
    */
+  @java.lang.Override
   public io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus getAnalysisStatus() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus result =
@@ -619,6 +631,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the analysisStatusError field is set.
    */
+  @java.lang.Override
   public boolean hasAnalysisStatusError() {
     return analysisStatusError_ != null;
   }
@@ -635,6 +648,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return The analysisStatusError.
    */
+  @java.lang.Override
   public com.google.rpc.Status getAnalysisStatusError() {
     return analysisStatusError_ == null
         ? com.google.rpc.Status.getDefaultInstance()
@@ -651,6 +665,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.rpc.Status analysis_status_error = 3;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getAnalysisStatusErrorOrBuilder() {
     return getAnalysisStatusError();
   }
@@ -668,6 +683,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return The cpe.
    */
+  @java.lang.Override
   public java.lang.String getCpe() {
     java.lang.Object ref = cpe_;
     if (ref instanceof java.lang.String) {
@@ -690,6 +706,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for cpe.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCpeBytes() {
     java.lang.Object ref = cpe_;
     if (ref instanceof java.lang.String) {
@@ -715,6 +732,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the lastScanTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastScanTime() {
     return lastScanTime_ != null;
   }
@@ -729,6 +747,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * @return The lastScanTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastScanTime() {
     return lastScanTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -743,6 +762,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastScanTimeOrBuilder() {
     return getLastScanTime();
   }
@@ -1164,6 +1184,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for continuousAnalysis.
      */
+    @java.lang.Override
     public int getContinuousAnalysisValue() {
       return continuousAnalysis_;
     }
@@ -1180,6 +1201,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setContinuousAnalysisValue(int value) {
+
       continuousAnalysis_ = value;
       onChanged();
       return this;
@@ -1195,6 +1217,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * @return The continuousAnalysis.
      */
+    @java.lang.Override
     public io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis getContinuousAnalysis() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis result =
@@ -1255,6 +1278,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for analysisStatus.
      */
+    @java.lang.Override
     public int getAnalysisStatusValue() {
       return analysisStatus_;
     }
@@ -1271,6 +1295,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setAnalysisStatusValue(int value) {
+
       analysisStatus_ = value;
       onChanged();
       return this;
@@ -1286,6 +1311,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * @return The analysisStatus.
      */
+    @java.lang.Override
     public io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus getAnalysisStatus() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus result =

@@ -143,6 +143,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Occurrence> getOccurrencesList() {
     return occurrences_;
   }
@@ -207,6 +210,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> getOccurrencesOrBuilderList() {
     return occurrences_;
   }
@@ -221,6 +225,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getOccurrencesCount() {
     return occurrences_.size();
   }
@@ -235,6 +240,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Occurrence getOccurrences(int index) {
     return occurrences_.get(index);
   }
@@ -249,6 +255,7 @@ public final class BatchCreateOccurrencesRequest extends com.google.protobuf.Gen
    * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
     return occurrences_.get(index);
   }

@@ -146,6 +146,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cpeUri.
    */
+  @java.lang.Override
   public java.lang.String getCpeUri() {
     java.lang.Object ref = cpeUri_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for cpeUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCpeUriBytes() {
     java.lang.Object ref = cpeUri_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the version field is set.
    */
+  @java.lang.Override
   public boolean hasVersion() {
     return version_ != null;
   }
@@ -208,6 +211,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public io.grafeas.v1.Version getVersion() {
     return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
@@ -220,6 +224,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.Version version = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.VersionOrBuilder getVersionOrBuilder() {
     return getVersion();
   }
@@ -237,6 +242,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The path.
    */
+  @java.lang.Override
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
@@ -259,6 +265,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for path.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPathBytes() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {

@@ -136,6 +136,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -158,6 +159,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +184,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Location> getLocationList() {
     return location_;
   }
@@ -195,6 +198,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.LocationOrBuilder> getLocationOrBuilderList() {
     return location_;
   }
@@ -208,6 +212,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
+  @java.lang.Override
   public int getLocationCount() {
     return location_.size();
   }
@@ -221,6 +226,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Location getLocation(int index) {
     return location_.get(index);
   }
@@ -234,6 +240,7 @@ public final class PackageOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1.Location location = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.LocationOrBuilder getLocationOrBuilder(int index) {
     return location_.get(index);
   }

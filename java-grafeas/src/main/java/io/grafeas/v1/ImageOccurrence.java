@@ -158,6 +158,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the fingerprint field is set.
    */
+  @java.lang.Override
   public boolean hasFingerprint() {
     return fingerprint_ != null;
   }
@@ -172,6 +173,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * @return The fingerprint.
    */
+  @java.lang.Override
   public io.grafeas.v1.Fingerprint getFingerprint() {
     return fingerprint_ == null ? io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
   }
@@ -184,6 +186,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.grafeas.v1.Fingerprint fingerprint = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.FingerprintOrBuilder getFingerprintOrBuilder() {
     return getFingerprint();
   }
@@ -202,6 +205,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * @return The distance.
    */
+  @java.lang.Override
   public int getDistance() {
     return distance_;
   }
@@ -219,6 +223,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Layer> getLayerInfoList() {
     return layerInfo_;
   }
@@ -233,6 +238,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.LayerOrBuilder> getLayerInfoOrBuilderList() {
     return layerInfo_;
   }
@@ -247,6 +253,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
+  @java.lang.Override
   public int getLayerInfoCount() {
     return layerInfo_.size();
   }
@@ -261,6 +268,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Layer getLayerInfo(int index) {
     return layerInfo_.get(index);
   }
@@ -275,6 +283,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .grafeas.v1.Layer layer_info = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.LayerOrBuilder getLayerInfoOrBuilder(int index) {
     return layerInfo_.get(index);
   }
@@ -293,6 +302,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * @return The baseResourceUrl.
    */
+  @java.lang.Override
   public java.lang.String getBaseResourceUrl() {
     java.lang.Object ref = baseResourceUrl_;
     if (ref instanceof java.lang.String) {
@@ -316,6 +326,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for baseResourceUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBaseResourceUrlBytes() {
     java.lang.Object ref = baseResourceUrl_;
     if (ref instanceof java.lang.String) {
@@ -932,6 +943,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
      *
      * @return The distance.
      */
+    @java.lang.Override
     public int getDistance() {
       return distance_;
     }

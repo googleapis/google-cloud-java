@@ -179,6 +179,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The artifactStorageSourceUri.
    */
+  @java.lang.Override
   public java.lang.String getArtifactStorageSourceUri() {
     java.lang.Object ref = artifactStorageSourceUri_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +203,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for artifactStorageSourceUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getArtifactStorageSourceUriBytes() {
     java.lang.Object ref = artifactStorageSourceUri_;
     if (ref instanceof java.lang.String) {
@@ -256,6 +258,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
+  @java.lang.Override
   public boolean containsFileHashes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -263,6 +266,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     return internalGetFileHashes().getMap().containsKey(key);
   }
   /** Use {@link #getFileHashesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getFileHashes() {
     return getFileHashesMap();
@@ -281,6 +285,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getFileHashesMap() {
     return internalGetFileHashes().getMap();
   }
@@ -298,6 +303,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.FileHashes getFileHashesOrDefault(
       java.lang.String key, io.grafeas.v1.FileHashes defaultValue) {
     if (key == null) {
@@ -321,6 +327,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.FileHashes getFileHashesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -346,6 +353,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the context field is set.
    */
+  @java.lang.Override
   public boolean hasContext() {
     return context_ != null;
   }
@@ -360,6 +368,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The context.
    */
+  @java.lang.Override
   public io.grafeas.v1.SourceContext getContext() {
     return context_ == null ? io.grafeas.v1.SourceContext.getDefaultInstance() : context_;
   }
@@ -372,6 +381,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.SourceContext context = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.SourceContextOrBuilder getContextOrBuilder() {
     return getContext();
   }
@@ -390,6 +400,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.SourceContext> getAdditionalContextsList() {
     return additionalContexts_;
   }
@@ -405,6 +416,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.SourceContextOrBuilder>
       getAdditionalContextsOrBuilderList() {
     return additionalContexts_;
@@ -421,6 +433,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
+  @java.lang.Override
   public int getAdditionalContextsCount() {
     return additionalContexts_.size();
   }
@@ -436,6 +449,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.SourceContext getAdditionalContexts(int index) {
     return additionalContexts_.get(index);
   }
@@ -451,6 +465,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.SourceContextOrBuilder getAdditionalContextsOrBuilder(int index) {
     return additionalContexts_.get(index);
   }
@@ -1046,6 +1061,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
      */
+    @java.lang.Override
     public boolean containsFileHashes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1053,6 +1069,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       return internalGetFileHashes().getMap().containsKey(key);
     }
     /** Use {@link #getFileHashesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getFileHashes() {
       return getFileHashesMap();
@@ -1071,6 +1088,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getFileHashesMap() {
       return internalGetFileHashes().getMap();
     }
@@ -1088,6 +1106,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1.FileHashes getFileHashesOrDefault(
         java.lang.String key, io.grafeas.v1.FileHashes defaultValue) {
       if (key == null) {
@@ -1111,6 +1130,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1.FileHashes getFileHashesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

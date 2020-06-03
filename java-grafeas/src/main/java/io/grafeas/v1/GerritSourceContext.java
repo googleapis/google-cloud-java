@@ -200,6 +200,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * @return The hostUri.
    */
+  @java.lang.Override
   public java.lang.String getHostUri() {
     java.lang.Object ref = hostUri_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +223,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for hostUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHostUriBytes() {
     java.lang.Object ref = hostUri_;
     if (ref instanceof java.lang.String) {
@@ -249,6 +251,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * @return The gerritProject.
    */
+  @java.lang.Override
   public java.lang.String getGerritProject() {
     java.lang.Object ref = gerritProject_;
     if (ref instanceof java.lang.String) {
@@ -273,6 +276,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for gerritProject.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGerritProjectBytes() {
     java.lang.Object ref = gerritProject_;
     if (ref instanceof java.lang.String) {
@@ -353,6 +357,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the aliasContext field is set.
    */
+  @java.lang.Override
   public boolean hasAliasContext() {
     return revisionCase_ == 4;
   }
@@ -367,6 +372,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * @return The aliasContext.
    */
+  @java.lang.Override
   public io.grafeas.v1.AliasContext getAliasContext() {
     if (revisionCase_ == 4) {
       return (io.grafeas.v1.AliasContext) revision_;
@@ -382,6 +388,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    *
    * <code>.grafeas.v1.AliasContext alias_context = 4;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.AliasContextOrBuilder getAliasContextOrBuilder() {
     if (revisionCase_ == 4) {
       return (io.grafeas.v1.AliasContext) revision_;
@@ -1031,6 +1038,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * @return The revisionId.
      */
+    @java.lang.Override
     public java.lang.String getRevisionId() {
       java.lang.Object ref = "";
       if (revisionCase_ == 3) {
@@ -1058,6 +1066,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * @return The bytes for revisionId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRevisionIdBytes() {
       java.lang.Object ref = "";
       if (revisionCase_ == 3) {
@@ -1153,6 +1162,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the aliasContext field is set.
      */
+    @java.lang.Override
     public boolean hasAliasContext() {
       return revisionCase_ == 4;
     }
@@ -1167,6 +1177,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * @return The aliasContext.
      */
+    @java.lang.Override
     public io.grafeas.v1.AliasContext getAliasContext() {
       if (aliasContextBuilder_ == null) {
         if (revisionCase_ == 4) {
@@ -1296,6 +1307,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      *
      * <code>.grafeas.v1.AliasContext alias_context = 4;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1.AliasContextOrBuilder getAliasContextOrBuilder() {
       if ((revisionCase_ == 4) && (aliasContextBuilder_ != null)) {
         return aliasContextBuilder_.getMessageOrBuilder();

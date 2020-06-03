@@ -125,6 +125,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for analysisKind.
    */
+  @java.lang.Override
   public int getAnalysisKindValue() {
     return analysisKind_;
   }
@@ -140,6 +141,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The analysisKind.
    */
+  @java.lang.Override
   public io.grafeas.v1.NoteKind getAnalysisKind() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.valueOf(analysisKind_);
@@ -469,6 +471,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for analysisKind.
      */
+    @java.lang.Override
     public int getAnalysisKindValue() {
       return analysisKind_;
     }
@@ -486,6 +489,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnalysisKindValue(int value) {
+
       analysisKind_ = value;
       onChanged();
       return this;
@@ -502,6 +506,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The analysisKind.
      */
+    @java.lang.Override
     public io.grafeas.v1.NoteKind getAnalysisKind() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.valueOf(analysisKind_);

@@ -157,6 +157,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +183,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -207,6 +209,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return Whether the occurrence field is set.
    */
+  @java.lang.Override
   public boolean hasOccurrence() {
     return occurrence_ != null;
   }
@@ -221,6 +224,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return The occurrence.
    */
+  @java.lang.Override
   public io.grafeas.v1.Occurrence getOccurrence() {
     return occurrence_ == null ? io.grafeas.v1.Occurrence.getDefaultInstance() : occurrence_;
   }
@@ -233,6 +237,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * <code>.grafeas.v1.Occurrence occurrence = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.OccurrenceOrBuilder getOccurrenceOrBuilder() {
     return getOccurrence();
   }
@@ -250,6 +255,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -264,6 +270,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -276,6 +283,7 @@ public final class UpdateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

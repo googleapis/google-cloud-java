@@ -234,6 +234,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the cloudRepo field is set.
    */
+  @java.lang.Override
   public boolean hasCloudRepo() {
     return contextCase_ == 1;
   }
@@ -248,6 +249,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cloudRepo.
    */
+  @java.lang.Override
   public io.grafeas.v1.CloudRepoSourceContext getCloudRepo() {
     if (contextCase_ == 1) {
       return (io.grafeas.v1.CloudRepoSourceContext) context_;
@@ -263,6 +265,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.CloudRepoSourceContext cloud_repo = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.CloudRepoSourceContextOrBuilder getCloudRepoOrBuilder() {
     if (contextCase_ == 1) {
       return (io.grafeas.v1.CloudRepoSourceContext) context_;
@@ -282,6 +285,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gerrit field is set.
    */
+  @java.lang.Override
   public boolean hasGerrit() {
     return contextCase_ == 2;
   }
@@ -296,6 +300,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gerrit.
    */
+  @java.lang.Override
   public io.grafeas.v1.GerritSourceContext getGerrit() {
     if (contextCase_ == 2) {
       return (io.grafeas.v1.GerritSourceContext) context_;
@@ -311,6 +316,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.GerritSourceContext gerrit = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.GerritSourceContextOrBuilder getGerritOrBuilder() {
     if (contextCase_ == 2) {
       return (io.grafeas.v1.GerritSourceContext) context_;
@@ -330,6 +336,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the git field is set.
    */
+  @java.lang.Override
   public boolean hasGit() {
     return contextCase_ == 3;
   }
@@ -344,6 +351,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The git.
    */
+  @java.lang.Override
   public io.grafeas.v1.GitSourceContext getGit() {
     if (contextCase_ == 3) {
       return (io.grafeas.v1.GitSourceContext) context_;
@@ -359,6 +367,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1.GitSourceContext git = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.GitSourceContextOrBuilder getGitOrBuilder() {
     if (contextCase_ == 3) {
       return (io.grafeas.v1.GitSourceContext) context_;
@@ -400,6 +409,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -407,6 +417,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -420,6 +431,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -432,6 +444,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -448,6 +461,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -926,6 +940,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the cloudRepo field is set.
      */
+    @java.lang.Override
     public boolean hasCloudRepo() {
       return contextCase_ == 1;
     }
@@ -940,6 +955,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The cloudRepo.
      */
+    @java.lang.Override
     public io.grafeas.v1.CloudRepoSourceContext getCloudRepo() {
       if (cloudRepoBuilder_ == null) {
         if (contextCase_ == 1) {
@@ -1071,6 +1087,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1.CloudRepoSourceContext cloud_repo = 1;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1.CloudRepoSourceContextOrBuilder getCloudRepoOrBuilder() {
       if ((contextCase_ == 1) && (cloudRepoBuilder_ != null)) {
         return cloudRepoBuilder_.getMessageOrBuilder();
@@ -1129,6 +1146,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gerrit field is set.
      */
+    @java.lang.Override
     public boolean hasGerrit() {
       return contextCase_ == 2;
     }
@@ -1143,6 +1161,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gerrit.
      */
+    @java.lang.Override
     public io.grafeas.v1.GerritSourceContext getGerrit() {
       if (gerritBuilder_ == null) {
         if (contextCase_ == 2) {
@@ -1274,6 +1293,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1.GerritSourceContext gerrit = 2;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1.GerritSourceContextOrBuilder getGerritOrBuilder() {
       if ((contextCase_ == 2) && (gerritBuilder_ != null)) {
         return gerritBuilder_.getMessageOrBuilder();
@@ -1332,6 +1352,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the git field is set.
      */
+    @java.lang.Override
     public boolean hasGit() {
       return contextCase_ == 3;
     }
@@ -1346,6 +1367,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The git.
      */
+    @java.lang.Override
     public io.grafeas.v1.GitSourceContext getGit() {
       if (gitBuilder_ == null) {
         if (contextCase_ == 3) {
@@ -1475,6 +1497,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1.GitSourceContext git = 3;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1.GitSourceContextOrBuilder getGitOrBuilder() {
       if ((contextCase_ == 3) && (gitBuilder_ != null)) {
         return gitBuilder_.getMessageOrBuilder();
@@ -1551,6 +1574,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1558,6 +1582,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1571,6 +1596,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1583,6 +1609,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1600,6 +1627,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

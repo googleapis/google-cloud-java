@@ -198,6 +198,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * @return Whether the repoId field is set.
    */
+  @java.lang.Override
   public boolean hasRepoId() {
     return repoId_ != null;
   }
@@ -212,6 +213,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * @return The repoId.
    */
+  @java.lang.Override
   public io.grafeas.v1.RepoId getRepoId() {
     return repoId_ == null ? io.grafeas.v1.RepoId.getDefaultInstance() : repoId_;
   }
@@ -224,6 +226,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * <code>.grafeas.v1.RepoId repo_id = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.RepoIdOrBuilder getRepoIdOrBuilder() {
     return getRepoId();
   }
@@ -296,6 +299,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * @return Whether the aliasContext field is set.
    */
+  @java.lang.Override
   public boolean hasAliasContext() {
     return revisionCase_ == 3;
   }
@@ -310,6 +314,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * @return The aliasContext.
    */
+  @java.lang.Override
   public io.grafeas.v1.AliasContext getAliasContext() {
     if (revisionCase_ == 3) {
       return (io.grafeas.v1.AliasContext) revision_;
@@ -325,6 +330,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
    *
    * <code>.grafeas.v1.AliasContext alias_context = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.AliasContextOrBuilder getAliasContextOrBuilder() {
     if (revisionCase_ == 3) {
       return (io.grafeas.v1.AliasContext) revision_;
@@ -921,6 +927,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * @return The revisionId.
      */
+    @java.lang.Override
     public java.lang.String getRevisionId() {
       java.lang.Object ref = "";
       if (revisionCase_ == 2) {
@@ -948,6 +955,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * @return The bytes for revisionId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRevisionIdBytes() {
       java.lang.Object ref = "";
       if (revisionCase_ == 2) {
@@ -1043,6 +1051,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * @return Whether the aliasContext field is set.
      */
+    @java.lang.Override
     public boolean hasAliasContext() {
       return revisionCase_ == 3;
     }
@@ -1057,6 +1066,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * @return The aliasContext.
      */
+    @java.lang.Override
     public io.grafeas.v1.AliasContext getAliasContext() {
       if (aliasContextBuilder_ == null) {
         if (revisionCase_ == 3) {
@@ -1186,6 +1196,7 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
      *
      * <code>.grafeas.v1.AliasContext alias_context = 3;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1.AliasContextOrBuilder getAliasContextOrBuilder() {
       if ((revisionCase_ == 3) && (aliasContextBuilder_ != null)) {
         return aliasContextBuilder_.getMessageOrBuilder();

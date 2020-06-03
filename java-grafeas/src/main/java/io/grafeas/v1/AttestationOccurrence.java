@@ -145,6 +145,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    *
    * @return The serializedPayload.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSerializedPayload() {
     return serializedPayload_;
   }
@@ -163,6 +164,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Signature> getSignaturesList() {
     return signatures_;
   }
@@ -178,6 +180,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> getSignaturesOrBuilderList() {
     return signatures_;
   }
@@ -193,6 +196,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
+  @java.lang.Override
   public int getSignaturesCount() {
     return signatures_.size();
   }
@@ -208,6 +212,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Signature getSignatures(int index) {
     return signatures_.get(index);
   }
@@ -223,6 +228,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.SignatureOrBuilder getSignaturesOrBuilder(int index) {
     return signatures_.get(index);
   }
@@ -616,6 +622,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * @return The serializedPayload.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSerializedPayload() {
       return serializedPayload_;
     }

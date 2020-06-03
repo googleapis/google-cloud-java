@@ -127,6 +127,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1.Hash> getFileHashList() {
     return fileHash_;
   }
@@ -139,6 +140,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.HashOrBuilder> getFileHashOrBuilderList() {
     return fileHash_;
   }
@@ -151,6 +153,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
+  @java.lang.Override
   public int getFileHashCount() {
     return fileHash_.size();
   }
@@ -163,6 +166,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.Hash getFileHash(int index) {
     return fileHash_.get(index);
   }
@@ -175,6 +179,7 @@ public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.HashOrBuilder getFileHashOrBuilder(int index) {
     return fileHash_.get(index);
   }

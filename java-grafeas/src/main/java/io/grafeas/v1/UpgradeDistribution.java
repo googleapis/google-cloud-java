@@ -157,6 +157,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    *
    * @return The cpeUri.
    */
+  @java.lang.Override
   public java.lang.String getCpeUri() {
     java.lang.Object ref = cpeUri_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +181,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for cpeUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCpeUriBytes() {
     java.lang.Object ref = cpeUri_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +210,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    *
    * @return The classification.
    */
+  @java.lang.Override
   public java.lang.String getClassification() {
     java.lang.Object ref = classification_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +236,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for classification.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClassificationBytes() {
     java.lang.Object ref = classification_;
     if (ref instanceof java.lang.String) {
@@ -258,6 +262,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    *
    * @return The severity.
    */
+  @java.lang.Override
   public java.lang.String getSeverity() {
     java.lang.Object ref = severity_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +285,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for severity.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSeverityBytes() {
     java.lang.Object ref = severity_;
     if (ref instanceof java.lang.String) {

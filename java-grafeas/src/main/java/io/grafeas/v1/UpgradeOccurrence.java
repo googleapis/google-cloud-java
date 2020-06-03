@@ -170,6 +170,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return The package.
    */
+  @java.lang.Override
   public java.lang.String getPackage() {
     java.lang.Object ref = package_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +193,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for package.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPackageBytes() {
     java.lang.Object ref = package_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +220,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the parsedVersion field is set.
    */
+  @java.lang.Override
   public boolean hasParsedVersion() {
     return parsedVersion_ != null;
   }
@@ -233,6 +236,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return The parsedVersion.
    */
+  @java.lang.Override
   public io.grafeas.v1.Version getParsedVersion() {
     return parsedVersion_ == null ? io.grafeas.v1.Version.getDefaultInstance() : parsedVersion_;
   }
@@ -246,6 +250,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * <code>.grafeas.v1.Version parsed_version = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.VersionOrBuilder getParsedVersionOrBuilder() {
     return getParsedVersion();
   }
@@ -265,6 +270,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the distribution field is set.
    */
+  @java.lang.Override
   public boolean hasDistribution() {
     return distribution_ != null;
   }
@@ -281,6 +287,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return The distribution.
    */
+  @java.lang.Override
   public io.grafeas.v1.UpgradeDistribution getDistribution() {
     return distribution_ == null
         ? io.grafeas.v1.UpgradeDistribution.getDefaultInstance()
@@ -297,6 +304,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionOrBuilder() {
     return getDistribution();
   }
@@ -314,6 +322,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the windowsUpdate field is set.
    */
+  @java.lang.Override
   public boolean hasWindowsUpdate() {
     return windowsUpdate_ != null;
   }
@@ -328,6 +337,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * @return The windowsUpdate.
    */
+  @java.lang.Override
   public io.grafeas.v1.WindowsUpdate getWindowsUpdate() {
     return windowsUpdate_ == null
         ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
@@ -342,6 +352,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1.WindowsUpdateOrBuilder getWindowsUpdateOrBuilder() {
     return getWindowsUpdate();
   }
