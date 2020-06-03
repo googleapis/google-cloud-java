@@ -131,6 +131,7 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the expr field is set.
    */
+  @java.lang.Override
   public boolean hasExpr() {
     return expr_ != null;
   }
@@ -145,6 +146,7 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expr.
    */
+  @java.lang.Override
   public com.google.type.Expr getExpr() {
     return expr_ == null ? com.google.type.Expr.getDefaultInstance() : expr_;
   }
@@ -157,6 +159,7 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Expr expr = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.ExprOrBuilder getExprOrBuilder() {
     return getExpr();
   }

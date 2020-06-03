@@ -326,6 +326,10 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -375,6 +379,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -399,6 +404,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -424,6 +430,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -446,6 +453,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -472,6 +480,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -495,6 +504,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -520,6 +530,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -534,6 +545,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -546,6 +558,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -563,6 +576,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -577,6 +591,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -589,6 +604,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -613,6 +629,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for perimeterType.
    */
+  @java.lang.Override
   public int getPerimeterTypeValue() {
     return perimeterType_;
   }
@@ -634,6 +651,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The perimeterType.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType
       getPerimeterType() {
     @SuppressWarnings("deprecation")
@@ -660,6 +678,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -676,6 +695,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig getStatus() {
     return status_ == null
         ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.getDefaultInstance()
@@ -692,6 +712,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeterConfig status = 7;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfigOrBuilder
       getStatusOrBuilder() {
     return getStatus();
@@ -713,6 +734,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the spec field is set.
    */
+  @java.lang.Override
   public boolean hasSpec() {
     return spec_ != null;
   }
@@ -730,6 +752,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The spec.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig getSpec() {
     return spec_ == null
         ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.getDefaultInstance()
@@ -747,6 +770,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeterConfig spec = 8;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfigOrBuilder
       getSpecOrBuilder() {
     return getSpec();
@@ -774,6 +798,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    *
    * @return The useExplicitDryRunSpec.
    */
+  @java.lang.Override
   public boolean getUseExplicitDryRunSpec() {
     return useExplicitDryRunSpec_;
   }
@@ -2006,6 +2031,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for perimeterType.
      */
+    @java.lang.Override
     public int getPerimeterTypeValue() {
       return perimeterType_;
     }
@@ -2029,6 +2055,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setPerimeterTypeValue(int value) {
+
       perimeterType_ = value;
       onChanged();
       return this;
@@ -2051,6 +2078,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      *
      * @return The perimeterType.
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType
         getPerimeterType() {
       @SuppressWarnings("deprecation")
@@ -2567,6 +2595,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      *
      * @return The useExplicitDryRunSpec.
      */
+    @java.lang.Override
     public boolean getUseExplicitDryRunSpec() {
       return useExplicitDryRunSpec_;
     }

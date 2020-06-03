@@ -219,6 +219,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The requireScreenlock.
    */
+  @java.lang.Override
   public boolean getRequireScreenlock() {
     return requireScreenlock_;
   }
@@ -256,6 +257,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the allowedEncryptionStatuses.
    */
+  @java.lang.Override
   public java.util.List<com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus>
       getAllowedEncryptionStatusesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -275,6 +277,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of allowedEncryptionStatuses.
    */
+  @java.lang.Override
   public int getAllowedEncryptionStatusesCount() {
     return allowedEncryptionStatuses_.size();
   }
@@ -292,6 +295,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The allowedEncryptionStatuses at the given index.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.type.DeviceEncryptionStatus
       getAllowedEncryptionStatuses(int index) {
     return allowedEncryptionStatuses_converter_.convert(allowedEncryptionStatuses_.get(index));
@@ -309,6 +313,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for allowedEncryptionStatuses.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getAllowedEncryptionStatusesValueList() {
     return allowedEncryptionStatuses_;
   }
@@ -326,6 +331,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of allowedEncryptionStatuses at the given index.
    */
+  @java.lang.Override
   public int getAllowedEncryptionStatusesValue(int index) {
     return allowedEncryptionStatuses_.get(index);
   }
@@ -343,6 +349,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.OsConstraint os_constraints = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.identity.accesscontextmanager.v1.OsConstraint>
       getOsConstraintsList() {
     return osConstraints_;
@@ -356,6 +363,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.OsConstraint os_constraints = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.identity.accesscontextmanager.v1.OsConstraintOrBuilder>
       getOsConstraintsOrBuilderList() {
     return osConstraints_;
@@ -369,6 +377,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.OsConstraint os_constraints = 3;</code>
    */
+  @java.lang.Override
   public int getOsConstraintsCount() {
     return osConstraints_.size();
   }
@@ -381,6 +390,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.OsConstraint os_constraints = 3;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.OsConstraint getOsConstraints(int index) {
     return osConstraints_.get(index);
   }
@@ -393,6 +403,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.OsConstraint os_constraints = 3;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.OsConstraintOrBuilder
       getOsConstraintsOrBuilder(int index) {
     return osConstraints_.get(index);
@@ -430,6 +441,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the allowedDeviceManagementLevels.
    */
+  @java.lang.Override
   public java.util.List<com.google.identity.accesscontextmanager.type.DeviceManagementLevel>
       getAllowedDeviceManagementLevelsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -450,6 +462,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of allowedDeviceManagementLevels.
    */
+  @java.lang.Override
   public int getAllowedDeviceManagementLevelsCount() {
     return allowedDeviceManagementLevels_.size();
   }
@@ -468,6 +481,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The allowedDeviceManagementLevels at the given index.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.type.DeviceManagementLevel
       getAllowedDeviceManagementLevels(int index) {
     return allowedDeviceManagementLevels_converter_.convert(
@@ -488,6 +502,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    * @return A list containing the enum numeric values on the wire for
    *     allowedDeviceManagementLevels.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getAllowedDeviceManagementLevelsValueList() {
     return allowedDeviceManagementLevels_;
   }
@@ -506,6 +521,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of allowedDeviceManagementLevels at the given index.
    */
+  @java.lang.Override
   public int getAllowedDeviceManagementLevelsValue(int index) {
     return allowedDeviceManagementLevels_.get(index);
   }
@@ -525,6 +541,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The requireAdminApproval.
    */
+  @java.lang.Override
   public boolean getRequireAdminApproval() {
     return requireAdminApproval_;
   }
@@ -542,6 +559,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The requireCorpOwned.
    */
+  @java.lang.Override
   public boolean getRequireCorpOwned() {
     return requireCorpOwned_;
   }
@@ -1062,6 +1080,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The requireScreenlock.
      */
+    @java.lang.Override
     public boolean getRequireScreenlock() {
       return requireScreenlock_;
     }
@@ -2026,6 +2045,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The requireAdminApproval.
      */
+    @java.lang.Override
     public boolean getRequireAdminApproval() {
       return requireAdminApproval_;
     }
@@ -2077,6 +2097,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The requireCorpOwned.
      */
+    @java.lang.Override
     public boolean getRequireCorpOwned() {
       return requireCorpOwned_;
     }

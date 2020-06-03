@@ -137,6 +137,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for osType.
    */
+  @java.lang.Override
   public int getOsTypeValue() {
     return osType_;
   }
@@ -151,6 +152,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The osType.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.type.OsType getOsType() {
     @SuppressWarnings("deprecation")
     com.google.identity.accesscontextmanager.type.OsType result =
@@ -175,6 +177,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The minimumVersion.
    */
+  @java.lang.Override
   public java.lang.String getMinimumVersion() {
     java.lang.Object ref = minimumVersion_;
     if (ref instanceof java.lang.String) {
@@ -199,6 +202,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for minimumVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMinimumVersionBytes() {
     java.lang.Object ref = minimumVersion_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +231,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The requireVerifiedChromeOs.
    */
+  @java.lang.Override
   public boolean getRequireVerifiedChromeOs() {
     return requireVerifiedChromeOs_;
   }
@@ -594,6 +599,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for osType.
      */
+    @java.lang.Override
     public int getOsTypeValue() {
       return osType_;
     }
@@ -610,6 +616,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOsTypeValue(int value) {
+
       osType_ = value;
       onChanged();
       return this;
@@ -625,6 +632,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The osType.
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.type.OsType getOsType() {
       @SuppressWarnings("deprecation")
       com.google.identity.accesscontextmanager.type.OsType result =
@@ -803,6 +811,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The requireVerifiedChromeOs.
      */
+    @java.lang.Override
     public boolean getRequireVerifiedChromeOs() {
       return requireVerifiedChromeOs_;
     }

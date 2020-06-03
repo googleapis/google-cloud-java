@@ -233,6 +233,10 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -279,6 +283,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.Condition conditions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.identity.accesscontextmanager.v1.Condition> getConditionsList() {
     return conditions_;
   }
@@ -291,6 +296,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.Condition conditions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.identity.accesscontextmanager.v1.ConditionOrBuilder>
       getConditionsOrBuilderList() {
     return conditions_;
@@ -304,6 +310,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.Condition conditions = 1;</code>
    */
+  @java.lang.Override
   public int getConditionsCount() {
     return conditions_.size();
   }
@@ -316,6 +323,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.Condition conditions = 1;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.Condition getConditions(int index) {
     return conditions_.get(index);
   }
@@ -328,6 +336,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.identity.accesscontextmanager.v1.Condition conditions = 1;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ConditionOrBuilder getConditionsOrBuilder(
       int index) {
     return conditions_.get(index);
@@ -352,6 +361,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for combiningFunction.
    */
+  @java.lang.Override
   public int getCombiningFunctionValue() {
     return combiningFunction_;
   }
@@ -372,6 +382,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The combiningFunction.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction
       getCombiningFunction() {
     @SuppressWarnings("deprecation")
@@ -1142,6 +1153,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for combiningFunction.
      */
+    @java.lang.Override
     public int getCombiningFunctionValue() {
       return combiningFunction_;
     }
@@ -1164,6 +1176,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCombiningFunctionValue(int value) {
+
       combiningFunction_ = value;
       onChanged();
       return this;
@@ -1185,6 +1198,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The combiningFunction.
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction
         getCombiningFunction() {
       @SuppressWarnings("deprecation")

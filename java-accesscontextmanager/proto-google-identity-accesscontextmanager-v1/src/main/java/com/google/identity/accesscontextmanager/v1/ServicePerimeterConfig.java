@@ -364,6 +364,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
      *
      * @return The enableRestriction.
      */
+    @java.lang.Override
     public boolean getEnableRestriction() {
       return enableRestriction_;
     }
@@ -857,6 +858,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
        *
        * @return The enableRestriction.
        */
+      @java.lang.Override
       public boolean getEnableRestriction() {
         return enableRestriction_;
       }
@@ -1377,6 +1379,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
    *
    * @return Whether the vpcAccessibleServices field is set.
    */
+  @java.lang.Override
   public boolean hasVpcAccessibleServices() {
     return vpcAccessibleServices_ != null;
   }
@@ -1393,6 +1396,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
    *
    * @return The vpcAccessibleServices.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServices
       getVpcAccessibleServices() {
     return vpcAccessibleServices_ == null
@@ -1411,6 +1415,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
    * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServices vpc_accessible_services = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
           .VpcAccessibleServicesOrBuilder
       getVpcAccessibleServicesOrBuilder() {

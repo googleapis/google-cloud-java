@@ -289,6 +289,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the devicePolicy field is set.
    */
+  @java.lang.Override
   public boolean hasDevicePolicy() {
     return devicePolicy_ != null;
   }
@@ -304,6 +305,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The devicePolicy.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.DevicePolicy getDevicePolicy() {
     return devicePolicy_ == null
         ? com.google.identity.accesscontextmanager.v1.DevicePolicy.getDefaultInstance()
@@ -319,6 +321,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.identity.accesscontextmanager.v1.DevicePolicy device_policy = 2;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.DevicePolicyOrBuilder
       getDevicePolicyOrBuilder() {
     return getDevicePolicy();
@@ -416,6 +419,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The negate.
    */
+  @java.lang.Override
   public boolean getNegate() {
     return negate_;
   }
@@ -1699,6 +1703,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The negate.
      */
+    @java.lang.Override
     public boolean getNegate() {
       return negate_;
     }

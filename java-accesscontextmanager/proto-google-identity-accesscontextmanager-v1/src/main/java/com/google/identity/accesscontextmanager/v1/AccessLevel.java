@@ -260,6 +260,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -285,6 +286,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -310,6 +312,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -332,6 +335,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -357,6 +361,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -379,6 +384,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -403,6 +409,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the basic field is set.
    */
+  @java.lang.Override
   public boolean hasBasic() {
     return levelCase_ == 4;
   }
@@ -417,6 +424,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The basic.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.BasicLevel getBasic() {
     if (levelCase_ == 4) {
       return (com.google.identity.accesscontextmanager.v1.BasicLevel) level_;
@@ -432,6 +440,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.identity.accesscontextmanager.v1.BasicLevel basic = 4;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.BasicLevelOrBuilder getBasicOrBuilder() {
     if (levelCase_ == 4) {
       return (com.google.identity.accesscontextmanager.v1.BasicLevel) level_;
@@ -451,6 +460,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the custom field is set.
    */
+  @java.lang.Override
   public boolean hasCustom() {
     return levelCase_ == 5;
   }
@@ -465,6 +475,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The custom.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.CustomLevel getCustom() {
     if (levelCase_ == 5) {
       return (com.google.identity.accesscontextmanager.v1.CustomLevel) level_;
@@ -480,6 +491,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.identity.accesscontextmanager.v1.CustomLevel custom = 5;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.CustomLevelOrBuilder getCustomOrBuilder() {
     if (levelCase_ == 5) {
       return (com.google.identity.accesscontextmanager.v1.CustomLevel) level_;
@@ -500,6 +512,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -514,6 +527,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -526,6 +540,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -543,6 +558,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -557,6 +573,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -569,6 +586,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -1417,6 +1435,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the basic field is set.
      */
+    @java.lang.Override
     public boolean hasBasic() {
       return levelCase_ == 4;
     }
@@ -1431,6 +1450,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The basic.
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.BasicLevel getBasic() {
       if (basicBuilder_ == null) {
         if (levelCase_ == 4) {
@@ -1564,6 +1584,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.identity.accesscontextmanager.v1.BasicLevel basic = 4;</code>
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.BasicLevelOrBuilder getBasicOrBuilder() {
       if ((levelCase_ == 4) && (basicBuilder_ != null)) {
         return basicBuilder_.getMessageOrBuilder();
@@ -1624,6 +1645,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the custom field is set.
      */
+    @java.lang.Override
     public boolean hasCustom() {
       return levelCase_ == 5;
     }
@@ -1638,6 +1660,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The custom.
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.CustomLevel getCustom() {
       if (customBuilder_ == null) {
         if (levelCase_ == 5) {
@@ -1771,6 +1794,7 @@ public final class AccessLevel extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.identity.accesscontextmanager.v1.CustomLevel custom = 5;</code>
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.CustomLevelOrBuilder getCustomOrBuilder() {
       if ((levelCase_ == 5) && (customBuilder_ != null)) {
         return customBuilder_.getMessageOrBuilder();
