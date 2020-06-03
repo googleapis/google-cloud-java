@@ -206,6 +206,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The estimatedTotalSize.
    */
+  @java.lang.Override
   public long getEstimatedTotalSize() {
     return estimatedTotalSize_;
   }
@@ -223,6 +224,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return Whether the spellCorrection field is set.
    */
+  @java.lang.Override
   public boolean hasSpellCorrection() {
     return spellCorrection_ != null;
   }
@@ -237,6 +239,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The spellCorrection.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
     return spellCorrection_ == null
         ? com.google.cloud.talent.v4beta1.SpellingCorrection.getDefaultInstance()
@@ -251,6 +254,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SpellingCorrectionOrBuilder getSpellCorrectionOrBuilder() {
     return getSpellCorrection();
   }
@@ -269,6 +273,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -284,6 +289,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
@@ -299,6 +305,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -317,6 +324,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -340,6 +348,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -366,6 +375,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.HistogramQueryResult>
       getHistogramQueryResultsList() {
     return histogramQueryResults_;
@@ -381,6 +391,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder>
       getHistogramQueryResultsOrBuilderList() {
     return histogramQueryResults_;
@@ -396,6 +407,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 5;
    * </code>
    */
+  @java.lang.Override
   public int getHistogramQueryResultsCount() {
     return histogramQueryResults_.size();
   }
@@ -410,6 +422,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.HistogramQueryResult getHistogramQueryResults(int index) {
     return histogramQueryResults_.get(index);
   }
@@ -424,6 +437,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder
       getHistogramQueryResultsOrBuilder(int index) {
     return histogramQueryResults_.get(index);
@@ -440,6 +454,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.SummarizedProfile>
       getSummarizedProfilesList() {
     return summarizedProfiles_;
@@ -453,6 +468,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.SummarizedProfileOrBuilder>
       getSummarizedProfilesOrBuilderList() {
     return summarizedProfiles_;
@@ -466,6 +482,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
    */
+  @java.lang.Override
   public int getSummarizedProfilesCount() {
     return summarizedProfiles_.size();
   }
@@ -478,6 +495,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SummarizedProfile getSummarizedProfiles(int index) {
     return summarizedProfiles_.get(index);
   }
@@ -490,6 +508,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.talent.v4beta1.SummarizedProfile summarized_profiles = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SummarizedProfileOrBuilder getSummarizedProfilesOrBuilder(
       int index) {
     return summarizedProfiles_.get(index);
@@ -510,6 +529,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The resultSetId.
    */
+  @java.lang.Override
   public java.lang.String getResultSetId() {
     java.lang.Object ref = resultSetId_;
     if (ref instanceof java.lang.String) {
@@ -534,6 +554,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for resultSetId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResultSetIdBytes() {
     java.lang.Object ref = resultSetId_;
     if (ref instanceof java.lang.String) {
@@ -1080,6 +1101,7 @@ public final class SearchProfilesResponse extends com.google.protobuf.GeneratedM
      *
      * @return The estimatedTotalSize.
      */
+    @java.lang.Override
     public long getEstimatedTotalSize() {
       return estimatedTotalSize_;
     }

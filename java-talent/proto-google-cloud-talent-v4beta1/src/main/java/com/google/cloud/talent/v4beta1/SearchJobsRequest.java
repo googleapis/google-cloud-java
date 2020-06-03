@@ -377,6 +377,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -553,6 +557,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -1021,6 +1029,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
               };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -1074,6 +1086,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for importanceLevel.
      */
+    @java.lang.Override
     public int getImportanceLevelValue() {
       return importanceLevel_;
     }
@@ -1093,6 +1106,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The importanceLevel.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
         getImportanceLevel() {
       @SuppressWarnings("deprecation")
@@ -1133,6 +1147,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The rankingExpression.
      */
+    @java.lang.Override
     public java.lang.String getRankingExpression() {
       java.lang.Object ref = rankingExpression_;
       if (ref instanceof java.lang.String) {
@@ -1170,6 +1185,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The bytes for rankingExpression.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRankingExpressionBytes() {
       java.lang.Object ref = rankingExpression_;
       if (ref instanceof java.lang.String) {
@@ -1551,6 +1567,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        *
        * @return The enum numeric value on the wire for importanceLevel.
        */
+      @java.lang.Override
       public int getImportanceLevelValue() {
         return importanceLevel_;
       }
@@ -1572,6 +1589,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setImportanceLevelValue(int value) {
+
         importanceLevel_ = value;
         onChanged();
         return this;
@@ -1592,6 +1610,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
        *
        * @return The importanceLevel.
        */
+      @java.lang.Override
       public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
           getImportanceLevel() {
         @SuppressWarnings("deprecation")
@@ -1908,6 +1927,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -1935,6 +1955,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -1961,6 +1982,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for searchMode.
    */
+  @java.lang.Override
   public int getSearchModeValue() {
     return searchMode_;
   }
@@ -1976,6 +1998,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The searchMode.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode getSearchMode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode result =
@@ -2002,6 +2025,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the requestMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasRequestMetadata() {
     return requestMetadata_ != null;
   }
@@ -2020,6 +2044,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The requestMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata() {
     return requestMetadata_ == null
         ? com.google.cloud.talent.v4beta1.RequestMetadata.getDefaultInstance()
@@ -2038,6 +2063,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.RequestMetadataOrBuilder getRequestMetadataOrBuilder() {
     return getRequestMetadata();
   }
@@ -2055,6 +2081,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the jobQuery field is set.
    */
+  @java.lang.Override
   public boolean hasJobQuery() {
     return jobQuery_ != null;
   }
@@ -2069,6 +2096,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The jobQuery.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobQuery getJobQuery() {
     return jobQuery_ == null
         ? com.google.cloud.talent.v4beta1.JobQuery.getDefaultInstance()
@@ -2083,6 +2111,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.talent.v4beta1.JobQuery job_query = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobQueryOrBuilder getJobQueryOrBuilder() {
     return getJobQuery();
   }
@@ -2103,6 +2132,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The enableBroadening.
    */
+  @java.lang.Override
   public boolean getEnableBroadening() {
     return enableBroadening_;
   }
@@ -2126,6 +2156,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The requirePreciseResultSize.
    */
+  @java.lang.Override
   public boolean getRequirePreciseResultSize() {
     return requirePreciseResultSize_;
   }
@@ -2219,6 +2250,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.HistogramQuery> getHistogramQueriesList() {
     return histogramQueries_;
   }
@@ -2309,6 +2341,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder>
       getHistogramQueriesOrBuilderList() {
     return histogramQueries_;
@@ -2400,6 +2433,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 7;</code>
    */
+  @java.lang.Override
   public int getHistogramQueriesCount() {
     return histogramQueries_.size();
   }
@@ -2490,6 +2524,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.HistogramQuery getHistogramQueries(int index) {
     return histogramQueries_.get(index);
   }
@@ -2580,6 +2615,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder getHistogramQueriesOrBuilder(
       int index) {
     return histogramQueries_.get(index);
@@ -2599,6 +2635,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for jobView.
    */
+  @java.lang.Override
   public int getJobViewValue() {
     return jobView_;
   }
@@ -2614,6 +2651,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The jobView.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobView getJobView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.JobView result =
@@ -2641,6 +2679,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The offset.
    */
+  @java.lang.Override
   public int getOffset() {
     return offset_;
   }
@@ -2660,6 +2699,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -2679,6 +2719,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -2703,6 +2744,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -2775,6 +2817,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The orderBy.
    */
+  @java.lang.Override
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -2844,6 +2887,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for orderBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -2878,6 +2922,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for diversificationLevel.
    */
+  @java.lang.Override
   public int getDiversificationLevelValue() {
     return diversificationLevel_;
   }
@@ -2901,6 +2946,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The diversificationLevel.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel
       getDiversificationLevel() {
     @SuppressWarnings("deprecation")
@@ -2928,6 +2974,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the customRankingInfo field is set.
    */
+  @java.lang.Override
   public boolean hasCustomRankingInfo() {
     return customRankingInfo_ != null;
   }
@@ -2945,6 +2992,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The customRankingInfo.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo
       getCustomRankingInfo() {
     return customRankingInfo_ == null
@@ -2963,6 +3011,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    * .google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo custom_ranking_info = 14;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfoOrBuilder
       getCustomRankingInfoOrBuilder() {
     return getCustomRankingInfo();
@@ -2996,6 +3045,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The disableKeywordMatch.
    */
+  @java.lang.Override
   public boolean getDisableKeywordMatch() {
     return disableKeywordMatch_;
   }
@@ -3766,6 +3816,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for searchMode.
      */
+    @java.lang.Override
     public int getSearchModeValue() {
       return searchMode_;
     }
@@ -3783,6 +3834,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setSearchModeValue(int value) {
+
       searchMode_ = value;
       onChanged();
       return this;
@@ -3799,6 +3851,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The searchMode.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode getSearchMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode result =
@@ -4271,6 +4324,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The enableBroadening.
      */
+    @java.lang.Override
     public boolean getEnableBroadening() {
       return enableBroadening_;
     }
@@ -4334,6 +4388,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The requirePreciseResultSize.
      */
+    @java.lang.Override
     public boolean getRequirePreciseResultSize() {
       return requirePreciseResultSize_;
     }
@@ -6163,6 +6218,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for jobView.
      */
+    @java.lang.Override
     public int getJobViewValue() {
       return jobView_;
     }
@@ -6180,6 +6236,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setJobViewValue(int value) {
+
       jobView_ = value;
       onChanged();
       return this;
@@ -6196,6 +6253,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The jobView.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobView getJobView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.JobView result =
@@ -6262,6 +6320,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The offset.
      */
+    @java.lang.Override
     public int getOffset() {
       return offset_;
     }
@@ -6329,6 +6388,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -6850,6 +6910,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for diversificationLevel.
      */
+    @java.lang.Override
     public int getDiversificationLevelValue() {
       return diversificationLevel_;
     }
@@ -6875,6 +6936,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setDiversificationLevelValue(int value) {
+
       diversificationLevel_ = value;
       onChanged();
       return this;
@@ -6899,6 +6961,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The diversificationLevel.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel
         getDiversificationLevel() {
       @SuppressWarnings("deprecation")
@@ -7216,6 +7279,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The disableKeywordMatch.
      */
+    @java.lang.Override
     public boolean getDisableKeywordMatch() {
       return disableKeywordMatch_;
     }

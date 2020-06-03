@@ -359,6 +359,10 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -408,6 +412,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -424,6 +429,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.CompensationFilter.FilterType result =
@@ -465,6 +471,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return A list containing the units.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit>
       getUnitsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -485,6 +492,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The count of units.
    */
+  @java.lang.Override
   public int getUnitsCount() {
     return units_.size();
   }
@@ -503,6 +511,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * @param index The index of the element to return.
    * @return The units at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit getUnits(int index) {
     return units_converter_.convert(units_.get(index));
   }
@@ -520,6 +529,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return A list containing the enum numeric values on the wire for units.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getUnitsValueList() {
     return units_;
   }
@@ -538,6 +548,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of units at the given index.
    */
+  @java.lang.Override
   public int getUnitsValue(int index) {
     return units_.get(index);
   }
@@ -557,6 +568,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the range field is set.
    */
+  @java.lang.Override
   public boolean hasRange() {
     return range_ != null;
   }
@@ -571,6 +583,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The range.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange getRange() {
     return range_ == null
         ? com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.getDefaultInstance()
@@ -585,6 +598,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange range = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRangeOrBuilder
       getRangeOrBuilder() {
     return getRange();
@@ -604,6 +618,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The includeJobsWithUnspecifiedCompensationRange.
    */
+  @java.lang.Override
   public boolean getIncludeJobsWithUnspecifiedCompensationRange() {
     return includeJobsWithUnspecifiedCompensationRange_;
   }
@@ -1039,6 +1054,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1057,6 +1073,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -1074,6 +1091,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CompensationFilter.FilterType getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.CompensationFilter.FilterType result =
@@ -1593,6 +1611,7 @@ public final class CompensationFilter extends com.google.protobuf.GeneratedMessa
      *
      * @return The includeJobsWithUnspecifiedCompensationRange.
      */
+    @java.lang.Override
     public boolean getIncludeJobsWithUnspecifiedCompensationRange() {
       return includeJobsWithUnspecifiedCompensationRange_;
     }

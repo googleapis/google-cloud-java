@@ -327,6 +327,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The query.
    */
+  @java.lang.Override
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -351,6 +352,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for query.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -382,6 +384,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The queryLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getQueryLanguageCode() {
     java.lang.Object ref = queryLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -410,6 +413,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for queryLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQueryLanguageCodeBytes() {
     java.lang.Object ref = queryLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -542,6 +546,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.LocationFilter> getLocationFiltersList() {
     return locationFilters_;
   }
@@ -562,6 +567,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.LocationFilterOrBuilder>
       getLocationFiltersOrBuilderList() {
     return locationFilters_;
@@ -583,6 +589,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 3;</code>
    */
+  @java.lang.Override
   public int getLocationFiltersCount() {
     return locationFilters_.size();
   }
@@ -603,6 +610,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.LocationFilter getLocationFilters(int index) {
     return locationFilters_.get(index);
   }
@@ -623,6 +631,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.LocationFilterOrBuilder getLocationFiltersOrBuilder(
       int index) {
     return locationFilters_.get(index);
@@ -659,6 +668,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the jobCategories.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.talent.v4beta1.JobCategory>(
@@ -679,6 +689,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of jobCategories.
    */
+  @java.lang.Override
   public int getJobCategoriesCount() {
     return jobCategories_.size();
   }
@@ -698,6 +709,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The jobCategories at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index) {
     return jobCategories_converter_.convert(jobCategories_.get(index));
   }
@@ -716,6 +728,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for jobCategories.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getJobCategoriesValueList() {
     return jobCategories_;
   }
@@ -735,6 +748,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of jobCategories at the given index.
    */
+  @java.lang.Override
   public int getJobCategoriesValue(int index) {
     return jobCategories_.get(index);
   }
@@ -758,6 +772,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the commuteFilter field is set.
    */
+  @java.lang.Override
   public boolean hasCommuteFilter() {
     return commuteFilter_ != null;
   }
@@ -776,6 +791,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The commuteFilter.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CommuteFilter getCommuteFilter() {
     return commuteFilter_ == null
         ? com.google.cloud.talent.v4beta1.CommuteFilter.getDefaultInstance()
@@ -794,6 +810,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.CommuteFilter commute_filter = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CommuteFilterOrBuilder getCommuteFilterOrBuilder() {
     return getCommuteFilter();
   }
@@ -900,6 +917,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the compensationFilter field is set.
    */
+  @java.lang.Override
   public boolean hasCompensationFilter() {
     return compensationFilter_ != null;
   }
@@ -918,6 +936,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The compensationFilter.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationFilter getCompensationFilter() {
     return compensationFilter_ == null
         ? com.google.cloud.talent.v4beta1.CompensationFilter.getDefaultInstance()
@@ -936,6 +955,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.CompensationFilter compensation_filter = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationFilterOrBuilder
       getCompensationFilterOrBuilder() {
     return getCompensationFilter();
@@ -970,6 +990,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The customAttributeFilter.
    */
+  @java.lang.Override
   public java.lang.String getCustomAttributeFilter() {
     java.lang.Object ref = customAttributeFilter_;
     if (ref instanceof java.lang.String) {
@@ -1008,6 +1029,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for customAttributeFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCustomAttributeFilterBytes() {
     java.lang.Object ref = customAttributeFilter_;
     if (ref instanceof java.lang.String) {
@@ -1036,6 +1058,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The disableSpellCheck.
    */
+  @java.lang.Override
   public boolean getDisableSpellCheck() {
     return disableSpellCheck_;
   }
@@ -1072,6 +1095,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the employmentTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.talent.v4beta1.EmploymentType>(
@@ -1093,6 +1117,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of employmentTypes.
    */
+  @java.lang.Override
   public int getEmploymentTypesCount() {
     return employmentTypes_.size();
   }
@@ -1113,6 +1138,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The employmentTypes at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index) {
     return employmentTypes_converter_.convert(employmentTypes_.get(index));
   }
@@ -1132,6 +1158,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for employmentTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getEmploymentTypesValueList() {
     return employmentTypes_;
   }
@@ -1152,6 +1179,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of employmentTypes at the given index.
    */
+  @java.lang.Override
   public int getEmploymentTypesValue(int index) {
     return employmentTypes_.get(index);
   }
@@ -1261,6 +1289,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the publishTimeRange field is set.
    */
+  @java.lang.Override
   public boolean hasPublishTimeRange() {
     return publishTimeRange_ != null;
   }
@@ -1276,6 +1305,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publishTimeRange.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TimestampRange getPublishTimeRange() {
     return publishTimeRange_ == null
         ? com.google.cloud.talent.v4beta1.TimestampRange.getDefaultInstance()
@@ -1291,6 +1321,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.TimestampRange publish_time_range = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TimestampRangeOrBuilder getPublishTimeRangeOrBuilder() {
     return getPublishTimeRange();
   }
@@ -4234,6 +4265,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The disableSpellCheck.
      */
+    @java.lang.Override
     public boolean getDisableSpellCheck() {
       return disableSpellCheck_;
     }

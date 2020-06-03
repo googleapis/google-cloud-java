@@ -146,6 +146,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Profile> getProfilesList() {
     return profiles_;
   }
@@ -158,6 +159,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.ProfileOrBuilder>
       getProfilesOrBuilderList() {
     return profiles_;
@@ -171,6 +173,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
    */
+  @java.lang.Override
   public int getProfilesCount() {
     return profiles_.size();
   }
@@ -183,6 +186,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Profile getProfiles(int index) {
     return profiles_.get(index);
   }
@@ -195,6 +199,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.talent.v4beta1.Profile profiles = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ProfileOrBuilder getProfilesOrBuilder(int index) {
     return profiles_.get(index);
   }
@@ -222,6 +227,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the summary field is set.
    */
+  @java.lang.Override
   public boolean hasSummary() {
     return summary_ != null;
   }
@@ -246,6 +252,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * @return The summary.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Profile getSummary() {
     return summary_ == null
         ? com.google.cloud.talent.v4beta1.Profile.getDefaultInstance()
@@ -270,6 +277,7 @@ public final class SummarizedProfile extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.talent.v4beta1.Profile summary = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ProfileOrBuilder getSummaryOrBuilder() {
     return getSummary();
   }

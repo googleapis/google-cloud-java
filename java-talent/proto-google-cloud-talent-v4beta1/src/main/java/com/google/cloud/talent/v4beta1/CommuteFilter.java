@@ -289,6 +289,10 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -383,6 +387,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for commuteMethod.
    */
+  @java.lang.Override
   public int getCommuteMethodValue() {
     return commuteMethod_;
   }
@@ -399,6 +404,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The commuteMethod.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CommuteMethod getCommuteMethod() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.CommuteMethod result =
@@ -421,6 +427,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startCoordinates field is set.
    */
+  @java.lang.Override
   public boolean hasStartCoordinates() {
     return startCoordinates_ != null;
   }
@@ -437,6 +444,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startCoordinates.
    */
+  @java.lang.Override
   public com.google.type.LatLng getStartCoordinates() {
     return startCoordinates_ == null
         ? com.google.type.LatLng.getDefaultInstance()
@@ -453,6 +461,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.type.LatLng start_coordinates = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.type.LatLngOrBuilder getStartCoordinatesOrBuilder() {
     return getStartCoordinates();
   }
@@ -472,6 +481,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the travelDuration field is set.
    */
+  @java.lang.Override
   public boolean hasTravelDuration() {
     return travelDuration_ != null;
   }
@@ -488,6 +498,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The travelDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTravelDuration() {
     return travelDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -504,6 +515,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTravelDurationOrBuilder() {
     return getTravelDuration();
   }
@@ -525,6 +537,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The allowImpreciseAddresses.
    */
+  @java.lang.Override
   public boolean getAllowImpreciseAddresses() {
     return allowImpreciseAddresses_;
   }
@@ -585,6 +598,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the departureTime field is set.
    */
+  @java.lang.Override
   public boolean hasDepartureTime() {
     return trafficOptionCase_ == 6;
   }
@@ -601,6 +615,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The departureTime.
    */
+  @java.lang.Override
   public com.google.type.TimeOfDay getDepartureTime() {
     if (trafficOptionCase_ == 6) {
       return (com.google.type.TimeOfDay) trafficOption_;
@@ -618,6 +633,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.TimeOfDay departure_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.type.TimeOfDayOrBuilder getDepartureTimeOrBuilder() {
     if (trafficOptionCase_ == 6) {
       return (com.google.type.TimeOfDay) trafficOption_;
@@ -1109,6 +1125,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for commuteMethod.
      */
+    @java.lang.Override
     public int getCommuteMethodValue() {
       return commuteMethod_;
     }
@@ -1127,6 +1144,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCommuteMethodValue(int value) {
+
       commuteMethod_ = value;
       onChanged();
       return this;
@@ -1144,6 +1162,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The commuteMethod.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CommuteMethod getCommuteMethod() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.CommuteMethod result =
@@ -1618,6 +1637,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The allowImpreciseAddresses.
      */
+    @java.lang.Override
     public boolean getAllowImpreciseAddresses() {
       return allowImpreciseAddresses_;
     }
@@ -1676,6 +1696,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for roadTraffic.
      */
+    @java.lang.Override
     public int getRoadTrafficValue() {
       if (trafficOptionCase_ == 5) {
         return ((java.lang.Integer) trafficOption_).intValue();
@@ -1711,6 +1732,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The roadTraffic.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CommuteFilter.RoadTraffic getRoadTraffic() {
       if (trafficOptionCase_ == 5) {
         @SuppressWarnings("deprecation")
@@ -1782,6 +1804,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the departureTime field is set.
      */
+    @java.lang.Override
     public boolean hasDepartureTime() {
       return trafficOptionCase_ == 6;
     }
@@ -1798,6 +1821,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The departureTime.
      */
+    @java.lang.Override
     public com.google.type.TimeOfDay getDepartureTime() {
       if (departureTimeBuilder_ == null) {
         if (trafficOptionCase_ == 6) {
@@ -1940,6 +1964,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.TimeOfDay departure_time = 6;</code>
      */
+    @java.lang.Override
     public com.google.type.TimeOfDayOrBuilder getDepartureTimeOrBuilder() {
       if ((trafficOptionCase_ == 6) && (departureTimeBuilder_ != null)) {
         return departureTimeBuilder_.getMessageOrBuilder();

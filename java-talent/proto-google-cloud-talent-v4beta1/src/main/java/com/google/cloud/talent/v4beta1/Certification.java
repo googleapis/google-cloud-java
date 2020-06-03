@@ -169,6 +169,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +193,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +219,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the acquireDate field is set.
    */
+  @java.lang.Override
   public boolean hasAcquireDate() {
     return acquireDate_ != null;
   }
@@ -231,6 +234,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The acquireDate.
    */
+  @java.lang.Override
   public com.google.type.Date getAcquireDate() {
     return acquireDate_ == null ? com.google.type.Date.getDefaultInstance() : acquireDate_;
   }
@@ -243,6 +247,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date acquire_date = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getAcquireDateOrBuilder() {
     return getAcquireDate();
   }
@@ -260,6 +265,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the expireDate field is set.
    */
+  @java.lang.Override
   public boolean hasExpireDate() {
     return expireDate_ != null;
   }
@@ -274,6 +280,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expireDate.
    */
+  @java.lang.Override
   public com.google.type.Date getExpireDate() {
     return expireDate_ == null ? com.google.type.Date.getDefaultInstance() : expireDate_;
   }
@@ -286,6 +293,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date expire_date = 3;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getExpireDateOrBuilder() {
     return getExpireDate();
   }
@@ -304,6 +312,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The authority.
    */
+  @java.lang.Override
   public java.lang.String getAuthority() {
     java.lang.Object ref = authority_;
     if (ref instanceof java.lang.String) {
@@ -327,6 +336,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for authority.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAuthorityBytes() {
     java.lang.Object ref = authority_;
     if (ref instanceof java.lang.String) {
@@ -353,6 +363,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -376,6 +387,7 @@ public final class Certification extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {

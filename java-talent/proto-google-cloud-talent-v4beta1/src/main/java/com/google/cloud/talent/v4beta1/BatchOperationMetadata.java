@@ -389,6 +389,10 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -436,6 +440,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -450,6 +455,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.BatchOperationMetadata.State result =
@@ -472,6 +478,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The stateDescription.
    */
+  @java.lang.Override
   public java.lang.String getStateDescription() {
     java.lang.Object ref = stateDescription_;
     if (ref instanceof java.lang.String) {
@@ -494,6 +501,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for stateDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStateDescriptionBytes() {
     java.lang.Object ref = stateDescription_;
     if (ref instanceof java.lang.String) {
@@ -519,6 +527,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The successCount.
    */
+  @java.lang.Override
   public int getSuccessCount() {
     return successCount_;
   }
@@ -536,6 +545,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The failureCount.
    */
+  @java.lang.Override
   public int getFailureCount() {
     return failureCount_;
   }
@@ -553,6 +563,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The totalCount.
    */
+  @java.lang.Override
   public int getTotalCount() {
     return totalCount_;
   }
@@ -570,6 +581,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -584,6 +596,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -596,6 +609,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -615,6 +629,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -631,6 +646,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -645,6 +661,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -663,6 +680,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -678,6 +696,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -691,6 +710,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -1175,6 +1195,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1191,6 +1212,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1206,6 +1228,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.BatchOperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.BatchOperationMetadata.State result =
@@ -1371,6 +1394,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The successCount.
      */
+    @java.lang.Override
     public int getSuccessCount() {
       return successCount_;
     }
@@ -1422,6 +1446,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The failureCount.
      */
+    @java.lang.Override
     public int getFailureCount() {
       return failureCount_;
     }
@@ -1473,6 +1498,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The totalCount.
      */
+    @java.lang.Override
     public int getTotalCount() {
       return totalCount_;
     }

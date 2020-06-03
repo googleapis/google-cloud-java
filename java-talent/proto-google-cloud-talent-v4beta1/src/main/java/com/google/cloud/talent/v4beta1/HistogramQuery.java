@@ -127,6 +127,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The histogramQuery.
    */
+  @java.lang.Override
   public java.lang.String getHistogramQuery() {
     java.lang.Object ref = histogramQuery_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class HistogramQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for histogramQuery.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHistogramQueryBytes() {
     java.lang.Object ref = histogramQuery_;
     if (ref instanceof java.lang.String) {

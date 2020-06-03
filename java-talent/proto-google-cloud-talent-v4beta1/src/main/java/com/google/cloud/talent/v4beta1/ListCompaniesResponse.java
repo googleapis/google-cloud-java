@@ -154,6 +154,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.Company companies = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Company> getCompaniesList() {
     return companies_;
   }
@@ -166,6 +167,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.Company companies = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.CompanyOrBuilder>
       getCompaniesOrBuilderList() {
     return companies_;
@@ -179,6 +181,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.Company companies = 1;</code>
    */
+  @java.lang.Override
   public int getCompaniesCount() {
     return companies_.size();
   }
@@ -191,6 +194,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.Company companies = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Company getCompanies(int index) {
     return companies_.get(index);
   }
@@ -203,6 +207,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.Company companies = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompanyOrBuilder getCompaniesOrBuilder(int index) {
     return companies_.get(index);
   }
@@ -220,6 +225,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +248,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +275,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -283,6 +291,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
@@ -298,6 +307,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }

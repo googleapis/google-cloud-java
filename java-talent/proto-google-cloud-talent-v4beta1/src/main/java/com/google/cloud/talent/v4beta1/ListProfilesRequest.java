@@ -164,6 +164,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +191,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +227,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +260,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -284,6 +288,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -308,6 +313,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -334,6 +340,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -354,6 +361,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the readMask field is set.
    */
+  @java.lang.Override
   public boolean hasReadMask() {
     return readMask_ != null;
   }
@@ -371,6 +379,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The readMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
@@ -386,6 +395,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.FieldMask read_mask = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
     return getReadMask();
   }
@@ -1194,6 +1204,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

@@ -160,6 +160,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +188,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +214,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList() {
     return jobs_;
   }
@@ -226,6 +229,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder>
       getJobsOrBuilderList() {
     return jobs_;
@@ -241,6 +245,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getJobsCount() {
     return jobs_.size();
   }
@@ -255,6 +260,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job getJobs(int index) {
     return jobs_.get(index);
   }
@@ -269,6 +275,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
   }
@@ -296,6 +303,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -320,6 +328,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -342,6 +351,7 @@ public final class BatchUpdateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

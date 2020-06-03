@@ -231,6 +231,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +255,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +282,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +306,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +333,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -352,6 +357,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -377,6 +383,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createDate field is set.
    */
+  @java.lang.Override
   public boolean hasCreateDate() {
     return createDate_ != null;
   }
@@ -391,6 +398,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createDate.
    */
+  @java.lang.Override
   public com.google.type.Date getCreateDate() {
     return createDate_ == null ? com.google.type.Date.getDefaultInstance() : createDate_;
   }
@@ -403,6 +411,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date create_date = 4;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getCreateDateOrBuilder() {
     return getCreateDate();
   }
@@ -420,6 +429,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateDate field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateDate() {
     return updateDate_ != null;
   }
@@ -434,6 +444,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateDate.
    */
+  @java.lang.Override
   public com.google.type.Date getUpdateDate() {
     return updateDate_ == null ? com.google.type.Date.getDefaultInstance() : updateDate_;
   }
@@ -446,6 +457,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date update_date = 5;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getUpdateDateOrBuilder() {
     return getUpdateDate();
   }
@@ -531,6 +543,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Skill> getSkillsUsedList() {
     return skillsUsed_;
   }
@@ -544,6 +557,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.SkillOrBuilder>
       getSkillsUsedOrBuilderList() {
     return skillsUsed_;
@@ -558,6 +572,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
    */
+  @java.lang.Override
   public int getSkillsUsedCount() {
     return skillsUsed_.size();
   }
@@ -571,6 +586,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Skill getSkillsUsed(int index) {
     return skillsUsed_.get(index);
   }
@@ -584,6 +600,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SkillOrBuilder getSkillsUsedOrBuilder(int index) {
     return skillsUsed_.get(index);
   }
@@ -603,6 +620,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The activityNameSnippet.
    */
+  @java.lang.Override
   public java.lang.String getActivityNameSnippet() {
     java.lang.Object ref = activityNameSnippet_;
     if (ref instanceof java.lang.String) {
@@ -627,6 +645,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for activityNameSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getActivityNameSnippetBytes() {
     java.lang.Object ref = activityNameSnippet_;
     if (ref instanceof java.lang.String) {
@@ -655,6 +674,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The activityDescriptionSnippet.
    */
+  @java.lang.Override
   public java.lang.String getActivityDescriptionSnippet() {
     java.lang.Object ref = activityDescriptionSnippet_;
     if (ref instanceof java.lang.String) {
@@ -680,6 +700,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for activityDescriptionSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getActivityDescriptionSnippetBytes() {
     java.lang.Object ref = activityDescriptionSnippet_;
     if (ref instanceof java.lang.String) {

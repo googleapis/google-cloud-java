@@ -140,6 +140,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the rating field is set.
    */
+  @java.lang.Override
   public boolean hasRating() {
     return rating_ != null;
   }
@@ -154,6 +155,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rating.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Rating getRating() {
     return rating_ == null ? com.google.cloud.talent.v4beta1.Rating.getDefaultInstance() : rating_;
   }
@@ -166,6 +168,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.Rating rating = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.RatingOrBuilder getRatingOrBuilder() {
     return getRating();
   }
@@ -186,6 +189,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for outcome.
    */
+  @java.lang.Override
   public int getOutcomeValue() {
     return outcome_;
   }
@@ -203,6 +207,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The outcome.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Outcome result =
@@ -753,6 +758,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for outcome.
      */
+    @java.lang.Override
     public int getOutcomeValue() {
       return outcome_;
     }
@@ -772,6 +778,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOutcomeValue(int value) {
+
       outcome_ = value;
       onChanged();
       return this;
@@ -790,6 +797,7 @@ public final class Interview extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The outcome.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Outcome result =

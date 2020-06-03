@@ -141,6 +141,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The enum numeric value on the wire for usage.
    */
+  @java.lang.Override
   public int getUsageValue() {
     return usage_;
   }
@@ -155,6 +156,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The usage.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.ContactInfoUsage result =
@@ -177,6 +179,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +204,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +231,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The contactId.
    */
+  @java.lang.Override
   public java.lang.String getContactId() {
     java.lang.Object ref = contactId_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +255,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for contactId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContactIdBytes() {
     java.lang.Object ref = contactId_;
     if (ref instanceof java.lang.String) {
@@ -629,6 +635,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
      *
      * @return The enum numeric value on the wire for usage.
      */
+    @java.lang.Override
     public int getUsageValue() {
       return usage_;
     }
@@ -645,6 +652,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
+
       usage_ = value;
       onChanged();
       return this;
@@ -660,6 +668,7 @@ public final class AdditionalContactInfo extends com.google.protobuf.GeneratedMe
      *
      * @return The usage.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.ContactInfoUsage result =

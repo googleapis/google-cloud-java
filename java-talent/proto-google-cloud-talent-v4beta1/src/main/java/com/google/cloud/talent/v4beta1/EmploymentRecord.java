@@ -261,6 +261,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the startDate field is set.
    */
+  @java.lang.Override
   public boolean hasStartDate() {
     return startDate_ != null;
   }
@@ -275,6 +276,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The startDate.
    */
+  @java.lang.Override
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
   }
@@ -287,6 +289,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.type.Date start_date = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getStartDateOrBuilder() {
     return getStartDate();
   }
@@ -304,6 +307,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the endDate field is set.
    */
+  @java.lang.Override
   public boolean hasEndDate() {
     return endDate_ != null;
   }
@@ -318,6 +322,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The endDate.
    */
+  @java.lang.Override
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
   }
@@ -330,6 +335,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.type.Date end_date = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getEndDateOrBuilder() {
     return getEndDate();
   }
@@ -349,6 +355,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The employerName.
    */
+  @java.lang.Override
   public java.lang.String getEmployerName() {
     java.lang.Object ref = employerName_;
     if (ref instanceof java.lang.String) {
@@ -373,6 +380,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for employerName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEmployerNameBytes() {
     java.lang.Object ref = employerName_;
     if (ref instanceof java.lang.String) {
@@ -400,6 +408,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The divisionName.
    */
+  @java.lang.Override
   public java.lang.String getDivisionName() {
     java.lang.Object ref = divisionName_;
     if (ref instanceof java.lang.String) {
@@ -424,6 +433,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for divisionName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDivisionNameBytes() {
     java.lang.Object ref = divisionName_;
     if (ref instanceof java.lang.String) {
@@ -449,6 +459,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the address field is set.
    */
+  @java.lang.Override
   public boolean hasAddress() {
     return address_ != null;
   }
@@ -463,6 +474,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The address.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Address getAddress() {
     return address_ == null
         ? com.google.cloud.talent.v4beta1.Address.getDefaultInstance()
@@ -477,6 +489,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AddressOrBuilder getAddressOrBuilder() {
     return getAddress();
   }
@@ -496,6 +509,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The jobTitle.
    */
+  @java.lang.Override
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
     if (ref instanceof java.lang.String) {
@@ -520,6 +534,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for jobTitle.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobTitleBytes() {
     java.lang.Object ref = jobTitle_;
     if (ref instanceof java.lang.String) {
@@ -546,6 +561,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The jobDescription.
    */
+  @java.lang.Override
   public java.lang.String getJobDescription() {
     java.lang.Object ref = jobDescription_;
     if (ref instanceof java.lang.String) {
@@ -569,6 +585,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for jobDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobDescriptionBytes() {
     java.lang.Object ref = jobDescription_;
     if (ref instanceof java.lang.String) {
@@ -594,6 +611,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the isSupervisor field is set.
    */
+  @java.lang.Override
   public boolean hasIsSupervisor() {
     return isSupervisor_ != null;
   }
@@ -608,6 +626,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The isSupervisor.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getIsSupervisor() {
     return isSupervisor_ == null
         ? com.google.protobuf.BoolValue.getDefaultInstance()
@@ -622,6 +641,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getIsSupervisorOrBuilder() {
     return getIsSupervisor();
   }
@@ -639,6 +659,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the isSelfEmployed field is set.
    */
+  @java.lang.Override
   public boolean hasIsSelfEmployed() {
     return isSelfEmployed_ != null;
   }
@@ -653,6 +674,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The isSelfEmployed.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getIsSelfEmployed() {
     return isSelfEmployed_ == null
         ? com.google.protobuf.BoolValue.getDefaultInstance()
@@ -667,6 +689,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.BoolValue is_self_employed = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getIsSelfEmployedOrBuilder() {
     return getIsSelfEmployed();
   }
@@ -684,6 +707,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the isCurrent field is set.
    */
+  @java.lang.Override
   public boolean hasIsCurrent() {
     return isCurrent_ != null;
   }
@@ -698,6 +722,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The isCurrent.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getIsCurrent() {
     return isCurrent_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCurrent_;
   }
@@ -710,6 +735,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.BoolValue is_current = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getIsCurrentOrBuilder() {
     return getIsCurrent();
   }
@@ -729,6 +755,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The jobTitleSnippet.
    */
+  @java.lang.Override
   public java.lang.String getJobTitleSnippet() {
     java.lang.Object ref = jobTitleSnippet_;
     if (ref instanceof java.lang.String) {
@@ -753,6 +780,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for jobTitleSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
     java.lang.Object ref = jobTitleSnippet_;
     if (ref instanceof java.lang.String) {
@@ -780,6 +808,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The jobDescriptionSnippet.
    */
+  @java.lang.Override
   public java.lang.String getJobDescriptionSnippet() {
     java.lang.Object ref = jobDescriptionSnippet_;
     if (ref instanceof java.lang.String) {
@@ -804,6 +833,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for jobDescriptionSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobDescriptionSnippetBytes() {
     java.lang.Object ref = jobDescriptionSnippet_;
     if (ref instanceof java.lang.String) {
@@ -831,6 +861,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The employerNameSnippet.
    */
+  @java.lang.Override
   public java.lang.String getEmployerNameSnippet() {
     java.lang.Object ref = employerNameSnippet_;
     if (ref instanceof java.lang.String) {
@@ -855,6 +886,7 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for employerNameSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEmployerNameSnippetBytes() {
     java.lang.Object ref = employerNameSnippet_;
     if (ref instanceof java.lang.String) {

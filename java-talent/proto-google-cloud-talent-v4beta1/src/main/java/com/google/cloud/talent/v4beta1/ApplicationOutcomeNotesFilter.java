@@ -130,6 +130,7 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
    *
    * @return The outcomeNotes.
    */
+  @java.lang.Override
   public java.lang.String getOutcomeNotes() {
     java.lang.Object ref = outcomeNotes_;
     if (ref instanceof java.lang.String) {
@@ -153,6 +154,7 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
    *
    * @return The bytes for outcomeNotes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutcomeNotesBytes() {
     java.lang.Object ref = outcomeNotes_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +182,7 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
    *
    * @return The negated.
    */
+  @java.lang.Override
   public boolean getNegated() {
     return negated_;
   }
@@ -646,6 +649,7 @@ public final class ApplicationOutcomeNotesFilter extends com.google.protobuf.Gen
      *
      * @return The negated.
      */
+    @java.lang.Override
     public boolean getNegated() {
       return negated_;
     }

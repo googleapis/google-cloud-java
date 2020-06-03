@@ -145,6 +145,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -199,6 +201,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the company field is set.
    */
+  @java.lang.Override
   public boolean hasCompany() {
     return company_ != null;
   }
@@ -215,6 +218,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The company.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Company getCompany() {
     return company_ == null
         ? com.google.cloud.talent.v4beta1.Company.getDefaultInstance()
@@ -231,6 +235,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.talent.v4beta1.Company company = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompanyOrBuilder getCompanyOrBuilder() {
     return getCompany();
   }

@@ -240,6 +240,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The requestId.
    */
+  @java.lang.Override
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +265,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -289,6 +291,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventId.
    */
+  @java.lang.Override
   public java.lang.String getEventId() {
     java.lang.Object ref = eventId_;
     if (ref instanceof java.lang.String) {
@@ -311,6 +314,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for eventId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEventIdBytes() {
     java.lang.Object ref = eventId_;
     if (ref instanceof java.lang.String) {
@@ -337,6 +341,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -352,6 +357,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -365,6 +371,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -382,6 +389,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the jobEvent field is set.
    */
+  @java.lang.Override
   public boolean hasJobEvent() {
     return eventCase_ == 5;
   }
@@ -397,6 +405,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobEvent.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobEvent getJobEvent() {
     if (eventCase_ == 5) {
       return (com.google.cloud.talent.v4beta1.JobEvent) event_;
@@ -413,6 +422,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.JobEvent job_event = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobEventOrBuilder getJobEventOrBuilder() {
     if (eventCase_ == 5) {
       return (com.google.cloud.talent.v4beta1.JobEvent) event_;
@@ -433,6 +443,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the profileEvent field is set.
    */
+  @java.lang.Override
   public boolean hasProfileEvent() {
     return eventCase_ == 6;
   }
@@ -448,6 +459,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The profileEvent.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ProfileEvent getProfileEvent() {
     if (eventCase_ == 6) {
       return (com.google.cloud.talent.v4beta1.ProfileEvent) event_;
@@ -464,6 +476,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ProfileEventOrBuilder getProfileEventOrBuilder() {
     if (eventCase_ == 6) {
       return (com.google.cloud.talent.v4beta1.ProfileEvent) event_;
@@ -485,6 +498,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventNotes.
    */
+  @java.lang.Override
   public java.lang.String getEventNotes() {
     java.lang.Object ref = eventNotes_;
     if (ref instanceof java.lang.String) {
@@ -508,6 +522,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for eventNotes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEventNotesBytes() {
     java.lang.Object ref = eventNotes_;
     if (ref instanceof java.lang.String) {
@@ -1417,6 +1432,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the jobEvent field is set.
      */
+    @java.lang.Override
     public boolean hasJobEvent() {
       return eventCase_ == 5;
     }
@@ -1432,6 +1448,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The jobEvent.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobEvent getJobEvent() {
       if (jobEventBuilder_ == null) {
         if (eventCase_ == 5) {
@@ -1569,6 +1586,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.JobEvent job_event = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobEventOrBuilder getJobEventOrBuilder() {
       if ((eventCase_ == 5) && (jobEventBuilder_ != null)) {
         return jobEventBuilder_.getMessageOrBuilder();
@@ -1631,6 +1649,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the profileEvent field is set.
      */
+    @java.lang.Override
     public boolean hasProfileEvent() {
       return eventCase_ == 6;
     }
@@ -1646,6 +1665,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The profileEvent.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.ProfileEvent getProfileEvent() {
       if (profileEventBuilder_ == null) {
         if (eventCase_ == 6) {
@@ -1784,6 +1804,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.ProfileEventOrBuilder getProfileEventOrBuilder() {
       if ((eventCase_ == 6) && (profileEventBuilder_ != null)) {
         return profileEventBuilder_.getMessageOrBuilder();

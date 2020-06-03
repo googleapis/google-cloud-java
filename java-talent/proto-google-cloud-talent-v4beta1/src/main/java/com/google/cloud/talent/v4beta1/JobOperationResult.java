@@ -341,6 +341,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the job field is set.
      */
+    @java.lang.Override
     public boolean hasJob() {
       return job_ != null;
     }
@@ -358,6 +359,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * @return The job.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Job getJob() {
       return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
     }
@@ -373,6 +375,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder() {
       return getJob();
     }
@@ -391,6 +394,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the status field is set.
      */
+    @java.lang.Override
     public boolean hasStatus() {
       return status_ != null;
     }
@@ -406,6 +410,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
@@ -419,6 +424,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.rpc.Status status = 2;</code>
      */
+    @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
       return getStatus();
     }
@@ -1247,6 +1253,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.JobOperationResult.JobResult job_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.JobOperationResult.JobResult>
       getJobResultsList() {
     return jobResults_;
@@ -1262,6 +1269,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.JobOperationResult.JobResult job_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.talent.v4beta1.JobOperationResult.JobResultOrBuilder>
       getJobResultsOrBuilderList() {
@@ -1278,6 +1286,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.JobOperationResult.JobResult job_results = 1;
    * </code>
    */
+  @java.lang.Override
   public int getJobResultsCount() {
     return jobResults_.size();
   }
@@ -1292,6 +1301,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.JobOperationResult.JobResult job_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobOperationResult.JobResult getJobResults(int index) {
     return jobResults_.get(index);
   }
@@ -1306,6 +1316,7 @@ public final class JobOperationResult extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.JobOperationResult.JobResult job_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobOperationResult.JobResultOrBuilder
       getJobResultsOrBuilder(int index) {
     return jobResults_.get(index);

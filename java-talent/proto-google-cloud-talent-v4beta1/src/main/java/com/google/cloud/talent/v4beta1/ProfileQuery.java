@@ -367,6 +367,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The query.
    */
+  @java.lang.Override
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -390,6 +391,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for query.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -468,6 +470,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.LocationFilter> getLocationFiltersList() {
     return locationFilters_;
   }
@@ -535,6 +538,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.LocationFilterOrBuilder>
       getLocationFiltersOrBuilderList() {
     return locationFilters_;
@@ -603,6 +607,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
    */
+  @java.lang.Override
   public int getLocationFiltersCount() {
     return locationFilters_.size();
   }
@@ -670,6 +675,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.LocationFilter getLocationFilters(int index) {
     return locationFilters_.get(index);
   }
@@ -737,6 +743,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.LocationFilter location_filters = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.LocationFilterOrBuilder getLocationFiltersOrBuilder(
       int index) {
     return locationFilters_.get(index);
@@ -759,6 +766,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobTitleFilter job_title_filters = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.JobTitleFilter> getJobTitleFiltersList() {
     return jobTitleFilters_;
   }
@@ -777,6 +785,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobTitleFilter job_title_filters = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.JobTitleFilterOrBuilder>
       getJobTitleFiltersOrBuilderList() {
     return jobTitleFilters_;
@@ -796,6 +805,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobTitleFilter job_title_filters = 3;</code>
    */
+  @java.lang.Override
   public int getJobTitleFiltersCount() {
     return jobTitleFilters_.size();
   }
@@ -814,6 +824,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobTitleFilter job_title_filters = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobTitleFilter getJobTitleFilters(int index) {
     return jobTitleFilters_.get(index);
   }
@@ -832,6 +843,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.JobTitleFilter job_title_filters = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobTitleFilterOrBuilder getJobTitleFiltersOrBuilder(
       int index) {
     return jobTitleFilters_.get(index);
@@ -856,6 +868,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmployerFilter employer_filters = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.EmployerFilter> getEmployerFiltersList() {
     return employerFilters_;
   }
@@ -876,6 +889,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmployerFilter employer_filters = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.EmployerFilterOrBuilder>
       getEmployerFiltersOrBuilderList() {
     return employerFilters_;
@@ -897,6 +911,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmployerFilter employer_filters = 4;</code>
    */
+  @java.lang.Override
   public int getEmployerFiltersCount() {
     return employerFilters_.size();
   }
@@ -917,6 +932,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmployerFilter employer_filters = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EmployerFilter getEmployerFilters(int index) {
     return employerFilters_.get(index);
   }
@@ -937,6 +953,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmployerFilter employer_filters = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EmployerFilterOrBuilder getEmployerFiltersOrBuilder(
       int index) {
     return employerFilters_.get(index);
@@ -960,6 +977,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationFilter education_filters = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.EducationFilter> getEducationFiltersList() {
     return educationFilters_;
   }
@@ -979,6 +997,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationFilter education_filters = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.EducationFilterOrBuilder>
       getEducationFiltersOrBuilderList() {
     return educationFilters_;
@@ -999,6 +1018,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationFilter education_filters = 5;</code>
    */
+  @java.lang.Override
   public int getEducationFiltersCount() {
     return educationFilters_.size();
   }
@@ -1018,6 +1038,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationFilter education_filters = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EducationFilter getEducationFilters(int index) {
     return educationFilters_.get(index);
   }
@@ -1037,6 +1058,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationFilter education_filters = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EducationFilterOrBuilder getEducationFiltersOrBuilder(
       int index) {
     return educationFilters_.get(index);
@@ -1060,6 +1082,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.SkillFilter skill_filters = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.SkillFilter> getSkillFiltersList() {
     return skillFilters_;
   }
@@ -1079,6 +1102,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.SkillFilter skill_filters = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.SkillFilterOrBuilder>
       getSkillFiltersOrBuilderList() {
     return skillFilters_;
@@ -1099,6 +1123,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.SkillFilter skill_filters = 6;</code>
    */
+  @java.lang.Override
   public int getSkillFiltersCount() {
     return skillFilters_.size();
   }
@@ -1118,6 +1143,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.SkillFilter skill_filters = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SkillFilter getSkillFilters(int index) {
     return skillFilters_.get(index);
   }
@@ -1137,6 +1163,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.SkillFilter skill_filters = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SkillFilterOrBuilder getSkillFiltersOrBuilder(int index) {
     return skillFilters_.get(index);
   }
@@ -1160,6 +1187,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.WorkExperienceFilter work_experience_filter = 7;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.WorkExperienceFilter>
       getWorkExperienceFilterList() {
     return workExperienceFilter_;
@@ -1180,6 +1208,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.WorkExperienceFilter work_experience_filter = 7;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.WorkExperienceFilterOrBuilder>
       getWorkExperienceFilterOrBuilderList() {
     return workExperienceFilter_;
@@ -1200,6 +1229,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.WorkExperienceFilter work_experience_filter = 7;
    * </code>
    */
+  @java.lang.Override
   public int getWorkExperienceFilterCount() {
     return workExperienceFilter_.size();
   }
@@ -1219,6 +1249,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.WorkExperienceFilter work_experience_filter = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.WorkExperienceFilter getWorkExperienceFilter(int index) {
     return workExperienceFilter_.get(index);
   }
@@ -1238,6 +1269,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.WorkExperienceFilter work_experience_filter = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.WorkExperienceFilterOrBuilder
       getWorkExperienceFilterOrBuilder(int index) {
     return workExperienceFilter_.get(index);
@@ -1256,6 +1288,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.TimeFilter time_filters = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.TimeFilter> getTimeFiltersList() {
     return timeFilters_;
   }
@@ -1270,6 +1303,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.TimeFilter time_filters = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.TimeFilterOrBuilder>
       getTimeFiltersOrBuilderList() {
     return timeFilters_;
@@ -1285,6 +1319,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.TimeFilter time_filters = 8;</code>
    */
+  @java.lang.Override
   public int getTimeFiltersCount() {
     return timeFilters_.size();
   }
@@ -1299,6 +1334,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.TimeFilter time_filters = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TimeFilter getTimeFilters(int index) {
     return timeFilters_.get(index);
   }
@@ -1313,6 +1349,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.TimeFilter time_filters = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TimeFilterOrBuilder getTimeFiltersOrBuilder(int index) {
     return timeFilters_.get(index);
   }
@@ -1330,6 +1367,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the hirableFilter field is set.
    */
+  @java.lang.Override
   public boolean hasHirableFilter() {
     return hirableFilter_ != null;
   }
@@ -1344,6 +1382,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The hirableFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getHirableFilter() {
     return hirableFilter_ == null
         ? com.google.protobuf.BoolValue.getDefaultInstance()
@@ -1358,6 +1397,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.BoolValue hirable_filter = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getHirableFilterOrBuilder() {
     return getHirableFilter();
   }
@@ -1376,6 +1416,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationDateFilter application_date_filters = 10;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.ApplicationDateFilter>
       getApplicationDateFiltersList() {
     return applicationDateFilters_;
@@ -1391,6 +1432,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationDateFilter application_date_filters = 10;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.ApplicationDateFilterOrBuilder>
       getApplicationDateFiltersOrBuilderList() {
     return applicationDateFilters_;
@@ -1406,6 +1448,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationDateFilter application_date_filters = 10;
    * </code>
    */
+  @java.lang.Override
   public int getApplicationDateFiltersCount() {
     return applicationDateFilters_.size();
   }
@@ -1420,6 +1463,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationDateFilter application_date_filters = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationDateFilter getApplicationDateFilters(
       int index) {
     return applicationDateFilters_.get(index);
@@ -1435,6 +1479,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationDateFilter application_date_filters = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationDateFilterOrBuilder
       getApplicationDateFiltersOrBuilder(int index) {
     return applicationDateFilters_.get(index);
@@ -1455,6 +1500,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>
       getApplicationOutcomeNotesFiltersList() {
     return applicationOutcomeNotesFilters_;
@@ -1471,6 +1517,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder>
       getApplicationOutcomeNotesFiltersOrBuilderList() {
@@ -1488,6 +1535,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
+  @java.lang.Override
   public int getApplicationOutcomeNotesFiltersCount() {
     return applicationOutcomeNotesFilters_.size();
   }
@@ -1503,6 +1551,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter
       getApplicationOutcomeNotesFilters(int index) {
     return applicationOutcomeNotesFilters_.get(index);
@@ -1519,6 +1568,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder
       getApplicationOutcomeNotesFiltersOrBuilder(int index) {
     return applicationOutcomeNotesFilters_.get(index);
@@ -1537,6 +1587,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.ApplicationJobFilter>
       getApplicationJobFiltersList() {
     return applicationJobFilters_;
@@ -1551,6 +1602,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.ApplicationJobFilterOrBuilder>
       getApplicationJobFiltersOrBuilderList() {
     return applicationJobFilters_;
@@ -1565,6 +1617,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
    * </code>
    */
+  @java.lang.Override
   public int getApplicationJobFiltersCount() {
     return applicationJobFilters_.size();
   }
@@ -1578,6 +1631,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationJobFilter getApplicationJobFilters(int index) {
     return applicationJobFilters_.get(index);
   }
@@ -1591,6 +1645,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.ApplicationJobFilter application_job_filters = 13;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationJobFilterOrBuilder
       getApplicationJobFiltersOrBuilder(int index) {
     return applicationJobFilters_.get(index);
@@ -1626,6 +1681,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The customAttributeFilter.
    */
+  @java.lang.Override
   public java.lang.String getCustomAttributeFilter() {
     java.lang.Object ref = customAttributeFilter_;
     if (ref instanceof java.lang.String) {
@@ -1665,6 +1721,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for customAttributeFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCustomAttributeFilterBytes() {
     java.lang.Object ref = customAttributeFilter_;
     if (ref instanceof java.lang.String) {
@@ -1705,6 +1762,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the candidateAvailabilityFilter field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean hasCandidateAvailabilityFilter() {
     return candidateAvailabilityFilter_ != null;
@@ -1735,6 +1793,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The candidateAvailabilityFilter.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.talent.v4beta1.CandidateAvailabilityFilter
       getCandidateAvailabilityFilter() {
@@ -1766,6 +1825,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.talent.v4beta1.CandidateAvailabilityFilter candidate_availability_filter = 16 [deprecated = true];
    * </code>
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.talent.v4beta1.CandidateAvailabilityFilterOrBuilder
       getCandidateAvailabilityFilterOrBuilder() {
@@ -1794,6 +1854,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.AvailabilityFilter>
       getAvailabilityFiltersList() {
     return availabilityFilters_;
@@ -1818,6 +1879,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.AvailabilityFilterOrBuilder>
       getAvailabilityFiltersOrBuilderList() {
     return availabilityFilters_;
@@ -1842,6 +1904,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
    * </code>
    */
+  @java.lang.Override
   public int getAvailabilityFiltersCount() {
     return availabilityFilters_.size();
   }
@@ -1865,6 +1928,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AvailabilityFilter getAvailabilityFilters(int index) {
     return availabilityFilters_.get(index);
   }
@@ -1888,6 +1952,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AvailabilityFilter availability_filters = 18;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AvailabilityFilterOrBuilder
       getAvailabilityFiltersOrBuilder(int index) {
     return availabilityFilters_.get(index);
@@ -1907,6 +1972,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.PersonNameFilter>
       getPersonNameFiltersList() {
     return personNameFilters_;
@@ -1923,6 +1989,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder>
       getPersonNameFiltersOrBuilderList() {
     return personNameFilters_;
@@ -1939,6 +2006,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
    */
+  @java.lang.Override
   public int getPersonNameFiltersCount() {
     return personNameFilters_.size();
   }
@@ -1954,6 +2022,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PersonNameFilter getPersonNameFilters(int index) {
     return personNameFilters_.get(index);
   }
@@ -1969,6 +2038,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonNameFilter person_name_filters = 17;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PersonNameFilterOrBuilder getPersonNameFiltersOrBuilder(
       int index) {
     return personNameFilters_.get(index);

@@ -562,6 +562,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -588,6 +589,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -616,6 +618,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The externalId.
    */
+  @java.lang.Override
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
@@ -641,6 +644,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for externalId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExternalIdBytes() {
     java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
@@ -669,6 +673,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The source.
    */
+  @java.lang.Override
   public java.lang.String getSource() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
@@ -694,6 +699,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for source.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceBytes() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
@@ -720,6 +726,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -743,6 +750,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -777,6 +785,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The groupId.
    */
+  @java.lang.Override
   public java.lang.String getGroupId() {
     java.lang.Object ref = groupId_;
     if (ref instanceof java.lang.String) {
@@ -808,6 +817,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for groupId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGroupIdBytes() {
     java.lang.Object ref = groupId_;
     if (ref instanceof java.lang.String) {
@@ -833,6 +843,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the isHirable field is set.
    */
+  @java.lang.Override
   public boolean hasIsHirable() {
     return isHirable_ != null;
   }
@@ -847,6 +858,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isHirable.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getIsHirable() {
     return isHirable_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isHirable_;
   }
@@ -859,6 +871,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.BoolValue is_hirable = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getIsHirableOrBuilder() {
     return getIsHirable();
   }
@@ -876,6 +889,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -890,6 +904,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -902,6 +917,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -919,6 +935,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -933,6 +950,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -945,6 +963,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -976,6 +995,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the candidateUpdateTime field is set.
    */
+  @java.lang.Override
   public boolean hasCandidateUpdateTime() {
     return candidateUpdateTime_ != null;
   }
@@ -1004,6 +1024,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The candidateUpdateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCandidateUpdateTime() {
     return candidateUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1032,6 +1053,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp candidate_update_time = 67;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCandidateUpdateTimeOrBuilder() {
     return getCandidateUpdateTime();
   }
@@ -1054,6 +1076,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the resumeUpdateTime field is set.
    */
+  @java.lang.Override
   public boolean hasResumeUpdateTime() {
     return resumeUpdateTime_ != null;
   }
@@ -1073,6 +1096,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resumeUpdateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getResumeUpdateTime() {
     return resumeUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1092,6 +1116,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp resume_update_time = 68;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getResumeUpdateTimeOrBuilder() {
     return getResumeUpdateTime();
   }
@@ -1109,6 +1134,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the resume field is set.
    */
+  @java.lang.Override
   public boolean hasResume() {
     return resume_ != null;
   }
@@ -1123,6 +1149,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resume.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Resume getResume() {
     return resume_ == null ? com.google.cloud.talent.v4beta1.Resume.getDefaultInstance() : resume_;
   }
@@ -1135,6 +1162,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.Resume resume = 53;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResumeOrBuilder getResumeOrBuilder() {
     return getResume();
   }
@@ -1151,6 +1179,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonName person_names = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.PersonName> getPersonNamesList() {
     return personNames_;
   }
@@ -1164,6 +1193,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonName person_names = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.PersonNameOrBuilder>
       getPersonNamesOrBuilderList() {
     return personNames_;
@@ -1178,6 +1208,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonName person_names = 11;</code>
    */
+  @java.lang.Override
   public int getPersonNamesCount() {
     return personNames_.size();
   }
@@ -1191,6 +1222,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonName person_names = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PersonName getPersonNames(int index) {
     return personNames_.get(index);
   }
@@ -1204,6 +1236,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonName person_names = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PersonNameOrBuilder getPersonNamesOrBuilder(int index) {
     return personNames_.get(index);
   }
@@ -1238,6 +1271,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Address> getAddressesList() {
     return addresses_;
   }
@@ -1269,6 +1303,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.AddressOrBuilder>
       getAddressesOrBuilderList() {
     return addresses_;
@@ -1301,6 +1336,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
    */
+  @java.lang.Override
   public int getAddressesCount() {
     return addresses_.size();
   }
@@ -1332,6 +1368,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Address getAddresses(int index) {
     return addresses_.get(index);
   }
@@ -1363,6 +1400,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Address addresses = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AddressOrBuilder getAddressesOrBuilder(int index) {
     return addresses_.get(index);
   }
@@ -1378,6 +1416,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Email email_addresses = 13;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Email> getEmailAddressesList() {
     return emailAddresses_;
   }
@@ -1390,6 +1429,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Email email_addresses = 13;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.EmailOrBuilder>
       getEmailAddressesOrBuilderList() {
     return emailAddresses_;
@@ -1403,6 +1443,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Email email_addresses = 13;</code>
    */
+  @java.lang.Override
   public int getEmailAddressesCount() {
     return emailAddresses_.size();
   }
@@ -1415,6 +1456,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Email email_addresses = 13;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Email getEmailAddresses(int index) {
     return emailAddresses_.get(index);
   }
@@ -1427,6 +1469,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Email email_addresses = 13;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EmailOrBuilder getEmailAddressesOrBuilder(int index) {
     return emailAddresses_.get(index);
   }
@@ -1442,6 +1485,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Phone phone_numbers = 14;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Phone> getPhoneNumbersList() {
     return phoneNumbers_;
   }
@@ -1454,6 +1498,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Phone phone_numbers = 14;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.PhoneOrBuilder>
       getPhoneNumbersOrBuilderList() {
     return phoneNumbers_;
@@ -1467,6 +1512,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Phone phone_numbers = 14;</code>
    */
+  @java.lang.Override
   public int getPhoneNumbersCount() {
     return phoneNumbers_.size();
   }
@@ -1479,6 +1525,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Phone phone_numbers = 14;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Phone getPhoneNumbers(int index) {
     return phoneNumbers_.get(index);
   }
@@ -1491,6 +1538,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Phone phone_numbers = 14;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PhoneOrBuilder getPhoneNumbersOrBuilder(int index) {
     return phoneNumbers_.get(index);
   }
@@ -1506,6 +1554,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonalUri personal_uris = 15;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.PersonalUri> getPersonalUrisList() {
     return personalUris_;
   }
@@ -1518,6 +1567,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonalUri personal_uris = 15;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.PersonalUriOrBuilder>
       getPersonalUrisOrBuilderList() {
     return personalUris_;
@@ -1531,6 +1581,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonalUri personal_uris = 15;</code>
    */
+  @java.lang.Override
   public int getPersonalUrisCount() {
     return personalUris_.size();
   }
@@ -1543,6 +1594,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonalUri personal_uris = 15;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PersonalUri getPersonalUris(int index) {
     return personalUris_.get(index);
   }
@@ -1555,6 +1607,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.PersonalUri personal_uris = 15;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PersonalUriOrBuilder getPersonalUrisOrBuilder(int index) {
     return personalUris_.get(index);
   }
@@ -1573,6 +1626,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.AdditionalContactInfo>
       getAdditionalContactInfoList() {
     return additionalContactInfo_;
@@ -1588,6 +1642,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.AdditionalContactInfoOrBuilder>
       getAdditionalContactInfoOrBuilderList() {
     return additionalContactInfo_;
@@ -1603,6 +1658,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
    * </code>
    */
+  @java.lang.Override
   public int getAdditionalContactInfoCount() {
     return additionalContactInfo_.size();
   }
@@ -1617,6 +1673,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AdditionalContactInfo getAdditionalContactInfo(int index) {
     return additionalContactInfo_.get(index);
   }
@@ -1631,6 +1688,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.talent.v4beta1.AdditionalContactInfo additional_contact_info = 16;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AdditionalContactInfoOrBuilder
       getAdditionalContactInfoOrBuilder(int index) {
     return additionalContactInfo_.get(index);
@@ -1657,6 +1715,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.EmploymentRecord>
       getEmploymentRecordsList() {
     return employmentRecords_;
@@ -1680,6 +1739,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.EmploymentRecordOrBuilder>
       getEmploymentRecordsOrBuilderList() {
     return employmentRecords_;
@@ -1703,6 +1763,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
    */
+  @java.lang.Override
   public int getEmploymentRecordsCount() {
     return employmentRecords_.size();
   }
@@ -1725,6 +1786,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EmploymentRecord getEmploymentRecords(int index) {
     return employmentRecords_.get(index);
   }
@@ -1747,6 +1809,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EmploymentRecord employment_records = 17;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EmploymentRecordOrBuilder getEmploymentRecordsOrBuilder(
       int index) {
     return employmentRecords_.get(index);
@@ -1772,6 +1835,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.EducationRecord> getEducationRecordsList() {
     return educationRecords_;
   }
@@ -1793,6 +1857,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.EducationRecordOrBuilder>
       getEducationRecordsOrBuilderList() {
     return educationRecords_;
@@ -1815,6 +1880,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
    */
+  @java.lang.Override
   public int getEducationRecordsCount() {
     return educationRecords_.size();
   }
@@ -1836,6 +1902,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EducationRecord getEducationRecords(int index) {
     return educationRecords_.get(index);
   }
@@ -1857,6 +1924,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.EducationRecord education_records = 18;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EducationRecordOrBuilder getEducationRecordsOrBuilder(
       int index) {
     return educationRecords_.get(index);
@@ -1875,6 +1943,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Skill> getSkillsList() {
     return skills_;
   }
@@ -1889,6 +1958,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.SkillOrBuilder>
       getSkillsOrBuilderList() {
     return skills_;
@@ -1904,6 +1974,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
    */
+  @java.lang.Override
   public int getSkillsCount() {
     return skills_.size();
   }
@@ -1918,6 +1989,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Skill getSkills(int index) {
     return skills_.get(index);
   }
@@ -1932,6 +2004,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills = 19;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SkillOrBuilder getSkillsOrBuilder(int index) {
     return skills_.get(index);
   }
@@ -1950,6 +2023,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Activity> getActivitiesList() {
     return activities_;
   }
@@ -1965,6 +2039,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.ActivityOrBuilder>
       getActivitiesOrBuilderList() {
     return activities_;
@@ -1981,6 +2056,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
    */
+  @java.lang.Override
   public int getActivitiesCount() {
     return activities_.size();
   }
@@ -1996,6 +2072,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Activity getActivities(int index) {
     return activities_.get(index);
   }
@@ -2011,6 +2088,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Activity activities = 20;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ActivityOrBuilder getActivitiesOrBuilder(int index) {
     return activities_.get(index);
   }
@@ -2027,6 +2105,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Publication> getPublicationsList() {
     return publications_;
   }
@@ -2040,6 +2119,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.PublicationOrBuilder>
       getPublicationsOrBuilderList() {
     return publications_;
@@ -2054,6 +2134,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
    */
+  @java.lang.Override
   public int getPublicationsCount() {
     return publications_.size();
   }
@@ -2067,6 +2148,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Publication getPublications(int index) {
     return publications_.get(index);
   }
@@ -2080,6 +2162,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Publication publications = 21;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PublicationOrBuilder getPublicationsOrBuilder(int index) {
     return publications_.get(index);
   }
@@ -2095,6 +2178,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Patent patents = 22;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Patent> getPatentsList() {
     return patents_;
   }
@@ -2107,6 +2191,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Patent patents = 22;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.PatentOrBuilder>
       getPatentsOrBuilderList() {
     return patents_;
@@ -2120,6 +2205,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Patent patents = 22;</code>
    */
+  @java.lang.Override
   public int getPatentsCount() {
     return patents_.size();
   }
@@ -2132,6 +2218,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Patent patents = 22;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Patent getPatents(int index) {
     return patents_.get(index);
   }
@@ -2144,6 +2231,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Patent patents = 22;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PatentOrBuilder getPatentsOrBuilder(int index) {
     return patents_.get(index);
   }
@@ -2159,6 +2247,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Certification certifications = 23;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Certification> getCertificationsList() {
     return certifications_;
   }
@@ -2171,6 +2260,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Certification certifications = 23;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.CertificationOrBuilder>
       getCertificationsOrBuilderList() {
     return certifications_;
@@ -2184,6 +2274,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Certification certifications = 23;</code>
    */
+  @java.lang.Override
   public int getCertificationsCount() {
     return certifications_.size();
   }
@@ -2196,6 +2287,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Certification certifications = 23;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Certification getCertifications(int index) {
     return certifications_.get(index);
   }
@@ -2208,6 +2300,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Certification certifications = 23;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CertificationOrBuilder getCertificationsOrBuilder(
       int index) {
     return certifications_.get(index);
@@ -2393,6 +2486,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
    * </code>
    */
+  @java.lang.Override
   public boolean containsCustomAttributes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -2400,6 +2494,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     return internalGetCustomAttributes().getMap().containsKey(key);
   }
   /** Use {@link #getCustomAttributesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
       getCustomAttributes() {
@@ -2429,6 +2524,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
       getCustomAttributesMap() {
     return internalGetCustomAttributes().getMap();
@@ -2457,6 +2553,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
       java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
     if (key == null) {
@@ -2490,6 +2587,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -2518,6 +2616,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The processed.
    */
+  @java.lang.Override
   public boolean getProcessed() {
     return processed_;
   }
@@ -2536,6 +2635,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The keywordSnippet.
    */
+  @java.lang.Override
   public java.lang.String getKeywordSnippet() {
     java.lang.Object ref = keywordSnippet_;
     if (ref instanceof java.lang.String) {
@@ -2559,6 +2659,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for keywordSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeywordSnippetBytes() {
     java.lang.Object ref = keywordSnippet_;
     if (ref instanceof java.lang.String) {
@@ -2584,6 +2685,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.AvailabilitySignal>
       getAvailabilitySignalsList() {
     return availabilitySignals_;
@@ -2599,6 +2701,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder>
       getAvailabilitySignalsOrBuilderList() {
     return availabilitySignals_;
@@ -2614,6 +2717,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getAvailabilitySignalsCount() {
     return availabilitySignals_.size();
   }
@@ -2628,6 +2732,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AvailabilitySignal getAvailabilitySignals(int index) {
     return availabilitySignals_.get(index);
   }
@@ -2642,6 +2747,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.AvailabilitySignal availability_signals = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AvailabilitySignalOrBuilder
       getAvailabilitySignalsOrBuilder(int index) {
     return availabilitySignals_.get(index);
@@ -2662,6 +2768,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Location> getDerivedAddressesList() {
     return derivedAddresses_;
   }
@@ -2678,6 +2785,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.LocationOrBuilder>
       getDerivedAddressesOrBuilderList() {
     return derivedAddresses_;
@@ -2695,6 +2803,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getDerivedAddressesCount() {
     return derivedAddresses_.size();
   }
@@ -2711,6 +2820,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Location getDerivedAddresses(int index) {
     return derivedAddresses_.get(index);
   }
@@ -2727,6 +2837,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.talent.v4beta1.Location derived_addresses = 64 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.LocationOrBuilder getDerivedAddressesOrBuilder(int index) {
     return derivedAddresses_.get(index);
   }
@@ -11999,6 +12110,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
      * </code>
      */
+    @java.lang.Override
     public boolean containsCustomAttributes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -12006,6 +12118,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       return internalGetCustomAttributes().getMap().containsKey(key);
     }
     /** Use {@link #getCustomAttributesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
         getCustomAttributes() {
@@ -12035,6 +12148,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
         getCustomAttributesMap() {
       return internalGetCustomAttributes().getMap();
@@ -12063,6 +12177,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
         java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
       if (key == null) {
@@ -12096,6 +12211,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrThrow(
         java.lang.String key) {
       if (key == null) {
@@ -12229,6 +12345,7 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The processed.
      */
+    @java.lang.Override
     public boolean getProcessed() {
       return processed_;
     }

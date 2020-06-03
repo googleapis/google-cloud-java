@@ -874,6 +874,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The instruction.
      */
+    @java.lang.Override
     public java.lang.String getInstruction() {
       java.lang.Object ref = instruction_;
       if (ref instanceof java.lang.String) {
@@ -900,6 +901,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for instruction.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getInstructionBytes() {
       java.lang.Object ref = instruction_;
       if (ref instanceof java.lang.String) {
@@ -2196,6 +2198,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4beta1.Location locations = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.talent.v4beta1.Location> getLocationsList() {
       return locations_;
     }
@@ -2210,6 +2213,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4beta1.Location locations = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.cloud.talent.v4beta1.LocationOrBuilder>
         getLocationsOrBuilderList() {
       return locations_;
@@ -2225,6 +2229,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4beta1.Location locations = 1;</code>
      */
+    @java.lang.Override
     public int getLocationsCount() {
       return locations_.size();
     }
@@ -2239,6 +2244,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4beta1.Location locations = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Location getLocations(int index) {
       return locations_.get(index);
     }
@@ -2253,6 +2259,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4beta1.Location locations = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.LocationOrBuilder getLocationsOrBuilder(int index) {
       return locations_.get(index);
     }
@@ -2284,6 +2291,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return A list containing the jobCategories.
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.talent.v4beta1.JobCategory> getJobCategoriesList() {
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.cloud.talent.v4beta1.JobCategory>(
@@ -2300,6 +2308,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The count of jobCategories.
      */
+    @java.lang.Override
     public int getJobCategoriesCount() {
       return jobCategories_.size();
     }
@@ -2315,6 +2324,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @param index The index of the element to return.
      * @return The jobCategories at the given index.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobCategory getJobCategories(int index) {
       return jobCategories_converter_.convert(jobCategories_.get(index));
     }
@@ -2329,6 +2339,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return A list containing the enum numeric values on the wire for jobCategories.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Integer> getJobCategoriesValueList() {
       return jobCategories_;
     }
@@ -2344,6 +2355,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of jobCategories at the given index.
      */
+    @java.lang.Override
     public int getJobCategoriesValue(int index) {
       return jobCategories_.get(index);
     }
@@ -3590,6 +3602,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The disableStreetAddressResolution.
      */
+    @java.lang.Override
     public boolean getDisableStreetAddressResolution() {
       return disableStreetAddressResolution_;
     }
@@ -3615,6 +3628,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for htmlSanitization.
      */
+    @java.lang.Override
     public int getHtmlSanitizationValue() {
       return htmlSanitization_;
     }
@@ -3637,6 +3651,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The htmlSanitization.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.HtmlSanitization getHtmlSanitization() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.HtmlSanitization result =
@@ -4005,6 +4020,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The disableStreetAddressResolution.
        */
+      @java.lang.Override
       public boolean getDisableStreetAddressResolution() {
         return disableStreetAddressResolution_;
       }
@@ -4066,6 +4082,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for htmlSanitization.
        */
+      @java.lang.Override
       public int getHtmlSanitizationValue() {
         return htmlSanitization_;
       }
@@ -4090,6 +4107,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setHtmlSanitizationValue(int value) {
+
         htmlSanitization_ = value;
         onChanged();
         return this;
@@ -4113,6 +4131,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The htmlSanitization.
        */
+      @java.lang.Override
       public com.google.cloud.talent.v4beta1.HtmlSanitization getHtmlSanitization() {
         @SuppressWarnings("deprecation")
         com.google.cloud.talent.v4beta1.HtmlSanitization result =
@@ -4250,6 +4269,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -4281,6 +4301,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -4313,6 +4334,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The company.
    */
+  @java.lang.Override
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
     if (ref instanceof java.lang.String) {
@@ -4342,6 +4364,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for company.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCompanyBytes() {
     java.lang.Object ref = company_;
     if (ref instanceof java.lang.String) {
@@ -4372,6 +4395,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The requisitionId.
    */
+  @java.lang.Override
   public java.lang.String getRequisitionId() {
     java.lang.Object ref = requisitionId_;
     if (ref instanceof java.lang.String) {
@@ -4399,6 +4423,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for requisitionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequisitionIdBytes() {
     java.lang.Object ref = requisitionId_;
     if (ref instanceof java.lang.String) {
@@ -4425,6 +4450,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -4448,6 +4474,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -4480,6 +4507,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -4509,6 +4537,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -4643,6 +4672,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the applicationInfo field is set.
    */
+  @java.lang.Override
   public boolean hasApplicationInfo() {
     return applicationInfo_ != null;
   }
@@ -4657,6 +4687,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The applicationInfo.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.ApplicationInfo getApplicationInfo() {
     return applicationInfo_ == null
         ? com.google.cloud.talent.v4beta1.Job.ApplicationInfo.getDefaultInstance()
@@ -4671,6 +4702,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.ApplicationInfoOrBuilder
       getApplicationInfoOrBuilder() {
     return getApplicationInfo();
@@ -4703,6 +4735,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the jobBenefits.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.JobBenefit> getJobBenefitsList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.talent.v4beta1.JobBenefit>(
@@ -4719,6 +4752,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of jobBenefits.
    */
+  @java.lang.Override
   public int getJobBenefitsCount() {
     return jobBenefits_.size();
   }
@@ -4734,6 +4768,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The jobBenefits at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobBenefit getJobBenefits(int index) {
     return jobBenefits_converter_.convert(jobBenefits_.get(index));
   }
@@ -4748,6 +4783,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for jobBenefits.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getJobBenefitsValueList() {
     return jobBenefits_;
   }
@@ -4763,6 +4799,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of jobBenefits at the given index.
    */
+  @java.lang.Override
   public int getJobBenefitsValue(int index) {
     return jobBenefits_.get(index);
   }
@@ -4783,6 +4820,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the compensationInfo field is set.
    */
+  @java.lang.Override
   public boolean hasCompensationInfo() {
     return compensationInfo_ != null;
   }
@@ -4798,6 +4836,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The compensationInfo.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationInfo getCompensationInfo() {
     return compensationInfo_ == null
         ? com.google.cloud.talent.v4beta1.CompensationInfo.getDefaultInstance()
@@ -4813,6 +4852,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationInfoOrBuilder getCompensationInfoOrBuilder() {
     return getCompensationInfo();
   }
@@ -4870,6 +4910,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
    * </code>
    */
+  @java.lang.Override
   public boolean containsCustomAttributes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -4877,6 +4918,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return internalGetCustomAttributes().getMap().containsKey(key);
   }
   /** Use {@link #getCustomAttributesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
       getCustomAttributes() {
@@ -4901,6 +4943,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
       getCustomAttributesMap() {
     return internalGetCustomAttributes().getMap();
@@ -4924,6 +4967,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
       java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
     if (key == null) {
@@ -4952,6 +4996,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -4992,6 +5037,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the degreeTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.DegreeType> getDegreeTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.talent.v4beta1.DegreeType>(
@@ -5008,6 +5054,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of degreeTypes.
    */
+  @java.lang.Override
   public int getDegreeTypesCount() {
     return degreeTypes_.size();
   }
@@ -5023,6 +5070,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The degreeTypes at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.DegreeType getDegreeTypes(int index) {
     return degreeTypes_converter_.convert(degreeTypes_.get(index));
   }
@@ -5037,6 +5085,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for degreeTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getDegreeTypesValueList() {
     return degreeTypes_;
   }
@@ -5052,6 +5101,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of degreeTypes at the given index.
    */
+  @java.lang.Override
   public int getDegreeTypesValue(int index) {
     return degreeTypes_.get(index);
   }
@@ -5073,6 +5123,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The department.
    */
+  @java.lang.Override
   public java.lang.String getDepartment() {
     java.lang.Object ref = department_;
     if (ref instanceof java.lang.String) {
@@ -5097,6 +5148,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for department.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDepartmentBytes() {
     java.lang.Object ref = department_;
     if (ref instanceof java.lang.String) {
@@ -5138,6 +5190,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the employmentTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.EmploymentType> getEmploymentTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.talent.v4beta1.EmploymentType>(
@@ -5156,6 +5209,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of employmentTypes.
    */
+  @java.lang.Override
   public int getEmploymentTypesCount() {
     return employmentTypes_.size();
   }
@@ -5173,6 +5227,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The employmentTypes at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EmploymentType getEmploymentTypes(int index) {
     return employmentTypes_converter_.convert(employmentTypes_.get(index));
   }
@@ -5189,6 +5244,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for employmentTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getEmploymentTypesValueList() {
     return employmentTypes_;
   }
@@ -5206,6 +5262,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of employmentTypes at the given index.
    */
+  @java.lang.Override
   public int getEmploymentTypesValue(int index) {
     return employmentTypes_.get(index);
   }
@@ -5227,6 +5284,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The incentives.
    */
+  @java.lang.Override
   public java.lang.String getIncentives() {
     java.lang.Object ref = incentives_;
     if (ref instanceof java.lang.String) {
@@ -5251,6 +5309,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for incentives.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIncentivesBytes() {
     java.lang.Object ref = incentives_;
     if (ref instanceof java.lang.String) {
@@ -5284,6 +5343,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -5314,6 +5374,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -5339,6 +5400,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for jobLevel.
    */
+  @java.lang.Override
   public int getJobLevelValue() {
     return jobLevel_;
   }
@@ -5353,6 +5415,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobLevel.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobLevel getJobLevel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.JobLevel result =
@@ -5378,6 +5441,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The promotionValue.
    */
+  @java.lang.Override
   public int getPromotionValue() {
     return promotionValue_;
   }
@@ -5400,6 +5464,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The qualifications.
    */
+  @java.lang.Override
   public java.lang.String getQualifications() {
     java.lang.Object ref = qualifications_;
     if (ref instanceof java.lang.String) {
@@ -5427,6 +5492,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for qualifications.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQualificationsBytes() {
     java.lang.Object ref = qualifications_;
     if (ref instanceof java.lang.String) {
@@ -5457,6 +5523,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The responsibilities.
    */
+  @java.lang.Override
   public java.lang.String getResponsibilities() {
     java.lang.Object ref = responsibilities_;
     if (ref instanceof java.lang.String) {
@@ -5484,6 +5551,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for responsibilities.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResponsibilitiesBytes() {
     java.lang.Object ref = responsibilities_;
     if (ref instanceof java.lang.String) {
@@ -5515,6 +5583,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for postingRegion.
    */
+  @java.lang.Override
   public int getPostingRegionValue() {
     return postingRegion_;
   }
@@ -5535,6 +5604,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The postingRegion.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PostingRegion getPostingRegion() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.PostingRegion result =
@@ -5557,6 +5627,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for visibility.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public int getVisibilityValue() {
     return visibility_;
@@ -5574,6 +5645,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The visibility.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
     @SuppressWarnings("deprecation")
@@ -5596,6 +5668,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the jobStartTime field is set.
    */
+  @java.lang.Override
   public boolean hasJobStartTime() {
     return jobStartTime_ != null;
   }
@@ -5611,6 +5684,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobStartTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getJobStartTime() {
     return jobStartTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -5626,6 +5700,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getJobStartTimeOrBuilder() {
     return getJobStartTime();
   }
@@ -5644,6 +5719,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the jobEndTime field is set.
    */
+  @java.lang.Override
   public boolean hasJobEndTime() {
     return jobEndTime_ != null;
   }
@@ -5659,6 +5735,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobEndTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getJobEndTime() {
     return jobEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : jobEndTime_;
   }
@@ -5672,6 +5749,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getJobEndTimeOrBuilder() {
     return getJobEndTime();
   }
@@ -5691,6 +5769,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the postingPublishTime field is set.
    */
+  @java.lang.Override
   public boolean hasPostingPublishTime() {
     return postingPublishTime_ != null;
   }
@@ -5707,6 +5786,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The postingPublishTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getPostingPublishTime() {
     return postingPublishTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -5723,6 +5803,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPostingPublishTimeOrBuilder() {
     return getPostingPublishTime();
   }
@@ -5774,6 +5855,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the postingExpireTime field is set.
    */
+  @java.lang.Override
   public boolean hasPostingExpireTime() {
     return postingExpireTime_ != null;
   }
@@ -5822,6 +5904,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The postingExpireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getPostingExpireTime() {
     return postingExpireTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -5870,6 +5953,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPostingExpireTimeOrBuilder() {
     return getPostingExpireTime();
   }
@@ -5889,6 +5973,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the postingCreateTime field is set.
    */
+  @java.lang.Override
   public boolean hasPostingCreateTime() {
     return postingCreateTime_ != null;
   }
@@ -5905,6 +5990,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The postingCreateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getPostingCreateTime() {
     return postingCreateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -5921,6 +6007,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * .google.protobuf.Timestamp posting_create_time = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPostingCreateTimeOrBuilder() {
     return getPostingCreateTime();
   }
@@ -5940,6 +6027,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the postingUpdateTime field is set.
    */
+  @java.lang.Override
   public boolean hasPostingUpdateTime() {
     return postingUpdateTime_ != null;
   }
@@ -5956,6 +6044,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The postingUpdateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getPostingUpdateTime() {
     return postingUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -5972,6 +6061,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * .google.protobuf.Timestamp posting_update_time = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPostingUpdateTimeOrBuilder() {
     return getPostingUpdateTime();
   }
@@ -5989,6 +6079,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The companyDisplayName.
    */
+  @java.lang.Override
   public java.lang.String getCompanyDisplayName() {
     java.lang.Object ref = companyDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -6011,6 +6102,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for companyDisplayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCompanyDisplayNameBytes() {
     java.lang.Object ref = companyDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -6038,6 +6130,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the derivedInfo field is set.
    */
+  @java.lang.Override
   public boolean hasDerivedInfo() {
     return derivedInfo_ != null;
   }
@@ -6054,6 +6147,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The derivedInfo.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.DerivedInfo getDerivedInfo() {
     return derivedInfo_ == null
         ? com.google.cloud.talent.v4beta1.Job.DerivedInfo.getDefaultInstance()
@@ -6070,6 +6164,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.talent.v4beta1.Job.DerivedInfo derived_info = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.DerivedInfoOrBuilder getDerivedInfoOrBuilder() {
     return getDerivedInfo();
   }
@@ -6087,6 +6182,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the processingOptions field is set.
    */
+  @java.lang.Override
   public boolean hasProcessingOptions() {
     return processingOptions_ != null;
   }
@@ -6101,6 +6197,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The processingOptions.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.ProcessingOptions getProcessingOptions() {
     return processingOptions_ == null
         ? com.google.cloud.talent.v4beta1.Job.ProcessingOptions.getDefaultInstance()
@@ -6115,6 +6212,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.ProcessingOptionsOrBuilder
       getProcessingOptionsOrBuilder() {
     return getProcessingOptions();
@@ -8750,6 +8848,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
      * </code>
      */
+    @java.lang.Override
     public boolean containsCustomAttributes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -8757,6 +8856,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return internalGetCustomAttributes().getMap().containsKey(key);
     }
     /** Use {@link #getCustomAttributesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
         getCustomAttributes() {
@@ -8781,6 +8881,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
         getCustomAttributesMap() {
       return internalGetCustomAttributes().getMap();
@@ -8804,6 +8905,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
         java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
       if (key == null) {
@@ -8832,6 +8934,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 10;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrThrow(
         java.lang.String key) {
       if (key == null) {
@@ -9793,6 +9896,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for jobLevel.
      */
+    @java.lang.Override
     public int getJobLevelValue() {
       return jobLevel_;
     }
@@ -9809,6 +9913,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setJobLevelValue(int value) {
+
       jobLevel_ = value;
       onChanged();
       return this;
@@ -9824,6 +9929,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The jobLevel.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobLevel getJobLevel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.JobLevel result =
@@ -9886,6 +9992,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The promotionValue.
      */
+    @java.lang.Override
     public int getPromotionValue() {
       return promotionValue_;
     }
@@ -10215,6 +10322,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for postingRegion.
      */
+    @java.lang.Override
     public int getPostingRegionValue() {
       return postingRegion_;
     }
@@ -10237,6 +10345,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPostingRegionValue(int value) {
+
       postingRegion_ = value;
       onChanged();
       return this;
@@ -10258,6 +10367,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The postingRegion.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.PostingRegion getPostingRegion() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.PostingRegion result =
@@ -10329,6 +10439,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for visibility.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public int getVisibilityValue() {
       return visibility_;
@@ -10349,6 +10460,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder setVisibilityValue(int value) {
+
       visibility_ = value;
       onChanged();
       return this;
@@ -10366,6 +10478,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The visibility.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
       @SuppressWarnings("deprecation")

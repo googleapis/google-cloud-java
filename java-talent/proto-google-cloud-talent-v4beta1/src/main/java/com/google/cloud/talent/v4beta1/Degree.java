@@ -147,6 +147,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for degreeType.
    */
+  @java.lang.Override
   public int getDegreeTypeValue() {
     return degreeType_;
   }
@@ -161,6 +162,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The degreeType.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.DegreeType getDegreeType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.DegreeType result =
@@ -183,6 +185,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The degreeName.
    */
+  @java.lang.Override
   public java.lang.String getDegreeName() {
     java.lang.Object ref = degreeName_;
     if (ref instanceof java.lang.String) {
@@ -207,6 +210,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for degreeName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDegreeNameBytes() {
     java.lang.Object ref = degreeName_;
     if (ref instanceof java.lang.String) {
@@ -668,6 +672,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for degreeType.
      */
+    @java.lang.Override
     public int getDegreeTypeValue() {
       return degreeType_;
     }
@@ -684,6 +689,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDegreeTypeValue(int value) {
+
       degreeType_ = value;
       onChanged();
       return this;
@@ -699,6 +705,7 @@ public final class Degree extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The degreeType.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.DegreeType getDegreeType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.DegreeType result =

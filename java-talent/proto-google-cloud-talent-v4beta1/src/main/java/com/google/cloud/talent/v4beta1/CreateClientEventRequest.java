@@ -145,6 +145,7 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +202,7 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    * @return Whether the clientEvent field is set.
    */
+  @java.lang.Override
   public boolean hasClientEvent() {
     return clientEvent_ != null;
   }
@@ -217,6 +220,7 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    * @return The clientEvent.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ClientEvent getClientEvent() {
     return clientEvent_ == null
         ? com.google.cloud.talent.v4beta1.ClientEvent.getDefaultInstance()
@@ -234,6 +238,7 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    * .google.cloud.talent.v4beta1.ClientEvent client_event = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ClientEventOrBuilder getClientEventOrBuilder() {
     return getClientEvent();
   }

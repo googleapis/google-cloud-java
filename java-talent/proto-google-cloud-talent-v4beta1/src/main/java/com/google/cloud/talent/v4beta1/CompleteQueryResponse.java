@@ -343,6 +343,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * @return The suggestion.
      */
+    @java.lang.Override
     public java.lang.String getSuggestion() {
       java.lang.Object ref = suggestion_;
       if (ref instanceof java.lang.String) {
@@ -365,6 +366,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * @return The bytes for suggestion.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSuggestionBytes() {
       java.lang.Object ref = suggestion_;
       if (ref instanceof java.lang.String) {
@@ -390,6 +392,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -404,6 +407,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType result =
@@ -427,6 +431,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * @return The imageUri.
      */
+    @java.lang.Override
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
       if (ref instanceof java.lang.String) {
@@ -450,6 +455,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * @return The bytes for imageUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getImageUriBytes() {
       java.lang.Object ref = imageUri_;
       if (ref instanceof java.lang.String) {
@@ -952,6 +958,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * @return The enum numeric value on the wire for type.
        */
+      @java.lang.Override
       public int getTypeValue() {
         return type_;
       }
@@ -968,6 +975,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+
         type_ = value;
         onChanged();
         return this;
@@ -983,6 +991,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * @return The type.
        */
+      @java.lang.Override
       public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType result =
@@ -1212,6 +1221,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult completion_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult>
       getCompletionResultsList() {
     return completionResults_;
@@ -1227,6 +1237,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult completion_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResultOrBuilder>
       getCompletionResultsOrBuilderList() {
@@ -1243,6 +1254,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult completion_results = 1;
    * </code>
    */
+  @java.lang.Override
   public int getCompletionResultsCount() {
     return completionResults_.size();
   }
@@ -1257,6 +1269,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult completion_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult
       getCompletionResults(int index) {
     return completionResults_.get(index);
@@ -1272,6 +1285,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResult completion_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompleteQueryResponse.CompletionResultOrBuilder
       getCompletionResultsOrBuilder(int index) {
     return completionResults_.get(index);
@@ -1291,6 +1305,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -1306,6 +1321,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
@@ -1321,6 +1337,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }

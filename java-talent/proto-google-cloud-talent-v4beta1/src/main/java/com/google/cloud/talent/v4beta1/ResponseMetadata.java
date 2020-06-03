@@ -125,6 +125,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The requestId.
    */
+  @java.lang.Override
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -148,6 +149,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {

@@ -148,6 +148,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    *
    * @return Whether the application field is set.
    */
+  @java.lang.Override
   public boolean hasApplication() {
     return application_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    *
    * @return The application.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Application getApplication() {
     return application_ == null
         ? com.google.cloud.talent.v4beta1.Application.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    * .google.cloud.talent.v4beta1.Application application = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationOrBuilder() {
     return getApplication();
   }
@@ -201,6 +204,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -219,6 +223,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -235,6 +240,7 @@ public final class UpdateApplicationRequest extends com.google.protobuf.Generate
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

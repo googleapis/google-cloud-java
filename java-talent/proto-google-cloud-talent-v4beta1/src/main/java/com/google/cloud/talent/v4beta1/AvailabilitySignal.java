@@ -154,6 +154,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -168,6 +169,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AvailabilitySignalType getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.AvailabilitySignalType result =
@@ -190,6 +192,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the lastUpdateTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastUpdateTime() {
     return lastUpdateTime_ != null;
   }
@@ -204,6 +207,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    * @return The lastUpdateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastUpdateTime() {
     return lastUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -218,6 +222,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.protobuf.Timestamp last_update_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
     return getLastUpdateTime();
   }
@@ -239,6 +244,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the filterSatisfied field is set.
    */
+  @java.lang.Override
   public boolean hasFilterSatisfied() {
     return filterSatisfied_ != null;
   }
@@ -257,6 +263,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    * @return The filterSatisfied.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getFilterSatisfied() {
     return filterSatisfied_ == null
         ? com.google.protobuf.BoolValue.getDefaultInstance()
@@ -275,6 +282,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.protobuf.BoolValue filter_satisfied = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getFilterSatisfiedOrBuilder() {
     return getFilterSatisfied();
   }
@@ -670,6 +678,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -686,6 +695,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -701,6 +711,7 @@ public final class AvailabilitySignal extends com.google.protobuf.GeneratedMessa
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.AvailabilitySignalType getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.AvailabilitySignalType result =

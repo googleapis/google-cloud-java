@@ -156,6 +156,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList() {
     return jobs_;
   }
@@ -170,6 +171,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder>
       getJobsOrBuilderList() {
     return jobs_;
@@ -185,6 +187,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
+  @java.lang.Override
   public int getJobsCount() {
     return jobs_.size();
   }
@@ -199,6 +202,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job getJobs(int index) {
     return jobs_.get(index);
   }
@@ -213,6 +217,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.talent.v4beta1.Job jobs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
   }
@@ -230,6 +235,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +258,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -278,6 +285,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -293,6 +301,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
@@ -308,6 +317,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }

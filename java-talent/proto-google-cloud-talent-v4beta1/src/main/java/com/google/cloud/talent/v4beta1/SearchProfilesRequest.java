@@ -226,6 +226,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +253,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -281,6 +283,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the requestMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasRequestMetadata() {
     return requestMetadata_ != null;
   }
@@ -299,6 +302,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The requestMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.RequestMetadata getRequestMetadata() {
     return requestMetadata_ == null
         ? com.google.cloud.talent.v4beta1.RequestMetadata.getDefaultInstance()
@@ -317,6 +321,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.talent.v4beta1.RequestMetadata request_metadata = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.RequestMetadataOrBuilder getRequestMetadataOrBuilder() {
     return getRequestMetadata();
   }
@@ -334,6 +339,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the profileQuery field is set.
    */
+  @java.lang.Override
   public boolean hasProfileQuery() {
     return profileQuery_ != null;
   }
@@ -348,6 +354,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The profileQuery.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ProfileQuery getProfileQuery() {
     return profileQuery_ == null
         ? com.google.cloud.talent.v4beta1.ProfileQuery.getDefaultInstance()
@@ -362,6 +369,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.talent.v4beta1.ProfileQuery profile_query = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ProfileQueryOrBuilder getProfileQueryOrBuilder() {
     return getProfileQuery();
   }
@@ -381,6 +389,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -404,6 +413,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -432,6 +442,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -462,6 +473,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The offset.
    */
+  @java.lang.Override
   public int getOffset() {
     return offset_;
   }
@@ -481,6 +493,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The disableSpellCheck.
    */
+  @java.lang.Override
   public boolean getDisableSpellCheck() {
     return disableSpellCheck_;
   }
@@ -514,6 +527,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The orderBy.
    */
+  @java.lang.Override
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -552,6 +566,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for orderBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -579,6 +594,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The caseSensitiveSort.
    */
+  @java.lang.Override
   public boolean getCaseSensitiveSort() {
     return caseSensitiveSort_;
   }
@@ -655,6 +671,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.HistogramQuery> getHistogramQueriesList() {
     return histogramQueries_;
   }
@@ -728,6 +745,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder>
       getHistogramQueriesOrBuilderList() {
     return histogramQueries_;
@@ -802,6 +820,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 10;</code>
    */
+  @java.lang.Override
   public int getHistogramQueriesCount() {
     return histogramQueries_.size();
   }
@@ -875,6 +894,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 10;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.HistogramQuery getHistogramQueries(int index) {
     return histogramQueries_.get(index);
   }
@@ -948,6 +968,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQuery histogram_queries = 10;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder getHistogramQueriesOrBuilder(
       int index) {
     return histogramQueries_.get(index);
@@ -981,6 +1002,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The resultSetId.
    */
+  @java.lang.Override
   public java.lang.String getResultSetId() {
     java.lang.Object ref = resultSetId_;
     if (ref instanceof java.lang.String) {
@@ -1018,6 +1040,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for resultSetId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResultSetIdBytes() {
     java.lang.Object ref = resultSetId_;
     if (ref instanceof java.lang.String) {
@@ -1054,6 +1077,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The strictKeywordsSearch.
    */
+  @java.lang.Override
   public boolean getStrictKeywordsSearch() {
     return strictKeywordsSearch_;
   }
@@ -2163,6 +2187,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -2359,6 +2384,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The offset.
      */
+    @java.lang.Override
     public int getOffset() {
       return offset_;
     }
@@ -2422,6 +2448,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The disableSpellCheck.
      */
+    @java.lang.Override
     public boolean getDisableSpellCheck() {
       return disableSpellCheck_;
     }
@@ -2665,6 +2692,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The caseSensitiveSort.
      */
+    @java.lang.Override
     public boolean getCaseSensitiveSort() {
       return caseSensitiveSort_;
     }
@@ -4371,6 +4399,7 @@ public final class SearchProfilesRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The strictKeywordsSearch.
      */
+    @java.lang.Override
     public boolean getStrictKeywordsSearch() {
       return strictKeywordsSearch_;
     }

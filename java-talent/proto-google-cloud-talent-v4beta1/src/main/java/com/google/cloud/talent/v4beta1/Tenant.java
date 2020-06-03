@@ -272,6 +272,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -321,6 +325,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -347,6 +352,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -373,6 +379,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The externalId.
    */
+  @java.lang.Override
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
@@ -396,6 +403,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for externalId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExternalIdBytes() {
     java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
@@ -423,6 +431,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for usageType.
    */
+  @java.lang.Override
   public int getUsageTypeValue() {
     return usageType_;
   }
@@ -439,6 +448,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The usageType.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Tenant.DataUsageType result =
@@ -1175,6 +1185,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for usageType.
      */
+    @java.lang.Override
     public int getUsageTypeValue() {
       return usageType_;
     }
@@ -1193,6 +1204,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUsageTypeValue(int value) {
+
       usageType_ = value;
       onChanged();
       return this;
@@ -1210,6 +1222,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The usageType.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Tenant.DataUsageType result =

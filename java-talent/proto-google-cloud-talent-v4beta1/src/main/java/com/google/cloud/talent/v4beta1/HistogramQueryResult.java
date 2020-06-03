@@ -151,6 +151,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    * @return The histogramQuery.
    */
+  @java.lang.Override
   public java.lang.String getHistogramQuery() {
     java.lang.Object ref = histogramQuery_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for histogramQuery.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHistogramQueryBytes() {
     java.lang.Object ref = histogramQuery_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +228,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
    */
+  @java.lang.Override
   public boolean containsHistogram(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -233,6 +236,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
     return internalGetHistogram().getMap().containsKey(key);
   }
   /** Use {@link #getHistogramMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getHistogram() {
     return getHistogramMap();
@@ -253,6 +257,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.Long> getHistogramMap() {
     return internalGetHistogram().getMap();
   }
@@ -272,6 +277,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
    */
+  @java.lang.Override
   public long getHistogramOrDefault(java.lang.String key, long defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -295,6 +301,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
    */
+  @java.lang.Override
   public long getHistogramOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -816,6 +823,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
      */
+    @java.lang.Override
     public boolean containsHistogram(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -823,6 +831,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
       return internalGetHistogram().getMap().containsKey(key);
     }
     /** Use {@link #getHistogramMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getHistogram() {
       return getHistogramMap();
@@ -843,6 +852,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.Long> getHistogramMap() {
       return internalGetHistogram().getMap();
     }
@@ -862,6 +872,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
      */
+    @java.lang.Override
     public long getHistogramOrDefault(java.lang.String key, long defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -885,6 +896,7 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, int64&gt; histogram = 2;</code>
      */
+    @java.lang.Override
     public long getHistogramOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

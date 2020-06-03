@@ -158,6 +158,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -256,6 +259,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -281,6 +285,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +308,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -331,6 +337,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -350,6 +357,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for jobView.
    */
+  @java.lang.Override
   public int getJobViewValue() {
     return jobView_;
   }
@@ -366,6 +374,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The jobView.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobView getJobView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.JobView result =
@@ -1170,6 +1179,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -1229,6 +1239,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for jobView.
      */
+    @java.lang.Override
     public int getJobViewValue() {
       return jobView_;
     }
@@ -1247,6 +1258,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setJobViewValue(int value) {
+
       jobView_ = value;
       onChanged();
       return this;
@@ -1264,6 +1276,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The jobView.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobView getJobView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.JobView result =

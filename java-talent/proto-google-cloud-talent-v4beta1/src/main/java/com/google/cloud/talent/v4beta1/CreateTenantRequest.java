@@ -144,6 +144,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the tenant field is set.
    */
+  @java.lang.Override
   public boolean hasTenant() {
     return tenant_ != null;
   }
@@ -211,6 +214,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The tenant.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Tenant getTenant() {
     return tenant_ == null ? com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance() : tenant_;
   }
@@ -224,6 +228,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TenantOrBuilder getTenantOrBuilder() {
     return getTenant();
   }

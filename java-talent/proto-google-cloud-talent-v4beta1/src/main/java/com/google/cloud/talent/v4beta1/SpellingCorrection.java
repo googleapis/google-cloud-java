@@ -137,6 +137,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    *
    * @return The corrected.
    */
+  @java.lang.Override
   public boolean getCorrected() {
     return corrected_;
   }
@@ -154,6 +155,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    *
    * @return The correctedText.
    */
+  @java.lang.Override
   public java.lang.String getCorrectedText() {
     java.lang.Object ref = correctedText_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +178,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for correctedText.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCorrectedTextBytes() {
     java.lang.Object ref = correctedText_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +209,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    *
    * @return The correctedHtml.
    */
+  @java.lang.Override
   public java.lang.String getCorrectedHtml() {
     java.lang.Object ref = correctedHtml_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +237,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for correctedHtml.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCorrectedHtmlBytes() {
     java.lang.Object ref = correctedHtml_;
     if (ref instanceof java.lang.String) {
@@ -606,6 +611,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      *
      * @return The corrected.
      */
+    @java.lang.Override
     public boolean getCorrected() {
       return corrected_;
     }

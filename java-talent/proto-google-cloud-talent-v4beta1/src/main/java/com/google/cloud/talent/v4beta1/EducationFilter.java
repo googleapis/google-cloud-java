@@ -145,6 +145,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The school.
    */
+  @java.lang.Override
   public java.lang.String getSchool() {
     java.lang.Object ref = school_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for school.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSchoolBytes() {
     java.lang.Object ref = school_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The fieldOfStudy.
    */
+  @java.lang.Override
   public java.lang.String getFieldOfStudy() {
     java.lang.Object ref = fieldOfStudy_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +221,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for fieldOfStudy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFieldOfStudyBytes() {
     java.lang.Object ref = fieldOfStudy_;
     if (ref instanceof java.lang.String) {
@@ -245,6 +249,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for degreeType.
    */
+  @java.lang.Override
   public int getDegreeTypeValue() {
     return degreeType_;
   }
@@ -261,6 +266,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The degreeType.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.DegreeType getDegreeType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.DegreeType result =
@@ -282,6 +288,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
    *
    * @return The negated.
    */
+  @java.lang.Override
   public boolean getNegated() {
     return negated_;
   }
@@ -887,6 +894,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for degreeType.
      */
+    @java.lang.Override
     public int getDegreeTypeValue() {
       return degreeType_;
     }
@@ -905,6 +913,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setDegreeTypeValue(int value) {
+
       degreeType_ = value;
       onChanged();
       return this;
@@ -922,6 +931,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
      *
      * @return The degreeType.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.DegreeType getDegreeType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.DegreeType result =
@@ -984,6 +994,7 @@ public final class EducationFilter extends com.google.protobuf.GeneratedMessageV
      *
      * @return The negated.
      */
+    @java.lang.Override
     public boolean getNegated() {
       return negated_;
     }

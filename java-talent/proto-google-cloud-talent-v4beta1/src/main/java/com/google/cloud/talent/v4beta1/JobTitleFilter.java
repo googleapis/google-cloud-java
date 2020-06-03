@@ -129,6 +129,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobTitle.
    */
+  @java.lang.Override
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
     if (ref instanceof java.lang.String) {
@@ -151,6 +152,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for jobTitle.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobTitleBytes() {
     java.lang.Object ref = jobTitle_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +179,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The negated.
    */
+  @java.lang.Override
   public boolean getNegated() {
     return negated_;
   }
@@ -631,6 +634,7 @@ public final class JobTitleFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The negated.
      */
+    @java.lang.Override
     public boolean getNegated() {
       return negated_;
     }

@@ -148,6 +148,7 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the company field is set.
    */
+  @java.lang.Override
   public boolean hasCompany() {
     return company_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The company.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Company getCompany() {
     return company_ == null
         ? com.google.cloud.talent.v4beta1.Company.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.talent.v4beta1.Company company = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompanyOrBuilder getCompanyOrBuilder() {
     return getCompany();
   }
@@ -201,6 +204,7 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -219,6 +223,7 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -235,6 +240,7 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

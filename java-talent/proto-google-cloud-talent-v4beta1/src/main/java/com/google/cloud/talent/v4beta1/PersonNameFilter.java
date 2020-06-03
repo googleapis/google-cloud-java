@@ -128,6 +128,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return The personName.
    */
+  @java.lang.Override
   public java.lang.String getPersonName() {
     java.lang.Object ref = personName_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class PersonNameFilter extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for personName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPersonNameBytes() {
     java.lang.Object ref = personName_;
     if (ref instanceof java.lang.String) {

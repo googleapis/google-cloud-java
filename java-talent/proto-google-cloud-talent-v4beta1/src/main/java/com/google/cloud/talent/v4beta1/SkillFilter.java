@@ -129,6 +129,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The skill.
    */
+  @java.lang.Override
   public java.lang.String getSkill() {
     java.lang.Object ref = skill_;
     if (ref instanceof java.lang.String) {
@@ -151,6 +152,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for skill.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSkillBytes() {
     java.lang.Object ref = skill_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +179,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The negated.
    */
+  @java.lang.Override
   public boolean getNegated() {
     return negated_;
   }
@@ -631,6 +634,7 @@ public final class SkillFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The negated.
      */
+    @java.lang.Override
     public boolean getNegated() {
       return negated_;
     }

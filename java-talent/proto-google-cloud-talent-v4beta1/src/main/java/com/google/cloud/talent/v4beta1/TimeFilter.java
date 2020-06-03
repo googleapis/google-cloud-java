@@ -262,6 +262,10 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -309,6 +313,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -325,6 +330,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -339,6 +345,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -358,6 +365,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -374,6 +382,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -388,6 +397,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -406,6 +416,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for timeField.
    */
+  @java.lang.Override
   public int getTimeFieldValue() {
     return timeField_;
   }
@@ -421,6 +432,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeField.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TimeFilter.TimeField getTimeField() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.TimeFilter.TimeField result =
@@ -1212,6 +1224,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for timeField.
      */
+    @java.lang.Override
     public int getTimeFieldValue() {
       return timeField_;
     }
@@ -1229,6 +1242,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTimeFieldValue(int value) {
+
       timeField_ = value;
       onChanged();
       return this;
@@ -1245,6 +1259,7 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timeField.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.TimeFilter.TimeField getTimeField() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.TimeFilter.TimeField result =

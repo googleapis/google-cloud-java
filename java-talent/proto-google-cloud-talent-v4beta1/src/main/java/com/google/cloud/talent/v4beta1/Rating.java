@@ -135,6 +135,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The overall.
    */
+  @java.lang.Override
   public double getOverall() {
     return overall_;
   }
@@ -152,6 +153,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The min.
    */
+  @java.lang.Override
   public double getMin() {
     return min_;
   }
@@ -169,6 +171,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The max.
    */
+  @java.lang.Override
   public double getMax() {
     return max_;
   }
@@ -187,6 +190,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The interval.
    */
+  @java.lang.Override
   public double getInterval() {
     return interval_;
   }
@@ -576,6 +580,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The overall.
      */
+    @java.lang.Override
     public double getOverall() {
       return overall_;
     }
@@ -627,6 +632,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The min.
      */
+    @java.lang.Override
     public double getMin() {
       return min_;
     }
@@ -678,6 +684,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The max.
      */
+    @java.lang.Override
     public double getMax() {
       return max_;
     }
@@ -730,6 +737,7 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The interval.
      */
+    @java.lang.Override
     public double getInterval() {
       return interval_;
     }

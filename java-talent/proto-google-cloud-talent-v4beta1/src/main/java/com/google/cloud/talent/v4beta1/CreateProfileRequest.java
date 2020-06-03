@@ -144,6 +144,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the profile field is set.
    */
+  @java.lang.Override
   public boolean hasProfile() {
     return profile_ != null;
   }
@@ -213,6 +216,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The profile.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Profile getProfile() {
     return profile_ == null
         ? com.google.cloud.talent.v4beta1.Profile.getDefaultInstance()
@@ -229,6 +233,7 @@ public final class CreateProfileRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.talent.v4beta1.Profile profile = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ProfileOrBuilder getProfileOrBuilder() {
     return getProfile();
   }

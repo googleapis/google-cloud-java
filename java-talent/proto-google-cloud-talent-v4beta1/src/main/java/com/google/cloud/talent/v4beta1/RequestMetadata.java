@@ -173,6 +173,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return The domain.
    */
+  @java.lang.Override
   public java.lang.String getDomain() {
     java.lang.Object ref = domain_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +206,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for domain.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDomainBytes() {
     java.lang.Object ref = domain_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +240,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return The sessionId.
    */
+  @java.lang.Override
   public java.lang.String getSessionId() {
     java.lang.Object ref = sessionId_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +271,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for sessionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSessionIdBytes() {
     java.lang.Object ref = sessionId_;
     if (ref instanceof java.lang.String) {
@@ -301,6 +305,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -331,6 +336,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserIdBytes() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -359,6 +365,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return The allowMissingIds.
    */
+  @java.lang.Override
   public boolean getAllowMissingIds() {
     return allowMissingIds_;
   }
@@ -377,6 +384,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the deviceInfo field is set.
    */
+  @java.lang.Override
   public boolean hasDeviceInfo() {
     return deviceInfo_ != null;
   }
@@ -392,6 +400,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * @return The deviceInfo.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.DeviceInfo getDeviceInfo() {
     return deviceInfo_ == null
         ? com.google.cloud.talent.v4beta1.DeviceInfo.getDefaultInstance()
@@ -407,6 +416,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.talent.v4beta1.DeviceInfo device_info = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.DeviceInfoOrBuilder getDeviceInfoOrBuilder() {
     return getDeviceInfo();
   }
@@ -1268,6 +1278,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      * @return The allowMissingIds.
      */
+    @java.lang.Override
     public boolean getAllowMissingIds() {
       return allowMissingIds_;
     }

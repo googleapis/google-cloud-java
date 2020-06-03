@@ -147,6 +147,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for signalType.
    */
+  @java.lang.Override
   public int getSignalTypeValue() {
     return signalType_;
   }
@@ -163,6 +164,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The signalType.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AvailabilitySignalType getSignalType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.AvailabilitySignalType result =
@@ -187,6 +189,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the range field is set.
    */
+  @java.lang.Override
   public boolean hasRange() {
     return range_ != null;
   }
@@ -203,6 +206,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The range.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TimestampRange getRange() {
     return range_ == null
         ? com.google.cloud.talent.v4beta1.TimestampRange.getDefaultInstance()
@@ -219,6 +223,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    * .google.cloud.talent.v4beta1.TimestampRange range = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TimestampRangeOrBuilder getRangeOrBuilder() {
     return getRange();
   }
@@ -239,6 +244,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
    *
    * @return The required.
    */
+  @java.lang.Override
   public boolean getRequired() {
     return required_;
   }
@@ -623,6 +629,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for signalType.
      */
+    @java.lang.Override
     public int getSignalTypeValue() {
       return signalType_;
     }
@@ -641,6 +648,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setSignalTypeValue(int value) {
+
       signalType_ = value;
       onChanged();
       return this;
@@ -658,6 +666,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      *
      * @return The signalType.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.AvailabilitySignalType getSignalType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.AvailabilitySignalType result =
@@ -928,6 +937,7 @@ public final class AvailabilityFilter extends com.google.protobuf.GeneratedMessa
      *
      * @return The required.
      */
+    @java.lang.Override
     public boolean getRequired() {
       return required_;
     }

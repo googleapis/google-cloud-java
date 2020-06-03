@@ -272,6 +272,10 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -318,6 +322,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The employer.
    */
+  @java.lang.Override
   public java.lang.String getEmployer() {
     java.lang.Object ref = employer_;
     if (ref instanceof java.lang.String) {
@@ -340,6 +345,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for employer.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEmployerBytes() {
     java.lang.Object ref = employer_;
     if (ref instanceof java.lang.String) {
@@ -366,6 +372,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for mode.
    */
+  @java.lang.Override
   public int getModeValue() {
     return mode_;
   }
@@ -381,6 +388,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mode.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode getMode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode result =
@@ -404,6 +412,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The negated.
    */
+  @java.lang.Override
   public boolean getNegated() {
     return negated_;
   }
@@ -879,6 +888,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for mode.
      */
+    @java.lang.Override
     public int getModeValue() {
       return mode_;
     }
@@ -896,6 +906,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
+
       mode_ = value;
       onChanged();
       return this;
@@ -912,6 +923,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mode.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode getMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode result =
@@ -975,6 +987,7 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The negated.
      */
+    @java.lang.Override
     public boolean getNegated() {
       return negated_;
     }

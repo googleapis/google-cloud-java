@@ -217,6 +217,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +241,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -331,6 +333,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The patentStatus.
    */
+  @java.lang.Override
   public java.lang.String getPatentStatus() {
     java.lang.Object ref = patentStatus_;
     if (ref instanceof java.lang.String) {
@@ -354,6 +357,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for patentStatus.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPatentStatusBytes() {
     java.lang.Object ref = patentStatus_;
     if (ref instanceof java.lang.String) {
@@ -379,6 +383,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the patentStatusDate field is set.
    */
+  @java.lang.Override
   public boolean hasPatentStatusDate() {
     return patentStatusDate_ != null;
   }
@@ -393,6 +398,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The patentStatusDate.
    */
+  @java.lang.Override
   public com.google.type.Date getPatentStatusDate() {
     return patentStatusDate_ == null
         ? com.google.type.Date.getDefaultInstance()
@@ -407,6 +413,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date patent_status_date = 4;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getPatentStatusDateOrBuilder() {
     return getPatentStatusDate();
   }
@@ -424,6 +431,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the patentFilingDate field is set.
    */
+  @java.lang.Override
   public boolean hasPatentFilingDate() {
     return patentFilingDate_ != null;
   }
@@ -438,6 +446,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The patentFilingDate.
    */
+  @java.lang.Override
   public com.google.type.Date getPatentFilingDate() {
     return patentFilingDate_ == null
         ? com.google.type.Date.getDefaultInstance()
@@ -452,6 +461,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date patent_filing_date = 5;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getPatentFilingDateOrBuilder() {
     return getPatentFilingDate();
   }
@@ -470,6 +480,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The patentOffice.
    */
+  @java.lang.Override
   public java.lang.String getPatentOffice() {
     java.lang.Object ref = patentOffice_;
     if (ref instanceof java.lang.String) {
@@ -493,6 +504,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for patentOffice.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPatentOfficeBytes() {
     java.lang.Object ref = patentOffice_;
     if (ref instanceof java.lang.String) {
@@ -519,6 +531,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The patentNumber.
    */
+  @java.lang.Override
   public java.lang.String getPatentNumber() {
     java.lang.Object ref = patentNumber_;
     if (ref instanceof java.lang.String) {
@@ -542,6 +555,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for patentNumber.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPatentNumberBytes() {
     java.lang.Object ref = patentNumber_;
     if (ref instanceof java.lang.String) {
@@ -568,6 +582,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The patentDescription.
    */
+  @java.lang.Override
   public java.lang.String getPatentDescription() {
     java.lang.Object ref = patentDescription_;
     if (ref instanceof java.lang.String) {
@@ -591,6 +606,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for patentDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPatentDescriptionBytes() {
     java.lang.Object ref = patentDescription_;
     if (ref instanceof java.lang.String) {
@@ -614,6 +630,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Skill> getSkillsUsedList() {
     return skillsUsed_;
   }
@@ -626,6 +643,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.SkillOrBuilder>
       getSkillsUsedOrBuilderList() {
     return skillsUsed_;
@@ -639,6 +657,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
    */
+  @java.lang.Override
   public int getSkillsUsedCount() {
     return skillsUsed_.size();
   }
@@ -651,6 +670,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Skill getSkillsUsed(int index) {
     return skillsUsed_.get(index);
   }
@@ -663,6 +683,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Skill skills_used = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SkillOrBuilder getSkillsUsedOrBuilder(int index) {
     return skillsUsed_.get(index);
   }

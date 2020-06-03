@@ -154,6 +154,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.talent.v4beta1.Tenant tenants = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Tenant> getTenantsList() {
     return tenants_;
   }
@@ -166,6 +167,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.talent.v4beta1.Tenant tenants = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.TenantOrBuilder>
       getTenantsOrBuilderList() {
     return tenants_;
@@ -179,6 +181,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.talent.v4beta1.Tenant tenants = 1;</code>
    */
+  @java.lang.Override
   public int getTenantsCount() {
     return tenants_.size();
   }
@@ -191,6 +194,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.talent.v4beta1.Tenant tenants = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Tenant getTenants(int index) {
     return tenants_.get(index);
   }
@@ -203,6 +207,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.talent.v4beta1.Tenant tenants = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TenantOrBuilder getTenantsOrBuilder(int index) {
     return tenants_.get(index);
   }
@@ -220,6 +225,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +248,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +275,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -283,6 +291,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
@@ -298,6 +307,7 @@ public final class ListTenantsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }

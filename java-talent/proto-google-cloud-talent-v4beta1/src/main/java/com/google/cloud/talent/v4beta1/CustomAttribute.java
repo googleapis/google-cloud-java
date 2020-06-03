@@ -255,6 +255,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    *
    * @return A list containing the longValues.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Long> getLongValuesList() {
     return longValues_;
   }
@@ -311,6 +312,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    *
    * @return The filterable.
    */
+  @java.lang.Override
   public boolean getFilterable() {
     return filterable_;
   }
@@ -1102,6 +1104,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      *
      * @return The filterable.
      */
+    @java.lang.Override
     public boolean getFilterable() {
       return filterable_;
     }

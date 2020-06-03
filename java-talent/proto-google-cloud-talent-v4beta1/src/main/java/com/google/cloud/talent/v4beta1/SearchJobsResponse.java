@@ -533,6 +533,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the job field is set.
      */
+    @java.lang.Override
     public boolean hasJob() {
       return job_ != null;
     }
@@ -547,6 +548,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The job.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Job getJob() {
       return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
     }
@@ -559,6 +561,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder() {
       return getJob();
     }
@@ -577,6 +580,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The jobSummary.
      */
+    @java.lang.Override
     public java.lang.String getJobSummary() {
       java.lang.Object ref = jobSummary_;
       if (ref instanceof java.lang.String) {
@@ -600,6 +604,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for jobSummary.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getJobSummaryBytes() {
       java.lang.Object ref = jobSummary_;
       if (ref instanceof java.lang.String) {
@@ -627,6 +632,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The jobTitleSnippet.
      */
+    @java.lang.Override
     public java.lang.String getJobTitleSnippet() {
       java.lang.Object ref = jobTitleSnippet_;
       if (ref instanceof java.lang.String) {
@@ -651,6 +657,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for jobTitleSnippet.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
       java.lang.Object ref = jobTitleSnippet_;
       if (ref instanceof java.lang.String) {
@@ -679,6 +686,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The searchTextSnippet.
      */
+    @java.lang.Override
     public java.lang.String getSearchTextSnippet() {
       java.lang.Object ref = searchTextSnippet_;
       if (ref instanceof java.lang.String) {
@@ -704,6 +712,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for searchTextSnippet.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSearchTextSnippetBytes() {
       java.lang.Object ref = searchTextSnippet_;
       if (ref instanceof java.lang.String) {
@@ -730,6 +739,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the commuteInfo field is set.
      */
+    @java.lang.Override
     public boolean hasCommuteInfo() {
       return commuteInfo_ != null;
     }
@@ -745,6 +755,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The commuteInfo.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo getCommuteInfo() {
       return commuteInfo_ == null
           ? com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo.getDefaultInstance()
@@ -760,6 +771,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfoOrBuilder
         getCommuteInfoOrBuilder() {
       return getCommuteInfo();
@@ -2176,6 +2188,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the jobLocation field is set.
      */
+    @java.lang.Override
     public boolean hasJobLocation() {
       return jobLocation_ != null;
     }
@@ -2190,6 +2203,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The jobLocation.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Location getJobLocation() {
       return jobLocation_ == null
           ? com.google.cloud.talent.v4beta1.Location.getDefaultInstance()
@@ -2204,6 +2218,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.LocationOrBuilder getJobLocationOrBuilder() {
       return getJobLocation();
     }
@@ -2224,6 +2239,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the travelDuration field is set.
      */
+    @java.lang.Override
     public boolean hasTravelDuration() {
       return travelDuration_ != null;
     }
@@ -2241,6 +2257,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The travelDuration.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getTravelDuration() {
       return travelDuration_ == null
           ? com.google.protobuf.Duration.getDefaultInstance()
@@ -2258,6 +2275,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.protobuf.Duration travel_duration = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getTravelDurationOrBuilder() {
       return getTravelDuration();
     }
@@ -3095,6 +3113,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob>
       getMatchingJobsList() {
     return matchingJobs_;
@@ -3109,6 +3128,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJobOrBuilder>
       getMatchingJobsOrBuilderList() {
@@ -3124,6 +3144,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
    * </code>
    */
+  @java.lang.Override
   public int getMatchingJobsCount() {
     return matchingJobs_.size();
   }
@@ -3137,6 +3158,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob getMatchingJobs(int index) {
     return matchingJobs_.get(index);
   }
@@ -3150,6 +3172,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJobOrBuilder
       getMatchingJobsOrBuilder(int index) {
     return matchingJobs_.get(index);
@@ -3169,6 +3192,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.HistogramQueryResult>
       getHistogramQueryResultsList() {
     return histogramQueryResults_;
@@ -3184,6 +3208,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder>
       getHistogramQueryResultsOrBuilderList() {
     return histogramQueryResults_;
@@ -3199,6 +3224,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 2;
    * </code>
    */
+  @java.lang.Override
   public int getHistogramQueryResultsCount() {
     return histogramQueryResults_.size();
   }
@@ -3213,6 +3239,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.HistogramQueryResult getHistogramQueryResults(int index) {
     return histogramQueryResults_.get(index);
   }
@@ -3227,6 +3254,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.talent.v4beta1.HistogramQueryResult histogram_query_results = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.HistogramQueryResultOrBuilder
       getHistogramQueryResultsOrBuilder(int index) {
     return histogramQueryResults_.get(index);
@@ -3246,6 +3274,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -3269,6 +3298,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -3294,6 +3324,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.talent.v4beta1.Location location_filters = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Location> getLocationFiltersList() {
     return locationFilters_;
   }
@@ -3308,6 +3339,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.talent.v4beta1.Location location_filters = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.LocationOrBuilder>
       getLocationFiltersOrBuilderList() {
     return locationFilters_;
@@ -3323,6 +3355,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.talent.v4beta1.Location location_filters = 4;</code>
    */
+  @java.lang.Override
   public int getLocationFiltersCount() {
     return locationFilters_.size();
   }
@@ -3337,6 +3370,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.talent.v4beta1.Location location_filters = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Location getLocationFilters(int index) {
     return locationFilters_.get(index);
   }
@@ -3351,6 +3385,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.talent.v4beta1.Location location_filters = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.LocationOrBuilder getLocationFiltersOrBuilder(int index) {
     return locationFilters_.get(index);
   }
@@ -3370,6 +3405,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The estimatedTotalSize.
    */
+  @java.lang.Override
   public int getEstimatedTotalSize() {
     return estimatedTotalSize_;
   }
@@ -3389,6 +3425,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -3407,6 +3444,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -3422,6 +3460,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
@@ -3437,6 +3476,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -3460,6 +3500,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The broadenedQueryJobsCount.
    */
+  @java.lang.Override
   public int getBroadenedQueryJobsCount() {
     return broadenedQueryJobsCount_;
   }
@@ -3477,6 +3518,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the spellCorrection field is set.
    */
+  @java.lang.Override
   public boolean hasSpellCorrection() {
     return spellCorrection_ != null;
   }
@@ -3491,6 +3533,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The spellCorrection.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SpellingCorrection getSpellCorrection() {
     return spellCorrection_ == null
         ? com.google.cloud.talent.v4beta1.SpellingCorrection.getDefaultInstance()
@@ -3505,6 +3548,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SpellingCorrectionOrBuilder getSpellCorrectionOrBuilder() {
     return getSpellCorrection();
   }
@@ -5399,6 +5443,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The estimatedTotalSize.
      */
+    @java.lang.Override
     public int getEstimatedTotalSize() {
       return estimatedTotalSize_;
     }
@@ -5456,6 +5501,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }
@@ -5712,6 +5758,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The broadenedQueryJobsCount.
      */
+    @java.lang.Override
     public int getBroadenedQueryJobsCount() {
       return broadenedQueryJobsCount_;
     }

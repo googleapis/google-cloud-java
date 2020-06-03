@@ -268,6 +268,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +292,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +319,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -340,6 +343,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -366,6 +370,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The journal.
    */
+  @java.lang.Override
   public java.lang.String getJournal() {
     java.lang.Object ref = journal_;
     if (ref instanceof java.lang.String) {
@@ -389,6 +394,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for journal.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJournalBytes() {
     java.lang.Object ref = journal_;
     if (ref instanceof java.lang.String) {
@@ -415,6 +421,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The volume.
    */
+  @java.lang.Override
   public java.lang.String getVolume() {
     java.lang.Object ref = volume_;
     if (ref instanceof java.lang.String) {
@@ -438,6 +445,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for volume.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVolumeBytes() {
     java.lang.Object ref = volume_;
     if (ref instanceof java.lang.String) {
@@ -464,6 +472,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publisher.
    */
+  @java.lang.Override
   public java.lang.String getPublisher() {
     java.lang.Object ref = publisher_;
     if (ref instanceof java.lang.String) {
@@ -487,6 +496,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for publisher.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPublisherBytes() {
     java.lang.Object ref = publisher_;
     if (ref instanceof java.lang.String) {
@@ -512,6 +522,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the publicationDate field is set.
    */
+  @java.lang.Override
   public boolean hasPublicationDate() {
     return publicationDate_ != null;
   }
@@ -526,6 +537,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publicationDate.
    */
+  @java.lang.Override
   public com.google.type.Date getPublicationDate() {
     return publicationDate_ == null ? com.google.type.Date.getDefaultInstance() : publicationDate_;
   }
@@ -538,6 +550,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date publication_date = 7;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getPublicationDateOrBuilder() {
     return getPublicationDate();
   }
@@ -556,6 +569,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publicationType.
    */
+  @java.lang.Override
   public java.lang.String getPublicationType() {
     java.lang.Object ref = publicationType_;
     if (ref instanceof java.lang.String) {
@@ -579,6 +593,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for publicationType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPublicationTypeBytes() {
     java.lang.Object ref = publicationType_;
     if (ref instanceof java.lang.String) {
@@ -605,6 +620,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isbn.
    */
+  @java.lang.Override
   public java.lang.String getIsbn() {
     java.lang.Object ref = isbn_;
     if (ref instanceof java.lang.String) {
@@ -628,6 +644,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for isbn.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIsbnBytes() {
     java.lang.Object ref = isbn_;
     if (ref instanceof java.lang.String) {

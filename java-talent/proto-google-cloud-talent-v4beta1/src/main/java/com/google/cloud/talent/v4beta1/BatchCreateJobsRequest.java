@@ -145,6 +145,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Job> getJobsList() {
     return jobs_;
   }
@@ -211,6 +214,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.JobOrBuilder>
       getJobsOrBuilderList() {
     return jobs_;
@@ -226,6 +230,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getJobsCount() {
     return jobs_.size();
   }
@@ -240,6 +245,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job getJobs(int index) {
     return jobs_.get(index);
   }
@@ -254,6 +260,7 @@ public final class BatchCreateJobsRequest extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.talent.v4beta1.Job jobs = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
   }

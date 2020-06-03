@@ -468,6 +468,10 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -743,6 +747,10 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -793,6 +801,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -819,6 +828,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -846,6 +856,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The externalId.
    */
+  @java.lang.Override
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
@@ -870,6 +881,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for externalId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExternalIdBytes() {
     java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
@@ -898,6 +910,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The profile.
    */
+  @java.lang.Override
   public java.lang.String getProfile() {
     java.lang.Object ref = profile_;
     if (ref instanceof java.lang.String) {
@@ -923,6 +936,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for profile.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProfileBytes() {
     java.lang.Object ref = profile_;
     if (ref instanceof java.lang.String) {
@@ -953,6 +967,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The job.
    */
+  @java.lang.Override
   public java.lang.String getJob() {
     java.lang.Object ref = job_;
     if (ref instanceof java.lang.String) {
@@ -980,6 +995,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for job.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobBytes() {
     java.lang.Object ref = job_;
     if (ref instanceof java.lang.String) {
@@ -1008,6 +1024,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The company.
    */
+  @java.lang.Override
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
     if (ref instanceof java.lang.String) {
@@ -1033,6 +1050,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for company.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCompanyBytes() {
     java.lang.Object ref = company_;
     if (ref instanceof java.lang.String) {
@@ -1058,6 +1076,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the applicationDate field is set.
    */
+  @java.lang.Override
   public boolean hasApplicationDate() {
     return applicationDate_ != null;
   }
@@ -1072,6 +1091,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The applicationDate.
    */
+  @java.lang.Override
   public com.google.type.Date getApplicationDate() {
     return applicationDate_ == null ? com.google.type.Date.getDefaultInstance() : applicationDate_;
   }
@@ -1084,6 +1104,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date application_date = 7;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getApplicationDateOrBuilder() {
     return getApplicationDate();
   }
@@ -1106,6 +1127,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for stage.
    */
+  @java.lang.Override
   public int getStageValue() {
     return stage_;
   }
@@ -1125,6 +1147,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stage.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Application.ApplicationStage result =
@@ -1147,6 +1170,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -1161,6 +1185,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Application.ApplicationState getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Application.ApplicationState result =
@@ -1183,6 +1208,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Interview interviews = 16;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Interview> getInterviewsList() {
     return interviews_;
   }
@@ -1197,6 +1223,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Interview interviews = 16;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.InterviewOrBuilder>
       getInterviewsOrBuilderList() {
     return interviews_;
@@ -1212,6 +1239,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Interview interviews = 16;</code>
    */
+  @java.lang.Override
   public int getInterviewsCount() {
     return interviews_.size();
   }
@@ -1226,6 +1254,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Interview interviews = 16;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Interview getInterviews(int index) {
     return interviews_.get(index);
   }
@@ -1240,6 +1269,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.talent.v4beta1.Interview interviews = 16;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.InterviewOrBuilder getInterviewsOrBuilder(int index) {
     return interviews_.get(index);
   }
@@ -1257,6 +1287,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the referral field is set.
    */
+  @java.lang.Override
   public boolean hasReferral() {
     return referral_ != null;
   }
@@ -1271,6 +1302,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The referral.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getReferral() {
     return referral_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : referral_;
   }
@@ -1283,6 +1315,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.BoolValue referral = 18;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getReferralOrBuilder() {
     return getReferral();
   }
@@ -1301,6 +1334,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -1316,6 +1350,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -1329,6 +1364,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 19 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1346,6 +1382,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -1360,6 +1397,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -1372,6 +1410,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 20;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -1391,6 +1430,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The outcomeNotes.
    */
+  @java.lang.Override
   public java.lang.String getOutcomeNotes() {
     java.lang.Object ref = outcomeNotes_;
     if (ref instanceof java.lang.String) {
@@ -1415,6 +1455,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for outcomeNotes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutcomeNotesBytes() {
     java.lang.Object ref = outcomeNotes_;
     if (ref instanceof java.lang.String) {
@@ -1440,6 +1481,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for outcome.
    */
+  @java.lang.Override
   public int getOutcomeValue() {
     return outcome_;
   }
@@ -1454,6 +1496,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The outcome.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Outcome result =
@@ -1477,6 +1520,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the isMatch field is set.
    */
+  @java.lang.Override
   public boolean hasIsMatch() {
     return isMatch_ != null;
   }
@@ -1494,6 +1538,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isMatch.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getIsMatch() {
     return isMatch_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isMatch_;
   }
@@ -1509,6 +1554,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.BoolValue is_match = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getIsMatchOrBuilder() {
     return getIsMatch();
   }
@@ -1528,6 +1574,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobTitleSnippet.
    */
+  @java.lang.Override
   public java.lang.String getJobTitleSnippet() {
     java.lang.Object ref = jobTitleSnippet_;
     if (ref instanceof java.lang.String) {
@@ -1552,6 +1599,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for jobTitleSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobTitleSnippetBytes() {
     java.lang.Object ref = jobTitleSnippet_;
     if (ref instanceof java.lang.String) {
@@ -3040,6 +3088,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for stage.
      */
+    @java.lang.Override
     public int getStageValue() {
       return stage_;
     }
@@ -3061,6 +3110,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStageValue(int value) {
+
       stage_ = value;
       onChanged();
       return this;
@@ -3081,6 +3131,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stage.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Application.ApplicationStage getStage() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Application.ApplicationStage result =
@@ -3150,6 +3201,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -3166,6 +3218,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -3181,6 +3234,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Application.ApplicationState getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Application.ApplicationState result =
@@ -4297,6 +4351,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for outcome.
      */
+    @java.lang.Override
     public int getOutcomeValue() {
       return outcome_;
     }
@@ -4313,6 +4368,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOutcomeValue(int value) {
+
       outcome_ = value;
       onChanged();
       return this;
@@ -4328,6 +4384,7 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The outcome.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Outcome getOutcome() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Outcome result =

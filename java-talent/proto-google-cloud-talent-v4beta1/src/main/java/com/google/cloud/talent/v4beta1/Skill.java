@@ -164,6 +164,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +189,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +215,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastUsedDate field is set.
    */
+  @java.lang.Override
   public boolean hasLastUsedDate() {
     return lastUsedDate_ != null;
   }
@@ -227,6 +230,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastUsedDate.
    */
+  @java.lang.Override
   public com.google.type.Date getLastUsedDate() {
     return lastUsedDate_ == null ? com.google.type.Date.getDefaultInstance() : lastUsedDate_;
   }
@@ -239,6 +243,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date last_used_date = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getLastUsedDateOrBuilder() {
     return getLastUsedDate();
   }
@@ -257,6 +262,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for level.
    */
+  @java.lang.Override
   public int getLevelValue() {
     return level_;
   }
@@ -272,6 +278,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The level.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.SkillProficiencyLevel getLevel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.SkillProficiencyLevel result =
@@ -295,6 +302,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The context.
    */
+  @java.lang.Override
   public java.lang.String getContext() {
     java.lang.Object ref = context_;
     if (ref instanceof java.lang.String) {
@@ -318,6 +326,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for context.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContextBytes() {
     java.lang.Object ref = context_;
     if (ref instanceof java.lang.String) {
@@ -345,6 +354,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The skillNameSnippet.
    */
+  @java.lang.Override
   public java.lang.String getSkillNameSnippet() {
     java.lang.Object ref = skillNameSnippet_;
     if (ref instanceof java.lang.String) {
@@ -369,6 +379,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for skillNameSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSkillNameSnippetBytes() {
     java.lang.Object ref = skillNameSnippet_;
     if (ref instanceof java.lang.String) {
@@ -1076,6 +1087,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for level.
      */
+    @java.lang.Override
     public int getLevelValue() {
       return level_;
     }
@@ -1093,6 +1105,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLevelValue(int value) {
+
       level_ = value;
       onChanged();
       return this;
@@ -1109,6 +1122,7 @@ public final class Skill extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The level.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.SkillProficiencyLevel getLevel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.SkillProficiencyLevel result =

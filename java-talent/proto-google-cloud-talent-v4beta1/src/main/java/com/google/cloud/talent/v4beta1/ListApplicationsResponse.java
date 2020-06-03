@@ -155,6 +155,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.talent.v4beta1.Application applications = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.talent.v4beta1.Application> getApplicationsList() {
     return applications_;
   }
@@ -167,6 +168,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.talent.v4beta1.Application applications = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.talent.v4beta1.ApplicationOrBuilder>
       getApplicationsOrBuilderList() {
     return applications_;
@@ -180,6 +182,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.talent.v4beta1.Application applications = 1;</code>
    */
+  @java.lang.Override
   public int getApplicationsCount() {
     return applications_.size();
   }
@@ -192,6 +195,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.talent.v4beta1.Application applications = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Application getApplications(int index) {
     return applications_.get(index);
   }
@@ -204,6 +208,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.talent.v4beta1.Application applications = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationsOrBuilder(int index) {
     return applications_.get(index);
   }
@@ -221,6 +226,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -243,6 +249,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -269,6 +276,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -284,6 +292,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
@@ -299,6 +308,7 @@ public final class ListApplicationsResponse extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }

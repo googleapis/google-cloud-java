@@ -422,6 +422,10 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -467,6 +471,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for usage.
    */
+  @java.lang.Override
   public int getUsageValue() {
     return usage_;
   }
@@ -481,6 +486,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The usage.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.ContactInfoUsage result =
@@ -501,6 +507,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -515,6 +522,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Phone.PhoneType getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Phone.PhoneType result =
@@ -540,6 +548,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The number.
    */
+  @java.lang.Override
   public java.lang.String getNumber() {
     java.lang.Object ref = number_;
     if (ref instanceof java.lang.String) {
@@ -567,6 +576,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for number.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNumberBytes() {
     java.lang.Object ref = number_;
     if (ref instanceof java.lang.String) {
@@ -593,6 +603,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The whenAvailable.
    */
+  @java.lang.Override
   public java.lang.String getWhenAvailable() {
     java.lang.Object ref = whenAvailable_;
     if (ref instanceof java.lang.String) {
@@ -616,6 +627,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for whenAvailable.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getWhenAvailableBytes() {
     java.lang.Object ref = whenAvailable_;
     if (ref instanceof java.lang.String) {
@@ -1006,6 +1018,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for usage.
      */
+    @java.lang.Override
     public int getUsageValue() {
       return usage_;
     }
@@ -1022,6 +1035,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
+
       usage_ = value;
       onChanged();
       return this;
@@ -1037,6 +1051,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The usage.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.ContactInfoUsage result =
@@ -1096,6 +1111,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1112,6 +1128,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -1127,6 +1144,7 @@ public final class Phone extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Phone.PhoneType getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Phone.PhoneType result =

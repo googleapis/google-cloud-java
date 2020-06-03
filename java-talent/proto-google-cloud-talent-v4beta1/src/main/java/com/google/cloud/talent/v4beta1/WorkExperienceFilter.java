@@ -147,6 +147,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the minExperience field is set.
    */
+  @java.lang.Override
   public boolean hasMinExperience() {
     return minExperience_ != null;
   }
@@ -161,6 +162,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The minExperience.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getMinExperience() {
     return minExperience_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -175,6 +177,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Duration min_experience = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMinExperienceOrBuilder() {
     return getMinExperience();
   }
@@ -192,6 +195,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the maxExperience field is set.
    */
+  @java.lang.Override
   public boolean hasMaxExperience() {
     return maxExperience_ != null;
   }
@@ -206,6 +210,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The maxExperience.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getMaxExperience() {
     return maxExperience_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -220,6 +225,7 @@ public final class WorkExperienceFilter extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Duration max_experience = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMaxExperienceOrBuilder() {
     return getMaxExperience();
   }

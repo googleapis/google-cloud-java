@@ -287,6 +287,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -481,6 +485,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -534,6 +542,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -562,6 +571,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -588,6 +598,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The query.
    */
+  @java.lang.Override
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -611,6 +622,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for query.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -714,6 +726,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -736,6 +749,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The company.
    */
+  @java.lang.Override
   public java.lang.String getCompany() {
     java.lang.Object ref = company_;
     if (ref instanceof java.lang.String) {
@@ -763,6 +777,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for company.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCompanyBytes() {
     java.lang.Object ref = company_;
     if (ref instanceof java.lang.String) {
@@ -788,6 +803,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for scope.
    */
+  @java.lang.Override
   public int getScopeValue() {
     return scope_;
   }
@@ -802,6 +818,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The scope.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope getScope() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope result =
@@ -824,6 +841,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -838,6 +856,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType result =
@@ -1754,6 +1773,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -1938,6 +1958,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for scope.
      */
+    @java.lang.Override
     public int getScopeValue() {
       return scope_;
     }
@@ -1954,6 +1975,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
+
       scope_ = value;
       onChanged();
       return this;
@@ -1969,6 +1991,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The scope.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope getScope() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope result =
@@ -2029,6 +2052,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -2045,6 +2069,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -2060,6 +2085,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType result =

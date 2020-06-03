@@ -529,6 +529,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The givenName.
      */
+    @java.lang.Override
     public java.lang.String getGivenName() {
       java.lang.Object ref = givenName_;
       if (ref instanceof java.lang.String) {
@@ -553,6 +554,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for givenName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getGivenNameBytes() {
       java.lang.Object ref = givenName_;
       if (ref instanceof java.lang.String) {
@@ -579,6 +581,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The preferredName.
      */
+    @java.lang.Override
     public java.lang.String getPreferredName() {
       java.lang.Object ref = preferredName_;
       if (ref instanceof java.lang.String) {
@@ -602,6 +605,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for preferredName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPreferredNameBytes() {
       java.lang.Object ref = preferredName_;
       if (ref instanceof java.lang.String) {
@@ -629,6 +633,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The middleInitial.
      */
+    @java.lang.Override
     public java.lang.String getMiddleInitial() {
       java.lang.Object ref = middleInitial_;
       if (ref instanceof java.lang.String) {
@@ -653,6 +658,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for middleInitial.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMiddleInitialBytes() {
       java.lang.Object ref = middleInitial_;
       if (ref instanceof java.lang.String) {
@@ -680,6 +686,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The familyName.
      */
+    @java.lang.Override
     public java.lang.String getFamilyName() {
       java.lang.Object ref = familyName_;
       if (ref instanceof java.lang.String) {
@@ -704,6 +711,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for familyName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFamilyNameBytes() {
       java.lang.Object ref = familyName_;
       if (ref instanceof java.lang.String) {
@@ -2278,6 +2286,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the structuredName field is set.
    */
+  @java.lang.Override
   public boolean hasStructuredName() {
     return personNameCase_ == 2;
   }
@@ -2293,6 +2302,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The structuredName.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName getStructuredName() {
     if (personNameCase_ == 2) {
       return (com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName) personName_;
@@ -2309,6 +2319,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredNameOrBuilder
       getStructuredNameOrBuilder() {
     if (personNameCase_ == 2) {
@@ -2332,6 +2343,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The preferredName.
    */
+  @java.lang.Override
   public java.lang.String getPreferredName() {
     java.lang.Object ref = preferredName_;
     if (ref instanceof java.lang.String) {
@@ -2356,6 +2368,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for preferredName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPreferredNameBytes() {
     java.lang.Object ref = preferredName_;
     if (ref instanceof java.lang.String) {
@@ -2779,6 +2792,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The formattedName.
      */
+    @java.lang.Override
     public java.lang.String getFormattedName() {
       java.lang.Object ref = "";
       if (personNameCase_ == 1) {
@@ -2807,6 +2821,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for formattedName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFormattedNameBytes() {
       java.lang.Object ref = "";
       if (personNameCase_ == 1) {
@@ -2907,6 +2922,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the structuredName field is set.
      */
+    @java.lang.Override
     public boolean hasStructuredName() {
       return personNameCase_ == 2;
     }
@@ -2923,6 +2939,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The structuredName.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredName getStructuredName() {
       if (structuredNameBuilder_ == null) {
         if (personNameCase_ == 2) {
@@ -3072,6 +3089,7 @@ public final class PersonName extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.PersonName.PersonStructuredName structured_name = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.PersonName.PersonStructuredNameOrBuilder
         getStructuredNameOrBuilder() {
       if ((personNameCase_ == 2) && (structuredNameBuilder_ != null)) {

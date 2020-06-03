@@ -138,6 +138,7 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The jobRequisitionId.
    */
+  @java.lang.Override
   public java.lang.String getJobRequisitionId() {
     java.lang.Object ref = jobRequisitionId_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for jobRequisitionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobRequisitionIdBytes() {
     java.lang.Object ref = jobRequisitionId_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The jobTitle.
    */
+  @java.lang.Override
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +213,7 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for jobTitle.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobTitleBytes() {
     java.lang.Object ref = jobTitle_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +240,7 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The negated.
    */
+  @java.lang.Override
   public boolean getNegated() {
     return negated_;
   }
@@ -824,6 +829,7 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
      *
      * @return The negated.
      */
+    @java.lang.Override
     public boolean getNegated() {
       return negated_;
     }

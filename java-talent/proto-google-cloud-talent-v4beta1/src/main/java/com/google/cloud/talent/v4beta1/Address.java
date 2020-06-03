@@ -208,6 +208,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for usage.
    */
+  @java.lang.Override
   public int getUsageValue() {
     return usage_;
   }
@@ -222,6 +223,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The usage.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.ContactInfoUsage result =
@@ -304,6 +306,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the structuredAddress field is set.
    */
+  @java.lang.Override
   public boolean hasStructuredAddress() {
     return addressCase_ == 3;
   }
@@ -319,6 +322,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The structuredAddress.
    */
+  @java.lang.Override
   public com.google.type.PostalAddress getStructuredAddress() {
     if (addressCase_ == 3) {
       return (com.google.type.PostalAddress) address_;
@@ -335,6 +339,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.PostalAddress structured_address = 3;</code>
    */
+  @java.lang.Override
   public com.google.type.PostalAddressOrBuilder getStructuredAddressOrBuilder() {
     if (addressCase_ == 3) {
       return (com.google.type.PostalAddress) address_;
@@ -355,6 +360,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the current field is set.
    */
+  @java.lang.Override
   public boolean hasCurrent() {
     return current_ != null;
   }
@@ -369,6 +375,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The current.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getCurrent() {
     return current_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : current_;
   }
@@ -381,6 +388,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.BoolValue current = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getCurrentOrBuilder() {
     return getCurrent();
   }
@@ -825,6 +833,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for usage.
      */
+    @java.lang.Override
     public int getUsageValue() {
       return usage_;
     }
@@ -841,6 +850,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
+
       usage_ = value;
       onChanged();
       return this;
@@ -856,6 +866,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The usage.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.ContactInfoUsage result =
@@ -917,6 +928,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The unstructuredAddress.
      */
+    @java.lang.Override
     public java.lang.String getUnstructuredAddress() {
       java.lang.Object ref = "";
       if (addressCase_ == 2) {
@@ -947,6 +959,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for unstructuredAddress.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUnstructuredAddressBytes() {
       java.lang.Object ref = "";
       if (addressCase_ == 2) {
@@ -1052,6 +1065,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the structuredAddress field is set.
      */
+    @java.lang.Override
     public boolean hasStructuredAddress() {
       return addressCase_ == 3;
     }
@@ -1067,6 +1081,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The structuredAddress.
      */
+    @java.lang.Override
     public com.google.type.PostalAddress getStructuredAddress() {
       if (structuredAddressBuilder_ == null) {
         if (addressCase_ == 3) {
@@ -1202,6 +1217,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.PostalAddress structured_address = 3;</code>
      */
+    @java.lang.Override
     public com.google.type.PostalAddressOrBuilder getStructuredAddressOrBuilder() {
       if ((addressCase_ == 3) && (structuredAddressBuilder_ != null)) {
         return structuredAddressBuilder_.getMessageOrBuilder();

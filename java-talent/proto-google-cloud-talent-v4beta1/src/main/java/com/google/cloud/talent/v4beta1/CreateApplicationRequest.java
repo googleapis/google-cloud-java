@@ -145,6 +145,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -199,6 +201,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    * @return Whether the application field is set.
    */
+  @java.lang.Override
   public boolean hasApplication() {
     return application_ != null;
   }
@@ -215,6 +218,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    * @return The application.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Application getApplication() {
     return application_ == null
         ? com.google.cloud.talent.v4beta1.Application.getDefaultInstance()
@@ -231,6 +235,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    * .google.cloud.talent.v4beta1.Application application = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ApplicationOrBuilder getApplicationOrBuilder() {
     return getApplication();
   }

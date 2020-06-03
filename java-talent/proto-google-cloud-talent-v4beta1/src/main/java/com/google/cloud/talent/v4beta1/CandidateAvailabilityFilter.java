@@ -123,6 +123,7 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
    *
    * @return The negated.
    */
+  @java.lang.Override
   public boolean getNegated() {
     return negated_;
   }
@@ -459,6 +460,7 @@ public final class CandidateAvailabilityFilter extends com.google.protobuf.Gener
      *
      * @return The negated.
      */
+    @java.lang.Override
     public boolean getNegated() {
       return negated_;
     }

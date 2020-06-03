@@ -132,6 +132,7 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for usage.
    */
+  @java.lang.Override
   public int getUsageValue() {
     return usage_;
   }
@@ -146,6 +147,7 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The usage.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.ContactInfoUsage result =
@@ -167,6 +169,7 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The emailAddress.
    */
+  @java.lang.Override
   public java.lang.String getEmailAddress() {
     java.lang.Object ref = emailAddress_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +193,7 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for emailAddress.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEmailAddressBytes() {
     java.lang.Object ref = emailAddress_;
     if (ref instanceof java.lang.String) {
@@ -547,6 +551,7 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for usage.
      */
+    @java.lang.Override
     public int getUsageValue() {
       return usage_;
     }
@@ -563,6 +568,7 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUsageValue(int value) {
+
       usage_ = value;
       onChanged();
       return this;
@@ -578,6 +584,7 @@ public final class Email extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The usage.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.ContactInfoUsage getUsage() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.ContactInfoUsage result =

@@ -147,6 +147,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the tenant field is set.
    */
+  @java.lang.Override
   public boolean hasTenant() {
     return tenant_ != null;
   }
@@ -162,6 +163,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The tenant.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Tenant getTenant() {
     return tenant_ == null ? com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance() : tenant_;
   }
@@ -175,6 +177,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    * <code>.google.cloud.talent.v4beta1.Tenant tenant = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.TenantOrBuilder getTenantOrBuilder() {
     return getTenant();
   }
@@ -196,6 +199,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -214,6 +218,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -230,6 +235,7 @@ public final class UpdateTenantRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

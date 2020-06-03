@@ -292,6 +292,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the startDate field is set.
    */
+  @java.lang.Override
   public boolean hasStartDate() {
     return startDate_ != null;
   }
@@ -306,6 +307,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The startDate.
    */
+  @java.lang.Override
   public com.google.type.Date getStartDate() {
     return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
   }
@@ -318,6 +320,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.type.Date start_date = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getStartDateOrBuilder() {
     return getStartDate();
   }
@@ -335,6 +338,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the endDate field is set.
    */
+  @java.lang.Override
   public boolean hasEndDate() {
     return endDate_ != null;
   }
@@ -349,6 +353,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The endDate.
    */
+  @java.lang.Override
   public com.google.type.Date getEndDate() {
     return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
   }
@@ -361,6 +366,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.type.Date end_date = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getEndDateOrBuilder() {
     return getEndDate();
   }
@@ -378,6 +384,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the expectedGraduationDate field is set.
    */
+  @java.lang.Override
   public boolean hasExpectedGraduationDate() {
     return expectedGraduationDate_ != null;
   }
@@ -392,6 +399,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The expectedGraduationDate.
    */
+  @java.lang.Override
   public com.google.type.Date getExpectedGraduationDate() {
     return expectedGraduationDate_ == null
         ? com.google.type.Date.getDefaultInstance()
@@ -406,6 +414,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.type.Date expected_graduation_date = 3;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getExpectedGraduationDateOrBuilder() {
     return getExpectedGraduationDate();
   }
@@ -425,6 +434,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The schoolName.
    */
+  @java.lang.Override
   public java.lang.String getSchoolName() {
     java.lang.Object ref = schoolName_;
     if (ref instanceof java.lang.String) {
@@ -449,6 +459,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for schoolName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSchoolNameBytes() {
     java.lang.Object ref = schoolName_;
     if (ref instanceof java.lang.String) {
@@ -474,6 +485,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the address field is set.
    */
+  @java.lang.Override
   public boolean hasAddress() {
     return address_ != null;
   }
@@ -488,6 +500,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The address.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Address getAddress() {
     return address_ == null
         ? com.google.cloud.talent.v4beta1.Address.getDefaultInstance()
@@ -502,6 +515,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.talent.v4beta1.Address address = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.AddressOrBuilder getAddressOrBuilder() {
     return getAddress();
   }
@@ -578,6 +592,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the structuredDegree field is set.
    */
+  @java.lang.Override
   public boolean hasStructuredDegree() {
     return degreeCase_ == 7;
   }
@@ -592,6 +607,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The structuredDegree.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Degree getStructuredDegree() {
     if (degreeCase_ == 7) {
       return (com.google.cloud.talent.v4beta1.Degree) degree_;
@@ -607,6 +623,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.talent.v4beta1.Degree structured_degree = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.DegreeOrBuilder getStructuredDegreeOrBuilder() {
     if (degreeCase_ == 7) {
       return (com.google.cloud.talent.v4beta1.Degree) degree_;
@@ -628,6 +645,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -651,6 +669,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -676,6 +695,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the isCurrent field is set.
    */
+  @java.lang.Override
   public boolean hasIsCurrent() {
     return isCurrent_ != null;
   }
@@ -690,6 +710,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The isCurrent.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getIsCurrent() {
     return isCurrent_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCurrent_;
   }
@@ -702,6 +723,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.BoolValue is_current = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getIsCurrentOrBuilder() {
     return getIsCurrent();
   }
@@ -721,6 +743,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The schoolNameSnippet.
    */
+  @java.lang.Override
   public java.lang.String getSchoolNameSnippet() {
     java.lang.Object ref = schoolNameSnippet_;
     if (ref instanceof java.lang.String) {
@@ -745,6 +768,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for schoolNameSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSchoolNameSnippetBytes() {
     java.lang.Object ref = schoolNameSnippet_;
     if (ref instanceof java.lang.String) {
@@ -772,6 +796,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The degreeSnippet.
    */
+  @java.lang.Override
   public java.lang.String getDegreeSnippet() {
     java.lang.Object ref = degreeSnippet_;
     if (ref instanceof java.lang.String) {
@@ -796,6 +821,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for degreeSnippet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDegreeSnippetBytes() {
     java.lang.Object ref = degreeSnippet_;
     if (ref instanceof java.lang.String) {
@@ -2233,6 +2259,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      * @return The degreeDescription.
      */
+    @java.lang.Override
     public java.lang.String getDegreeDescription() {
       java.lang.Object ref = "";
       if (degreeCase_ == 6) {
@@ -2262,6 +2289,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      * @return The bytes for degreeDescription.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDegreeDescriptionBytes() {
       java.lang.Object ref = "";
       if (degreeCase_ == 6) {
@@ -2363,6 +2391,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the structuredDegree field is set.
      */
+    @java.lang.Override
     public boolean hasStructuredDegree() {
       return degreeCase_ == 7;
     }
@@ -2377,6 +2406,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      * @return The structuredDegree.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Degree getStructuredDegree() {
       if (structuredDegreeBuilder_ == null) {
         if (degreeCase_ == 7) {
@@ -2509,6 +2539,7 @@ public final class EducationRecord extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.talent.v4beta1.Degree structured_degree = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.DegreeOrBuilder getStructuredDegreeOrBuilder() {
       if ((degreeCase_ == 7) && (structuredDegreeBuilder_ != null)) {
         return structuredDegreeBuilder_.getMessageOrBuilder();

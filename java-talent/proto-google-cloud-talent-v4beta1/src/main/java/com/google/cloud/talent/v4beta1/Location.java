@@ -450,6 +450,10 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -498,6 +502,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for locationType.
    */
+  @java.lang.Override
   public int getLocationTypeValue() {
     return locationType_;
   }
@@ -515,6 +520,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The locationType.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Location.LocationType getLocationType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Location.LocationType result =
@@ -540,6 +546,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the postalAddress field is set.
    */
+  @java.lang.Override
   public boolean hasPostalAddress() {
     return postalAddress_ != null;
   }
@@ -557,6 +564,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The postalAddress.
    */
+  @java.lang.Override
   public com.google.type.PostalAddress getPostalAddress() {
     return postalAddress_ == null
         ? com.google.type.PostalAddress.getDefaultInstance()
@@ -574,6 +582,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.PostalAddress postal_address = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.PostalAddressOrBuilder getPostalAddressOrBuilder() {
     return getPostalAddress();
   }
@@ -591,6 +600,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the latLng field is set.
    */
+  @java.lang.Override
   public boolean hasLatLng() {
     return latLng_ != null;
   }
@@ -605,6 +615,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The latLng.
    */
+  @java.lang.Override
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
@@ -617,6 +628,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.LatLng lat_lng = 3;</code>
    */
+  @java.lang.Override
   public com.google.type.LatLngOrBuilder getLatLngOrBuilder() {
     return getLatLng();
   }
@@ -639,6 +651,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The radiusMiles.
    */
+  @java.lang.Override
   public double getRadiusMiles() {
     return radiusMiles_;
   }
@@ -1051,6 +1064,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for locationType.
      */
+    @java.lang.Override
     public int getLocationTypeValue() {
       return locationType_;
     }
@@ -1070,6 +1084,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLocationTypeValue(int value) {
+
       locationType_ = value;
       onChanged();
       return this;
@@ -1088,6 +1103,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The locationType.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Location.LocationType getLocationType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Location.LocationType result =
@@ -1543,6 +1559,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The radiusMiles.
      */
+    @java.lang.Override
     public double getRadiusMiles() {
       return radiusMiles_;
     }

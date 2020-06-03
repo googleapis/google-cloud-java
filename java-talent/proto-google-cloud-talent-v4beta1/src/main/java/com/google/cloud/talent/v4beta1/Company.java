@@ -378,6 +378,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the headquartersLocation field is set.
      */
+    @java.lang.Override
     public boolean hasHeadquartersLocation() {
       return headquartersLocation_ != null;
     }
@@ -393,6 +394,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The headquartersLocation.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.Location getHeadquartersLocation() {
       return headquartersLocation_ == null
           ? com.google.cloud.talent.v4beta1.Location.getDefaultInstance()
@@ -408,6 +410,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.talent.v4beta1.Location headquarters_location = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.LocationOrBuilder getHeadquartersLocationOrBuilder() {
       return getHeadquartersLocation();
     }
@@ -1015,6 +1018,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1044,6 +1048,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1069,6 +1074,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1091,6 +1097,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1118,6 +1125,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The externalId.
    */
+  @java.lang.Override
   public java.lang.String getExternalId() {
     java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
@@ -1142,6 +1150,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for externalId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExternalIdBytes() {
     java.lang.Object ref = externalId_;
     if (ref instanceof java.lang.String) {
@@ -1167,6 +1176,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for size.
    */
+  @java.lang.Override
   public int getSizeValue() {
     return size_;
   }
@@ -1181,6 +1191,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The size.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompanySize getSize() {
     @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.CompanySize result =
@@ -1204,6 +1215,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The headquartersAddress.
    */
+  @java.lang.Override
   public java.lang.String getHeadquartersAddress() {
     java.lang.Object ref = headquartersAddress_;
     if (ref instanceof java.lang.String) {
@@ -1229,6 +1241,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for headquartersAddress.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHeadquartersAddressBytes() {
     java.lang.Object ref = headquartersAddress_;
     if (ref instanceof java.lang.String) {
@@ -1256,6 +1269,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The hiringAgency.
    */
+  @java.lang.Override
   public boolean getHiringAgency() {
     return hiringAgency_;
   }
@@ -1276,6 +1290,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eeoText.
    */
+  @java.lang.Override
   public java.lang.String getEeoText() {
     java.lang.Object ref = eeoText_;
     if (ref instanceof java.lang.String) {
@@ -1301,6 +1316,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for eeoText.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEeoTextBytes() {
     java.lang.Object ref = eeoText_;
     if (ref instanceof java.lang.String) {
@@ -1328,6 +1344,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The websiteUri.
    */
+  @java.lang.Override
   public java.lang.String getWebsiteUri() {
     java.lang.Object ref = websiteUri_;
     if (ref instanceof java.lang.String) {
@@ -1352,6 +1369,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for websiteUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getWebsiteUriBytes() {
     java.lang.Object ref = websiteUri_;
     if (ref instanceof java.lang.String) {
@@ -1378,6 +1396,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The careerSiteUri.
    */
+  @java.lang.Override
   public java.lang.String getCareerSiteUri() {
     java.lang.Object ref = careerSiteUri_;
     if (ref instanceof java.lang.String) {
@@ -1401,6 +1420,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for careerSiteUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCareerSiteUriBytes() {
     java.lang.Object ref = careerSiteUri_;
     if (ref instanceof java.lang.String) {
@@ -1426,6 +1446,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageUri.
    */
+  @java.lang.Override
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {
@@ -1448,6 +1469,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for imageUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageUriBytes() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {
@@ -1556,6 +1578,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the derivedInfo field is set.
    */
+  @java.lang.Override
   public boolean hasDerivedInfo() {
     return derivedInfo_ != null;
   }
@@ -1572,6 +1595,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The derivedInfo.
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Company.DerivedInfo getDerivedInfo() {
     return derivedInfo_ == null
         ? com.google.cloud.talent.v4beta1.Company.DerivedInfo.getDefaultInstance()
@@ -1588,6 +1612,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.talent.v4beta1.Company.DerivedInfo derived_info = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.talent.v4beta1.Company.DerivedInfoOrBuilder getDerivedInfoOrBuilder() {
     return getDerivedInfo();
   }
@@ -1607,6 +1632,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The suspended.
    */
+  @java.lang.Override
   public boolean getSuspended() {
     return suspended_;
   }
@@ -2527,6 +2553,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for size.
      */
+    @java.lang.Override
     public int getSizeValue() {
       return size_;
     }
@@ -2543,6 +2570,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSizeValue(int value) {
+
       size_ = value;
       onChanged();
       return this;
@@ -2558,6 +2586,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The size.
      */
+    @java.lang.Override
     public com.google.cloud.talent.v4beta1.CompanySize getSize() {
       @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.CompanySize result =
@@ -2738,6 +2767,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The hiringAgency.
      */
+    @java.lang.Override
     public boolean getHiringAgency() {
       return hiringAgency_;
     }
@@ -3670,6 +3700,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The suspended.
      */
+    @java.lang.Override
     public boolean getSuspended() {
       return suspended_;
     }
