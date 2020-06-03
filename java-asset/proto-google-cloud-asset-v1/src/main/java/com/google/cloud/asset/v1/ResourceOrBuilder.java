@@ -27,7 +27,7 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * The API version. For example: "v1"
+   * The API version. For example: `v1`
    * </pre>
    *
    * <code>string version = 1;</code>
@@ -39,7 +39,7 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * The API version. For example: "v1"
+   * The API version. For example: `v1`
    * </pre>
    *
    * <code>string version = 1;</code>
@@ -54,7 +54,7 @@ public interface ResourceOrBuilder
    * <pre>
    * The URL of the discovery document containing the resource's JSON schema.
    * For example:
-   * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"
+   * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
    * This value is unspecified for resources that do not have an API based on a
    * discovery document, such as Cloud Bigtable.
    * </pre>
@@ -70,7 +70,7 @@ public interface ResourceOrBuilder
    * <pre>
    * The URL of the discovery document containing the resource's JSON schema.
    * For example:
-   * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"
+   * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
    * This value is unspecified for resources that do not have an API based on a
    * discovery document, such as Cloud Bigtable.
    * </pre>
@@ -86,7 +86,7 @@ public interface ResourceOrBuilder
    *
    * <pre>
    * The JSON schema name listed in the discovery document. For example:
-   * "Project"
+   * `Project`
    * This value is unspecified for resources that do not have an API based on a
    * discovery document, such as Cloud Bigtable.
    * </pre>
@@ -101,7 +101,7 @@ public interface ResourceOrBuilder
    *
    * <pre>
    * The JSON schema name listed in the discovery document. For example:
-   * "Project"
+   * `Project`
    * This value is unspecified for resources that do not have an API based on a
    * discovery document, such as Cloud Bigtable.
    * </pre>
@@ -118,7 +118,7 @@ public interface ResourceOrBuilder
    * <pre>
    * The REST URL for accessing the resource. An HTTP `GET` request using this
    * URL returns the resource itself. For example:
-   * "https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123"
+   * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
    * This value is unspecified for resources without a REST API.
    * </pre>
    *
@@ -133,7 +133,7 @@ public interface ResourceOrBuilder
    * <pre>
    * The REST URL for accessing the resource. An HTTP `GET` request using this
    * URL returns the resource itself. For example:
-   * "https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123"
+   * `https://cloudresourcemanager.googleapis.com/v1/projects/my-project-123`
    * This value is unspecified for resources without a REST API.
    * </pre>
    *
@@ -155,7 +155,7 @@ public interface ResourceOrBuilder
    * [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * For example:
-   * "//cloudresourcemanager.googleapis.com/projects/my_project_123"
+   * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
    * For third-party assets, this field may be set differently.
    * </pre>
    *
@@ -176,7 +176,7 @@ public interface ResourceOrBuilder
    * [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * For example:
-   * "//cloudresourcemanager.googleapis.com/projects/my_project_123"
+   * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
    * For third-party assets, this field may be set differently.
    * </pre>
    *

@@ -28,7 +28,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * The full name of the asset. For example:
-   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
@@ -44,7 +44,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * The full name of the asset. For example:
-   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1"
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
@@ -60,7 +60,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The type of the asset. For example: "compute.googleapis.com/Disk"
+   * The type of the asset. For example: `compute.googleapis.com/Disk`
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -75,7 +75,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The type of the asset. For example: "compute.googleapis.com/Disk"
+   * The type of the asset. For example: `compute.googleapis.com/Disk`
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.

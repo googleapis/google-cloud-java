@@ -212,7 +212,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The full resource name of this resource. Example:
-   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
@@ -241,7 +241,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The full resource name of this resource. Example:
-   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
@@ -272,7 +272,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The type of this resource. Example: "compute.googleapis.com/Disk".
+   * The type of this resource. Example: `compute.googleapis.com/Disk`.
    * To search against the `asset_type`:
    * * specify the `asset_type` field in your search request.
    * </pre>
@@ -296,7 +296,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The type of this resource. Example: "compute.googleapis.com/Disk".
+   * The type of this resource. Example: `compute.googleapis.com/Disk`.
    * To search against the `asset_type`:
    * * specify the `asset_type` field in your search request.
    * </pre>
@@ -484,8 +484,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Location can be "global", regional like "us-east1", or zonal like
-   * "us-west1-b".
+   * Location can be `global`, regional like `us-east1`, or zonal like
+   * `us-west1-b`.
    * To search against the `location`:
    * * use a field query. Example: `location : "us-west*"`
    * * use a free text query. Example: `"us-west*"`
@@ -510,8 +510,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Location can be "global", regional like "us-east1", or zonal like
-   * "us-west1-b".
+   * Location can be `global`, regional like `us-east1`, or zonal like
+   * `us-west1-b`.
    * To search against the `location`:
    * * use a field query. Example: `location : "us-west*"`
    * * use a free text query. Example: `"us-west*"`
@@ -750,11 +750,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The additional attributes of this resource. The attributes may vary from
-   * one resource type to another. Examples: "projectId" for Project,
-   * "dnsName" for DNS ManagedZone.
+   * one resource type to another. Examples: `projectId` for Project,
+   * `dnsName` for DNS ManagedZone.
    * To search against the `additional_attributes`:
    * * use a free text query to match the attributes values. Example: to search
-   *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+   *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `"foobar"`.
    * </pre>
    *
@@ -770,11 +770,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The additional attributes of this resource. The attributes may vary from
-   * one resource type to another. Examples: "projectId" for Project,
-   * "dnsName" for DNS ManagedZone.
+   * one resource type to another. Examples: `projectId` for Project,
+   * `dnsName` for DNS ManagedZone.
    * To search against the `additional_attributes`:
    * * use a free text query to match the attributes values. Example: to search
-   *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+   *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `"foobar"`.
    * </pre>
    *
@@ -792,11 +792,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The additional attributes of this resource. The attributes may vary from
-   * one resource type to another. Examples: "projectId" for Project,
-   * "dnsName" for DNS ManagedZone.
+   * one resource type to another. Examples: `projectId` for Project,
+   * `dnsName` for DNS ManagedZone.
    * To search against the `additional_attributes`:
    * * use a free text query to match the attributes values. Example: to search
-   *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+   *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `"foobar"`.
    * </pre>
    *
@@ -1314,7 +1314,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The full resource name of this resource. Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -1343,7 +1343,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The full resource name of this resource. Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -1372,7 +1372,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The full resource name of this resource. Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -1400,7 +1400,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The full resource name of this resource. Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -1424,7 +1424,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The full resource name of this resource. Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -1454,7 +1454,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The type of this resource. Example: "compute.googleapis.com/Disk".
+     * The type of this resource. Example: `compute.googleapis.com/Disk`.
      * To search against the `asset_type`:
      * * specify the `asset_type` field in your search request.
      * </pre>
@@ -1478,7 +1478,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The type of this resource. Example: "compute.googleapis.com/Disk".
+     * The type of this resource. Example: `compute.googleapis.com/Disk`.
      * To search against the `asset_type`:
      * * specify the `asset_type` field in your search request.
      * </pre>
@@ -1502,7 +1502,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The type of this resource. Example: "compute.googleapis.com/Disk".
+     * The type of this resource. Example: `compute.googleapis.com/Disk`.
      * To search against the `asset_type`:
      * * specify the `asset_type` field in your search request.
      * </pre>
@@ -1525,7 +1525,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The type of this resource. Example: "compute.googleapis.com/Disk".
+     * The type of this resource. Example: `compute.googleapis.com/Disk`.
      * To search against the `asset_type`:
      * * specify the `asset_type` field in your search request.
      * </pre>
@@ -1544,7 +1544,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The type of this resource. Example: "compute.googleapis.com/Disk".
+     * The type of this resource. Example: `compute.googleapis.com/Disk`.
      * To search against the `asset_type`:
      * * specify the `asset_type` field in your search request.
      * </pre>
@@ -1938,8 +1938,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Location can be "global", regional like "us-east1", or zonal like
-     * "us-west1-b".
+     * Location can be `global`, regional like `us-east1`, or zonal like
+     * `us-west1-b`.
      * To search against the `location`:
      * * use a field query. Example: `location : "us-west*"`
      * * use a free text query. Example: `"us-west*"`
@@ -1964,8 +1964,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Location can be "global", regional like "us-east1", or zonal like
-     * "us-west1-b".
+     * Location can be `global`, regional like `us-east1`, or zonal like
+     * `us-west1-b`.
      * To search against the `location`:
      * * use a field query. Example: `location : "us-west*"`
      * * use a free text query. Example: `"us-west*"`
@@ -1990,8 +1990,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Location can be "global", regional like "us-east1", or zonal like
-     * "us-west1-b".
+     * Location can be `global`, regional like `us-east1`, or zonal like
+     * `us-west1-b`.
      * To search against the `location`:
      * * use a field query. Example: `location : "us-west*"`
      * * use a free text query. Example: `"us-west*"`
@@ -2015,8 +2015,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Location can be "global", regional like "us-east1", or zonal like
-     * "us-west1-b".
+     * Location can be `global`, regional like `us-east1`, or zonal like
+     * `us-west1-b`.
      * To search against the `location`:
      * * use a field query. Example: `location : "us-west*"`
      * * use a free text query. Example: `"us-west*"`
@@ -2036,8 +2036,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Location can be "global", regional like "us-east1", or zonal like
-     * "us-west1-b".
+     * Location can be `global`, regional like `us-east1`, or zonal like
+     * `us-west1-b`.
      * To search against the `location`:
      * * use a field query. Example: `location : "us-west*"`
      * * use a free text query. Example: `"us-west*"`
@@ -2500,11 +2500,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *
@@ -2520,11 +2520,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *
@@ -2546,11 +2546,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *
@@ -2574,11 +2574,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *
@@ -2599,11 +2599,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *
@@ -2631,11 +2631,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *
@@ -2657,11 +2657,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *
@@ -2677,11 +2677,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *
@@ -2701,11 +2701,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The additional attributes of this resource. The attributes may vary from
-     * one resource type to another. Examples: "projectId" for Project,
-     * "dnsName" for DNS ManagedZone.
+     * one resource type to another. Examples: `projectId` for Project,
+     * `dnsName` for DNS ManagedZone.
      * To search against the `additional_attributes`:
      * * use a free text query to match the attributes values. Example: to search
-     *   additional_attributes = { dnsName: "foobar" }, you can issue a query
+     *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `"foobar"`.
      * </pre>
      *

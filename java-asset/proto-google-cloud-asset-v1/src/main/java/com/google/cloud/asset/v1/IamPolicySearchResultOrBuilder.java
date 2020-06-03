@@ -29,7 +29,7 @@ public interface IamPolicySearchResultOrBuilder
    * <pre>
    * The full resource name of the resource associated with this IAM policy.
    * Example:
-   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
@@ -48,7 +48,7 @@ public interface IamPolicySearchResultOrBuilder
    * <pre>
    * The full resource name of the resource associated with this IAM policy.
    * Example:
-   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.

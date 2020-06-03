@@ -163,7 +163,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -181,7 +181,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -205,7 +205,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -226,7 +226,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -247,7 +247,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -384,7 +384,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * A list of permissions. A sample permission string: "compute.disk.get".
+       * A list of permissions. A sample permission string: `compute.disk.get`.
        * </pre>
        *
        * <code>repeated string permissions = 1;</code>
@@ -396,7 +396,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * A list of permissions. A sample permission string: "compute.disk.get".
+       * A list of permissions. A sample permission string: `compute.disk.get`.
        * </pre>
        *
        * <code>repeated string permissions = 1;</code>
@@ -408,7 +408,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * A list of permissions. A sample permission string: "compute.disk.get".
+       * A list of permissions. A sample permission string: `compute.disk.get`.
        * </pre>
        *
        * <code>repeated string permissions = 1;</code>
@@ -421,7 +421,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * A list of permissions. A sample permission string: "compute.disk.get".
+       * A list of permissions. A sample permission string: `compute.disk.get`.
        * </pre>
        *
        * <code>repeated string permissions = 1;</code>
@@ -539,7 +539,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * A list of permissions. A sample permission string: "compute.disk.get".
+       * A list of permissions. A sample permission string: `compute.disk.get`.
        * </pre>
        *
        * <code>repeated string permissions = 1;</code>
@@ -553,7 +553,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * A list of permissions. A sample permission string: "compute.disk.get".
+       * A list of permissions. A sample permission string: `compute.disk.get`.
        * </pre>
        *
        * <code>repeated string permissions = 1;</code>
@@ -567,7 +567,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * A list of permissions. A sample permission string: "compute.disk.get".
+       * A list of permissions. A sample permission string: `compute.disk.get`.
        * </pre>
        *
        * <code>repeated string permissions = 1;</code>
@@ -582,7 +582,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * A list of permissions. A sample permission string: "compute.disk.get".
+       * A list of permissions. A sample permission string: `compute.disk.get`.
        * </pre>
        *
        * <code>repeated string permissions = 1;</code>
@@ -971,7 +971,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -985,7 +985,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -999,7 +999,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -1014,7 +1014,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -1029,7 +1029,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -1051,7 +1051,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -1072,7 +1072,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -1090,7 +1090,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -1107,7 +1107,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
          *
          *
          * <pre>
-         * A list of permissions. A sample permission string: "compute.disk.get".
+         * A list of permissions. A sample permission string: `compute.disk.get`.
          * </pre>
          *
          * <code>repeated string permissions = 1;</code>
@@ -1229,7 +1229,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -1260,7 +1260,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -1283,7 +1283,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -1313,7 +1313,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * permission query (i.e., a query containing `policy.role.permissions:`).
      * Example: if query `policy.role.permissions : "compute.disk.get"`
      * matches a policy binding that contains owner role, the
-     * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+     * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
      * roles can also be found in the returned `policy` bindings. Note that the
      * map is populated only for requests with permission queries.
      * </pre>
@@ -1744,7 +1744,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * permission query (i.e., a query containing `policy.role.permissions:`).
        * Example: if query `policy.role.permissions : "compute.disk.get"`
        * matches a policy binding that contains owner role, the
-       * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+       * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
        * roles can also be found in the returned `policy` bindings. Note that the
        * map is populated only for requests with permission queries.
        * </pre>
@@ -1775,7 +1775,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * permission query (i.e., a query containing `policy.role.permissions:`).
        * Example: if query `policy.role.permissions : "compute.disk.get"`
        * matches a policy binding that contains owner role, the
-       * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+       * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
        * roles can also be found in the returned `policy` bindings. Note that the
        * map is populated only for requests with permission queries.
        * </pre>
@@ -1798,7 +1798,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * permission query (i.e., a query containing `policy.role.permissions:`).
        * Example: if query `policy.role.permissions : "compute.disk.get"`
        * matches a policy binding that contains owner role, the
-       * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+       * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
        * roles can also be found in the returned `policy` bindings. Note that the
        * map is populated only for requests with permission queries.
        * </pre>
@@ -1829,7 +1829,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * permission query (i.e., a query containing `policy.role.permissions:`).
        * Example: if query `policy.role.permissions : "compute.disk.get"`
        * matches a policy binding that contains owner role, the
-       * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+       * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
        * roles can also be found in the returned `policy` bindings. Note that the
        * map is populated only for requests with permission queries.
        * </pre>
@@ -1865,7 +1865,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * permission query (i.e., a query containing `policy.role.permissions:`).
        * Example: if query `policy.role.permissions : "compute.disk.get"`
        * matches a policy binding that contains owner role, the
-       * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+       * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
        * roles can also be found in the returned `policy` bindings. Note that the
        * map is populated only for requests with permission queries.
        * </pre>
@@ -1897,7 +1897,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * permission query (i.e., a query containing `policy.role.permissions:`).
        * Example: if query `policy.role.permissions : "compute.disk.get"`
        * matches a policy binding that contains owner role, the
-       * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+       * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
        * roles can also be found in the returned `policy` bindings. Note that the
        * map is populated only for requests with permission queries.
        * </pre>
@@ -1926,7 +1926,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * permission query (i.e., a query containing `policy.role.permissions:`).
        * Example: if query `policy.role.permissions : "compute.disk.get"`
        * matches a policy binding that contains owner role, the
-       * matched_permissions will be {"roles/owner": ["compute.disk.get"]}. The
+       * matched_permissions will be `{"roles/owner": ["compute.disk.get"]}`. The
        * roles can also be found in the returned `policy` bindings. Note that the
        * map is populated only for requests with permission queries.
        * </pre>
@@ -2005,7 +2005,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * <pre>
    * The full resource name of the resource associated with this IAM policy.
    * Example:
-   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
@@ -2034,7 +2034,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    * <pre>
    * The full resource name of the resource associated with this IAM policy.
    * Example:
-   * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
@@ -2638,7 +2638,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The full resource name of the resource associated with this IAM policy.
      * Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -2667,7 +2667,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The full resource name of the resource associated with this IAM policy.
      * Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -2696,7 +2696,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The full resource name of the resource associated with this IAM policy.
      * Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -2724,7 +2724,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The full resource name of the resource associated with this IAM policy.
      * Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
@@ -2748,7 +2748,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <pre>
      * The full resource name of the resource associated with this IAM policy.
      * Example:
-     * "//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1".
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
