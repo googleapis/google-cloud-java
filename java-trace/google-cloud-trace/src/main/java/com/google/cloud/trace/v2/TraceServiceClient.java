@@ -154,6 +154,67 @@ public class TraceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Creates a new span.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
+   *   String spanId = "";
+   *   TruncatableString displayName = TruncatableString.newBuilder().build();
+   *   Timestamp startTime = Timestamp.newBuilder().build();
+   *   Timestamp endTime = Timestamp.newBuilder().build();
+   *   Span request = Span.newBuilder()
+   *     .setName(name.toString())
+   *     .setSpanId(spanId)
+   *     .setDisplayName(displayName)
+   *     .setStartTime(startTime)
+   *     .setEndTime(endTime)
+   *     .build();
+   *   Span response = traceServiceClient.createSpan(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Span createSpan(Span request) {
+    return createSpanCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new span.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
+   *   String spanId = "";
+   *   TruncatableString displayName = TruncatableString.newBuilder().build();
+   *   Timestamp startTime = Timestamp.newBuilder().build();
+   *   Timestamp endTime = Timestamp.newBuilder().build();
+   *   Span request = Span.newBuilder()
+   *     .setName(name.toString())
+   *     .setSpanId(spanId)
+   *     .setDisplayName(displayName)
+   *     .setStartTime(startTime)
+   *     .setEndTime(endTime)
+   *     .build();
+   *   ApiFuture&lt;Span&gt; future = traceServiceClient.createSpanCallable().futureCall(request);
+   *   // Do something
+   *   Span response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<Span, Span> createSpanCallable() {
+    return stub.createSpanCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Sends new spans to new or existing traces. You cannot update existing spans.
    *
    * <p>Sample code:
@@ -254,67 +315,6 @@ public class TraceServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable() {
     return stub.batchWriteSpansCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new span.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
-   *   String spanId = "";
-   *   TruncatableString displayName = TruncatableString.newBuilder().build();
-   *   Timestamp startTime = Timestamp.newBuilder().build();
-   *   Timestamp endTime = Timestamp.newBuilder().build();
-   *   Span request = Span.newBuilder()
-   *     .setName(name.toString())
-   *     .setSpanId(spanId)
-   *     .setDisplayName(displayName)
-   *     .setStartTime(startTime)
-   *     .setEndTime(endTime)
-   *     .build();
-   *   Span response = traceServiceClient.createSpan(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Span createSpan(Span request) {
-    return createSpanCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new span.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   SpanName name = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
-   *   String spanId = "";
-   *   TruncatableString displayName = TruncatableString.newBuilder().build();
-   *   Timestamp startTime = Timestamp.newBuilder().build();
-   *   Timestamp endTime = Timestamp.newBuilder().build();
-   *   Span request = Span.newBuilder()
-   *     .setName(name.toString())
-   *     .setSpanId(spanId)
-   *     .setDisplayName(displayName)
-   *     .setStartTime(startTime)
-   *     .setEndTime(endTime)
-   *     .build();
-   *   ApiFuture&lt;Span&gt; future = traceServiceClient.createSpanCallable().futureCall(request);
-   *   // Do something
-   *   Span response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<Span, Span> createSpanCallable() {
-    return stub.createSpanCallable();
   }
 
   @Override

@@ -83,17 +83,17 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
           .add("https://www.googleapis.com/auth/trace.append")
           .build();
 
-  private final UnaryCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansSettings;
   private final UnaryCallSettings<Span, Span> createSpanSettings;
-
-  /** Returns the object with the settings used for calls to batchWriteSpans. */
-  public UnaryCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
-    return batchWriteSpansSettings;
-  }
+  private final UnaryCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansSettings;
 
   /** Returns the object with the settings used for calls to createSpan. */
   public UnaryCallSettings<Span, Span> createSpanSettings() {
     return createSpanSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchWriteSpans. */
+  public UnaryCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
+    return batchWriteSpansSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -165,16 +165,16 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
   protected TraceServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    batchWriteSpansSettings = settingsBuilder.batchWriteSpansSettings().build();
     createSpanSettings = settingsBuilder.createSpanSettings().build();
+    batchWriteSpansSettings = settingsBuilder.batchWriteSpansSettings().build();
   }
 
   /** Builder for TraceServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<TraceServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<BatchWriteSpansRequest, Empty> batchWriteSpansSettings;
     private final UnaryCallSettings.Builder<Span, Span> createSpanSettings;
+    private final UnaryCallSettings.Builder<BatchWriteSpansRequest, Empty> batchWriteSpansSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -199,12 +199,12 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setRetryDelayMultiplier(1.2)
+              .setMaxRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.5)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(120000L))
               .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -217,13 +217,13 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      batchWriteSpansSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createSpanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      batchWriteSpansSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              batchWriteSpansSettings, createSpanSettings);
+              createSpanSettings, batchWriteSpansSettings);
 
       initDefaults(this);
     }
@@ -240,12 +240,12 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .batchWriteSpansSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .createSpanSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .createSpanSettings()
+          .batchWriteSpansSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -255,12 +255,12 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     protected Builder(TraceServiceStubSettings settings) {
       super(settings);
 
-      batchWriteSpansSettings = settings.batchWriteSpansSettings.toBuilder();
       createSpanSettings = settings.createSpanSettings.toBuilder();
+      batchWriteSpansSettings = settings.batchWriteSpansSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              batchWriteSpansSettings, createSpanSettings);
+              createSpanSettings, batchWriteSpansSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -279,14 +279,14 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to batchWriteSpans. */
-    public UnaryCallSettings.Builder<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
-      return batchWriteSpansSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createSpan. */
     public UnaryCallSettings.Builder<Span, Span> createSpanSettings() {
       return createSpanSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchWriteSpans. */
+    public UnaryCallSettings.Builder<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
+      return batchWriteSpansSettings;
     }
 
     @Override

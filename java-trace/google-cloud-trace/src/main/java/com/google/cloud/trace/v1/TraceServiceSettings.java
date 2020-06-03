@@ -54,16 +54,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getTrace to 30 seconds:
+ * <p>For example, to set the total timeout of patchTraces to 30 seconds:
  *
  * <pre>
  * <code>
  * TraceServiceSettings.Builder traceServiceSettingsBuilder =
  *     TraceServiceSettings.newBuilder();
  * traceServiceSettingsBuilder
- *     .getTraceSettings()
+ *     .patchTracesSettings()
  *     .setRetrySettings(
- *         traceServiceSettingsBuilder.getTraceSettings().getRetrySettings().toBuilder()
+ *         traceServiceSettingsBuilder.patchTracesSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TraceServiceSettings traceServiceSettings = traceServiceSettingsBuilder.build();
@@ -73,6 +73,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
+  /** Returns the object with the settings used for calls to patchTraces. */
+  public UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
+    return ((TraceServiceStubSettings) getStubSettings()).patchTracesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listTraces. */
   public PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
       listTracesSettings() {
@@ -82,11 +87,6 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
   /** Returns the object with the settings used for calls to getTrace. */
   public UnaryCallSettings<GetTraceRequest, Trace> getTraceSettings() {
     return ((TraceServiceStubSettings) getStubSettings()).getTraceSettings();
-  }
-
-  /** Returns the object with the settings used for calls to patchTraces. */
-  public UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
-    return ((TraceServiceStubSettings) getStubSettings()).patchTracesSettings();
   }
 
   public static final TraceServiceSettings create(TraceServiceStubSettings stub)
@@ -186,6 +186,11 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to patchTraces. */
+    public UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
+      return getStubSettingsBuilder().patchTracesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listTraces. */
     public PagedCallSettings.Builder<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
         listTracesSettings() {
@@ -195,11 +200,6 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
     /** Returns the builder for the settings used for calls to getTrace. */
     public UnaryCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings() {
       return getStubSettingsBuilder().getTraceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to patchTraces. */
-    public UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
-      return getStubSettingsBuilder().patchTracesSettings();
     }
 
     @Override

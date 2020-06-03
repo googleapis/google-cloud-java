@@ -44,6 +44,13 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcTraceServiceStub extends TraceServiceStub {
 
+  private static final MethodDescriptor<Span, Span> createSpanMethodDescriptor =
+      MethodDescriptor.<Span, Span>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.cloudtrace.v2.TraceService/CreateSpan")
+          .setRequestMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<BatchWriteSpansRequest, Empty>
       batchWriteSpansMethodDescriptor =
           MethodDescriptor.<BatchWriteSpansRequest, Empty>newBuilder()
@@ -53,18 +60,11 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
                   ProtoUtils.marshaller(BatchWriteSpansRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<Span, Span> createSpanMethodDescriptor =
-      MethodDescriptor.<Span, Span>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.devtools.cloudtrace.v2.TraceService/CreateSpan")
-          .setRequestMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
-          .build();
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable;
   private final UnaryCallable<Span, Span> createSpanCallable;
+  private final UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -105,19 +105,6 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansTransportSettings =
-        GrpcCallSettings.<BatchWriteSpansRequest, Empty>newBuilder()
-            .setMethodDescriptor(batchWriteSpansMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<BatchWriteSpansRequest>() {
-                  @Override
-                  public Map<String, String> extract(BatchWriteSpansRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<Span, Span> createSpanTransportSettings =
         GrpcCallSettings.<Span, Span>newBuilder()
             .setMethodDescriptor(createSpanMethodDescriptor)
@@ -131,23 +118,36 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansTransportSettings =
+        GrpcCallSettings.<BatchWriteSpansRequest, Empty>newBuilder()
+            .setMethodDescriptor(batchWriteSpansMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchWriteSpansRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchWriteSpansRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.batchWriteSpansCallable =
-        callableFactory.createUnaryCallable(
-            batchWriteSpansTransportSettings, settings.batchWriteSpansSettings(), clientContext);
     this.createSpanCallable =
         callableFactory.createUnaryCallable(
             createSpanTransportSettings, settings.createSpanSettings(), clientContext);
+    this.batchWriteSpansCallable =
+        callableFactory.createUnaryCallable(
+            batchWriteSpansTransportSettings, settings.batchWriteSpansSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable() {
-    return batchWriteSpansCallable;
-  }
-
   public UnaryCallable<Span, Span> createSpanCallable() {
     return createSpanCallable;
+  }
+
+  public UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable() {
+    return batchWriteSpansCallable;
   }
 
   @Override

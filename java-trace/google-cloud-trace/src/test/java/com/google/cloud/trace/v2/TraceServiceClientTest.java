@@ -84,46 +84,6 @@ public class TraceServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void batchWriteSpansTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockTraceService.addResponse(expectedResponse);
-
-    ProjectName name = ProjectName.of("[PROJECT]");
-    List<Span> spans = new ArrayList<>();
-
-    client.batchWriteSpans(name, spans);
-
-    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BatchWriteSpansRequest actualRequest = (BatchWriteSpansRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
-    Assert.assertEquals(spans, actualRequest.getSpansList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchWriteSpansExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockTraceService.addException(exception);
-
-    try {
-      ProjectName name = ProjectName.of("[PROJECT]");
-      List<Span> spans = new ArrayList<>();
-
-      client.batchWriteSpans(name, spans);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createSpanTest() {
     SpanName name2 = SpanName.of("[PROJECT]", "[TRACE]", "[SPAN]");
     String spanId2 = "spanId2-643891741";
@@ -190,6 +150,46 @@ public class TraceServiceClientTest {
               .build();
 
       client.createSpan(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchWriteSpansTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTraceService.addResponse(expectedResponse);
+
+    ProjectName name = ProjectName.of("[PROJECT]");
+    List<Span> spans = new ArrayList<>();
+
+    client.batchWriteSpans(name, spans);
+
+    List<AbstractMessage> actualRequests = mockTraceService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchWriteSpansRequest actualRequest = (BatchWriteSpansRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(spans, actualRequest.getSpansList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchWriteSpansExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTraceService.addException(exception);
+
+    try {
+      ProjectName name = ProjectName.of("[PROJECT]");
+      List<Span> spans = new ArrayList<>();
+
+      client.batchWriteSpans(name, spans);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

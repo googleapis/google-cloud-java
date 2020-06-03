@@ -38,6 +38,10 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class TraceServiceStub implements BackgroundResource {
 
+  public UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchTracesCallable()");
+  }
+
   public UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listTracesPagedCallable()");
   }
@@ -48,10 +52,6 @@ public abstract class TraceServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetTraceRequest, Trace> getTraceCallable() {
     throw new UnsupportedOperationException("Not implemented: getTraceCallable()");
-  }
-
-  public UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
-    throw new UnsupportedOperationException("Not implemented: patchTracesCallable()");
   }
 
   @Override

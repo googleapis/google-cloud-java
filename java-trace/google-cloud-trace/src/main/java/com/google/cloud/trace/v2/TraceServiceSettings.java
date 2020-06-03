@@ -67,14 +67,14 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
-  /** Returns the object with the settings used for calls to batchWriteSpans. */
-  public UnaryCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
-    return ((TraceServiceStubSettings) getStubSettings()).batchWriteSpansSettings();
-  }
-
   /** Returns the object with the settings used for calls to createSpan. */
   public UnaryCallSettings<Span, Span> createSpanSettings() {
     return ((TraceServiceStubSettings) getStubSettings()).createSpanSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchWriteSpans. */
+  public UnaryCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
+    return ((TraceServiceStubSettings) getStubSettings()).batchWriteSpansSettings();
   }
 
   public static final TraceServiceSettings create(TraceServiceStubSettings stub)
@@ -174,14 +174,14 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to batchWriteSpans. */
-    public UnaryCallSettings.Builder<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
-      return getStubSettingsBuilder().batchWriteSpansSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createSpan. */
     public UnaryCallSettings.Builder<Span, Span> createSpanSettings() {
       return getStubSettingsBuilder().createSpanSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchWriteSpans. */
+    public UnaryCallSettings.Builder<BatchWriteSpansRequest, Empty> batchWriteSpansSettings() {
+      return getStubSettingsBuilder().batchWriteSpansSettings();
     }
 
     @Override

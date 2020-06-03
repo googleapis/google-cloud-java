@@ -69,16 +69,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getTrace to 30 seconds:
+ * <p>For example, to set the total timeout of patchTraces to 30 seconds:
  *
  * <pre>
  * <code>
  * TraceServiceStubSettings.Builder traceServiceSettingsBuilder =
  *     TraceServiceStubSettings.newBuilder();
  * traceServiceSettingsBuilder
- *     .getTraceSettings()
+ *     .patchTracesSettings()
  *     .setRetrySettings(
- *         traceServiceSettingsBuilder.getTraceSettings().getRetrySettings().toBuilder()
+ *         traceServiceSettingsBuilder.patchTracesSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TraceServiceStubSettings traceServiceSettings = traceServiceSettingsBuilder.build();
@@ -96,10 +96,15 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
           .add("https://www.googleapis.com/auth/trace.readonly")
           .build();
 
+  private final UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
   private final PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
       listTracesSettings;
   private final UnaryCallSettings<GetTraceRequest, Trace> getTraceSettings;
-  private final UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
+
+  /** Returns the object with the settings used for calls to patchTraces. */
+  public UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
+    return patchTracesSettings;
+  }
 
   /** Returns the object with the settings used for calls to listTraces. */
   public PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
@@ -110,11 +115,6 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
   /** Returns the object with the settings used for calls to getTrace. */
   public UnaryCallSettings<GetTraceRequest, Trace> getTraceSettings() {
     return getTraceSettings;
-  }
-
-  /** Returns the object with the settings used for calls to patchTraces. */
-  public UnaryCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
-    return patchTracesSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -186,9 +186,9 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
   protected TraceServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    patchTracesSettings = settingsBuilder.patchTracesSettings().build();
     listTracesSettings = settingsBuilder.listTracesSettings().build();
     getTraceSettings = settingsBuilder.getTraceSettings().build();
-    patchTracesSettings = settingsBuilder.patchTracesSettings().build();
   }
 
   private static final PagedListDescriptor<ListTracesRequest, ListTracesResponse, Trace>
@@ -248,11 +248,11 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
   public static class Builder extends StubSettings.Builder<TraceServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
     private final PagedCallSettings.Builder<
             ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
         listTracesSettings;
     private final UnaryCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
-    private final UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -277,12 +277,12 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setRetryDelayMultiplier(1.2)
+              .setMaxRetryDelay(Duration.ofMillis(1000L))
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.5)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(45000L))
               .build();
       definitions.put("default", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -295,15 +295,15 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      patchTracesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listTracesSettings = PagedCallSettings.newBuilder(LIST_TRACES_PAGE_STR_FACT);
 
       getTraceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      patchTracesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listTracesSettings, getTraceSettings, patchTracesSettings);
+              patchTracesSettings, listTracesSettings, getTraceSettings);
 
       initDefaults(this);
     }
@@ -320,6 +320,11 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .patchTracesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .listTracesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -329,24 +334,19 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .patchTracesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
     protected Builder(TraceServiceStubSettings settings) {
       super(settings);
 
+      patchTracesSettings = settings.patchTracesSettings.toBuilder();
       listTracesSettings = settings.listTracesSettings.toBuilder();
       getTraceSettings = settings.getTraceSettings.toBuilder();
-      patchTracesSettings = settings.patchTracesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listTracesSettings, getTraceSettings, patchTracesSettings);
+              patchTracesSettings, listTracesSettings, getTraceSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -365,6 +365,11 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to patchTraces. */
+    public UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
+      return patchTracesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listTraces. */
     public PagedCallSettings.Builder<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
         listTracesSettings() {
@@ -374,11 +379,6 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     /** Returns the builder for the settings used for calls to getTrace. */
     public UnaryCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings() {
       return getTraceSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to patchTraces. */
-    public UnaryCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
-      return patchTracesSettings;
     }
 
     @Override

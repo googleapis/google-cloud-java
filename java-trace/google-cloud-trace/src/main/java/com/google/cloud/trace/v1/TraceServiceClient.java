@@ -54,8 +54,8 @@ import javax.annotation.Generated;
  * <code>
  * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
  *   String projectId = "";
- *   String traceId = "";
- *   Trace response = traceServiceClient.getTrace(projectId, traceId);
+ *   Traces traces = Traces.newBuilder().build();
+ *   traceServiceClient.patchTraces(projectId, traces);
  * }
  * </code>
  * </pre>
@@ -161,6 +161,88 @@ public class TraceServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TraceServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends new traces to Stackdriver Trace or updates existing traces. If the ID of a trace that you
+   * send matches that of an existing trace, any fields in the existing trace and its spans are
+   * overwritten by the provided values, and any new fields provided are merged with the existing
+   * trace data. If the ID does not match, a new trace is created.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   String projectId = "";
+   *   Traces traces = Traces.newBuilder().build();
+   *   traceServiceClient.patchTraces(projectId, traces);
+   * }
+   * </code></pre>
+   *
+   * @param projectId Required. ID of the Cloud project where the trace data is stored.
+   * @param traces Required. The body of the message.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void patchTraces(String projectId, Traces traces) {
+    PatchTracesRequest request =
+        PatchTracesRequest.newBuilder().setProjectId(projectId).setTraces(traces).build();
+    patchTraces(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends new traces to Stackdriver Trace or updates existing traces. If the ID of a trace that you
+   * send matches that of an existing trace, any fields in the existing trace and its spans are
+   * overwritten by the provided values, and any new fields provided are merged with the existing
+   * trace data. If the ID does not match, a new trace is created.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   String projectId = "";
+   *   Traces traces = Traces.newBuilder().build();
+   *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setTraces(traces)
+   *     .build();
+   *   traceServiceClient.patchTraces(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void patchTraces(PatchTracesRequest request) {
+    patchTracesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends new traces to Stackdriver Trace or updates existing traces. If the ID of a trace that you
+   * send matches that of an existing trace, any fields in the existing trace and its spans are
+   * overwritten by the provided values, and any new fields provided are merged with the existing
+   * trace data. If the ID does not match, a new trace is created.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   String projectId = "";
+   *   Traces traces = Traces.newBuilder().build();
+   *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setTraces(traces)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = traceServiceClient.patchTracesCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
+    return stub.patchTracesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -337,88 +419,6 @@ public class TraceServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetTraceRequest, Trace> getTraceCallable() {
     return stub.getTraceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends new traces to Stackdriver Trace or updates existing traces. If the ID of a trace that you
-   * send matches that of an existing trace, any fields in the existing trace and its spans are
-   * overwritten by the provided values, and any new fields provided are merged with the existing
-   * trace data. If the ID does not match, a new trace is created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   String projectId = "";
-   *   Traces traces = Traces.newBuilder().build();
-   *   traceServiceClient.patchTraces(projectId, traces);
-   * }
-   * </code></pre>
-   *
-   * @param projectId Required. ID of the Cloud project where the trace data is stored.
-   * @param traces Required. The body of the message.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void patchTraces(String projectId, Traces traces) {
-    PatchTracesRequest request =
-        PatchTracesRequest.newBuilder().setProjectId(projectId).setTraces(traces).build();
-    patchTraces(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends new traces to Stackdriver Trace or updates existing traces. If the ID of a trace that you
-   * send matches that of an existing trace, any fields in the existing trace and its spans are
-   * overwritten by the provided values, and any new fields provided are merged with the existing
-   * trace data. If the ID does not match, a new trace is created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   String projectId = "";
-   *   Traces traces = Traces.newBuilder().build();
-   *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setTraces(traces)
-   *     .build();
-   *   traceServiceClient.patchTraces(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void patchTraces(PatchTracesRequest request) {
-    patchTracesCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends new traces to Stackdriver Trace or updates existing traces. If the ID of a trace that you
-   * send matches that of an existing trace, any fields in the existing trace and its spans are
-   * overwritten by the provided values, and any new fields provided are merged with the existing
-   * trace data. If the ID does not match, a new trace is created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
-   *   String projectId = "";
-   *   Traces traces = Traces.newBuilder().build();
-   *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setTraces(traces)
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = traceServiceClient.patchTracesCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
-    return stub.patchTracesCallable();
   }
 
   @Override

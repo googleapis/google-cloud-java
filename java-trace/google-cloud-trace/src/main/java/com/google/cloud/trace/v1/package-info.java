@@ -32,8 +32,8 @@
  * <code>
  * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
  *   String projectId = "";
- *   String traceId = "";
- *   Trace response = traceServiceClient.getTrace(projectId, traceId);
+ *   Traces traces = Traces.newBuilder().build();
+ *   traceServiceClient.patchTraces(projectId, traces);
  * }
  * </code>
  * </pre>
