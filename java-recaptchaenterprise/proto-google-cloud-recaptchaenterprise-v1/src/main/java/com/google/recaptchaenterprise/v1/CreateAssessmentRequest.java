@@ -143,6 +143,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    * @return Whether the assessment field is set.
    */
+  @java.lang.Override
   public boolean hasAssessment() {
     return assessment_ != null;
   }
@@ -211,6 +214,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    * @return The assessment.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.Assessment getAssessment() {
     return assessment_ == null
         ? com.google.recaptchaenterprise.v1.Assessment.getDefaultInstance()
@@ -227,6 +231,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    * .google.cloud.recaptchaenterprise.v1.Assessment assessment = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.AssessmentOrBuilder getAssessmentOrBuilder() {
     return getAssessment();
   }

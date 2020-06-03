@@ -148,6 +148,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the key field is set.
    */
+  @java.lang.Override
   public boolean hasKey() {
     return key_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The key.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.Key getKey() {
     return key_ == null ? com.google.recaptchaenterprise.v1beta1.Key.getDefaultInstance() : key_;
   }
@@ -178,6 +180,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    * .google.cloud.recaptchaenterprise.v1beta1.Key key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.KeyOrBuilder getKeyOrBuilder() {
     return getKey();
   }
@@ -197,6 +200,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -213,6 +217,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -227,6 +232,7 @@ public final class UpdateKeyRequest extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

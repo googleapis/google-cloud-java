@@ -174,6 +174,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +198,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the event field is set.
    */
+  @java.lang.Override
   public boolean hasEvent() {
     return event_ != null;
   }
@@ -236,6 +239,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The event.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.Event getEvent() {
     return event_ == null ? com.google.recaptchaenterprise.v1.Event.getDefaultInstance() : event_;
   }
@@ -248,6 +252,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recaptchaenterprise.v1.Event event = 2;</code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.EventOrBuilder getEventOrBuilder() {
     return getEvent();
   }
@@ -267,6 +272,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the riskAnalysis field is set.
    */
+  @java.lang.Override
   public boolean hasRiskAnalysis() {
     return riskAnalysis_ != null;
   }
@@ -283,6 +289,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The riskAnalysis.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.RiskAnalysis getRiskAnalysis() {
     return riskAnalysis_ == null
         ? com.google.recaptchaenterprise.v1.RiskAnalysis.getDefaultInstance()
@@ -299,6 +306,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recaptchaenterprise.v1.RiskAnalysis risk_analysis = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.RiskAnalysisOrBuilder getRiskAnalysisOrBuilder() {
     return getRiskAnalysis();
   }
@@ -318,6 +326,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the tokenProperties field is set.
    */
+  @java.lang.Override
   public boolean hasTokenProperties() {
     return tokenProperties_ != null;
   }
@@ -334,6 +343,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tokenProperties.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.TokenProperties getTokenProperties() {
     return tokenProperties_ == null
         ? com.google.recaptchaenterprise.v1.TokenProperties.getDefaultInstance()
@@ -350,6 +360,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recaptchaenterprise.v1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.TokenPropertiesOrBuilder getTokenPropertiesOrBuilder() {
     return getTokenProperties();
   }

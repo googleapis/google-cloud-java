@@ -373,6 +373,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -422,6 +426,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -445,6 +450,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -470,6 +476,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the event field is set.
    */
+  @java.lang.Override
   public boolean hasEvent() {
     return event_ != null;
   }
@@ -484,6 +491,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The event.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.Event getEvent() {
     return event_ == null
         ? com.google.recaptchaenterprise.v1beta1.Event.getDefaultInstance()
@@ -498,6 +506,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recaptchaenterprise.v1beta1.Event event = 2;</code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.EventOrBuilder getEventOrBuilder() {
     return getEvent();
   }
@@ -517,6 +526,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -536,6 +546,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the tokenProperties field is set.
    */
+  @java.lang.Override
   public boolean hasTokenProperties() {
     return tokenProperties_ != null;
   }
@@ -552,6 +563,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tokenProperties.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.TokenProperties getTokenProperties() {
     return tokenProperties_ == null
         ? com.google.recaptchaenterprise.v1beta1.TokenProperties.getDefaultInstance()
@@ -568,6 +580,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recaptchaenterprise.v1beta1.TokenProperties token_properties = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.TokenPropertiesOrBuilder
       getTokenPropertiesOrBuilder() {
     return getTokenProperties();
@@ -606,6 +619,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the reasons.
    */
+  @java.lang.Override
   public java.util.List<com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason>
       getReasonsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -625,6 +639,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of reasons.
    */
+  @java.lang.Override
   public int getReasonsCount() {
     return reasons_.size();
   }
@@ -642,6 +657,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The reasons at the given index.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.Assessment.ClassificationReason getReasons(
       int index) {
     return reasons_converter_.convert(reasons_.get(index));
@@ -659,6 +675,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for reasons.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getReasonsValueList() {
     return reasons_;
   }
@@ -676,6 +693,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of reasons at the given index.
    */
+  @java.lang.Override
   public int getReasonsValue(int index) {
     return reasons_.get(index);
   }
@@ -1427,6 +1445,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }

@@ -138,6 +138,7 @@ public final class ListKeysResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.recaptchaenterprise.v1beta1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.recaptchaenterprise.v1beta1.Key> getKeysList() {
     return keys_;
   }
@@ -150,6 +151,7 @@ public final class ListKeysResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.recaptchaenterprise.v1beta1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.recaptchaenterprise.v1beta1.KeyOrBuilder>
       getKeysOrBuilderList() {
     return keys_;
@@ -163,6 +165,7 @@ public final class ListKeysResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.recaptchaenterprise.v1beta1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public int getKeysCount() {
     return keys_.size();
   }
@@ -175,6 +178,7 @@ public final class ListKeysResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.recaptchaenterprise.v1beta1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.Key getKeys(int index) {
     return keys_.get(index);
   }
@@ -187,6 +191,7 @@ public final class ListKeysResponse extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.recaptchaenterprise.v1beta1.Key keys = 1;</code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.KeyOrBuilder getKeysOrBuilder(int index) {
     return keys_.get(index);
   }
@@ -205,6 +210,7 @@ public final class ListKeysResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +234,7 @@ public final class ListKeysResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

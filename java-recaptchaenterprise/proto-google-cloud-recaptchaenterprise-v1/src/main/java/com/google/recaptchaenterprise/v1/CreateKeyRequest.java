@@ -143,6 +143,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the key field is set.
    */
+  @java.lang.Override
   public boolean hasKey() {
     return key_ != null;
   }
@@ -211,6 +214,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The key.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.Key getKey() {
     return key_ == null ? com.google.recaptchaenterprise.v1.Key.getDefaultInstance() : key_;
   }
@@ -225,6 +229,7 @@ public final class CreateKeyRequest extends com.google.protobuf.GeneratedMessage
    * .google.cloud.recaptchaenterprise.v1.Key key = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.KeyOrBuilder getKeyOrBuilder() {
     return getKey();
   }

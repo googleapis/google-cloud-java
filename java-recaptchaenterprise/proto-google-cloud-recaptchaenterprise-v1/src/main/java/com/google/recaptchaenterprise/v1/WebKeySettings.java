@@ -298,6 +298,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -478,6 +482,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -524,6 +532,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The allowAllDomains.
    */
+  @java.lang.Override
   public boolean getAllowAllDomains() {
     return allowAllDomains_;
   }
@@ -614,6 +623,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The allowAmpTraffic.
    */
+  @java.lang.Override
   public boolean getAllowAmpTraffic() {
     return allowAmpTraffic_;
   }
@@ -633,6 +643,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for integrationType.
    */
+  @java.lang.Override
   public int getIntegrationTypeValue() {
     return integrationType_;
   }
@@ -649,6 +660,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The integrationType.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType getIntegrationType() {
     @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType result =
@@ -675,6 +687,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for challengeSecurityPreference.
    */
+  @java.lang.Override
   public int getChallengeSecurityPreferenceValue() {
     return challengeSecurityPreference_;
   }
@@ -693,6 +706,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The challengeSecurityPreference.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference
       getChallengeSecurityPreference() {
     @SuppressWarnings("deprecation")
@@ -1126,6 +1140,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The allowAllDomains.
      */
+    @java.lang.Override
     public boolean getAllowAllDomains() {
       return allowAllDomains_;
     }
@@ -1372,6 +1387,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The allowAmpTraffic.
      */
+    @java.lang.Override
     public boolean getAllowAmpTraffic() {
       return allowAmpTraffic_;
     }
@@ -1425,6 +1441,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for integrationType.
      */
+    @java.lang.Override
     public int getIntegrationTypeValue() {
       return integrationType_;
     }
@@ -1443,6 +1460,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIntegrationTypeValue(int value) {
+
       integrationType_ = value;
       onChanged();
       return this;
@@ -1460,6 +1478,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The integrationType.
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType getIntegrationType() {
       @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType result =
@@ -1529,6 +1548,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for challengeSecurityPreference.
      */
+    @java.lang.Override
     public int getChallengeSecurityPreferenceValue() {
       return challengeSecurityPreference_;
     }
@@ -1549,6 +1569,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setChallengeSecurityPreferenceValue(int value) {
+
       challengeSecurityPreference_ = value;
       onChanged();
       return this;
@@ -1568,6 +1589,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The challengeSecurityPreference.
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference
         getChallengeSecurityPreference() {
       @SuppressWarnings("deprecation")

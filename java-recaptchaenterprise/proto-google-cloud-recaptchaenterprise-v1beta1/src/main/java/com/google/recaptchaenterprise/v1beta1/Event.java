@@ -149,6 +149,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The token.
    */
+  @java.lang.Override
   public java.lang.String getToken() {
     java.lang.Object ref = token_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for token.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTokenBytes() {
     java.lang.Object ref = token_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The siteKey.
    */
+  @java.lang.Override
   public java.lang.String getSiteKey() {
     java.lang.Object ref = siteKey_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +224,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for siteKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSiteKeyBytes() {
     java.lang.Object ref = siteKey_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +251,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userAgent.
    */
+  @java.lang.Override
   public java.lang.String getUserAgent() {
     java.lang.Object ref = userAgent_;
     if (ref instanceof java.lang.String) {
@@ -270,6 +275,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for userAgent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserAgentBytes() {
     java.lang.Object ref = userAgent_;
     if (ref instanceof java.lang.String) {
@@ -295,6 +301,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userIpAddress.
    */
+  @java.lang.Override
   public java.lang.String getUserIpAddress() {
     java.lang.Object ref = userIpAddress_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +324,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for userIpAddress.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserIpAddressBytes() {
     java.lang.Object ref = userIpAddress_;
     if (ref instanceof java.lang.String) {
@@ -344,6 +352,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expectedAction.
    */
+  @java.lang.Override
   public java.lang.String getExpectedAction() {
     java.lang.Object ref = expectedAction_;
     if (ref instanceof java.lang.String) {
@@ -368,6 +377,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for expectedAction.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExpectedActionBytes() {
     java.lang.Object ref = expectedAction_;
     if (ref instanceof java.lang.String) {

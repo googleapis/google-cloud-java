@@ -332,6 +332,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -380,6 +384,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -415,6 +420,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the reasons.
    */
+  @java.lang.Override
   public java.util.List<com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason>
       getReasonsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -434,6 +440,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of reasons.
    */
+  @java.lang.Override
   public int getReasonsCount() {
     return reasons_.size();
   }
@@ -451,6 +458,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The reasons at the given index.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason getReasons(int index) {
     return reasons_converter_.convert(reasons_.get(index));
   }
@@ -467,6 +475,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for reasons.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getReasonsValueList() {
     return reasons_;
   }
@@ -484,6 +493,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of reasons at the given index.
    */
+  @java.lang.Override
   public int getReasonsValue(int index) {
     return reasons_.get(index);
   }
@@ -865,6 +875,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }

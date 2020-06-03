@@ -282,6 +282,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +306,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -330,6 +332,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -352,6 +355,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -376,6 +380,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the webSettings field is set.
    */
+  @java.lang.Override
   public boolean hasWebSettings() {
     return platformSettingsCase_ == 3;
   }
@@ -390,6 +395,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The webSettings.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.WebKeySettings getWebSettings() {
     if (platformSettingsCase_ == 3) {
       return (com.google.recaptchaenterprise.v1.WebKeySettings) platformSettings_;
@@ -405,6 +411,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recaptchaenterprise.v1.WebKeySettings web_settings = 3;</code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.WebKeySettingsOrBuilder getWebSettingsOrBuilder() {
     if (platformSettingsCase_ == 3) {
       return (com.google.recaptchaenterprise.v1.WebKeySettings) platformSettings_;
@@ -424,6 +431,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the androidSettings field is set.
    */
+  @java.lang.Override
   public boolean hasAndroidSettings() {
     return platformSettingsCase_ == 4;
   }
@@ -438,6 +446,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The androidSettings.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.AndroidKeySettings getAndroidSettings() {
     if (platformSettingsCase_ == 4) {
       return (com.google.recaptchaenterprise.v1.AndroidKeySettings) platformSettings_;
@@ -453,6 +462,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recaptchaenterprise.v1.AndroidKeySettings android_settings = 4;</code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.AndroidKeySettingsOrBuilder
       getAndroidSettingsOrBuilder() {
     if (platformSettingsCase_ == 4) {
@@ -473,6 +483,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the iosSettings field is set.
    */
+  @java.lang.Override
   public boolean hasIosSettings() {
     return platformSettingsCase_ == 5;
   }
@@ -487,6 +498,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The iosSettings.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.IOSKeySettings getIosSettings() {
     if (platformSettingsCase_ == 5) {
       return (com.google.recaptchaenterprise.v1.IOSKeySettings) platformSettings_;
@@ -502,6 +514,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recaptchaenterprise.v1.IOSKeySettings ios_settings = 5;</code>
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1.IOSKeySettingsOrBuilder getIosSettingsOrBuilder() {
     if (platformSettingsCase_ == 5) {
       return (com.google.recaptchaenterprise.v1.IOSKeySettings) platformSettings_;
@@ -544,6 +557,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -551,6 +565,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -565,6 +580,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -578,6 +594,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -595,6 +612,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -619,6 +637,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -633,6 +652,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -645,6 +665,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1399,6 +1420,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the webSettings field is set.
      */
+    @java.lang.Override
     public boolean hasWebSettings() {
       return platformSettingsCase_ == 3;
     }
@@ -1413,6 +1435,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The webSettings.
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1.WebKeySettings getWebSettings() {
       if (webSettingsBuilder_ == null) {
         if (platformSettingsCase_ == 3) {
@@ -1546,6 +1569,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.recaptchaenterprise.v1.WebKeySettings web_settings = 3;</code>
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1.WebKeySettingsOrBuilder getWebSettingsOrBuilder() {
       if ((platformSettingsCase_ == 3) && (webSettingsBuilder_ != null)) {
         return webSettingsBuilder_.getMessageOrBuilder();
@@ -1606,6 +1630,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the androidSettings field is set.
      */
+    @java.lang.Override
     public boolean hasAndroidSettings() {
       return platformSettingsCase_ == 4;
     }
@@ -1620,6 +1645,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The androidSettings.
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1.AndroidKeySettings getAndroidSettings() {
       if (androidSettingsBuilder_ == null) {
         if (platformSettingsCase_ == 4) {
@@ -1755,6 +1781,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.recaptchaenterprise.v1.AndroidKeySettings android_settings = 4;</code>
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1.AndroidKeySettingsOrBuilder
         getAndroidSettingsOrBuilder() {
       if ((platformSettingsCase_ == 4) && (androidSettingsBuilder_ != null)) {
@@ -1817,6 +1844,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the iosSettings field is set.
      */
+    @java.lang.Override
     public boolean hasIosSettings() {
       return platformSettingsCase_ == 5;
     }
@@ -1831,6 +1859,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The iosSettings.
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1.IOSKeySettings getIosSettings() {
       if (iosSettingsBuilder_ == null) {
         if (platformSettingsCase_ == 5) {
@@ -1964,6 +1993,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.recaptchaenterprise.v1.IOSKeySettings ios_settings = 5;</code>
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1.IOSKeySettingsOrBuilder getIosSettingsOrBuilder() {
       if ((platformSettingsCase_ == 5) && (iosSettingsBuilder_ != null)) {
         return iosSettingsBuilder_.getMessageOrBuilder();
@@ -2043,6 +2073,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2050,6 +2081,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2064,6 +2096,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2077,6 +2110,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2095,6 +2129,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

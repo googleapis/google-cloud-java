@@ -355,6 +355,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -402,6 +406,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The valid.
    */
+  @java.lang.Override
   public boolean getValid() {
     return valid_;
   }
@@ -421,6 +426,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for invalidReason.
    */
+  @java.lang.Override
   public int getInvalidReasonValue() {
     return invalidReason_;
   }
@@ -437,6 +443,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The invalidReason.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason getInvalidReason() {
     @SuppressWarnings("deprecation")
     com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason result =
@@ -460,6 +467,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -474,6 +482,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -486,6 +495,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -503,6 +513,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The hostname.
    */
+  @java.lang.Override
   public java.lang.String getHostname() {
     java.lang.Object ref = hostname_;
     if (ref instanceof java.lang.String) {
@@ -525,6 +536,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for hostname.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHostnameBytes() {
     java.lang.Object ref = hostname_;
     if (ref instanceof java.lang.String) {
@@ -550,6 +562,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -572,6 +585,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -987,6 +1001,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      * @return The valid.
      */
+    @java.lang.Override
     public boolean getValid() {
       return valid_;
     }
@@ -1040,6 +1055,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for invalidReason.
      */
+    @java.lang.Override
     public int getInvalidReasonValue() {
       return invalidReason_;
     }
@@ -1058,6 +1074,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setInvalidReasonValue(int value) {
+
       invalidReason_ = value;
       onChanged();
       return this;
@@ -1075,6 +1092,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      * @return The invalidReason.
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason getInvalidReason() {
       @SuppressWarnings("deprecation")
       com.google.recaptchaenterprise.v1beta1.TokenProperties.InvalidReason result =

@@ -241,6 +241,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -291,6 +295,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -316,6 +321,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -343,6 +349,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    * @return The enum numeric value on the wire for annotation.
    */
+  @java.lang.Override
   public int getAnnotationValue() {
     return annotation_;
   }
@@ -359,6 +366,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    * @return The annotation.
    */
+  @java.lang.Override
   public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation
       getAnnotation() {
     @SuppressWarnings("deprecation")
@@ -849,6 +857,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      * @return The enum numeric value on the wire for annotation.
      */
+    @java.lang.Override
     public int getAnnotationValue() {
       return annotation_;
     }
@@ -867,6 +876,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setAnnotationValue(int value) {
+
       annotation_ = value;
       onChanged();
       return this;
@@ -884,6 +894,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      * @return The annotation.
      */
+    @java.lang.Override
     public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest.Annotation
         getAnnotation() {
       @SuppressWarnings("deprecation")
