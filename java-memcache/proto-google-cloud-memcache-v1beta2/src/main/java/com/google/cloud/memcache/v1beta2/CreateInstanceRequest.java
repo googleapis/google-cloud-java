@@ -152,6 +152,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +211,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The instanceId.
    */
+  @java.lang.Override
   public java.lang.String getInstanceId() {
     java.lang.Object ref = instanceId_;
     if (ref instanceof java.lang.String) {
@@ -237,6 +240,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for instanceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstanceIdBytes() {
     java.lang.Object ref = instanceId_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +268,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the resource field is set.
    */
+  @java.lang.Override
   public boolean hasResource() {
     return resource_ != null;
   }
@@ -280,6 +285,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The resource.
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance getResource() {
     return resource_ == null
         ? com.google.cloud.memcache.v1beta2.Instance.getDefaultInstance()
@@ -296,6 +302,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.memcache.v1beta2.Instance resource = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.InstanceOrBuilder getResourceOrBuilder() {
     return getResource();
   }

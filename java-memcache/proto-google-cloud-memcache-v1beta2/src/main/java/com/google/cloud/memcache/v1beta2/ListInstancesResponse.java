@@ -155,6 +155,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance resources = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.memcache.v1beta2.Instance> getResourcesList() {
     return resources_;
   }
@@ -170,6 +171,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance resources = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.memcache.v1beta2.InstanceOrBuilder>
       getResourcesOrBuilderList() {
     return resources_;
@@ -186,6 +188,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance resources = 1;</code>
    */
+  @java.lang.Override
   public int getResourcesCount() {
     return resources_.size();
   }
@@ -201,6 +204,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance resources = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance getResources(int index) {
     return resources_.get(index);
   }
@@ -216,6 +220,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.memcache.v1beta2.Instance resources = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.InstanceOrBuilder getResourcesOrBuilder(int index) {
     return resources_.get(index);
   }
@@ -234,6 +239,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +263,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

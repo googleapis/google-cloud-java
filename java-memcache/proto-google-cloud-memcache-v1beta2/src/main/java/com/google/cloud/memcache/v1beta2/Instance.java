@@ -459,6 +459,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -629,6 +633,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The cpuCount.
      */
+    @java.lang.Override
     public int getCpuCount() {
       return cpuCount_;
     }
@@ -646,6 +651,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The memorySizeMb.
      */
+    @java.lang.Override
     public int getMemorySizeMb() {
       return memorySizeMb_;
     }
@@ -999,6 +1005,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The cpuCount.
        */
+      @java.lang.Override
       public int getCpuCount() {
         return cpuCount_;
       }
@@ -1050,6 +1057,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The memorySizeMb.
        */
+      @java.lang.Override
       public int getMemorySizeMb() {
         return memorySizeMb_;
       }
@@ -1599,6 +1607,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -1647,6 +1659,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The nodeId.
      */
+    @java.lang.Override
     public java.lang.String getNodeId() {
       java.lang.Object ref = nodeId_;
       if (ref instanceof java.lang.String) {
@@ -1670,6 +1683,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for nodeId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNodeIdBytes() {
       java.lang.Object ref = nodeId_;
       if (ref instanceof java.lang.String) {
@@ -1695,6 +1709,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The zone.
      */
+    @java.lang.Override
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (ref instanceof java.lang.String) {
@@ -1717,6 +1732,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for zone.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof java.lang.String) {
@@ -1744,6 +1760,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1760,6 +1777,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.memcache.v1beta2.Instance.Node.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.memcache.v1beta2.Instance.Node.State result =
@@ -1783,6 +1801,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The host.
      */
+    @java.lang.Override
     public java.lang.String getHost() {
       java.lang.Object ref = host_;
       if (ref instanceof java.lang.String) {
@@ -1806,6 +1825,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for host.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getHostBytes() {
       java.lang.Object ref = host_;
       if (ref instanceof java.lang.String) {
@@ -1831,6 +1851,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The port.
      */
+    @java.lang.Override
     public int getPort() {
       return port_;
     }
@@ -1848,6 +1869,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the parameters field is set.
      */
+    @java.lang.Override
     public boolean hasParameters() {
       return parameters_ != null;
     }
@@ -1862,6 +1884,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The parameters.
      */
+    @java.lang.Override
     public com.google.cloud.memcache.v1beta2.MemcacheParameters getParameters() {
       return parameters_ == null
           ? com.google.cloud.memcache.v1beta2.MemcacheParameters.getDefaultInstance()
@@ -1876,6 +1899,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.memcache.v1beta2.MemcacheParameters parameters = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.memcache.v1beta2.MemcacheParametersOrBuilder getParametersOrBuilder() {
       return getParameters();
     }
@@ -2517,6 +2541,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for state.
        */
+      @java.lang.Override
       public int getStateValue() {
         return state_;
       }
@@ -2535,6 +2560,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+
         state_ = value;
         onChanged();
         return this;
@@ -2552,6 +2578,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The state.
        */
+      @java.lang.Override
       public com.google.cloud.memcache.v1beta2.Instance.Node.State getState() {
         @SuppressWarnings("deprecation")
         com.google.cloud.memcache.v1beta2.Instance.Node.State result =
@@ -2726,6 +2753,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The port.
        */
+      @java.lang.Override
       public int getPort() {
         return port_;
       }
@@ -3243,6 +3271,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -3290,6 +3322,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for code.
      */
+    @java.lang.Override
     public int getCodeValue() {
       return code_;
     }
@@ -3304,6 +3337,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The code.
      */
+    @java.lang.Override
     public com.google.cloud.memcache.v1beta2.Instance.InstanceMessage.Code getCode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.memcache.v1beta2.Instance.InstanceMessage.Code result =
@@ -3326,6 +3360,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The message.
      */
+    @java.lang.Override
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
@@ -3348,6 +3383,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for message.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMessageBytes() {
       java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
@@ -3708,6 +3744,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for code.
        */
+      @java.lang.Override
       public int getCodeValue() {
         return code_;
       }
@@ -3724,6 +3761,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setCodeValue(int value) {
+
         code_ = value;
         onChanged();
         return this;
@@ -3739,6 +3777,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The code.
        */
+      @java.lang.Override
       public com.google.cloud.memcache.v1beta2.Instance.InstanceMessage.Code getCode() {
         @SuppressWarnings("deprecation")
         com.google.cloud.memcache.v1beta2.Instance.InstanceMessage.Code result =
@@ -3965,6 +4004,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -3993,6 +4033,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -4019,6 +4060,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -4042,6 +4084,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -4090,6 +4133,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -4097,6 +4141,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -4112,6 +4157,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -4126,6 +4172,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -4144,6 +4191,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -4171,6 +4219,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The authorizedNetwork.
    */
+  @java.lang.Override
   public java.lang.String getAuthorizedNetwork() {
     java.lang.Object ref = authorizedNetwork_;
     if (ref instanceof java.lang.String) {
@@ -4196,6 +4245,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for authorizedNetwork.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAuthorizedNetworkBytes() {
     java.lang.Object ref = authorizedNetwork_;
     if (ref instanceof java.lang.String) {
@@ -4294,6 +4344,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nodeCount.
    */
+  @java.lang.Override
   public int getNodeCount() {
     return nodeCount_;
   }
@@ -4313,6 +4364,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the nodeConfig field is set.
    */
+  @java.lang.Override
   public boolean hasNodeConfig() {
     return nodeConfig_ != null;
   }
@@ -4329,6 +4381,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nodeConfig.
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance.NodeConfig getNodeConfig() {
     return nodeConfig_ == null
         ? com.google.cloud.memcache.v1beta2.Instance.NodeConfig.getDefaultInstance()
@@ -4345,6 +4398,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.memcache.v1beta2.Instance.NodeConfig node_config = 7 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance.NodeConfigOrBuilder getNodeConfigOrBuilder() {
     return getNodeConfig();
   }
@@ -4366,6 +4420,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for memcacheVersion.
    */
+  @java.lang.Override
   public int getMemcacheVersionValue() {
     return memcacheVersion_;
   }
@@ -4384,6 +4439,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The memcacheVersion.
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.MemcacheVersion getMemcacheVersion() {
     @SuppressWarnings("deprecation")
     com.google.cloud.memcache.v1beta2.MemcacheVersion result =
@@ -4405,6 +4461,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the parameters field is set.
    */
+  @java.lang.Override
   public boolean hasParameters() {
     return parameters_ != null;
   }
@@ -4420,6 +4477,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parameters.
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.MemcacheParameters getParameters() {
     return parameters_ == null
         ? com.google.cloud.memcache.v1beta2.MemcacheParameters.getDefaultInstance()
@@ -4435,6 +4493,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.memcache.v1beta2.MemcacheParameters parameters = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.MemcacheParametersOrBuilder getParametersOrBuilder() {
     return getParameters();
   }
@@ -4453,6 +4512,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.memcache.v1beta2.Instance.Node> getMemcacheNodesList() {
     return memcacheNodes_;
   }
@@ -4468,6 +4528,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.memcache.v1beta2.Instance.NodeOrBuilder>
       getMemcacheNodesOrBuilderList() {
     return memcacheNodes_;
@@ -4484,6 +4545,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getMemcacheNodesCount() {
     return memcacheNodes_.size();
   }
@@ -4499,6 +4561,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance.Node getMemcacheNodes(int index) {
     return memcacheNodes_.get(index);
   }
@@ -4514,6 +4577,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.memcache.v1beta2.Instance.Node memcache_nodes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance.NodeOrBuilder getMemcacheNodesOrBuilder(
       int index) {
     return memcacheNodes_.get(index);
@@ -4533,6 +4597,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -4548,6 +4613,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -4561,6 +4627,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -4579,6 +4646,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -4594,6 +4662,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -4607,6 +4676,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -4626,6 +4696,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -4642,6 +4713,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.memcache.v1beta2.Instance.State result =
@@ -4665,6 +4737,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The memcacheFullVersion.
    */
+  @java.lang.Override
   public java.lang.String getMemcacheFullVersion() {
     java.lang.Object ref = memcacheFullVersion_;
     if (ref instanceof java.lang.String) {
@@ -4690,6 +4763,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for memcacheFullVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMemcacheFullVersionBytes() {
     java.lang.Object ref = memcacheFullVersion_;
     if (ref instanceof java.lang.String) {
@@ -4715,6 +4789,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.memcache.v1beta2.Instance.InstanceMessage>
       getInstanceMessagesList() {
     return instanceMessages_;
@@ -4729,6 +4804,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.memcache.v1beta2.Instance.InstanceMessageOrBuilder>
       getInstanceMessagesOrBuilderList() {
@@ -4744,6 +4820,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;
    * </code>
    */
+  @java.lang.Override
   public int getInstanceMessagesCount() {
     return instanceMessages_.size();
   }
@@ -4757,6 +4834,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance.InstanceMessage getInstanceMessages(int index) {
     return instanceMessages_.get(index);
   }
@@ -4770,6 +4848,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.memcache.v1beta2.Instance.InstanceMessage instance_messages = 19;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance.InstanceMessageOrBuilder
       getInstanceMessagesOrBuilder(int index) {
     return instanceMessages_.get(index);
@@ -4788,6 +4867,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The discoveryEndpoint.
    */
+  @java.lang.Override
   public java.lang.String getDiscoveryEndpoint() {
     java.lang.Object ref = discoveryEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -4810,6 +4890,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for discoveryEndpoint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDiscoveryEndpointBytes() {
     java.lang.Object ref = discoveryEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -5825,6 +5906,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -5832,6 +5914,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -5847,6 +5930,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -5861,6 +5945,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -5880,6 +5965,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -6283,6 +6369,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The nodeCount.
      */
+    @java.lang.Override
     public int getNodeCount() {
       return nodeCount_;
     }
@@ -6542,6 +6629,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for memcacheVersion.
      */
+    @java.lang.Override
     public int getMemcacheVersionValue() {
       return memcacheVersion_;
     }
@@ -6562,6 +6650,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMemcacheVersionValue(int value) {
+
       memcacheVersion_ = value;
       onChanged();
       return this;
@@ -6581,6 +6670,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The memcacheVersion.
      */
+    @java.lang.Override
     public com.google.cloud.memcache.v1beta2.MemcacheVersion getMemcacheVersion() {
       @SuppressWarnings("deprecation")
       com.google.cloud.memcache.v1beta2.MemcacheVersion result =
@@ -7661,6 +7751,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -7679,6 +7770,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -7696,6 +7788,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.memcache.v1beta2.Instance.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.memcache.v1beta2.Instance.State result =

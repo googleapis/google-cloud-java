@@ -148,6 +148,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -178,6 +180,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -198,6 +201,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the resource field is set.
    */
+  @java.lang.Override
   public boolean hasResource() {
     return resource_ != null;
   }
@@ -215,6 +219,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The resource.
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.Instance getResource() {
     return resource_ == null
         ? com.google.cloud.memcache.v1beta2.Instance.getDefaultInstance()
@@ -232,6 +237,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.memcache.v1beta2.Instance resource = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.InstanceOrBuilder getResourceOrBuilder() {
     return getResource();
   }

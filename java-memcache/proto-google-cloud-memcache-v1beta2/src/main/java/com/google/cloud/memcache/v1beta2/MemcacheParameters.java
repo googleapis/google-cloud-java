@@ -144,6 +144,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +217,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
+  @java.lang.Override
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -222,6 +225,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
     return internalGetParams().getMap().containsKey(key);
   }
   /** Use {@link #getParamsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
@@ -235,6 +239,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
@@ -247,6 +252,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -263,6 +269,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getParamsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -783,6 +790,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
+    @java.lang.Override
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -790,6 +798,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
       return internalGetParams().getMap().containsKey(key);
     }
     /** Use {@link #getParamsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
@@ -803,6 +812,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
@@ -815,6 +825,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getParamsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -832,6 +843,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getParamsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

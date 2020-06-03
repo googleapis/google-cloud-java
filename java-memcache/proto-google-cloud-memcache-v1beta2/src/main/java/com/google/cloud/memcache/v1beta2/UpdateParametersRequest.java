@@ -159,6 +159,7 @@ public final class UpdateParametersRequest extends com.google.protobuf.Generated
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +185,7 @@ public final class UpdateParametersRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class UpdateParametersRequest extends com.google.protobuf.Generated
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -225,6 +228,7 @@ public final class UpdateParametersRequest extends com.google.protobuf.Generated
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -238,6 +242,7 @@ public final class UpdateParametersRequest extends com.google.protobuf.Generated
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -255,6 +260,7 @@ public final class UpdateParametersRequest extends com.google.protobuf.Generated
    *
    * @return Whether the parameters field is set.
    */
+  @java.lang.Override
   public boolean hasParameters() {
     return parameters_ != null;
   }
@@ -269,6 +275,7 @@ public final class UpdateParametersRequest extends com.google.protobuf.Generated
    *
    * @return The parameters.
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.MemcacheParameters getParameters() {
     return parameters_ == null
         ? com.google.cloud.memcache.v1beta2.MemcacheParameters.getDefaultInstance()
@@ -283,6 +290,7 @@ public final class UpdateParametersRequest extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.memcache.v1beta2.MemcacheParameters parameters = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.memcache.v1beta2.MemcacheParametersOrBuilder getParametersOrBuilder() {
     return getParameters();
   }
