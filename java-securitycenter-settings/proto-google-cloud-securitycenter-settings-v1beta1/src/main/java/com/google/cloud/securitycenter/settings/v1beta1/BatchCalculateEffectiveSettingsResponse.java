@@ -138,6 +138,7 @@ public final class BatchCalculateEffectiveSettingsResponse
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.securitycenter.settings.v1beta1.Settings>
       getSettingsList() {
     return settings_;
@@ -151,6 +152,7 @@ public final class BatchCalculateEffectiveSettingsResponse
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.securitycenter.settings.v1beta1.SettingsOrBuilder>
       getSettingsOrBuilderList() {
@@ -165,6 +167,7 @@ public final class BatchCalculateEffectiveSettingsResponse
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1;</code>
    */
+  @java.lang.Override
   public int getSettingsCount() {
     return settings_.size();
   }
@@ -177,6 +180,7 @@ public final class BatchCalculateEffectiveSettingsResponse
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.Settings getSettings(int index) {
     return settings_.get(index);
   }
@@ -189,6 +193,7 @@ public final class BatchCalculateEffectiveSettingsResponse
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SettingsOrBuilder getSettingsOrBuilder(
       int index) {
     return settings_.get(index);

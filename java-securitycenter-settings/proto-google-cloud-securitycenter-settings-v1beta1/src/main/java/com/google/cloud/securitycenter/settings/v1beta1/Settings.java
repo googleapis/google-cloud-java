@@ -456,6 +456,10 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -632,6 +636,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -647,6 +652,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
@@ -1023,6 +1029,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for state.
        */
+      @java.lang.Override
       public int getStateValue() {
         return state_;
       }
@@ -1040,6 +1047,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+
         state_ = value;
         onChanged();
         return this;
@@ -1056,6 +1064,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The state.
        */
+      @java.lang.Override
       public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
         @SuppressWarnings("deprecation")
         com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
@@ -1184,6 +1193,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1213,6 +1223,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1239,6 +1250,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the billingSettings field is set.
    */
+  @java.lang.Override
   public boolean hasBillingSettings() {
     return billingSettings_ != null;
   }
@@ -1254,6 +1266,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The billingSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.BillingSettings getBillingSettings() {
     return billingSettings_ == null
         ? com.google.cloud.securitycenter.settings.v1beta1.BillingSettings.getDefaultInstance()
@@ -1269,6 +1282,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.securitycenter.settings.v1beta1.BillingSettings billing_settings = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.BillingSettingsOrBuilder
       getBillingSettingsOrBuilder() {
     return getBillingSettings();
@@ -1287,6 +1301,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -1301,6 +1316,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.Settings.OnboardingState getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.Settings.OnboardingState result =
@@ -1325,6 +1341,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The orgServiceAccount.
    */
+  @java.lang.Override
   public java.lang.String getOrgServiceAccount() {
     java.lang.Object ref = orgServiceAccount_;
     if (ref instanceof java.lang.String) {
@@ -1349,6 +1366,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for orgServiceAccount.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrgServiceAccountBytes() {
     java.lang.Object ref = orgServiceAccount_;
     if (ref instanceof java.lang.String) {
@@ -1374,6 +1392,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sinkSettings field is set.
    */
+  @java.lang.Override
   public boolean hasSinkSettings() {
     return sinkSettings_ != null;
   }
@@ -1388,6 +1407,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sinkSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SinkSettings getSinkSettings() {
     return sinkSettings_ == null
         ? com.google.cloud.securitycenter.settings.v1beta1.SinkSettings.getDefaultInstance()
@@ -1402,6 +1422,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.securitycenter.settings.v1beta1.SinkSettings sink_settings = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SinkSettingsOrBuilder
       getSinkSettingsOrBuilder() {
     return getSinkSettings();
@@ -1454,6 +1475,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
    * </code>
    */
+  @java.lang.Override
   public boolean containsComponentSettings(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1461,6 +1483,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     return internalGetComponentSettings().getMap().containsKey(key);
   }
   /** Use {@link #getComponentSettingsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<
           java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
@@ -1478,6 +1501,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<
           java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
       getComponentSettingsMap() {
@@ -1494,6 +1518,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
       getComponentSettingsOrDefault(
           java.lang.String key,
@@ -1517,6 +1542,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
       getComponentSettingsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -1583,6 +1609,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
    * </code>
    */
+  @java.lang.Override
   public boolean containsDetectorGroupSettings(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1590,6 +1617,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     return internalGetDetectorGroupSettings().getMap().containsKey(key);
   }
   /** Use {@link #getDetectorGroupSettingsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<
           java.lang.String,
@@ -1610,6 +1638,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<
           java.lang.String,
           com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings>
@@ -1629,6 +1658,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
       getDetectorGroupSettingsOrDefault(
           java.lang.String key,
@@ -1656,6 +1686,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
       getDetectorGroupSettingsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -1685,6 +1716,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1708,6 +1740,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1734,6 +1767,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -1749,6 +1783,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -1762,6 +1797,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -2660,6 +2696,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -2677,6 +2714,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -2693,6 +2731,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.Settings.OnboardingState getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.Settings.OnboardingState result =
@@ -3094,6 +3133,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
      * </code>
      */
+    @java.lang.Override
     public boolean containsComponentSettings(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3101,6 +3141,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return internalGetComponentSettings().getMap().containsKey(key);
     }
     /** Use {@link #getComponentSettingsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
@@ -3118,6 +3159,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String, com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
         getComponentSettingsMap() {
@@ -3134,6 +3176,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
         getComponentSettingsOrDefault(
             java.lang.String key,
@@ -3157,6 +3200,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
         getComponentSettingsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -3292,6 +3336,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
      * </code>
      */
+    @java.lang.Override
     public boolean containsDetectorGroupSettings(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3299,6 +3344,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return internalGetDetectorGroupSettings().getMap().containsKey(key);
     }
     /** Use {@link #getDetectorGroupSettingsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String,
@@ -3319,6 +3365,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String,
             com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings>
@@ -3338,6 +3385,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
         getDetectorGroupSettingsOrDefault(
             java.lang.String key,
@@ -3365,6 +3413,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
         getDetectorGroupSettingsOrThrow(java.lang.String key) {
       if (key == null) {

@@ -160,6 +160,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    *
    * @return Whether the componentSettings field is set.
    */
+  @java.lang.Override
   public boolean hasComponentSettings() {
     return componentSettings_ != null;
   }
@@ -184,6 +185,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    *
    * @return The componentSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings getComponentSettings() {
     return componentSettings_ == null
         ? com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.getDefaultInstance()
@@ -208,6 +210,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    * .google.cloud.securitycenter.settings.v1beta1.ComponentSettings component_settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsOrBuilder
       getComponentSettingsOrBuilder() {
     return getComponentSettings();
@@ -226,6 +229,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -240,6 +244,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -252,6 +257,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

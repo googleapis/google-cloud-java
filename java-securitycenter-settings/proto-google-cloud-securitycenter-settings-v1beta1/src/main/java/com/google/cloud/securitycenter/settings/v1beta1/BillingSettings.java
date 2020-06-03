@@ -164,6 +164,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for billingTier.
    */
+  @java.lang.Override
   public int getBillingTierValue() {
     return billingTier_;
   }
@@ -180,6 +181,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * @return The billingTier.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.BillingTier getBillingTier() {
     @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.BillingTier result =
@@ -204,6 +206,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for billingType.
    */
+  @java.lang.Override
   public int getBillingTypeValue() {
     return billingType_;
   }
@@ -220,6 +223,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * @return The billingType.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.BillingType getBillingType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.BillingType result =
@@ -244,6 +248,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -260,6 +265,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -274,6 +280,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -294,6 +301,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the expireTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpireTime() {
     return expireTime_ != null;
   }
@@ -311,6 +319,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * @return The expireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
@@ -326,6 +335,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Timestamp expire_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
     return getExpireTime();
   }
@@ -745,6 +755,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for billingTier.
      */
+    @java.lang.Override
     public int getBillingTierValue() {
       return billingTier_;
     }
@@ -763,6 +774,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setBillingTierValue(int value) {
+
       billingTier_ = value;
       onChanged();
       return this;
@@ -780,6 +792,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * @return The billingTier.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.BillingTier getBillingTier() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.BillingTier result =
@@ -846,6 +859,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for billingType.
      */
+    @java.lang.Override
     public int getBillingTypeValue() {
       return billingType_;
     }
@@ -864,6 +878,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setBillingTypeValue(int value) {
+
       billingType_ = value;
       onChanged();
       return this;
@@ -881,6 +896,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * @return The billingType.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.BillingType getBillingType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.BillingType result =

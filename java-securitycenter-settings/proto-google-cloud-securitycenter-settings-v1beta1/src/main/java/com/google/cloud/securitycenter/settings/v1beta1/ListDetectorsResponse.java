@@ -141,6 +141,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Detector detectors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.securitycenter.settings.v1beta1.Detector>
       getDetectorsList() {
     return detectors_;
@@ -154,6 +155,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Detector detectors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.securitycenter.settings.v1beta1.DetectorOrBuilder>
       getDetectorsOrBuilderList() {
@@ -168,6 +170,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Detector detectors = 1;</code>
    */
+  @java.lang.Override
   public int getDetectorsCount() {
     return detectors_.size();
   }
@@ -180,6 +183,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Detector detectors = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.Detector getDetectors(int index) {
     return detectors_.get(index);
   }
@@ -192,6 +196,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.securitycenter.settings.v1beta1.Detector detectors = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.DetectorOrBuilder getDetectorsOrBuilder(
       int index) {
     return detectors_.get(index);
@@ -211,6 +216,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +240,7 @@ public final class ListDetectorsResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

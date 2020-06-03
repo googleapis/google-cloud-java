@@ -161,6 +161,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The detector.
    */
+  @java.lang.Override
   public java.lang.String getDetector() {
     java.lang.Object ref = detector_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +184,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for detector.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDetectorBytes() {
     java.lang.Object ref = detector_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +211,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The component.
    */
+  @java.lang.Override
   public java.lang.String getComponent() {
     java.lang.Object ref = component_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +235,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for component.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getComponentBytes() {
     java.lang.Object ref = component_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +264,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for billingTier.
    */
+  @java.lang.Override
   public int getBillingTierValue() {
     return billingTier_;
   }
@@ -277,6 +282,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The billingTier.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.BillingTier getBillingTier() {
     @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.BillingTier result =
@@ -987,6 +993,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for billingTier.
      */
+    @java.lang.Override
     public int getBillingTierValue() {
       return billingTier_;
     }
@@ -1006,6 +1013,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBillingTierValue(int value) {
+
       billingTier_ = value;
       onChanged();
       return this;
@@ -1024,6 +1032,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The billingTier.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.BillingTier getBillingTier() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.BillingTier result =

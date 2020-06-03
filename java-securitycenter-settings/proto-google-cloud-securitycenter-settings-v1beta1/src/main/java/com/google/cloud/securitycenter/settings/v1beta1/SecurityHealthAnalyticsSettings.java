@@ -2186,6 +2186,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
    *
    * @return Whether the nonOrgIamMemberSettings field is set.
    */
+  @java.lang.Override
   public boolean hasNonOrgIamMemberSettings() {
     return nonOrgIamMemberSettings_ != null;
   }
@@ -2202,6 +2203,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
    *
    * @return The nonOrgIamMemberSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .NonOrgIamMemberSettings
       getNonOrgIamMemberSettings() {
@@ -2221,6 +2223,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
    * .google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.NonOrgIamMemberSettings non_org_iam_member_settings = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .NonOrgIamMemberSettingsOrBuilder
       getNonOrgIamMemberSettingsOrBuilder() {
@@ -2244,6 +2247,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
    *
    * @return Whether the adminServiceAccountSettings field is set.
    */
+  @java.lang.Override
   public boolean hasAdminServiceAccountSettings() {
     return adminServiceAccountSettings_ != null;
   }
@@ -2260,6 +2264,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
    *
    * @return The adminServiceAccountSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .AdminServiceAccountSettings
       getAdminServiceAccountSettings() {
@@ -2279,6 +2284,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
    * .google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.AdminServiceAccountSettings admin_service_account_settings = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
           .AdminServiceAccountSettingsOrBuilder
       getAdminServiceAccountSettingsOrBuilder() {

@@ -128,6 +128,7 @@ public final class SinkSettings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The loggingSinkProject.
    */
+  @java.lang.Override
   public java.lang.String getLoggingSinkProject() {
     java.lang.Object ref = loggingSinkProject_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class SinkSettings extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for loggingSinkProject.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLoggingSinkProjectBytes() {
     java.lang.Object ref = loggingSinkProject_;
     if (ref instanceof java.lang.String) {

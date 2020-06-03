@@ -155,6 +155,7 @@ public final class BatchCalculateEffectiveSettingsRequest
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +183,7 @@ public final class BatchCalculateEffectiveSettingsRequest
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class BatchCalculateEffectiveSettingsRequest
    * repeated .google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest requests = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest>
       getRequestsList() {
@@ -227,6 +230,7 @@ public final class BatchCalculateEffectiveSettingsRequest
    * repeated .google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest requests = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.securitycenter.settings.v1beta1
@@ -246,6 +250,7 @@ public final class BatchCalculateEffectiveSettingsRequest
    * repeated .google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest requests = 2;
    * </code>
    */
+  @java.lang.Override
   public int getRequestsCount() {
     return requests_.size();
   }
@@ -261,6 +266,7 @@ public final class BatchCalculateEffectiveSettingsRequest
    * repeated .google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest requests = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest
       getRequests(int index) {
     return requests_.get(index);
@@ -277,6 +283,7 @@ public final class BatchCalculateEffectiveSettingsRequest
    * repeated .google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest requests = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequestOrBuilder
       getRequestsOrBuilder(int index) {
     return requests_.get(index);

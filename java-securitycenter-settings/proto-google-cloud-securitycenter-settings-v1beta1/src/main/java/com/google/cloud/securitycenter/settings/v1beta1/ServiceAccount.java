@@ -135,6 +135,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -159,6 +160,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serviceAccount.
    */
+  @java.lang.Override
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +215,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for serviceAccount.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {

@@ -157,6 +157,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the settings field is set.
    */
+  @java.lang.Override
   public boolean hasSettings() {
     return settings_ != null;
   }
@@ -181,6 +182,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The settings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.Settings getSettings() {
     return settings_ == null
         ? com.google.cloud.securitycenter.settings.v1beta1.Settings.getDefaultInstance()
@@ -205,6 +207,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.securitycenter.settings.v1beta1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SettingsOrBuilder getSettingsOrBuilder() {
     return getSettings();
   }
@@ -222,6 +225,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -236,6 +240,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -248,6 +253,7 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

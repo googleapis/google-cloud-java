@@ -429,6 +429,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -445,6 +446,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
@@ -837,6 +839,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
        *
        * @return The enum numeric value on the wire for state.
        */
+      @java.lang.Override
       public int getStateValue() {
         return state_;
       }
@@ -855,6 +858,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+
         state_ = value;
         onChanged();
         return this;
@@ -872,6 +876,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
        *
        * @return The state.
        */
+      @java.lang.Override
       public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
         @SuppressWarnings("deprecation")
         com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
@@ -1056,6 +1061,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1085,6 +1091,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1111,6 +1118,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -1126,6 +1134,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
@@ -1149,6 +1158,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The projectServiceAccount.
    */
+  @java.lang.Override
   public java.lang.String getProjectServiceAccount() {
     java.lang.Object ref = projectServiceAccount_;
     if (ref instanceof java.lang.String) {
@@ -1172,6 +1182,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for projectServiceAccount.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectServiceAccountBytes() {
     java.lang.Object ref = projectServiceAccount_;
     if (ref instanceof java.lang.String) {
@@ -1238,6 +1249,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
    * </code>
    */
+  @java.lang.Override
   public boolean containsDetectorSettings(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1245,6 +1257,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     return internalGetDetectorSettings().getMap().containsKey(key);
   }
   /** Use {@link #getDetectorSettingsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<
           java.lang.String,
@@ -1266,6 +1279,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<
           java.lang.String,
           com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings>
@@ -1286,6 +1300,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
       getDetectorSettingsOrDefault(
           java.lang.String key,
@@ -1314,6 +1329,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
       getDetectorSettingsOrThrow(java.lang.String key) {
     if (key == null) {
@@ -1343,6 +1359,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1366,6 +1383,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1392,6 +1410,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -1407,6 +1426,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -1420,6 +1440,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -1439,6 +1460,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the containerThreatDetectionSettings field is set.
    */
+  @java.lang.Override
   public boolean hasContainerThreatDetectionSettings() {
     return specificSettingsCase_ == 41;
   }
@@ -1456,6 +1478,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The containerThreatDetectionSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ContainerThreatDetectionSettings
       getContainerThreatDetectionSettings() {
     if (specificSettingsCase_ == 41) {
@@ -1477,6 +1500,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * .google.cloud.securitycenter.settings.v1beta1.ContainerThreatDetectionSettings container_threat_detection_settings = 41;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ContainerThreatDetectionSettingsOrBuilder
       getContainerThreatDetectionSettingsOrBuilder() {
     if (specificSettingsCase_ == 41) {
@@ -1502,6 +1526,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the eventThreatDetectionSettings field is set.
    */
+  @java.lang.Override
   public boolean hasEventThreatDetectionSettings() {
     return specificSettingsCase_ == 42;
   }
@@ -1519,6 +1544,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The eventThreatDetectionSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettings
       getEventThreatDetectionSettings() {
     if (specificSettingsCase_ == 42) {
@@ -1540,6 +1566,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * .google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettings event_threat_detection_settings = 42;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettingsOrBuilder
       getEventThreatDetectionSettingsOrBuilder() {
     if (specificSettingsCase_ == 42) {
@@ -1565,6 +1592,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the securityHealthAnalyticsSettings field is set.
    */
+  @java.lang.Override
   public boolean hasSecurityHealthAnalyticsSettings() {
     return specificSettingsCase_ == 44;
   }
@@ -1582,6 +1610,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The securityHealthAnalyticsSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
       getSecurityHealthAnalyticsSettings() {
     if (specificSettingsCase_ == 44) {
@@ -1603,6 +1632,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * .google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings security_health_analytics_settings = 44;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettingsOrBuilder
       getSecurityHealthAnalyticsSettingsOrBuilder() {
     if (specificSettingsCase_ == 44) {
@@ -1628,6 +1658,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the webSecurityScannerSettings field is set.
    */
+  @java.lang.Override
   public boolean hasWebSecurityScannerSettings() {
     return specificSettingsCase_ == 40;
   }
@@ -1645,6 +1676,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    *
    * @return The webSecurityScannerSettings.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.WebSecurityScanner
       getWebSecurityScannerSettings() {
     if (specificSettingsCase_ == 40) {
@@ -1665,6 +1697,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * .google.cloud.securitycenter.settings.v1beta1.WebSecurityScanner web_security_scanner_settings = 40;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.WebSecurityScannerOrBuilder
       getWebSecurityScannerSettingsOrBuilder() {
     if (specificSettingsCase_ == 40) {
@@ -2449,6 +2482,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -2467,6 +2501,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -2484,6 +2519,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
@@ -2697,6 +2733,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
      * </code>
      */
+    @java.lang.Override
     public boolean containsDetectorSettings(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2704,6 +2741,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       return internalGetDetectorSettings().getMap().containsKey(key);
     }
     /** Use {@link #getDetectorSettingsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String,
@@ -2725,6 +2763,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String,
             com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings>
@@ -2745,6 +2784,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
         getDetectorSettingsOrDefault(
             java.lang.String key,
@@ -2773,6 +2813,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
         getDetectorSettingsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -3203,6 +3244,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the containerThreatDetectionSettings field is set.
      */
+    @java.lang.Override
     public boolean hasContainerThreatDetectionSettings() {
       return specificSettingsCase_ == 41;
     }
@@ -3220,6 +3262,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return The containerThreatDetectionSettings.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ContainerThreatDetectionSettings
         getContainerThreatDetectionSettings() {
       if (containerThreatDetectionSettingsBuilder_ == null) {
@@ -3383,6 +3426,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * .google.cloud.securitycenter.settings.v1beta1.ContainerThreatDetectionSettings container_threat_detection_settings = 41;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1
             .ContainerThreatDetectionSettingsOrBuilder
         getContainerThreatDetectionSettingsOrBuilder() {
@@ -3460,6 +3504,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the eventThreatDetectionSettings field is set.
      */
+    @java.lang.Override
     public boolean hasEventThreatDetectionSettings() {
       return specificSettingsCase_ == 42;
     }
@@ -3477,6 +3522,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return The eventThreatDetectionSettings.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettings
         getEventThreatDetectionSettings() {
       if (eventThreatDetectionSettingsBuilder_ == null) {
@@ -3640,6 +3686,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * .google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettings event_threat_detection_settings = 42;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.EventThreatDetectionSettingsOrBuilder
         getEventThreatDetectionSettingsOrBuilder() {
       if ((specificSettingsCase_ == 42) && (eventThreatDetectionSettingsBuilder_ != null)) {
@@ -3716,6 +3763,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the securityHealthAnalyticsSettings field is set.
      */
+    @java.lang.Override
     public boolean hasSecurityHealthAnalyticsSettings() {
       return specificSettingsCase_ == 44;
     }
@@ -3733,6 +3781,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return The securityHealthAnalyticsSettings.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
         getSecurityHealthAnalyticsSettings() {
       if (securityHealthAnalyticsSettingsBuilder_ == null) {
@@ -3896,6 +3945,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * .google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings security_health_analytics_settings = 44;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettingsOrBuilder
         getSecurityHealthAnalyticsSettingsOrBuilder() {
       if ((specificSettingsCase_ == 44) && (securityHealthAnalyticsSettingsBuilder_ != null)) {
@@ -3972,6 +4022,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the webSecurityScannerSettings field is set.
      */
+    @java.lang.Override
     public boolean hasWebSecurityScannerSettings() {
       return specificSettingsCase_ == 40;
     }
@@ -3989,6 +4040,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      *
      * @return The webSecurityScannerSettings.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.WebSecurityScanner
         getWebSecurityScannerSettings() {
       if (webSecurityScannerSettingsBuilder_ == null) {
@@ -4150,6 +4202,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * .google.cloud.securitycenter.settings.v1beta1.WebSecurityScanner web_security_scanner_settings = 40;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.WebSecurityScannerOrBuilder
         getWebSecurityScannerSettingsOrBuilder() {
       if ((specificSettingsCase_ == 40) && (webSecurityScannerSettingsBuilder_ != null)) {
