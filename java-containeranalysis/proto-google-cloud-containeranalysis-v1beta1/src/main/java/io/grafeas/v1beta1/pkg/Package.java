@@ -141,6 +141,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -163,6 +164,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +188,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1beta1.pkg.Distribution> getDistributionList() {
     return distribution_;
   }
@@ -198,6 +201,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1beta1.pkg.DistributionOrBuilder>
       getDistributionOrBuilderList() {
     return distribution_;
@@ -211,6 +215,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public int getDistributionCount() {
     return distribution_.size();
   }
@@ -223,6 +228,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.Distribution getDistribution(int index) {
     return distribution_.get(index);
   }
@@ -235,6 +241,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Distribution distribution = 10;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.DistributionOrBuilder getDistributionOrBuilder(int index) {
     return distribution_.get(index);
   }

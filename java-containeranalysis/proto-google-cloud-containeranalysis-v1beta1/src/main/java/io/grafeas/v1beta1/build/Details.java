@@ -139,6 +139,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the provenance field is set.
    */
+  @java.lang.Override
   public boolean hasProvenance() {
     return provenance_ != null;
   }
@@ -153,6 +154,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The provenance.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.provenance.BuildProvenance getProvenance() {
     return provenance_ == null
         ? io.grafeas.v1beta1.provenance.BuildProvenance.getDefaultInstance()
@@ -167,6 +169,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.provenance.BuildProvenance provenance = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.provenance.BuildProvenanceOrBuilder getProvenanceOrBuilder() {
     return getProvenance();
   }
@@ -193,6 +196,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The provenanceBytes.
    */
+  @java.lang.Override
   public java.lang.String getProvenanceBytes() {
     java.lang.Object ref = provenanceBytes_;
     if (ref instanceof java.lang.String) {
@@ -224,6 +228,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for provenanceBytes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProvenanceBytesBytes() {
     java.lang.Object ref = provenanceBytes_;
     if (ref instanceof java.lang.String) {

@@ -241,6 +241,10 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -292,6 +296,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
    *
    * @return The enum numeric value on the wire for contentType.
    */
+  @java.lang.Override
   public int getContentTypeValue() {
     return contentType_;
   }
@@ -310,6 +315,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
    *
    * @return The contentType.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType getContentType() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType result =
@@ -334,6 +340,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
    *
    * @return The serializedPayload.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSerializedPayload() {
     return serializedPayload_;
   }
@@ -352,6 +359,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1beta1.Signature signatures = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1beta1.common.Signature> getSignaturesList() {
     return signatures_;
   }
@@ -367,6 +375,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1beta1.Signature signatures = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1beta1.common.SignatureOrBuilder>
       getSignaturesOrBuilderList() {
     return signatures_;
@@ -383,6 +392,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1beta1.Signature signatures = 3;</code>
    */
+  @java.lang.Override
   public int getSignaturesCount() {
     return signatures_.size();
   }
@@ -398,6 +408,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1beta1.Signature signatures = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.common.Signature getSignatures(int index) {
     return signatures_.get(index);
   }
@@ -413,6 +424,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
    *
    * <code>repeated .grafeas.v1beta1.Signature signatures = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.common.SignatureOrBuilder getSignaturesOrBuilder(int index) {
     return signatures_.get(index);
   }
@@ -833,6 +845,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
      *
      * @return The enum numeric value on the wire for contentType.
      */
+    @java.lang.Override
     public int getContentTypeValue() {
       return contentType_;
     }
@@ -853,6 +866,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
+
       contentType_ = value;
       onChanged();
       return this;
@@ -872,6 +886,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
      *
      * @return The contentType.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType getContentType() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.attestation.GenericSignedAttestation.ContentType result =
@@ -943,6 +958,7 @@ public final class GenericSignedAttestation extends com.google.protobuf.Generate
      *
      * @return The serializedPayload.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSerializedPayload() {
       return serializedPayload_;
     }

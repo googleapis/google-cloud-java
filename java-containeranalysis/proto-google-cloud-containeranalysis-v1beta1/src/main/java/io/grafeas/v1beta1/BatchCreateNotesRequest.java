@@ -150,6 +150,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
    */
+  @java.lang.Override
   public boolean containsNotes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -229,6 +232,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     return internalGetNotes().getMap().containsKey(key);
   }
   /** Use {@link #getNotesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotes() {
     return getNotesMap();
@@ -242,6 +246,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotesMap() {
     return internalGetNotes().getMap();
   }
@@ -254,6 +259,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.Note getNotesOrDefault(
       java.lang.String key, io.grafeas.v1beta1.Note defaultValue) {
     if (key == null) {
@@ -271,6 +277,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.Note getNotesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -788,6 +795,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
      */
+    @java.lang.Override
     public boolean containsNotes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -795,6 +803,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       return internalGetNotes().getMap().containsKey(key);
     }
     /** Use {@link #getNotesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotes() {
       return getNotesMap();
@@ -808,6 +817,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, io.grafeas.v1beta1.Note> getNotesMap() {
       return internalGetNotes().getMap();
     }
@@ -820,6 +830,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.Note getNotesOrDefault(
         java.lang.String key, io.grafeas.v1beta1.Note defaultValue) {
       if (key == null) {
@@ -837,6 +848,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, .grafeas.v1beta1.Note&gt; notes = 2;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.Note getNotesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

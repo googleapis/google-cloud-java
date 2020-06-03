@@ -140,6 +140,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -163,6 +164,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +190,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return Whether the occurrence field is set.
    */
+  @java.lang.Override
   public boolean hasOccurrence() {
     return occurrence_ != null;
   }
@@ -202,6 +205,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * @return The occurrence.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.Occurrence getOccurrence() {
     return occurrence_ == null ? io.grafeas.v1beta1.Occurrence.getDefaultInstance() : occurrence_;
   }
@@ -214,6 +218,7 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
    *
    * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.OccurrenceOrBuilder getOccurrenceOrBuilder() {
     return getOccurrence();
   }

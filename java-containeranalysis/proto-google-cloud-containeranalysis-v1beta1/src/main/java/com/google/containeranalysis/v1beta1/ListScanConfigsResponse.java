@@ -139,6 +139,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.containeranalysis.v1beta1.ScanConfig scan_configs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.containeranalysis.v1beta1.ScanConfig> getScanConfigsList() {
     return scanConfigs_;
   }
@@ -151,6 +152,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.containeranalysis.v1beta1.ScanConfig scan_configs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.containeranalysis.v1beta1.ScanConfigOrBuilder>
       getScanConfigsOrBuilderList() {
     return scanConfigs_;
@@ -164,6 +166,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.containeranalysis.v1beta1.ScanConfig scan_configs = 1;</code>
    */
+  @java.lang.Override
   public int getScanConfigsCount() {
     return scanConfigs_.size();
   }
@@ -176,6 +179,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.containeranalysis.v1beta1.ScanConfig scan_configs = 1;</code>
    */
+  @java.lang.Override
   public com.google.containeranalysis.v1beta1.ScanConfig getScanConfigs(int index) {
     return scanConfigs_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.containeranalysis.v1beta1.ScanConfig scan_configs = 1;</code>
    */
+  @java.lang.Override
   public com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigsOrBuilder(
       int index) {
     return scanConfigs_.get(index);
@@ -208,6 +213,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +238,7 @@ public final class ListScanConfigsResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

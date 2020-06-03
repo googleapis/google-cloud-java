@@ -389,6 +389,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -412,6 +413,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -437,6 +439,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The shortDescription.
    */
+  @java.lang.Override
   public java.lang.String getShortDescription() {
     java.lang.Object ref = shortDescription_;
     if (ref instanceof java.lang.String) {
@@ -459,6 +462,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for shortDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getShortDescriptionBytes() {
     java.lang.Object ref = shortDescription_;
     if (ref instanceof java.lang.String) {
@@ -484,6 +488,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The longDescription.
    */
+  @java.lang.Override
   public java.lang.String getLongDescription() {
     java.lang.Object ref = longDescription_;
     if (ref instanceof java.lang.String) {
@@ -506,6 +511,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for longDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLongDescriptionBytes() {
     java.lang.Object ref = longDescription_;
     if (ref instanceof java.lang.String) {
@@ -532,6 +538,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for kind.
    */
+  @java.lang.Override
   public int getKindValue() {
     return kind_;
   }
@@ -547,6 +554,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kind.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.common.NoteKind getKind() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.common.NoteKind result = io.grafeas.v1beta1.common.NoteKind.valueOf(kind_);
@@ -564,6 +572,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1beta1.common.RelatedUrl> getRelatedUrlList() {
     return relatedUrl_;
   }
@@ -576,6 +585,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1beta1.common.RelatedUrlOrBuilder>
       getRelatedUrlOrBuilderList() {
     return relatedUrl_;
@@ -589,6 +599,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
+  @java.lang.Override
   public int getRelatedUrlCount() {
     return relatedUrl_.size();
   }
@@ -601,6 +612,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.common.RelatedUrl getRelatedUrl(int index) {
     return relatedUrl_.get(index);
   }
@@ -613,6 +625,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.common.RelatedUrlOrBuilder getRelatedUrlOrBuilder(int index) {
     return relatedUrl_.get(index);
   }
@@ -630,6 +643,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the expirationTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpirationTime() {
     return expirationTime_ != null;
   }
@@ -644,6 +658,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expirationTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpirationTime() {
     return expirationTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -658,6 +673,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpirationTimeOrBuilder() {
     return getExpirationTime();
   }
@@ -676,6 +692,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -691,6 +708,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -704,6 +722,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -722,6 +741,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -737,6 +757,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -750,6 +771,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -827,6 +849,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the vulnerability field is set.
    */
+  @java.lang.Override
   public boolean hasVulnerability() {
     return typeCase_ == 10;
   }
@@ -841,6 +864,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The vulnerability.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.vulnerability.Vulnerability getVulnerability() {
     if (typeCase_ == 10) {
       return (io.grafeas.v1beta1.vulnerability.Vulnerability) type_;
@@ -856,6 +880,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.vulnerability.Vulnerability vulnerability = 10;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.vulnerability.VulnerabilityOrBuilder getVulnerabilityOrBuilder() {
     if (typeCase_ == 10) {
       return (io.grafeas.v1beta1.vulnerability.Vulnerability) type_;
@@ -875,6 +900,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the build field is set.
    */
+  @java.lang.Override
   public boolean hasBuild() {
     return typeCase_ == 11;
   }
@@ -889,6 +915,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The build.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.build.Build getBuild() {
     if (typeCase_ == 11) {
       return (io.grafeas.v1beta1.build.Build) type_;
@@ -904,6 +931,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.build.Build build = 11;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.build.BuildOrBuilder getBuildOrBuilder() {
     if (typeCase_ == 11) {
       return (io.grafeas.v1beta1.build.Build) type_;
@@ -923,6 +951,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the baseImage field is set.
    */
+  @java.lang.Override
   public boolean hasBaseImage() {
     return typeCase_ == 12;
   }
@@ -937,6 +966,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The baseImage.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.image.Basis getBaseImage() {
     if (typeCase_ == 12) {
       return (io.grafeas.v1beta1.image.Basis) type_;
@@ -952,6 +982,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.image.Basis base_image = 12;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.image.BasisOrBuilder getBaseImageOrBuilder() {
     if (typeCase_ == 12) {
       return (io.grafeas.v1beta1.image.Basis) type_;
@@ -971,6 +1002,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the package field is set.
    */
+  @java.lang.Override
   public boolean hasPackage() {
     return typeCase_ == 13;
   }
@@ -985,6 +1017,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The package.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.Package getPackage() {
     if (typeCase_ == 13) {
       return (io.grafeas.v1beta1.pkg.Package) type_;
@@ -1000,6 +1033,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.package.Package package = 13;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.PackageOrBuilder getPackageOrBuilder() {
     if (typeCase_ == 13) {
       return (io.grafeas.v1beta1.pkg.Package) type_;
@@ -1019,6 +1053,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deployable field is set.
    */
+  @java.lang.Override
   public boolean hasDeployable() {
     return typeCase_ == 14;
   }
@@ -1033,6 +1068,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deployable.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.deployment.Deployable getDeployable() {
     if (typeCase_ == 14) {
       return (io.grafeas.v1beta1.deployment.Deployable) type_;
@@ -1048,6 +1084,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.deployment.Deployable deployable = 14;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.deployment.DeployableOrBuilder getDeployableOrBuilder() {
     if (typeCase_ == 14) {
       return (io.grafeas.v1beta1.deployment.Deployable) type_;
@@ -1067,6 +1104,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the discovery field is set.
    */
+  @java.lang.Override
   public boolean hasDiscovery() {
     return typeCase_ == 15;
   }
@@ -1081,6 +1119,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The discovery.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.discovery.Discovery getDiscovery() {
     if (typeCase_ == 15) {
       return (io.grafeas.v1beta1.discovery.Discovery) type_;
@@ -1096,6 +1135,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.discovery.Discovery discovery = 15;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.discovery.DiscoveryOrBuilder getDiscoveryOrBuilder() {
     if (typeCase_ == 15) {
       return (io.grafeas.v1beta1.discovery.Discovery) type_;
@@ -1115,6 +1155,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the attestationAuthority field is set.
    */
+  @java.lang.Override
   public boolean hasAttestationAuthority() {
     return typeCase_ == 16;
   }
@@ -1129,6 +1170,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The attestationAuthority.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.Authority getAttestationAuthority() {
     if (typeCase_ == 16) {
       return (io.grafeas.v1beta1.attestation.Authority) type_;
@@ -1144,6 +1186,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.attestation.Authority attestation_authority = 16;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.AuthorityOrBuilder getAttestationAuthorityOrBuilder() {
     if (typeCase_ == 16) {
       return (io.grafeas.v1beta1.attestation.Authority) type_;
@@ -2239,6 +2282,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for kind.
      */
+    @java.lang.Override
     public int getKindValue() {
       return kind_;
     }
@@ -2256,6 +2300,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
+
       kind_ = value;
       onChanged();
       return this;
@@ -2272,6 +2317,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The kind.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.common.NoteKind getKind() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.common.NoteKind result = io.grafeas.v1beta1.common.NoteKind.valueOf(kind_);
@@ -3419,6 +3465,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the vulnerability field is set.
      */
+    @java.lang.Override
     public boolean hasVulnerability() {
       return typeCase_ == 10;
     }
@@ -3433,6 +3480,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The vulnerability.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.vulnerability.Vulnerability getVulnerability() {
       if (vulnerabilityBuilder_ == null) {
         if (typeCase_ == 10) {
@@ -3565,6 +3613,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.vulnerability.Vulnerability vulnerability = 10;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.vulnerability.VulnerabilityOrBuilder getVulnerabilityOrBuilder() {
       if ((typeCase_ == 10) && (vulnerabilityBuilder_ != null)) {
         return vulnerabilityBuilder_.getMessageOrBuilder();
@@ -3625,6 +3674,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the build field is set.
      */
+    @java.lang.Override
     public boolean hasBuild() {
       return typeCase_ == 11;
     }
@@ -3639,6 +3689,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The build.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.build.Build getBuild() {
       if (buildBuilder_ == null) {
         if (typeCase_ == 11) {
@@ -3768,6 +3819,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.build.Build build = 11;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.build.BuildOrBuilder getBuildOrBuilder() {
       if ((typeCase_ == 11) && (buildBuilder_ != null)) {
         return buildBuilder_.getMessageOrBuilder();
@@ -3826,6 +3878,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the baseImage field is set.
      */
+    @java.lang.Override
     public boolean hasBaseImage() {
       return typeCase_ == 12;
     }
@@ -3840,6 +3893,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The baseImage.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.image.Basis getBaseImage() {
       if (baseImageBuilder_ == null) {
         if (typeCase_ == 12) {
@@ -3969,6 +4023,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.image.Basis base_image = 12;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.image.BasisOrBuilder getBaseImageOrBuilder() {
       if ((typeCase_ == 12) && (baseImageBuilder_ != null)) {
         return baseImageBuilder_.getMessageOrBuilder();
@@ -4027,6 +4082,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the package field is set.
      */
+    @java.lang.Override
     public boolean hasPackage() {
       return typeCase_ == 13;
     }
@@ -4041,6 +4097,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The package.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.pkg.Package getPackage() {
       if (packageBuilder_ == null) {
         if (typeCase_ == 13) {
@@ -4170,6 +4227,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.package.Package package = 13;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.pkg.PackageOrBuilder getPackageOrBuilder() {
       if ((typeCase_ == 13) && (packageBuilder_ != null)) {
         return packageBuilder_.getMessageOrBuilder();
@@ -4228,6 +4286,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the deployable field is set.
      */
+    @java.lang.Override
     public boolean hasDeployable() {
       return typeCase_ == 14;
     }
@@ -4242,6 +4301,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The deployable.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.deployment.Deployable getDeployable() {
       if (deployableBuilder_ == null) {
         if (typeCase_ == 14) {
@@ -4373,6 +4433,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.deployment.Deployable deployable = 14;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.deployment.DeployableOrBuilder getDeployableOrBuilder() {
       if ((typeCase_ == 14) && (deployableBuilder_ != null)) {
         return deployableBuilder_.getMessageOrBuilder();
@@ -4433,6 +4494,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the discovery field is set.
      */
+    @java.lang.Override
     public boolean hasDiscovery() {
       return typeCase_ == 15;
     }
@@ -4447,6 +4509,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The discovery.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.discovery.Discovery getDiscovery() {
       if (discoveryBuilder_ == null) {
         if (typeCase_ == 15) {
@@ -4578,6 +4641,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.discovery.Discovery discovery = 15;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.discovery.DiscoveryOrBuilder getDiscoveryOrBuilder() {
       if ((typeCase_ == 15) && (discoveryBuilder_ != null)) {
         return discoveryBuilder_.getMessageOrBuilder();
@@ -4636,6 +4700,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the attestationAuthority field is set.
      */
+    @java.lang.Override
     public boolean hasAttestationAuthority() {
       return typeCase_ == 16;
     }
@@ -4650,6 +4715,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The attestationAuthority.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.Authority getAttestationAuthority() {
       if (attestationAuthorityBuilder_ == null) {
         if (typeCase_ == 16) {
@@ -4782,6 +4848,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.attestation.Authority attestation_authority = 16;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.AuthorityOrBuilder getAttestationAuthorityOrBuilder() {
       if ((typeCase_ == 16) && (attestationAuthorityBuilder_ != null)) {
         return attestationAuthorityBuilder_.getMessageOrBuilder();

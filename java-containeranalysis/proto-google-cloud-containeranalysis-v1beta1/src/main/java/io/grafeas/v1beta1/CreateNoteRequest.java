@@ -146,6 +146,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The noteId.
    */
+  @java.lang.Override
   public java.lang.String getNoteId() {
     java.lang.Object ref = noteId_;
     if (ref instanceof java.lang.String) {
@@ -216,6 +219,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for noteId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNoteIdBytes() {
     java.lang.Object ref = noteId_;
     if (ref instanceof java.lang.String) {
@@ -241,6 +245,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the note field is set.
    */
+  @java.lang.Override
   public boolean hasNote() {
     return note_ != null;
   }
@@ -255,6 +260,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The note.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.Note getNote() {
     return note_ == null ? io.grafeas.v1beta1.Note.getDefaultInstance() : note_;
   }
@@ -267,6 +273,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.grafeas.v1beta1.Note note = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.NoteOrBuilder getNoteOrBuilder() {
     return getNote();
   }

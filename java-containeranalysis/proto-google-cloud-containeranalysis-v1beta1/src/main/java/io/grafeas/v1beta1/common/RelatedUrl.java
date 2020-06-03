@@ -131,6 +131,7 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -153,6 +154,7 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +180,7 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The label.
    */
+  @java.lang.Override
   public java.lang.String getLabel() {
     java.lang.Object ref = label_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +203,7 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for label.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLabelBytes() {
     java.lang.Object ref = label_;
     if (ref instanceof java.lang.String) {

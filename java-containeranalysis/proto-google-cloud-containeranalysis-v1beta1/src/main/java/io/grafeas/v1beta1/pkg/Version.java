@@ -274,6 +274,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -319,6 +323,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The epoch.
    */
+  @java.lang.Override
   public int getEpoch() {
     return epoch_;
   }
@@ -337,6 +342,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -360,6 +366,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -385,6 +392,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The revision.
    */
+  @java.lang.Override
   public java.lang.String getRevision() {
     java.lang.Object ref = revision_;
     if (ref instanceof java.lang.String) {
@@ -407,6 +415,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for revision.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRevisionBytes() {
     java.lang.Object ref = revision_;
     if (ref instanceof java.lang.String) {
@@ -433,6 +442,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for kind.
    */
+  @java.lang.Override
   public int getKindValue() {
     return kind_;
   }
@@ -448,6 +458,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kind.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.Version.VersionKind getKind() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.pkg.Version.VersionKind result =
@@ -825,6 +836,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The epoch.
      */
+    @java.lang.Override
     public int getEpoch() {
       return epoch_;
     }
@@ -1094,6 +1106,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for kind.
      */
+    @java.lang.Override
     public int getKindValue() {
       return kind_;
     }
@@ -1111,6 +1124,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
+
       kind_ = value;
       onChanged();
       return this;
@@ -1127,6 +1141,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The kind.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.pkg.Version.VersionKind getKind() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.pkg.Version.VersionKind result =

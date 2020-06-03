@@ -270,6 +270,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The humanReadableName.
      */
+    @java.lang.Override
     public java.lang.String getHumanReadableName() {
       java.lang.Object ref = humanReadableName_;
       if (ref instanceof java.lang.String) {
@@ -293,6 +294,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for humanReadableName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getHumanReadableNameBytes() {
       java.lang.Object ref = humanReadableName_;
       if (ref instanceof java.lang.String) {
@@ -808,6 +810,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the hint field is set.
    */
+  @java.lang.Override
   public boolean hasHint() {
     return hint_ != null;
   }
@@ -822,6 +825,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The hint.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.Authority.Hint getHint() {
     return hint_ == null
         ? io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance()
@@ -836,6 +840,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.Authority.HintOrBuilder getHintOrBuilder() {
     return getHint();
   }

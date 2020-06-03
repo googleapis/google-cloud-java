@@ -145,6 +145,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +220,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +246,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the contentHash field is set.
    */
+  @java.lang.Override
   public boolean hasContentHash() {
     return contentHash_ != null;
   }
@@ -256,6 +261,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The contentHash.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.provenance.Hash getContentHash() {
     return contentHash_ == null
         ? io.grafeas.v1beta1.provenance.Hash.getDefaultInstance()
@@ -270,6 +276,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.provenance.Hash content_hash = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.provenance.HashOrBuilder getContentHashOrBuilder() {
     return getContentHash();
   }

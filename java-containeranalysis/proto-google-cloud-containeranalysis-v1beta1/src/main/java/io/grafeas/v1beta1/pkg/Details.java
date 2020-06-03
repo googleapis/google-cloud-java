@@ -130,6 +130,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the installation field is set.
    */
+  @java.lang.Override
   public boolean hasInstallation() {
     return installation_ != null;
   }
@@ -144,6 +145,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The installation.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.Installation getInstallation() {
     return installation_ == null
         ? io.grafeas.v1beta1.pkg.Installation.getDefaultInstance()
@@ -158,6 +160,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.package.Installation installation = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.InstallationOrBuilder getInstallationOrBuilder() {
     return getInstallation();
   }

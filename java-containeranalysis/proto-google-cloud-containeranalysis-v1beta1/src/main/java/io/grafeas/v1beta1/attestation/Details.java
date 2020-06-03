@@ -131,6 +131,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the attestation field is set.
    */
+  @java.lang.Override
   public boolean hasAttestation() {
     return attestation_ != null;
   }
@@ -145,6 +146,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The attestation.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.Attestation getAttestation() {
     return attestation_ == null
         ? io.grafeas.v1beta1.attestation.Attestation.getDefaultInstance()
@@ -159,6 +161,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.attestation.Attestation attestation = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.AttestationOrBuilder getAttestationOrBuilder() {
     return getAttestation();
   }

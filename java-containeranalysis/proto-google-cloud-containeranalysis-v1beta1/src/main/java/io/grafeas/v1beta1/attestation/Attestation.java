@@ -207,6 +207,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pgpSignedAttestation field is set.
    */
+  @java.lang.Override
   public boolean hasPgpSignedAttestation() {
     return signatureCase_ == 1;
   }
@@ -221,6 +222,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pgpSignedAttestation.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.PgpSignedAttestation getPgpSignedAttestation() {
     if (signatureCase_ == 1) {
       return (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_;
@@ -236,6 +238,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder
       getPgpSignedAttestationOrBuilder() {
     if (signatureCase_ == 1) {
@@ -251,6 +254,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the genericSignedAttestation field is set.
    */
+  @java.lang.Override
   public boolean hasGenericSignedAttestation() {
     return signatureCase_ == 2;
   }
@@ -260,6 +264,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The genericSignedAttestation.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.GenericSignedAttestation getGenericSignedAttestation() {
     if (signatureCase_ == 2) {
       return (io.grafeas.v1beta1.attestation.GenericSignedAttestation) signature_;
@@ -270,6 +275,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
    * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
    * </code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.GenericSignedAttestationOrBuilder
       getGenericSignedAttestationOrBuilder() {
     if (signatureCase_ == 2) {
@@ -688,6 +694,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the pgpSignedAttestation field is set.
      */
+    @java.lang.Override
     public boolean hasPgpSignedAttestation() {
       return signatureCase_ == 1;
     }
@@ -702,6 +709,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pgpSignedAttestation.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.PgpSignedAttestation getPgpSignedAttestation() {
       if (pgpSignedAttestationBuilder_ == null) {
         if (signatureCase_ == 1) {
@@ -838,6 +846,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder
         getPgpSignedAttestationOrBuilder() {
       if ((signatureCase_ == 1) && (pgpSignedAttestationBuilder_ != null)) {
@@ -894,6 +903,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the genericSignedAttestation field is set.
      */
+    @java.lang.Override
     public boolean hasGenericSignedAttestation() {
       return signatureCase_ == 2;
     }
@@ -903,6 +913,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The genericSignedAttestation.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.GenericSignedAttestation getGenericSignedAttestation() {
       if (genericSignedAttestationBuilder_ == null) {
         if (signatureCase_ == 2) {
@@ -1009,6 +1020,7 @@ public final class Attestation extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1beta1.attestation.GenericSignedAttestation generic_signed_attestation = 2;
      * </code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.GenericSignedAttestationOrBuilder
         getGenericSignedAttestationOrBuilder() {
       if ((signatureCase_ == 2) && (genericSignedAttestationBuilder_ != null)) {

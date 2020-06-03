@@ -135,6 +135,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1beta1.Note> getNotesList() {
     return notes_;
   }
@@ -147,6 +148,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1beta1.NoteOrBuilder> getNotesOrBuilderList() {
     return notes_;
   }
@@ -159,6 +161,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public int getNotesCount() {
     return notes_.size();
   }
@@ -171,6 +174,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.Note getNotes(int index) {
     return notes_.get(index);
   }
@@ -183,6 +187,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.NoteOrBuilder getNotesOrBuilder(int index) {
     return notes_.get(index);
   }
@@ -202,6 +207,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +232,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

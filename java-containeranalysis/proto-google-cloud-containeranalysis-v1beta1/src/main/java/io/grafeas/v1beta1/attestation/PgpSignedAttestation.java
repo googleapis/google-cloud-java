@@ -233,6 +233,10 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -332,6 +336,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    *
    * @return The signature.
    */
+  @java.lang.Override
   public java.lang.String getSignature() {
     java.lang.Object ref = signature_;
     if (ref instanceof java.lang.String) {
@@ -362,6 +367,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for signature.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignatureBytes() {
     java.lang.Object ref = signature_;
     if (ref instanceof java.lang.String) {
@@ -390,6 +396,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for contentType.
    */
+  @java.lang.Override
   public int getContentTypeValue() {
     return contentType_;
   }
@@ -407,6 +414,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
    *
    * @return The contentType.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType result =
@@ -1057,6 +1065,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for contentType.
      */
+    @java.lang.Override
     public int getContentTypeValue() {
       return contentType_;
     }
@@ -1076,6 +1085,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
+
       contentType_ = value;
       onChanged();
       return this;
@@ -1094,6 +1104,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      *
      * @return The contentType.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType result =
@@ -1174,6 +1185,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      *
      * @return The pgpKeyId.
      */
+    @java.lang.Override
     public java.lang.String getPgpKeyId() {
       java.lang.Object ref = "";
       if (keyIdCase_ == 2) {
@@ -1216,6 +1228,7 @@ public final class PgpSignedAttestation extends com.google.protobuf.GeneratedMes
      *
      * @return The bytes for pgpKeyId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPgpKeyIdBytes() {
       java.lang.Object ref = "";
       if (keyIdCase_ == 2) {

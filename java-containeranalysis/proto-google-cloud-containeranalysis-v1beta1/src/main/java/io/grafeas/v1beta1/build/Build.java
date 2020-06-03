@@ -140,6 +140,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The builderVersion.
    */
+  @java.lang.Override
   public java.lang.String getBuilderVersion() {
     java.lang.Object ref = builderVersion_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for builderVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBuilderVersionBytes() {
     java.lang.Object ref = builderVersion_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +190,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the signature field is set.
    */
+  @java.lang.Override
   public boolean hasSignature() {
     return signature_ != null;
   }
@@ -203,6 +206,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The signature.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.build.BuildSignature getSignature() {
     return signature_ == null
         ? io.grafeas.v1beta1.build.BuildSignature.getDefaultInstance()
@@ -218,6 +222,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.build.BuildSignature signature = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.build.BuildSignatureOrBuilder getSignatureOrBuilder() {
     return getSignature();
   }

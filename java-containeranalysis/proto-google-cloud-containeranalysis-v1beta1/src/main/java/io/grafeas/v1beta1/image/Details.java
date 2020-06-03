@@ -128,6 +128,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the derivedImage field is set.
    */
+  @java.lang.Override
   public boolean hasDerivedImage() {
     return derivedImage_ != null;
   }
@@ -142,6 +143,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The derivedImage.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.image.Derived getDerivedImage() {
     return derivedImage_ == null
         ? io.grafeas.v1beta1.image.Derived.getDefaultInstance()
@@ -156,6 +158,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.image.Derived derived_image = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.image.DerivedOrBuilder getDerivedImageOrBuilder() {
     return getDerivedImage();
   }

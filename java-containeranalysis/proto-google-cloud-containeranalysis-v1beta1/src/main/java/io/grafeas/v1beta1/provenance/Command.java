@@ -184,6 +184,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -207,6 +208,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -355,6 +357,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dir.
    */
+  @java.lang.Override
   public java.lang.String getDir() {
     java.lang.Object ref = dir_;
     if (ref instanceof java.lang.String) {
@@ -378,6 +381,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for dir.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDirBytes() {
     java.lang.Object ref = dir_;
     if (ref instanceof java.lang.String) {
@@ -404,6 +408,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -427,6 +432,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {

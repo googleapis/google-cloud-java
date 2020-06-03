@@ -183,6 +183,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the projectRepoId field is set.
    */
+  @java.lang.Override
   public boolean hasProjectRepoId() {
     return idCase_ == 1;
   }
@@ -197,6 +198,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectRepoId.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.source.ProjectRepoId getProjectRepoId() {
     if (idCase_ == 1) {
       return (io.grafeas.v1beta1.source.ProjectRepoId) id_;
@@ -212,6 +214,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.source.ProjectRepoIdOrBuilder getProjectRepoIdOrBuilder() {
     if (idCase_ == 1) {
       return (io.grafeas.v1beta1.source.ProjectRepoId) id_;
@@ -670,6 +673,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the projectRepoId field is set.
      */
+    @java.lang.Override
     public boolean hasProjectRepoId() {
       return idCase_ == 1;
     }
@@ -684,6 +688,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The projectRepoId.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.source.ProjectRepoId getProjectRepoId() {
       if (projectRepoIdBuilder_ == null) {
         if (idCase_ == 1) {
@@ -815,6 +820,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1beta1.source.ProjectRepoId project_repo_id = 1;</code>
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.source.ProjectRepoIdOrBuilder getProjectRepoIdOrBuilder() {
       if ((idCase_ == 1) && (projectRepoIdBuilder_ != null)) {
         return projectRepoIdBuilder_.getMessageOrBuilder();
@@ -868,6 +874,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The uid.
      */
+    @java.lang.Override
     public java.lang.String getUid() {
       java.lang.Object ref = "";
       if (idCase_ == 2) {
@@ -895,6 +902,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for uid.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUidBytes() {
       java.lang.Object ref = "";
       if (idCase_ == 2) {

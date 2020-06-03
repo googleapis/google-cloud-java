@@ -153,6 +153,7 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the note field is set.
    */
+  @java.lang.Override
   public boolean hasNote() {
     return note_ != null;
   }
@@ -215,6 +218,7 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The note.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.Note getNote() {
     return note_ == null ? io.grafeas.v1beta1.Note.getDefaultInstance() : note_;
   }
@@ -227,6 +231,7 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.grafeas.v1beta1.Note note = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.NoteOrBuilder getNoteOrBuilder() {
     return getNote();
   }
@@ -244,6 +249,7 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -258,6 +264,7 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -270,6 +277,7 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

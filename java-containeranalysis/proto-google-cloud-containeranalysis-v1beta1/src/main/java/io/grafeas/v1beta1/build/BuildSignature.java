@@ -254,6 +254,10 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -309,6 +313,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publicKey.
    */
+  @java.lang.Override
   public java.lang.String getPublicKey() {
     java.lang.Object ref = publicKey_;
     if (ref instanceof java.lang.String) {
@@ -341,6 +346,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for publicKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPublicKeyBytes() {
     java.lang.Object ref = publicKey_;
     if (ref instanceof java.lang.String) {
@@ -367,6 +373,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The signature.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignature() {
     return signature_;
   }
@@ -387,6 +394,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The keyId.
    */
+  @java.lang.Override
   public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
@@ -412,6 +420,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for keyId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyIdBytes() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
@@ -438,6 +447,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for keyType.
    */
+  @java.lang.Override
   public int getKeyTypeValue() {
     return keyType_;
   }
@@ -453,6 +463,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The keyType.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.build.BuildSignature.KeyType result =
@@ -992,6 +1003,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The signature.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
@@ -1170,6 +1182,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for keyType.
      */
+    @java.lang.Override
     public int getKeyTypeValue() {
       return keyType_;
     }
@@ -1187,6 +1200,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKeyTypeValue(int value) {
+
       keyType_ = value;
       onChanged();
       return this;
@@ -1203,6 +1217,7 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The keyType.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.build.BuildSignature.KeyType result =

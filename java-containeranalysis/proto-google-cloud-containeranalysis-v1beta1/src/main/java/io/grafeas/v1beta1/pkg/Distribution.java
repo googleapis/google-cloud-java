@@ -173,6 +173,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cpeUri.
    */
+  @java.lang.Override
   public java.lang.String getCpeUri() {
     java.lang.Object ref = cpeUri_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +197,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for cpeUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCpeUriBytes() {
     java.lang.Object ref = cpeUri_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for architecture.
    */
+  @java.lang.Override
   public int getArchitectureValue() {
     return architecture_;
   }
@@ -237,6 +240,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The architecture.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.Architecture getArchitecture() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.pkg.Architecture result =
@@ -257,6 +261,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the latestVersion field is set.
    */
+  @java.lang.Override
   public boolean hasLatestVersion() {
     return latestVersion_ != null;
   }
@@ -271,6 +276,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The latestVersion.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.Version getLatestVersion() {
     return latestVersion_ == null
         ? io.grafeas.v1beta1.pkg.Version.getDefaultInstance()
@@ -285,6 +291,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.package.Version latest_version = 3;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.VersionOrBuilder getLatestVersionOrBuilder() {
     return getLatestVersion();
   }
@@ -302,6 +309,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maintainer.
    */
+  @java.lang.Override
   public java.lang.String getMaintainer() {
     java.lang.Object ref = maintainer_;
     if (ref instanceof java.lang.String) {
@@ -324,6 +332,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for maintainer.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMaintainerBytes() {
     java.lang.Object ref = maintainer_;
     if (ref instanceof java.lang.String) {
@@ -349,6 +358,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -371,6 +381,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -396,6 +407,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -418,6 +430,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -959,6 +972,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for architecture.
      */
+    @java.lang.Override
     public int getArchitectureValue() {
       return architecture_;
     }
@@ -976,6 +990,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setArchitectureValue(int value) {
+
       architecture_ = value;
       onChanged();
       return this;
@@ -992,6 +1007,7 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The architecture.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.pkg.Architecture getArchitecture() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.pkg.Architecture result =

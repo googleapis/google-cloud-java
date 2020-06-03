@@ -153,6 +153,7 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The signature.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignature() {
     return signature_;
   }
@@ -183,6 +184,7 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publicKeyId.
    */
+  @java.lang.Override
   public java.lang.String getPublicKeyId() {
     java.lang.Object ref = publicKeyId_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +220,7 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for publicKeyId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPublicKeyIdBytes() {
     java.lang.Object ref = publicKeyId_;
     if (ref instanceof java.lang.String) {
@@ -592,6 +595,7 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The signature.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }

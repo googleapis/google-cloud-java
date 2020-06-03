@@ -140,6 +140,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +188,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<io.grafeas.v1beta1.pkg.Location> getLocationList() {
     return location_;
   }
@@ -199,6 +202,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends io.grafeas.v1beta1.pkg.LocationOrBuilder>
       getLocationOrBuilderList() {
     return location_;
@@ -213,6 +217,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
+  @java.lang.Override
   public int getLocationCount() {
     return location_.size();
   }
@@ -226,6 +231,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.Location getLocation(int index) {
     return location_.get(index);
   }
@@ -239,6 +245,7 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.pkg.LocationOrBuilder getLocationOrBuilder(int index) {
     return location_.get(index);
   }

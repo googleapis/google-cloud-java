@@ -272,6 +272,10 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -495,6 +499,10 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -540,6 +548,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for continuousAnalysis.
    */
+  @java.lang.Override
   public int getContinuousAnalysisValue() {
     return continuousAnalysis_;
   }
@@ -554,6 +563,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The continuousAnalysis.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis getContinuousAnalysis() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis result =
@@ -576,6 +586,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastAnalysisTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastAnalysisTime() {
     return lastAnalysisTime_ != null;
   }
@@ -590,6 +601,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastAnalysisTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastAnalysisTime() {
     return lastAnalysisTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -604,6 +616,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastAnalysisTimeOrBuilder() {
     return getLastAnalysisTime();
   }
@@ -621,6 +634,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for analysisStatus.
    */
+  @java.lang.Override
   public int getAnalysisStatusValue() {
     return analysisStatus_;
   }
@@ -635,6 +649,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The analysisStatus.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus getAnalysisStatus() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus result =
@@ -659,6 +674,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the analysisStatusError field is set.
    */
+  @java.lang.Override
   public boolean hasAnalysisStatusError() {
     return analysisStatusError_ != null;
   }
@@ -675,6 +691,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The analysisStatusError.
    */
+  @java.lang.Override
   public com.google.rpc.Status getAnalysisStatusError() {
     return analysisStatusError_ == null
         ? com.google.rpc.Status.getDefaultInstance()
@@ -691,6 +708,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.rpc.Status analysis_status_error = 4;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getAnalysisStatusErrorOrBuilder() {
     return getAnalysisStatusError();
   }
@@ -1103,6 +1121,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for continuousAnalysis.
      */
+    @java.lang.Override
     public int getContinuousAnalysisValue() {
       return continuousAnalysis_;
     }
@@ -1120,6 +1139,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setContinuousAnalysisValue(int value) {
+
       continuousAnalysis_ = value;
       onChanged();
       return this;
@@ -1136,6 +1156,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The continuousAnalysis.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis getContinuousAnalysis() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis result =
@@ -1383,6 +1404,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for analysisStatus.
      */
+    @java.lang.Override
     public int getAnalysisStatusValue() {
       return analysisStatus_;
     }
@@ -1399,6 +1421,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnalysisStatusValue(int value) {
+
       analysisStatus_ = value;
       onChanged();
       return this;
@@ -1414,6 +1437,7 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The analysisStatus.
      */
+    @java.lang.Override
     public io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus getAnalysisStatus() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus result =

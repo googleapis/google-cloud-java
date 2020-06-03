@@ -143,6 +143,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    * @return Whether the scanConfig field is set.
    */
+  @java.lang.Override
   public boolean hasScanConfig() {
     return scanConfig_ != null;
   }
@@ -211,6 +214,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    *
    * @return The scanConfig.
    */
+  @java.lang.Override
   public com.google.containeranalysis.v1beta1.ScanConfig getScanConfig() {
     return scanConfig_ == null
         ? com.google.containeranalysis.v1beta1.ScanConfig.getDefaultInstance()
@@ -227,6 +231,7 @@ public final class UpdateScanConfigRequest extends com.google.protobuf.Generated
    * .google.devtools.containeranalysis.v1beta1.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigOrBuilder() {
     return getScanConfig();
   }

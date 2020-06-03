@@ -131,6 +131,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the discovered field is set.
    */
+  @java.lang.Override
   public boolean hasDiscovered() {
     return discovered_ != null;
   }
@@ -145,6 +146,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The discovered.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.discovery.Discovered getDiscovered() {
     return discovered_ == null
         ? io.grafeas.v1beta1.discovery.Discovered.getDefaultInstance()
@@ -159,6 +161,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.discovery.Discovered discovered = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.discovery.DiscoveredOrBuilder getDiscoveredOrBuilder() {
     return getDiscovered();
   }

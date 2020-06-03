@@ -131,6 +131,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deployment field is set.
    */
+  @java.lang.Override
   public boolean hasDeployment() {
     return deployment_ != null;
   }
@@ -145,6 +146,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deployment.
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.deployment.Deployment getDeployment() {
     return deployment_ == null
         ? io.grafeas.v1beta1.deployment.Deployment.getDefaultInstance()
@@ -159,6 +161,7 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.grafeas.v1beta1.deployment.Deployment deployment = 1;</code>
    */
+  @java.lang.Override
   public io.grafeas.v1beta1.deployment.DeploymentOrBuilder getDeploymentOrBuilder() {
     return getDeployment();
   }

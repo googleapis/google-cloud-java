@@ -148,6 +148,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The v1Name.
    */
+  @java.lang.Override
   public java.lang.String getV1Name() {
     java.lang.Object ref = v1Name_;
     if (ref instanceof java.lang.String) {
@@ -171,6 +172,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for v1Name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getV1NameBytes() {
     java.lang.Object ref = v1Name_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +262,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The v2Name.
    */
+  @java.lang.Override
   public java.lang.String getV2Name() {
     java.lang.Object ref = v2Name_;
     if (ref instanceof java.lang.String) {
@@ -285,6 +288,7 @@ public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for v2Name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getV2NameBytes() {
     java.lang.Object ref = v2Name_;
     if (ref instanceof java.lang.String) {
