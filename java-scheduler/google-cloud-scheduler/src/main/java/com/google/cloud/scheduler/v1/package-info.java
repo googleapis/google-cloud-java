@@ -30,7 +30,7 @@
  * <code>
  * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
  *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
- *   Job response = cloudSchedulerClient.getJob(name);
+ *   cloudSchedulerClient.deleteJob(name);
  * }
  * </code>
  * </pre>

@@ -43,6 +43,10 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class CloudSchedulerStub implements BackgroundResource {
 
+  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
+  }
+
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listJobsPagedCallable()");
   }
@@ -61,10 +65,6 @@ public abstract class CloudSchedulerStub implements BackgroundResource {
 
   public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     throw new UnsupportedOperationException("Not implemented: updateJobCallable()");
-  }
-
-  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteJobCallable()");
   }
 
   public UnaryCallable<PauseJobRequest, Job> pauseJobCallable() {

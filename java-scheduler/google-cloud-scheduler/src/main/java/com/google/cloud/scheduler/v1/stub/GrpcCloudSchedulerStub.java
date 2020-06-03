@@ -54,6 +54,13 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
 
+  private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
+      MethodDescriptor.<DeleteJobRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/DeleteJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
       listJobsMethodDescriptor =
           MethodDescriptor.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -83,13 +90,6 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
           .build();
-  private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
-      MethodDescriptor.<DeleteJobRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/DeleteJob")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<PauseJobRequest, Job> pauseJobMethodDescriptor =
       MethodDescriptor.<PauseJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -114,12 +114,12 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;
   private final UnaryCallable<UpdateJobRequest, Job> updateJobCallable;
-  private final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable;
   private final UnaryCallable<PauseJobRequest, Job> pauseJobCallable;
   private final UnaryCallable<ResumeJobRequest, Job> resumeJobCallable;
   private final UnaryCallable<RunJobRequest, Job> runJobCallable;
@@ -165,6 +165,19 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
+        GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteJobMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteJobRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteJobRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
@@ -217,19 +230,6 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
-        GrpcCallSettings.<DeleteJobRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteJobMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteJobRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteJobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<PauseJobRequest, Job> pauseJobTransportSettings =
         GrpcCallSettings.<PauseJobRequest, Job>newBuilder()
             .setMethodDescriptor(pauseJobMethodDescriptor)
@@ -270,6 +270,9 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                 })
             .build();
 
+    this.deleteJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteJobTransportSettings, settings.deleteJobSettings(), clientContext);
     this.listJobsCallable =
         callableFactory.createUnaryCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
@@ -285,9 +288,6 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
     this.updateJobCallable =
         callableFactory.createUnaryCallable(
             updateJobTransportSettings, settings.updateJobSettings(), clientContext);
-    this.deleteJobCallable =
-        callableFactory.createUnaryCallable(
-            deleteJobTransportSettings, settings.deleteJobSettings(), clientContext);
     this.pauseJobCallable =
         callableFactory.createUnaryCallable(
             pauseJobTransportSettings, settings.pauseJobSettings(), clientContext);
@@ -299,6 +299,10 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
             runJobTransportSettings, settings.runJobSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    return deleteJobCallable;
   }
 
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
@@ -319,10 +323,6 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
 
   public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     return updateJobCallable;
-  }
-
-  public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    return deleteJobCallable;
   }
 
   public UnaryCallable<PauseJobRequest, Job> pauseJobCallable() {

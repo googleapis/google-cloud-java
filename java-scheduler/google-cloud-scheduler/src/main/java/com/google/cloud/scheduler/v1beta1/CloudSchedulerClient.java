@@ -47,7 +47,7 @@ import javax.annotation.Generated;
  * <code>
  * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
  *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
- *   Job response = cloudSchedulerClient.getJob(name);
+ *   cloudSchedulerClient.deleteJob(name);
  * }
  * </code>
  * </pre>
@@ -154,6 +154,324 @@ public class CloudSchedulerClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudSchedulerStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   cloudSchedulerClient.deleteJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(JobName name) {
+    DeleteJobRequest request =
+        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   cloudSchedulerClient.deleteJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(String name) {
+    DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   cloudSchedulerClient.deleteJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(DeleteJobRequest request) {
+    deleteJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = cloudSchedulerClient.deleteJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    return stub.deleteJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses a job.
+   *
+   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
+   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
+   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
+   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.pauseJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job pauseJob(JobName name) {
+    PauseJobRequest request =
+        PauseJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return pauseJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses a job.
+   *
+   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
+   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
+   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
+   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.pauseJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job pauseJob(String name) {
+    PauseJobRequest request = PauseJobRequest.newBuilder().setName(name).build();
+    return pauseJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses a job.
+   *
+   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
+   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
+   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
+   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   PauseJobRequest request = PauseJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Job response = cloudSchedulerClient.pauseJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job pauseJob(PauseJobRequest request) {
+    return pauseJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses a job.
+   *
+   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
+   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
+   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
+   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   PauseJobRequest request = PauseJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.pauseJobCallable().futureCall(request);
+   *   // Do something
+   *   Job response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<PauseJobRequest, Job> pauseJobCallable() {
+    return stub.pauseJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resume a job.
+   *
+   * <p>This method reenables a job after it has been
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
+   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
+   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.resumeJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job resumeJob(JobName name) {
+    ResumeJobRequest request =
+        ResumeJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return resumeJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resume a job.
+   *
+   * <p>This method reenables a job after it has been
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
+   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
+   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.resumeJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job resumeJob(String name) {
+    ResumeJobRequest request = ResumeJobRequest.newBuilder().setName(name).build();
+    return resumeJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resume a job.
+   *
+   * <p>This method reenables a job after it has been
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
+   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
+   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   ResumeJobRequest request = ResumeJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Job response = cloudSchedulerClient.resumeJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job resumeJob(ResumeJobRequest request) {
+    return resumeJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resume a job.
+   *
+   * <p>This method reenables a job after it has been
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
+   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
+   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   ResumeJobRequest request = ResumeJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.resumeJobCallable().futureCall(request);
+   *   // Do something
+   *   Job response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ResumeJobRequest, Job> resumeJobCallable() {
+    return stub.resumeJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -578,324 +896,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     return stub.updateJobCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   cloudSchedulerClient.deleteJob(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The job name. For example:
-   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(JobName name) {
-    DeleteJobRequest request =
-        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   cloudSchedulerClient.deleteJob(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The job name. For example:
-   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(String name) {
-    DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
-    deleteJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   cloudSchedulerClient.deleteJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(DeleteJobRequest request) {
-    deleteJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = cloudSchedulerClient.deleteJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    return stub.deleteJobCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Pauses a job.
-   *
-   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
-   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
-   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
-   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
-   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = cloudSchedulerClient.pauseJob(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The job name. For example:
-   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Job pauseJob(JobName name) {
-    PauseJobRequest request =
-        PauseJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return pauseJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Pauses a job.
-   *
-   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
-   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
-   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
-   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
-   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = cloudSchedulerClient.pauseJob(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The job name. For example:
-   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Job pauseJob(String name) {
-    PauseJobRequest request = PauseJobRequest.newBuilder().setName(name).build();
-    return pauseJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Pauses a job.
-   *
-   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
-   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
-   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
-   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
-   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   PauseJobRequest request = PauseJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Job response = cloudSchedulerClient.pauseJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Job pauseJob(PauseJobRequest request) {
-    return pauseJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Pauses a job.
-   *
-   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
-   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
-   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
-   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
-   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   PauseJobRequest request = PauseJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.pauseJobCallable().futureCall(request);
-   *   // Do something
-   *   Job response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<PauseJobRequest, Job> pauseJobCallable() {
-    return stub.pauseJobCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Resume a job.
-   *
-   * <p>This method reenables a job after it has been
-   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
-   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
-   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
-   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = cloudSchedulerClient.resumeJob(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The job name. For example:
-   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Job resumeJob(JobName name) {
-    ResumeJobRequest request =
-        ResumeJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return resumeJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Resume a job.
-   *
-   * <p>This method reenables a job after it has been
-   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
-   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
-   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
-   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = cloudSchedulerClient.resumeJob(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The job name. For example:
-   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Job resumeJob(String name) {
-    ResumeJobRequest request = ResumeJobRequest.newBuilder().setName(name).build();
-    return resumeJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Resume a job.
-   *
-   * <p>This method reenables a job after it has been
-   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
-   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
-   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
-   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   ResumeJobRequest request = ResumeJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Job response = cloudSchedulerClient.resumeJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Job resumeJob(ResumeJobRequest request) {
-    return resumeJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Resume a job.
-   *
-   * <p>This method reenables a job after it has been
-   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
-   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
-   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
-   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   ResumeJobRequest request = ResumeJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.resumeJobCallable().futureCall(request);
-   *   // Do something
-   *   Job response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ResumeJobRequest, Job> resumeJobCallable() {
-    return stub.resumeJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

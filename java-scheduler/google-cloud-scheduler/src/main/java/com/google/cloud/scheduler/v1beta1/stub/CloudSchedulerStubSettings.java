@@ -75,16 +75,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getJob to 30 seconds:
+ * <p>For example, to set the total timeout of deleteJob to 30 seconds:
  *
  * <pre>
  * <code>
  * CloudSchedulerStubSettings.Builder cloudSchedulerSettingsBuilder =
  *     CloudSchedulerStubSettings.newBuilder();
  * cloudSchedulerSettingsBuilder
- *     .getJobSettings()
+ *     .deleteJobSettings()
  *     .setRetrySettings(
- *         cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
+ *         cloudSchedulerSettingsBuilder.deleteJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudSchedulerStubSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();
@@ -98,15 +98,30 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
+  private final UnaryCallSettings<PauseJobRequest, Job> pauseJobSettings;
+  private final UnaryCallSettings<ResumeJobRequest, Job> resumeJobSettings;
   private final PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings;
   private final UnaryCallSettings<GetJobRequest, Job> getJobSettings;
   private final UnaryCallSettings<CreateJobRequest, Job> createJobSettings;
   private final UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings;
-  private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
-  private final UnaryCallSettings<PauseJobRequest, Job> pauseJobSettings;
-  private final UnaryCallSettings<ResumeJobRequest, Job> resumeJobSettings;
   private final UnaryCallSettings<RunJobRequest, Job> runJobSettings;
+
+  /** Returns the object with the settings used for calls to deleteJob. */
+  public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
+    return deleteJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pauseJob. */
+  public UnaryCallSettings<PauseJobRequest, Job> pauseJobSettings() {
+    return pauseJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resumeJob. */
+  public UnaryCallSettings<ResumeJobRequest, Job> resumeJobSettings() {
+    return resumeJobSettings;
+  }
 
   /** Returns the object with the settings used for calls to listJobs. */
   public PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
@@ -127,21 +142,6 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
   /** Returns the object with the settings used for calls to updateJob. */
   public UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings() {
     return updateJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteJob. */
-  public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
-    return deleteJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to pauseJob. */
-  public UnaryCallSettings<PauseJobRequest, Job> pauseJobSettings() {
-    return pauseJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to resumeJob. */
-  public UnaryCallSettings<ResumeJobRequest, Job> resumeJobSettings() {
-    return resumeJobSettings;
   }
 
   /** Returns the object with the settings used for calls to runJob. */
@@ -218,13 +218,13 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
   protected CloudSchedulerStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteJobSettings = settingsBuilder.deleteJobSettings().build();
+    pauseJobSettings = settingsBuilder.pauseJobSettings().build();
+    resumeJobSettings = settingsBuilder.resumeJobSettings().build();
     listJobsSettings = settingsBuilder.listJobsSettings().build();
     getJobSettings = settingsBuilder.getJobSettings().build();
     createJobSettings = settingsBuilder.createJobSettings().build();
     updateJobSettings = settingsBuilder.updateJobSettings().build();
-    deleteJobSettings = settingsBuilder.deleteJobSettings().build();
-    pauseJobSettings = settingsBuilder.pauseJobSettings().build();
-    resumeJobSettings = settingsBuilder.resumeJobSettings().build();
     runJobSettings = settingsBuilder.runJobSettings().build();
   }
 
@@ -284,15 +284,15 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
   public static class Builder extends StubSettings.Builder<CloudSchedulerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
+    private final UnaryCallSettings.Builder<PauseJobRequest, Job> pauseJobSettings;
+    private final UnaryCallSettings.Builder<ResumeJobRequest, Job> resumeJobSettings;
     private final PagedCallSettings.Builder<
             ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
         listJobsSettings;
     private final UnaryCallSettings.Builder<GetJobRequest, Job> getJobSettings;
     private final UnaryCallSettings.Builder<CreateJobRequest, Job> createJobSettings;
     private final UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings;
-    private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
-    private final UnaryCallSettings.Builder<PauseJobRequest, Job> pauseJobSettings;
-    private final UnaryCallSettings.Builder<ResumeJobRequest, Job> resumeJobSettings;
     private final UnaryCallSettings.Builder<RunJobRequest, Job> runJobSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -336,6 +336,12 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      pauseJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      resumeJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
 
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -344,23 +350,17 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
 
       updateJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      pauseJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      resumeJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       runJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteJobSettings,
+              pauseJobSettings,
+              resumeJobSettings,
               listJobsSettings,
               getJobSettings,
               createJobSettings,
               updateJobSettings,
-              deleteJobSettings,
-              pauseJobSettings,
-              resumeJobSettings,
               runJobSettings);
 
       initDefaults(this);
@@ -376,6 +376,21 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .pauseJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .resumeJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listJobsSettings()
@@ -398,21 +413,6 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .pauseJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .resumeJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .runJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -423,24 +423,24 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     protected Builder(CloudSchedulerStubSettings settings) {
       super(settings);
 
+      deleteJobSettings = settings.deleteJobSettings.toBuilder();
+      pauseJobSettings = settings.pauseJobSettings.toBuilder();
+      resumeJobSettings = settings.resumeJobSettings.toBuilder();
       listJobsSettings = settings.listJobsSettings.toBuilder();
       getJobSettings = settings.getJobSettings.toBuilder();
       createJobSettings = settings.createJobSettings.toBuilder();
       updateJobSettings = settings.updateJobSettings.toBuilder();
-      deleteJobSettings = settings.deleteJobSettings.toBuilder();
-      pauseJobSettings = settings.pauseJobSettings.toBuilder();
-      resumeJobSettings = settings.resumeJobSettings.toBuilder();
       runJobSettings = settings.runJobSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteJobSettings,
+              pauseJobSettings,
+              resumeJobSettings,
               listJobsSettings,
               getJobSettings,
               createJobSettings,
               updateJobSettings,
-              deleteJobSettings,
-              pauseJobSettings,
-              resumeJobSettings,
               runJobSettings);
     }
 
@@ -458,6 +458,21 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteJob. */
+    public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
+      return deleteJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pauseJob. */
+    public UnaryCallSettings.Builder<PauseJobRequest, Job> pauseJobSettings() {
+      return pauseJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resumeJob. */
+    public UnaryCallSettings.Builder<ResumeJobRequest, Job> resumeJobSettings() {
+      return resumeJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to listJobs. */
@@ -479,21 +494,6 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     /** Returns the builder for the settings used for calls to updateJob. */
     public UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings() {
       return updateJobSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteJob. */
-    public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
-      return deleteJobSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to pauseJob. */
-    public UnaryCallSettings.Builder<PauseJobRequest, Job> pauseJobSettings() {
-      return pauseJobSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to resumeJob. */
-    public UnaryCallSettings.Builder<ResumeJobRequest, Job> resumeJobSettings() {
-      return resumeJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to runJob. */
