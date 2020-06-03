@@ -383,6 +383,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    * multiple default text responses exist, they will be concatenated when
    * generating audio. If no default platform text responses exist, the
    * generated audio content will be empty.
+   * In some scenarios, multiple output audio fields may be present in the
+   * response structure. In these cases, only the top-most-level audio output
+   * has content.
    * </pre>
    *
    * <code>bytes output_audio = 5;</code>
@@ -1568,6 +1571,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     * In some scenarios, multiple output audio fields may be present in the
+     * response structure. In these cases, only the top-most-level audio output
+     * has content.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
@@ -1587,6 +1593,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     * In some scenarios, multiple output audio fields may be present in the
+     * response structure. In these cases, only the top-most-level audio output
+     * has content.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>
@@ -1613,6 +1622,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
      * multiple default text responses exist, they will be concatenated when
      * generating audio. If no default platform text responses exist, the
      * generated audio content will be empty.
+     * In some scenarios, multiple output audio fields may be present in the
+     * response structure. In these cases, only the top-most-level audio output
+     * has content.
      * </pre>
      *
      * <code>bytes output_audio = 5;</code>

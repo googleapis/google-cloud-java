@@ -252,8 +252,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.INTERNAL, StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "idempotent2",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -304,7 +309,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
       builder
           .listEnvironmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent2"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
