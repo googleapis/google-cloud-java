@@ -57,12 +57,12 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class WebSecurityScannerStub implements BackgroundResource {
 
-  public UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: createScanConfigCallable()");
-  }
-
   public UnaryCallable<DeleteScanConfigRequest, Empty> deleteScanConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteScanConfigCallable()");
+  }
+
+  public UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createScanConfigCallable()");
   }
 
   public UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable() {

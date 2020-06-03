@@ -47,9 +47,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
- *   ScanConfig response = webSecurityScannerClient.createScanConfig(parent, scanConfig);
+ *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+ *   webSecurityScannerClient.deleteScanConfig(name);
  * }
  * </code>
  * </pre>
@@ -161,6 +160,96 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes an existing ScanConfig and its child resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   webSecurityScannerClient.deleteScanConfig(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the ScanConfig to be deleted. The name follows the
+   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteScanConfig(ScanConfigName name) {
+    DeleteScanConfigRequest request =
+        DeleteScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteScanConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing ScanConfig and its child resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   webSecurityScannerClient.deleteScanConfig(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the ScanConfig to be deleted. The name follows the
+   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteScanConfig(String name) {
+    DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder().setName(name).build();
+    deleteScanConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing ScanConfig and its child resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   webSecurityScannerClient.deleteScanConfig(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteScanConfig(DeleteScanConfigRequest request) {
+    deleteScanConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing ScanConfig and its child resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = webSecurityScannerClient.deleteScanConfigCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteScanConfigRequest, Empty> deleteScanConfigCallable() {
+    return stub.deleteScanConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a new ScanConfig.
    *
    * <p>Sample code:
@@ -259,96 +348,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable() {
     return stub.createScanConfigCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing ScanConfig and its child resources.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   webSecurityScannerClient.deleteScanConfig(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the ScanConfig to be deleted. The name follows the
-   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteScanConfig(ScanConfigName name) {
-    DeleteScanConfigRequest request =
-        DeleteScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteScanConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing ScanConfig and its child resources.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   webSecurityScannerClient.deleteScanConfig(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the ScanConfig to be deleted. The name follows the
-   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteScanConfig(String name) {
-    DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder().setName(name).build();
-    deleteScanConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing ScanConfig and its child resources.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   webSecurityScannerClient.deleteScanConfig(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteScanConfig(DeleteScanConfigRequest request) {
-    deleteScanConfigCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an existing ScanConfig and its child resources.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = webSecurityScannerClient.deleteScanConfigCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteScanConfigRequest, Empty> deleteScanConfigCallable() {
-    return stub.deleteScanConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
