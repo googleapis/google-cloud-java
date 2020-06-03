@@ -22,6 +22,7 @@ import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.Action;
 import com.google.privacy.dlp.v2.CloudStorageOptions;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
+import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectJobConfig;
@@ -109,9 +110,9 @@ public class JobsCreate {
               .setInspectJob(inspectJobConfig)
               .build();
 
-      // Send the job creation request
-      dlpServiceClient.createDlpJob(createDlpJobRequest);
-      System.out.println("Job created successfully.");
+      // Send the job creation request and process the response.
+      DlpJob createdDlpJob = dlpServiceClient.createDlpJob(createDlpJobRequest);
+      System.out.println("Job created successfully: " + createdDlpJob.getName());
     }
   }
 }
