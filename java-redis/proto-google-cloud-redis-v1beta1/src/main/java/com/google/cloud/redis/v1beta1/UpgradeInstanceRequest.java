@@ -136,6 +136,7 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The redisVersion.
    */
+  @java.lang.Override
   public java.lang.String getRedisVersion() {
     java.lang.Object ref = redisVersion_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +212,7 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for redisVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRedisVersionBytes() {
     java.lang.Object ref = redisVersion_;
     if (ref instanceof java.lang.String) {

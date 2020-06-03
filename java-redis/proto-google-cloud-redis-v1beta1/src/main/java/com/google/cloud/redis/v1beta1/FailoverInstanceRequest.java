@@ -250,6 +250,10 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -302,6 +306,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -328,6 +333,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -356,6 +362,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    *
    * @return The enum numeric value on the wire for dataProtectionMode.
    */
+  @java.lang.Override
   public int getDataProtectionModeValue() {
     return dataProtectionMode_;
   }
@@ -373,6 +380,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
    *
    * @return The dataProtectionMode.
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode
       getDataProtectionMode() {
     @SuppressWarnings("deprecation")
@@ -865,6 +873,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      *
      * @return The enum numeric value on the wire for dataProtectionMode.
      */
+    @java.lang.Override
     public int getDataProtectionModeValue() {
       return dataProtectionMode_;
     }
@@ -884,6 +893,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setDataProtectionModeValue(int value) {
+
       dataProtectionMode_ = value;
       onChanged();
       return this;
@@ -902,6 +912,7 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
      *
      * @return The dataProtectionMode.
      */
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.FailoverInstanceRequest.DataProtectionMode
         getDataProtectionMode() {
       @SuppressWarnings("deprecation")

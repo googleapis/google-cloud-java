@@ -151,6 +151,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +210,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The instanceId.
    */
+  @java.lang.Override
   public java.lang.String getInstanceId() {
     java.lang.Object ref = instanceId_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +239,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for instanceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstanceIdBytes() {
     java.lang.Object ref = instanceId_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +266,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the instance field is set.
    */
+  @java.lang.Override
   public boolean hasInstance() {
     return instance_ != null;
   }
@@ -277,6 +282,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The instance.
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1.Instance getInstance() {
     return instance_ == null ? com.google.cloud.redis.v1.Instance.getDefaultInstance() : instance_;
   }
@@ -290,6 +296,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.redis.v1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1.InstanceOrBuilder getInstanceOrBuilder() {
     return getInstance();
   }

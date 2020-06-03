@@ -124,6 +124,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -146,6 +147,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {

@@ -539,6 +539,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -692,6 +696,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -847,6 +855,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -899,6 +911,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -928,6 +941,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -953,6 +967,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -975,6 +990,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1021,6 +1037,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1028,6 +1045,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -1041,6 +1059,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -1053,6 +1072,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1069,6 +1089,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1097,6 +1118,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -1123,6 +1145,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -1150,6 +1173,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The alternativeLocationId.
    */
+  @java.lang.Override
   public java.lang.String getAlternativeLocationId() {
     java.lang.Object ref = alternativeLocationId_;
     if (ref instanceof java.lang.String) {
@@ -1174,6 +1198,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for alternativeLocationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAlternativeLocationIdBytes() {
     java.lang.Object ref = alternativeLocationId_;
     if (ref instanceof java.lang.String) {
@@ -1204,6 +1229,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The redisVersion.
    */
+  @java.lang.Override
   public java.lang.String getRedisVersion() {
     java.lang.Object ref = redisVersion_;
     if (ref instanceof java.lang.String) {
@@ -1231,6 +1257,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for redisVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRedisVersionBytes() {
     java.lang.Object ref = redisVersion_;
     if (ref instanceof java.lang.String) {
@@ -1259,6 +1286,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The reservedIpRange.
    */
+  @java.lang.Override
   public java.lang.String getReservedIpRange() {
     java.lang.Object ref = reservedIpRange_;
     if (ref instanceof java.lang.String) {
@@ -1284,6 +1312,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for reservedIpRange.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getReservedIpRangeBytes() {
     java.lang.Object ref = reservedIpRange_;
     if (ref instanceof java.lang.String) {
@@ -1310,6 +1339,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The host.
    */
+  @java.lang.Override
   public java.lang.String getHost() {
     java.lang.Object ref = host_;
     if (ref instanceof java.lang.String) {
@@ -1333,6 +1363,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for host.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHostBytes() {
     java.lang.Object ref = host_;
     if (ref instanceof java.lang.String) {
@@ -1358,6 +1389,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The port.
    */
+  @java.lang.Override
   public int getPort() {
     return port_;
   }
@@ -1379,6 +1411,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The currentLocationId.
    */
+  @java.lang.Override
   public java.lang.String getCurrentLocationId() {
     java.lang.Object ref = currentLocationId_;
     if (ref instanceof java.lang.String) {
@@ -1405,6 +1438,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for currentLocationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCurrentLocationIdBytes() {
     java.lang.Object ref = currentLocationId_;
     if (ref instanceof java.lang.String) {
@@ -1431,6 +1465,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -1446,6 +1481,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -1459,6 +1495,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1478,6 +1515,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -1494,6 +1532,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.Instance.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.redis.v1beta1.Instance.State result =
@@ -1515,6 +1554,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The statusMessage.
    */
+  @java.lang.Override
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -1538,6 +1578,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for statusMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -1600,6 +1641,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsRedisConfigs(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1607,6 +1649,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return internalGetRedisConfigs().getMap().containsKey(key);
   }
   /** Use {@link #getRedisConfigsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getRedisConfigs() {
     return getRedisConfigsMap();
@@ -1634,6 +1677,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap() {
     return internalGetRedisConfigs().getMap();
   }
@@ -1660,6 +1704,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getRedisConfigsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -1691,6 +1736,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getRedisConfigsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1717,6 +1763,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for tier.
    */
+  @java.lang.Override
   public int getTierValue() {
     return tier_;
   }
@@ -1733,6 +1780,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tier.
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.Instance.Tier getTier() {
     @SuppressWarnings("deprecation")
     com.google.cloud.redis.v1beta1.Instance.Tier result =
@@ -1753,6 +1801,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The memorySizeGb.
    */
+  @java.lang.Override
   public int getMemorySizeGb() {
     return memorySizeGb_;
   }
@@ -1773,6 +1822,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The authorizedNetwork.
    */
+  @java.lang.Override
   public java.lang.String getAuthorizedNetwork() {
     java.lang.Object ref = authorizedNetwork_;
     if (ref instanceof java.lang.String) {
@@ -1798,6 +1848,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for authorizedNetwork.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAuthorizedNetworkBytes() {
     java.lang.Object ref = authorizedNetwork_;
     if (ref instanceof java.lang.String) {
@@ -1827,6 +1878,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The persistenceIamIdentity.
    */
+  @java.lang.Override
   public java.lang.String getPersistenceIamIdentity() {
     java.lang.Object ref = persistenceIamIdentity_;
     if (ref instanceof java.lang.String) {
@@ -1853,6 +1905,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for persistenceIamIdentity.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPersistenceIamIdentityBytes() {
     java.lang.Object ref = persistenceIamIdentity_;
     if (ref instanceof java.lang.String) {
@@ -1882,6 +1935,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for connectMode.
    */
+  @java.lang.Override
   public int getConnectModeValue() {
     return connectMode_;
   }
@@ -1900,6 +1954,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The connectMode.
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.Instance.ConnectMode getConnectMode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.redis.v1beta1.Instance.ConnectMode result =
@@ -2841,6 +2896,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2848,6 +2904,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2861,6 +2918,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2873,6 +2931,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2890,6 +2949,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3576,6 +3636,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The port.
      */
+    @java.lang.Override
     public int getPort() {
       return port_;
     }
@@ -3956,6 +4017,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -3974,6 +4036,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -3991,6 +4054,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.Instance.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.redis.v1beta1.Instance.State result =
@@ -4202,6 +4266,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsRedisConfigs(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -4209,6 +4274,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return internalGetRedisConfigs().getMap().containsKey(key);
     }
     /** Use {@link #getRedisConfigsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getRedisConfigs() {
       return getRedisConfigsMap();
@@ -4236,6 +4302,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap() {
       return internalGetRedisConfigs().getMap();
     }
@@ -4262,6 +4329,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getRedisConfigsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -4293,6 +4361,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; redis_configs = 16 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getRedisConfigsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -4418,6 +4487,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for tier.
      */
+    @java.lang.Override
     public int getTierValue() {
       return tier_;
     }
@@ -4436,6 +4506,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTierValue(int value) {
+
       tier_ = value;
       onChanged();
       return this;
@@ -4453,6 +4524,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The tier.
      */
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.Instance.Tier getTier() {
       @SuppressWarnings("deprecation")
       com.google.cloud.redis.v1beta1.Instance.Tier result =
@@ -4514,6 +4586,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The memorySizeGb.
      */
+    @java.lang.Override
     public int getMemorySizeGb() {
       return memorySizeGb_;
     }
@@ -4821,6 +4894,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for connectMode.
      */
+    @java.lang.Override
     public int getConnectModeValue() {
       return connectMode_;
     }
@@ -4841,6 +4915,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setConnectModeValue(int value) {
+
       connectMode_ = value;
       onChanged();
       return this;
@@ -4860,6 +4935,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The connectMode.
      */
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.Instance.ConnectMode getConnectMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.redis.v1beta1.Instance.ConnectMode result =

@@ -174,6 +174,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
@@ -188,6 +189,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.redis.v1.GcsSource) source_;
@@ -203,6 +205,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.redis.v1.GcsSource gcs_source = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.redis.v1.GcsSource) source_;
@@ -583,6 +586,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
@@ -597,6 +601,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.redis.v1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -728,6 +733,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.redis.v1.GcsSource gcs_source = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.redis.v1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();

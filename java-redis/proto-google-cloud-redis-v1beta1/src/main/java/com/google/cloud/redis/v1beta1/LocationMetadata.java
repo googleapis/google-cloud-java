@@ -183,6 +183,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public boolean containsAvailableZones(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -190,6 +191,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     return internalGetAvailableZones().getMap().containsKey(key);
   }
   /** Use {@link #getAvailableZonesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata>
       getAvailableZones() {
@@ -209,6 +211,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata>
       getAvailableZonesMap() {
     return internalGetAvailableZones().getMap();
@@ -227,6 +230,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrDefault(
       java.lang.String key, com.google.cloud.redis.v1beta1.ZoneMetadata defaultValue) {
     if (key == null) {
@@ -250,6 +254,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
    * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -658,6 +663,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public boolean containsAvailableZones(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -665,6 +671,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       return internalGetAvailableZones().getMap().containsKey(key);
     }
     /** Use {@link #getAvailableZonesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata>
         getAvailableZones() {
@@ -684,6 +691,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata>
         getAvailableZonesMap() {
       return internalGetAvailableZones().getMap();
@@ -702,6 +710,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrDefault(
         java.lang.String key, com.google.cloud.redis.v1beta1.ZoneMetadata defaultValue) {
       if (key == null) {
@@ -725,6 +734,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrThrow(
         java.lang.String key) {
       if (key == null) {

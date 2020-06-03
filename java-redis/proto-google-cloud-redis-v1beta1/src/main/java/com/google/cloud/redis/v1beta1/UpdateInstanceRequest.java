@@ -153,6 +153,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -174,6 +175,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -193,6 +195,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -213,6 +216,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the instance field is set.
    */
+  @java.lang.Override
   public boolean hasInstance() {
     return instance_ != null;
   }
@@ -230,6 +234,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The instance.
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.Instance getInstance() {
     return instance_ == null
         ? com.google.cloud.redis.v1beta1.Instance.getDefaultInstance()
@@ -247,6 +252,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.redis.v1beta1.Instance instance = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstanceOrBuilder() {
     return getInstance();
   }

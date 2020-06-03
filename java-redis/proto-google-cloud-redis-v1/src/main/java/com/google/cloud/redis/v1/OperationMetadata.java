@@ -183,6 +183,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -197,6 +198,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -209,6 +211,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -226,6 +229,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -240,6 +244,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -252,6 +257,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -269,6 +275,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The target.
    */
+  @java.lang.Override
   public java.lang.String getTarget() {
     java.lang.Object ref = target_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +298,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for target.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTargetBytes() {
     java.lang.Object ref = target_;
     if (ref instanceof java.lang.String) {
@@ -316,6 +324,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The verb.
    */
+  @java.lang.Override
   public java.lang.String getVerb() {
     java.lang.Object ref = verb_;
     if (ref instanceof java.lang.String) {
@@ -338,6 +347,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for verb.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVerbBytes() {
     java.lang.Object ref = verb_;
     if (ref instanceof java.lang.String) {
@@ -363,6 +373,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The statusDetail.
    */
+  @java.lang.Override
   public java.lang.String getStatusDetail() {
     java.lang.Object ref = statusDetail_;
     if (ref instanceof java.lang.String) {
@@ -385,6 +396,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for statusDetail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStatusDetailBytes() {
     java.lang.Object ref = statusDetail_;
     if (ref instanceof java.lang.String) {
@@ -410,6 +422,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The cancelRequested.
    */
+  @java.lang.Override
   public boolean getCancelRequested() {
     return cancelRequested_;
   }
@@ -427,6 +440,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The apiVersion.
    */
+  @java.lang.Override
   public java.lang.String getApiVersion() {
     java.lang.Object ref = apiVersion_;
     if (ref instanceof java.lang.String) {
@@ -449,6 +463,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for apiVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getApiVersionBytes() {
     java.lang.Object ref = apiVersion_;
     if (ref instanceof java.lang.String) {
@@ -1588,6 +1603,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The cancelRequested.
      */
+    @java.lang.Override
     public boolean getCancelRequested() {
       return cancelRequested_;
     }
