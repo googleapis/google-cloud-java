@@ -134,6 +134,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.recommender.v1beta1.OperationGroup operation_groups = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommender.v1beta1.OperationGroup>
       getOperationGroupsList() {
     return operationGroups_;
@@ -149,6 +150,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.recommender.v1beta1.OperationGroup operation_groups = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.recommender.v1beta1.OperationGroupOrBuilder>
       getOperationGroupsOrBuilderList() {
     return operationGroups_;
@@ -164,6 +166,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.recommender.v1beta1.OperationGroup operation_groups = 2;</code>
    */
+  @java.lang.Override
   public int getOperationGroupsCount() {
     return operationGroups_.size();
   }
@@ -178,6 +181,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.recommender.v1beta1.OperationGroup operation_groups = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.OperationGroup getOperationGroups(int index) {
     return operationGroups_.get(index);
   }
@@ -192,6 +196,7 @@ public final class RecommendationContent extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.recommender.v1beta1.OperationGroup operation_groups = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.OperationGroupOrBuilder getOperationGroupsOrBuilder(
       int index) {
     return operationGroups_.get(index);

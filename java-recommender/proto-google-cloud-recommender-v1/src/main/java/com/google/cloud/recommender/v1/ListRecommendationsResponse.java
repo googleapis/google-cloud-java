@@ -139,6 +139,7 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.recommender.v1.Recommendation recommendations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommender.v1.Recommendation> getRecommendationsList() {
     return recommendations_;
   }
@@ -151,6 +152,7 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.recommender.v1.Recommendation recommendations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.recommender.v1.RecommendationOrBuilder>
       getRecommendationsOrBuilderList() {
     return recommendations_;
@@ -164,6 +166,7 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.recommender.v1.Recommendation recommendations = 1;</code>
    */
+  @java.lang.Override
   public int getRecommendationsCount() {
     return recommendations_.size();
   }
@@ -176,6 +179,7 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.recommender.v1.Recommendation recommendations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1.Recommendation getRecommendations(int index) {
     return recommendations_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.recommender.v1.Recommendation recommendations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1.RecommendationOrBuilder getRecommendationsOrBuilder(
       int index) {
     return recommendations_.get(index);
@@ -207,6 +212,7 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +236,7 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -404,6 +404,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -575,6 +579,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The recommendation.
      */
+    @java.lang.Override
     public java.lang.String getRecommendation() {
       java.lang.Object ref = recommendation_;
       if (ref instanceof java.lang.String) {
@@ -598,6 +603,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for recommendation.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRecommendationBytes() {
       java.lang.Object ref = recommendation_;
       if (ref instanceof java.lang.String) {
@@ -1121,6 +1127,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1143,6 +1150,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1169,6 +1177,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1192,6 +1201,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1278,6 +1288,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The insightSubtype.
    */
+  @java.lang.Override
   public java.lang.String getInsightSubtype() {
     java.lang.Object ref = insightSubtype_;
     if (ref instanceof java.lang.String) {
@@ -1300,6 +1311,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for insightSubtype.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInsightSubtypeBytes() {
     java.lang.Object ref = insightSubtype_;
     if (ref instanceof java.lang.String) {
@@ -1326,6 +1338,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the content field is set.
    */
+  @java.lang.Override
   public boolean hasContent() {
     return content_ != null;
   }
@@ -1341,6 +1354,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The content.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getContent() {
     return content_ == null ? com.google.protobuf.Struct.getDefaultInstance() : content_;
   }
@@ -1354,6 +1368,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Struct content = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getContentOrBuilder() {
     return getContent();
   }
@@ -1371,6 +1386,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastRefreshTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastRefreshTime() {
     return lastRefreshTime_ != null;
   }
@@ -1385,6 +1401,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastRefreshTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastRefreshTime() {
     return lastRefreshTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1399,6 +1416,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastRefreshTimeOrBuilder() {
     return getLastRefreshTime();
   }
@@ -1418,6 +1436,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the observationPeriod field is set.
    */
+  @java.lang.Override
   public boolean hasObservationPeriod() {
     return observationPeriod_ != null;
   }
@@ -1434,6 +1453,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The observationPeriod.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getObservationPeriod() {
     return observationPeriod_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -1450,6 +1470,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration observation_period = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getObservationPeriodOrBuilder() {
     return getObservationPeriod();
   }
@@ -1467,6 +1488,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the stateInfo field is set.
    */
+  @java.lang.Override
   public boolean hasStateInfo() {
     return stateInfo_ != null;
   }
@@ -1481,6 +1503,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stateInfo.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.InsightStateInfo getStateInfo() {
     return stateInfo_ == null
         ? com.google.cloud.recommender.v1beta1.InsightStateInfo.getDefaultInstance()
@@ -1495,6 +1518,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recommender.v1beta1.InsightStateInfo state_info = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.InsightStateInfoOrBuilder getStateInfoOrBuilder() {
     return getStateInfo();
   }
@@ -1512,6 +1536,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for category.
    */
+  @java.lang.Override
   public int getCategoryValue() {
     return category_;
   }
@@ -1526,6 +1551,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The category.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Insight.Category getCategory() {
     @SuppressWarnings("deprecation")
     com.google.cloud.recommender.v1beta1.Insight.Category result =
@@ -1549,6 +1575,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1572,6 +1599,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1598,6 +1626,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Insight.RecommendationReference associated_recommendations = 8;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommender.v1beta1.Insight.RecommendationReference>
       getAssociatedRecommendationsList() {
     return associatedRecommendations_;
@@ -1613,6 +1642,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Insight.RecommendationReference associated_recommendations = 8;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.recommender.v1beta1.Insight.RecommendationReferenceOrBuilder>
       getAssociatedRecommendationsOrBuilderList() {
@@ -1629,6 +1659,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Insight.RecommendationReference associated_recommendations = 8;
    * </code>
    */
+  @java.lang.Override
   public int getAssociatedRecommendationsCount() {
     return associatedRecommendations_.size();
   }
@@ -1643,6 +1674,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Insight.RecommendationReference associated_recommendations = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Insight.RecommendationReference
       getAssociatedRecommendations(int index) {
     return associatedRecommendations_.get(index);
@@ -1658,6 +1690,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Insight.RecommendationReference associated_recommendations = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Insight.RecommendationReferenceOrBuilder
       getAssociatedRecommendationsOrBuilder(int index) {
     return associatedRecommendations_.get(index);
@@ -3517,6 +3550,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for category.
      */
+    @java.lang.Override
     public int getCategoryValue() {
       return category_;
     }
@@ -3533,6 +3567,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCategoryValue(int value) {
+
       category_ = value;
       onChanged();
       return this;
@@ -3548,6 +3583,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The category.
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1beta1.Insight.Category getCategory() {
       @SuppressWarnings("deprecation")
       com.google.cloud.recommender.v1beta1.Insight.Category result =

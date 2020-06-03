@@ -146,6 +146,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the cost field is set.
    */
+  @java.lang.Override
   public boolean hasCost() {
     return cost_ != null;
   }
@@ -162,6 +163,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cost.
    */
+  @java.lang.Override
   public com.google.type.Money getCost() {
     return cost_ == null ? com.google.type.Money.getDefaultInstance() : cost_;
   }
@@ -176,6 +178,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Money cost = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.MoneyOrBuilder getCostOrBuilder() {
     return getCost();
   }
@@ -193,6 +196,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the duration field is set.
    */
+  @java.lang.Override
   public boolean hasDuration() {
     return duration_ != null;
   }
@@ -207,6 +211,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The duration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
@@ -219,6 +224,7 @@ public final class CostProjection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
     return getDuration();
   }

@@ -581,6 +581,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The matchesPattern.
      */
+    @java.lang.Override
     public java.lang.String getMatchesPattern() {
       java.lang.Object ref = "";
       if (matchVariantCase_ == 1) {
@@ -610,6 +611,7 @@ public final class ValueMatcher extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for matchesPattern.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMatchesPatternBytes() {
       java.lang.Object ref = "";
       if (matchVariantCase_ == 1) {

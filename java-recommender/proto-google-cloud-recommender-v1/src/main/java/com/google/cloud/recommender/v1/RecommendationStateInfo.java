@@ -347,6 +347,10 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -394,6 +398,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -408,6 +413,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1.RecommendationStateInfo.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.recommender.v1.RecommendationStateInfo.State result =
@@ -453,6 +459,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public boolean containsStateMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -460,6 +467,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
     return internalGetStateMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getStateMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
     return getStateMetadataMap();
@@ -473,6 +481,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
     return internalGetStateMetadata().getMap();
   }
@@ -485,6 +494,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getStateMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -502,6 +512,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getStateMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -891,6 +902,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -907,6 +919,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -922,6 +935,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1.RecommendationStateInfo.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.recommender.v1.RecommendationStateInfo.State result =
@@ -1006,6 +1020,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public boolean containsStateMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1013,6 +1028,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
       return internalGetStateMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getStateMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
       return getStateMetadataMap();
@@ -1026,6 +1042,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
       return internalGetStateMetadata().getMap();
     }
@@ -1038,6 +1055,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getStateMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1055,6 +1073,7 @@ public final class RecommendationStateInfo extends com.google.protobuf.Generated
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getStateMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

@@ -138,6 +138,7 @@ public final class ListInsightsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Insight insights = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommender.v1beta1.Insight> getInsightsList() {
     return insights_;
   }
@@ -150,6 +151,7 @@ public final class ListInsightsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Insight insights = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.recommender.v1beta1.InsightOrBuilder>
       getInsightsOrBuilderList() {
     return insights_;
@@ -163,6 +165,7 @@ public final class ListInsightsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Insight insights = 1;</code>
    */
+  @java.lang.Override
   public int getInsightsCount() {
     return insights_.size();
   }
@@ -175,6 +178,7 @@ public final class ListInsightsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Insight insights = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Insight getInsights(int index) {
     return insights_.get(index);
   }
@@ -187,6 +191,7 @@ public final class ListInsightsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Insight insights = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.InsightOrBuilder getInsightsOrBuilder(int index) {
     return insights_.get(index);
   }
@@ -205,6 +210,7 @@ public final class ListInsightsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +234,7 @@ public final class ListInsightsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

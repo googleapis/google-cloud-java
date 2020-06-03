@@ -295,6 +295,10 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -342,6 +346,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -356,6 +361,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.InsightStateInfo.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.recommender.v1beta1.InsightStateInfo.State result =
@@ -401,6 +407,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public boolean containsStateMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -408,6 +415,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
     return internalGetStateMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getStateMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
     return getStateMetadataMap();
@@ -421,6 +429,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
     return internalGetStateMetadata().getMap();
   }
@@ -433,6 +442,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getStateMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -450,6 +460,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getStateMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -839,6 +850,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -855,6 +867,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -870,6 +883,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1beta1.InsightStateInfo.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.recommender.v1beta1.InsightStateInfo.State result =
@@ -954,6 +968,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public boolean containsStateMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -961,6 +976,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
       return internalGetStateMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getStateMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
       return getStateMetadataMap();
@@ -974,6 +990,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
       return internalGetStateMetadata().getMap();
     }
@@ -986,6 +1003,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getStateMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1003,6 +1021,7 @@ public final class InsightStateInfo extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getStateMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

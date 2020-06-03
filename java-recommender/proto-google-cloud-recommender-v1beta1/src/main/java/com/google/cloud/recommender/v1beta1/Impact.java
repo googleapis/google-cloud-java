@@ -295,6 +295,10 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -384,6 +388,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for category.
    */
+  @java.lang.Override
   public int getCategoryValue() {
     return category_;
   }
@@ -398,6 +403,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The category.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Impact.Category getCategory() {
     @SuppressWarnings("deprecation")
     com.google.cloud.recommender.v1beta1.Impact.Category result =
@@ -419,6 +425,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the costProjection field is set.
    */
+  @java.lang.Override
   public boolean hasCostProjection() {
     return projectionCase_ == 100;
   }
@@ -433,6 +440,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The costProjection.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.CostProjection getCostProjection() {
     if (projectionCase_ == 100) {
       return (com.google.cloud.recommender.v1beta1.CostProjection) projection_;
@@ -448,6 +456,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recommender.v1beta1.CostProjection cost_projection = 100;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.CostProjectionOrBuilder getCostProjectionOrBuilder() {
     if (projectionCase_ == 100) {
       return (com.google.cloud.recommender.v1beta1.CostProjection) projection_;
@@ -843,6 +852,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for category.
      */
+    @java.lang.Override
     public int getCategoryValue() {
       return category_;
     }
@@ -859,6 +869,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCategoryValue(int value) {
+
       category_ = value;
       onChanged();
       return this;
@@ -874,6 +885,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The category.
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1beta1.Impact.Category getCategory() {
       @SuppressWarnings("deprecation")
       com.google.cloud.recommender.v1beta1.Impact.Category result =
@@ -937,6 +949,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the costProjection field is set.
      */
+    @java.lang.Override
     public boolean hasCostProjection() {
       return projectionCase_ == 100;
     }
@@ -951,6 +964,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The costProjection.
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1beta1.CostProjection getCostProjection() {
       if (costProjectionBuilder_ == null) {
         if (projectionCase_ == 100) {
@@ -1084,6 +1098,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.recommender.v1beta1.CostProjection cost_projection = 100;</code>
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1beta1.CostProjectionOrBuilder
         getCostProjectionOrBuilder() {
       if ((projectionCase_ == 100) && (costProjectionBuilder_ != null)) {

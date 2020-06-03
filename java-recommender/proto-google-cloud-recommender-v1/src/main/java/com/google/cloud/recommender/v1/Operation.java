@@ -300,6 +300,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -324,6 +325,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -351,6 +353,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resourceType.
    */
+  @java.lang.Override
   public java.lang.String getResourceType() {
     java.lang.Object ref = resourceType_;
     if (ref instanceof java.lang.String) {
@@ -375,6 +378,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for resourceType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceTypeBytes() {
     java.lang.Object ref = resourceType_;
     if (ref instanceof java.lang.String) {
@@ -401,6 +405,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resource.
    */
+  @java.lang.Override
   public java.lang.String getResource() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -424,6 +429,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for resource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceBytes() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -450,6 +456,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The path.
    */
+  @java.lang.Override
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
@@ -473,6 +480,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for path.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPathBytes() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
@@ -502,6 +510,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sourceResource.
    */
+  @java.lang.Override
   public java.lang.String getSourceResource() {
     java.lang.Object ref = sourceResource_;
     if (ref instanceof java.lang.String) {
@@ -528,6 +537,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for sourceResource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceResourceBytes() {
     java.lang.Object ref = sourceResource_;
     if (ref instanceof java.lang.String) {
@@ -554,6 +564,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sourcePath.
    */
+  @java.lang.Override
   public java.lang.String getSourcePath() {
     java.lang.Object ref = sourcePath_;
     if (ref instanceof java.lang.String) {
@@ -577,6 +588,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for sourcePath.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourcePathBytes() {
     java.lang.Object ref = sourcePath_;
     if (ref instanceof java.lang.String) {
@@ -603,6 +615,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the value field is set.
    */
+  @java.lang.Override
   public boolean hasValue() {
     return pathValueCase_ == 7;
   }
@@ -619,6 +632,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public com.google.protobuf.Value getValue() {
     if (pathValueCase_ == 7) {
       return (com.google.protobuf.Value) pathValue_;
@@ -636,6 +650,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Value value = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
     if (pathValueCase_ == 7) {
       return (com.google.protobuf.Value) pathValue_;
@@ -656,6 +671,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the valueMatcher field is set.
    */
+  @java.lang.Override
   public boolean hasValueMatcher() {
     return pathValueCase_ == 10;
   }
@@ -671,6 +687,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The valueMatcher.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1.ValueMatcher getValueMatcher() {
     if (pathValueCase_ == 10) {
       return (com.google.cloud.recommender.v1.ValueMatcher) pathValue_;
@@ -687,6 +704,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recommender.v1.ValueMatcher value_matcher = 10;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1.ValueMatcherOrBuilder getValueMatcherOrBuilder() {
     if (pathValueCase_ == 10) {
       return (com.google.cloud.recommender.v1.ValueMatcher) pathValue_;
@@ -749,6 +767,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
+  @java.lang.Override
   public boolean containsPathFilters(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -756,6 +775,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     return internalGetPathFilters().getMap().containsKey(key);
   }
   /** Use {@link #getPathFiltersMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFilters() {
     return getPathFiltersMap();
@@ -787,6 +807,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFiltersMap() {
     return internalGetPathFilters().getMap();
   }
@@ -817,6 +838,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getPathFiltersOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
@@ -853,6 +875,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getPathFiltersOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -912,6 +935,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.recommender.v1.ValueMatcher&gt; path_value_matchers = 11;
    * </code>
    */
+  @java.lang.Override
   public boolean containsPathValueMatchers(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -919,6 +943,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     return internalGetPathValueMatchers().getMap().containsKey(key);
   }
   /** Use {@link #getPathValueMatchersMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher>
       getPathValueMatchers() {
@@ -938,6 +963,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.recommender.v1.ValueMatcher&gt; path_value_matchers = 11;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher>
       getPathValueMatchersMap() {
     return internalGetPathValueMatchers().getMap();
@@ -956,6 +982,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.recommender.v1.ValueMatcher&gt; path_value_matchers = 11;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrDefault(
       java.lang.String key, com.google.cloud.recommender.v1.ValueMatcher defaultValue) {
     if (key == null) {
@@ -979,6 +1006,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.recommender.v1.ValueMatcher&gt; path_value_matchers = 11;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -2263,6 +2291,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the value field is set.
      */
+    @java.lang.Override
     public boolean hasValue() {
       return pathValueCase_ == 7;
     }
@@ -2279,6 +2308,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public com.google.protobuf.Value getValue() {
       if (valueBuilder_ == null) {
         if (pathValueCase_ == 7) {
@@ -2420,6 +2450,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Value value = 7;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
       if ((pathValueCase_ == 7) && (valueBuilder_ != null)) {
         return valueBuilder_.getMessageOrBuilder();
@@ -2481,6 +2512,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the valueMatcher field is set.
      */
+    @java.lang.Override
     public boolean hasValueMatcher() {
       return pathValueCase_ == 10;
     }
@@ -2496,6 +2528,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The valueMatcher.
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1.ValueMatcher getValueMatcher() {
       if (valueMatcherBuilder_ == null) {
         if (pathValueCase_ == 10) {
@@ -2634,6 +2667,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.recommender.v1.ValueMatcher value_matcher = 10;</code>
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1.ValueMatcherOrBuilder getValueMatcherOrBuilder() {
       if ((pathValueCase_ == 10) && (valueMatcherBuilder_ != null)) {
         return valueMatcherBuilder_.getMessageOrBuilder();
@@ -2734,6 +2768,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
      */
+    @java.lang.Override
     public boolean containsPathFilters(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2741,6 +2776,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return internalGetPathFilters().getMap().containsKey(key);
     }
     /** Use {@link #getPathFiltersMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFilters() {
       return getPathFiltersMap();
@@ -2772,6 +2808,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getPathFiltersMap() {
       return internalGetPathFilters().getMap();
     }
@@ -2802,6 +2839,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getPathFiltersOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
@@ -2838,6 +2876,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; path_filters = 8;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getPathFiltersOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3010,6 +3049,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.recommender.v1.ValueMatcher&gt; path_value_matchers = 11;
      * </code>
      */
+    @java.lang.Override
     public boolean containsPathValueMatchers(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3017,6 +3057,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       return internalGetPathValueMatchers().getMap().containsKey(key);
     }
     /** Use {@link #getPathValueMatchersMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher>
         getPathValueMatchers() {
@@ -3036,6 +3077,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.recommender.v1.ValueMatcher&gt; path_value_matchers = 11;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.recommender.v1.ValueMatcher>
         getPathValueMatchersMap() {
       return internalGetPathValueMatchers().getMap();
@@ -3054,6 +3096,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.recommender.v1.ValueMatcher&gt; path_value_matchers = 11;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrDefault(
         java.lang.String key, com.google.cloud.recommender.v1.ValueMatcher defaultValue) {
       if (key == null) {
@@ -3077,6 +3120,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.recommender.v1.ValueMatcher&gt; path_value_matchers = 11;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommender.v1.ValueMatcher getPathValueMatchersOrThrow(
         java.lang.String key) {
       if (key == null) {

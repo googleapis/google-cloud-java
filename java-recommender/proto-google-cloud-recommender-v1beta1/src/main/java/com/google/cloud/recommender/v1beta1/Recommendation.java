@@ -376,6 +376,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The insight.
      */
+    @java.lang.Override
     public java.lang.String getInsight() {
       java.lang.Object ref = insight_;
       if (ref instanceof java.lang.String) {
@@ -399,6 +400,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for insight.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getInsightBytes() {
       java.lang.Object ref = insight_;
       if (ref instanceof java.lang.String) {
@@ -922,6 +924,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -944,6 +947,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -970,6 +974,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -993,6 +998,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1025,6 +1031,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The recommenderSubtype.
    */
+  @java.lang.Override
   public java.lang.String getRecommenderSubtype() {
     java.lang.Object ref = recommenderSubtype_;
     if (ref instanceof java.lang.String) {
@@ -1054,6 +1061,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for recommenderSubtype.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRecommenderSubtypeBytes() {
     java.lang.Object ref = recommenderSubtype_;
     if (ref instanceof java.lang.String) {
@@ -1080,6 +1088,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastRefreshTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastRefreshTime() {
     return lastRefreshTime_ != null;
   }
@@ -1095,6 +1104,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastRefreshTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastRefreshTime() {
     return lastRefreshTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1110,6 +1120,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_refresh_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastRefreshTimeOrBuilder() {
     return getLastRefreshTime();
   }
@@ -1128,6 +1139,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the primaryImpact field is set.
    */
+  @java.lang.Override
   public boolean hasPrimaryImpact() {
     return primaryImpact_ != null;
   }
@@ -1143,6 +1155,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The primaryImpact.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Impact getPrimaryImpact() {
     return primaryImpact_ == null
         ? com.google.cloud.recommender.v1beta1.Impact.getDefaultInstance()
@@ -1158,6 +1171,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recommender.v1beta1.Impact primary_impact = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.ImpactOrBuilder getPrimaryImpactOrBuilder() {
     return getPrimaryImpact();
   }
@@ -1175,6 +1189,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Impact additional_impact = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommender.v1beta1.Impact> getAdditionalImpactList() {
     return additionalImpact_;
   }
@@ -1189,6 +1204,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Impact additional_impact = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.recommender.v1beta1.ImpactOrBuilder>
       getAdditionalImpactOrBuilderList() {
     return additionalImpact_;
@@ -1204,6 +1220,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Impact additional_impact = 6;</code>
    */
+  @java.lang.Override
   public int getAdditionalImpactCount() {
     return additionalImpact_.size();
   }
@@ -1218,6 +1235,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Impact additional_impact = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Impact getAdditionalImpact(int index) {
     return additionalImpact_.get(index);
   }
@@ -1232,6 +1250,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.recommender.v1beta1.Impact additional_impact = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.ImpactOrBuilder getAdditionalImpactOrBuilder(
       int index) {
     return additionalImpact_.get(index);
@@ -1250,6 +1269,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the content field is set.
    */
+  @java.lang.Override
   public boolean hasContent() {
     return content_ != null;
   }
@@ -1264,6 +1284,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The content.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.RecommendationContent getContent() {
     return content_ == null
         ? com.google.cloud.recommender.v1beta1.RecommendationContent.getDefaultInstance()
@@ -1278,6 +1299,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationContent content = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.RecommendationContentOrBuilder getContentOrBuilder() {
     return getContent();
   }
@@ -1295,6 +1317,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the stateInfo field is set.
    */
+  @java.lang.Override
   public boolean hasStateInfo() {
     return stateInfo_ != null;
   }
@@ -1309,6 +1332,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stateInfo.
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.RecommendationStateInfo getStateInfo() {
     return stateInfo_ == null
         ? com.google.cloud.recommender.v1beta1.RecommendationStateInfo.getDefaultInstance()
@@ -1323,6 +1347,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recommender.v1beta1.RecommendationStateInfo state_info = 10;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.RecommendationStateInfoOrBuilder
       getStateInfoOrBuilder() {
     return getStateInfo();
@@ -1342,6 +1367,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1365,6 +1391,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1391,6 +1418,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommender.v1beta1.Recommendation.InsightReference>
       getAssociatedInsightsList() {
     return associatedInsights_;
@@ -1406,6 +1434,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.recommender.v1beta1.Recommendation.InsightReferenceOrBuilder>
       getAssociatedInsightsOrBuilderList() {
@@ -1422,6 +1451,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
    * </code>
    */
+  @java.lang.Override
   public int getAssociatedInsightsCount() {
     return associatedInsights_.size();
   }
@@ -1436,6 +1466,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Recommendation.InsightReference getAssociatedInsights(
       int index) {
     return associatedInsights_.get(index);
@@ -1451,6 +1482,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommender.v1beta1.Recommendation.InsightReference associated_insights = 14;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommender.v1beta1.Recommendation.InsightReferenceOrBuilder
       getAssociatedInsightsOrBuilder(int index) {
     return associatedInsights_.get(index);

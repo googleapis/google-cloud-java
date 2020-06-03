@@ -164,6 +164,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +189,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +241,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public boolean containsStateMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -246,6 +249,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
     return internalGetStateMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getStateMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
     return getStateMetadataMap();
@@ -262,6 +266,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
     return internalGetStateMetadata().getMap();
   }
@@ -277,6 +282,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getStateMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -297,6 +303,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
    *
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getStateMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -321,6 +328,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -343,6 +351,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -894,6 +903,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public boolean containsStateMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -901,6 +911,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
       return internalGetStateMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getStateMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
       return getStateMetadataMap();
@@ -917,6 +928,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
       return internalGetStateMetadata().getMap();
     }
@@ -932,6 +944,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getStateMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -952,6 +965,7 @@ public final class MarkRecommendationFailedRequest extends com.google.protobuf.G
      *
      * <code>map&lt;string, string&gt; state_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getStateMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
