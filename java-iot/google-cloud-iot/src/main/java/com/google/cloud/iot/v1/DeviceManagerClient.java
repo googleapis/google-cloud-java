@@ -52,9 +52,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   DeviceRegistry deviceRegistry = DeviceRegistry.newBuilder().build();
- *   DeviceRegistry response = deviceManagerClient.createDeviceRegistry(parent, deviceRegistry);
+ *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+ *   deviceManagerClient.deleteDeviceRegistry(name);
  * }
  * </code>
  * </pre>
@@ -161,6 +160,537 @@ public class DeviceManagerClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DeviceManagerStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a device registry configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   deviceManagerClient.deleteDeviceRegistry(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device registry. For example,
+   *     `projects/example-project/locations/us-central1/registries/my-registry`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDeviceRegistry(RegistryName name) {
+    DeleteDeviceRegistryRequest request =
+        DeleteDeviceRegistryRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteDeviceRegistry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a device registry configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   deviceManagerClient.deleteDeviceRegistry(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device registry. For example,
+   *     `projects/example-project/locations/us-central1/registries/my-registry`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDeviceRegistry(String name) {
+    DeleteDeviceRegistryRequest request =
+        DeleteDeviceRegistryRequest.newBuilder().setName(name).build();
+    deleteDeviceRegistry(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a device registry configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   DeleteDeviceRegistryRequest request = DeleteDeviceRegistryRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   deviceManagerClient.deleteDeviceRegistry(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDeviceRegistry(DeleteDeviceRegistryRequest request) {
+    deleteDeviceRegistryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a device registry configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   DeleteDeviceRegistryRequest request = DeleteDeviceRegistryRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = deviceManagerClient.deleteDeviceRegistryCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable() {
+    return stub.deleteDeviceRegistryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   deviceManagerClient.deleteDevice(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDevice(DeviceName name) {
+    DeleteDeviceRequest request =
+        DeleteDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   deviceManagerClient.deleteDevice(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDevice(String name) {
+    DeleteDeviceRequest request = DeleteDeviceRequest.newBuilder().setName(name).build();
+    deleteDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   DeleteDeviceRequest request = DeleteDeviceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   deviceManagerClient.deleteDevice(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDevice(DeleteDeviceRequest request) {
+    deleteDeviceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   DeleteDeviceRequest request = DeleteDeviceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = deviceManagerClient.deleteDeviceCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable() {
+    return stub.deleteDeviceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core
+   * servers. Returns the modified configuration version and its metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   DeviceConfig response = deviceManagerClient.modifyCloudToDeviceConfig(name, binaryData);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData Required. The configuration data for the device.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeviceConfig modifyCloudToDeviceConfig(DeviceName name, ByteString binaryData) {
+    ModifyCloudToDeviceConfigRequest request =
+        ModifyCloudToDeviceConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setBinaryData(binaryData)
+            .build();
+    return modifyCloudToDeviceConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core
+   * servers. Returns the modified configuration version and its metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   DeviceConfig response = deviceManagerClient.modifyCloudToDeviceConfig(name.toString(), binaryData);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData Required. The configuration data for the device.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeviceConfig modifyCloudToDeviceConfig(String name, ByteString binaryData) {
+    ModifyCloudToDeviceConfigRequest request =
+        ModifyCloudToDeviceConfigRequest.newBuilder()
+            .setName(name)
+            .setBinaryData(binaryData)
+            .build();
+    return modifyCloudToDeviceConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core
+   * servers. Returns the modified configuration version and its metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   ModifyCloudToDeviceConfigRequest request = ModifyCloudToDeviceConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setBinaryData(binaryData)
+   *     .build();
+   *   DeviceConfig response = deviceManagerClient.modifyCloudToDeviceConfig(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeviceConfig modifyCloudToDeviceConfig(ModifyCloudToDeviceConfigRequest request) {
+    return modifyCloudToDeviceConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core
+   * servers. Returns the modified configuration version and its metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   ModifyCloudToDeviceConfigRequest request = ModifyCloudToDeviceConfigRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setBinaryData(binaryData)
+   *     .build();
+   *   ApiFuture&lt;DeviceConfig&gt; future = deviceManagerClient.modifyCloudToDeviceConfigCallable().futureCall(request);
+   *   // Do something
+   *   DeviceConfig response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+      modifyCloudToDeviceConfigCallable() {
+    return stub.modifyCloudToDeviceConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name, binaryData);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData Required. The command data to send to the device.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(
+      DeviceName name, ByteString binaryData) {
+    SendCommandToDeviceRequest request =
+        SendCommandToDeviceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setBinaryData(binaryData)
+            .build();
+    return sendCommandToDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name.toString(), binaryData);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData Required. The command data to send to the device.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(String name, ByteString binaryData) {
+    SendCommandToDeviceRequest request =
+        SendCommandToDeviceRequest.newBuilder().setName(name).setBinaryData(binaryData).build();
+    return sendCommandToDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   String subfolder = "";
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name, binaryData, subfolder);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData Required. The command data to send to the device.
+   * @param subfolder Optional subfolder for the command. If empty, the command will be delivered to
+   *     the /devices/{device-id}/commands topic, otherwise it will be delivered to the
+   *     /devices/{device-id}/commands/{subfolder} topic. Multi-level subfolders are allowed. This
+   *     field must not have more than 256 characters, and must not contain any MQTT wildcards ("+"
+   *     or "#") or null characters.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(
+      DeviceName name, ByteString binaryData, String subfolder) {
+    SendCommandToDeviceRequest request =
+        SendCommandToDeviceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setBinaryData(binaryData)
+            .setSubfolder(subfolder)
+            .build();
+    return sendCommandToDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   String subfolder = "";
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name.toString(), binaryData, subfolder);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData Required. The command data to send to the device.
+   * @param subfolder Optional subfolder for the command. If empty, the command will be delivered to
+   *     the /devices/{device-id}/commands topic, otherwise it will be delivered to the
+   *     /devices/{device-id}/commands/{subfolder} topic. Multi-level subfolders are allowed. This
+   *     field must not have more than 256 characters, and must not contain any MQTT wildcards ("+"
+   *     or "#") or null characters.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(
+      String name, ByteString binaryData, String subfolder) {
+    SendCommandToDeviceRequest request =
+        SendCommandToDeviceRequest.newBuilder()
+            .setName(name)
+            .setBinaryData(binaryData)
+            .setSubfolder(subfolder)
+            .build();
+    return sendCommandToDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   SendCommandToDeviceRequest request = SendCommandToDeviceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setBinaryData(binaryData)
+   *     .build();
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(SendCommandToDeviceRequest request) {
+    return sendCommandToDeviceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   SendCommandToDeviceRequest request = SendCommandToDeviceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setBinaryData(binaryData)
+   *     .build();
+   *   ApiFuture&lt;SendCommandToDeviceResponse&gt; future = deviceManagerClient.sendCommandToDeviceCallable().futureCall(request);
+   *   // Do something
+   *   SendCommandToDeviceResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceCallable() {
+    return stub.sendCommandToDeviceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -445,99 +975,6 @@ public class DeviceManagerClient implements BackgroundResource {
   public final UnaryCallable<UpdateDeviceRegistryRequest, DeviceRegistry>
       updateDeviceRegistryCallable() {
     return stub.updateDeviceRegistryCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a device registry configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
-   *   deviceManagerClient.deleteDeviceRegistry(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device registry. For example,
-   *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeviceRegistry(RegistryName name) {
-    DeleteDeviceRegistryRequest request =
-        DeleteDeviceRegistryRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteDeviceRegistry(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a device registry configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
-   *   deviceManagerClient.deleteDeviceRegistry(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device registry. For example,
-   *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeviceRegistry(String name) {
-    DeleteDeviceRegistryRequest request =
-        DeleteDeviceRegistryRequest.newBuilder().setName(name).build();
-    deleteDeviceRegistry(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a device registry configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
-   *   DeleteDeviceRegistryRequest request = DeleteDeviceRegistryRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   deviceManagerClient.deleteDeviceRegistry(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDeviceRegistry(DeleteDeviceRegistryRequest request) {
-    deleteDeviceRegistryCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a device registry configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
-   *   DeleteDeviceRegistryRequest request = DeleteDeviceRegistryRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = deviceManagerClient.deleteDeviceRegistryCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable() {
-    return stub.deleteDeviceRegistryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -951,98 +1388,6 @@ public class DeviceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   deviceManagerClient.deleteDevice(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device. For example,
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDevice(DeviceName name) {
-    DeleteDeviceRequest request =
-        DeleteDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteDevice(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   deviceManagerClient.deleteDevice(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device. For example,
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDevice(String name) {
-    DeleteDeviceRequest request = DeleteDeviceRequest.newBuilder().setName(name).build();
-    deleteDevice(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   DeleteDeviceRequest request = DeleteDeviceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   deviceManagerClient.deleteDevice(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteDevice(DeleteDeviceRequest request) {
-    deleteDeviceCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   DeleteDeviceRequest request = DeleteDeviceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = deviceManagerClient.deleteDeviceCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable() {
-    return stub.deleteDeviceCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * List devices in a device registry.
    *
    * <p>Sample code:
@@ -1171,118 +1516,6 @@ public class DeviceManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<ListDevicesRequest, ListDevicesResponse> listDevicesCallable() {
     return stub.listDevicesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core
-   * servers. Returns the modified configuration version and its metadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   DeviceConfig response = deviceManagerClient.modifyCloudToDeviceConfig(name, binaryData);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device. For example,
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData Required. The configuration data for the device.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final DeviceConfig modifyCloudToDeviceConfig(DeviceName name, ByteString binaryData) {
-    ModifyCloudToDeviceConfigRequest request =
-        ModifyCloudToDeviceConfigRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setBinaryData(binaryData)
-            .build();
-    return modifyCloudToDeviceConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core
-   * servers. Returns the modified configuration version and its metadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   DeviceConfig response = deviceManagerClient.modifyCloudToDeviceConfig(name.toString(), binaryData);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device. For example,
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData Required. The configuration data for the device.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final DeviceConfig modifyCloudToDeviceConfig(String name, ByteString binaryData) {
-    ModifyCloudToDeviceConfigRequest request =
-        ModifyCloudToDeviceConfigRequest.newBuilder()
-            .setName(name)
-            .setBinaryData(binaryData)
-            .build();
-    return modifyCloudToDeviceConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core
-   * servers. Returns the modified configuration version and its metadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   ModifyCloudToDeviceConfigRequest request = ModifyCloudToDeviceConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setBinaryData(binaryData)
-   *     .build();
-   *   DeviceConfig response = deviceManagerClient.modifyCloudToDeviceConfig(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final DeviceConfig modifyCloudToDeviceConfig(ModifyCloudToDeviceConfigRequest request) {
-    return modifyCloudToDeviceConfigCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Modifies the configuration for the device, which is eventually sent from the Cloud IoT Core
-   * servers. Returns the modified configuration version and its metadata.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   ModifyCloudToDeviceConfigRequest request = ModifyCloudToDeviceConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setBinaryData(binaryData)
-   *     .build();
-   *   ApiFuture&lt;DeviceConfig&gt; future = deviceManagerClient.modifyCloudToDeviceConfigCallable().futureCall(request);
-   *   // Do something
-   *   DeviceConfig response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-      modifyCloudToDeviceConfigCallable() {
-    return stub.modifyCloudToDeviceConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1795,240 +2028,6 @@ public class DeviceManagerClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends a command to the specified device. In order for a device to be able to receive commands,
-   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
-   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
-   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
-   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
-   * subfolders is not supported. If the command could not be delivered to the device, this method
-   * will return an error; in particular, if the device is not subscribed, this method will return
-   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
-   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
-   * device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name, binaryData);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device. For example,
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData Required. The command data to send to the device.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SendCommandToDeviceResponse sendCommandToDevice(
-      DeviceName name, ByteString binaryData) {
-    SendCommandToDeviceRequest request =
-        SendCommandToDeviceRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setBinaryData(binaryData)
-            .build();
-    return sendCommandToDevice(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends a command to the specified device. In order for a device to be able to receive commands,
-   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
-   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
-   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
-   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
-   * subfolders is not supported. If the command could not be delivered to the device, this method
-   * will return an error; in particular, if the device is not subscribed, this method will return
-   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
-   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
-   * device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name.toString(), binaryData);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device. For example,
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData Required. The command data to send to the device.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SendCommandToDeviceResponse sendCommandToDevice(String name, ByteString binaryData) {
-    SendCommandToDeviceRequest request =
-        SendCommandToDeviceRequest.newBuilder().setName(name).setBinaryData(binaryData).build();
-    return sendCommandToDevice(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends a command to the specified device. In order for a device to be able to receive commands,
-   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
-   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
-   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
-   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
-   * subfolders is not supported. If the command could not be delivered to the device, this method
-   * will return an error; in particular, if the device is not subscribed, this method will return
-   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
-   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
-   * device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   String subfolder = "";
-   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name, binaryData, subfolder);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device. For example,
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData Required. The command data to send to the device.
-   * @param subfolder Optional subfolder for the command. If empty, the command will be delivered to
-   *     the /devices/{device-id}/commands topic, otherwise it will be delivered to the
-   *     /devices/{device-id}/commands/{subfolder} topic. Multi-level subfolders are allowed. This
-   *     field must not have more than 256 characters, and must not contain any MQTT wildcards ("+"
-   *     or "#") or null characters.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SendCommandToDeviceResponse sendCommandToDevice(
-      DeviceName name, ByteString binaryData, String subfolder) {
-    SendCommandToDeviceRequest request =
-        SendCommandToDeviceRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setBinaryData(binaryData)
-            .setSubfolder(subfolder)
-            .build();
-    return sendCommandToDevice(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends a command to the specified device. In order for a device to be able to receive commands,
-   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
-   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
-   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
-   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
-   * subfolders is not supported. If the command could not be delivered to the device, this method
-   * will return an error; in particular, if the device is not subscribed, this method will return
-   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
-   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
-   * device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   String subfolder = "";
-   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name.toString(), binaryData, subfolder);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the device. For example,
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
-   * @param binaryData Required. The command data to send to the device.
-   * @param subfolder Optional subfolder for the command. If empty, the command will be delivered to
-   *     the /devices/{device-id}/commands topic, otherwise it will be delivered to the
-   *     /devices/{device-id}/commands/{subfolder} topic. Multi-level subfolders are allowed. This
-   *     field must not have more than 256 characters, and must not contain any MQTT wildcards ("+"
-   *     or "#") or null characters.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SendCommandToDeviceResponse sendCommandToDevice(
-      String name, ByteString binaryData, String subfolder) {
-    SendCommandToDeviceRequest request =
-        SendCommandToDeviceRequest.newBuilder()
-            .setName(name)
-            .setBinaryData(binaryData)
-            .setSubfolder(subfolder)
-            .build();
-    return sendCommandToDevice(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends a command to the specified device. In order for a device to be able to receive commands,
-   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
-   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
-   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
-   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
-   * subfolders is not supported. If the command could not be delivered to the device, this method
-   * will return an error; in particular, if the device is not subscribed, this method will return
-   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
-   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
-   * device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   SendCommandToDeviceRequest request = SendCommandToDeviceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setBinaryData(binaryData)
-   *     .build();
-   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SendCommandToDeviceResponse sendCommandToDevice(SendCommandToDeviceRequest request) {
-    return sendCommandToDeviceCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends a command to the specified device. In order for a device to be able to receive commands,
-   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
-   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
-   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
-   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
-   * subfolders is not supported. If the command could not be delivered to the device, this method
-   * will return an error; in particular, if the device is not subscribed, this method will return
-   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
-   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
-   * device.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
-   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-   *   ByteString binaryData = ByteString.copyFromUtf8("");
-   *   SendCommandToDeviceRequest request = SendCommandToDeviceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setBinaryData(binaryData)
-   *     .build();
-   *   ApiFuture&lt;SendCommandToDeviceResponse&gt; future = deviceManagerClient.sendCommandToDeviceCallable().futureCall(request);
-   *   // Do something
-   *   SendCommandToDeviceResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-      sendCommandToDeviceCallable() {
-    return stub.sendCommandToDeviceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

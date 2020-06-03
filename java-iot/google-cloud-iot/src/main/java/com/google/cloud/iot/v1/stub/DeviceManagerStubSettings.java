@@ -96,16 +96,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createDeviceRegistry to 30 seconds:
+ * <p>For example, to set the total timeout of deleteDeviceRegistry to 30 seconds:
  *
  * <pre>
  * <code>
  * DeviceManagerStubSettings.Builder deviceManagerSettingsBuilder =
  *     DeviceManagerStubSettings.newBuilder();
  * deviceManagerSettingsBuilder
- *     .createDeviceRegistrySettings()
+ *     .deleteDeviceRegistrySettings()
  *     .setRetrySettings(
- *         deviceManagerSettingsBuilder.createDeviceRegistrySettings().getRetrySettings().toBuilder()
+ *         deviceManagerSettingsBuilder.deleteDeviceRegistrySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DeviceManagerStubSettings deviceManagerSettings = deviceManagerSettingsBuilder.build();
@@ -122,13 +122,18 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
           .add("https://www.googleapis.com/auth/cloudiot")
           .build();
 
+  private final UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings;
+  private final UnaryCallSettings<DeleteDeviceRequest, Empty> deleteDeviceSettings;
+  private final UnaryCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+      modifyCloudToDeviceConfigSettings;
+  private final UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceSettings;
   private final UnaryCallSettings<CreateDeviceRegistryRequest, DeviceRegistry>
       createDeviceRegistrySettings;
   private final UnaryCallSettings<GetDeviceRegistryRequest, DeviceRegistry>
       getDeviceRegistrySettings;
   private final UnaryCallSettings<UpdateDeviceRegistryRequest, DeviceRegistry>
       updateDeviceRegistrySettings;
-  private final UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings;
   private final PagedCallSettings<
           ListDeviceRegistriesRequest,
           ListDeviceRegistriesResponse,
@@ -137,11 +142,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   private final UnaryCallSettings<CreateDeviceRequest, Device> createDeviceSettings;
   private final UnaryCallSettings<GetDeviceRequest, Device> getDeviceSettings;
   private final UnaryCallSettings<UpdateDeviceRequest, Device> updateDeviceSettings;
-  private final UnaryCallSettings<DeleteDeviceRequest, Empty> deleteDeviceSettings;
   private final PagedCallSettings<ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>
       listDevicesSettings;
-  private final UnaryCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-      modifyCloudToDeviceConfigSettings;
   private final UnaryCallSettings<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
       listDeviceConfigVersionsSettings;
   private final UnaryCallSettings<ListDeviceStatesRequest, ListDeviceStatesResponse>
@@ -150,12 +152,32 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
-  private final UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-      sendCommandToDeviceSettings;
   private final UnaryCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
       bindDeviceToGatewaySettings;
   private final UnaryCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
       unbindDeviceFromGatewaySettings;
+
+  /** Returns the object with the settings used for calls to deleteDeviceRegistry. */
+  public UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings() {
+    return deleteDeviceRegistrySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDevice. */
+  public UnaryCallSettings<DeleteDeviceRequest, Empty> deleteDeviceSettings() {
+    return deleteDeviceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to modifyCloudToDeviceConfig. */
+  public UnaryCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+      modifyCloudToDeviceConfigSettings() {
+    return modifyCloudToDeviceConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to sendCommandToDevice. */
+  public UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceSettings() {
+    return sendCommandToDeviceSettings;
+  }
 
   /** Returns the object with the settings used for calls to createDeviceRegistry. */
   public UnaryCallSettings<CreateDeviceRegistryRequest, DeviceRegistry>
@@ -172,11 +194,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   public UnaryCallSettings<UpdateDeviceRegistryRequest, DeviceRegistry>
       updateDeviceRegistrySettings() {
     return updateDeviceRegistrySettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteDeviceRegistry. */
-  public UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings() {
-    return deleteDeviceRegistrySettings;
   }
 
   /** Returns the object with the settings used for calls to listDeviceRegistries. */
@@ -203,21 +220,10 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     return updateDeviceSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteDevice. */
-  public UnaryCallSettings<DeleteDeviceRequest, Empty> deleteDeviceSettings() {
-    return deleteDeviceSettings;
-  }
-
   /** Returns the object with the settings used for calls to listDevices. */
   public PagedCallSettings<ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>
       listDevicesSettings() {
     return listDevicesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to modifyCloudToDeviceConfig. */
-  public UnaryCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-      modifyCloudToDeviceConfigSettings() {
-    return modifyCloudToDeviceConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to listDeviceConfigVersions. */
@@ -246,12 +252,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to sendCommandToDevice. */
-  public UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-      sendCommandToDeviceSettings() {
-    return sendCommandToDeviceSettings;
   }
 
   /** Returns the object with the settings used for calls to bindDeviceToGateway. */
@@ -335,23 +335,23 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   protected DeviceManagerStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteDeviceRegistrySettings = settingsBuilder.deleteDeviceRegistrySettings().build();
+    deleteDeviceSettings = settingsBuilder.deleteDeviceSettings().build();
+    modifyCloudToDeviceConfigSettings = settingsBuilder.modifyCloudToDeviceConfigSettings().build();
+    sendCommandToDeviceSettings = settingsBuilder.sendCommandToDeviceSettings().build();
     createDeviceRegistrySettings = settingsBuilder.createDeviceRegistrySettings().build();
     getDeviceRegistrySettings = settingsBuilder.getDeviceRegistrySettings().build();
     updateDeviceRegistrySettings = settingsBuilder.updateDeviceRegistrySettings().build();
-    deleteDeviceRegistrySettings = settingsBuilder.deleteDeviceRegistrySettings().build();
     listDeviceRegistriesSettings = settingsBuilder.listDeviceRegistriesSettings().build();
     createDeviceSettings = settingsBuilder.createDeviceSettings().build();
     getDeviceSettings = settingsBuilder.getDeviceSettings().build();
     updateDeviceSettings = settingsBuilder.updateDeviceSettings().build();
-    deleteDeviceSettings = settingsBuilder.deleteDeviceSettings().build();
     listDevicesSettings = settingsBuilder.listDevicesSettings().build();
-    modifyCloudToDeviceConfigSettings = settingsBuilder.modifyCloudToDeviceConfigSettings().build();
     listDeviceConfigVersionsSettings = settingsBuilder.listDeviceConfigVersionsSettings().build();
     listDeviceStatesSettings = settingsBuilder.listDeviceStatesSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
-    sendCommandToDeviceSettings = settingsBuilder.sendCommandToDeviceSettings().build();
     bindDeviceToGatewaySettings = settingsBuilder.bindDeviceToGatewaySettings().build();
     unbindDeviceFromGatewaySettings = settingsBuilder.unbindDeviceFromGatewaySettings().build();
   }
@@ -476,14 +476,19 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   public static class Builder extends StubSettings.Builder<DeviceManagerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
+        deleteDeviceRegistrySettings;
+    private final UnaryCallSettings.Builder<DeleteDeviceRequest, Empty> deleteDeviceSettings;
+    private final UnaryCallSettings.Builder<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+        modifyCloudToDeviceConfigSettings;
+    private final UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+        sendCommandToDeviceSettings;
     private final UnaryCallSettings.Builder<CreateDeviceRegistryRequest, DeviceRegistry>
         createDeviceRegistrySettings;
     private final UnaryCallSettings.Builder<GetDeviceRegistryRequest, DeviceRegistry>
         getDeviceRegistrySettings;
     private final UnaryCallSettings.Builder<UpdateDeviceRegistryRequest, DeviceRegistry>
         updateDeviceRegistrySettings;
-    private final UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
-        deleteDeviceRegistrySettings;
     private final PagedCallSettings.Builder<
             ListDeviceRegistriesRequest,
             ListDeviceRegistriesResponse,
@@ -492,12 +497,9 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     private final UnaryCallSettings.Builder<CreateDeviceRequest, Device> createDeviceSettings;
     private final UnaryCallSettings.Builder<GetDeviceRequest, Device> getDeviceSettings;
     private final UnaryCallSettings.Builder<UpdateDeviceRequest, Device> updateDeviceSettings;
-    private final UnaryCallSettings.Builder<DeleteDeviceRequest, Empty> deleteDeviceSettings;
     private final PagedCallSettings.Builder<
             ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>
         listDevicesSettings;
-    private final UnaryCallSettings.Builder<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-        modifyCloudToDeviceConfigSettings;
     private final UnaryCallSettings.Builder<
             ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
         listDeviceConfigVersionsSettings;
@@ -507,8 +509,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
-    private final UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-        sendCommandToDeviceSettings;
     private final UnaryCallSettings.Builder<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
         bindDeviceToGatewaySettings;
     private final UnaryCallSettings.Builder<
@@ -527,6 +527,13 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "rate_limited_aware",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.RESOURCE_EXHAUSTED,
+                  StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -543,9 +550,20 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(120000L))
               .build();
       definitions.put("default", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setTotalTimeout(Duration.ofMillis(120000L))
+              .build();
+      definitions.put("rate_limited_aware", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -556,13 +574,19 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      modifyCloudToDeviceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      sendCommandToDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteDeviceRegistrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listDeviceRegistriesSettings =
           PagedCallSettings.newBuilder(LIST_DEVICE_REGISTRIES_PAGE_STR_FACT);
@@ -573,11 +597,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
       updateDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDevicesSettings = PagedCallSettings.newBuilder(LIST_DEVICES_PAGE_STR_FACT);
-
-      modifyCloudToDeviceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listDeviceConfigVersionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -589,31 +609,29 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      sendCommandToDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       bindDeviceToGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unbindDeviceFromGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteDeviceRegistrySettings,
+              deleteDeviceSettings,
+              modifyCloudToDeviceConfigSettings,
+              sendCommandToDeviceSettings,
               createDeviceRegistrySettings,
               getDeviceRegistrySettings,
               updateDeviceRegistrySettings,
-              deleteDeviceRegistrySettings,
               listDeviceRegistriesSettings,
               createDeviceSettings,
               getDeviceSettings,
               updateDeviceSettings,
-              deleteDeviceSettings,
               listDevicesSettings,
-              modifyCloudToDeviceConfigSettings,
               listDeviceConfigVersionsSettings,
               listDeviceStatesSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings,
-              sendCommandToDeviceSettings,
               bindDeviceToGatewaySettings,
               unbindDeviceFromGatewaySettings);
 
@@ -632,6 +650,26 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .deleteDeviceRegistrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .modifyCloudToDeviceConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("rate_limited_aware"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("rate_limited_aware"));
+
+      builder
+          .sendCommandToDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("rate_limited_aware"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("rate_limited_aware"));
+
+      builder
           .createDeviceRegistrySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -643,11 +681,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
       builder
           .updateDeviceRegistrySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteDeviceRegistrySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -672,18 +705,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listDevicesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .modifyCloudToDeviceConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -712,11 +735,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .sendCommandToDeviceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .bindDeviceToGatewaySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -732,45 +750,45 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     protected Builder(DeviceManagerStubSettings settings) {
       super(settings);
 
+      deleteDeviceRegistrySettings = settings.deleteDeviceRegistrySettings.toBuilder();
+      deleteDeviceSettings = settings.deleteDeviceSettings.toBuilder();
+      modifyCloudToDeviceConfigSettings = settings.modifyCloudToDeviceConfigSettings.toBuilder();
+      sendCommandToDeviceSettings = settings.sendCommandToDeviceSettings.toBuilder();
       createDeviceRegistrySettings = settings.createDeviceRegistrySettings.toBuilder();
       getDeviceRegistrySettings = settings.getDeviceRegistrySettings.toBuilder();
       updateDeviceRegistrySettings = settings.updateDeviceRegistrySettings.toBuilder();
-      deleteDeviceRegistrySettings = settings.deleteDeviceRegistrySettings.toBuilder();
       listDeviceRegistriesSettings = settings.listDeviceRegistriesSettings.toBuilder();
       createDeviceSettings = settings.createDeviceSettings.toBuilder();
       getDeviceSettings = settings.getDeviceSettings.toBuilder();
       updateDeviceSettings = settings.updateDeviceSettings.toBuilder();
-      deleteDeviceSettings = settings.deleteDeviceSettings.toBuilder();
       listDevicesSettings = settings.listDevicesSettings.toBuilder();
-      modifyCloudToDeviceConfigSettings = settings.modifyCloudToDeviceConfigSettings.toBuilder();
       listDeviceConfigVersionsSettings = settings.listDeviceConfigVersionsSettings.toBuilder();
       listDeviceStatesSettings = settings.listDeviceStatesSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
-      sendCommandToDeviceSettings = settings.sendCommandToDeviceSettings.toBuilder();
       bindDeviceToGatewaySettings = settings.bindDeviceToGatewaySettings.toBuilder();
       unbindDeviceFromGatewaySettings = settings.unbindDeviceFromGatewaySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteDeviceRegistrySettings,
+              deleteDeviceSettings,
+              modifyCloudToDeviceConfigSettings,
+              sendCommandToDeviceSettings,
               createDeviceRegistrySettings,
               getDeviceRegistrySettings,
               updateDeviceRegistrySettings,
-              deleteDeviceRegistrySettings,
               listDeviceRegistriesSettings,
               createDeviceSettings,
               getDeviceSettings,
               updateDeviceSettings,
-              deleteDeviceSettings,
               listDevicesSettings,
-              modifyCloudToDeviceConfigSettings,
               listDeviceConfigVersionsSettings,
               listDeviceStatesSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings,
-              sendCommandToDeviceSettings,
               bindDeviceToGatewaySettings,
               unbindDeviceFromGatewaySettings);
     }
@@ -791,6 +809,29 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to deleteDeviceRegistry. */
+    public UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
+        deleteDeviceRegistrySettings() {
+      return deleteDeviceRegistrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDevice. */
+    public UnaryCallSettings.Builder<DeleteDeviceRequest, Empty> deleteDeviceSettings() {
+      return deleteDeviceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to modifyCloudToDeviceConfig. */
+    public UnaryCallSettings.Builder<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+        modifyCloudToDeviceConfigSettings() {
+      return modifyCloudToDeviceConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to sendCommandToDevice. */
+    public UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+        sendCommandToDeviceSettings() {
+      return sendCommandToDeviceSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createDeviceRegistry. */
     public UnaryCallSettings.Builder<CreateDeviceRegistryRequest, DeviceRegistry>
         createDeviceRegistrySettings() {
@@ -807,12 +848,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     public UnaryCallSettings.Builder<UpdateDeviceRegistryRequest, DeviceRegistry>
         updateDeviceRegistrySettings() {
       return updateDeviceRegistrySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDeviceRegistry. */
-    public UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
-        deleteDeviceRegistrySettings() {
-      return deleteDeviceRegistrySettings;
     }
 
     /** Returns the builder for the settings used for calls to listDeviceRegistries. */
@@ -839,22 +874,11 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
       return updateDeviceSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDevice. */
-    public UnaryCallSettings.Builder<DeleteDeviceRequest, Empty> deleteDeviceSettings() {
-      return deleteDeviceSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listDevices. */
     public PagedCallSettings.Builder<
             ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>
         listDevicesSettings() {
       return listDevicesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to modifyCloudToDeviceConfig. */
-    public UnaryCallSettings.Builder<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-        modifyCloudToDeviceConfigSettings() {
-      return modifyCloudToDeviceConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listDeviceConfigVersions. */
@@ -884,12 +908,6 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to sendCommandToDevice. */
-    public UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-        sendCommandToDeviceSettings() {
-      return sendCommandToDeviceSettings;
     }
 
     /** Returns the builder for the settings used for calls to bindDeviceToGateway. */

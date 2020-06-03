@@ -91,6 +91,211 @@ public class DeviceManagerClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteDeviceRegistryTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+
+    client.deleteDeviceRegistry(name);
+
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDeviceRegistryRequest actualRequest = (DeleteDeviceRegistryRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, RegistryName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteDeviceRegistryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+
+      client.deleteDeviceRegistry(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteDeviceTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+
+    client.deleteDevice(name);
+
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDeviceRequest actualRequest = (DeleteDeviceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteDeviceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+
+      client.deleteDevice(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void modifyCloudToDeviceConfigTest() {
+    long version = 351608024L;
+    ByteString binaryData2 = ByteString.copyFromUtf8("-37");
+    DeviceConfig expectedResponse =
+        DeviceConfig.newBuilder().setVersion(version).setBinaryData(binaryData2).build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ByteString binaryData = ByteString.copyFromUtf8("40");
+
+    DeviceConfig actualResponse = client.modifyCloudToDeviceConfig(name, binaryData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModifyCloudToDeviceConfigRequest actualRequest =
+        (ModifyCloudToDeviceConfigRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
+    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void modifyCloudToDeviceConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ByteString binaryData = ByteString.copyFromUtf8("40");
+
+      client.modifyCloudToDeviceConfig(name, binaryData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceTest() {
+    SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ByteString binaryData = ByteString.copyFromUtf8("40");
+
+    SendCommandToDeviceResponse actualResponse = client.sendCommandToDevice(name, binaryData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SendCommandToDeviceRequest actualRequest = (SendCommandToDeviceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
+    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ByteString binaryData = ByteString.copyFromUtf8("40");
+
+      client.sendCommandToDevice(name, binaryData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceTest2() {
+    SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ByteString binaryData = ByteString.copyFromUtf8("40");
+    String subfolder = "subfolder153561774";
+
+    SendCommandToDeviceResponse actualResponse =
+        client.sendCommandToDevice(name, binaryData, subfolder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SendCommandToDeviceRequest actualRequest = (SendCommandToDeviceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
+    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
+    Assert.assertEquals(subfolder, actualRequest.getSubfolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ByteString binaryData = ByteString.copyFromUtf8("40");
+      String subfolder = "subfolder153561774";
+
+      client.sendCommandToDevice(name, binaryData, subfolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createDeviceRegistryTest() {
     String id = "id3355";
     RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
@@ -212,43 +417,6 @@ public class DeviceManagerClientTest {
       FieldMask updateMask = FieldMask.newBuilder().build();
 
       client.updateDeviceRegistry(deviceRegistry, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteDeviceRegistryTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDeviceManager.addResponse(expectedResponse);
-
-    RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
-
-    client.deleteDeviceRegistry(name);
-
-    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteDeviceRegistryRequest actualRequest = (DeleteDeviceRegistryRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, RegistryName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteDeviceRegistryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDeviceManager.addException(exception);
-
-    try {
-      RegistryName name = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
-
-      client.deleteDeviceRegistry(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -455,43 +623,6 @@ public class DeviceManagerClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteDeviceTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockDeviceManager.addResponse(expectedResponse);
-
-    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-
-    client.deleteDevice(name);
-
-    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteDeviceRequest actualRequest = (DeleteDeviceRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteDeviceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDeviceManager.addException(exception);
-
-    try {
-      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-
-      client.deleteDevice(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listDevicesTest() {
     String nextPageToken = "";
     Device devicesElement = Device.newBuilder().build();
@@ -532,51 +663,6 @@ public class DeviceManagerClientTest {
       RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
 
       client.listDevices(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void modifyCloudToDeviceConfigTest() {
-    long version = 351608024L;
-    ByteString binaryData2 = ByteString.copyFromUtf8("-37");
-    DeviceConfig expectedResponse =
-        DeviceConfig.newBuilder().setVersion(version).setBinaryData(binaryData2).build();
-    mockDeviceManager.addResponse(expectedResponse);
-
-    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-    ByteString binaryData = ByteString.copyFromUtf8("40");
-
-    DeviceConfig actualResponse = client.modifyCloudToDeviceConfig(name, binaryData);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ModifyCloudToDeviceConfigRequest actualRequest =
-        (ModifyCloudToDeviceConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
-    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void modifyCloudToDeviceConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDeviceManager.addException(exception);
-
-    try {
-      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-      ByteString binaryData = ByteString.copyFromUtf8("40");
-
-      client.modifyCloudToDeviceConfig(name, binaryData);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -779,92 +865,6 @@ public class DeviceManagerClientTest {
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void sendCommandToDeviceTest() {
-    SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
-    mockDeviceManager.addResponse(expectedResponse);
-
-    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-    ByteString binaryData = ByteString.copyFromUtf8("40");
-
-    SendCommandToDeviceResponse actualResponse = client.sendCommandToDevice(name, binaryData);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SendCommandToDeviceRequest actualRequest = (SendCommandToDeviceRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
-    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void sendCommandToDeviceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDeviceManager.addException(exception);
-
-    try {
-      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-      ByteString binaryData = ByteString.copyFromUtf8("40");
-
-      client.sendCommandToDevice(name, binaryData);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void sendCommandToDeviceTest2() {
-    SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
-    mockDeviceManager.addResponse(expectedResponse);
-
-    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-    ByteString binaryData = ByteString.copyFromUtf8("40");
-    String subfolder = "subfolder153561774";
-
-    SendCommandToDeviceResponse actualResponse =
-        client.sendCommandToDevice(name, binaryData, subfolder);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDeviceManager.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SendCommandToDeviceRequest actualRequest = (SendCommandToDeviceRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
-    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
-    Assert.assertEquals(subfolder, actualRequest.getSubfolder());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void sendCommandToDeviceExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDeviceManager.addException(exception);
-
-    try {
-      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
-      ByteString binaryData = ByteString.copyFromUtf8("40");
-      String subfolder = "subfolder153561774";
-
-      client.sendCommandToDevice(name, binaryData, subfolder);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

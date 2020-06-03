@@ -55,16 +55,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createDeviceRegistry to 30 seconds:
+ * <p>For example, to set the total timeout of deleteDeviceRegistry to 30 seconds:
  *
  * <pre>
  * <code>
  * DeviceManagerSettings.Builder deviceManagerSettingsBuilder =
  *     DeviceManagerSettings.newBuilder();
  * deviceManagerSettingsBuilder
- *     .createDeviceRegistrySettings()
+ *     .deleteDeviceRegistrySettings()
  *     .setRetrySettings(
- *         deviceManagerSettingsBuilder.createDeviceRegistrySettings().getRetrySettings().toBuilder()
+ *         deviceManagerSettingsBuilder.deleteDeviceRegistrySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DeviceManagerSettings deviceManagerSettings = deviceManagerSettingsBuilder.build();
@@ -74,6 +74,28 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings> {
+  /** Returns the object with the settings used for calls to deleteDeviceRegistry. */
+  public UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings() {
+    return ((DeviceManagerStubSettings) getStubSettings()).deleteDeviceRegistrySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDevice. */
+  public UnaryCallSettings<DeleteDeviceRequest, Empty> deleteDeviceSettings() {
+    return ((DeviceManagerStubSettings) getStubSettings()).deleteDeviceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to modifyCloudToDeviceConfig. */
+  public UnaryCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+      modifyCloudToDeviceConfigSettings() {
+    return ((DeviceManagerStubSettings) getStubSettings()).modifyCloudToDeviceConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to sendCommandToDevice. */
+  public UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceSettings() {
+    return ((DeviceManagerStubSettings) getStubSettings()).sendCommandToDeviceSettings();
+  }
+
   /** Returns the object with the settings used for calls to createDeviceRegistry. */
   public UnaryCallSettings<CreateDeviceRegistryRequest, DeviceRegistry>
       createDeviceRegistrySettings() {
@@ -89,11 +111,6 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
   public UnaryCallSettings<UpdateDeviceRegistryRequest, DeviceRegistry>
       updateDeviceRegistrySettings() {
     return ((DeviceManagerStubSettings) getStubSettings()).updateDeviceRegistrySettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteDeviceRegistry. */
-  public UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings() {
-    return ((DeviceManagerStubSettings) getStubSettings()).deleteDeviceRegistrySettings();
   }
 
   /** Returns the object with the settings used for calls to listDeviceRegistries. */
@@ -120,21 +137,10 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
     return ((DeviceManagerStubSettings) getStubSettings()).updateDeviceSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteDevice. */
-  public UnaryCallSettings<DeleteDeviceRequest, Empty> deleteDeviceSettings() {
-    return ((DeviceManagerStubSettings) getStubSettings()).deleteDeviceSettings();
-  }
-
   /** Returns the object with the settings used for calls to listDevices. */
   public PagedCallSettings<ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>
       listDevicesSettings() {
     return ((DeviceManagerStubSettings) getStubSettings()).listDevicesSettings();
-  }
-
-  /** Returns the object with the settings used for calls to modifyCloudToDeviceConfig. */
-  public UnaryCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-      modifyCloudToDeviceConfigSettings() {
-    return ((DeviceManagerStubSettings) getStubSettings()).modifyCloudToDeviceConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to listDeviceConfigVersions. */
@@ -163,12 +169,6 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((DeviceManagerStubSettings) getStubSettings()).testIamPermissionsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to sendCommandToDevice. */
-  public UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-      sendCommandToDeviceSettings() {
-    return ((DeviceManagerStubSettings) getStubSettings()).sendCommandToDeviceSettings();
   }
 
   /** Returns the object with the settings used for calls to bindDeviceToGateway. */
@@ -280,6 +280,29 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteDeviceRegistry. */
+    public UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
+        deleteDeviceRegistrySettings() {
+      return getStubSettingsBuilder().deleteDeviceRegistrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDevice. */
+    public UnaryCallSettings.Builder<DeleteDeviceRequest, Empty> deleteDeviceSettings() {
+      return getStubSettingsBuilder().deleteDeviceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to modifyCloudToDeviceConfig. */
+    public UnaryCallSettings.Builder<ModifyCloudToDeviceConfigRequest, DeviceConfig>
+        modifyCloudToDeviceConfigSettings() {
+      return getStubSettingsBuilder().modifyCloudToDeviceConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to sendCommandToDevice. */
+    public UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+        sendCommandToDeviceSettings() {
+      return getStubSettingsBuilder().sendCommandToDeviceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createDeviceRegistry. */
     public UnaryCallSettings.Builder<CreateDeviceRegistryRequest, DeviceRegistry>
         createDeviceRegistrySettings() {
@@ -296,12 +319,6 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
     public UnaryCallSettings.Builder<UpdateDeviceRegistryRequest, DeviceRegistry>
         updateDeviceRegistrySettings() {
       return getStubSettingsBuilder().updateDeviceRegistrySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteDeviceRegistry. */
-    public UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
-        deleteDeviceRegistrySettings() {
-      return getStubSettingsBuilder().deleteDeviceRegistrySettings();
     }
 
     /** Returns the builder for the settings used for calls to listDeviceRegistries. */
@@ -328,22 +345,11 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
       return getStubSettingsBuilder().updateDeviceSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteDevice. */
-    public UnaryCallSettings.Builder<DeleteDeviceRequest, Empty> deleteDeviceSettings() {
-      return getStubSettingsBuilder().deleteDeviceSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listDevices. */
     public PagedCallSettings.Builder<
             ListDevicesRequest, ListDevicesResponse, ListDevicesPagedResponse>
         listDevicesSettings() {
       return getStubSettingsBuilder().listDevicesSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to modifyCloudToDeviceConfig. */
-    public UnaryCallSettings.Builder<ModifyCloudToDeviceConfigRequest, DeviceConfig>
-        modifyCloudToDeviceConfigSettings() {
-      return getStubSettingsBuilder().modifyCloudToDeviceConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to listDeviceConfigVersions. */
@@ -373,12 +379,6 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to sendCommandToDevice. */
-    public UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
-        sendCommandToDeviceSettings() {
-      return getStubSettingsBuilder().sendCommandToDeviceSettings();
     }
 
     /** Returns the builder for the settings used for calls to bindDeviceToGateway. */
