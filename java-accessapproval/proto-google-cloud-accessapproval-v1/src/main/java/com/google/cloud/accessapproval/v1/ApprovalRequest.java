@@ -298,6 +298,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -321,6 +322,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -352,6 +354,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The requestedResourceName.
    */
+  @java.lang.Override
   public java.lang.String getRequestedResourceName() {
     java.lang.Object ref = requestedResourceName_;
     if (ref instanceof java.lang.String) {
@@ -380,6 +383,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for requestedResourceName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestedResourceNameBytes() {
     java.lang.Object ref = requestedResourceName_;
     if (ref instanceof java.lang.String) {
@@ -406,6 +410,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the requestedResourceProperties field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedResourceProperties() {
     return requestedResourceProperties_ != null;
   }
@@ -421,6 +426,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The requestedResourceProperties.
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.ResourceProperties getRequestedResourceProperties() {
     return requestedResourceProperties_ == null
         ? com.google.cloud.accessapproval.v1.ResourceProperties.getDefaultInstance()
@@ -436,6 +442,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    * <code>.google.cloud.accessapproval.v1.ResourceProperties requested_resource_properties = 9;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.ResourcePropertiesOrBuilder
       getRequestedResourcePropertiesOrBuilder() {
     return getRequestedResourceProperties();
@@ -454,6 +461,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the requestedReason field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedReason() {
     return requestedReason_ != null;
   }
@@ -468,6 +476,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The requestedReason.
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessReason getRequestedReason() {
     return requestedReason_ == null
         ? com.google.cloud.accessapproval.v1.AccessReason.getDefaultInstance()
@@ -482,6 +491,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.accessapproval.v1.AccessReason requested_reason = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessReasonOrBuilder getRequestedReasonOrBuilder() {
     return getRequestedReason();
   }
@@ -499,6 +509,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the requestedLocations field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedLocations() {
     return requestedLocations_ != null;
   }
@@ -513,6 +524,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The requestedLocations.
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessLocations getRequestedLocations() {
     return requestedLocations_ == null
         ? com.google.cloud.accessapproval.v1.AccessLocations.getDefaultInstance()
@@ -527,6 +539,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.accessapproval.v1.AccessLocations requested_locations = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessLocationsOrBuilder
       getRequestedLocationsOrBuilder() {
     return getRequestedLocations();
@@ -545,6 +558,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the requestTime field is set.
    */
+  @java.lang.Override
   public boolean hasRequestTime() {
     return requestTime_ != null;
   }
@@ -559,6 +573,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The requestTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getRequestTime() {
     return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
@@ -571,6 +586,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp request_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestTimeOrBuilder() {
     return getRequestTime();
   }
@@ -589,6 +605,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the requestedExpiration field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedExpiration() {
     return requestedExpiration_ != null;
   }
@@ -604,6 +621,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The requestedExpiration.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getRequestedExpiration() {
     return requestedExpiration_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -619,6 +637,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp requested_expiration = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestedExpirationOrBuilder() {
     return getRequestedExpiration();
   }
@@ -635,6 +654,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the approve field is set.
    */
+  @java.lang.Override
   public boolean hasApprove() {
     return decisionCase_ == 7;
   }
@@ -649,6 +669,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The approve.
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.ApproveDecision getApprove() {
     if (decisionCase_ == 7) {
       return (com.google.cloud.accessapproval.v1.ApproveDecision) decision_;
@@ -664,6 +685,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.accessapproval.v1.ApproveDecision approve = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.ApproveDecisionOrBuilder getApproveOrBuilder() {
     if (decisionCase_ == 7) {
       return (com.google.cloud.accessapproval.v1.ApproveDecision) decision_;
@@ -683,6 +705,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the dismiss field is set.
    */
+  @java.lang.Override
   public boolean hasDismiss() {
     return decisionCase_ == 8;
   }
@@ -697,6 +720,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The dismiss.
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.DismissDecision getDismiss() {
     if (decisionCase_ == 8) {
       return (com.google.cloud.accessapproval.v1.DismissDecision) decision_;
@@ -712,6 +736,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.accessapproval.v1.DismissDecision dismiss = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.DismissDecisionOrBuilder getDismissOrBuilder() {
     if (decisionCase_ == 8) {
       return (com.google.cloud.accessapproval.v1.DismissDecision) decision_;
@@ -2499,6 +2524,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the approve field is set.
      */
+    @java.lang.Override
     public boolean hasApprove() {
       return decisionCase_ == 7;
     }
@@ -2513,6 +2539,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The approve.
      */
+    @java.lang.Override
     public com.google.cloud.accessapproval.v1.ApproveDecision getApprove() {
       if (approveBuilder_ == null) {
         if (decisionCase_ == 7) {
@@ -2646,6 +2673,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.accessapproval.v1.ApproveDecision approve = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.accessapproval.v1.ApproveDecisionOrBuilder getApproveOrBuilder() {
       if ((decisionCase_ == 7) && (approveBuilder_ != null)) {
         return approveBuilder_.getMessageOrBuilder();
@@ -2706,6 +2734,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the dismiss field is set.
      */
+    @java.lang.Override
     public boolean hasDismiss() {
       return decisionCase_ == 8;
     }
@@ -2720,6 +2749,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The dismiss.
      */
+    @java.lang.Override
     public com.google.cloud.accessapproval.v1.DismissDecision getDismiss() {
       if (dismissBuilder_ == null) {
         if (decisionCase_ == 8) {
@@ -2853,6 +2883,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.accessapproval.v1.DismissDecision dismiss = 8;</code>
      */
+    @java.lang.Override
     public com.google.cloud.accessapproval.v1.DismissDecisionOrBuilder getDismissOrBuilder() {
       if ((decisionCase_ == 8) && (dismissBuilder_ != null)) {
         return dismissBuilder_.getMessageOrBuilder();

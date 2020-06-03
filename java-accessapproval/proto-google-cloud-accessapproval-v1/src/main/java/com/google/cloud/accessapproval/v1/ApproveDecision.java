@@ -145,6 +145,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the approveTime field is set.
    */
+  @java.lang.Override
   public boolean hasApproveTime() {
     return approveTime_ != null;
   }
@@ -159,6 +160,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
    *
    * @return The approveTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getApproveTime() {
     return approveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : approveTime_;
   }
@@ -171,6 +173,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp approve_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getApproveTimeOrBuilder() {
     return getApproveTime();
   }
@@ -188,6 +191,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the expireTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpireTime() {
     return expireTime_ != null;
   }
@@ -202,6 +206,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
    *
    * @return The expireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
@@ -214,6 +219,7 @@ public final class ApproveDecision extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp expire_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
     return getExpireTime();
   }

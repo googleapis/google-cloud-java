@@ -149,6 +149,7 @@ public final class UpdateAccessApprovalSettingsMessage
    *
    * @return Whether the settings field is set.
    */
+  @java.lang.Override
   public boolean hasSettings() {
     return settings_ != null;
   }
@@ -163,6 +164,7 @@ public final class UpdateAccessApprovalSettingsMessage
    *
    * @return The settings.
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessApprovalSettings getSettings() {
     return settings_ == null
         ? com.google.cloud.accessapproval.v1.AccessApprovalSettings.getDefaultInstance()
@@ -177,6 +179,7 @@ public final class UpdateAccessApprovalSettingsMessage
    *
    * <code>.google.cloud.accessapproval.v1.AccessApprovalSettings settings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessApprovalSettingsOrBuilder getSettingsOrBuilder() {
     return getSettings();
   }
@@ -202,6 +205,7 @@ public final class UpdateAccessApprovalSettingsMessage
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -224,6 +228,7 @@ public final class UpdateAccessApprovalSettingsMessage
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -244,6 +249,7 @@ public final class UpdateAccessApprovalSettingsMessage
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

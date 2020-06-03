@@ -146,6 +146,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
    *
    * @return The principalOfficeCountry.
    */
+  @java.lang.Override
   public java.lang.String getPrincipalOfficeCountry() {
     java.lang.Object ref = principalOfficeCountry_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +183,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for principalOfficeCountry.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPrincipalOfficeCountryBytes() {
     java.lang.Object ref = principalOfficeCountry_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +223,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
    *
    * @return The principalPhysicalLocationCountry.
    */
+  @java.lang.Override
   public java.lang.String getPrincipalPhysicalLocationCountry() {
     java.lang.Object ref = principalPhysicalLocationCountry_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +260,7 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for principalPhysicalLocationCountry.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPrincipalPhysicalLocationCountryBytes() {
     java.lang.Object ref = principalPhysicalLocationCountry_;
     if (ref instanceof java.lang.String) {

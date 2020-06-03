@@ -130,6 +130,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the dismissTime field is set.
    */
+  @java.lang.Override
   public boolean hasDismissTime() {
     return dismissTime_ != null;
   }
@@ -144,6 +145,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
    *
    * @return The dismissTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDismissTime() {
     return dismissTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dismissTime_;
   }
@@ -156,6 +158,7 @@ public final class DismissDecision extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp dismiss_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDismissTimeOrBuilder() {
     return getDismissTime();
   }

@@ -121,6 +121,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
    *
    * @return The excludesDescendants.
    */
+  @java.lang.Override
   public boolean getExcludesDescendants() {
     return excludesDescendants_;
   }
@@ -456,6 +457,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
      *
      * @return The excludesDescendants.
      */
+    @java.lang.Override
     public boolean getExcludesDescendants() {
       return excludesDescendants_;
     }

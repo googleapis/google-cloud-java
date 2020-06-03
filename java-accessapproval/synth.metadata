@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-accessapproval.git",
-        "sha": "441c70f860334328a48b890d6edeee5494614eb8"
+        "sha": "a84da373fdb9f4bd576ae044eb698992592d3a12"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "edd3b80fb770548d6ad780105f1782de6ff73ea0",
-        "internalRef": "311053644"
+        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
+        "internalRef": "313460921"
       }
     },
     {

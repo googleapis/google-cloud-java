@@ -166,6 +166,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +194,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -298,6 +300,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.accessapproval.v1.EnrolledService enrolled_services = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.accessapproval.v1.EnrolledService>
       getEnrolledServicesList() {
     return enrolledServices_;
@@ -320,6 +323,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.accessapproval.v1.EnrolledService enrolled_services = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.accessapproval.v1.EnrolledServiceOrBuilder>
       getEnrolledServicesOrBuilderList() {
     return enrolledServices_;
@@ -342,6 +346,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.accessapproval.v1.EnrolledService enrolled_services = 3;</code>
    */
+  @java.lang.Override
   public int getEnrolledServicesCount() {
     return enrolledServices_.size();
   }
@@ -363,6 +368,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.accessapproval.v1.EnrolledService enrolled_services = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.EnrolledService getEnrolledServices(int index) {
     return enrolledServices_.get(index);
   }
@@ -384,6 +390,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.accessapproval.v1.EnrolledService enrolled_services = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.EnrolledServiceOrBuilder getEnrolledServicesOrBuilder(
       int index) {
     return enrolledServices_.get(index);
@@ -406,6 +413,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
    *
    * @return The enrolledAncestor.
    */
+  @java.lang.Override
   public boolean getEnrolledAncestor() {
     return enrolledAncestor_;
   }
@@ -1701,6 +1709,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      *
      * @return The enrolledAncestor.
      */
+    @java.lang.Override
     public boolean getEnrolledAncestor() {
       return enrolledAncestor_;
     }

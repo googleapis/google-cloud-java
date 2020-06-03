@@ -145,6 +145,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    *
    * @return The cloudProduct.
    */
+  @java.lang.Override
   public java.lang.String getCloudProduct() {
     java.lang.Object ref = cloudProduct_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +181,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for cloudProduct.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCloudProductBytes() {
     java.lang.Object ref = cloudProduct_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +207,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for enrollmentLevel.
    */
+  @java.lang.Override
   public int getEnrollmentLevelValue() {
     return enrollmentLevel_;
   }
@@ -219,6 +222,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enrollmentLevel.
    */
+  @java.lang.Override
   public com.google.cloud.accessapproval.v1.EnrollmentLevel getEnrollmentLevel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.accessapproval.v1.EnrollmentLevel result =
@@ -748,6 +752,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for enrollmentLevel.
      */
+    @java.lang.Override
     public int getEnrollmentLevelValue() {
       return enrollmentLevel_;
     }
@@ -764,6 +769,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setEnrollmentLevelValue(int value) {
+
       enrollmentLevel_ = value;
       onChanged();
       return this;
@@ -779,6 +785,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enrollmentLevel.
      */
+    @java.lang.Override
     public com.google.cloud.accessapproval.v1.EnrollmentLevel getEnrollmentLevel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.accessapproval.v1.EnrollmentLevel result =
