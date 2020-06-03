@@ -23,7 +23,7 @@ package com.google.cloud.secretmanager.v1;
  *
  * <pre>
  * A secret payload resource in the Secret Manager API. This contains the
- * sensitive secret data that is associated with a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+ * sensitive secret payload that is associated with a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.SecretPayload}
@@ -291,7 +291,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A secret payload resource in the Secret Manager API. This contains the
-   * sensitive secret data that is associated with a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * sensitive secret payload that is associated with a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.SecretPayload}
