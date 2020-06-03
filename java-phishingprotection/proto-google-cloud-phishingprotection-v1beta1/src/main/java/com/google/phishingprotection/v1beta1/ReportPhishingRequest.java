@@ -135,6 +135,7 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -160,6 +161,7 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +187,7 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -207,6 +210,7 @@ public final class ReportPhishingRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
