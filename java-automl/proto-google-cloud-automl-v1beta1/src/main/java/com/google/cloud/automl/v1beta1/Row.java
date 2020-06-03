@@ -231,6 +231,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.protobuf.Value> getValuesList() {
     return values_;
   }
@@ -247,6 +248,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.protobuf.ValueOrBuilder> getValuesOrBuilderList() {
     return values_;
   }
@@ -263,6 +265,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
+  @java.lang.Override
   public int getValuesCount() {
     return values_.size();
   }
@@ -279,6 +282,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getValues(int index) {
     return values_.get(index);
   }
@@ -295,6 +299,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Value values = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getValuesOrBuilder(int index) {
     return values_.get(index);
   }

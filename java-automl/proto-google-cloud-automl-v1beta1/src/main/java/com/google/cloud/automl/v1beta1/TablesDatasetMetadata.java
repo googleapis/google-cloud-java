@@ -195,6 +195,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The primaryTableSpecId.
    */
+  @java.lang.Override
   public java.lang.String getPrimaryTableSpecId() {
     java.lang.Object ref = primaryTableSpecId_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +218,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for primaryTableSpecId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPrimaryTableSpecIdBytes() {
     java.lang.Object ref = primaryTableSpecId_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +253,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The targetColumnSpecId.
    */
+  @java.lang.Override
   public java.lang.String getTargetColumnSpecId() {
     java.lang.Object ref = targetColumnSpecId_;
     if (ref instanceof java.lang.String) {
@@ -282,6 +285,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for targetColumnSpecId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTargetColumnSpecIdBytes() {
     java.lang.Object ref = targetColumnSpecId_;
     if (ref instanceof java.lang.String) {
@@ -315,6 +319,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The weightColumnSpecId.
    */
+  @java.lang.Override
   public java.lang.String getWeightColumnSpecId() {
     java.lang.Object ref = weightColumnSpecId_;
     if (ref instanceof java.lang.String) {
@@ -345,6 +350,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for weightColumnSpecId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getWeightColumnSpecIdBytes() {
     java.lang.Object ref = weightColumnSpecId_;
     if (ref instanceof java.lang.String) {
@@ -382,6 +388,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The mlUseColumnSpecId.
    */
+  @java.lang.Override
   public java.lang.String getMlUseColumnSpecId() {
     java.lang.Object ref = mlUseColumnSpecId_;
     if (ref instanceof java.lang.String) {
@@ -416,6 +423,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for mlUseColumnSpecId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMlUseColumnSpecIdBytes() {
     java.lang.Object ref = mlUseColumnSpecId_;
     if (ref instanceof java.lang.String) {
@@ -480,6 +488,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * map&lt;string, .google.cloud.automl.v1beta1.CorrelationStats&gt; target_column_correlations = 6;
    * </code>
    */
+  @java.lang.Override
   public boolean containsTargetColumnCorrelations(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -487,6 +496,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
     return internalGetTargetColumnCorrelations().getMap().containsKey(key);
   }
   /** Use {@link #getTargetColumnCorrelationsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
       getTargetColumnCorrelations() {
@@ -510,6 +520,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * map&lt;string, .google.cloud.automl.v1beta1.CorrelationStats&gt; target_column_correlations = 6;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
       getTargetColumnCorrelationsMap() {
     return internalGetTargetColumnCorrelations().getMap();
@@ -532,6 +543,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * map&lt;string, .google.cloud.automl.v1beta1.CorrelationStats&gt; target_column_correlations = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrDefault(
       java.lang.String key, com.google.cloud.automl.v1beta1.CorrelationStats defaultValue) {
     if (key == null) {
@@ -559,6 +571,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    * map&lt;string, .google.cloud.automl.v1beta1.CorrelationStats&gt; target_column_correlations = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -590,6 +603,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the statsUpdateTime field is set.
    */
+  @java.lang.Override
   public boolean hasStatsUpdateTime() {
     return statsUpdateTime_ != null;
   }
@@ -609,6 +623,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * @return The statsUpdateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStatsUpdateTime() {
     return statsUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -628,6 +643,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.protobuf.Timestamp stats_update_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStatsUpdateTimeOrBuilder() {
     return getStatsUpdateTime();
   }
@@ -1699,6 +1715,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.automl.v1beta1.CorrelationStats&gt; target_column_correlations = 6;
      * </code>
      */
+    @java.lang.Override
     public boolean containsTargetColumnCorrelations(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1706,6 +1723,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
       return internalGetTargetColumnCorrelations().getMap().containsKey(key);
     }
     /** Use {@link #getTargetColumnCorrelationsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
         getTargetColumnCorrelations() {
@@ -1729,6 +1747,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.automl.v1beta1.CorrelationStats&gt; target_column_correlations = 6;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
         getTargetColumnCorrelationsMap() {
       return internalGetTargetColumnCorrelations().getMap();
@@ -1751,6 +1770,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.automl.v1beta1.CorrelationStats&gt; target_column_correlations = 6;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrDefault(
         java.lang.String key, com.google.cloud.automl.v1beta1.CorrelationStats defaultValue) {
       if (key == null) {
@@ -1778,6 +1798,7 @@ public final class TablesDatasetMetadata extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.automl.v1beta1.CorrelationStats&gt; target_column_correlations = 6;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.CorrelationStats getTargetColumnCorrelationsOrThrow(
         java.lang.String key) {
       if (key == null) {

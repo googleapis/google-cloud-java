@@ -182,6 +182,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +207,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +240,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeColumnSpecId.
    */
+  @java.lang.Override
   public java.lang.String getTimeColumnSpecId() {
     java.lang.Object ref = timeColumnSpecId_;
     if (ref instanceof java.lang.String) {
@@ -267,6 +270,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for timeColumnSpecId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTimeColumnSpecIdBytes() {
     java.lang.Object ref = timeColumnSpecId_;
     if (ref instanceof java.lang.String) {
@@ -292,6 +296,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rowCount.
    */
+  @java.lang.Override
   public long getRowCount() {
     return rowCount_;
   }
@@ -310,6 +315,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The validRowCount.
    */
+  @java.lang.Override
   public long getValidRowCount() {
     return validRowCount_;
   }
@@ -328,6 +334,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The columnCount.
    */
+  @java.lang.Override
   public long getColumnCount() {
     return columnCount_;
   }
@@ -344,6 +351,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.InputConfig> getInputConfigsList() {
     return inputConfigs_;
   }
@@ -357,6 +365,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.InputConfigOrBuilder>
       getInputConfigsOrBuilderList() {
     return inputConfigs_;
@@ -371,6 +380,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public int getInputConfigsCount() {
     return inputConfigs_.size();
   }
@@ -384,6 +394,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.InputConfig getInputConfigs(int index) {
     return inputConfigs_.get(index);
   }
@@ -397,6 +408,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.InputConfigOrBuilder getInputConfigsOrBuilder(int index) {
     return inputConfigs_.get(index);
   }
@@ -415,6 +427,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -438,6 +451,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1178,6 +1192,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The rowCount.
      */
+    @java.lang.Override
     public long getRowCount() {
       return rowCount_;
     }
@@ -1230,6 +1245,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The validRowCount.
      */
+    @java.lang.Override
     public long getValidRowCount() {
       return validRowCount_;
     }
@@ -1284,6 +1300,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The columnCount.
      */
+    @java.lang.Override
     public long getColumnCount() {
       return columnCount_;
     }

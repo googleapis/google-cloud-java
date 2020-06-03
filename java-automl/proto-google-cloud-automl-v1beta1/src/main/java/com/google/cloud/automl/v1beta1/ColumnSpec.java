@@ -373,6 +373,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The columnSpecId.
      */
+    @java.lang.Override
     public java.lang.String getColumnSpecId() {
       java.lang.Object ref = columnSpecId_;
       if (ref instanceof java.lang.String) {
@@ -396,6 +397,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for columnSpecId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getColumnSpecIdBytes() {
       java.lang.Object ref = columnSpecId_;
       if (ref instanceof java.lang.String) {
@@ -421,6 +423,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the correlationStats field is set.
      */
+    @java.lang.Override
     public boolean hasCorrelationStats() {
       return correlationStats_ != null;
     }
@@ -435,6 +438,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The correlationStats.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.CorrelationStats getCorrelationStats() {
       return correlationStats_ == null
           ? com.google.cloud.automl.v1beta1.CorrelationStats.getDefaultInstance()
@@ -449,6 +453,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.CorrelationStats correlation_stats = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.CorrelationStatsOrBuilder
         getCorrelationStatsOrBuilder() {
       return getCorrelationStats();
@@ -1175,6 +1180,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1199,6 +1205,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1224,6 +1231,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dataType field is set.
    */
+  @java.lang.Override
   public boolean hasDataType() {
     return dataType_ != null;
   }
@@ -1238,6 +1246,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataType.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataType getDataType() {
     return dataType_ == null
         ? com.google.cloud.automl.v1beta1.DataType.getDefaultInstance()
@@ -1252,6 +1261,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.DataType data_type = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataTypeOrBuilder getDataTypeOrBuilder() {
     return getDataType();
   }
@@ -1272,6 +1282,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1297,6 +1308,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1325,6 +1337,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dataStats field is set.
    */
+  @java.lang.Override
   public boolean hasDataStats() {
     return dataStats_ != null;
   }
@@ -1342,6 +1355,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataStats.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataStats getDataStats() {
     return dataStats_ == null
         ? com.google.cloud.automl.v1beta1.DataStats.getDefaultInstance()
@@ -1359,6 +1373,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.DataStats data_stats = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataStatsOrBuilder getDataStatsOrBuilder() {
     return getDataStats();
   }
@@ -1377,6 +1392,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn top_correlated_columns = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn>
       getTopCorrelatedColumnsList() {
     return topCorrelatedColumns_;
@@ -1392,6 +1408,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn top_correlated_columns = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumnOrBuilder>
       getTopCorrelatedColumnsOrBuilderList() {
@@ -1408,6 +1425,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn top_correlated_columns = 5;
    * </code>
    */
+  @java.lang.Override
   public int getTopCorrelatedColumnsCount() {
     return topCorrelatedColumns_.size();
   }
@@ -1422,6 +1440,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn top_correlated_columns = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn getTopCorrelatedColumns(
       int index) {
     return topCorrelatedColumns_.get(index);
@@ -1437,6 +1456,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn top_correlated_columns = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumnOrBuilder
       getTopCorrelatedColumnsOrBuilder(int index) {
     return topCorrelatedColumns_.get(index);
@@ -1456,6 +1476,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -1479,6 +1500,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {

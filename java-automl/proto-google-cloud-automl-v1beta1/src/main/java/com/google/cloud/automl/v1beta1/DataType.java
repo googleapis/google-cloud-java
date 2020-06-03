@@ -219,6 +219,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the listElementType field is set.
    */
+  @java.lang.Override
   public boolean hasListElementType() {
     return detailsCase_ == 2;
   }
@@ -234,6 +235,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The listElementType.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataType getListElementType() {
     if (detailsCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.DataType) details_;
@@ -250,6 +252,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.DataType list_element_type = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataTypeOrBuilder getListElementTypeOrBuilder() {
     if (detailsCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.DataType) details_;
@@ -270,6 +273,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the structType field is set.
    */
+  @java.lang.Override
   public boolean hasStructType() {
     return detailsCase_ == 3;
   }
@@ -285,6 +289,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The structType.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.StructType getStructType() {
     if (detailsCase_ == 3) {
       return (com.google.cloud.automl.v1beta1.StructType) details_;
@@ -301,6 +306,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.StructType struct_type = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.StructTypeOrBuilder getStructTypeOrBuilder() {
     if (detailsCase_ == 3) {
       return (com.google.cloud.automl.v1beta1.StructType) details_;
@@ -397,6 +403,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for typeCode.
    */
+  @java.lang.Override
   public int getTypeCodeValue() {
     return typeCode_;
   }
@@ -411,6 +418,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The typeCode.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TypeCode getTypeCode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.automl.v1beta1.TypeCode result =
@@ -432,6 +440,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nullable.
    */
+  @java.lang.Override
   public boolean getNullable() {
     return nullable_;
   }
@@ -892,6 +901,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the listElementType field is set.
      */
+    @java.lang.Override
     public boolean hasListElementType() {
       return detailsCase_ == 2;
     }
@@ -907,6 +917,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The listElementType.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DataType getListElementType() {
       if (listElementTypeBuilder_ == null) {
         if (detailsCase_ == 2) {
@@ -1045,6 +1056,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.DataType list_element_type = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DataTypeOrBuilder getListElementTypeOrBuilder() {
       if ((detailsCase_ == 2) && (listElementTypeBuilder_ != null)) {
         return listElementTypeBuilder_.getMessageOrBuilder();
@@ -1107,6 +1119,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the structType field is set.
      */
+    @java.lang.Override
     public boolean hasStructType() {
       return detailsCase_ == 3;
     }
@@ -1122,6 +1135,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The structType.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.StructType getStructType() {
       if (structTypeBuilder_ == null) {
         if (detailsCase_ == 3) {
@@ -1260,6 +1274,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.StructType struct_type = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.StructTypeOrBuilder getStructTypeOrBuilder() {
       if ((detailsCase_ == 3) && (structTypeBuilder_ != null)) {
         return structTypeBuilder_.getMessageOrBuilder();
@@ -1326,6 +1341,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timeFormat.
      */
+    @java.lang.Override
     public java.lang.String getTimeFormat() {
       java.lang.Object ref = "";
       if (detailsCase_ == 5) {
@@ -1363,6 +1379,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for timeFormat.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTimeFormatBytes() {
       java.lang.Object ref = "";
       if (detailsCase_ == 5) {
@@ -1484,6 +1501,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for typeCode.
      */
+    @java.lang.Override
     public int getTypeCodeValue() {
       return typeCode_;
     }
@@ -1500,6 +1518,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeCodeValue(int value) {
+
       typeCode_ = value;
       onChanged();
       return this;
@@ -1515,6 +1534,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The typeCode.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TypeCode getTypeCode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1beta1.TypeCode result =
@@ -1573,6 +1593,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The nullable.
      */
+    @java.lang.Override
     public boolean getNullable() {
       return nullable_;
     }

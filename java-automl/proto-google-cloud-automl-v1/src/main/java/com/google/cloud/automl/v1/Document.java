@@ -737,6 +737,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -784,6 +788,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textSegment field is set.
      */
+    @java.lang.Override
     public boolean hasTextSegment() {
       return textSegment_ != null;
     }
@@ -799,6 +804,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textSegment.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextSegment getTextSegment() {
       return textSegment_ == null
           ? com.google.cloud.automl.v1.TextSegment.getDefaultInstance()
@@ -814,6 +820,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1.TextSegment text_segment = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextSegmentOrBuilder getTextSegmentOrBuilder() {
       return getTextSegment();
     }
@@ -832,6 +839,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pageNumber.
      */
+    @java.lang.Override
     public int getPageNumber() {
       return pageNumber_;
     }
@@ -856,6 +864,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the boundingPoly field is set.
      */
+    @java.lang.Override
     public boolean hasBoundingPoly() {
       return boundingPoly_ != null;
     }
@@ -877,6 +886,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The boundingPoly.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.BoundingPoly getBoundingPoly() {
       return boundingPoly_ == null
           ? com.google.cloud.automl.v1.BoundingPoly.getDefaultInstance()
@@ -898,6 +908,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1.BoundingPoly bounding_poly = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
       return getBoundingPoly();
     }
@@ -915,6 +926,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for textSegmentType.
      */
+    @java.lang.Override
     public int getTextSegmentTypeValue() {
       return textSegmentType_;
     }
@@ -929,6 +941,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textSegmentType.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.Document.Layout.TextSegmentType getTextSegmentType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1.Document.Layout.TextSegmentType result =
@@ -1542,6 +1555,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The pageNumber.
        */
+      @java.lang.Override
       public int getPageNumber() {
         return pageNumber_;
       }
@@ -1844,6 +1858,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for textSegmentType.
        */
+      @java.lang.Override
       public int getTextSegmentTypeValue() {
         return textSegmentType_;
       }
@@ -1860,6 +1875,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTextSegmentTypeValue(int value) {
+
         textSegmentType_ = value;
         onChanged();
         return this;
@@ -1875,6 +1891,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The textSegmentType.
        */
+      @java.lang.Override
       public com.google.cloud.automl.v1.Document.Layout.TextSegmentType getTextSegmentType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.automl.v1.Document.Layout.TextSegmentType result =
@@ -1988,6 +2005,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -2002,6 +2020,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.DocumentInputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.automl.v1.DocumentInputConfig.getDefaultInstance()
@@ -2016,6 +2035,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1.DocumentInputConfig input_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.DocumentInputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -2033,6 +2053,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the documentText field is set.
    */
+  @java.lang.Override
   public boolean hasDocumentText() {
     return documentText_ != null;
   }
@@ -2047,6 +2068,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The documentText.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextSnippet getDocumentText() {
     return documentText_ == null
         ? com.google.cloud.automl.v1.TextSnippet.getDefaultInstance()
@@ -2061,6 +2083,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1.TextSnippet document_text = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextSnippetOrBuilder getDocumentTextOrBuilder() {
     return getDocumentText();
   }
@@ -2077,6 +2100,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1.Document.Layout layout = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1.Document.Layout> getLayoutList() {
     return layout_;
   }
@@ -2090,6 +2114,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1.Document.Layout layout = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1.Document.LayoutOrBuilder>
       getLayoutOrBuilderList() {
     return layout_;
@@ -2104,6 +2129,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1.Document.Layout layout = 3;</code>
    */
+  @java.lang.Override
   public int getLayoutCount() {
     return layout_.size();
   }
@@ -2117,6 +2143,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1.Document.Layout layout = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.Document.Layout getLayout(int index) {
     return layout_.get(index);
   }
@@ -2130,6 +2157,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1.Document.Layout layout = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.Document.LayoutOrBuilder getLayoutOrBuilder(int index) {
     return layout_.get(index);
   }
@@ -2147,6 +2175,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the documentDimensions field is set.
    */
+  @java.lang.Override
   public boolean hasDocumentDimensions() {
     return documentDimensions_ != null;
   }
@@ -2161,6 +2190,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The documentDimensions.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.DocumentDimensions getDocumentDimensions() {
     return documentDimensions_ == null
         ? com.google.cloud.automl.v1.DocumentDimensions.getDefaultInstance()
@@ -2175,6 +2205,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1.DocumentDimensions document_dimensions = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.DocumentDimensionsOrBuilder getDocumentDimensionsOrBuilder() {
     return getDocumentDimensions();
   }
@@ -2192,6 +2223,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pageCount.
    */
+  @java.lang.Override
   public int getPageCount() {
     return pageCount_;
   }
@@ -3586,6 +3618,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pageCount.
      */
+    @java.lang.Override
     public int getPageCount() {
       return pageCount_;
     }

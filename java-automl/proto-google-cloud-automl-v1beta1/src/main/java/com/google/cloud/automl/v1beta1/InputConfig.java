@@ -561,6 +561,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
@@ -577,6 +578,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.automl.v1beta1.GcsSource) source_;
@@ -594,6 +596,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.automl.v1beta1.GcsSource) source_;
@@ -613,6 +616,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the bigquerySource field is set.
    */
+  @java.lang.Override
   public boolean hasBigquerySource() {
     return sourceCase_ == 3;
   }
@@ -627,6 +631,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bigquerySource.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource() {
     if (sourceCase_ == 3) {
       return (com.google.cloud.automl.v1beta1.BigQuerySource) source_;
@@ -642,6 +647,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder() {
     if (sourceCase_ == 3) {
       return (com.google.cloud.automl.v1beta1.BigQuerySource) source_;
@@ -690,6 +696,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
+  @java.lang.Override
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -697,6 +704,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     return internalGetParams().getMap().containsKey(key);
   }
   /** Use {@link #getParamsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParams() {
     return getParamsMap();
@@ -717,6 +725,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
     return internalGetParams().getMap();
   }
@@ -736,6 +745,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -759,6 +769,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; params = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getParamsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1559,6 +1570,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
@@ -1575,6 +1587,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -1718,6 +1731,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();
@@ -1780,6 +1794,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the bigquerySource field is set.
      */
+    @java.lang.Override
     public boolean hasBigquerySource() {
       return sourceCase_ == 3;
     }
@@ -1794,6 +1809,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bigquerySource.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource() {
       if (bigquerySourceBuilder_ == null) {
         if (sourceCase_ == 3) {
@@ -1926,6 +1942,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder() {
       if ((sourceCase_ == 3) && (bigquerySourceBuilder_ != null)) {
         return bigquerySourceBuilder_.getMessageOrBuilder();
@@ -2011,6 +2028,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
+    @java.lang.Override
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2018,6 +2036,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetParams().getMap().containsKey(key);
     }
     /** Use {@link #getParamsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParams() {
       return getParamsMap();
@@ -2038,6 +2057,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
       return internalGetParams().getMap();
     }
@@ -2057,6 +2077,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getParamsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2081,6 +2102,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; params = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getParamsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

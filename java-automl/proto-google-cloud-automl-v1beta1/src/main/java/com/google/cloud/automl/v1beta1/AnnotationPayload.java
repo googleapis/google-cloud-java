@@ -369,6 +369,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the translation field is set.
    */
+  @java.lang.Override
   public boolean hasTranslation() {
     return detailCase_ == 2;
   }
@@ -383,6 +384,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The translation.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TranslationAnnotation getTranslation() {
     if (detailCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_;
@@ -398,6 +400,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1beta1.TranslationAnnotation translation = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder getTranslationOrBuilder() {
     if (detailCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_;
@@ -417,6 +420,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the classification field is set.
    */
+  @java.lang.Override
   public boolean hasClassification() {
     return detailCase_ == 3;
   }
@@ -431,6 +435,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The classification.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
       getClassification() {
     if (detailCase_ == 3) {
@@ -448,6 +453,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
       getClassificationOrBuilder() {
     if (detailCase_ == 3) {
@@ -470,6 +476,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the imageObjectDetection field is set.
    */
+  @java.lang.Override
   public boolean hasImageObjectDetection() {
     return detailCase_ == 4;
   }
@@ -485,6 +492,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The imageObjectDetection.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation getImageObjectDetection() {
     if (detailCase_ == 4) {
       return (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_;
@@ -501,6 +509,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotationOrBuilder
       getImageObjectDetectionOrBuilder() {
     if (detailCase_ == 4) {
@@ -523,6 +532,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the videoClassification field is set.
    */
+  @java.lang.Override
   public boolean hasVideoClassification() {
     return detailCase_ == 9;
   }
@@ -539,6 +549,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The videoClassification.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
       getVideoClassification() {
     if (detailCase_ == 9) {
@@ -559,6 +570,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotationOrBuilder
       getVideoClassificationOrBuilder() {
     if (detailCase_ == 9) {
@@ -582,6 +594,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the videoObjectTracking field is set.
    */
+  @java.lang.Override
   public boolean hasVideoObjectTracking() {
     return detailCase_ == 8;
   }
@@ -597,6 +610,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The videoObjectTracking.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation getVideoObjectTracking() {
     if (detailCase_ == 8) {
       return (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_;
@@ -613,6 +627,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotationOrBuilder
       getVideoObjectTrackingOrBuilder() {
     if (detailCase_ == 8) {
@@ -633,6 +648,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the textExtraction field is set.
    */
+  @java.lang.Override
   public boolean hasTextExtraction() {
     return detailCase_ == 6;
   }
@@ -647,6 +663,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The textExtraction.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TextExtractionAnnotation getTextExtraction() {
     if (detailCase_ == 6) {
       return (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_;
@@ -662,6 +679,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder
       getTextExtractionOrBuilder() {
     if (detailCase_ == 6) {
@@ -682,6 +700,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the textSentiment field is set.
    */
+  @java.lang.Override
   public boolean hasTextSentiment() {
     return detailCase_ == 7;
   }
@@ -696,6 +715,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The textSentiment.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
       getTextSentiment() {
     if (detailCase_ == 7) {
@@ -713,6 +733,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotationOrBuilder
       getTextSentimentOrBuilder() {
     if (detailCase_ == 7) {
@@ -734,6 +755,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the tables field is set.
    */
+  @java.lang.Override
   public boolean hasTables() {
     return detailCase_ == 10;
   }
@@ -748,6 +770,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The tables.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TablesAnnotation getTables() {
     if (detailCase_ == 10) {
       return (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_;
@@ -763,6 +786,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TablesAnnotationOrBuilder getTablesOrBuilder() {
     if (detailCase_ == 10) {
       return (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_;
@@ -785,6 +809,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The annotationSpecId.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationSpecId() {
     java.lang.Object ref = annotationSpecId_;
     if (ref instanceof java.lang.String) {
@@ -809,6 +834,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for annotationSpecId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationSpecIdBytes() {
     java.lang.Object ref = annotationSpecId_;
     if (ref instanceof java.lang.String) {
@@ -839,6 +865,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -866,6 +893,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1489,6 +1517,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the translation field is set.
      */
+    @java.lang.Override
     public boolean hasTranslation() {
       return detailCase_ == 2;
     }
@@ -1503,6 +1532,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The translation.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TranslationAnnotation getTranslation() {
       if (translationBuilder_ == null) {
         if (detailCase_ == 2) {
@@ -1636,6 +1666,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1beta1.TranslationAnnotation translation = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder
         getTranslationOrBuilder() {
       if ((detailCase_ == 2) && (translationBuilder_ != null)) {
@@ -1697,6 +1728,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the classification field is set.
      */
+    @java.lang.Override
     public boolean hasClassification() {
       return detailCase_ == 3;
     }
@@ -1711,6 +1743,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The classification.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
         getClassification() {
       if (classificationBuilder_ == null) {
@@ -1855,6 +1888,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
         getClassificationOrBuilder() {
       if ((detailCase_ == 3) && (classificationBuilder_ != null)) {
@@ -1924,6 +1958,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the imageObjectDetection field is set.
      */
+    @java.lang.Override
     public boolean hasImageObjectDetection() {
       return detailCase_ == 4;
     }
@@ -1939,6 +1974,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The imageObjectDetection.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation
         getImageObjectDetection() {
       if (imageObjectDetectionBuilder_ == null) {
@@ -2083,6 +2119,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation image_object_detection = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotationOrBuilder
         getImageObjectDetectionOrBuilder() {
       if ((detailCase_ == 4) && (imageObjectDetectionBuilder_ != null)) {
@@ -2150,6 +2187,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the videoClassification field is set.
      */
+    @java.lang.Override
     public boolean hasVideoClassification() {
       return detailCase_ == 9;
     }
@@ -2166,6 +2204,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The videoClassification.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
         getVideoClassification() {
       if (videoClassificationBuilder_ == null) {
@@ -2323,6 +2362,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.VideoClassificationAnnotation video_classification = 9;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto
             .VideoClassificationAnnotationOrBuilder
         getVideoClassificationOrBuilder() {
@@ -2397,6 +2437,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the videoObjectTracking field is set.
      */
+    @java.lang.Override
     public boolean hasVideoObjectTracking() {
       return detailCase_ == 8;
     }
@@ -2412,6 +2453,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The videoObjectTracking.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation getVideoObjectTracking() {
       if (videoObjectTrackingBuilder_ == null) {
         if (detailCase_ == 8) {
@@ -2555,6 +2597,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation video_object_tracking = 8;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotationOrBuilder
         getVideoObjectTrackingOrBuilder() {
       if ((detailCase_ == 8) && (videoObjectTrackingBuilder_ != null)) {
@@ -2618,6 +2661,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the textExtraction field is set.
      */
+    @java.lang.Override
     public boolean hasTextExtraction() {
       return detailCase_ == 6;
     }
@@ -2632,6 +2676,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The textExtraction.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TextExtractionAnnotation getTextExtraction() {
       if (textExtractionBuilder_ == null) {
         if (detailCase_ == 6) {
@@ -2768,6 +2813,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1beta1.TextExtractionAnnotation text_extraction = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TextExtractionAnnotationOrBuilder
         getTextExtractionOrBuilder() {
       if ((detailCase_ == 6) && (textExtractionBuilder_ != null)) {
@@ -2829,6 +2875,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the textSentiment field is set.
      */
+    @java.lang.Override
     public boolean hasTextSentiment() {
       return detailCase_ == 7;
     }
@@ -2843,6 +2890,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The textSentiment.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
         getTextSentiment() {
       if (textSentimentBuilder_ == null) {
@@ -2986,6 +3034,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1beta1.TextSentimentAnnotation text_sentiment = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotationOrBuilder
         getTextSentimentOrBuilder() {
       if ((detailCase_ == 7) && (textSentimentBuilder_ != null)) {
@@ -3053,6 +3102,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the tables field is set.
      */
+    @java.lang.Override
     public boolean hasTables() {
       return detailCase_ == 10;
     }
@@ -3067,6 +3117,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * @return The tables.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TablesAnnotation getTables() {
       if (tablesBuilder_ == null) {
         if (detailCase_ == 10) {
@@ -3199,6 +3250,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1beta1.TablesAnnotation tables = 10;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TablesAnnotationOrBuilder getTablesOrBuilder() {
       if ((detailCase_ == 10) && (tablesBuilder_ != null)) {
         return tablesBuilder_.getMessageOrBuilder();

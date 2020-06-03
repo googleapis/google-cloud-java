@@ -312,6 +312,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The confidenceThreshold.
      */
+    @java.lang.Override
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
@@ -329,6 +330,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The recall.
      */
+    @java.lang.Override
     public float getRecall() {
       return recall_;
     }
@@ -346,6 +348,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The precision.
      */
+    @java.lang.Override
     public float getPrecision() {
       return precision_;
     }
@@ -363,6 +366,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The f1Score.
      */
+    @java.lang.Override
     public float getF1Score() {
       return f1Score_;
     }
@@ -779,6 +783,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The confidenceThreshold.
        */
+      @java.lang.Override
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
@@ -834,6 +839,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The recall.
        */
+      @java.lang.Override
       public float getRecall() {
         return recall_;
       }
@@ -885,6 +891,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The precision.
        */
+      @java.lang.Override
       public float getPrecision() {
         return precision_;
       }
@@ -936,6 +943,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The f1Score.
        */
+      @java.lang.Override
       public float getF1Score() {
         return f1Score_;
       }
@@ -1045,6 +1053,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
    *
    * @return The auPrc.
    */
+  @java.lang.Override
   public float getAuPrc() {
     return auPrc_;
   }
@@ -1065,6 +1074,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry>
       getConfidenceMetricsEntriesList() {
@@ -1082,6 +1092,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.automl.v1.TextExtractionEvaluationMetrics
@@ -1101,6 +1112,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public int getConfidenceMetricsEntriesCount() {
     return confidenceMetricsEntries_.size();
   }
@@ -1116,6 +1128,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry
       getConfidenceMetricsEntries(int index) {
     return confidenceMetricsEntries_.get(index);
@@ -1132,6 +1145,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextExtractionEvaluationMetrics.ConfidenceMetricsEntryOrBuilder
       getConfidenceMetricsEntriesOrBuilder(int index) {
     return confidenceMetricsEntries_.get(index);
@@ -1530,6 +1544,7 @@ public final class TextExtractionEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The auPrc.
      */
+    @java.lang.Override
     public float getAuPrc() {
       return auPrc_;
     }

@@ -344,11 +344,13 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;int32, int64&gt; buckets = 1;</code>
      */
+    @java.lang.Override
     public boolean containsBuckets(int key) {
 
       return internalGetBuckets().getMap().containsKey(key);
     }
     /** Use {@link #getBucketsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, java.lang.Long> getBuckets() {
       return getBucketsMap();
@@ -363,6 +365,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;int32, int64&gt; buckets = 1;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.Integer, java.lang.Long> getBucketsMap() {
       return internalGetBuckets().getMap();
     }
@@ -376,6 +379,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;int32, int64&gt; buckets = 1;</code>
      */
+    @java.lang.Override
     public long getBucketsOrDefault(int key, long defaultValue) {
 
       java.util.Map<java.lang.Integer, java.lang.Long> map = internalGetBuckets().getMap();
@@ -391,6 +395,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;int32, int64&gt; buckets = 1;</code>
      */
+    @java.lang.Override
     public long getBucketsOrThrow(int key) {
 
       java.util.Map<java.lang.Integer, java.lang.Long> map = internalGetBuckets().getMap();
@@ -790,11 +795,13 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>map&lt;int32, int64&gt; buckets = 1;</code>
        */
+      @java.lang.Override
       public boolean containsBuckets(int key) {
 
         return internalGetBuckets().getMap().containsKey(key);
       }
       /** Use {@link #getBucketsMap()} instead. */
+      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Long> getBuckets() {
         return getBucketsMap();
@@ -809,6 +816,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>map&lt;int32, int64&gt; buckets = 1;</code>
        */
+      @java.lang.Override
       public java.util.Map<java.lang.Integer, java.lang.Long> getBucketsMap() {
         return internalGetBuckets().getMap();
       }
@@ -822,6 +830,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>map&lt;int32, int64&gt; buckets = 1;</code>
        */
+      @java.lang.Override
       public long getBucketsOrDefault(int key, long defaultValue) {
 
         java.util.Map<java.lang.Integer, java.lang.Long> map = internalGetBuckets().getMap();
@@ -837,6 +846,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>map&lt;int32, int64&gt; buckets = 1;</code>
        */
+      @java.lang.Override
       public long getBucketsOrThrow(int key) {
 
         java.util.Map<java.lang.Integer, java.lang.Long> map = internalGetBuckets().getMap();
@@ -1005,6 +1015,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public boolean containsGranularStats(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1012,6 +1023,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
     return internalGetGranularStats().getMap().containsKey(key);
   }
   /** Use {@link #getGranularStatsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<
           java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
@@ -1033,6 +1045,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<
           java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
       getGranularStatsMap() {
@@ -1053,6 +1066,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrDefault(
       java.lang.String key,
       com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue) {
@@ -1078,6 +1092,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -1485,6 +1500,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
      * </code>
      */
+    @java.lang.Override
     public boolean containsGranularStats(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1492,6 +1508,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
       return internalGetGranularStats().getMap().containsKey(key);
     }
     /** Use {@link #getGranularStatsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
@@ -1513,6 +1530,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String, com.google.cloud.automl.v1beta1.TimestampStats.GranularStats>
         getGranularStatsMap() {
@@ -1533,6 +1551,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrDefault(
         java.lang.String key,
         com.google.cloud.automl.v1beta1.TimestampStats.GranularStats defaultValue) {
@@ -1558,6 +1577,7 @@ public final class TimestampStats extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.automl.v1beta1.TimestampStats.GranularStats&gt; granular_stats = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TimestampStats.GranularStats getGranularStatsOrThrow(
         java.lang.String key) {
       if (key == null) {

@@ -877,6 +877,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        *
        * @return The gcsOutputDirectory.
        */
+      @java.lang.Override
       public java.lang.String getGcsOutputDirectory() {
         java.lang.Object ref = "";
         if (outputLocationCase_ == 1) {
@@ -905,6 +906,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        *
        * @return The bytes for gcsOutputDirectory.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getGcsOutputDirectoryBytes() {
         java.lang.Object ref = "";
         if (outputLocationCase_ == 1) {
@@ -999,6 +1001,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        *
        * @return The bigqueryOutputDataset.
        */
+      @java.lang.Override
       public java.lang.String getBigqueryOutputDataset() {
         java.lang.Object ref = "";
         if (outputLocationCase_ == 2) {
@@ -1027,6 +1030,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
        *
        * @return The bytes for bigqueryOutputDataset.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getBigqueryOutputDatasetBytes() {
         java.lang.Object ref = "";
         if (outputLocationCase_ == 2) {
@@ -1182,6 +1186,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
    *
    * @return Whether the outputInfo field is set.
    */
+  @java.lang.Override
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
   }
@@ -1198,6 +1203,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
    *
    * @return The outputInfo.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.ExportDataOutputInfo
       getOutputInfo() {
     return outputInfo_ == null
@@ -1216,6 +1222,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
    * .google.cloud.automl.v1beta1.ExportDataOperationMetadata.ExportDataOutputInfo output_info = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.ExportDataOutputInfoOrBuilder
       getOutputInfoOrBuilder() {
     return getOutputInfo();

@@ -266,6 +266,10 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -314,6 +318,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for unit.
    */
+  @java.lang.Override
   public int getUnitValue() {
     return unit_;
   }
@@ -328,6 +333,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    *
    * @return The unit.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit getUnit() {
     @SuppressWarnings("deprecation")
     com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit result =
@@ -350,6 +356,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    *
    * @return The width.
    */
+  @java.lang.Override
   public float getWidth() {
     return width_;
   }
@@ -367,6 +374,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
    *
    * @return The height.
    */
+  @java.lang.Override
   public float getHeight() {
     return height_;
   }
@@ -738,6 +746,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for unit.
      */
+    @java.lang.Override
     public int getUnitValue() {
       return unit_;
     }
@@ -754,6 +763,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setUnitValue(int value) {
+
       unit_ = value;
       onChanged();
       return this;
@@ -769,6 +779,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      *
      * @return The unit.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit getUnit() {
       @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1beta1.DocumentDimensions.DocumentDimensionUnit result =
@@ -829,6 +840,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      *
      * @return The width.
      */
+    @java.lang.Override
     public float getWidth() {
       return width_;
     }
@@ -880,6 +892,7 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      *
      * @return The height.
      */
+    @java.lang.Override
     public float getHeight() {
       return height_;
     }

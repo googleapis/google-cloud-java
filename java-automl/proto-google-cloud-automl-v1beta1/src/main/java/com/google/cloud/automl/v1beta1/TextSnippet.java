@@ -141,6 +141,7 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The content.
    */
+  @java.lang.Override
   public java.lang.String getContent() {
     java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
@@ -164,6 +165,7 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for content.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +218,7 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +244,7 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The contentUri.
    */
+  @java.lang.Override
   public java.lang.String getContentUri() {
     java.lang.Object ref = contentUri_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +267,7 @@ public final class TextSnippet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for contentUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContentUriBytes() {
     java.lang.Object ref = contentUri_;
     if (ref instanceof java.lang.String) {

@@ -145,6 +145,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the model field is set.
    */
+  @java.lang.Override
   public boolean hasModel() {
     return model_ != null;
   }
@@ -159,6 +160,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The model.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.Model getModel() {
     return model_ == null ? com.google.cloud.automl.v1.Model.getDefaultInstance() : model_;
   }
@@ -171,6 +173,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.automl.v1.Model model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ModelOrBuilder getModelOrBuilder() {
     return getModel();
   }
@@ -189,6 +192,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -204,6 +208,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -217,6 +222,7 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

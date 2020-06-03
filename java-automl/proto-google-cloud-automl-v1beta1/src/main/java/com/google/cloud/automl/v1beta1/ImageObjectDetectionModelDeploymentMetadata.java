@@ -127,6 +127,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
    *
    * @return The nodeCount.
    */
+  @java.lang.Override
   public long getNodeCount() {
     return nodeCount_;
   }
@@ -484,6 +485,7 @@ public final class ImageObjectDetectionModelDeploymentMetadata
      *
      * @return The nodeCount.
      */
+    @java.lang.Override
     public long getNodeCount() {
       return nodeCount_;
     }

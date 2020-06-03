@@ -125,6 +125,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The start.
    */
+  @java.lang.Override
   public double getStart() {
     return start_;
   }
@@ -142,6 +143,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The end.
    */
+  @java.lang.Override
   public double getEnd() {
     return end_;
   }
@@ -494,6 +496,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The start.
      */
+    @java.lang.Override
     public double getStart() {
       return start_;
     }
@@ -545,6 +548,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The end.
      */
+    @java.lang.Override
     public double getEnd() {
       return end_;
     }

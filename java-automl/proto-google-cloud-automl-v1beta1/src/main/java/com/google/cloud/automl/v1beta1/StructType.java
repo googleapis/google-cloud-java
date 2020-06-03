@@ -171,6 +171,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
    */
+  @java.lang.Override
   public boolean containsFields(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -178,6 +179,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
     return internalGetFields().getMap().containsKey(key);
   }
   /** Use {@link #getFieldsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataType> getFields() {
     return getFieldsMap();
@@ -193,6 +195,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataType> getFieldsMap() {
     return internalGetFields().getMap();
   }
@@ -207,6 +210,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataType getFieldsOrDefault(
       java.lang.String key, com.google.cloud.automl.v1beta1.DataType defaultValue) {
     if (key == null) {
@@ -227,6 +231,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataType getFieldsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -622,6 +627,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
      */
+    @java.lang.Override
     public boolean containsFields(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -629,6 +635,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
       return internalGetFields().getMap().containsKey(key);
     }
     /** Use {@link #getFieldsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataType> getFields() {
       return getFieldsMap();
@@ -644,6 +651,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataType>
         getFieldsMap() {
       return internalGetFields().getMap();
@@ -659,6 +667,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DataType getFieldsOrDefault(
         java.lang.String key, com.google.cloud.automl.v1beta1.DataType defaultValue) {
       if (key == null) {
@@ -679,6 +688,7 @@ public final class StructType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataType&gt; fields = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DataType getFieldsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

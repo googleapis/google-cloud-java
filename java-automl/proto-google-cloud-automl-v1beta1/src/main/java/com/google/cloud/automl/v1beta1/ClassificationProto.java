@@ -149,6 +149,10 @@ public final class ClassificationProto {
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -313,6 +317,7 @@ public final class ClassificationProto {
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -677,6 +682,7 @@ public final class ClassificationProto {
        *
        * @return The score.
        */
+      @java.lang.Override
       public float getScore() {
         return score_;
       }
@@ -1091,6 +1097,7 @@ public final class ClassificationProto {
      *
      * @return The type.
      */
+    @java.lang.Override
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -1132,6 +1139,7 @@ public final class ClassificationProto {
      *
      * @return The bytes for type.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -1159,6 +1167,7 @@ public final class ClassificationProto {
      *
      * @return Whether the classificationAnnotation field is set.
      */
+    @java.lang.Override
     public boolean hasClassificationAnnotation() {
       return classificationAnnotation_ != null;
     }
@@ -1174,6 +1183,7 @@ public final class ClassificationProto {
      *
      * @return The classificationAnnotation.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
         getClassificationAnnotation() {
       return classificationAnnotation_ == null
@@ -1191,6 +1201,7 @@ public final class ClassificationProto {
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification_annotation = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
         getClassificationAnnotationOrBuilder() {
       return getClassificationAnnotation();
@@ -1210,6 +1221,7 @@ public final class ClassificationProto {
      *
      * @return Whether the timeSegment field is set.
      */
+    @java.lang.Override
     public boolean hasTimeSegment() {
       return timeSegment_ != null;
     }
@@ -1225,6 +1237,7 @@ public final class ClassificationProto {
      *
      * @return The timeSegment.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TimeSegment getTimeSegment() {
       return timeSegment_ == null
           ? com.google.cloud.automl.v1beta1.TimeSegment.getDefaultInstance()
@@ -1240,6 +1253,7 @@ public final class ClassificationProto {
      *
      * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder() {
       return getTimeSegment();
     }
@@ -3120,6 +3134,7 @@ public final class ClassificationProto {
        *
        * @return The confidenceThreshold.
        */
+      @java.lang.Override
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
@@ -3139,6 +3154,7 @@ public final class ClassificationProto {
        *
        * @return The positionThreshold.
        */
+      @java.lang.Override
       public int getPositionThreshold() {
         return positionThreshold_;
       }
@@ -3157,6 +3173,7 @@ public final class ClassificationProto {
        *
        * @return The recall.
        */
+      @java.lang.Override
       public float getRecall() {
         return recall_;
       }
@@ -3174,6 +3191,7 @@ public final class ClassificationProto {
        *
        * @return The precision.
        */
+      @java.lang.Override
       public float getPrecision() {
         return precision_;
       }
@@ -3191,6 +3209,7 @@ public final class ClassificationProto {
        *
        * @return The falsePositiveRate.
        */
+      @java.lang.Override
       public float getFalsePositiveRate() {
         return falsePositiveRate_;
       }
@@ -3208,6 +3227,7 @@ public final class ClassificationProto {
        *
        * @return The f1Score.
        */
+      @java.lang.Override
       public float getF1Score() {
         return f1Score_;
       }
@@ -3227,6 +3247,7 @@ public final class ClassificationProto {
        *
        * @return The recallAt1.
        */
+      @java.lang.Override
       public float getRecallAt1() {
         return recallAt1_;
       }
@@ -3246,6 +3267,7 @@ public final class ClassificationProto {
        *
        * @return The precisionAt1.
        */
+      @java.lang.Override
       public float getPrecisionAt1() {
         return precisionAt1_;
       }
@@ -3265,6 +3287,7 @@ public final class ClassificationProto {
        *
        * @return The falsePositiveRateAt1.
        */
+      @java.lang.Override
       public float getFalsePositiveRateAt1() {
         return falsePositiveRateAt1_;
       }
@@ -3282,6 +3305,7 @@ public final class ClassificationProto {
        *
        * @return The f1ScoreAt1.
        */
+      @java.lang.Override
       public float getF1ScoreAt1() {
         return f1ScoreAt1_;
       }
@@ -3300,6 +3324,7 @@ public final class ClassificationProto {
        *
        * @return The truePositiveCount.
        */
+      @java.lang.Override
       public long getTruePositiveCount() {
         return truePositiveCount_;
       }
@@ -3318,6 +3343,7 @@ public final class ClassificationProto {
        *
        * @return The falsePositiveCount.
        */
+      @java.lang.Override
       public long getFalsePositiveCount() {
         return falsePositiveCount_;
       }
@@ -3336,6 +3362,7 @@ public final class ClassificationProto {
        *
        * @return The falseNegativeCount.
        */
+      @java.lang.Override
       public long getFalseNegativeCount() {
         return falseNegativeCount_;
       }
@@ -3354,6 +3381,7 @@ public final class ClassificationProto {
        *
        * @return The trueNegativeCount.
        */
+      @java.lang.Override
       public long getTrueNegativeCount() {
         return trueNegativeCount_;
       }
@@ -3957,6 +3985,7 @@ public final class ClassificationProto {
          *
          * @return The confidenceThreshold.
          */
+        @java.lang.Override
         public float getConfidenceThreshold() {
           return confidenceThreshold_;
         }
@@ -4012,6 +4041,7 @@ public final class ClassificationProto {
          *
          * @return The positionThreshold.
          */
+        @java.lang.Override
         public int getPositionThreshold() {
           return positionThreshold_;
         }
@@ -4068,6 +4098,7 @@ public final class ClassificationProto {
          *
          * @return The recall.
          */
+        @java.lang.Override
         public float getRecall() {
           return recall_;
         }
@@ -4121,6 +4152,7 @@ public final class ClassificationProto {
          *
          * @return The precision.
          */
+        @java.lang.Override
         public float getPrecision() {
           return precision_;
         }
@@ -4172,6 +4204,7 @@ public final class ClassificationProto {
          *
          * @return The falsePositiveRate.
          */
+        @java.lang.Override
         public float getFalsePositiveRate() {
           return falsePositiveRate_;
         }
@@ -4223,6 +4256,7 @@ public final class ClassificationProto {
          *
          * @return The f1Score.
          */
+        @java.lang.Override
         public float getF1Score() {
           return f1Score_;
         }
@@ -4276,6 +4310,7 @@ public final class ClassificationProto {
          *
          * @return The recallAt1.
          */
+        @java.lang.Override
         public float getRecallAt1() {
           return recallAt1_;
         }
@@ -4333,6 +4368,7 @@ public final class ClassificationProto {
          *
          * @return The precisionAt1.
          */
+        @java.lang.Override
         public float getPrecisionAt1() {
           return precisionAt1_;
         }
@@ -4390,6 +4426,7 @@ public final class ClassificationProto {
          *
          * @return The falsePositiveRateAt1.
          */
+        @java.lang.Override
         public float getFalsePositiveRateAt1() {
           return falsePositiveRateAt1_;
         }
@@ -4445,6 +4482,7 @@ public final class ClassificationProto {
          *
          * @return The f1ScoreAt1.
          */
+        @java.lang.Override
         public float getF1ScoreAt1() {
           return f1ScoreAt1_;
         }
@@ -4497,6 +4535,7 @@ public final class ClassificationProto {
          *
          * @return The truePositiveCount.
          */
+        @java.lang.Override
         public long getTruePositiveCount() {
           return truePositiveCount_;
         }
@@ -4551,6 +4590,7 @@ public final class ClassificationProto {
          *
          * @return The falsePositiveCount.
          */
+        @java.lang.Override
         public long getFalsePositiveCount() {
           return falsePositiveCount_;
         }
@@ -4605,6 +4645,7 @@ public final class ClassificationProto {
          *
          * @return The falseNegativeCount.
          */
+        @java.lang.Override
         public long getFalseNegativeCount() {
           return falseNegativeCount_;
         }
@@ -4659,6 +4700,7 @@ public final class ClassificationProto {
          *
          * @return The trueNegativeCount.
          */
+        @java.lang.Override
         public long getTrueNegativeCount() {
           return trueNegativeCount_;
         }
@@ -5315,6 +5357,7 @@ public final class ClassificationProto {
          *
          * @return A list containing the exampleCount.
          */
+        @java.lang.Override
         public java.util.List<java.lang.Integer> getExampleCountList() {
           return exampleCount_;
         }
@@ -6156,6 +6199,7 @@ public final class ClassificationProto {
        * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
                   .ConfusionMatrix.Row>
@@ -6177,6 +6221,7 @@ public final class ClassificationProto {
        * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.cloud.automl.v1beta1.ClassificationProto
@@ -6199,6 +6244,7 @@ public final class ClassificationProto {
        * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
        * </code>
        */
+      @java.lang.Override
       public int getRowCount() {
         return row_.size();
       }
@@ -6217,6 +6263,7 @@ public final class ClassificationProto {
        * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
               .ConfusionMatrix.Row
           getRow(int index) {
@@ -6237,6 +6284,7 @@ public final class ClassificationProto {
        * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
               .ConfusionMatrix.RowOrBuilder
           getRowOrBuilder(int index) {
@@ -7735,6 +7783,7 @@ public final class ClassificationProto {
      *
      * @return The auPrc.
      */
+    @java.lang.Override
     public float getAuPrc() {
       return auPrc_;
     }
@@ -7754,6 +7803,7 @@ public final class ClassificationProto {
      *
      * @return The baseAuPrc.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public float getBaseAuPrc() {
       return baseAuPrc_;
@@ -7773,6 +7823,7 @@ public final class ClassificationProto {
      *
      * @return The auRoc.
      */
+    @java.lang.Override
     public float getAuRoc() {
       return auRoc_;
     }
@@ -7790,6 +7841,7 @@ public final class ClassificationProto {
      *
      * @return The logLoss.
      */
+    @java.lang.Override
     public float getLogLoss() {
       return logLoss_;
     }
@@ -7816,6 +7868,7 @@ public final class ClassificationProto {
      * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
                 .ConfidenceMetricsEntry>
@@ -7839,6 +7892,7 @@ public final class ClassificationProto {
      * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
@@ -7863,6 +7917,7 @@ public final class ClassificationProto {
      * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
      * </code>
      */
+    @java.lang.Override
     public int getConfidenceMetricsEntryCount() {
       return confidenceMetricsEntry_.size();
     }
@@ -7883,6 +7938,7 @@ public final class ClassificationProto {
      * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfidenceMetricsEntry
         getConfidenceMetricsEntry(int index) {
@@ -7905,6 +7961,7 @@ public final class ClassificationProto {
      * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfidenceMetricsEntryOrBuilder
         getConfidenceMetricsEntryOrBuilder(int index) {
@@ -7931,6 +7988,7 @@ public final class ClassificationProto {
      *
      * @return Whether the confusionMatrix field is set.
      */
+    @java.lang.Override
     public boolean hasConfusionMatrix() {
       return confusionMatrix_ != null;
     }
@@ -7950,6 +8008,7 @@ public final class ClassificationProto {
      *
      * @return The confusionMatrix.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrix
         getConfusionMatrix() {
@@ -7972,6 +8031,7 @@ public final class ClassificationProto {
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrixOrBuilder
         getConfusionMatrixOrBuilder() {
@@ -8588,6 +8648,7 @@ public final class ClassificationProto {
        *
        * @return The auPrc.
        */
+      @java.lang.Override
       public float getAuPrc() {
         return auPrc_;
       }
@@ -8643,6 +8704,7 @@ public final class ClassificationProto {
        *
        * @return The baseAuPrc.
        */
+      @java.lang.Override
       @java.lang.Deprecated
       public float getBaseAuPrc() {
         return baseAuPrc_;
@@ -8702,6 +8764,7 @@ public final class ClassificationProto {
        *
        * @return The auRoc.
        */
+      @java.lang.Override
       public float getAuRoc() {
         return auRoc_;
       }
@@ -8755,6 +8818,7 @@ public final class ClassificationProto {
        *
        * @return The logLoss.
        */
+      @java.lang.Override
       public float getLogLoss() {
         return logLoss_;
       }

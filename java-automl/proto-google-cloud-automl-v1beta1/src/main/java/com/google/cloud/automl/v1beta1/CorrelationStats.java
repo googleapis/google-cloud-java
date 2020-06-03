@@ -122,6 +122,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
    *
    * @return The cramersV.
    */
+  @java.lang.Override
   public double getCramersV() {
     return cramersV_;
   }
@@ -460,6 +461,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
      *
      * @return The cramersV.
      */
+    @java.lang.Override
     public double getCramersV() {
       return cramersV_;
     }

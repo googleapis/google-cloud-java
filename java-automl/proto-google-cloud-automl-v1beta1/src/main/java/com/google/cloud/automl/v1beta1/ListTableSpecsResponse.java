@@ -138,6 +138,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.automl.v1beta1.TableSpec table_specs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.TableSpec> getTableSpecsList() {
     return tableSpecs_;
   }
@@ -150,6 +151,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.automl.v1beta1.TableSpec table_specs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.TableSpecOrBuilder>
       getTableSpecsOrBuilderList() {
     return tableSpecs_;
@@ -163,6 +165,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.automl.v1beta1.TableSpec table_specs = 1;</code>
    */
+  @java.lang.Override
   public int getTableSpecsCount() {
     return tableSpecs_.size();
   }
@@ -175,6 +178,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.automl.v1beta1.TableSpec table_specs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TableSpec getTableSpecs(int index) {
     return tableSpecs_.get(index);
   }
@@ -187,6 +191,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.automl.v1beta1.TableSpec table_specs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TableSpecOrBuilder getTableSpecsOrBuilder(int index) {
     return tableSpecs_.get(index);
   }
@@ -205,6 +210,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +234,7 @@ public final class ListTableSpecsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

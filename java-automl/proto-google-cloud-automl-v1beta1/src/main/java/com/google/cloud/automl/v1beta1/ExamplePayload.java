@@ -231,6 +231,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the image field is set.
    */
+  @java.lang.Override
   public boolean hasImage() {
     return payloadCase_ == 1;
   }
@@ -245,6 +246,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The image.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.Image getImage() {
     if (payloadCase_ == 1) {
       return (com.google.cloud.automl.v1beta1.Image) payload_;
@@ -260,6 +262,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ImageOrBuilder getImageOrBuilder() {
     if (payloadCase_ == 1) {
       return (com.google.cloud.automl.v1beta1.Image) payload_;
@@ -279,6 +282,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the textSnippet field is set.
    */
+  @java.lang.Override
   public boolean hasTextSnippet() {
     return payloadCase_ == 2;
   }
@@ -293,6 +297,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The textSnippet.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TextSnippet getTextSnippet() {
     if (payloadCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.TextSnippet) payload_;
@@ -308,6 +313,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.TextSnippet text_snippet = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TextSnippetOrBuilder getTextSnippetOrBuilder() {
     if (payloadCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.TextSnippet) payload_;
@@ -327,6 +333,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Override
   public boolean hasDocument() {
     return payloadCase_ == 4;
   }
@@ -341,6 +348,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The document.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.Document getDocument() {
     if (payloadCase_ == 4) {
       return (com.google.cloud.automl.v1beta1.Document) payload_;
@@ -356,6 +364,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DocumentOrBuilder getDocumentOrBuilder() {
     if (payloadCase_ == 4) {
       return (com.google.cloud.automl.v1beta1.Document) payload_;
@@ -375,6 +384,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the row field is set.
    */
+  @java.lang.Override
   public boolean hasRow() {
     return payloadCase_ == 3;
   }
@@ -389,6 +399,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The row.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.Row getRow() {
     if (payloadCase_ == 3) {
       return (com.google.cloud.automl.v1beta1.Row) payload_;
@@ -404,6 +415,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.RowOrBuilder getRowOrBuilder() {
     if (payloadCase_ == 3) {
       return (com.google.cloud.automl.v1beta1.Row) payload_;
@@ -867,6 +879,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the image field is set.
      */
+    @java.lang.Override
     public boolean hasImage() {
       return payloadCase_ == 1;
     }
@@ -881,6 +894,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The image.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.Image getImage() {
       if (imageBuilder_ == null) {
         if (payloadCase_ == 1) {
@@ -1012,6 +1026,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.Image image = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ImageOrBuilder getImageOrBuilder() {
       if ((payloadCase_ == 1) && (imageBuilder_ != null)) {
         return imageBuilder_.getMessageOrBuilder();
@@ -1072,6 +1087,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textSnippet field is set.
      */
+    @java.lang.Override
     public boolean hasTextSnippet() {
       return payloadCase_ == 2;
     }
@@ -1086,6 +1102,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textSnippet.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TextSnippet getTextSnippet() {
       if (textSnippetBuilder_ == null) {
         if (payloadCase_ == 2) {
@@ -1218,6 +1235,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.TextSnippet text_snippet = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TextSnippetOrBuilder getTextSnippetOrBuilder() {
       if ((payloadCase_ == 2) && (textSnippetBuilder_ != null)) {
         return textSnippetBuilder_.getMessageOrBuilder();
@@ -1278,6 +1296,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the document field is set.
      */
+    @java.lang.Override
     public boolean hasDocument() {
       return payloadCase_ == 4;
     }
@@ -1292,6 +1311,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The document.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.Document getDocument() {
       if (documentBuilder_ == null) {
         if (payloadCase_ == 4) {
@@ -1423,6 +1443,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.Document document = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DocumentOrBuilder getDocumentOrBuilder() {
       if ((payloadCase_ == 4) && (documentBuilder_ != null)) {
         return documentBuilder_.getMessageOrBuilder();
@@ -1483,6 +1504,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the row field is set.
      */
+    @java.lang.Override
     public boolean hasRow() {
       return payloadCase_ == 3;
     }
@@ -1497,6 +1519,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The row.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.Row getRow() {
       if (rowBuilder_ == null) {
         if (payloadCase_ == 3) {
@@ -1628,6 +1651,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.Row row = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.RowOrBuilder getRowOrBuilder() {
       if ((payloadCase_ == 3) && (rowBuilder_ != null)) {
         return rowBuilder_.getMessageOrBuilder();

@@ -547,6 +547,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The confidenceThreshold.
      */
+    @java.lang.Override
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
@@ -566,6 +567,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The positionThreshold.
      */
+    @java.lang.Override
     public int getPositionThreshold() {
       return positionThreshold_;
     }
@@ -584,6 +586,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The recall.
      */
+    @java.lang.Override
     public float getRecall() {
       return recall_;
     }
@@ -601,6 +604,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The precision.
      */
+    @java.lang.Override
     public float getPrecision() {
       return precision_;
     }
@@ -618,6 +622,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The falsePositiveRate.
      */
+    @java.lang.Override
     public float getFalsePositiveRate() {
       return falsePositiveRate_;
     }
@@ -635,6 +640,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The f1Score.
      */
+    @java.lang.Override
     public float getF1Score() {
       return f1Score_;
     }
@@ -654,6 +660,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The recallAt1.
      */
+    @java.lang.Override
     public float getRecallAt1() {
       return recallAt1_;
     }
@@ -673,6 +680,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The precisionAt1.
      */
+    @java.lang.Override
     public float getPrecisionAt1() {
       return precisionAt1_;
     }
@@ -692,6 +700,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The falsePositiveRateAt1.
      */
+    @java.lang.Override
     public float getFalsePositiveRateAt1() {
       return falsePositiveRateAt1_;
     }
@@ -709,6 +718,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The f1ScoreAt1.
      */
+    @java.lang.Override
     public float getF1ScoreAt1() {
       return f1ScoreAt1_;
     }
@@ -727,6 +737,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The truePositiveCount.
      */
+    @java.lang.Override
     public long getTruePositiveCount() {
       return truePositiveCount_;
     }
@@ -745,6 +756,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The falsePositiveCount.
      */
+    @java.lang.Override
     public long getFalsePositiveCount() {
       return falsePositiveCount_;
     }
@@ -763,6 +775,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The falseNegativeCount.
      */
+    @java.lang.Override
     public long getFalseNegativeCount() {
       return falseNegativeCount_;
     }
@@ -781,6 +794,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The trueNegativeCount.
      */
+    @java.lang.Override
     public long getTrueNegativeCount() {
       return trueNegativeCount_;
     }
@@ -1351,6 +1365,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The confidenceThreshold.
        */
+      @java.lang.Override
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
@@ -1406,6 +1421,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The positionThreshold.
        */
+      @java.lang.Override
       public int getPositionThreshold() {
         return positionThreshold_;
       }
@@ -1462,6 +1478,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The recall.
        */
+      @java.lang.Override
       public float getRecall() {
         return recall_;
       }
@@ -1515,6 +1532,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The precision.
        */
+      @java.lang.Override
       public float getPrecision() {
         return precision_;
       }
@@ -1566,6 +1584,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The falsePositiveRate.
        */
+      @java.lang.Override
       public float getFalsePositiveRate() {
         return falsePositiveRate_;
       }
@@ -1617,6 +1636,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The f1Score.
        */
+      @java.lang.Override
       public float getF1Score() {
         return f1Score_;
       }
@@ -1670,6 +1690,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The recallAt1.
        */
+      @java.lang.Override
       public float getRecallAt1() {
         return recallAt1_;
       }
@@ -1727,6 +1748,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The precisionAt1.
        */
+      @java.lang.Override
       public float getPrecisionAt1() {
         return precisionAt1_;
       }
@@ -1784,6 +1806,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The falsePositiveRateAt1.
        */
+      @java.lang.Override
       public float getFalsePositiveRateAt1() {
         return falsePositiveRateAt1_;
       }
@@ -1839,6 +1862,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The f1ScoreAt1.
        */
+      @java.lang.Override
       public float getF1ScoreAt1() {
         return f1ScoreAt1_;
       }
@@ -1891,6 +1915,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The truePositiveCount.
        */
+      @java.lang.Override
       public long getTruePositiveCount() {
         return truePositiveCount_;
       }
@@ -1945,6 +1970,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The falsePositiveCount.
        */
+      @java.lang.Override
       public long getFalsePositiveCount() {
         return falsePositiveCount_;
       }
@@ -1999,6 +2025,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The falseNegativeCount.
        */
+      @java.lang.Override
       public long getFalseNegativeCount() {
         return falseNegativeCount_;
       }
@@ -2053,6 +2080,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return The trueNegativeCount.
        */
+      @java.lang.Override
       public long getTrueNegativeCount() {
         return trueNegativeCount_;
       }
@@ -2698,6 +2726,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
        *
        * @return A list containing the exampleCount.
        */
+      @java.lang.Override
       public java.util.List<java.lang.Integer> getExampleCountList() {
         return exampleCount_;
       }
@@ -3499,6 +3528,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row>
         getRowList() {
@@ -3519,6 +3549,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
@@ -3541,6 +3572,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
      * </code>
      */
+    @java.lang.Override
     public int getRowCount() {
       return row_.size();
     }
@@ -3559,6 +3591,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row getRow(
         int index) {
       return row_.get(index);
@@ -3578,6 +3611,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder
         getRowOrBuilder(int index) {
       return row_.get(index);
@@ -5010,6 +5044,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    *
    * @return The auPrc.
    */
+  @java.lang.Override
   public float getAuPrc() {
     return auPrc_;
   }
@@ -5028,6 +5063,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    *
    * @return The auRoc.
    */
+  @java.lang.Override
   public float getAuRoc() {
     return auRoc_;
   }
@@ -5045,6 +5081,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    *
    * @return The logLoss.
    */
+  @java.lang.Override
   public float getLogLoss() {
     return logLoss_;
   }
@@ -5070,6 +5107,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry>
       getConfidenceMetricsEntryList() {
@@ -5092,6 +5130,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.automl.v1.ClassificationEvaluationMetrics
@@ -5116,6 +5155,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
    * </code>
    */
+  @java.lang.Override
   public int getConfidenceMetricsEntryCount() {
     return confidenceMetricsEntry_.size();
   }
@@ -5136,6 +5176,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry
       getConfidenceMetricsEntry(int index) {
     return confidenceMetricsEntry_.get(index);
@@ -5157,6 +5198,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    * repeated .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder
       getConfidenceMetricsEntryOrBuilder(int index) {
     return confidenceMetricsEntry_.get(index);
@@ -5181,6 +5223,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    *
    * @return Whether the confusionMatrix field is set.
    */
+  @java.lang.Override
   public boolean hasConfusionMatrix() {
     return confusionMatrix_ != null;
   }
@@ -5200,6 +5243,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    *
    * @return The confusionMatrix.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
       getConfusionMatrix() {
     return confusionMatrix_ == null
@@ -5221,6 +5265,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
    * .google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder
       getConfusionMatrixOrBuilder() {
     return getConfusionMatrix();
@@ -5775,6 +5820,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The auPrc.
      */
+    @java.lang.Override
     public float getAuPrc() {
       return auPrc_;
     }
@@ -5829,6 +5875,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The auRoc.
      */
+    @java.lang.Override
     public float getAuRoc() {
       return auRoc_;
     }
@@ -5882,6 +5929,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
      *
      * @return The logLoss.
      */
+    @java.lang.Override
     public float getLogLoss() {
       return logLoss_;
     }

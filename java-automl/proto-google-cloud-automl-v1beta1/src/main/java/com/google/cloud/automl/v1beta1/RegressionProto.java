@@ -222,6 +222,7 @@ public final class RegressionProto {
      *
      * @return The rootMeanSquaredError.
      */
+    @java.lang.Override
     public float getRootMeanSquaredError() {
       return rootMeanSquaredError_;
     }
@@ -239,6 +240,7 @@ public final class RegressionProto {
      *
      * @return The meanAbsoluteError.
      */
+    @java.lang.Override
     public float getMeanAbsoluteError() {
       return meanAbsoluteError_;
     }
@@ -257,6 +259,7 @@ public final class RegressionProto {
      *
      * @return The meanAbsolutePercentageError.
      */
+    @java.lang.Override
     public float getMeanAbsolutePercentageError() {
       return meanAbsolutePercentageError_;
     }
@@ -274,6 +277,7 @@ public final class RegressionProto {
      *
      * @return The rSquared.
      */
+    @java.lang.Override
     public float getRSquared() {
       return rSquared_;
     }
@@ -291,6 +295,7 @@ public final class RegressionProto {
      *
      * @return The rootMeanSquaredLogError.
      */
+    @java.lang.Override
     public float getRootMeanSquaredLogError() {
       return rootMeanSquaredLogError_;
     }
@@ -715,6 +720,7 @@ public final class RegressionProto {
        *
        * @return The rootMeanSquaredError.
        */
+      @java.lang.Override
       public float getRootMeanSquaredError() {
         return rootMeanSquaredError_;
       }
@@ -766,6 +772,7 @@ public final class RegressionProto {
        *
        * @return The meanAbsoluteError.
        */
+      @java.lang.Override
       public float getMeanAbsoluteError() {
         return meanAbsoluteError_;
       }
@@ -818,6 +825,7 @@ public final class RegressionProto {
        *
        * @return The meanAbsolutePercentageError.
        */
+      @java.lang.Override
       public float getMeanAbsolutePercentageError() {
         return meanAbsolutePercentageError_;
       }
@@ -871,6 +879,7 @@ public final class RegressionProto {
        *
        * @return The rSquared.
        */
+      @java.lang.Override
       public float getRSquared() {
         return rSquared_;
       }
@@ -922,6 +931,7 @@ public final class RegressionProto {
        *
        * @return The rootMeanSquaredLogError.
        */
+      @java.lang.Override
       public float getRootMeanSquaredLogError() {
         return rootMeanSquaredLogError_;
       }

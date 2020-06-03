@@ -132,6 +132,7 @@ public final class GcrDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The outputUri.
    */
+  @java.lang.Override
   public java.lang.String getOutputUri() {
     java.lang.Object ref = outputUri_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class GcrDestination extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for outputUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutputUriBytes() {
     java.lang.Object ref = outputUri_;
     if (ref instanceof java.lang.String) {

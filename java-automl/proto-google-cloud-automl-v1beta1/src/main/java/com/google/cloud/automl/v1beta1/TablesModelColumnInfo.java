@@ -139,6 +139,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The columnSpecName.
    */
+  @java.lang.Override
   public java.lang.String getColumnSpecName() {
     java.lang.Object ref = columnSpecName_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for columnSpecName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getColumnSpecNameBytes() {
     java.lang.Object ref = columnSpecName_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +190,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The columnDisplayName.
    */
+  @java.lang.Override
   public java.lang.String getColumnDisplayName() {
     java.lang.Object ref = columnDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +214,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for columnDisplayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getColumnDisplayNameBytes() {
     java.lang.Object ref = columnDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +255,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
    *
    * @return The featureImportance.
    */
+  @java.lang.Override
   public float getFeatureImportance() {
     return featureImportance_;
   }
@@ -856,6 +861,7 @@ public final class TablesModelColumnInfo extends com.google.protobuf.GeneratedMe
      *
      * @return The featureImportance.
      */
+    @java.lang.Override
     public float getFeatureImportance() {
       return featureImportance_;
     }

@@ -179,6 +179,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -199,6 +200,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the predictionInterval field is set.
    */
+  @java.lang.Override
   public boolean hasPredictionInterval() {
     return predictionInterval_ != null;
   }
@@ -216,6 +218,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The predictionInterval.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DoubleRange getPredictionInterval() {
     return predictionInterval_ == null
         ? com.google.cloud.automl.v1beta1.DoubleRange.getDefaultInstance()
@@ -233,6 +236,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.automl.v1beta1.DoubleRange prediction_interval = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DoubleRangeOrBuilder getPredictionIntervalOrBuilder() {
     return getPredictionInterval();
   }
@@ -255,6 +259,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the value field is set.
    */
+  @java.lang.Override
   public boolean hasValue() {
     return value_ != null;
   }
@@ -274,6 +279,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The value.
    */
+  @java.lang.Override
   public com.google.protobuf.Value getValue() {
     return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
   }
@@ -291,6 +297,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Value value = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
     return getValue();
   }
@@ -315,6 +322,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>
       getTablesModelColumnInfoList() {
     return tablesModelColumnInfo_;
@@ -336,6 +344,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder>
       getTablesModelColumnInfoOrBuilderList() {
     return tablesModelColumnInfo_;
@@ -357,6 +366,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
    * </code>
    */
+  @java.lang.Override
   public int getTablesModelColumnInfoCount() {
     return tablesModelColumnInfo_.size();
   }
@@ -377,6 +387,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TablesModelColumnInfo getTablesModelColumnInfo(int index) {
     return tablesModelColumnInfo_.get(index);
   }
@@ -397,6 +408,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder
       getTablesModelColumnInfoOrBuilder(int index) {
     return tablesModelColumnInfo_.get(index);
@@ -421,6 +433,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The baselineScore.
    */
+  @java.lang.Override
   public float getBaselineScore() {
     return baselineScore_;
   }
@@ -890,6 +903,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -1918,6 +1932,7 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * @return The baselineScore.
      */
+    @java.lang.Override
     public float getBaselineScore() {
       return baselineScore_;
     }

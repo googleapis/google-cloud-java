@@ -132,6 +132,7 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the memberStats field is set.
    */
+  @java.lang.Override
   public boolean hasMemberStats() {
     return memberStats_ != null;
   }
@@ -147,6 +148,7 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The memberStats.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataStats getMemberStats() {
     return memberStats_ == null
         ? com.google.cloud.automl.v1beta1.DataStats.getDefaultInstance()
@@ -162,6 +164,7 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.DataStats member_stats = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataStatsOrBuilder getMemberStatsOrBuilder() {
     return getMemberStats();
   }

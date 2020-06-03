@@ -284,6 +284,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the float64Stats field is set.
    */
+  @java.lang.Override
   public boolean hasFloat64Stats() {
     return statsCase_ == 3;
   }
@@ -298,6 +299,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The float64Stats.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.Float64Stats getFloat64Stats() {
     if (statsCase_ == 3) {
       return (com.google.cloud.automl.v1beta1.Float64Stats) stats_;
@@ -313,6 +315,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.Float64Stats float64_stats = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.Float64StatsOrBuilder getFloat64StatsOrBuilder() {
     if (statsCase_ == 3) {
       return (com.google.cloud.automl.v1beta1.Float64Stats) stats_;
@@ -332,6 +335,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the stringStats field is set.
    */
+  @java.lang.Override
   public boolean hasStringStats() {
     return statsCase_ == 4;
   }
@@ -346,6 +350,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stringStats.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.StringStats getStringStats() {
     if (statsCase_ == 4) {
       return (com.google.cloud.automl.v1beta1.StringStats) stats_;
@@ -361,6 +366,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.StringStats string_stats = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.StringStatsOrBuilder getStringStatsOrBuilder() {
     if (statsCase_ == 4) {
       return (com.google.cloud.automl.v1beta1.StringStats) stats_;
@@ -380,6 +386,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timestampStats field is set.
    */
+  @java.lang.Override
   public boolean hasTimestampStats() {
     return statsCase_ == 5;
   }
@@ -394,6 +401,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timestampStats.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TimestampStats getTimestampStats() {
     if (statsCase_ == 5) {
       return (com.google.cloud.automl.v1beta1.TimestampStats) stats_;
@@ -409,6 +417,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.TimestampStats timestamp_stats = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TimestampStatsOrBuilder getTimestampStatsOrBuilder() {
     if (statsCase_ == 5) {
       return (com.google.cloud.automl.v1beta1.TimestampStats) stats_;
@@ -428,6 +437,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the arrayStats field is set.
    */
+  @java.lang.Override
   public boolean hasArrayStats() {
     return statsCase_ == 6;
   }
@@ -442,6 +452,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The arrayStats.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ArrayStats getArrayStats() {
     if (statsCase_ == 6) {
       return (com.google.cloud.automl.v1beta1.ArrayStats) stats_;
@@ -457,6 +468,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.ArrayStats array_stats = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ArrayStatsOrBuilder getArrayStatsOrBuilder() {
     if (statsCase_ == 6) {
       return (com.google.cloud.automl.v1beta1.ArrayStats) stats_;
@@ -476,6 +488,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the structStats field is set.
    */
+  @java.lang.Override
   public boolean hasStructStats() {
     return statsCase_ == 7;
   }
@@ -490,6 +503,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The structStats.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.StructStats getStructStats() {
     if (statsCase_ == 7) {
       return (com.google.cloud.automl.v1beta1.StructStats) stats_;
@@ -505,6 +519,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.StructStats struct_stats = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.StructStatsOrBuilder getStructStatsOrBuilder() {
     if (statsCase_ == 7) {
       return (com.google.cloud.automl.v1beta1.StructStats) stats_;
@@ -524,6 +539,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the categoryStats field is set.
    */
+  @java.lang.Override
   public boolean hasCategoryStats() {
     return statsCase_ == 8;
   }
@@ -538,6 +554,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The categoryStats.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.CategoryStats getCategoryStats() {
     if (statsCase_ == 8) {
       return (com.google.cloud.automl.v1beta1.CategoryStats) stats_;
@@ -553,6 +570,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.CategoryStats category_stats = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.CategoryStatsOrBuilder getCategoryStatsOrBuilder() {
     if (statsCase_ == 8) {
       return (com.google.cloud.automl.v1beta1.CategoryStats) stats_;
@@ -573,6 +591,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The distinctValueCount.
    */
+  @java.lang.Override
   public long getDistinctValueCount() {
     return distinctValueCount_;
   }
@@ -590,6 +609,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nullValueCount.
    */
+  @java.lang.Override
   public long getNullValueCount() {
     return nullValueCount_;
   }
@@ -607,6 +627,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The validValueCount.
    */
+  @java.lang.Override
   public long getValidValueCount() {
     return validValueCount_;
   }
@@ -1166,6 +1187,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the float64Stats field is set.
      */
+    @java.lang.Override
     public boolean hasFloat64Stats() {
       return statsCase_ == 3;
     }
@@ -1180,6 +1202,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The float64Stats.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.Float64Stats getFloat64Stats() {
       if (float64StatsBuilder_ == null) {
         if (statsCase_ == 3) {
@@ -1312,6 +1335,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.Float64Stats float64_stats = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.Float64StatsOrBuilder getFloat64StatsOrBuilder() {
       if ((statsCase_ == 3) && (float64StatsBuilder_ != null)) {
         return float64StatsBuilder_.getMessageOrBuilder();
@@ -1372,6 +1396,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the stringStats field is set.
      */
+    @java.lang.Override
     public boolean hasStringStats() {
       return statsCase_ == 4;
     }
@@ -1386,6 +1411,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stringStats.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.StringStats getStringStats() {
       if (stringStatsBuilder_ == null) {
         if (statsCase_ == 4) {
@@ -1518,6 +1544,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.StringStats string_stats = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.StringStatsOrBuilder getStringStatsOrBuilder() {
       if ((statsCase_ == 4) && (stringStatsBuilder_ != null)) {
         return stringStatsBuilder_.getMessageOrBuilder();
@@ -1578,6 +1605,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timestampStats field is set.
      */
+    @java.lang.Override
     public boolean hasTimestampStats() {
       return statsCase_ == 5;
     }
@@ -1592,6 +1620,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timestampStats.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TimestampStats getTimestampStats() {
       if (timestampStatsBuilder_ == null) {
         if (statsCase_ == 5) {
@@ -1724,6 +1753,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.TimestampStats timestamp_stats = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.TimestampStatsOrBuilder getTimestampStatsOrBuilder() {
       if ((statsCase_ == 5) && (timestampStatsBuilder_ != null)) {
         return timestampStatsBuilder_.getMessageOrBuilder();
@@ -1784,6 +1814,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the arrayStats field is set.
      */
+    @java.lang.Override
     public boolean hasArrayStats() {
       return statsCase_ == 6;
     }
@@ -1798,6 +1829,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The arrayStats.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ArrayStats getArrayStats() {
       if (arrayStatsBuilder_ == null) {
         if (statsCase_ == 6) {
@@ -1930,6 +1962,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.ArrayStats array_stats = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ArrayStatsOrBuilder getArrayStatsOrBuilder() {
       if ((statsCase_ == 6) && (arrayStatsBuilder_ != null)) {
         return arrayStatsBuilder_.getMessageOrBuilder();
@@ -1990,6 +2023,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the structStats field is set.
      */
+    @java.lang.Override
     public boolean hasStructStats() {
       return statsCase_ == 7;
     }
@@ -2004,6 +2038,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The structStats.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.StructStats getStructStats() {
       if (structStatsBuilder_ == null) {
         if (statsCase_ == 7) {
@@ -2136,6 +2171,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.StructStats struct_stats = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.StructStatsOrBuilder getStructStatsOrBuilder() {
       if ((statsCase_ == 7) && (structStatsBuilder_ != null)) {
         return structStatsBuilder_.getMessageOrBuilder();
@@ -2196,6 +2232,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the categoryStats field is set.
      */
+    @java.lang.Override
     public boolean hasCategoryStats() {
       return statsCase_ == 8;
     }
@@ -2210,6 +2247,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The categoryStats.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.CategoryStats getCategoryStats() {
       if (categoryStatsBuilder_ == null) {
         if (statsCase_ == 8) {
@@ -2342,6 +2380,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.CategoryStats category_stats = 8;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.CategoryStatsOrBuilder getCategoryStatsOrBuilder() {
       if ((statsCase_ == 8) && (categoryStatsBuilder_ != null)) {
         return categoryStatsBuilder_.getMessageOrBuilder();
@@ -2398,6 +2437,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The distinctValueCount.
      */
+    @java.lang.Override
     public long getDistinctValueCount() {
       return distinctValueCount_;
     }
@@ -2449,6 +2489,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The nullValueCount.
      */
+    @java.lang.Override
     public long getNullValueCount() {
       return nullValueCount_;
     }
@@ -2500,6 +2541,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The validValueCount.
      */
+    @java.lang.Override
     public long getValidValueCount() {
       return validValueCount_;
     }

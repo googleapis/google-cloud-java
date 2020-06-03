@@ -170,6 +170,7 @@ public final class TextSentimentProto {
      *
      * @return The sentiment.
      */
+    @java.lang.Override
     public int getSentiment() {
       return sentiment_;
     }
@@ -538,6 +539,7 @@ public final class TextSentimentProto {
        *
        * @return The sentiment.
        */
+      @java.lang.Override
       public int getSentiment() {
         return sentiment_;
       }
@@ -1037,6 +1039,7 @@ public final class TextSentimentProto {
      *
      * @return The precision.
      */
+    @java.lang.Override
     public float getPrecision() {
       return precision_;
     }
@@ -1054,6 +1057,7 @@ public final class TextSentimentProto {
      *
      * @return The recall.
      */
+    @java.lang.Override
     public float getRecall() {
       return recall_;
     }
@@ -1071,6 +1075,7 @@ public final class TextSentimentProto {
      *
      * @return The f1Score.
      */
+    @java.lang.Override
     public float getF1Score() {
       return f1Score_;
     }
@@ -1089,6 +1094,7 @@ public final class TextSentimentProto {
      *
      * @return The meanAbsoluteError.
      */
+    @java.lang.Override
     public float getMeanAbsoluteError() {
       return meanAbsoluteError_;
     }
@@ -1107,6 +1113,7 @@ public final class TextSentimentProto {
      *
      * @return The meanSquaredError.
      */
+    @java.lang.Override
     public float getMeanSquaredError() {
       return meanSquaredError_;
     }
@@ -1125,6 +1132,7 @@ public final class TextSentimentProto {
      *
      * @return The linearKappa.
      */
+    @java.lang.Override
     public float getLinearKappa() {
       return linearKappa_;
     }
@@ -1143,6 +1151,7 @@ public final class TextSentimentProto {
      *
      * @return The quadraticKappa.
      */
+    @java.lang.Override
     public float getQuadraticKappa() {
       return quadraticKappa_;
     }
@@ -1166,6 +1175,7 @@ public final class TextSentimentProto {
      *
      * @return Whether the confusionMatrix field is set.
      */
+    @java.lang.Override
     public boolean hasConfusionMatrix() {
       return confusionMatrix_ != null;
     }
@@ -1184,6 +1194,7 @@ public final class TextSentimentProto {
      *
      * @return The confusionMatrix.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrix
         getConfusionMatrix() {
@@ -1205,6 +1216,7 @@ public final class TextSentimentProto {
      * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 8;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrixOrBuilder
         getConfusionMatrixOrBuilder() {
@@ -1801,6 +1813,7 @@ public final class TextSentimentProto {
        *
        * @return The precision.
        */
+      @java.lang.Override
       public float getPrecision() {
         return precision_;
       }
@@ -1852,6 +1865,7 @@ public final class TextSentimentProto {
        *
        * @return The recall.
        */
+      @java.lang.Override
       public float getRecall() {
         return recall_;
       }
@@ -1903,6 +1917,7 @@ public final class TextSentimentProto {
        *
        * @return The f1Score.
        */
+      @java.lang.Override
       public float getF1Score() {
         return f1Score_;
       }
@@ -1955,6 +1970,7 @@ public final class TextSentimentProto {
        *
        * @return The meanAbsoluteError.
        */
+      @java.lang.Override
       public float getMeanAbsoluteError() {
         return meanAbsoluteError_;
       }
@@ -2009,6 +2025,7 @@ public final class TextSentimentProto {
        *
        * @return The meanSquaredError.
        */
+      @java.lang.Override
       public float getMeanSquaredError() {
         return meanSquaredError_;
       }
@@ -2063,6 +2080,7 @@ public final class TextSentimentProto {
        *
        * @return The linearKappa.
        */
+      @java.lang.Override
       public float getLinearKappa() {
         return linearKappa_;
       }
@@ -2117,6 +2135,7 @@ public final class TextSentimentProto {
        *
        * @return The quadraticKappa.
        */
+      @java.lang.Override
       public float getQuadraticKappa() {
         return quadraticKappa_;
       }

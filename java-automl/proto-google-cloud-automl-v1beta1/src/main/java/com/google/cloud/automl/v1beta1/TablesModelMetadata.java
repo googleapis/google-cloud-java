@@ -250,6 +250,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return The optimizationObjectiveRecallValue.
    */
+  @java.lang.Override
   public float getOptimizationObjectiveRecallValue() {
     if (additionalOptimizationObjectiveConfigCase_ == 17) {
       return (java.lang.Float) additionalOptimizationObjectiveConfig_;
@@ -270,6 +271,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return The optimizationObjectivePrecisionValue.
    */
+  @java.lang.Override
   public float getOptimizationObjectivePrecisionValue() {
     if (additionalOptimizationObjectiveConfigCase_ == 18) {
       return (java.lang.Float) additionalOptimizationObjectiveConfig_;
@@ -298,6 +300,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the targetColumnSpec field is set.
    */
+  @java.lang.Override
   public boolean hasTargetColumnSpec() {
     return targetColumnSpec_ != null;
   }
@@ -320,6 +323,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return The targetColumnSpec.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ColumnSpec getTargetColumnSpec() {
     return targetColumnSpec_ == null
         ? com.google.cloud.automl.v1beta1.ColumnSpec.getDefaultInstance()
@@ -342,6 +346,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.automl.v1beta1.ColumnSpec target_column_spec = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder getTargetColumnSpecOrBuilder() {
     return getTargetColumnSpec();
   }
@@ -371,6 +376,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec>
       getInputFeatureColumnSpecsList() {
     return inputFeatureColumnSpecs_;
@@ -398,6 +404,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder>
       getInputFeatureColumnSpecsOrBuilderList() {
     return inputFeatureColumnSpecs_;
@@ -425,6 +432,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
    */
+  @java.lang.Override
   public int getInputFeatureColumnSpecsCount() {
     return inputFeatureColumnSpecs_.size();
   }
@@ -451,6 +459,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ColumnSpec getInputFeatureColumnSpecs(int index) {
     return inputFeatureColumnSpecs_.get(index);
   }
@@ -477,6 +486,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec input_feature_column_specs = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder getInputFeatureColumnSpecsOrBuilder(
       int index) {
     return inputFeatureColumnSpecs_.get(index);
@@ -514,6 +524,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return The optimizationObjective.
    */
+  @java.lang.Override
   public java.lang.String getOptimizationObjective() {
     java.lang.Object ref = optimizationObjective_;
     if (ref instanceof java.lang.String) {
@@ -555,6 +566,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for optimizationObjective.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOptimizationObjectiveBytes() {
     java.lang.Object ref = optimizationObjective_;
     if (ref instanceof java.lang.String) {
@@ -581,6 +593,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>
       getTablesModelColumnInfoList() {
     return tablesModelColumnInfo_;
@@ -596,6 +609,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder>
       getTablesModelColumnInfoOrBuilderList() {
     return tablesModelColumnInfo_;
@@ -611,6 +625,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
    * </code>
    */
+  @java.lang.Override
   public int getTablesModelColumnInfoCount() {
     return tablesModelColumnInfo_.size();
   }
@@ -625,6 +640,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TablesModelColumnInfo getTablesModelColumnInfo(int index) {
     return tablesModelColumnInfo_.get(index);
   }
@@ -639,6 +655,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.automl.v1beta1.TablesModelColumnInfo tables_model_column_info = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TablesModelColumnInfoOrBuilder
       getTablesModelColumnInfoOrBuilder(int index) {
     return tablesModelColumnInfo_.get(index);
@@ -667,6 +684,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return The trainBudgetMilliNodeHours.
    */
+  @java.lang.Override
   public long getTrainBudgetMilliNodeHours() {
     return trainBudgetMilliNodeHours_;
   }
@@ -686,6 +704,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return The trainCostMilliNodeHours.
    */
+  @java.lang.Override
   public long getTrainCostMilliNodeHours() {
     return trainCostMilliNodeHours_;
   }
@@ -705,6 +724,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *
    * @return The disableEarlyStopping.
    */
+  @java.lang.Override
   public boolean getDisableEarlyStopping() {
     return disableEarlyStopping_;
   }
@@ -2935,6 +2955,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * @return The trainBudgetMilliNodeHours.
      */
+    @java.lang.Override
     public long getTrainBudgetMilliNodeHours() {
       return trainBudgetMilliNodeHours_;
     }
@@ -3008,6 +3029,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * @return The trainCostMilliNodeHours.
      */
+    @java.lang.Override
     public long getTrainCostMilliNodeHours() {
       return trainCostMilliNodeHours_;
     }
@@ -3065,6 +3087,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *
      * @return The disableEarlyStopping.
      */
+    @java.lang.Override
     public boolean getDisableEarlyStopping() {
       return disableEarlyStopping_;
     }

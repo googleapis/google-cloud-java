@@ -126,6 +126,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The inputUri.
    */
+  @java.lang.Override
   public java.lang.String getInputUri() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -150,6 +151,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for inputUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {

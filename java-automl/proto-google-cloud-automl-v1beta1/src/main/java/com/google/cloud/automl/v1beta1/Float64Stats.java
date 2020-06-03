@@ -317,6 +317,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The min.
      */
+    @java.lang.Override
     public double getMin() {
       return min_;
     }
@@ -335,6 +336,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The max.
      */
+    @java.lang.Override
     public double getMax() {
       return max_;
     }
@@ -353,6 +355,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }
@@ -730,6 +733,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The min.
        */
+      @java.lang.Override
       public double getMin() {
         return min_;
       }
@@ -782,6 +786,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The max.
        */
+      @java.lang.Override
       public double getMax() {
         return max_;
       }
@@ -836,6 +841,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The count.
        */
+      @java.lang.Override
       public long getCount() {
         return count_;
       }
@@ -945,6 +951,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mean.
    */
+  @java.lang.Override
   public double getMean() {
     return mean_;
   }
@@ -962,6 +969,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The standardDeviation.
    */
+  @java.lang.Override
   public double getStandardDeviation() {
     return standardDeviation_;
   }
@@ -982,6 +990,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the quantiles.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Double> getQuantilesList() {
     return quantiles_;
   }
@@ -1040,6 +1049,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.Float64Stats.HistogramBucket histogram_buckets = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket>
       getHistogramBucketsList() {
     return histogramBuckets_;
@@ -1058,6 +1068,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.Float64Stats.HistogramBucket histogram_buckets = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucketOrBuilder>
       getHistogramBucketsOrBuilderList() {
@@ -1077,6 +1088,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.Float64Stats.HistogramBucket histogram_buckets = 4;
    * </code>
    */
+  @java.lang.Override
   public int getHistogramBucketsCount() {
     return histogramBuckets_.size();
   }
@@ -1094,6 +1106,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.Float64Stats.HistogramBucket histogram_buckets = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket getHistogramBuckets(
       int index) {
     return histogramBuckets_.get(index);
@@ -1112,6 +1125,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.Float64Stats.HistogramBucket histogram_buckets = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucketOrBuilder
       getHistogramBucketsOrBuilder(int index) {
     return histogramBuckets_.get(index);
@@ -1564,6 +1578,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mean.
      */
+    @java.lang.Override
     public double getMean() {
       return mean_;
     }
@@ -1615,6 +1630,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The standardDeviation.
      */
+    @java.lang.Override
     public double getStandardDeviation() {
       return standardDeviation_;
     }

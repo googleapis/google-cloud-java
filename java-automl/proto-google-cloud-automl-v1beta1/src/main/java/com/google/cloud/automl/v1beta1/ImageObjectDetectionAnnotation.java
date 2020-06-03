@@ -137,6 +137,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    *
    * @return Whether the boundingBox field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
   }
@@ -151,6 +152,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    *
    * @return The boundingBox.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
         ? com.google.cloud.automl.v1beta1.BoundingPoly.getDefaultInstance()
@@ -165,6 +167,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
     return getBoundingBox();
   }
@@ -183,6 +186,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -736,6 +740,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }

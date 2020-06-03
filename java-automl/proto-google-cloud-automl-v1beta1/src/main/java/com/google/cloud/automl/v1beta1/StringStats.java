@@ -276,6 +276,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -298,6 +299,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -323,6 +325,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }
@@ -783,6 +786,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The count.
        */
+      @java.lang.Override
       public long getCount() {
         return count_;
       }
@@ -887,6 +891,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.StringStats.UnigramStats top_unigram_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.StringStats.UnigramStats>
       getTopUnigramStatsList() {
     return topUnigramStats_;
@@ -902,6 +907,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.StringStats.UnigramStats top_unigram_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.StringStats.UnigramStatsOrBuilder>
       getTopUnigramStatsOrBuilderList() {
     return topUnigramStats_;
@@ -917,6 +923,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.StringStats.UnigramStats top_unigram_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public int getTopUnigramStatsCount() {
     return topUnigramStats_.size();
   }
@@ -931,6 +938,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.StringStats.UnigramStats top_unigram_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.StringStats.UnigramStats getTopUnigramStats(int index) {
     return topUnigramStats_.get(index);
   }
@@ -945,6 +953,7 @@ public final class StringStats extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.automl.v1beta1.StringStats.UnigramStats top_unigram_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.StringStats.UnigramStatsOrBuilder
       getTopUnigramStatsOrBuilder(int index) {
     return topUnigramStats_.get(index);

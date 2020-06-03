@@ -146,6 +146,7 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -171,6 +172,7 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -214,6 +217,7 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig.getDefaultInstance()
@@ -230,6 +234,7 @@ public final class ExportEvaluatedExamplesRequest extends com.google.protobuf.Ge
    * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfigOrBuilder
       getOutputConfigOrBuilder() {
     return getOutputConfig();

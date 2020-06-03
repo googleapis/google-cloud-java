@@ -171,6 +171,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
    */
+  @java.lang.Override
   public boolean containsFieldStats(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -178,6 +179,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     return internalGetFieldStats().getMap().containsKey(key);
   }
   /** Use {@link #getFieldStatsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats>
       getFieldStats() {
@@ -193,6 +195,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats>
       getFieldStatsMap() {
     return internalGetFieldStats().getMap();
@@ -207,6 +210,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataStats getFieldStatsOrDefault(
       java.lang.String key, com.google.cloud.automl.v1beta1.DataStats defaultValue) {
     if (key == null) {
@@ -226,6 +230,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataStats getFieldStatsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -625,6 +630,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
      */
+    @java.lang.Override
     public boolean containsFieldStats(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -632,6 +638,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       return internalGetFieldStats().getMap().containsKey(key);
     }
     /** Use {@link #getFieldStatsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats>
         getFieldStats() {
@@ -647,6 +654,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats>
         getFieldStatsMap() {
       return internalGetFieldStats().getMap();
@@ -661,6 +669,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DataStats getFieldStatsOrDefault(
         java.lang.String key, com.google.cloud.automl.v1beta1.DataStats defaultValue) {
       if (key == null) {
@@ -680,6 +689,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.cloud.automl.v1beta1.DataStats&gt; field_stats = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DataStats getFieldStatsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

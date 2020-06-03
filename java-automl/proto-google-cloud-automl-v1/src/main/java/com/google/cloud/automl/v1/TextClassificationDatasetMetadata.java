@@ -125,6 +125,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
    *
    * @return The enum numeric value on the wire for classificationType.
    */
+  @java.lang.Override
   public int getClassificationTypeValue() {
     return classificationType_;
   }
@@ -139,6 +140,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
    *
    * @return The classificationType.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.ClassificationType getClassificationType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.automl.v1.ClassificationType result =
@@ -482,6 +484,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
      *
      * @return The enum numeric value on the wire for classificationType.
      */
+    @java.lang.Override
     public int getClassificationTypeValue() {
       return classificationType_;
     }
@@ -498,6 +501,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder setClassificationTypeValue(int value) {
+
       classificationType_ = value;
       onChanged();
       return this;
@@ -513,6 +517,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
      *
      * @return The classificationType.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.ClassificationType getClassificationType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1.ClassificationType result =

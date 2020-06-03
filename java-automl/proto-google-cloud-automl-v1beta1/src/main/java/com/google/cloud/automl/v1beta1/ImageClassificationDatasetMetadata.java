@@ -125,6 +125,7 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
    *
    * @return The enum numeric value on the wire for classificationType.
    */
+  @java.lang.Override
   public int getClassificationTypeValue() {
     return classificationType_;
   }
@@ -139,6 +140,7 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
    *
    * @return The classificationType.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
       getClassificationType() {
     @SuppressWarnings("deprecation")
@@ -494,6 +496,7 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
      *
      * @return The enum numeric value on the wire for classificationType.
      */
+    @java.lang.Override
     public int getClassificationTypeValue() {
       return classificationType_;
     }
@@ -510,6 +513,7 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setClassificationTypeValue(int value) {
+
       classificationType_ = value;
       onChanged();
       return this;
@@ -525,6 +529,7 @@ public final class ImageClassificationDatasetMetadata extends com.google.protobu
      *
      * @return The classificationType.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
         getClassificationType() {
       @SuppressWarnings("deprecation")

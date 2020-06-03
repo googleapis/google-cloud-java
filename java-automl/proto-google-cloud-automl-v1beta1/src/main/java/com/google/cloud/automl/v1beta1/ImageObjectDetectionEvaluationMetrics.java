@@ -150,6 +150,7 @@ public final class ImageObjectDetectionEvaluationMetrics
    *
    * @return The evaluatedBoundingBoxCount.
    */
+  @java.lang.Override
   public int getEvaluatedBoundingBoxCount() {
     return evaluatedBoundingBoxCount_;
   }
@@ -171,6 +172,7 @@ public final class ImageObjectDetectionEvaluationMetrics
    * repeated .google.cloud.automl.v1beta1.BoundingBoxMetricsEntry bounding_box_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry>
       getBoundingBoxMetricsEntriesList() {
     return boundingBoxMetricsEntries_;
@@ -189,6 +191,7 @@ public final class ImageObjectDetectionEvaluationMetrics
    * repeated .google.cloud.automl.v1beta1.BoundingBoxMetricsEntry bounding_box_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntryOrBuilder>
       getBoundingBoxMetricsEntriesOrBuilderList() {
     return boundingBoxMetricsEntries_;
@@ -207,6 +210,7 @@ public final class ImageObjectDetectionEvaluationMetrics
    * repeated .google.cloud.automl.v1beta1.BoundingBoxMetricsEntry bounding_box_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public int getBoundingBoxMetricsEntriesCount() {
     return boundingBoxMetricsEntries_.size();
   }
@@ -224,6 +228,7 @@ public final class ImageObjectDetectionEvaluationMetrics
    * repeated .google.cloud.automl.v1beta1.BoundingBoxMetricsEntry bounding_box_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry getBoundingBoxMetricsEntries(
       int index) {
     return boundingBoxMetricsEntries_.get(index);
@@ -242,6 +247,7 @@ public final class ImageObjectDetectionEvaluationMetrics
    * repeated .google.cloud.automl.v1beta1.BoundingBoxMetricsEntry bounding_box_metrics_entries = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntryOrBuilder
       getBoundingBoxMetricsEntriesOrBuilder(int index) {
     return boundingBoxMetricsEntries_.get(index);
@@ -261,6 +267,7 @@ public final class ImageObjectDetectionEvaluationMetrics
    *
    * @return The boundingBoxMeanAveragePrecision.
    */
+  @java.lang.Override
   public float getBoundingBoxMeanAveragePrecision() {
     return boundingBoxMeanAveragePrecision_;
   }
@@ -685,6 +692,7 @@ public final class ImageObjectDetectionEvaluationMetrics
      *
      * @return The evaluatedBoundingBoxCount.
      */
+    @java.lang.Override
     public int getEvaluatedBoundingBoxCount() {
       return evaluatedBoundingBoxCount_;
     }
@@ -1198,6 +1206,7 @@ public final class ImageObjectDetectionEvaluationMetrics
      *
      * @return The boundingBoxMeanAveragePrecision.
      */
+    @java.lang.Override
     public float getBoundingBoxMeanAveragePrecision() {
       return boundingBoxMeanAveragePrecision_;
     }

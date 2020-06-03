@@ -134,6 +134,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.NormalizedVertex normalized_vertices = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.NormalizedVertex>
       getNormalizedVerticesList() {
     return normalizedVertices_;
@@ -147,6 +148,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.NormalizedVertex normalized_vertices = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.NormalizedVertexOrBuilder>
       getNormalizedVerticesOrBuilderList() {
     return normalizedVertices_;
@@ -160,6 +162,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.NormalizedVertex normalized_vertices = 2;</code>
    */
+  @java.lang.Override
   public int getNormalizedVerticesCount() {
     return normalizedVertices_.size();
   }
@@ -172,6 +175,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.NormalizedVertex normalized_vertices = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.NormalizedVertex getNormalizedVertices(int index) {
     return normalizedVertices_.get(index);
   }
@@ -184,6 +188,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.automl.v1beta1.NormalizedVertex normalized_vertices = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.NormalizedVertexOrBuilder getNormalizedVerticesOrBuilder(
       int index) {
     return normalizedVertices_.get(index);

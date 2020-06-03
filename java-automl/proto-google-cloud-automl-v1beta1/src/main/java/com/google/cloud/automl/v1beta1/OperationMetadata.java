@@ -422,6 +422,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the deleteDetails field is set.
    */
+  @java.lang.Override
   public boolean hasDeleteDetails() {
     return detailsCase_ == 8;
   }
@@ -436,6 +437,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The deleteDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DeleteOperationMetadata getDeleteDetails() {
     if (detailsCase_ == 8) {
       return (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_;
@@ -451,6 +453,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DeleteOperationMetadataOrBuilder
       getDeleteDetailsOrBuilder() {
     if (detailsCase_ == 8) {
@@ -472,6 +475,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the deployModelDetails field is set.
    */
+  @java.lang.Override
   public boolean hasDeployModelDetails() {
     return detailsCase_ == 24;
   }
@@ -487,6 +491,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The deployModelDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DeployModelOperationMetadata getDeployModelDetails() {
     if (detailsCase_ == 24) {
       return (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_;
@@ -503,6 +508,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.DeployModelOperationMetadataOrBuilder
       getDeployModelDetailsOrBuilder() {
     if (detailsCase_ == 24) {
@@ -524,6 +530,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the undeployModelDetails field is set.
    */
+  @java.lang.Override
   public boolean hasUndeployModelDetails() {
     return detailsCase_ == 25;
   }
@@ -539,6 +546,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The undeployModelDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata getUndeployModelDetails() {
     if (detailsCase_ == 25) {
       return (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_;
@@ -555,6 +563,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadataOrBuilder
       getUndeployModelDetailsOrBuilder() {
     if (detailsCase_ == 25) {
@@ -576,6 +585,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the createModelDetails field is set.
    */
+  @java.lang.Override
   public boolean hasCreateModelDetails() {
     return detailsCase_ == 10;
   }
@@ -591,6 +601,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The createModelDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.CreateModelOperationMetadata getCreateModelDetails() {
     if (detailsCase_ == 10) {
       return (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_;
@@ -607,6 +618,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder
       getCreateModelDetailsOrBuilder() {
     if (detailsCase_ == 10) {
@@ -627,6 +639,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the importDataDetails field is set.
    */
+  @java.lang.Override
   public boolean hasImportDataDetails() {
     return detailsCase_ == 15;
   }
@@ -641,6 +654,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The importDataDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ImportDataOperationMetadata getImportDataDetails() {
     if (detailsCase_ == 15) {
       return (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_;
@@ -656,6 +670,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ImportDataOperationMetadataOrBuilder
       getImportDataDetailsOrBuilder() {
     if (detailsCase_ == 15) {
@@ -677,6 +692,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the batchPredictDetails field is set.
    */
+  @java.lang.Override
   public boolean hasBatchPredictDetails() {
     return detailsCase_ == 16;
   }
@@ -692,6 +708,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The batchPredictDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata getBatchPredictDetails() {
     if (detailsCase_ == 16) {
       return (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_;
@@ -708,6 +725,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadataOrBuilder
       getBatchPredictDetailsOrBuilder() {
     if (detailsCase_ == 16) {
@@ -728,6 +746,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the exportDataDetails field is set.
    */
+  @java.lang.Override
   public boolean hasExportDataDetails() {
     return detailsCase_ == 21;
   }
@@ -742,6 +761,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The exportDataDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportDataOperationMetadata getExportDataDetails() {
     if (detailsCase_ == 21) {
       return (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_;
@@ -757,6 +777,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportDataOperationMetadataOrBuilder
       getExportDataDetailsOrBuilder() {
     if (detailsCase_ == 21) {
@@ -778,6 +799,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the exportModelDetails field is set.
    */
+  @java.lang.Override
   public boolean hasExportModelDetails() {
     return detailsCase_ == 22;
   }
@@ -793,6 +815,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The exportModelDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportModelOperationMetadata getExportModelDetails() {
     if (detailsCase_ == 22) {
       return (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_;
@@ -809,6 +832,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportModelOperationMetadataOrBuilder
       getExportModelDetailsOrBuilder() {
     if (detailsCase_ == 22) {
@@ -831,6 +855,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the exportEvaluatedExamplesDetails field is set.
    */
+  @java.lang.Override
   public boolean hasExportEvaluatedExamplesDetails() {
     return detailsCase_ == 26;
   }
@@ -847,6 +872,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The exportEvaluatedExamplesDetails.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
       getExportEvaluatedExamplesDetails() {
     if (detailsCase_ == 26) {
@@ -866,6 +892,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadataOrBuilder
       getExportEvaluatedExamplesDetailsOrBuilder() {
     if (detailsCase_ == 26) {
@@ -889,6 +916,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The progressPercent.
    */
+  @java.lang.Override
   public int getProgressPercent() {
     return progressPercent_;
   }
@@ -907,6 +935,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
@@ -922,6 +951,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder>
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
@@ -938,6 +968,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
@@ -953,6 +984,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
@@ -968,6 +1000,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index) {
     return partialFailures_.get(index);
   }
@@ -985,6 +1018,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -999,6 +1033,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -1011,6 +1046,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1028,6 +1064,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -1042,6 +1079,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -1054,6 +1092,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -1790,6 +1829,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the deleteDetails field is set.
      */
+    @java.lang.Override
     public boolean hasDeleteDetails() {
       return detailsCase_ == 8;
     }
@@ -1804,6 +1844,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The deleteDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DeleteOperationMetadata getDeleteDetails() {
       if (deleteDetailsBuilder_ == null) {
         if (detailsCase_ == 8) {
@@ -1939,6 +1980,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.automl.v1beta1.DeleteOperationMetadata delete_details = 8;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DeleteOperationMetadataOrBuilder
         getDeleteDetailsOrBuilder() {
       if ((detailsCase_ == 8) && (deleteDetailsBuilder_ != null)) {
@@ -2001,6 +2043,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the deployModelDetails field is set.
      */
+    @java.lang.Override
     public boolean hasDeployModelDetails() {
       return detailsCase_ == 24;
     }
@@ -2016,6 +2059,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The deployModelDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DeployModelOperationMetadata getDeployModelDetails() {
       if (deployModelDetailsBuilder_ == null) {
         if (detailsCase_ == 24) {
@@ -2159,6 +2203,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.DeployModelOperationMetadata deploy_model_details = 24;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.DeployModelOperationMetadataOrBuilder
         getDeployModelDetailsOrBuilder() {
       if ((detailsCase_ == 24) && (deployModelDetailsBuilder_ != null)) {
@@ -2224,6 +2269,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the undeployModelDetails field is set.
      */
+    @java.lang.Override
     public boolean hasUndeployModelDetails() {
       return detailsCase_ == 25;
     }
@@ -2240,6 +2286,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The undeployModelDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata
         getUndeployModelDetails() {
       if (undeployModelDetailsBuilder_ == null) {
@@ -2390,6 +2437,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * .google.cloud.automl.v1beta1.UndeployModelOperationMetadata undeploy_model_details = 25;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.UndeployModelOperationMetadataOrBuilder
         getUndeployModelDetailsOrBuilder() {
       if ((detailsCase_ == 25) && (undeployModelDetailsBuilder_ != null)) {
@@ -2455,6 +2503,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the createModelDetails field is set.
      */
+    @java.lang.Override
     public boolean hasCreateModelDetails() {
       return detailsCase_ == 10;
     }
@@ -2470,6 +2519,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The createModelDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.CreateModelOperationMetadata getCreateModelDetails() {
       if (createModelDetailsBuilder_ == null) {
         if (detailsCase_ == 10) {
@@ -2613,6 +2663,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder
         getCreateModelDetailsOrBuilder() {
       if ((detailsCase_ == 10) && (createModelDetailsBuilder_ != null)) {
@@ -2677,6 +2728,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the importDataDetails field is set.
      */
+    @java.lang.Override
     public boolean hasImportDataDetails() {
       return detailsCase_ == 15;
     }
@@ -2692,6 +2744,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The importDataDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ImportDataOperationMetadata getImportDataDetails() {
       if (importDataDetailsBuilder_ == null) {
         if (detailsCase_ == 15) {
@@ -2835,6 +2888,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.ImportDataOperationMetadata import_data_details = 15;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ImportDataOperationMetadataOrBuilder
         getImportDataDetailsOrBuilder() {
       if ((detailsCase_ == 15) && (importDataDetailsBuilder_ != null)) {
@@ -2899,6 +2953,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the batchPredictDetails field is set.
      */
+    @java.lang.Override
     public boolean hasBatchPredictDetails() {
       return detailsCase_ == 16;
     }
@@ -2914,6 +2969,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The batchPredictDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata getBatchPredictDetails() {
       if (batchPredictDetailsBuilder_ == null) {
         if (detailsCase_ == 16) {
@@ -3057,6 +3113,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.BatchPredictOperationMetadata batch_predict_details = 16;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.BatchPredictOperationMetadataOrBuilder
         getBatchPredictDetailsOrBuilder() {
       if ((detailsCase_ == 16) && (batchPredictDetailsBuilder_ != null)) {
@@ -3121,6 +3178,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the exportDataDetails field is set.
      */
+    @java.lang.Override
     public boolean hasExportDataDetails() {
       return detailsCase_ == 21;
     }
@@ -3136,6 +3194,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The exportDataDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ExportDataOperationMetadata getExportDataDetails() {
       if (exportDataDetailsBuilder_ == null) {
         if (detailsCase_ == 21) {
@@ -3279,6 +3338,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.ExportDataOperationMetadata export_data_details = 21;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ExportDataOperationMetadataOrBuilder
         getExportDataDetailsOrBuilder() {
       if ((detailsCase_ == 21) && (exportDataDetailsBuilder_ != null)) {
@@ -3343,6 +3403,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the exportModelDetails field is set.
      */
+    @java.lang.Override
     public boolean hasExportModelDetails() {
       return detailsCase_ == 22;
     }
@@ -3358,6 +3419,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The exportModelDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ExportModelOperationMetadata getExportModelDetails() {
       if (exportModelDetailsBuilder_ == null) {
         if (detailsCase_ == 22) {
@@ -3501,6 +3563,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.automl.v1beta1.ExportModelOperationMetadata export_model_details = 22;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ExportModelOperationMetadataOrBuilder
         getExportModelDetailsOrBuilder() {
       if ((detailsCase_ == 22) && (exportModelDetailsBuilder_ != null)) {
@@ -3566,6 +3629,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the exportEvaluatedExamplesDetails field is set.
      */
+    @java.lang.Override
     public boolean hasExportEvaluatedExamplesDetails() {
       return detailsCase_ == 26;
     }
@@ -3582,6 +3646,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The exportEvaluatedExamplesDetails.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
         getExportEvaluatedExamplesDetails() {
       if (exportEvaluatedExamplesDetailsBuilder_ == null) {
@@ -3737,6 +3802,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadataOrBuilder
         getExportEvaluatedExamplesDetailsOrBuilder() {
       if ((detailsCase_ == 26) && (exportEvaluatedExamplesDetailsBuilder_ != null)) {
@@ -3801,6 +3867,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The progressPercent.
      */
+    @java.lang.Override
     public int getProgressPercent() {
       return progressPercent_;
     }

@@ -383,6 +383,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
@@ -397,6 +398,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.automl.v1beta1.GcsSource) source_;
@@ -412,6 +414,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.automl.v1beta1.GcsSource) source_;
@@ -431,6 +434,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * @return Whether the bigquerySource field is set.
    */
+  @java.lang.Override
   public boolean hasBigquerySource() {
     return sourceCase_ == 2;
   }
@@ -445,6 +449,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * @return The bigquerySource.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.BigQuerySource) source_;
@@ -460,6 +465,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.BigQuerySource) source_;
@@ -1062,6 +1068,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
@@ -1076,6 +1083,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -1207,6 +1215,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      *
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();
@@ -1267,6 +1276,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      *
      * @return Whether the bigquerySource field is set.
      */
+    @java.lang.Override
     public boolean hasBigquerySource() {
       return sourceCase_ == 2;
     }
@@ -1281,6 +1291,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      *
      * @return The bigquerySource.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.BigQuerySource getBigquerySource() {
       if (bigquerySourceBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -1413,6 +1424,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
      *
      * <code>.google.cloud.automl.v1beta1.BigQuerySource bigquery_source = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder() {
       if ((sourceCase_ == 2) && (bigquerySourceBuilder_ != null)) {
         return bigquerySourceBuilder_.getMessageOrBuilder();

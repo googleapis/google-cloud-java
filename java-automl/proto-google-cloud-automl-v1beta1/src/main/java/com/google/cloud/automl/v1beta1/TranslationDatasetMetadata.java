@@ -132,6 +132,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    *
    * @return The sourceLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    *
    * @return The bytes for sourceLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +181,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    *
    * @return The targetLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getTargetLanguageCode() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +204,7 @@ public final class TranslationDatasetMetadata extends com.google.protobuf.Genera
    *
    * @return The bytes for targetLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {

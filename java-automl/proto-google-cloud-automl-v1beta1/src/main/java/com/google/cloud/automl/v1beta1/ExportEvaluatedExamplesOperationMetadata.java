@@ -270,6 +270,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
      *
      * @return The bigqueryOutputDataset.
      */
+    @java.lang.Override
     public java.lang.String getBigqueryOutputDataset() {
       java.lang.Object ref = bigqueryOutputDataset_;
       if (ref instanceof java.lang.String) {
@@ -293,6 +294,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
      *
      * @return The bytes for bigqueryOutputDataset.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBigqueryOutputDatasetBytes() {
       java.lang.Object ref = bigqueryOutputDataset_;
       if (ref instanceof java.lang.String) {
@@ -877,6 +879,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
    *
    * @return Whether the outputInfo field is set.
    */
+  @java.lang.Override
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
   }
@@ -894,6 +897,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
    *
    * @return The outputInfo.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
           .ExportEvaluatedExamplesOutputInfo
       getOutputInfo() {
@@ -914,6 +918,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
    * .google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.ExportEvaluatedExamplesOutputInfo output_info = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
           .ExportEvaluatedExamplesOutputInfoOrBuilder
       getOutputInfoOrBuilder() {

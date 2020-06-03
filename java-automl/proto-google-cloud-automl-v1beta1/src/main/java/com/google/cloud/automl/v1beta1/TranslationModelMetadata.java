@@ -143,6 +143,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    * @return The baseModel.
    */
+  @java.lang.Override
   public java.lang.String getBaseModel() {
     java.lang.Object ref = baseModel_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for baseModel.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBaseModelBytes() {
     java.lang.Object ref = baseModel_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    * @return The sourceLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +220,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for sourceLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -243,6 +247,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    * @return The targetLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getTargetLanguageCode() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +271,7 @@ public final class TranslationModelMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for targetLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {

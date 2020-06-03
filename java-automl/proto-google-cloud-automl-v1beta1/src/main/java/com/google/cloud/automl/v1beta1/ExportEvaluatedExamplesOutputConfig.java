@@ -204,6 +204,7 @@ public final class ExportEvaluatedExamplesOutputConfig
    *
    * @return Whether the bigqueryDestination field is set.
    */
+  @java.lang.Override
   public boolean hasBigqueryDestination() {
     return destinationCase_ == 2;
   }
@@ -218,6 +219,7 @@ public final class ExportEvaluatedExamplesOutputConfig
    *
    * @return The bigqueryDestination.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BigQueryDestination getBigqueryDestination() {
     if (destinationCase_ == 2) {
       return (com.google.cloud.automl.v1beta1.BigQueryDestination) destination_;
@@ -233,6 +235,7 @@ public final class ExportEvaluatedExamplesOutputConfig
    *
    * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder
       getBigqueryDestinationOrBuilder() {
     if (destinationCase_ == 2) {
@@ -651,6 +654,7 @@ public final class ExportEvaluatedExamplesOutputConfig
      *
      * @return Whether the bigqueryDestination field is set.
      */
+    @java.lang.Override
     public boolean hasBigqueryDestination() {
       return destinationCase_ == 2;
     }
@@ -665,6 +669,7 @@ public final class ExportEvaluatedExamplesOutputConfig
      *
      * @return The bigqueryDestination.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.BigQueryDestination getBigqueryDestination() {
       if (bigqueryDestinationBuilder_ == null) {
         if (destinationCase_ == 2) {
@@ -801,6 +806,7 @@ public final class ExportEvaluatedExamplesOutputConfig
      *
      * <code>.google.cloud.automl.v1beta1.BigQueryDestination bigquery_destination = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder
         getBigqueryDestinationOrBuilder() {
       if ((destinationCase_ == 2) && (bigqueryDestinationBuilder_ != null)) {

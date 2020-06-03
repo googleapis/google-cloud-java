@@ -124,6 +124,7 @@ public final class ClassificationAnnotation extends com.google.protobuf.Generate
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -462,6 +463,7 @@ public final class ClassificationAnnotation extends com.google.protobuf.Generate
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }

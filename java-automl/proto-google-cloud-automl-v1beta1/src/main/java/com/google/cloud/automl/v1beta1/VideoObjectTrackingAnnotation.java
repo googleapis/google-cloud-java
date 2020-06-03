@@ -166,6 +166,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return The instanceId.
    */
+  @java.lang.Override
   public java.lang.String getInstanceId() {
     java.lang.Object ref = instanceId_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +195,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return The bytes for instanceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstanceIdBytes() {
     java.lang.Object ref = instanceId_;
     if (ref instanceof java.lang.String) {
@@ -220,6 +222,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return Whether the timeOffset field is set.
    */
+  @java.lang.Override
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
   }
@@ -235,6 +238,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return The timeOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
@@ -248,6 +252,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
     return getTimeOffset();
   }
@@ -266,6 +271,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return Whether the boundingBox field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
   }
@@ -281,6 +287,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return The boundingBox.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
         ? com.google.cloud.automl.v1beta1.BoundingPoly.getDefaultInstance()
@@ -296,6 +303,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
     return getBoundingBox();
   }
@@ -317,6 +325,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -1254,6 +1263,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }

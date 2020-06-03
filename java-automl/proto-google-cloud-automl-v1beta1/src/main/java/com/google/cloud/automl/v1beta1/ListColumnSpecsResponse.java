@@ -139,6 +139,7 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec column_specs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec> getColumnSpecsList() {
     return columnSpecs_;
   }
@@ -151,6 +152,7 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec column_specs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder>
       getColumnSpecsOrBuilderList() {
     return columnSpecs_;
@@ -164,6 +166,7 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec column_specs = 1;</code>
    */
+  @java.lang.Override
   public int getColumnSpecsCount() {
     return columnSpecs_.size();
   }
@@ -176,6 +179,7 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec column_specs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ColumnSpec getColumnSpecs(int index) {
     return columnSpecs_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec column_specs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder getColumnSpecsOrBuilder(int index) {
     return columnSpecs_.get(index);
   }
@@ -206,6 +211,7 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +235,7 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

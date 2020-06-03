@@ -180,6 +180,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
    *
    * @return Whether the textSegment field is set.
    */
+  @java.lang.Override
   public boolean hasTextSegment() {
     return annotationCase_ == 3;
   }
@@ -195,6 +196,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
    *
    * @return The textSegment.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextSegment getTextSegment() {
     if (annotationCase_ == 3) {
       return (com.google.cloud.automl.v1.TextSegment) annotation_;
@@ -211,6 +213,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.automl.v1.TextSegment text_segment = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1.TextSegmentOrBuilder getTextSegmentOrBuilder() {
     if (annotationCase_ == 3) {
       return (com.google.cloud.automl.v1.TextSegment) annotation_;
@@ -232,6 +235,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -630,6 +634,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      *
      * @return Whether the textSegment field is set.
      */
+    @java.lang.Override
     public boolean hasTextSegment() {
       return annotationCase_ == 3;
     }
@@ -645,6 +650,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      *
      * @return The textSegment.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextSegment getTextSegment() {
       if (textSegmentBuilder_ == null) {
         if (annotationCase_ == 3) {
@@ -782,6 +788,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.automl.v1.TextSegment text_segment = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1.TextSegmentOrBuilder getTextSegmentOrBuilder() {
       if ((annotationCase_ == 3) && (textSegmentBuilder_ != null)) {
         return textSegmentBuilder_.getMessageOrBuilder();
@@ -840,6 +847,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }

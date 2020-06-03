@@ -148,6 +148,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the tableSpec field is set.
    */
+  @java.lang.Override
   public boolean hasTableSpec() {
     return tableSpec_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    *
    * @return The tableSpec.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TableSpec getTableSpec() {
     return tableSpec_ == null
         ? com.google.cloud.automl.v1beta1.TableSpec.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    * .google.cloud.automl.v1beta1.TableSpec table_spec = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.TableSpecOrBuilder getTableSpecOrBuilder() {
     return getTableSpec();
   }
@@ -197,6 +200,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -211,6 +215,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -223,6 +228,7 @@ public final class UpdateTableSpecRequest extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

@@ -125,6 +125,7 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
    *
    * @return The sentimentMax.
    */
+  @java.lang.Override
   public int getSentimentMax() {
     return sentimentMax_;
   }
@@ -466,6 +467,7 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
      *
      * @return The sentimentMax.
      */
+    @java.lang.Override
     public int getSentimentMax() {
       return sentimentMax_;
     }

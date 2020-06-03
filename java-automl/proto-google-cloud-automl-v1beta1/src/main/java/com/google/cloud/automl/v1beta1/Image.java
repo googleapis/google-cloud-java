@@ -195,6 +195,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageBytes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageBytes() {
     if (dataCase_ == 1) {
       return (com.google.protobuf.ByteString) data_;
@@ -214,6 +215,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return dataCase_ == 6;
   }
@@ -228,6 +230,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.InputConfig getInputConfig() {
     if (dataCase_ == 6) {
       return (com.google.cloud.automl.v1beta1.InputConfig) data_;
@@ -243,6 +246,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
     if (dataCase_ == 6) {
       return (com.google.cloud.automl.v1beta1.InputConfig) data_;
@@ -263,6 +267,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The thumbnailUri.
    */
+  @java.lang.Override
   public java.lang.String getThumbnailUri() {
     java.lang.Object ref = thumbnailUri_;
     if (ref instanceof java.lang.String) {
@@ -285,6 +290,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for thumbnailUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getThumbnailUriBytes() {
     java.lang.Object ref = thumbnailUri_;
     if (ref instanceof java.lang.String) {
@@ -774,6 +780,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the inputConfig field is set.
      */
+    @java.lang.Override
     public boolean hasInputConfig() {
       return dataCase_ == 6;
     }
@@ -788,6 +795,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The inputConfig.
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.InputConfig getInputConfig() {
       if (inputConfigBuilder_ == null) {
         if (dataCase_ == 6) {
@@ -920,6 +928,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.automl.v1beta1.InputConfig input_config = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
       if ((dataCase_ == 6) && (inputConfigBuilder_ != null)) {
         return inputConfigBuilder_.getMessageOrBuilder();

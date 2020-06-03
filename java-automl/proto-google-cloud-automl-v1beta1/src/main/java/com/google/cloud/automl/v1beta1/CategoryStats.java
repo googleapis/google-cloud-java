@@ -276,6 +276,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -298,6 +299,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -323,6 +325,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }
@@ -791,6 +794,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The count.
        */
+      @java.lang.Override
       public long getCount() {
         return count_;
       }
@@ -900,6 +904,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats top_category_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats>
       getTopCategoryStatsList() {
     return topCategoryStats_;
@@ -916,6 +921,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats top_category_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStatsOrBuilder>
       getTopCategoryStatsOrBuilderList() {
@@ -933,6 +939,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats top_category_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public int getTopCategoryStatsCount() {
     return topCategoryStats_.size();
   }
@@ -948,6 +955,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats top_category_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats getTopCategoryStats(
       int index) {
     return topCategoryStats_.get(index);
@@ -964,6 +972,7 @@ public final class CategoryStats extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStats top_category_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.CategoryStats.SingleCategoryStatsOrBuilder
       getTopCategoryStatsOrBuilder(int index) {
     return topCategoryStats_.get(index);
