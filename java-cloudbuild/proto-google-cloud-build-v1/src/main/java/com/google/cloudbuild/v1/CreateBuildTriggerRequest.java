@@ -140,6 +140,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    * @return Whether the trigger field is set.
    */
+  @java.lang.Override
   public boolean hasTrigger() {
     return trigger_ != null;
   }
@@ -205,6 +208,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
    *
    * @return The trigger.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildTrigger getTrigger() {
     return trigger_ == null ? com.google.cloudbuild.v1.BuildTrigger.getDefaultInstance() : trigger_;
   }
@@ -219,6 +223,7 @@ public final class CreateBuildTriggerRequest extends com.google.protobuf.Generat
    * .google.devtools.cloudbuild.v1.BuildTrigger trigger = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggerOrBuilder() {
     return getTrigger();
   }

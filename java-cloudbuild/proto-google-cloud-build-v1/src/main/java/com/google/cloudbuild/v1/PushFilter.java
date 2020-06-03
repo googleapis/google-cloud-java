@@ -302,6 +302,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The invertRegex.
    */
+  @java.lang.Override
   public boolean getInvertRegex() {
     return invertRegex_;
   }
@@ -709,6 +710,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The branch.
      */
+    @java.lang.Override
     public java.lang.String getBranch() {
       java.lang.Object ref = "";
       if (gitRefCase_ == 2) {
@@ -738,6 +740,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for branch.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBranchBytes() {
       java.lang.Object ref = "";
       if (gitRefCase_ == 2) {
@@ -836,6 +839,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The tag.
      */
+    @java.lang.Override
     public java.lang.String getTag() {
       java.lang.Object ref = "";
       if (gitRefCase_ == 3) {
@@ -865,6 +869,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for tag.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTagBytes() {
       java.lang.Object ref = "";
       if (gitRefCase_ == 3) {
@@ -963,6 +968,7 @@ public final class PushFilter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The invertRegex.
      */
+    @java.lang.Override
     public boolean getInvertRegex() {
       return invertRegex_;
     }

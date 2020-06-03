@@ -139,6 +139,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bucket.
    */
+  @java.lang.Override
   public java.lang.String getBucket() {
     java.lang.Object ref = bucket_;
     if (ref instanceof java.lang.String) {
@@ -163,6 +164,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for bucket.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBucketBytes() {
     java.lang.Object ref = bucket_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +192,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The object.
    */
+  @java.lang.Override
   public java.lang.String getObject() {
     java.lang.Object ref = object_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +217,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for object.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getObjectBytes() {
     java.lang.Object ref = object_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +244,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The generation.
    */
+  @java.lang.Override
   public long getGeneration() {
     return generation_;
   }
@@ -835,6 +840,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The generation.
      */
+    @java.lang.Override
     public long getGeneration() {
       return generation_;
     }

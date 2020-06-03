@@ -132,6 +132,7 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +181,7 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +204,7 @@ public final class GetBuildRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {

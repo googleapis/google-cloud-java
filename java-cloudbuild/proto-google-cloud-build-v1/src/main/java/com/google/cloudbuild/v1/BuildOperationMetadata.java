@@ -130,6 +130,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the build field is set.
    */
+  @java.lang.Override
   public boolean hasBuild() {
     return build_ != null;
   }
@@ -144,6 +145,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The build.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Build getBuild() {
     return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
   }
@@ -156,6 +158,7 @@ public final class BuildOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.devtools.cloudbuild.v1.Build build = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOrBuilder getBuildOrBuilder() {
     return getBuild();
   }

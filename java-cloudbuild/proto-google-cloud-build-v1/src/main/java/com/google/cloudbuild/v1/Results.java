@@ -184,6 +184,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.BuiltImage> getImagesList() {
     return images_;
   }
@@ -196,6 +197,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.BuiltImageOrBuilder>
       getImagesOrBuilderList() {
     return images_;
@@ -209,6 +211,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
+  @java.lang.Override
   public int getImagesCount() {
     return images_.size();
   }
@@ -221,6 +224,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuiltImage getImages(int index) {
     return images_.get(index);
   }
@@ -233,6 +237,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuiltImageOrBuilder getImagesOrBuilder(int index) {
     return images_.get(index);
   }
@@ -315,6 +320,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The artifactManifest.
    */
+  @java.lang.Override
   public java.lang.String getArtifactManifest() {
     java.lang.Object ref = artifactManifest_;
     if (ref instanceof java.lang.String) {
@@ -337,6 +343,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for artifactManifest.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getArtifactManifestBytes() {
     java.lang.Object ref = artifactManifest_;
     if (ref instanceof java.lang.String) {
@@ -362,6 +369,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The numArtifacts.
    */
+  @java.lang.Override
   public long getNumArtifacts() {
     return numArtifacts_;
   }
@@ -383,6 +391,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the buildStepOutputs.
    */
+  @java.lang.Override
   public java.util.List<com.google.protobuf.ByteString> getBuildStepOutputsList() {
     return buildStepOutputs_;
   }
@@ -437,6 +446,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the artifactTiming field is set.
    */
+  @java.lang.Override
   public boolean hasArtifactTiming() {
     return artifactTiming_ != null;
   }
@@ -451,6 +461,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The artifactTiming.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpan getArtifactTiming() {
     return artifactTiming_ == null
         ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
@@ -465,6 +476,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getArtifactTimingOrBuilder() {
     return getArtifactTiming();
   }
@@ -1593,6 +1605,7 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The numArtifacts.
      */
+    @java.lang.Override
     public long getNumArtifacts() {
       return numArtifacts_;
     }

@@ -143,6 +143,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The network.
    */
+  @java.lang.Override
   public java.lang.String getNetwork() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +221,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for network.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNetworkBytes() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +248,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The subnetwork.
    */
+  @java.lang.Override
   public java.lang.String getSubnetwork() {
     java.lang.Object ref = subnetwork_;
     if (ref instanceof java.lang.String) {
@@ -267,6 +272,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for subnetwork.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubnetworkBytes() {
     java.lang.Object ref = subnetwork_;
     if (ref instanceof java.lang.String) {

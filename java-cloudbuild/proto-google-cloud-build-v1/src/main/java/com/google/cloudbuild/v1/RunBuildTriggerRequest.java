@@ -148,6 +148,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * @return The triggerId.
    */
+  @java.lang.Override
   public java.lang.String getTriggerId() {
     java.lang.Object ref = triggerId_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +220,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for triggerId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTriggerIdBytes() {
     java.lang.Object ref = triggerId_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +248,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the source field is set.
    */
+  @java.lang.Override
   public boolean hasSource() {
     return source_ != null;
   }
@@ -260,6 +265,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    *
    * @return The source.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.RepoSource getSource() {
     return source_ == null ? com.google.cloudbuild.v1.RepoSource.getDefaultInstance() : source_;
   }
@@ -274,6 +280,7 @@ public final class RunBuildTriggerRequest extends com.google.protobuf.GeneratedM
    * .google.devtools.cloudbuild.v1.RepoSource source = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getSourceOrBuilder() {
     return getSource();
   }

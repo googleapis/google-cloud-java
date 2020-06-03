@@ -679,6 +679,10 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -724,6 +728,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -746,6 +751,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -771,6 +777,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -793,6 +800,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -818,6 +826,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for status.
    */
+  @java.lang.Override
   public int getStatusValue() {
     return status_;
   }
@@ -832,6 +841,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Build.Status getStatus() {
     @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.Build.Status result =
@@ -852,6 +862,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The statusDetail.
    */
+  @java.lang.Override
   public java.lang.String getStatusDetail() {
     java.lang.Object ref = statusDetail_;
     if (ref instanceof java.lang.String) {
@@ -874,6 +885,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for statusDetail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStatusDetailBytes() {
     java.lang.Object ref = statusDetail_;
     if (ref instanceof java.lang.String) {
@@ -899,6 +911,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the source field is set.
    */
+  @java.lang.Override
   public boolean hasSource() {
     return source_ != null;
   }
@@ -913,6 +926,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The source.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Source getSource() {
     return source_ == null ? com.google.cloudbuild.v1.Source.getDefaultInstance() : source_;
   }
@@ -925,6 +939,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.SourceOrBuilder getSourceOrBuilder() {
     return getSource();
   }
@@ -940,6 +955,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.BuildStep> getStepsList() {
     return steps_;
   }
@@ -952,6 +968,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.BuildStepOrBuilder>
       getStepsOrBuilderList() {
     return steps_;
@@ -965,6 +982,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
+  @java.lang.Override
   public int getStepsCount() {
     return steps_.size();
   }
@@ -977,6 +995,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildStep getSteps(int index) {
     return steps_.get(index);
   }
@@ -989,6 +1008,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildStep steps = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildStepOrBuilder getStepsOrBuilder(int index) {
     return steps_.get(index);
   }
@@ -1008,6 +1028,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the results field is set.
    */
+  @java.lang.Override
   public boolean hasResults() {
     return results_ != null;
   }
@@ -1024,6 +1045,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The results.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Results getResults() {
     return results_ == null ? com.google.cloudbuild.v1.Results.getDefaultInstance() : results_;
   }
@@ -1038,6 +1060,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * .google.devtools.cloudbuild.v1.Results results = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.ResultsOrBuilder getResultsOrBuilder() {
     return getResults();
   }
@@ -1056,6 +1079,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -1071,6 +1095,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -1084,6 +1109,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1102,6 +1128,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -1117,6 +1144,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -1130,6 +1158,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -1150,6 +1179,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the finishTime field is set.
    */
+  @java.lang.Override
   public boolean hasFinishTime() {
     return finishTime_ != null;
   }
@@ -1167,6 +1197,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The finishTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getFinishTime() {
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
@@ -1182,6 +1213,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp finish_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getFinishTimeOrBuilder() {
     return getFinishTime();
   }
@@ -1202,6 +1234,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeout field is set.
    */
+  @java.lang.Override
   public boolean hasTimeout() {
     return timeout_ != null;
   }
@@ -1219,6 +1252,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeout.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
@@ -1234,6 +1268,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration timeout = 12;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
     return getTimeout();
   }
@@ -1339,6 +1374,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the queueTtl field is set.
    */
+  @java.lang.Override
   public boolean hasQueueTtl() {
     return queueTtl_ != null;
   }
@@ -1356,6 +1392,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The queueTtl.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getQueueTtl() {
     return queueTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : queueTtl_;
   }
@@ -1371,6 +1408,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration queue_ttl = 40;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getQueueTtlOrBuilder() {
     return getQueueTtl();
   }
@@ -1389,6 +1427,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the artifacts field is set.
    */
+  @java.lang.Override
   public boolean hasArtifacts() {
     return artifacts_ != null;
   }
@@ -1404,6 +1443,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The artifacts.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Artifacts getArtifacts() {
     return artifacts_ == null
         ? com.google.cloudbuild.v1.Artifacts.getDefaultInstance()
@@ -1419,6 +1459,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts artifacts = 37;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.ArtifactsOrBuilder getArtifactsOrBuilder() {
     return getArtifacts();
   }
@@ -1439,6 +1480,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The logsBucket.
    */
+  @java.lang.Override
   public java.lang.String getLogsBucket() {
     java.lang.Object ref = logsBucket_;
     if (ref instanceof java.lang.String) {
@@ -1464,6 +1506,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for logsBucket.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLogsBucketBytes() {
     java.lang.Object ref = logsBucket_;
     if (ref instanceof java.lang.String) {
@@ -1489,6 +1532,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sourceProvenance field is set.
    */
+  @java.lang.Override
   public boolean hasSourceProvenance() {
     return sourceProvenance_ != null;
   }
@@ -1503,6 +1547,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sourceProvenance.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.SourceProvenance getSourceProvenance() {
     return sourceProvenance_ == null
         ? com.google.cloudbuild.v1.SourceProvenance.getDefaultInstance()
@@ -1517,6 +1562,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.SourceProvenance source_provenance = 21;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.SourceProvenanceOrBuilder getSourceProvenanceOrBuilder() {
     return getSourceProvenance();
   }
@@ -1535,6 +1581,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The buildTriggerId.
    */
+  @java.lang.Override
   public java.lang.String getBuildTriggerId() {
     java.lang.Object ref = buildTriggerId_;
     if (ref instanceof java.lang.String) {
@@ -1558,6 +1605,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for buildTriggerId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBuildTriggerIdBytes() {
     java.lang.Object ref = buildTriggerId_;
     if (ref instanceof java.lang.String) {
@@ -1583,6 +1631,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the options field is set.
    */
+  @java.lang.Override
   public boolean hasOptions() {
     return options_ != null;
   }
@@ -1597,6 +1646,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The options.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions getOptions() {
     return options_ == null ? com.google.cloudbuild.v1.BuildOptions.getDefaultInstance() : options_;
   }
@@ -1609,6 +1659,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.BuildOptions options = 23;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptionsOrBuilder getOptionsOrBuilder() {
     return getOptions();
   }
@@ -1626,6 +1677,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The logUrl.
    */
+  @java.lang.Override
   public java.lang.String getLogUrl() {
     java.lang.Object ref = logUrl_;
     if (ref instanceof java.lang.String) {
@@ -1648,6 +1700,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for logUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLogUrlBytes() {
     java.lang.Object ref = logUrl_;
     if (ref instanceof java.lang.String) {
@@ -1696,6 +1749,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 29;</code>
    */
+  @java.lang.Override
   public boolean containsSubstitutions(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1703,6 +1757,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     return internalGetSubstitutions().getMap().containsKey(key);
   }
   /** Use {@link #getSubstitutionsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSubstitutions() {
     return getSubstitutionsMap();
@@ -1716,6 +1771,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 29;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
     return internalGetSubstitutions().getMap();
   }
@@ -1728,6 +1784,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 29;</code>
    */
+  @java.lang.Override
   public java.lang.String getSubstitutionsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -1745,6 +1802,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 29;</code>
    */
+  @java.lang.Override
   public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1828,6 +1886,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.Secret> getSecretsList() {
     return secrets_;
   }
@@ -1840,6 +1899,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.SecretOrBuilder>
       getSecretsOrBuilderList() {
     return secrets_;
@@ -1853,6 +1913,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
+  @java.lang.Override
   public int getSecretsCount() {
     return secrets_.size();
   }
@@ -1865,6 +1926,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Secret getSecrets(int index) {
     return secrets_.get(index);
   }
@@ -1877,6 +1939,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Secret secrets = 32;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.SecretOrBuilder getSecretsOrBuilder(int index) {
     return secrets_.get(index);
   }
@@ -1926,6 +1989,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public boolean containsTiming(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1933,6 +1997,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
     return internalGetTiming().getMap().containsKey(key);
   }
   /** Use {@link #getTimingMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTiming() {
     return getTimingMap();
@@ -1954,6 +2019,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTimingMap() {
     return internalGetTiming().getMap();
   }
@@ -1974,6 +2040,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpan getTimingOrDefault(
       java.lang.String key, com.google.cloudbuild.v1.TimeSpan defaultValue) {
     if (key == null) {
@@ -2000,6 +2067,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpan getTimingOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -3180,6 +3248,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for status.
      */
+    @java.lang.Override
     public int getStatusValue() {
       return status_;
     }
@@ -3196,6 +3265,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+
       status_ = value;
       onChanged();
       return this;
@@ -3211,6 +3281,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.Build.Status getStatus() {
       @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.Build.Status result =
@@ -6266,6 +6337,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 29;</code>
      */
+    @java.lang.Override
     public boolean containsSubstitutions(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -6273,6 +6345,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       return internalGetSubstitutions().getMap().containsKey(key);
     }
     /** Use {@link #getSubstitutionsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSubstitutions() {
       return getSubstitutionsMap();
@@ -6286,6 +6359,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 29;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
       return internalGetSubstitutions().getMap();
     }
@@ -6298,6 +6372,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 29;</code>
      */
+    @java.lang.Override
     public java.lang.String getSubstitutionsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -6315,6 +6390,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 29;</code>
      */
+    @java.lang.Override
     public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -6942,6 +7018,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public boolean containsTiming(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -6949,6 +7026,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
       return internalGetTiming().getMap().containsKey(key);
     }
     /** Use {@link #getTimingMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTiming() {
       return getTimingMap();
@@ -6970,6 +7048,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloudbuild.v1.TimeSpan> getTimingMap() {
       return internalGetTiming().getMap();
     }
@@ -6990,6 +7069,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.TimeSpan getTimingOrDefault(
         java.lang.String key, com.google.cloudbuild.v1.TimeSpan defaultValue) {
       if (key == null) {
@@ -7016,6 +7096,7 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.devtools.cloudbuild.v1.TimeSpan&gt; timing = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.TimeSpan getTimingOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

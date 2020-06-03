@@ -160,6 +160,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The machineType.
    */
+  @java.lang.Override
   public java.lang.String getMachineType() {
     java.lang.Object ref = machineType_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +190,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for machineType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMachineTypeBytes() {
     java.lang.Object ref = machineType_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +223,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The diskSizeGb.
    */
+  @java.lang.Override
   public long getDiskSizeGb() {
     return diskSizeGb_;
   }
@@ -240,6 +243,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the network field is set.
    */
+  @java.lang.Override
   public boolean hasNetwork() {
     return network_ != null;
   }
@@ -256,6 +260,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The network.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Network getNetwork() {
     return network_ == null ? com.google.cloudbuild.v1.Network.getDefaultInstance() : network_;
   }
@@ -270,6 +275,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.Network network = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.NetworkOrBuilder getNetworkOrBuilder() {
     return getNetwork();
   }
@@ -289,6 +295,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tag.
    */
+  @java.lang.Override
   public java.lang.String getTag() {
     java.lang.Object ref = tag_;
     if (ref instanceof java.lang.String) {
@@ -313,6 +320,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for tag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTagBytes() {
     java.lang.Object ref = tag_;
     if (ref instanceof java.lang.String) {
@@ -859,6 +867,7 @@ public final class WorkerConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The diskSizeGb.
      */
+    @java.lang.Override
     public long getDiskSizeGb() {
       return diskSizeGb_;
     }

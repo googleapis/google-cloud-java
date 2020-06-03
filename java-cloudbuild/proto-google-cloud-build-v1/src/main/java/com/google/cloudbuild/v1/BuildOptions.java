@@ -327,6 +327,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -480,6 +484,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -615,6 +623,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -773,6 +785,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -929,6 +945,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -986,6 +1006,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the sourceProvenanceHash.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.Hash.HashType> getSourceProvenanceHashList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloudbuild.v1.Hash.HashType>(
@@ -1002,6 +1023,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of sourceProvenanceHash.
    */
+  @java.lang.Override
   public int getSourceProvenanceHashCount() {
     return sourceProvenanceHash_.size();
   }
@@ -1017,6 +1039,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The sourceProvenanceHash at the given index.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Hash.HashType getSourceProvenanceHash(int index) {
     return sourceProvenanceHash_converter_.convert(sourceProvenanceHash_.get(index));
   }
@@ -1031,6 +1054,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for sourceProvenanceHash.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getSourceProvenanceHashValueList() {
     return sourceProvenanceHash_;
   }
@@ -1046,6 +1070,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of sourceProvenanceHash at the given index.
    */
+  @java.lang.Override
   public int getSourceProvenanceHashValue(int index) {
     return sourceProvenanceHash_.get(index);
   }
@@ -1066,6 +1091,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for requestedVerifyOption.
    */
+  @java.lang.Override
   public int getRequestedVerifyOptionValue() {
     return requestedVerifyOption_;
   }
@@ -1081,6 +1107,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The requestedVerifyOption.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.VerifyOption getRequestedVerifyOption() {
     @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.VerifyOption result =
@@ -1103,6 +1130,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for machineType.
    */
+  @java.lang.Override
   public int getMachineTypeValue() {
     return machineType_;
   }
@@ -1117,6 +1145,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The machineType.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.MachineType getMachineType() {
     @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.MachineType result =
@@ -1142,6 +1171,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The diskSizeGb.
    */
+  @java.lang.Override
   public long getDiskSizeGb() {
     return diskSizeGb_;
   }
@@ -1161,6 +1191,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for substitutionOption.
    */
+  @java.lang.Override
   public int getSubstitutionOptionValue() {
     return substitutionOption_;
   }
@@ -1177,6 +1208,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The substitutionOption.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.SubstitutionOption getSubstitutionOption() {
     @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.SubstitutionOption result =
@@ -1201,6 +1233,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for logStreamingOption.
    */
+  @java.lang.Override
   public int getLogStreamingOptionValue() {
     return logStreamingOption_;
   }
@@ -1217,6 +1250,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The logStreamingOption.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.LogStreamingOption getLogStreamingOption() {
     @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.LogStreamingOption result =
@@ -1241,6 +1275,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The workerPool.
    */
+  @java.lang.Override
   public java.lang.String getWorkerPool() {
     java.lang.Object ref = workerPool_;
     if (ref instanceof java.lang.String) {
@@ -1265,6 +1300,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for workerPool.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getWorkerPoolBytes() {
     java.lang.Object ref = workerPool_;
     if (ref instanceof java.lang.String) {
@@ -1291,6 +1327,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for logging.
    */
+  @java.lang.Override
   public int getLoggingValue() {
     return logging_;
   }
@@ -1306,6 +1343,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The logging.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOptions.LoggingMode getLogging() {
     @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.BuildOptions.LoggingMode result =
@@ -1480,6 +1518,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 14;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.Volume> getVolumesList() {
     return volumes_;
   }
@@ -1498,6 +1537,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 14;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.VolumeOrBuilder>
       getVolumesOrBuilderList() {
     return volumes_;
@@ -1517,6 +1557,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 14;</code>
    */
+  @java.lang.Override
   public int getVolumesCount() {
     return volumes_.size();
   }
@@ -1535,6 +1576,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 14;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
@@ -1553,6 +1595,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 14;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.VolumeOrBuilder getVolumesOrBuilder(int index) {
     return volumes_.get(index);
   }
@@ -2385,6 +2428,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for requestedVerifyOption.
      */
+    @java.lang.Override
     public int getRequestedVerifyOptionValue() {
       return requestedVerifyOption_;
     }
@@ -2402,6 +2446,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRequestedVerifyOptionValue(int value) {
+
       requestedVerifyOption_ = value;
       onChanged();
       return this;
@@ -2418,6 +2463,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The requestedVerifyOption.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.VerifyOption getRequestedVerifyOption() {
       @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.VerifyOption result =
@@ -2480,6 +2526,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for machineType.
      */
+    @java.lang.Override
     public int getMachineTypeValue() {
       return machineType_;
     }
@@ -2496,6 +2543,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMachineTypeValue(int value) {
+
       machineType_ = value;
       onChanged();
       return this;
@@ -2511,6 +2559,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The machineType.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.MachineType getMachineType() {
       @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.MachineType result =
@@ -2575,6 +2624,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The diskSizeGb.
      */
+    @java.lang.Override
     public long getDiskSizeGb() {
       return diskSizeGb_;
     }
@@ -2638,6 +2688,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for substitutionOption.
      */
+    @java.lang.Override
     public int getSubstitutionOptionValue() {
       return substitutionOption_;
     }
@@ -2656,6 +2707,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSubstitutionOptionValue(int value) {
+
       substitutionOption_ = value;
       onChanged();
       return this;
@@ -2673,6 +2725,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The substitutionOption.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.SubstitutionOption getSubstitutionOption() {
       @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.SubstitutionOption result =
@@ -2740,6 +2793,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for logStreamingOption.
      */
+    @java.lang.Override
     public int getLogStreamingOptionValue() {
       return logStreamingOption_;
     }
@@ -2759,6 +2813,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLogStreamingOptionValue(int value) {
+
       logStreamingOption_ = value;
       onChanged();
       return this;
@@ -2777,6 +2832,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The logStreamingOption.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.LogStreamingOption getLogStreamingOption() {
       @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.LogStreamingOption result =
@@ -2960,6 +3016,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for logging.
      */
+    @java.lang.Override
     public int getLoggingValue() {
       return logging_;
     }
@@ -2977,6 +3034,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLoggingValue(int value) {
+
       logging_ = value;
       onChanged();
       return this;
@@ -2993,6 +3051,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The logging.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.BuildOptions.LoggingMode getLogging() {
       @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.BuildOptions.LoggingMode result =

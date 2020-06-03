@@ -192,6 +192,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the storageSource field is set.
    */
+  @java.lang.Override
   public boolean hasStorageSource() {
     return sourceCase_ == 2;
   }
@@ -206,6 +207,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The storageSource.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.StorageSource getStorageSource() {
     if (sourceCase_ == 2) {
       return (com.google.cloudbuild.v1.StorageSource) source_;
@@ -221,6 +223,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.StorageSourceOrBuilder getStorageSourceOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.cloudbuild.v1.StorageSource) source_;
@@ -241,6 +244,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the repoSource field is set.
    */
+  @java.lang.Override
   public boolean hasRepoSource() {
     return sourceCase_ == 3;
   }
@@ -256,6 +260,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The repoSource.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.RepoSource getRepoSource() {
     if (sourceCase_ == 3) {
       return (com.google.cloudbuild.v1.RepoSource) source_;
@@ -272,6 +277,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource repo_source = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getRepoSourceOrBuilder() {
     if (sourceCase_ == 3) {
       return (com.google.cloudbuild.v1.RepoSource) source_;
@@ -677,6 +683,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the storageSource field is set.
      */
+    @java.lang.Override
     public boolean hasStorageSource() {
       return sourceCase_ == 2;
     }
@@ -691,6 +698,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The storageSource.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.StorageSource getStorageSource() {
       if (storageSourceBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -823,6 +831,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.StorageSource storage_source = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.StorageSourceOrBuilder getStorageSourceOrBuilder() {
       if ((sourceCase_ == 2) && (storageSourceBuilder_ != null)) {
         return storageSourceBuilder_.getMessageOrBuilder();
@@ -884,6 +893,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the repoSource field is set.
      */
+    @java.lang.Override
     public boolean hasRepoSource() {
       return sourceCase_ == 3;
     }
@@ -899,6 +909,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The repoSource.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.RepoSource getRepoSource() {
       if (repoSourceBuilder_ == null) {
         if (sourceCase_ == 3) {
@@ -1036,6 +1047,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.RepoSource repo_source = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.RepoSourceOrBuilder getRepoSourceOrBuilder() {
       if ((sourceCase_ == 3) && (repoSourceBuilder_ != null)) {
         return repoSourceBuilder_.getMessageOrBuilder();

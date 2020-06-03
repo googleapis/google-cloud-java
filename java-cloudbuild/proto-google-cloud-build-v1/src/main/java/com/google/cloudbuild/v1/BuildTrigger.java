@@ -333,6 +333,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -355,6 +356,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -380,6 +382,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -402,6 +405,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -431,6 +435,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -457,6 +462,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -547,6 +553,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the triggerTemplate field is set.
    */
+  @java.lang.Override
   public boolean hasTriggerTemplate() {
     return triggerTemplate_ != null;
   }
@@ -565,6 +572,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The triggerTemplate.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.RepoSource getTriggerTemplate() {
     return triggerTemplate_ == null
         ? com.google.cloudbuild.v1.RepoSource.getDefaultInstance()
@@ -583,6 +591,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource trigger_template = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getTriggerTemplateOrBuilder() {
     return getTriggerTemplate();
   }
@@ -602,6 +611,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the github field is set.
    */
+  @java.lang.Override
   public boolean hasGithub() {
     return github_ != null;
   }
@@ -618,6 +628,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The github.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.GitHubEventsConfig getGithub() {
     return github_ == null
         ? com.google.cloudbuild.v1.GitHubEventsConfig.getDefaultInstance()
@@ -634,6 +645,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.GitHubEventsConfig github = 13;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.GitHubEventsConfigOrBuilder getGithubOrBuilder() {
     return getGithub();
   }
@@ -650,6 +662,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the build field is set.
    */
+  @java.lang.Override
   public boolean hasBuild() {
     return buildTemplateCase_ == 4;
   }
@@ -664,6 +677,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The build.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Build getBuild() {
     if (buildTemplateCase_ == 4) {
       return (com.google.cloudbuild.v1.Build) buildTemplate_;
@@ -679,6 +693,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.Build build = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOrBuilder getBuildOrBuilder() {
     if (buildTemplateCase_ == 4) {
       return (com.google.cloudbuild.v1.Build) buildTemplate_;
@@ -758,6 +773,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -773,6 +789,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -786,6 +803,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -803,6 +821,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The disabled.
    */
+  @java.lang.Override
   public boolean getDisabled() {
     return disabled_;
   }
@@ -845,6 +864,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
    */
+  @java.lang.Override
   public boolean containsSubstitutions(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -852,6 +872,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
     return internalGetSubstitutions().getMap().containsKey(key);
   }
   /** Use {@link #getSubstitutionsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSubstitutions() {
     return getSubstitutionsMap();
@@ -867,6 +888,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
     return internalGetSubstitutions().getMap();
   }
@@ -881,6 +903,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
    */
+  @java.lang.Override
   public java.lang.String getSubstitutionsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -900,6 +923,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 11;</code>
    */
+  @java.lang.Override
   public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -2698,6 +2722,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the build field is set.
      */
+    @java.lang.Override
     public boolean hasBuild() {
       return buildTemplateCase_ == 4;
     }
@@ -2712,6 +2737,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The build.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.Build getBuild() {
       if (buildBuilder_ == null) {
         if (buildTemplateCase_ == 4) {
@@ -2843,6 +2869,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.Build build = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.BuildOrBuilder getBuildOrBuilder() {
       if ((buildTemplateCase_ == 4) && (buildBuilder_ != null)) {
         return buildBuilder_.getMessageOrBuilder();
@@ -2897,6 +2924,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The filename.
      */
+    @java.lang.Override
     public java.lang.String getFilename() {
       java.lang.Object ref = "";
       if (buildTemplateCase_ == 8) {
@@ -2925,6 +2953,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for filename.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFilenameBytes() {
       java.lang.Object ref = "";
       if (buildTemplateCase_ == 8) {
@@ -3220,6 +3249,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The disabled.
      */
+    @java.lang.Override
     public boolean getDisabled() {
       return disabled_;
     }
@@ -3298,6 +3328,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
      */
+    @java.lang.Override
     public boolean containsSubstitutions(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3305,6 +3336,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
       return internalGetSubstitutions().getMap().containsKey(key);
     }
     /** Use {@link #getSubstitutionsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSubstitutions() {
       return getSubstitutionsMap();
@@ -3320,6 +3352,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
       return internalGetSubstitutions().getMap();
     }
@@ -3334,6 +3367,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
      */
+    @java.lang.Override
     public java.lang.String getSubstitutionsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -3353,6 +3387,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 11;</code>
      */
+    @java.lang.Override
     public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

@@ -140,6 +140,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * @return Whether the workerPool field is set.
    */
+  @java.lang.Override
   public boolean hasWorkerPool() {
     return workerPool_ != null;
   }
@@ -201,6 +204,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * @return The workerPool.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.WorkerPool getWorkerPool() {
     return workerPool_ == null
         ? com.google.cloudbuild.v1.WorkerPool.getDefaultInstance()
@@ -215,6 +219,7 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolOrBuilder() {
     return getWorkerPool();
   }

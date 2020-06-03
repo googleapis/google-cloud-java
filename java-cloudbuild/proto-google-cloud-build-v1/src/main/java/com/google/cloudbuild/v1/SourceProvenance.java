@@ -177,6 +177,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the resolvedStorageSource field is set.
    */
+  @java.lang.Override
   public boolean hasResolvedStorageSource() {
     return resolvedStorageSource_ != null;
   }
@@ -192,6 +193,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    *
    * @return The resolvedStorageSource.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.StorageSource getResolvedStorageSource() {
     return resolvedStorageSource_ == null
         ? com.google.cloudbuild.v1.StorageSource.getDefaultInstance()
@@ -207,6 +209,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.devtools.cloudbuild.v1.StorageSource resolved_storage_source = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.StorageSourceOrBuilder getResolvedStorageSourceOrBuilder() {
     return getResolvedStorageSource();
   }
@@ -225,6 +228,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the resolvedRepoSource field is set.
    */
+  @java.lang.Override
   public boolean hasResolvedRepoSource() {
     return resolvedRepoSource_ != null;
   }
@@ -240,6 +244,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    *
    * @return The resolvedRepoSource.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.RepoSource getResolvedRepoSource() {
     return resolvedRepoSource_ == null
         ? com.google.cloudbuild.v1.RepoSource.getDefaultInstance()
@@ -255,6 +260,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource resolved_repo_source = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.RepoSourceOrBuilder getResolvedRepoSourceOrBuilder() {
     return getResolvedRepoSource();
   }
@@ -306,6 +312,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public boolean containsFileHashes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -313,6 +320,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     return internalGetFileHashes().getMap().containsKey(key);
   }
   /** Use {@link #getFileHashesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashes() {
     return getFileHashesMap();
@@ -335,6 +343,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashesMap() {
     return internalGetFileHashes().getMap();
   }
@@ -356,6 +365,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
       java.lang.String key, com.google.cloudbuild.v1.FileHashes defaultValue) {
     if (key == null) {
@@ -383,6 +393,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
    * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.FileHashes getFileHashesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1235,6 +1246,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public boolean containsFileHashes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1242,6 +1254,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       return internalGetFileHashes().getMap().containsKey(key);
     }
     /** Use {@link #getFileHashesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashes() {
       return getFileHashesMap();
@@ -1264,6 +1277,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashesMap() {
       return internalGetFileHashes().getMap();
     }
@@ -1285,6 +1299,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.FileHashes getFileHashesOrDefault(
         java.lang.String key, com.google.cloudbuild.v1.FileHashes defaultValue) {
       if (key == null) {
@@ -1312,6 +1327,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
      * map&lt;string, .google.devtools.cloudbuild.v1.FileHashes&gt; file_hashes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.FileHashes getFileHashesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

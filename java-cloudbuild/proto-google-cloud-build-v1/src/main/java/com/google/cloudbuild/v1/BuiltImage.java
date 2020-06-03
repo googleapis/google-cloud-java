@@ -148,6 +148,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -171,6 +172,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The digest.
    */
+  @java.lang.Override
   public java.lang.String getDigest() {
     java.lang.Object ref = digest_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +221,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for digest.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDigestBytes() {
     java.lang.Object ref = digest_;
     if (ref instanceof java.lang.String) {
@@ -245,6 +249,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pushTiming field is set.
    */
+  @java.lang.Override
   public boolean hasPushTiming() {
     return pushTiming_ != null;
   }
@@ -261,6 +266,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pushTiming.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpan getPushTiming() {
     return pushTiming_ == null
         ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
@@ -277,6 +283,7 @@ public final class BuiltImage extends com.google.protobuf.GeneratedMessageV3
    * .google.devtools.cloudbuild.v1.TimeSpan push_timing = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getPushTimingOrBuilder() {
     return getPushTiming();
   }

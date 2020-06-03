@@ -143,6 +143,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The location.
    */
+  @java.lang.Override
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for location.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +192,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.FileHashes> getFileHashList() {
     return fileHash_;
   }
@@ -202,6 +205,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.FileHashesOrBuilder>
       getFileHashOrBuilderList() {
     return fileHash_;
@@ -215,6 +219,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
+  @java.lang.Override
   public int getFileHashCount() {
     return fileHash_.size();
   }
@@ -227,6 +232,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.FileHashes getFileHash(int index) {
     return fileHash_.get(index);
   }
@@ -239,6 +245,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.FileHashes file_hash = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.FileHashesOrBuilder getFileHashOrBuilder(int index) {
     return fileHash_.get(index);
   }

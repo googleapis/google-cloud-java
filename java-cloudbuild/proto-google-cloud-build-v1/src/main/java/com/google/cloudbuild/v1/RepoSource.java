@@ -246,6 +246,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -269,6 +270,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -294,6 +296,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The repoName.
    */
+  @java.lang.Override
   public java.lang.String getRepoName() {
     java.lang.Object ref = repoName_;
     if (ref instanceof java.lang.String) {
@@ -316,6 +319,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for repoName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRepoNameBytes() {
     java.lang.Object ref = repoName_;
     if (ref instanceof java.lang.String) {
@@ -519,6 +523,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dir.
    */
+  @java.lang.Override
   public java.lang.String getDir() {
     java.lang.Object ref = dir_;
     if (ref instanceof java.lang.String) {
@@ -543,6 +548,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for dir.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDirBytes() {
     java.lang.Object ref = dir_;
     if (ref instanceof java.lang.String) {
@@ -569,6 +575,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The invertRegex.
    */
+  @java.lang.Override
   public boolean getInvertRegex() {
     return invertRegex_;
   }
@@ -610,6 +617,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
+  @java.lang.Override
   public boolean containsSubstitutions(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -617,6 +625,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
     return internalGetSubstitutions().getMap().containsKey(key);
   }
   /** Use {@link #getSubstitutionsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSubstitutions() {
     return getSubstitutionsMap();
@@ -631,6 +640,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
     return internalGetSubstitutions().getMap();
   }
@@ -644,6 +654,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
+  @java.lang.Override
   public java.lang.String getSubstitutionsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -662,6 +673,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; substitutions = 9;</code>
    */
+  @java.lang.Override
   public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1408,6 +1420,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The branchName.
      */
+    @java.lang.Override
     public java.lang.String getBranchName() {
       java.lang.Object ref = "";
       if (revisionCase_ == 3) {
@@ -1437,6 +1450,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for branchName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBranchNameBytes() {
       java.lang.Object ref = "";
       if (revisionCase_ == 3) {
@@ -1535,6 +1549,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The tagName.
      */
+    @java.lang.Override
     public java.lang.String getTagName() {
       java.lang.Object ref = "";
       if (revisionCase_ == 4) {
@@ -1564,6 +1579,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for tagName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTagNameBytes() {
       java.lang.Object ref = "";
       if (revisionCase_ == 4) {
@@ -1660,6 +1676,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The commitSha.
      */
+    @java.lang.Override
     public java.lang.String getCommitSha() {
       java.lang.Object ref = "";
       if (revisionCase_ == 5) {
@@ -1687,6 +1704,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for commitSha.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCommitShaBytes() {
       java.lang.Object ref = "";
       if (revisionCase_ == 5) {
@@ -1895,6 +1913,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The invertRegex.
      */
+    @java.lang.Override
     public boolean getInvertRegex() {
       return invertRegex_;
     }
@@ -1974,6 +1993,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 9;</code>
      */
+    @java.lang.Override
     public boolean containsSubstitutions(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1981,6 +2001,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
       return internalGetSubstitutions().getMap().containsKey(key);
     }
     /** Use {@link #getSubstitutionsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSubstitutions() {
       return getSubstitutionsMap();
@@ -1995,6 +2016,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 9;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
       return internalGetSubstitutions().getMap();
     }
@@ -2008,6 +2030,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 9;</code>
      */
+    @java.lang.Override
     public java.lang.String getSubstitutionsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2026,6 +2049,7 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; substitutions = 9;</code>
      */
+    @java.lang.Override
     public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

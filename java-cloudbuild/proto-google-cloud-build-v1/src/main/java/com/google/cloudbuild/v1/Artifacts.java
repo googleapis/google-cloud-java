@@ -402,6 +402,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The location.
      */
+    @java.lang.Override
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
       if (ref instanceof java.lang.String) {
@@ -428,6 +429,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for location.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
       if (ref instanceof java.lang.String) {
@@ -514,6 +516,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timing field is set.
      */
+    @java.lang.Override
     public boolean hasTiming() {
       return timing_ != null;
     }
@@ -528,6 +531,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timing.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.TimeSpan getTiming() {
       return timing_ == null ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance() : timing_;
     }
@@ -540,6 +544,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudbuild.v1.TimeSpan timing = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder() {
       return getTiming();
     }
@@ -1559,6 +1564,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the objects field is set.
    */
+  @java.lang.Override
   public boolean hasObjects() {
     return objects_ != null;
   }
@@ -1580,6 +1586,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The objects.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Artifacts.ArtifactObjects getObjects() {
     return objects_ == null
         ? com.google.cloudbuild.v1.Artifacts.ArtifactObjects.getDefaultInstance()
@@ -1601,6 +1608,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Artifacts.ArtifactObjectsOrBuilder getObjectsOrBuilder() {
     return getObjects();
   }

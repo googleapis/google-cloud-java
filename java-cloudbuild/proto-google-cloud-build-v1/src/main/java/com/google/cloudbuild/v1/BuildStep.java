@@ -285,6 +285,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -320,6 +321,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -498,6 +500,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dir.
    */
+  @java.lang.Override
   public java.lang.String getDir() {
     java.lang.Object ref = dir_;
     if (ref instanceof java.lang.String) {
@@ -527,6 +530,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for dir.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDirBytes() {
     java.lang.Object ref = dir_;
     if (ref instanceof java.lang.String) {
@@ -553,6 +557,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -576,6 +581,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -679,6 +685,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The entrypoint.
    */
+  @java.lang.Override
   public java.lang.String getEntrypoint() {
     java.lang.Object ref = entrypoint_;
     if (ref instanceof java.lang.String) {
@@ -702,6 +709,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for entrypoint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEntrypointBytes() {
     java.lang.Object ref = entrypoint_;
     if (ref instanceof java.lang.String) {
@@ -799,6 +807,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.Volume> getVolumesList() {
     return volumes_;
   }
@@ -816,6 +825,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.VolumeOrBuilder>
       getVolumesOrBuilderList() {
     return volumes_;
@@ -834,6 +844,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
+  @java.lang.Override
   public int getVolumesCount() {
     return volumes_.size();
   }
@@ -851,6 +862,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
@@ -868,6 +880,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.VolumeOrBuilder getVolumesOrBuilder(int index) {
     return volumes_.get(index);
   }
@@ -887,6 +900,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timing field is set.
    */
+  @java.lang.Override
   public boolean hasTiming() {
     return timing_ != null;
   }
@@ -903,6 +917,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timing.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpan getTiming() {
     return timing_ == null ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance() : timing_;
   }
@@ -917,6 +932,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    * .google.devtools.cloudbuild.v1.TimeSpan timing = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getTimingOrBuilder() {
     return getTiming();
   }
@@ -935,6 +951,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pullTiming field is set.
    */
+  @java.lang.Override
   public boolean hasPullTiming() {
     return pullTiming_ != null;
   }
@@ -950,6 +967,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pullTiming.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpan getPullTiming() {
     return pullTiming_ == null
         ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
@@ -965,6 +983,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan pull_timing = 13;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.TimeSpanOrBuilder getPullTimingOrBuilder() {
     return getPullTiming();
   }
@@ -984,6 +1003,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeout field is set.
    */
+  @java.lang.Override
   public boolean hasTimeout() {
     return timeout_ != null;
   }
@@ -1000,6 +1020,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeout.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
@@ -1014,6 +1035,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration timeout = 11;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
     return getTimeout();
   }
@@ -1033,6 +1055,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for status.
    */
+  @java.lang.Override
   public int getStatusValue() {
     return status_;
   }
@@ -1049,6 +1072,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Build.Status getStatus() {
     @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.Build.Status result =
@@ -4057,6 +4081,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for status.
      */
+    @java.lang.Override
     public int getStatusValue() {
       return status_;
     }
@@ -4075,6 +4100,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+
       status_ = value;
       onChanged();
       return this;
@@ -4092,6 +4118,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.Build.Status getStatus() {
       @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.Build.Status result =

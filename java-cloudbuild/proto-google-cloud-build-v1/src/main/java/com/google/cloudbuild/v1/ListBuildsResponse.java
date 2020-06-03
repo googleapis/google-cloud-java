@@ -137,6 +137,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.Build> getBuildsList() {
     return builds_;
   }
@@ -149,6 +150,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.BuildOrBuilder>
       getBuildsOrBuilderList() {
     return builds_;
@@ -162,6 +164,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
+  @java.lang.Override
   public int getBuildsCount() {
     return builds_.size();
   }
@@ -174,6 +177,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Build getBuilds(int index) {
     return builds_.get(index);
   }
@@ -186,6 +190,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.cloudbuild.v1.Build builds = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOrBuilder getBuildsOrBuilder(int index) {
     return builds_.get(index);
   }
@@ -203,6 +208,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +231,7 @@ public final class ListBuildsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

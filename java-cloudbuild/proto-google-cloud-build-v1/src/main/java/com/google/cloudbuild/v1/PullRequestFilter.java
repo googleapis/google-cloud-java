@@ -225,6 +225,10 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -376,6 +380,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for commentControl.
    */
+  @java.lang.Override
   public int getCommentControlValue() {
     return commentControl_;
   }
@@ -392,6 +397,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    * @return The commentControl.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.PullRequestFilter.CommentControl getCommentControl() {
     @SuppressWarnings("deprecation")
     com.google.cloudbuild.v1.PullRequestFilter.CommentControl result =
@@ -414,6 +420,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    * @return The invertRegex.
    */
+  @java.lang.Override
   public boolean getInvertRegex() {
     return invertRegex_;
   }
@@ -821,6 +828,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * @return The branch.
      */
+    @java.lang.Override
     public java.lang.String getBranch() {
       java.lang.Object ref = "";
       if (gitRefCase_ == 2) {
@@ -850,6 +858,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * @return The bytes for branch.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBranchBytes() {
       java.lang.Object ref = "";
       if (gitRefCase_ == 2) {
@@ -949,6 +958,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for commentControl.
      */
+    @java.lang.Override
     public int getCommentControlValue() {
       return commentControl_;
     }
@@ -967,6 +977,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setCommentControlValue(int value) {
+
       commentControl_ = value;
       onChanged();
       return this;
@@ -984,6 +995,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * @return The commentControl.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.PullRequestFilter.CommentControl getCommentControl() {
       @SuppressWarnings("deprecation")
       com.google.cloudbuild.v1.PullRequestFilter.CommentControl result =
@@ -1048,6 +1060,7 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
      *
      * @return The invertRegex.
      */
+    @java.lang.Override
     public boolean getInvertRegex() {
       return invertRegex_;
     }

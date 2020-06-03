@@ -152,6 +152,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kmsKeyName.
    */
+  @java.lang.Override
   public java.lang.String getKmsKeyName() {
     java.lang.Object ref = kmsKeyName_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +175,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for kmsKeyName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKmsKeyNameBytes() {
     java.lang.Object ref = kmsKeyName_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +229,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
+  @java.lang.Override
   public boolean containsSecretEnv(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -234,6 +237,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     return internalGetSecretEnv().getMap().containsKey(key);
   }
   /** Use {@link #getSecretEnvMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnv() {
     return getSecretEnvMap();
@@ -251,6 +255,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnvMap() {
     return internalGetSecretEnv().getMap();
   }
@@ -267,6 +272,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSecretEnvOrDefault(
       java.lang.String key, com.google.protobuf.ByteString defaultValue) {
     if (key == null) {
@@ -289,6 +295,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSecretEnvOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -805,6 +812,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
      */
+    @java.lang.Override
     public boolean containsSecretEnv(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -812,6 +820,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       return internalGetSecretEnv().getMap().containsKey(key);
     }
     /** Use {@link #getSecretEnvMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnv() {
       return getSecretEnvMap();
@@ -829,6 +838,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getSecretEnvMap() {
       return internalGetSecretEnv().getMap();
     }
@@ -845,6 +855,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSecretEnvOrDefault(
         java.lang.String key, com.google.protobuf.ByteString defaultValue) {
       if (key == null) {
@@ -867,6 +878,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, bytes&gt; secret_env = 3;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSecretEnvOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

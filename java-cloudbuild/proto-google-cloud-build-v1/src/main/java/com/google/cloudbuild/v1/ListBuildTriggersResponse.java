@@ -138,6 +138,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.BuildTrigger> getTriggersList() {
     return triggers_;
   }
@@ -150,6 +151,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.BuildTriggerOrBuilder>
       getTriggersOrBuilderList() {
     return triggers_;
@@ -163,6 +165,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
+  @java.lang.Override
   public int getTriggersCount() {
     return triggers_.size();
   }
@@ -175,6 +178,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildTrigger getTriggers(int index) {
     return triggers_.get(index);
   }
@@ -187,6 +191,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.devtools.cloudbuild.v1.BuildTrigger triggers = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildTriggerOrBuilder getTriggersOrBuilder(int index) {
     return triggers_.get(index);
   }
@@ -204,6 +209,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +232,7 @@ public final class ListBuildTriggersResponse extends com.google.protobuf.Generat
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -137,6 +137,7 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -159,6 +160,7 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +186,7 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -201,6 +204,7 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -223,6 +227,7 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -702,6 +707,7 @@ public final class ListBuildTriggersRequest extends com.google.protobuf.Generate
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

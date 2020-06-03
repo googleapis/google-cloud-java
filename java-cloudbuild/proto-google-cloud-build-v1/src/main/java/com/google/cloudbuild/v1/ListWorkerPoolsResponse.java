@@ -130,6 +130,7 @@ public final class ListWorkerPoolsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloudbuild.v1.WorkerPool> getWorkerPoolsList() {
     return workerPools_;
   }
@@ -142,6 +143,7 @@ public final class ListWorkerPoolsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloudbuild.v1.WorkerPoolOrBuilder>
       getWorkerPoolsOrBuilderList() {
     return workerPools_;
@@ -155,6 +157,7 @@ public final class ListWorkerPoolsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
    */
+  @java.lang.Override
   public int getWorkerPoolsCount() {
     return workerPools_.size();
   }
@@ -167,6 +170,7 @@ public final class ListWorkerPoolsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.WorkerPool getWorkerPools(int index) {
     return workerPools_.get(index);
   }
@@ -179,6 +183,7 @@ public final class ListWorkerPoolsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolsOrBuilder(int index) {
     return workerPools_.get(index);
   }

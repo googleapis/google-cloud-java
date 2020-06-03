@@ -218,6 +218,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The installationId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public long getInstallationId() {
     return installationId_;
@@ -238,6 +239,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The owner.
    */
+  @java.lang.Override
   public java.lang.String getOwner() {
     java.lang.Object ref = owner_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +264,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for owner.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOwnerBytes() {
     java.lang.Object ref = owner_;
     if (ref instanceof java.lang.String) {
@@ -288,6 +291,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -311,6 +315,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -335,6 +340,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the pullRequest field is set.
    */
+  @java.lang.Override
   public boolean hasPullRequest() {
     return eventCase_ == 4;
   }
@@ -349,6 +355,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The pullRequest.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.PullRequestFilter getPullRequest() {
     if (eventCase_ == 4) {
       return (com.google.cloudbuild.v1.PullRequestFilter) event_;
@@ -364,6 +371,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.devtools.cloudbuild.v1.PullRequestFilter pull_request = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.PullRequestFilterOrBuilder getPullRequestOrBuilder() {
     if (eventCase_ == 4) {
       return (com.google.cloudbuild.v1.PullRequestFilter) event_;
@@ -383,6 +391,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the push field is set.
    */
+  @java.lang.Override
   public boolean hasPush() {
     return eventCase_ == 5;
   }
@@ -397,6 +406,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The push.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.PushFilter getPush() {
     if (eventCase_ == 5) {
       return (com.google.cloudbuild.v1.PushFilter) event_;
@@ -412,6 +422,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.devtools.cloudbuild.v1.PushFilter push = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.PushFilterOrBuilder getPushOrBuilder() {
     if (eventCase_ == 5) {
       return (com.google.cloudbuild.v1.PushFilter) event_;
@@ -866,6 +877,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return The installationId.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public long getInstallationId() {
       return installationId_;
@@ -1151,6 +1163,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the pullRequest field is set.
      */
+    @java.lang.Override
     public boolean hasPullRequest() {
       return eventCase_ == 4;
     }
@@ -1165,6 +1178,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return The pullRequest.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.PullRequestFilter getPullRequest() {
       if (pullRequestBuilder_ == null) {
         if (eventCase_ == 4) {
@@ -1297,6 +1311,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.devtools.cloudbuild.v1.PullRequestFilter pull_request = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.PullRequestFilterOrBuilder getPullRequestOrBuilder() {
       if ((eventCase_ == 4) && (pullRequestBuilder_ != null)) {
         return pullRequestBuilder_.getMessageOrBuilder();
@@ -1357,6 +1372,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the push field is set.
      */
+    @java.lang.Override
     public boolean hasPush() {
       return eventCase_ == 5;
     }
@@ -1371,6 +1387,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return The push.
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.PushFilter getPush() {
       if (pushBuilder_ == null) {
         if (eventCase_ == 5) {
@@ -1501,6 +1518,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.devtools.cloudbuild.v1.PushFilter push = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloudbuild.v1.PushFilterOrBuilder getPushOrBuilder() {
       if ((eventCase_ == 5) && (pushBuilder_ != null)) {
         return pushBuilder_.getMessageOrBuilder();

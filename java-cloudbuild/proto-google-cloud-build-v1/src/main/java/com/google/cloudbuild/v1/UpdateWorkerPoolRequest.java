@@ -141,6 +141,7 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -164,6 +165,7 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * @return Whether the workerPool field is set.
    */
+  @java.lang.Override
   public boolean hasWorkerPool() {
     return workerPool_ != null;
   }
@@ -203,6 +206,7 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * @return The workerPool.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.WorkerPool getWorkerPool() {
     return workerPool_ == null
         ? com.google.cloudbuild.v1.WorkerPool.getDefaultInstance()
@@ -217,6 +221,7 @@ public final class UpdateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolOrBuilder() {
     return getWorkerPool();
   }

@@ -132,6 +132,7 @@ public final class DeleteBuildTriggerRequest extends com.google.protobuf.Generat
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class DeleteBuildTriggerRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +181,7 @@ public final class DeleteBuildTriggerRequest extends com.google.protobuf.Generat
    *
    * @return The triggerId.
    */
+  @java.lang.Override
   public java.lang.String getTriggerId() {
     java.lang.Object ref = triggerId_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +204,7 @@ public final class DeleteBuildTriggerRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for triggerId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTriggerIdBytes() {
     java.lang.Object ref = triggerId_;
     if (ref instanceof java.lang.String) {

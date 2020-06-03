@@ -139,6 +139,7 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the build field is set.
    */
+  @java.lang.Override
   public boolean hasBuild() {
     return build_ != null;
   }
@@ -202,6 +205,7 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The build.
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.Build getBuild() {
     return build_ == null ? com.google.cloudbuild.v1.Build.getDefaultInstance() : build_;
   }
@@ -215,6 +219,7 @@ public final class CreateBuildRequest extends com.google.protobuf.GeneratedMessa
    * <code>.google.devtools.cloudbuild.v1.Build build = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloudbuild.v1.BuildOrBuilder getBuildOrBuilder() {
     return getBuild();
   }
