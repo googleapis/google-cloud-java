@@ -63,9 +63,9 @@ public interface LabelAnnotationOrBuilder
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Entity category_entities = 2;</code>
@@ -76,9 +76,9 @@ public interface LabelAnnotationOrBuilder
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Entity category_entities = 2;</code>
@@ -89,9 +89,9 @@ public interface LabelAnnotationOrBuilder
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Entity category_entities = 2;</code>
@@ -102,9 +102,9 @@ public interface LabelAnnotationOrBuilder
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Entity category_entities = 2;</code>
@@ -116,9 +116,9 @@ public interface LabelAnnotationOrBuilder
    *
    * <pre>
    * Common categories for the detected entity.
-   * E.g. when the label is `Terrier` the category is likely `dog`. And in some
-   * cases there might be more than one categories e.g. `Terrier` could also be
-   * a `pet`.
+   * For example, when the label is `Terrier`, the category is likely `dog`. And
+   * in some cases there might be more than one categories e.g., `Terrier` could
+   * also be a `pet`.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Entity category_entities = 2;</code>

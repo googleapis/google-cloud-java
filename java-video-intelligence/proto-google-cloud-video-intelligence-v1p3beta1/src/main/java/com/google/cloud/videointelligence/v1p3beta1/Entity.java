@@ -184,7 +184,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Textual description, e.g. `Fixed-gear bicycle`.
+   * Textual description, e.g., `Fixed-gear bicycle`.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -206,7 +206,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Textual description, e.g. `Fixed-gear bicycle`.
+   * Textual description, e.g., `Fixed-gear bicycle`.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -743,7 +743,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Textual description, e.g. `Fixed-gear bicycle`.
+     * Textual description, e.g., `Fixed-gear bicycle`.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -765,7 +765,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Textual description, e.g. `Fixed-gear bicycle`.
+     * Textual description, e.g., `Fixed-gear bicycle`.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -787,7 +787,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Textual description, e.g. `Fixed-gear bicycle`.
+     * Textual description, e.g., `Fixed-gear bicycle`.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -808,7 +808,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Textual description, e.g. `Fixed-gear bicycle`.
+     * Textual description, e.g., `Fixed-gear bicycle`.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -825,7 +825,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Textual description, e.g. `Fixed-gear bicycle`.
+     * Textual description, e.g., `Fixed-gear bicycle`.
      * </pre>
      *
      * <code>string description = 2;</code>

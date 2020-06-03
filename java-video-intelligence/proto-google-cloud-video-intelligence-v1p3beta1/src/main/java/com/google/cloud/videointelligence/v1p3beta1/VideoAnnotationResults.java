@@ -412,7 +412,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Video file location in
-   * [Google Cloud Storage](https://cloud.google.com/storage/).
+   * [Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -435,7 +435,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Video file location in
-   * [Google Cloud Storage](https://cloud.google.com/storage/).
+   * [Cloud Storage](https://cloud.google.com/storage/).
    * </pre>
    *
    * <code>string input_uri = 1;</code>
@@ -506,7 +506,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -522,7 +522,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -539,7 +539,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -554,7 +554,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -570,7 +570,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Topical label annotations on video level or user specified segment level.
+   * Topical label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label.
    * </pre>
    *
@@ -590,7 +590,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -610,7 +610,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -631,7 +631,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -650,7 +650,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -670,7 +670,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Presence label annotations on video level or user specified segment level.
+   * Presence label annotations on video level or user-specified segment level.
    * There is exactly one element for each unique label. Compared to the
    * existing topical `segment_label_annotations`, this field presents more
    * fine-grained, segment-level labels detected in video content and is made
@@ -2794,7 +2794,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -2817,7 +2817,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -2840,7 +2840,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -2862,7 +2862,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -2880,7 +2880,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Video file location in
-     * [Google Cloud Storage](https://cloud.google.com/storage/).
+     * [Cloud Storage](https://cloud.google.com/storage/).
      * </pre>
      *
      * <code>string input_uri = 1;</code>
@@ -3108,7 +3108,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3128,7 +3128,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3147,7 +3147,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3167,7 +3167,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3193,7 +3193,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3217,7 +3217,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3243,7 +3243,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3269,7 +3269,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3292,7 +3292,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3316,7 +3316,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3340,7 +3340,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3362,7 +3362,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3384,7 +3384,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3400,7 +3400,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3420,7 +3420,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3441,7 +3441,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3459,7 +3459,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3478,7 +3478,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Topical label annotations on video level or user specified segment level.
+     * Topical label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label.
      * </pre>
      *
@@ -3533,7 +3533,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3557,7 +3557,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3580,7 +3580,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3604,7 +3604,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3634,7 +3634,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3662,7 +3662,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3692,7 +3692,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3722,7 +3722,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3749,7 +3749,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3777,7 +3777,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3806,7 +3806,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3832,7 +3832,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3858,7 +3858,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3878,7 +3878,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3902,7 +3902,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3927,7 +3927,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3949,7 +3949,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made
@@ -3972,7 +3972,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Presence label annotations on video level or user specified segment level.
+     * Presence label annotations on video level or user-specified segment level.
      * There is exactly one element for each unique label. Compared to the
      * existing topical `segment_label_annotations`, this field presents more
      * fine-grained, segment-level labels detected in video content and is made

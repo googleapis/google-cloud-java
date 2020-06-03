@@ -27,7 +27,7 @@ public interface PersonDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * The trackes that a person is detected.
+   * The detected tracks of a person.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 1;</code>
@@ -37,7 +37,7 @@ public interface PersonDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * The trackes that a person is detected.
+   * The detected tracks of a person.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 1;</code>
@@ -47,7 +47,7 @@ public interface PersonDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * The trackes that a person is detected.
+   * The detected tracks of a person.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 1;</code>
@@ -57,7 +57,7 @@ public interface PersonDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * The trackes that a person is detected.
+   * The detected tracks of a person.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 1;</code>
@@ -68,7 +68,7 @@ public interface PersonDetectionAnnotationOrBuilder
    *
    *
    * <pre>
-   * The trackes that a person is detected.
+   * The detected tracks of a person.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 1;</code>

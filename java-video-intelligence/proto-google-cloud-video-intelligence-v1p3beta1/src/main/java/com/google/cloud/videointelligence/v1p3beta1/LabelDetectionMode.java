@@ -173,7 +173,7 @@ public enum LabelDetectionMode implements com.google.protobuf.ProtocolMessageEnu
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(0);
   }
 
   private static final LabelDetectionMode[] VALUES = values();

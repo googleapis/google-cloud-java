@@ -444,7 +444,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
    * Note: When this is true, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive responses.
+   * audio for the top alternative in every consecutive response.
    * This is done in order to improve our speaker tags as our models learn to
    * identify the speakers in the conversation over time.
    * </pre>
@@ -1877,7 +1877,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive responses.
+     * audio for the top alternative in every consecutive response.
      * This is done in order to improve our speaker tags as our models learn to
      * identify the speakers in the conversation over time.
      * </pre>
@@ -1897,7 +1897,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive responses.
+     * audio for the top alternative in every consecutive response.
      * This is done in order to improve our speaker tags as our models learn to
      * identify the speakers in the conversation over time.
      * </pre>
@@ -1921,7 +1921,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * the top alternative of the recognition result using a speaker_tag provided
      * in the WordInfo.
      * Note: When this is true, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive responses.
+     * audio for the top alternative in every consecutive response.
      * This is done in order to improve our speaker tags as our models learn to
      * identify the speakers in the conversation over time.
      * </pre>

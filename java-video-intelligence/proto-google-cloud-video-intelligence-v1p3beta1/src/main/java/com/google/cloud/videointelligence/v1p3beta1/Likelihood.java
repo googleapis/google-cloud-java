@@ -216,7 +216,7 @@ public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .getDescriptor()
         .getEnumTypes()
-        .get(2);
+        .get(1);
   }
 
   private static final Likelihood[] VALUES = values();

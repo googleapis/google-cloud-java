@@ -27,6 +27,62 @@ public interface ObjectTrackingAnnotationOrBuilder
    *
    *
    * <pre>
+   * Non-streaming batch mode ONLY.
+   * Each object track corresponds to one video segment where it appears.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+   *
+   * @return Whether the segment field is set.
+   */
+  boolean hasSegment();
+  /**
+   *
+   *
+   * <pre>
+   * Non-streaming batch mode ONLY.
+   * Each object track corresponds to one video segment where it appears.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+   *
+   * @return The segment.
+   */
+  com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
+  /**
+   *
+   *
+   * <pre>
+   * Non-streaming batch mode ONLY.
+   * Each object track corresponds to one video segment where it appears.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Streaming mode ONLY.
+   * In streaming mode, we do not know the end time of a tracked object
+   * before it is completed. Hence, there is no VideoSegment info returned.
+   * Instead, we provide a unique identifiable integer track_id so that
+   * the customers can correlate the results of the ongoing
+   * ObjectTrackAnnotation of the same track_id over time.
+   * </pre>
+   *
+   * <code>int64 track_id = 5;</code>
+   *
+   * @return The trackId.
+   */
+  long getTrackId();
+
+  /**
+   *
+   *
+   * <pre>
    * Entity to specify the object category that this track is labeled as.
    * </pre>
    *
@@ -139,62 +195,6 @@ public interface ObjectTrackingAnnotationOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrameOrBuilder getFramesOrBuilder(
       int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Non-streaming batch mode ONLY.
-   * Each object track corresponds to one video segment where it appears.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-   *
-   * @return Whether the segment field is set.
-   */
-  boolean hasSegment();
-  /**
-   *
-   *
-   * <pre>
-   * Non-streaming batch mode ONLY.
-   * Each object track corresponds to one video segment where it appears.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-   *
-   * @return The segment.
-   */
-  com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment();
-  /**
-   *
-   *
-   * <pre>
-   * Non-streaming batch mode ONLY.
-   * Each object track corresponds to one video segment where it appears.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-   */
-  com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Streaming mode ONLY.
-   * In streaming mode, we do not know the end time of a tracked object
-   * before it is completed. Hence, there is no VideoSegment info returned.
-   * Instead, we provide a unique identifiable integer track_id so that
-   * the customers can correlate the results of the ongoing
-   * ObjectTrackAnnotation of the same track_id over time.
-   * </pre>
-   *
-   * <code>int64 track_id = 5;</code>
-   *
-   * @return The trackId.
-   */
-  long getTrackId();
 
   public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation.TrackInfoCase
       getTrackInfoCase();

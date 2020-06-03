@@ -217,6 +217,81 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     return TrackInfoCase.forNumber(trackInfoCase_);
   }
 
+  public static final int SEGMENT_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Non-streaming batch mode ONLY.
+   * Each object track corresponds to one video segment where it appears.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+   *
+   * @return Whether the segment field is set.
+   */
+  public boolean hasSegment() {
+    return trackInfoCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Non-streaming batch mode ONLY.
+   * Each object track corresponds to one video segment where it appears.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+   *
+   * @return The segment.
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
+    if (trackInfoCase_ == 3) {
+      return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
+    }
+    return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Non-streaming batch mode ONLY.
+   * Each object track corresponds to one video segment where it appears.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder() {
+    if (trackInfoCase_ == 3) {
+      return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
+    }
+    return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
+  }
+
+  public static final int TRACK_ID_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Streaming mode ONLY.
+   * In streaming mode, we do not know the end time of a tracked object
+   * before it is completed. Hence, there is no VideoSegment info returned.
+   * Instead, we provide a unique identifiable integer track_id so that
+   * the customers can correlate the results of the ongoing
+   * ObjectTrackAnnotation of the same track_id over time.
+   * </pre>
+   *
+   * <code>int64 track_id = 5;</code>
+   *
+   * @return The trackId.
+   */
+  public long getTrackId() {
+    if (trackInfoCase_ == 5) {
+      return (java.lang.Long) trackInfo_;
+    }
+    return 0L;
+  }
+
   public static final int ENTITY_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p3beta1.Entity entity_;
   /**
@@ -359,81 +434,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrameOrBuilder
       getFramesOrBuilder(int index) {
     return frames_.get(index);
-  }
-
-  public static final int SEGMENT_FIELD_NUMBER = 3;
-  /**
-   *
-   *
-   * <pre>
-   * Non-streaming batch mode ONLY.
-   * Each object track corresponds to one video segment where it appears.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-   *
-   * @return Whether the segment field is set.
-   */
-  public boolean hasSegment() {
-    return trackInfoCase_ == 3;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Non-streaming batch mode ONLY.
-   * Each object track corresponds to one video segment where it appears.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-   *
-   * @return The segment.
-   */
-  public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
-    if (trackInfoCase_ == 3) {
-      return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
-    }
-    return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Non-streaming batch mode ONLY.
-   * Each object track corresponds to one video segment where it appears.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-   */
-  public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder() {
-    if (trackInfoCase_ == 3) {
-      return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
-    }
-    return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
-  }
-
-  public static final int TRACK_ID_FIELD_NUMBER = 5;
-  /**
-   *
-   *
-   * <pre>
-   * Streaming mode ONLY.
-   * In streaming mode, we do not know the end time of a tracked object
-   * before it is completed. Hence, there is no VideoSegment info returned.
-   * Instead, we provide a unique identifiable integer track_id so that
-   * the customers can correlate the results of the ongoing
-   * ObjectTrackAnnotation of the same track_id over time.
-   * </pre>
-   *
-   * <code>int64 track_id = 5;</code>
-   *
-   * @return The trackId.
-   */
-  public long getTrackId() {
-    if (trackInfoCase_ == 5) {
-      return (java.lang.Long) trackInfo_;
-    }
-    return 0L;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -757,6 +757,16 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation result =
           new com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation(this);
       int from_bitField0_ = bitField0_;
+      if (trackInfoCase_ == 3) {
+        if (segmentBuilder_ == null) {
+          result.trackInfo_ = trackInfo_;
+        } else {
+          result.trackInfo_ = segmentBuilder_.build();
+        }
+      }
+      if (trackInfoCase_ == 5) {
+        result.trackInfo_ = trackInfo_;
+      }
       if (entityBuilder_ == null) {
         result.entity_ = entity_;
       } else {
@@ -771,16 +781,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         result.frames_ = frames_;
       } else {
         result.frames_ = framesBuilder_.build();
-      }
-      if (trackInfoCase_ == 3) {
-        if (segmentBuilder_ == null) {
-          result.trackInfo_ = trackInfo_;
-        } else {
-          result.trackInfo_ = segmentBuilder_.build();
-        }
-      }
-      if (trackInfoCase_ == 5) {
-        result.trackInfo_ = trackInfo_;
       }
       result.trackInfoCase_ = trackInfoCase_;
       onBuilt();
@@ -931,6 +931,294 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     }
 
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
+        segmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     *
+     * @return Whether the segment field is set.
+     */
+    public boolean hasSegment() {
+      return trackInfoCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     *
+     * @return The segment.
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
+      if (segmentBuilder_ == null) {
+        if (trackInfoCase_ == 3) {
+          return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
+      } else {
+        if (trackInfoCase_ == 3) {
+          return segmentBuilder_.getMessage();
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     */
+    public Builder setSegment(com.google.cloud.videointelligence.v1p3beta1.VideoSegment value) {
+      if (segmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        trackInfo_ = value;
+        onChanged();
+      } else {
+        segmentBuilder_.setMessage(value);
+      }
+      trackInfoCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     */
+    public Builder setSegment(
+        com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder builderForValue) {
+      if (segmentBuilder_ == null) {
+        trackInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        segmentBuilder_.setMessage(builderForValue.build());
+      }
+      trackInfoCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     */
+    public Builder mergeSegment(com.google.cloud.videointelligence.v1p3beta1.VideoSegment value) {
+      if (segmentBuilder_ == null) {
+        if (trackInfoCase_ == 3
+            && trackInfo_
+                != com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance()) {
+          trackInfo_ =
+              com.google.cloud.videointelligence.v1p3beta1.VideoSegment.newBuilder(
+                      (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          trackInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (trackInfoCase_ == 3) {
+          segmentBuilder_.mergeFrom(value);
+        }
+        segmentBuilder_.setMessage(value);
+      }
+      trackInfoCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     */
+    public Builder clearSegment() {
+      if (segmentBuilder_ == null) {
+        if (trackInfoCase_ == 3) {
+          trackInfoCase_ = 0;
+          trackInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (trackInfoCase_ == 3) {
+          trackInfoCase_ = 0;
+          trackInfo_ = null;
+        }
+        segmentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder getSegmentBuilder() {
+      return getSegmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder
+        getSegmentOrBuilder() {
+      if ((trackInfoCase_ == 3) && (segmentBuilder_ != null)) {
+        return segmentBuilder_.getMessageOrBuilder();
+      } else {
+        if (trackInfoCase_ == 3) {
+          return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Non-streaming batch mode ONLY.
+     * Each object track corresponds to one video segment where it appears.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
+        getSegmentFieldBuilder() {
+      if (segmentBuilder_ == null) {
+        if (!(trackInfoCase_ == 3)) {
+          trackInfo_ =
+              com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
+        }
+        segmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
+                com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
+                com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>(
+                (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_,
+                getParentForChildren(),
+                isClean());
+        trackInfo_ = null;
+      }
+      trackInfoCase_ = 3;
+      onChanged();
+      ;
+      return segmentBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming mode ONLY.
+     * In streaming mode, we do not know the end time of a tracked object
+     * before it is completed. Hence, there is no VideoSegment info returned.
+     * Instead, we provide a unique identifiable integer track_id so that
+     * the customers can correlate the results of the ongoing
+     * ObjectTrackAnnotation of the same track_id over time.
+     * </pre>
+     *
+     * <code>int64 track_id = 5;</code>
+     *
+     * @return The trackId.
+     */
+    public long getTrackId() {
+      if (trackInfoCase_ == 5) {
+        return (java.lang.Long) trackInfo_;
+      }
+      return 0L;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Streaming mode ONLY.
+     * In streaming mode, we do not know the end time of a tracked object
+     * before it is completed. Hence, there is no VideoSegment info returned.
+     * Instead, we provide a unique identifiable integer track_id so that
+     * the customers can correlate the results of the ongoing
+     * ObjectTrackAnnotation of the same track_id over time.
+     * </pre>
+     *
+     * <code>int64 track_id = 5;</code>
+     *
+     * @param value The trackId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrackId(long value) {
+      trackInfoCase_ = 5;
+      trackInfo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Streaming mode ONLY.
+     * In streaming mode, we do not know the end time of a tracked object
+     * before it is completed. Hence, there is no VideoSegment info returned.
+     * Instead, we provide a unique identifiable integer track_id so that
+     * the customers can correlate the results of the ongoing
+     * ObjectTrackAnnotation of the same track_id over time.
+     * </pre>
+     *
+     * <code>int64 track_id = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrackId() {
+      if (trackInfoCase_ == 5) {
+        trackInfoCase_ = 0;
+        trackInfo_ = null;
+        onChanged();
+      }
+      return this;
+    }
 
     private com.google.cloud.videointelligence.v1p3beta1.Entity entity_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1609,294 +1897,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         frames_ = null;
       }
       return framesBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
-            com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
-            com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
-        segmentBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     *
-     * @return Whether the segment field is set.
-     */
-    public boolean hasSegment() {
-      return trackInfoCase_ == 3;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     *
-     * @return The segment.
-     */
-    public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
-      if (segmentBuilder_ == null) {
-        if (trackInfoCase_ == 3) {
-          return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
-        }
-        return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
-      } else {
-        if (trackInfoCase_ == 3) {
-          return segmentBuilder_.getMessage();
-        }
-        return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     */
-    public Builder setSegment(com.google.cloud.videointelligence.v1p3beta1.VideoSegment value) {
-      if (segmentBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        trackInfo_ = value;
-        onChanged();
-      } else {
-        segmentBuilder_.setMessage(value);
-      }
-      trackInfoCase_ = 3;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     */
-    public Builder setSegment(
-        com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder builderForValue) {
-      if (segmentBuilder_ == null) {
-        trackInfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        segmentBuilder_.setMessage(builderForValue.build());
-      }
-      trackInfoCase_ = 3;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     */
-    public Builder mergeSegment(com.google.cloud.videointelligence.v1p3beta1.VideoSegment value) {
-      if (segmentBuilder_ == null) {
-        if (trackInfoCase_ == 3
-            && trackInfo_
-                != com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance()) {
-          trackInfo_ =
-              com.google.cloud.videointelligence.v1p3beta1.VideoSegment.newBuilder(
-                      (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          trackInfo_ = value;
-        }
-        onChanged();
-      } else {
-        if (trackInfoCase_ == 3) {
-          segmentBuilder_.mergeFrom(value);
-        }
-        segmentBuilder_.setMessage(value);
-      }
-      trackInfoCase_ = 3;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     */
-    public Builder clearSegment() {
-      if (segmentBuilder_ == null) {
-        if (trackInfoCase_ == 3) {
-          trackInfoCase_ = 0;
-          trackInfo_ = null;
-          onChanged();
-        }
-      } else {
-        if (trackInfoCase_ == 3) {
-          trackInfoCase_ = 0;
-          trackInfo_ = null;
-        }
-        segmentBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     */
-    public com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder getSegmentBuilder() {
-      return getSegmentFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     */
-    public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder
-        getSegmentOrBuilder() {
-      if ((trackInfoCase_ == 3) && (segmentBuilder_ != null)) {
-        return segmentBuilder_.getMessageOrBuilder();
-      } else {
-        if (trackInfoCase_ == 3) {
-          return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
-        }
-        return com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Non-streaming batch mode ONLY.
-     * Each object track corresponds to one video segment where it appears.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
-            com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
-            com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
-        getSegmentFieldBuilder() {
-      if (segmentBuilder_ == null) {
-        if (!(trackInfoCase_ == 3)) {
-          trackInfo_ =
-              com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance();
-        }
-        segmentBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.videointelligence.v1p3beta1.VideoSegment,
-                com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder,
-                com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>(
-                (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_,
-                getParentForChildren(),
-                isClean());
-        trackInfo_ = null;
-      }
-      trackInfoCase_ = 3;
-      onChanged();
-      ;
-      return segmentBuilder_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Streaming mode ONLY.
-     * In streaming mode, we do not know the end time of a tracked object
-     * before it is completed. Hence, there is no VideoSegment info returned.
-     * Instead, we provide a unique identifiable integer track_id so that
-     * the customers can correlate the results of the ongoing
-     * ObjectTrackAnnotation of the same track_id over time.
-     * </pre>
-     *
-     * <code>int64 track_id = 5;</code>
-     *
-     * @return The trackId.
-     */
-    public long getTrackId() {
-      if (trackInfoCase_ == 5) {
-        return (java.lang.Long) trackInfo_;
-      }
-      return 0L;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Streaming mode ONLY.
-     * In streaming mode, we do not know the end time of a tracked object
-     * before it is completed. Hence, there is no VideoSegment info returned.
-     * Instead, we provide a unique identifiable integer track_id so that
-     * the customers can correlate the results of the ongoing
-     * ObjectTrackAnnotation of the same track_id over time.
-     * </pre>
-     *
-     * <code>int64 track_id = 5;</code>
-     *
-     * @param value The trackId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTrackId(long value) {
-      trackInfoCase_ = 5;
-      trackInfo_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Streaming mode ONLY.
-     * In streaming mode, we do not know the end time of a tracked object
-     * before it is completed. Hence, there is no VideoSegment info returned.
-     * Instead, we provide a unique identifiable integer track_id so that
-     * the customers can correlate the results of the ongoing
-     * ObjectTrackAnnotation of the same track_id over time.
-     * </pre>
-     *
-     * <code>int64 track_id = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearTrackId() {
-      if (trackInfoCase_ == 5) {
-        trackInfoCase_ = 0;
-        trackInfo_ = null;
-        onChanged();
-      }
-      return this;
     }
 
     @java.lang.Override

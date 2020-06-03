@@ -22,32 +22,32 @@ package com.google.cloud.videointelligence.v1p3beta1;
  *
  *
  * <pre>
- * Config for STREAMING_AUTOML_CLASSIFICATION.
+ * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
  * </pre>
  *
  * Protobuf type {@code
- * google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig}
+ * google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig}
  */
-public final class StreamingAutomlClassificationConfig
+public final class StreamingAutomlActionRecognitionConfig
     extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
-    StreamingAutomlClassificationConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
+    StreamingAutomlActionRecognitionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use StreamingAutomlClassificationConfig.newBuilder() to construct.
-  private StreamingAutomlClassificationConfig(
+  // Use StreamingAutomlActionRecognitionConfig.newBuilder() to construct.
+  private StreamingAutomlActionRecognitionConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private StreamingAutomlClassificationConfig() {
+  private StreamingAutomlActionRecognitionConfig() {
     modelName_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new StreamingAutomlClassificationConfig();
+    return new StreamingAutomlActionRecognitionConfig();
   }
 
   @java.lang.Override
@@ -55,7 +55,7 @@ public final class StreamingAutomlClassificationConfig
     return this.unknownFields;
   }
 
-  private StreamingAutomlClassificationConfig(
+  private StreamingAutomlActionRecognitionConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -101,18 +101,19 @@ public final class StreamingAutomlClassificationConfig
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
-        .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlClassificationConfig_descriptor;
+        .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlActionRecognitionConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
-        .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlClassificationConfig_fieldAccessorTable
+        .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlActionRecognitionConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig.class,
-            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig.Builder
-                .class);
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+                .class,
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+                .Builder.class);
   }
 
   public static final int MODEL_NAME_FIELD_NUMBER = 1;
@@ -122,8 +123,7 @@ public final class StreamingAutomlClassificationConfig
    *
    * <pre>
    * Resource name of AutoML model.
-   * Format:
-   * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+   * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
    * </pre>
    *
    * <code>string model_name = 1;</code>
@@ -146,8 +146,7 @@ public final class StreamingAutomlClassificationConfig
    *
    * <pre>
    * Resource name of AutoML model.
-   * Format:
-   * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+   * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
    * </pre>
    *
    * <code>string model_name = 1;</code>
@@ -207,11 +206,11 @@ public final class StreamingAutomlClassificationConfig
     }
     if (!(obj
         instanceof
-        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)) {
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig other =
-        (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig) obj;
+    com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig other =
+        (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig) obj;
 
     if (!getModelName().equals(other.getModelName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -232,26 +231,26 @@ public final class StreamingAutomlClassificationConfig
     return hash;
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(
           java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -259,23 +258,23 @@ public final class StreamingAutomlClassificationConfig
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -283,12 +282,12 @@ public final class StreamingAutomlClassificationConfig
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -296,12 +295,12 @@ public final class StreamingAutomlClassificationConfig
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -320,7 +319,8 @@ public final class StreamingAutomlClassificationConfig
   }
 
   public static Builder newBuilder(
-      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig prototype) {
+      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+          prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -338,35 +338,35 @@ public final class StreamingAutomlClassificationConfig
    *
    *
    * <pre>
-   * Config for STREAMING_AUTOML_CLASSIFICATION.
+   * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
    * </pre>
    *
    * Protobuf type {@code
-   * google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig}
+   * google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
-      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
+      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfigOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlClassificationConfig_descriptor;
+          .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlActionRecognitionConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlClassificationConfig_fieldAccessorTable
+          .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlActionRecognitionConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
                   .class,
-              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
                   .Builder.class);
     }
 
     // Construct using
-    // com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig.newBuilder()
+    // com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -391,20 +391,20 @@ public final class StreamingAutomlClassificationConfig
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
-          .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlClassificationConfig_descriptor;
+          .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAutomlActionRecognitionConfig_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
         getDefaultInstanceForType() {
-      return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+      return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
           .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
         build() {
-      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig result =
+      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig result =
           buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
@@ -413,10 +413,10 @@ public final class StreamingAutomlClassificationConfig
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
         buildPartial() {
-      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig result =
-          new com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig(
+      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig result =
+          new com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig(
               this);
       result.modelName_ = modelName_;
       onBuilt();
@@ -460,9 +460,9 @@ public final class StreamingAutomlClassificationConfig
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other
           instanceof
-          com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig) {
+          com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig) {
         return mergeFrom(
-            (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+            (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
                 other);
       } else {
         super.mergeFrom(other);
@@ -471,9 +471,9 @@ public final class StreamingAutomlClassificationConfig
     }
 
     public Builder mergeFrom(
-        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig other) {
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig other) {
       if (other
-          == com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+          == com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
               .getDefaultInstance()) return this;
       if (!other.getModelName().isEmpty()) {
         modelName_ = other.modelName_;
@@ -494,13 +494,13 @@ public final class StreamingAutomlClassificationConfig
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+      com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
           parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+            (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
                 e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
@@ -517,8 +517,7 @@ public final class StreamingAutomlClassificationConfig
      *
      * <pre>
      * Resource name of AutoML model.
-     * Format:
-     * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+     * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -541,8 +540,7 @@ public final class StreamingAutomlClassificationConfig
      *
      * <pre>
      * Resource name of AutoML model.
-     * Format:
-     * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+     * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -565,8 +563,7 @@ public final class StreamingAutomlClassificationConfig
      *
      * <pre>
      * Resource name of AutoML model.
-     * Format:
-     * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+     * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -588,8 +585,7 @@ public final class StreamingAutomlClassificationConfig
      *
      * <pre>
      * Resource name of AutoML model.
-     * Format:
-     * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+     * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -607,8 +603,7 @@ public final class StreamingAutomlClassificationConfig
      *
      * <pre>
      * Resource name of AutoML model.
-     * Format:
-     * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+     * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model_name = 1;</code>
@@ -638,46 +633,46 @@ public final class StreamingAutomlClassificationConfig
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+    // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+  // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
   private static final com.google.cloud.videointelligence.v1p3beta1
-          .StreamingAutomlClassificationConfig
+          .StreamingAutomlActionRecognitionConfig
       DEFAULT_INSTANCE;
 
   static {
     DEFAULT_INSTANCE =
-        new com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig();
+        new com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig();
   }
 
-  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public static com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StreamingAutomlClassificationConfig> PARSER =
-      new com.google.protobuf.AbstractParser<StreamingAutomlClassificationConfig>() {
+  private static final com.google.protobuf.Parser<StreamingAutomlActionRecognitionConfig> PARSER =
+      new com.google.protobuf.AbstractParser<StreamingAutomlActionRecognitionConfig>() {
         @java.lang.Override
-        public StreamingAutomlClassificationConfig parsePartialFrom(
+        public StreamingAutomlActionRecognitionConfig parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StreamingAutomlClassificationConfig(input, extensionRegistry);
+          return new StreamingAutomlActionRecognitionConfig(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<StreamingAutomlClassificationConfig> parser() {
+  public static com.google.protobuf.Parser<StreamingAutomlActionRecognitionConfig> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<StreamingAutomlClassificationConfig> getParserForType() {
+  public com.google.protobuf.Parser<StreamingAutomlActionRecognitionConfig> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
+  public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

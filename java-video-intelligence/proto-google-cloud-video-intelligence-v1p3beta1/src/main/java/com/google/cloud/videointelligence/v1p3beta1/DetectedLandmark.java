@@ -141,7 +141,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The name of this landmark, i.e. left_hand, right_shoulder.
+   * The name of this landmark, for example, left_hand, right_shoulder.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -163,7 +163,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The name of this landmark, i.e. left_hand, right_shoulder.
+   * The name of this landmark, for example, left_hand, right_shoulder.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -620,7 +620,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of this landmark, i.e. left_hand, right_shoulder.
+     * The name of this landmark, for example, left_hand, right_shoulder.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -642,7 +642,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of this landmark, i.e. left_hand, right_shoulder.
+     * The name of this landmark, for example, left_hand, right_shoulder.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -664,7 +664,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of this landmark, i.e. left_hand, right_shoulder.
+     * The name of this landmark, for example, left_hand, right_shoulder.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -685,7 +685,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of this landmark, i.e. left_hand, right_shoulder.
+     * The name of this landmark, for example, left_hand, right_shoulder.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -702,7 +702,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of this landmark, i.e. left_hand, right_shoulder.
+     * The name of this landmark, for example, left_hand, right_shoulder.
      * </pre>
      *
      * <code>string name = 1;</code>

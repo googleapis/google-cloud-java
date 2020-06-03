@@ -234,6 +234,33 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
               streamingConfigCase_ = 22;
               break;
             }
+          case 186:
+            {
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+                      .Builder
+                  subBuilder = null;
+              if (streamingConfigCase_ == 23) {
+                subBuilder =
+                    ((com.google.cloud.videointelligence.v1p3beta1
+                                .StreamingAutomlActionRecognitionConfig)
+                            streamingConfig_)
+                        .toBuilder();
+              }
+              streamingConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p3beta1
+                          .StreamingAutomlActionRecognitionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.videointelligence.v1p3beta1
+                            .StreamingAutomlActionRecognitionConfig)
+                        streamingConfig_);
+                streamingConfig_ = subBuilder.buildPartial();
+              }
+              streamingConfigCase_ = 23;
+              break;
+            }
           case 242:
             {
               com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig.Builder
@@ -297,6 +324,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     LABEL_DETECTION_CONFIG(3),
     EXPLICIT_CONTENT_DETECTION_CONFIG(4),
     OBJECT_TRACKING_CONFIG(5),
+    AUTOML_ACTION_RECOGNITION_CONFIG(23),
     AUTOML_CLASSIFICATION_CONFIG(21),
     AUTOML_OBJECT_TRACKING_CONFIG(22),
     STREAMINGCONFIG_NOT_SET(0);
@@ -325,6 +353,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
           return EXPLICIT_CONTENT_DETECTION_CONFIG;
         case 5:
           return OBJECT_TRACKING_CONFIG;
+        case 23:
+          return AUTOML_ACTION_RECOGNITION_CONFIG;
         case 21:
           return AUTOML_CLASSIFICATION_CONFIG;
         case 22:
@@ -343,42 +373,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
 
   public StreamingConfigCase getStreamingConfigCase() {
     return StreamingConfigCase.forNumber(streamingConfigCase_);
-  }
-
-  public static final int FEATURE_FIELD_NUMBER = 1;
-  private int feature_;
-  /**
-   *
-   *
-   * <pre>
-   * Requested annotation feature.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-   *
-   * @return The enum numeric value on the wire for feature.
-   */
-  public int getFeatureValue() {
-    return feature_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Requested annotation feature.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-   *
-   * @return The feature.
-   */
-  public com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.videointelligence.v1p3beta1.StreamingFeature result =
-        com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.valueOf(feature_);
-    return result == null
-        ? com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.UNRECOGNIZED
-        : result;
   }
 
   public static final int SHOT_CHANGE_DETECTION_CONFIG_FIELD_NUMBER = 2;
@@ -622,6 +616,67 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
         .getDefaultInstance();
   }
 
+  public static final int AUTOML_ACTION_RECOGNITION_CONFIG_FIELD_NUMBER = 23;
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+   * </code>
+   *
+   * @return Whether the automlActionRecognitionConfig field is set.
+   */
+  public boolean hasAutomlActionRecognitionConfig() {
+    return streamingConfigCase_ == 23;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+   * </code>
+   *
+   * @return The automlActionRecognitionConfig.
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+      getAutomlActionRecognitionConfig() {
+    if (streamingConfigCase_ == 23) {
+      return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
+          streamingConfig_;
+    }
+    return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1p3beta1
+          .StreamingAutomlActionRecognitionConfigOrBuilder
+      getAutomlActionRecognitionConfigOrBuilder() {
+    if (streamingConfigCase_ == 23) {
+      return (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
+          streamingConfig_;
+    }
+    return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+        .getDefaultInstance();
+  }
+
   public static final int AUTOML_CLASSIFICATION_CONFIG_FIELD_NUMBER = 21;
   /**
    *
@@ -742,6 +797,42 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
         .getDefaultInstance();
   }
 
+  public static final int FEATURE_FIELD_NUMBER = 1;
+  private int feature_;
+  /**
+   *
+   *
+   * <pre>
+   * Requested annotation feature.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
+   */
+  public int getFeatureValue() {
+    return feature_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Requested annotation feature.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+   *
+   * @return The feature.
+   */
+  public com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.videointelligence.v1p3beta1.StreamingFeature result =
+        com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.valueOf(feature_);
+    return result == null
+        ? com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.UNRECOGNIZED
+        : result;
+  }
+
   public static final int STORAGE_CONFIG_FIELD_NUMBER = 30;
   private com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storageConfig_;
   /**
@@ -847,6 +938,12 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
           (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
               streamingConfig_);
     }
+    if (streamingConfigCase_ == 23) {
+      output.writeMessage(
+          23,
+          (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
+              streamingConfig_);
+    }
     if (storageConfig_ != null) {
       output.writeMessage(30, getStorageConfig());
     }
@@ -907,6 +1004,13 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
               (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfig)
                   streamingConfig_);
     }
+    if (streamingConfigCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23,
+              (com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
+                  streamingConfig_);
+    }
     if (storageConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getStorageConfig());
     }
@@ -946,6 +1050,10 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
         break;
       case 5:
         if (!getObjectTrackingConfig().equals(other.getObjectTrackingConfig())) return false;
+        break;
+      case 23:
+        if (!getAutomlActionRecognitionConfig().equals(other.getAutomlActionRecognitionConfig()))
+          return false;
         break;
       case 21:
         if (!getAutomlClassificationConfig().equals(other.getAutomlClassificationConfig()))
@@ -991,6 +1099,10 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       case 5:
         hash = (37 * hash) + OBJECT_TRACKING_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getObjectTrackingConfig().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + AUTOML_ACTION_RECOGNITION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getAutomlActionRecognitionConfig().hashCode();
         break;
       case 21:
         hash = (37 * hash) + AUTOML_CLASSIFICATION_CONFIG_FIELD_NUMBER;
@@ -1190,7 +1302,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig result =
           new com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig(this);
-      result.feature_ = feature_;
       if (streamingConfigCase_ == 2) {
         if (shotChangeDetectionConfigBuilder_ == null) {
           result.streamingConfig_ = streamingConfig_;
@@ -1219,6 +1330,13 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
           result.streamingConfig_ = objectTrackingConfigBuilder_.build();
         }
       }
+      if (streamingConfigCase_ == 23) {
+        if (automlActionRecognitionConfigBuilder_ == null) {
+          result.streamingConfig_ = streamingConfig_;
+        } else {
+          result.streamingConfig_ = automlActionRecognitionConfigBuilder_.build();
+        }
+      }
       if (streamingConfigCase_ == 21) {
         if (automlClassificationConfigBuilder_ == null) {
           result.streamingConfig_ = streamingConfig_;
@@ -1233,6 +1351,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
           result.streamingConfig_ = automlObjectTrackingConfigBuilder_.build();
         }
       }
+      result.feature_ = feature_;
       if (storageConfigBuilder_ == null) {
         result.storageConfig_ = storageConfig_;
       } else {
@@ -1318,6 +1437,11 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
             mergeObjectTrackingConfig(other.getObjectTrackingConfig());
             break;
           }
+        case AUTOML_ACTION_RECOGNITION_CONFIG:
+          {
+            mergeAutomlActionRecognitionConfig(other.getAutomlActionRecognitionConfig());
+            break;
+          }
         case AUTOML_CLASSIFICATION_CONFIG:
           {
             mergeAutomlClassificationConfig(other.getAutomlClassificationConfig());
@@ -1374,96 +1498,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     public Builder clearStreamingConfig() {
       streamingConfigCase_ = 0;
       streamingConfig_ = null;
-      onChanged();
-      return this;
-    }
-
-    private int feature_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Requested annotation feature.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-     *
-     * @return The enum numeric value on the wire for feature.
-     */
-    public int getFeatureValue() {
-      return feature_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Requested annotation feature.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-     *
-     * @param value The enum numeric value on the wire for feature to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFeatureValue(int value) {
-      feature_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Requested annotation feature.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-     *
-     * @return The feature.
-     */
-    public com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.videointelligence.v1p3beta1.StreamingFeature result =
-          com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.valueOf(feature_);
-      return result == null
-          ? com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Requested annotation feature.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-     *
-     * @param value The feature to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFeature(com.google.cloud.videointelligence.v1p3beta1.StreamingFeature value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      feature_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Requested annotation feature.
-     * </pre>
-     *
-     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearFeature() {
-
-      feature_ = 0;
       onChanged();
       return this;
     }
@@ -2457,6 +2491,260 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig,
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+                .Builder,
+            com.google.cloud.videointelligence.v1p3beta1
+                .StreamingAutomlActionRecognitionConfigOrBuilder>
+        automlActionRecognitionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     *
+     * @return Whether the automlActionRecognitionConfig field is set.
+     */
+    public boolean hasAutomlActionRecognitionConfig() {
+      return streamingConfigCase_ == 23;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     *
+     * @return The automlActionRecognitionConfig.
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+        getAutomlActionRecognitionConfig() {
+      if (automlActionRecognitionConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 23) {
+          return (com.google.cloud.videointelligence.v1p3beta1
+                  .StreamingAutomlActionRecognitionConfig)
+              streamingConfig_;
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+            .getDefaultInstance();
+      } else {
+        if (streamingConfigCase_ == 23) {
+          return automlActionRecognitionConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     */
+    public Builder setAutomlActionRecognitionConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig value) {
+      if (automlActionRecognitionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        streamingConfig_ = value;
+        onChanged();
+      } else {
+        automlActionRecognitionConfigBuilder_.setMessage(value);
+      }
+      streamingConfigCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     */
+    public Builder setAutomlActionRecognitionConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig.Builder
+            builderForValue) {
+      if (automlActionRecognitionConfigBuilder_ == null) {
+        streamingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        automlActionRecognitionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      streamingConfigCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     */
+    public Builder mergeAutomlActionRecognitionConfig(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig value) {
+      if (automlActionRecognitionConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 23
+            && streamingConfig_
+                != com.google.cloud.videointelligence.v1p3beta1
+                    .StreamingAutomlActionRecognitionConfig.getDefaultInstance()) {
+          streamingConfig_ =
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+                  .newBuilder(
+                      (com.google.cloud.videointelligence.v1p3beta1
+                              .StreamingAutomlActionRecognitionConfig)
+                          streamingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          streamingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (streamingConfigCase_ == 23) {
+          automlActionRecognitionConfigBuilder_.mergeFrom(value);
+        }
+        automlActionRecognitionConfigBuilder_.setMessage(value);
+      }
+      streamingConfigCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     */
+    public Builder clearAutomlActionRecognitionConfig() {
+      if (automlActionRecognitionConfigBuilder_ == null) {
+        if (streamingConfigCase_ == 23) {
+          streamingConfigCase_ = 0;
+          streamingConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (streamingConfigCase_ == 23) {
+          streamingConfigCase_ = 0;
+          streamingConfig_ = null;
+        }
+        automlActionRecognitionConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+            .Builder
+        getAutomlActionRecognitionConfigBuilder() {
+      return getAutomlActionRecognitionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1p3beta1
+            .StreamingAutomlActionRecognitionConfigOrBuilder
+        getAutomlActionRecognitionConfigOrBuilder() {
+      if ((streamingConfigCase_ == 23) && (automlActionRecognitionConfigBuilder_ != null)) {
+        return automlActionRecognitionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (streamingConfigCase_ == 23) {
+          return (com.google.cloud.videointelligence.v1p3beta1
+                  .StreamingAutomlActionRecognitionConfig)
+              streamingConfig_;
+        }
+        return com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig,
+            com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+                .Builder,
+            com.google.cloud.videointelligence.v1p3beta1
+                .StreamingAutomlActionRecognitionConfigOrBuilder>
+        getAutomlActionRecognitionConfigFieldBuilder() {
+      if (automlActionRecognitionConfigBuilder_ == null) {
+        if (!(streamingConfigCase_ == 23)) {
+          streamingConfig_ =
+              com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+                  .getDefaultInstance();
+        }
+        automlActionRecognitionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig,
+                com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+                    .Builder,
+                com.google.cloud.videointelligence.v1p3beta1
+                    .StreamingAutomlActionRecognitionConfigOrBuilder>(
+                (com.google.cloud.videointelligence.v1p3beta1
+                        .StreamingAutomlActionRecognitionConfig)
+                    streamingConfig_,
+                getParentForChildren(),
+                isClean());
+        streamingConfig_ = null;
+      }
+      streamingConfigCase_ = 23;
+      onChanged();
+      ;
+      return automlActionRecognitionConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig,
             com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig
                 .Builder,
@@ -2952,6 +3240,96 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       ;
       return automlObjectTrackingConfigBuilder_;
+    }
+
+    private int feature_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Requested annotation feature.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @return The enum numeric value on the wire for feature.
+     */
+    public int getFeatureValue() {
+      return feature_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Requested annotation feature.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @param value The enum numeric value on the wire for feature to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFeatureValue(int value) {
+      feature_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Requested annotation feature.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @return The feature.
+     */
+    public com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.videointelligence.v1p3beta1.StreamingFeature result =
+          com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.valueOf(feature_);
+      return result == null
+          ? com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Requested annotation feature.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @param value The feature to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFeature(com.google.cloud.videointelligence.v1p3beta1.StreamingFeature value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      feature_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Requested annotation feature.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFeature() {
+
+      feature_ = 0;
+      onChanged();
+      return this;
     }
 
     private com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig storageConfig_;

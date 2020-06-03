@@ -26,7 +26,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Service that implements streaming Google Cloud Video Intelligence API.
+ * Service Description: Service that implements streaming Video Intelligence API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

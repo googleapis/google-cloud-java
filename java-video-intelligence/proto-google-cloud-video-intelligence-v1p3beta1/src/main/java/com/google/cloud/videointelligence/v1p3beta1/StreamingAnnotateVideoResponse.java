@@ -255,10 +255,10 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * GCS URI that stores annotation results of one streaming session.
-   * It is a directory that can hold multiple files in JSON format.
-   * Example uri format:
-   * gs://bucket_id/object_id/cloud_project_name-session_id
+   * Google Cloud Storage(GCS) URI that stores annotation results of one
+   * streaming session in JSON format.
+   * It is the annotation_result_storage_directory
+   * from the request followed by '/cloud_project_number-session_id'.
    * </pre>
    *
    * <code>string annotation_results_uri = 3;</code>
@@ -280,10 +280,10 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * GCS URI that stores annotation results of one streaming session.
-   * It is a directory that can hold multiple files in JSON format.
-   * Example uri format:
-   * gs://bucket_id/object_id/cloud_project_name-session_id
+   * Google Cloud Storage(GCS) URI that stores annotation results of one
+   * streaming session in JSON format.
+   * It is the annotation_result_storage_directory
+   * from the request followed by '/cloud_project_number-session_id'.
    * </pre>
    *
    * <code>string annotation_results_uri = 3;</code>
@@ -1101,10 +1101,10 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * GCS URI that stores annotation results of one streaming session.
-     * It is a directory that can hold multiple files in JSON format.
-     * Example uri format:
-     * gs://bucket_id/object_id/cloud_project_name-session_id
+     * Google Cloud Storage(GCS) URI that stores annotation results of one
+     * streaming session in JSON format.
+     * It is the annotation_result_storage_directory
+     * from the request followed by '/cloud_project_number-session_id'.
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
@@ -1126,10 +1126,10 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * GCS URI that stores annotation results of one streaming session.
-     * It is a directory that can hold multiple files in JSON format.
-     * Example uri format:
-     * gs://bucket_id/object_id/cloud_project_name-session_id
+     * Google Cloud Storage(GCS) URI that stores annotation results of one
+     * streaming session in JSON format.
+     * It is the annotation_result_storage_directory
+     * from the request followed by '/cloud_project_number-session_id'.
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
@@ -1151,10 +1151,10 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * GCS URI that stores annotation results of one streaming session.
-     * It is a directory that can hold multiple files in JSON format.
-     * Example uri format:
-     * gs://bucket_id/object_id/cloud_project_name-session_id
+     * Google Cloud Storage(GCS) URI that stores annotation results of one
+     * streaming session in JSON format.
+     * It is the annotation_result_storage_directory
+     * from the request followed by '/cloud_project_number-session_id'.
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
@@ -1175,10 +1175,10 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * GCS URI that stores annotation results of one streaming session.
-     * It is a directory that can hold multiple files in JSON format.
-     * Example uri format:
-     * gs://bucket_id/object_id/cloud_project_name-session_id
+     * Google Cloud Storage(GCS) URI that stores annotation results of one
+     * streaming session in JSON format.
+     * It is the annotation_result_storage_directory
+     * from the request followed by '/cloud_project_number-session_id'.
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>
@@ -1195,10 +1195,10 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * GCS URI that stores annotation results of one streaming session.
-     * It is a directory that can hold multiple files in JSON format.
-     * Example uri format:
-     * gs://bucket_id/object_id/cloud_project_name-session_id
+     * Google Cloud Storage(GCS) URI that stores annotation results of one
+     * streaming session in JSON format.
+     * It is the annotation_result_storage_directory
+     * from the request followed by '/cloud_project_number-session_id'.
      * </pre>
      *
      * <code>string annotation_results_uri = 3;</code>

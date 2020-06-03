@@ -27,31 +27,6 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
-   * Requested annotation feature.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-   *
-   * @return The enum numeric value on the wire for feature.
-   */
-  int getFeatureValue();
-  /**
-   *
-   *
-   * <pre>
-   * Requested annotation feature.
-   * </pre>
-   *
-   * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
-   *
-   * @return The feature.
-   */
-  com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature();
-
-  /**
-   *
-   *
-   * <pre>
    * Config for STREAMING_SHOT_CHANGE_DETECTION.
    * </pre>
    *
@@ -224,6 +199,49 @@ public interface StreamingVideoConfigOrBuilder
    *
    *
    * <pre>
+   * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+   * </code>
+   *
+   * @return Whether the automlActionRecognitionConfig field is set.
+   */
+  boolean hasAutomlActionRecognitionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+   * </code>
+   *
+   * @return The automlActionRecognitionConfig.
+   */
+  com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig
+      getAutomlActionRecognitionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for STREAMING_AUTOML_ACTION_RECOGNITION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig automl_action_recognition_config = 23;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfigOrBuilder
+      getAutomlActionRecognitionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Config for STREAMING_AUTOML_CLASSIFICATION.
    * </pre>
    *
@@ -305,6 +323,31 @@ public interface StreamingVideoConfigOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlObjectTrackingConfigOrBuilder
       getAutomlObjectTrackingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Requested annotation feature.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+   *
+   * @return The enum numeric value on the wire for feature.
+   */
+  int getFeatureValue();
+  /**
+   *
+   *
+   * <pre>
+   * Requested annotation feature.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1p3beta1.StreamingFeature feature = 1;</code>
+   *
+   * @return The feature.
+   */
+  com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature();
 
   /**
    *

@@ -18,9 +18,9 @@
 
 package com.google.cloud.videointelligence.v1p3beta1;
 
-public interface StreamingAutomlClassificationConfigOrBuilder
+public interface StreamingAutomlActionRecognitionConfigOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig)
+    // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p3beta1.StreamingAutomlActionRecognitionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -28,8 +28,7 @@ public interface StreamingAutomlClassificationConfigOrBuilder
    *
    * <pre>
    * Resource name of AutoML model.
-   * Format:
-   * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+   * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
    * </pre>
    *
    * <code>string model_name = 1;</code>
@@ -42,8 +41,7 @@ public interface StreamingAutomlClassificationConfigOrBuilder
    *
    * <pre>
    * Resource name of AutoML model.
-   * Format:
-   * `projects/{project_number}/locations/{location_id}/models/{model_id}`
+   * Format: `projects/{project_id}/locations/{location_id}/models/{model_id}`
    * </pre>
    *
    * <code>string model_name = 1;</code>

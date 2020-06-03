@@ -26,7 +26,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Service that implements Google Cloud Video Intelligence API.
+ * Service that implements the Video Intelligence API.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -132,7 +132,7 @@ public final class VideoIntelligenceServiceGrpc {
    *
    *
    * <pre>
-   * Service that implements Google Cloud Video Intelligence API.
+   * Service that implements the Video Intelligence API.
    * </pre>
    */
   public abstract static class VideoIntelligenceServiceImplBase implements io.grpc.BindableService {
@@ -170,7 +170,7 @@ public final class VideoIntelligenceServiceGrpc {
    *
    *
    * <pre>
-   * Service that implements Google Cloud Video Intelligence API.
+   * Service that implements the Video Intelligence API.
    * </pre>
    */
   public static final class VideoIntelligenceServiceStub
@@ -209,7 +209,7 @@ public final class VideoIntelligenceServiceGrpc {
    *
    *
    * <pre>
-   * Service that implements Google Cloud Video Intelligence API.
+   * Service that implements the Video Intelligence API.
    * </pre>
    */
   public static final class VideoIntelligenceServiceBlockingStub
@@ -245,7 +245,7 @@ public final class VideoIntelligenceServiceGrpc {
    *
    *
    * <pre>
-   * Service that implements Google Cloud Video Intelligence API.
+   * Service that implements the Video Intelligence API.
    * </pre>
    */
   public static final class VideoIntelligenceServiceFutureStub

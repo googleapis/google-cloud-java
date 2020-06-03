@@ -82,6 +82,16 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
+   * Action recognition based on AutoML model.
+   * </pre>
+   *
+   * <code>STREAMING_AUTOML_ACTION_RECOGNITION = 23;</code>
+   */
+  STREAMING_AUTOML_ACTION_RECOGNITION(23),
+  /**
+   *
+   *
+   * <pre>
    * Video classification based on AutoML model.
    * </pre>
    *
@@ -155,6 +165,16 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    *
    *
    * <pre>
+   * Action recognition based on AutoML model.
+   * </pre>
+   *
+   * <code>STREAMING_AUTOML_ACTION_RECOGNITION = 23;</code>
+   */
+  public static final int STREAMING_AUTOML_ACTION_RECOGNITION_VALUE = 23;
+  /**
+   *
+   *
+   * <pre>
    * Video classification based on AutoML model.
    * </pre>
    *
@@ -206,6 +226,8 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
         return STREAMING_EXPLICIT_CONTENT_DETECTION;
       case 4:
         return STREAMING_OBJECT_TRACKING;
+      case 23:
+        return STREAMING_AUTOML_ACTION_RECOGNITION;
       case 21:
         return STREAMING_AUTOML_CLASSIFICATION;
       case 22:
@@ -238,7 +260,7 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .getDescriptor()
         .getEnumTypes()
-        .get(3);
+        .get(2);
   }
 
   private static final StreamingFeature[] VALUES = values();

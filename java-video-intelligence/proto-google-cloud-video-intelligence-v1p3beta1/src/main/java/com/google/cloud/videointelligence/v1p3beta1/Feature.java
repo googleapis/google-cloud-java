@@ -326,7 +326,7 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(3);
   }
 
   private static final Feature[] VALUES = values();

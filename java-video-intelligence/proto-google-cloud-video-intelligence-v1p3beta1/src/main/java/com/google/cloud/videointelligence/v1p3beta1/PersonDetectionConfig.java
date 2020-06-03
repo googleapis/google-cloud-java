@@ -123,7 +123,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Whether bounding boxes be included in the person detection annotation
+   * Whether bounding boxes are included in the person detection annotation
    * output.
    * </pre>
    *
@@ -142,7 +142,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Whether to enable pose landmarks detection. Ignored if
-   * 'include_bounding_boxes' is false.
+   * 'include_bounding_boxes' is set to false.
    * </pre>
    *
    * <code>bool include_pose_landmarks = 2;</code>
@@ -160,9 +160,9 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Whether to enable person attributes detection, such as cloth color (black,
-   * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair
-   * color (black, blonde, etc), hair length (long, short, bald), etc.
-   * Ignored if 'include_bounding_boxes' is false.
+   * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair,
+   * etc.
+   * Ignored if 'include_bounding_boxes' is set to false.
    * </pre>
    *
    * <code>bool include_attributes = 3;</code>
@@ -534,7 +534,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Whether bounding boxes be included in the person detection annotation
+     * Whether bounding boxes are included in the person detection annotation
      * output.
      * </pre>
      *
@@ -549,7 +549,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Whether bounding boxes be included in the person detection annotation
+     * Whether bounding boxes are included in the person detection annotation
      * output.
      * </pre>
      *
@@ -568,7 +568,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Whether bounding boxes be included in the person detection annotation
+     * Whether bounding boxes are included in the person detection annotation
      * output.
      * </pre>
      *
@@ -589,7 +589,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Whether to enable pose landmarks detection. Ignored if
-     * 'include_bounding_boxes' is false.
+     * 'include_bounding_boxes' is set to false.
      * </pre>
      *
      * <code>bool include_pose_landmarks = 2;</code>
@@ -604,7 +604,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Whether to enable pose landmarks detection. Ignored if
-     * 'include_bounding_boxes' is false.
+     * 'include_bounding_boxes' is set to false.
      * </pre>
      *
      * <code>bool include_pose_landmarks = 2;</code>
@@ -623,7 +623,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Whether to enable pose landmarks detection. Ignored if
-     * 'include_bounding_boxes' is false.
+     * 'include_bounding_boxes' is set to false.
      * </pre>
      *
      * <code>bool include_pose_landmarks = 2;</code>
@@ -643,9 +643,9 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Whether to enable person attributes detection, such as cloth color (black,
-     * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair
-     * color (black, blonde, etc), hair length (long, short, bald), etc.
-     * Ignored if 'include_bounding_boxes' is false.
+     * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair,
+     * etc.
+     * Ignored if 'include_bounding_boxes' is set to false.
      * </pre>
      *
      * <code>bool include_attributes = 3;</code>
@@ -660,9 +660,9 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Whether to enable person attributes detection, such as cloth color (black,
-     * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair
-     * color (black, blonde, etc), hair length (long, short, bald), etc.
-     * Ignored if 'include_bounding_boxes' is false.
+     * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair,
+     * etc.
+     * Ignored if 'include_bounding_boxes' is set to false.
      * </pre>
      *
      * <code>bool include_attributes = 3;</code>
@@ -681,9 +681,9 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Whether to enable person attributes detection, such as cloth color (black,
-     * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair
-     * color (black, blonde, etc), hair length (long, short, bald), etc.
-     * Ignored if 'include_bounding_boxes' is false.
+     * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair,
+     * etc.
+     * Ignored if 'include_bounding_boxes' is set to false.
      * </pre>
      *
      * <code>bool include_attributes = 3;</code>

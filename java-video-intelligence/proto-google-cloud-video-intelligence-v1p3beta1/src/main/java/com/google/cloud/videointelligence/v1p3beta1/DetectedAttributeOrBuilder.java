@@ -27,7 +27,7 @@ public interface DetectedAttributeOrBuilder
    *
    *
    * <pre>
-   * The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc.
+   * The name of the attribute, for example, glasses, dark_glasses, mouth_open.
    * A full list of supported type names will be provided in the document.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface DetectedAttributeOrBuilder
    *
    *
    * <pre>
-   * The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc.
+   * The name of the attribute, for example, glasses, dark_glasses, mouth_open.
    * A full list of supported type names will be provided in the document.
    * </pre>
    *
