@@ -58,6 +58,16 @@ public abstract class TranslationServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+      deleteGlossaryOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteGlossaryOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteGlossaryCallable()");
+  }
+
   public UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable() {
     throw new UnsupportedOperationException("Not implemented: translateTextCallable()");
   }
@@ -104,16 +114,6 @@ public abstract class TranslationServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetGlossaryRequest, Glossary> getGlossaryCallable() {
     throw new UnsupportedOperationException("Not implemented: getGlossaryCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-      deleteGlossaryOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteGlossaryOperationCallable()");
-  }
-
-  public UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteGlossaryCallable()");
   }
 
   @Override

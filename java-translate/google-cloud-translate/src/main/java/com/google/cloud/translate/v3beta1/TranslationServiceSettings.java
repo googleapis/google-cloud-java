@@ -69,6 +69,20 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class TranslationServiceSettings extends ClientSettings<TranslationServiceSettings> {
+  /** Returns the object with the settings used for calls to deleteGlossary. */
+  public UnaryCallSettings<DeleteGlossaryRequest, Operation> deleteGlossarySettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteGlossarySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGlossary. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+      deleteGlossaryOperationSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).deleteGlossaryOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to translateText. */
   public UnaryCallSettings<TranslateTextRequest, TranslateTextResponse> translateTextSettings() {
     return ((TranslationServiceStubSettings) getStubSettings()).translateTextSettings();
@@ -123,20 +137,6 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
   /** Returns the object with the settings used for calls to getGlossary. */
   public UnaryCallSettings<GetGlossaryRequest, Glossary> getGlossarySettings() {
     return ((TranslationServiceStubSettings) getStubSettings()).getGlossarySettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteGlossary. */
-  public UnaryCallSettings<DeleteGlossaryRequest, Operation> deleteGlossarySettings() {
-    return ((TranslationServiceStubSettings) getStubSettings()).deleteGlossarySettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteGlossary. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-      deleteGlossaryOperationSettings() {
-    return ((TranslationServiceStubSettings) getStubSettings()).deleteGlossaryOperationSettings();
   }
 
   public static final TranslationServiceSettings create(TranslationServiceStubSettings stub)
@@ -236,6 +236,20 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteGlossary. */
+    public UnaryCallSettings.Builder<DeleteGlossaryRequest, Operation> deleteGlossarySettings() {
+      return getStubSettingsBuilder().deleteGlossarySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGlossary. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+        deleteGlossaryOperationSettings() {
+      return getStubSettingsBuilder().deleteGlossaryOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to translateText. */
     public UnaryCallSettings.Builder<TranslateTextRequest, TranslateTextResponse>
         translateTextSettings() {
@@ -292,20 +306,6 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
     /** Returns the builder for the settings used for calls to getGlossary. */
     public UnaryCallSettings.Builder<GetGlossaryRequest, Glossary> getGlossarySettings() {
       return getStubSettingsBuilder().getGlossarySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteGlossary. */
-    public UnaryCallSettings.Builder<DeleteGlossaryRequest, Operation> deleteGlossarySettings() {
-      return getStubSettingsBuilder().deleteGlossarySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteGlossary. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-        deleteGlossaryOperationSettings() {
-      return getStubSettingsBuilder().deleteGlossaryOperationSettings();
     }
 
     @Override

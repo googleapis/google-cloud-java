@@ -64,6 +64,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcTranslationServiceStub extends TranslationServiceStub {
 
+  private static final MethodDescriptor<DeleteGlossaryRequest, Operation>
+      deleteGlossaryMethodDescriptor =
+          MethodDescriptor.<DeleteGlossaryRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.translation.v3beta1.TranslationService/DeleteGlossary")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteGlossaryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<TranslateTextRequest, TranslateTextResponse>
       translateTextMethodDescriptor =
           MethodDescriptor.<TranslateTextRequest, TranslateTextResponse>newBuilder()
@@ -134,20 +144,14 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetGlossaryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Glossary.getDefaultInstance()))
           .build();
-  private static final MethodDescriptor<DeleteGlossaryRequest, Operation>
-      deleteGlossaryMethodDescriptor =
-          MethodDescriptor.<DeleteGlossaryRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.translation.v3beta1.TranslationService/DeleteGlossary")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteGlossaryRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
+  private final UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable;
+  private final OperationCallable<
+          DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+      deleteGlossaryOperationCallable;
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;
   private final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable;
   private final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -163,10 +167,6 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   private final UnaryCallable<ListGlossariesRequest, ListGlossariesPagedResponse>
       listGlossariesPagedCallable;
   private final UnaryCallable<GetGlossaryRequest, Glossary> getGlossaryCallable;
-  private final UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable;
-  private final OperationCallable<
-          DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-      deleteGlossaryOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -210,6 +210,19 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
+        GrpcCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteGlossaryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteGlossaryRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteGlossaryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<TranslateTextRequest, TranslateTextResponse> translateTextTransportSettings =
         GrpcCallSettings.<TranslateTextRequest, TranslateTextResponse>newBuilder()
             .setMethodDescriptor(translateTextMethodDescriptor)
@@ -304,20 +317,16 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
-        GrpcCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
-            .setMethodDescriptor(deleteGlossaryMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteGlossaryRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteGlossaryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
 
+    this.deleteGlossaryCallable =
+        callableFactory.createUnaryCallable(
+            deleteGlossaryTransportSettings, settings.deleteGlossarySettings(), clientContext);
+    this.deleteGlossaryOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGlossaryTransportSettings,
+            settings.deleteGlossaryOperationSettings(),
+            clientContext,
+            this.operationsStub);
     this.translateTextCallable =
         callableFactory.createUnaryCallable(
             translateTextTransportSettings, settings.translateTextSettings(), clientContext);
@@ -358,15 +367,6 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
     this.getGlossaryCallable =
         callableFactory.createUnaryCallable(
             getGlossaryTransportSettings, settings.getGlossarySettings(), clientContext);
-    this.deleteGlossaryCallable =
-        callableFactory.createUnaryCallable(
-            deleteGlossaryTransportSettings, settings.deleteGlossarySettings(), clientContext);
-    this.deleteGlossaryOperationCallable =
-        callableFactory.createOperationCallable(
-            deleteGlossaryTransportSettings,
-            settings.deleteGlossaryOperationSettings(),
-            clientContext,
-            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -374,6 +374,16 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
+      deleteGlossaryOperationCallable() {
+    return deleteGlossaryOperationCallable;
+  }
+
+  public UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
+    return deleteGlossaryCallable;
   }
 
   public UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable() {
@@ -421,16 +431,6 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
 
   public UnaryCallable<GetGlossaryRequest, Glossary> getGlossaryCallable() {
     return getGlossaryCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
-      deleteGlossaryOperationCallable() {
-    return deleteGlossaryOperationCallable;
-  }
-
-  public UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
-    return deleteGlossaryCallable;
   }
 
   @Override
