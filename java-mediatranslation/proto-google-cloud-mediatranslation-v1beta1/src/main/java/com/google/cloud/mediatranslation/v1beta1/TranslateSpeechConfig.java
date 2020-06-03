@@ -172,6 +172,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The audioEncoding.
    */
+  @java.lang.Override
   public java.lang.String getAudioEncoding() {
     java.lang.Object ref = audioEncoding_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +198,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for audioEncoding.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAudioEncodingBytes() {
     java.lang.Object ref = audioEncoding_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The sourceLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +247,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for sourceLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -358,6 +362,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The targetLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getTargetLanguageCode() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -380,6 +385,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for targetLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -409,6 +415,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The sampleRateHertz.
    */
+  @java.lang.Override
   public int getSampleRateHertz() {
     return sampleRateHertz_;
   }
@@ -426,6 +433,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -448,6 +456,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -1468,6 +1477,7 @@ public final class TranslateSpeechConfig extends com.google.protobuf.GeneratedMe
      *
      * @return The sampleRateHertz.
      */
+    @java.lang.Override
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }

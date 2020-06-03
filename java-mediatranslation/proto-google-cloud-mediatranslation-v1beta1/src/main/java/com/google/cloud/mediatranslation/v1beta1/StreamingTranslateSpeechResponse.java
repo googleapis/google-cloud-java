@@ -266,6 +266,10 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -316,6 +320,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    *
    * @return Whether the error field is set.
    */
+  @java.lang.Override
   public boolean hasError() {
     return error_ != null;
   }
@@ -331,6 +336,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    *
    * @return The error.
    */
+  @java.lang.Override
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
@@ -344,6 +350,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    *
    * <code>.google.rpc.Status error = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
   }
@@ -364,6 +371,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    *
    * @return Whether the result field is set.
    */
+  @java.lang.Override
   public boolean hasResult() {
     return result_ != null;
   }
@@ -381,6 +389,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    *
    * @return The result.
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult getResult() {
     return result_ == null
         ? com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
@@ -399,6 +408,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    * .google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResultOrBuilder
       getResultOrBuilder() {
     return getResult();
@@ -419,6 +429,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    *
    * @return The enum numeric value on the wire for speechEventType.
    */
+  @java.lang.Override
   public int getSpeechEventTypeValue() {
     return speechEventType_;
   }
@@ -435,6 +446,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
    *
    * @return The speechEventType.
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse.SpeechEventType
       getSpeechEventType() {
     @SuppressWarnings("deprecation")
@@ -1265,6 +1277,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      *
      * @return The enum numeric value on the wire for speechEventType.
      */
+    @java.lang.Override
     public int getSpeechEventTypeValue() {
       return speechEventType_;
     }
@@ -1283,6 +1296,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setSpeechEventTypeValue(int value) {
+
       speechEventType_ = value;
       onChanged();
       return this;
@@ -1300,6 +1314,7 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      *
      * @return The speechEventType.
      */
+    @java.lang.Override
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse
             .SpeechEventType
         getSpeechEventType() {

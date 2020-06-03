@@ -341,6 +341,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      *
      * @return The translation.
      */
+    @java.lang.Override
     public java.lang.String getTranslation() {
       java.lang.Object ref = translation_;
       if (ref instanceof java.lang.String) {
@@ -363,6 +364,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      *
      * @return The bytes for translation.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTranslationBytes() {
       java.lang.Object ref = translation_;
       if (ref instanceof java.lang.String) {
@@ -393,6 +395,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      *
      * @return The isFinal.
      */
+    @java.lang.Override
     public boolean getIsFinal() {
       return isFinal_;
     }
@@ -413,6 +416,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      *
      * @return The detectedSourceLanguageCode.
      */
+    @java.lang.Override
     public java.lang.String getDetectedSourceLanguageCode() {
       java.lang.Object ref = detectedSourceLanguageCode_;
       if (ref instanceof java.lang.String) {
@@ -438,6 +442,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      *
      * @return The bytes for detectedSourceLanguageCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDetectedSourceLanguageCodeBytes() {
       java.lang.Object ref = detectedSourceLanguageCode_;
       if (ref instanceof java.lang.String) {
@@ -987,6 +992,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
        *
        * @return The isFinal.
        */
+      @java.lang.Override
       public boolean getIsFinal() {
         return isFinal_;
       }
@@ -1280,6 +1286,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
    *
    * @return Whether the textTranslationResult field is set.
    */
+  @java.lang.Override
   public boolean hasTextTranslationResult() {
     return resultCase_ == 1;
   }
@@ -1296,6 +1303,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
    *
    * @return The textTranslationResult.
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
           .TextTranslationResult
       getTextTranslationResult() {
@@ -1318,6 +1326,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
    * .google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.TextTranslationResult text_translation_result = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
           .TextTranslationResultOrBuilder
       getTextTranslationResultOrBuilder() {
@@ -1346,6 +1355,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
    *
    * @return The recognitionResult.
    */
+  @java.lang.Override
   public java.lang.String getRecognitionResult() {
     java.lang.Object ref = recognitionResult_;
     if (ref instanceof java.lang.String) {
@@ -1371,6 +1381,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
    *
    * @return The bytes for recognitionResult.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRecognitionResultBytes() {
     java.lang.Object ref = recognitionResult_;
     if (ref instanceof java.lang.String) {
@@ -1802,6 +1813,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      *
      * @return Whether the textTranslationResult field is set.
      */
+    @java.lang.Override
     public boolean hasTextTranslationResult() {
       return resultCase_ == 1;
     }
@@ -1818,6 +1830,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      *
      * @return The textTranslationResult.
      */
+    @java.lang.Override
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
             .TextTranslationResult
         getTextTranslationResult() {
@@ -1983,6 +1996,7 @@ public final class StreamingTranslateSpeechResult extends com.google.protobuf.Ge
      * .google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.TextTranslationResult text_translation_result = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult
             .TextTranslationResultOrBuilder
         getTextTranslationResultOrBuilder() {

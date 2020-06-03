@@ -141,6 +141,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
    *
    * @return Whether the audioConfig field is set.
    */
+  @java.lang.Override
   public boolean hasAudioConfig() {
     return audioConfig_ != null;
   }
@@ -157,6 +158,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
    *
    * @return The audioConfig.
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig getAudioConfig() {
     return audioConfig_ == null
         ? com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.getDefaultInstance()
@@ -173,6 +175,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
    * .google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig audio_config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfigOrBuilder
       getAudioConfigOrBuilder() {
     return getAudioConfig();
@@ -203,6 +206,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
    *
    * @return The singleUtterance.
    */
+  @java.lang.Override
   public boolean getSingleUtterance() {
     return singleUtterance_;
   }
@@ -798,6 +802,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
      *
      * @return The singleUtterance.
      */
+    @java.lang.Override
     public boolean getSingleUtterance() {
       return singleUtterance_;
     }

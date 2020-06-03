@@ -201,6 +201,7 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
    *
    * @return Whether the streamingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasStreamingConfig() {
     return streamingRequestCase_ == 1;
   }
@@ -219,6 +220,7 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
    *
    * @return The streamingConfig.
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig
       getStreamingConfig() {
     if (streamingRequestCase_ == 1) {
@@ -241,6 +243,7 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
    * .google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig streaming_config = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfigOrBuilder
       getStreamingConfigOrBuilder() {
     if (streamingRequestCase_ == 1) {
@@ -270,6 +273,7 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
    *
    * @return The audioContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAudioContent() {
     if (streamingRequestCase_ == 2) {
       return (com.google.protobuf.ByteString) streamingRequest_;
@@ -705,6 +709,7 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
      *
      * @return Whether the streamingConfig field is set.
      */
+    @java.lang.Override
     public boolean hasStreamingConfig() {
       return streamingRequestCase_ == 1;
     }
@@ -723,6 +728,7 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
      *
      * @return The streamingConfig.
      */
+    @java.lang.Override
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig
         getStreamingConfig() {
       if (streamingConfigBuilder_ == null) {
@@ -890,6 +896,7 @@ public final class StreamingTranslateSpeechRequest extends com.google.protobuf.G
      * .google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig streaming_config = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfigOrBuilder
         getStreamingConfigOrBuilder() {
       if ((streamingRequestCase_ == 1) && (streamingConfigBuilder_ != null)) {
