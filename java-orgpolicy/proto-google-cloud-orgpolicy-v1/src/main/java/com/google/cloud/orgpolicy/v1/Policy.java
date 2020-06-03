@@ -743,6 +743,10 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -920,6 +924,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for allValues.
      */
+    @java.lang.Override
     public int getAllValuesValue() {
       return allValues_;
     }
@@ -934,6 +939,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The allValues.
      */
+    @java.lang.Override
     public com.google.cloud.orgpolicy.v1.Policy.ListPolicy.AllValues getAllValues() {
       @SuppressWarnings("deprecation")
       com.google.cloud.orgpolicy.v1.Policy.ListPolicy.AllValues result =
@@ -959,6 +965,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The suggestedValue.
      */
+    @java.lang.Override
     public java.lang.String getSuggestedValue() {
       java.lang.Object ref = suggestedValue_;
       if (ref instanceof java.lang.String) {
@@ -984,6 +991,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for suggestedValue.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSuggestedValueBytes() {
       java.lang.Object ref = suggestedValue_;
       if (ref instanceof java.lang.String) {
@@ -1093,6 +1101,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The inheritFromParent.
      */
+    @java.lang.Override
     public boolean getInheritFromParent() {
       return inheritFromParent_;
     }
@@ -1907,6 +1916,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for allValues.
        */
+      @java.lang.Override
       public int getAllValuesValue() {
         return allValues_;
       }
@@ -1923,6 +1933,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setAllValuesValue(int value) {
+
         allValues_ = value;
         onChanged();
         return this;
@@ -1938,6 +1949,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The allValues.
        */
+      @java.lang.Override
       public com.google.cloud.orgpolicy.v1.Policy.ListPolicy.AllValues getAllValues() {
         @SuppressWarnings("deprecation")
         com.google.cloud.orgpolicy.v1.Policy.ListPolicy.AllValues result =
@@ -2202,6 +2214,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The inheritFromParent.
        */
+      @java.lang.Override
       public boolean getInheritFromParent() {
         return inheritFromParent_;
       }
@@ -2658,6 +2671,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enforced.
      */
+    @java.lang.Override
     public boolean getEnforced() {
       return enforced_;
     }
@@ -3034,6 +3048,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enforced.
        */
+      @java.lang.Override
       public boolean getEnforced() {
         return enforced_;
       }
@@ -3731,6 +3746,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public int getVersion() {
     return version_;
   }
@@ -3750,6 +3766,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The constraint.
    */
+  @java.lang.Override
   public java.lang.String getConstraint() {
     java.lang.Object ref = constraint_;
     if (ref instanceof java.lang.String) {
@@ -3774,6 +3791,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for constraint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getConstraintBytes() {
     java.lang.Object ref = constraint_;
     if (ref instanceof java.lang.String) {
@@ -3810,6 +3828,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtag() {
     return etag_;
   }
@@ -3830,6 +3849,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -3847,6 +3867,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -3862,6 +3883,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -3878,6 +3900,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the listPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasListPolicy() {
     return policyTypeCase_ == 5;
   }
@@ -3892,6 +3915,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The listPolicy.
    */
+  @java.lang.Override
   public com.google.cloud.orgpolicy.v1.Policy.ListPolicy getListPolicy() {
     if (policyTypeCase_ == 5) {
       return (com.google.cloud.orgpolicy.v1.Policy.ListPolicy) policyType_;
@@ -3907,6 +3931,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.orgpolicy.v1.Policy.ListPolicy list_policy = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.orgpolicy.v1.Policy.ListPolicyOrBuilder getListPolicyOrBuilder() {
     if (policyTypeCase_ == 5) {
       return (com.google.cloud.orgpolicy.v1.Policy.ListPolicy) policyType_;
@@ -3926,6 +3951,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the booleanPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasBooleanPolicy() {
     return policyTypeCase_ == 6;
   }
@@ -3940,6 +3966,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The booleanPolicy.
    */
+  @java.lang.Override
   public com.google.cloud.orgpolicy.v1.Policy.BooleanPolicy getBooleanPolicy() {
     if (policyTypeCase_ == 6) {
       return (com.google.cloud.orgpolicy.v1.Policy.BooleanPolicy) policyType_;
@@ -3955,6 +3982,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.orgpolicy.v1.Policy.BooleanPolicy boolean_policy = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.orgpolicy.v1.Policy.BooleanPolicyOrBuilder getBooleanPolicyOrBuilder() {
     if (policyTypeCase_ == 6) {
       return (com.google.cloud.orgpolicy.v1.Policy.BooleanPolicy) policyType_;
@@ -3975,6 +4003,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the restoreDefault field is set.
    */
+  @java.lang.Override
   public boolean hasRestoreDefault() {
     return policyTypeCase_ == 7;
   }
@@ -3990,6 +4019,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The restoreDefault.
    */
+  @java.lang.Override
   public com.google.cloud.orgpolicy.v1.Policy.RestoreDefault getRestoreDefault() {
     if (policyTypeCase_ == 7) {
       return (com.google.cloud.orgpolicy.v1.Policy.RestoreDefault) policyType_;
@@ -4006,6 +4036,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.orgpolicy.v1.Policy.RestoreDefault restore_default = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.orgpolicy.v1.Policy.RestoreDefaultOrBuilder getRestoreDefaultOrBuilder() {
     if (policyTypeCase_ == 7) {
       return (com.google.cloud.orgpolicy.v1.Policy.RestoreDefault) policyType_;
@@ -4510,6 +4541,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The version.
      */
+    @java.lang.Override
     public int getVersion() {
       return version_;
     }
@@ -4688,6 +4720,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The etag.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEtag() {
       return etag_;
     }
@@ -4978,6 +5011,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the listPolicy field is set.
      */
+    @java.lang.Override
     public boolean hasListPolicy() {
       return policyTypeCase_ == 5;
     }
@@ -4992,6 +5026,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The listPolicy.
      */
+    @java.lang.Override
     public com.google.cloud.orgpolicy.v1.Policy.ListPolicy getListPolicy() {
       if (listPolicyBuilder_ == null) {
         if (policyTypeCase_ == 5) {
@@ -5125,6 +5160,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.orgpolicy.v1.Policy.ListPolicy list_policy = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.orgpolicy.v1.Policy.ListPolicyOrBuilder getListPolicyOrBuilder() {
       if ((policyTypeCase_ == 5) && (listPolicyBuilder_ != null)) {
         return listPolicyBuilder_.getMessageOrBuilder();
@@ -5185,6 +5221,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the booleanPolicy field is set.
      */
+    @java.lang.Override
     public boolean hasBooleanPolicy() {
       return policyTypeCase_ == 6;
     }
@@ -5199,6 +5236,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The booleanPolicy.
      */
+    @java.lang.Override
     public com.google.cloud.orgpolicy.v1.Policy.BooleanPolicy getBooleanPolicy() {
       if (booleanPolicyBuilder_ == null) {
         if (policyTypeCase_ == 6) {
@@ -5332,6 +5370,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.orgpolicy.v1.Policy.BooleanPolicy boolean_policy = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.orgpolicy.v1.Policy.BooleanPolicyOrBuilder getBooleanPolicyOrBuilder() {
       if ((policyTypeCase_ == 6) && (booleanPolicyBuilder_ != null)) {
         return booleanPolicyBuilder_.getMessageOrBuilder();
@@ -5393,6 +5432,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the restoreDefault field is set.
      */
+    @java.lang.Override
     public boolean hasRestoreDefault() {
       return policyTypeCase_ == 7;
     }
@@ -5408,6 +5448,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The restoreDefault.
      */
+    @java.lang.Override
     public com.google.cloud.orgpolicy.v1.Policy.RestoreDefault getRestoreDefault() {
       if (restoreDefaultBuilder_ == null) {
         if (policyTypeCase_ == 7) {
@@ -5547,6 +5588,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.orgpolicy.v1.Policy.RestoreDefault restore_default = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.orgpolicy.v1.Policy.RestoreDefaultOrBuilder
         getRestoreDefaultOrBuilder() {
       if ((policyTypeCase_ == 7) && (restoreDefaultBuilder_ != null)) {

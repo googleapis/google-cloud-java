@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-orgpolicy.git",
-        "sha": "ec7d77ad66fe953cfc7dd3050a2d8fcae0ed9e13"
+        "sha": "18bc24eae1c39a743cc3866738aa7d7d3b110bda"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "aed11c01e52921613b9ee469c2d85f5f33175fb7",
-        "internalRef": "310660461"
+        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
+        "internalRef": "313460921"
       }
     },
     {
