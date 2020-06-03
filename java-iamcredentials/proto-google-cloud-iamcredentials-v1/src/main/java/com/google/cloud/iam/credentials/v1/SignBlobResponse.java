@@ -122,6 +122,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The keyId.
    */
+  @java.lang.Override
   public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
@@ -144,6 +145,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for keyId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyIdBytes() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +171,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The signedBlob.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignedBlob() {
     return signedBlob_;
   }
@@ -616,6 +619,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      *
      * @return The signedBlob.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSignedBlob() {
       return signedBlob_;
     }

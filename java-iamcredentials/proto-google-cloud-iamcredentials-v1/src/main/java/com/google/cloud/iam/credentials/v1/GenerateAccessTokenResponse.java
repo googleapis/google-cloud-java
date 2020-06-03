@@ -131,6 +131,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
    *
    * @return The accessToken.
    */
+  @java.lang.Override
   public java.lang.String getAccessToken() {
     java.lang.Object ref = accessToken_;
     if (ref instanceof java.lang.String) {
@@ -153,6 +154,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
    *
    * @return The bytes for accessToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAccessTokenBytes() {
     java.lang.Object ref = accessToken_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +181,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
    *
    * @return Whether the expireTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpireTime() {
     return expireTime_ != null;
   }
@@ -194,6 +197,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
    *
    * @return The expireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
@@ -207,6 +211,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
     return getExpireTime();
   }

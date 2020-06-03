@@ -124,6 +124,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The keyId.
    */
+  @java.lang.Override
   public java.lang.String getKeyId() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
@@ -146,6 +147,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for keyId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyIdBytes() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
@@ -171,6 +173,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The signedJwt.
    */
+  @java.lang.Override
   public java.lang.String getSignedJwt() {
     java.lang.Object ref = signedJwt_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +196,7 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for signedJwt.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignedJwtBytes() {
     java.lang.Object ref = signedJwt_;
     if (ref instanceof java.lang.String) {

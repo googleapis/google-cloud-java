@@ -165,6 +165,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +193,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -386,6 +388,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    *
    * @return Whether the lifetime field is set.
    */
+  @java.lang.Override
   public boolean hasLifetime() {
     return lifetime_ != null;
   }
@@ -403,6 +406,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    *
    * @return The lifetime.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getLifetime() {
     return lifetime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : lifetime_;
   }
@@ -418,6 +422,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    *
    * <code>.google.protobuf.Duration lifetime = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getLifetimeOrBuilder() {
     return getLifetime();
   }

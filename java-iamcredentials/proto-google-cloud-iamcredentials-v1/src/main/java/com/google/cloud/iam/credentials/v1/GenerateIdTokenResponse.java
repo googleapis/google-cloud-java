@@ -116,6 +116,7 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
    *
    * @return The token.
    */
+  @java.lang.Override
   public java.lang.String getToken() {
     java.lang.Object ref = token_;
     if (ref instanceof java.lang.String) {
@@ -138,6 +139,7 @@ public final class GenerateIdTokenResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for token.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTokenBytes() {
     java.lang.Object ref = token_;
     if (ref instanceof java.lang.String) {
