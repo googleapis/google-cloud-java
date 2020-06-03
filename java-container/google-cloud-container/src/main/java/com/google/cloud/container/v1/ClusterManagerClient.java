@@ -90,7 +90,8 @@ import javax.annotation.Generated;
  * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
  *   String projectId = "";
  *   String zone = "";
- *   ListClustersResponse response = clusterManagerClient.listClusters(projectId, zone);
+ *   String clusterId = "";
+ *   Operation response = clusterManagerClient.deleteCluster(projectId, zone, clusterId);
  * }
  * </code>
  * </pre>
@@ -197,6 +198,227 @@ public class ClusterManagerClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ClusterManagerStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
+   *
+   * <p>Firewalls and routes that were configured during cluster creation are also deleted.
+   *
+   * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
+   * balancer resources, are not deleted if they weren't present when the cluster was initially
+   * created.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "";
+   *   String zone = "";
+   *   String clusterId = "";
+   *   Operation response = clusterManagerClient.deleteCluster(projectId, zone, clusterId);
+   * }
+   * </code></pre>
+   *
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
+   *     This field has been deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to delete. This field has been deprecated
+   *     and replaced by the name field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation deleteCluster(String projectId, String zone, String clusterId) {
+    DeleteClusterRequest request =
+        DeleteClusterRequest.newBuilder()
+            .setProjectId(projectId)
+            .setZone(zone)
+            .setClusterId(clusterId)
+            .build();
+    return deleteCluster(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
+   *
+   * <p>Firewalls and routes that were configured during cluster creation are also deleted.
+   *
+   * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
+   * balancer resources, are not deleted if they weren't present when the cluster was initially
+   * created.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "";
+   *   Operation response = clusterManagerClient.deleteCluster(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The name (project, location, cluster) of the cluster to delete. Specified in the
+   *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation deleteCluster(String name) {
+    DeleteClusterRequest request = DeleteClusterRequest.newBuilder().setName(name).build();
+    return deleteCluster(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
+   *
+   * <p>Firewalls and routes that were configured during cluster creation are also deleted.
+   *
+   * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
+   * balancer resources, are not deleted if they weren't present when the cluster was initially
+   * created.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder().build();
+   *   Operation response = clusterManagerClient.deleteCluster(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation deleteCluster(DeleteClusterRequest request) {
+    return deleteClusterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
+   *
+   * <p>Firewalls and routes that were configured during cluster creation are also deleted.
+   *
+   * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
+   * balancer resources, are not deleted if they weren't present when the cluster was initially
+   * created.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder().build();
+   *   ApiFuture&lt;Operation&gt; future = clusterManagerClient.deleteClusterCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
+    return stub.deleteClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a node pool from a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "";
+   *   String zone = "";
+   *   String clusterId = "";
+   *   String nodePoolId = "";
+   *   Operation response = clusterManagerClient.deleteNodePool(projectId, zone, clusterId, nodePoolId);
+   * }
+   * </code></pre>
+   *
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
+   *     deprecated and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
+   *     This field has been deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
+   *     replaced by the name field.
+   * @param nodePoolId Deprecated. The name of the node pool to delete. This field has been
+   *     deprecated and replaced by the name field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation deleteNodePool(
+      String projectId, String zone, String clusterId, String nodePoolId) {
+    DeleteNodePoolRequest request =
+        DeleteNodePoolRequest.newBuilder()
+            .setProjectId(projectId)
+            .setZone(zone)
+            .setClusterId(clusterId)
+            .setNodePoolId(nodePoolId)
+            .build();
+    return deleteNodePool(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a node pool from a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "";
+   *   Operation response = clusterManagerClient.deleteNodePool(name);
+   * }
+   * </code></pre>
+   *
+   * @param name The name (project, location, cluster, node pool id) of the node pool to delete.
+   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation deleteNodePool(String name) {
+    DeleteNodePoolRequest request = DeleteNodePoolRequest.newBuilder().setName(name).build();
+    return deleteNodePool(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a node pool from a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   DeleteNodePoolRequest request = DeleteNodePoolRequest.newBuilder().build();
+   *   Operation response = clusterManagerClient.deleteNodePool(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation deleteNodePool(DeleteNodePoolRequest request) {
+    return deleteNodePoolCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a node pool from a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   DeleteNodePoolRequest request = DeleteNodePoolRequest.newBuilder().build();
+   *   ApiFuture&lt;Operation&gt; future = clusterManagerClient.deleteNodePoolCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
+    return stub.deleteNodePoolCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1382,126 +1604,6 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
-   *
-   * <p>Firewalls and routes that were configured during cluster creation are also deleted.
-   *
-   * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
-   * balancer resources, are not deleted if they weren't present when the cluster was initially
-   * created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   String projectId = "";
-   *   String zone = "";
-   *   String clusterId = "";
-   *   Operation response = clusterManagerClient.deleteCluster(projectId, zone, clusterId);
-   * }
-   * </code></pre>
-   *
-   * @param projectId Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
-   * @param zone Deprecated. The name of the Google Compute Engine
-   *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
-   *     This field has been deprecated and replaced by the name field.
-   * @param clusterId Deprecated. The name of the cluster to delete. This field has been deprecated
-   *     and replaced by the name field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation deleteCluster(String projectId, String zone, String clusterId) {
-    DeleteClusterRequest request =
-        DeleteClusterRequest.newBuilder()
-            .setProjectId(projectId)
-            .setZone(zone)
-            .setClusterId(clusterId)
-            .build();
-    return deleteCluster(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
-   *
-   * <p>Firewalls and routes that were configured during cluster creation are also deleted.
-   *
-   * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
-   * balancer resources, are not deleted if they weren't present when the cluster was initially
-   * created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   String name = "";
-   *   Operation response = clusterManagerClient.deleteCluster(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name (project, location, cluster) of the cluster to delete. Specified in the
-   *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation deleteCluster(String name) {
-    DeleteClusterRequest request = DeleteClusterRequest.newBuilder().setName(name).build();
-    return deleteCluster(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
-   *
-   * <p>Firewalls and routes that were configured during cluster creation are also deleted.
-   *
-   * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
-   * balancer resources, are not deleted if they weren't present when the cluster was initially
-   * created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder().build();
-   *   Operation response = clusterManagerClient.deleteCluster(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation deleteCluster(DeleteClusterRequest request) {
-    return deleteClusterCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the cluster, including the Kubernetes endpoint and all worker nodes.
-   *
-   * <p>Firewalls and routes that were configured during cluster creation are also deleted.
-   *
-   * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
-   * balancer resources, are not deleted if they weren't present when the cluster was initially
-   * created.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   DeleteClusterRequest request = DeleteClusterRequest.newBuilder().build();
-   *   ApiFuture&lt;Operation&gt; future = clusterManagerClient.deleteClusterCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
-    return stub.deleteClusterCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Lists all operations in a project in a specific zone or all zones.
    *
    * <p>Sample code:
@@ -2132,107 +2234,6 @@ public class ClusterManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateNodePoolRequest, Operation> createNodePoolCallable() {
     return stub.createNodePoolCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a node pool from a cluster.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   String projectId = "";
-   *   String zone = "";
-   *   String clusterId = "";
-   *   String nodePoolId = "";
-   *   Operation response = clusterManagerClient.deleteNodePool(projectId, zone, clusterId, nodePoolId);
-   * }
-   * </code></pre>
-   *
-   * @param projectId Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the name field.
-   * @param zone Deprecated. The name of the Google Compute Engine
-   *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
-   *     This field has been deprecated and replaced by the name field.
-   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
-   *     replaced by the name field.
-   * @param nodePoolId Deprecated. The name of the node pool to delete. This field has been
-   *     deprecated and replaced by the name field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation deleteNodePool(
-      String projectId, String zone, String clusterId, String nodePoolId) {
-    DeleteNodePoolRequest request =
-        DeleteNodePoolRequest.newBuilder()
-            .setProjectId(projectId)
-            .setZone(zone)
-            .setClusterId(clusterId)
-            .setNodePoolId(nodePoolId)
-            .build();
-    return deleteNodePool(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a node pool from a cluster.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   String name = "";
-   *   Operation response = clusterManagerClient.deleteNodePool(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name (project, location, cluster, node pool id) of the node pool to delete.
-   *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation deleteNodePool(String name) {
-    DeleteNodePoolRequest request = DeleteNodePoolRequest.newBuilder().setName(name).build();
-    return deleteNodePool(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a node pool from a cluster.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   DeleteNodePoolRequest request = DeleteNodePoolRequest.newBuilder().build();
-   *   Operation response = clusterManagerClient.deleteNodePool(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Operation deleteNodePool(DeleteNodePoolRequest request) {
-    return deleteNodePoolCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a node pool from a cluster.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
-   *   DeleteNodePoolRequest request = DeleteNodePoolRequest.newBuilder().build();
-   *   ApiFuture&lt;Operation&gt; future = clusterManagerClient.deleteNodePoolCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
-    return stub.deleteNodePoolCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

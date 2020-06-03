@@ -104,16 +104,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listClusters to 30 seconds:
+ * <p>For example, to set the total timeout of deleteCluster to 30 seconds:
  *
  * <pre>
  * <code>
  * ClusterManagerStubSettings.Builder clusterManagerSettingsBuilder =
  *     ClusterManagerStubSettings.newBuilder();
  * clusterManagerSettingsBuilder
- *     .listClustersSettings()
+ *     .deleteClusterSettings()
  *     .setRetrySettings(
- *         clusterManagerSettingsBuilder.listClustersSettings().getRetrySettings().toBuilder()
+ *         clusterManagerSettingsBuilder.deleteClusterSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ClusterManagerStubSettings clusterManagerSettings = clusterManagerSettingsBuilder.build();
@@ -127,6 +127,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings;
+  private final UnaryCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolSettings;
   private final UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings;
   private final UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings;
   private final UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings;
@@ -141,7 +143,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   private final UnaryCallSettings<SetLocationsRequest, Operation> setLocationsSettings;
   private final UnaryCallSettings<UpdateMasterRequest, Operation> updateMasterSettings;
   private final UnaryCallSettings<SetMasterAuthRequest, Operation> setMasterAuthSettings;
-  private final UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings;
   private final UnaryCallSettings<ListOperationsRequest, ListOperationsResponse>
       listOperationsSettings;
   private final UnaryCallSettings<GetOperationRequest, Operation> getOperationSettings;
@@ -151,7 +152,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       listNodePoolsSettings;
   private final UnaryCallSettings<GetNodePoolRequest, NodePool> getNodePoolSettings;
   private final UnaryCallSettings<CreateNodePoolRequest, Operation> createNodePoolSettings;
-  private final UnaryCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolSettings;
   private final UnaryCallSettings<RollbackNodePoolUpgradeRequest, Operation>
       rollbackNodePoolUpgradeSettings;
   private final UnaryCallSettings<SetNodePoolManagementRequest, Operation>
@@ -169,6 +169,16 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           ListUsableSubnetworksResponse,
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings;
+
+  /** Returns the object with the settings used for calls to deleteCluster. */
+  public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
+    return deleteClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteNodePool. */
+  public UnaryCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
+    return deleteNodePoolSettings;
+  }
 
   /** Returns the object with the settings used for calls to listClusters. */
   public UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings() {
@@ -231,11 +241,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return setMasterAuthSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteCluster. */
-  public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
-    return deleteClusterSettings;
-  }
-
   /** Returns the object with the settings used for calls to listOperations. */
   public UnaryCallSettings<ListOperationsRequest, ListOperationsResponse> listOperationsSettings() {
     return listOperationsSettings;
@@ -269,11 +274,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   /** Returns the object with the settings used for calls to createNodePool. */
   public UnaryCallSettings<CreateNodePoolRequest, Operation> createNodePoolSettings() {
     return createNodePoolSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteNodePool. */
-  public UnaryCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
-    return deleteNodePoolSettings;
   }
 
   /** Returns the object with the settings used for calls to rollbackNodePoolUpgrade. */
@@ -401,6 +401,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   protected ClusterManagerStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
+    deleteNodePoolSettings = settingsBuilder.deleteNodePoolSettings().build();
     listClustersSettings = settingsBuilder.listClustersSettings().build();
     getClusterSettings = settingsBuilder.getClusterSettings().build();
     createClusterSettings = settingsBuilder.createClusterSettings().build();
@@ -413,7 +415,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     setLocationsSettings = settingsBuilder.setLocationsSettings().build();
     updateMasterSettings = settingsBuilder.updateMasterSettings().build();
     setMasterAuthSettings = settingsBuilder.setMasterAuthSettings().build();
-    deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     listOperationsSettings = settingsBuilder.listOperationsSettings().build();
     getOperationSettings = settingsBuilder.getOperationSettings().build();
     cancelOperationSettings = settingsBuilder.cancelOperationSettings().build();
@@ -421,7 +422,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     listNodePoolsSettings = settingsBuilder.listNodePoolsSettings().build();
     getNodePoolSettings = settingsBuilder.getNodePoolSettings().build();
     createNodePoolSettings = settingsBuilder.createNodePoolSettings().build();
-    deleteNodePoolSettings = settingsBuilder.deleteNodePoolSettings().build();
     rollbackNodePoolUpgradeSettings = settingsBuilder.rollbackNodePoolUpgradeSettings().build();
     setNodePoolManagementSettings = settingsBuilder.setNodePoolManagementSettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
@@ -503,6 +503,9 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   public static class Builder extends StubSettings.Builder<ClusterManagerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings;
+    private final UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation>
+        deleteNodePoolSettings;
     private final UnaryCallSettings.Builder<ListClustersRequest, ListClustersResponse>
         listClustersSettings;
     private final UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings;
@@ -521,7 +524,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     private final UnaryCallSettings.Builder<SetLocationsRequest, Operation> setLocationsSettings;
     private final UnaryCallSettings.Builder<UpdateMasterRequest, Operation> updateMasterSettings;
     private final UnaryCallSettings.Builder<SetMasterAuthRequest, Operation> setMasterAuthSettings;
-    private final UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings;
     private final UnaryCallSettings.Builder<ListOperationsRequest, ListOperationsResponse>
         listOperationsSettings;
     private final UnaryCallSettings.Builder<GetOperationRequest, Operation> getOperationSettings;
@@ -533,8 +535,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     private final UnaryCallSettings.Builder<GetNodePoolRequest, NodePool> getNodePoolSettings;
     private final UnaryCallSettings.Builder<CreateNodePoolRequest, Operation>
         createNodePoolSettings;
-    private final UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation>
-        deleteNodePoolSettings;
     private final UnaryCallSettings.Builder<RollbackNodePoolUpgradeRequest, Operation>
         rollbackNodePoolUpgradeSettings;
     private final UnaryCallSettings.Builder<SetNodePoolManagementRequest, Operation>
@@ -598,6 +598,10 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listClustersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -622,8 +626,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       setMasterAuthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listOperationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -637,8 +639,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       getNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       rollbackNodePoolUpgradeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -663,6 +663,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteClusterSettings,
+              deleteNodePoolSettings,
               listClustersSettings,
               getClusterSettings,
               createClusterSettings,
@@ -675,7 +677,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setLocationsSettings,
               updateMasterSettings,
               setMasterAuthSettings,
-              deleteClusterSettings,
               listOperationsSettings,
               getOperationSettings,
               cancelOperationSettings,
@@ -683,7 +684,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               listNodePoolsSettings,
               getNodePoolSettings,
               createNodePoolSettings,
-              deleteNodePoolSettings,
               rollbackNodePoolUpgradeSettings,
               setNodePoolManagementSettings,
               setLabelsSettings,
@@ -708,6 +708,16 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteNodePoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listClustersSettings()
@@ -770,11 +780,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listOperationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -806,11 +811,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       builder
           .createNodePoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .deleteNodePoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -870,6 +870,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     protected Builder(ClusterManagerStubSettings settings) {
       super(settings);
 
+      deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
+      deleteNodePoolSettings = settings.deleteNodePoolSettings.toBuilder();
       listClustersSettings = settings.listClustersSettings.toBuilder();
       getClusterSettings = settings.getClusterSettings.toBuilder();
       createClusterSettings = settings.createClusterSettings.toBuilder();
@@ -882,7 +884,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       setLocationsSettings = settings.setLocationsSettings.toBuilder();
       updateMasterSettings = settings.updateMasterSettings.toBuilder();
       setMasterAuthSettings = settings.setMasterAuthSettings.toBuilder();
-      deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       listOperationsSettings = settings.listOperationsSettings.toBuilder();
       getOperationSettings = settings.getOperationSettings.toBuilder();
       cancelOperationSettings = settings.cancelOperationSettings.toBuilder();
@@ -890,7 +891,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       listNodePoolsSettings = settings.listNodePoolsSettings.toBuilder();
       getNodePoolSettings = settings.getNodePoolSettings.toBuilder();
       createNodePoolSettings = settings.createNodePoolSettings.toBuilder();
-      deleteNodePoolSettings = settings.deleteNodePoolSettings.toBuilder();
       rollbackNodePoolUpgradeSettings = settings.rollbackNodePoolUpgradeSettings.toBuilder();
       setNodePoolManagementSettings = settings.setNodePoolManagementSettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
@@ -904,6 +904,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteClusterSettings,
+              deleteNodePoolSettings,
               listClustersSettings,
               getClusterSettings,
               createClusterSettings,
@@ -916,7 +918,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               setLocationsSettings,
               updateMasterSettings,
               setMasterAuthSettings,
-              deleteClusterSettings,
               listOperationsSettings,
               getOperationSettings,
               cancelOperationSettings,
@@ -924,7 +925,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               listNodePoolsSettings,
               getNodePoolSettings,
               createNodePoolSettings,
-              deleteNodePoolSettings,
               rollbackNodePoolUpgradeSettings,
               setNodePoolManagementSettings,
               setLabelsSettings,
@@ -951,6 +951,16 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCluster. */
+    public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
+      return deleteClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNodePool. */
+    public UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
+      return deleteNodePoolSettings;
     }
 
     /** Returns the builder for the settings used for calls to listClusters. */
@@ -1017,11 +1027,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       return setMasterAuthSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteCluster. */
-    public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
-      return deleteClusterSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listOperations. */
     public UnaryCallSettings.Builder<ListOperationsRequest, ListOperationsResponse>
         listOperationsSettings() {
@@ -1058,11 +1063,6 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     /** Returns the builder for the settings used for calls to createNodePool. */
     public UnaryCallSettings.Builder<CreateNodePoolRequest, Operation> createNodePoolSettings() {
       return createNodePoolSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteNodePool. */
-    public UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
-      return deleteNodePoolSettings;
     }
 
     /** Returns the builder for the settings used for calls to rollbackNodePoolUpgrade. */

@@ -88,16 +88,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listClusters to 30 seconds:
+ * <p>For example, to set the total timeout of deleteCluster to 30 seconds:
  *
  * <pre>
  * <code>
  * ClusterManagerSettings.Builder clusterManagerSettingsBuilder =
  *     ClusterManagerSettings.newBuilder();
  * clusterManagerSettingsBuilder
- *     .listClustersSettings()
+ *     .deleteClusterSettings()
  *     .setRetrySettings(
- *         clusterManagerSettingsBuilder.listClustersSettings().getRetrySettings().toBuilder()
+ *         clusterManagerSettingsBuilder.deleteClusterSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ClusterManagerSettings clusterManagerSettings = clusterManagerSettingsBuilder.build();
@@ -107,6 +107,16 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ClusterManagerSettings extends ClientSettings<ClusterManagerSettings> {
+  /** Returns the object with the settings used for calls to deleteCluster. */
+  public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).deleteClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNodePool. */
+  public UnaryCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).deleteNodePoolSettings();
+  }
+
   /** Returns the object with the settings used for calls to listClusters. */
   public UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).listClustersSettings();
@@ -168,11 +178,6 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return ((ClusterManagerStubSettings) getStubSettings()).setMasterAuthSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteCluster. */
-  public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
-    return ((ClusterManagerStubSettings) getStubSettings()).deleteClusterSettings();
-  }
-
   /** Returns the object with the settings used for calls to listOperations. */
   public UnaryCallSettings<ListOperationsRequest, ListOperationsResponse> listOperationsSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).listOperationsSettings();
@@ -206,11 +211,6 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   /** Returns the object with the settings used for calls to createNodePool. */
   public UnaryCallSettings<CreateNodePoolRequest, Operation> createNodePoolSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).createNodePoolSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteNodePool. */
-  public UnaryCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
-    return ((ClusterManagerStubSettings) getStubSettings()).deleteNodePoolSettings();
   }
 
   /** Returns the object with the settings used for calls to rollbackNodePoolUpgrade. */
@@ -366,6 +366,16 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteCluster. */
+    public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
+      return getStubSettingsBuilder().deleteClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNodePool. */
+    public UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
+      return getStubSettingsBuilder().deleteNodePoolSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listClusters. */
     public UnaryCallSettings.Builder<ListClustersRequest, ListClustersResponse>
         listClustersSettings() {
@@ -430,11 +440,6 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       return getStubSettingsBuilder().setMasterAuthSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteCluster. */
-    public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
-      return getStubSettingsBuilder().deleteClusterSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listOperations. */
     public UnaryCallSettings.Builder<ListOperationsRequest, ListOperationsResponse>
         listOperationsSettings() {
@@ -471,11 +476,6 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     /** Returns the builder for the settings used for calls to createNodePool. */
     public UnaryCallSettings.Builder<CreateNodePoolRequest, Operation> createNodePoolSettings() {
       return getStubSettingsBuilder().createNodePoolSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteNodePool. */
-    public UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
-      return getStubSettingsBuilder().deleteNodePoolSettings();
     }
 
     /** Returns the builder for the settings used for calls to rollbackNodePoolUpgrade. */
