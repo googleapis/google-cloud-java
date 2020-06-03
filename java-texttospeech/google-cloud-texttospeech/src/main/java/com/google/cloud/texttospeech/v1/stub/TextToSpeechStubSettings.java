@@ -58,16 +58,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listVoices to 30 seconds:
+ * <p>For example, to set the total timeout of synthesizeSpeech to 30 seconds:
  *
  * <pre>
  * <code>
  * TextToSpeechStubSettings.Builder textToSpeechSettingsBuilder =
  *     TextToSpeechStubSettings.newBuilder();
  * textToSpeechSettingsBuilder
- *     .listVoicesSettings()
+ *     .synthesizeSpeechSettings()
  *     .setRetrySettings(
- *         textToSpeechSettingsBuilder.listVoicesSettings().getRetrySettings().toBuilder()
+ *         textToSpeechSettingsBuilder.synthesizeSpeechSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TextToSpeechStubSettings textToSpeechSettings = textToSpeechSettingsBuilder.build();
@@ -81,19 +81,19 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings;
   private final UnaryCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechSettings;
-
-  /** Returns the object with the settings used for calls to listVoices. */
-  public UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
-    return listVoicesSettings;
-  }
+  private final UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings;
 
   /** Returns the object with the settings used for calls to synthesizeSpeech. */
   public UnaryCallSettings<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechSettings() {
     return synthesizeSpeechSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listVoices. */
+  public UnaryCallSettings<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
+    return listVoicesSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -165,18 +165,18 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
   protected TextToSpeechStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    listVoicesSettings = settingsBuilder.listVoicesSettings().build();
     synthesizeSpeechSettings = settingsBuilder.synthesizeSpeechSettings().build();
+    listVoicesSettings = settingsBuilder.listVoicesSettings().build();
   }
 
   /** Builder for TextToSpeechStubSettings. */
   public static class Builder extends StubSettings.Builder<TextToSpeechStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<ListVoicesRequest, ListVoicesResponse>
-        listVoicesSettings;
     private final UnaryCallSettings.Builder<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
         synthesizeSpeechSettings;
+    private final UnaryCallSettings.Builder<ListVoicesRequest, ListVoicesResponse>
+        listVoicesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -219,13 +219,13 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      listVoicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       synthesizeSpeechSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listVoicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listVoicesSettings, synthesizeSpeechSettings);
+              synthesizeSpeechSettings, listVoicesSettings);
 
       initDefaults(this);
     }
@@ -242,13 +242,13 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .listVoicesSettings()
+          .synthesizeSpeechSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .synthesizeSpeechSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .listVoicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -257,12 +257,12 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
     protected Builder(TextToSpeechStubSettings settings) {
       super(settings);
 
-      listVoicesSettings = settings.listVoicesSettings.toBuilder();
       synthesizeSpeechSettings = settings.synthesizeSpeechSettings.toBuilder();
+      listVoicesSettings = settings.listVoicesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listVoicesSettings, synthesizeSpeechSettings);
+              synthesizeSpeechSettings, listVoicesSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -281,15 +281,15 @@ public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSetti
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to listVoices. */
-    public UnaryCallSettings.Builder<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
-      return listVoicesSettings;
-    }
-
     /** Returns the builder for the settings used for calls to synthesizeSpeech. */
     public UnaryCallSettings.Builder<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
         synthesizeSpeechSettings() {
       return synthesizeSpeechSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listVoices. */
+    public UnaryCallSettings.Builder<ListVoicesRequest, ListVoicesResponse> listVoicesSettings() {
+      return listVoicesSettings;
     }
 
     @Override
