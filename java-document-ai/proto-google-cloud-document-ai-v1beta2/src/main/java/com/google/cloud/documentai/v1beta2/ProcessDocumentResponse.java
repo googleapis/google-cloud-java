@@ -148,6 +148,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -163,6 +164,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.InputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.documentai.v1beta2.InputConfig.getDefaultInstance()
@@ -178,6 +180,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.documentai.v1beta2.InputConfig input_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -196,6 +199,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -211,6 +215,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.documentai.v1beta2.OutputConfig.getDefaultInstance()
@@ -226,6 +231,7 @@ public final class ProcessDocumentResponse extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.documentai.v1beta2.OutputConfig output_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }

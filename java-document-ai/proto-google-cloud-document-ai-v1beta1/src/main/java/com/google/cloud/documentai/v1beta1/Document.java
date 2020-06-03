@@ -397,6 +397,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The shardIndex.
      */
+    @java.lang.Override
     public long getShardIndex() {
       return shardIndex_;
     }
@@ -414,6 +415,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The shardCount.
      */
+    @java.lang.Override
     public long getShardCount() {
       return shardCount_;
     }
@@ -433,6 +435,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textOffset.
      */
+    @java.lang.Override
     public long getTextOffset() {
       return textOffset_;
     }
@@ -803,6 +806,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The shardIndex.
        */
+      @java.lang.Override
       public long getShardIndex() {
         return shardIndex_;
       }
@@ -854,6 +858,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The shardCount.
        */
+      @java.lang.Override
       public long getShardCount() {
         return shardCount_;
       }
@@ -907,6 +912,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The textOffset.
        */
+      @java.lang.Override
       public long getTextOffset() {
         return textOffset_;
       }
@@ -1562,6 +1568,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The size.
        */
+      @java.lang.Override
       public float getSize() {
         return size_;
       }
@@ -1579,6 +1586,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The unit.
        */
+      @java.lang.Override
       public java.lang.String getUnit() {
         java.lang.Object ref = unit_;
         if (ref instanceof java.lang.String) {
@@ -1601,6 +1609,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for unit.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getUnitBytes() {
         java.lang.Object ref = unit_;
         if (ref instanceof java.lang.String) {
@@ -1968,6 +1977,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The size.
          */
+        @java.lang.Override
         public float getSize() {
           return size_;
         }
@@ -2182,6 +2192,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textAnchor field is set.
      */
+    @java.lang.Override
     public boolean hasTextAnchor() {
       return textAnchor_ != null;
     }
@@ -2197,6 +2208,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textAnchor.
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.TextAnchor getTextAnchor() {
       return textAnchor_ == null
           ? com.google.cloud.documentai.v1beta1.Document.TextAnchor.getDefaultInstance()
@@ -2212,6 +2224,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.documentai.v1beta1.Document.TextAnchor text_anchor = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.TextAnchorOrBuilder
         getTextAnchorOrBuilder() {
       return getTextAnchor();
@@ -2230,6 +2243,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the color field is set.
      */
+    @java.lang.Override
     public boolean hasColor() {
       return color_ != null;
     }
@@ -2244,6 +2258,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The color.
      */
+    @java.lang.Override
     public com.google.type.Color getColor() {
       return color_ == null ? com.google.type.Color.getDefaultInstance() : color_;
     }
@@ -2256,6 +2271,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.Color color = 2;</code>
      */
+    @java.lang.Override
     public com.google.type.ColorOrBuilder getColorOrBuilder() {
       return getColor();
     }
@@ -2273,6 +2289,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the backgroundColor field is set.
      */
+    @java.lang.Override
     public boolean hasBackgroundColor() {
       return backgroundColor_ != null;
     }
@@ -2287,6 +2304,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The backgroundColor.
      */
+    @java.lang.Override
     public com.google.type.Color getBackgroundColor() {
       return backgroundColor_ == null
           ? com.google.type.Color.getDefaultInstance()
@@ -2301,6 +2319,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.Color background_color = 3;</code>
      */
+    @java.lang.Override
     public com.google.type.ColorOrBuilder getBackgroundColorOrBuilder() {
       return getBackgroundColor();
     }
@@ -2319,6 +2338,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The fontWeight.
      */
+    @java.lang.Override
     public java.lang.String getFontWeight() {
       java.lang.Object ref = fontWeight_;
       if (ref instanceof java.lang.String) {
@@ -2342,6 +2362,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for fontWeight.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFontWeightBytes() {
       java.lang.Object ref = fontWeight_;
       if (ref instanceof java.lang.String) {
@@ -2368,6 +2389,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textStyle.
      */
+    @java.lang.Override
     public java.lang.String getTextStyle() {
       java.lang.Object ref = textStyle_;
       if (ref instanceof java.lang.String) {
@@ -2391,6 +2413,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for textStyle.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTextStyleBytes() {
       java.lang.Object ref = textStyle_;
       if (ref instanceof java.lang.String) {
@@ -2418,6 +2441,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textDecoration.
      */
+    @java.lang.Override
     public java.lang.String getTextDecoration() {
       java.lang.Object ref = textDecoration_;
       if (ref instanceof java.lang.String) {
@@ -2442,6 +2466,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for textDecoration.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTextDecorationBytes() {
       java.lang.Object ref = textDecoration_;
       if (ref instanceof java.lang.String) {
@@ -2467,6 +2492,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the fontSize field is set.
      */
+    @java.lang.Override
     public boolean hasFontSize() {
       return fontSize_ != null;
     }
@@ -2481,6 +2507,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The fontSize.
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Style.FontSize getFontSize() {
       return fontSize_ == null
           ? com.google.cloud.documentai.v1beta1.Document.Style.FontSize.getDefaultInstance()
@@ -2495,6 +2522,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.documentai.v1beta1.Document.Style.FontSize font_size = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Style.FontSizeOrBuilder
         getFontSizeOrBuilder() {
       return getFontSize();
@@ -5115,6 +5143,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The width.
        */
+      @java.lang.Override
       public float getWidth() {
         return width_;
       }
@@ -5132,6 +5161,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The height.
        */
+      @java.lang.Override
       public float getHeight() {
         return height_;
       }
@@ -5149,6 +5179,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The unit.
        */
+      @java.lang.Override
       public java.lang.String getUnit() {
         java.lang.Object ref = unit_;
         if (ref instanceof java.lang.String) {
@@ -5171,6 +5202,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for unit.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getUnitBytes() {
         java.lang.Object ref = unit_;
         if (ref instanceof java.lang.String) {
@@ -5554,6 +5586,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The width.
          */
+        @java.lang.Override
         public float getWidth() {
           return width_;
         }
@@ -5605,6 +5638,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The height.
          */
+        @java.lang.Override
         public float getHeight() {
           return height_;
         }
@@ -6237,6 +6271,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 };
 
         public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
           return getDescriptor().getValues().get(ordinal());
         }
 
@@ -6287,6 +6325,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the textAnchor field is set.
        */
+      @java.lang.Override
       public boolean hasTextAnchor() {
         return textAnchor_ != null;
       }
@@ -6302,6 +6341,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The textAnchor.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.TextAnchor getTextAnchor() {
         return textAnchor_ == null
             ? com.google.cloud.documentai.v1beta1.Document.TextAnchor.getDefaultInstance()
@@ -6317,6 +6357,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.TextAnchor text_anchor = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.TextAnchorOrBuilder
           getTextAnchorOrBuilder() {
         return getTextAnchor();
@@ -6339,6 +6380,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The confidence.
        */
+      @java.lang.Override
       public float getConfidence() {
         return confidence_;
       }
@@ -6357,6 +6399,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the boundingPoly field is set.
        */
+      @java.lang.Override
       public boolean hasBoundingPoly() {
         return boundingPoly_ != null;
       }
@@ -6372,6 +6415,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The boundingPoly.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.BoundingPoly getBoundingPoly() {
         return boundingPoly_ == null
             ? com.google.cloud.documentai.v1beta1.BoundingPoly.getDefaultInstance()
@@ -6387,6 +6431,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.BoundingPoly bounding_poly = 3;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
         return getBoundingPoly();
       }
@@ -6406,6 +6451,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for orientation.
        */
+      @java.lang.Override
       public int getOrientationValue() {
         return orientation_;
       }
@@ -6422,6 +6468,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The orientation.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout.Orientation getOrientation() {
         @SuppressWarnings("deprecation")
         com.google.cloud.documentai.v1beta1.Document.Page.Layout.Orientation result =
@@ -7049,6 +7096,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The confidence.
          */
+        @java.lang.Override
         public float getConfidence() {
           return confidence_;
         }
@@ -7306,6 +7354,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The enum numeric value on the wire for orientation.
          */
+        @java.lang.Override
         public int getOrientationValue() {
           return orientation_;
         }
@@ -7324,6 +7373,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setOrientationValue(int value) {
+
           orientation_ = value;
           onChanged();
           return this;
@@ -7341,6 +7391,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The orientation.
          */
+        @java.lang.Override
         public com.google.cloud.documentai.v1beta1.Document.Page.Layout.Orientation
             getOrientation() {
           @SuppressWarnings("deprecation")
@@ -7696,6 +7747,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the layout field is set.
        */
+      @java.lang.Override
       public boolean hasLayout() {
         return layout_ != null;
       }
@@ -7711,6 +7763,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The layout.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout getLayout() {
         return layout_ == null
             ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -7726,6 +7779,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
           getLayoutOrBuilder() {
         return getLayout();
@@ -7745,6 +7799,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
           getDetectedLanguagesList() {
         return detectedLanguages_;
@@ -7760,6 +7815,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
           getDetectedLanguagesOrBuilderList() {
@@ -7776,6 +7832,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public int getDetectedLanguagesCount() {
         return detectedLanguages_.size();
       }
@@ -7790,6 +7847,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
           getDetectedLanguages(int index) {
         return detectedLanguages_.get(index);
@@ -7805,6 +7863,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
           getDetectedLanguagesOrBuilder(int index) {
         return detectedLanguages_.get(index);
@@ -9117,6 +9176,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the layout field is set.
        */
+      @java.lang.Override
       public boolean hasLayout() {
         return layout_ != null;
       }
@@ -9132,6 +9192,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The layout.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout getLayout() {
         return layout_ == null
             ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -9147,6 +9208,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
           getLayoutOrBuilder() {
         return getLayout();
@@ -9166,6 +9228,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
           getDetectedLanguagesList() {
         return detectedLanguages_;
@@ -9181,6 +9244,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
           getDetectedLanguagesOrBuilderList() {
@@ -9197,6 +9261,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public int getDetectedLanguagesCount() {
         return detectedLanguages_.size();
       }
@@ -9211,6 +9276,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
           getDetectedLanguages(int index) {
         return detectedLanguages_.get(index);
@@ -9226,6 +9292,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
           getDetectedLanguagesOrBuilder(int index) {
         return detectedLanguages_.get(index);
@@ -10545,6 +10612,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the layout field is set.
        */
+      @java.lang.Override
       public boolean hasLayout() {
         return layout_ != null;
       }
@@ -10560,6 +10628,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The layout.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout getLayout() {
         return layout_ == null
             ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -10575,6 +10644,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
           getLayoutOrBuilder() {
         return getLayout();
@@ -10594,6 +10664,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
           getDetectedLanguagesList() {
         return detectedLanguages_;
@@ -10609,6 +10680,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
           getDetectedLanguagesOrBuilderList() {
@@ -10625,6 +10697,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public int getDetectedLanguagesCount() {
         return detectedLanguages_.size();
       }
@@ -10639,6 +10712,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
           getDetectedLanguages(int index) {
         return detectedLanguages_.get(index);
@@ -10654,6 +10728,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
           getDetectedLanguagesOrBuilder(int index) {
         return detectedLanguages_.get(index);
@@ -12288,6 +12363,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               };
 
           public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
             return getDescriptor().getValues().get(ordinal());
           }
 
@@ -12338,6 +12417,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The enum numeric value on the wire for type.
          */
+        @java.lang.Override
         public int getTypeValue() {
           return type_;
         }
@@ -12353,6 +12433,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The type.
          */
+        @java.lang.Override
         public com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.Type
             getType() {
           @SuppressWarnings("deprecation")
@@ -12731,6 +12812,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The enum numeric value on the wire for type.
            */
+          @java.lang.Override
           public int getTypeValue() {
             return type_;
           }
@@ -12748,6 +12830,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder setTypeValue(int value) {
+
             type_ = value;
             onChanged();
             return this;
@@ -12764,6 +12847,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The type.
            */
+          @java.lang.Override
           public com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.Type
               getType() {
             @SuppressWarnings("deprecation")
@@ -12887,6 +12971,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the layout field is set.
        */
+      @java.lang.Override
       public boolean hasLayout() {
         return layout_ != null;
       }
@@ -12902,6 +12987,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The layout.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout getLayout() {
         return layout_ == null
             ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -12917,6 +13003,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
           getLayoutOrBuilder() {
         return getLayout();
@@ -12938,6 +13025,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the detectedBreak field is set.
        */
+      @java.lang.Override
       public boolean hasDetectedBreak() {
         return detectedBreak_ != null;
       }
@@ -12955,6 +13043,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The detectedBreak.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
           getDetectedBreak() {
         return detectedBreak_ == null
@@ -12974,6 +13063,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak detected_break = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreakOrBuilder
           getDetectedBreakOrBuilder() {
         return getDetectedBreak();
@@ -12993,6 +13083,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
           getDetectedLanguagesList() {
         return detectedLanguages_;
@@ -13008,6 +13099,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
           getDetectedLanguagesOrBuilderList() {
@@ -13024,6 +13116,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public int getDetectedLanguagesCount() {
         return detectedLanguages_.size();
       }
@@ -13038,6 +13131,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
           getDetectedLanguages(int index) {
         return detectedLanguages_.get(index);
@@ -13053,6 +13147,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
           getDetectedLanguagesOrBuilder(int index) {
         return detectedLanguages_.get(index);
@@ -14651,6 +14746,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the layout field is set.
        */
+      @java.lang.Override
       public boolean hasLayout() {
         return layout_ != null;
       }
@@ -14666,6 +14762,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The layout.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout getLayout() {
         return layout_ == null
             ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -14681,6 +14778,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
           getLayoutOrBuilder() {
         return getLayout();
@@ -14700,6 +14798,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The type.
        */
+      @java.lang.Override
       public java.lang.String getType() {
         java.lang.Object ref = type_;
         if (ref instanceof java.lang.String) {
@@ -14723,6 +14822,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for type.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTypeBytes() {
         java.lang.Object ref = type_;
         if (ref instanceof java.lang.String) {
@@ -14749,6 +14849,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
           getDetectedLanguagesList() {
         return detectedLanguages_;
@@ -14764,6 +14865,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
           getDetectedLanguagesOrBuilderList() {
@@ -14780,6 +14882,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public int getDetectedLanguagesCount() {
         return detectedLanguages_.size();
       }
@@ -14794,6 +14897,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
           getDetectedLanguages(int index) {
         return detectedLanguages_.get(index);
@@ -14809,6 +14913,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
           getDetectedLanguagesOrBuilder(int index) {
         return detectedLanguages_.get(index);
@@ -16592,6 +16697,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableCell cells = 1;
          * </code>
          */
+        @java.lang.Override
         public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell>
             getCellsList() {
           return cells_;
@@ -16606,6 +16712,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableCell cells = 1;
          * </code>
          */
+        @java.lang.Override
         public java.util.List<
                 ? extends
                     com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCellOrBuilder>
@@ -16622,6 +16729,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableCell cells = 1;
          * </code>
          */
+        @java.lang.Override
         public int getCellsCount() {
           return cells_.size();
         }
@@ -16635,6 +16743,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableCell cells = 1;
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell getCells(
             int index) {
           return cells_.get(index);
@@ -16649,6 +16758,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableCell cells = 1;
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCellOrBuilder
             getCellsOrBuilder(int index) {
           return cells_.get(index);
@@ -17782,6 +17892,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the layout field is set.
          */
+        @java.lang.Override
         public boolean hasLayout() {
           return layout_ != null;
         }
@@ -17797,6 +17908,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The layout.
          */
+        @java.lang.Override
         public com.google.cloud.documentai.v1beta1.Document.Page.Layout getLayout() {
           return layout_ == null
               ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -17812,6 +17924,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 1;</code>
          */
+        @java.lang.Override
         public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
             getLayoutOrBuilder() {
           return getLayout();
@@ -17830,6 +17943,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The rowSpan.
          */
+        @java.lang.Override
         public int getRowSpan() {
           return rowSpan_;
         }
@@ -17847,6 +17961,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The colSpan.
          */
+        @java.lang.Override
         public int getColSpan() {
           return colSpan_;
         }
@@ -17865,6 +17980,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
          * </code>
          */
+        @java.lang.Override
         public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
             getDetectedLanguagesList() {
           return detectedLanguages_;
@@ -17880,6 +17996,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
          * </code>
          */
+        @java.lang.Override
         public java.util.List<
                 ? extends
                     com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
@@ -17897,6 +18014,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
          * </code>
          */
+        @java.lang.Override
         public int getDetectedLanguagesCount() {
           return detectedLanguages_.size();
         }
@@ -17911,6 +18029,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
             getDetectedLanguages(int index) {
           return detectedLanguages_.get(index);
@@ -17926,6 +18045,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
             getDetectedLanguagesOrBuilder(int index) {
           return detectedLanguages_.get(index);
@@ -18580,6 +18700,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The rowSpan.
            */
+          @java.lang.Override
           public int getRowSpan() {
             return rowSpan_;
           }
@@ -18631,6 +18752,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The colSpan.
            */
+          @java.lang.Override
           public int getColSpan() {
             return colSpan_;
           }
@@ -19156,6 +19278,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the layout field is set.
        */
+      @java.lang.Override
       public boolean hasLayout() {
         return layout_ != null;
       }
@@ -19171,6 +19294,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The layout.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout getLayout() {
         return layout_ == null
             ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -19186,6 +19310,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
           getLayoutOrBuilder() {
         return getLayout();
@@ -19205,6 +19330,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow header_rows = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow>
           getHeaderRowsList() {
         return headerRows_;
@@ -19220,6 +19346,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow header_rows = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRowOrBuilder>
           getHeaderRowsOrBuilderList() {
@@ -19236,6 +19363,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow header_rows = 2;
        * </code>
        */
+      @java.lang.Override
       public int getHeaderRowsCount() {
         return headerRows_.size();
       }
@@ -19250,6 +19378,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow header_rows = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow getHeaderRows(
           int index) {
         return headerRows_.get(index);
@@ -19265,6 +19394,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow header_rows = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRowOrBuilder
           getHeaderRowsOrBuilder(int index) {
         return headerRows_.get(index);
@@ -19283,6 +19413,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow body_rows = 3;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow>
           getBodyRowsList() {
         return bodyRows_;
@@ -19297,6 +19428,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow body_rows = 3;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRowOrBuilder>
           getBodyRowsOrBuilderList() {
@@ -19312,6 +19444,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow body_rows = 3;
        * </code>
        */
+      @java.lang.Override
       public int getBodyRowsCount() {
         return bodyRows_.size();
       }
@@ -19325,6 +19458,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow body_rows = 3;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow getBodyRows(
           int index) {
         return bodyRows_.get(index);
@@ -19339,6 +19473,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table.TableRow body_rows = 3;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRowOrBuilder
           getBodyRowsOrBuilder(int index) {
         return bodyRows_.get(index);
@@ -19358,6 +19493,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
           getDetectedLanguagesList() {
         return detectedLanguages_;
@@ -19373,6 +19509,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
           getDetectedLanguagesOrBuilderList() {
@@ -19389,6 +19526,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public int getDetectedLanguagesCount() {
         return detectedLanguages_.size();
       }
@@ -19403,6 +19541,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
           getDetectedLanguages(int index) {
         return detectedLanguages_.get(index);
@@ -19418,6 +19557,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
           getDetectedLanguagesOrBuilder(int index) {
         return detectedLanguages_.get(index);
@@ -21811,6 +21951,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the fieldName field is set.
        */
+      @java.lang.Override
       public boolean hasFieldName() {
         return fieldName_ != null;
       }
@@ -21827,6 +21968,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The fieldName.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout getFieldName() {
         return fieldName_ == null
             ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -21843,6 +21985,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout field_name = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
           getFieldNameOrBuilder() {
         return getFieldName();
@@ -21863,6 +22006,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the fieldValue field is set.
        */
+      @java.lang.Override
       public boolean hasFieldValue() {
         return fieldValue_ != null;
       }
@@ -21879,6 +22023,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The fieldValue.
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.Layout getFieldValue() {
         return fieldValue_ == null
             ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -21895,6 +22040,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout field_value = 2;</code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder
           getFieldValueOrBuilder() {
         return getFieldValue();
@@ -21914,6 +22060,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage name_detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
           getNameDetectedLanguagesList() {
         return nameDetectedLanguages_;
@@ -21929,6 +22076,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage name_detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
           getNameDetectedLanguagesOrBuilderList() {
@@ -21945,6 +22093,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage name_detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public int getNameDetectedLanguagesCount() {
         return nameDetectedLanguages_.size();
       }
@@ -21959,6 +22108,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage name_detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
           getNameDetectedLanguages(int index) {
         return nameDetectedLanguages_.get(index);
@@ -21974,6 +22124,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage name_detected_languages = 3;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
           getNameDetectedLanguagesOrBuilder(int index) {
         return nameDetectedLanguages_.get(index);
@@ -21993,6 +22144,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage value_detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
           getValueDetectedLanguagesList() {
         return valueDetectedLanguages_;
@@ -22008,6 +22160,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage value_detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
           getValueDetectedLanguagesOrBuilderList() {
@@ -22024,6 +22177,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage value_detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public int getValueDetectedLanguagesCount() {
         return valueDetectedLanguages_.size();
       }
@@ -22038,6 +22192,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage value_detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
           getValueDetectedLanguages(int index) {
         return valueDetectedLanguages_.get(index);
@@ -22053,6 +22208,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage value_detected_languages = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
           getValueDetectedLanguagesOrBuilder(int index) {
         return valueDetectedLanguages_.get(index);
@@ -24009,6 +24165,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The languageCode.
        */
+      @java.lang.Override
       public java.lang.String getLanguageCode() {
         java.lang.Object ref = languageCode_;
         if (ref instanceof java.lang.String) {
@@ -24033,6 +24190,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for languageCode.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getLanguageCodeBytes() {
         java.lang.Object ref = languageCode_;
         if (ref instanceof java.lang.String) {
@@ -24058,6 +24216,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The confidence.
        */
+      @java.lang.Override
       public float getConfidence() {
         return confidence_;
       }
@@ -24539,6 +24698,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The confidence.
          */
+        @java.lang.Override
         public float getConfidence() {
           return confidence_;
         }
@@ -24650,6 +24810,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pageNumber.
      */
+    @java.lang.Override
     public int getPageNumber() {
       return pageNumber_;
     }
@@ -24667,6 +24828,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the dimension field is set.
      */
+    @java.lang.Override
     public boolean hasDimension() {
       return dimension_ != null;
     }
@@ -24681,6 +24843,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dimension.
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.Dimension getDimension() {
       return dimension_ == null
           ? com.google.cloud.documentai.v1beta1.Document.Page.Dimension.getDefaultInstance()
@@ -24695,6 +24858,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.documentai.v1beta1.Document.Page.Dimension dimension = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.DimensionOrBuilder
         getDimensionOrBuilder() {
       return getDimension();
@@ -24714,6 +24878,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the layout field is set.
      */
+    @java.lang.Override
     public boolean hasLayout() {
       return layout_ != null;
     }
@@ -24729,6 +24894,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The layout.
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.Layout getLayout() {
       return layout_ == null
           ? com.google.cloud.documentai.v1beta1.Document.Page.Layout.getDefaultInstance()
@@ -24744,6 +24910,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.documentai.v1beta1.Document.Page.Layout layout = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.LayoutOrBuilder getLayoutOrBuilder() {
       return getLayout();
     }
@@ -24762,6 +24929,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>
         getDetectedLanguagesList() {
       return detectedLanguages_;
@@ -24777,6 +24945,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder>
         getDetectedLanguagesOrBuilderList() {
@@ -24793,6 +24962,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
      * </code>
      */
+    @java.lang.Override
     public int getDetectedLanguagesCount() {
       return detectedLanguages_.size();
     }
@@ -24807,6 +24977,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage getDetectedLanguages(
         int index) {
       return detectedLanguages_.get(index);
@@ -24822,6 +24993,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage detected_languages = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguageOrBuilder
         getDetectedLanguagesOrBuilder(int index) {
       return detectedLanguages_.get(index);
@@ -24840,6 +25012,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Block blocks = 5;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.Block> getBlocksList() {
       return blocks_;
     }
@@ -24854,6 +25027,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Block blocks = 5;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta1.Document.Page.BlockOrBuilder>
         getBlocksOrBuilderList() {
@@ -24870,6 +25044,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Block blocks = 5;</code>
      */
+    @java.lang.Override
     public int getBlocksCount() {
       return blocks_.size();
     }
@@ -24884,6 +25059,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Block blocks = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.Block getBlocks(int index) {
       return blocks_.get(index);
     }
@@ -24898,6 +25074,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Block blocks = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.BlockOrBuilder getBlocksOrBuilder(
         int index) {
       return blocks_.get(index);
@@ -24916,6 +25093,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Paragraph paragraphs = 6;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.Paragraph>
         getParagraphsList() {
       return paragraphs_;
@@ -24931,6 +25109,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Paragraph paragraphs = 6;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta1.Document.Page.ParagraphOrBuilder>
         getParagraphsOrBuilderList() {
@@ -24947,6 +25126,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Paragraph paragraphs = 6;
      * </code>
      */
+    @java.lang.Override
     public int getParagraphsCount() {
       return paragraphs_.size();
     }
@@ -24961,6 +25141,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Paragraph paragraphs = 6;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.Paragraph getParagraphs(int index) {
       return paragraphs_.get(index);
     }
@@ -24975,6 +25156,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Paragraph paragraphs = 6;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.ParagraphOrBuilder
         getParagraphsOrBuilder(int index) {
       return paragraphs_.get(index);
@@ -24992,6 +25174,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Line lines = 7;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.Line> getLinesList() {
       return lines_;
     }
@@ -25005,6 +25188,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Line lines = 7;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.cloud.documentai.v1beta1.Document.Page.LineOrBuilder>
         getLinesOrBuilderList() {
       return lines_;
@@ -25019,6 +25203,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Line lines = 7;</code>
      */
+    @java.lang.Override
     public int getLinesCount() {
       return lines_.size();
     }
@@ -25032,6 +25217,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Line lines = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.Line getLines(int index) {
       return lines_.get(index);
     }
@@ -25045,6 +25231,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Line lines = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.LineOrBuilder getLinesOrBuilder(
         int index) {
       return lines_.get(index);
@@ -25061,6 +25248,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Token tokens = 8;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.Token> getTokensList() {
       return tokens_;
     }
@@ -25073,6 +25261,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Token tokens = 8;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta1.Document.Page.TokenOrBuilder>
         getTokensOrBuilderList() {
@@ -25087,6 +25276,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Token tokens = 8;</code>
      */
+    @java.lang.Override
     public int getTokensCount() {
       return tokens_.size();
     }
@@ -25099,6 +25289,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Token tokens = 8;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.Token getTokens(int index) {
       return tokens_.get(index);
     }
@@ -25111,6 +25302,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Token tokens = 8;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.TokenOrBuilder getTokensOrBuilder(
         int index) {
       return tokens_.get(index);
@@ -25131,6 +25323,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.VisualElement visual_elements = 9;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.VisualElement>
         getVisualElementsList() {
       return visualElements_;
@@ -25147,6 +25340,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.VisualElement visual_elements = 9;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta1.Document.Page.VisualElementOrBuilder>
         getVisualElementsOrBuilderList() {
@@ -25164,6 +25358,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.VisualElement visual_elements = 9;
      * </code>
      */
+    @java.lang.Override
     public int getVisualElementsCount() {
       return visualElements_.size();
     }
@@ -25179,6 +25374,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.VisualElement visual_elements = 9;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.VisualElement getVisualElements(
         int index) {
       return visualElements_.get(index);
@@ -25195,6 +25391,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.Page.VisualElement visual_elements = 9;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.VisualElementOrBuilder
         getVisualElementsOrBuilder(int index) {
       return visualElements_.get(index);
@@ -25211,6 +25408,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table tables = 10;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.Table> getTablesList() {
       return tables_;
     }
@@ -25223,6 +25421,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table tables = 10;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta1.Document.Page.TableOrBuilder>
         getTablesOrBuilderList() {
@@ -25237,6 +25436,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table tables = 10;</code>
      */
+    @java.lang.Override
     public int getTablesCount() {
       return tables_.size();
     }
@@ -25249,6 +25449,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table tables = 10;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.Table getTables(int index) {
       return tables_.get(index);
     }
@@ -25261,6 +25462,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.Table tables = 10;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.TableOrBuilder getTablesOrBuilder(
         int index) {
       return tables_.get(index);
@@ -25278,6 +25480,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.FormField form_fields = 11;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page.FormField>
         getFormFieldsList() {
       return formFields_;
@@ -25292,6 +25495,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.FormField form_fields = 11;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta1.Document.Page.FormFieldOrBuilder>
         getFormFieldsOrBuilderList() {
@@ -25307,6 +25511,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.FormField form_fields = 11;
      * </code>
      */
+    @java.lang.Override
     public int getFormFieldsCount() {
       return formFields_.size();
     }
@@ -25320,6 +25525,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.FormField form_fields = 11;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.FormField getFormFields(int index) {
       return formFields_.get(index);
     }
@@ -25333,6 +25539,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.documentai.v1beta1.Document.Page.FormField form_fields = 11;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.Page.FormFieldOrBuilder
         getFormFieldsOrBuilder(int index) {
       return formFields_.get(index);
@@ -26168,6 +26375,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The pageNumber.
        */
+      @java.lang.Override
       public int getPageNumber() {
         return pageNumber_;
       }
@@ -30061,6 +30269,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textAnchor field is set.
      */
+    @java.lang.Override
     public boolean hasTextAnchor() {
       return textAnchor_ != null;
     }
@@ -30077,6 +30286,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textAnchor.
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.TextAnchor getTextAnchor() {
       return textAnchor_ == null
           ? com.google.cloud.documentai.v1beta1.Document.TextAnchor.getDefaultInstance()
@@ -30093,6 +30303,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.documentai.v1beta1.Document.TextAnchor text_anchor = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.TextAnchorOrBuilder
         getTextAnchorOrBuilder() {
       return getTextAnchor();
@@ -30111,6 +30322,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -30133,6 +30345,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for type.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -30158,6 +30371,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mentionText.
      */
+    @java.lang.Override
     public java.lang.String getMentionText() {
       java.lang.Object ref = mentionText_;
       if (ref instanceof java.lang.String) {
@@ -30180,6 +30394,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for mentionText.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMentionTextBytes() {
       java.lang.Object ref = mentionText_;
       if (ref instanceof java.lang.String) {
@@ -30206,6 +30421,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mentionId.
      */
+    @java.lang.Override
     public java.lang.String getMentionId() {
       java.lang.Object ref = mentionId_;
       if (ref instanceof java.lang.String) {
@@ -30229,6 +30445,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for mentionId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMentionIdBytes() {
       java.lang.Object ref = mentionId_;
       if (ref instanceof java.lang.String) {
@@ -31410,6 +31627,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The subjectId.
      */
+    @java.lang.Override
     public java.lang.String getSubjectId() {
       java.lang.Object ref = subjectId_;
       if (ref instanceof java.lang.String) {
@@ -31432,6 +31650,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for subjectId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSubjectIdBytes() {
       java.lang.Object ref = subjectId_;
       if (ref instanceof java.lang.String) {
@@ -31457,6 +31676,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The objectId.
      */
+    @java.lang.Override
     public java.lang.String getObjectId() {
       java.lang.Object ref = objectId_;
       if (ref instanceof java.lang.String) {
@@ -31479,6 +31699,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for objectId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getObjectIdBytes() {
       java.lang.Object ref = objectId_;
       if (ref instanceof java.lang.String) {
@@ -31504,6 +31725,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The relation.
      */
+    @java.lang.Override
     public java.lang.String getRelation() {
       java.lang.Object ref = relation_;
       if (ref instanceof java.lang.String) {
@@ -31526,6 +31748,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for relation.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRelationBytes() {
       java.lang.Object ref = relation_;
       if (ref instanceof java.lang.String) {
@@ -32598,6 +32821,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The startIndex.
        */
+      @java.lang.Override
       public long getStartIndex() {
         return startIndex_;
       }
@@ -32617,6 +32841,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The endIndex.
        */
+      @java.lang.Override
       public long getEndIndex() {
         return endIndex_;
       }
@@ -32988,6 +33213,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The startIndex.
          */
+        @java.lang.Override
         public long getStartIndex() {
           return startIndex_;
         }
@@ -33045,6 +33271,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The endIndex.
          */
+        @java.lang.Override
         public long getEndIndex() {
           return endIndex_;
         }
@@ -33159,6 +33386,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment text_segments = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment>
         getTextSegmentsList() {
       return textSegments_;
@@ -33175,6 +33403,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment text_segments = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegmentOrBuilder>
         getTextSegmentsOrBuilderList() {
@@ -33192,6 +33421,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment text_segments = 1;
      * </code>
      */
+    @java.lang.Override
     public int getTextSegmentsCount() {
       return textSegments_.size();
     }
@@ -33207,6 +33437,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment text_segments = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment getTextSegments(
         int index) {
       return textSegments_.get(index);
@@ -33223,6 +33454,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment text_segments = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegmentOrBuilder
         getTextSegmentsOrBuilder(int index) {
       return textSegments_.get(index);
@@ -34205,6 +34437,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The content.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContent() {
     if (sourceCase_ == 2) {
       return (com.google.protobuf.ByteString) source_;
@@ -34227,6 +34460,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -34251,6 +34485,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -34276,6 +34511,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public java.lang.String getText() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {
@@ -34298,6 +34534,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for text.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {
@@ -34322,6 +34559,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Style text_styles = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.documentai.v1beta1.Document.Style> getTextStylesList() {
     return textStyles_;
   }
@@ -34335,6 +34573,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Style text_styles = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.documentai.v1beta1.Document.StyleOrBuilder>
       getTextStylesOrBuilderList() {
     return textStyles_;
@@ -34349,6 +34588,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Style text_styles = 5;</code>
    */
+  @java.lang.Override
   public int getTextStylesCount() {
     return textStyles_.size();
   }
@@ -34362,6 +34602,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Style text_styles = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.Style getTextStyles(int index) {
     return textStyles_.get(index);
   }
@@ -34375,6 +34616,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Style text_styles = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.StyleOrBuilder getTextStylesOrBuilder(
       int index) {
     return textStyles_.get(index);
@@ -34392,6 +34634,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Page pages = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.documentai.v1beta1.Document.Page> getPagesList() {
     return pages_;
   }
@@ -34405,6 +34648,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Page pages = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.documentai.v1beta1.Document.PageOrBuilder>
       getPagesOrBuilderList() {
     return pages_;
@@ -34419,6 +34663,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Page pages = 6;</code>
    */
+  @java.lang.Override
   public int getPagesCount() {
     return pages_.size();
   }
@@ -34432,6 +34677,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Page pages = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.Page getPages(int index) {
     return pages_.get(index);
   }
@@ -34445,6 +34691,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Page pages = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.PageOrBuilder getPagesOrBuilder(int index) {
     return pages_.get(index);
   }
@@ -34462,6 +34709,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Entity entities = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.documentai.v1beta1.Document.Entity> getEntitiesList() {
     return entities_;
   }
@@ -34476,6 +34724,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Entity entities = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.documentai.v1beta1.Document.EntityOrBuilder>
       getEntitiesOrBuilderList() {
     return entities_;
@@ -34491,6 +34740,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Entity entities = 7;</code>
    */
+  @java.lang.Override
   public int getEntitiesCount() {
     return entities_.size();
   }
@@ -34505,6 +34755,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Entity entities = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.Entity getEntities(int index) {
     return entities_.get(index);
   }
@@ -34519,6 +34770,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.documentai.v1beta1.Document.Entity entities = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.EntityOrBuilder getEntitiesOrBuilder(
       int index) {
     return entities_.get(index);
@@ -34538,6 +34790,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.documentai.v1beta1.Document.EntityRelation entity_relations = 8;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.documentai.v1beta1.Document.EntityRelation>
       getEntityRelationsList() {
     return entityRelations_;
@@ -34553,6 +34806,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.documentai.v1beta1.Document.EntityRelation entity_relations = 8;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.documentai.v1beta1.Document.EntityRelationOrBuilder>
       getEntityRelationsOrBuilderList() {
@@ -34569,6 +34823,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.documentai.v1beta1.Document.EntityRelation entity_relations = 8;
    * </code>
    */
+  @java.lang.Override
   public int getEntityRelationsCount() {
     return entityRelations_.size();
   }
@@ -34583,6 +34838,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.documentai.v1beta1.Document.EntityRelation entity_relations = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.EntityRelation getEntityRelations(int index) {
     return entityRelations_.get(index);
   }
@@ -34597,6 +34853,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.documentai.v1beta1.Document.EntityRelation entity_relations = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.EntityRelationOrBuilder
       getEntityRelationsOrBuilder(int index) {
     return entityRelations_.get(index);
@@ -34616,6 +34873,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the shardInfo field is set.
    */
+  @java.lang.Override
   public boolean hasShardInfo() {
     return shardInfo_ != null;
   }
@@ -34631,6 +34889,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The shardInfo.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.ShardInfo getShardInfo() {
     return shardInfo_ == null
         ? com.google.cloud.documentai.v1beta1.Document.ShardInfo.getDefaultInstance()
@@ -34646,6 +34905,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.documentai.v1beta1.Document.ShardInfo shard_info = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.Document.ShardInfoOrBuilder getShardInfoOrBuilder() {
     return getShardInfo();
   }
@@ -34663,6 +34923,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the error field is set.
    */
+  @java.lang.Override
   public boolean hasError() {
     return error_ != null;
   }
@@ -34677,6 +34938,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The error.
    */
+  @java.lang.Override
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
@@ -34689,6 +34951,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.rpc.Status error = 10;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
   }
@@ -35398,6 +35661,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The uri.
      */
+    @java.lang.Override
     public java.lang.String getUri() {
       java.lang.Object ref = "";
       if (sourceCase_ == 1) {
@@ -35429,6 +35693,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for uri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 1) {

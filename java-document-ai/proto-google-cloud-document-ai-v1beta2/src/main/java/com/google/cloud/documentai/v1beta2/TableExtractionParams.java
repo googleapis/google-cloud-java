@@ -161,6 +161,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -179,6 +180,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.documentai.v1beta2.TableBoundHint table_bound_hints = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.documentai.v1beta2.TableBoundHint>
       getTableBoundHintsList() {
     return tableBoundHints_;
@@ -195,6 +197,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.documentai.v1beta2.TableBoundHint table_bound_hints = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.documentai.v1beta2.TableBoundHintOrBuilder>
       getTableBoundHintsOrBuilderList() {
     return tableBoundHints_;
@@ -211,6 +214,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.documentai.v1beta2.TableBoundHint table_bound_hints = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getTableBoundHintsCount() {
     return tableBoundHints_.size();
   }
@@ -226,6 +230,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.documentai.v1beta2.TableBoundHint table_bound_hints = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.TableBoundHint getTableBoundHints(int index) {
     return tableBoundHints_.get(index);
   }
@@ -241,6 +246,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.documentai.v1beta2.TableBoundHint table_bound_hints = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.TableBoundHintOrBuilder getTableBoundHintsOrBuilder(
       int index) {
     return tableBoundHints_.get(index);
@@ -325,6 +331,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    * @return The modelVersion.
    */
+  @java.lang.Override
   public java.lang.String getModelVersion() {
     java.lang.Object ref = modelVersion_;
     if (ref instanceof java.lang.String) {
@@ -348,6 +355,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for modelVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelVersionBytes() {
     java.lang.Object ref = modelVersion_;
     if (ref instanceof java.lang.String) {
@@ -797,6 +805,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }

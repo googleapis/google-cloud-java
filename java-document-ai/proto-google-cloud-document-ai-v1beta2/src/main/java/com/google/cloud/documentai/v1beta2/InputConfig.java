@@ -193,6 +193,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
@@ -208,6 +209,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.documentai.v1beta2.GcsSource) source_;
@@ -224,6 +226,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.documentai.v1beta2.GcsSource gcs_source = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.documentai.v1beta2.GcsSource) source_;
@@ -246,6 +249,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The contents.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContents() {
     if (sourceCase_ == 3) {
       return (com.google.protobuf.ByteString) source_;
@@ -270,6 +274,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -296,6 +301,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -724,6 +730,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
@@ -739,6 +746,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta2.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -877,6 +885,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.documentai.v1beta2.GcsSource gcs_source = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta2.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();

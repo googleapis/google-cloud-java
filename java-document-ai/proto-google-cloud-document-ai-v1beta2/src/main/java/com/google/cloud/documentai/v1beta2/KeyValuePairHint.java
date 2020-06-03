@@ -139,6 +139,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
    *
    * @return The key.
    */
+  @java.lang.Override
   public java.lang.String getKey() {
     java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for key.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyBytes() {
     java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {

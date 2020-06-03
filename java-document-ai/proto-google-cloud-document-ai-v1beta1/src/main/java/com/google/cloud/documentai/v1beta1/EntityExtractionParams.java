@@ -129,6 +129,7 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -147,6 +148,7 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
    *
    * @return The modelVersion.
    */
+  @java.lang.Override
   public java.lang.String getModelVersion() {
     java.lang.Object ref = modelVersion_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +172,7 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for modelVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelVersionBytes() {
     java.lang.Object ref = modelVersion_;
     if (ref instanceof java.lang.String) {
@@ -528,6 +531,7 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }

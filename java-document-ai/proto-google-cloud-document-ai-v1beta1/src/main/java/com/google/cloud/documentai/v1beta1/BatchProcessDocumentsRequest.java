@@ -143,6 +143,7 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    * repeated .google.cloud.documentai.v1beta1.ProcessDocumentRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.documentai.v1beta1.ProcessDocumentRequest>
       getRequestsList() {
     return requests_;
@@ -158,6 +159,7 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    * repeated .google.cloud.documentai.v1beta1.ProcessDocumentRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.documentai.v1beta1.ProcessDocumentRequestOrBuilder>
       getRequestsOrBuilderList() {
@@ -174,6 +176,7 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    * repeated .google.cloud.documentai.v1beta1.ProcessDocumentRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getRequestsCount() {
     return requests_.size();
   }
@@ -188,6 +191,7 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    * repeated .google.cloud.documentai.v1beta1.ProcessDocumentRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.ProcessDocumentRequest getRequests(int index) {
     return requests_.get(index);
   }
@@ -202,6 +206,7 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    * repeated .google.cloud.documentai.v1beta1.ProcessDocumentRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.ProcessDocumentRequestOrBuilder getRequestsOrBuilder(
       int index) {
     return requests_.get(index);
@@ -222,6 +227,7 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -246,6 +252,7 @@ public final class BatchProcessDocumentsRequest extends com.google.protobuf.Gene
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {

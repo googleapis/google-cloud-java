@@ -138,6 +138,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pageNumber.
    */
+  @java.lang.Override
   public int getPageNumber() {
     return pageNumber_;
   }
@@ -156,6 +157,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the boundingBox field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
   }
@@ -171,6 +173,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boundingBox.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
         ? com.google.cloud.documentai.v1beta2.BoundingPoly.getDefaultInstance()
@@ -186,6 +189,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.documentai.v1beta2.BoundingPoly bounding_box = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
     return getBoundingBox();
   }
@@ -549,6 +553,7 @@ public final class TableBoundHint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pageNumber.
      */
+    @java.lang.Override
     public int getPageNumber() {
       return pageNumber_;
     }

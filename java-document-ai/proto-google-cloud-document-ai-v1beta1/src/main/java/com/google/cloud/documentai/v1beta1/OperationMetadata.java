@@ -350,6 +350,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -397,6 +401,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -411,6 +416,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.OperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.documentai.v1beta1.OperationMetadata.State result =
@@ -433,6 +439,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The stateMessage.
    */
+  @java.lang.Override
   public java.lang.String getStateMessage() {
     java.lang.Object ref = stateMessage_;
     if (ref instanceof java.lang.String) {
@@ -455,6 +462,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for stateMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStateMessageBytes() {
     java.lang.Object ref = stateMessage_;
     if (ref instanceof java.lang.String) {
@@ -480,6 +488,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -494,6 +503,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -506,6 +516,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -523,6 +534,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -537,6 +549,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -549,6 +562,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -959,6 +973,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -975,6 +990,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -990,6 +1006,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.documentai.v1beta1.OperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.documentai.v1beta1.OperationMetadata.State result =

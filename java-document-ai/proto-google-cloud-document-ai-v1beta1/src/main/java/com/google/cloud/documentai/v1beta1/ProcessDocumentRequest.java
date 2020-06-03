@@ -225,6 +225,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -241,6 +242,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.InputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.documentai.v1beta1.InputConfig.getDefaultInstance()
@@ -257,6 +259,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    * .google.cloud.documentai.v1beta1.InputConfig input_config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -276,6 +279,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -292,6 +296,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.documentai.v1beta1.OutputConfig.getDefaultInstance()
@@ -308,6 +313,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    * .google.cloud.documentai.v1beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }
@@ -327,6 +333,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return The documentType.
    */
+  @java.lang.Override
   public java.lang.String getDocumentType() {
     java.lang.Object ref = documentType_;
     if (ref instanceof java.lang.String) {
@@ -351,6 +358,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for documentType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDocumentTypeBytes() {
     java.lang.Object ref = documentType_;
     if (ref instanceof java.lang.String) {
@@ -378,6 +386,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the tableExtractionParams field is set.
    */
+  @java.lang.Override
   public boolean hasTableExtractionParams() {
     return tableExtractionParams_ != null;
   }
@@ -394,6 +403,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return The tableExtractionParams.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.TableExtractionParams getTableExtractionParams() {
     return tableExtractionParams_ == null
         ? com.google.cloud.documentai.v1beta1.TableExtractionParams.getDefaultInstance()
@@ -410,6 +420,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    * <code>.google.cloud.documentai.v1beta1.TableExtractionParams table_extraction_params = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.TableExtractionParamsOrBuilder
       getTableExtractionParamsOrBuilder() {
     return getTableExtractionParams();
@@ -429,6 +440,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the formExtractionParams field is set.
    */
+  @java.lang.Override
   public boolean hasFormExtractionParams() {
     return formExtractionParams_ != null;
   }
@@ -444,6 +456,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return The formExtractionParams.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.FormExtractionParams getFormExtractionParams() {
     return formExtractionParams_ == null
         ? com.google.cloud.documentai.v1beta1.FormExtractionParams.getDefaultInstance()
@@ -459,6 +472,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * <code>.google.cloud.documentai.v1beta1.FormExtractionParams form_extraction_params = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.FormExtractionParamsOrBuilder
       getFormExtractionParamsOrBuilder() {
     return getFormExtractionParams();
@@ -479,6 +493,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the entityExtractionParams field is set.
    */
+  @java.lang.Override
   public boolean hasEntityExtractionParams() {
     return entityExtractionParams_ != null;
   }
@@ -495,6 +510,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return The entityExtractionParams.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.EntityExtractionParams getEntityExtractionParams() {
     return entityExtractionParams_ == null
         ? com.google.cloud.documentai.v1beta1.EntityExtractionParams.getDefaultInstance()
@@ -511,6 +527,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    * <code>.google.cloud.documentai.v1beta1.EntityExtractionParams entity_extraction_params = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.EntityExtractionParamsOrBuilder
       getEntityExtractionParamsOrBuilder() {
     return getEntityExtractionParams();
@@ -530,6 +547,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the ocrParams field is set.
    */
+  @java.lang.Override
   public boolean hasOcrParams() {
     return ocrParams_ != null;
   }
@@ -545,6 +563,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * @return The ocrParams.
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.OcrParams getOcrParams() {
     return ocrParams_ == null
         ? com.google.cloud.documentai.v1beta1.OcrParams.getDefaultInstance()
@@ -560,6 +579,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
    *
    * <code>.google.cloud.documentai.v1beta1.OcrParams ocr_params = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.OcrParamsOrBuilder getOcrParamsOrBuilder() {
     return getOcrParams();
   }

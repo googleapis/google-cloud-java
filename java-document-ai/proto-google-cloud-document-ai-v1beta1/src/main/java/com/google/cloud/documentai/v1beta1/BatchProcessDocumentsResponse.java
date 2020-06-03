@@ -134,6 +134,7 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.documentai.v1beta1.ProcessDocumentResponse responses = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.documentai.v1beta1.ProcessDocumentResponse>
       getResponsesList() {
     return responses_;
@@ -147,6 +148,7 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.documentai.v1beta1.ProcessDocumentResponse responses = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.documentai.v1beta1.ProcessDocumentResponseOrBuilder>
       getResponsesOrBuilderList() {
@@ -161,6 +163,7 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.documentai.v1beta1.ProcessDocumentResponse responses = 1;</code>
    */
+  @java.lang.Override
   public int getResponsesCount() {
     return responses_.size();
   }
@@ -173,6 +176,7 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.documentai.v1beta1.ProcessDocumentResponse responses = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.ProcessDocumentResponse getResponses(int index) {
     return responses_.get(index);
   }
@@ -185,6 +189,7 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.documentai.v1beta1.ProcessDocumentResponse responses = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta1.ProcessDocumentResponseOrBuilder getResponsesOrBuilder(
       int index) {
     return responses_.get(index);

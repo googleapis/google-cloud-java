@@ -147,6 +147,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -172,6 +173,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.documentai.v1beta2.KeyValuePairHint>
       getKeyValuePairHintsList() {
     return keyValuePairHints_;
@@ -195,6 +197,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.documentai.v1beta2.KeyValuePairHintOrBuilder>
       getKeyValuePairHintsOrBuilderList() {
     return keyValuePairHints_;
@@ -218,6 +221,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
    * </code>
    */
+  @java.lang.Override
   public int getKeyValuePairHintsCount() {
     return keyValuePairHints_.size();
   }
@@ -240,6 +244,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.KeyValuePairHint getKeyValuePairHints(int index) {
     return keyValuePairHints_.get(index);
   }
@@ -262,6 +267,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.documentai.v1beta2.KeyValuePairHintOrBuilder
       getKeyValuePairHintsOrBuilder(int index) {
     return keyValuePairHints_.get(index);
@@ -284,6 +290,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    *
    * @return The modelVersion.
    */
+  @java.lang.Override
   public java.lang.String getModelVersion() {
     java.lang.Object ref = modelVersion_;
     if (ref instanceof java.lang.String) {
@@ -310,6 +317,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for modelVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelVersionBytes() {
     java.lang.Object ref = modelVersion_;
     if (ref instanceof java.lang.String) {
@@ -727,6 +735,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }
