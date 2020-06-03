@@ -22,7 +22,7 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Statistics related to processing hybrid inspect requests.
+ * Statistics related to processing hybrid inspect requests.s
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.HybridInspectStatistics}
@@ -354,7 +354,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Statistics related to processing hybrid inspect requests.
+   * Statistics related to processing hybrid inspect requests.s
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.HybridInspectStatistics}

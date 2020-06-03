@@ -147,7 +147,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The parent resource name, for example projects/my-project-id or
-   * organizations/my-org-id.
+   * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -172,7 +172,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The parent resource name, for example projects/my-project-id or
-   * organizations/my-org-id.
+   * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -331,8 +331,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The geographic location where inspection templates will be retrieved from.
-   * Use `-` for all locations. Reserved for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 5;</code>
@@ -354,8 +353,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The geographic location where inspection templates will be retrieved from.
-   * Use `-` for all locations. Reserved for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 5;</code>
@@ -762,7 +760,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id.
+     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -787,7 +785,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id.
+     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -812,7 +810,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id.
+     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -836,7 +834,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id.
+     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -856,7 +854,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource name, for example projects/my-project-id or
-     * organizations/my-org-id.
+     * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -1198,8 +1196,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The geographic location where inspection templates will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 5;</code>
@@ -1221,8 +1218,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The geographic location where inspection templates will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 5;</code>
@@ -1244,8 +1240,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The geographic location where inspection templates will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 5;</code>
@@ -1266,8 +1261,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The geographic location where inspection templates will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 5;</code>
@@ -1284,8 +1278,7 @@ public final class ListInspectTemplatesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The geographic location where inspection templates will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 5;</code>

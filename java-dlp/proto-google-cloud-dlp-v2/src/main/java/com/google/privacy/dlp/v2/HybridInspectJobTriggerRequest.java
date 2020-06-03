@@ -134,8 +134,8 @@ public final class HybridInspectJobTriggerRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Resource name of the trigger to execute a hybrid inspect on, for example
-   * `projects/dlp-test-project/jobTriggers/53234423`.
+   * Required. Resource name of the trigger to execute a hybrid inspect on, for
+   * example `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
    * <code>
@@ -159,8 +159,8 @@ public final class HybridInspectJobTriggerRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Resource name of the trigger to execute a hybrid inspect on, for example
-   * `projects/dlp-test-project/jobTriggers/53234423`.
+   * Required. Resource name of the trigger to execute a hybrid inspect on, for
+   * example `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
    * <code>
@@ -578,8 +578,8 @@ public final class HybridInspectJobTriggerRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Resource name of the trigger to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/jobTriggers/53234423`.
+     * Required. Resource name of the trigger to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>
@@ -603,8 +603,8 @@ public final class HybridInspectJobTriggerRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Resource name of the trigger to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/jobTriggers/53234423`.
+     * Required. Resource name of the trigger to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>
@@ -628,8 +628,8 @@ public final class HybridInspectJobTriggerRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Resource name of the trigger to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/jobTriggers/53234423`.
+     * Required. Resource name of the trigger to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>
@@ -652,8 +652,8 @@ public final class HybridInspectJobTriggerRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Resource name of the trigger to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/jobTriggers/53234423`.
+     * Required. Resource name of the trigger to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>
@@ -672,8 +672,8 @@ public final class HybridInspectJobTriggerRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Resource name of the trigger to execute a hybrid inspect on, for example
-     * `projects/dlp-test-project/jobTriggers/53234423`.
+     * Required. Resource name of the trigger to execute a hybrid inspect on, for
+     * example `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
      * <code>

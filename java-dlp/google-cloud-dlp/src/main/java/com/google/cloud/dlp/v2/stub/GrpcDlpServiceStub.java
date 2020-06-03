@@ -562,7 +562,7 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   @Override
                   public Map<String, String> extract(ListInfoTypesRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("location_id", String.valueOf(request.getLocationId()));
+                    params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
                   }
                 })

@@ -38,6 +38,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
   }
 
   private ListInfoTypesRequest() {
+    parent_ = "";
     languageCode_ = "";
     filter_ = "";
     locationId_ = "";
@@ -93,6 +94,13 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
               locationId_ = s;
               break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parent_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -125,6 +133,53 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         .ensureFieldAccessorsInitialized(
             com.google.privacy.dlp.v2.ListInfoTypesRequest.class,
             com.google.privacy.dlp.v2.ListInfoTypesRequest.Builder.class);
+  }
+
+  public static final int PARENT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object parent_;
+  /**
+   *
+   *
+   * <pre>
+   * The parent resource name, for example locations/{location_id}
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   *
+   * @return The parent.
+   */
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The parent resource name, for example locations/{location_id}
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   *
+   * @return The bytes for parent.
+   */
+  public com.google.protobuf.ByteString getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
@@ -233,8 +288,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The geographic location to list info types. Reserved for future
-   * extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 3;</code>
@@ -256,8 +310,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The geographic location to list info types. Reserved for future
-   * extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 3;</code>
@@ -299,6 +352,9 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     if (!getLocationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, locationId_);
     }
+    if (!getParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, parent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -317,6 +373,9 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     if (!getLocationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, locationId_);
     }
+    if (!getParentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, parent_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -333,6 +392,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     com.google.privacy.dlp.v2.ListInfoTypesRequest other =
         (com.google.privacy.dlp.v2.ListInfoTypesRequest) obj;
 
+    if (!getParent().equals(other.getParent())) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getLocationId().equals(other.getLocationId())) return false;
@@ -347,6 +407,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
@@ -498,6 +560,8 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      parent_ = "";
+
       languageCode_ = "";
 
       filter_ = "";
@@ -531,6 +595,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     public com.google.privacy.dlp.v2.ListInfoTypesRequest buildPartial() {
       com.google.privacy.dlp.v2.ListInfoTypesRequest result =
           new com.google.privacy.dlp.v2.ListInfoTypesRequest(this);
+      result.parent_ = parent_;
       result.languageCode_ = languageCode_;
       result.filter_ = filter_;
       result.locationId_ = locationId_;
@@ -583,6 +648,10 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.ListInfoTypesRequest other) {
       if (other == com.google.privacy.dlp.v2.ListInfoTypesRequest.getDefaultInstance()) return this;
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
         onChanged();
@@ -621,6 +690,112 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object parent_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource name, for example locations/{location_id}
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @return The parent.
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource name, for example locations/{location_id}
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @return The bytes for parent.
+     */
+    public com.google.protobuf.ByteString getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource name, for example locations/{location_id}
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource name, for example locations/{location_id}
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The parent resource name, for example locations/{location_id}
+     * </pre>
+     *
+     * <code>string parent = 4;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      parent_ = value;
+      onChanged();
       return this;
     }
 
@@ -856,8 +1031,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The geographic location to list info types. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 3;</code>
@@ -879,8 +1053,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The geographic location to list info types. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 3;</code>
@@ -902,8 +1075,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The geographic location to list info types. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 3;</code>
@@ -924,8 +1096,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The geographic location to list info types. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 3;</code>
@@ -942,8 +1113,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The geographic location to list info types. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 3;</code>

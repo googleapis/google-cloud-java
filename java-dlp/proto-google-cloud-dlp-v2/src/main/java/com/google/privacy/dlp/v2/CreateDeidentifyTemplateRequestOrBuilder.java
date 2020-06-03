@@ -28,7 +28,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, for example projects/my-project-id or
-   * organizations/my-org-id.
+   * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name, for example projects/my-project-id or
-   * organizations/my-org-id.
+   * organizations/my-org-id or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -130,8 +130,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to store the deidentification template. Reserved
-   * for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 4;</code>
@@ -143,8 +142,7 @@ public interface CreateDeidentifyTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to store the deidentification template. Reserved
-   * for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 4;</code>

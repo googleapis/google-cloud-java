@@ -27,7 +27,8 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name, for example `projects/my-project-id`.
+   * Required. The parent resource name, for example `projects/my-project-id`
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name, for example `projects/my-project-id`.
+   * Required. The parent resource name, for example `projects/my-project-id`
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -206,8 +208,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location where job triggers will be retrieved from.
-   * Use `-` for all locations. Reserved for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -219,8 +220,7 @@ public interface ListJobTriggersRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location where job triggers will be retrieved from.
-   * Use `-` for all locations. Reserved for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>

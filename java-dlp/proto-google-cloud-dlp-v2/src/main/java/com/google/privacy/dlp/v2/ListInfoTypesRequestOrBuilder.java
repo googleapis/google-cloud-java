@@ -27,6 +27,31 @@ public interface ListInfoTypesRequestOrBuilder
    *
    *
    * <pre>
+   * The parent resource name, for example locations/{location_id}
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   *
+   * @return The parent.
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * The parent resource name, for example locations/{location_id}
+   * </pre>
+   *
+   * <code>string parent = 4;</code>
+   *
+   * @return The bytes for parent.
+   */
+  com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * BCP-47 language code for localized infoType friendly
    * names. If omitted, or if localized strings are not available,
    * en-US strings will be returned.
@@ -83,8 +108,7 @@ public interface ListInfoTypesRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to list info types. Reserved for future
-   * extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 3;</code>
@@ -96,8 +120,7 @@ public interface ListInfoTypesRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to list info types. Reserved for future
-   * extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 3;</code>

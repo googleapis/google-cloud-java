@@ -27,7 +27,8 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name, for example projects/my-project-id.
+   * Required. The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name, for example projects/my-project-id.
+   * Required. The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -157,8 +159,7 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to store and process the job. Reserved for
-   * future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 5;</code>
@@ -170,8 +171,7 @@ public interface CreateDlpJobRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to store and process the job. Reserved for
-   * future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 5;</code>

@@ -308,16 +308,16 @@ public class DlpServiceClientTest {
     ListInfoTypesResponse expectedResponse = ListInfoTypesResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    String locationId = "locationId552319461";
+    String parent = "parent-995424086";
 
-    ListInfoTypesResponse actualResponse = client.listInfoTypes(locationId);
+    ListInfoTypesResponse actualResponse = client.listInfoTypes(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDlpService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListInfoTypesRequest actualRequest = (ListInfoTypesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -331,9 +331,9 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      String locationId = "locationId552319461";
+      String parent = "parent-995424086";
 
-      client.listInfoTypes(locationId);
+      client.listInfoTypes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -386,62 +386,6 @@ public class DlpServiceClientTest {
       InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
 
       client.createInspectTemplate(parent, inspectTemplate);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createInspectTemplateTest2() {
-    InspectTemplateName name =
-        InspectTemplateName.ofOrganizationInspectTemplateName(
-            "[ORGANIZATION]", "[INSPECT_TEMPLATE]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    InspectTemplate expectedResponse =
-        InspectTemplate.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .build();
-    mockDlpService.addResponse(expectedResponse);
-
-    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
-    InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
-    String locationId = "locationId552319461";
-
-    InspectTemplate actualResponse =
-        client.createInspectTemplate(parent, inspectTemplate, locationId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateInspectTemplateRequest actualRequest =
-        (CreateInspectTemplateRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, OrganizationLocationName.parse(actualRequest.getParent()));
-    Assert.assertEquals(inspectTemplate, actualRequest.getInspectTemplate());
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createInspectTemplateExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
-      InspectTemplate inspectTemplate = InspectTemplate.newBuilder().build();
-      String locationId = "locationId552319461";
-
-      client.createInspectTemplate(parent, inspectTemplate, locationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -696,62 +640,6 @@ public class DlpServiceClientTest {
       DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
 
       client.createDeidentifyTemplate(parent, deidentifyTemplate);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createDeidentifyTemplateTest2() {
-    DeidentifyTemplateName name =
-        DeidentifyTemplateName.ofOrganizationDeidentifyTemplateName(
-            "[ORGANIZATION]", "[DEIDENTIFY_TEMPLATE]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    DeidentifyTemplate expectedResponse =
-        DeidentifyTemplate.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .build();
-    mockDlpService.addResponse(expectedResponse);
-
-    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
-    DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
-    String locationId = "locationId552319461";
-
-    DeidentifyTemplate actualResponse =
-        client.createDeidentifyTemplate(parent, deidentifyTemplate, locationId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateDeidentifyTemplateRequest actualRequest =
-        (CreateDeidentifyTemplateRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, OrganizationLocationName.parse(actualRequest.getParent()));
-    Assert.assertEquals(deidentifyTemplate, actualRequest.getDeidentifyTemplate());
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createDeidentifyTemplateExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
-      DeidentifyTemplate deidentifyTemplate = DeidentifyTemplate.newBuilder().build();
-      String locationId = "locationId552319461";
-
-      client.createDeidentifyTemplate(parent, deidentifyTemplate, locationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1016,53 +904,6 @@ public class DlpServiceClientTest {
     mockDlpService.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
-    InspectJobConfig inspectJob = InspectJobConfig.newBuilder().build();
-    String locationId = "locationId552319461";
-
-    DlpJob actualResponse = client.createDlpJob(parent, inspectJob, locationId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateDlpJobRequest actualRequest = (CreateDlpJobRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(inspectJob, actualRequest.getInspectJob());
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createDlpJobExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      InspectJobConfig inspectJob = InspectJobConfig.newBuilder().build();
-      String locationId = "locationId552319461";
-
-      client.createDlpJob(parent, inspectJob, locationId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createDlpJobTest3() {
-    DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-    String jobTriggerName = "jobTriggerName1819490804";
-    DlpJob expectedResponse =
-        DlpJob.newBuilder().setName(name.toString()).setJobTriggerName(jobTriggerName).build();
-    mockDlpService.addResponse(expectedResponse);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
     RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
 
     DlpJob actualResponse = client.createDlpJob(parent, riskJob);
@@ -1082,7 +923,7 @@ public class DlpServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createDlpJobExceptionTest3() throws Exception {
+  public void createDlpJobExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockDlpService.addException(exception);
 
@@ -1091,53 +932,6 @@ public class DlpServiceClientTest {
       RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
 
       client.createDlpJob(parent, riskJob);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createDlpJobTest4() {
-    DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
-    String jobTriggerName = "jobTriggerName1819490804";
-    DlpJob expectedResponse =
-        DlpJob.newBuilder().setName(name.toString()).setJobTriggerName(jobTriggerName).build();
-    mockDlpService.addResponse(expectedResponse);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-    RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
-    String locationId = "locationId552319461";
-
-    DlpJob actualResponse = client.createDlpJob(parent, riskJob, locationId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateDlpJobRequest actualRequest = (CreateDlpJobRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(riskJob, actualRequest.getRiskJob());
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createDlpJobExceptionTest4() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      RiskAnalysisJobConfig riskJob = RiskAnalysisJobConfig.newBuilder().build();
-      String locationId = "locationId552319461";
-
-      client.createDlpJob(parent, riskJob, locationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1658,58 +1452,6 @@ public class DlpServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createJobTriggerTest2() {
-    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    JobTrigger expectedResponse =
-        JobTrigger.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .build();
-    mockDlpService.addResponse(expectedResponse);
-
-    ProjectName parent = ProjectName.of("[PROJECT]");
-    JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-    String locationId = "locationId552319461";
-
-    JobTrigger actualResponse = client.createJobTrigger(parent, jobTrigger, locationId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateJobTriggerRequest actualRequest = (CreateJobTriggerRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
-    Assert.assertEquals(jobTrigger, actualRequest.getJobTrigger());
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createJobTriggerExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      JobTrigger jobTrigger = JobTrigger.newBuilder().build();
-      String locationId = "locationId552319461";
-
-      client.createJobTrigger(parent, jobTrigger, locationId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createStoredInfoTypeTest() {
     StoredInfoTypeName name =
         StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
@@ -1745,52 +1487,6 @@ public class DlpServiceClientTest {
       StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
 
       client.createStoredInfoType(parent, config);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createStoredInfoTypeTest2() {
-    StoredInfoTypeName name =
-        StoredInfoTypeName.ofOrganizationStoredInfoTypeName("[ORGANIZATION]", "[STORED_INFO_TYPE]");
-    StoredInfoType expectedResponse = StoredInfoType.newBuilder().setName(name.toString()).build();
-    mockDlpService.addResponse(expectedResponse);
-
-    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
-    StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
-    String locationId = "locationId552319461";
-
-    StoredInfoType actualResponse = client.createStoredInfoType(parent, config, locationId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateStoredInfoTypeRequest actualRequest = (CreateStoredInfoTypeRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, OrganizationLocationName.parse(actualRequest.getParent()));
-    Assert.assertEquals(config, actualRequest.getConfig());
-    Assert.assertEquals(locationId, actualRequest.getLocationId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createStoredInfoTypeExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockDlpService.addException(exception);
-
-    try {
-      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
-      StoredInfoTypeConfig config = StoredInfoTypeConfig.newBuilder().build();
-      String locationId = "locationId552319461";
-
-      client.createStoredInfoType(parent, config, locationId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

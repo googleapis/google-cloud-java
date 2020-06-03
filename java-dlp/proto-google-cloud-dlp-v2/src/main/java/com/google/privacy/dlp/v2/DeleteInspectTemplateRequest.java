@@ -117,9 +117,9 @@ public final class DeleteInspectTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Resource name of the organization and inspectTemplate to be deleted, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
-   * projects/project-id/inspectTemplates/432452342.
+   * Required. Resource name of the organization and inspectTemplate to be
+   * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+   * or projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
    * <code>
@@ -143,9 +143,9 @@ public final class DeleteInspectTemplateRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Resource name of the organization and inspectTemplate to be deleted, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
-   * projects/project-id/inspectTemplates/432452342.
+   * Required. Resource name of the organization and inspectTemplate to be
+   * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+   * or projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
    * <code>
@@ -490,9 +490,9 @@ public final class DeleteInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be deleted, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
-     * projects/project-id/inspectTemplates/432452342.
+     * Required. Resource name of the organization and inspectTemplate to be
+     * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+     * or projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
      * <code>
@@ -516,9 +516,9 @@ public final class DeleteInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be deleted, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
-     * projects/project-id/inspectTemplates/432452342.
+     * Required. Resource name of the organization and inspectTemplate to be
+     * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+     * or projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
      * <code>
@@ -542,9 +542,9 @@ public final class DeleteInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be deleted, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
-     * projects/project-id/inspectTemplates/432452342.
+     * Required. Resource name of the organization and inspectTemplate to be
+     * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+     * or projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
      * <code>
@@ -567,9 +567,9 @@ public final class DeleteInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be deleted, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
-     * projects/project-id/inspectTemplates/432452342.
+     * Required. Resource name of the organization and inspectTemplate to be
+     * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+     * or projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
      * <code>
@@ -588,9 +588,9 @@ public final class DeleteInspectTemplateRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Resource name of the organization and inspectTemplate to be deleted, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
-     * projects/project-id/inspectTemplates/432452342.
+     * Required. Resource name of the organization and inspectTemplate to be
+     * deleted, for example `organizations/433245324/inspectTemplates/432452342`
+     * or projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
      * <code>

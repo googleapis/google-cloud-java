@@ -154,7 +154,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The parent resource name, for example `projects/my-project-id`.
+   * Required. The parent resource name, for example `projects/my-project-id`
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -178,7 +179,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The parent resource name, for example `projects/my-project-id`.
+   * Required. The parent resource name, for example `projects/my-project-id`
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -425,8 +427,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The geographic location where job triggers will be retrieved from.
-   * Use `-` for all locations. Reserved for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -448,8 +449,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The geographic location where job triggers will be retrieved from.
-   * Use `-` for all locations. Reserved for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -869,7 +869,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource name, for example `projects/my-project-id`.
+     * Required. The parent resource name, for example `projects/my-project-id`
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -893,7 +894,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource name, for example `projects/my-project-id`.
+     * Required. The parent resource name, for example `projects/my-project-id`
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -917,7 +919,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource name, for example `projects/my-project-id`.
+     * Required. The parent resource name, for example `projects/my-project-id`
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -940,7 +943,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource name, for example `projects/my-project-id`.
+     * Required. The parent resource name, for example `projects/my-project-id`
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -959,7 +963,8 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The parent resource name, for example `projects/my-project-id`.
+     * Required. The parent resource name, for example `projects/my-project-id`
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -1509,8 +1514,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The geographic location where job triggers will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1532,8 +1536,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The geographic location where job triggers will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1555,8 +1558,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The geographic location where job triggers will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1577,8 +1579,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The geographic location where job triggers will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1595,8 +1596,7 @@ public final class ListJobTriggersRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The geographic location where job triggers will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>

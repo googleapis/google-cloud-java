@@ -27,7 +27,8 @@ public interface InspectContentRequestOrBuilder
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -39,7 +40,8 @@ public interface InspectContentRequestOrBuilder
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -158,10 +160,7 @@ public interface InspectContentRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to process content inspection. Reserved for future
-   * extensions.
-   * When inspecting images location is restricted to 'global', 'us', 'asia',
-   * and 'europe'.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 5;</code>
@@ -173,10 +172,7 @@ public interface InspectContentRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to process content inspection. Reserved for future
-   * extensions.
-   * When inspecting images location is restricted to 'global', 'us', 'asia',
-   * and 'europe'.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 5;</code>

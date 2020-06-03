@@ -27,7 +27,8 @@ public interface RedactImageRequestOrBuilder
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -39,7 +40,8 @@ public interface RedactImageRequestOrBuilder
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -52,9 +54,7 @@ public interface RedactImageRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to process the request. Reserved for future
-   * extensions.
-   * Location is restricted to 'global', 'us', 'asia', and 'europe'.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 8;</code>
@@ -66,9 +66,7 @@ public interface RedactImageRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to process the request. Reserved for future
-   * extensions.
-   * Location is restricted to 'global', 'us', 'asia', and 'europe'.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 8;</code>

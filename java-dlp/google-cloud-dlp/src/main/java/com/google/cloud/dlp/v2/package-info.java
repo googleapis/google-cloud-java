@@ -34,8 +34,8 @@
  * <pre>
  * <code>
  * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
- *   String locationId = "";
- *   ListInfoTypesResponse response = dlpServiceClient.listInfoTypes(locationId);
+ *   String parent = "";
+ *   ListInfoTypesResponse response = dlpServiceClient.listInfoTypes(parent);
  * }
  * </code>
  * </pre>

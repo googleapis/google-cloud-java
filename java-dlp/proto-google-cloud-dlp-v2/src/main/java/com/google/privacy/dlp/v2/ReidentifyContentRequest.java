@@ -509,8 +509,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The geographic location to process content reidentification.  Reserved for
-   * future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -532,8 +531,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The geographic location to process content reidentification.  Reserved for
-   * future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -2005,8 +2003,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process content reidentification.  Reserved for
-     * future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -2028,8 +2025,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process content reidentification.  Reserved for
-     * future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -2051,8 +2047,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process content reidentification.  Reserved for
-     * future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -2073,8 +2068,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process content reidentification.  Reserved for
-     * future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -2091,8 +2085,7 @@ public final class ReidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process content reidentification.  Reserved for
-     * future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>

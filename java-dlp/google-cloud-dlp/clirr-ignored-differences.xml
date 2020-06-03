@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dlp/v2/DlpServiceClient</className>
+    <method>* createDeidentifyTemplate(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dlp/v2/DlpServiceClient</className>
+    <method>* createDlpJob(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dlp/v2/DlpServiceClient</className>
+    <method>* createInspectTemplate(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dlp/v2/DlpServiceClient</className>
+    <method>* createJobTrigger(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dlp/v2/DlpServiceClient</className>
+    <method>* createStoredInfoType(*)</method>
+  </difference>
+</differences>

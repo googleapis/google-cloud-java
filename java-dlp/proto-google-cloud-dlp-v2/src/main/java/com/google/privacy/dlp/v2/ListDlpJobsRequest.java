@@ -162,7 +162,8 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The parent resource name, for example projects/my-project-id.
+   * Required. The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -186,7 +187,8 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The parent resource name, for example projects/my-project-id.
+   * Required. The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>
@@ -467,8 +469,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The geographic location where jobs will be retrieved from.
-   * Use `-` for all locations. Reserved for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -490,8 +491,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The geographic location where jobs will be retrieved from.
-   * Use `-` for all locations. Reserved for future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -925,7 +925,8 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id.
+     * Required. The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -949,7 +950,8 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id.
+     * Required. The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -973,7 +975,8 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id.
+     * Required. The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -996,7 +999,8 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id.
+     * Required. The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -1015,7 +1019,8 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The parent resource name, for example projects/my-project-id.
+     * Required. The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>
@@ -1653,8 +1658,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The geographic location where jobs will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1676,8 +1680,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The geographic location where jobs will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1699,8 +1702,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The geographic location where jobs will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1721,8 +1723,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The geographic location where jobs will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1739,8 +1740,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The geographic location where jobs will be retrieved from.
-     * Use `-` for all locations. Reserved for future extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>

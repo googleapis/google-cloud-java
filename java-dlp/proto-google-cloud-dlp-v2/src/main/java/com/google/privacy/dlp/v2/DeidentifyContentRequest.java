@@ -189,7 +189,8 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -211,7 +212,8 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The parent resource name, for example projects/my-project-id.
+   * The parent resource name, for example projects/my-project-id
+   * or projects/my-project-id/locations/{location_id}.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -491,8 +493,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The geographic location to process de-identification. Reserved for future
-   * extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -514,8 +515,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The geographic location to process de-identification. Reserved for future
-   * extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -989,7 +989,8 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id.
+     * The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1011,7 +1012,8 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id.
+     * The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1033,7 +1035,8 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id.
+     * The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1054,7 +1057,8 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id.
+     * The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1071,7 +1075,8 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The parent resource name, for example projects/my-project-id.
+     * The parent resource name, for example projects/my-project-id
+     * or projects/my-project-id/locations/{location_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1936,8 +1941,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process de-identification. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1959,8 +1963,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process de-identification. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -1982,8 +1985,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process de-identification. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -2004,8 +2006,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process de-identification. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>
@@ -2022,8 +2023,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The geographic location to process de-identification. Reserved for future
-     * extensions.
+     * Deprecated. This field has no effect.
      * </pre>
      *
      * <code>string location_id = 7;</code>

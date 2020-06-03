@@ -253,8 +253,7 @@ public interface ReidentifyContentRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to process content reidentification.  Reserved for
-   * future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
@@ -266,8 +265,7 @@ public interface ReidentifyContentRequestOrBuilder
    *
    *
    * <pre>
-   * The geographic location to process content reidentification.  Reserved for
-   * future extensions.
+   * Deprecated. This field has no effect.
    * </pre>
    *
    * <code>string location_id = 7;</code>
