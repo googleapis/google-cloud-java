@@ -50,6 +50,16 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
 
+  private static final MethodDescriptor<DeleteEventsRequest, DeleteEventsResponse>
+      deleteEventsMethodDescriptor =
+          MethodDescriptor.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/DeleteEvents")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DeleteEventsResponse.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListGroupStatsRequest, ListGroupStatsResponse>
       listGroupStatsMethodDescriptor =
           MethodDescriptor.<ListGroupStatsRequest, ListGroupStatsResponse>newBuilder()
@@ -70,25 +80,15 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteEventsRequest, DeleteEventsResponse>
-      deleteEventsMethodDescriptor =
-          MethodDescriptor.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService/DeleteEvents")
-              .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(DeleteEventsResponse.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
   private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
   private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
-  private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -131,6 +131,19 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
+        GrpcCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
+            .setMethodDescriptor(deleteEventsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteEventsRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteEventsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_name", String.valueOf(request.getProjectName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListGroupStatsRequest, ListGroupStatsResponse>
         listGroupStatsTransportSettings =
             GrpcCallSettings.<ListGroupStatsRequest, ListGroupStatsResponse>newBuilder()
@@ -158,20 +171,10 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
-        GrpcCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
-            .setMethodDescriptor(deleteEventsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEventsRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEventsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_name", String.valueOf(request.getProjectName()));
-                    return params.build();
-                  }
-                })
-            .build();
 
+    this.deleteEventsCallable =
+        callableFactory.createUnaryCallable(
+            deleteEventsTransportSettings, settings.deleteEventsSettings(), clientContext);
     this.listGroupStatsCallable =
         callableFactory.createUnaryCallable(
             listGroupStatsTransportSettings, settings.listGroupStatsSettings(), clientContext);
@@ -184,11 +187,12 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
     this.listEventsPagedCallable =
         callableFactory.createPagedCallable(
             listEventsTransportSettings, settings.listEventsSettings(), clientContext);
-    this.deleteEventsCallable =
-        callableFactory.createUnaryCallable(
-            deleteEventsTransportSettings, settings.deleteEventsSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
+    return deleteEventsCallable;
   }
 
   public UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
@@ -206,10 +210,6 @@ public class GrpcErrorStatsServiceStub extends ErrorStatsServiceStub {
 
   public UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
     return listEventsCallable;
-  }
-
-  public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
-    return deleteEventsCallable;
   }
 
   @Override

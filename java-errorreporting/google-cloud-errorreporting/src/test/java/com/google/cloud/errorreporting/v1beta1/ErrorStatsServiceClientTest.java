@@ -96,6 +96,44 @@ public class ErrorStatsServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteEventsTest() {
+    DeleteEventsResponse expectedResponse = DeleteEventsResponse.newBuilder().build();
+    mockErrorStatsService.addResponse(expectedResponse);
+
+    ProjectName projectName = ProjectName.of("[PROJECT]");
+
+    DeleteEventsResponse actualResponse = client.deleteEvents(projectName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEventsRequest actualRequest = (DeleteEventsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockErrorStatsService.addException(exception);
+
+    try {
+      ProjectName projectName = ProjectName.of("[PROJECT]");
+
+      client.deleteEvents(projectName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listGroupStatsTest() {
     String nextPageToken = "";
     ErrorGroupStats errorGroupStatsElement = ErrorGroupStats.newBuilder().build();
@@ -190,44 +228,6 @@ public class ErrorStatsServiceClientTest {
       String groupId = "groupId506361563";
 
       client.listEvents(projectName, groupId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteEventsTest() {
-    DeleteEventsResponse expectedResponse = DeleteEventsResponse.newBuilder().build();
-    mockErrorStatsService.addResponse(expectedResponse);
-
-    ProjectName projectName = ProjectName.of("[PROJECT]");
-
-    DeleteEventsResponse actualResponse = client.deleteEvents(projectName);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockErrorStatsService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteEventsRequest actualRequest = (DeleteEventsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(projectName, ProjectName.parse(actualRequest.getProjectName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockErrorStatsService.addException(exception);
-
-    try {
-      ProjectName projectName = ProjectName.of("[PROJECT]");
-
-      client.deleteEvents(projectName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

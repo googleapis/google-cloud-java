@@ -44,14 +44,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
 
-  private static final MethodDescriptor<GetGroupRequest, ErrorGroup> getGroupMethodDescriptor =
-      MethodDescriptor.<GetGroupRequest, ErrorGroup>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(
-              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<UpdateGroupRequest, ErrorGroup>
       updateGroupMethodDescriptor =
           MethodDescriptor.<UpdateGroupRequest, ErrorGroup>newBuilder()
@@ -61,11 +53,19 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<GetGroupRequest, ErrorGroup> getGroupMethodDescriptor =
+      MethodDescriptor.<GetGroupRequest, ErrorGroup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
+          .build();
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
   private final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
+  private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -108,19 +108,6 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<GetGroupRequest, ErrorGroup> getGroupTransportSettings =
-        GrpcCallSettings.<GetGroupRequest, ErrorGroup>newBuilder()
-            .setMethodDescriptor(getGroupMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("group_name", String.valueOf(request.getGroupName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupTransportSettings =
         GrpcCallSettings.<UpdateGroupRequest, ErrorGroup>newBuilder()
             .setMethodDescriptor(updateGroupMethodDescriptor)
@@ -134,23 +121,36 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<GetGroupRequest, ErrorGroup> getGroupTransportSettings =
+        GrpcCallSettings.<GetGroupRequest, ErrorGroup>newBuilder()
+            .setMethodDescriptor(getGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetGroupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("group_name", String.valueOf(request.getGroupName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.getGroupCallable =
-        callableFactory.createUnaryCallable(
-            getGroupTransportSettings, settings.getGroupSettings(), clientContext);
     this.updateGroupCallable =
         callableFactory.createUnaryCallable(
             updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
+    this.getGroupCallable =
+        callableFactory.createUnaryCallable(
+            getGroupTransportSettings, settings.getGroupSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
-    return getGroupCallable;
-  }
-
   public UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
     return updateGroupCallable;
+  }
+
+  public UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
+    return getGroupCallable;
   }
 
   @Override

@@ -96,12 +96,17 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
+  private final UnaryCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings;
   private final PagedCallSettings<
           ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
       listGroupStatsSettings;
   private final PagedCallSettings<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
       listEventsSettings;
-  private final UnaryCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings;
+
+  /** Returns the object with the settings used for calls to deleteEvents. */
+  public UnaryCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings() {
+    return deleteEventsSettings;
+  }
 
   /** Returns the object with the settings used for calls to listGroupStats. */
   public PagedCallSettings<
@@ -114,11 +119,6 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
   public PagedCallSettings<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
       listEventsSettings() {
     return listEventsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteEvents. */
-  public UnaryCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings() {
-    return deleteEventsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -190,9 +190,9 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
   protected ErrorStatsServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteEventsSettings = settingsBuilder.deleteEventsSettings().build();
     listGroupStatsSettings = settingsBuilder.listGroupStatsSettings().build();
     listEventsSettings = settingsBuilder.listEventsSettings().build();
-    deleteEventsSettings = settingsBuilder.deleteEventsSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -310,14 +310,14 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
   public static class Builder extends StubSettings.Builder<ErrorStatsServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
+        deleteEventsSettings;
     private final PagedCallSettings.Builder<
             ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
         listGroupStatsSettings;
     private final PagedCallSettings.Builder<
             ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
         listEventsSettings;
-    private final UnaryCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
-        deleteEventsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -360,15 +360,15 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listGroupStatsSettings = PagedCallSettings.newBuilder(LIST_GROUP_STATS_PAGE_STR_FACT);
 
       listEventsSettings = PagedCallSettings.newBuilder(LIST_EVENTS_PAGE_STR_FACT);
 
-      deleteEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listGroupStatsSettings, listEventsSettings, deleteEventsSettings);
+              deleteEventsSettings, listGroupStatsSettings, listEventsSettings);
 
       initDefaults(this);
     }
@@ -385,6 +385,11 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .deleteEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .listGroupStatsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -394,24 +399,19 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .deleteEventsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
     protected Builder(ErrorStatsServiceStubSettings settings) {
       super(settings);
 
+      deleteEventsSettings = settings.deleteEventsSettings.toBuilder();
       listGroupStatsSettings = settings.listGroupStatsSettings.toBuilder();
       listEventsSettings = settings.listEventsSettings.toBuilder();
-      deleteEventsSettings = settings.deleteEventsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listGroupStatsSettings, listEventsSettings, deleteEventsSettings);
+              deleteEventsSettings, listGroupStatsSettings, listEventsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -430,6 +430,12 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to deleteEvents. */
+    public UnaryCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
+        deleteEventsSettings() {
+      return deleteEventsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listGroupStats. */
     public PagedCallSettings.Builder<
             ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
@@ -441,12 +447,6 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
     public PagedCallSettings.Builder<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
         listEventsSettings() {
       return listEventsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteEvents. */
-    public UnaryCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
-        deleteEventsSettings() {
-      return deleteEventsSettings;
     }
 
     @Override

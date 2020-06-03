@@ -33,12 +33,12 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ErrorGroupServiceStub implements BackgroundResource {
 
-  public UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
-    throw new UnsupportedOperationException("Not implemented: getGroupCallable()");
-  }
-
   public UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: updateGroupCallable()");
+  }
+
+  public UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getGroupCallable()");
   }
 
   @Override

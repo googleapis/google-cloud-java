@@ -28,8 +28,8 @@
  * <pre>
  * <code>
  * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
- *   ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+ *   ErrorGroup group = ErrorGroup.newBuilder().build();
+ *   ErrorGroup response = errorGroupServiceClient.updateGroup(group);
  * }
  * </code>
  * </pre>

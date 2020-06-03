@@ -39,8 +39,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
- *   ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+ *   ErrorGroup group = ErrorGroup.newBuilder().build();
+ *   ErrorGroup response = errorGroupServiceClient.updateGroup(group);
  * }
  * </code>
  * </pre>
@@ -184,6 +184,72 @@ public class ErrorGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Replace the data for the specified group. Fails if the group does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   ErrorGroup group = ErrorGroup.newBuilder().build();
+   *   ErrorGroup response = errorGroupServiceClient.updateGroup(group);
+   * }
+   * </code></pre>
+   *
+   * @param group Required. The group which replaces the resource on the server.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ErrorGroup updateGroup(ErrorGroup group) {
+    UpdateGroupRequest request = UpdateGroupRequest.newBuilder().setGroup(group).build();
+    return updateGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Replace the data for the specified group. Fails if the group does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   ErrorGroup group = ErrorGroup.newBuilder().build();
+   *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
+   *     .setGroup(group)
+   *     .build();
+   *   ErrorGroup response = errorGroupServiceClient.updateGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ErrorGroup updateGroup(UpdateGroupRequest request) {
+    return updateGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Replace the data for the specified group. Fails if the group does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   ErrorGroup group = ErrorGroup.newBuilder().build();
+   *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
+   *     .setGroup(group)
+   *     .build();
+   *   ApiFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.updateGroupCallable().futureCall(request);
+   *   // Do something
+   *   ErrorGroup response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
+    return stub.updateGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Get the specified group.
    *
    * <p>Sample code:
@@ -280,72 +346,6 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
     return stub.getGroupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Replace the data for the specified group. Fails if the group does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
-   *   ErrorGroup group = ErrorGroup.newBuilder().build();
-   *   ErrorGroup response = errorGroupServiceClient.updateGroup(group);
-   * }
-   * </code></pre>
-   *
-   * @param group Required. The group which replaces the resource on the server.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ErrorGroup updateGroup(ErrorGroup group) {
-    UpdateGroupRequest request = UpdateGroupRequest.newBuilder().setGroup(group).build();
-    return updateGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Replace the data for the specified group. Fails if the group does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
-   *   ErrorGroup group = ErrorGroup.newBuilder().build();
-   *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
-   *     .setGroup(group)
-   *     .build();
-   *   ErrorGroup response = errorGroupServiceClient.updateGroup(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ErrorGroup updateGroup(UpdateGroupRequest request) {
-    return updateGroupCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Replace the data for the specified group. Fails if the group does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
-   *   ErrorGroup group = ErrorGroup.newBuilder().build();
-   *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
-   *     .setGroup(group)
-   *     .build();
-   *   ApiFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.updateGroupCallable().futureCall(request);
-   *   // Do something
-   *   ErrorGroup response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
-    return stub.updateGroupCallable();
   }
 
   @Override

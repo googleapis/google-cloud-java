@@ -58,16 +58,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getGroup to 30 seconds:
+ * <p>For example, to set the total timeout of updateGroup to 30 seconds:
  *
  * <pre>
  * <code>
  * ErrorGroupServiceStubSettings.Builder errorGroupServiceSettingsBuilder =
  *     ErrorGroupServiceStubSettings.newBuilder();
  * errorGroupServiceSettingsBuilder
- *     .getGroupSettings()
+ *     .updateGroupSettings()
  *     .setRetrySettings(
- *         errorGroupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
+ *         errorGroupServiceSettingsBuilder.updateGroupSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ErrorGroupServiceStubSettings errorGroupServiceSettings = errorGroupServiceSettingsBuilder.build();
@@ -81,17 +81,17 @@ public class ErrorGroupServiceStubSettings extends StubSettings<ErrorGroupServic
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings;
   private final UnaryCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
-
-  /** Returns the object with the settings used for calls to getGroup. */
-  public UnaryCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings() {
-    return getGroupSettings;
-  }
+  private final UnaryCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings;
 
   /** Returns the object with the settings used for calls to updateGroup. */
   public UnaryCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
     return updateGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getGroup. */
+  public UnaryCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings() {
+    return getGroupSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -163,16 +163,16 @@ public class ErrorGroupServiceStubSettings extends StubSettings<ErrorGroupServic
   protected ErrorGroupServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    getGroupSettings = settingsBuilder.getGroupSettings().build();
     updateGroupSettings = settingsBuilder.updateGroupSettings().build();
+    getGroupSettings = settingsBuilder.getGroupSettings().build();
   }
 
   /** Builder for ErrorGroupServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<ErrorGroupServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
     private final UnaryCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
+    private final UnaryCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -215,12 +215,12 @@ public class ErrorGroupServiceStubSettings extends StubSettings<ErrorGroupServic
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      getGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getGroupSettings, updateGroupSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(updateGroupSettings, getGroupSettings);
 
       initDefaults(this);
     }
@@ -237,13 +237,13 @@ public class ErrorGroupServiceStubSettings extends StubSettings<ErrorGroupServic
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .getGroupSettings()
+          .updateGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .updateGroupSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .getGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -252,11 +252,11 @@ public class ErrorGroupServiceStubSettings extends StubSettings<ErrorGroupServic
     protected Builder(ErrorGroupServiceStubSettings settings) {
       super(settings);
 
-      getGroupSettings = settings.getGroupSettings.toBuilder();
       updateGroupSettings = settings.updateGroupSettings.toBuilder();
+      getGroupSettings = settings.getGroupSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getGroupSettings, updateGroupSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(updateGroupSettings, getGroupSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -275,14 +275,14 @@ public class ErrorGroupServiceStubSettings extends StubSettings<ErrorGroupServic
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to getGroup. */
-    public UnaryCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings() {
-      return getGroupSettings;
-    }
-
     /** Returns the builder for the settings used for calls to updateGroup. */
     public UnaryCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
       return updateGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGroup. */
+    public UnaryCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings() {
+      return getGroupSettings;
     }
 
     @Override

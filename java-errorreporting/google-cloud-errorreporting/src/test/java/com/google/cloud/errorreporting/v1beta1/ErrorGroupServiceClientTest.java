@@ -86,47 +86,6 @@ public class ErrorGroupServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getGroupTest() {
-    ErrorGroupName name = ErrorGroupName.of("[PROJECT]", "[GROUP]");
-    String groupId = "groupId506361563";
-    ErrorGroup expectedResponse =
-        ErrorGroup.newBuilder().setName(name.toString()).setGroupId(groupId).build();
-    mockErrorGroupService.addResponse(expectedResponse);
-
-    ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
-
-    ErrorGroup actualResponse = client.getGroup(groupName);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockErrorGroupService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
-
-    Assert.assertEquals(groupName, ErrorGroupName.parse(actualRequest.getGroupName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockErrorGroupService.addException(exception);
-
-    try {
-      ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
-
-      client.getGroup(groupName);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void updateGroupTest() {
     ErrorGroupName name = ErrorGroupName.of("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
@@ -160,6 +119,47 @@ public class ErrorGroupServiceClientTest {
       ErrorGroup group = ErrorGroup.newBuilder().build();
 
       client.updateGroup(group);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getGroupTest() {
+    ErrorGroupName name = ErrorGroupName.of("[PROJECT]", "[GROUP]");
+    String groupId = "groupId506361563";
+    ErrorGroup expectedResponse =
+        ErrorGroup.newBuilder().setName(name.toString()).setGroupId(groupId).build();
+    mockErrorGroupService.addResponse(expectedResponse);
+
+    ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
+
+    ErrorGroup actualResponse = client.getGroup(groupName);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockErrorGroupService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
+
+    Assert.assertEquals(groupName, ErrorGroupName.parse(actualRequest.getGroupName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockErrorGroupService.addException(exception);
+
+    try {
+      ErrorGroupName groupName = ErrorGroupName.of("[PROJECT]", "[GROUP]");
+
+      client.getGroup(groupName);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

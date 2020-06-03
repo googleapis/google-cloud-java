@@ -75,6 +75,11 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceSettings> {
+  /** Returns the object with the settings used for calls to deleteEvents. */
+  public UnaryCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings() {
+    return ((ErrorStatsServiceStubSettings) getStubSettings()).deleteEventsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listGroupStats. */
   public PagedCallSettings<
           ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
@@ -86,11 +91,6 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
   public PagedCallSettings<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
       listEventsSettings() {
     return ((ErrorStatsServiceStubSettings) getStubSettings()).listEventsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteEvents. */
-  public UnaryCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings() {
-    return ((ErrorStatsServiceStubSettings) getStubSettings()).deleteEventsSettings();
   }
 
   public static final ErrorStatsServiceSettings create(ErrorStatsServiceStubSettings stub)
@@ -190,6 +190,12 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteEvents. */
+    public UnaryCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
+        deleteEventsSettings() {
+      return getStubSettingsBuilder().deleteEventsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listGroupStats. */
     public PagedCallSettings.Builder<
             ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
@@ -201,12 +207,6 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
     public PagedCallSettings.Builder<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
         listEventsSettings() {
       return getStubSettingsBuilder().listEventsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteEvents. */
-    public UnaryCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
-        deleteEventsSettings() {
-      return getStubSettingsBuilder().deleteEventsSettings();
     }
 
     @Override

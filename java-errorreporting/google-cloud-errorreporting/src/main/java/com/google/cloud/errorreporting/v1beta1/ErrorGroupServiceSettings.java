@@ -49,16 +49,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getGroup to 30 seconds:
+ * <p>For example, to set the total timeout of updateGroup to 30 seconds:
  *
  * <pre>
  * <code>
  * ErrorGroupServiceSettings.Builder errorGroupServiceSettingsBuilder =
  *     ErrorGroupServiceSettings.newBuilder();
  * errorGroupServiceSettingsBuilder
- *     .getGroupSettings()
+ *     .updateGroupSettings()
  *     .setRetrySettings(
- *         errorGroupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
+ *         errorGroupServiceSettingsBuilder.updateGroupSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ErrorGroupServiceSettings errorGroupServiceSettings = errorGroupServiceSettingsBuilder.build();
@@ -68,14 +68,14 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ErrorGroupServiceSettings extends ClientSettings<ErrorGroupServiceSettings> {
-  /** Returns the object with the settings used for calls to getGroup. */
-  public UnaryCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings() {
-    return ((ErrorGroupServiceStubSettings) getStubSettings()).getGroupSettings();
-  }
-
   /** Returns the object with the settings used for calls to updateGroup. */
   public UnaryCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
     return ((ErrorGroupServiceStubSettings) getStubSettings()).updateGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGroup. */
+  public UnaryCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings() {
+    return ((ErrorGroupServiceStubSettings) getStubSettings()).getGroupSettings();
   }
 
   public static final ErrorGroupServiceSettings create(ErrorGroupServiceStubSettings stub)
@@ -175,14 +175,14 @@ public class ErrorGroupServiceSettings extends ClientSettings<ErrorGroupServiceS
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to getGroup. */
-    public UnaryCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings() {
-      return getStubSettingsBuilder().getGroupSettings();
-    }
-
     /** Returns the builder for the settings used for calls to updateGroup. */
     public UnaryCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings() {
       return getStubSettingsBuilder().updateGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGroup. */
+    public UnaryCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings() {
+      return getStubSettingsBuilder().getGroupSettings();
     }
 
     @Override

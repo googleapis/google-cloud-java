@@ -167,6 +167,101 @@ public class ErrorStatsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes all error events of a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
+   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
+   * }
+   * </code></pre>
+   *
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
+   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
+    DeleteEventsRequest request =
+        DeleteEventsRequest.newBuilder()
+            .setProjectName(projectName == null ? null : projectName.toString())
+            .build();
+    return deleteEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all error events of a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
+   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName.toString());
+   * }
+   * </code></pre>
+   *
+   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
+   *     `projects/` plus the [Google Cloud Platform project
+   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeleteEventsResponse deleteEvents(String projectName) {
+    DeleteEventsRequest request =
+        DeleteEventsRequest.newBuilder().setProjectName(projectName).build();
+    return deleteEvents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all error events of a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
+   *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
+   *     .setProjectName(projectName.toString())
+   *     .build();
+   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeleteEventsResponse deleteEvents(DeleteEventsRequest request) {
+    return deleteEventsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes all error events of a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   ProjectName projectName = ProjectName.of("[PROJECT]");
+   *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
+   *     .setProjectName(projectName.toString())
+   *     .build();
+   *   ApiFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
+   *   // Do something
+   *   DeleteEventsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
+    return stub.deleteEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lists the specified groups.
    *
    * <p>Sample code:
@@ -470,101 +565,6 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
     return stub.listEventsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all error events of a given project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.of("[PROJECT]");
-   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
-   * }
-   * </code></pre>
-   *
-   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
-   *     `projects/` plus the [Google Cloud Platform project
-   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
-    DeleteEventsRequest request =
-        DeleteEventsRequest.newBuilder()
-            .setProjectName(projectName == null ? null : projectName.toString())
-            .build();
-    return deleteEvents(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all error events of a given project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.of("[PROJECT]");
-   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName.toString());
-   * }
-   * </code></pre>
-   *
-   * @param projectName Required. The resource name of the Google Cloud Platform project. Written as
-   *     `projects/` plus the [Google Cloud Platform project
-   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final DeleteEventsResponse deleteEvents(String projectName) {
-    DeleteEventsRequest request =
-        DeleteEventsRequest.newBuilder().setProjectName(projectName).build();
-    return deleteEvents(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all error events of a given project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.of("[PROJECT]");
-   *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
-   *     .setProjectName(projectName.toString())
-   *     .build();
-   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final DeleteEventsResponse deleteEvents(DeleteEventsRequest request) {
-    return deleteEventsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes all error events of a given project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   ProjectName projectName = ProjectName.of("[PROJECT]");
-   *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
-   *     .setProjectName(projectName.toString())
-   *     .build();
-   *   ApiFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
-   *   // Do something
-   *   DeleteEventsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
-    return stub.deleteEventsCallable();
   }
 
   @Override

@@ -39,6 +39,10 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class ErrorStatsServiceStub implements BackgroundResource {
 
+  public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEventsCallable()");
+  }
+
   public UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listGroupStatsPagedCallable()");
@@ -54,10 +58,6 @@ public abstract class ErrorStatsServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: listEventsCallable()");
-  }
-
-  public UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteEventsCallable()");
   }
 
   @Override
