@@ -129,6 +129,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The magnitude.
    */
+  @java.lang.Override
   public float getMagnitude() {
     return magnitude_;
   }
@@ -147,6 +148,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -499,6 +501,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The magnitude.
      */
+    @java.lang.Override
     public float getMagnitude() {
       return magnitude_;
     }
@@ -555,6 +558,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }

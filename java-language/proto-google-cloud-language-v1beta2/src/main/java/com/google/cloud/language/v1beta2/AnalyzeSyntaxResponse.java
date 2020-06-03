@@ -153,6 +153,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1beta2.Sentence> getSentencesList() {
     return sentences_;
   }
@@ -165,6 +166,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder>
       getSentencesOrBuilderList() {
     return sentences_;
@@ -178,6 +180,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public int getSentencesCount() {
     return sentences_.size();
   }
@@ -190,6 +193,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Sentence getSentences(int index) {
     return sentences_.get(index);
   }
@@ -202,6 +206,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.SentenceOrBuilder getSentencesOrBuilder(int index) {
     return sentences_.get(index);
   }
@@ -217,6 +222,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1beta2.Token> getTokensList() {
     return tokens_;
   }
@@ -229,6 +235,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1beta2.TokenOrBuilder>
       getTokensOrBuilderList() {
     return tokens_;
@@ -242,6 +249,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public int getTokensCount() {
     return tokens_.size();
   }
@@ -254,6 +262,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Token getTokens(int index) {
     return tokens_.get(index);
   }
@@ -266,6 +275,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.TokenOrBuilder getTokensOrBuilder(int index) {
     return tokens_.get(index);
   }
@@ -285,6 +295,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -309,6 +320,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {

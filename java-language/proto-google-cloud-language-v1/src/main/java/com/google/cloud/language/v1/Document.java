@@ -255,6 +255,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -348,6 +352,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -363,6 +368,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.Document.Type getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.language.v1.Document.Type result =
@@ -510,6 +516,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -539,6 +546,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -972,6 +980,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -989,6 +998,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -1005,6 +1015,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.language.v1.Document.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.Document.Type result =
@@ -1064,6 +1075,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The content.
      */
+    @java.lang.Override
     public java.lang.String getContent() {
       java.lang.Object ref = "";
       if (sourceCase_ == 2) {
@@ -1092,6 +1104,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for content.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 2) {
@@ -1188,6 +1201,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsContentUri.
      */
+    @java.lang.Override
     public java.lang.String getGcsContentUri() {
       java.lang.Object ref = "";
       if (sourceCase_ == 3) {
@@ -1218,6 +1232,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for gcsContentUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getGcsContentUriBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 3) {

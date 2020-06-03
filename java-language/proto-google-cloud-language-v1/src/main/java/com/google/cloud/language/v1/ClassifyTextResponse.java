@@ -132,6 +132,7 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1.ClassificationCategory> getCategoriesList() {
     return categories_;
   }
@@ -144,6 +145,7 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1.ClassificationCategoryOrBuilder>
       getCategoriesOrBuilderList() {
     return categories_;
@@ -157,6 +159,7 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
    */
+  @java.lang.Override
   public int getCategoriesCount() {
     return categories_.size();
   }
@@ -169,6 +172,7 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.ClassificationCategory getCategories(int index) {
     return categories_.get(index);
   }
@@ -181,6 +185,7 @@ public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.ClassificationCategoryOrBuilder getCategoriesOrBuilder(
       int index) {
     return categories_.get(index);

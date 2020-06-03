@@ -142,6 +142,7 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Override
   public boolean hasDocument() {
     return document_ != null;
   }
@@ -158,6 +159,7 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The document.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.Document getDocument() {
     return document_ == null
         ? com.google.cloud.language.v1.Document.getDefaultInstance()
@@ -174,6 +176,7 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
@@ -191,6 +194,7 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for encodingType.
    */
+  @java.lang.Override
   public int getEncodingTypeValue() {
     return encodingType_;
   }
@@ -205,6 +209,7 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The encodingType.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.EncodingType getEncodingType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.language.v1.EncodingType result =
@@ -772,6 +777,7 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for encodingType.
      */
+    @java.lang.Override
     public int getEncodingTypeValue() {
       return encodingType_;
     }
@@ -788,6 +794,7 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setEncodingTypeValue(int value) {
+
       encodingType_ = value;
       onChanged();
       return this;
@@ -803,6 +810,7 @@ public final class AnalyzeSyntaxRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The encodingType.
      */
+    @java.lang.Override
     public com.google.cloud.language.v1.EncodingType getEncodingType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.EncodingType result =

@@ -1997,6 +1997,10 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -2046,6 +2050,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The headTokenIndex.
    */
+  @java.lang.Override
   public int getHeadTokenIndex() {
     return headTokenIndex_;
   }
@@ -2063,6 +2068,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for label.
    */
+  @java.lang.Override
   public int getLabelValue() {
     return label_;
   }
@@ -2077,6 +2083,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The label.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.DependencyEdge.Label getLabel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.DependencyEdge.Label result =
@@ -2433,6 +2440,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The headTokenIndex.
      */
+    @java.lang.Override
     public int getHeadTokenIndex() {
       return headTokenIndex_;
     }
@@ -2492,6 +2500,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for label.
      */
+    @java.lang.Override
     public int getLabelValue() {
       return label_;
     }
@@ -2508,6 +2517,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLabelValue(int value) {
+
       label_ = value;
       onChanged();
       return this;
@@ -2523,6 +2533,7 @@ public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The label.
      */
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.DependencyEdge.Label getLabel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.DependencyEdge.Label result =

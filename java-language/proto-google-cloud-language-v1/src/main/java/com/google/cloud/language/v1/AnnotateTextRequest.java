@@ -338,6 +338,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The extractSyntax.
      */
+    @java.lang.Override
     public boolean getExtractSyntax() {
       return extractSyntax_;
     }
@@ -355,6 +356,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The extractEntities.
      */
+    @java.lang.Override
     public boolean getExtractEntities() {
       return extractEntities_;
     }
@@ -372,6 +374,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The extractDocumentSentiment.
      */
+    @java.lang.Override
     public boolean getExtractDocumentSentiment() {
       return extractDocumentSentiment_;
     }
@@ -389,6 +392,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The extractEntitySentiment.
      */
+    @java.lang.Override
     public boolean getExtractEntitySentiment() {
       return extractEntitySentiment_;
     }
@@ -406,6 +410,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The classifyText.
      */
+    @java.lang.Override
     public boolean getClassifyText() {
       return classifyText_;
     }
@@ -805,6 +810,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        *
        * @return The extractSyntax.
        */
+      @java.lang.Override
       public boolean getExtractSyntax() {
         return extractSyntax_;
       }
@@ -856,6 +862,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        *
        * @return The extractEntities.
        */
+      @java.lang.Override
       public boolean getExtractEntities() {
         return extractEntities_;
       }
@@ -907,6 +914,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        *
        * @return The extractDocumentSentiment.
        */
+      @java.lang.Override
       public boolean getExtractDocumentSentiment() {
         return extractDocumentSentiment_;
       }
@@ -958,6 +966,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        *
        * @return The extractEntitySentiment.
        */
+      @java.lang.Override
       public boolean getExtractEntitySentiment() {
         return extractEntitySentiment_;
       }
@@ -1009,6 +1018,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        *
        * @return The classifyText.
        */
+      @java.lang.Override
       public boolean getClassifyText() {
         return classifyText_;
       }
@@ -1115,6 +1125,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Override
   public boolean hasDocument() {
     return document_ != null;
   }
@@ -1131,6 +1142,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The document.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.Document getDocument() {
     return document_ == null
         ? com.google.cloud.language.v1.Document.getDefaultInstance()
@@ -1147,6 +1159,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.language.v1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
@@ -1166,6 +1179,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the features field is set.
    */
+  @java.lang.Override
   public boolean hasFeatures() {
     return features_ != null;
   }
@@ -1182,6 +1196,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The features.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.AnnotateTextRequest.Features getFeatures() {
     return features_ == null
         ? com.google.cloud.language.v1.AnnotateTextRequest.Features.getDefaultInstance()
@@ -1198,6 +1213,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.language.v1.AnnotateTextRequest.Features features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.AnnotateTextRequest.FeaturesOrBuilder getFeaturesOrBuilder() {
     return getFeatures();
   }
@@ -1215,6 +1231,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for encodingType.
    */
+  @java.lang.Override
   public int getEncodingTypeValue() {
     return encodingType_;
   }
@@ -1229,6 +1246,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The encodingType.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.EncodingType getEncodingType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.language.v1.EncodingType result =
@@ -2029,6 +2047,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for encodingType.
      */
+    @java.lang.Override
     public int getEncodingTypeValue() {
       return encodingType_;
     }
@@ -2045,6 +2064,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setEncodingTypeValue(int value) {
+
       encodingType_ = value;
       onChanged();
       return this;
@@ -2060,6 +2080,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The encodingType.
      */
+    @java.lang.Override
     public com.google.cloud.language.v1.EncodingType getEncodingType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.EncodingType result =

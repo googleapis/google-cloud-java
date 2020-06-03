@@ -139,6 +139,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1beta2.Entity> getEntitiesList() {
     return entities_;
   }
@@ -151,6 +152,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1beta2.EntityOrBuilder>
       getEntitiesOrBuilderList() {
     return entities_;
@@ -164,6 +166,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 1;</code>
    */
+  @java.lang.Override
   public int getEntitiesCount() {
     return entities_.size();
   }
@@ -176,6 +179,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Entity getEntities(int index) {
     return entities_.get(index);
   }
@@ -188,6 +192,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.EntityOrBuilder getEntitiesOrBuilder(int index) {
     return entities_.get(index);
   }
@@ -207,6 +212,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    *
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
    *
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {

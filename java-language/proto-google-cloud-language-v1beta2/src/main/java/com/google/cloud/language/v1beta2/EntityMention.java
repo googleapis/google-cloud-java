@@ -265,6 +265,10 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -310,6 +314,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the text field is set.
    */
+  @java.lang.Override
   public boolean hasText() {
     return text_ != null;
   }
@@ -324,6 +329,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.TextSpan getText() {
     return text_ == null ? com.google.cloud.language.v1beta2.TextSpan.getDefaultInstance() : text_;
   }
@@ -336,6 +342,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.language.v1beta2.TextSpan text = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.TextSpanOrBuilder getTextOrBuilder() {
     return getText();
   }
@@ -353,6 +360,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -367,6 +375,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.EntityMention.Type getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.EntityMention.Type result =
@@ -392,6 +401,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sentiment field is set.
    */
+  @java.lang.Override
   public boolean hasSentiment() {
     return sentiment_ != null;
   }
@@ -409,6 +419,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sentiment.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Sentiment getSentiment() {
     return sentiment_ == null
         ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance()
@@ -426,6 +437,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.SentimentOrBuilder getSentimentOrBuilder() {
     return getSentiment();
   }
@@ -1000,6 +1012,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1016,6 +1029,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -1031,6 +1045,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.EntityMention.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.EntityMention.Type result =

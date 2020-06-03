@@ -147,6 +147,7 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the text field is set.
    */
+  @java.lang.Override
   public boolean hasText() {
     return text_ != null;
   }
@@ -161,6 +162,7 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.TextSpan getText() {
     return text_ == null ? com.google.cloud.language.v1.TextSpan.getDefaultInstance() : text_;
   }
@@ -173,6 +175,7 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.TextSpanOrBuilder getTextOrBuilder() {
     return getText();
   }
@@ -192,6 +195,7 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sentiment field is set.
    */
+  @java.lang.Override
   public boolean hasSentiment() {
     return sentiment_ != null;
   }
@@ -208,6 +212,7 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sentiment.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.Sentiment getSentiment() {
     return sentiment_ == null
         ? com.google.cloud.language.v1.Sentiment.getDefaultInstance()
@@ -224,6 +229,7 @@ public final class Sentence extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.language.v1.Sentiment sentiment = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.SentimentOrBuilder getSentimentOrBuilder() {
     return getSentiment();
   }

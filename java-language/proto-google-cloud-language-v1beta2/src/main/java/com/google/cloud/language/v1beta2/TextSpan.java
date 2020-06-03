@@ -129,6 +129,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The content.
    */
+  @java.lang.Override
   public java.lang.String getContent() {
     java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
@@ -151,6 +152,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for content.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +179,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The beginOffset.
    */
+  @java.lang.Override
   public int getBeginOffset() {
     return beginOffset_;
   }
@@ -631,6 +634,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The beginOffset.
      */
+    @java.lang.Override
     public int getBeginOffset() {
       return beginOffset_;
     }

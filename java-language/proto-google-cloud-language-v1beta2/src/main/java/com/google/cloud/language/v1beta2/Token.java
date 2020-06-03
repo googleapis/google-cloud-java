@@ -172,6 +172,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the text field is set.
    */
+  @java.lang.Override
   public boolean hasText() {
     return text_ != null;
   }
@@ -186,6 +187,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.TextSpan getText() {
     return text_ == null ? com.google.cloud.language.v1beta2.TextSpan.getDefaultInstance() : text_;
   }
@@ -198,6 +200,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.language.v1beta2.TextSpan text = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.TextSpanOrBuilder getTextOrBuilder() {
     return getText();
   }
@@ -215,6 +218,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the partOfSpeech field is set.
    */
+  @java.lang.Override
   public boolean hasPartOfSpeech() {
     return partOfSpeech_ != null;
   }
@@ -229,6 +233,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The partOfSpeech.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech getPartOfSpeech() {
     return partOfSpeech_ == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.getDefaultInstance()
@@ -243,6 +248,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.language.v1beta2.PartOfSpeech part_of_speech = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeechOrBuilder getPartOfSpeechOrBuilder() {
     return getPartOfSpeech();
   }
@@ -260,6 +266,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dependencyEdge field is set.
    */
+  @java.lang.Override
   public boolean hasDependencyEdge() {
     return dependencyEdge_ != null;
   }
@@ -274,6 +281,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dependencyEdge.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.DependencyEdge getDependencyEdge() {
     return dependencyEdge_ == null
         ? com.google.cloud.language.v1beta2.DependencyEdge.getDefaultInstance()
@@ -288,6 +296,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.language.v1beta2.DependencyEdge dependency_edge = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.DependencyEdgeOrBuilder getDependencyEdgeOrBuilder() {
     return getDependencyEdge();
   }
@@ -305,6 +314,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lemma.
    */
+  @java.lang.Override
   public java.lang.String getLemma() {
     java.lang.Object ref = lemma_;
     if (ref instanceof java.lang.String) {
@@ -327,6 +337,7 @@ public final class Token extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for lemma.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLemmaBytes() {
     java.lang.Object ref = lemma_;
     if (ref instanceof java.lang.String) {

@@ -156,6 +156,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * @return Whether the documentSentiment field is set.
    */
+  @java.lang.Override
   public boolean hasDocumentSentiment() {
     return documentSentiment_ != null;
   }
@@ -170,6 +171,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * @return The documentSentiment.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Sentiment getDocumentSentiment() {
     return documentSentiment_ == null
         ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance()
@@ -184,6 +186,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.language.v1beta2.Sentiment document_sentiment = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.SentimentOrBuilder getDocumentSentimentOrBuilder() {
     return getDocumentSentiment();
   }
@@ -203,6 +206,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +231,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +255,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1beta2.Sentence> getSentencesList() {
     return sentences_;
   }
@@ -262,6 +268,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder>
       getSentencesOrBuilderList() {
     return sentences_;
@@ -275,6 +282,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 3;</code>
    */
+  @java.lang.Override
   public int getSentencesCount() {
     return sentences_.size();
   }
@@ -287,6 +295,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Sentence getSentences(int index) {
     return sentences_.get(index);
   }
@@ -299,6 +308,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.SentenceOrBuilder getSentencesOrBuilder(int index) {
     return sentences_.get(index);
   }

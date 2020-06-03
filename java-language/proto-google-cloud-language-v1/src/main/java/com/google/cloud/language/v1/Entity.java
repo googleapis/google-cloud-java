@@ -578,6 +578,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -623,6 +627,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -645,6 +650,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -670,6 +676,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -684,6 +691,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.Entity.Type getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.language.v1.Entity.Type result =
@@ -728,6 +736,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
+  @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -735,6 +744,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     return internalGetMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
@@ -751,6 +761,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
@@ -766,6 +777,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -786,6 +798,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -814,6 +827,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The salience.
    */
+  @java.lang.Override
   public float getSalience() {
     return salience_;
   }
@@ -830,6 +844,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.language.v1.EntityMention mentions = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1.EntityMention> getMentionsList() {
     return mentions_;
   }
@@ -843,6 +858,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.language.v1.EntityMention mentions = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1.EntityMentionOrBuilder>
       getMentionsOrBuilderList() {
     return mentions_;
@@ -857,6 +873,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.language.v1.EntityMention mentions = 5;</code>
    */
+  @java.lang.Override
   public int getMentionsCount() {
     return mentions_.size();
   }
@@ -870,6 +887,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.language.v1.EntityMention mentions = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.EntityMention getMentions(int index) {
     return mentions_.get(index);
   }
@@ -883,6 +901,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.language.v1.EntityMention mentions = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.EntityMentionOrBuilder getMentionsOrBuilder(int index) {
     return mentions_.get(index);
   }
@@ -903,6 +922,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sentiment field is set.
    */
+  @java.lang.Override
   public boolean hasSentiment() {
     return sentiment_ != null;
   }
@@ -920,6 +940,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sentiment.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.Sentiment getSentiment() {
     return sentiment_ == null
         ? com.google.cloud.language.v1.Sentiment.getDefaultInstance()
@@ -937,6 +958,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1.SentimentOrBuilder getSentimentOrBuilder() {
     return getSentiment();
   }
@@ -1532,6 +1554,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1548,6 +1571,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -1563,6 +1587,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.language.v1.Entity.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.Entity.Type result =
@@ -1646,6 +1671,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
+    @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1653,6 +1679,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       return internalGetMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
@@ -1669,6 +1696,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
@@ -1684,6 +1712,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1704,6 +1733,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1798,6 +1828,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The salience.
      */
+    @java.lang.Override
     public float getSalience() {
       return salience_;
     }

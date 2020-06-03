@@ -142,6 +142,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Override
   public boolean hasDocument() {
     return document_ != null;
   }
@@ -158,6 +159,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    *
    * @return The document.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Document getDocument() {
     return document_ == null
         ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
@@ -174,6 +176,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
@@ -191,6 +194,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    *
    * @return The enum numeric value on the wire for encodingType.
    */
+  @java.lang.Override
   public int getEncodingTypeValue() {
     return encodingType_;
   }
@@ -205,6 +209,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    *
    * @return The encodingType.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.EncodingType result =
@@ -777,6 +782,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      * @return The enum numeric value on the wire for encodingType.
      */
+    @java.lang.Override
     public int getEncodingTypeValue() {
       return encodingType_;
     }
@@ -793,6 +799,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setEncodingTypeValue(int value) {
+
       encodingType_ = value;
       onChanged();
       return this;
@@ -808,6 +815,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      *
      * @return The encodingType.
      */
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.EncodingType result =

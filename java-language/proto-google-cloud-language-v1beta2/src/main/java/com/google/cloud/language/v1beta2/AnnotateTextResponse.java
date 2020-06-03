@@ -203,6 +203,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1beta2.Sentence> getSentencesList() {
     return sentences_;
   }
@@ -216,6 +217,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder>
       getSentencesOrBuilderList() {
     return sentences_;
@@ -230,6 +232,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public int getSentencesCount() {
     return sentences_.size();
   }
@@ -243,6 +246,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Sentence getSentences(int index) {
     return sentences_.get(index);
   }
@@ -256,6 +260,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.SentenceOrBuilder getSentencesOrBuilder(int index) {
     return sentences_.get(index);
   }
@@ -273,6 +278,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1beta2.Token> getTokensList() {
     return tokens_;
   }
@@ -287,6 +293,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1beta2.TokenOrBuilder>
       getTokensOrBuilderList() {
     return tokens_;
@@ -302,6 +309,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public int getTokensCount() {
     return tokens_.size();
   }
@@ -316,6 +324,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Token getTokens(int index) {
     return tokens_.get(index);
   }
@@ -330,6 +339,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.TokenOrBuilder getTokensOrBuilder(int index) {
     return tokens_.get(index);
   }
@@ -347,6 +357,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1beta2.Entity> getEntitiesList() {
     return entities_;
   }
@@ -361,6 +372,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1beta2.EntityOrBuilder>
       getEntitiesOrBuilderList() {
     return entities_;
@@ -376,6 +388,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public int getEntitiesCount() {
     return entities_.size();
   }
@@ -390,6 +403,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Entity getEntities(int index) {
     return entities_.get(index);
   }
@@ -404,6 +418,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.EntityOrBuilder getEntitiesOrBuilder(int index) {
     return entities_.get(index);
   }
@@ -422,6 +437,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the documentSentiment field is set.
    */
+  @java.lang.Override
   public boolean hasDocumentSentiment() {
     return documentSentiment_ != null;
   }
@@ -437,6 +453,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The documentSentiment.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Sentiment getDocumentSentiment() {
     return documentSentiment_ == null
         ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance()
@@ -452,6 +469,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.language.v1beta2.Sentiment document_sentiment = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.SentimentOrBuilder getDocumentSentimentOrBuilder() {
     return getDocumentSentiment();
   }
@@ -471,6 +489,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -495,6 +514,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -518,6 +538,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.ClassificationCategory categories = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.language.v1beta2.ClassificationCategory>
       getCategoriesList() {
     return categories_;
@@ -531,6 +552,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.ClassificationCategory categories = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.language.v1beta2.ClassificationCategoryOrBuilder>
       getCategoriesOrBuilderList() {
     return categories_;
@@ -544,6 +566,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.ClassificationCategory categories = 6;</code>
    */
+  @java.lang.Override
   public int getCategoriesCount() {
     return categories_.size();
   }
@@ -556,6 +579,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.ClassificationCategory categories = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.ClassificationCategory getCategories(int index) {
     return categories_.get(index);
   }
@@ -568,6 +592,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.language.v1beta2.ClassificationCategory categories = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.ClassificationCategoryOrBuilder getCategoriesOrBuilder(
       int index) {
     return categories_.get(index);

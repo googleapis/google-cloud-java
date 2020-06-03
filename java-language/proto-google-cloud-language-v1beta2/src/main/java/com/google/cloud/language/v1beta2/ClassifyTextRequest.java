@@ -133,6 +133,7 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Override
   public boolean hasDocument() {
     return document_ != null;
   }
@@ -149,6 +150,7 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The document.
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Document getDocument() {
     return document_ == null
         ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
@@ -165,6 +167,7 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.language.v1beta2.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
