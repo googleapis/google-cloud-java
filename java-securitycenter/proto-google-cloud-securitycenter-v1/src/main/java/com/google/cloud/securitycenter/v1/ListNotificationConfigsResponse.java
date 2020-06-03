@@ -144,6 +144,7 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
    * <code>repeated .google.cloud.securitycenter.v1.NotificationConfig notification_configs = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.securitycenter.v1.NotificationConfig>
       getNotificationConfigsList() {
     return notificationConfigs_;
@@ -158,6 +159,7 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
    * <code>repeated .google.cloud.securitycenter.v1.NotificationConfig notification_configs = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.securitycenter.v1.NotificationConfigOrBuilder>
       getNotificationConfigsOrBuilderList() {
     return notificationConfigs_;
@@ -172,6 +174,7 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
    * <code>repeated .google.cloud.securitycenter.v1.NotificationConfig notification_configs = 1;
    * </code>
    */
+  @java.lang.Override
   public int getNotificationConfigsCount() {
     return notificationConfigs_.size();
   }
@@ -185,6 +188,7 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
    * <code>repeated .google.cloud.securitycenter.v1.NotificationConfig notification_configs = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.NotificationConfig getNotificationConfigs(int index) {
     return notificationConfigs_.get(index);
   }
@@ -198,6 +202,7 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
    * <code>repeated .google.cloud.securitycenter.v1.NotificationConfig notification_configs = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.NotificationConfigOrBuilder
       getNotificationConfigsOrBuilder(int index) {
     return notificationConfigs_.get(index);
@@ -217,6 +222,7 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +246,7 @@ public final class ListNotificationConfigsResponse extends com.google.protobuf.G
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

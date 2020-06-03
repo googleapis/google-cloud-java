@@ -143,6 +143,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the source field is set.
    */
+  @java.lang.Override
   public boolean hasSource() {
     return source_ != null;
   }
@@ -213,6 +216,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The source.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Source getSource() {
     return source_ == null
         ? com.google.cloud.securitycenter.v1.Source.getDefaultInstance()
@@ -230,6 +234,7 @@ public final class CreateSourceRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder() {
     return getSource();
   }

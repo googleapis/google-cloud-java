@@ -148,6 +148,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the source field is set.
    */
+  @java.lang.Override
   public boolean hasSource() {
     return source_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The source.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Source getSource() {
     return source_ == null
         ? com.google.cloud.securitycenter.v1.Source.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.securitycenter.v1.Source source = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.SourceOrBuilder getSourceOrBuilder() {
     return getSource();
   }
@@ -198,6 +201,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -213,6 +217,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -226,6 +231,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

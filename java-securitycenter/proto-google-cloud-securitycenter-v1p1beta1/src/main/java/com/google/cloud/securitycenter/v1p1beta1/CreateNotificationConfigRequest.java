@@ -155,6 +155,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +181,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +210,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return The configId.
    */
+  @java.lang.Override
   public java.lang.String getConfigId() {
     java.lang.Object ref = configId_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +236,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return The bytes for configId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getConfigIdBytes() {
     java.lang.Object ref = configId_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +266,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return Whether the notificationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasNotificationConfig() {
     return notificationConfig_ != null;
   }
@@ -280,6 +285,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return The notificationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig getNotificationConfig() {
     return notificationConfig_ == null
         ? com.google.cloud.securitycenter.v1p1beta1.NotificationConfig.getDefaultInstance()
@@ -298,6 +304,7 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    * .google.cloud.securitycenter.v1p1beta1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.NotificationConfigOrBuilder
       getNotificationConfigOrBuilder() {
     return getNotificationConfig();

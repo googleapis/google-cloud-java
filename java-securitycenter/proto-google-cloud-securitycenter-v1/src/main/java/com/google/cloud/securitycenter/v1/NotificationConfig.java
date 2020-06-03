@@ -343,6 +343,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return The filter.
      */
+    @java.lang.Override
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
@@ -380,6 +381,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for filter.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
@@ -1024,6 +1026,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1049,6 +1052,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1074,6 +1078,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1096,6 +1101,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1122,6 +1128,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The pubsubTopic.
    */
+  @java.lang.Override
   public java.lang.String getPubsubTopic() {
     java.lang.Object ref = pubsubTopic_;
     if (ref instanceof java.lang.String) {
@@ -1145,6 +1152,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for pubsubTopic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPubsubTopicBytes() {
     java.lang.Object ref = pubsubTopic_;
     if (ref instanceof java.lang.String) {
@@ -1171,6 +1179,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The serviceAccount.
    */
+  @java.lang.Override
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -1194,6 +1203,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for serviceAccount.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -1219,6 +1229,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the streamingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasStreamingConfig() {
     return notifyConfigCase_ == 5;
   }
@@ -1234,6 +1245,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The streamingConfig.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig
       getStreamingConfig() {
     if (notifyConfigCase_ == 5) {
@@ -1252,6 +1264,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    * <code>.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig streaming_config = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfigOrBuilder
       getStreamingConfigOrBuilder() {
     if (notifyConfigCase_ == 5) {
@@ -2159,6 +2172,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the streamingConfig field is set.
      */
+    @java.lang.Override
     public boolean hasStreamingConfig() {
       return notifyConfigCase_ == 5;
     }
@@ -2175,6 +2189,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return The streamingConfig.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig
         getStreamingConfig() {
       if (streamingConfigBuilder_ == null) {
@@ -2330,6 +2345,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * .google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig streaming_config = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfigOrBuilder
         getStreamingConfigOrBuilder() {
       if ((notifyConfigCase_ == 5) && (streamingConfigBuilder_ != null)) {

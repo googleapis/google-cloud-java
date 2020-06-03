@@ -172,6 +172,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
+  @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -179,6 +180,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
     return internalGetProperties().getMap().containsKey(key);
   }
   /** Use {@link #getPropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getProperties() {
     return getPropertiesMap();
@@ -192,6 +194,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
@@ -204,6 +207,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getPropertiesOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
@@ -222,6 +226,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -247,6 +252,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count.
    */
+  @java.lang.Override
   public long getCount() {
     return count_;
   }
@@ -649,6 +655,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
      */
+    @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -656,6 +663,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
       return internalGetProperties().getMap().containsKey(key);
     }
     /** Use {@link #getPropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getProperties() {
       return getPropertiesMap();
@@ -669,6 +677,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
@@ -681,6 +690,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getPropertiesOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
@@ -699,6 +709,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; properties = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -782,6 +793,7 @@ public final class GroupResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }

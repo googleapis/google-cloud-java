@@ -151,6 +151,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +205,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The findingId.
    */
+  @java.lang.Override
   public java.lang.String getFindingId() {
     java.lang.Object ref = findingId_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +230,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for findingId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFindingIdBytes() {
     java.lang.Object ref = findingId_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +259,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the finding field is set.
    */
+  @java.lang.Override
   public boolean hasFinding() {
     return finding_ != null;
   }
@@ -272,6 +277,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The finding.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Finding getFinding() {
     return finding_ == null
         ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()
@@ -289,6 +295,7 @@ public final class CreateFindingRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder() {
     return getFinding();
   }

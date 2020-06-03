@@ -643,6 +643,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resourceName.
      */
+    @java.lang.Override
     public java.lang.String getResourceName() {
       java.lang.Object ref = resourceName_;
       if (ref instanceof java.lang.String) {
@@ -667,6 +668,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for resourceName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getResourceNameBytes() {
       java.lang.Object ref = resourceName_;
       if (ref instanceof java.lang.String) {
@@ -695,6 +697,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resourceType.
      */
+    @java.lang.Override
     public java.lang.String getResourceType() {
       java.lang.Object ref = resourceType_;
       if (ref instanceof java.lang.String) {
@@ -720,6 +723,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for resourceType.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getResourceTypeBytes() {
       java.lang.Object ref = resourceType_;
       if (ref instanceof java.lang.String) {
@@ -746,6 +750,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resourceParent.
      */
+    @java.lang.Override
     public java.lang.String getResourceParent() {
       java.lang.Object ref = resourceParent_;
       if (ref instanceof java.lang.String) {
@@ -769,6 +774,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for resourceParent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getResourceParentBytes() {
       java.lang.Object ref = resourceParent_;
       if (ref instanceof java.lang.String) {
@@ -795,6 +801,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resourceProject.
      */
+    @java.lang.Override
     public java.lang.String getResourceProject() {
       java.lang.Object ref = resourceProject_;
       if (ref instanceof java.lang.String) {
@@ -818,6 +825,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for resourceProject.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getResourceProjectBytes() {
       java.lang.Object ref = resourceProject_;
       if (ref instanceof java.lang.String) {
@@ -904,6 +912,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resourceDisplayName.
      */
+    @java.lang.Override
     public java.lang.String getResourceDisplayName() {
       java.lang.Object ref = resourceDisplayName_;
       if (ref instanceof java.lang.String) {
@@ -926,6 +935,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for resourceDisplayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getResourceDisplayNameBytes() {
       java.lang.Object ref = resourceDisplayName_;
       if (ref instanceof java.lang.String) {
@@ -951,6 +961,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resourceParentDisplayName.
      */
+    @java.lang.Override
     public java.lang.String getResourceParentDisplayName() {
       java.lang.Object ref = resourceParentDisplayName_;
       if (ref instanceof java.lang.String) {
@@ -973,6 +984,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for resourceParentDisplayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getResourceParentDisplayNameBytes() {
       java.lang.Object ref = resourceParentDisplayName_;
       if (ref instanceof java.lang.String) {
@@ -998,6 +1010,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resourceProjectDisplayName.
      */
+    @java.lang.Override
     public java.lang.String getResourceProjectDisplayName() {
       java.lang.Object ref = resourceProjectDisplayName_;
       if (ref instanceof java.lang.String) {
@@ -1020,6 +1033,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for resourceProjectDisplayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getResourceProjectDisplayNameBytes() {
       java.lang.Object ref = resourceProjectDisplayName_;
       if (ref instanceof java.lang.String) {
@@ -2645,6 +2659,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The policyBlob.
      */
+    @java.lang.Override
     public java.lang.String getPolicyBlob() {
       java.lang.Object ref = policyBlob_;
       if (ref instanceof java.lang.String) {
@@ -2669,6 +2684,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for policyBlob.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPolicyBlobBytes() {
       java.lang.Object ref = policyBlob_;
       if (ref instanceof java.lang.String) {
@@ -3189,6 +3205,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -3214,6 +3231,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -3243,6 +3261,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the securityCenterProperties field is set.
    */
+  @java.lang.Override
   public boolean hasSecurityCenterProperties() {
     return securityCenterProperties_ != null;
   }
@@ -3260,6 +3279,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The securityCenterProperties.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Asset.SecurityCenterProperties
       getSecurityCenterProperties() {
     return securityCenterProperties_ == null
@@ -3278,6 +3298,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.securitycenter.v1.Asset.SecurityCenterProperties security_center_properties = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Asset.SecurityCenterPropertiesOrBuilder
       getSecurityCenterPropertiesOrBuilder() {
     return getSecurityCenterProperties();
@@ -3323,6 +3344,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
+  @java.lang.Override
   public boolean containsResourceProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -3330,6 +3352,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return internalGetResourceProperties().getMap().containsKey(key);
   }
   /** Use {@link #getResourcePropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourceProperties() {
     return getResourcePropertiesMap();
@@ -3344,6 +3367,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourcePropertiesMap() {
     return internalGetResourceProperties().getMap();
   }
@@ -3357,6 +3381,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getResourcePropertiesOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
@@ -3376,6 +3401,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getResourcePropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -3402,6 +3428,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the securityMarks field is set.
    */
+  @java.lang.Override
   public boolean hasSecurityMarks() {
     return securityMarks_ != null;
   }
@@ -3417,6 +3444,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The securityMarks.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.SecurityMarks getSecurityMarks() {
     return securityMarks_ == null
         ? com.google.cloud.securitycenter.v1.SecurityMarks.getDefaultInstance()
@@ -3432,6 +3460,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.securitycenter.v1.SecurityMarks security_marks = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
     return getSecurityMarks();
   }
@@ -3449,6 +3478,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -3463,6 +3493,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -3475,6 +3506,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -3493,6 +3525,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -3508,6 +3541,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -3521,6 +3555,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -3540,6 +3575,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the iamPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasIamPolicy() {
     return iamPolicy_ != null;
   }
@@ -3556,6 +3592,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The iamPolicy.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Asset.IamPolicy getIamPolicy() {
     return iamPolicy_ == null
         ? com.google.cloud.securitycenter.v1.Asset.IamPolicy.getDefaultInstance()
@@ -3572,6 +3609,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Asset.IamPolicyOrBuilder getIamPolicyOrBuilder() {
     return getIamPolicy();
   }
@@ -4467,6 +4505,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
+    @java.lang.Override
     public boolean containsResourceProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -4474,6 +4513,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return internalGetResourceProperties().getMap().containsKey(key);
     }
     /** Use {@link #getResourcePropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourceProperties() {
       return getResourcePropertiesMap();
@@ -4488,6 +4528,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourcePropertiesMap() {
       return internalGetResourceProperties().getMap();
     }
@@ -4501,6 +4542,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getResourcePropertiesOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
@@ -4520,6 +4562,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getResourcePropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

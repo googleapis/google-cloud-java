@@ -188,6 +188,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +216,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -271,6 +273,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -324,6 +327,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -358,6 +362,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The groupBy.
    */
+  @java.lang.Override
   public java.lang.String getGroupBy() {
     java.lang.Object ref = groupBy_;
     if (ref instanceof java.lang.String) {
@@ -389,6 +394,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for groupBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGroupByBytes() {
     java.lang.Object ref = groupBy_;
     if (ref instanceof java.lang.String) {
@@ -417,6 +423,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the readTime field is set.
    */
+  @java.lang.Override
   public boolean hasReadTime() {
     return readTime_ != null;
   }
@@ -434,6 +441,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The readTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
@@ -449,6 +457,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
     return getReadTime();
   }
@@ -492,6 +501,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the compareDuration field is set.
    */
+  @java.lang.Override
   public boolean hasCompareDuration() {
     return compareDuration_ != null;
   }
@@ -532,6 +542,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The compareDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getCompareDuration() {
     return compareDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -572,6 +583,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCompareDurationOrBuilder() {
     return getCompareDuration();
   }
@@ -591,6 +603,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -615,6 +628,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -641,6 +655,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -2380,6 +2395,7 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

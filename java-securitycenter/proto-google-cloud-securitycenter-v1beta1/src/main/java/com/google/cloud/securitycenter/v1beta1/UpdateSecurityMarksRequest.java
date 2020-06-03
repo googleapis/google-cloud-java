@@ -164,6 +164,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * @return Whether the securityMarks field is set.
    */
+  @java.lang.Override
   public boolean hasSecurityMarks() {
     return securityMarks_ != null;
   }
@@ -180,6 +181,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * @return The securityMarks.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks() {
     return securityMarks_ == null
         ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()
@@ -196,6 +198,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    * .google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder
       getSecurityMarksOrBuilder() {
     return getSecurityMarks();
@@ -214,6 +217,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -228,6 +232,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -240,6 +245,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -257,6 +263,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -271,6 +278,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -283,6 +291,7 @@ public final class UpdateSecurityMarksRequest extends com.google.protobuf.Genera
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }

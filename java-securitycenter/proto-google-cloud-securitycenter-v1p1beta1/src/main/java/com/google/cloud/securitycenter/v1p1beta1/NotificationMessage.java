@@ -186,6 +186,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
    *
    * @return The notificationConfigName.
    */
+  @java.lang.Override
   public java.lang.String getNotificationConfigName() {
     java.lang.Object ref = notificationConfigName_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +209,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for notificationConfigName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNotificationConfigNameBytes() {
     java.lang.Object ref = notificationConfigName_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +235,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the finding field is set.
    */
+  @java.lang.Override
   public boolean hasFinding() {
     return eventCase_ == 2;
   }
@@ -248,6 +251,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
    *
    * @return The finding.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.Finding getFinding() {
     if (eventCase_ == 2) {
       return (com.google.cloud.securitycenter.v1p1beta1.Finding) event_;
@@ -264,6 +268,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.securitycenter.v1p1beta1.Finding finding = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.FindingOrBuilder getFindingOrBuilder() {
     if (eventCase_ == 2) {
       return (com.google.cloud.securitycenter.v1p1beta1.Finding) event_;
@@ -775,6 +780,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the finding field is set.
      */
+    @java.lang.Override
     public boolean hasFinding() {
       return eventCase_ == 2;
     }
@@ -790,6 +796,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
      *
      * @return The finding.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1p1beta1.Finding getFinding() {
       if (findingBuilder_ == null) {
         if (eventCase_ == 2) {
@@ -928,6 +935,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Finding finding = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1p1beta1.FindingOrBuilder getFindingOrBuilder() {
       if ((eventCase_ == 2) && (findingBuilder_ != null)) {
         return findingBuilder_.getMessageOrBuilder();

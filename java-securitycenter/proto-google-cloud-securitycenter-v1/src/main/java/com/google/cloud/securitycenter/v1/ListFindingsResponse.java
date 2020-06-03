@@ -573,6 +573,10 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -884,6 +888,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The name.
        */
+      @java.lang.Override
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (ref instanceof java.lang.String) {
@@ -907,6 +912,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The bytes for name.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof java.lang.String) {
@@ -932,6 +938,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The projectName.
        */
+      @java.lang.Override
       public java.lang.String getProjectName() {
         java.lang.Object ref = projectName_;
         if (ref instanceof java.lang.String) {
@@ -954,6 +961,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The bytes for projectName.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getProjectNameBytes() {
         java.lang.Object ref = projectName_;
         if (ref instanceof java.lang.String) {
@@ -979,6 +987,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The projectDisplayName.
        */
+      @java.lang.Override
       public java.lang.String getProjectDisplayName() {
         java.lang.Object ref = projectDisplayName_;
         if (ref instanceof java.lang.String) {
@@ -1001,6 +1010,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The bytes for projectDisplayName.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getProjectDisplayNameBytes() {
         java.lang.Object ref = projectDisplayName_;
         if (ref instanceof java.lang.String) {
@@ -1026,6 +1036,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The parentName.
        */
+      @java.lang.Override
       public java.lang.String getParentName() {
         java.lang.Object ref = parentName_;
         if (ref instanceof java.lang.String) {
@@ -1048,6 +1059,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The bytes for parentName.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getParentNameBytes() {
         java.lang.Object ref = parentName_;
         if (ref instanceof java.lang.String) {
@@ -1073,6 +1085,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The parentDisplayName.
        */
+      @java.lang.Override
       public java.lang.String getParentDisplayName() {
         java.lang.Object ref = parentDisplayName_;
         if (ref instanceof java.lang.String) {
@@ -1095,6 +1108,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The bytes for parentDisplayName.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getParentDisplayNameBytes() {
         java.lang.Object ref = parentDisplayName_;
         if (ref instanceof java.lang.String) {
@@ -2149,6 +2163,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the finding field is set.
      */
+    @java.lang.Override
     public boolean hasFinding() {
       return finding_ != null;
     }
@@ -2163,6 +2178,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The finding.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1.Finding getFinding() {
       return finding_ == null
           ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()
@@ -2177,6 +2193,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder() {
       return getFinding();
     }
@@ -2196,6 +2213,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for stateChange.
      */
+    @java.lang.Override
     public int getStateChangeValue() {
       return stateChange_;
     }
@@ -2212,6 +2230,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The stateChange.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange
         getStateChange() {
       @SuppressWarnings("deprecation")
@@ -2241,6 +2260,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the resource field is set.
      */
+    @java.lang.Override
     public boolean hasResource() {
       return resource_ != null;
     }
@@ -2257,6 +2277,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The resource.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource
         getResource() {
       return resource_ == null
@@ -2275,6 +2296,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      * .google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.Resource resource = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult
             .ResourceOrBuilder
         getResourceOrBuilder() {
@@ -2884,6 +2906,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The enum numeric value on the wire for stateChange.
        */
+      @java.lang.Override
       public int getStateChangeValue() {
         return stateChange_;
       }
@@ -2902,6 +2925,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setStateChangeValue(int value) {
+
         stateChange_ = value;
         onChanged();
         return this;
@@ -2919,6 +2943,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        * @return The stateChange.
        */
+      @java.lang.Override
       public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange
           getStateChange() {
         @SuppressWarnings("deprecation")
@@ -3271,6 +3296,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult list_findings_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult>
       getListFindingsResultsList() {
     return listFindingsResults_;
@@ -3286,6 +3312,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult list_findings_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResultOrBuilder>
@@ -3303,6 +3330,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult list_findings_results = 1;
    * </code>
    */
+  @java.lang.Override
   public int getListFindingsResultsCount() {
     return listFindingsResults_.size();
   }
@@ -3317,6 +3345,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult list_findings_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult
       getListFindingsResults(int index) {
     return listFindingsResults_.get(index);
@@ -3332,6 +3361,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult list_findings_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResultOrBuilder
       getListFindingsResultsOrBuilder(int index) {
     return listFindingsResults_.get(index);
@@ -3350,6 +3380,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the readTime field is set.
    */
+  @java.lang.Override
   public boolean hasReadTime() {
     return readTime_ != null;
   }
@@ -3364,6 +3395,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The readTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
@@ -3376,6 +3408,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
     return getReadTime();
   }
@@ -3394,6 +3427,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -3417,6 +3451,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -3442,6 +3477,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -4591,6 +4627,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

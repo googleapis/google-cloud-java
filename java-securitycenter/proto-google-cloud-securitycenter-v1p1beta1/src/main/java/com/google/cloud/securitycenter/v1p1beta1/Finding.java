@@ -355,6 +355,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -405,6 +409,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -430,6 +435,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -459,6 +465,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -485,6 +492,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -515,6 +523,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resourceName.
    */
+  @java.lang.Override
   public java.lang.String getResourceName() {
     java.lang.Object ref = resourceName_;
     if (ref instanceof java.lang.String) {
@@ -542,6 +551,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for resourceName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceNameBytes() {
     java.lang.Object ref = resourceName_;
     if (ref instanceof java.lang.String) {
@@ -567,6 +577,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -581,6 +592,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.Finding.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.v1p1beta1.Finding.State result =
@@ -605,6 +617,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The category.
    */
+  @java.lang.Override
   public java.lang.String getCategory() {
     java.lang.Object ref = category_;
     if (ref instanceof java.lang.String) {
@@ -629,6 +642,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for category.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCategoryBytes() {
     java.lang.Object ref = category_;
     if (ref instanceof java.lang.String) {
@@ -656,6 +670,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The externalUri.
    */
+  @java.lang.Override
   public java.lang.String getExternalUri() {
     java.lang.Object ref = externalUri_;
     if (ref instanceof java.lang.String) {
@@ -680,6 +695,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for externalUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExternalUriBytes() {
     java.lang.Object ref = externalUri_;
     if (ref instanceof java.lang.String) {
@@ -734,6 +750,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
+  @java.lang.Override
   public boolean containsSourceProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -741,6 +758,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return internalGetSourceProperties().getMap().containsKey(key);
   }
   /** Use {@link #getSourcePropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getSourceProperties() {
     return getSourcePropertiesMap();
@@ -757,6 +775,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getSourcePropertiesMap() {
     return internalGetSourceProperties().getMap();
   }
@@ -772,6 +791,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getSourcePropertiesOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
@@ -793,6 +813,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getSourcePropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -822,6 +843,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the securityMarks field is set.
    */
+  @java.lang.Override
   public boolean hasSecurityMarks() {
     return securityMarks_ != null;
   }
@@ -840,6 +862,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The securityMarks.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.SecurityMarks getSecurityMarks() {
     return securityMarks_ == null
         ? com.google.cloud.securitycenter.v1p1beta1.SecurityMarks.getDefaultInstance()
@@ -858,6 +881,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.securitycenter.v1p1beta1.SecurityMarks security_marks = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.SecurityMarksOrBuilder
       getSecurityMarksOrBuilder() {
     return getSecurityMarks();
@@ -878,6 +902,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the eventTime field is set.
    */
+  @java.lang.Override
   public boolean hasEventTime() {
     return eventTime_ != null;
   }
@@ -894,6 +919,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
@@ -908,6 +934,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp event_time = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEventTimeOrBuilder() {
     return getEventTime();
   }
@@ -925,6 +952,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -939,6 +967,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -951,6 +980,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1876,6 +1906,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1892,6 +1923,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1907,6 +1939,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1p1beta1.Finding.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1p1beta1.Finding.State result =
@@ -2228,6 +2261,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
      */
+    @java.lang.Override
     public boolean containsSourceProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2235,6 +2269,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return internalGetSourceProperties().getMap().containsKey(key);
     }
     /** Use {@link #getSourcePropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getSourceProperties() {
       return getSourcePropertiesMap();
@@ -2251,6 +2286,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getSourcePropertiesMap() {
       return internalGetSourceProperties().getMap();
     }
@@ -2266,6 +2302,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getSourcePropertiesOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
@@ -2287,6 +2324,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getSourcePropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

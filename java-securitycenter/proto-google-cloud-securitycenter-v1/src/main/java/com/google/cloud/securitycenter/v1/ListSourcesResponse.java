@@ -138,6 +138,7 @@ public final class ListSourcesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1.Source sources = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.securitycenter.v1.Source> getSourcesList() {
     return sources_;
   }
@@ -150,6 +151,7 @@ public final class ListSourcesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1.Source sources = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.securitycenter.v1.SourceOrBuilder>
       getSourcesOrBuilderList() {
     return sources_;
@@ -163,6 +165,7 @@ public final class ListSourcesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1.Source sources = 1;</code>
    */
+  @java.lang.Override
   public int getSourcesCount() {
     return sources_.size();
   }
@@ -175,6 +178,7 @@ public final class ListSourcesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1.Source sources = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Source getSources(int index) {
     return sources_.get(index);
   }
@@ -187,6 +191,7 @@ public final class ListSourcesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1.Source sources = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.SourceOrBuilder getSourcesOrBuilder(int index) {
     return sources_.get(index);
   }
@@ -205,6 +210,7 @@ public final class ListSourcesResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +234,7 @@ public final class ListSourcesResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

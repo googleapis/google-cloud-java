@@ -152,6 +152,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the finding field is set.
    */
+  @java.lang.Override
   public boolean hasFinding() {
     return finding_ != null;
   }
@@ -172,6 +173,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The finding.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Finding getFinding() {
     return finding_ == null
         ? com.google.cloud.securitycenter.v1.Finding.getDefaultInstance()
@@ -192,6 +194,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.securitycenter.v1.Finding finding = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.FindingOrBuilder getFindingOrBuilder() {
     return getFinding();
   }
@@ -214,6 +217,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -233,6 +237,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -250,6 +255,7 @@ public final class UpdateFindingRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

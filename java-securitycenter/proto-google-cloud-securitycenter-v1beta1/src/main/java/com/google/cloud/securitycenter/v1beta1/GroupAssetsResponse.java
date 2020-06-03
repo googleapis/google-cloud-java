@@ -157,6 +157,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.GroupResult group_by_results = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.securitycenter.v1beta1.GroupResult>
       getGroupByResultsList() {
     return groupByResults_;
@@ -172,6 +173,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.GroupResult group_by_results = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.securitycenter.v1beta1.GroupResultOrBuilder>
       getGroupByResultsOrBuilderList() {
     return groupByResults_;
@@ -187,6 +189,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.GroupResult group_by_results = 1;</code>
    */
+  @java.lang.Override
   public int getGroupByResultsCount() {
     return groupByResults_.size();
   }
@@ -201,6 +204,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.GroupResult group_by_results = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.GroupResult getGroupByResults(int index) {
     return groupByResults_.get(index);
   }
@@ -215,6 +219,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.GroupResult group_by_results = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.GroupResultOrBuilder getGroupByResultsOrBuilder(
       int index) {
     return groupByResults_.get(index);
@@ -233,6 +238,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the readTime field is set.
    */
+  @java.lang.Override
   public boolean hasReadTime() {
     return readTime_ != null;
   }
@@ -247,6 +253,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The readTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
@@ -259,6 +266,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
     return getReadTime();
   }
@@ -277,6 +285,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -300,6 +309,7 @@ public final class GroupAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -470,6 +470,10 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
               };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -582,6 +586,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for inclusionMode.
      */
+    @java.lang.Override
     public int getInclusionModeValue() {
       return inclusionMode_;
     }
@@ -598,6 +603,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      *
      * @return The inclusionMode.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
             .InclusionMode
         getInclusionMode() {
@@ -1186,6 +1192,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        *
        * @return The enum numeric value on the wire for inclusionMode.
        */
+      @java.lang.Override
       public int getInclusionModeValue() {
         return inclusionMode_;
       }
@@ -1204,6 +1211,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setInclusionModeValue(int value) {
+
         inclusionMode_ = value;
         onChanged();
         return this;
@@ -1221,6 +1229,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
        *
        * @return The inclusionMode.
        */
+      @java.lang.Override
       public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
               .InclusionMode
           getInclusionMode() {
@@ -1354,6 +1363,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1379,6 +1389,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1407,6 +1418,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    *
    * @return The enableAssetDiscovery.
    */
+  @java.lang.Override
   public boolean getEnableAssetDiscovery() {
     return enableAssetDiscovery_;
   }
@@ -1427,6 +1439,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the assetDiscoveryConfig field is set.
    */
+  @java.lang.Override
   public boolean hasAssetDiscoveryConfig() {
     return assetDiscoveryConfig_ != null;
   }
@@ -1443,6 +1456,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    *
    * @return The assetDiscoveryConfig.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
       getAssetDiscoveryConfig() {
     return assetDiscoveryConfig_ == null
@@ -1461,6 +1475,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder
       getAssetDiscoveryConfigOrBuilder() {
     return getAssetDiscoveryConfig();
@@ -1968,6 +1983,7 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
      *
      * @return The enableAssetDiscovery.
      */
+    @java.lang.Override
     public boolean getEnableAssetDiscovery() {
       return enableAssetDiscovery_;
     }

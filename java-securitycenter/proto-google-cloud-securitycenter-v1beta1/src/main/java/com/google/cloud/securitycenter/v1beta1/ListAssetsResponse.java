@@ -501,6 +501,10 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -549,6 +553,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the asset field is set.
      */
+    @java.lang.Override
     public boolean hasAsset() {
       return asset_ != null;
     }
@@ -563,6 +568,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The asset.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.Asset getAsset() {
       return asset_ == null
           ? com.google.cloud.securitycenter.v1beta1.Asset.getDefaultInstance()
@@ -577,6 +583,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.securitycenter.v1beta1.Asset asset = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.AssetOrBuilder getAssetOrBuilder() {
       return getAsset();
     }
@@ -596,6 +603,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -612,6 +620,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
         getState() {
       @SuppressWarnings("deprecation")
@@ -1200,6 +1209,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        *
        * @return The enum numeric value on the wire for state.
        */
+      @java.lang.Override
       public int getStateValue() {
         return state_;
       }
@@ -1218,6 +1228,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
+
         state_ = value;
         onChanged();
         return this;
@@ -1235,6 +1246,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
        *
        * @return The state.
        */
+      @java.lang.Override
       public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
           getState() {
         @SuppressWarnings("deprecation")
@@ -1361,6 +1373,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>
       getListAssetsResultsList() {
     return listAssetsResults_;
@@ -1376,6 +1389,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder>
@@ -1393,6 +1407,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
    * </code>
    */
+  @java.lang.Override
   public int getListAssetsResultsCount() {
     return listAssetsResults_.size();
   }
@@ -1407,6 +1422,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
       getListAssetsResults(int index) {
     return listAssetsResults_.get(index);
@@ -1422,6 +1438,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder
       getListAssetsResultsOrBuilder(int index) {
     return listAssetsResults_.get(index);
@@ -1440,6 +1457,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the readTime field is set.
    */
+  @java.lang.Override
   public boolean hasReadTime() {
     return readTime_ != null;
   }
@@ -1454,6 +1472,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The readTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
@@ -1466,6 +1485,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
     return getReadTime();
   }
@@ -1484,6 +1504,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -1507,6 +1528,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -1532,6 +1554,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -2682,6 +2705,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

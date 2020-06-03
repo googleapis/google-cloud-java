@@ -211,6 +211,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +239,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -294,6 +296,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -347,6 +350,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -388,6 +392,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The orderBy.
    */
+  @java.lang.Override
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -426,6 +431,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for orderBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -454,6 +460,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the readTime field is set.
    */
+  @java.lang.Override
   public boolean hasReadTime() {
     return readTime_ != null;
   }
@@ -471,6 +478,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The readTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
@@ -486,6 +494,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.Timestamp read_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
     return getReadTime();
   }
@@ -522,6 +531,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the compareDuration field is set.
    */
+  @java.lang.Override
   public boolean hasCompareDuration() {
     return compareDuration_ != null;
   }
@@ -555,6 +565,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The compareDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getCompareDuration() {
     return compareDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -588,6 +599,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCompareDurationOrBuilder() {
     return getCompareDuration();
   }
@@ -607,6 +619,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The having.
    */
+  @java.lang.Override
   public java.lang.String getHaving() {
     java.lang.Object ref = having_;
     if (ref instanceof java.lang.String) {
@@ -631,6 +644,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for having.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHavingBytes() {
     java.lang.Object ref = having_;
     if (ref instanceof java.lang.String) {
@@ -659,6 +673,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the fieldMask field is set.
    */
+  @java.lang.Override
   public boolean hasFieldMask() {
     return fieldMask_ != null;
   }
@@ -676,6 +691,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The fieldMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
@@ -691,6 +707,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
     return getFieldMask();
   }
@@ -710,6 +727,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -734,6 +752,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -760,6 +779,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -2840,6 +2860,7 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

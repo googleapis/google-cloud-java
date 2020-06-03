@@ -152,6 +152,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +180,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +208,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -222,6 +225,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.Finding.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.v1.Finding.State result =
@@ -243,6 +247,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -258,6 +263,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -271,6 +277,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
    * <code>.google.protobuf.Timestamp start_time = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -782,6 +789,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -800,6 +808,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -817,6 +826,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1.Finding.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1.Finding.State result =

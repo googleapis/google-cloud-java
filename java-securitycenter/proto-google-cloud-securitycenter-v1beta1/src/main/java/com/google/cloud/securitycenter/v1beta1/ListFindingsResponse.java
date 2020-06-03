@@ -159,6 +159,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.securitycenter.v1beta1.Finding> getFindingsList() {
     return findings_;
   }
@@ -171,6 +172,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.securitycenter.v1beta1.FindingOrBuilder>
       getFindingsOrBuilderList() {
     return findings_;
@@ -184,6 +186,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public int getFindingsCount() {
     return findings_.size();
   }
@@ -196,6 +199,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.Finding getFindings(int index) {
     return findings_.get(index);
   }
@@ -208,6 +212,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1beta1.FindingOrBuilder getFindingsOrBuilder(int index) {
     return findings_.get(index);
   }
@@ -225,6 +230,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the readTime field is set.
    */
+  @java.lang.Override
   public boolean hasReadTime() {
     return readTime_ != null;
   }
@@ -239,6 +245,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The readTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
@@ -251,6 +258,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
     return getReadTime();
   }
@@ -269,6 +277,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -292,6 +301,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +327,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -1397,6 +1408,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

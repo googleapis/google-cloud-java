@@ -150,6 +150,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return Whether the notificationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasNotificationConfig() {
     return notificationConfig_ != null;
   }
@@ -166,6 +167,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return The notificationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.NotificationConfig getNotificationConfig() {
     return notificationConfig_ == null
         ? com.google.cloud.securitycenter.v1.NotificationConfig.getDefaultInstance()
@@ -182,6 +184,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    * .google.cloud.securitycenter.v1.NotificationConfig notification_config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1.NotificationConfigOrBuilder
       getNotificationConfigOrBuilder() {
     return getNotificationConfig();
@@ -201,6 +204,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -216,6 +220,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -229,6 +234,7 @@ public final class UpdateNotificationConfigRequest extends com.google.protobuf.G
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

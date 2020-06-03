@@ -156,6 +156,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +183,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +236,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
+  @java.lang.Override
   public boolean containsMarks(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -241,6 +244,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
     return internalGetMarks().getMap().containsKey(key);
   }
   /** Use {@link #getMarksMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMarks() {
     return getMarksMap();
@@ -260,6 +264,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMarksMap() {
     return internalGetMarks().getMap();
   }
@@ -278,6 +283,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getMarksOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -300,6 +306,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getMarksOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -843,6 +850,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; marks = 2;</code>
      */
+    @java.lang.Override
     public boolean containsMarks(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -850,6 +858,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
       return internalGetMarks().getMap().containsKey(key);
     }
     /** Use {@link #getMarksMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMarks() {
       return getMarksMap();
@@ -869,6 +878,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; marks = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMarksMap() {
       return internalGetMarks().getMap();
     }
@@ -887,6 +897,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; marks = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getMarksOrDefault(java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -909,6 +920,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; marks = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getMarksOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

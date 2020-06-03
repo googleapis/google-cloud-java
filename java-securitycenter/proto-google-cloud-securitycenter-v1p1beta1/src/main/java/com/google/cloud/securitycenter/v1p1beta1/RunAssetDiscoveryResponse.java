@@ -271,6 +271,10 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -318,6 +322,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -332,6 +337,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State result =
@@ -354,6 +360,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
    *
    * @return Whether the duration field is set.
    */
+  @java.lang.Override
   public boolean hasDuration() {
     return duration_ != null;
   }
@@ -368,6 +375,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
    *
    * @return The duration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
@@ -380,6 +388,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
    *
    * <code>.google.protobuf.Duration duration = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
     return getDuration();
   }
@@ -757,6 +766,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -774,6 +784,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -790,6 +801,7 @@ public final class RunAssetDiscoveryResponse extends com.google.protobuf.Generat
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryResponse.State result =
