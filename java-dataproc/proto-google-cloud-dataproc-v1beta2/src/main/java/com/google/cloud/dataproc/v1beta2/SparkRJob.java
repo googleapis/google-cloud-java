@@ -212,6 +212,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mainRFileUri.
    */
+  @java.lang.Override
   public java.lang.String getMainRFileUri() {
     java.lang.Object ref = mainRFileUri_;
     if (ref instanceof java.lang.String) {
@@ -235,6 +236,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mainRFileUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMainRFileUriBytes() {
     java.lang.Object ref = mainRFileUri_;
     if (ref instanceof java.lang.String) {
@@ -488,6 +490,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -495,6 +498,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
     return internalGetProperties().getMap().containsKey(key);
   }
   /** Use {@link #getPropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
@@ -512,6 +516,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
@@ -528,6 +533,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -549,6 +555,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -575,6 +582,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the loggingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasLoggingConfig() {
     return loggingConfig_ != null;
   }
@@ -591,6 +599,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The loggingConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig() {
     return loggingConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.LoggingConfig.getDefaultInstance()
@@ -607,6 +616,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
     return getLoggingConfig();
   }
@@ -1801,6 +1811,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1808,6 +1819,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
       return internalGetProperties().getMap().containsKey(key);
     }
     /** Use {@link #getPropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
@@ -1825,6 +1837,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
@@ -1841,6 +1854,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1862,6 +1876,7 @@ public final class SparkRJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

@@ -201,6 +201,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the regex field is set.
    */
+  @java.lang.Override
   public boolean hasRegex() {
     return validationTypeCase_ == 1;
   }
@@ -215,6 +216,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
    *
    * @return The regex.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.RegexValidation getRegex() {
     if (validationTypeCase_ == 1) {
       return (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_;
@@ -230,6 +232,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.dataproc.v1beta2.RegexValidation regex = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder getRegexOrBuilder() {
     if (validationTypeCase_ == 1) {
       return (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_;
@@ -249,6 +252,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the values field is set.
    */
+  @java.lang.Override
   public boolean hasValues() {
     return validationTypeCase_ == 2;
   }
@@ -263,6 +267,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
    *
    * @return The values.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ValueValidation getValues() {
     if (validationTypeCase_ == 2) {
       return (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_;
@@ -278,6 +283,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.dataproc.v1beta2.ValueValidation values = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder getValuesOrBuilder() {
     if (validationTypeCase_ == 2) {
       return (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_;
@@ -690,6 +696,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the regex field is set.
      */
+    @java.lang.Override
     public boolean hasRegex() {
       return validationTypeCase_ == 1;
     }
@@ -704,6 +711,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
      *
      * @return The regex.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.RegexValidation getRegex() {
       if (regexBuilder_ == null) {
         if (validationTypeCase_ == 1) {
@@ -837,6 +845,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.cloud.dataproc.v1beta2.RegexValidation regex = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder getRegexOrBuilder() {
       if ((validationTypeCase_ == 1) && (regexBuilder_ != null)) {
         return regexBuilder_.getMessageOrBuilder();
@@ -897,6 +906,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the values field is set.
      */
+    @java.lang.Override
     public boolean hasValues() {
       return validationTypeCase_ == 2;
     }
@@ -911,6 +921,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
      *
      * @return The values.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.ValueValidation getValues() {
       if (valuesBuilder_ == null) {
         if (validationTypeCase_ == 2) {
@@ -1044,6 +1055,7 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.cloud.dataproc.v1beta2.ValueValidation values = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder getValuesOrBuilder() {
       if ((validationTypeCase_ == 2) && (valuesBuilder_ != null)) {
         return valuesBuilder_.getMessageOrBuilder();

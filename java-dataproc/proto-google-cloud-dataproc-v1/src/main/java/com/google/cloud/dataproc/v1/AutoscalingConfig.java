@@ -129,6 +129,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The policyUri.
    */
+  @java.lang.Override
   public java.lang.String getPolicyUri() {
     java.lang.Object ref = policyUri_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for policyUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPolicyUriBytes() {
     java.lang.Object ref = policyUri_;
     if (ref instanceof java.lang.String) {

@@ -234,6 +234,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The zoneUri.
    */
+  @java.lang.Override
   public java.lang.String getZoneUri() {
     java.lang.Object ref = zoneUri_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +265,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for zoneUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getZoneUriBytes() {
     java.lang.Object ref = zoneUri_;
     if (ref instanceof java.lang.String) {
@@ -298,6 +300,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The networkUri.
    */
+  @java.lang.Override
   public java.lang.String getNetworkUri() {
     java.lang.Object ref = networkUri_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +332,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for networkUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNetworkUriBytes() {
     java.lang.Object ref = networkUri_;
     if (ref instanceof java.lang.String) {
@@ -359,6 +363,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The subnetworkUri.
    */
+  @java.lang.Override
   public java.lang.String getSubnetworkUri() {
     java.lang.Object ref = subnetworkUri_;
     if (ref instanceof java.lang.String) {
@@ -386,6 +391,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for subnetworkUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubnetworkUriBytes() {
     java.lang.Object ref = subnetworkUri_;
     if (ref instanceof java.lang.String) {
@@ -416,6 +422,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The internalIpOnly.
    */
+  @java.lang.Override
   public boolean getInternalIpOnly() {
     return internalIpOnly_;
   }
@@ -442,6 +449,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The serviceAccount.
    */
+  @java.lang.Override
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -473,6 +481,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for serviceAccount.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -691,6 +700,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
+  @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -698,6 +708,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     return internalGetMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
@@ -713,6 +724,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
@@ -727,6 +739,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -746,6 +759,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -772,6 +786,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the reservationAffinity field is set.
    */
+  @java.lang.Override
   public boolean hasReservationAffinity() {
     return reservationAffinity_ != null;
   }
@@ -788,6 +803,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The reservationAffinity.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ReservationAffinity getReservationAffinity() {
     return reservationAffinity_ == null
         ? com.google.cloud.dataproc.v1beta2.ReservationAffinity.getDefaultInstance()
@@ -804,6 +820,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * .google.cloud.dataproc.v1beta2.ReservationAffinity reservation_affinity = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ReservationAffinityOrBuilder
       getReservationAffinityOrBuilder() {
     return getReservationAffinity();
@@ -1776,6 +1793,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The internalIpOnly.
      */
+    @java.lang.Override
     public boolean getInternalIpOnly() {
       return internalIpOnly_;
     }
@@ -2457,6 +2475,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
+    @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2464,6 +2483,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       return internalGetMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
@@ -2479,6 +2499,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
@@ -2493,6 +2514,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2512,6 +2534,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

@@ -245,6 +245,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -271,6 +272,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +305,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -332,6 +335,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -364,6 +368,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return The version.
    */
+  @java.lang.Override
   public int getVersion() {
     return version_;
   }
@@ -382,6 +387,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -397,6 +403,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -410,6 +417,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -428,6 +436,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -443,6 +452,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -456,6 +466,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -502,6 +513,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -509,6 +521,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -530,6 +543,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -550,6 +564,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -574,6 +589,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -598,6 +614,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the placement field is set.
    */
+  @java.lang.Override
   public boolean hasPlacement() {
     return placement_ != null;
   }
@@ -612,6 +629,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * @return The placement.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement getPlacement() {
     return placement_ == null
         ? com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.getDefaultInstance()
@@ -626,6 +644,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder
       getPlacementOrBuilder() {
     return getPlacement();
@@ -642,6 +661,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1beta2.OrderedJob> getJobsList() {
     return jobs_;
   }
@@ -654,6 +674,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>
       getJobsOrBuilderList() {
     return jobs_;
@@ -667,6 +688,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
+  @java.lang.Override
   public int getJobsCount() {
     return jobs_.size();
   }
@@ -679,6 +701,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.OrderedJob getJobs(int index) {
     return jobs_.get(index);
   }
@@ -691,6 +714,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
   }
@@ -710,6 +734,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> getParametersList() {
     return parameters_;
   }
@@ -726,6 +751,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>
       getParametersOrBuilderList() {
     return parameters_;
@@ -743,6 +769,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getParametersCount() {
     return parameters_.size();
   }
@@ -759,6 +786,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.TemplateParameter getParameters(int index) {
     return parameters_.get(index);
   }
@@ -775,6 +803,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder getParametersOrBuilder(
       int index) {
     return parameters_.get(index);
@@ -1652,6 +1681,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *
      * @return The version.
      */
+    @java.lang.Override
     public int getVersion() {
       return version_;
     }
@@ -2149,6 +2179,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2156,6 +2187,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2177,6 +2209,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2197,6 +2230,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2222,6 +2256,7 @@ public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

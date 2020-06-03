@@ -136,6 +136,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bootDiskType.
    */
+  @java.lang.Override
   public java.lang.String getBootDiskType() {
     java.lang.Object ref = bootDiskType_;
     if (ref instanceof java.lang.String) {
@@ -160,6 +161,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for bootDiskType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBootDiskTypeBytes() {
     java.lang.Object ref = bootDiskType_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +187,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bootDiskSizeGb.
    */
+  @java.lang.Override
   public int getBootDiskSizeGb() {
     return bootDiskSizeGb_;
   }
@@ -207,6 +210,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The numLocalSsds.
    */
+  @java.lang.Override
   public int getNumLocalSsds() {
     return numLocalSsds_;
   }
@@ -684,6 +688,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bootDiskSizeGb.
      */
+    @java.lang.Override
     public int getBootDiskSizeGb() {
       return bootDiskSizeGb_;
     }
@@ -740,6 +745,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The numLocalSsds.
      */
+    @java.lang.Override
     public int getNumLocalSsds() {
       return numLocalSsds_;
     }

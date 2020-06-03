@@ -380,6 +380,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stepId.
    */
+  @java.lang.Override
   public java.lang.String getStepId() {
     java.lang.Object ref = stepId_;
     if (ref instanceof java.lang.String) {
@@ -410,6 +411,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for stepId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStepIdBytes() {
     java.lang.Object ref = stepId_;
     if (ref instanceof java.lang.String) {
@@ -428,6 +430,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the hadoopJob field is set.
    */
+  @java.lang.Override
   public boolean hasHadoopJob() {
     return jobTypeCase_ == 2;
   }
@@ -436,6 +439,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The hadoopJob.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.HadoopJob getHadoopJob() {
     if (jobTypeCase_ == 2) {
       return (com.google.cloud.dataproc.v1.HadoopJob) jobType_;
@@ -443,6 +447,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataproc.v1.HadoopJob.getDefaultInstance();
   }
   /** <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 2;</code> */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.HadoopJobOrBuilder getHadoopJobOrBuilder() {
     if (jobTypeCase_ == 2) {
       return (com.google.cloud.dataproc.v1.HadoopJob) jobType_;
@@ -456,6 +461,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sparkJob field is set.
    */
+  @java.lang.Override
   public boolean hasSparkJob() {
     return jobTypeCase_ == 3;
   }
@@ -464,6 +470,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sparkJob.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkJob getSparkJob() {
     if (jobTypeCase_ == 3) {
       return (com.google.cloud.dataproc.v1.SparkJob) jobType_;
@@ -471,6 +478,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataproc.v1.SparkJob.getDefaultInstance();
   }
   /** <code>.google.cloud.dataproc.v1.SparkJob spark_job = 3;</code> */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkJobOrBuilder getSparkJobOrBuilder() {
     if (jobTypeCase_ == 3) {
       return (com.google.cloud.dataproc.v1.SparkJob) jobType_;
@@ -484,6 +492,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pysparkJob field is set.
    */
+  @java.lang.Override
   public boolean hasPysparkJob() {
     return jobTypeCase_ == 4;
   }
@@ -492,6 +501,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pysparkJob.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.PySparkJob getPysparkJob() {
     if (jobTypeCase_ == 4) {
       return (com.google.cloud.dataproc.v1.PySparkJob) jobType_;
@@ -499,6 +509,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataproc.v1.PySparkJob.getDefaultInstance();
   }
   /** <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 4;</code> */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.PySparkJobOrBuilder getPysparkJobOrBuilder() {
     if (jobTypeCase_ == 4) {
       return (com.google.cloud.dataproc.v1.PySparkJob) jobType_;
@@ -512,6 +523,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the hiveJob field is set.
    */
+  @java.lang.Override
   public boolean hasHiveJob() {
     return jobTypeCase_ == 5;
   }
@@ -520,6 +532,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The hiveJob.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.HiveJob getHiveJob() {
     if (jobTypeCase_ == 5) {
       return (com.google.cloud.dataproc.v1.HiveJob) jobType_;
@@ -527,6 +540,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataproc.v1.HiveJob.getDefaultInstance();
   }
   /** <code>.google.cloud.dataproc.v1.HiveJob hive_job = 5;</code> */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.HiveJobOrBuilder getHiveJobOrBuilder() {
     if (jobTypeCase_ == 5) {
       return (com.google.cloud.dataproc.v1.HiveJob) jobType_;
@@ -540,6 +554,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pigJob field is set.
    */
+  @java.lang.Override
   public boolean hasPigJob() {
     return jobTypeCase_ == 6;
   }
@@ -548,6 +563,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pigJob.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.PigJob getPigJob() {
     if (jobTypeCase_ == 6) {
       return (com.google.cloud.dataproc.v1.PigJob) jobType_;
@@ -555,6 +571,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataproc.v1.PigJob.getDefaultInstance();
   }
   /** <code>.google.cloud.dataproc.v1.PigJob pig_job = 6;</code> */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.PigJobOrBuilder getPigJobOrBuilder() {
     if (jobTypeCase_ == 6) {
       return (com.google.cloud.dataproc.v1.PigJob) jobType_;
@@ -574,6 +591,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sparkRJob field is set.
    */
+  @java.lang.Override
   public boolean hasSparkRJob() {
     return jobTypeCase_ == 11;
   }
@@ -588,6 +606,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sparkRJob.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkRJob getSparkRJob() {
     if (jobTypeCase_ == 11) {
       return (com.google.cloud.dataproc.v1.SparkRJob) jobType_;
@@ -603,6 +622,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dataproc.v1.SparkRJob spark_r_job = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkRJobOrBuilder getSparkRJobOrBuilder() {
     if (jobTypeCase_ == 11) {
       return (com.google.cloud.dataproc.v1.SparkRJob) jobType_;
@@ -616,6 +636,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sparkSqlJob field is set.
    */
+  @java.lang.Override
   public boolean hasSparkSqlJob() {
     return jobTypeCase_ == 7;
   }
@@ -624,6 +645,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sparkSqlJob.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob() {
     if (jobTypeCase_ == 7) {
       return (com.google.cloud.dataproc.v1.SparkSqlJob) jobType_;
@@ -631,6 +653,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataproc.v1.SparkSqlJob.getDefaultInstance();
   }
   /** <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 7;</code> */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder() {
     if (jobTypeCase_ == 7) {
       return (com.google.cloud.dataproc.v1.SparkSqlJob) jobType_;
@@ -650,6 +673,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the prestoJob field is set.
    */
+  @java.lang.Override
   public boolean hasPrestoJob() {
     return jobTypeCase_ == 12;
   }
@@ -664,6 +688,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The prestoJob.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.PrestoJob getPrestoJob() {
     if (jobTypeCase_ == 12) {
       return (com.google.cloud.dataproc.v1.PrestoJob) jobType_;
@@ -679,6 +704,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dataproc.v1.PrestoJob presto_job = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.PrestoJobOrBuilder getPrestoJobOrBuilder() {
     if (jobTypeCase_ == 12) {
       return (com.google.cloud.dataproc.v1.PrestoJob) jobType_;
@@ -726,6 +752,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -733,6 +760,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -752,6 +780,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -770,6 +799,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -792,6 +822,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -818,6 +849,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the scheduling field is set.
    */
+  @java.lang.Override
   public boolean hasScheduling() {
     return scheduling_ != null;
   }
@@ -834,6 +866,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The scheduling.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.JobScheduling getScheduling() {
     return scheduling_ == null
         ? com.google.cloud.dataproc.v1.JobScheduling.getDefaultInstance()
@@ -850,6 +883,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1.JobScheduling scheduling = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.JobSchedulingOrBuilder getSchedulingOrBuilder() {
     return getScheduling();
   }
@@ -1748,6 +1782,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the hadoopJob field is set.
      */
+    @java.lang.Override
     public boolean hasHadoopJob() {
       return jobTypeCase_ == 2;
     }
@@ -1756,6 +1791,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The hadoopJob.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.HadoopJob getHadoopJob() {
       if (hadoopJobBuilder_ == null) {
         if (jobTypeCase_ == 2) {
@@ -1839,6 +1875,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return getHadoopJobFieldBuilder().getBuilder();
     }
     /** <code>.google.cloud.dataproc.v1.HadoopJob hadoop_job = 2;</code> */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.HadoopJobOrBuilder getHadoopJobOrBuilder() {
       if ((jobTypeCase_ == 2) && (hadoopJobBuilder_ != null)) {
         return hadoopJobBuilder_.getMessageOrBuilder();
@@ -1885,6 +1922,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the sparkJob field is set.
      */
+    @java.lang.Override
     public boolean hasSparkJob() {
       return jobTypeCase_ == 3;
     }
@@ -1893,6 +1931,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sparkJob.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkJob getSparkJob() {
       if (sparkJobBuilder_ == null) {
         if (jobTypeCase_ == 3) {
@@ -1976,6 +2015,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return getSparkJobFieldBuilder().getBuilder();
     }
     /** <code>.google.cloud.dataproc.v1.SparkJob spark_job = 3;</code> */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkJobOrBuilder getSparkJobOrBuilder() {
       if ((jobTypeCase_ == 3) && (sparkJobBuilder_ != null)) {
         return sparkJobBuilder_.getMessageOrBuilder();
@@ -2022,6 +2062,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the pysparkJob field is set.
      */
+    @java.lang.Override
     public boolean hasPysparkJob() {
       return jobTypeCase_ == 4;
     }
@@ -2030,6 +2071,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pysparkJob.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.PySparkJob getPysparkJob() {
       if (pysparkJobBuilder_ == null) {
         if (jobTypeCase_ == 4) {
@@ -2113,6 +2155,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return getPysparkJobFieldBuilder().getBuilder();
     }
     /** <code>.google.cloud.dataproc.v1.PySparkJob pyspark_job = 4;</code> */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.PySparkJobOrBuilder getPysparkJobOrBuilder() {
       if ((jobTypeCase_ == 4) && (pysparkJobBuilder_ != null)) {
         return pysparkJobBuilder_.getMessageOrBuilder();
@@ -2159,6 +2202,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the hiveJob field is set.
      */
+    @java.lang.Override
     public boolean hasHiveJob() {
       return jobTypeCase_ == 5;
     }
@@ -2167,6 +2211,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The hiveJob.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.HiveJob getHiveJob() {
       if (hiveJobBuilder_ == null) {
         if (jobTypeCase_ == 5) {
@@ -2250,6 +2295,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return getHiveJobFieldBuilder().getBuilder();
     }
     /** <code>.google.cloud.dataproc.v1.HiveJob hive_job = 5;</code> */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.HiveJobOrBuilder getHiveJobOrBuilder() {
       if ((jobTypeCase_ == 5) && (hiveJobBuilder_ != null)) {
         return hiveJobBuilder_.getMessageOrBuilder();
@@ -2294,6 +2340,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the pigJob field is set.
      */
+    @java.lang.Override
     public boolean hasPigJob() {
       return jobTypeCase_ == 6;
     }
@@ -2302,6 +2349,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pigJob.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.PigJob getPigJob() {
       if (pigJobBuilder_ == null) {
         if (jobTypeCase_ == 6) {
@@ -2385,6 +2433,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return getPigJobFieldBuilder().getBuilder();
     }
     /** <code>.google.cloud.dataproc.v1.PigJob pig_job = 6;</code> */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.PigJobOrBuilder getPigJobOrBuilder() {
       if ((jobTypeCase_ == 6) && (pigJobBuilder_ != null)) {
         return pigJobBuilder_.getMessageOrBuilder();
@@ -2435,6 +2484,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the sparkRJob field is set.
      */
+    @java.lang.Override
     public boolean hasSparkRJob() {
       return jobTypeCase_ == 11;
     }
@@ -2449,6 +2499,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sparkRJob.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkRJob getSparkRJob() {
       if (sparkRJobBuilder_ == null) {
         if (jobTypeCase_ == 11) {
@@ -2580,6 +2631,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dataproc.v1.SparkRJob spark_r_job = 11;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkRJobOrBuilder getSparkRJobOrBuilder() {
       if ((jobTypeCase_ == 11) && (sparkRJobBuilder_ != null)) {
         return sparkRJobBuilder_.getMessageOrBuilder();
@@ -2634,6 +2686,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the sparkSqlJob field is set.
      */
+    @java.lang.Override
     public boolean hasSparkSqlJob() {
       return jobTypeCase_ == 7;
     }
@@ -2642,6 +2695,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sparkSqlJob.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkSqlJob getSparkSqlJob() {
       if (sparkSqlJobBuilder_ == null) {
         if (jobTypeCase_ == 7) {
@@ -2726,6 +2780,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return getSparkSqlJobFieldBuilder().getBuilder();
     }
     /** <code>.google.cloud.dataproc.v1.SparkSqlJob spark_sql_job = 7;</code> */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder() {
       if ((jobTypeCase_ == 7) && (sparkSqlJobBuilder_ != null)) {
         return sparkSqlJobBuilder_.getMessageOrBuilder();
@@ -2778,6 +2833,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the prestoJob field is set.
      */
+    @java.lang.Override
     public boolean hasPrestoJob() {
       return jobTypeCase_ == 12;
     }
@@ -2792,6 +2848,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The prestoJob.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.PrestoJob getPrestoJob() {
       if (prestoJobBuilder_ == null) {
         if (jobTypeCase_ == 12) {
@@ -2923,6 +2980,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dataproc.v1.PrestoJob presto_job = 12;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.PrestoJobOrBuilder getPrestoJobOrBuilder() {
       if ((jobTypeCase_ == 12) && (prestoJobBuilder_ != null)) {
         return prestoJobBuilder_.getMessageOrBuilder();
@@ -3007,6 +3065,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3014,6 +3073,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -3033,6 +3093,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -3051,6 +3112,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -3074,6 +3136,7 @@ public final class OrderedJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

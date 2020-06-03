@@ -169,6 +169,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +201,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +229,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    * @return Whether the template field is set.
    */
+  @java.lang.Override
   public boolean hasTemplate() {
     return template_ != null;
   }
@@ -243,6 +246,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    * @return The template.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
     return template_ == null
         ? com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance()
@@ -259,6 +263,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    * .google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
     return getTemplate();
   }
@@ -276,6 +281,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    * @return The instanceId.
    */
+  @java.lang.Override
   public java.lang.String getInstanceId() {
     java.lang.Object ref = instanceId_;
     if (ref instanceof java.lang.String) {
@@ -298,6 +304,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    * @return The bytes for instanceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstanceIdBytes() {
     java.lang.Object ref = instanceId_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +336,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    * @return The requestId.
    */
+  @java.lang.Override
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -357,6 +365,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {

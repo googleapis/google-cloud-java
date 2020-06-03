@@ -156,6 +156,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    *
    * @return The zone.
    */
+  @java.lang.Override
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +182,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +232,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
    */
+  @java.lang.Override
   public boolean containsClusterLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -237,6 +240,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
     return internalGetClusterLabels().getMap().containsKey(key);
   }
   /** Use {@link #getClusterLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getClusterLabels() {
     return getClusterLabelsMap();
@@ -251,6 +255,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap() {
     return internalGetClusterLabels().getMap();
   }
@@ -264,6 +269,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getClusterLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -282,6 +288,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getClusterLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -814,6 +821,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
      */
+    @java.lang.Override
     public boolean containsClusterLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -821,6 +829,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
       return internalGetClusterLabels().getMap().containsKey(key);
     }
     /** Use {@link #getClusterLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getClusterLabels() {
       return getClusterLabelsMap();
@@ -835,6 +844,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap() {
       return internalGetClusterLabels().getMap();
     }
@@ -848,6 +858,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getClusterLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -866,6 +877,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getClusterLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

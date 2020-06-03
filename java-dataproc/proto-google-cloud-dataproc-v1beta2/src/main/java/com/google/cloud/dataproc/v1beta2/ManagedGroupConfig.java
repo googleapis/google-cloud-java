@@ -133,6 +133,7 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The instanceTemplateName.
    */
+  @java.lang.Override
   public java.lang.String getInstanceTemplateName() {
     java.lang.Object ref = instanceTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for instanceTemplateName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstanceTemplateNameBytes() {
     java.lang.Object ref = instanceTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +184,7 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The instanceGroupManagerName.
    */
+  @java.lang.Override
   public java.lang.String getInstanceGroupManagerName() {
     java.lang.Object ref = instanceGroupManagerName_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +208,7 @@ public final class ManagedGroupConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for instanceGroupManagerName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstanceGroupManagerNameBytes() {
     java.lang.Object ref = instanceGroupManagerName_;
     if (ref instanceof java.lang.String) {

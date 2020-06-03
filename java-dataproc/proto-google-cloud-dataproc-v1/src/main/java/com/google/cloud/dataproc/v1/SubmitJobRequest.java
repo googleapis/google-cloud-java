@@ -156,6 +156,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +180,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The region.
    */
+  @java.lang.Override
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +229,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for region.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +255,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the job field is set.
    */
+  @java.lang.Override
   public boolean hasJob() {
     return job_ != null;
   }
@@ -265,6 +270,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The job.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.Job getJob() {
     return job_ == null ? com.google.cloud.dataproc.v1.Job.getDefaultInstance() : job_;
   }
@@ -277,6 +283,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.dataproc.v1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.JobOrBuilder getJobOrBuilder() {
     return getJob();
   }
@@ -302,6 +309,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The requestId.
    */
+  @java.lang.Override
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -332,6 +340,7 @@ public final class SubmitJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {

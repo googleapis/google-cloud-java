@@ -221,6 +221,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The clusterName.
    */
+  @java.lang.Override
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -243,6 +244,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for clusterName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +270,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The clusterUuid.
    */
+  @java.lang.Override
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {
@@ -290,6 +293,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for clusterUuid.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +321,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -333,6 +338,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationStatus getStatus() {
     return status_ == null
         ? com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance()
@@ -349,6 +355,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * .google.cloud.dataproc.v1.ClusterOperationStatus status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -366,6 +373,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1.ClusterOperationStatus>
       getStatusHistoryList() {
     return statusHistory_;
@@ -381,6 +389,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder>
       getStatusHistoryOrBuilderList() {
     return statusHistory_;
@@ -396,6 +405,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getStatusHistoryCount() {
     return statusHistory_.size();
   }
@@ -410,6 +420,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationStatus getStatusHistory(int index) {
     return statusHistory_.get(index);
   }
@@ -424,6 +435,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder getStatusHistoryOrBuilder(
       int index) {
     return statusHistory_.get(index);
@@ -442,6 +454,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The operationType.
    */
+  @java.lang.Override
   public java.lang.String getOperationType() {
     java.lang.Object ref = operationType_;
     if (ref instanceof java.lang.String) {
@@ -464,6 +477,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for operationType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOperationTypeBytes() {
     java.lang.Object ref = operationType_;
     if (ref instanceof java.lang.String) {
@@ -489,6 +503,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -511,6 +526,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -558,6 +574,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -565,6 +582,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -579,6 +597,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -592,6 +611,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -609,6 +629,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -2269,6 +2290,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2276,6 +2298,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2290,6 +2313,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2303,6 +2327,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2321,6 +2346,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

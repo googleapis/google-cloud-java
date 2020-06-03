@@ -314,6 +314,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the queryList field is set.
    */
+  @java.lang.Override
   public boolean hasQueryList() {
     return queriesCase_ == 2;
   }
@@ -328,6 +329,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The queryList.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.QueryList getQueryList() {
     if (queriesCase_ == 2) {
       return (com.google.cloud.dataproc.v1.QueryList) queries_;
@@ -343,6 +345,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.QueryListOrBuilder getQueryListOrBuilder() {
     if (queriesCase_ == 2) {
       return (com.google.cloud.dataproc.v1.QueryList) queries_;
@@ -365,6 +368,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The continueOnFailure.
    */
+  @java.lang.Override
   public boolean getContinueOnFailure() {
     return continueOnFailure_;
   }
@@ -383,6 +387,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The outputFormat.
    */
+  @java.lang.Override
   public java.lang.String getOutputFormat() {
     java.lang.Object ref = outputFormat_;
     if (ref instanceof java.lang.String) {
@@ -406,6 +411,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for outputFormat.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutputFormatBytes() {
     java.lang.Object ref = outputFormat_;
     if (ref instanceof java.lang.String) {
@@ -516,6 +522,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -523,6 +530,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     return internalGetProperties().getMap().containsKey(key);
   }
   /** Use {@link #getPropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
@@ -539,6 +547,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
@@ -554,6 +563,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -574,6 +584,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -600,6 +611,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the loggingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasLoggingConfig() {
     return loggingConfig_ != null;
   }
@@ -616,6 +628,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The loggingConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
     return loggingConfig_ == null
         ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
@@ -632,6 +645,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
     return getLoggingConfig();
   }
@@ -1167,6 +1181,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The queryFileUri.
      */
+    @java.lang.Override
     public java.lang.String getQueryFileUri() {
       java.lang.Object ref = "";
       if (queriesCase_ == 1) {
@@ -1194,6 +1209,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for queryFileUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getQueryFileUriBytes() {
       java.lang.Object ref = "";
       if (queriesCase_ == 1) {
@@ -1289,6 +1305,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the queryList field is set.
      */
+    @java.lang.Override
     public boolean hasQueryList() {
       return queriesCase_ == 2;
     }
@@ -1303,6 +1320,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The queryList.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.QueryList getQueryList() {
       if (queryListBuilder_ == null) {
         if (queriesCase_ == 2) {
@@ -1434,6 +1452,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.QueryListOrBuilder getQueryListOrBuilder() {
       if ((queriesCase_ == 2) && (queryListBuilder_ != null)) {
         return queryListBuilder_.getMessageOrBuilder();
@@ -1492,6 +1511,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The continueOnFailure.
      */
+    @java.lang.Override
     public boolean getContinueOnFailure() {
       return continueOnFailure_;
     }
@@ -1854,6 +1874,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1861,6 +1882,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       return internalGetProperties().getMap().containsKey(key);
     }
     /** Use {@link #getPropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
@@ -1877,6 +1899,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
@@ -1892,6 +1915,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1912,6 +1936,7 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

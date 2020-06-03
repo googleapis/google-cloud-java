@@ -172,6 +172,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +196,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -220,6 +222,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The region.
    */
+  @java.lang.Override
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +245,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for region.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -267,6 +271,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The jobId.
    */
+  @java.lang.Override
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
     if (ref instanceof java.lang.String) {
@@ -289,6 +294,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for jobId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
     if (ref instanceof java.lang.String) {
@@ -315,6 +321,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the job field is set.
    */
+  @java.lang.Override
   public boolean hasJob() {
     return job_ != null;
   }
@@ -330,6 +337,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The job.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.Job getJob() {
     return job_ == null ? com.google.cloud.dataproc.v1beta2.Job.getDefaultInstance() : job_;
   }
@@ -343,6 +351,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.dataproc.v1beta2.Job job = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobOrBuilder() {
     return getJob();
   }
@@ -366,6 +375,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -386,6 +396,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -404,6 +415,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

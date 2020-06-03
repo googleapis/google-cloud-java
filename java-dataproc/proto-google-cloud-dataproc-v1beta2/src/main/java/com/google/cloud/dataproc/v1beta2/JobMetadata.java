@@ -163,6 +163,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobId.
    */
+  @java.lang.Override
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for jobId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +214,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -228,6 +231,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.JobStatus getStatus() {
     return status_ == null
         ? com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance()
@@ -244,6 +248,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.JobStatus status = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -261,6 +266,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The operationType.
    */
+  @java.lang.Override
   public java.lang.String getOperationType() {
     java.lang.Object ref = operationType_;
     if (ref instanceof java.lang.String) {
@@ -283,6 +289,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for operationType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOperationTypeBytes() {
     java.lang.Object ref = operationType_;
     if (ref instanceof java.lang.String) {
@@ -309,6 +316,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -324,6 +332,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -337,6 +346,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }

@@ -125,6 +125,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The gcePdKmsKeyName.
    */
+  @java.lang.Override
   public java.lang.String getGcePdKmsKeyName() {
     java.lang.Object ref = gcePdKmsKeyName_;
     if (ref instanceof java.lang.String) {
@@ -148,6 +149,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for gcePdKmsKeyName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGcePdKmsKeyNameBytes() {
     java.lang.Object ref = gcePdKmsKeyName_;
     if (ref instanceof java.lang.String) {

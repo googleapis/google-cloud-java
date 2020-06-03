@@ -141,6 +141,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * repeated .google.cloud.dataproc.v1.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1.WorkflowTemplate> getTemplatesList() {
     return templates_;
   }
@@ -155,6 +156,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * repeated .google.cloud.dataproc.v1.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder>
       getTemplatesOrBuilderList() {
     return templates_;
@@ -170,6 +172,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * repeated .google.cloud.dataproc.v1.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getTemplatesCount() {
     return templates_.size();
   }
@@ -184,6 +187,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * repeated .google.cloud.dataproc.v1.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowTemplate getTemplates(int index) {
     return templates_.get(index);
   }
@@ -198,6 +202,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    * repeated .google.cloud.dataproc.v1.WorkflowTemplate templates = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplatesOrBuilder(int index) {
     return templates_.get(index);
   }
@@ -217,6 +222,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -241,6 +247,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

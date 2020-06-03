@@ -335,6 +335,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The configBucket.
    */
+  @java.lang.Override
   public java.lang.String getConfigBucket() {
     java.lang.Object ref = configBucket_;
     if (ref instanceof java.lang.String) {
@@ -365,6 +366,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for configBucket.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getConfigBucketBytes() {
     java.lang.Object ref = configBucket_;
     if (ref instanceof java.lang.String) {
@@ -393,6 +395,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gceClusterConfig field is set.
    */
+  @java.lang.Override
   public boolean hasGceClusterConfig() {
     return gceClusterConfig_ != null;
   }
@@ -410,6 +413,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gceClusterConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.GceClusterConfig getGceClusterConfig() {
     return gceClusterConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance()
@@ -427,6 +431,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.GceClusterConfig gce_cluster_config = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder
       getGceClusterConfigOrBuilder() {
     return getGceClusterConfig();
@@ -448,6 +453,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the masterConfig field is set.
    */
+  @java.lang.Override
   public boolean hasMasterConfig() {
     return masterConfig_ != null;
   }
@@ -465,6 +471,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The masterConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getMasterConfig() {
     return masterConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
@@ -482,6 +489,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.InstanceGroupConfig master_config = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getMasterConfigOrBuilder() {
     return getMasterConfig();
   }
@@ -502,6 +510,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the workerConfig field is set.
    */
+  @java.lang.Override
   public boolean hasWorkerConfig() {
     return workerConfig_ != null;
   }
@@ -519,6 +528,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The workerConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getWorkerConfig() {
     return workerConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
@@ -536,6 +546,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.InstanceGroupConfig worker_config = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getWorkerConfigOrBuilder() {
     return getWorkerConfig();
   }
@@ -556,6 +567,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the secondaryWorkerConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSecondaryWorkerConfig() {
     return secondaryWorkerConfig_ != null;
   }
@@ -573,6 +585,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The secondaryWorkerConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getSecondaryWorkerConfig() {
     return secondaryWorkerConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
@@ -590,6 +603,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder
       getSecondaryWorkerConfigOrBuilder() {
     return getSecondaryWorkerConfig();
@@ -610,6 +624,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the softwareConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSoftwareConfig() {
     return softwareConfig_ != null;
   }
@@ -626,6 +641,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The softwareConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.SoftwareConfig getSoftwareConfig() {
     return softwareConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.SoftwareConfig.getDefaultInstance()
@@ -642,6 +658,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.SoftwareConfig software_config = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.SoftwareConfigOrBuilder getSoftwareConfigOrBuilder() {
     return getSoftwareConfig();
   }
@@ -661,6 +678,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lifecycleConfig field is set.
    */
+  @java.lang.Override
   public boolean hasLifecycleConfig() {
     return lifecycleConfig_ != null;
   }
@@ -677,6 +695,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lifecycleConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.LifecycleConfig getLifecycleConfig() {
     return lifecycleConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance()
@@ -693,6 +712,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.LifecycleConfig lifecycle_config = 14 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder getLifecycleConfigOrBuilder() {
     return getLifecycleConfig();
   }
@@ -722,6 +742,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>
       getInitializationActionsList() {
     return initializationActions_;
@@ -748,6 +769,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder>
       getInitializationActionsOrBuilderList() {
@@ -775,6 +797,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getInitializationActionsCount() {
     return initializationActions_.size();
   }
@@ -800,6 +823,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.NodeInitializationAction getInitializationActions(
       int index) {
     return initializationActions_.get(index);
@@ -826,6 +850,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder
       getInitializationActionsOrBuilder(int index) {
     return initializationActions_.get(index);
@@ -846,6 +871,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the encryptionConfig field is set.
    */
+  @java.lang.Override
   public boolean hasEncryptionConfig() {
     return encryptionConfig_ != null;
   }
@@ -862,6 +888,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The encryptionConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.EncryptionConfig getEncryptionConfig() {
     return encryptionConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.EncryptionConfig.getDefaultInstance()
@@ -878,6 +905,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.EncryptionConfigOrBuilder
       getEncryptionConfigOrBuilder() {
     return getEncryptionConfig();
@@ -899,6 +927,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the autoscalingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasAutoscalingConfig() {
     return autoscalingConfig_ != null;
   }
@@ -916,6 +945,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The autoscalingConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.AutoscalingConfig getAutoscalingConfig() {
     return autoscalingConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.AutoscalingConfig.getDefaultInstance()
@@ -933,6 +963,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.AutoscalingConfig autoscaling_config = 16 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.AutoscalingConfigOrBuilder
       getAutoscalingConfigOrBuilder() {
     return getAutoscalingConfig();
@@ -953,6 +984,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endpointConfig field is set.
    */
+  @java.lang.Override
   public boolean hasEndpointConfig() {
     return endpointConfig_ != null;
   }
@@ -969,6 +1001,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endpointConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.EndpointConfig getEndpointConfig() {
     return endpointConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.EndpointConfig.getDefaultInstance()
@@ -985,6 +1018,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.EndpointConfig endpoint_config = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.EndpointConfigOrBuilder getEndpointConfigOrBuilder() {
     return getEndpointConfig();
   }
@@ -1004,6 +1038,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the securityConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSecurityConfig() {
     return securityConfig_ != null;
   }
@@ -1020,6 +1055,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The securityConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.SecurityConfig getSecurityConfig() {
     return securityConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.SecurityConfig.getDefaultInstance()
@@ -1036,6 +1072,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.SecurityConfig security_config = 18 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.SecurityConfigOrBuilder getSecurityConfigOrBuilder() {
     return getSecurityConfig();
   }
@@ -1058,6 +1095,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gkeClusterConfig field is set.
    */
+  @java.lang.Override
   public boolean hasGkeClusterConfig() {
     return gkeClusterConfig_ != null;
   }
@@ -1077,6 +1115,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gkeClusterConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.GkeClusterConfig getGkeClusterConfig() {
     return gkeClusterConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.GkeClusterConfig.getDefaultInstance()
@@ -1096,6 +1135,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.GkeClusterConfig gke_cluster_config = 19 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.GkeClusterConfigOrBuilder
       getGkeClusterConfigOrBuilder() {
     return getGkeClusterConfig();

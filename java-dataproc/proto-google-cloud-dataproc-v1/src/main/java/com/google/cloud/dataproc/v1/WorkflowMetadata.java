@@ -388,6 +388,10 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -440,6 +444,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The template.
    */
+  @java.lang.Override
   public java.lang.String getTemplate() {
     java.lang.Object ref = template_;
     if (ref instanceof java.lang.String) {
@@ -469,6 +474,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for template.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTemplateBytes() {
     java.lang.Object ref = template_;
     if (ref instanceof java.lang.String) {
@@ -495,6 +501,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The version.
    */
+  @java.lang.Override
   public int getVersion() {
     return version_;
   }
@@ -514,6 +521,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the createCluster field is set.
    */
+  @java.lang.Override
   public boolean hasCreateCluster() {
     return createCluster_ != null;
   }
@@ -530,6 +538,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The createCluster.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperation getCreateCluster() {
     return createCluster_ == null
         ? com.google.cloud.dataproc.v1.ClusterOperation.getDefaultInstance()
@@ -546,6 +555,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * .google.cloud.dataproc.v1.ClusterOperation create_cluster = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationOrBuilder getCreateClusterOrBuilder() {
     return getCreateCluster();
   }
@@ -565,6 +575,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the graph field is set.
    */
+  @java.lang.Override
   public boolean hasGraph() {
     return graph_ != null;
   }
@@ -581,6 +592,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The graph.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowGraph getGraph() {
     return graph_ == null
         ? com.google.cloud.dataproc.v1.WorkflowGraph.getDefaultInstance()
@@ -597,6 +609,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * .google.cloud.dataproc.v1.WorkflowGraph graph = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowGraphOrBuilder getGraphOrBuilder() {
     return getGraph();
   }
@@ -616,6 +629,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the deleteCluster field is set.
    */
+  @java.lang.Override
   public boolean hasDeleteCluster() {
     return deleteCluster_ != null;
   }
@@ -632,6 +646,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The deleteCluster.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperation getDeleteCluster() {
     return deleteCluster_ == null
         ? com.google.cloud.dataproc.v1.ClusterOperation.getDefaultInstance()
@@ -648,6 +663,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * .google.cloud.dataproc.v1.ClusterOperation delete_cluster = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationOrBuilder getDeleteClusterOrBuilder() {
     return getDeleteCluster();
   }
@@ -667,6 +683,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -683,6 +700,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowMetadata.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.WorkflowMetadata.State result =
@@ -705,6 +723,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The clusterName.
    */
+  @java.lang.Override
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -727,6 +746,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for clusterName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -773,6 +793,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
+  @java.lang.Override
   public boolean containsParameters(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -780,6 +801,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     return internalGetParameters().getMap().containsKey(key);
   }
   /** Use {@link #getParametersMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
@@ -793,6 +815,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
@@ -805,6 +828,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
+  @java.lang.Override
   public java.lang.String getParametersOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -822,6 +846,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
+  @java.lang.Override
   public java.lang.String getParametersOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -847,6 +872,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -862,6 +888,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -875,6 +902,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Timestamp start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -893,6 +921,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -908,6 +937,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -921,6 +951,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Timestamp end_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -938,6 +969,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The clusterUuid.
    */
+  @java.lang.Override
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {
@@ -960,6 +992,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for clusterUuid.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {
@@ -1688,6 +1721,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * @return The version.
      */
+    @java.lang.Override
     public int getVersion() {
       return version_;
     }
@@ -2354,6 +2388,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -2372,6 +2407,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -2389,6 +2425,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.WorkflowMetadata.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.WorkflowMetadata.State result =
@@ -2583,6 +2620,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
+    @java.lang.Override
     public boolean containsParameters(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2590,6 +2628,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       return internalGetParameters().getMap().containsKey(key);
     }
     /** Use {@link #getParametersMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
@@ -2603,6 +2642,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
@@ -2615,6 +2655,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
+    @java.lang.Override
     public java.lang.String getParametersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2632,6 +2673,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
+    @java.lang.Override
     public java.lang.String getParametersOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

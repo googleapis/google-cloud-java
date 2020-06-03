@@ -177,6 +177,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +206,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -432,6 +434,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -455,6 +458,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -482,6 +486,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the validation field is set.
    */
+  @java.lang.Override
   public boolean hasValidation() {
     return validation_ != null;
   }
@@ -498,6 +503,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *
    * @return The validation.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ParameterValidation getValidation() {
     return validation_ == null
         ? com.google.cloud.dataproc.v1.ParameterValidation.getDefaultInstance()
@@ -514,6 +520,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * .google.cloud.dataproc.v1.ParameterValidation validation = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ParameterValidationOrBuilder getValidationOrBuilder() {
     return getValidation();
   }

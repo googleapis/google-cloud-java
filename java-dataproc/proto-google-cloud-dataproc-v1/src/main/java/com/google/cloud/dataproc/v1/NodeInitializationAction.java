@@ -140,6 +140,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    *
    * @return The executableFile.
    */
+  @java.lang.Override
   public java.lang.String getExecutableFile() {
     java.lang.Object ref = executableFile_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    *
    * @return The bytes for executableFile.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExecutableFileBytes() {
     java.lang.Object ref = executableFile_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    *
    * @return Whether the executionTimeout field is set.
    */
+  @java.lang.Override
   public boolean hasExecutionTimeout() {
     return executionTimeout_ != null;
   }
@@ -215,6 +218,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    *
    * @return The executionTimeout.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getExecutionTimeout() {
     return executionTimeout_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -236,6 +240,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * .google.protobuf.Duration execution_timeout = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder() {
     return getExecutionTimeout();
   }

@@ -140,6 +140,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1beta2.Job> getJobsList() {
     return jobs_;
   }
@@ -154,6 +155,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobOrBuilder>
       getJobsOrBuilderList() {
     return jobs_;
@@ -169,6 +171,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getJobsCount() {
     return jobs_.size();
   }
@@ -183,6 +186,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.Job getJobs(int index) {
     return jobs_.get(index);
   }
@@ -197,6 +201,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    * repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
   }
@@ -216,6 +221,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +246,7 @@ public final class ListJobsResponse extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

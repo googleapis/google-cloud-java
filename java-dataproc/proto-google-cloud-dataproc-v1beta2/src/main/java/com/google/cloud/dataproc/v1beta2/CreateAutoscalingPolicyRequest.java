@@ -151,6 +151,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +183,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +211,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    * @return Whether the policy field is set.
    */
+  @java.lang.Override
   public boolean hasPolicy() {
     return policy_ != null;
   }
@@ -225,6 +228,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    * @return The policy.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.AutoscalingPolicy getPolicy() {
     return policy_ == null
         ? com.google.cloud.dataproc.v1beta2.AutoscalingPolicy.getDefaultInstance()
@@ -241,6 +245,7 @@ public final class CreateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    * .google.cloud.dataproc.v1beta2.AutoscalingPolicy policy = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.AutoscalingPolicyOrBuilder getPolicyOrBuilder() {
     return getPolicy();
   }

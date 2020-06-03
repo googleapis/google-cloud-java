@@ -230,6 +230,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +253,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -278,6 +280,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clusterName.
    */
+  @java.lang.Override
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -301,6 +304,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clusterName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +333,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -346,6 +351,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterConfig getConfig() {
     return config_ == null
         ? com.google.cloud.dataproc.v1beta2.ClusterConfig.getDefaultInstance()
@@ -363,6 +369,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.ClusterConfig config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -407,6 +414,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -414,6 +422,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -433,6 +442,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -451,6 +461,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -473,6 +484,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -499,6 +511,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -515,6 +528,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterStatus getStatus() {
     return status_ == null
         ? com.google.cloud.dataproc.v1beta2.ClusterStatus.getDefaultInstance()
@@ -531,6 +545,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.ClusterStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -548,6 +563,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1beta2.ClusterStatus> getStatusHistoryList() {
     return statusHistory_;
   }
@@ -562,6 +578,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder>
       getStatusHistoryOrBuilderList() {
     return statusHistory_;
@@ -577,6 +594,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getStatusHistoryCount() {
     return statusHistory_.size();
   }
@@ -591,6 +609,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterStatus getStatusHistory(int index) {
     return statusHistory_.get(index);
   }
@@ -605,6 +624,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dataproc.v1beta2.ClusterStatus status_history = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterStatusOrBuilder getStatusHistoryOrBuilder(
       int index) {
     return statusHistory_.get(index);
@@ -624,6 +644,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clusterUuid.
    */
+  @java.lang.Override
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {
@@ -647,6 +668,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clusterUuid.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {
@@ -676,6 +698,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the metrics field is set.
    */
+  @java.lang.Override
   public boolean hasMetrics() {
     return metrics_ != null;
   }
@@ -694,6 +717,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The metrics.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterMetrics getMetrics() {
     return metrics_ == null
         ? com.google.cloud.dataproc.v1beta2.ClusterMetrics.getDefaultInstance()
@@ -712,6 +736,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterMetricsOrBuilder getMetricsOrBuilder() {
     return getMetrics();
   }
@@ -1718,6 +1743,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1725,6 +1751,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1744,6 +1771,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1762,6 +1790,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1785,6 +1814,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

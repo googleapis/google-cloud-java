@@ -215,6 +215,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The numInstances.
    */
+  @java.lang.Override
   public int getNumInstances() {
     return numInstances_;
   }
@@ -308,6 +309,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The imageUri.
    */
+  @java.lang.Override
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {
@@ -341,6 +343,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for imageUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageUriBytes() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {
@@ -375,6 +378,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The machineTypeUri.
    */
+  @java.lang.Override
   public java.lang.String getMachineTypeUri() {
     java.lang.Object ref = machineTypeUri_;
     if (ref instanceof java.lang.String) {
@@ -406,6 +410,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for machineTypeUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMachineTypeUriBytes() {
     java.lang.Object ref = machineTypeUri_;
     if (ref instanceof java.lang.String) {
@@ -433,6 +438,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the diskConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDiskConfig() {
     return diskConfig_ != null;
   }
@@ -449,6 +455,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The diskConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.DiskConfig getDiskConfig() {
     return diskConfig_ == null
         ? com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()
@@ -465,6 +472,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * .google.cloud.dataproc.v1.DiskConfig disk_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.DiskConfigOrBuilder getDiskConfigOrBuilder() {
     return getDiskConfig();
   }
@@ -483,6 +491,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The isPreemptible.
    */
+  @java.lang.Override
   public boolean getIsPreemptible() {
     return isPreemptible_;
   }
@@ -504,6 +513,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the managedGroupConfig field is set.
    */
+  @java.lang.Override
   public boolean hasManagedGroupConfig() {
     return managedGroupConfig_ != null;
   }
@@ -522,6 +532,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The managedGroupConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ManagedGroupConfig getManagedGroupConfig() {
     return managedGroupConfig_ == null
         ? com.google.cloud.dataproc.v1.ManagedGroupConfig.getDefaultInstance()
@@ -540,6 +551,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * .google.cloud.dataproc.v1.ManagedGroupConfig managed_group_config = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ManagedGroupConfigOrBuilder getManagedGroupConfigOrBuilder() {
     return getManagedGroupConfig();
   }
@@ -558,6 +570,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1.AcceleratorConfig> getAcceleratorsList() {
     return accelerators_;
   }
@@ -573,6 +586,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList() {
     return accelerators_;
@@ -589,6 +603,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getAcceleratorsCount() {
     return accelerators_.size();
   }
@@ -604,6 +619,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.AcceleratorConfig getAccelerators(int index) {
     return accelerators_.get(index);
   }
@@ -619,6 +635,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.dataproc.v1.AcceleratorConfig accelerators = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(
       int index) {
     return accelerators_.get(index);
@@ -639,6 +656,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The minCpuPlatform.
    */
+  @java.lang.Override
   public java.lang.String getMinCpuPlatform() {
     java.lang.Object ref = minCpuPlatform_;
     if (ref instanceof java.lang.String) {
@@ -663,6 +681,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for minCpuPlatform.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
     java.lang.Object ref = minCpuPlatform_;
     if (ref instanceof java.lang.String) {
@@ -1215,6 +1234,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The numInstances.
      */
+    @java.lang.Override
     public int getNumInstances() {
       return numInstances_;
     }
@@ -1961,6 +1981,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The isPreemptible.
      */
+    @java.lang.Override
     public boolean getIsPreemptible() {
       return isPreemptible_;
     }

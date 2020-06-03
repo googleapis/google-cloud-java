@@ -125,6 +125,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxFailuresPerHour.
    */
+  @java.lang.Override
   public int getMaxFailuresPerHour() {
     return maxFailuresPerHour_;
   }
@@ -462,6 +463,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxFailuresPerHour.
      */
+    @java.lang.Override
     public int getMaxFailuresPerHour() {
       return maxFailuresPerHour_;
     }

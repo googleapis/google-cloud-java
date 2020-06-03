@@ -186,6 +186,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageVersion.
    */
+  @java.lang.Override
   public java.lang.String getImageVersion() {
     java.lang.Object ref = imageVersion_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +215,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for imageVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageVersionBytes() {
     java.lang.Object ref = imageVersion_;
     if (ref instanceof java.lang.String) {
@@ -275,6 +277,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -282,6 +285,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     return internalGetProperties().getMap().containsKey(key);
   }
   /** Use {@link #getPropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
@@ -310,6 +314,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
@@ -337,6 +342,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -369,6 +375,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -407,6 +414,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the optionalComponents.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1beta2.Component> getOptionalComponentsList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.dataproc.v1beta2.Component>(
@@ -423,6 +431,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of optionalComponents.
    */
+  @java.lang.Override
   public int getOptionalComponentsCount() {
     return optionalComponents_.size();
   }
@@ -438,6 +447,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The optionalComponents at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.Component getOptionalComponents(int index) {
     return optionalComponents_converter_.convert(optionalComponents_.get(index));
   }
@@ -452,6 +462,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for optionalComponents.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getOptionalComponentsValueList() {
     return optionalComponents_;
   }
@@ -467,6 +478,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of optionalComponents at the given index.
    */
+  @java.lang.Override
   public int getOptionalComponentsValue(int index) {
     return optionalComponents_.get(index);
   }
@@ -1065,6 +1077,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1072,6 +1085,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetProperties().getMap().containsKey(key);
     }
     /** Use {@link #getPropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
@@ -1100,6 +1114,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
@@ -1127,6 +1142,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1159,6 +1175,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

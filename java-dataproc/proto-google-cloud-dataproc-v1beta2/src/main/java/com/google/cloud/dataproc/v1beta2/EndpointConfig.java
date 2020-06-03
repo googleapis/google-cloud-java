@@ -170,6 +170,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public boolean containsHttpPorts(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -177,6 +178,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     return internalGetHttpPorts().getMap().containsKey(key);
   }
   /** Use {@link #getHttpPortsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHttpPorts() {
     return getHttpPortsMap();
@@ -192,6 +194,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getHttpPortsMap() {
     return internalGetHttpPorts().getMap();
   }
@@ -206,6 +209,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getHttpPortsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -225,6 +229,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getHttpPortsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -250,6 +255,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enableHttpPortAccess.
    */
+  @java.lang.Override
   public boolean getEnableHttpPortAccess() {
     return enableHttpPortAccess_;
   }
@@ -652,6 +658,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public boolean containsHttpPorts(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -659,6 +666,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetHttpPorts().getMap().containsKey(key);
     }
     /** Use {@link #getHttpPortsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHttpPorts() {
       return getHttpPortsMap();
@@ -674,6 +682,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getHttpPortsMap() {
       return internalGetHttpPorts().getMap();
     }
@@ -688,6 +697,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getHttpPortsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -707,6 +717,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getHttpPortsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -795,6 +806,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableHttpPortAccess.
      */
+    @java.lang.Override
     public boolean getEnableHttpPortAccess() {
       return enableHttpPortAccess_;
     }

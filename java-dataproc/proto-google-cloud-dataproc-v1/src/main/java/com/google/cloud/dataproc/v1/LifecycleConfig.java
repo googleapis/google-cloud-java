@@ -225,6 +225,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the idleDeleteTtl field is set.
    */
+  @java.lang.Override
   public boolean hasIdleDeleteTtl() {
     return idleDeleteTtl_ != null;
   }
@@ -244,6 +245,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The idleDeleteTtl.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getIdleDeleteTtl() {
     return idleDeleteTtl_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -263,6 +265,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Duration idle_delete_ttl = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getIdleDeleteTtlOrBuilder() {
     return getIdleDeleteTtl();
   }
@@ -282,6 +285,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the autoDeleteTime field is set.
    */
+  @java.lang.Override
   public boolean hasAutoDeleteTime() {
     return ttlCase_ == 2;
   }
@@ -299,6 +303,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The autoDeleteTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getAutoDeleteTime() {
     if (ttlCase_ == 2) {
       return (com.google.protobuf.Timestamp) ttl_;
@@ -317,6 +322,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getAutoDeleteTimeOrBuilder() {
     if (ttlCase_ == 2) {
       return (com.google.protobuf.Timestamp) ttl_;
@@ -340,6 +346,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the autoDeleteTtl field is set.
    */
+  @java.lang.Override
   public boolean hasAutoDeleteTtl() {
     return ttlCase_ == 3;
   }
@@ -358,6 +365,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The autoDeleteTtl.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getAutoDeleteTtl() {
     if (ttlCase_ == 3) {
       return (com.google.protobuf.Duration) ttl_;
@@ -377,6 +385,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getAutoDeleteTtlOrBuilder() {
     if (ttlCase_ == 3) {
       return (com.google.protobuf.Duration) ttl_;
@@ -402,6 +411,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the idleStartTime field is set.
    */
+  @java.lang.Override
   public boolean hasIdleStartTime() {
     return idleStartTime_ != null;
   }
@@ -421,6 +431,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The idleStartTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getIdleStartTime() {
     return idleStartTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -440,6 +451,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
    * .google.protobuf.Timestamp idle_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getIdleStartTimeOrBuilder() {
     return getIdleStartTime();
   }
@@ -1144,6 +1156,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the autoDeleteTime field is set.
      */
+    @java.lang.Override
     public boolean hasAutoDeleteTime() {
       return ttlCase_ == 2;
     }
@@ -1161,6 +1174,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The autoDeleteTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getAutoDeleteTime() {
       if (autoDeleteTimeBuilder_ == null) {
         if (ttlCase_ == 2) {
@@ -1308,6 +1322,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * .google.protobuf.Timestamp auto_delete_time = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getAutoDeleteTimeOrBuilder() {
       if ((ttlCase_ == 2) && (autoDeleteTimeBuilder_ != null)) {
         return autoDeleteTimeBuilder_.getMessageOrBuilder();
@@ -1374,6 +1389,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the autoDeleteTtl field is set.
      */
+    @java.lang.Override
     public boolean hasAutoDeleteTtl() {
       return ttlCase_ == 3;
     }
@@ -1393,6 +1409,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The autoDeleteTtl.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getAutoDeleteTtl() {
       if (autoDeleteTtlBuilder_ == null) {
         if (ttlCase_ == 3) {
@@ -1552,6 +1569,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
      * .google.protobuf.Duration auto_delete_ttl = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getAutoDeleteTtlOrBuilder() {
       if ((ttlCase_ == 3) && (autoDeleteTtlBuilder_ != null)) {
         return autoDeleteTtlBuilder_.getMessageOrBuilder();

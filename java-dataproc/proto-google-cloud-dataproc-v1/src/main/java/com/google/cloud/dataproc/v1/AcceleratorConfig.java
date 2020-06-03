@@ -143,6 +143,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The acceleratorTypeUri.
    */
+  @java.lang.Override
   public java.lang.String getAcceleratorTypeUri() {
     java.lang.Object ref = acceleratorTypeUri_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for acceleratorTypeUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAcceleratorTypeUriBytes() {
     java.lang.Object ref = acceleratorTypeUri_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +204,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The acceleratorCount.
    */
+  @java.lang.Override
   public int getAcceleratorCount() {
     return acceleratorCount_;
   }
@@ -717,6 +720,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The acceleratorCount.
      */
+    @java.lang.Override
     public int getAcceleratorCount() {
       return acceleratorCount_;
     }

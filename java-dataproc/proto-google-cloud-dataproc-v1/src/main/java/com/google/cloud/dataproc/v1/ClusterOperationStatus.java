@@ -285,6 +285,10 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -334,6 +338,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -350,6 +355,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationStatus.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.ClusterOperationStatus.State result =
@@ -372,6 +378,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    *
    * @return The innerState.
    */
+  @java.lang.Override
   public java.lang.String getInnerState() {
     java.lang.Object ref = innerState_;
     if (ref instanceof java.lang.String) {
@@ -394,6 +401,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for innerState.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInnerStateBytes() {
     java.lang.Object ref = innerState_;
     if (ref instanceof java.lang.String) {
@@ -419,6 +427,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    *
    * @return The details.
    */
+  @java.lang.Override
   public java.lang.String getDetails() {
     java.lang.Object ref = details_;
     if (ref instanceof java.lang.String) {
@@ -441,6 +450,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for details.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDetailsBytes() {
     java.lang.Object ref = details_;
     if (ref instanceof java.lang.String) {
@@ -468,6 +478,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    *
    * @return Whether the stateStartTime field is set.
    */
+  @java.lang.Override
   public boolean hasStateStartTime() {
     return stateStartTime_ != null;
   }
@@ -484,6 +495,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    *
    * @return The stateStartTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStateStartTime() {
     return stateStartTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -500,6 +512,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
    * .google.protobuf.Timestamp state_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
     return getStateStartTime();
   }
@@ -895,6 +908,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -913,6 +927,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -930,6 +945,7 @@ public final class ClusterOperationStatus extends com.google.protobuf.GeneratedM
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.ClusterOperationStatus.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.ClusterOperationStatus.State result =

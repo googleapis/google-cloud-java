@@ -157,6 +157,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +181,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +207,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The region.
    */
+  @java.lang.Override
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +230,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for region.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +258,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the cluster field is set.
    */
+  @java.lang.Override
   public boolean hasCluster() {
     return cluster_ != null;
   }
@@ -270,6 +275,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The cluster.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.Cluster getCluster() {
     return cluster_ == null
         ? com.google.cloud.dataproc.v1beta2.Cluster.getDefaultInstance()
@@ -286,6 +292,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.dataproc.v1beta2.Cluster cluster = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterOrBuilder getClusterOrBuilder() {
     return getCluster();
   }
@@ -311,6 +318,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The requestId.
    */
+  @java.lang.Override
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -341,6 +349,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {

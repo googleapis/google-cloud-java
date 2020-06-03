@@ -263,6 +263,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -312,6 +316,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for consumeReservationType.
    */
+  @java.lang.Override
   public int getConsumeReservationTypeValue() {
     return consumeReservationType_;
   }
@@ -328,6 +333,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    * @return The consumeReservationType.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type getConsumeReservationType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type result =
@@ -350,6 +356,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    * @return The key.
    */
+  @java.lang.Override
   public java.lang.String getKey() {
     java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
@@ -372,6 +379,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for key.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyBytes() {
     java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
@@ -833,6 +841,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for consumeReservationType.
      */
+    @java.lang.Override
     public int getConsumeReservationTypeValue() {
       return consumeReservationType_;
     }
@@ -851,6 +860,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setConsumeReservationTypeValue(int value) {
+
       consumeReservationType_ = value;
       onChanged();
       return this;
@@ -868,6 +878,7 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      * @return The consumeReservationType.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type getConsumeReservationType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1beta2.ReservationAffinity.Type result =

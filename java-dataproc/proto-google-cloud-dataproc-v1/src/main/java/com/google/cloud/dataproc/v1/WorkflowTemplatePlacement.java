@@ -195,6 +195,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    * @return Whether the managedCluster field is set.
    */
+  @java.lang.Override
   public boolean hasManagedCluster() {
     return placementCase_ == 1;
   }
@@ -209,6 +210,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    * @return The managedCluster.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ManagedCluster getManagedCluster() {
     if (placementCase_ == 1) {
       return (com.google.cloud.dataproc.v1.ManagedCluster) placement_;
@@ -224,6 +226,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ManagedClusterOrBuilder getManagedClusterOrBuilder() {
     if (placementCase_ == 1) {
       return (com.google.cloud.dataproc.v1.ManagedCluster) placement_;
@@ -245,6 +248,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    * @return Whether the clusterSelector field is set.
    */
+  @java.lang.Override
   public boolean hasClusterSelector() {
     return placementCase_ == 2;
   }
@@ -261,6 +265,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    * @return The clusterSelector.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterSelector getClusterSelector() {
     if (placementCase_ == 2) {
       return (com.google.cloud.dataproc.v1.ClusterSelector) placement_;
@@ -278,6 +283,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.dataproc.v1.ClusterSelector cluster_selector = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterSelectorOrBuilder getClusterSelectorOrBuilder() {
     if (placementCase_ == 2) {
       return (com.google.cloud.dataproc.v1.ClusterSelector) placement_;
@@ -691,6 +697,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      * @return Whether the managedCluster field is set.
      */
+    @java.lang.Override
     public boolean hasManagedCluster() {
       return placementCase_ == 1;
     }
@@ -705,6 +712,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      * @return The managedCluster.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.ManagedCluster getManagedCluster() {
       if (managedClusterBuilder_ == null) {
         if (placementCase_ == 1) {
@@ -837,6 +845,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.dataproc.v1.ManagedCluster managed_cluster = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.ManagedClusterOrBuilder getManagedClusterOrBuilder() {
       if ((placementCase_ == 1) && (managedClusterBuilder_ != null)) {
         return managedClusterBuilder_.getMessageOrBuilder();
@@ -899,6 +908,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      * @return Whether the clusterSelector field is set.
      */
+    @java.lang.Override
     public boolean hasClusterSelector() {
       return placementCase_ == 2;
     }
@@ -915,6 +925,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      * @return The clusterSelector.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.ClusterSelector getClusterSelector() {
       if (clusterSelectorBuilder_ == null) {
         if (placementCase_ == 2) {
@@ -1059,6 +1070,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.dataproc.v1.ClusterSelector cluster_selector = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.ClusterSelectorOrBuilder getClusterSelectorOrBuilder() {
       if ((placementCase_ == 2) && (clusterSelectorBuilder_ != null)) {
         return clusterSelectorBuilder_.getMessageOrBuilder();

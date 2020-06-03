@@ -126,6 +126,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
    *
    * @return The outputUri.
    */
+  @java.lang.Override
   public java.lang.String getOutputUri() {
     java.lang.Object ref = outputUri_;
     if (ref instanceof java.lang.String) {
@@ -150,6 +151,7 @@ public final class DiagnoseClusterResults extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for outputUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutputUriBytes() {
     java.lang.Object ref = outputUri_;
     if (ref instanceof java.lang.String) {

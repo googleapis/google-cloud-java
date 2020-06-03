@@ -305,6 +305,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The targetGkeCluster.
      */
+    @java.lang.Override
     public java.lang.String getTargetGkeCluster() {
       java.lang.Object ref = targetGkeCluster_;
       if (ref instanceof java.lang.String) {
@@ -330,6 +331,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The bytes for targetGkeCluster.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTargetGkeClusterBytes() {
       java.lang.Object ref = targetGkeCluster_;
       if (ref instanceof java.lang.String) {
@@ -355,6 +357,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The clusterNamespace.
      */
+    @java.lang.Override
     public java.lang.String getClusterNamespace() {
       java.lang.Object ref = clusterNamespace_;
       if (ref instanceof java.lang.String) {
@@ -377,6 +380,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The bytes for clusterNamespace.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getClusterNamespaceBytes() {
       java.lang.Object ref = clusterNamespace_;
       if (ref instanceof java.lang.String) {
@@ -1055,6 +1059,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the namespacedGkeDeploymentTarget field is set.
    */
+  @java.lang.Override
   public boolean hasNamespacedGkeDeploymentTarget() {
     return namespacedGkeDeploymentTarget_ != null;
   }
@@ -1071,6 +1076,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The namespacedGkeDeploymentTarget.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.GkeClusterConfig.NamespacedGkeDeploymentTarget
       getNamespacedGkeDeploymentTarget() {
     return namespacedGkeDeploymentTarget_ == null
@@ -1089,6 +1095,7 @@ public final class GkeClusterConfig extends com.google.protobuf.GeneratedMessage
    * .google.cloud.dataproc.v1beta2.GkeClusterConfig.NamespacedGkeDeploymentTarget namespaced_gke_deployment_target = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.GkeClusterConfig.NamespacedGkeDeploymentTargetOrBuilder
       getNamespacedGkeDeploymentTargetOrBuilder() {
     return getNamespacedGkeDeploymentTarget();

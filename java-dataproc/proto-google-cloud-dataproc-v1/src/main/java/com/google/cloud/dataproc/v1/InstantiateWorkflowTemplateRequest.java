@@ -174,6 +174,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +206,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +236,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    * @return The version.
    */
+  @java.lang.Override
   public int getVersion() {
     return version_;
   }
@@ -257,6 +260,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    * @return The requestId.
    */
+  @java.lang.Override
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -285,6 +289,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -333,6 +338,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsParameters(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -340,6 +346,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     return internalGetParameters().getMap().containsKey(key);
   }
   /** Use {@link #getParametersMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
@@ -355,6 +362,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
@@ -369,6 +377,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getParametersOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -388,6 +397,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
    * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getParametersOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -964,6 +974,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      *
      * @return The version.
      */
+    @java.lang.Override
     public int getVersion() {
       return version_;
     }
@@ -1186,6 +1197,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsParameters(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1193,6 +1205,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       return internalGetParameters().getMap().containsKey(key);
     }
     /** Use {@link #getParametersMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
@@ -1208,6 +1221,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
@@ -1222,6 +1236,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getParametersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1241,6 +1256,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getParametersOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

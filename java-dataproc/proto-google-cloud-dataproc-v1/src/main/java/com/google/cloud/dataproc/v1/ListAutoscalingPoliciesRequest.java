@@ -147,6 +147,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -222,6 +225,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -245,6 +249,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -771,6 +776,7 @@ public final class ListAutoscalingPoliciesRequest extends com.google.protobuf.Ge
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

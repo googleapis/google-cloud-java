@@ -235,6 +235,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +261,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -292,6 +294,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -321,6 +324,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -341,6 +345,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the basicAlgorithm field is set.
    */
+  @java.lang.Override
   public boolean hasBasicAlgorithm() {
     return algorithmCase_ == 3;
   }
@@ -351,6 +356,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The basicAlgorithm.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm getBasicAlgorithm() {
     if (algorithmCase_ == 3) {
       return (com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm) algorithm_;
@@ -362,6 +368,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithmOrBuilder
       getBasicAlgorithmOrBuilder() {
     if (algorithmCase_ == 3) {
@@ -385,6 +392,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the workerConfig field is set.
    */
+  @java.lang.Override
   public boolean hasWorkerConfig() {
     return workerConfig_ != null;
   }
@@ -401,6 +409,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The workerConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig getWorkerConfig() {
     return workerConfig_ == null
         ? com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig.getDefaultInstance()
@@ -417,6 +426,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig worker_config = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfigOrBuilder
       getWorkerConfigOrBuilder() {
     return getWorkerConfig();
@@ -437,6 +447,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the secondaryWorkerConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSecondaryWorkerConfig() {
     return secondaryWorkerConfig_ != null;
   }
@@ -453,6 +464,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The secondaryWorkerConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig
       getSecondaryWorkerConfig() {
     return secondaryWorkerConfig_ == null
@@ -470,6 +482,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    * .google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig secondary_worker_config = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfigOrBuilder
       getSecondaryWorkerConfigOrBuilder() {
     return getSecondaryWorkerConfig();
@@ -1197,6 +1210,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the basicAlgorithm field is set.
      */
+    @java.lang.Override
     public boolean hasBasicAlgorithm() {
       return algorithmCase_ == 3;
     }
@@ -1207,6 +1221,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      * @return The basicAlgorithm.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm getBasicAlgorithm() {
       if (basicAlgorithmBuilder_ == null) {
         if (algorithmCase_ == 3) {
@@ -1318,6 +1333,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithmOrBuilder
         getBasicAlgorithmOrBuilder() {
       if ((algorithmCase_ == 3) && (basicAlgorithmBuilder_ != null)) {

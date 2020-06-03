@@ -280,6 +280,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -327,6 +331,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -350,6 +355,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -375,6 +381,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The region.
    */
+  @java.lang.Override
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -397,6 +404,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for region.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -422,6 +430,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -440,6 +449,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -463,6 +473,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -489,6 +500,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The clusterName.
    */
+  @java.lang.Override
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -512,6 +524,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for clusterName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -541,6 +554,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for jobStateMatcher.
    */
+  @java.lang.Override
   public int getJobStateMatcherValue() {
     return jobStateMatcher_;
   }
@@ -559,6 +573,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The jobStateMatcher.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher getJobStateMatcher() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher result =
@@ -590,6 +605,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -621,6 +637,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -1274,6 +1291,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -1551,6 +1569,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for jobStateMatcher.
      */
+    @java.lang.Override
     public int getJobStateMatcherValue() {
       return jobStateMatcher_;
     }
@@ -1571,6 +1590,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setJobStateMatcherValue(int value) {
+
       jobStateMatcher_ = value;
       onChanged();
       return this;
@@ -1590,6 +1610,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      * @return The jobStateMatcher.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher getJobStateMatcher() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher result =

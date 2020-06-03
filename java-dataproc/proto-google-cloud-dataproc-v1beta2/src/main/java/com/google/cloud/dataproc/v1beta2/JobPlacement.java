@@ -132,6 +132,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clusterName.
    */
+  @java.lang.Override
   public java.lang.String getClusterName() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clusterName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +182,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clusterUuid.
    */
+  @java.lang.Override
   public java.lang.String getClusterUuid() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +206,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clusterUuid.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {

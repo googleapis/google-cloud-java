@@ -156,6 +156,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    *
    * @return Whether the gracefulDecommissionTimeout field is set.
    */
+  @java.lang.Override
   public boolean hasGracefulDecommissionTimeout() {
     return gracefulDecommissionTimeout_ != null;
   }
@@ -176,6 +177,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    *
    * @return The gracefulDecommissionTimeout.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
     return gracefulDecommissionTimeout_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -196,6 +198,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    * .google.protobuf.Duration graceful_decommission_timeout = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder() {
     return getGracefulDecommissionTimeout();
   }
@@ -218,6 +221,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    *
    * @return The scaleUpFactor.
    */
+  @java.lang.Override
   public double getScaleUpFactor() {
     return scaleUpFactor_;
   }
@@ -240,6 +244,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    *
    * @return The scaleDownFactor.
    */
+  @java.lang.Override
   public double getScaleDownFactor() {
     return scaleDownFactor_;
   }
@@ -262,6 +267,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    *
    * @return The scaleUpMinWorkerFraction.
    */
+  @java.lang.Override
   public double getScaleUpMinWorkerFraction() {
     return scaleUpMinWorkerFraction_;
   }
@@ -285,6 +291,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
    *
    * @return The scaleDownMinWorkerFraction.
    */
+  @java.lang.Override
   public double getScaleDownMinWorkerFraction() {
     return scaleDownMinWorkerFraction_;
   }
@@ -957,6 +964,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * @return The scaleUpFactor.
      */
+    @java.lang.Override
     public double getScaleUpFactor() {
       return scaleUpFactor_;
     }
@@ -1023,6 +1031,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * @return The scaleDownFactor.
      */
+    @java.lang.Override
     public double getScaleDownFactor() {
       return scaleDownFactor_;
     }
@@ -1090,6 +1099,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * @return The scaleUpMinWorkerFraction.
      */
+    @java.lang.Override
     public double getScaleUpMinWorkerFraction() {
       return scaleUpMinWorkerFraction_;
     }
@@ -1159,6 +1169,7 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
      *
      * @return The scaleDownMinWorkerFraction.
      */
+    @java.lang.Override
     public double getScaleDownMinWorkerFraction() {
       return scaleDownMinWorkerFraction_;
     }

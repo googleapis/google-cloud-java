@@ -425,6 +425,10 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -614,6 +618,10 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -661,6 +669,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -677,6 +686,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.JobStatus.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.JobStatus.State result =
@@ -700,6 +710,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The details.
    */
+  @java.lang.Override
   public java.lang.String getDetails() {
     java.lang.Object ref = details_;
     if (ref instanceof java.lang.String) {
@@ -725,6 +736,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for details.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDetailsBytes() {
     java.lang.Object ref = details_;
     if (ref instanceof java.lang.String) {
@@ -752,6 +764,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the stateStartTime field is set.
    */
+  @java.lang.Override
   public boolean hasStateStartTime() {
     return stateStartTime_ != null;
   }
@@ -768,6 +781,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stateStartTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStateStartTime() {
     return stateStartTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -784,6 +798,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    * .google.protobuf.Timestamp state_start_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
     return getStateStartTime();
   }
@@ -804,6 +819,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for substate.
    */
+  @java.lang.Override
   public int getSubstateValue() {
     return substate_;
   }
@@ -821,6 +837,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The substate.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.JobStatus.Substate getSubstate() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.JobStatus.Substate result =
@@ -1215,6 +1232,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1233,6 +1251,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1250,6 +1269,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.JobStatus.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.JobStatus.State result =
@@ -1638,6 +1658,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for substate.
      */
+    @java.lang.Override
     public int getSubstateValue() {
       return substate_;
     }
@@ -1657,6 +1678,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSubstateValue(int value) {
+
       substate_ = value;
       onChanged();
       return this;
@@ -1675,6 +1697,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The substate.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.JobStatus.Substate getSubstate() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.JobStatus.Substate result =

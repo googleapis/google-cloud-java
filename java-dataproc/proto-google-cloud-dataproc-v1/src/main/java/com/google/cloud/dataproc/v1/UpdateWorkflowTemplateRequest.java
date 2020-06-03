@@ -134,6 +134,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    *
    * @return Whether the template field is set.
    */
+  @java.lang.Override
   public boolean hasTemplate() {
     return template_ != null;
   }
@@ -151,6 +152,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    *
    * @return The template.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate() {
     return template_ == null
         ? com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance()
@@ -168,6 +170,7 @@ public final class UpdateWorkflowTemplateRequest extends com.google.protobuf.Gen
    * .google.cloud.dataproc.v1.WorkflowTemplate template = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
     return getTemplate();
   }

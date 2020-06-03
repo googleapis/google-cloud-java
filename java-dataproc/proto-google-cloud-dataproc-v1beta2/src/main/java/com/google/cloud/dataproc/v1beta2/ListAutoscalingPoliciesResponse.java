@@ -143,6 +143,7 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
    * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1beta2.AutoscalingPolicy> getPoliciesList() {
     return policies_;
   }
@@ -157,6 +158,7 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
    * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.AutoscalingPolicyOrBuilder>
       getPoliciesOrBuilderList() {
     return policies_;
@@ -172,6 +174,7 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
    * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getPoliciesCount() {
     return policies_.size();
   }
@@ -186,6 +189,7 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
    * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.AutoscalingPolicy getPolicies(int index) {
     return policies_.get(index);
   }
@@ -200,6 +204,7 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
    * repeated .google.cloud.dataproc.v1beta2.AutoscalingPolicy policies = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.AutoscalingPolicyOrBuilder getPoliciesOrBuilder(
       int index) {
     return policies_.get(index);
@@ -219,6 +224,7 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +248,7 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

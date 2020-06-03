@@ -154,6 +154,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +204,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The region.
    */
+  @java.lang.Override
   public java.lang.String getRegion() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -224,6 +227,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for region.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +267,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -299,6 +304,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -324,6 +330,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -341,6 +348,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -363,6 +371,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -1160,6 +1169,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

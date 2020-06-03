@@ -149,6 +149,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    *
    * @return Whether the yarnConfig field is set.
    */
+  @java.lang.Override
   public boolean hasYarnConfig() {
     return yarnConfig_ != null;
   }
@@ -165,6 +166,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    *
    * @return The yarnConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig getYarnConfig() {
     return yarnConfig_ == null
         ? com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance()
@@ -181,6 +183,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    * .google.cloud.dataproc.v1.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfigOrBuilder getYarnConfigOrBuilder() {
     return getYarnConfig();
   }
@@ -201,6 +204,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    *
    * @return Whether the cooldownPeriod field is set.
    */
+  @java.lang.Override
   public boolean hasCooldownPeriod() {
     return cooldownPeriod_ != null;
   }
@@ -218,6 +222,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    *
    * @return The cooldownPeriod.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getCooldownPeriod() {
     return cooldownPeriod_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -235,6 +240,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    * <code>.google.protobuf.Duration cooldown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCooldownPeriodOrBuilder() {
     return getCooldownPeriod();
   }

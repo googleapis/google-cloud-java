@@ -137,6 +137,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    *
    * @return The operationId.
    */
+  @java.lang.Override
   public java.lang.String getOperationId() {
     java.lang.Object ref = operationId_;
     if (ref instanceof java.lang.String) {
@@ -159,6 +160,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for operationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOperationIdBytes() {
     java.lang.Object ref = operationId_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +186,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    *
    * @return The error.
    */
+  @java.lang.Override
   public java.lang.String getError() {
     java.lang.Object ref = error_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +209,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for error.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getErrorBytes() {
     java.lang.Object ref = error_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +235,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
    *
    * @return The done.
    */
+  @java.lang.Override
   public boolean getDone() {
     return done_;
   }
@@ -806,6 +811,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      *
      * @return The done.
      */
+    @java.lang.Override
     public boolean getDone() {
       return done_;
     }

@@ -140,6 +140,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.dataproc.v1beta2.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1beta2.Cluster> getClustersList() {
     return clusters_;
   }
@@ -154,6 +155,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.dataproc.v1beta2.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.ClusterOrBuilder>
       getClustersOrBuilderList() {
     return clusters_;
@@ -169,6 +171,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.dataproc.v1beta2.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getClustersCount() {
     return clusters_.size();
   }
@@ -183,6 +186,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.dataproc.v1beta2.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.Cluster getClusters(int index) {
     return clusters_.get(index);
   }
@@ -197,6 +201,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.dataproc.v1beta2.Cluster clusters = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.ClusterOrBuilder getClustersOrBuilder(int index) {
     return clusters_.get(index);
   }
@@ -216,6 +221,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +246,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

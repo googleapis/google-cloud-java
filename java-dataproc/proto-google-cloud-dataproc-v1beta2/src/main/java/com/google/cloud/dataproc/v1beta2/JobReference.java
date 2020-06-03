@@ -133,6 +133,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +186,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobId.
    */
+  @java.lang.Override
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +212,7 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for jobId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
     if (ref instanceof java.lang.String) {

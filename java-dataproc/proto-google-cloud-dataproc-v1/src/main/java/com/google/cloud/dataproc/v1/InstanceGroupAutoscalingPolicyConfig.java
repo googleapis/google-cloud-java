@@ -135,6 +135,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
    *
    * @return The minInstances.
    */
+  @java.lang.Override
   public int getMinInstances() {
     return minInstances_;
   }
@@ -156,6 +157,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
    *
    * @return The maxInstances.
    */
+  @java.lang.Override
   public int getMaxInstances() {
     return maxInstances_;
   }
@@ -188,6 +190,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
    *
    * @return The weight.
    */
+  @java.lang.Override
   public int getWeight() {
     return weight_;
   }
@@ -561,6 +564,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      *
      * @return The minInstances.
      */
+    @java.lang.Override
     public int getMinInstances() {
       return minInstances_;
     }
@@ -620,6 +624,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      *
      * @return The maxInstances.
      */
+    @java.lang.Override
     public int getMaxInstances() {
       return maxInstances_;
     }
@@ -694,6 +699,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      *
      * @return The weight.
      */
+    @java.lang.Override
     public int getWeight() {
       return weight_;
     }

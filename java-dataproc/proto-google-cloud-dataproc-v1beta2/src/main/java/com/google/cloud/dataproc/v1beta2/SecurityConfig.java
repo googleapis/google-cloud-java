@@ -131,6 +131,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the kerberosConfig field is set.
    */
+  @java.lang.Override
   public boolean hasKerberosConfig() {
     return kerberosConfig_ != null;
   }
@@ -145,6 +146,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kerberosConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.KerberosConfig getKerberosConfig() {
     return kerberosConfig_ == null
         ? com.google.cloud.dataproc.v1beta2.KerberosConfig.getDefaultInstance()
@@ -159,6 +161,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dataproc.v1beta2.KerberosConfig kerberos_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.KerberosConfigOrBuilder getKerberosConfigOrBuilder() {
     return getKerberosConfig();
   }

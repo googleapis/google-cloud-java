@@ -134,6 +134,7 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    * @return Whether the policy field is set.
    */
+  @java.lang.Override
   public boolean hasPolicy() {
     return policy_ != null;
   }
@@ -150,6 +151,7 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    *
    * @return The policy.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.AutoscalingPolicy getPolicy() {
     return policy_ == null
         ? com.google.cloud.dataproc.v1.AutoscalingPolicy.getDefaultInstance()
@@ -166,6 +168,7 @@ public final class UpdateAutoscalingPolicyRequest extends com.google.protobuf.Ge
    * .google.cloud.dataproc.v1.AutoscalingPolicy policy = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.AutoscalingPolicyOrBuilder getPolicyOrBuilder() {
     return getPolicy();
   }

@@ -307,6 +307,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the queryList field is set.
    */
+  @java.lang.Override
   public boolean hasQueryList() {
     return queriesCase_ == 2;
   }
@@ -321,6 +322,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The queryList.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.QueryList getQueryList() {
     if (queriesCase_ == 2) {
       return (com.google.cloud.dataproc.v1beta2.QueryList) queries_;
@@ -336,6 +338,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dataproc.v1beta2.QueryList query_list = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.QueryListOrBuilder getQueryListOrBuilder() {
     if (queriesCase_ == 2) {
       return (com.google.cloud.dataproc.v1beta2.QueryList) queries_;
@@ -358,6 +361,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The continueOnFailure.
    */
+  @java.lang.Override
   public boolean getContinueOnFailure() {
     return continueOnFailure_;
   }
@@ -400,6 +404,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsScriptVariables(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -407,6 +412,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     return internalGetScriptVariables().getMap().containsKey(key);
   }
   /** Use {@link #getScriptVariablesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariables() {
     return getScriptVariablesMap();
@@ -422,6 +428,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
     return internalGetScriptVariables().getMap();
   }
@@ -436,6 +443,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getScriptVariablesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -455,6 +463,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -504,6 +513,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -511,6 +521,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     return internalGetProperties().getMap().containsKey(key);
   }
   /** Use {@link #getPropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
@@ -528,6 +539,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
@@ -544,6 +556,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -565,6 +578,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1156,6 +1170,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The queryFileUri.
      */
+    @java.lang.Override
     public java.lang.String getQueryFileUri() {
       java.lang.Object ref = "";
       if (queriesCase_ == 1) {
@@ -1183,6 +1198,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for queryFileUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getQueryFileUriBytes() {
       java.lang.Object ref = "";
       if (queriesCase_ == 1) {
@@ -1278,6 +1294,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the queryList field is set.
      */
+    @java.lang.Override
     public boolean hasQueryList() {
       return queriesCase_ == 2;
     }
@@ -1292,6 +1309,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The queryList.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.QueryList getQueryList() {
       if (queryListBuilder_ == null) {
         if (queriesCase_ == 2) {
@@ -1424,6 +1442,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dataproc.v1beta2.QueryList query_list = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.QueryListOrBuilder getQueryListOrBuilder() {
       if ((queriesCase_ == 2) && (queryListBuilder_ != null)) {
         return queryListBuilder_.getMessageOrBuilder();
@@ -1482,6 +1501,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The continueOnFailure.
      */
+    @java.lang.Override
     public boolean getContinueOnFailure() {
       return continueOnFailure_;
     }
@@ -1566,6 +1586,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsScriptVariables(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1573,6 +1594,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       return internalGetScriptVariables().getMap().containsKey(key);
     }
     /** Use {@link #getScriptVariablesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariables() {
       return getScriptVariablesMap();
@@ -1589,6 +1611,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
       return internalGetScriptVariables().getMap();
     }
@@ -1604,6 +1627,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getScriptVariablesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1624,6 +1648,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1743,6 +1768,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1750,6 +1776,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       return internalGetProperties().getMap().containsKey(key);
     }
     /** Use {@link #getPropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
@@ -1767,6 +1794,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
@@ -1783,6 +1811,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1804,6 +1833,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

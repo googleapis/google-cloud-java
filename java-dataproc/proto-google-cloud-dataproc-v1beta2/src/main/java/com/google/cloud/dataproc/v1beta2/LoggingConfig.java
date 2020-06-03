@@ -386,6 +386,10 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -474,6 +478,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
    * </code>
    */
+  @java.lang.Override
   public boolean containsDriverLogLevels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -481,6 +486,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     return internalGetDriverLogLevels().getMap().containsKey(key);
   }
   /** Use {@link #getDriverLogLevelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1beta2.LoggingConfig.Level>
       getDriverLogLevels() {
@@ -500,6 +506,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1beta2.LoggingConfig.Level>
       getDriverLogLevelsMap() {
     return internalGetAdaptedDriverLogLevelsMap(internalGetDriverLogLevels().getMap());
@@ -518,6 +525,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.LoggingConfig.Level getDriverLogLevelsOrDefault(
       java.lang.String key, com.google.cloud.dataproc.v1beta2.LoggingConfig.Level defaultValue) {
     if (key == null) {
@@ -542,6 +550,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.LoggingConfig.Level getDriverLogLevelsOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -554,6 +563,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     return driverLogLevelsValueConverter.doForward(map.get(key));
   }
   /** Use {@link #getDriverLogLevelsValueMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValue() {
     return getDriverLogLevelsValueMap();
@@ -572,6 +582,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValueMap() {
     return internalGetDriverLogLevels().getMap();
   }
@@ -589,6 +600,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
    * </code>
    */
+  @java.lang.Override
   public int getDriverLogLevelsValueOrDefault(java.lang.String key, int defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -610,6 +622,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
    * </code>
    */
+  @java.lang.Override
   public int getDriverLogLevelsValueOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1009,6 +1022,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
      * </code>
      */
+    @java.lang.Override
     public boolean containsDriverLogLevels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1016,6 +1030,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetDriverLogLevels().getMap().containsKey(key);
     }
     /** Use {@link #getDriverLogLevelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1beta2.LoggingConfig.Level>
         getDriverLogLevels() {
@@ -1035,6 +1050,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1beta2.LoggingConfig.Level>
         getDriverLogLevelsMap() {
       return internalGetAdaptedDriverLogLevelsMap(internalGetDriverLogLevels().getMap());
@@ -1053,6 +1069,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.LoggingConfig.Level getDriverLogLevelsOrDefault(
         java.lang.String key, com.google.cloud.dataproc.v1beta2.LoggingConfig.Level defaultValue) {
       if (key == null) {
@@ -1078,6 +1095,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.LoggingConfig.Level getDriverLogLevelsOrThrow(
         java.lang.String key) {
       if (key == null) {
@@ -1091,6 +1109,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       return driverLogLevelsValueConverter.doForward(map.get(key));
     }
     /** Use {@link #getDriverLogLevelsValueMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValue() {
       return getDriverLogLevelsValueMap();
@@ -1109,6 +1128,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValueMap() {
       return internalGetDriverLogLevels().getMap();
     }
@@ -1126,6 +1146,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
      * </code>
      */
+    @java.lang.Override
     public int getDriverLogLevelsValueOrDefault(java.lang.String key, int defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1148,6 +1169,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.dataproc.v1beta2.LoggingConfig.Level&gt; driver_log_levels = 2;
      * </code>
      */
+    @java.lang.Override
     public int getDriverLogLevelsValueOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

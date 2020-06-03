@@ -703,6 +703,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -710,6 +711,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     return internalGetProperties().getMap().containsKey(key);
   }
   /** Use {@link #getPropertiesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
@@ -727,6 +729,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
@@ -743,6 +746,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -764,6 +768,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -790,6 +795,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the loggingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasLoggingConfig() {
     return loggingConfig_ != null;
   }
@@ -806,6 +812,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The loggingConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
     return loggingConfig_ == null
         ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
@@ -822,6 +829,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dataproc.v1.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
     return getLoggingConfig();
   }
@@ -1426,6 +1434,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mainJarFileUri.
      */
+    @java.lang.Override
     public java.lang.String getMainJarFileUri() {
       java.lang.Object ref = "";
       if (driverCase_ == 1) {
@@ -1457,6 +1466,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for mainJarFileUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMainJarFileUriBytes() {
       java.lang.Object ref = "";
       if (driverCase_ == 1) {
@@ -1560,6 +1570,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mainClass.
      */
+    @java.lang.Override
     public java.lang.String getMainClass() {
       java.lang.Object ref = "";
       if (driverCase_ == 2) {
@@ -1588,6 +1599,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for mainClass.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMainClassBytes() {
       java.lang.Object ref = "";
       if (driverCase_ == 2) {
@@ -2455,6 +2467,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2462,6 +2475,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       return internalGetProperties().getMap().containsKey(key);
     }
     /** Use {@link #getPropertiesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
@@ -2479,6 +2493,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
@@ -2495,6 +2510,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2516,6 +2532,7 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

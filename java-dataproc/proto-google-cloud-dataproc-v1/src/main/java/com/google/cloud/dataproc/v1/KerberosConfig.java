@@ -231,6 +231,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enableKerberos.
    */
+  @java.lang.Override
   public boolean getEnableKerberos() {
     return enableKerberos_;
   }
@@ -249,6 +250,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rootPrincipalPasswordUri.
    */
+  @java.lang.Override
   public java.lang.String getRootPrincipalPasswordUri() {
     java.lang.Object ref = rootPrincipalPasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -272,6 +274,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for rootPrincipalPasswordUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRootPrincipalPasswordUriBytes() {
     java.lang.Object ref = rootPrincipalPasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -298,6 +301,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kmsKeyUri.
    */
+  @java.lang.Override
   public java.lang.String getKmsKeyUri() {
     java.lang.Object ref = kmsKeyUri_;
     if (ref instanceof java.lang.String) {
@@ -321,6 +325,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for kmsKeyUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKmsKeyUriBytes() {
     java.lang.Object ref = kmsKeyUri_;
     if (ref instanceof java.lang.String) {
@@ -348,6 +353,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The keystoreUri.
    */
+  @java.lang.Override
   public java.lang.String getKeystoreUri() {
     java.lang.Object ref = keystoreUri_;
     if (ref instanceof java.lang.String) {
@@ -372,6 +378,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for keystoreUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeystoreUriBytes() {
     java.lang.Object ref = keystoreUri_;
     if (ref instanceof java.lang.String) {
@@ -399,6 +406,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The truststoreUri.
    */
+  @java.lang.Override
   public java.lang.String getTruststoreUri() {
     java.lang.Object ref = truststoreUri_;
     if (ref instanceof java.lang.String) {
@@ -423,6 +431,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for truststoreUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTruststoreUriBytes() {
     java.lang.Object ref = truststoreUri_;
     if (ref instanceof java.lang.String) {
@@ -450,6 +459,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The keystorePasswordUri.
    */
+  @java.lang.Override
   public java.lang.String getKeystorePasswordUri() {
     java.lang.Object ref = keystorePasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -474,6 +484,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for keystorePasswordUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeystorePasswordUriBytes() {
     java.lang.Object ref = keystorePasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -501,6 +512,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The keyPasswordUri.
    */
+  @java.lang.Override
   public java.lang.String getKeyPasswordUri() {
     java.lang.Object ref = keyPasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -525,6 +537,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for keyPasswordUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyPasswordUriBytes() {
     java.lang.Object ref = keyPasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -552,6 +565,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The truststorePasswordUri.
    */
+  @java.lang.Override
   public java.lang.String getTruststorePasswordUri() {
     java.lang.Object ref = truststorePasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -576,6 +590,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for truststorePasswordUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTruststorePasswordUriBytes() {
     java.lang.Object ref = truststorePasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -602,6 +617,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The crossRealmTrustRealm.
    */
+  @java.lang.Override
   public java.lang.String getCrossRealmTrustRealm() {
     java.lang.Object ref = crossRealmTrustRealm_;
     if (ref instanceof java.lang.String) {
@@ -625,6 +641,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for crossRealmTrustRealm.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCrossRealmTrustRealmBytes() {
     java.lang.Object ref = crossRealmTrustRealm_;
     if (ref instanceof java.lang.String) {
@@ -651,6 +668,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The crossRealmTrustKdc.
    */
+  @java.lang.Override
   public java.lang.String getCrossRealmTrustKdc() {
     java.lang.Object ref = crossRealmTrustKdc_;
     if (ref instanceof java.lang.String) {
@@ -674,6 +692,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for crossRealmTrustKdc.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCrossRealmTrustKdcBytes() {
     java.lang.Object ref = crossRealmTrustKdc_;
     if (ref instanceof java.lang.String) {
@@ -701,6 +720,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The crossRealmTrustAdminServer.
    */
+  @java.lang.Override
   public java.lang.String getCrossRealmTrustAdminServer() {
     java.lang.Object ref = crossRealmTrustAdminServer_;
     if (ref instanceof java.lang.String) {
@@ -725,6 +745,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for crossRealmTrustAdminServer.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCrossRealmTrustAdminServerBytes() {
     java.lang.Object ref = crossRealmTrustAdminServer_;
     if (ref instanceof java.lang.String) {
@@ -754,6 +775,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The crossRealmTrustSharedPasswordUri.
    */
+  @java.lang.Override
   public java.lang.String getCrossRealmTrustSharedPasswordUri() {
     java.lang.Object ref = crossRealmTrustSharedPasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -780,6 +802,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for crossRealmTrustSharedPasswordUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCrossRealmTrustSharedPasswordUriBytes() {
     java.lang.Object ref = crossRealmTrustSharedPasswordUri_;
     if (ref instanceof java.lang.String) {
@@ -806,6 +829,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kdcDbKeyUri.
    */
+  @java.lang.Override
   public java.lang.String getKdcDbKeyUri() {
     java.lang.Object ref = kdcDbKeyUri_;
     if (ref instanceof java.lang.String) {
@@ -829,6 +853,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for kdcDbKeyUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKdcDbKeyUriBytes() {
     java.lang.Object ref = kdcDbKeyUri_;
     if (ref instanceof java.lang.String) {
@@ -856,6 +881,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tgtLifetimeHours.
    */
+  @java.lang.Override
   public int getTgtLifetimeHours() {
     return tgtLifetimeHours_;
   }
@@ -874,6 +900,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The realm.
    */
+  @java.lang.Override
   public java.lang.String getRealm() {
     java.lang.Object ref = realm_;
     if (ref instanceof java.lang.String) {
@@ -897,6 +924,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for realm.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRealmBytes() {
     java.lang.Object ref = realm_;
     if (ref instanceof java.lang.String) {
@@ -1467,6 +1495,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableKerberos.
      */
+    @java.lang.Override
     public boolean getEnableKerberos() {
       return enableKerberos_;
     }
@@ -2905,6 +2934,7 @@ public final class KerberosConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The tgtLifetimeHours.
      */
+    @java.lang.Override
     public int getTgtLifetimeHours() {
       return tgtLifetimeHours_;
     }
