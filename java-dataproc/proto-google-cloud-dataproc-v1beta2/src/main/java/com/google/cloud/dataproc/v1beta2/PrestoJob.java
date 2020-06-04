@@ -24,8 +24,9 @@ package com.google.cloud.dataproc.v1beta2;
  * <pre>
  * A Dataproc job for running [Presto](https://prestosql.io/) queries.
  * **IMPORTANT**: The [Dataproc Presto Optional
- * Component](/dataproc/docs/concepts/components/presto) must be enabled when
- * the cluster is created to submit a Presto job to the cluster.
+ * Component](https://cloud.google.com/dataproc/docs/concepts/components/presto)
+ * must be enabled when the cluster is created to submit a Presto job to the
+ * cluster.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.PrestoJob}
@@ -908,8 +909,9 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A Dataproc job for running [Presto](https://prestosql.io/) queries.
    * **IMPORTANT**: The [Dataproc Presto Optional
-   * Component](/dataproc/docs/concepts/components/presto) must be enabled when
-   * the cluster is created to submit a Presto job to the cluster.
+   * Component](https://cloud.google.com/dataproc/docs/concepts/components/presto)
+   * must be enabled when the cluster is created to submit a Presto job to the
+   * cluster.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.PrestoJob}
