@@ -145,6 +145,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -162,6 +163,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionConfig getConfig() {
     return config_ == null
         ? com.google.cloud.speech.v1.RecognitionConfig.getDefaultInstance()
@@ -179,6 +181,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -205,6 +208,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    * @return The singleUtterance.
    */
+  @java.lang.Override
   public boolean getSingleUtterance() {
     return singleUtterance_;
   }
@@ -225,6 +229,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    *
    * @return The interimResults.
    */
+  @java.lang.Override
   public boolean getInterimResults() {
     return interimResults_;
   }
@@ -824,6 +829,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      * @return The singleUtterance.
      */
+    @java.lang.Override
     public boolean getSingleUtterance() {
       return singleUtterance_;
     }
@@ -896,6 +902,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      *
      * @return The interimResults.
      */
+    @java.lang.Override
     public boolean getInterimResults() {
       return interimResults_;
     }

@@ -291,6 +291,10 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -340,6 +344,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * @return Whether the error field is set.
    */
+  @java.lang.Override
   public boolean hasError() {
     return error_ != null;
   }
@@ -355,6 +360,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * @return The error.
    */
+  @java.lang.Override
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
@@ -368,6 +374,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * <code>.google.rpc.Status error = 1;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
   }
@@ -386,6 +393,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult>
       getResultsList() {
     return results_;
@@ -402,6 +410,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.speech.v1p1beta1.StreamingRecognitionResultOrBuilder>
       getResultsOrBuilderList() {
@@ -419,6 +428,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public int getResultsCount() {
     return results_.size();
   }
@@ -434,6 +444,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult getResults(int index) {
     return results_.get(index);
   }
@@ -449,6 +460,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.StreamingRecognitionResultOrBuilder getResultsOrBuilder(
       int index) {
     return results_.get(index);
@@ -469,6 +481,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * @return The enum numeric value on the wire for speechEventType.
    */
+  @java.lang.Override
   public int getSpeechEventTypeValue() {
     return speechEventType_;
   }
@@ -485,6 +498,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    *
    * @return The speechEventType.
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType
       getSpeechEventType() {
     @SuppressWarnings("deprecation")
@@ -1559,6 +1573,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      * @return The enum numeric value on the wire for speechEventType.
      */
+    @java.lang.Override
     public int getSpeechEventTypeValue() {
       return speechEventType_;
     }
@@ -1577,6 +1592,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setSpeechEventTypeValue(int value) {
+
       speechEventType_ = value;
       onChanged();
       return this;
@@ -1594,6 +1610,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      *
      * @return The speechEventType.
      */
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType
         getSpeechEventType() {
       @SuppressWarnings("deprecation")

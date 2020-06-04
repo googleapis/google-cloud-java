@@ -137,6 +137,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    * @return The enableSpeakerDiarization.
    */
+  @java.lang.Override
   public boolean getEnableSpeakerDiarization() {
     return enableSpeakerDiarization_;
   }
@@ -156,6 +157,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    * @return The minSpeakerCount.
    */
+  @java.lang.Override
   public int getMinSpeakerCount() {
     return minSpeakerCount_;
   }
@@ -175,6 +177,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    * @return The maxSpeakerCount.
    */
+  @java.lang.Override
   public int getMaxSpeakerCount() {
     return maxSpeakerCount_;
   }
@@ -193,6 +196,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    * @return The speakerTag.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public int getSpeakerTag() {
     return speakerTag_;
@@ -574,6 +578,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * @return The enableSpeakerDiarization.
      */
+    @java.lang.Override
     public boolean getEnableSpeakerDiarization() {
       return enableSpeakerDiarization_;
     }
@@ -631,6 +636,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * @return The minSpeakerCount.
      */
+    @java.lang.Override
     public int getMinSpeakerCount() {
       return minSpeakerCount_;
     }
@@ -688,6 +694,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * @return The maxSpeakerCount.
      */
+    @java.lang.Override
     public int getMaxSpeakerCount() {
       return maxSpeakerCount_;
     }
@@ -744,6 +751,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      * @return The speakerTag.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public int getSpeakerTag() {
       return speakerTag_;

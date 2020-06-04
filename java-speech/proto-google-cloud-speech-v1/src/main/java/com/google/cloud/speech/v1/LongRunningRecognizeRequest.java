@@ -151,6 +151,7 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -168,6 +169,7 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionConfig getConfig() {
     return config_ == null
         ? com.google.cloud.speech.v1.RecognitionConfig.getDefaultInstance()
@@ -185,6 +187,7 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    * .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -204,6 +207,7 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    * @return Whether the audio field is set.
    */
+  @java.lang.Override
   public boolean hasAudio() {
     return audio_ != null;
   }
@@ -220,6 +224,7 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    *
    * @return The audio.
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionAudio getAudio() {
     return audio_ == null
         ? com.google.cloud.speech.v1.RecognitionAudio.getDefaultInstance()
@@ -236,6 +241,7 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
    * .google.cloud.speech.v1.RecognitionAudio audio = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionAudioOrBuilder getAudioOrBuilder() {
     return getAudio();
   }

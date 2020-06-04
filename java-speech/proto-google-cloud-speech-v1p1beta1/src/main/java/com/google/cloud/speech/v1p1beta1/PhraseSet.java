@@ -315,6 +315,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -337,6 +338,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -371,6 +373,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The boost.
      */
+    @java.lang.Override
     public float getBoost() {
       return boost_;
     }
@@ -857,6 +860,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The boost.
        */
+      @java.lang.Override
       public float getBoost() {
         return boost_;
       }
@@ -979,6 +983,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1001,6 +1006,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1024,6 +1030,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase> getPhrasesList() {
     return phrases_;
   }
@@ -1036,6 +1043,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.speech.v1p1beta1.PhraseSet.PhraseOrBuilder>
       getPhrasesOrBuilderList() {
     return phrases_;
@@ -1049,6 +1057,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code>
    */
+  @java.lang.Override
   public int getPhrasesCount() {
     return phrases_.size();
   }
@@ -1061,6 +1070,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase getPhrases(int index) {
     return phrases_.get(index);
   }
@@ -1073,6 +1083,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.PhraseSet.PhraseOrBuilder getPhrasesOrBuilder(
       int index) {
     return phrases_.get(index);
@@ -1099,6 +1110,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boost.
    */
+  @java.lang.Override
   public float getBoost() {
     return boost_;
   }
@@ -1973,6 +1985,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The boost.
      */
+    @java.lang.Override
     public float getBoost() {
       return boost_;
     }

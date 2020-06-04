@@ -175,6 +175,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative>
       getAlternativesList() {
     return alternatives_;
@@ -191,6 +192,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList() {
     return alternatives_;
@@ -207,6 +209,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public int getAlternativesCount() {
     return alternatives_.size();
   }
@@ -222,6 +225,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.SpeechRecognitionAlternative getAlternatives(int index) {
     return alternatives_.get(index);
   }
@@ -237,6 +241,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder getAlternativesOrBuilder(
       int index) {
     return alternatives_.get(index);
@@ -259,6 +264,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The isFinal.
    */
+  @java.lang.Override
   public boolean getIsFinal() {
     return isFinal_;
   }
@@ -280,6 +286,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The stability.
    */
+  @java.lang.Override
   public float getStability() {
     return stability_;
   }
@@ -298,6 +305,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return Whether the resultEndTime field is set.
    */
+  @java.lang.Override
   public boolean hasResultEndTime() {
     return resultEndTime_ != null;
   }
@@ -313,6 +321,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The resultEndTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getResultEndTime() {
     return resultEndTime_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -328,6 +337,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>.google.protobuf.Duration result_end_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder() {
     return getResultEndTime();
   }
@@ -347,6 +357,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The channelTag.
    */
+  @java.lang.Override
   public int getChannelTag() {
     return channelTag_;
   }
@@ -366,6 +377,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -390,6 +402,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -1288,6 +1301,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * @return The isFinal.
      */
+    @java.lang.Override
     public boolean getIsFinal() {
       return isFinal_;
     }
@@ -1351,6 +1365,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * @return The stability.
      */
+    @java.lang.Override
     public float getStability() {
       return stability_;
     }
@@ -1606,6 +1621,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * @return The channelTag.
      */
+    @java.lang.Override
     public int getChannelTag() {
       return channelTag_;
     }

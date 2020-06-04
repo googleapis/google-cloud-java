@@ -141,6 +141,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative>
       getAlternativesList() {
     return alternatives_;
@@ -157,6 +158,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList() {
     return alternatives_;
@@ -173,6 +175,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public int getAlternativesCount() {
     return alternatives_.size();
   }
@@ -188,6 +191,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.SpeechRecognitionAlternative getAlternatives(int index) {
     return alternatives_.get(index);
   }
@@ -203,6 +207,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder getAlternativesOrBuilder(
       int index) {
     return alternatives_.get(index);
@@ -223,6 +228,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
    *
    * @return The channelTag.
    */
+  @java.lang.Override
   public int getChannelTag() {
     return channelTag_;
   }
@@ -1034,6 +1040,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
      *
      * @return The channelTag.
      */
+    @java.lang.Override
     public int getChannelTag() {
       return channelTag_;
     }

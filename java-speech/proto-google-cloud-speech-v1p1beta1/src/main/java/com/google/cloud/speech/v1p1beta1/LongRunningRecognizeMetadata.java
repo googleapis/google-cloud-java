@@ -162,6 +162,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * @return The progressPercent.
    */
+  @java.lang.Override
   public int getProgressPercent() {
     return progressPercent_;
   }
@@ -179,6 +180,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -193,6 +195,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -205,6 +208,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * <code>.google.protobuf.Timestamp start_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -222,6 +226,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * @return Whether the lastUpdateTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastUpdateTime() {
     return lastUpdateTime_ != null;
   }
@@ -236,6 +241,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * @return The lastUpdateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastUpdateTime() {
     return lastUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -250,6 +256,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * <code>.google.protobuf.Timestamp last_update_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
     return getLastUpdateTime();
   }
@@ -268,6 +275,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +299,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -711,6 +720,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      *
      * @return The progressPercent.
      */
+    @java.lang.Override
     public int getProgressPercent() {
       return progressPercent_;
     }

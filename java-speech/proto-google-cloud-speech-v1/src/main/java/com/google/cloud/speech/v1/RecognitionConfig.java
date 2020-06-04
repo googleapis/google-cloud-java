@@ -505,6 +505,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -552,6 +556,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for encoding.
    */
+  @java.lang.Override
   public int getEncodingValue() {
     return encoding_;
   }
@@ -568,6 +573,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The encoding.
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding getEncoding() {
     @SuppressWarnings("deprecation")
     com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding result =
@@ -596,6 +602,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The sampleRateHertz.
    */
+  @java.lang.Override
   public int getSampleRateHertz() {
     return sampleRateHertz_;
   }
@@ -621,6 +628,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The audioChannelCount.
    */
+  @java.lang.Override
   public int getAudioChannelCount() {
     return audioChannelCount_;
   }
@@ -643,6 +651,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The enableSeparateRecognitionPerChannel.
    */
+  @java.lang.Override
   public boolean getEnableSeparateRecognitionPerChannel() {
     return enableSeparateRecognitionPerChannel_;
   }
@@ -665,6 +674,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -692,6 +702,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -722,6 +733,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The maxAlternatives.
    */
+  @java.lang.Override
   public int getMaxAlternatives() {
     return maxAlternatives_;
   }
@@ -742,6 +754,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The profanityFilter.
    */
+  @java.lang.Override
   public boolean getProfanityFilter() {
     return profanityFilter_;
   }
@@ -761,6 +774,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1.SpeechContext> getSpeechContextsList() {
     return speechContexts_;
   }
@@ -777,6 +791,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.speech.v1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList() {
     return speechContexts_;
@@ -794,6 +809,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
+  @java.lang.Override
   public int getSpeechContextsCount() {
     return speechContexts_.size();
   }
@@ -810,6 +826,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.SpeechContext getSpeechContexts(int index) {
     return speechContexts_.get(index);
   }
@@ -826,6 +843,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.SpeechContextOrBuilder getSpeechContextsOrBuilder(int index) {
     return speechContexts_.get(index);
   }
@@ -846,6 +864,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The enableWordTimeOffsets.
    */
+  @java.lang.Override
   public boolean getEnableWordTimeOffsets() {
     return enableWordTimeOffsets_;
   }
@@ -869,6 +888,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The enableAutomaticPunctuation.
    */
+  @java.lang.Override
   public boolean getEnableAutomaticPunctuation() {
     return enableAutomaticPunctuation_;
   }
@@ -893,6 +913,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the diarizationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDiarizationConfig() {
     return diarizationConfig_ != null;
   }
@@ -914,6 +935,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The diarizationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.SpeakerDiarizationConfig getDiarizationConfig() {
     return diarizationConfig_ == null
         ? com.google.cloud.speech.v1.SpeakerDiarizationConfig.getDefaultInstance()
@@ -935,6 +957,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.speech.v1.SpeakerDiarizationConfig diarization_config = 19;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.SpeakerDiarizationConfigOrBuilder
       getDiarizationConfigOrBuilder() {
     return getDiarizationConfig();
@@ -953,6 +976,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -967,6 +991,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.speech.v1.RecognitionMetadata.getDefaultInstance()
@@ -981,6 +1006,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.RecognitionMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -1029,6 +1055,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -1082,6 +1109,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -1113,6 +1141,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The useEnhanced.
    */
+  @java.lang.Override
   public boolean getUseEnhanced() {
     return useEnhanced_;
   }
@@ -1723,6 +1752,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for encoding.
      */
+    @java.lang.Override
     public int getEncodingValue() {
       return encoding_;
     }
@@ -1741,6 +1771,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEncodingValue(int value) {
+
       encoding_ = value;
       onChanged();
       return this;
@@ -1758,6 +1789,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The encoding.
      */
+    @java.lang.Override
     public com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding getEncoding() {
       @SuppressWarnings("deprecation")
       com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding result =
@@ -1827,6 +1859,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The sampleRateHertz.
      */
+    @java.lang.Override
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
@@ -1898,6 +1931,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The audioChannelCount.
      */
+    @java.lang.Override
     public int getAudioChannelCount() {
       return audioChannelCount_;
     }
@@ -1970,6 +2004,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The enableSeparateRecognitionPerChannel.
      */
+    @java.lang.Override
     public boolean getEnableSeparateRecognitionPerChannel() {
       return enableSeparateRecognitionPerChannel_;
     }
@@ -2167,6 +2202,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The maxAlternatives.
      */
+    @java.lang.Override
     public int getMaxAlternatives() {
       return maxAlternatives_;
     }
@@ -2231,6 +2267,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The profanityFilter.
      */
+    @java.lang.Override
     public boolean getProfanityFilter() {
       return profanityFilter_;
     }
@@ -2717,6 +2754,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The enableWordTimeOffsets.
      */
+    @java.lang.Override
     public boolean getEnableWordTimeOffsets() {
       return enableWordTimeOffsets_;
     }
@@ -2780,6 +2818,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The enableAutomaticPunctuation.
      */
+    @java.lang.Override
     public boolean getEnableAutomaticPunctuation() {
       return enableAutomaticPunctuation_;
     }
@@ -3548,6 +3587,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The useEnhanced.
      */
+    @java.lang.Override
     public boolean getUseEnhanced() {
       return useEnhanced_;
     }

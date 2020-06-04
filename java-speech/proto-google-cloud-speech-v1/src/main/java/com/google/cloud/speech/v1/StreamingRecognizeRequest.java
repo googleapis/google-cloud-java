@@ -193,6 +193,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    *
    * @return Whether the streamingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasStreamingConfig() {
     return streamingRequestCase_ == 1;
   }
@@ -209,6 +210,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    *
    * @return The streamingConfig.
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.StreamingRecognitionConfig getStreamingConfig() {
     if (streamingRequestCase_ == 1) {
       return (com.google.cloud.speech.v1.StreamingRecognitionConfig) streamingRequest_;
@@ -226,6 +228,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.speech.v1.StreamingRecognitionConfig streaming_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1.StreamingRecognitionConfigOrBuilder
       getStreamingConfigOrBuilder() {
     if (streamingRequestCase_ == 1) {
@@ -253,6 +256,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    *
    * @return The audioContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAudioContent() {
     if (streamingRequestCase_ == 2) {
       return (com.google.protobuf.ByteString) streamingRequest_;
@@ -667,6 +671,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      * @return Whether the streamingConfig field is set.
      */
+    @java.lang.Override
     public boolean hasStreamingConfig() {
       return streamingRequestCase_ == 1;
     }
@@ -683,6 +688,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      * @return The streamingConfig.
      */
+    @java.lang.Override
     public com.google.cloud.speech.v1.StreamingRecognitionConfig getStreamingConfig() {
       if (streamingConfigBuilder_ == null) {
         if (streamingRequestCase_ == 1) {
@@ -830,6 +836,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      * <code>.google.cloud.speech.v1.StreamingRecognitionConfig streaming_config = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.speech.v1.StreamingRecognitionConfigOrBuilder
         getStreamingConfigOrBuilder() {
       if ((streamingRequestCase_ == 1) && (streamingConfigBuilder_ != null)) {

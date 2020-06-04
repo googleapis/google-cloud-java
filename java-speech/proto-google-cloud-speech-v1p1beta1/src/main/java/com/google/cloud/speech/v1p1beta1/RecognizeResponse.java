@@ -136,6 +136,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult>
       getResultsList() {
     return results_;
@@ -150,6 +151,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionResultOrBuilder>
       getResultsOrBuilderList() {
@@ -165,6 +167,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public int getResultsCount() {
     return results_.size();
   }
@@ -178,6 +181,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult getResults(int index) {
     return results_.get(index);
   }
@@ -191,6 +195,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionResult results = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResultOrBuilder getResultsOrBuilder(
       int index) {
     return results_.get(index);

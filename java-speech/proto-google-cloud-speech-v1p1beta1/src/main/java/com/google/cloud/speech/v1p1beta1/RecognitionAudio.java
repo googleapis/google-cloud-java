@@ -179,6 +179,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
    *
    * @return The content.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContent() {
     if (audioSourceCase_ == 1) {
       return (com.google.protobuf.ByteString) audioSource_;
@@ -721,6 +722,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      *
      * @return The uri.
      */
+    @java.lang.Override
     public java.lang.String getUri() {
       java.lang.Object ref = "";
       if (audioSourceCase_ == 2) {
@@ -755,6 +757,7 @@ public final class RecognitionAudio extends com.google.protobuf.GeneratedMessage
      *
      * @return The bytes for uri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = "";
       if (audioSourceCase_ == 2) {

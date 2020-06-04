@@ -149,6 +149,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet phrase_sets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet> getPhraseSetsList() {
     return phraseSets_;
   }
@@ -163,6 +164,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet phrase_sets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder>
       getPhraseSetsOrBuilderList() {
     return phraseSets_;
@@ -178,6 +180,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet phrase_sets = 1;</code>
    */
+  @java.lang.Override
   public int getPhraseSetsCount() {
     return phraseSets_.size();
   }
@@ -192,6 +195,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet phrase_sets = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.PhraseSet getPhraseSets(int index) {
     return phraseSets_.get(index);
   }
@@ -206,6 +210,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet phrase_sets = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder getPhraseSetsOrBuilder(int index) {
     return phraseSets_.get(index);
   }
@@ -224,6 +229,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> getCustomClassesList() {
     return customClasses_;
   }
@@ -239,6 +245,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder>
       getCustomClassesOrBuilderList() {
     return customClasses_;
@@ -255,6 +262,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
    */
+  @java.lang.Override
   public int getCustomClassesCount() {
     return customClasses_.size();
   }
@@ -270,6 +278,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.CustomClass getCustomClasses(int index) {
     return customClasses_.get(index);
   }
@@ -285,6 +294,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder getCustomClassesOrBuilder(
       int index) {
     return customClasses_.get(index);

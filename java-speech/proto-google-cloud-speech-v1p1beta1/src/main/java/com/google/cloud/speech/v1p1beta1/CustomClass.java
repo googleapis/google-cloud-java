@@ -276,6 +276,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -298,6 +299,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -804,6 +806,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -826,6 +829,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -852,6 +856,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The customClassId.
    */
+  @java.lang.Override
   public java.lang.String getCustomClassId() {
     java.lang.Object ref = customClassId_;
     if (ref instanceof java.lang.String) {
@@ -875,6 +880,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for customClassId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCustomClassIdBytes() {
     java.lang.Object ref = customClassId_;
     if (ref instanceof java.lang.String) {
@@ -898,6 +904,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass.ClassItem items = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem> getItemsList() {
     return items_;
   }
@@ -910,6 +917,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass.ClassItem items = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.speech.v1p1beta1.CustomClass.ClassItemOrBuilder>
       getItemsOrBuilderList() {
     return items_;
@@ -923,6 +931,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass.ClassItem items = 3;</code>
    */
+  @java.lang.Override
   public int getItemsCount() {
     return items_.size();
   }
@@ -935,6 +944,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass.ClassItem items = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem getItems(int index) {
     return items_.get(index);
   }
@@ -947,6 +957,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass.ClassItem items = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.CustomClass.ClassItemOrBuilder getItemsOrBuilder(
       int index) {
     return items_.get(index);
