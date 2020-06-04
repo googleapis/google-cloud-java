@@ -146,6 +146,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -171,6 +172,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -220,6 +223,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -245,6 +249,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    *
    * @return The supportSource.
    */
+  @java.lang.Override
   public boolean getSupportSource() {
     return supportSource_;
   }
@@ -262,6 +267,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
    *
    * @return The supportTarget.
    */
+  @java.lang.Override
   public boolean getSupportTarget() {
     return supportTarget_;
   }
@@ -874,6 +880,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      *
      * @return The supportSource.
      */
+    @java.lang.Override
     public boolean getSupportSource() {
       return supportSource_;
     }
@@ -925,6 +932,7 @@ public final class SupportedLanguage extends com.google.protobuf.GeneratedMessag
      *
      * @return The supportTarget.
      */
+    @java.lang.Override
     public boolean getSupportTarget() {
       return supportTarget_;
     }

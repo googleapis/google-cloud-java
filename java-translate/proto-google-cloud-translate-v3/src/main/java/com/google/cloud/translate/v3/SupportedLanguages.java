@@ -132,6 +132,7 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.translation.v3.SupportedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.translate.v3.SupportedLanguage> getLanguagesList() {
     return languages_;
   }
@@ -145,6 +146,7 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.translation.v3.SupportedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.translate.v3.SupportedLanguageOrBuilder>
       getLanguagesOrBuilderList() {
     return languages_;
@@ -159,6 +161,7 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.translation.v3.SupportedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public int getLanguagesCount() {
     return languages_.size();
   }
@@ -172,6 +175,7 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.translation.v3.SupportedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3.SupportedLanguage getLanguages(int index) {
     return languages_.get(index);
   }
@@ -185,6 +189,7 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.translation.v3.SupportedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3.SupportedLanguageOrBuilder getLanguagesOrBuilder(int index) {
     return languages_.get(index);
   }

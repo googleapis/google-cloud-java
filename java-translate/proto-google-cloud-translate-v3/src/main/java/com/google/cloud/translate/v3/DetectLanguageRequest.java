@@ -225,6 +225,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -256,6 +257,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -286,6 +288,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -313,6 +316,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -395,6 +399,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -418,6 +423,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -469,6 +475,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -476,6 +483,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -494,6 +502,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -511,6 +520,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -532,6 +542,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1285,6 +1296,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The content.
      */
+    @java.lang.Override
     public java.lang.String getContent() {
       java.lang.Object ref = "";
       if (sourceCase_ == 1) {
@@ -1312,6 +1324,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The bytes for content.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 1) {
@@ -1541,6 +1554,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1548,6 +1562,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1566,6 +1581,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1583,6 +1599,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1605,6 +1622,7 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

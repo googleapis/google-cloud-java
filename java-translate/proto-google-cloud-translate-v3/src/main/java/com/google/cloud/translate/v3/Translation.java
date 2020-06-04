@@ -157,6 +157,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The translatedText.
    */
+  @java.lang.Override
   public java.lang.String getTranslatedText() {
     java.lang.Object ref = translatedText_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +180,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for translatedText.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTranslatedTextBytes() {
     java.lang.Object ref = translatedText_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +241,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +270,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The detectedLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getDetectedLanguageCode() {
     java.lang.Object ref = detectedLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +296,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for detectedLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDetectedLanguageCodeBytes() {
     java.lang.Object ref = detectedLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -316,6 +322,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the glossaryConfig field is set.
    */
+  @java.lang.Override
   public boolean hasGlossaryConfig() {
     return glossaryConfig_ != null;
   }
@@ -330,6 +337,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The glossaryConfig.
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3.TranslateTextGlossaryConfig getGlossaryConfig() {
     return glossaryConfig_ == null
         ? com.google.cloud.translate.v3.TranslateTextGlossaryConfig.getDefaultInstance()
@@ -344,6 +352,7 @@ public final class Translation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.translation.v3.TranslateTextGlossaryConfig glossary_config = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3.TranslateTextGlossaryConfigOrBuilder
       getGlossaryConfigOrBuilder() {
     return getGlossaryConfig();

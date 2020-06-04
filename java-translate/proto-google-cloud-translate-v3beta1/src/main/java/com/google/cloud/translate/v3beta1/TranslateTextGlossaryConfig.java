@@ -131,6 +131,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * @return The glossary.
    */
+  @java.lang.Override
   public java.lang.String getGlossary() {
     java.lang.Object ref = glossary_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * @return The bytes for glossary.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGlossaryBytes() {
     java.lang.Object ref = glossary_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +182,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    * @return The ignoreCase.
    */
+  @java.lang.Override
   public boolean getIgnoreCase() {
     return ignoreCase_;
   }
@@ -646,6 +649,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      *
      * @return The ignoreCase.
      */
+    @java.lang.Override
     public boolean getIgnoreCase() {
       return ignoreCase_;
     }

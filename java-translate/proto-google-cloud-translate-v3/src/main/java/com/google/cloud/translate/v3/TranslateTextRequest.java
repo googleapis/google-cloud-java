@@ -282,6 +282,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +306,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -334,6 +336,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The sourceLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -360,6 +363,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for sourceLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -386,6 +390,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The targetLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getTargetLanguageCode() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -409,6 +414,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for targetLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -445,6 +451,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -478,6 +485,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -513,6 +521,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -545,6 +554,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -574,6 +584,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the glossaryConfig field is set.
    */
+  @java.lang.Override
   public boolean hasGlossaryConfig() {
     return glossaryConfig_ != null;
   }
@@ -592,6 +603,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The glossaryConfig.
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3.TranslateTextGlossaryConfig getGlossaryConfig() {
     return glossaryConfig_ == null
         ? com.google.cloud.translate.v3.TranslateTextGlossaryConfig.getDefaultInstance()
@@ -610,6 +622,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.translation.v3.TranslateTextGlossaryConfig glossary_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3.TranslateTextGlossaryConfigOrBuilder
       getGlossaryConfigOrBuilder() {
     return getGlossaryConfig();
@@ -654,6 +667,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -661,6 +675,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -679,6 +694,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -696,6 +712,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -717,6 +734,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -2331,6 +2349,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2338,6 +2357,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2356,6 +2376,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2373,6 +2394,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2395,6 +2417,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

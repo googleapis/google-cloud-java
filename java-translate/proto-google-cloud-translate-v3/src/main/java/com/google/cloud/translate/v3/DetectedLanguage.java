@@ -130,6 +130,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -153,6 +154,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +180,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -637,6 +640,7 @@ public final class DetectedLanguage extends com.google.protobuf.GeneratedMessage
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

@@ -245,6 +245,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -274,6 +275,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -299,6 +301,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * @return The sourceLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getSourceLanguageCode() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -321,6 +324,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for sourceLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -442,6 +446,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsModels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -449,6 +454,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     return internalGetModels().getMap().containsKey(key);
   }
   /** Use {@link #getModelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getModels() {
     return getModelsMap();
@@ -472,6 +478,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getModelsMap() {
     return internalGetModels().getMap();
   }
@@ -494,6 +501,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getModelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -520,6 +528,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getModelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -547,6 +556,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.translate.v3beta1.InputConfig> getInputConfigsList() {
     return inputConfigs_;
   }
@@ -564,6 +574,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.translate.v3beta1.InputConfigOrBuilder>
       getInputConfigsOrBuilderList() {
     return inputConfigs_;
@@ -582,6 +593,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getInputConfigsCount() {
     return inputConfigs_.size();
   }
@@ -599,6 +611,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.InputConfig getInputConfigs(int index) {
     return inputConfigs_.get(index);
   }
@@ -616,6 +629,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.translation.v3beta1.InputConfig input_configs = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.InputConfigOrBuilder getInputConfigsOrBuilder(
       int index) {
     return inputConfigs_.get(index);
@@ -638,6 +652,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -656,6 +671,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.translate.v3beta1.OutputConfig.getDefaultInstance()
@@ -674,6 +690,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * .google.cloud.translation.v3beta1.OutputConfig output_config = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }
@@ -724,6 +741,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsGlossaries(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -731,6 +749,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     return internalGetGlossaries().getMap().containsKey(key);
   }
   /** Use {@link #getGlossariesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<
           java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
@@ -749,6 +768,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<
           java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
       getGlossariesMap() {
@@ -766,6 +786,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrDefault(
       java.lang.String key,
       com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig defaultValue) {
@@ -788,6 +809,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -840,6 +862,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -847,6 +870,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -865,6 +889,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -882,6 +907,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -903,6 +929,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1932,6 +1959,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsModels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1939,6 +1967,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       return internalGetModels().getMap().containsKey(key);
     }
     /** Use {@link #getModelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getModels() {
       return getModelsMap();
@@ -1962,6 +1991,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getModelsMap() {
       return internalGetModels().getMap();
     }
@@ -1984,6 +2014,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getModelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2011,6 +2042,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getModelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2822,6 +2854,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsGlossaries(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2829,6 +2862,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       return internalGetGlossaries().getMap().containsKey(key);
     }
     /** Use {@link #getGlossariesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
@@ -2847,6 +2881,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
         getGlossariesMap() {
@@ -2864,6 +2899,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrDefault(
         java.lang.String key,
         com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig defaultValue) {
@@ -2887,6 +2923,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      * map&lt;string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig getGlossariesOrThrow(
         java.lang.String key) {
       if (key == null) {
@@ -3014,6 +3051,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3021,6 +3059,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -3039,6 +3078,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -3056,6 +3096,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -3078,6 +3119,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
      *
      * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

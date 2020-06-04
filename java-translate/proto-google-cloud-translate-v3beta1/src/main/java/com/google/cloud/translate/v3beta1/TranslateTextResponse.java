@@ -141,6 +141,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.translate.v3beta1.Translation> getTranslationsList() {
     return translations_;
   }
@@ -155,6 +156,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.translate.v3beta1.TranslationOrBuilder>
       getTranslationsOrBuilderList() {
     return translations_;
@@ -170,6 +172,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
    */
+  @java.lang.Override
   public int getTranslationsCount() {
     return translations_.size();
   }
@@ -184,6 +187,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.Translation getTranslations(int index) {
     return translations_.get(index);
   }
@@ -198,6 +202,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation translations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.TranslationOrBuilder getTranslationsOrBuilder(
       int index) {
     return translations_.get(index);
@@ -218,6 +223,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.translate.v3beta1.Translation>
       getGlossaryTranslationsList() {
     return glossaryTranslations_;
@@ -235,6 +241,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.translate.v3beta1.TranslationOrBuilder>
       getGlossaryTranslationsOrBuilderList() {
     return glossaryTranslations_;
@@ -252,6 +259,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
    */
+  @java.lang.Override
   public int getGlossaryTranslationsCount() {
     return glossaryTranslations_.size();
   }
@@ -268,6 +276,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.Translation getGlossaryTranslations(int index) {
     return glossaryTranslations_.get(index);
   }
@@ -284,6 +293,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.translation.v3beta1.Translation glossary_translations = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.TranslationOrBuilder getGlossaryTranslationsOrBuilder(
       int index) {
     return glossaryTranslations_.get(index);

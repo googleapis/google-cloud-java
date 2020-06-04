@@ -133,6 +133,7 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.DetectedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.translate.v3beta1.DetectedLanguage> getLanguagesList() {
     return languages_;
   }
@@ -146,6 +147,7 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.DetectedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.translate.v3beta1.DetectedLanguageOrBuilder>
       getLanguagesOrBuilderList() {
     return languages_;
@@ -160,6 +162,7 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.DetectedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public int getLanguagesCount() {
     return languages_.size();
   }
@@ -173,6 +176,7 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.DetectedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.DetectedLanguage getLanguages(int index) {
     return languages_.get(index);
   }
@@ -186,6 +190,7 @@ public final class DetectLanguageResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.DetectedLanguage languages = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.DetectedLanguageOrBuilder getLanguagesOrBuilder(
       int index) {
     return languages_.get(index);

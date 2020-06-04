@@ -187,6 +187,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +213,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +253,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
@@ -280,6 +283,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3.GcsSource getGcsSource() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.translate.v3.GcsSource) source_;
@@ -310,6 +314,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.translation.v3.GcsSource gcs_source = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.translate.v3.GcsSource) source_;
@@ -844,6 +849,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
@@ -873,6 +879,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -1094,6 +1101,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.translation.v3.GcsSource gcs_source = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 2) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();

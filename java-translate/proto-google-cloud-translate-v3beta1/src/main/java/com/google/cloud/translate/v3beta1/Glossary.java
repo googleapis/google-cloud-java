@@ -379,6 +379,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sourceLanguageCode.
      */
+    @java.lang.Override
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
       if (ref instanceof java.lang.String) {
@@ -402,6 +403,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for sourceLanguageCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
       if (ref instanceof java.lang.String) {
@@ -428,6 +430,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The targetLanguageCode.
      */
+    @java.lang.Override
     public java.lang.String getTargetLanguageCode() {
       java.lang.Object ref = targetLanguageCode_;
       if (ref instanceof java.lang.String) {
@@ -451,6 +454,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for targetLanguageCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
       java.lang.Object ref = targetLanguageCode_;
       if (ref instanceof java.lang.String) {
@@ -1963,6 +1967,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1986,6 +1991,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -2010,6 +2016,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the languagePair field is set.
    */
+  @java.lang.Override
   public boolean hasLanguagePair() {
     return languagesCase_ == 3;
   }
@@ -2024,6 +2031,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languagePair.
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.Glossary.LanguageCodePair getLanguagePair() {
     if (languagesCase_ == 3) {
       return (com.google.cloud.translate.v3beta1.Glossary.LanguageCodePair) languages_;
@@ -2039,6 +2047,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.Glossary.LanguageCodePairOrBuilder
       getLanguagePairOrBuilder() {
     if (languagesCase_ == 3) {
@@ -2060,6 +2069,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the languageCodesSet field is set.
    */
+  @java.lang.Override
   public boolean hasLanguageCodesSet() {
     return languagesCase_ == 4;
   }
@@ -2075,6 +2085,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languageCodesSet.
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.Glossary.LanguageCodesSet getLanguageCodesSet() {
     if (languagesCase_ == 4) {
       return (com.google.cloud.translate.v3beta1.Glossary.LanguageCodesSet) languages_;
@@ -2091,6 +2102,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.Glossary.LanguageCodesSetOrBuilder
       getLanguageCodesSetOrBuilder() {
     if (languagesCase_ == 4) {
@@ -2113,6 +2125,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -2128,6 +2141,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.GlossaryInputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.translate.v3beta1.GlossaryInputConfig.getDefaultInstance()
@@ -2143,6 +2157,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.translation.v3beta1.GlossaryInputConfig input_config = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.GlossaryInputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -2160,6 +2175,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The entryCount.
    */
+  @java.lang.Override
   public int getEntryCount() {
     return entryCount_;
   }
@@ -2178,6 +2194,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the submitTime field is set.
    */
+  @java.lang.Override
   public boolean hasSubmitTime() {
     return submitTime_ != null;
   }
@@ -2193,6 +2210,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The submitTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
@@ -2206,6 +2224,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp submit_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
     return getSubmitTime();
   }
@@ -2224,6 +2243,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -2239,6 +2259,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -2252,6 +2273,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -2886,6 +2908,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the languagePair field is set.
      */
+    @java.lang.Override
     public boolean hasLanguagePair() {
       return languagesCase_ == 3;
     }
@@ -2900,6 +2923,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The languagePair.
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3beta1.Glossary.LanguageCodePair getLanguagePair() {
       if (languagePairBuilder_ == null) {
         if (languagesCase_ == 3) {
@@ -3037,6 +3061,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodePair language_pair = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3beta1.Glossary.LanguageCodePairOrBuilder
         getLanguagePairOrBuilder() {
       if ((languagesCase_ == 3) && (languagePairBuilder_ != null)) {
@@ -3100,6 +3125,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the languageCodesSet field is set.
      */
+    @java.lang.Override
     public boolean hasLanguageCodesSet() {
       return languagesCase_ == 4;
     }
@@ -3115,6 +3141,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The languageCodesSet.
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3beta1.Glossary.LanguageCodesSet getLanguageCodesSet() {
       if (languageCodesSetBuilder_ == null) {
         if (languagesCase_ == 4) {
@@ -3258,6 +3285,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.translation.v3beta1.Glossary.LanguageCodesSet language_codes_set = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3beta1.Glossary.LanguageCodesSetOrBuilder
         getLanguageCodesSetOrBuilder() {
       if ((languagesCase_ == 4) && (languageCodesSetBuilder_ != null)) {
@@ -3513,6 +3541,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The entryCount.
      */
+    @java.lang.Override
     public int getEntryCount() {
       return entryCount_;
     }

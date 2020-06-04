@@ -139,6 +139,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.Glossary glossaries = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.translate.v3beta1.Glossary> getGlossariesList() {
     return glossaries_;
   }
@@ -151,6 +152,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.Glossary glossaries = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.translate.v3beta1.GlossaryOrBuilder>
       getGlossariesOrBuilderList() {
     return glossaries_;
@@ -164,6 +166,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.Glossary glossaries = 1;</code>
    */
+  @java.lang.Override
   public int getGlossariesCount() {
     return glossaries_.size();
   }
@@ -176,6 +179,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.Glossary glossaries = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.Glossary getGlossaries(int index) {
     return glossaries_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.translation.v3beta1.Glossary glossaries = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.GlossaryOrBuilder getGlossariesOrBuilder(int index) {
     return glossaries_.get(index);
   }
@@ -207,6 +212,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class ListGlossariesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -161,6 +161,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * @return The totalCharacters.
    */
+  @java.lang.Override
   public long getTotalCharacters() {
     return totalCharacters_;
   }
@@ -178,6 +179,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * @return The translatedCharacters.
    */
+  @java.lang.Override
   public long getTranslatedCharacters() {
     return translatedCharacters_;
   }
@@ -195,6 +197,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * @return The failedCharacters.
    */
+  @java.lang.Override
   public long getFailedCharacters() {
     return failedCharacters_;
   }
@@ -212,6 +215,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * @return Whether the submitTime field is set.
    */
+  @java.lang.Override
   public boolean hasSubmitTime() {
     return submitTime_ != null;
   }
@@ -226,6 +230,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * @return The submitTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
@@ -238,6 +243,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp submit_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
     return getSubmitTime();
   }
@@ -256,6 +262,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -271,6 +278,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -284,6 +292,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -705,6 +714,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      * @return The totalCharacters.
      */
+    @java.lang.Override
     public long getTotalCharacters() {
       return totalCharacters_;
     }
@@ -756,6 +766,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      * @return The translatedCharacters.
      */
+    @java.lang.Override
     public long getTranslatedCharacters() {
       return translatedCharacters_;
     }
@@ -807,6 +818,7 @@ public final class BatchTranslateResponse extends com.google.protobuf.GeneratedM
      *
      * @return The failedCharacters.
      */
+    @java.lang.Override
     public long getFailedCharacters() {
       return failedCharacters_;
     }

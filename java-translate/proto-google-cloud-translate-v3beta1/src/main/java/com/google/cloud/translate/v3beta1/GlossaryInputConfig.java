@@ -190,6 +190,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
@@ -220,6 +221,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.translate.v3beta1.GcsSource) source_;
@@ -251,6 +253,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.translate.v3beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.translate.v3beta1.GcsSource) source_;
@@ -652,6 +655,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
@@ -682,6 +686,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -910,6 +915,7 @@ public final class GlossaryInputConfig extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.cloud.translation.v3beta1.GcsSource gcs_source = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.translate.v3beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();

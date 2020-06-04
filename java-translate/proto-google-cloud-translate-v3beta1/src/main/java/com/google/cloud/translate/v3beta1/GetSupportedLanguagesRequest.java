@@ -150,6 +150,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +183,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +211,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    * @return The displayLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getDisplayLanguageCode() {
     java.lang.Object ref = displayLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +236,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    * @return The bytes for displayLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayLanguageCodeBytes() {
     java.lang.Object ref = displayLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +270,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -296,6 +301,7 @@ public final class GetSupportedLanguagesRequest extends com.google.protobuf.Gene
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
