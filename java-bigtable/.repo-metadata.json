@@ -9,5 +9,6 @@
   "repo": "googleapis/java-bigtable",
   "repo_short": "java-bigtable",
   "distribution_name": "com.google.cloud:google-cloud-bigtable",
+  "codeowner_team": "@googleapis/bigtable-dpe",
   "api_id": "bigtable.googleapis.com"
 }
