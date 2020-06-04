@@ -125,6 +125,7 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
    *
    * @return The pubsubTopicName.
    */
+  @java.lang.Override
   public java.lang.String getPubsubTopicName() {
     java.lang.Object ref = pubsubTopicName_;
     if (ref instanceof java.lang.String) {
@@ -148,6 +149,7 @@ public final class StateNotificationConfig extends com.google.protobuf.Generated
    *
    * @return The bytes for pubsubTopicName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPubsubTopicNameBytes() {
     java.lang.Object ref = pubsubTopicName_;
     if (ref instanceof java.lang.String) {

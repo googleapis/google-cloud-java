@@ -139,6 +139,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.iot.v1.DeviceRegistry device_registries = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.iot.v1.DeviceRegistry> getDeviceRegistriesList() {
     return deviceRegistries_;
   }
@@ -151,6 +152,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.iot.v1.DeviceRegistry device_registries = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.iot.v1.DeviceRegistryOrBuilder>
       getDeviceRegistriesOrBuilderList() {
     return deviceRegistries_;
@@ -164,6 +166,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.iot.v1.DeviceRegistry device_registries = 1;</code>
    */
+  @java.lang.Override
   public int getDeviceRegistriesCount() {
     return deviceRegistries_.size();
   }
@@ -176,6 +179,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.iot.v1.DeviceRegistry device_registries = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistries(int index) {
     return deviceRegistries_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.iot.v1.DeviceRegistry device_registries = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceRegistryOrBuilder getDeviceRegistriesOrBuilder(int index) {
     return deviceRegistries_.get(index);
   }
@@ -207,6 +212,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class ListDeviceRegistriesResponse extends com.google.protobuf.Gene
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

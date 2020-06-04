@@ -143,6 +143,7 @@ public final class CreateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class CreateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class CreateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    * @return Whether the deviceRegistry field is set.
    */
+  @java.lang.Override
   public boolean hasDeviceRegistry() {
     return deviceRegistry_ != null;
   }
@@ -215,6 +218,7 @@ public final class CreateDeviceRegistryRequest extends com.google.protobuf.Gener
    *
    * @return The deviceRegistry.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry() {
     return deviceRegistry_ == null
         ? com.google.cloud.iot.v1.DeviceRegistry.getDefaultInstance()
@@ -233,6 +237,7 @@ public final class CreateDeviceRegistryRequest extends com.google.protobuf.Gener
    * .google.cloud.iot.v1.DeviceRegistry device_registry = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceRegistryOrBuilder getDeviceRegistryOrBuilder() {
     return getDeviceRegistry();
   }

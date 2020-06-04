@@ -143,6 +143,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
    *
    * @return The gatewayId.
    */
+  @java.lang.Override
   public java.lang.String getGatewayId() {
     java.lang.Object ref = gatewayId_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +220,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for gatewayId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGatewayIdBytes() {
     java.lang.Object ref = gatewayId_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +248,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
    *
    * @return The deviceId.
    */
+  @java.lang.Override
   public java.lang.String getDeviceId() {
     java.lang.Object ref = deviceId_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +273,7 @@ public final class BindDeviceToGatewayRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for deviceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDeviceIdBytes() {
     java.lang.Object ref = deviceId_;
     if (ref instanceof java.lang.String) {

@@ -160,6 +160,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public long getVersion() {
     return version_;
   }
@@ -178,6 +179,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the cloudUpdateTime field is set.
    */
+  @java.lang.Override
   public boolean hasCloudUpdateTime() {
     return cloudUpdateTime_ != null;
   }
@@ -193,6 +195,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cloudUpdateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCloudUpdateTime() {
     return cloudUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -208,6 +211,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCloudUpdateTimeOrBuilder() {
     return getCloudUpdateTime();
   }
@@ -233,6 +237,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deviceAckTime field is set.
    */
+  @java.lang.Override
   public boolean hasDeviceAckTime() {
     return deviceAckTime_ != null;
   }
@@ -255,6 +260,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deviceAckTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDeviceAckTime() {
     return deviceAckTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -277,6 +283,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeviceAckTimeOrBuilder() {
     return getDeviceAckTime();
   }
@@ -294,6 +301,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The binaryData.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
   }
@@ -696,6 +704,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The version.
      */
+    @java.lang.Override
     public long getVersion() {
       return version_;
     }
@@ -1204,6 +1213,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The binaryData.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
     }

@@ -140,6 +140,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -166,6 +167,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
    *
    * @return The versionToUpdate.
    */
+  @java.lang.Override
   public long getVersionToUpdate() {
     return versionToUpdate_;
   }
@@ -212,6 +215,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
    *
    * @return The binaryData.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
   }
@@ -707,6 +711,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      *
      * @return The versionToUpdate.
      */
+    @java.lang.Override
     public long getVersionToUpdate() {
       return versionToUpdate_;
     }
@@ -766,6 +771,7 @@ public final class ModifyCloudToDeviceConfigRequest extends com.google.protobuf.
      *
      * @return The binaryData.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
     }

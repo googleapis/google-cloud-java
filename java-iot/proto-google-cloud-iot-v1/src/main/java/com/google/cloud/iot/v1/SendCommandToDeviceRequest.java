@@ -142,6 +142,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    *
    * @return The binaryData.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
   }
@@ -214,6 +217,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    *
    * @return The subfolder.
    */
+  @java.lang.Override
   public java.lang.String getSubfolder() {
     java.lang.Object ref = subfolder_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +244,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for subfolder.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubfolderBytes() {
     java.lang.Object ref = subfolder_;
     if (ref instanceof java.lang.String) {
@@ -739,6 +744,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      *
      * @return The binaryData.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
     }

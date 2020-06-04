@@ -178,6 +178,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The issuer.
    */
+  @java.lang.Override
   public java.lang.String getIssuer() {
     java.lang.Object ref = issuer_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +201,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for issuer.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIssuerBytes() {
     java.lang.Object ref = issuer_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +227,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The subject.
    */
+  @java.lang.Override
   public java.lang.String getSubject() {
     java.lang.Object ref = subject_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +250,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for subject.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubjectBytes() {
     java.lang.Object ref = subject_;
     if (ref instanceof java.lang.String) {
@@ -272,6 +276,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -286,6 +291,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -298,6 +304,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -315,6 +322,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return Whether the expiryTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpiryTime() {
     return expiryTime_ != null;
   }
@@ -329,6 +337,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The expiryTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpiryTime() {
     return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
   }
@@ -341,6 +350,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder() {
     return getExpiryTime();
   }
@@ -358,6 +368,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The signatureAlgorithm.
    */
+  @java.lang.Override
   public java.lang.String getSignatureAlgorithm() {
     java.lang.Object ref = signatureAlgorithm_;
     if (ref instanceof java.lang.String) {
@@ -380,6 +391,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for signatureAlgorithm.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignatureAlgorithmBytes() {
     java.lang.Object ref = signatureAlgorithm_;
     if (ref instanceof java.lang.String) {
@@ -405,6 +417,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The publicKeyType.
    */
+  @java.lang.Override
   public java.lang.String getPublicKeyType() {
     java.lang.Object ref = publicKeyType_;
     if (ref instanceof java.lang.String) {
@@ -427,6 +440,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for publicKeyType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPublicKeyTypeBytes() {
     java.lang.Object ref = publicKeyType_;
     if (ref instanceof java.lang.String) {

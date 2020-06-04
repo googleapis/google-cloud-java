@@ -148,6 +148,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for format.
    */
+  @java.lang.Override
   public int getFormatValue() {
     return format_;
   }
@@ -162,6 +163,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    *
    * @return The format.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.PublicKeyCertificateFormat getFormat() {
     @SuppressWarnings("deprecation")
     com.google.cloud.iot.v1.PublicKeyCertificateFormat result =
@@ -184,6 +186,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    *
    * @return The certificate.
    */
+  @java.lang.Override
   public java.lang.String getCertificate() {
     java.lang.Object ref = certificate_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +209,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for certificate.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCertificateBytes() {
     java.lang.Object ref = certificate_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +235,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the x509Details field is set.
    */
+  @java.lang.Override
   public boolean hasX509Details() {
     return x509Details_ != null;
   }
@@ -245,6 +250,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    *
    * @return The x509Details.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.X509CertificateDetails getX509Details() {
     return x509Details_ == null
         ? com.google.cloud.iot.v1.X509CertificateDetails.getDefaultInstance()
@@ -259,6 +265,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.iot.v1.X509CertificateDetails x509_details = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.X509CertificateDetailsOrBuilder getX509DetailsOrBuilder() {
     return getX509Details();
   }
@@ -640,6 +647,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for format.
      */
+    @java.lang.Override
     public int getFormatValue() {
       return format_;
     }
@@ -656,6 +664,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
+
       format_ = value;
       onChanged();
       return this;
@@ -671,6 +680,7 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
      *
      * @return The format.
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.PublicKeyCertificateFormat getFormat() {
       @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.PublicKeyCertificateFormat result =

@@ -131,6 +131,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.iot.v1.DeviceState> getDeviceStatesList() {
     return deviceStates_;
   }
@@ -144,6 +145,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.iot.v1.DeviceStateOrBuilder>
       getDeviceStatesOrBuilderList() {
     return deviceStates_;
@@ -158,6 +160,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
+  @java.lang.Override
   public int getDeviceStatesCount() {
     return deviceStates_.size();
   }
@@ -171,6 +174,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceState getDeviceStates(int index) {
     return deviceStates_.get(index);
   }
@@ -184,6 +188,7 @@ public final class ListDeviceStatesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceStateOrBuilder getDeviceStatesOrBuilder(int index) {
     return deviceStates_.get(index);
   }

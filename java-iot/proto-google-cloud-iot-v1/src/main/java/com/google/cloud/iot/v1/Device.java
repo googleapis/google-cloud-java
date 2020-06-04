@@ -345,6 +345,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -368,6 +369,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -397,6 +399,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -423,6 +426,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -449,6 +453,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The numId.
    */
+  @java.lang.Override
   public long getNumId() {
     return numId_;
   }
@@ -469,6 +474,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.iot.v1.DeviceCredential> getCredentialsList() {
     return credentials_;
   }
@@ -486,6 +492,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.iot.v1.DeviceCredentialOrBuilder>
       getCredentialsOrBuilderList() {
     return credentials_;
@@ -504,6 +511,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
+  @java.lang.Override
   public int getCredentialsCount() {
     return credentials_.size();
   }
@@ -521,6 +529,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceCredential getCredentials(int index) {
     return credentials_.get(index);
   }
@@ -538,6 +547,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceCredentialOrBuilder getCredentialsOrBuilder(int index) {
     return credentials_.get(index);
   }
@@ -559,6 +569,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastHeartbeatTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastHeartbeatTime() {
     return lastHeartbeatTime_ != null;
   }
@@ -577,6 +588,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastHeartbeatTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastHeartbeatTime() {
     return lastHeartbeatTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -595,6 +607,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastHeartbeatTimeOrBuilder() {
     return getLastHeartbeatTime();
   }
@@ -614,6 +627,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastEventTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastEventTime() {
     return lastEventTime_ != null;
   }
@@ -630,6 +644,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastEventTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastEventTime() {
     return lastEventTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -646,6 +661,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastEventTimeOrBuilder() {
     return getLastEventTime();
   }
@@ -665,6 +681,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastStateTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastStateTime() {
     return lastStateTime_ != null;
   }
@@ -681,6 +698,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastStateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastStateTime() {
     return lastStateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -697,6 +715,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastStateTimeOrBuilder() {
     return getLastStateTime();
   }
@@ -716,6 +735,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastConfigAckTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastConfigAckTime() {
     return lastConfigAckTime_ != null;
   }
@@ -732,6 +752,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastConfigAckTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastConfigAckTime() {
     return lastConfigAckTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -748,6 +769,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastConfigAckTimeOrBuilder() {
     return getLastConfigAckTime();
   }
@@ -766,6 +788,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastConfigSendTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastConfigSendTime() {
     return lastConfigSendTime_ != null;
   }
@@ -781,6 +804,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastConfigSendTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastConfigSendTime() {
     return lastConfigSendTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -796,6 +820,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastConfigSendTimeOrBuilder() {
     return getLastConfigSendTime();
   }
@@ -815,6 +840,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The blocked.
    */
+  @java.lang.Override
   public boolean getBlocked() {
     return blocked_;
   }
@@ -834,6 +860,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastErrorTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastErrorTime() {
     return lastErrorTime_ != null;
   }
@@ -850,6 +877,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastErrorTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastErrorTime() {
     return lastErrorTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -866,6 +894,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastErrorTimeOrBuilder() {
     return getLastErrorTime();
   }
@@ -887,6 +916,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastErrorStatus field is set.
    */
+  @java.lang.Override
   public boolean hasLastErrorStatus() {
     return lastErrorStatus_ != null;
   }
@@ -905,6 +935,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastErrorStatus.
    */
+  @java.lang.Override
   public com.google.rpc.Status getLastErrorStatus() {
     return lastErrorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : lastErrorStatus_;
   }
@@ -921,6 +952,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.rpc.Status last_error_status = 11;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getLastErrorStatusOrBuilder() {
     return getLastErrorStatus();
   }
@@ -942,6 +974,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -960,6 +993,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceConfig getConfig() {
     return config_ == null ? com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance() : config_;
   }
@@ -976,6 +1010,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -994,6 +1029,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the state field is set.
    */
+  @java.lang.Override
   public boolean hasState() {
     return state_ != null;
   }
@@ -1009,6 +1045,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceState getState() {
     return state_ == null ? com.google.cloud.iot.v1.DeviceState.getDefaultInstance() : state_;
   }
@@ -1022,6 +1059,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceStateOrBuilder getStateOrBuilder() {
     return getState();
   }
@@ -1041,6 +1079,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for logLevel.
    */
+  @java.lang.Override
   public int getLogLevelValue() {
     return logLevel_;
   }
@@ -1057,6 +1096,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The logLevel.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.LogLevel getLogLevel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
@@ -1105,6 +1145,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
+  @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1112,6 +1153,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     return internalGetMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
@@ -1133,6 +1175,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
@@ -1153,6 +1196,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -1178,6 +1222,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1202,6 +1247,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gatewayConfig field is set.
    */
+  @java.lang.Override
   public boolean hasGatewayConfig() {
     return gatewayConfig_ != null;
   }
@@ -1216,6 +1262,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gatewayConfig.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.GatewayConfig getGatewayConfig() {
     return gatewayConfig_ == null
         ? com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance()
@@ -1230,6 +1277,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.GatewayConfigOrBuilder getGatewayConfigOrBuilder() {
     return getGatewayConfig();
   }
@@ -2236,6 +2284,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The numId.
      */
+    @java.lang.Override
     public long getNumId() {
       return numId_;
     }
@@ -3756,6 +3805,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The blocked.
      */
+    @java.lang.Override
     public boolean getBlocked() {
       return blocked_;
     }
@@ -4642,6 +4692,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for logLevel.
      */
+    @java.lang.Override
     public int getLogLevelValue() {
       return logLevel_;
     }
@@ -4660,6 +4711,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLogLevelValue(int value) {
+
       logLevel_ = value;
       onChanged();
       return this;
@@ -4677,6 +4729,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The logLevel.
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.LogLevel getLogLevel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
@@ -4768,6 +4821,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
+    @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -4775,6 +4829,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       return internalGetMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
@@ -4796,6 +4851,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
@@ -4816,6 +4872,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -4841,6 +4898,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

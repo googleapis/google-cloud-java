@@ -137,6 +137,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.iot.v1.Device devices = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.iot.v1.Device> getDevicesList() {
     return devices_;
   }
@@ -149,6 +150,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.iot.v1.Device devices = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.iot.v1.DeviceOrBuilder>
       getDevicesOrBuilderList() {
     return devices_;
@@ -162,6 +164,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.iot.v1.Device devices = 1;</code>
    */
+  @java.lang.Override
   public int getDevicesCount() {
     return devices_.size();
   }
@@ -174,6 +177,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.iot.v1.Device devices = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.Device getDevices(int index) {
     return devices_.get(index);
   }
@@ -186,6 +190,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.iot.v1.Device devices = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceOrBuilder getDevicesOrBuilder(int index) {
     return devices_.get(index);
   }
@@ -204,6 +209,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +233,7 @@ public final class ListDevicesResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

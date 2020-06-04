@@ -125,6 +125,7 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for httpEnabledState.
    */
+  @java.lang.Override
   public int getHttpEnabledStateValue() {
     return httpEnabledState_;
   }
@@ -140,6 +141,7 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpEnabledState.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.HttpState getHttpEnabledState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.iot.v1.HttpState result =
@@ -472,6 +474,7 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for httpEnabledState.
      */
+    @java.lang.Override
     public int getHttpEnabledStateValue() {
       return httpEnabledState_;
     }
@@ -489,6 +492,7 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHttpEnabledStateValue(int value) {
+
       httpEnabledState_ = value;
       onChanged();
       return this;
@@ -505,6 +509,7 @@ public final class HttpConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The httpEnabledState.
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.HttpState getHttpEnabledState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.HttpState result =

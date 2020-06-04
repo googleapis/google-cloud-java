@@ -753,6 +753,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for gatewayType.
      */
+    @java.lang.Override
     public int getGatewayTypeValue() {
       if (filterCase_ == 1) {
         return ((java.lang.Integer) filter_).intValue();
@@ -792,6 +793,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      *
      * @return The gatewayType.
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.GatewayType getGatewayType() {
       if (filterCase_ == 1) {
         @SuppressWarnings("deprecation")
@@ -860,6 +862,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      *
      * @return The associationsGatewayId.
      */
+    @java.lang.Override
     public java.lang.String getAssociationsGatewayId() {
       java.lang.Object ref = "";
       if (filterCase_ == 2) {
@@ -890,6 +893,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for associationsGatewayId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAssociationsGatewayIdBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 2) {
@@ -992,6 +996,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      *
      * @return The associationsDeviceId.
      */
+    @java.lang.Override
     public java.lang.String getAssociationsDeviceId() {
       java.lang.Object ref = "";
       if (filterCase_ == 3) {
@@ -1022,6 +1027,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for associationsDeviceId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAssociationsDeviceIdBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 3) {

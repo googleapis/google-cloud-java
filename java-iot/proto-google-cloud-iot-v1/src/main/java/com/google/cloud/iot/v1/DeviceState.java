@@ -138,6 +138,7 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -153,6 +154,7 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -166,6 +168,7 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -183,6 +186,7 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The binaryData.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBinaryData() {
     return binaryData_;
   }
@@ -731,6 +735,7 @@ public final class DeviceState extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The binaryData.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBinaryData() {
       return binaryData_;
     }

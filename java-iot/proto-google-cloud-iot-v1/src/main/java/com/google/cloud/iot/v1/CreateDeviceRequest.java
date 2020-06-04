@@ -143,6 +143,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the device field is set.
    */
+  @java.lang.Override
   public boolean hasDevice() {
     return device_ != null;
   }
@@ -212,6 +215,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The device.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.Device getDevice() {
     return device_ == null ? com.google.cloud.iot.v1.Device.getDefaultInstance() : device_;
   }
@@ -226,6 +230,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder() {
     return getDevice();
   }

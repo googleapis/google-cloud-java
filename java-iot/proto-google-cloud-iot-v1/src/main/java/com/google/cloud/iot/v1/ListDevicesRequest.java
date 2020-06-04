@@ -213,6 +213,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +239,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +266,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return A list containing the deviceNumIds.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Long> getDeviceNumIdsList() {
     return deviceNumIds_;
   }
@@ -381,6 +384,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the fieldMask field is set.
    */
+  @java.lang.Override
   public boolean hasFieldMask() {
     return fieldMask_ != null;
   }
@@ -397,6 +401,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The fieldMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
@@ -411,6 +416,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.protobuf.FieldMask field_mask = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
     return getFieldMask();
   }
@@ -428,6 +434,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the gatewayListOptions field is set.
    */
+  @java.lang.Override
   public boolean hasGatewayListOptions() {
     return gatewayListOptions_ != null;
   }
@@ -442,6 +449,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The gatewayListOptions.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions() {
     return gatewayListOptions_ == null
         ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance()
@@ -456,6 +464,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.GatewayListOptionsOrBuilder getGatewayListOptionsOrBuilder() {
     return getGatewayListOptions();
   }
@@ -476,6 +485,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -495,6 +505,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -519,6 +530,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -1842,6 +1854,7 @@ public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

@@ -148,6 +148,7 @@ public final class UpdateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the device field is set.
    */
+  @java.lang.Override
   public boolean hasDevice() {
     return device_ != null;
   }
@@ -165,6 +166,7 @@ public final class UpdateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The device.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.Device getDevice() {
     return device_ == null ? com.google.cloud.iot.v1.Device.getDefaultInstance() : device_;
   }
@@ -180,6 +182,7 @@ public final class UpdateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.iot.v1.Device device = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder() {
     return getDevice();
   }
@@ -201,6 +204,7 @@ public final class UpdateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -219,6 +223,7 @@ public final class UpdateDeviceRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -235,6 +240,7 @@ public final class UpdateDeviceRequest extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

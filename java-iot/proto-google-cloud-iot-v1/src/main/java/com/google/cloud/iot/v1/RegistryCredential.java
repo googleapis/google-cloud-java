@@ -175,6 +175,7 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the publicKeyCertificate field is set.
    */
+  @java.lang.Override
   public boolean hasPublicKeyCertificate() {
     return credentialCase_ == 1;
   }
@@ -189,6 +190,7 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
    *
    * @return The publicKeyCertificate.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.PublicKeyCertificate getPublicKeyCertificate() {
     if (credentialCase_ == 1) {
       return (com.google.cloud.iot.v1.PublicKeyCertificate) credential_;
@@ -204,6 +206,7 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder getPublicKeyCertificateOrBuilder() {
     if (credentialCase_ == 1) {
       return (com.google.cloud.iot.v1.PublicKeyCertificate) credential_;
@@ -586,6 +589,7 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the publicKeyCertificate field is set.
      */
+    @java.lang.Override
     public boolean hasPublicKeyCertificate() {
       return credentialCase_ == 1;
     }
@@ -600,6 +604,7 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
      *
      * @return The publicKeyCertificate.
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.PublicKeyCertificate getPublicKeyCertificate() {
       if (publicKeyCertificateBuilder_ == null) {
         if (credentialCase_ == 1) {
@@ -732,6 +737,7 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder
         getPublicKeyCertificateOrBuilder() {
       if ((credentialCase_ == 1) && (publicKeyCertificateBuilder_ != null)) {

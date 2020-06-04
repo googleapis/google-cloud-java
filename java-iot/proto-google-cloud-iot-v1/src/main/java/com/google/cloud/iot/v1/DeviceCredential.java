@@ -200,6 +200,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the publicKey field is set.
    */
+  @java.lang.Override
   public boolean hasPublicKey() {
     return credentialCase_ == 2;
   }
@@ -224,6 +225,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    *
    * @return The publicKey.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.PublicKeyCredential getPublicKey() {
     if (credentialCase_ == 2) {
       return (com.google.cloud.iot.v1.PublicKeyCredential) credential_;
@@ -249,6 +251,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.iot.v1.PublicKeyCredential public_key = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.PublicKeyCredentialOrBuilder getPublicKeyOrBuilder() {
     if (credentialCase_ == 2) {
       return (com.google.cloud.iot.v1.PublicKeyCredential) credential_;
@@ -271,6 +274,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the expirationTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpirationTime() {
     return expirationTime_ != null;
   }
@@ -287,6 +291,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    *
    * @return The expirationTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpirationTime() {
     return expirationTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -303,6 +308,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpirationTimeOrBuilder() {
     return getExpirationTime();
   }
@@ -719,6 +725,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the publicKey field is set.
      */
+    @java.lang.Override
     public boolean hasPublicKey() {
       return credentialCase_ == 2;
     }
@@ -743,6 +750,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      *
      * @return The publicKey.
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.PublicKeyCredential getPublicKey() {
       if (publicKeyBuilder_ == null) {
         if (credentialCase_ == 2) {
@@ -935,6 +943,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.cloud.iot.v1.PublicKeyCredential public_key = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.PublicKeyCredentialOrBuilder getPublicKeyOrBuilder() {
       if ((credentialCase_ == 2) && (publicKeyBuilder_ != null)) {
         return publicKeyBuilder_.getMessageOrBuilder();

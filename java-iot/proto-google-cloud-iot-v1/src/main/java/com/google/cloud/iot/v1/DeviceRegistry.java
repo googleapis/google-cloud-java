@@ -220,6 +220,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +243,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +270,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +294,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -323,6 +327,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.iot.v1.EventNotificationConfig>
       getEventNotificationConfigsList() {
     return eventNotificationConfigs_;
@@ -345,6 +350,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>
       getEventNotificationConfigsOrBuilderList() {
     return eventNotificationConfigs_;
@@ -367,6 +373,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
    * </code>
    */
+  @java.lang.Override
   public int getEventNotificationConfigsCount() {
     return eventNotificationConfigs_.size();
   }
@@ -388,6 +395,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.EventNotificationConfig getEventNotificationConfigs(int index) {
     return eventNotificationConfigs_.get(index);
   }
@@ -409,6 +417,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.EventNotificationConfigOrBuilder
       getEventNotificationConfigsOrBuilder(int index) {
     return eventNotificationConfigs_.get(index);
@@ -432,6 +441,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the stateNotificationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasStateNotificationConfig() {
     return stateNotificationConfig_ != null;
   }
@@ -451,6 +461,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stateNotificationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.StateNotificationConfig getStateNotificationConfig() {
     return stateNotificationConfig_ == null
         ? com.google.cloud.iot.v1.StateNotificationConfig.getDefaultInstance()
@@ -470,6 +481,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.StateNotificationConfigOrBuilder
       getStateNotificationConfigOrBuilder() {
     return getStateNotificationConfig();
@@ -488,6 +500,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the mqttConfig field is set.
    */
+  @java.lang.Override
   public boolean hasMqttConfig() {
     return mqttConfig_ != null;
   }
@@ -502,6 +515,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mqttConfig.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.MqttConfig getMqttConfig() {
     return mqttConfig_ == null
         ? com.google.cloud.iot.v1.MqttConfig.getDefaultInstance()
@@ -516,6 +530,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.iot.v1.MqttConfig mqtt_config = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.MqttConfigOrBuilder getMqttConfigOrBuilder() {
     return getMqttConfig();
   }
@@ -533,6 +548,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the httpConfig field is set.
    */
+  @java.lang.Override
   public boolean hasHttpConfig() {
     return httpConfig_ != null;
   }
@@ -547,6 +563,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpConfig.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.HttpConfig getHttpConfig() {
     return httpConfig_ == null
         ? com.google.cloud.iot.v1.HttpConfig.getDefaultInstance()
@@ -561,6 +578,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.iot.v1.HttpConfig http_config = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.HttpConfigOrBuilder getHttpConfigOrBuilder() {
     return getHttpConfig();
   }
@@ -580,6 +598,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for logLevel.
    */
+  @java.lang.Override
   public int getLogLevelValue() {
     return logLevel_;
   }
@@ -596,6 +615,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The logLevel.
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.LogLevel getLogLevel() {
     @SuppressWarnings("deprecation")
     com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
@@ -622,6 +642,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.iot.v1.RegistryCredential> getCredentialsList() {
     return credentials_;
   }
@@ -643,6 +664,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.iot.v1.RegistryCredentialOrBuilder>
       getCredentialsOrBuilderList() {
     return credentials_;
@@ -665,6 +687,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
+  @java.lang.Override
   public int getCredentialsCount() {
     return credentials_.size();
   }
@@ -686,6 +709,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.RegistryCredential getCredentials(int index) {
     return credentials_.get(index);
   }
@@ -707,6 +731,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.RegistryCredentialOrBuilder getCredentialsOrBuilder(int index) {
     return credentials_.get(index);
   }
@@ -2619,6 +2644,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for logLevel.
      */
+    @java.lang.Override
     public int getLogLevelValue() {
       return logLevel_;
     }
@@ -2637,6 +2663,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLogLevelValue(int value) {
+
       logLevel_ = value;
       onChanged();
       return this;
@@ -2654,6 +2681,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The logLevel.
      */
+    @java.lang.Override
     public com.google.cloud.iot.v1.LogLevel getLogLevel() {
       @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);

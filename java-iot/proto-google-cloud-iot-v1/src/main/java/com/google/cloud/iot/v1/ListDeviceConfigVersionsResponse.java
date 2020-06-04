@@ -132,6 +132,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.iot.v1.DeviceConfig> getDeviceConfigsList() {
     return deviceConfigs_;
   }
@@ -145,6 +146,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.iot.v1.DeviceConfigOrBuilder>
       getDeviceConfigsOrBuilderList() {
     return deviceConfigs_;
@@ -159,6 +161,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
+  @java.lang.Override
   public int getDeviceConfigsCount() {
     return deviceConfigs_.size();
   }
@@ -172,6 +175,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceConfig getDeviceConfigs(int index) {
     return deviceConfigs_.get(index);
   }
@@ -185,6 +189,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.iot.v1.DeviceConfigOrBuilder getDeviceConfigsOrBuilder(int index) {
     return deviceConfigs_.get(index);
   }
