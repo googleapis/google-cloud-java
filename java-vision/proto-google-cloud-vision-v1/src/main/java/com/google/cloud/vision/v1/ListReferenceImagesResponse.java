@@ -144,6 +144,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.ReferenceImage> getReferenceImagesList() {
     return referenceImages_;
   }
@@ -156,6 +157,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.ReferenceImageOrBuilder>
       getReferenceImagesOrBuilderList() {
     return referenceImages_;
@@ -169,6 +171,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public int getReferenceImagesCount() {
     return referenceImages_.size();
   }
@@ -181,6 +184,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ReferenceImage getReferenceImages(int index) {
     return referenceImages_.get(index);
   }
@@ -193,6 +197,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ReferenceImageOrBuilder getReferenceImagesOrBuilder(int index) {
     return referenceImages_.get(index);
   }
@@ -210,6 +215,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -227,6 +233,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -249,6 +256,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -1020,6 +1028,7 @@ public final class ListReferenceImagesResponse extends com.google.protobuf.Gener
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

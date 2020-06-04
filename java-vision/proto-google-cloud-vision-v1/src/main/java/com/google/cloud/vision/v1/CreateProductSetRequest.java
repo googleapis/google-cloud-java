@@ -151,6 +151,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +205,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return Whether the productSet field is set.
    */
+  @java.lang.Override
   public boolean hasProductSet() {
     return productSet_ != null;
   }
@@ -219,6 +222,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return The productSet.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ProductSet getProductSet() {
     return productSet_ == null
         ? com.google.cloud.vision.v1.ProductSet.getDefaultInstance()
@@ -235,6 +239,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    * .google.cloud.vision.v1.ProductSet product_set = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ProductSetOrBuilder getProductSetOrBuilder() {
     return getProductSet();
   }
@@ -255,6 +260,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return The productSetId.
    */
+  @java.lang.Override
   public java.lang.String getProductSetId() {
     java.lang.Object ref = productSetId_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +286,7 @@ public final class CreateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for productSetId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductSetIdBytes() {
     java.lang.Object ref = productSetId_;
     if (ref instanceof java.lang.String) {

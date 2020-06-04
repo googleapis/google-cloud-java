@@ -136,6 +136,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsDestination field is set.
    */
+  @java.lang.Override
   public boolean hasGcsDestination() {
     return gcsDestination_ != null;
   }
@@ -150,6 +151,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsDestination.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.GcsDestination getGcsDestination() {
     return gcsDestination_ == null
         ? com.google.cloud.vision.v1p3beta1.GcsDestination.getDefaultInstance()
@@ -164,6 +166,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p3beta1.GcsDestination gcs_destination = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
     return getGcsDestination();
   }
@@ -189,6 +192,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The batchSize.
    */
+  @java.lang.Override
   public int getBatchSize() {
     return batchSize_;
   }
@@ -742,6 +746,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The batchSize.
      */
+    @java.lang.Override
     public int getBatchSize() {
       return batchSize_;
     }

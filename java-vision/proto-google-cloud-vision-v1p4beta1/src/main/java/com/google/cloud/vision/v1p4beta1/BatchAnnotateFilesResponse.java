@@ -134,6 +134,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileResponse responses = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateFileResponse> getResponsesList() {
     return responses_;
   }
@@ -147,6 +148,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileResponse responses = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateFileResponseOrBuilder>
       getResponsesOrBuilderList() {
     return responses_;
@@ -161,6 +163,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileResponse responses = 1;</code>
    */
+  @java.lang.Override
   public int getResponsesCount() {
     return responses_.size();
   }
@@ -174,6 +177,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileResponse responses = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.AnnotateFileResponse getResponses(int index) {
     return responses_.get(index);
   }
@@ -187,6 +191,7 @@ public final class BatchAnnotateFilesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateFileResponse responses = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.AnnotateFileResponseOrBuilder getResponsesOrBuilder(
       int index) {
     return responses_.get(index);

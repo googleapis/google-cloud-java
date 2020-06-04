@@ -126,6 +126,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The x.
    */
+  @java.lang.Override
   public int getX() {
     return x_;
   }
@@ -143,6 +144,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The y.
    */
+  @java.lang.Override
   public int getY() {
     return y_;
   }
@@ -489,6 +491,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The x.
      */
+    @java.lang.Override
     public int getX() {
       return x_;
     }
@@ -540,6 +543,7 @@ public final class Vertex extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The y.
      */
+    @java.lang.Override
     public int getY() {
       return y_;
     }

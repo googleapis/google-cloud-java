@@ -213,6 +213,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The catalogName.
    */
+  @java.lang.Override
   public java.lang.String getCatalogName() {
     java.lang.Object ref = catalogName_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +237,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for catalogName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCatalogNameBytes() {
     java.lang.Object ref = catalogName_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +265,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for category.
    */
+  @java.lang.Override
   public int getCategoryValue() {
     return category_;
   }
@@ -279,6 +282,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The category.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p3beta1.ProductSearchCategory result =
@@ -304,6 +308,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The productCategory.
    */
+  @java.lang.Override
   public java.lang.String getProductCategory() {
     java.lang.Object ref = productCategory_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +334,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for productCategory.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductCategoryBytes() {
     java.lang.Object ref = productCategory_;
     if (ref instanceof java.lang.String) {
@@ -357,6 +363,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the normalizedBoundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasNormalizedBoundingPoly() {
     return normalizedBoundingPoly_ != null;
   }
@@ -374,6 +381,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The normalizedBoundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly getNormalizedBoundingPoly() {
     return normalizedBoundingPoly_ == null
         ? com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.getDefaultInstance()
@@ -391,6 +399,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.NormalizedBoundingPolyOrBuilder
       getNormalizedBoundingPolyOrBuilder() {
     return getNormalizedBoundingPoly();
@@ -410,6 +419,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the boundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
   }
@@ -425,6 +435,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The boundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
         ? com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()
@@ -440,6 +451,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
     return getBoundingPoly();
   }
@@ -458,6 +470,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for view.
    */
+  @java.lang.Override
   public int getViewValue() {
     return view_;
   }
@@ -473,6 +486,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The view.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductSearchResultsView getView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p3beta1.ProductSearchResultsView result =
@@ -499,6 +513,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The productSet.
    */
+  @java.lang.Override
   public java.lang.String getProductSet() {
     java.lang.Object ref = productSet_;
     if (ref instanceof java.lang.String) {
@@ -525,6 +540,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for productSet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductSetBytes() {
     java.lang.Object ref = productSet_;
     if (ref instanceof java.lang.String) {
@@ -623,6 +639,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -649,6 +666,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -1282,6 +1300,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for category.
      */
+    @java.lang.Override
     public int getCategoryValue() {
       return category_;
     }
@@ -1300,6 +1319,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setCategoryValue(int value) {
+
       category_ = value;
       onChanged();
       return this;
@@ -1317,6 +1337,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * @return The category.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p3beta1.ProductSearchCategory result =
@@ -1915,6 +1936,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for view.
      */
+    @java.lang.Override
     public int getViewValue() {
       return view_;
     }
@@ -1932,6 +1954,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
+
       view_ = value;
       onChanged();
       return this;
@@ -1948,6 +1971,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * @return The view.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.ProductSearchResultsView getView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p3beta1.ProductSearchResultsView result =

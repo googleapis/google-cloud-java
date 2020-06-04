@@ -363,6 +363,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the product field is set.
      */
+    @java.lang.Override
     public boolean hasProduct() {
       return product_ != null;
     }
@@ -377,6 +378,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The product.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Product getProduct() {
       return product_ == null ? com.google.cloud.vision.v1.Product.getDefaultInstance() : product_;
     }
@@ -389,6 +391,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.vision.v1.Product product = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.ProductOrBuilder getProductOrBuilder() {
       return getProduct();
     }
@@ -407,6 +410,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -425,6 +429,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The image.
      */
+    @java.lang.Override
     public java.lang.String getImage() {
       java.lang.Object ref = image_;
       if (ref instanceof java.lang.String) {
@@ -448,6 +453,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The bytes for image.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getImageBytes() {
       java.lang.Object ref = image_;
       if (ref instanceof java.lang.String) {
@@ -1025,6 +1031,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        *
        * @return The score.
        */
+      @java.lang.Override
       public float getScore() {
         return score_;
       }
@@ -1453,6 +1460,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The mid.
      */
+    @java.lang.Override
     public java.lang.String getMid() {
       java.lang.Object ref = mid_;
       if (ref instanceof java.lang.String) {
@@ -1475,6 +1483,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The bytes for mid.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMidBytes() {
       java.lang.Object ref = mid_;
       if (ref instanceof java.lang.String) {
@@ -1502,6 +1511,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The languageCode.
      */
+    @java.lang.Override
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof java.lang.String) {
@@ -1526,6 +1536,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The bytes for languageCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof java.lang.String) {
@@ -1551,6 +1562,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1573,6 +1585,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1598,6 +1611,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -2321,6 +2335,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        *
        * @return The score.
        */
+      @java.lang.Override
       public float getScore() {
         return score_;
       }
@@ -2725,6 +2740,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the boundingPoly field is set.
      */
+    @java.lang.Override
     public boolean hasBoundingPoly() {
       return boundingPoly_ != null;
     }
@@ -2739,6 +2755,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * @return The boundingPoly.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
       return boundingPoly_ == null
           ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
@@ -2753,6 +2770,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
       return getBoundingPoly();
     }
@@ -2768,6 +2786,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.vision.v1.ProductSearchResults.Result> getResultsList() {
       return results_;
     }
@@ -2780,6 +2799,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>
         getResultsOrBuilderList() {
       return results_;
@@ -2793,6 +2813,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 2;</code>
      */
+    @java.lang.Override
     public int getResultsCount() {
       return results_.size();
     }
@@ -2805,6 +2826,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.ProductSearchResults.Result getResults(int index) {
       return results_.get(index);
     }
@@ -2817,6 +2839,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder getResultsOrBuilder(
         int index) {
       return results_.get(index);
@@ -2836,6 +2859,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation>
         getObjectAnnotationsList() {
       return objectAnnotations_;
@@ -2851,6 +2875,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder>
         getObjectAnnotationsOrBuilderList() {
@@ -2867,6 +2892,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
      * </code>
      */
+    @java.lang.Override
     public int getObjectAnnotationsCount() {
       return objectAnnotations_.size();
     }
@@ -2881,6 +2907,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation getObjectAnnotations(
         int index) {
       return objectAnnotations_.get(index);
@@ -2896,6 +2923,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * repeated .google.cloud.vision.v1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.ProductSearchResults.ObjectAnnotationOrBuilder
         getObjectAnnotationsOrBuilder(int index) {
       return objectAnnotations_.get(index);
@@ -4389,6 +4417,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the indexTime field is set.
    */
+  @java.lang.Override
   public boolean hasIndexTime() {
     return indexTime_ != null;
   }
@@ -4405,6 +4434,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    * @return The indexTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getIndexTime() {
     return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
   }
@@ -4419,6 +4449,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
     return getIndexTime();
   }
@@ -4434,6 +4465,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.ProductSearchResults.Result> getResultsList() {
     return results_;
   }
@@ -4446,6 +4478,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>
       getResultsOrBuilderList() {
     return results_;
@@ -4459,6 +4492,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
+  @java.lang.Override
   public int getResultsCount() {
     return results_.size();
   }
@@ -4471,6 +4505,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ProductSearchResults.Result getResults(int index) {
     return results_.get(index);
   }
@@ -4483,6 +4518,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder getResultsOrBuilder(
       int index) {
     return results_.get(index);
@@ -4505,6 +4541,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>
       getProductGroupedResultsList() {
     return productGroupedResults_;
@@ -4523,6 +4560,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder>
       getProductGroupedResultsOrBuilderList() {
@@ -4542,6 +4580,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
    * </code>
    */
+  @java.lang.Override
   public int getProductGroupedResultsCount() {
     return productGroupedResults_.size();
   }
@@ -4559,6 +4598,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ProductSearchResults.GroupedResult getProductGroupedResults(
       int index) {
     return productGroupedResults_.get(index);
@@ -4577,6 +4617,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder
       getProductGroupedResultsOrBuilder(int index) {
     return productGroupedResults_.get(index);

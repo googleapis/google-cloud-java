@@ -132,6 +132,7 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -146,6 +147,7 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.vision.v1p4beta1.OutputConfig.getDefaultInstance()
@@ -160,6 +162,7 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
    *
    * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }

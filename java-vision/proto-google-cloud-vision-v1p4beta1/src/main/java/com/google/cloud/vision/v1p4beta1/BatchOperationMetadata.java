@@ -314,6 +314,10 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -361,6 +365,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -375,6 +380,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BatchOperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p4beta1.BatchOperationMetadata.State result =
@@ -397,6 +403,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the submitTime field is set.
    */
+  @java.lang.Override
   public boolean hasSubmitTime() {
     return submitTime_ != null;
   }
@@ -411,6 +418,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The submitTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
@@ -423,6 +431,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp submit_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
     return getSubmitTime();
   }
@@ -442,6 +451,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -458,6 +468,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -472,6 +483,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp end_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -868,6 +880,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -884,6 +897,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -899,6 +913,7 @@ public final class BatchOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p4beta1.BatchOperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p4beta1.BatchOperationMetadata.State result =

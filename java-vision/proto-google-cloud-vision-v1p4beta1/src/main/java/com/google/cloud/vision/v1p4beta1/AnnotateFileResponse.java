@@ -171,6 +171,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -185,6 +186,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.InputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.vision.v1p4beta1.InputConfig.getDefaultInstance()
@@ -199,6 +201,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.vision.v1p4beta1.InputConfig input_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -215,6 +218,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageResponse responses = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateImageResponse>
       getResponsesList() {
     return responses_;
@@ -229,6 +233,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageResponse responses = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateImageResponseOrBuilder>
       getResponsesOrBuilderList() {
     return responses_;
@@ -243,6 +248,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageResponse responses = 2;</code>
    */
+  @java.lang.Override
   public int getResponsesCount() {
     return responses_.size();
   }
@@ -256,6 +262,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageResponse responses = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.AnnotateImageResponse getResponses(int index) {
     return responses_.get(index);
   }
@@ -269,6 +276,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.AnnotateImageResponse responses = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.AnnotateImageResponseOrBuilder getResponsesOrBuilder(
       int index) {
     return responses_.get(index);
@@ -287,6 +295,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The totalPages.
    */
+  @java.lang.Override
   public int getTotalPages() {
     return totalPages_;
   }
@@ -305,6 +314,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the error field is set.
    */
+  @java.lang.Override
   public boolean hasError() {
     return error_ != null;
   }
@@ -320,6 +330,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The error.
    */
+  @java.lang.Override
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
@@ -333,6 +344,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.rpc.Status error = 4;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
   }
@@ -1349,6 +1361,7 @@ public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMes
      *
      * @return The totalPages.
      */
+    @java.lang.Override
     public int getTotalPages() {
       return totalPages_;
     }

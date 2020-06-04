@@ -169,6 +169,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the property field is set.
    */
+  @java.lang.Override
   public boolean hasProperty() {
     return property_ != null;
   }
@@ -183,6 +184,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The property.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty() {
     return property_ == null
         ? com.google.cloud.vision.v1.TextAnnotation.TextProperty.getDefaultInstance()
@@ -197,6 +199,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.TextAnnotation.TextPropertyOrBuilder getPropertyOrBuilder() {
     return getProperty();
   }
@@ -228,6 +231,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the boundingBox field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
   }
@@ -256,6 +260,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boundingBox.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
         ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
@@ -284,6 +289,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
     return getBoundingBox();
   }
@@ -299,6 +305,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.Word> getWordsList() {
     return words_;
   }
@@ -311,6 +318,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.WordOrBuilder>
       getWordsOrBuilderList() {
     return words_;
@@ -324,6 +332,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
+  @java.lang.Override
   public int getWordsCount() {
     return words_.size();
   }
@@ -336,6 +345,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Word getWords(int index) {
     return words_.get(index);
   }
@@ -348,6 +358,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WordOrBuilder getWordsOrBuilder(int index) {
     return words_.get(index);
   }
@@ -365,6 +376,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -1651,6 +1663,7 @@ public final class Paragraph extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

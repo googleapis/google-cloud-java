@@ -142,6 +142,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the boundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
   }
@@ -157,6 +158,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
         ? com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()
@@ -172,6 +174,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
     return getBoundingPoly();
   }
@@ -189,6 +192,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -207,6 +211,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The importanceFraction.
    */
+  @java.lang.Override
   public float getImportanceFraction() {
     return importanceFraction_;
   }
@@ -778,6 +783,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }
@@ -830,6 +836,7 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The importanceFraction.
      */
+    @java.lang.Override
     public float getImportanceFraction() {
       return importanceFraction_;
     }

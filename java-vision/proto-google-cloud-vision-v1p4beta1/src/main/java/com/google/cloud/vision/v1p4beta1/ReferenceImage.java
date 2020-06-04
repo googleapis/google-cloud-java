@@ -153,6 +153,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +230,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -258,6 +262,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.vision.v1p4beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p4beta1.BoundingPoly> getBoundingPolysList() {
     return boundingPolys_;
   }
@@ -278,6 +283,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.vision.v1p4beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder>
       getBoundingPolysOrBuilderList() {
     return boundingPolys_;
@@ -299,6 +305,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.vision.v1p4beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getBoundingPolysCount() {
     return boundingPolys_.size();
   }
@@ -319,6 +326,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.vision.v1p4beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPolys(int index) {
     return boundingPolys_.get(index);
   }
@@ -339,6 +347,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.vision.v1p4beta1.BoundingPoly bounding_polys = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(
       int index) {
     return boundingPolys_.get(index);

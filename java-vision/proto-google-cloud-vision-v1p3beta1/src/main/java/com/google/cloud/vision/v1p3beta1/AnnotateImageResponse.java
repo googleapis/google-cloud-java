@@ -350,6 +350,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation> getFaceAnnotationsList() {
     return faceAnnotations_;
   }
@@ -362,6 +363,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder>
       getFaceAnnotationsOrBuilderList() {
     return faceAnnotations_;
@@ -375,6 +377,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
    */
+  @java.lang.Override
   public int getFaceAnnotationsCount() {
     return faceAnnotations_.size();
   }
@@ -387,6 +390,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.FaceAnnotation getFaceAnnotations(int index) {
     return faceAnnotations_.get(index);
   }
@@ -399,6 +403,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder getFaceAnnotationsOrBuilder(
       int index) {
     return faceAnnotations_.get(index);
@@ -415,6 +420,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
       getLandmarkAnnotationsList() {
     return landmarkAnnotations_;
@@ -428,6 +434,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
       getLandmarkAnnotationsOrBuilderList() {
     return landmarkAnnotations_;
@@ -441,6 +448,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
+  @java.lang.Override
   public int getLandmarkAnnotationsCount() {
     return landmarkAnnotations_.size();
   }
@@ -453,6 +461,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.EntityAnnotation getLandmarkAnnotations(int index) {
     return landmarkAnnotations_.get(index);
   }
@@ -465,6 +474,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder
       getLandmarkAnnotationsOrBuilder(int index) {
     return landmarkAnnotations_.get(index);
@@ -481,6 +491,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
       getLogoAnnotationsList() {
     return logoAnnotations_;
@@ -494,6 +505,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
       getLogoAnnotationsOrBuilderList() {
     return logoAnnotations_;
@@ -507,6 +519,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
    */
+  @java.lang.Override
   public int getLogoAnnotationsCount() {
     return logoAnnotations_.size();
   }
@@ -519,6 +532,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.EntityAnnotation getLogoAnnotations(int index) {
     return logoAnnotations_.get(index);
   }
@@ -531,6 +545,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder getLogoAnnotationsOrBuilder(
       int index) {
     return logoAnnotations_.get(index);
@@ -547,6 +562,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
       getLabelAnnotationsList() {
     return labelAnnotations_;
@@ -560,6 +576,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
       getLabelAnnotationsOrBuilderList() {
     return labelAnnotations_;
@@ -573,6 +590,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
    */
+  @java.lang.Override
   public int getLabelAnnotationsCount() {
     return labelAnnotations_.size();
   }
@@ -585,6 +603,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.EntityAnnotation getLabelAnnotations(int index) {
     return labelAnnotations_.get(index);
   }
@@ -597,6 +616,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder getLabelAnnotationsOrBuilder(
       int index) {
     return labelAnnotations_.get(index);
@@ -617,6 +637,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>
       getLocalizedObjectAnnotationsList() {
     return localizedObjectAnnotations_;
@@ -633,6 +654,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder>
       getLocalizedObjectAnnotationsOrBuilderList() {
@@ -650,6 +672,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
    * </code>
    */
+  @java.lang.Override
   public int getLocalizedObjectAnnotationsCount() {
     return localizedObjectAnnotations_.size();
   }
@@ -665,6 +688,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(
       int index) {
     return localizedObjectAnnotations_.get(index);
@@ -681,6 +705,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder
       getLocalizedObjectAnnotationsOrBuilder(int index) {
     return localizedObjectAnnotations_.get(index);
@@ -697,6 +722,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
       getTextAnnotationsList() {
     return textAnnotations_;
@@ -710,6 +736,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
       getTextAnnotationsOrBuilderList() {
     return textAnnotations_;
@@ -723,6 +750,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
    */
+  @java.lang.Override
   public int getTextAnnotationsCount() {
     return textAnnotations_.size();
   }
@@ -735,6 +763,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.EntityAnnotation getTextAnnotations(int index) {
     return textAnnotations_.get(index);
   }
@@ -747,6 +776,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder getTextAnnotationsOrBuilder(
       int index) {
     return textAnnotations_.get(index);
@@ -768,6 +798,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the fullTextAnnotation field is set.
    */
+  @java.lang.Override
   public boolean hasFullTextAnnotation() {
     return fullTextAnnotation_ != null;
   }
@@ -785,6 +816,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The fullTextAnnotation.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.TextAnnotation getFullTextAnnotation() {
     return fullTextAnnotation_ == null
         ? com.google.cloud.vision.v1p3beta1.TextAnnotation.getDefaultInstance()
@@ -802,6 +834,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.vision.v1p3beta1.TextAnnotation full_text_annotation = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder
       getFullTextAnnotationOrBuilder() {
     return getFullTextAnnotation();
@@ -820,6 +853,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the safeSearchAnnotation field is set.
    */
+  @java.lang.Override
   public boolean hasSafeSearchAnnotation() {
     return safeSearchAnnotation_ != null;
   }
@@ -834,6 +868,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The safeSearchAnnotation.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation getSafeSearchAnnotation() {
     return safeSearchAnnotation_ == null
         ? com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.getDefaultInstance()
@@ -848,6 +883,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder
       getSafeSearchAnnotationOrBuilder() {
     return getSafeSearchAnnotation();
@@ -866,6 +902,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the imagePropertiesAnnotation field is set.
    */
+  @java.lang.Override
   public boolean hasImagePropertiesAnnotation() {
     return imagePropertiesAnnotation_ != null;
   }
@@ -880,6 +917,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The imagePropertiesAnnotation.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ImageProperties getImagePropertiesAnnotation() {
     return imagePropertiesAnnotation_ == null
         ? com.google.cloud.vision.v1p3beta1.ImageProperties.getDefaultInstance()
@@ -894,6 +932,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.vision.v1p3beta1.ImageProperties image_properties_annotation = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder
       getImagePropertiesAnnotationOrBuilder() {
     return getImagePropertiesAnnotation();
@@ -912,6 +951,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the cropHintsAnnotation field is set.
    */
+  @java.lang.Override
   public boolean hasCropHintsAnnotation() {
     return cropHintsAnnotation_ != null;
   }
@@ -926,6 +966,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The cropHintsAnnotation.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.CropHintsAnnotation getCropHintsAnnotation() {
     return cropHintsAnnotation_ == null
         ? com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.getDefaultInstance()
@@ -940,6 +981,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.vision.v1p3beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder
       getCropHintsAnnotationOrBuilder() {
     return getCropHintsAnnotation();
@@ -958,6 +1000,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the webDetection field is set.
    */
+  @java.lang.Override
   public boolean hasWebDetection() {
     return webDetection_ != null;
   }
@@ -972,6 +1015,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The webDetection.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.WebDetection getWebDetection() {
     return webDetection_ == null
         ? com.google.cloud.vision.v1p3beta1.WebDetection.getDefaultInstance()
@@ -986,6 +1030,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.vision.v1p3beta1.WebDetection web_detection = 13;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.WebDetectionOrBuilder getWebDetectionOrBuilder() {
     return getWebDetection();
   }
@@ -1003,6 +1048,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the productSearchResults field is set.
    */
+  @java.lang.Override
   public boolean hasProductSearchResults() {
     return productSearchResults_ != null;
   }
@@ -1017,6 +1063,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The productSearchResults.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductSearchResults getProductSearchResults() {
     return productSearchResults_ == null
         ? com.google.cloud.vision.v1p3beta1.ProductSearchResults.getDefaultInstance()
@@ -1031,6 +1078,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchResults product_search_results = 14;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder
       getProductSearchResultsOrBuilder() {
     return getProductSearchResults();
@@ -1051,6 +1099,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the error field is set.
    */
+  @java.lang.Override
   public boolean hasError() {
     return error_ != null;
   }
@@ -1067,6 +1116,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The error.
    */
+  @java.lang.Override
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
@@ -1081,6 +1131,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.rpc.Status error = 9;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
   }
@@ -1099,6 +1150,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the context field is set.
    */
+  @java.lang.Override
   public boolean hasContext() {
     return context_ != null;
   }
@@ -1114,6 +1166,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The context.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ImageAnnotationContext getContext() {
     return context_ == null
         ? com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.getDefaultInstance()
@@ -1129,6 +1182,7 @@ public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.vision.v1p3beta1.ImageAnnotationContext context = 21;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ImageAnnotationContextOrBuilder getContextOrBuilder() {
     return getContext();
   }

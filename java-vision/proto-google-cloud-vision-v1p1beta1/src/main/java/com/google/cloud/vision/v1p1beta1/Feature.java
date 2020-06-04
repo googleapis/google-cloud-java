@@ -426,6 +426,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -471,6 +475,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -485,6 +490,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.Feature.Type getType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p1beta1.Feature.Type result =
@@ -505,6 +511,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxResults.
    */
+  @java.lang.Override
   public int getMaxResults() {
     return maxResults_;
   }
@@ -524,6 +531,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -548,6 +556,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -921,6 +930,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -937,6 +947,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -952,6 +963,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p1beta1.Feature.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p1beta1.Feature.Type result =
@@ -1009,6 +1021,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxResults.
      */
+    @java.lang.Override
     public int getMaxResults() {
       return maxResults_;
     }

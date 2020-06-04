@@ -180,6 +180,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -194,6 +195,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.InputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.vision.v1p3beta1.InputConfig.getDefaultInstance()
@@ -208,6 +210,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.vision.v1p3beta1.InputConfig input_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -223,6 +226,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.Feature> getFeaturesList() {
     return features_;
   }
@@ -235,6 +239,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p3beta1.FeatureOrBuilder>
       getFeaturesOrBuilderList() {
     return features_;
@@ -248,6 +253,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public int getFeaturesCount() {
     return features_.size();
   }
@@ -260,6 +266,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.Feature getFeatures(int index) {
     return features_.get(index);
   }
@@ -272,6 +279,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.FeatureOrBuilder getFeaturesOrBuilder(int index) {
     return features_.get(index);
   }
@@ -289,6 +297,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * @return Whether the imageContext field is set.
    */
+  @java.lang.Override
   public boolean hasImageContext() {
     return imageContext_ != null;
   }
@@ -303,6 +312,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * @return The imageContext.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ImageContext getImageContext() {
     return imageContext_ == null
         ? com.google.cloud.vision.v1p3beta1.ImageContext.getDefaultInstance()
@@ -317,6 +327,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.vision.v1p3beta1.ImageContext image_context = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ImageContextOrBuilder getImageContextOrBuilder() {
     return getImageContext();
   }
@@ -334,6 +345,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -348,6 +360,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.vision.v1p3beta1.OutputConfig.getDefaultInstance()
@@ -362,6 +375,7 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.vision.v1p3beta1.OutputConfig output_config = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }

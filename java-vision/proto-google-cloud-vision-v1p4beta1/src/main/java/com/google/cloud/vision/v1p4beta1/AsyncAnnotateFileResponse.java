@@ -131,6 +131,7 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -145,6 +146,7 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.vision.v1p4beta1.OutputConfig.getDefaultInstance()
@@ -159,6 +161,7 @@ public final class AsyncAnnotateFileResponse extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.vision.v1p4beta1.OutputConfig output_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }

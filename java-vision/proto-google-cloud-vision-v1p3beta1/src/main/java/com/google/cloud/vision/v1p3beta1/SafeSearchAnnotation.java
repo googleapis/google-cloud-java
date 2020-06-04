@@ -160,6 +160,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for adult.
    */
+  @java.lang.Override
   public int getAdultValue() {
     return adult_;
   }
@@ -176,6 +177,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The adult.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.Likelihood getAdult() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -198,6 +200,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for spoof.
    */
+  @java.lang.Override
   public int getSpoofValue() {
     return spoof_;
   }
@@ -214,6 +217,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The spoof.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.Likelihood getSpoof() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -234,6 +238,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for medical.
    */
+  @java.lang.Override
   public int getMedicalValue() {
     return medical_;
   }
@@ -248,6 +253,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The medical.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.Likelihood getMedical() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -268,6 +274,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for violence.
    */
+  @java.lang.Override
   public int getViolenceValue() {
     return violence_;
   }
@@ -282,6 +289,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The violence.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.Likelihood getViolence() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -305,6 +313,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for racy.
    */
+  @java.lang.Override
   public int getRacyValue() {
     return racy_;
   }
@@ -322,6 +331,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The racy.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.Likelihood getRacy() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -723,6 +733,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for adult.
      */
+    @java.lang.Override
     public int getAdultValue() {
       return adult_;
     }
@@ -741,6 +752,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setAdultValue(int value) {
+
       adult_ = value;
       onChanged();
       return this;
@@ -758,6 +770,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The adult.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.Likelihood getAdult() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -821,6 +834,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for spoof.
      */
+    @java.lang.Override
     public int getSpoofValue() {
       return spoof_;
     }
@@ -839,6 +853,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSpoofValue(int value) {
+
       spoof_ = value;
       onChanged();
       return this;
@@ -856,6 +871,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The spoof.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.Likelihood getSpoof() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -917,6 +933,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for medical.
      */
+    @java.lang.Override
     public int getMedicalValue() {
       return medical_;
     }
@@ -933,6 +950,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setMedicalValue(int value) {
+
       medical_ = value;
       onChanged();
       return this;
@@ -948,6 +966,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The medical.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.Likelihood getMedical() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -1005,6 +1024,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for violence.
      */
+    @java.lang.Override
     public int getViolenceValue() {
       return violence_;
     }
@@ -1021,6 +1041,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setViolenceValue(int value) {
+
       violence_ = value;
       onChanged();
       return this;
@@ -1036,6 +1057,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The violence.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.Likelihood getViolence() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p3beta1.Likelihood result =
@@ -1096,6 +1118,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for racy.
      */
+    @java.lang.Override
     public int getRacyValue() {
       return racy_;
     }
@@ -1115,6 +1138,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setRacyValue(int value) {
+
       racy_ = value;
       onChanged();
       return this;
@@ -1133,6 +1157,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
      *
      * @return The racy.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.Likelihood getRacy() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1p3beta1.Likelihood result =

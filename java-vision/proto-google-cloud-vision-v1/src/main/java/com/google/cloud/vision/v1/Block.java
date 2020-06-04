@@ -351,6 +351,10 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -396,6 +400,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the property field is set.
    */
+  @java.lang.Override
   public boolean hasProperty() {
     return property_ != null;
   }
@@ -410,6 +415,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The property.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty() {
     return property_ == null
         ? com.google.cloud.vision.v1.TextAnnotation.TextProperty.getDefaultInstance()
@@ -424,6 +430,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1.TextAnnotation.TextProperty property = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.TextAnnotation.TextPropertyOrBuilder getPropertyOrBuilder() {
     return getProperty();
   }
@@ -455,6 +462,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the boundingBox field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
   }
@@ -483,6 +491,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boundingBox.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPoly getBoundingBox() {
     return boundingBox_ == null
         ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
@@ -511,6 +520,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
     return getBoundingBox();
   }
@@ -526,6 +536,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Paragraph paragraphs = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.Paragraph> getParagraphsList() {
     return paragraphs_;
   }
@@ -538,6 +549,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Paragraph paragraphs = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.ParagraphOrBuilder>
       getParagraphsOrBuilderList() {
     return paragraphs_;
@@ -551,6 +563,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Paragraph paragraphs = 3;</code>
    */
+  @java.lang.Override
   public int getParagraphsCount() {
     return paragraphs_.size();
   }
@@ -563,6 +576,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Paragraph paragraphs = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Paragraph getParagraphs(int index) {
     return paragraphs_.get(index);
   }
@@ -575,6 +589,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Paragraph paragraphs = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ParagraphOrBuilder getParagraphsOrBuilder(int index) {
     return paragraphs_.get(index);
   }
@@ -592,6 +607,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for blockType.
    */
+  @java.lang.Override
   public int getBlockTypeValue() {
     return blockType_;
   }
@@ -606,6 +622,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The blockType.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Block.BlockType getBlockType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Block.BlockType result =
@@ -626,6 +643,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -1929,6 +1947,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for blockType.
      */
+    @java.lang.Override
     public int getBlockTypeValue() {
       return blockType_;
     }
@@ -1945,6 +1964,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBlockTypeValue(int value) {
+
       blockType_ = value;
       onChanged();
       return this;
@@ -1960,6 +1980,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The blockType.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Block.BlockType getBlockType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Block.BlockType result =
@@ -2017,6 +2038,7 @@ public final class Block extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

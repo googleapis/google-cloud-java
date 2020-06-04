@@ -393,6 +393,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The entityId.
      */
+    @java.lang.Override
     public java.lang.String getEntityId() {
       java.lang.Object ref = entityId_;
       if (ref instanceof java.lang.String) {
@@ -415,6 +416,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for entityId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEntityIdBytes() {
       java.lang.Object ref = entityId_;
       if (ref instanceof java.lang.String) {
@@ -441,6 +443,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -458,6 +461,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The description.
      */
+    @java.lang.Override
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -480,6 +484,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for description.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
@@ -965,6 +970,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The score.
        */
+      @java.lang.Override
       public float getScore() {
         return score_;
       }
@@ -1318,6 +1324,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The url.
      */
+    @java.lang.Override
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
@@ -1340,6 +1347,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for url.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
@@ -1365,6 +1373,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -1825,6 +1834,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The score.
        */
+      @java.lang.Override
       public float getScore() {
         return score_;
       }
@@ -2269,6 +2279,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The url.
      */
+    @java.lang.Override
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
@@ -2291,6 +2302,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for url.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
@@ -2316,6 +2328,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -2333,6 +2346,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pageTitle.
      */
+    @java.lang.Override
     public java.lang.String getPageTitle() {
       java.lang.Object ref = pageTitle_;
       if (ref instanceof java.lang.String) {
@@ -2355,6 +2369,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for pageTitle.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPageTitleBytes() {
       java.lang.Object ref = pageTitle_;
       if (ref instanceof java.lang.String) {
@@ -2379,6 +2394,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
         getFullMatchingImagesList() {
       return fullMatchingImages_;
@@ -2393,6 +2409,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getFullMatchingImagesOrBuilderList() {
       return fullMatchingImages_;
@@ -2407,6 +2424,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
+    @java.lang.Override
     public int getFullMatchingImagesCount() {
       return fullMatchingImages_.size();
     }
@@ -2420,6 +2438,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection.WebImage getFullMatchingImages(int index) {
       return fullMatchingImages_.get(index);
     }
@@ -2433,6 +2452,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getFullMatchingImagesOrBuilder(
         int index) {
       return fullMatchingImages_.get(index);
@@ -2453,6 +2473,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
         getPartialMatchingImagesList() {
       return partialMatchingImages_;
@@ -2470,6 +2491,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getPartialMatchingImagesOrBuilderList() {
       return partialMatchingImages_;
@@ -2487,6 +2509,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
      * </code>
      */
+    @java.lang.Override
     public int getPartialMatchingImagesCount() {
       return partialMatchingImages_.size();
     }
@@ -2503,6 +2526,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection.WebImage getPartialMatchingImages(int index) {
       return partialMatchingImages_.get(index);
     }
@@ -2519,6 +2543,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
         getPartialMatchingImagesOrBuilder(int index) {
       return partialMatchingImages_.get(index);
@@ -3112,6 +3137,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The score.
        */
+      @java.lang.Override
       public float getScore() {
         return score_;
       }
@@ -4317,6 +4343,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The label.
      */
+    @java.lang.Override
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
       if (ref instanceof java.lang.String) {
@@ -4339,6 +4366,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for label.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLabelBytes() {
       java.lang.Object ref = label_;
       if (ref instanceof java.lang.String) {
@@ -4366,6 +4394,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The languageCode.
      */
+    @java.lang.Override
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof java.lang.String) {
@@ -4390,6 +4419,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for languageCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof java.lang.String) {
@@ -5025,6 +5055,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.WebDetection.WebEntity> getWebEntitiesList() {
     return webEntities_;
   }
@@ -5037,6 +5068,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder>
       getWebEntitiesOrBuilderList() {
     return webEntities_;
@@ -5050,6 +5082,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
+  @java.lang.Override
   public int getWebEntitiesCount() {
     return webEntities_.size();
   }
@@ -5062,6 +5095,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebEntity getWebEntities(int index) {
     return webEntities_.get(index);
   }
@@ -5074,6 +5108,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder getWebEntitiesOrBuilder(
       int index) {
     return webEntities_.get(index);
@@ -5091,6 +5126,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
       getFullMatchingImagesList() {
     return fullMatchingImages_;
@@ -5105,6 +5141,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getFullMatchingImagesOrBuilderList() {
     return fullMatchingImages_;
@@ -5119,6 +5156,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
+  @java.lang.Override
   public int getFullMatchingImagesCount() {
     return fullMatchingImages_.size();
   }
@@ -5132,6 +5170,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebImage getFullMatchingImages(int index) {
     return fullMatchingImages_.get(index);
   }
@@ -5145,6 +5184,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getFullMatchingImagesOrBuilder(
       int index) {
     return fullMatchingImages_.get(index);
@@ -5164,6 +5204,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
       getPartialMatchingImagesList() {
     return partialMatchingImages_;
@@ -5180,6 +5221,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getPartialMatchingImagesOrBuilderList() {
     return partialMatchingImages_;
@@ -5196,6 +5238,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
    * </code>
    */
+  @java.lang.Override
   public int getPartialMatchingImagesCount() {
     return partialMatchingImages_.size();
   }
@@ -5211,6 +5254,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebImage getPartialMatchingImages(int index) {
     return partialMatchingImages_.get(index);
   }
@@ -5226,6 +5270,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
       getPartialMatchingImagesOrBuilder(int index) {
     return partialMatchingImages_.get(index);
@@ -5243,6 +5288,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage>
       getPagesWithMatchingImagesList() {
     return pagesWithMatchingImages_;
@@ -5257,6 +5303,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder>
       getPagesWithMatchingImagesOrBuilderList() {
     return pagesWithMatchingImages_;
@@ -5271,6 +5318,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
    * </code>
    */
+  @java.lang.Override
   public int getPagesWithMatchingImagesCount() {
     return pagesWithMatchingImages_.size();
   }
@@ -5284,6 +5332,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebPage getPagesWithMatchingImages(int index) {
     return pagesWithMatchingImages_.get(index);
   }
@@ -5297,6 +5346,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder
       getPagesWithMatchingImagesOrBuilder(int index) {
     return pagesWithMatchingImages_.get(index);
@@ -5314,6 +5364,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
       getVisuallySimilarImagesList() {
     return visuallySimilarImages_;
@@ -5328,6 +5379,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getVisuallySimilarImagesOrBuilderList() {
     return visuallySimilarImages_;
@@ -5342,6 +5394,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
    * </code>
    */
+  @java.lang.Override
   public int getVisuallySimilarImagesCount() {
     return visuallySimilarImages_.size();
   }
@@ -5355,6 +5408,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebImage getVisuallySimilarImages(int index) {
     return visuallySimilarImages_.get(index);
   }
@@ -5368,6 +5422,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
       getVisuallySimilarImagesOrBuilder(int index) {
     return visuallySimilarImages_.get(index);
@@ -5385,6 +5440,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.WebDetection.WebLabel> getBestGuessLabelsList() {
     return bestGuessLabels_;
   }
@@ -5398,6 +5454,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder>
       getBestGuessLabelsOrBuilderList() {
     return bestGuessLabels_;
@@ -5412,6 +5469,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
+  @java.lang.Override
   public int getBestGuessLabelsCount() {
     return bestGuessLabels_.size();
   }
@@ -5425,6 +5483,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebLabel getBestGuessLabels(int index) {
     return bestGuessLabels_.get(index);
   }
@@ -5438,6 +5497,7 @@ public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder getBestGuessLabelsOrBuilder(
       int index) {
     return bestGuessLabels_.get(index);

@@ -139,6 +139,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.ProductSet product_sets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p4beta1.ProductSet> getProductSetsList() {
     return productSets_;
   }
@@ -151,6 +152,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.ProductSet product_sets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.ProductSetOrBuilder>
       getProductSetsOrBuilderList() {
     return productSets_;
@@ -164,6 +166,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.ProductSet product_sets = 1;</code>
    */
+  @java.lang.Override
   public int getProductSetsCount() {
     return productSets_.size();
   }
@@ -176,6 +179,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.ProductSet product_sets = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.ProductSet getProductSets(int index) {
     return productSets_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.ProductSet product_sets = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.ProductSetOrBuilder getProductSetsOrBuilder(int index) {
     return productSets_.get(index);
   }
@@ -206,6 +211,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +235,7 @@ public final class ListProductSetsResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

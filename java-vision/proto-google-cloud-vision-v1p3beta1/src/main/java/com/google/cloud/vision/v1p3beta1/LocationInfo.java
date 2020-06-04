@@ -129,6 +129,7 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the latLng field is set.
    */
+  @java.lang.Override
   public boolean hasLatLng() {
     return latLng_ != null;
   }
@@ -143,6 +144,7 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The latLng.
    */
+  @java.lang.Override
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
@@ -155,6 +157,7 @@ public final class LocationInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.LatLng lat_lng = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.LatLngOrBuilder getLatLngOrBuilder() {
     return getLatLng();
   }

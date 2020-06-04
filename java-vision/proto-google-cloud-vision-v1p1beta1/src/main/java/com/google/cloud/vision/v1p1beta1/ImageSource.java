@@ -137,6 +137,7 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsImageUri.
    */
+  @java.lang.Override
   public java.lang.String getGcsImageUri() {
     java.lang.Object ref = gcsImageUri_;
     if (ref instanceof java.lang.String) {
@@ -164,6 +165,7 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for gcsImageUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGcsImageUriBytes() {
     java.lang.Object ref = gcsImageUri_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageUri.
    */
+  @java.lang.Override
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +232,7 @@ public final class ImageSource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for imageUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageUriBytes() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {

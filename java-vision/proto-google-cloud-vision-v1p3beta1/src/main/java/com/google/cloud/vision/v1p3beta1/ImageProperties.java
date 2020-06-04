@@ -132,6 +132,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the dominantColors field is set.
    */
+  @java.lang.Override
   public boolean hasDominantColors() {
     return dominantColors_ != null;
   }
@@ -146,6 +147,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
    *
    * @return The dominantColors.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.DominantColorsAnnotation getDominantColors() {
     return dominantColors_ == null
         ? com.google.cloud.vision.v1p3beta1.DominantColorsAnnotation.getDefaultInstance()
@@ -160,6 +162,7 @@ public final class ImageProperties extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.vision.v1p3beta1.DominantColorsAnnotation dominant_colors = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.DominantColorsAnnotationOrBuilder
       getDominantColorsOrBuilder() {
     return getDominantColors();

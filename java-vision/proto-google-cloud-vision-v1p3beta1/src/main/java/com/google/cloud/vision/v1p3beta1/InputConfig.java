@@ -140,6 +140,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return gcsSource_ != null;
   }
@@ -154,6 +155,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.GcsSource getGcsSource() {
     return gcsSource_ == null
         ? com.google.cloud.vision.v1p3beta1.GcsSource.getDefaultInstance()
@@ -168,6 +170,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p3beta1.GcsSource gcs_source = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     return getGcsSource();
   }
@@ -186,6 +189,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +213,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {

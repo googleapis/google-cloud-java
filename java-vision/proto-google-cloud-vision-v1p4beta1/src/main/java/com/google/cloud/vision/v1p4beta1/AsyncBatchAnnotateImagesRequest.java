@@ -152,6 +152,7 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateImageRequest> getRequestsList() {
     return requests_;
   }
@@ -166,6 +167,7 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList() {
     return requests_;
@@ -181,6 +183,7 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getRequestsCount() {
     return requests_.size();
   }
@@ -195,6 +198,7 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.AnnotateImageRequest getRequests(int index) {
     return requests_.get(index);
   }
@@ -209,6 +213,7 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * repeated .google.cloud.vision.v1p4beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.AnnotateImageRequestOrBuilder getRequestsOrBuilder(
       int index) {
     return requests_.get(index);
@@ -229,6 +234,7 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -245,6 +251,7 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.vision.v1p4beta1.OutputConfig.getDefaultInstance()
@@ -261,6 +268,7 @@ public final class AsyncBatchAnnotateImagesRequest extends com.google.protobuf.G
    * .google.cloud.vision.v1p4beta1.OutputConfig output_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }

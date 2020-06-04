@@ -205,6 +205,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The mid.
    */
+  @java.lang.Override
   public java.lang.String getMid() {
     java.lang.Object ref = mid_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +230,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for mid.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMidBytes() {
     java.lang.Object ref = mid_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +257,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The locale.
    */
+  @java.lang.Override
   public java.lang.String getLocale() {
     java.lang.Object ref = locale_;
     if (ref instanceof java.lang.String) {
@@ -278,6 +281,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for locale.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocaleBytes() {
     java.lang.Object ref = locale_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +307,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -325,6 +330,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -350,6 +356,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -371,6 +378,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The confidence.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public float getConfidence() {
     return confidence_;
@@ -393,6 +401,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The topicality.
    */
+  @java.lang.Override
   public float getTopicality() {
     return topicality_;
   }
@@ -411,6 +420,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the boundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
   }
@@ -426,6 +436,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * @return The boundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
         ? com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()
@@ -441,6 +452,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
     return getBoundingPoly();
   }
@@ -460,6 +472,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.LocationInfo locations = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p4beta1.LocationInfo> getLocationsList() {
     return locations_;
   }
@@ -476,6 +489,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.LocationInfo locations = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.LocationInfoOrBuilder>
       getLocationsOrBuilderList() {
     return locations_;
@@ -493,6 +507,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.LocationInfo locations = 8;</code>
    */
+  @java.lang.Override
   public int getLocationsCount() {
     return locations_.size();
   }
@@ -509,6 +524,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.LocationInfo locations = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.LocationInfo getLocations(int index) {
     return locations_.get(index);
   }
@@ -525,6 +541,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.LocationInfo locations = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.LocationInfoOrBuilder getLocationsOrBuilder(int index) {
     return locations_.get(index);
   }
@@ -541,6 +558,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Property properties = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p4beta1.Property> getPropertiesList() {
     return properties_;
   }
@@ -554,6 +572,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Property properties = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p4beta1.PropertyOrBuilder>
       getPropertiesOrBuilderList() {
     return properties_;
@@ -568,6 +587,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Property properties = 9;</code>
    */
+  @java.lang.Override
   public int getPropertiesCount() {
     return properties_.size();
   }
@@ -581,6 +601,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Property properties = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.Property getProperties(int index) {
     return properties_.get(index);
   }
@@ -594,6 +615,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.vision.v1p4beta1.Property properties = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.PropertyOrBuilder getPropertiesOrBuilder(int index) {
     return properties_.get(index);
   }
@@ -1481,6 +1503,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -1536,6 +1559,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * @return The confidence.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public float getConfidence() {
       return confidence_;
@@ -1602,6 +1626,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * @return The topicality.
      */
+    @java.lang.Override
     public float getTopicality() {
       return topicality_;
     }

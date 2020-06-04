@@ -326,6 +326,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -349,6 +350,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -375,6 +377,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -398,6 +401,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -1036,6 +1040,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1061,6 +1066,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1087,6 +1093,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1110,6 +1117,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1136,6 +1144,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1159,6 +1168,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1187,6 +1197,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The productCategory.
    */
+  @java.lang.Override
   public java.lang.String getProductCategory() {
     java.lang.Object ref = productCategory_;
     if (ref instanceof java.lang.String) {
@@ -1212,6 +1223,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for productCategory.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductCategoryBytes() {
     java.lang.Object ref = productCategory_;
     if (ref instanceof java.lang.String) {
@@ -1244,6 +1256,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Product.KeyValue product_labels = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.Product.KeyValue> getProductLabelsList() {
     return productLabels_;
   }
@@ -1265,6 +1278,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Product.KeyValue product_labels = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.Product.KeyValueOrBuilder>
       getProductLabelsOrBuilderList() {
     return productLabels_;
@@ -1287,6 +1301,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Product.KeyValue product_labels = 5;</code>
    */
+  @java.lang.Override
   public int getProductLabelsCount() {
     return productLabels_.size();
   }
@@ -1308,6 +1323,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Product.KeyValue product_labels = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Product.KeyValue getProductLabels(int index) {
     return productLabels_.get(index);
   }
@@ -1329,6 +1345,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Product.KeyValue product_labels = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Product.KeyValueOrBuilder getProductLabelsOrBuilder(int index) {
     return productLabels_.get(index);
   }

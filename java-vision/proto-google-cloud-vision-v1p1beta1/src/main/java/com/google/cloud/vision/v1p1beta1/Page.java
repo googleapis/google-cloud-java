@@ -165,6 +165,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the property field is set.
    */
+  @java.lang.Override
   public boolean hasProperty() {
     return property_ != null;
   }
@@ -179,6 +180,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The property.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty getProperty() {
     return property_ == null
         ? com.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty.getDefaultInstance()
@@ -193,6 +195,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty property = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.TextAnnotation.TextPropertyOrBuilder
       getPropertyOrBuilder() {
     return getProperty();
@@ -211,6 +214,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The width.
    */
+  @java.lang.Override
   public int getWidth() {
     return width_;
   }
@@ -228,6 +232,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The height.
    */
+  @java.lang.Override
   public int getHeight() {
     return height_;
   }
@@ -243,6 +248,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Block blocks = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p1beta1.Block> getBlocksList() {
     return blocks_;
   }
@@ -255,6 +261,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Block blocks = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p1beta1.BlockOrBuilder>
       getBlocksOrBuilderList() {
     return blocks_;
@@ -268,6 +275,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Block blocks = 4;</code>
    */
+  @java.lang.Override
   public int getBlocksCount() {
     return blocks_.size();
   }
@@ -280,6 +288,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Block blocks = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.Block getBlocks(int index) {
     return blocks_.get(index);
   }
@@ -292,6 +301,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Block blocks = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.BlockOrBuilder getBlocksOrBuilder(int index) {
     return blocks_.get(index);
   }
@@ -309,6 +319,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -946,6 +957,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The width.
      */
+    @java.lang.Override
     public int getWidth() {
       return width_;
     }
@@ -997,6 +1009,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The height.
      */
+    @java.lang.Override
     public int getHeight() {
       return height_;
     }
@@ -1396,6 +1409,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

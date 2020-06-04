@@ -120,6 +120,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
    *
    * @return The includeGeoResults.
    */
+  @java.lang.Override
   public boolean getIncludeGeoResults() {
     return includeGeoResults_;
   }
@@ -453,6 +454,7 @@ public final class WebDetectionParams extends com.google.protobuf.GeneratedMessa
      *
      * @return The includeGeoResults.
      */
+    @java.lang.Override
     public boolean getIncludeGeoResults() {
       return includeGeoResults_;
     }

@@ -152,6 +152,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +208,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    * @return Whether the referenceImage field is set.
    */
+  @java.lang.Override
   public boolean hasReferenceImage() {
     return referenceImage_ != null;
   }
@@ -223,6 +226,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    * @return The referenceImage.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ReferenceImage getReferenceImage() {
     return referenceImage_ == null
         ? com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance()
@@ -240,6 +244,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    * .google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImageOrBuilder() {
     return getReferenceImage();
   }
@@ -260,6 +265,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    * @return The referenceImageId.
    */
+  @java.lang.Override
   public java.lang.String getReferenceImageId() {
     java.lang.Object ref = referenceImageId_;
     if (ref instanceof java.lang.String) {
@@ -285,6 +291,7 @@ public final class CreateReferenceImageRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for referenceImageId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getReferenceImageIdBytes() {
     java.lang.Object ref = referenceImageId_;
     if (ref instanceof java.lang.String) {

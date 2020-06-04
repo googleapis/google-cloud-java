@@ -164,6 +164,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the image field is set.
    */
+  @java.lang.Override
   public boolean hasImage() {
     return image_ != null;
   }
@@ -178,6 +179,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The image.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Image getImage() {
     return image_ == null ? com.google.cloud.vision.v1.Image.getDefaultInstance() : image_;
   }
@@ -190,6 +192,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.vision.v1.Image image = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImageOrBuilder getImageOrBuilder() {
     return getImage();
   }
@@ -205,6 +208,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.Feature> getFeaturesList() {
     return features_;
   }
@@ -217,6 +221,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.FeatureOrBuilder>
       getFeaturesOrBuilderList() {
     return features_;
@@ -230,6 +235,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public int getFeaturesCount() {
     return features_.size();
   }
@@ -242,6 +248,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Feature getFeatures(int index) {
     return features_.get(index);
   }
@@ -254,6 +261,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.FeatureOrBuilder getFeaturesOrBuilder(int index) {
     return features_.get(index);
   }
@@ -271,6 +279,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the imageContext field is set.
    */
+  @java.lang.Override
   public boolean hasImageContext() {
     return imageContext_ != null;
   }
@@ -285,6 +294,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The imageContext.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImageContext getImageContext() {
     return imageContext_ == null
         ? com.google.cloud.vision.v1.ImageContext.getDefaultInstance()
@@ -299,6 +309,7 @@ public final class AnnotateImageRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImageContextOrBuilder getImageContextOrBuilder() {
     return getImageContext();
   }

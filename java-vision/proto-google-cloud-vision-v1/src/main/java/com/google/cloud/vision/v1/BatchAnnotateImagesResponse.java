@@ -132,6 +132,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.AnnotateImageResponse> getResponsesList() {
     return responses_;
   }
@@ -144,6 +145,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.AnnotateImageResponseOrBuilder>
       getResponsesOrBuilderList() {
     return responses_;
@@ -157,6 +159,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 1;</code>
    */
+  @java.lang.Override
   public int getResponsesCount() {
     return responses_.size();
   }
@@ -169,6 +172,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.AnnotateImageResponse getResponses(int index) {
     return responses_.get(index);
   }
@@ -181,6 +185,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
    *
    * <code>repeated .google.cloud.vision.v1.AnnotateImageResponse responses = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.AnnotateImageResponseOrBuilder getResponsesOrBuilder(
       int index) {
     return responses_.get(index);

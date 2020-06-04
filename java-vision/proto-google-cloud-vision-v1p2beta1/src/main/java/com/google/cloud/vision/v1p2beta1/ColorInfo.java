@@ -140,6 +140,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the color field is set.
    */
+  @java.lang.Override
   public boolean hasColor() {
     return color_ != null;
   }
@@ -154,6 +155,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The color.
    */
+  @java.lang.Override
   public com.google.type.Color getColor() {
     return color_ == null ? com.google.type.Color.getDefaultInstance() : color_;
   }
@@ -166,6 +168,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Color color = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.ColorOrBuilder getColorOrBuilder() {
     return getColor();
   }
@@ -183,6 +186,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -201,6 +205,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pixelFraction.
    */
+  @java.lang.Override
   public float getPixelFraction() {
     return pixelFraction_;
   }
@@ -751,6 +756,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -803,6 +809,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pixelFraction.
      */
+    @java.lang.Override
     public float getPixelFraction() {
       return pixelFraction_;
     }

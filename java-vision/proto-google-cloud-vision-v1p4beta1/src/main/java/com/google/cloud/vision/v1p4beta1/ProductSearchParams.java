@@ -164,6 +164,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the boundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
   }
@@ -179,6 +180,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The boundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
         ? com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()
@@ -194,6 +196,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.vision.v1p4beta1.BoundingPoly bounding_poly = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
     return getBoundingPoly();
   }
@@ -215,6 +218,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The productSet.
    */
+  @java.lang.Override
   public java.lang.String getProductSet() {
     java.lang.Object ref = productSet_;
     if (ref instanceof java.lang.String) {
@@ -241,6 +245,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for productSet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductSetBytes() {
     java.lang.Object ref = productSet_;
     if (ref instanceof java.lang.String) {
@@ -357,6 +362,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -385,6 +391,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {

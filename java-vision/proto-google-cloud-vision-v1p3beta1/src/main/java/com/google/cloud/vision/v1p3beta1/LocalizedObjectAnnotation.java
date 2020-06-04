@@ -161,6 +161,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return The mid.
    */
+  @java.lang.Override
   public java.lang.String getMid() {
     java.lang.Object ref = mid_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +184,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return The bytes for mid.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMidBytes() {
     java.lang.Object ref = mid_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +237,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -259,6 +263,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -281,6 +286,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -306,6 +312,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -323,6 +330,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return Whether the boundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
   }
@@ -337,6 +345,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * @return The boundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
         ? com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()
@@ -351,6 +360,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
     return getBoundingPoly();
   }
@@ -1090,6 +1100,7 @@ public final class LocalizedObjectAnnotation extends com.google.protobuf.Generat
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }

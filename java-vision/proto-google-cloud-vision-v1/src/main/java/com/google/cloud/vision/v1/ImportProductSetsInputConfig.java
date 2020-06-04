@@ -178,6 +178,7 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
@@ -193,6 +194,7 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImportProductSetsGcsSource getGcsSource() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.vision.v1.ImportProductSetsGcsSource) source_;
@@ -209,6 +211,7 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
    *
    * <code>.google.cloud.vision.v1.ImportProductSetsGcsSource gcs_source = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImportProductSetsGcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.cloud.vision.v1.ImportProductSetsGcsSource) source_;
@@ -595,6 +598,7 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
@@ -610,6 +614,7 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.ImportProductSetsGcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -749,6 +754,7 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
      *
      * <code>.google.cloud.vision.v1.ImportProductSetsGcsSource gcs_source = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.ImportProductSetsGcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();

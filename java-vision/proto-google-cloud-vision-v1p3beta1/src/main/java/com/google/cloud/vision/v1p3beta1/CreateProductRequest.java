@@ -152,6 +152,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +207,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the product field is set.
    */
+  @java.lang.Override
   public boolean hasProduct() {
     return product_ != null;
   }
@@ -221,6 +224,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The product.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.Product getProduct() {
     return product_ == null
         ? com.google.cloud.vision.v1p3beta1.Product.getDefaultInstance()
@@ -237,6 +241,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.vision.v1p3beta1.Product product = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductOrBuilder getProductOrBuilder() {
     return getProduct();
   }
@@ -257,6 +262,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The productId.
    */
+  @java.lang.Override
   public java.lang.String getProductId() {
     java.lang.Object ref = productId_;
     if (ref instanceof java.lang.String) {
@@ -282,6 +288,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for productId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductIdBytes() {
     java.lang.Object ref = productId_;
     if (ref instanceof java.lang.String) {

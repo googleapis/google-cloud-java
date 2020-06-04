@@ -140,6 +140,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The content.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContent() {
     return content_;
   }
@@ -159,6 +160,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the source field is set.
    */
+  @java.lang.Override
   public boolean hasSource() {
     return source_ != null;
   }
@@ -175,6 +177,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The source.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p2beta1.ImageSource getSource() {
     return source_ == null
         ? com.google.cloud.vision.v1p2beta1.ImageSource.getDefaultInstance()
@@ -191,6 +194,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p2beta1.ImageSource source = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p2beta1.ImageSourceOrBuilder getSourceOrBuilder() {
     return getSource();
   }
@@ -551,6 +555,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The content.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }

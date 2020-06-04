@@ -149,6 +149,7 @@ public final class CropHintsParams extends com.google.protobuf.GeneratedMessageV
    *
    * @return A list containing the aspectRatios.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float> getAspectRatiosList() {
     return aspectRatios_;
   }

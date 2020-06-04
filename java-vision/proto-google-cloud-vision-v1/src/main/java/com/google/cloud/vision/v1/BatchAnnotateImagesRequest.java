@@ -141,6 +141,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
    * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.AnnotateImageRequest> getRequestsList() {
     return requests_;
   }
@@ -155,6 +156,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
    * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList() {
     return requests_;
@@ -170,6 +172,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
    * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getRequestsCount() {
     return requests_.size();
   }
@@ -184,6 +187,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
    * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.AnnotateImageRequest getRequests(int index) {
     return requests_.get(index);
   }
@@ -198,6 +202,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
    * repeated .google.cloud.vision.v1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.AnnotateImageRequestOrBuilder getRequestsOrBuilder(int index) {
     return requests_.get(index);
   }
@@ -222,6 +227,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +257,7 @@ public final class BatchAnnotateImagesRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {

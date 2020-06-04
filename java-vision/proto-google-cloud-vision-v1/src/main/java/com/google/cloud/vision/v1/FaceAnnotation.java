@@ -1236,6 +1236,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -1283,6 +1287,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1297,6 +1302,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type result =
@@ -1319,6 +1325,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the position field is set.
      */
+    @java.lang.Override
     public boolean hasPosition() {
       return position_ != null;
     }
@@ -1333,6 +1340,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The position.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Position getPosition() {
       return position_ == null
           ? com.google.cloud.vision.v1.Position.getDefaultInstance()
@@ -1347,6 +1355,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.vision.v1.Position position = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.PositionOrBuilder getPositionOrBuilder() {
       return getPosition();
     }
@@ -1714,6 +1723,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for type.
        */
+      @java.lang.Override
       public int getTypeValue() {
         return type_;
       }
@@ -1730,6 +1740,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+
         type_ = value;
         onChanged();
         return this;
@@ -1745,6 +1756,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The type.
        */
+      @java.lang.Override
       public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type result =
@@ -2048,6 +2060,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the boundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPoly() {
     return boundingPoly_ != null;
   }
@@ -2068,6 +2081,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
     return boundingPoly_ == null
         ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
@@ -2088,6 +2102,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
     return getBoundingPoly();
   }
@@ -2110,6 +2125,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the fdBoundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasFdBoundingPoly() {
     return fdBoundingPoly_ != null;
   }
@@ -2129,6 +2145,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The fdBoundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPoly getFdBoundingPoly() {
     return fdBoundingPoly_ == null
         ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
@@ -2148,6 +2165,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.BoundingPolyOrBuilder getFdBoundingPolyOrBuilder() {
     return getFdBoundingPoly();
   }
@@ -2163,6 +2181,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.FaceAnnotation.Landmark> getLandmarksList() {
     return landmarks_;
   }
@@ -2175,6 +2194,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>
       getLandmarksOrBuilderList() {
     return landmarks_;
@@ -2188,6 +2208,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
+  @java.lang.Override
   public int getLandmarksCount() {
     return landmarks_.size();
   }
@@ -2200,6 +2221,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.FaceAnnotation.Landmark getLandmarks(int index) {
     return landmarks_.get(index);
   }
@@ -2212,6 +2234,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder getLandmarksOrBuilder(
       int index) {
     return landmarks_.get(index);
@@ -2232,6 +2255,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rollAngle.
    */
+  @java.lang.Override
   public float getRollAngle() {
     return rollAngle_;
   }
@@ -2251,6 +2275,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The panAngle.
    */
+  @java.lang.Override
   public float getPanAngle() {
     return panAngle_;
   }
@@ -2269,6 +2294,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tiltAngle.
    */
+  @java.lang.Override
   public float getTiltAngle() {
     return tiltAngle_;
   }
@@ -2286,6 +2312,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The detectionConfidence.
    */
+  @java.lang.Override
   public float getDetectionConfidence() {
     return detectionConfidence_;
   }
@@ -2303,6 +2330,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The landmarkingConfidence.
    */
+  @java.lang.Override
   public float getLandmarkingConfidence() {
     return landmarkingConfidence_;
   }
@@ -2320,6 +2348,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for joyLikelihood.
    */
+  @java.lang.Override
   public int getJoyLikelihoodValue() {
     return joyLikelihood_;
   }
@@ -2334,6 +2363,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The joyLikelihood.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getJoyLikelihood() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
@@ -2354,6 +2384,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for sorrowLikelihood.
    */
+  @java.lang.Override
   public int getSorrowLikelihoodValue() {
     return sorrowLikelihood_;
   }
@@ -2368,6 +2399,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sorrowLikelihood.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getSorrowLikelihood() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
@@ -2388,6 +2420,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for angerLikelihood.
    */
+  @java.lang.Override
   public int getAngerLikelihoodValue() {
     return angerLikelihood_;
   }
@@ -2402,6 +2435,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The angerLikelihood.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getAngerLikelihood() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
@@ -2422,6 +2456,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for surpriseLikelihood.
    */
+  @java.lang.Override
   public int getSurpriseLikelihoodValue() {
     return surpriseLikelihood_;
   }
@@ -2436,6 +2471,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The surpriseLikelihood.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
@@ -2456,6 +2492,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for underExposedLikelihood.
    */
+  @java.lang.Override
   public int getUnderExposedLikelihoodValue() {
     return underExposedLikelihood_;
   }
@@ -2470,6 +2507,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The underExposedLikelihood.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
@@ -2490,6 +2528,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for blurredLikelihood.
    */
+  @java.lang.Override
   public int getBlurredLikelihoodValue() {
     return blurredLikelihood_;
   }
@@ -2504,6 +2543,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The blurredLikelihood.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getBlurredLikelihood() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
@@ -2524,6 +2564,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for headwearLikelihood.
    */
+  @java.lang.Override
   public int getHeadwearLikelihoodValue() {
     return headwearLikelihood_;
   }
@@ -2538,6 +2579,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The headwearLikelihood.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood() {
     @SuppressWarnings("deprecation")
     com.google.cloud.vision.v1.Likelihood result =
@@ -3986,6 +4028,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The rollAngle.
      */
+    @java.lang.Override
     public float getRollAngle() {
       return rollAngle_;
     }
@@ -4043,6 +4086,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The panAngle.
      */
+    @java.lang.Override
     public float getPanAngle() {
       return panAngle_;
     }
@@ -4099,6 +4143,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The tiltAngle.
      */
+    @java.lang.Override
     public float getTiltAngle() {
       return tiltAngle_;
     }
@@ -4152,6 +4197,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The detectionConfidence.
      */
+    @java.lang.Override
     public float getDetectionConfidence() {
       return detectionConfidence_;
     }
@@ -4203,6 +4249,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The landmarkingConfidence.
      */
+    @java.lang.Override
     public float getLandmarkingConfidence() {
       return landmarkingConfidence_;
     }
@@ -4254,6 +4301,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for joyLikelihood.
      */
+    @java.lang.Override
     public int getJoyLikelihoodValue() {
       return joyLikelihood_;
     }
@@ -4270,6 +4318,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setJoyLikelihoodValue(int value) {
+
       joyLikelihood_ = value;
       onChanged();
       return this;
@@ -4285,6 +4334,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The joyLikelihood.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getJoyLikelihood() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
@@ -4342,6 +4392,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for sorrowLikelihood.
      */
+    @java.lang.Override
     public int getSorrowLikelihoodValue() {
       return sorrowLikelihood_;
     }
@@ -4358,6 +4409,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSorrowLikelihoodValue(int value) {
+
       sorrowLikelihood_ = value;
       onChanged();
       return this;
@@ -4373,6 +4425,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sorrowLikelihood.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getSorrowLikelihood() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
@@ -4430,6 +4483,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for angerLikelihood.
      */
+    @java.lang.Override
     public int getAngerLikelihoodValue() {
       return angerLikelihood_;
     }
@@ -4446,6 +4500,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAngerLikelihoodValue(int value) {
+
       angerLikelihood_ = value;
       onChanged();
       return this;
@@ -4461,6 +4516,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The angerLikelihood.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getAngerLikelihood() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
@@ -4518,6 +4574,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for surpriseLikelihood.
      */
+    @java.lang.Override
     public int getSurpriseLikelihoodValue() {
       return surpriseLikelihood_;
     }
@@ -4534,6 +4591,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSurpriseLikelihoodValue(int value) {
+
       surpriseLikelihood_ = value;
       onChanged();
       return this;
@@ -4549,6 +4607,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The surpriseLikelihood.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
@@ -4606,6 +4665,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for underExposedLikelihood.
      */
+    @java.lang.Override
     public int getUnderExposedLikelihoodValue() {
       return underExposedLikelihood_;
     }
@@ -4622,6 +4682,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUnderExposedLikelihoodValue(int value) {
+
       underExposedLikelihood_ = value;
       onChanged();
       return this;
@@ -4637,6 +4698,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The underExposedLikelihood.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
@@ -4694,6 +4756,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for blurredLikelihood.
      */
+    @java.lang.Override
     public int getBlurredLikelihoodValue() {
       return blurredLikelihood_;
     }
@@ -4710,6 +4773,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBlurredLikelihoodValue(int value) {
+
       blurredLikelihood_ = value;
       onChanged();
       return this;
@@ -4725,6 +4789,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The blurredLikelihood.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getBlurredLikelihood() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =
@@ -4782,6 +4847,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for headwearLikelihood.
      */
+    @java.lang.Override
     public int getHeadwearLikelihoodValue() {
       return headwearLikelihood_;
     }
@@ -4798,6 +4864,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHeadwearLikelihoodValue(int value) {
+
       headwearLikelihood_ = value;
       onChanged();
       return this;
@@ -4813,6 +4880,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The headwearLikelihood.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.Likelihood result =

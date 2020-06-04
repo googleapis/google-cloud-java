@@ -126,6 +126,7 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The productSetId.
    */
+  @java.lang.Override
   public java.lang.String getProductSetId() {
     java.lang.Object ref = productSetId_;
     if (ref instanceof java.lang.String) {
@@ -150,6 +151,7 @@ public final class ProductSetPurgeConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for productSetId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductSetIdBytes() {
     java.lang.Object ref = productSetId_;
     if (ref instanceof java.lang.String) {

@@ -132,6 +132,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The x.
    */
+  @java.lang.Override
   public float getX() {
     return x_;
   }
@@ -149,6 +150,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The y.
    */
+  @java.lang.Override
   public float getY() {
     return y_;
   }
@@ -166,6 +168,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The z.
    */
+  @java.lang.Override
   public float getZ() {
     return z_;
   }
@@ -529,6 +532,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The x.
      */
+    @java.lang.Override
     public float getX() {
       return x_;
     }
@@ -580,6 +584,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The y.
      */
+    @java.lang.Override
     public float getY() {
       return y_;
     }
@@ -631,6 +636,7 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The z.
      */
+    @java.lang.Override
     public float getZ() {
       return z_;
     }

@@ -137,6 +137,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -159,6 +160,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +186,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public java.lang.String getValue() {
     java.lang.Object ref = value_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +209,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for value.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValueBytes() {
     java.lang.Object ref = value_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +235,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uint64Value.
    */
+  @java.lang.Override
   public long getUint64Value() {
     return uint64Value_;
   }
@@ -806,6 +811,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The uint64Value.
      */
+    @java.lang.Override
     public long getUint64Value() {
       return uint64Value_;
     }

@@ -130,6 +130,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1.ColorInfo colors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.ColorInfo> getColorsList() {
     return colors_;
   }
@@ -142,6 +143,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1.ColorInfo colors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.ColorInfoOrBuilder>
       getColorsOrBuilderList() {
     return colors_;
@@ -155,6 +157,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1.ColorInfo colors = 1;</code>
    */
+  @java.lang.Override
   public int getColorsCount() {
     return colors_.size();
   }
@@ -167,6 +170,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1.ColorInfo colors = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ColorInfo getColors(int index) {
     return colors_.get(index);
   }
@@ -179,6 +183,7 @@ public final class DominantColorsAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.vision.v1.ColorInfo colors = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ColorInfoOrBuilder getColorsOrBuilder(int index) {
     return colors_.get(index);
   }

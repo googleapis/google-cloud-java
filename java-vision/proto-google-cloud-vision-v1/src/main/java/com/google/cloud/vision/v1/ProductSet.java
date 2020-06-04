@@ -166,6 +166,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +192,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +219,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +243,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -270,6 +274,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the indexTime field is set.
    */
+  @java.lang.Override
   public boolean hasIndexTime() {
     return indexTime_ != null;
   }
@@ -289,6 +294,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The indexTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getIndexTime() {
     return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
   }
@@ -306,6 +312,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp index_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
     return getIndexTime();
   }
@@ -325,6 +332,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the indexError field is set.
    */
+  @java.lang.Override
   public boolean hasIndexError() {
     return indexError_ != null;
   }
@@ -341,6 +349,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The indexError.
    */
+  @java.lang.Override
   public com.google.rpc.Status getIndexError() {
     return indexError_ == null ? com.google.rpc.Status.getDefaultInstance() : indexError_;
   }
@@ -355,6 +364,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.rpc.Status index_error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getIndexErrorOrBuilder() {
     return getIndexError();
   }

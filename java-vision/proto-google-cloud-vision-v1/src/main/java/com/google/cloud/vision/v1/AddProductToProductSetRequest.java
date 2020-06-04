@@ -136,6 +136,7 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
    *
    * @return The product.
    */
+  @java.lang.Override
   public java.lang.String getProduct() {
     java.lang.Object ref = product_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +220,7 @@ public final class AddProductToProductSetRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for product.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProductBytes() {
     java.lang.Object ref = product_;
     if (ref instanceof java.lang.String) {

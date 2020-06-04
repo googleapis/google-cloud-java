@@ -147,6 +147,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.ReferenceImage> getReferenceImagesList() {
     return referenceImages_;
   }
@@ -159,6 +160,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.ReferenceImageOrBuilder>
       getReferenceImagesOrBuilderList() {
     return referenceImages_;
@@ -172,6 +174,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public int getReferenceImagesCount() {
     return referenceImages_.size();
   }
@@ -184,6 +187,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ReferenceImage getReferenceImages(int index) {
     return referenceImages_.get(index);
   }
@@ -196,6 +200,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.vision.v1.ReferenceImage reference_images = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ReferenceImageOrBuilder getReferenceImagesOrBuilder(int index) {
     return referenceImages_.get(index);
   }
@@ -215,6 +220,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getStatusesList() {
     return statuses_;
   }
@@ -231,6 +237,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getStatusesOrBuilderList() {
     return statuses_;
   }
@@ -247,6 +254,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
+  @java.lang.Override
   public int getStatusesCount() {
     return statuses_.size();
   }
@@ -263,6 +271,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getStatuses(int index) {
     return statuses_.get(index);
   }
@@ -279,6 +288,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusesOrBuilder(int index) {
     return statuses_.get(index);
   }

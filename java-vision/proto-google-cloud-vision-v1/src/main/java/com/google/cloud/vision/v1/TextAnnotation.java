@@ -292,6 +292,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The languageCode.
      */
+    @java.lang.Override
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof java.lang.String) {
@@ -316,6 +317,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for languageCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof java.lang.String) {
@@ -341,6 +343,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }
@@ -814,6 +817,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The confidence.
        */
+      @java.lang.Override
       public float getConfidence() {
         return confidence_;
       }
@@ -1236,6 +1240,10 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -1283,6 +1291,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1297,6 +1306,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType result =
@@ -1319,6 +1329,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isPrefix.
      */
+    @java.lang.Override
     public boolean getIsPrefix() {
       return isPrefix_;
     }
@@ -1676,6 +1687,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for type.
        */
+      @java.lang.Override
       public int getTypeValue() {
         return type_;
       }
@@ -1692,6 +1704,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+
         type_ = value;
         onChanged();
         return this;
@@ -1707,6 +1720,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The type.
        */
+      @java.lang.Override
       public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType getType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.BreakType result =
@@ -1767,6 +1781,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The isPrefix.
        */
+      @java.lang.Override
       public boolean getIsPrefix() {
         return isPrefix_;
       }
@@ -2097,6 +2112,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.vision.v1.TextAnnotation.DetectedLanguage detected_languages = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage>
         getDetectedLanguagesList() {
       return detectedLanguages_;
@@ -2112,6 +2128,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.vision.v1.TextAnnotation.DetectedLanguage detected_languages = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.vision.v1.TextAnnotation.DetectedLanguageOrBuilder>
         getDetectedLanguagesOrBuilderList() {
@@ -2128,6 +2145,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.vision.v1.TextAnnotation.DetectedLanguage detected_languages = 1;
      * </code>
      */
+    @java.lang.Override
     public int getDetectedLanguagesCount() {
       return detectedLanguages_.size();
     }
@@ -2142,6 +2160,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.vision.v1.TextAnnotation.DetectedLanguage detected_languages = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.TextAnnotation.DetectedLanguage getDetectedLanguages(
         int index) {
       return detectedLanguages_.get(index);
@@ -2157,6 +2176,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.vision.v1.TextAnnotation.DetectedLanguage detected_languages = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.TextAnnotation.DetectedLanguageOrBuilder
         getDetectedLanguagesOrBuilder(int index) {
       return detectedLanguages_.get(index);
@@ -2175,6 +2195,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the detectedBreak field is set.
      */
+    @java.lang.Override
     public boolean hasDetectedBreak() {
       return detectedBreak_ != null;
     }
@@ -2189,6 +2210,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The detectedBreak.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.TextAnnotation.DetectedBreak getDetectedBreak() {
       return detectedBreak_ == null
           ? com.google.cloud.vision.v1.TextAnnotation.DetectedBreak.getDefaultInstance()
@@ -2203,6 +2225,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.vision.v1.TextAnnotation.DetectedBreak detected_break = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1.TextAnnotation.DetectedBreakOrBuilder
         getDetectedBreakOrBuilder() {
       return getDetectedBreak();
@@ -3262,6 +3285,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Page pages = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.Page> getPagesList() {
     return pages_;
   }
@@ -3274,6 +3298,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Page pages = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.PageOrBuilder>
       getPagesOrBuilderList() {
     return pages_;
@@ -3287,6 +3312,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Page pages = 1;</code>
    */
+  @java.lang.Override
   public int getPagesCount() {
     return pages_.size();
   }
@@ -3299,6 +3325,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Page pages = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Page getPages(int index) {
     return pages_.get(index);
   }
@@ -3311,6 +3338,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1.Page pages = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.PageOrBuilder getPagesOrBuilder(int index) {
     return pages_.get(index);
   }
@@ -3328,6 +3356,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public java.lang.String getText() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {
@@ -3350,6 +3379,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for text.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {

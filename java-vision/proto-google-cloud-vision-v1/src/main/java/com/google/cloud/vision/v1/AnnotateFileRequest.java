@@ -191,6 +191,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -205,6 +206,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.InputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
@@ -219,6 +221,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -234,6 +237,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1.Feature> getFeaturesList() {
     return features_;
   }
@@ -246,6 +250,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1.FeatureOrBuilder>
       getFeaturesOrBuilderList() {
     return features_;
@@ -259,6 +264,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public int getFeaturesCount() {
     return features_.size();
   }
@@ -271,6 +277,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.Feature getFeatures(int index) {
     return features_.get(index);
   }
@@ -283,6 +290,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.FeatureOrBuilder getFeaturesOrBuilder(int index) {
     return features_.get(index);
   }
@@ -300,6 +308,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the imageContext field is set.
    */
+  @java.lang.Override
   public boolean hasImageContext() {
     return imageContext_ != null;
   }
@@ -314,6 +323,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The imageContext.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImageContext getImageContext() {
     return imageContext_ == null
         ? com.google.cloud.vision.v1.ImageContext.getDefaultInstance()
@@ -328,6 +338,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImageContextOrBuilder getImageContextOrBuilder() {
     return getImageContext();
   }
@@ -354,6 +365,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
    *
    * @return A list containing the pages.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getPagesList() {
     return pages_;
   }

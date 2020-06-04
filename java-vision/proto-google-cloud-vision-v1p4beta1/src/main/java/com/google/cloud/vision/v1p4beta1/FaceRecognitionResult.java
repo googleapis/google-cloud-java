@@ -137,6 +137,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the celebrity field is set.
    */
+  @java.lang.Override
   public boolean hasCelebrity() {
     return celebrity_ != null;
   }
@@ -152,6 +153,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
    *
    * @return The celebrity.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.Celebrity getCelebrity() {
     return celebrity_ == null
         ? com.google.cloud.vision.v1p4beta1.Celebrity.getDefaultInstance()
@@ -167,6 +169,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.vision.v1p4beta1.Celebrity celebrity = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.CelebrityOrBuilder getCelebrityOrBuilder() {
     return getCelebrity();
   }
@@ -184,6 +187,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -742,6 +746,7 @@ public final class FaceRecognitionResult extends com.google.protobuf.GeneratedMe
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

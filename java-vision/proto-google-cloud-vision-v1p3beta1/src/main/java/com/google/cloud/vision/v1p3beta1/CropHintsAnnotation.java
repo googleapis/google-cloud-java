@@ -130,6 +130,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.CropHint crop_hints = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.CropHint> getCropHintsList() {
     return cropHints_;
   }
@@ -142,6 +143,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.CropHint crop_hints = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p3beta1.CropHintOrBuilder>
       getCropHintsOrBuilderList() {
     return cropHints_;
@@ -155,6 +157,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.CropHint crop_hints = 1;</code>
    */
+  @java.lang.Override
   public int getCropHintsCount() {
     return cropHints_.size();
   }
@@ -167,6 +170,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.CropHint crop_hints = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.CropHint getCropHints(int index) {
     return cropHints_.get(index);
   }
@@ -179,6 +183,7 @@ public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.CropHint crop_hints = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.CropHintOrBuilder getCropHintsOrBuilder(int index) {
     return cropHints_.get(index);
   }

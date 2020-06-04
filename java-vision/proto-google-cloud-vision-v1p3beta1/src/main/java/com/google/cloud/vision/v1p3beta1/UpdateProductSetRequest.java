@@ -148,6 +148,7 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return Whether the productSet field is set.
    */
+  @java.lang.Override
   public boolean hasProductSet() {
     return productSet_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return The productSet.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductSet getProductSet() {
     return productSet_ == null
         ? com.google.cloud.vision.v1p3beta1.ProductSet.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    * .google.cloud.vision.v1p3beta1.ProductSet product_set = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder getProductSetOrBuilder() {
     return getProductSet();
   }
@@ -200,6 +203,7 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -217,6 +221,7 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -232,6 +237,7 @@ public final class UpdateProductSetRequest extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

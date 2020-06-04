@@ -130,6 +130,7 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +180,7 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
    *
    * @return The pageNumber.
    */
+  @java.lang.Override
   public int getPageNumber() {
     return pageNumber_;
   }
@@ -635,6 +638,7 @@ public final class ImageAnnotationContext extends com.google.protobuf.GeneratedM
      *
      * @return The pageNumber.
      */
+    @java.lang.Override
     public int getPageNumber() {
       return pageNumber_;
     }

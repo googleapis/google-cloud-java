@@ -144,6 +144,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -212,6 +215,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImportProductSetsInputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.vision.v1.ImportProductSetsInputConfig.getDefaultInstance()
@@ -228,6 +232,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    * .google.cloud.vision.v1.ImportProductSetsInputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImportProductSetsInputConfigOrBuilder
       getInputConfigOrBuilder() {
     return getInputConfig();

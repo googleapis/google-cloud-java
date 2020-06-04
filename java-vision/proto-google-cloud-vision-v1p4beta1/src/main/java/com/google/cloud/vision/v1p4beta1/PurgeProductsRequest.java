@@ -200,6 +200,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the productSetPurgeConfig field is set.
    */
+  @java.lang.Override
   public boolean hasProductSetPurgeConfig() {
     return targetCase_ == 2;
   }
@@ -214,6 +215,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The productSetPurgeConfig.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig getProductSetPurgeConfig() {
     if (targetCase_ == 2) {
       return (com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig) target_;
@@ -229,6 +231,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig product_set_purge_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfigOrBuilder
       getProductSetPurgeConfigOrBuilder() {
     if (targetCase_ == 2) {
@@ -250,6 +253,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The deleteOrphanProducts.
    */
+  @java.lang.Override
   public boolean getDeleteOrphanProducts() {
     if (targetCase_ == 3) {
       return (java.lang.Boolean) target_;
@@ -273,6 +277,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -298,6 +303,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -324,6 +330,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The force.
    */
+  @java.lang.Override
   public boolean getForce() {
     return force_;
   }
@@ -761,6 +768,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the productSetPurgeConfig field is set.
      */
+    @java.lang.Override
     public boolean hasProductSetPurgeConfig() {
       return targetCase_ == 2;
     }
@@ -776,6 +784,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The productSetPurgeConfig.
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig getProductSetPurgeConfig() {
       if (productSetPurgeConfigBuilder_ == null) {
         if (targetCase_ == 2) {
@@ -918,6 +927,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.vision.v1p4beta1.ProductSetPurgeConfig product_set_purge_config = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.vision.v1p4beta1.ProductSetPurgeConfigOrBuilder
         getProductSetPurgeConfigOrBuilder() {
       if ((targetCase_ == 2) && (productSetPurgeConfigBuilder_ != null)) {
@@ -1156,6 +1166,7 @@ public final class PurgeProductsRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The force.
      */
+    @java.lang.Override
     public boolean getForce() {
       return force_;
     }

@@ -169,6 +169,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    *
    * @return The csvFileUri.
    */
+  @java.lang.Override
   public java.lang.String getCsvFileUri() {
     java.lang.Object ref = csvFileUri_;
     if (ref instanceof java.lang.String) {
@@ -235,6 +236,7 @@ public final class ImportProductSetsGcsSource extends com.google.protobuf.Genera
    *
    * @return The bytes for csvFileUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCsvFileUriBytes() {
     java.lang.Object ref = csvFileUri_;
     if (ref instanceof java.lang.String) {

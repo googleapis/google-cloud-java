@@ -137,6 +137,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    * repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest>
       getRequestsList() {
     return requests_;
@@ -152,6 +153,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    * repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequestOrBuilder>
       getRequestsOrBuilderList() {
@@ -168,6 +170,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    * repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getRequestsCount() {
     return requests_.size();
   }
@@ -182,6 +185,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    * repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest getRequests(int index) {
     return requests_.get(index);
   }
@@ -196,6 +200,7 @@ public final class AsyncBatchAnnotateFilesRequest extends com.google.protobuf.Ge
    * repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequestOrBuilder getRequestsOrBuilder(
       int index) {
     return requests_.get(index);

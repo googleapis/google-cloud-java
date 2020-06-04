@@ -143,6 +143,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the minLatLng field is set.
    */
+  @java.lang.Override
   public boolean hasMinLatLng() {
     return minLatLng_ != null;
   }
@@ -157,6 +158,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The minLatLng.
    */
+  @java.lang.Override
   public com.google.type.LatLng getMinLatLng() {
     return minLatLng_ == null ? com.google.type.LatLng.getDefaultInstance() : minLatLng_;
   }
@@ -169,6 +171,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.LatLng min_lat_lng = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.LatLngOrBuilder getMinLatLngOrBuilder() {
     return getMinLatLng();
   }
@@ -186,6 +189,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the maxLatLng field is set.
    */
+  @java.lang.Override
   public boolean hasMaxLatLng() {
     return maxLatLng_ != null;
   }
@@ -200,6 +204,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxLatLng.
    */
+  @java.lang.Override
   public com.google.type.LatLng getMaxLatLng() {
     return maxLatLng_ == null ? com.google.type.LatLng.getDefaultInstance() : maxLatLng_;
   }
@@ -212,6 +217,7 @@ public final class LatLongRect extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.LatLng max_lat_lng = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.LatLngOrBuilder getMaxLatLngOrBuilder() {
     return getMaxLatLng();
   }

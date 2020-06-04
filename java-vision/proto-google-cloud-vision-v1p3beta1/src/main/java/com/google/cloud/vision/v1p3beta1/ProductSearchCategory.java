@@ -141,6 +141,10 @@ public enum ProductSearchCategory implements com.google.protobuf.ProtocolMessage
           };
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
 

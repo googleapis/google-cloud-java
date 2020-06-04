@@ -198,6 +198,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the latLongRect field is set.
    */
+  @java.lang.Override
   public boolean hasLatLongRect() {
     return latLongRect_ != null;
   }
@@ -212,6 +213,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The latLongRect.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.LatLongRect getLatLongRect() {
     return latLongRect_ == null
         ? com.google.cloud.vision.v1p3beta1.LatLongRect.getDefaultInstance()
@@ -226,6 +228,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p3beta1.LatLongRect lat_long_rect = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.LatLongRectOrBuilder getLatLongRectOrBuilder() {
     return getLatLongRect();
   }
@@ -332,6 +335,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the cropHintsParams field is set.
    */
+  @java.lang.Override
   public boolean hasCropHintsParams() {
     return cropHintsParams_ != null;
   }
@@ -346,6 +350,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cropHintsParams.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.CropHintsParams getCropHintsParams() {
     return cropHintsParams_ == null
         ? com.google.cloud.vision.v1p3beta1.CropHintsParams.getDefaultInstance()
@@ -360,6 +365,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p3beta1.CropHintsParams crop_hints_params = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder getCropHintsParamsOrBuilder() {
     return getCropHintsParams();
   }
@@ -377,6 +383,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the productSearchParams field is set.
    */
+  @java.lang.Override
   public boolean hasProductSearchParams() {
     return productSearchParams_ != null;
   }
@@ -391,6 +398,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The productSearchParams.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductSearchParams getProductSearchParams() {
     return productSearchParams_ == null
         ? com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance()
@@ -405,6 +413,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchParams product_search_params = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder
       getProductSearchParamsOrBuilder() {
     return getProductSearchParams();
@@ -423,6 +432,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the webDetectionParams field is set.
    */
+  @java.lang.Override
   public boolean hasWebDetectionParams() {
     return webDetectionParams_ != null;
   }
@@ -437,6 +447,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The webDetectionParams.
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.WebDetectionParams getWebDetectionParams() {
     return webDetectionParams_ == null
         ? com.google.cloud.vision.v1p3beta1.WebDetectionParams.getDefaultInstance()
@@ -451,6 +462,7 @@ public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.vision.v1p3beta1.WebDetectionParams web_detection_params = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder
       getWebDetectionParamsOrBuilder() {
     return getWebDetectionParams();

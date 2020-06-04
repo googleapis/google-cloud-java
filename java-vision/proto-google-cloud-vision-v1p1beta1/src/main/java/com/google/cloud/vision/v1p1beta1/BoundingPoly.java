@@ -130,6 +130,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Vertex vertices = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.vision.v1p1beta1.Vertex> getVerticesList() {
     return vertices_;
   }
@@ -142,6 +143,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Vertex vertices = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.vision.v1p1beta1.VertexOrBuilder>
       getVerticesOrBuilderList() {
     return vertices_;
@@ -155,6 +157,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Vertex vertices = 1;</code>
    */
+  @java.lang.Override
   public int getVerticesCount() {
     return vertices_.size();
   }
@@ -167,6 +170,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Vertex vertices = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.Vertex getVertices(int index) {
     return vertices_.get(index);
   }
@@ -179,6 +183,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Vertex vertices = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.vision.v1p1beta1.VertexOrBuilder getVerticesOrBuilder(int index) {
     return vertices_.get(index);
   }
