@@ -88,15 +88,7 @@ If the service is not listed, [google-api-java-client][google-api-java-client-se
 
 *When building Java applications, preference should be given to the libraries listed in the table.*
 
-## IDE Plugins
 
-If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins:
-* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforIntelliJ)
-* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
-
-Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
-
-These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
 
 ## Specifying a Project ID
 
@@ -315,6 +307,19 @@ a higher priority.
 Libraries defined at an Alpha quality level are still a work-in-progress and
 are more likely to get backwards-incompatible updates. Additionally, it's possible for Alpha
 libraries to get deprecated and deleted before ever being promoted to Beta or GA.
+
+## IDE Plugins
+
+If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins:
+* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforIntelliJ)
+* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
+
+Besides adding client libraries, the plugins provide additional functionality, such as service account
+key management. Refer to the documentation for each plugin for more details.
+
+These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible
+(including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7
+runtime. However, Datastore, Storage, and Bigquery should work.
 
 ## Contributing
 
