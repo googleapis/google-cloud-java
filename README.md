@@ -1,6 +1,6 @@
-# Google Google Cloud Logging Logback Appender Client for Java
+# Google Cloud Logging Logback Appender Client for Java
 
-Java idiomatic client for [Google Cloud Logging Logback Appender][product-docs].
+Java idiomatic client for [Cloud Logging Logback Appender][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -44,7 +44,7 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Logging Logback Appender [API enabled][enable-api].
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Logging Logback Appender [API enabled][enable-api].
 
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
@@ -55,13 +55,13 @@ You will need a [Google Cloud Platform Console][developer-console] project with 
 You'll need to obtain the `google-cloud-logging-logback` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-logging-logback` as a dependency in your code.
 
-## About Google Cloud Logging Logback Appender
+## About Cloud Logging Logback Appender
 
 
-[Google Cloud Logging Logback Appender][product-docs] 
+[Cloud Logging Logback Appender][product-docs] 
 
-See the [Google Cloud Logging Logback Appender client library docs][javadocs] to learn how to
-use this Google Cloud Logging Logback Appender Client Library.
+See the [Cloud Logging Logback Appender client library docs][javadocs] to learn how to
+use this Cloud Logging Logback Appender Client Library.
 
 
 ### Usage

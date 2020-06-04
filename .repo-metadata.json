@@ -1,6 +1,6 @@
 {
   "name": "logging-logback",
-  "name_pretty": "Google Cloud Logging Logback Appender",
+  "name_pretty": "Cloud Logging Logback Appender",
   "product_documentation": "https://cloud.google.com/logging-logback/docs/",
   "client_documentation": "https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/logging/logback/package-summary.html",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559764",
