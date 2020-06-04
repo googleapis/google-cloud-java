@@ -140,6 +140,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    *
    * @return The dataset.
    */
+  @java.lang.Override
   public java.lang.String getDataset() {
     java.lang.Object ref = dataset_;
     if (ref instanceof java.lang.String) {
@@ -165,6 +166,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for dataset.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDatasetBytes() {
     java.lang.Object ref = dataset_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +194,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    *
    * @return The table.
    */
+  @java.lang.Override
   public java.lang.String getTable() {
     java.lang.Object ref = table_;
     if (ref instanceof java.lang.String) {
@@ -216,6 +219,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for table.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableBytes() {
     java.lang.Object ref = table_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +248,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    *
    * @return The force.
    */
+  @java.lang.Override
   public boolean getForce() {
     return force_;
   }
@@ -847,6 +852,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      *
      * @return The force.
      */
+    @java.lang.Override
     public boolean getForce() {
       return force_;
     }

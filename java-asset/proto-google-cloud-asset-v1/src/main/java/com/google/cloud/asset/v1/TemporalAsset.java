@@ -152,6 +152,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the window field is set.
    */
+  @java.lang.Override
   public boolean hasWindow() {
     return window_ != null;
   }
@@ -166,6 +167,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The window.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.TimeWindow getWindow() {
     return window_ == null ? com.google.cloud.asset.v1.TimeWindow.getDefaultInstance() : window_;
   }
@@ -178,6 +180,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.asset.v1.TimeWindow window = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.TimeWindowOrBuilder getWindowOrBuilder() {
     return getWindow();
   }
@@ -195,6 +198,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deleted.
    */
+  @java.lang.Override
   public boolean getDeleted() {
     return deleted_;
   }
@@ -212,6 +216,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the asset field is set.
    */
+  @java.lang.Override
   public boolean hasAsset() {
     return asset_ != null;
   }
@@ -226,6 +231,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The asset.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.Asset getAsset() {
     return asset_ == null ? com.google.cloud.asset.v1.Asset.getDefaultInstance() : asset_;
   }
@@ -238,6 +244,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.AssetOrBuilder getAssetOrBuilder() {
     return getAsset();
   }
@@ -810,6 +817,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The deleted.
      */
+    @java.lang.Override
     public boolean getDeleted() {
       return deleted_;
     }

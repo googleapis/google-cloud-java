@@ -175,6 +175,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the pubsubDestination field is set.
    */
+  @java.lang.Override
   public boolean hasPubsubDestination() {
     return destinationCase_ == 1;
   }
@@ -189,6 +190,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The pubsubDestination.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.PubsubDestination getPubsubDestination() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.asset.v1.PubsubDestination) destination_;
@@ -204,6 +206,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.PubsubDestinationOrBuilder getPubsubDestinationOrBuilder() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.asset.v1.PubsubDestination) destination_;
@@ -586,6 +589,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the pubsubDestination field is set.
      */
+    @java.lang.Override
     public boolean hasPubsubDestination() {
       return destinationCase_ == 1;
     }
@@ -600,6 +604,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The pubsubDestination.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1.PubsubDestination getPubsubDestination() {
       if (pubsubDestinationBuilder_ == null) {
         if (destinationCase_ == 1) {
@@ -732,6 +737,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.cloud.asset.v1.PubsubDestination pubsub_destination = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1.PubsubDestinationOrBuilder getPubsubDestinationOrBuilder() {
       if ((destinationCase_ == 1) && (pubsubDestinationBuilder_ != null)) {
         return pubsubDestinationBuilder_.getMessageOrBuilder();

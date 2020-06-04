@@ -136,6 +136,7 @@ public final class ExportIamPolicyAnalysisResponse extends com.google.protobuf.G
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -150,6 +151,7 @@ public final class ExportIamPolicyAnalysisResponse extends com.google.protobuf.G
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfig.getDefaultInstance()
@@ -164,6 +166,7 @@ public final class ExportIamPolicyAnalysisResponse extends com.google.protobuf.G
    *
    * <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfig output_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfigOrBuilder
       getOutputConfigOrBuilder() {
     return getOutputConfig();

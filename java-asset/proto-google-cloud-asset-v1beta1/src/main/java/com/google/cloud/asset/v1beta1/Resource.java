@@ -170,6 +170,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +193,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for version.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +223,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The discoveryDocumentUri.
    */
+  @java.lang.Override
   public java.lang.String getDiscoveryDocumentUri() {
     java.lang.Object ref = discoveryDocumentUri_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +250,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for discoveryDocumentUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDiscoveryDocumentUriBytes() {
     java.lang.Object ref = discoveryDocumentUri_;
     if (ref instanceof java.lang.String) {
@@ -274,6 +278,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The discoveryName.
    */
+  @java.lang.Override
   public java.lang.String getDiscoveryName() {
     java.lang.Object ref = discoveryName_;
     if (ref instanceof java.lang.String) {
@@ -298,6 +303,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for discoveryName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDiscoveryNameBytes() {
     java.lang.Object ref = discoveryName_;
     if (ref instanceof java.lang.String) {
@@ -327,6 +333,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resourceUrl.
    */
+  @java.lang.Override
   public java.lang.String getResourceUrl() {
     java.lang.Object ref = resourceUrl_;
     if (ref instanceof java.lang.String) {
@@ -353,6 +360,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for resourceUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceUrlBytes() {
     java.lang.Object ref = resourceUrl_;
     if (ref instanceof java.lang.String) {
@@ -386,6 +394,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -416,6 +425,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -442,6 +452,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -457,6 +468,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The data.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getData() {
     return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
   }
@@ -470,6 +482,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Struct data = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getDataOrBuilder() {
     return getData();
   }

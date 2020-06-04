@@ -152,6 +152,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The feedId.
    */
+  @java.lang.Override
   public java.lang.String getFeedId() {
     java.lang.Object ref = feedId_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +230,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for feedId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFeedIdBytes() {
     java.lang.Object ref = feedId_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +261,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the feed field is set.
    */
+  @java.lang.Override
   public boolean hasFeed() {
     return feed_ != null;
   }
@@ -276,6 +281,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The feed.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p2beta1.Feed getFeed() {
     return feed_ == null ? com.google.cloud.asset.v1p2beta1.Feed.getDefaultInstance() : feed_;
   }
@@ -293,6 +299,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.asset.v1p2beta1.Feed feed = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p2beta1.FeedOrBuilder getFeedOrBuilder() {
     return getFeed();
   }

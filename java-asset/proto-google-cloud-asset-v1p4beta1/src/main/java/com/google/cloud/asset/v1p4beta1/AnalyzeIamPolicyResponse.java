@@ -426,6 +426,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      * @return Whether the analysisQuery field is set.
      */
+    @java.lang.Override
     public boolean hasAnalysisQuery() {
       return analysisQuery_ != null;
     }
@@ -440,6 +441,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      * @return The analysisQuery.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery getAnalysisQuery() {
       return analysisQuery_ == null
           ? com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.getDefaultInstance()
@@ -454,6 +456,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery analysis_query = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQueryOrBuilder
         getAnalysisQueryOrBuilder() {
       return getAnalysisQuery();
@@ -473,6 +476,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult analysis_results = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult>
         getAnalysisResultsList() {
       return analysisResults_;
@@ -488,6 +492,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult analysis_results = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResultOrBuilder>
         getAnalysisResultsOrBuilderList() {
@@ -504,6 +509,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult analysis_results = 2;
      * </code>
      */
+    @java.lang.Override
     public int getAnalysisResultsCount() {
       return analysisResults_.size();
     }
@@ -518,6 +524,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult analysis_results = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult getAnalysisResults(int index) {
       return analysisResults_.get(index);
     }
@@ -532,6 +539,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult analysis_results = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResultOrBuilder
         getAnalysisResultsOrBuilder(int index) {
       return analysisResults_.get(index);
@@ -551,6 +559,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      * @return The fullyExplored.
      */
+    @java.lang.Override
     public boolean getFullyExplored() {
       return fullyExplored_;
     }
@@ -1594,6 +1603,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        * @return The fullyExplored.
        */
+      @java.lang.Override
       public boolean getFullyExplored() {
         return fullyExplored_;
       }
@@ -1706,6 +1716,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    *
    * @return Whether the mainAnalysis field is set.
    */
+  @java.lang.Override
   public boolean hasMainAnalysis() {
     return mainAnalysis_ != null;
   }
@@ -1722,6 +1733,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    *
    * @return The mainAnalysis.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis
       getMainAnalysis() {
     return mainAnalysis_ == null
@@ -1740,6 +1752,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * .google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis main_analysis = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysisOrBuilder
       getMainAnalysisOrBuilder() {
     return getMainAnalysis();
@@ -1762,6 +1775,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis service_account_impersonation_analysis = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis>
       getServiceAccountImpersonationAnalysisList() {
     return serviceAccountImpersonationAnalysis_;
@@ -1779,6 +1793,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis service_account_impersonation_analysis = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysisOrBuilder>
@@ -1798,6 +1813,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis service_account_impersonation_analysis = 2;
    * </code>
    */
+  @java.lang.Override
   public int getServiceAccountImpersonationAnalysisCount() {
     return serviceAccountImpersonationAnalysis_.size();
   }
@@ -1814,6 +1830,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis service_account_impersonation_analysis = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis
       getServiceAccountImpersonationAnalysis(int index) {
     return serviceAccountImpersonationAnalysis_.get(index);
@@ -1831,6 +1848,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysis service_account_impersonation_analysis = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyResponse.IamPolicyAnalysisOrBuilder
       getServiceAccountImpersonationAnalysisOrBuilder(int index) {
     return serviceAccountImpersonationAnalysis_.get(index);
@@ -1851,6 +1869,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    *
    * @return The fullyExplored.
    */
+  @java.lang.Override
   public boolean getFullyExplored() {
     return fullyExplored_;
   }
@@ -1870,6 +1889,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState non_critical_errors = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState>
       getNonCriticalErrorsList() {
     return nonCriticalErrors_;
@@ -1886,6 +1906,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState non_critical_errors = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisStateOrBuilder>
       getNonCriticalErrorsOrBuilderList() {
@@ -1903,6 +1924,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState non_critical_errors = 4;
    * </code>
    */
+  @java.lang.Override
   public int getNonCriticalErrorsCount() {
     return nonCriticalErrors_.size();
   }
@@ -1918,6 +1940,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState non_critical_errors = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState
       getNonCriticalErrors(int index) {
     return nonCriticalErrors_.get(index);
@@ -1934,6 +1957,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState non_critical_errors = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisStateOrBuilder
       getNonCriticalErrorsOrBuilder(int index) {
     return nonCriticalErrors_.get(index);
@@ -3093,6 +3117,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      * @return The fullyExplored.
      */
+    @java.lang.Override
     public boolean getFullyExplored() {
       return fullyExplored_;
     }

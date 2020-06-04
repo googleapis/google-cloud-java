@@ -194,6 +194,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsDestination field is set.
    */
+  @java.lang.Override
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
@@ -208,6 +209,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsDestination.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.GcsDestination getGcsDestination() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.asset.v1.GcsDestination) destination_;
@@ -223,6 +225,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.asset.v1.GcsDestination gcs_destination = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.asset.v1.GcsDestination) destination_;
@@ -245,6 +248,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the bigqueryDestination field is set.
    */
+  @java.lang.Override
   public boolean hasBigqueryDestination() {
     return destinationCase_ == 2;
   }
@@ -262,6 +266,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bigqueryDestination.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.BigQueryDestination getBigqueryDestination() {
     if (destinationCase_ == 2) {
       return (com.google.cloud.asset.v1.BigQueryDestination) destination_;
@@ -280,6 +285,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.BigQueryDestinationOrBuilder getBigqueryDestinationOrBuilder() {
     if (destinationCase_ == 2) {
       return (com.google.cloud.asset.v1.BigQueryDestination) destination_;
@@ -688,6 +694,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsDestination field is set.
      */
+    @java.lang.Override
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
@@ -702,6 +709,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsDestination.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1.GcsDestination getGcsDestination() {
       if (gcsDestinationBuilder_ == null) {
         if (destinationCase_ == 1) {
@@ -834,6 +842,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.asset.v1.GcsDestination gcs_destination = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
       if ((destinationCase_ == 1) && (gcsDestinationBuilder_ != null)) {
         return gcsDestinationBuilder_.getMessageOrBuilder();
@@ -897,6 +906,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the bigqueryDestination field is set.
      */
+    @java.lang.Override
     public boolean hasBigqueryDestination() {
       return destinationCase_ == 2;
     }
@@ -914,6 +924,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bigqueryDestination.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1.BigQueryDestination getBigqueryDestination() {
       if (bigqueryDestinationBuilder_ == null) {
         if (destinationCase_ == 2) {
@@ -1064,6 +1075,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1.BigQueryDestinationOrBuilder
         getBigqueryDestinationOrBuilder() {
       if ((destinationCase_ == 2) && (bigqueryDestinationBuilder_ != null)) {

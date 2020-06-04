@@ -225,6 +225,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +255,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -281,6 +283,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The assetType.
    */
+  @java.lang.Override
   public java.lang.String getAssetType() {
     java.lang.Object ref = assetType_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +308,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for assetType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAssetTypeBytes() {
     java.lang.Object ref = assetType_;
     if (ref instanceof java.lang.String) {
@@ -333,6 +337,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The project.
    */
+  @java.lang.Override
   public java.lang.String getProject() {
     java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
@@ -358,6 +363,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for project.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectBytes() {
     java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
@@ -386,6 +392,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -411,6 +418,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -440,6 +448,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -466,6 +475,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -495,6 +505,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The location.
    */
+  @java.lang.Override
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -521,6 +532,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for location.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -575,6 +587,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -582,6 +595,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -603,6 +617,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -623,6 +638,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -647,6 +663,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -762,6 +779,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the additionalAttributes field is set.
    */
+  @java.lang.Override
   public boolean hasAdditionalAttributes() {
     return additionalAttributes_ != null;
   }
@@ -782,6 +800,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * @return The additionalAttributes.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getAdditionalAttributes() {
     return additionalAttributes_ == null
         ? com.google.protobuf.Struct.getDefaultInstance()
@@ -802,6 +821,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.Struct additional_attributes = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getAdditionalAttributesOrBuilder() {
     return getAdditionalAttributes();
   }
@@ -2101,6 +2121,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2108,6 +2129,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2129,6 +2151,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2149,6 +2172,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2174,6 +2198,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

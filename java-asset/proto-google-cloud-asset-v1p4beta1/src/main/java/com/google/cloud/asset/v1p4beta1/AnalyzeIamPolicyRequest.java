@@ -469,6 +469,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      * @return The expandGroups.
      */
+    @java.lang.Override
     public boolean getExpandGroups() {
       return expandGroups_;
     }
@@ -490,6 +491,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      * @return The expandRoles.
      */
+    @java.lang.Override
     public boolean getExpandRoles() {
       return expandRoles_;
     }
@@ -516,6 +518,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      * @return The expandResources.
      */
+    @java.lang.Override
     public boolean getExpandResources() {
       return expandResources_;
     }
@@ -535,6 +538,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      * @return The outputResourceEdges.
      */
+    @java.lang.Override
     public boolean getOutputResourceEdges() {
       return outputResourceEdges_;
     }
@@ -554,6 +558,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      * @return The outputGroupEdges.
      */
+    @java.lang.Override
     public boolean getOutputGroupEdges() {
       return outputGroupEdges_;
     }
@@ -591,6 +596,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      * @return The analyzeServiceAccountImpersonation.
      */
+    @java.lang.Override
     public boolean getAnalyzeServiceAccountImpersonation() {
       return analyzeServiceAccountImpersonation_;
     }
@@ -617,6 +623,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      * @return Whether the executionTimeout field is set.
      */
+    @java.lang.Override
     public boolean hasExecutionTimeout() {
       return executionTimeout_ != null;
     }
@@ -640,6 +647,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      * @return The executionTimeout.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getExecutionTimeout() {
       return executionTimeout_ == null
           ? com.google.protobuf.Duration.getDefaultInstance()
@@ -663,6 +671,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      * .google.protobuf.Duration execution_timeout = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder() {
       return getExecutionTimeout();
     }
@@ -1121,6 +1130,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
        *
        * @return The expandGroups.
        */
+      @java.lang.Override
       public boolean getExpandGroups() {
         return expandGroups_;
       }
@@ -1184,6 +1194,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
        *
        * @return The expandRoles.
        */
+      @java.lang.Override
       public boolean getExpandRoles() {
         return expandRoles_;
       }
@@ -1252,6 +1263,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
        *
        * @return The expandResources.
        */
+      @java.lang.Override
       public boolean getExpandResources() {
         return expandResources_;
       }
@@ -1323,6 +1335,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
        *
        * @return The outputResourceEdges.
        */
+      @java.lang.Override
       public boolean getOutputResourceEdges() {
         return outputResourceEdges_;
       }
@@ -1380,6 +1393,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
        *
        * @return The outputGroupEdges.
        */
+      @java.lang.Override
       public boolean getOutputGroupEdges() {
         return outputGroupEdges_;
       }
@@ -1455,6 +1469,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
        *
        * @return The analyzeServiceAccountImpersonation.
        */
+      @java.lang.Override
       public boolean getAnalyzeServiceAccountImpersonation() {
         return analyzeServiceAccountImpersonation_;
       }
@@ -1870,6 +1885,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    * @return Whether the analysisQuery field is set.
    */
+  @java.lang.Override
   public boolean hasAnalysisQuery() {
     return analysisQuery_ != null;
   }
@@ -1886,6 +1902,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The analysisQuery.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery getAnalysisQuery() {
     return analysisQuery_ == null
         ? com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.getDefaultInstance()
@@ -1902,6 +1919,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    * .google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery analysis_query = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQueryOrBuilder
       getAnalysisQueryOrBuilder() {
     return getAnalysisQuery();
@@ -1922,6 +1940,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    * @return Whether the options field is set.
    */
+  @java.lang.Override
   public boolean hasOptions() {
     return options_ != null;
   }
@@ -1938,6 +1957,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The options.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest.Options getOptions() {
     return options_ == null
         ? com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest.Options.getDefaultInstance()
@@ -1954,6 +1974,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    * .google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest.Options options = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest.OptionsOrBuilder
       getOptionsOrBuilder() {
     return getOptions();

@@ -187,6 +187,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +215,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -414,6 +416,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for contentType.
    */
+  @java.lang.Override
   public int getContentTypeValue() {
     return contentType_;
   }
@@ -429,6 +432,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The contentType.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p2beta1.ContentType getContentType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1p2beta1.ContentType result =
@@ -452,6 +456,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the feedOutputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasFeedOutputConfig() {
     return feedOutputConfig_ != null;
   }
@@ -469,6 +474,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The feedOutputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p2beta1.FeedOutputConfig getFeedOutputConfig() {
     return feedOutputConfig_ == null
         ? com.google.cloud.asset.v1p2beta1.FeedOutputConfig.getDefaultInstance()
@@ -486,6 +492,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.asset.v1p2beta1.FeedOutputConfig feed_output_config = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p2beta1.FeedOutputConfigOrBuilder getFeedOutputConfigOrBuilder() {
     return getFeedOutputConfig();
   }
@@ -1519,6 +1526,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for contentType.
      */
+    @java.lang.Override
     public int getContentTypeValue() {
       return contentType_;
     }
@@ -1536,6 +1544,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
+
       contentType_ = value;
       onChanged();
       return this;
@@ -1552,6 +1561,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The contentType.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p2beta1.ContentType getContentType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1p2beta1.ContentType result =

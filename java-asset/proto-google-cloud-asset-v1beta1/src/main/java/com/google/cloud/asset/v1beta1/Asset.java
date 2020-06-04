@@ -167,6 +167,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +194,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +220,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The assetType.
    */
+  @java.lang.Override
   public java.lang.String getAssetType() {
     java.lang.Object ref = assetType_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +243,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for assetType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAssetTypeBytes() {
     java.lang.Object ref = assetType_;
     if (ref instanceof java.lang.String) {
@@ -265,6 +269,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the resource field is set.
    */
+  @java.lang.Override
   public boolean hasResource() {
     return resource_ != null;
   }
@@ -279,6 +284,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resource.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.Resource getResource() {
     return resource_ == null
         ? com.google.cloud.asset.v1beta1.Resource.getDefaultInstance()
@@ -293,6 +299,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.asset.v1beta1.Resource resource = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.ResourceOrBuilder getResourceOrBuilder() {
     return getResource();
   }
@@ -311,6 +318,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the iamPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasIamPolicy() {
     return iamPolicy_ != null;
   }
@@ -326,6 +334,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The iamPolicy.
    */
+  @java.lang.Override
   public com.google.iam.v1.Policy getIamPolicy() {
     return iamPolicy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : iamPolicy_;
   }
@@ -339,6 +348,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getIamPolicyOrBuilder() {
     return getIamPolicy();
   }

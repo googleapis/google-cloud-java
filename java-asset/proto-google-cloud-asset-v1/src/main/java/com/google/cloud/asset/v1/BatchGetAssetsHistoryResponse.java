@@ -130,6 +130,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.asset.v1.TemporalAsset assets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.asset.v1.TemporalAsset> getAssetsList() {
     return assets_;
   }
@@ -142,6 +143,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.asset.v1.TemporalAsset assets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.asset.v1.TemporalAssetOrBuilder>
       getAssetsOrBuilderList() {
     return assets_;
@@ -155,6 +157,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.asset.v1.TemporalAsset assets = 1;</code>
    */
+  @java.lang.Override
   public int getAssetsCount() {
     return assets_.size();
   }
@@ -167,6 +170,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.asset.v1.TemporalAsset assets = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.TemporalAsset getAssets(int index) {
     return assets_.get(index);
   }
@@ -179,6 +183,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.cloud.asset.v1.TemporalAsset assets = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.TemporalAssetOrBuilder getAssetsOrBuilder(int index) {
     return assets_.get(index);
   }

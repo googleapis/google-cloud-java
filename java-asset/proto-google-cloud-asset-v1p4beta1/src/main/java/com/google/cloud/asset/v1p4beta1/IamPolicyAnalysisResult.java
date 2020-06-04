@@ -354,6 +354,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The enum numeric value on the wire for code.
      */
+    @java.lang.Override
     public int getCodeValue() {
       return code_;
     }
@@ -372,6 +373,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The code.
      */
+    @java.lang.Override
     public com.google.rpc.Code getCode() {
       @SuppressWarnings("deprecation")
       com.google.rpc.Code result = com.google.rpc.Code.valueOf(code_);
@@ -391,6 +393,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The cause.
      */
+    @java.lang.Override
     public java.lang.String getCause() {
       java.lang.Object ref = cause_;
       if (ref instanceof java.lang.String) {
@@ -413,6 +416,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The bytes for cause.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCauseBytes() {
       java.lang.Object ref = cause_;
       if (ref instanceof java.lang.String) {
@@ -792,6 +796,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        * @return The enum numeric value on the wire for code.
        */
+      @java.lang.Override
       public int getCodeValue() {
         return code_;
       }
@@ -812,6 +817,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder setCodeValue(int value) {
+
         code_ = value;
         onChanged();
         return this;
@@ -831,6 +837,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        * @return The code.
        */
+      @java.lang.Override
       public com.google.rpc.Code getCode() {
         @SuppressWarnings("deprecation")
         com.google.rpc.Code result = com.google.rpc.Code.valueOf(code_);
@@ -1239,6 +1246,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The fullResourceName.
      */
+    @java.lang.Override
     public java.lang.String getFullResourceName() {
       java.lang.Object ref = fullResourceName_;
       if (ref instanceof java.lang.String) {
@@ -1261,6 +1269,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The bytes for fullResourceName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFullResourceNameBytes() {
       java.lang.Object ref = fullResourceName_;
       if (ref instanceof java.lang.String) {
@@ -1287,6 +1296,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return Whether the analysisState field is set.
      */
+    @java.lang.Override
     public boolean hasAnalysisState() {
       return analysisState_ != null;
     }
@@ -1302,6 +1312,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The analysisState.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState
         getAnalysisState() {
       return analysisState_ == null
@@ -1319,6 +1330,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState analysis_state = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisStateOrBuilder
         getAnalysisStateOrBuilder() {
       return getAnalysisState();
@@ -2444,6 +2456,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return Whether the analysisState field is set.
      */
+    @java.lang.Override
     public boolean hasAnalysisState() {
       return analysisState_ != null;
     }
@@ -2459,6 +2472,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The analysisState.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState
         getAnalysisState() {
       return analysisState_ == null
@@ -2476,6 +2490,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState analysis_state = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisStateOrBuilder
         getAnalysisStateOrBuilder() {
       return getAnalysisState();
@@ -2911,6 +2926,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        * @return The role.
        */
+      @java.lang.Override
       public java.lang.String getRole() {
         java.lang.Object ref = "";
         if (oneofAccessCase_ == 1) {
@@ -2938,6 +2954,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        * @return The bytes for role.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getRoleBytes() {
         java.lang.Object ref = "";
         if (oneofAccessCase_ == 1) {
@@ -3028,6 +3045,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        * @return The permission.
        */
+      @java.lang.Override
       public java.lang.String getPermission() {
         java.lang.Object ref = "";
         if (oneofAccessCase_ == 2) {
@@ -3055,6 +3073,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        * @return The bytes for permission.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getPermissionBytes() {
         java.lang.Object ref = "";
         if (oneofAccessCase_ == 2) {
@@ -3571,6 +3590,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The sourceNode.
      */
+    @java.lang.Override
     public java.lang.String getSourceNode() {
       java.lang.Object ref = sourceNode_;
       if (ref instanceof java.lang.String) {
@@ -3593,6 +3613,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The bytes for sourceNode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSourceNodeBytes() {
       java.lang.Object ref = sourceNode_;
       if (ref instanceof java.lang.String) {
@@ -3618,6 +3639,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The targetNode.
      */
+    @java.lang.Override
     public java.lang.String getTargetNode() {
       java.lang.Object ref = targetNode_;
       if (ref instanceof java.lang.String) {
@@ -3640,6 +3662,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The bytes for targetNode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTargetNodeBytes() {
       java.lang.Object ref = targetNode_;
       if (ref instanceof java.lang.String) {
@@ -4486,6 +4509,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -4518,6 +4542,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -4544,6 +4569,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return Whether the analysisState field is set.
      */
+    @java.lang.Override
     public boolean hasAnalysisState() {
       return analysisState_ != null;
     }
@@ -4559,6 +4585,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The analysisState.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState
         getAnalysisState() {
       return analysisState_ == null
@@ -4576,6 +4603,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisState analysis_state = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AnalysisStateOrBuilder
         getAnalysisStateOrBuilder() {
       return getAnalysisState();
@@ -5755,6 +5783,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Resource resources = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Resource>
         getResourcesList() {
       return resources_;
@@ -5771,6 +5800,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Resource resources = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.ResourceOrBuilder>
         getResourcesOrBuilderList() {
@@ -5788,6 +5818,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Resource resources = 1;
      * </code>
      */
+    @java.lang.Override
     public int getResourcesCount() {
       return resources_.size();
     }
@@ -5803,6 +5834,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Resource resources = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Resource getResources(
         int index) {
       return resources_.get(index);
@@ -5819,6 +5851,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Resource resources = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.ResourceOrBuilder
         getResourcesOrBuilder(int index) {
       return resources_.get(index);
@@ -5839,6 +5872,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Access accesses = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Access>
         getAccessesList() {
       return accesses_;
@@ -5855,6 +5889,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Access accesses = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessOrBuilder>
         getAccessesOrBuilderList() {
@@ -5872,6 +5907,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Access accesses = 2;
      * </code>
      */
+    @java.lang.Override
     public int getAccessesCount() {
       return accesses_.size();
     }
@@ -5887,6 +5923,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Access accesses = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Access getAccesses(int index) {
       return accesses_.get(index);
     }
@@ -5902,6 +5939,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Access accesses = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessOrBuilder
         getAccessesOrBuilder(int index) {
       return accesses_.get(index);
@@ -5924,6 +5962,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge resource_edges = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge>
         getResourceEdgesList() {
       return resourceEdges_;
@@ -5942,6 +5981,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge resource_edges = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.EdgeOrBuilder>
         getResourceEdgesOrBuilderList() {
@@ -5961,6 +6001,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge resource_edges = 3;
      * </code>
      */
+    @java.lang.Override
     public int getResourceEdgesCount() {
       return resourceEdges_.size();
     }
@@ -5978,6 +6019,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge resource_edges = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge getResourceEdges(
         int index) {
       return resourceEdges_.get(index);
@@ -5996,6 +6038,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge resource_edges = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.EdgeOrBuilder
         getResourceEdgesOrBuilder(int index) {
       return resourceEdges_.get(index);
@@ -8211,6 +8254,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Identity identities = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Identity>
         getIdentitiesList() {
       return identities_;
@@ -8228,6 +8272,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Identity identities = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.IdentityOrBuilder>
         getIdentitiesOrBuilderList() {
@@ -8246,6 +8291,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Identity identities = 1;
      * </code>
      */
+    @java.lang.Override
     public int getIdentitiesCount() {
       return identities_.size();
     }
@@ -8262,6 +8308,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Identity identities = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Identity getIdentities(
         int index) {
       return identities_.get(index);
@@ -8279,6 +8326,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Identity identities = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.IdentityOrBuilder
         getIdentitiesOrBuilder(int index) {
       return identities_.get(index);
@@ -8303,6 +8351,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge group_edges = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge>
         getGroupEdgesList() {
       return groupEdges_;
@@ -8323,6 +8372,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge group_edges = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.EdgeOrBuilder>
         getGroupEdgesOrBuilderList() {
@@ -8344,6 +8394,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge group_edges = 2;
      * </code>
      */
+    @java.lang.Override
     public int getGroupEdgesCount() {
       return groupEdges_.size();
     }
@@ -8363,6 +8414,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge group_edges = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge getGroupEdges(int index) {
       return groupEdges_.get(index);
     }
@@ -8382,6 +8434,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      * <code>repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.Edge group_edges = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.EdgeOrBuilder
         getGroupEdgesOrBuilder(int index) {
       return groupEdges_.get(index);
@@ -9838,6 +9891,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    *
    * @return The attachedResourceFullName.
    */
+  @java.lang.Override
   public java.lang.String getAttachedResourceFullName() {
     java.lang.Object ref = attachedResourceFullName_;
     if (ref instanceof java.lang.String) {
@@ -9860,6 +9914,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    *
    * @return The bytes for attachedResourceFullName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAttachedResourceFullNameBytes() {
     java.lang.Object ref = attachedResourceFullName_;
     if (ref instanceof java.lang.String) {
@@ -9885,6 +9940,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    *
    * @return Whether the iamBinding field is set.
    */
+  @java.lang.Override
   public boolean hasIamBinding() {
     return iamBinding_ != null;
   }
@@ -9899,6 +9955,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    *
    * @return The iamBinding.
    */
+  @java.lang.Override
   public com.google.iam.v1.Binding getIamBinding() {
     return iamBinding_ == null ? com.google.iam.v1.Binding.getDefaultInstance() : iamBinding_;
   }
@@ -9911,6 +9968,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    *
    * <code>.google.iam.v1.Binding iam_binding = 2;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.BindingOrBuilder getIamBindingOrBuilder() {
     return getIamBinding();
   }
@@ -9930,6 +9988,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlList access_control_lists = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlList>
       getAccessControlListsList() {
     return accessControlLists_;
@@ -9946,6 +10005,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlList access_control_lists = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlListOrBuilder>
@@ -9964,6 +10024,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlList access_control_lists = 3;
    * </code>
    */
+  @java.lang.Override
   public int getAccessControlListsCount() {
     return accessControlLists_.size();
   }
@@ -9979,6 +10040,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlList access_control_lists = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlList
       getAccessControlLists(int index) {
     return accessControlLists_.get(index);
@@ -9995,6 +10057,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    * repeated .google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlList access_control_lists = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.AccessControlListOrBuilder
       getAccessControlListsOrBuilder(int index) {
     return accessControlLists_.get(index);
@@ -10015,6 +10078,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    *
    * @return Whether the identityList field is set.
    */
+  @java.lang.Override
   public boolean hasIdentityList() {
     return identityList_ != null;
   }
@@ -10031,6 +10095,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    *
    * @return The identityList.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.IdentityList getIdentityList() {
     return identityList_ == null
         ? com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.IdentityList.getDefaultInstance()
@@ -10047,6 +10112,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    * <code>.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.IdentityList identity_list = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult.IdentityListOrBuilder
       getIdentityListOrBuilder() {
     return getIdentityList();
@@ -10066,6 +10132,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
    *
    * @return The fullyExplored.
    */
+  @java.lang.Override
   public boolean getFullyExplored() {
     return fullyExplored_;
   }
@@ -11471,6 +11538,7 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      * @return The fullyExplored.
      */
+    @java.lang.Override
     public boolean getFullyExplored() {
       return fullyExplored_;
     }

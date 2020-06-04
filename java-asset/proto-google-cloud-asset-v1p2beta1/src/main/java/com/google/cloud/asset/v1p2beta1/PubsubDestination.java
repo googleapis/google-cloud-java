@@ -125,6 +125,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
    *
    * @return The topic.
    */
+  @java.lang.Override
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
@@ -148,6 +149,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for topic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTopicBytes() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {

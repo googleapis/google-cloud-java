@@ -221,6 +221,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +248,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -273,6 +275,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The assetType.
    */
+  @java.lang.Override
   public java.lang.String getAssetType() {
     java.lang.Object ref = assetType_;
     if (ref instanceof java.lang.String) {
@@ -296,6 +299,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for assetType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAssetTypeBytes() {
     java.lang.Object ref = assetType_;
     if (ref instanceof java.lang.String) {
@@ -322,6 +326,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The project.
    */
+  @java.lang.Override
   public java.lang.String getProject() {
     java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
@@ -345,6 +350,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for project.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectBytes() {
     java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
@@ -370,6 +376,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -392,6 +399,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -418,6 +426,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -441,6 +450,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -536,6 +546,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The location.
    */
+  @java.lang.Override
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -559,6 +570,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * @return The bytes for location.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -607,6 +619,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -614,6 +627,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -629,6 +643,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -643,6 +658,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -661,6 +677,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -2153,6 +2170,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <code>map&lt;string, string&gt; labels = 12;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2160,6 +2178,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2175,6 +2194,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <code>map&lt;string, string&gt; labels = 12;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2189,6 +2209,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <code>map&lt;string, string&gt; labels = 12;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2208,6 +2229,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <code>map&lt;string, string&gt; labels = 12;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

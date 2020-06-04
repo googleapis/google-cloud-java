@@ -1238,6 +1238,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
      * </code>
      */
+    @java.lang.Override
     public boolean containsMatchedPermissions(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1245,6 +1246,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       return internalGetMatchedPermissions().getMap().containsKey(key);
     }
     /** Use {@link #getMatchedPermissionsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String,
@@ -1269,6 +1271,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String,
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions>
@@ -1292,6 +1295,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
         getMatchedPermissionsOrDefault(
             java.lang.String key,
@@ -1322,6 +1326,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
         getMatchedPermissionsOrThrow(java.lang.String key) {
       if (key == null) {
@@ -1753,6 +1758,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
        * </code>
        */
+      @java.lang.Override
       public boolean containsMatchedPermissions(java.lang.String key) {
         if (key == null) {
           throw new java.lang.NullPointerException();
@@ -1760,6 +1766,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return internalGetMatchedPermissions().getMap().containsKey(key);
       }
       /** Use {@link #getMatchedPermissionsMap()} instead. */
+      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<
               java.lang.String,
@@ -1784,6 +1791,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
        * </code>
        */
+      @java.lang.Override
       public java.util.Map<
               java.lang.String,
               com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions>
@@ -1807,6 +1815,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
           getMatchedPermissionsOrDefault(
               java.lang.String key,
@@ -1838,6 +1847,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
           getMatchedPermissionsOrThrow(java.lang.String key) {
         if (key == null) {
@@ -2017,6 +2027,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * @return The resource.
    */
+  @java.lang.Override
   public java.lang.String getResource() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -2046,6 +2057,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for resource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceBytes() {
     java.lang.Object ref = resource_;
     if (ref instanceof java.lang.String) {
@@ -2077,6 +2089,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * @return The project.
    */
+  @java.lang.Override
   public java.lang.String getProject() {
     java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
@@ -2105,6 +2118,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for project.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectBytes() {
     java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
@@ -2141,6 +2155,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the policy field is set.
    */
+  @java.lang.Override
   public boolean hasPolicy() {
     return policy_ != null;
   }
@@ -2166,6 +2181,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * @return The policy.
    */
+  @java.lang.Override
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
@@ -2189,6 +2205,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.iam.v1.Policy policy = 3;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
     return getPolicy();
   }
@@ -2207,6 +2224,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the explanation field is set.
    */
+  @java.lang.Override
   public boolean hasExplanation() {
     return explanation_ != null;
   }
@@ -2222,6 +2240,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * @return The explanation.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation getExplanation() {
     return explanation_ == null
         ? com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.getDefaultInstance()
@@ -2237,6 +2256,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.asset.v1.IamPolicySearchResult.Explanation explanation = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicySearchResult.ExplanationOrBuilder
       getExplanationOrBuilder() {
     return getExplanation();

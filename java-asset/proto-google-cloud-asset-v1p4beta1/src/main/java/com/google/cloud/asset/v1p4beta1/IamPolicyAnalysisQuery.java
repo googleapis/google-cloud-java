@@ -314,6 +314,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      * @return The fullResourceName.
      */
+    @java.lang.Override
     public java.lang.String getFullResourceName() {
       java.lang.Object ref = fullResourceName_;
       if (ref instanceof java.lang.String) {
@@ -338,6 +339,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      * @return The bytes for fullResourceName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFullResourceNameBytes() {
       java.lang.Object ref = fullResourceName_;
       if (ref instanceof java.lang.String) {
@@ -1012,6 +1014,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      * @return The identity.
      */
+    @java.lang.Override
     public java.lang.String getIdentity() {
       java.lang.Object ref = identity_;
       if (ref instanceof java.lang.String) {
@@ -1036,6 +1039,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      * @return The bytes for identity.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getIdentityBytes() {
       java.lang.Object ref = identity_;
       if (ref instanceof java.lang.String) {
@@ -2708,6 +2712,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -2732,6 +2737,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -2760,6 +2766,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    * @return Whether the resourceSelector field is set.
    */
+  @java.lang.Override
   public boolean hasResourceSelector() {
     return resourceSelector_ != null;
   }
@@ -2776,6 +2783,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    * @return The resourceSelector.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.ResourceSelector
       getResourceSelector() {
     return resourceSelector_ == null
@@ -2794,6 +2802,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    * .google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.ResourceSelector resource_selector = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.ResourceSelectorOrBuilder
       getResourceSelectorOrBuilder() {
     return getResourceSelector();
@@ -2815,6 +2824,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    * @return Whether the identitySelector field is set.
    */
+  @java.lang.Override
   public boolean hasIdentitySelector() {
     return identitySelector_ != null;
   }
@@ -2831,6 +2841,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    * @return The identitySelector.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.IdentitySelector
       getIdentitySelector() {
     return identitySelector_ == null
@@ -2849,6 +2860,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    * .google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.IdentitySelector identity_selector = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.IdentitySelectorOrBuilder
       getIdentitySelectorOrBuilder() {
     return getIdentitySelector();
@@ -2870,6 +2882,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    * @return Whether the accessSelector field is set.
    */
+  @java.lang.Override
   public boolean hasAccessSelector() {
     return accessSelector_ != null;
   }
@@ -2887,6 +2900,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    * @return The accessSelector.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.AccessSelector
       getAccessSelector() {
     return accessSelector_ == null
@@ -2906,6 +2920,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    * .google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.AccessSelector access_selector = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.AccessSelectorOrBuilder
       getAccessSelectorOrBuilder() {
     return getAccessSelector();

@@ -167,6 +167,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +194,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +307,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    * @return The enum numeric value on the wire for contentType.
    */
+  @java.lang.Override
   public int getContentTypeValue() {
     return contentType_;
   }
@@ -321,6 +324,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    * @return The contentType.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.ContentType getContentType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1beta1.ContentType result =
@@ -348,6 +352,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    * @return Whether the readTimeWindow field is set.
    */
+  @java.lang.Override
   public boolean hasReadTimeWindow() {
     return readTimeWindow_ != null;
   }
@@ -369,6 +374,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    * @return The readTimeWindow.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.TimeWindow getReadTimeWindow() {
     return readTimeWindow_ == null
         ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance()
@@ -390,6 +396,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    * .google.cloud.asset.v1beta1.TimeWindow read_time_window = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.TimeWindowOrBuilder getReadTimeWindowOrBuilder() {
     return getReadTimeWindow();
   }
@@ -1156,6 +1163,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      * @return The enum numeric value on the wire for contentType.
      */
+    @java.lang.Override
     public int getContentTypeValue() {
       return contentType_;
     }
@@ -1174,6 +1182,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
+
       contentType_ = value;
       onChanged();
       return this;
@@ -1191,6 +1200,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      * @return The contentType.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1beta1.ContentType getContentType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1beta1.ContentType result =

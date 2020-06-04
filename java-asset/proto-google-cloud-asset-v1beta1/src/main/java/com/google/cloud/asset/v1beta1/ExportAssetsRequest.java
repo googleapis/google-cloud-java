@@ -183,6 +183,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +211,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +241,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the readTime field is set.
    */
+  @java.lang.Override
   public boolean hasReadTime() {
     return readTime_ != null;
   }
@@ -257,6 +260,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The readTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
@@ -273,6 +277,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
     return getReadTime();
   }
@@ -368,6 +373,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for contentType.
    */
+  @java.lang.Override
   public int getContentTypeValue() {
     return contentType_;
   }
@@ -383,6 +389,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The contentType.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.ContentType getContentType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1beta1.ContentType result =
@@ -406,6 +413,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -423,6 +431,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.asset.v1beta1.OutputConfig.getDefaultInstance()
@@ -440,6 +449,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.asset.v1beta1.OutputConfig output_config = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }
@@ -1434,6 +1444,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for contentType.
      */
+    @java.lang.Override
     public int getContentTypeValue() {
       return contentType_;
     }
@@ -1451,6 +1462,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
+
       contentType_ = value;
       onChanged();
       return this;
@@ -1467,6 +1479,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The contentType.
      */
+    @java.lang.Override
     public com.google.cloud.asset.v1beta1.ContentType getContentType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1beta1.ContentType result =

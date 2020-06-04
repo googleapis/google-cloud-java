@@ -141,6 +141,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.StandardResourceMetadata results = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.asset.v1p1beta1.StandardResourceMetadata>
       getResultsList() {
     return results_;
@@ -154,6 +155,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.StandardResourceMetadata results = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.asset.v1p1beta1.StandardResourceMetadataOrBuilder>
       getResultsOrBuilderList() {
@@ -168,6 +170,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.StandardResourceMetadata results = 1;</code>
    */
+  @java.lang.Override
   public int getResultsCount() {
     return results_.size();
   }
@@ -180,6 +183,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.StandardResourceMetadata results = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p1beta1.StandardResourceMetadata getResults(int index) {
     return results_.get(index);
   }
@@ -192,6 +196,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.StandardResourceMetadata results = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p1beta1.StandardResourceMetadataOrBuilder getResultsOrBuilder(
       int index) {
     return results_.get(index);
@@ -212,6 +217,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +242,7 @@ public final class SearchAllResourcesResponse extends com.google.protobuf.Genera
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

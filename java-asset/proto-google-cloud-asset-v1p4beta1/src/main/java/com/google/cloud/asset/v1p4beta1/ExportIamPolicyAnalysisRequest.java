@@ -412,6 +412,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
      *
      * @return The expandGroups.
      */
+    @java.lang.Override
     public boolean getExpandGroups() {
       return expandGroups_;
     }
@@ -433,6 +434,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
      *
      * @return The expandRoles.
      */
+    @java.lang.Override
     public boolean getExpandRoles() {
       return expandRoles_;
     }
@@ -459,6 +461,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
      *
      * @return The expandResources.
      */
+    @java.lang.Override
     public boolean getExpandResources() {
       return expandResources_;
     }
@@ -478,6 +481,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
      *
      * @return The outputResourceEdges.
      */
+    @java.lang.Override
     public boolean getOutputResourceEdges() {
       return outputResourceEdges_;
     }
@@ -497,6 +501,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
      *
      * @return The outputGroupEdges.
      */
+    @java.lang.Override
     public boolean getOutputGroupEdges() {
       return outputGroupEdges_;
     }
@@ -533,6 +538,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
      *
      * @return The analyzeServiceAccountImpersonation.
      */
+    @java.lang.Override
     public boolean getAnalyzeServiceAccountImpersonation() {
       return analyzeServiceAccountImpersonation_;
     }
@@ -969,6 +975,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
        *
        * @return The expandGroups.
        */
+      @java.lang.Override
       public boolean getExpandGroups() {
         return expandGroups_;
       }
@@ -1032,6 +1039,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
        *
        * @return The expandRoles.
        */
+      @java.lang.Override
       public boolean getExpandRoles() {
         return expandRoles_;
       }
@@ -1100,6 +1108,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
        *
        * @return The expandResources.
        */
+      @java.lang.Override
       public boolean getExpandResources() {
         return expandResources_;
       }
@@ -1171,6 +1180,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
        *
        * @return The outputResourceEdges.
        */
+      @java.lang.Override
       public boolean getOutputResourceEdges() {
         return outputResourceEdges_;
       }
@@ -1228,6 +1238,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
        *
        * @return The outputGroupEdges.
        */
+      @java.lang.Override
       public boolean getOutputGroupEdges() {
         return outputGroupEdges_;
       }
@@ -1302,6 +1313,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
        *
        * @return The analyzeServiceAccountImpersonation.
        */
+      @java.lang.Override
       public boolean getAnalyzeServiceAccountImpersonation() {
         return analyzeServiceAccountImpersonation_;
       }
@@ -1450,6 +1462,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    *
    * @return Whether the analysisQuery field is set.
    */
+  @java.lang.Override
   public boolean hasAnalysisQuery() {
     return analysisQuery_ != null;
   }
@@ -1466,6 +1479,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    *
    * @return The analysisQuery.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery getAnalysisQuery() {
     return analysisQuery_ == null
         ? com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery.getDefaultInstance()
@@ -1482,6 +1496,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    * .google.cloud.asset.v1p4beta1.IamPolicyAnalysisQuery analysis_query = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisQueryOrBuilder
       getAnalysisQueryOrBuilder() {
     return getAnalysisQuery();
@@ -1502,6 +1517,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    *
    * @return Whether the options field is set.
    */
+  @java.lang.Override
   public boolean hasOptions() {
     return options_ != null;
   }
@@ -1518,6 +1534,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    *
    * @return The options.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest.Options getOptions() {
     return options_ == null
         ? com.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest.Options
@@ -1535,6 +1552,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    * .google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest.Options options = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest.OptionsOrBuilder
       getOptionsOrBuilder() {
     return getOptions();
@@ -1555,6 +1573,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -1571,6 +1590,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfig.getDefaultInstance()
@@ -1587,6 +1607,7 @@ public final class ExportIamPolicyAnalysisRequest extends com.google.protobuf.Ge
    * .google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfig output_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p4beta1.IamPolicyAnalysisOutputConfigOrBuilder
       getOutputConfigOrBuilder() {
     return getOutputConfig();

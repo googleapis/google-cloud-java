@@ -122,6 +122,7 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.asset.v1p2beta1.Feed> getFeedsList() {
     return feeds_;
   }
@@ -134,6 +135,7 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.asset.v1p2beta1.FeedOrBuilder>
       getFeedsOrBuilderList() {
     return feeds_;
@@ -147,6 +149,7 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
+  @java.lang.Override
   public int getFeedsCount() {
     return feeds_.size();
   }
@@ -159,6 +162,7 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p2beta1.Feed getFeeds(int index) {
     return feeds_.get(index);
   }
@@ -171,6 +175,7 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.asset.v1p2beta1.Feed feeds = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1p2beta1.FeedOrBuilder getFeedsOrBuilder(int index) {
     return feeds_.get(index);
   }

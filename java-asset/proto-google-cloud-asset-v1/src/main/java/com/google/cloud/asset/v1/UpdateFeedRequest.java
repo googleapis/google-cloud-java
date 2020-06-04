@@ -148,6 +148,7 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the feed field is set.
    */
+  @java.lang.Override
   public boolean hasFeed() {
     return feed_ != null;
   }
@@ -166,6 +167,7 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The feed.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.Feed getFeed() {
     return feed_ == null ? com.google.cloud.asset.v1.Feed.getDefaultInstance() : feed_;
   }
@@ -182,6 +184,7 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.asset.v1.Feed feed = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.FeedOrBuilder getFeedOrBuilder() {
     return getFeed();
   }
@@ -202,6 +205,7 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -219,6 +223,7 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -234,6 +239,7 @@ public final class UpdateFeedRequest extends com.google.protobuf.GeneratedMessag
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

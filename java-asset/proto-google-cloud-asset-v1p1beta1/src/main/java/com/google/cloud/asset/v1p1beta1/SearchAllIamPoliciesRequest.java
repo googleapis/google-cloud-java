@@ -150,6 +150,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * @return The scope.
    */
+  @java.lang.Override
   public java.lang.String getScope() {
     java.lang.Object ref = scope_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for scope.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getScopeBytes() {
     java.lang.Object ref = scope_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +207,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * @return The query.
    */
+  @java.lang.Override
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +233,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for query.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -258,6 +262,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -278,6 +283,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +309,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -950,6 +957,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

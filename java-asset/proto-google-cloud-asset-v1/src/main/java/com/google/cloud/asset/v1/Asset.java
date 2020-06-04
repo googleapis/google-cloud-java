@@ -313,6 +313,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -339,6 +340,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -367,6 +369,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The assetType.
    */
+  @java.lang.Override
   public java.lang.String getAssetType() {
     java.lang.Object ref = assetType_;
     if (ref instanceof java.lang.String) {
@@ -392,6 +395,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for assetType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAssetTypeBytes() {
     java.lang.Object ref = assetType_;
     if (ref instanceof java.lang.String) {
@@ -417,6 +421,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the resource field is set.
    */
+  @java.lang.Override
   public boolean hasResource() {
     return resource_ != null;
   }
@@ -431,6 +436,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resource.
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.Resource getResource() {
     return resource_ == null ? com.google.cloud.asset.v1.Resource.getDefaultInstance() : resource_;
   }
@@ -443,6 +449,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.asset.v1.ResourceOrBuilder getResourceOrBuilder() {
     return getResource();
   }
@@ -468,6 +475,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the iamPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasIamPolicy() {
     return iamPolicy_ != null;
   }
@@ -490,6 +498,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The iamPolicy.
    */
+  @java.lang.Override
   public com.google.iam.v1.Policy getIamPolicy() {
     return iamPolicy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : iamPolicy_;
   }
@@ -510,6 +519,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
    */
+  @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getIamPolicyOrBuilder() {
     return getIamPolicy();
   }
@@ -528,6 +538,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.orgpolicy.v1.Policy> getOrgPolicyList() {
     return orgPolicy_;
   }
@@ -543,6 +554,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.orgpolicy.v1.PolicyOrBuilder>
       getOrgPolicyOrBuilderList() {
     return orgPolicy_;
@@ -559,6 +571,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
    */
+  @java.lang.Override
   public int getOrgPolicyCount() {
     return orgPolicy_.size();
   }
@@ -574,6 +587,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.orgpolicy.v1.Policy getOrgPolicy(int index) {
     return orgPolicy_.get(index);
   }
@@ -589,6 +603,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.orgpolicy.v1.Policy org_policy = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.orgpolicy.v1.PolicyOrBuilder getOrgPolicyOrBuilder(int index) {
     return orgPolicy_.get(index);
   }
@@ -599,6 +614,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the accessPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasAccessPolicy() {
     return accessContextPolicyCase_ == 7;
   }
@@ -607,6 +623,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The accessPolicy.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy() {
     if (accessContextPolicyCase_ == 7) {
       return (com.google.identity.accesscontextmanager.v1.AccessPolicy) accessContextPolicy_;
@@ -614,6 +631,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
   }
   /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder
       getAccessPolicyOrBuilder() {
     if (accessContextPolicyCase_ == 7) {
@@ -628,6 +646,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the accessLevel field is set.
    */
+  @java.lang.Override
   public boolean hasAccessLevel() {
     return accessContextPolicyCase_ == 8;
   }
@@ -636,6 +655,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The accessLevel.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel() {
     if (accessContextPolicyCase_ == 8) {
       return (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_;
@@ -643,6 +663,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
   }
   /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder
       getAccessLevelOrBuilder() {
     if (accessContextPolicyCase_ == 8) {
@@ -657,6 +678,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the servicePerimeter field is set.
    */
+  @java.lang.Override
   public boolean hasServicePerimeter() {
     return accessContextPolicyCase_ == 9;
   }
@@ -665,6 +687,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The servicePerimeter.
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter() {
     if (accessContextPolicyCase_ == 9) {
       return (com.google.identity.accesscontextmanager.v1.ServicePerimeter) accessContextPolicy_;
@@ -674,6 +697,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   /**
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
    */
+  @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
       getServicePerimeterOrBuilder() {
     if (accessContextPolicyCase_ == 9) {
@@ -2458,6 +2482,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the accessPolicy field is set.
      */
+    @java.lang.Override
     public boolean hasAccessPolicy() {
       return accessContextPolicyCase_ == 7;
     }
@@ -2466,6 +2491,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The accessPolicy.
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy() {
       if (accessPolicyBuilder_ == null) {
         if (accessContextPolicyCase_ == 7) {
@@ -2554,6 +2580,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return getAccessPolicyFieldBuilder().getBuilder();
     }
     /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder
         getAccessPolicyOrBuilder() {
       if ((accessContextPolicyCase_ == 7) && (accessPolicyBuilder_ != null)) {
@@ -2602,6 +2629,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the accessLevel field is set.
      */
+    @java.lang.Override
     public boolean hasAccessLevel() {
       return accessContextPolicyCase_ == 8;
     }
@@ -2610,6 +2638,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The accessLevel.
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel() {
       if (accessLevelBuilder_ == null) {
         if (accessContextPolicyCase_ == 8) {
@@ -2696,6 +2725,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return getAccessLevelFieldBuilder().getBuilder();
     }
     /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder
         getAccessLevelOrBuilder() {
       if ((accessContextPolicyCase_ == 8) && (accessLevelBuilder_ != null)) {
@@ -2744,6 +2774,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the servicePerimeter field is set.
      */
+    @java.lang.Override
     public boolean hasServicePerimeter() {
       return accessContextPolicyCase_ == 9;
     }
@@ -2752,6 +2783,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The servicePerimeter.
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter() {
       if (servicePerimeterBuilder_ == null) {
         if (accessContextPolicyCase_ == 9) {
@@ -2855,6 +2887,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     /**
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      */
+    @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
         getServicePerimeterOrBuilder() {
       if ((accessContextPolicyCase_ == 9) && (servicePerimeterBuilder_ != null)) {
