@@ -138,6 +138,7 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serviceAccountEmail.
    */
+  @java.lang.Override
   public java.lang.String getServiceAccountEmail() {
     java.lang.Object ref = serviceAccountEmail_;
     if (ref instanceof java.lang.String) {
@@ -163,6 +164,7 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for serviceAccountEmail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
     java.lang.Object ref = serviceAccountEmail_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +192,7 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The scope.
    */
+  @java.lang.Override
   public java.lang.String getScope() {
     java.lang.Object ref = scope_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +217,7 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for scope.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getScopeBytes() {
     java.lang.Object ref = scope_;
     if (ref instanceof java.lang.String) {

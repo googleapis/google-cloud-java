@@ -257,6 +257,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -284,6 +285,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -309,6 +311,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for httpMethod.
    */
+  @java.lang.Override
   public int getHttpMethodValue() {
     return httpMethod_;
   }
@@ -323,6 +326,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpMethod.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.HttpMethod getHttpMethod() {
     @SuppressWarnings("deprecation")
     com.google.cloud.scheduler.v1.HttpMethod result =
@@ -377,6 +381,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
+  @java.lang.Override
   public boolean containsHeaders(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -384,6 +389,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
     return internalGetHeaders().getMap().containsKey(key);
   }
   /** Use {@link #getHeadersMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
     return getHeadersMap();
@@ -410,6 +416,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
     return internalGetHeaders().getMap();
   }
@@ -435,6 +442,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -464,6 +472,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getHeadersOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -490,6 +499,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The body.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBody() {
     return body_;
   }
@@ -511,6 +521,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the oauthToken field is set.
    */
+  @java.lang.Override
   public boolean hasOauthToken() {
     return authorizationHeaderCase_ == 5;
   }
@@ -530,6 +541,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The oauthToken.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.OAuthToken getOauthToken() {
     if (authorizationHeaderCase_ == 5) {
       return (com.google.cloud.scheduler.v1.OAuthToken) authorizationHeader_;
@@ -550,6 +562,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.scheduler.v1.OAuthToken oauth_token = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.OAuthTokenOrBuilder getOauthTokenOrBuilder() {
     if (authorizationHeaderCase_ == 5) {
       return (com.google.cloud.scheduler.v1.OAuthToken) authorizationHeader_;
@@ -575,6 +588,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the oidcToken field is set.
    */
+  @java.lang.Override
   public boolean hasOidcToken() {
     return authorizationHeaderCase_ == 6;
   }
@@ -595,6 +609,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The oidcToken.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.OidcToken getOidcToken() {
     if (authorizationHeaderCase_ == 6) {
       return (com.google.cloud.scheduler.v1.OidcToken) authorizationHeader_;
@@ -616,6 +631,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.scheduler.v1.OidcToken oidc_token = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.OidcTokenOrBuilder getOidcTokenOrBuilder() {
     if (authorizationHeaderCase_ == 6) {
       return (com.google.cloud.scheduler.v1.OidcToken) authorizationHeader_;
@@ -1248,6 +1264,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for httpMethod.
      */
+    @java.lang.Override
     public int getHttpMethodValue() {
       return httpMethod_;
     }
@@ -1264,6 +1281,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setHttpMethodValue(int value) {
+
       httpMethod_ = value;
       onChanged();
       return this;
@@ -1279,6 +1297,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The httpMethod.
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.HttpMethod getHttpMethod() {
       @SuppressWarnings("deprecation")
       com.google.cloud.scheduler.v1.HttpMethod result =
@@ -1371,6 +1390,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; headers = 3;</code>
      */
+    @java.lang.Override
     public boolean containsHeaders(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1378,6 +1398,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
       return internalGetHeaders().getMap().containsKey(key);
     }
     /** Use {@link #getHeadersMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
@@ -1404,6 +1425,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; headers = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
@@ -1429,6 +1451,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; headers = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getHeadersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1459,6 +1482,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; headers = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getHeadersOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1581,6 +1605,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The body.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBody() {
       return body_;
     }
@@ -1648,6 +1673,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the oauthToken field is set.
      */
+    @java.lang.Override
     public boolean hasOauthToken() {
       return authorizationHeaderCase_ == 5;
     }
@@ -1667,6 +1693,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The oauthToken.
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.OAuthToken getOauthToken() {
       if (oauthTokenBuilder_ == null) {
         if (authorizationHeaderCase_ == 5) {
@@ -1829,6 +1856,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.scheduler.v1.OAuthToken oauth_token = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.OAuthTokenOrBuilder getOauthTokenOrBuilder() {
       if ((authorizationHeaderCase_ == 5) && (oauthTokenBuilder_ != null)) {
         return oauthTokenBuilder_.getMessageOrBuilder();
@@ -1900,6 +1928,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the oidcToken field is set.
      */
+    @java.lang.Override
     public boolean hasOidcToken() {
       return authorizationHeaderCase_ == 6;
     }
@@ -1920,6 +1949,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The oidcToken.
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.OidcToken getOidcToken() {
       if (oidcTokenBuilder_ == null) {
         if (authorizationHeaderCase_ == 6) {
@@ -2088,6 +2118,7 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.scheduler.v1.OidcToken oidc_token = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.OidcTokenOrBuilder getOidcTokenOrBuilder() {
       if ((authorizationHeaderCase_ == 6) && (oidcTokenBuilder_ != null)) {
         return oidcTokenBuilder_.getMessageOrBuilder();

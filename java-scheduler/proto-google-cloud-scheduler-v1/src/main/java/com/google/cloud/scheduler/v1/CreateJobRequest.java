@@ -142,6 +142,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the job field is set.
    */
+  @java.lang.Override
   public boolean hasJob() {
     return job_ != null;
   }
@@ -214,6 +217,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The job.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.Job getJob() {
     return job_ == null ? com.google.cloud.scheduler.v1.Job.getDefaultInstance() : job_;
   }
@@ -230,6 +234,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.scheduler.v1.Job job = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.JobOrBuilder getJobOrBuilder() {
     return getJob();
   }

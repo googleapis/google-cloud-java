@@ -147,6 +147,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the job field is set.
    */
+  @java.lang.Override
   public boolean hasJob() {
     return job_ != null;
   }
@@ -163,6 +164,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The job.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.Job getJob() {
     return job_ == null ? com.google.cloud.scheduler.v1.Job.getDefaultInstance() : job_;
   }
@@ -177,6 +179,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.scheduler.v1.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.JobOrBuilder getJobOrBuilder() {
     return getJob();
   }
@@ -195,6 +198,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -210,6 +214,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -223,6 +228,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

@@ -163,6 +163,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The topicName.
    */
+  @java.lang.Override
   public java.lang.String getTopicName() {
     java.lang.Object ref = topicName_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +191,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for topicName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTopicNameBytes() {
     java.lang.Object ref = topicName_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +219,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The data.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getData() {
     return data_;
   }
@@ -257,6 +260,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
+  @java.lang.Override
   public boolean containsAttributes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -264,6 +268,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
     return internalGetAttributes().getMap().containsKey(key);
   }
   /** Use {@link #getAttributesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
     return getAttributesMap();
@@ -279,6 +284,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
     return internalGetAttributes().getMap();
   }
@@ -293,6 +299,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getAttributesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -312,6 +319,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getAttributesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -845,6 +853,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
@@ -930,6 +939,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 4;</code>
      */
+    @java.lang.Override
     public boolean containsAttributes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -937,6 +947,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
       return internalGetAttributes().getMap().containsKey(key);
     }
     /** Use {@link #getAttributesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
       return getAttributesMap();
@@ -952,6 +963,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 4;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
@@ -966,6 +978,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getAttributesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -985,6 +998,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getAttributesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

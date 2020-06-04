@@ -159,6 +159,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * @return The service.
    */
+  @java.lang.Override
   public java.lang.String getService() {
     java.lang.Object ref = service_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +184,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for service.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceBytes() {
     java.lang.Object ref = service_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * @return The version.
    */
+  @java.lang.Override
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +237,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for version.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -269,6 +273,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * @return The instance.
    */
+  @java.lang.Override
   public java.lang.String getInstance() {
     java.lang.Object ref = instance_;
     if (ref instanceof java.lang.String) {
@@ -301,6 +306,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for instance.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstanceBytes() {
     java.lang.Object ref = instance_;
     if (ref instanceof java.lang.String) {
@@ -366,6 +372,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * @return The host.
    */
+  @java.lang.Override
   public java.lang.String getHost() {
     java.lang.Object ref = host_;
     if (ref instanceof java.lang.String) {
@@ -428,6 +435,7 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for host.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHostBytes() {
     java.lang.Object ref = host_;
     if (ref instanceof java.lang.String) {

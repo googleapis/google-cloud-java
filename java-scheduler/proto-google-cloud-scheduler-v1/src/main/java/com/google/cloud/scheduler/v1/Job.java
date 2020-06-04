@@ -459,6 +459,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -568,6 +572,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -604,6 +609,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -632,6 +638,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -657,6 +664,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -681,6 +689,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pubsubTarget field is set.
    */
+  @java.lang.Override
   public boolean hasPubsubTarget() {
     return targetCase_ == 4;
   }
@@ -695,6 +704,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pubsubTarget.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.PubsubTarget getPubsubTarget() {
     if (targetCase_ == 4) {
       return (com.google.cloud.scheduler.v1.PubsubTarget) target_;
@@ -710,6 +720,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.scheduler.v1.PubsubTarget pubsub_target = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.PubsubTargetOrBuilder getPubsubTargetOrBuilder() {
     if (targetCase_ == 4) {
       return (com.google.cloud.scheduler.v1.PubsubTarget) target_;
@@ -729,6 +740,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the appEngineHttpTarget field is set.
    */
+  @java.lang.Override
   public boolean hasAppEngineHttpTarget() {
     return targetCase_ == 5;
   }
@@ -743,6 +755,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The appEngineHttpTarget.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.AppEngineHttpTarget getAppEngineHttpTarget() {
     if (targetCase_ == 5) {
       return (com.google.cloud.scheduler.v1.AppEngineHttpTarget) target_;
@@ -758,6 +771,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.scheduler.v1.AppEngineHttpTarget app_engine_http_target = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.AppEngineHttpTargetOrBuilder
       getAppEngineHttpTargetOrBuilder() {
     if (targetCase_ == 5) {
@@ -778,6 +792,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the httpTarget field is set.
    */
+  @java.lang.Override
   public boolean hasHttpTarget() {
     return targetCase_ == 6;
   }
@@ -792,6 +807,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpTarget.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.HttpTarget getHttpTarget() {
     if (targetCase_ == 6) {
       return (com.google.cloud.scheduler.v1.HttpTarget) target_;
@@ -807,6 +823,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.scheduler.v1.HttpTarget http_target = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.HttpTargetOrBuilder getHttpTargetOrBuilder() {
     if (targetCase_ == 6) {
       return (com.google.cloud.scheduler.v1.HttpTarget) target_;
@@ -844,6 +861,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The schedule.
    */
+  @java.lang.Override
   public java.lang.String getSchedule() {
     java.lang.Object ref = schedule_;
     if (ref instanceof java.lang.String) {
@@ -883,6 +901,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for schedule.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getScheduleBytes() {
     java.lang.Object ref = schedule_;
     if (ref instanceof java.lang.String) {
@@ -915,6 +934,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeZone.
    */
+  @java.lang.Override
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
     if (ref instanceof java.lang.String) {
@@ -944,6 +964,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for timeZone.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
     if (ref instanceof java.lang.String) {
@@ -969,6 +990,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the userUpdateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUserUpdateTime() {
     return userUpdateTime_ != null;
   }
@@ -983,6 +1005,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userUpdateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUserUpdateTime() {
     return userUpdateTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -997,6 +1020,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUserUpdateTimeOrBuilder() {
     return getUserUpdateTime();
   }
@@ -1014,6 +1038,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -1028,6 +1053,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.Job.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.scheduler.v1.Job.State result =
@@ -1048,6 +1074,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -1062,6 +1089,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
@@ -1074,6 +1102,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.rpc.Status status = 11;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -1093,6 +1122,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the scheduleTime field is set.
    */
+  @java.lang.Override
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
   }
@@ -1109,6 +1139,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The scheduleTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1125,6 +1156,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
     return getScheduleTime();
   }
@@ -1142,6 +1174,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastAttemptTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastAttemptTime() {
     return lastAttemptTime_ != null;
   }
@@ -1156,6 +1189,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastAttemptTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastAttemptTime() {
     return lastAttemptTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1170,6 +1204,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastAttemptTimeOrBuilder() {
     return getLastAttemptTime();
   }
@@ -1187,6 +1222,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the retryConfig field is set.
    */
+  @java.lang.Override
   public boolean hasRetryConfig() {
     return retryConfig_ != null;
   }
@@ -1201,6 +1237,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The retryConfig.
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.RetryConfig getRetryConfig() {
     return retryConfig_ == null
         ? com.google.cloud.scheduler.v1.RetryConfig.getDefaultInstance()
@@ -1215,6 +1252,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.scheduler.v1.RetryConfig retry_config = 19;</code>
    */
+  @java.lang.Override
   public com.google.cloud.scheduler.v1.RetryConfigOrBuilder getRetryConfigOrBuilder() {
     return getRetryConfig();
   }
@@ -1240,6 +1278,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the attemptDeadline field is set.
    */
+  @java.lang.Override
   public boolean hasAttemptDeadline() {
     return attemptDeadline_ != null;
   }
@@ -1262,6 +1301,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The attemptDeadline.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getAttemptDeadline() {
     return attemptDeadline_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -1284,6 +1324,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration attempt_deadline = 22;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getAttemptDeadlineOrBuilder() {
     return getAttemptDeadline();
   }
@@ -2259,6 +2300,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the pubsubTarget field is set.
      */
+    @java.lang.Override
     public boolean hasPubsubTarget() {
       return targetCase_ == 4;
     }
@@ -2273,6 +2315,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pubsubTarget.
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.PubsubTarget getPubsubTarget() {
       if (pubsubTargetBuilder_ == null) {
         if (targetCase_ == 4) {
@@ -2405,6 +2448,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.scheduler.v1.PubsubTarget pubsub_target = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.PubsubTargetOrBuilder getPubsubTargetOrBuilder() {
       if ((targetCase_ == 4) && (pubsubTargetBuilder_ != null)) {
         return pubsubTargetBuilder_.getMessageOrBuilder();
@@ -2465,6 +2509,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the appEngineHttpTarget field is set.
      */
+    @java.lang.Override
     public boolean hasAppEngineHttpTarget() {
       return targetCase_ == 5;
     }
@@ -2479,6 +2524,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The appEngineHttpTarget.
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.AppEngineHttpTarget getAppEngineHttpTarget() {
       if (appEngineHttpTargetBuilder_ == null) {
         if (targetCase_ == 5) {
@@ -2613,6 +2659,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.scheduler.v1.AppEngineHttpTarget app_engine_http_target = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.AppEngineHttpTargetOrBuilder
         getAppEngineHttpTargetOrBuilder() {
       if ((targetCase_ == 5) && (appEngineHttpTargetBuilder_ != null)) {
@@ -2674,6 +2721,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the httpTarget field is set.
      */
+    @java.lang.Override
     public boolean hasHttpTarget() {
       return targetCase_ == 6;
     }
@@ -2688,6 +2736,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The httpTarget.
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.HttpTarget getHttpTarget() {
       if (httpTargetBuilder_ == null) {
         if (targetCase_ == 6) {
@@ -2819,6 +2868,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.scheduler.v1.HttpTarget http_target = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.HttpTargetOrBuilder getHttpTargetOrBuilder() {
       if ((targetCase_ == 6) && (httpTargetBuilder_ != null)) {
         return httpTargetBuilder_.getMessageOrBuilder();
@@ -3392,6 +3442,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -3408,6 +3459,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -3423,6 +3475,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.scheduler.v1.Job.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.scheduler.v1.Job.State result =
