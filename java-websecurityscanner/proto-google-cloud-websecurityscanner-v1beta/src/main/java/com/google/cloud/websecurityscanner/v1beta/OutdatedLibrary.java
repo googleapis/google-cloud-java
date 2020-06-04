@@ -147,6 +147,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    *
    * @return The libraryName.
    */
+  @java.lang.Override
   public java.lang.String getLibraryName() {
     java.lang.Object ref = libraryName_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for libraryName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLibraryNameBytes() {
     java.lang.Object ref = libraryName_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    *
    * @return The version.
    */
+  @java.lang.Override
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -216,6 +219,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for version.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {

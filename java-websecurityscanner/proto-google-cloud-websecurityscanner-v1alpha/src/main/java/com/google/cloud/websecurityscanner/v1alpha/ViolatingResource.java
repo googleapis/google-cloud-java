@@ -133,6 +133,7 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
    *
    * @return The contentType.
    */
+  @java.lang.Override
   public java.lang.String getContentType() {
     java.lang.Object ref = contentType_;
     if (ref instanceof java.lang.String) {
@@ -155,6 +156,7 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for contentType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContentTypeBytes() {
     java.lang.Object ref = contentType_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +182,7 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
    *
    * @return The resourceUrl.
    */
+  @java.lang.Override
   public java.lang.String getResourceUrl() {
     java.lang.Object ref = resourceUrl_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +205,7 @@ public final class ViolatingResource extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for resourceUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceUrlBytes() {
     java.lang.Object ref = resourceUrl_;
     if (ref instanceof java.lang.String) {

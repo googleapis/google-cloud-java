@@ -141,6 +141,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.websecurityscanner.v1beta.CrawledUrl crawled_urls = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.websecurityscanner.v1beta.CrawledUrl>
       getCrawledUrlsList() {
     return crawledUrls_;
@@ -154,6 +155,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.websecurityscanner.v1beta.CrawledUrl crawled_urls = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.websecurityscanner.v1beta.CrawledUrlOrBuilder>
       getCrawledUrlsOrBuilderList() {
     return crawledUrls_;
@@ -167,6 +169,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.websecurityscanner.v1beta.CrawledUrl crawled_urls = 1;</code>
    */
+  @java.lang.Override
   public int getCrawledUrlsCount() {
     return crawledUrls_.size();
   }
@@ -179,6 +182,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.websecurityscanner.v1beta.CrawledUrl crawled_urls = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.CrawledUrl getCrawledUrls(int index) {
     return crawledUrls_.get(index);
   }
@@ -191,6 +195,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.websecurityscanner.v1beta.CrawledUrl crawled_urls = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.CrawledUrlOrBuilder getCrawledUrlsOrBuilder(
       int index) {
     return crawledUrls_.get(index);
@@ -210,6 +215,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +239,7 @@ public final class ListCrawledUrlsResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -290,6 +290,10 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -337,6 +341,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for code.
    */
+  @java.lang.Override
   public int getCodeValue() {
     return code_;
   }
@@ -351,6 +356,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
    *
    * @return The code.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code getCode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code result =
@@ -699,6 +705,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for code.
      */
+    @java.lang.Override
     public int getCodeValue() {
       return code_;
     }
@@ -715,6 +722,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
+
       code_ = value;
       onChanged();
       return this;
@@ -730,6 +738,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      *
      * @return The code.
      */
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code getCode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1beta.ScanRunWarningTrace.Code result =

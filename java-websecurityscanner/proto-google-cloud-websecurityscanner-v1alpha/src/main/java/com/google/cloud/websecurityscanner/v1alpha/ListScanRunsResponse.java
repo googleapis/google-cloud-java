@@ -140,6 +140,7 @@ public final class ListScanRunsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanRun scan_runs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanRun> getScanRunsList() {
     return scanRuns_;
   }
@@ -152,6 +153,7 @@ public final class ListScanRunsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanRun scan_runs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder>
       getScanRunsOrBuilderList() {
     return scanRuns_;
@@ -165,6 +167,7 @@ public final class ListScanRunsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanRun scan_runs = 1;</code>
    */
+  @java.lang.Override
   public int getScanRunsCount() {
     return scanRuns_.size();
   }
@@ -177,6 +180,7 @@ public final class ListScanRunsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanRun scan_runs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanRun getScanRuns(int index) {
     return scanRuns_.get(index);
   }
@@ -189,6 +193,7 @@ public final class ListScanRunsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanRun scan_runs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder getScanRunsOrBuilder(
       int index) {
     return scanRuns_.get(index);
@@ -208,6 +213,7 @@ public final class ListScanRunsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class ListScanRunsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -130,6 +130,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    * @return The findingType.
    */
+  @java.lang.Override
   public java.lang.String getFindingType() {
     java.lang.Object ref = findingType_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for findingType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFindingTypeBytes() {
     java.lang.Object ref = findingType_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +179,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    * @return The findingCount.
    */
+  @java.lang.Override
   public int getFindingCount() {
     return findingCount_;
   }
@@ -634,6 +637,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      * @return The findingCount.
      */
+    @java.lang.Override
     public int getFindingCount() {
       return findingCount_;
     }

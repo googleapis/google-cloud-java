@@ -135,6 +135,7 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
    * <code>repeated .google.cloud.websecurityscanner.v1beta.FindingTypeStats finding_type_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.websecurityscanner.v1beta.FindingTypeStats>
       getFindingTypeStatsList() {
     return findingTypeStats_;
@@ -149,6 +150,7 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
    * <code>repeated .google.cloud.websecurityscanner.v1beta.FindingTypeStats finding_type_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.websecurityscanner.v1beta.FindingTypeStatsOrBuilder>
       getFindingTypeStatsOrBuilderList() {
@@ -164,6 +166,7 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
    * <code>repeated .google.cloud.websecurityscanner.v1beta.FindingTypeStats finding_type_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public int getFindingTypeStatsCount() {
     return findingTypeStats_.size();
   }
@@ -177,6 +180,7 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
    * <code>repeated .google.cloud.websecurityscanner.v1beta.FindingTypeStats finding_type_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.FindingTypeStats getFindingTypeStats(
       int index) {
     return findingTypeStats_.get(index);
@@ -191,6 +195,7 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
    * <code>repeated .google.cloud.websecurityscanner.v1beta.FindingTypeStats finding_type_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.FindingTypeStatsOrBuilder
       getFindingTypeStatsOrBuilder(int index) {
     return findingTypeStats_.get(index);

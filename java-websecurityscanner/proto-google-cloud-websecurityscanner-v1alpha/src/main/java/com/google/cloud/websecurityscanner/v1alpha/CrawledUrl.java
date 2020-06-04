@@ -143,6 +143,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpMethod.
    */
+  @java.lang.Override
   public java.lang.String getHttpMethod() {
     java.lang.Object ref = httpMethod_;
     if (ref instanceof java.lang.String) {
@@ -166,6 +167,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for httpMethod.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHttpMethodBytes() {
     java.lang.Object ref = httpMethod_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +216,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +242,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The body.
    */
+  @java.lang.Override
   public java.lang.String getBody() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +265,7 @@ public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for body.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBodyBytes() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {

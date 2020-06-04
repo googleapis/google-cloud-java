@@ -1133,6 +1133,10 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (index == -1) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(index);
     }
 
@@ -1146,50 +1150,54 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
           .get(0);
     }
 
-    private static final Code[] VALUES = {
-      CODE_UNSPECIFIED,
-      OK,
-      INTERNAL_ERROR,
-      APPENGINE_API_BACKEND_ERROR,
-      APPENGINE_API_NOT_ACCESSIBLE,
-      APPENGINE_DEFAULT_HOST_MISSING,
-      CANNOT_USE_GOOGLE_COM_ACCOUNT,
-      CANNOT_USE_OWNER_ACCOUNT,
-      COMPUTE_API_BACKEND_ERROR,
-      COMPUTE_API_NOT_ACCESSIBLE,
-      CUSTOM_LOGIN_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT,
-      CUSTOM_LOGIN_URL_MALFORMED,
-      CUSTOM_LOGIN_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS,
-      CUSTOM_LOGIN_URL_MAPPED_TO_UNRESERVED_ADDRESS,
-      CUSTOM_LOGIN_URL_HAS_NON_ROUTABLE_IP_ADDRESS,
-      CUSTOM_LOGIN_URL_HAS_UNRESERVED_IP_ADDRESS,
-      DUPLICATE_SCAN_NAME,
-      INVALID_FIELD_VALUE,
-      FAILED_TO_AUTHENTICATE_TO_TARGET,
-      FINDING_TYPE_UNSPECIFIED,
-      FORBIDDEN_TO_SCAN_COMPUTE,
-      FORBIDDEN_UPDATE_TO_MANAGED_SCAN,
-      MALFORMED_FILTER,
-      MALFORMED_RESOURCE_NAME,
-      PROJECT_INACTIVE,
-      REQUIRED_FIELD,
-      RESOURCE_NAME_INCONSISTENT,
-      SCAN_ALREADY_RUNNING,
-      SCAN_NOT_RUNNING,
-      SEED_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT,
-      SEED_URL_MALFORMED,
-      SEED_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS,
-      SEED_URL_MAPPED_TO_UNRESERVED_ADDRESS,
-      SEED_URL_HAS_NON_ROUTABLE_IP_ADDRESS,
-      SEED_URL_HAS_UNRESERVED_IP_ADDRESS,
-      SERVICE_ACCOUNT_NOT_CONFIGURED,
-      TOO_MANY_SCANS,
-      UNABLE_TO_RESOLVE_PROJECT_INFO,
-      UNSUPPORTED_BLACKLIST_PATTERN_FORMAT,
-      UNSUPPORTED_FILTER,
-      UNSUPPORTED_FINDING_TYPE,
-      UNSUPPORTED_URL_SCHEME,
-    };
+    private static final Code[] VALUES = getStaticValuesArray();
+
+    private static Code[] getStaticValuesArray() {
+      return new Code[] {
+        CODE_UNSPECIFIED,
+        OK,
+        INTERNAL_ERROR,
+        APPENGINE_API_BACKEND_ERROR,
+        APPENGINE_API_NOT_ACCESSIBLE,
+        APPENGINE_DEFAULT_HOST_MISSING,
+        CANNOT_USE_GOOGLE_COM_ACCOUNT,
+        CANNOT_USE_OWNER_ACCOUNT,
+        COMPUTE_API_BACKEND_ERROR,
+        COMPUTE_API_NOT_ACCESSIBLE,
+        CUSTOM_LOGIN_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT,
+        CUSTOM_LOGIN_URL_MALFORMED,
+        CUSTOM_LOGIN_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS,
+        CUSTOM_LOGIN_URL_MAPPED_TO_UNRESERVED_ADDRESS,
+        CUSTOM_LOGIN_URL_HAS_NON_ROUTABLE_IP_ADDRESS,
+        CUSTOM_LOGIN_URL_HAS_UNRESERVED_IP_ADDRESS,
+        DUPLICATE_SCAN_NAME,
+        INVALID_FIELD_VALUE,
+        FAILED_TO_AUTHENTICATE_TO_TARGET,
+        FINDING_TYPE_UNSPECIFIED,
+        FORBIDDEN_TO_SCAN_COMPUTE,
+        FORBIDDEN_UPDATE_TO_MANAGED_SCAN,
+        MALFORMED_FILTER,
+        MALFORMED_RESOURCE_NAME,
+        PROJECT_INACTIVE,
+        REQUIRED_FIELD,
+        RESOURCE_NAME_INCONSISTENT,
+        SCAN_ALREADY_RUNNING,
+        SCAN_NOT_RUNNING,
+        SEED_URL_DOES_NOT_BELONG_TO_CURRENT_PROJECT,
+        SEED_URL_MALFORMED,
+        SEED_URL_MAPPED_TO_NON_ROUTABLE_ADDRESS,
+        SEED_URL_MAPPED_TO_UNRESERVED_ADDRESS,
+        SEED_URL_HAS_NON_ROUTABLE_IP_ADDRESS,
+        SEED_URL_HAS_UNRESERVED_IP_ADDRESS,
+        SERVICE_ACCOUNT_NOT_CONFIGURED,
+        TOO_MANY_SCANS,
+        UNABLE_TO_RESOLVE_PROJECT_INFO,
+        UNSUPPORTED_BLACKLIST_PATTERN_FORMAT,
+        UNSUPPORTED_FILTER,
+        UNSUPPORTED_FINDING_TYPE,
+        UNSUPPORTED_URL_SCHEME,
+      };
+    }
 
     public static Code valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -1225,6 +1233,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for code.
    */
+  @java.lang.Override
   public int getCodeValue() {
     return code_;
   }
@@ -1239,6 +1248,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    *
    * @return The code.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code getCode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code result =
@@ -1264,6 +1274,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    *
    * @return The fieldName.
    */
+  @java.lang.Override
   public java.lang.String getFieldName() {
     java.lang.Object ref = fieldName_;
     if (ref instanceof java.lang.String) {
@@ -1289,6 +1300,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for fieldName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFieldNameBytes() {
     java.lang.Object ref = fieldName_;
     if (ref instanceof java.lang.String) {
@@ -1654,6 +1666,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for code.
      */
+    @java.lang.Override
     public int getCodeValue() {
       return code_;
     }
@@ -1670,6 +1683,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
+
       code_ = value;
       onChanged();
       return this;
@@ -1685,6 +1699,7 @@ public final class ScanConfigError extends com.google.protobuf.GeneratedMessageV
      *
      * @return The code.
      */
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code getCode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1beta.ScanConfigError.Code result =

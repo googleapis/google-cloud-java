@@ -144,6 +144,7 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    * @return Whether the scanConfig field is set.
    */
+  @java.lang.Override
   public boolean hasScanConfig() {
     return scanConfig_ != null;
   }
@@ -212,6 +215,7 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    *
    * @return The scanConfig.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig() {
     return scanConfig_ == null
         ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance()
@@ -228,6 +232,7 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
    * .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder getScanConfigOrBuilder() {
     return getScanConfig();
   }

@@ -130,6 +130,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for findingType.
    */
+  @java.lang.Override
   public int getFindingTypeValue() {
     return findingType_;
   }
@@ -144,6 +145,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    * @return The findingType.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType result =
@@ -166,6 +168,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
    *
    * @return The findingCount.
    */
+  @java.lang.Override
   public int getFindingCount() {
     return findingCount_;
   }
@@ -522,6 +525,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for findingType.
      */
+    @java.lang.Override
     public int getFindingTypeValue() {
       return findingType_;
     }
@@ -538,6 +542,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setFindingTypeValue(int value) {
+
       findingType_ = value;
       onChanged();
       return this;
@@ -553,6 +558,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      * @return The findingType.
      */
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType result =
@@ -613,6 +619,7 @@ public final class FindingTypeStats extends com.google.protobuf.GeneratedMessage
      *
      * @return The findingCount.
      */
+    @java.lang.Override
     public int getFindingCount() {
       return findingCount_;
     }

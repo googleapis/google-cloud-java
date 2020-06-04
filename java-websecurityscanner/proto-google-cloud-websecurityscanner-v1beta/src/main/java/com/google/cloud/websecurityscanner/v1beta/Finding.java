@@ -302,6 +302,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -326,6 +327,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -353,6 +355,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The findingType.
    */
+  @java.lang.Override
   public java.lang.String getFindingType() {
     java.lang.Object ref = findingType_;
     if (ref instanceof java.lang.String) {
@@ -377,6 +380,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for findingType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFindingTypeBytes() {
     java.lang.Object ref = findingType_;
     if (ref instanceof java.lang.String) {
@@ -403,6 +407,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpMethod.
    */
+  @java.lang.Override
   public java.lang.String getHttpMethod() {
     java.lang.Object ref = httpMethod_;
     if (ref instanceof java.lang.String) {
@@ -426,6 +431,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for httpMethod.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getHttpMethodBytes() {
     java.lang.Object ref = httpMethod_;
     if (ref instanceof java.lang.String) {
@@ -452,6 +458,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The fuzzedUrl.
    */
+  @java.lang.Override
   public java.lang.String getFuzzedUrl() {
     java.lang.Object ref = fuzzedUrl_;
     if (ref instanceof java.lang.String) {
@@ -475,6 +482,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for fuzzedUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFuzzedUrlBytes() {
     java.lang.Object ref = fuzzedUrl_;
     if (ref instanceof java.lang.String) {
@@ -500,6 +508,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The body.
    */
+  @java.lang.Override
   public java.lang.String getBody() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {
@@ -522,6 +531,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for body.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBodyBytes() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {
@@ -547,6 +557,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -569,6 +580,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -595,6 +607,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The reproductionUrl.
    */
+  @java.lang.Override
   public java.lang.String getReproductionUrl() {
     java.lang.Object ref = reproductionUrl_;
     if (ref instanceof java.lang.String) {
@@ -618,6 +631,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for reproductionUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getReproductionUrlBytes() {
     java.lang.Object ref = reproductionUrl_;
     if (ref instanceof java.lang.String) {
@@ -644,6 +658,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The frameUrl.
    */
+  @java.lang.Override
   public java.lang.String getFrameUrl() {
     java.lang.Object ref = frameUrl_;
     if (ref instanceof java.lang.String) {
@@ -667,6 +682,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for frameUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFrameUrlBytes() {
     java.lang.Object ref = frameUrl_;
     if (ref instanceof java.lang.String) {
@@ -692,6 +708,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The finalUrl.
    */
+  @java.lang.Override
   public java.lang.String getFinalUrl() {
     java.lang.Object ref = finalUrl_;
     if (ref instanceof java.lang.String) {
@@ -714,6 +731,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for finalUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFinalUrlBytes() {
     java.lang.Object ref = finalUrl_;
     if (ref instanceof java.lang.String) {
@@ -740,6 +758,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The trackingId.
    */
+  @java.lang.Override
   public java.lang.String getTrackingId() {
     java.lang.Object ref = trackingId_;
     if (ref instanceof java.lang.String) {
@@ -763,6 +782,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for trackingId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTrackingIdBytes() {
     java.lang.Object ref = trackingId_;
     if (ref instanceof java.lang.String) {
@@ -789,6 +809,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the form field is set.
    */
+  @java.lang.Override
   public boolean hasForm() {
     return form_ != null;
   }
@@ -804,6 +825,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The form.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.Form getForm() {
     return form_ == null
         ? com.google.cloud.websecurityscanner.v1beta.Form.getDefaultInstance()
@@ -819,6 +841,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1beta.Form form = 16;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.FormOrBuilder getFormOrBuilder() {
     return getForm();
   }
@@ -836,6 +859,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the outdatedLibrary field is set.
    */
+  @java.lang.Override
   public boolean hasOutdatedLibrary() {
     return outdatedLibrary_ != null;
   }
@@ -850,6 +874,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The outdatedLibrary.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary getOutdatedLibrary() {
     return outdatedLibrary_ == null
         ? com.google.cloud.websecurityscanner.v1beta.OutdatedLibrary.getDefaultInstance()
@@ -864,6 +889,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1beta.OutdatedLibrary outdated_library = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.OutdatedLibraryOrBuilder
       getOutdatedLibraryOrBuilder() {
     return getOutdatedLibrary();
@@ -883,6 +909,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the violatingResource field is set.
    */
+  @java.lang.Override
   public boolean hasViolatingResource() {
     return violatingResource_ != null;
   }
@@ -898,6 +925,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The violatingResource.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ViolatingResource getViolatingResource() {
     return violatingResource_ == null
         ? com.google.cloud.websecurityscanner.v1beta.ViolatingResource.getDefaultInstance()
@@ -913,6 +941,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ViolatingResource violating_resource = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ViolatingResourceOrBuilder
       getViolatingResourceOrBuilder() {
     return getViolatingResource();
@@ -931,6 +960,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the vulnerableHeaders field is set.
    */
+  @java.lang.Override
   public boolean hasVulnerableHeaders() {
     return vulnerableHeaders_ != null;
   }
@@ -945,6 +975,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The vulnerableHeaders.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders getVulnerableHeaders() {
     return vulnerableHeaders_ == null
         ? com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.getDefaultInstance()
@@ -959,6 +990,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1beta.VulnerableHeaders vulnerable_headers = 15;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.VulnerableHeadersOrBuilder
       getVulnerableHeadersOrBuilder() {
     return getVulnerableHeaders();
@@ -979,6 +1011,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the vulnerableParameters field is set.
    */
+  @java.lang.Override
   public boolean hasVulnerableParameters() {
     return vulnerableParameters_ != null;
   }
@@ -995,6 +1028,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The vulnerableParameters.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.VulnerableParameters getVulnerableParameters() {
     return vulnerableParameters_ == null
         ? com.google.cloud.websecurityscanner.v1beta.VulnerableParameters.getDefaultInstance()
@@ -1011,6 +1045,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.websecurityscanner.v1beta.VulnerableParameters vulnerable_parameters = 13;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.VulnerableParametersOrBuilder
       getVulnerableParametersOrBuilder() {
     return getVulnerableParameters();
@@ -1029,6 +1064,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the xss field is set.
    */
+  @java.lang.Override
   public boolean hasXss() {
     return xss_ != null;
   }
@@ -1043,6 +1079,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The xss.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.Xss getXss() {
     return xss_ == null
         ? com.google.cloud.websecurityscanner.v1beta.Xss.getDefaultInstance()
@@ -1057,6 +1094,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.websecurityscanner.v1beta.Xss xss = 14;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.XssOrBuilder getXssOrBuilder() {
     return getXss();
   }

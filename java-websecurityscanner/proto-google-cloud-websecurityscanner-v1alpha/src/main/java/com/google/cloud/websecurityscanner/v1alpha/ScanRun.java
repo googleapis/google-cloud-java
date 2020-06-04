@@ -322,6 +322,10 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -501,6 +505,10 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -550,6 +558,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -574,6 +583,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -600,6 +610,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for executionState.
    */
+  @java.lang.Override
   public int getExecutionStateValue() {
     return executionState_;
   }
@@ -615,6 +626,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The executionState.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState getExecutionState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState result =
@@ -638,6 +650,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for resultState.
    */
+  @java.lang.Override
   public int getResultStateValue() {
     return resultState_;
   }
@@ -653,6 +666,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resultState.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState getResultState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result =
@@ -675,6 +689,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -689,6 +704,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -701,6 +717,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -719,6 +736,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -734,6 +752,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -747,6 +766,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -765,6 +785,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The urlsCrawledCount.
    */
+  @java.lang.Override
   public long getUrlsCrawledCount() {
     return urlsCrawledCount_;
   }
@@ -785,6 +806,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The urlsTestedCount.
    */
+  @java.lang.Override
   public long getUrlsTestedCount() {
     return urlsTestedCount_;
   }
@@ -802,6 +824,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The hasVulnerabilities.
    */
+  @java.lang.Override
   public boolean getHasVulnerabilities() {
     return hasVulnerabilities_;
   }
@@ -822,6 +845,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The progressPercent.
    */
+  @java.lang.Override
   public int getProgressPercent() {
     return progressPercent_;
   }
@@ -1429,6 +1453,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for executionState.
      */
+    @java.lang.Override
     public int getExecutionStateValue() {
       return executionState_;
     }
@@ -1446,6 +1471,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExecutionStateValue(int value) {
+
       executionState_ = value;
       onChanged();
       return this;
@@ -1462,6 +1488,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The executionState.
      */
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState getExecutionState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState result =
@@ -1526,6 +1553,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for resultState.
      */
+    @java.lang.Override
     public int getResultStateValue() {
       return resultState_;
     }
@@ -1543,6 +1571,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setResultStateValue(int value) {
+
       resultState_ = value;
       onChanged();
       return this;
@@ -1559,6 +1588,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resultState.
      */
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState getResultState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result =
@@ -1989,6 +2019,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The urlsCrawledCount.
      */
+    @java.lang.Override
     public long getUrlsCrawledCount() {
       return urlsCrawledCount_;
     }
@@ -2045,6 +2076,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The urlsTestedCount.
      */
+    @java.lang.Override
     public long getUrlsTestedCount() {
       return urlsTestedCount_;
     }
@@ -2102,6 +2134,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The hasVulnerabilities.
      */
+    @java.lang.Override
     public boolean getHasVulnerabilities() {
       return hasVulnerabilities_;
     }
@@ -2156,6 +2189,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The progressPercent.
      */
+    @java.lang.Override
     public int getProgressPercent() {
       return progressPercent_;
     }

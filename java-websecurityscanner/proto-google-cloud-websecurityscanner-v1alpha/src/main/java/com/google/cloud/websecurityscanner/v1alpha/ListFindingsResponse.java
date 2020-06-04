@@ -140,6 +140,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.websecurityscanner.v1alpha.Finding> getFindingsList() {
     return findings_;
   }
@@ -152,6 +153,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.FindingOrBuilder>
       getFindingsOrBuilderList() {
     return findings_;
@@ -165,6 +167,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public int getFindingsCount() {
     return findings_.size();
   }
@@ -177,6 +180,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.Finding getFindings(int index) {
     return findings_.get(index);
   }
@@ -189,6 +193,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.FindingOrBuilder getFindingsOrBuilder(
       int index) {
     return findings_.get(index);
@@ -208,6 +213,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

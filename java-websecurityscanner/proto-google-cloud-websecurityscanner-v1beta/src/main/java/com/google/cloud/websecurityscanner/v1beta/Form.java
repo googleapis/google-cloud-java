@@ -139,6 +139,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The actionUri.
    */
+  @java.lang.Override
   public java.lang.String getActionUri() {
     java.lang.Object ref = actionUri_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for actionUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getActionUriBytes() {
     java.lang.Object ref = actionUri_;
     if (ref instanceof java.lang.String) {

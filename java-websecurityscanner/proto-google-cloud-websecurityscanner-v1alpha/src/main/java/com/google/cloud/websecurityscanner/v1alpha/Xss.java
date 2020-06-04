@@ -200,6 +200,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The errorMessage.
    */
+  @java.lang.Override
   public java.lang.String getErrorMessage() {
     java.lang.Object ref = errorMessage_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +223,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for errorMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getErrorMessageBytes() {
     java.lang.Object ref = errorMessage_;
     if (ref instanceof java.lang.String) {

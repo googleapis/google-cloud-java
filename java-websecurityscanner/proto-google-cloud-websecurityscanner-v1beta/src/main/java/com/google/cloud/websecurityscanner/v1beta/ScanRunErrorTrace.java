@@ -355,6 +355,10 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -402,6 +406,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for code.
    */
+  @java.lang.Override
   public int getCodeValue() {
     return code_;
   }
@@ -416,6 +421,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    * @return The code.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code getCode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code result =
@@ -440,6 +446,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the scanConfigError field is set.
    */
+  @java.lang.Override
   public boolean hasScanConfigError() {
     return scanConfigError_ != null;
   }
@@ -456,6 +463,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    * @return The scanConfigError.
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ScanConfigError getScanConfigError() {
     return scanConfigError_ == null
         ? com.google.cloud.websecurityscanner.v1beta.ScanConfigError.getDefaultInstance()
@@ -472,6 +480,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.websecurityscanner.v1beta.ScanConfigError scan_config_error = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.ScanConfigErrorOrBuilder
       getScanConfigErrorOrBuilder() {
     return getScanConfigError();
@@ -492,6 +501,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
    *
    * @return The mostCommonHttpErrorCode.
    */
+  @java.lang.Override
   public int getMostCommonHttpErrorCode() {
     return mostCommonHttpErrorCode_;
   }
@@ -876,6 +886,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for code.
      */
+    @java.lang.Override
     public int getCodeValue() {
       return code_;
     }
@@ -892,6 +903,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
+
       code_ = value;
       onChanged();
       return this;
@@ -907,6 +919,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      * @return The code.
      */
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code getCode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.websecurityscanner.v1beta.ScanRunErrorTrace.Code result =
@@ -1178,6 +1191,7 @@ public final class ScanRunErrorTrace extends com.google.protobuf.GeneratedMessag
      *
      * @return The mostCommonHttpErrorCode.
      */
+    @java.lang.Override
     public int getMostCommonHttpErrorCode() {
       return mostCommonHttpErrorCode_;
     }

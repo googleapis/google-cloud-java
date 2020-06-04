@@ -309,6 +309,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -331,6 +332,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -356,6 +358,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -378,6 +381,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -1017,6 +1021,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header headers = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header>
       getHeadersList() {
     return headers_;
@@ -1031,6 +1036,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header headers = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.HeaderOrBuilder>
       getHeadersOrBuilderList() {
@@ -1046,6 +1052,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header headers = 1;
    * </code>
    */
+  @java.lang.Override
   public int getHeadersCount() {
     return headers_.size();
   }
@@ -1059,6 +1066,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header headers = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header getHeaders(int index) {
     return headers_.get(index);
   }
@@ -1072,6 +1080,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * <code>repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header headers = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.HeaderOrBuilder
       getHeadersOrBuilder(int index) {
     return headers_.get(index);
@@ -1091,6 +1100,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header missing_headers = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header>
       getMissingHeadersList() {
     return missingHeaders_;
@@ -1106,6 +1116,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header missing_headers = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.HeaderOrBuilder>
       getMissingHeadersOrBuilderList() {
@@ -1122,6 +1133,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header missing_headers = 2;
    * </code>
    */
+  @java.lang.Override
   public int getMissingHeadersCount() {
     return missingHeaders_.size();
   }
@@ -1136,6 +1148,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header missing_headers = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header getMissingHeaders(
       int index) {
     return missingHeaders_.get(index);
@@ -1151,6 +1164,7 @@ public final class VulnerableHeaders extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.websecurityscanner.v1beta.VulnerableHeaders.Header missing_headers = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1beta.VulnerableHeaders.HeaderOrBuilder
       getMissingHeadersOrBuilder(int index) {
     return missingHeaders_.get(index);
