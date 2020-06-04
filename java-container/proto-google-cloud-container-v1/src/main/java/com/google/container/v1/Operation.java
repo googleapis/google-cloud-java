@@ -390,6 +390,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -851,6 +855,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -896,6 +904,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -918,6 +927,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -946,6 +956,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -972,6 +983,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -998,6 +1010,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for operationType.
    */
+  @java.lang.Override
   public int getOperationTypeValue() {
     return operationType_;
   }
@@ -1012,6 +1025,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The operationType.
    */
+  @java.lang.Override
   public com.google.container.v1.Operation.Type getOperationType() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.Operation.Type result =
@@ -1032,6 +1046,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for status.
    */
+  @java.lang.Override
   public int getStatusValue() {
     return status_;
   }
@@ -1046,6 +1061,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.container.v1.Operation.Status getStatus() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.Operation.Status result =
@@ -1066,6 +1082,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The detail.
    */
+  @java.lang.Override
   public java.lang.String getDetail() {
     java.lang.Object ref = detail_;
     if (ref instanceof java.lang.String) {
@@ -1088,6 +1105,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for detail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDetailBytes() {
     java.lang.Object ref = detail_;
     if (ref instanceof java.lang.String) {
@@ -1113,6 +1131,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The statusMessage.
    */
+  @java.lang.Override
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -1135,6 +1154,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for statusMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -1160,6 +1180,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The selfLink.
    */
+  @java.lang.Override
   public java.lang.String getSelfLink() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
@@ -1182,6 +1203,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for selfLink.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSelfLinkBytes() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
@@ -1207,6 +1229,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The targetLink.
    */
+  @java.lang.Override
   public java.lang.String getTargetLink() {
     java.lang.Object ref = targetLink_;
     if (ref instanceof java.lang.String) {
@@ -1229,6 +1252,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for targetLink.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTargetLinkBytes() {
     java.lang.Object ref = targetLink_;
     if (ref instanceof java.lang.String) {
@@ -1257,6 +1281,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The location.
    */
+  @java.lang.Override
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -1282,6 +1307,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for location.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -1308,6 +1334,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public java.lang.String getStartTime() {
     java.lang.Object ref = startTime_;
     if (ref instanceof java.lang.String) {
@@ -1331,6 +1358,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartTimeBytes() {
     java.lang.Object ref = startTime_;
     if (ref instanceof java.lang.String) {
@@ -1357,6 +1385,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public java.lang.String getEndTime() {
     java.lang.Object ref = endTime_;
     if (ref instanceof java.lang.String) {
@@ -1380,6 +1409,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndTimeBytes() {
     java.lang.Object ref = endTime_;
     if (ref instanceof java.lang.String) {
@@ -1403,6 +1433,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.StatusCondition> getClusterConditionsList() {
     return clusterConditions_;
   }
@@ -1415,6 +1446,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getClusterConditionsOrBuilderList() {
     return clusterConditions_;
@@ -1428,6 +1460,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
    */
+  @java.lang.Override
   public int getClusterConditionsCount() {
     return clusterConditions_.size();
   }
@@ -1440,6 +1473,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.StatusCondition getClusterConditions(int index) {
     return clusterConditions_.get(index);
   }
@@ -1452,6 +1486,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition cluster_conditions = 13;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.StatusConditionOrBuilder getClusterConditionsOrBuilder(int index) {
     return clusterConditions_.get(index);
   }
@@ -1467,6 +1502,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.StatusCondition> getNodepoolConditionsList() {
     return nodepoolConditions_;
   }
@@ -1479,6 +1515,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getNodepoolConditionsOrBuilderList() {
     return nodepoolConditions_;
@@ -1492,6 +1529,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
    */
+  @java.lang.Override
   public int getNodepoolConditionsCount() {
     return nodepoolConditions_.size();
   }
@@ -1504,6 +1542,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.StatusCondition getNodepoolConditions(int index) {
     return nodepoolConditions_.get(index);
   }
@@ -1516,6 +1555,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition nodepool_conditions = 14;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.StatusConditionOrBuilder getNodepoolConditionsOrBuilder(
       int index) {
     return nodepoolConditions_.get(index);
@@ -2351,6 +2391,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for operationType.
      */
+    @java.lang.Override
     public int getOperationTypeValue() {
       return operationType_;
     }
@@ -2367,6 +2408,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOperationTypeValue(int value) {
+
       operationType_ = value;
       onChanged();
       return this;
@@ -2382,6 +2424,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The operationType.
      */
+    @java.lang.Override
     public com.google.container.v1.Operation.Type getOperationType() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.Operation.Type result =
@@ -2439,6 +2482,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for status.
      */
+    @java.lang.Override
     public int getStatusValue() {
       return status_;
     }
@@ -2455,6 +2499,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+
       status_ = value;
       onChanged();
       return this;
@@ -2470,6 +2515,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.container.v1.Operation.Status getStatus() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.Operation.Status result =

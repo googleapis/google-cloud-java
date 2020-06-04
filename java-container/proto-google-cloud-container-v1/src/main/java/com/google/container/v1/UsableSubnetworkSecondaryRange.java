@@ -301,6 +301,10 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -349,6 +353,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * @return The rangeName.
    */
+  @java.lang.Override
   public java.lang.String getRangeName() {
     java.lang.Object ref = rangeName_;
     if (ref instanceof java.lang.String) {
@@ -372,6 +377,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * @return The bytes for rangeName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRangeNameBytes() {
     java.lang.Object ref = rangeName_;
     if (ref instanceof java.lang.String) {
@@ -397,6 +403,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * @return The ipCidrRange.
    */
+  @java.lang.Override
   public java.lang.String getIpCidrRange() {
     java.lang.Object ref = ipCidrRange_;
     if (ref instanceof java.lang.String) {
@@ -419,6 +426,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * @return The bytes for ipCidrRange.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIpCidrRangeBytes() {
     java.lang.Object ref = ipCidrRange_;
     if (ref instanceof java.lang.String) {
@@ -444,6 +452,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * @return The enum numeric value on the wire for status.
    */
+  @java.lang.Override
   public int getStatusValue() {
     return status_;
   }
@@ -458,6 +467,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.container.v1.UsableSubnetworkSecondaryRange.Status getStatus() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.UsableSubnetworkSecondaryRange.Status result =
@@ -1048,6 +1058,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      * @return The enum numeric value on the wire for status.
      */
+    @java.lang.Override
     public int getStatusValue() {
       return status_;
     }
@@ -1064,6 +1075,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+
       status_ = value;
       onChanged();
       return this;
@@ -1079,6 +1091,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.container.v1.UsableSubnetworkSecondaryRange.Status getStatus() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.UsableSubnetworkSecondaryRange.Status result =

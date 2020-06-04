@@ -123,6 +123,7 @@ public final class HttpLoadBalancing extends com.google.protobuf.GeneratedMessag
    *
    * @return The disabled.
    */
+  @java.lang.Override
   public boolean getDisabled() {
     return disabled_;
   }
@@ -457,6 +458,7 @@ public final class HttpLoadBalancing extends com.google.protobuf.GeneratedMessag
      *
      * @return The disabled.
      */
+    @java.lang.Override
     public boolean getDisabled() {
       return disabled_;
     }

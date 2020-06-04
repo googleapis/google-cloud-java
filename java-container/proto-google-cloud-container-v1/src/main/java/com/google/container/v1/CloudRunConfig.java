@@ -120,6 +120,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The disabled.
    */
+  @java.lang.Override
   public boolean getDisabled() {
     return disabled_;
   }
@@ -450,6 +451,7 @@ public final class CloudRunConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The disabled.
      */
+    @java.lang.Override
     public boolean getDisabled() {
       return disabled_;
     }

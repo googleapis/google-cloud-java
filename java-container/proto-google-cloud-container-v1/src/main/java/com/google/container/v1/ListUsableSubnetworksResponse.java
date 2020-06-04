@@ -139,6 +139,7 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.container.v1.UsableSubnetwork subnetworks = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.UsableSubnetwork> getSubnetworksList() {
     return subnetworks_;
   }
@@ -151,6 +152,7 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.container.v1.UsableSubnetwork subnetworks = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.UsableSubnetworkOrBuilder>
       getSubnetworksOrBuilderList() {
     return subnetworks_;
@@ -164,6 +166,7 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.container.v1.UsableSubnetwork subnetworks = 1;</code>
    */
+  @java.lang.Override
   public int getSubnetworksCount() {
     return subnetworks_.size();
   }
@@ -176,6 +179,7 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.container.v1.UsableSubnetwork subnetworks = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.UsableSubnetwork getSubnetworks(int index) {
     return subnetworks_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.container.v1.UsableSubnetwork subnetworks = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.UsableSubnetworkOrBuilder getSubnetworksOrBuilder(int index) {
     return subnetworks_.get(index);
   }
@@ -208,6 +213,7 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +239,7 @@ public final class ListUsableSubnetworksResponse extends com.google.protobuf.Gen
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

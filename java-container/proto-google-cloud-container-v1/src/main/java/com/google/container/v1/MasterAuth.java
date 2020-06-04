@@ -176,6 +176,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The username.
    */
+  @java.lang.Override
   public java.lang.String getUsername() {
     java.lang.Object ref = username_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +201,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for username.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUsernameBytes() {
     java.lang.Object ref = username_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +230,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The password.
    */
+  @java.lang.Override
   public java.lang.String getPassword() {
     java.lang.Object ref = password_;
     if (ref instanceof java.lang.String) {
@@ -253,6 +256,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for password.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPasswordBytes() {
     java.lang.Object ref = password_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +284,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the clientCertificateConfig field is set.
    */
+  @java.lang.Override
   public boolean hasClientCertificateConfig() {
     return clientCertificateConfig_ != null;
   }
@@ -296,6 +301,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clientCertificateConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.ClientCertificateConfig getClientCertificateConfig() {
     return clientCertificateConfig_ == null
         ? com.google.container.v1.ClientCertificateConfig.getDefaultInstance()
@@ -312,6 +318,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.ClientCertificateConfigOrBuilder
       getClientCertificateConfigOrBuilder() {
     return getClientCertificateConfig();
@@ -331,6 +338,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clusterCaCertificate.
    */
+  @java.lang.Override
   public java.lang.String getClusterCaCertificate() {
     java.lang.Object ref = clusterCaCertificate_;
     if (ref instanceof java.lang.String) {
@@ -354,6 +362,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clusterCaCertificate.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterCaCertificateBytes() {
     java.lang.Object ref = clusterCaCertificate_;
     if (ref instanceof java.lang.String) {
@@ -380,6 +389,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clientCertificate.
    */
+  @java.lang.Override
   public java.lang.String getClientCertificate() {
     java.lang.Object ref = clientCertificate_;
     if (ref instanceof java.lang.String) {
@@ -403,6 +413,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clientCertificate.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClientCertificateBytes() {
     java.lang.Object ref = clientCertificate_;
     if (ref instanceof java.lang.String) {
@@ -429,6 +440,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clientKey.
    */
+  @java.lang.Override
   public java.lang.String getClientKey() {
     java.lang.Object ref = clientKey_;
     if (ref instanceof java.lang.String) {
@@ -452,6 +464,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clientKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClientKeyBytes() {
     java.lang.Object ref = clientKey_;
     if (ref instanceof java.lang.String) {

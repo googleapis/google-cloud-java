@@ -152,6 +152,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The enablePrivateNodes.
    */
+  @java.lang.Override
   public boolean getEnablePrivateNodes() {
     return enablePrivateNodes_;
   }
@@ -169,6 +170,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The enablePrivateEndpoint.
    */
+  @java.lang.Override
   public boolean getEnablePrivateEndpoint() {
     return enablePrivateEndpoint_;
   }
@@ -189,6 +191,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The masterIpv4CidrBlock.
    */
+  @java.lang.Override
   public java.lang.String getMasterIpv4CidrBlock() {
     java.lang.Object ref = masterIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +217,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for masterIpv4CidrBlock.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMasterIpv4CidrBlockBytes() {
     java.lang.Object ref = masterIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +243,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The privateEndpoint.
    */
+  @java.lang.Override
   public java.lang.String getPrivateEndpoint() {
     java.lang.Object ref = privateEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -261,6 +266,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for privateEndpoint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPrivateEndpointBytes() {
     java.lang.Object ref = privateEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -286,6 +292,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The publicEndpoint.
    */
+  @java.lang.Override
   public java.lang.String getPublicEndpoint() {
     java.lang.Object ref = publicEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -308,6 +315,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for publicEndpoint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPublicEndpointBytes() {
     java.lang.Object ref = publicEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -712,6 +720,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The enablePrivateNodes.
      */
+    @java.lang.Override
     public boolean getEnablePrivateNodes() {
       return enablePrivateNodes_;
     }
@@ -767,6 +776,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The enablePrivateEndpoint.
      */
+    @java.lang.Override
     public boolean getEnablePrivateEndpoint() {
       return enablePrivateEndpoint_;
     }

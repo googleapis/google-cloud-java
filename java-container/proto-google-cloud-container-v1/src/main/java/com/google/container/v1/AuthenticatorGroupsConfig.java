@@ -130,6 +130,7 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -148,6 +149,7 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
    *
    * @return The securityGroup.
    */
+  @java.lang.Override
   public java.lang.String getSecurityGroup() {
     java.lang.Object ref = securityGroup_;
     if (ref instanceof java.lang.String) {
@@ -171,6 +173,7 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
    *
    * @return The bytes for securityGroup.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSecurityGroupBytes() {
     java.lang.Object ref = securityGroup_;
     if (ref instanceof java.lang.String) {
@@ -529,6 +532,7 @@ public final class AuthenticatorGroupsConfig extends com.google.protobuf.Generat
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }

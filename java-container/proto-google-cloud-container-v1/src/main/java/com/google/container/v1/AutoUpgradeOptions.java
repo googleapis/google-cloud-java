@@ -135,6 +135,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    *
    * @return The autoUpgradeStartTime.
    */
+  @java.lang.Override
   public java.lang.String getAutoUpgradeStartTime() {
     java.lang.Object ref = autoUpgradeStartTime_;
     if (ref instanceof java.lang.String) {
@@ -159,6 +160,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for autoUpgradeStartTime.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAutoUpgradeStartTimeBytes() {
     java.lang.Object ref = autoUpgradeStartTime_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +187,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +211,7 @@ public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {

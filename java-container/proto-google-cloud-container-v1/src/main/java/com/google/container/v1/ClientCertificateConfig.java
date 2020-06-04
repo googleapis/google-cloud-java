@@ -120,6 +120,7 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
    *
    * @return The issueClientCertificate.
    */
+  @java.lang.Override
   public boolean getIssueClientCertificate() {
     return issueClientCertificate_;
   }
@@ -452,6 +453,7 @@ public final class ClientCertificateConfig extends com.google.protobuf.Generated
      *
      * @return The issueClientCertificate.
      */
+    @java.lang.Override
     public boolean getIssueClientCertificate() {
       return issueClientCertificate_;
     }

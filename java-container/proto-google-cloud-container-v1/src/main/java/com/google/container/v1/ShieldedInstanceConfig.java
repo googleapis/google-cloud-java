@@ -128,6 +128,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    *
    * @return The enableSecureBoot.
    */
+  @java.lang.Override
   public boolean getEnableSecureBoot() {
     return enableSecureBoot_;
   }
@@ -149,6 +150,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    *
    * @return The enableIntegrityMonitoring.
    */
+  @java.lang.Override
   public boolean getEnableIntegrityMonitoring() {
     return enableIntegrityMonitoring_;
   }
@@ -498,6 +500,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      *
      * @return The enableSecureBoot.
      */
+    @java.lang.Override
     public boolean getEnableSecureBoot() {
       return enableSecureBoot_;
     }
@@ -559,6 +562,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      *
      * @return The enableIntegrityMonitoring.
      */
+    @java.lang.Override
     public boolean getEnableIntegrityMonitoring() {
       return enableIntegrityMonitoring_;
     }

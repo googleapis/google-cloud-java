@@ -197,6 +197,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the httpLoadBalancing field is set.
    */
+  @java.lang.Override
   public boolean hasHttpLoadBalancing() {
     return httpLoadBalancing_ != null;
   }
@@ -212,6 +213,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpLoadBalancing.
    */
+  @java.lang.Override
   public com.google.container.v1.HttpLoadBalancing getHttpLoadBalancing() {
     return httpLoadBalancing_ == null
         ? com.google.container.v1.HttpLoadBalancing.getDefaultInstance()
@@ -227,6 +229,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.HttpLoadBalancing http_load_balancing = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.HttpLoadBalancingOrBuilder getHttpLoadBalancingOrBuilder() {
     return getHttpLoadBalancing();
   }
@@ -246,6 +249,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the horizontalPodAutoscaling field is set.
    */
+  @java.lang.Override
   public boolean hasHorizontalPodAutoscaling() {
     return horizontalPodAutoscaling_ != null;
   }
@@ -262,6 +266,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The horizontalPodAutoscaling.
    */
+  @java.lang.Override
   public com.google.container.v1.HorizontalPodAutoscaling getHorizontalPodAutoscaling() {
     return horizontalPodAutoscaling_ == null
         ? com.google.container.v1.HorizontalPodAutoscaling.getDefaultInstance()
@@ -278,6 +283,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.HorizontalPodAutoscalingOrBuilder
       getHorizontalPodAutoscalingOrBuilder() {
     return getHorizontalPodAutoscaling();
@@ -301,6 +307,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the kubernetesDashboard field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean hasKubernetesDashboard() {
     return kubernetesDashboard_ != null;
@@ -321,6 +328,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kubernetesDashboard.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.container.v1.KubernetesDashboard getKubernetesDashboard() {
     return kubernetesDashboard_ == null
@@ -341,6 +349,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3 [deprecated = true];
    * </code>
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.container.v1.KubernetesDashboardOrBuilder getKubernetesDashboardOrBuilder() {
     return getKubernetesDashboard();
@@ -361,6 +370,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the networkPolicyConfig field is set.
    */
+  @java.lang.Override
   public boolean hasNetworkPolicyConfig() {
     return networkPolicyConfig_ != null;
   }
@@ -377,6 +387,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The networkPolicyConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkPolicyConfig getNetworkPolicyConfig() {
     return networkPolicyConfig_ == null
         ? com.google.container.v1.NetworkPolicyConfig.getDefaultInstance()
@@ -393,6 +404,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.NetworkPolicyConfig network_policy_config = 4;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkPolicyConfigOrBuilder getNetworkPolicyConfigOrBuilder() {
     return getNetworkPolicyConfig();
   }
@@ -411,6 +423,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the cloudRunConfig field is set.
    */
+  @java.lang.Override
   public boolean hasCloudRunConfig() {
     return cloudRunConfig_ != null;
   }
@@ -426,6 +439,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cloudRunConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.CloudRunConfig getCloudRunConfig() {
     return cloudRunConfig_ == null
         ? com.google.container.v1.CloudRunConfig.getDefaultInstance()
@@ -441,6 +455,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.CloudRunConfig cloud_run_config = 7;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.CloudRunConfigOrBuilder getCloudRunConfigOrBuilder() {
     return getCloudRunConfig();
   }

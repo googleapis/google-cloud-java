@@ -166,6 +166,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -191,6 +192,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -220,6 +222,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -246,6 +249,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -273,6 +277,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The clusterId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
@@ -297,6 +302,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for clusterId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
@@ -325,6 +331,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return Whether the networkPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasNetworkPolicy() {
     return networkPolicy_ != null;
   }
@@ -341,6 +348,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The networkPolicy.
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkPolicy getNetworkPolicy() {
     return networkPolicy_ == null
         ? com.google.container.v1.NetworkPolicy.getDefaultInstance()
@@ -357,6 +365,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    * .google.container.v1.NetworkPolicy network_policy = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkPolicyOrBuilder getNetworkPolicyOrBuilder() {
     return getNetworkPolicy();
   }
@@ -375,6 +384,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -398,6 +408,7 @@ public final class SetNetworkPolicyRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {

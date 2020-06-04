@@ -165,6 +165,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +189,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +217,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The zone.
    */
+  @java.lang.Override
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +242,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +268,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The clusterId.
    */
+  @java.lang.Override
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
@@ -286,6 +291,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for clusterId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
@@ -314,6 +320,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return Whether the maintenancePolicy field is set.
    */
+  @java.lang.Override
   public boolean hasMaintenancePolicy() {
     return maintenancePolicy_ != null;
   }
@@ -331,6 +338,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The maintenancePolicy.
    */
+  @java.lang.Override
   public com.google.container.v1.MaintenancePolicy getMaintenancePolicy() {
     return maintenancePolicy_ == null
         ? com.google.container.v1.MaintenancePolicy.getDefaultInstance()
@@ -348,6 +356,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    * .google.container.v1.MaintenancePolicy maintenance_policy = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
     return getMaintenancePolicy();
   }
@@ -367,6 +376,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -391,6 +401,7 @@ public final class SetMaintenancePolicyRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {

@@ -281,6 +281,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      *
      * @return The datasetId.
      */
+    @java.lang.Override
     public java.lang.String getDatasetId() {
       java.lang.Object ref = datasetId_;
       if (ref instanceof java.lang.String) {
@@ -303,6 +304,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      *
      * @return The bytes for datasetId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDatasetIdBytes() {
       java.lang.Object ref = datasetId_;
       if (ref instanceof java.lang.String) {
@@ -936,6 +938,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }
@@ -1296,6 +1299,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
        *
        * @return The enabled.
        */
+      @java.lang.Override
       public boolean getEnabled() {
         return enabled_;
       }
@@ -1411,6 +1415,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
    *
    * @return Whether the bigqueryDestination field is set.
    */
+  @java.lang.Override
   public boolean hasBigqueryDestination() {
     return bigqueryDestination_ != null;
   }
@@ -1427,6 +1432,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
    *
    * @return The bigqueryDestination.
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceUsageExportConfig.BigQueryDestination
       getBigqueryDestination() {
     return bigqueryDestination_ == null
@@ -1444,6 +1450,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
    * .google.container.v1.ResourceUsageExportConfig.BigQueryDestination bigquery_destination = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceUsageExportConfig.BigQueryDestinationOrBuilder
       getBigqueryDestinationOrBuilder() {
     return getBigqueryDestination();
@@ -1463,6 +1470,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
    *
    * @return The enableNetworkEgressMetering.
    */
+  @java.lang.Override
   public boolean getEnableNetworkEgressMetering() {
     return enableNetworkEgressMetering_;
   }
@@ -1483,6 +1491,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
    *
    * @return Whether the consumptionMeteringConfig field is set.
    */
+  @java.lang.Override
   public boolean hasConsumptionMeteringConfig() {
     return consumptionMeteringConfig_ != null;
   }
@@ -1499,6 +1508,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
    *
    * @return The consumptionMeteringConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceUsageExportConfig.ConsumptionMeteringConfig
       getConsumptionMeteringConfig() {
     return consumptionMeteringConfig_ == null
@@ -1517,6 +1527,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
    * .google.container.v1.ResourceUsageExportConfig.ConsumptionMeteringConfig consumption_metering_config = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceUsageExportConfig.ConsumptionMeteringConfigOrBuilder
       getConsumptionMeteringConfigOrBuilder() {
     return getConsumptionMeteringConfig();
@@ -2126,6 +2137,7 @@ public final class ResourceUsageExportConfig extends com.google.protobuf.Generat
      *
      * @return The enableNetworkEgressMetering.
      */
+    @java.lang.Override
     public boolean getEnableNetworkEgressMetering() {
       return enableNetworkEgressMetering_;
     }

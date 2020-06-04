@@ -139,6 +139,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the window field is set.
    */
+  @java.lang.Override
   public boolean hasWindow() {
     return window_ != null;
   }
@@ -153,6 +154,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
    *
    * @return The window.
    */
+  @java.lang.Override
   public com.google.container.v1.TimeWindow getWindow() {
     return window_ == null ? com.google.container.v1.TimeWindow.getDefaultInstance() : window_;
   }
@@ -165,6 +167,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.container.v1.TimeWindow window = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.TimeWindowOrBuilder getWindowOrBuilder() {
     return getWindow();
   }
@@ -207,6 +210,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
    *
    * @return The recurrence.
    */
+  @java.lang.Override
   public java.lang.String getRecurrence() {
     java.lang.Object ref = recurrence_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +258,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for recurrence.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRecurrenceBytes() {
     java.lang.Object ref = recurrence_;
     if (ref instanceof java.lang.String) {

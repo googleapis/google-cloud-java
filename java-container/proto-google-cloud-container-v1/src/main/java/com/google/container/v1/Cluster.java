@@ -872,6 +872,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -922,6 +926,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -949,6 +954,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -974,6 +980,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -996,6 +1003,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1029,6 +1037,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The initialNodeCount.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public int getInitialNodeCount() {
     return initialNodeCount_;
@@ -1056,6 +1065,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the nodeConfig field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean hasNodeConfig() {
     return nodeConfig_ != null;
@@ -1080,6 +1090,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nodeConfig.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.container.v1.NodeConfig getNodeConfig() {
     return nodeConfig_ == null
@@ -1104,6 +1115,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.container.v1.NodeConfigOrBuilder getNodeConfigOrBuilder() {
     return getNodeConfig();
@@ -1126,6 +1138,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the masterAuth field is set.
    */
+  @java.lang.Override
   public boolean hasMasterAuth() {
     return masterAuth_ != null;
   }
@@ -1144,6 +1157,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The masterAuth.
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuth getMasterAuth() {
     return masterAuth_ == null
         ? com.google.container.v1.MasterAuth.getDefaultInstance()
@@ -1162,6 +1176,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.MasterAuth master_auth = 5;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuthOrBuilder getMasterAuthOrBuilder() {
     return getMasterAuth();
   }
@@ -1185,6 +1200,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The loggingService.
    */
+  @java.lang.Override
   public java.lang.String getLoggingService() {
     java.lang.Object ref = loggingService_;
     if (ref instanceof java.lang.String) {
@@ -1213,6 +1229,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for loggingService.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLoggingServiceBytes() {
     java.lang.Object ref = loggingService_;
     if (ref instanceof java.lang.String) {
@@ -1242,6 +1259,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The monitoringService.
    */
+  @java.lang.Override
   public java.lang.String getMonitoringService() {
     java.lang.Object ref = monitoringService_;
     if (ref instanceof java.lang.String) {
@@ -1268,6 +1286,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for monitoringService.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMonitoringServiceBytes() {
     java.lang.Object ref = monitoringService_;
     if (ref instanceof java.lang.String) {
@@ -1296,6 +1315,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The network.
    */
+  @java.lang.Override
   public java.lang.String getNetwork() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -1321,6 +1341,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for network.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNetworkBytes() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -1349,6 +1370,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clusterIpv4Cidr.
    */
+  @java.lang.Override
   public java.lang.String getClusterIpv4Cidr() {
     java.lang.Object ref = clusterIpv4Cidr_;
     if (ref instanceof java.lang.String) {
@@ -1374,6 +1396,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for clusterIpv4Cidr.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterIpv4CidrBytes() {
     java.lang.Object ref = clusterIpv4Cidr_;
     if (ref instanceof java.lang.String) {
@@ -1399,6 +1422,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the addonsConfig field is set.
    */
+  @java.lang.Override
   public boolean hasAddonsConfig() {
     return addonsConfig_ != null;
   }
@@ -1413,6 +1437,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The addonsConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.AddonsConfig getAddonsConfig() {
     return addonsConfig_ == null
         ? com.google.container.v1.AddonsConfig.getDefaultInstance()
@@ -1427,6 +1452,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.AddonsConfig addons_config = 10;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.AddonsConfigOrBuilder getAddonsConfigOrBuilder() {
     return getAddonsConfig();
   }
@@ -1446,6 +1472,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The subnetwork.
    */
+  @java.lang.Override
   public java.lang.String getSubnetwork() {
     java.lang.Object ref = subnetwork_;
     if (ref instanceof java.lang.String) {
@@ -1470,6 +1497,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for subnetwork.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubnetworkBytes() {
     java.lang.Object ref = subnetwork_;
     if (ref instanceof java.lang.String) {
@@ -1495,6 +1523,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.NodePool> getNodePoolsList() {
     return nodePools_;
   }
@@ -1509,6 +1538,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder>
       getNodePoolsOrBuilderList() {
     return nodePools_;
@@ -1524,6 +1554,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
+  @java.lang.Override
   public int getNodePoolsCount() {
     return nodePools_.size();
   }
@@ -1538,6 +1569,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodePool getNodePools(int index) {
     return nodePools_.get(index);
   }
@@ -1552,6 +1584,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(int index) {
     return nodePools_.get(index);
   }
@@ -1643,6 +1676,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enableKubernetesAlpha.
    */
+  @java.lang.Override
   public boolean getEnableKubernetesAlpha() {
     return enableKubernetesAlpha_;
   }
@@ -1684,6 +1718,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
+  @java.lang.Override
   public boolean containsResourceLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1691,6 +1726,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return internalGetResourceLabels().getMap().containsKey(key);
   }
   /** Use {@link #getResourceLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
     return getResourceLabelsMap();
@@ -1705,6 +1741,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
     return internalGetResourceLabels().getMap();
   }
@@ -1718,6 +1755,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
+  @java.lang.Override
   public java.lang.String getResourceLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -1736,6 +1774,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
+  @java.lang.Override
   public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1760,6 +1799,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The labelFingerprint.
    */
+  @java.lang.Override
   public java.lang.String getLabelFingerprint() {
     java.lang.Object ref = labelFingerprint_;
     if (ref instanceof java.lang.String) {
@@ -1782,6 +1822,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for labelFingerprint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLabelFingerprintBytes() {
     java.lang.Object ref = labelFingerprint_;
     if (ref instanceof java.lang.String) {
@@ -1807,6 +1848,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the legacyAbac field is set.
    */
+  @java.lang.Override
   public boolean hasLegacyAbac() {
     return legacyAbac_ != null;
   }
@@ -1821,6 +1863,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The legacyAbac.
    */
+  @java.lang.Override
   public com.google.container.v1.LegacyAbac getLegacyAbac() {
     return legacyAbac_ == null
         ? com.google.container.v1.LegacyAbac.getDefaultInstance()
@@ -1835,6 +1878,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.LegacyAbac legacy_abac = 18;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.LegacyAbacOrBuilder getLegacyAbacOrBuilder() {
     return getLegacyAbac();
   }
@@ -1852,6 +1896,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the networkPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasNetworkPolicy() {
     return networkPolicy_ != null;
   }
@@ -1866,6 +1911,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The networkPolicy.
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkPolicy getNetworkPolicy() {
     return networkPolicy_ == null
         ? com.google.container.v1.NetworkPolicy.getDefaultInstance()
@@ -1880,6 +1926,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.NetworkPolicy network_policy = 19;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkPolicyOrBuilder getNetworkPolicyOrBuilder() {
     return getNetworkPolicy();
   }
@@ -1897,6 +1944,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the ipAllocationPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasIpAllocationPolicy() {
     return ipAllocationPolicy_ != null;
   }
@@ -1911,6 +1959,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The ipAllocationPolicy.
    */
+  @java.lang.Override
   public com.google.container.v1.IPAllocationPolicy getIpAllocationPolicy() {
     return ipAllocationPolicy_ == null
         ? com.google.container.v1.IPAllocationPolicy.getDefaultInstance()
@@ -1925,6 +1974,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.IPAllocationPolicy ip_allocation_policy = 20;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.IPAllocationPolicyOrBuilder getIpAllocationPolicyOrBuilder() {
     return getIpAllocationPolicy();
   }
@@ -1944,6 +1994,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
+  @java.lang.Override
   public boolean hasMasterAuthorizedNetworksConfig() {
     return masterAuthorizedNetworksConfig_ != null;
   }
@@ -1960,6 +2011,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The masterAuthorizedNetworksConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuthorizedNetworksConfig
       getMasterAuthorizedNetworksConfig() {
     return masterAuthorizedNetworksConfig_ == null
@@ -1977,6 +2029,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
       getMasterAuthorizedNetworksConfigOrBuilder() {
     return getMasterAuthorizedNetworksConfig();
@@ -1995,6 +2048,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the maintenancePolicy field is set.
    */
+  @java.lang.Override
   public boolean hasMaintenancePolicy() {
     return maintenancePolicy_ != null;
   }
@@ -2009,6 +2063,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maintenancePolicy.
    */
+  @java.lang.Override
   public com.google.container.v1.MaintenancePolicy getMaintenancePolicy() {
     return maintenancePolicy_ == null
         ? com.google.container.v1.MaintenancePolicy.getDefaultInstance()
@@ -2023,6 +2078,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 23;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
     return getMaintenancePolicy();
   }
@@ -2040,6 +2096,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the binaryAuthorization field is set.
    */
+  @java.lang.Override
   public boolean hasBinaryAuthorization() {
     return binaryAuthorization_ != null;
   }
@@ -2054,6 +2111,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The binaryAuthorization.
    */
+  @java.lang.Override
   public com.google.container.v1.BinaryAuthorization getBinaryAuthorization() {
     return binaryAuthorization_ == null
         ? com.google.container.v1.BinaryAuthorization.getDefaultInstance()
@@ -2068,6 +2126,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.BinaryAuthorization binary_authorization = 24;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.BinaryAuthorizationOrBuilder getBinaryAuthorizationOrBuilder() {
     return getBinaryAuthorization();
   }
@@ -2085,6 +2144,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the autoscaling field is set.
    */
+  @java.lang.Override
   public boolean hasAutoscaling() {
     return autoscaling_ != null;
   }
@@ -2099,6 +2159,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The autoscaling.
    */
+  @java.lang.Override
   public com.google.container.v1.ClusterAutoscaling getAutoscaling() {
     return autoscaling_ == null
         ? com.google.container.v1.ClusterAutoscaling.getDefaultInstance()
@@ -2113,6 +2174,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.ClusterAutoscaling autoscaling = 26;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.ClusterAutoscalingOrBuilder getAutoscalingOrBuilder() {
     return getAutoscaling();
   }
@@ -2130,6 +2192,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the networkConfig field is set.
    */
+  @java.lang.Override
   public boolean hasNetworkConfig() {
     return networkConfig_ != null;
   }
@@ -2144,6 +2207,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The networkConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkConfig getNetworkConfig() {
     return networkConfig_ == null
         ? com.google.container.v1.NetworkConfig.getDefaultInstance()
@@ -2158,6 +2222,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
     return getNetworkConfig();
   }
@@ -2177,6 +2242,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the defaultMaxPodsConstraint field is set.
    */
+  @java.lang.Override
   public boolean hasDefaultMaxPodsConstraint() {
     return defaultMaxPodsConstraint_ != null;
   }
@@ -2193,6 +2259,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The defaultMaxPodsConstraint.
    */
+  @java.lang.Override
   public com.google.container.v1.MaxPodsConstraint getDefaultMaxPodsConstraint() {
     return defaultMaxPodsConstraint_ == null
         ? com.google.container.v1.MaxPodsConstraint.getDefaultInstance()
@@ -2209,6 +2276,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.MaxPodsConstraint default_max_pods_constraint = 30;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.MaxPodsConstraintOrBuilder getDefaultMaxPodsConstraintOrBuilder() {
     return getDefaultMaxPodsConstraint();
   }
@@ -2227,6 +2295,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the resourceUsageExportConfig field is set.
    */
+  @java.lang.Override
   public boolean hasResourceUsageExportConfig() {
     return resourceUsageExportConfig_ != null;
   }
@@ -2242,6 +2311,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resourceUsageExportConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceUsageExportConfig getResourceUsageExportConfig() {
     return resourceUsageExportConfig_ == null
         ? com.google.container.v1.ResourceUsageExportConfig.getDefaultInstance()
@@ -2257,6 +2327,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.ResourceUsageExportConfig resource_usage_export_config = 33;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceUsageExportConfigOrBuilder
       getResourceUsageExportConfigOrBuilder() {
     return getResourceUsageExportConfig();
@@ -2275,6 +2346,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the authenticatorGroupsConfig field is set.
    */
+  @java.lang.Override
   public boolean hasAuthenticatorGroupsConfig() {
     return authenticatorGroupsConfig_ != null;
   }
@@ -2289,6 +2361,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The authenticatorGroupsConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.AuthenticatorGroupsConfig getAuthenticatorGroupsConfig() {
     return authenticatorGroupsConfig_ == null
         ? com.google.container.v1.AuthenticatorGroupsConfig.getDefaultInstance()
@@ -2303,6 +2376,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.AuthenticatorGroupsConfig authenticator_groups_config = 34;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.AuthenticatorGroupsConfigOrBuilder
       getAuthenticatorGroupsConfigOrBuilder() {
     return getAuthenticatorGroupsConfig();
@@ -2321,6 +2395,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the privateClusterConfig field is set.
    */
+  @java.lang.Override
   public boolean hasPrivateClusterConfig() {
     return privateClusterConfig_ != null;
   }
@@ -2335,6 +2410,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The privateClusterConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.PrivateClusterConfig getPrivateClusterConfig() {
     return privateClusterConfig_ == null
         ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance()
@@ -2349,6 +2425,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.PrivateClusterConfigOrBuilder getPrivateClusterConfigOrBuilder() {
     return getPrivateClusterConfig();
   }
@@ -2366,6 +2443,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the databaseEncryption field is set.
    */
+  @java.lang.Override
   public boolean hasDatabaseEncryption() {
     return databaseEncryption_ != null;
   }
@@ -2380,6 +2458,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The databaseEncryption.
    */
+  @java.lang.Override
   public com.google.container.v1.DatabaseEncryption getDatabaseEncryption() {
     return databaseEncryption_ == null
         ? com.google.container.v1.DatabaseEncryption.getDefaultInstance()
@@ -2394,6 +2473,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.DatabaseEncryption database_encryption = 38;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.DatabaseEncryptionOrBuilder getDatabaseEncryptionOrBuilder() {
     return getDatabaseEncryption();
   }
@@ -2411,6 +2491,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the verticalPodAutoscaling field is set.
    */
+  @java.lang.Override
   public boolean hasVerticalPodAutoscaling() {
     return verticalPodAutoscaling_ != null;
   }
@@ -2425,6 +2506,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The verticalPodAutoscaling.
    */
+  @java.lang.Override
   public com.google.container.v1.VerticalPodAutoscaling getVerticalPodAutoscaling() {
     return verticalPodAutoscaling_ == null
         ? com.google.container.v1.VerticalPodAutoscaling.getDefaultInstance()
@@ -2439,6 +2521,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.VerticalPodAutoscaling vertical_pod_autoscaling = 39;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.VerticalPodAutoscalingOrBuilder
       getVerticalPodAutoscalingOrBuilder() {
     return getVerticalPodAutoscaling();
@@ -2457,6 +2540,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The selfLink.
    */
+  @java.lang.Override
   public java.lang.String getSelfLink() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
@@ -2479,6 +2563,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for selfLink.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSelfLinkBytes() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
@@ -2507,6 +2592,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -2533,6 +2619,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -2563,6 +2650,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endpoint.
    */
+  @java.lang.Override
   public java.lang.String getEndpoint() {
     java.lang.Object ref = endpoint_;
     if (ref instanceof java.lang.String) {
@@ -2589,6 +2677,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for endpoint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEndpointBytes() {
     java.lang.Object ref = endpoint_;
     if (ref instanceof java.lang.String) {
@@ -2624,6 +2713,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The initialClusterVersion.
    */
+  @java.lang.Override
   public java.lang.String getInitialClusterVersion() {
     java.lang.Object ref = initialClusterVersion_;
     if (ref instanceof java.lang.String) {
@@ -2656,6 +2746,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for initialClusterVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInitialClusterVersionBytes() {
     java.lang.Object ref = initialClusterVersion_;
     if (ref instanceof java.lang.String) {
@@ -2681,6 +2772,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The currentMasterVersion.
    */
+  @java.lang.Override
   public java.lang.String getCurrentMasterVersion() {
     java.lang.Object ref = currentMasterVersion_;
     if (ref instanceof java.lang.String) {
@@ -2703,6 +2795,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for currentMasterVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCurrentMasterVersionBytes() {
     java.lang.Object ref = currentMasterVersion_;
     if (ref instanceof java.lang.String) {
@@ -2732,6 +2825,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The currentNodeVersion.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getCurrentNodeVersion() {
     java.lang.Object ref = currentNodeVersion_;
@@ -2759,6 +2853,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for currentNodeVersion.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getCurrentNodeVersionBytes() {
     java.lang.Object ref = currentNodeVersion_;
@@ -2786,6 +2881,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public java.lang.String getCreateTime() {
     java.lang.Object ref = createTime_;
     if (ref instanceof java.lang.String) {
@@ -2809,6 +2905,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCreateTimeBytes() {
     java.lang.Object ref = createTime_;
     if (ref instanceof java.lang.String) {
@@ -2834,6 +2931,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for status.
    */
+  @java.lang.Override
   public int getStatusValue() {
     return status_;
   }
@@ -2848,6 +2946,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.container.v1.Cluster.Status getStatus() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.Cluster.Status result =
@@ -2869,6 +2968,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The statusMessage.
    */
+  @java.lang.Override
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -2892,6 +2992,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for statusMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -2920,6 +3021,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nodeIpv4CidrSize.
    */
+  @java.lang.Override
   public int getNodeIpv4CidrSize() {
     return nodeIpv4CidrSize_;
   }
@@ -2941,6 +3043,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The servicesIpv4Cidr.
    */
+  @java.lang.Override
   public java.lang.String getServicesIpv4Cidr() {
     java.lang.Object ref = servicesIpv4Cidr_;
     if (ref instanceof java.lang.String) {
@@ -2967,6 +3070,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for servicesIpv4Cidr.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServicesIpv4CidrBytes() {
     java.lang.Object ref = servicesIpv4Cidr_;
     if (ref instanceof java.lang.String) {
@@ -3058,6 +3162,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The currentNodeCount.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public int getCurrentNodeCount() {
     return currentNodeCount_;
@@ -3077,6 +3182,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expireTime.
    */
+  @java.lang.Override
   public java.lang.String getExpireTime() {
     java.lang.Object ref = expireTime_;
     if (ref instanceof java.lang.String) {
@@ -3100,6 +3206,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for expireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExpireTimeBytes() {
     java.lang.Object ref = expireTime_;
     if (ref instanceof java.lang.String) {
@@ -3128,6 +3235,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The location.
    */
+  @java.lang.Override
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -3153,6 +3261,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for location.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -3178,6 +3287,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enableTpu.
    */
+  @java.lang.Override
   public boolean getEnableTpu() {
     return enableTpu_;
   }
@@ -3197,6 +3307,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tpuIpv4CidrBlock.
    */
+  @java.lang.Override
   public java.lang.String getTpuIpv4CidrBlock() {
     java.lang.Object ref = tpuIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -3221,6 +3332,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for tpuIpv4CidrBlock.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTpuIpv4CidrBlockBytes() {
     java.lang.Object ref = tpuIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -3244,6 +3356,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.StatusCondition> getConditionsList() {
     return conditions_;
   }
@@ -3256,6 +3369,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getConditionsOrBuilderList() {
     return conditions_;
@@ -3269,6 +3383,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
+  @java.lang.Override
   public int getConditionsCount() {
     return conditions_.size();
   }
@@ -3281,6 +3396,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.StatusCondition getConditions(int index) {
     return conditions_.get(index);
   }
@@ -3293,6 +3409,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 118;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index) {
     return conditions_.get(index);
   }
@@ -4970,6 +5087,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The initialNodeCount.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public int getInitialNodeCount() {
       return initialNodeCount_;
@@ -6915,6 +7033,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableKubernetesAlpha.
      */
+    @java.lang.Override
     public boolean getEnableKubernetesAlpha() {
       return enableKubernetesAlpha_;
     }
@@ -7002,6 +7121,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
+    @java.lang.Override
     public boolean containsResourceLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -7009,6 +7129,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return internalGetResourceLabels().getMap().containsKey(key);
     }
     /** Use {@link #getResourceLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
       return getResourceLabelsMap();
@@ -7023,6 +7144,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
       return internalGetResourceLabels().getMap();
     }
@@ -7036,6 +7158,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
+    @java.lang.Override
     public java.lang.String getResourceLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -7054,6 +7177,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
+    @java.lang.Override
     public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -10783,6 +10907,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for status.
      */
+    @java.lang.Override
     public int getStatusValue() {
       return status_;
     }
@@ -10799,6 +10924,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+
       status_ = value;
       onChanged();
       return this;
@@ -10814,6 +10940,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.container.v1.Cluster.Status getStatus() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.Cluster.Status result =
@@ -10985,6 +11112,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The nodeIpv4CidrSize.
      */
+    @java.lang.Override
     public int getNodeIpv4CidrSize() {
       return nodeIpv4CidrSize_;
     }
@@ -11346,6 +11474,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The currentNodeCount.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public int getCurrentNodeCount() {
       return currentNodeCount_;
@@ -11634,6 +11763,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableTpu.
      */
+    @java.lang.Override
     public boolean getEnableTpu() {
       return enableTpu_;
     }

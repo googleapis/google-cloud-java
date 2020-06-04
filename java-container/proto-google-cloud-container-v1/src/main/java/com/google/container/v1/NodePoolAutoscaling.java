@@ -136,6 +136,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -154,6 +155,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    * @return The minNodeCount.
    */
+  @java.lang.Override
   public int getMinNodeCount() {
     return minNodeCount_;
   }
@@ -172,6 +174,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    * @return The maxNodeCount.
    */
+  @java.lang.Override
   public int getMaxNodeCount() {
     return maxNodeCount_;
   }
@@ -189,6 +192,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    * @return The autoprovisioned.
    */
+  @java.lang.Override
   public boolean getAutoprovisioned() {
     return autoprovisioned_;
   }
@@ -566,6 +570,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }
@@ -618,6 +623,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      * @return The minNodeCount.
      */
+    @java.lang.Override
     public int getMinNodeCount() {
       return minNodeCount_;
     }
@@ -672,6 +678,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      * @return The maxNodeCount.
      */
+    @java.lang.Override
     public int getMaxNodeCount() {
       return maxNodeCount_;
     }
@@ -725,6 +732,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      * @return The autoprovisioned.
      */
+    @java.lang.Override
     public boolean getAutoprovisioned() {
       return autoprovisioned_;
     }

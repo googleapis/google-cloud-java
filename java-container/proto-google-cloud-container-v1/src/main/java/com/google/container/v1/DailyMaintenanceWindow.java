@@ -134,6 +134,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public java.lang.String getStartTime() {
     java.lang.Object ref = startTime_;
     if (ref instanceof java.lang.String) {
@@ -158,6 +159,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStartTimeBytes() {
     java.lang.Object ref = startTime_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +188,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    *
    * @return The duration.
    */
+  @java.lang.Override
   public java.lang.String getDuration() {
     java.lang.Object ref = duration_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +214,7 @@ public final class DailyMaintenanceWindow extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for duration.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDurationBytes() {
     java.lang.Object ref = duration_;
     if (ref instanceof java.lang.String) {

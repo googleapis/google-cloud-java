@@ -143,6 +143,7 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.Operation> getOperationsList() {
     return operations_;
   }
@@ -155,6 +156,7 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.OperationOrBuilder>
       getOperationsOrBuilderList() {
     return operations_;
@@ -168,6 +170,7 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
+  @java.lang.Override
   public int getOperationsCount() {
     return operations_.size();
   }
@@ -180,6 +183,7 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.Operation getOperations(int index) {
     return operations_.get(index);
   }
@@ -192,6 +196,7 @@ public final class ListOperationsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.OperationOrBuilder getOperationsOrBuilder(int index) {
     return operations_.get(index);
   }

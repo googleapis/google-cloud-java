@@ -174,6 +174,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -199,6 +200,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -228,6 +230,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -254,6 +257,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -281,6 +285,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The clusterId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
@@ -305,6 +310,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for clusterId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
@@ -332,6 +338,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The nodePoolId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getNodePoolId() {
     java.lang.Object ref = nodePoolId_;
@@ -356,6 +363,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for nodePoolId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getNodePoolIdBytes() {
     java.lang.Object ref = nodePoolId_;
@@ -390,6 +398,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The nodeVersion.
    */
+  @java.lang.Override
   public java.lang.String getNodeVersion() {
     java.lang.Object ref = nodeVersion_;
     if (ref instanceof java.lang.String) {
@@ -420,6 +429,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for nodeVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNodeVersionBytes() {
     java.lang.Object ref = nodeVersion_;
     if (ref instanceof java.lang.String) {
@@ -445,6 +455,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The imageType.
    */
+  @java.lang.Override
   public java.lang.String getImageType() {
     java.lang.Object ref = imageType_;
     if (ref instanceof java.lang.String) {
@@ -467,6 +478,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for imageType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageTypeBytes() {
     java.lang.Object ref = imageType_;
     if (ref instanceof java.lang.String) {
@@ -494,6 +506,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -518,6 +531,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {

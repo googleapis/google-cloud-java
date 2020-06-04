@@ -129,6 +129,7 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.NodePool> getNodePoolsList() {
     return nodePools_;
   }
@@ -141,6 +142,7 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder>
       getNodePoolsOrBuilderList() {
     return nodePools_;
@@ -154,6 +156,7 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
+  @java.lang.Override
   public int getNodePoolsCount() {
     return nodePools_.size();
   }
@@ -166,6 +169,7 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodePool getNodePools(int index) {
     return nodePools_.get(index);
   }
@@ -178,6 +182,7 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(int index) {
     return nodePools_.get(index);
   }

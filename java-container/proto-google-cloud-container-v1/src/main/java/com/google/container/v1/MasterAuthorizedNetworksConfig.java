@@ -300,6 +300,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      *
      * @return The displayName.
      */
+    @java.lang.Override
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -322,6 +323,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      *
      * @return The bytes for displayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -347,6 +349,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      *
      * @return The cidrBlock.
      */
+    @java.lang.Override
     public java.lang.String getCidrBlock() {
       java.lang.Object ref = cidrBlock_;
       if (ref instanceof java.lang.String) {
@@ -369,6 +372,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      *
      * @return The bytes for cidrBlock.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCidrBlockBytes() {
       java.lang.Object ref = cidrBlock_;
       if (ref instanceof java.lang.String) {
@@ -1008,6 +1012,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -1026,6 +1031,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
    * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>
       getCidrBlocksList() {
     return cidrBlocks_;
@@ -1041,6 +1047,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
    * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>
       getCidrBlocksOrBuilderList() {
@@ -1057,6 +1064,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
    * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
    * </code>
    */
+  @java.lang.Override
   public int getCidrBlocksCount() {
     return cidrBlocks_.size();
   }
@@ -1071,6 +1079,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
    * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock getCidrBlocks(int index) {
     return cidrBlocks_.get(index);
   }
@@ -1085,6 +1094,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
    * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder
       getCidrBlocksOrBuilder(int index) {
     return cidrBlocks_.get(index);
@@ -1481,6 +1491,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }

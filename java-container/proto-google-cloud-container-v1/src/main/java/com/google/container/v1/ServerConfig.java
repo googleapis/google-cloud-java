@@ -175,6 +175,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The defaultClusterVersion.
    */
+  @java.lang.Override
   public java.lang.String getDefaultClusterVersion() {
     java.lang.Object ref = defaultClusterVersion_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +198,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for defaultClusterVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDefaultClusterVersionBytes() {
     java.lang.Object ref = defaultClusterVersion_;
     if (ref instanceof java.lang.String) {
@@ -283,6 +285,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The defaultImageType.
    */
+  @java.lang.Override
   public java.lang.String getDefaultImageType() {
     java.lang.Object ref = defaultImageType_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +308,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for defaultImageType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDefaultImageTypeBytes() {
     java.lang.Object ref = defaultImageType_;
     if (ref instanceof java.lang.String) {

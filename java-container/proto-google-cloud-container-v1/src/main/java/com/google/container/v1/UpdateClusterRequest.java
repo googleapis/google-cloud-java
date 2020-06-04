@@ -166,6 +166,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -191,6 +192,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -220,6 +222,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -246,6 +249,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -273,6 +277,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The clusterId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
@@ -297,6 +302,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for clusterId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
@@ -324,6 +330,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the update field is set.
    */
+  @java.lang.Override
   public boolean hasUpdate() {
     return update_ != null;
   }
@@ -339,6 +346,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The update.
    */
+  @java.lang.Override
   public com.google.container.v1.ClusterUpdate getUpdate() {
     return update_ == null ? com.google.container.v1.ClusterUpdate.getDefaultInstance() : update_;
   }
@@ -352,6 +360,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    * <code>.google.container.v1.ClusterUpdate update = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.ClusterUpdateOrBuilder getUpdateOrBuilder() {
     return getUpdate();
   }
@@ -370,6 +379,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -393,6 +403,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {

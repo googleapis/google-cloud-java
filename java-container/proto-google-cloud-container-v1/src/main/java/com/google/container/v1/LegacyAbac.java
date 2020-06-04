@@ -124,6 +124,7 @@ public final class LegacyAbac extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -456,6 +457,7 @@ public final class LegacyAbac extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }

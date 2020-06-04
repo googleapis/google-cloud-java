@@ -216,6 +216,10 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -261,6 +265,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for provider.
    */
+  @java.lang.Override
   public int getProviderValue() {
     return provider_;
   }
@@ -275,6 +280,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The provider.
    */
+  @java.lang.Override
   public com.google.container.v1.NetworkPolicy.Provider getProvider() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.NetworkPolicy.Provider result =
@@ -295,6 +301,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -642,6 +649,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for provider.
      */
+    @java.lang.Override
     public int getProviderValue() {
       return provider_;
     }
@@ -658,6 +666,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProviderValue(int value) {
+
       provider_ = value;
       onChanged();
       return this;
@@ -673,6 +682,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The provider.
      */
+    @java.lang.Override
     public com.google.container.v1.NetworkPolicy.Provider getProvider() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.NetworkPolicy.Provider result =
@@ -730,6 +740,7 @@ public final class NetworkPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }

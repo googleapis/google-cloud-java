@@ -273,6 +273,10 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -318,6 +322,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The key.
    */
+  @java.lang.Override
   public java.lang.String getKey() {
     java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
@@ -340,6 +345,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for key.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyBytes() {
     java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
@@ -365,6 +371,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public java.lang.String getValue() {
     java.lang.Object ref = value_;
     if (ref instanceof java.lang.String) {
@@ -387,6 +394,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for value.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValueBytes() {
     java.lang.Object ref = value_;
     if (ref instanceof java.lang.String) {
@@ -412,6 +420,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for effect.
    */
+  @java.lang.Override
   public int getEffectValue() {
     return effect_;
   }
@@ -426,6 +435,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The effect.
    */
+  @java.lang.Override
   public com.google.container.v1.NodeTaint.Effect getEffect() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.NodeTaint.Effect result =
@@ -1004,6 +1014,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for effect.
      */
+    @java.lang.Override
     public int getEffectValue() {
       return effect_;
     }
@@ -1020,6 +1031,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEffectValue(int value) {
+
       effect_ = value;
       onChanged();
       return this;
@@ -1035,6 +1047,7 @@ public final class NodeTaint extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The effect.
      */
+    @java.lang.Override
     public com.google.container.v1.NodeTaint.Effect getEffect() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.NodeTaint.Effect result =

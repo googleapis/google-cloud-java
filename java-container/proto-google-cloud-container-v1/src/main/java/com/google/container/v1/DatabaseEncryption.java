@@ -242,6 +242,10 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -287,6 +291,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -301,6 +306,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.container.v1.DatabaseEncryption.State getState() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.DatabaseEncryption.State result =
@@ -322,6 +328,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
    *
    * @return The keyName.
    */
+  @java.lang.Override
   public java.lang.String getKeyName() {
     java.lang.Object ref = keyName_;
     if (ref instanceof java.lang.String) {
@@ -345,6 +352,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for keyName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKeyNameBytes() {
     java.lang.Object ref = keyName_;
     if (ref instanceof java.lang.String) {
@@ -700,6 +708,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -716,6 +725,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -731,6 +741,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.container.v1.DatabaseEncryption.State getState() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.DatabaseEncryption.State result =

@@ -291,6 +291,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The machineType.
    */
+  @java.lang.Override
   public java.lang.String getMachineType() {
     java.lang.Object ref = machineType_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +318,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for machineType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMachineTypeBytes() {
     java.lang.Object ref = machineType_;
     if (ref instanceof java.lang.String) {
@@ -344,6 +346,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The diskSizeGb.
    */
+  @java.lang.Override
   public int getDiskSizeGb() {
     return diskSizeGb_;
   }
@@ -463,6 +466,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serviceAccount.
    */
+  @java.lang.Override
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -486,6 +490,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for serviceAccount.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -559,6 +564,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
+  @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -566,6 +572,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return internalGetMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
@@ -606,6 +613,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
@@ -645,6 +653,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -689,6 +698,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -714,6 +724,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageType.
    */
+  @java.lang.Override
   public java.lang.String getImageType() {
     java.lang.Object ref = imageType_;
     if (ref instanceof java.lang.String) {
@@ -737,6 +748,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for imageType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageTypeBytes() {
     java.lang.Object ref = imageType_;
     if (ref instanceof java.lang.String) {
@@ -790,6 +802,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -797,6 +810,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -817,6 +831,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -836,6 +851,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -859,6 +875,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -887,6 +904,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The localSsdCount.
    */
+  @java.lang.Override
   public int getLocalSsdCount() {
     return localSsdCount_;
   }
@@ -979,6 +997,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The preemptible.
    */
+  @java.lang.Override
   public boolean getPreemptible() {
     return preemptible_;
   }
@@ -996,6 +1015,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.AcceleratorConfig> getAcceleratorsList() {
     return accelerators_;
   }
@@ -1010,6 +1030,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList() {
     return accelerators_;
@@ -1025,6 +1046,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
    */
+  @java.lang.Override
   public int getAcceleratorsCount() {
     return accelerators_.size();
   }
@@ -1039,6 +1061,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.AcceleratorConfig getAccelerators(int index) {
     return accelerators_.get(index);
   }
@@ -1053,6 +1076,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 11;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index) {
     return accelerators_.get(index);
   }
@@ -1071,6 +1095,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The diskType.
    */
+  @java.lang.Override
   public java.lang.String getDiskType() {
     java.lang.Object ref = diskType_;
     if (ref instanceof java.lang.String) {
@@ -1094,6 +1119,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for diskType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDiskTypeBytes() {
     java.lang.Object ref = diskType_;
     if (ref instanceof java.lang.String) {
@@ -1125,6 +1151,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The minCpuPlatform.
    */
+  @java.lang.Override
   public java.lang.String getMinCpuPlatform() {
     java.lang.Object ref = minCpuPlatform_;
     if (ref instanceof java.lang.String) {
@@ -1153,6 +1180,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for minCpuPlatform.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
     java.lang.Object ref = minCpuPlatform_;
     if (ref instanceof java.lang.String) {
@@ -1178,6 +1206,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.NodeTaint> getTaintsList() {
     return taints_;
   }
@@ -1192,6 +1221,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.NodeTaintOrBuilder>
       getTaintsOrBuilderList() {
     return taints_;
@@ -1207,6 +1237,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
    */
+  @java.lang.Override
   public int getTaintsCount() {
     return taints_.size();
   }
@@ -1221,6 +1252,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodeTaint getTaints(int index) {
     return taints_.get(index);
   }
@@ -1235,6 +1267,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.NodeTaint taints = 15;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodeTaintOrBuilder getTaintsOrBuilder(int index) {
     return taints_.get(index);
   }
@@ -1252,6 +1285,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the shieldedInstanceConfig field is set.
    */
+  @java.lang.Override
   public boolean hasShieldedInstanceConfig() {
     return shieldedInstanceConfig_ != null;
   }
@@ -1266,6 +1300,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The shieldedInstanceConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.ShieldedInstanceConfig getShieldedInstanceConfig() {
     return shieldedInstanceConfig_ == null
         ? com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()
@@ -1280,6 +1315,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.ShieldedInstanceConfigOrBuilder
       getShieldedInstanceConfigOrBuilder() {
     return getShieldedInstanceConfig();
@@ -2120,6 +2156,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The diskSizeGb.
      */
+    @java.lang.Override
     public int getDiskSizeGb() {
       return diskSizeGb_;
     }
@@ -2594,6 +2631,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 4;</code>
      */
+    @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2601,6 +2639,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
@@ -2641,6 +2680,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 4;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
@@ -2680,6 +2720,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2724,6 +2765,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; metadata = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3026,6 +3068,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3033,6 +3076,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -3053,6 +3097,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -3072,6 +3117,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -3096,6 +3142,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3202,6 +3249,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The localSsdCount.
      */
+    @java.lang.Override
     public int getLocalSsdCount() {
       return localSsdCount_;
     }
@@ -3458,6 +3506,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The preemptible.
      */
+    @java.lang.Override
     public boolean getPreemptible() {
       return preemptible_;
     }

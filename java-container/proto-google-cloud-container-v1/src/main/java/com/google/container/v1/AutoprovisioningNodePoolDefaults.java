@@ -207,6 +207,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    * @return The serviceAccount.
    */
+  @java.lang.Override
   public java.lang.String getServiceAccount() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +231,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    *
    * @return The bytes for serviceAccount.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {

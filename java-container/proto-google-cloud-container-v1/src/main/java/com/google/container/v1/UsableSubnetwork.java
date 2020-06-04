@@ -169,6 +169,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    * @return The subnetwork.
    */
+  @java.lang.Override
   public java.lang.String getSubnetwork() {
     java.lang.Object ref = subnetwork_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +193,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for subnetwork.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubnetworkBytes() {
     java.lang.Object ref = subnetwork_;
     if (ref instanceof java.lang.String) {
@@ -218,6 +220,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    * @return The network.
    */
+  @java.lang.Override
   public java.lang.String getNetwork() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -241,6 +244,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for network.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNetworkBytes() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +270,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    * @return The ipCidrRange.
    */
+  @java.lang.Override
   public java.lang.String getIpCidrRange() {
     java.lang.Object ref = ipCidrRange_;
     if (ref instanceof java.lang.String) {
@@ -288,6 +293,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for ipCidrRange.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIpCidrRangeBytes() {
     java.lang.Object ref = ipCidrRange_;
     if (ref instanceof java.lang.String) {
@@ -312,6 +318,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.container.v1.UsableSubnetworkSecondaryRange secondary_ip_ranges = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.UsableSubnetworkSecondaryRange>
       getSecondaryIpRangesList() {
     return secondaryIpRanges_;
@@ -326,6 +333,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.container.v1.UsableSubnetworkSecondaryRange secondary_ip_ranges = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.UsableSubnetworkSecondaryRangeOrBuilder>
       getSecondaryIpRangesOrBuilderList() {
     return secondaryIpRanges_;
@@ -340,6 +348,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.container.v1.UsableSubnetworkSecondaryRange secondary_ip_ranges = 4;
    * </code>
    */
+  @java.lang.Override
   public int getSecondaryIpRangesCount() {
     return secondaryIpRanges_.size();
   }
@@ -353,6 +362,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.container.v1.UsableSubnetworkSecondaryRange secondary_ip_ranges = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.UsableSubnetworkSecondaryRange getSecondaryIpRanges(int index) {
     return secondaryIpRanges_.get(index);
   }
@@ -366,6 +376,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.container.v1.UsableSubnetworkSecondaryRange secondary_ip_ranges = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.UsableSubnetworkSecondaryRangeOrBuilder
       getSecondaryIpRangesOrBuilder(int index) {
     return secondaryIpRanges_.get(index);
@@ -387,6 +398,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    * @return The statusMessage.
    */
+  @java.lang.Override
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -412,6 +424,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for statusMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {

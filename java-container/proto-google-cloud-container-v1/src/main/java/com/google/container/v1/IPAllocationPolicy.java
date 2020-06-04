@@ -206,6 +206,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The useIpAliases.
    */
+  @java.lang.Override
   public boolean getUseIpAliases() {
     return useIpAliases_;
   }
@@ -224,6 +225,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The createSubnetwork.
    */
+  @java.lang.Override
   public boolean getCreateSubnetwork() {
     return createSubnetwork_;
   }
@@ -243,6 +245,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The subnetworkName.
    */
+  @java.lang.Override
   public java.lang.String getSubnetworkName() {
     java.lang.Object ref = subnetworkName_;
     if (ref instanceof java.lang.String) {
@@ -267,6 +270,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for subnetworkName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubnetworkNameBytes() {
     java.lang.Object ref = subnetworkName_;
     if (ref instanceof java.lang.String) {
@@ -292,6 +296,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The clusterIpv4Cidr.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getClusterIpv4Cidr() {
     java.lang.Object ref = clusterIpv4Cidr_;
@@ -315,6 +320,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for clusterIpv4Cidr.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIpv4CidrBytes() {
     java.lang.Object ref = clusterIpv4Cidr_;
@@ -341,6 +347,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The nodeIpv4Cidr.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getNodeIpv4Cidr() {
     java.lang.Object ref = nodeIpv4Cidr_;
@@ -364,6 +371,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nodeIpv4Cidr.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getNodeIpv4CidrBytes() {
     java.lang.Object ref = nodeIpv4Cidr_;
@@ -390,6 +398,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The servicesIpv4Cidr.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getServicesIpv4Cidr() {
     java.lang.Object ref = servicesIpv4Cidr_;
@@ -413,6 +422,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for servicesIpv4Cidr.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getServicesIpv4CidrBytes() {
     java.lang.Object ref = servicesIpv4Cidr_;
@@ -444,6 +454,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The clusterSecondaryRangeName.
    */
+  @java.lang.Override
   public java.lang.String getClusterSecondaryRangeName() {
     java.lang.Object ref = clusterSecondaryRangeName_;
     if (ref instanceof java.lang.String) {
@@ -471,6 +482,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for clusterSecondaryRangeName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterSecondaryRangeNameBytes() {
     java.lang.Object ref = clusterSecondaryRangeName_;
     if (ref instanceof java.lang.String) {
@@ -501,6 +513,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The servicesSecondaryRangeName.
    */
+  @java.lang.Override
   public java.lang.String getServicesSecondaryRangeName() {
     java.lang.Object ref = servicesSecondaryRangeName_;
     if (ref instanceof java.lang.String) {
@@ -528,6 +541,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for servicesSecondaryRangeName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServicesSecondaryRangeNameBytes() {
     java.lang.Object ref = servicesSecondaryRangeName_;
     if (ref instanceof java.lang.String) {
@@ -563,6 +577,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The clusterIpv4CidrBlock.
    */
+  @java.lang.Override
   public java.lang.String getClusterIpv4CidrBlock() {
     java.lang.Object ref = clusterIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -595,6 +610,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for clusterIpv4CidrBlock.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClusterIpv4CidrBlockBytes() {
     java.lang.Object ref = clusterIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -629,6 +645,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The nodeIpv4CidrBlock.
    */
+  @java.lang.Override
   public java.lang.String getNodeIpv4CidrBlock() {
     java.lang.Object ref = nodeIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -660,6 +677,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nodeIpv4CidrBlock.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNodeIpv4CidrBlockBytes() {
     java.lang.Object ref = nodeIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -695,6 +713,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The servicesIpv4CidrBlock.
    */
+  @java.lang.Override
   public java.lang.String getServicesIpv4CidrBlock() {
     java.lang.Object ref = servicesIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -727,6 +746,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for servicesIpv4CidrBlock.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServicesIpv4CidrBlockBytes() {
     java.lang.Object ref = servicesIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -762,6 +782,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The tpuIpv4CidrBlock.
    */
+  @java.lang.Override
   public java.lang.String getTpuIpv4CidrBlock() {
     java.lang.Object ref = tpuIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -794,6 +815,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for tpuIpv4CidrBlock.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTpuIpv4CidrBlockBytes() {
     java.lang.Object ref = tpuIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
@@ -1311,6 +1333,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * @return The useIpAliases.
      */
+    @java.lang.Override
     public boolean getUseIpAliases() {
       return useIpAliases_;
     }
@@ -1363,6 +1386,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      *
      * @return The createSubnetwork.
      */
+    @java.lang.Override
     public boolean getCreateSubnetwork() {
       return createSubnetwork_;
     }

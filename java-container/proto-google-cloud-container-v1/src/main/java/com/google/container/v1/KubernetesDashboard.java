@@ -120,6 +120,7 @@ public final class KubernetesDashboard extends com.google.protobuf.GeneratedMess
    *
    * @return The disabled.
    */
+  @java.lang.Override
   public boolean getDisabled() {
     return disabled_;
   }
@@ -451,6 +452,7 @@ public final class KubernetesDashboard extends com.google.protobuf.GeneratedMess
      *
      * @return The disabled.
      */
+    @java.lang.Override
     public boolean getDisabled() {
       return disabled_;
     }

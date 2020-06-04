@@ -140,6 +140,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the window field is set.
    */
+  @java.lang.Override
   public boolean hasWindow() {
     return window_ != null;
   }
@@ -154,6 +155,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The window.
    */
+  @java.lang.Override
   public com.google.container.v1.MaintenanceWindow getWindow() {
     return window_ == null
         ? com.google.container.v1.MaintenanceWindow.getDefaultInstance()
@@ -168,6 +170,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.MaintenanceWindowOrBuilder getWindowOrBuilder() {
     return getWindow();
   }
@@ -189,6 +192,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The resourceVersion.
    */
+  @java.lang.Override
   public java.lang.String getResourceVersion() {
     java.lang.Object ref = resourceVersion_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +219,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for resourceVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceVersionBytes() {
     java.lang.Object ref = resourceVersion_;
     if (ref instanceof java.lang.String) {

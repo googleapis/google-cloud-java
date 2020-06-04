@@ -157,6 +157,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -182,6 +183,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -211,6 +213,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -237,6 +240,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -265,6 +269,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the cluster field is set.
    */
+  @java.lang.Override
   public boolean hasCluster() {
     return cluster_ != null;
   }
@@ -281,6 +286,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The cluster.
    */
+  @java.lang.Override
   public com.google.container.v1.Cluster getCluster() {
     return cluster_ == null ? com.google.container.v1.Cluster.getDefaultInstance() : cluster_;
   }
@@ -295,6 +301,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    * <code>.google.container.v1.Cluster cluster = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.ClusterOrBuilder getClusterOrBuilder() {
     return getCluster();
   }
@@ -313,6 +320,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -336,6 +344,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {

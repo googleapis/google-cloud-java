@@ -121,6 +121,7 @@ public final class IntraNodeVisibilityConfig extends com.google.protobuf.Generat
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
   }
@@ -455,6 +456,7 @@ public final class IntraNodeVisibilityConfig extends com.google.protobuf.Generat
      *
      * @return The enabled.
      */
+    @java.lang.Override
     public boolean getEnabled() {
       return enabled_;
     }

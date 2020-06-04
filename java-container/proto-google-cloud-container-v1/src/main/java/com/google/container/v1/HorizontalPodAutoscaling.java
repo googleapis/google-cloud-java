@@ -124,6 +124,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
    *
    * @return The disabled.
    */
+  @java.lang.Override
   public boolean getDisabled() {
     return disabled_;
   }
@@ -460,6 +461,7 @@ public final class HorizontalPodAutoscaling extends com.google.protobuf.Generate
      *
      * @return The disabled.
      */
+    @java.lang.Override
     public boolean getDisabled() {
       return disabled_;
     }

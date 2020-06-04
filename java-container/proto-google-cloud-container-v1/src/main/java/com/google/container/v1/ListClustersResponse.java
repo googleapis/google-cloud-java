@@ -144,6 +144,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.Cluster> getClustersList() {
     return clusters_;
   }
@@ -157,6 +158,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.ClusterOrBuilder>
       getClustersOrBuilderList() {
     return clusters_;
@@ -171,6 +173,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
+  @java.lang.Override
   public int getClustersCount() {
     return clusters_.size();
   }
@@ -184,6 +187,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.Cluster getClusters(int index) {
     return clusters_.get(index);
   }
@@ -197,6 +201,7 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.ClusterOrBuilder getClustersOrBuilder(int index) {
     return clusters_.get(index);
   }

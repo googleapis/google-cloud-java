@@ -135,6 +135,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resourceType.
    */
+  @java.lang.Override
   public java.lang.String getResourceType() {
     java.lang.Object ref = resourceType_;
     if (ref instanceof java.lang.String) {
@@ -157,6 +158,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for resourceType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceTypeBytes() {
     java.lang.Object ref = resourceType_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +184,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The minimum.
    */
+  @java.lang.Override
   public long getMinimum() {
     return minimum_;
   }
@@ -199,6 +202,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maximum.
    */
+  @java.lang.Override
   public long getMaximum() {
     return maximum_;
   }
@@ -666,6 +670,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The minimum.
      */
+    @java.lang.Override
     public long getMinimum() {
       return minimum_;
     }
@@ -717,6 +722,7 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maximum.
      */
+    @java.lang.Override
     public long getMaximum() {
       return maximum_;
     }

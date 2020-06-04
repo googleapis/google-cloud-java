@@ -336,6 +336,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredNodeVersion.
    */
+  @java.lang.Override
   public java.lang.String getDesiredNodeVersion() {
     java.lang.Object ref = desiredNodeVersion_;
     if (ref instanceof java.lang.String) {
@@ -366,6 +367,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for desiredNodeVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDesiredNodeVersionBytes() {
     java.lang.Object ref = desiredNodeVersion_;
     if (ref instanceof java.lang.String) {
@@ -396,6 +398,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredMonitoringService.
    */
+  @java.lang.Override
   public java.lang.String getDesiredMonitoringService() {
     java.lang.Object ref = desiredMonitoringService_;
     if (ref instanceof java.lang.String) {
@@ -423,6 +426,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for desiredMonitoringService.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDesiredMonitoringServiceBytes() {
     java.lang.Object ref = desiredMonitoringService_;
     if (ref instanceof java.lang.String) {
@@ -448,6 +452,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredAddonsConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredAddonsConfig() {
     return desiredAddonsConfig_ != null;
   }
@@ -462,6 +467,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredAddonsConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.AddonsConfig getDesiredAddonsConfig() {
     return desiredAddonsConfig_ == null
         ? com.google.container.v1.AddonsConfig.getDefaultInstance()
@@ -476,6 +482,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.AddonsConfig desired_addons_config = 6;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.AddonsConfigOrBuilder getDesiredAddonsConfigOrBuilder() {
     return getDesiredAddonsConfig();
   }
@@ -496,6 +503,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredNodePoolId.
    */
+  @java.lang.Override
   public java.lang.String getDesiredNodePoolId() {
     java.lang.Object ref = desiredNodePoolId_;
     if (ref instanceof java.lang.String) {
@@ -521,6 +529,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for desiredNodePoolId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDesiredNodePoolIdBytes() {
     java.lang.Object ref = desiredNodePoolId_;
     if (ref instanceof java.lang.String) {
@@ -547,6 +556,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredImageType.
    */
+  @java.lang.Override
   public java.lang.String getDesiredImageType() {
     java.lang.Object ref = desiredImageType_;
     if (ref instanceof java.lang.String) {
@@ -570,6 +580,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for desiredImageType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDesiredImageTypeBytes() {
     java.lang.Object ref = desiredImageType_;
     if (ref instanceof java.lang.String) {
@@ -595,6 +606,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredDatabaseEncryption field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredDatabaseEncryption() {
     return desiredDatabaseEncryption_ != null;
   }
@@ -609,6 +621,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredDatabaseEncryption.
    */
+  @java.lang.Override
   public com.google.container.v1.DatabaseEncryption getDesiredDatabaseEncryption() {
     return desiredDatabaseEncryption_ == null
         ? com.google.container.v1.DatabaseEncryption.getDefaultInstance()
@@ -623,6 +636,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.DatabaseEncryption desired_database_encryption = 46;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.DatabaseEncryptionOrBuilder
       getDesiredDatabaseEncryptionOrBuilder() {
     return getDesiredDatabaseEncryption();
@@ -644,6 +658,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredNodePoolAutoscaling field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredNodePoolAutoscaling() {
     return desiredNodePoolAutoscaling_ != null;
   }
@@ -661,6 +676,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredNodePoolAutoscaling.
    */
+  @java.lang.Override
   public com.google.container.v1.NodePoolAutoscaling getDesiredNodePoolAutoscaling() {
     return desiredNodePoolAutoscaling_ == null
         ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
@@ -678,6 +694,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.NodePoolAutoscaling desired_node_pool_autoscaling = 9;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodePoolAutoscalingOrBuilder
       getDesiredNodePoolAutoscalingOrBuilder() {
     return getDesiredNodePoolAutoscaling();
@@ -780,6 +797,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredMasterAuthorizedNetworksConfig() {
     return desiredMasterAuthorizedNetworksConfig_ != null;
   }
@@ -796,6 +814,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuthorizedNetworksConfig
       getDesiredMasterAuthorizedNetworksConfig() {
     return desiredMasterAuthorizedNetworksConfig_ == null
@@ -813,6 +832,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
       getDesiredMasterAuthorizedNetworksConfigOrBuilder() {
     return getDesiredMasterAuthorizedNetworksConfig();
@@ -831,6 +851,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredClusterAutoscaling field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredClusterAutoscaling() {
     return desiredClusterAutoscaling_ != null;
   }
@@ -845,6 +866,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredClusterAutoscaling.
    */
+  @java.lang.Override
   public com.google.container.v1.ClusterAutoscaling getDesiredClusterAutoscaling() {
     return desiredClusterAutoscaling_ == null
         ? com.google.container.v1.ClusterAutoscaling.getDefaultInstance()
@@ -859,6 +881,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.ClusterAutoscaling desired_cluster_autoscaling = 15;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.ClusterAutoscalingOrBuilder
       getDesiredClusterAutoscalingOrBuilder() {
     return getDesiredClusterAutoscaling();
@@ -877,6 +900,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredBinaryAuthorization field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredBinaryAuthorization() {
     return desiredBinaryAuthorization_ != null;
   }
@@ -891,6 +915,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredBinaryAuthorization.
    */
+  @java.lang.Override
   public com.google.container.v1.BinaryAuthorization getDesiredBinaryAuthorization() {
     return desiredBinaryAuthorization_ == null
         ? com.google.container.v1.BinaryAuthorization.getDefaultInstance()
@@ -905,6 +930,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.BinaryAuthorization desired_binary_authorization = 16;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.BinaryAuthorizationOrBuilder
       getDesiredBinaryAuthorizationOrBuilder() {
     return getDesiredBinaryAuthorization();
@@ -928,6 +954,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredLoggingService.
    */
+  @java.lang.Override
   public java.lang.String getDesiredLoggingService() {
     java.lang.Object ref = desiredLoggingService_;
     if (ref instanceof java.lang.String) {
@@ -955,6 +982,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for desiredLoggingService.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDesiredLoggingServiceBytes() {
     java.lang.Object ref = desiredLoggingService_;
     if (ref instanceof java.lang.String) {
@@ -981,6 +1009,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredResourceUsageExportConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredResourceUsageExportConfig() {
     return desiredResourceUsageExportConfig_ != null;
   }
@@ -996,6 +1025,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredResourceUsageExportConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceUsageExportConfig getDesiredResourceUsageExportConfig() {
     return desiredResourceUsageExportConfig_ == null
         ? com.google.container.v1.ResourceUsageExportConfig.getDefaultInstance()
@@ -1011,6 +1041,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.ResourceUsageExportConfig desired_resource_usage_export_config = 21;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceUsageExportConfigOrBuilder
       getDesiredResourceUsageExportConfigOrBuilder() {
     return getDesiredResourceUsageExportConfig();
@@ -1029,6 +1060,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredVerticalPodAutoscaling field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredVerticalPodAutoscaling() {
     return desiredVerticalPodAutoscaling_ != null;
   }
@@ -1043,6 +1075,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredVerticalPodAutoscaling.
    */
+  @java.lang.Override
   public com.google.container.v1.VerticalPodAutoscaling getDesiredVerticalPodAutoscaling() {
     return desiredVerticalPodAutoscaling_ == null
         ? com.google.container.v1.VerticalPodAutoscaling.getDefaultInstance()
@@ -1057,6 +1090,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.VerticalPodAutoscaling desired_vertical_pod_autoscaling = 22;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.VerticalPodAutoscalingOrBuilder
       getDesiredVerticalPodAutoscalingOrBuilder() {
     return getDesiredVerticalPodAutoscaling();
@@ -1076,6 +1110,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the desiredIntraNodeVisibilityConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredIntraNodeVisibilityConfig() {
     return desiredIntraNodeVisibilityConfig_ != null;
   }
@@ -1091,6 +1126,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredIntraNodeVisibilityConfig.
    */
+  @java.lang.Override
   public com.google.container.v1.IntraNodeVisibilityConfig getDesiredIntraNodeVisibilityConfig() {
     return desiredIntraNodeVisibilityConfig_ == null
         ? com.google.container.v1.IntraNodeVisibilityConfig.getDefaultInstance()
@@ -1106,6 +1142,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.IntraNodeVisibilityConfig desired_intra_node_visibility_config = 26;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.IntraNodeVisibilityConfigOrBuilder
       getDesiredIntraNodeVisibilityConfigOrBuilder() {
     return getDesiredIntraNodeVisibilityConfig();
@@ -1131,6 +1168,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The desiredMasterVersion.
    */
+  @java.lang.Override
   public java.lang.String getDesiredMasterVersion() {
     java.lang.Object ref = desiredMasterVersion_;
     if (ref instanceof java.lang.String) {
@@ -1160,6 +1198,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for desiredMasterVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDesiredMasterVersionBytes() {
     java.lang.Object ref = desiredMasterVersion_;
     if (ref instanceof java.lang.String) {

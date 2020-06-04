@@ -313,6 +313,10 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -358,6 +362,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for code.
    */
+  @java.lang.Override
   public int getCodeValue() {
     return code_;
   }
@@ -372,6 +377,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * @return The code.
    */
+  @java.lang.Override
   public com.google.container.v1.StatusCondition.Code getCode() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.StatusCondition.Code result =
@@ -392,6 +398,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * @return The message.
    */
+  @java.lang.Override
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
@@ -414,6 +421,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for message.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMessageBytes() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
@@ -769,6 +777,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for code.
      */
+    @java.lang.Override
     public int getCodeValue() {
       return code_;
     }
@@ -785,6 +794,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
+
       code_ = value;
       onChanged();
       return this;
@@ -800,6 +810,7 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * @return The code.
      */
+    @java.lang.Override
     public com.google.container.v1.StatusCondition.Code getCode() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.StatusCondition.Code result =

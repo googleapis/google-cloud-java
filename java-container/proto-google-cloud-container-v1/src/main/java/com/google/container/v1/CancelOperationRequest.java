@@ -150,6 +150,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * @return The projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -175,6 +176,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -203,6 +205,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * @return The zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -228,6 +231,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -255,6 +259,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * @return The operationId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getOperationId() {
     java.lang.Object ref = operationId_;
@@ -279,6 +284,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for operationId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getOperationIdBytes() {
     java.lang.Object ref = operationId_;
@@ -306,6 +312,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +336,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {

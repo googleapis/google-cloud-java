@@ -473,6 +473,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -518,6 +522,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -540,6 +545,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -565,6 +571,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -579,6 +586,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.container.v1.NodeConfig getConfig() {
     return config_ == null ? com.google.container.v1.NodeConfig.getDefaultInstance() : config_;
   }
@@ -591,6 +599,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.NodeConfig config = 2;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodeConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -611,6 +620,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The initialNodeCount.
    */
+  @java.lang.Override
   public int getInitialNodeCount() {
     return initialNodeCount_;
   }
@@ -628,6 +638,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The selfLink.
    */
+  @java.lang.Override
   public java.lang.String getSelfLink() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
@@ -650,6 +661,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for selfLink.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSelfLinkBytes() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
@@ -675,6 +687,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -697,6 +710,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for version.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -791,6 +805,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for status.
    */
+  @java.lang.Override
   public int getStatusValue() {
     return status_;
   }
@@ -805,6 +820,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.container.v1.NodePool.Status getStatus() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.NodePool.Status result =
@@ -826,6 +842,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The statusMessage.
    */
+  @java.lang.Override
   public java.lang.String getStatusMessage() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -849,6 +866,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for statusMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
@@ -875,6 +893,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the autoscaling field is set.
    */
+  @java.lang.Override
   public boolean hasAutoscaling() {
     return autoscaling_ != null;
   }
@@ -890,6 +909,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The autoscaling.
    */
+  @java.lang.Override
   public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
     return autoscaling_ == null
         ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
@@ -905,6 +925,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodePoolAutoscalingOrBuilder getAutoscalingOrBuilder() {
     return getAutoscaling();
   }
@@ -922,6 +943,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the management field is set.
    */
+  @java.lang.Override
   public boolean hasManagement() {
     return management_ != null;
   }
@@ -936,6 +958,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The management.
    */
+  @java.lang.Override
   public com.google.container.v1.NodeManagement getManagement() {
     return management_ == null
         ? com.google.container.v1.NodeManagement.getDefaultInstance()
@@ -950,6 +973,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.NodeManagement management = 5;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.NodeManagementOrBuilder getManagementOrBuilder() {
     return getManagement();
   }
@@ -968,6 +992,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the maxPodsConstraint field is set.
    */
+  @java.lang.Override
   public boolean hasMaxPodsConstraint() {
     return maxPodsConstraint_ != null;
   }
@@ -983,6 +1008,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxPodsConstraint.
    */
+  @java.lang.Override
   public com.google.container.v1.MaxPodsConstraint getMaxPodsConstraint() {
     return maxPodsConstraint_ == null
         ? com.google.container.v1.MaxPodsConstraint.getDefaultInstance()
@@ -998,6 +1024,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.container.v1.MaxPodsConstraint max_pods_constraint = 6;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.MaxPodsConstraintOrBuilder getMaxPodsConstraintOrBuilder() {
     return getMaxPodsConstraint();
   }
@@ -1013,6 +1040,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.StatusCondition> getConditionsList() {
     return conditions_;
   }
@@ -1025,6 +1053,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getConditionsOrBuilderList() {
     return conditions_;
@@ -1038,6 +1067,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
    */
+  @java.lang.Override
   public int getConditionsCount() {
     return conditions_.size();
   }
@@ -1050,6 +1080,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.StatusCondition getConditions(int index) {
     return conditions_.get(index);
   }
@@ -1062,6 +1093,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index) {
     return conditions_.get(index);
   }
@@ -1079,6 +1111,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The podIpv4CidrSize.
    */
+  @java.lang.Override
   public int getPodIpv4CidrSize() {
     return podIpv4CidrSize_;
   }
@@ -1999,6 +2032,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The initialNodeCount.
      */
+    @java.lang.Override
     public int getInitialNodeCount() {
       return initialNodeCount_;
     }
@@ -2454,6 +2488,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for status.
      */
+    @java.lang.Override
     public int getStatusValue() {
       return status_;
     }
@@ -2470,6 +2505,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+
       status_ = value;
       onChanged();
       return this;
@@ -2485,6 +2521,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.container.v1.NodePool.Status getStatus() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.NodePool.Status result =
@@ -3577,6 +3614,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The podIpv4CidrSize.
      */
+    @java.lang.Override
     public int getPodIpv4CidrSize() {
       return podIpv4CidrSize_;
     }

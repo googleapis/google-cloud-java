@@ -120,6 +120,7 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
    *
    * @return The maxPodsPerNode.
    */
+  @java.lang.Override
   public long getMaxPodsPerNode() {
     return maxPodsPerNode_;
   }
@@ -451,6 +452,7 @@ public final class MaxPodsConstraint extends com.google.protobuf.GeneratedMessag
      *
      * @return The maxPodsPerNode.
      */
+    @java.lang.Override
     public long getMaxPodsPerNode() {
       return maxPodsPerNode_;
     }

@@ -223,6 +223,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the dailyMaintenanceWindow field is set.
    */
+  @java.lang.Override
   public boolean hasDailyMaintenanceWindow() {
     return policyCase_ == 2;
   }
@@ -237,6 +238,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * @return The dailyMaintenanceWindow.
    */
+  @java.lang.Override
   public com.google.container.v1.DailyMaintenanceWindow getDailyMaintenanceWindow() {
     if (policyCase_ == 2) {
       return (com.google.container.v1.DailyMaintenanceWindow) policy_;
@@ -252,6 +254,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.container.v1.DailyMaintenanceWindow daily_maintenance_window = 2;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.DailyMaintenanceWindowOrBuilder
       getDailyMaintenanceWindowOrBuilder() {
     if (policyCase_ == 2) {
@@ -274,6 +277,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the recurringWindow field is set.
    */
+  @java.lang.Override
   public boolean hasRecurringWindow() {
     return policyCase_ == 3;
   }
@@ -290,6 +294,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * @return The recurringWindow.
    */
+  @java.lang.Override
   public com.google.container.v1.RecurringTimeWindow getRecurringWindow() {
     if (policyCase_ == 3) {
       return (com.google.container.v1.RecurringTimeWindow) policy_;
@@ -307,6 +312,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.RecurringTimeWindowOrBuilder getRecurringWindowOrBuilder() {
     if (policyCase_ == 3) {
       return (com.google.container.v1.RecurringTimeWindow) policy_;
@@ -354,6 +360,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
    */
+  @java.lang.Override
   public boolean containsMaintenanceExclusions(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -361,6 +368,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     return internalGetMaintenanceExclusions().getMap().containsKey(key);
   }
   /** Use {@link #getMaintenanceExclusionsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
       getMaintenanceExclusions() {
@@ -376,6 +384,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
       getMaintenanceExclusionsMap() {
     return internalGetMaintenanceExclusions().getMap();
@@ -390,6 +399,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
       java.lang.String key, com.google.container.v1.TimeWindow defaultValue) {
     if (key == null) {
@@ -409,6 +419,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
    *
    * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -872,6 +883,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the dailyMaintenanceWindow field is set.
      */
+    @java.lang.Override
     public boolean hasDailyMaintenanceWindow() {
       return policyCase_ == 2;
     }
@@ -886,6 +898,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * @return The dailyMaintenanceWindow.
      */
+    @java.lang.Override
     public com.google.container.v1.DailyMaintenanceWindow getDailyMaintenanceWindow() {
       if (dailyMaintenanceWindowBuilder_ == null) {
         if (policyCase_ == 2) {
@@ -1020,6 +1033,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.container.v1.DailyMaintenanceWindow daily_maintenance_window = 2;</code>
      */
+    @java.lang.Override
     public com.google.container.v1.DailyMaintenanceWindowOrBuilder
         getDailyMaintenanceWindowOrBuilder() {
       if ((policyCase_ == 2) && (dailyMaintenanceWindowBuilder_ != null)) {
@@ -1083,6 +1097,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the recurringWindow field is set.
      */
+    @java.lang.Override
     public boolean hasRecurringWindow() {
       return policyCase_ == 3;
     }
@@ -1099,6 +1114,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * @return The recurringWindow.
      */
+    @java.lang.Override
     public com.google.container.v1.RecurringTimeWindow getRecurringWindow() {
       if (recurringWindowBuilder_ == null) {
         if (policyCase_ == 3) {
@@ -1243,6 +1259,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.container.v1.RecurringTimeWindow recurring_window = 3;</code>
      */
+    @java.lang.Override
     public com.google.container.v1.RecurringTimeWindowOrBuilder getRecurringWindowOrBuilder() {
       if ((policyCase_ == 3) && (recurringWindowBuilder_ != null)) {
         return recurringWindowBuilder_.getMessageOrBuilder();
@@ -1329,6 +1346,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
      */
+    @java.lang.Override
     public boolean containsMaintenanceExclusions(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1336,6 +1354,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       return internalGetMaintenanceExclusions().getMap().containsKey(key);
     }
     /** Use {@link #getMaintenanceExclusionsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
         getMaintenanceExclusions() {
@@ -1351,6 +1370,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
         getMaintenanceExclusionsMap() {
       return internalGetMaintenanceExclusions().getMap();
@@ -1365,6 +1385,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
      */
+    @java.lang.Override
     public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrDefault(
         java.lang.String key, com.google.container.v1.TimeWindow defaultValue) {
       if (key == null) {
@@ -1384,6 +1405,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
      *
      * <code>map&lt;string, .google.container.v1.TimeWindow&gt; maintenance_exclusions = 4;</code>
      */
+    @java.lang.Override
     public com.google.container.v1.TimeWindow getMaintenanceExclusionsOrThrow(
         java.lang.String key) {
       if (key == null) {

@@ -307,6 +307,10 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -354,6 +358,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
@@ -379,6 +384,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
@@ -408,6 +414,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
@@ -434,6 +441,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for zone.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
@@ -461,6 +469,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The clusterId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
@@ -485,6 +494,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for clusterId.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
@@ -513,6 +523,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for action.
    */
+  @java.lang.Override
   public int getActionValue() {
     return action_;
   }
@@ -529,6 +540,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The action.
    */
+  @java.lang.Override
   public com.google.container.v1.SetMasterAuthRequest.Action getAction() {
     @SuppressWarnings("deprecation")
     com.google.container.v1.SetMasterAuthRequest.Action result =
@@ -552,6 +564,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the update field is set.
    */
+  @java.lang.Override
   public boolean hasUpdate() {
     return update_ != null;
   }
@@ -567,6 +580,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The update.
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuth getUpdate() {
     return update_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : update_;
   }
@@ -580,6 +594,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    * <code>.google.container.v1.MasterAuth update = 5 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.MasterAuthOrBuilder getUpdateOrBuilder() {
     return getUpdate();
   }
@@ -598,6 +613,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -621,6 +637,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1417,6 +1434,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for action.
      */
+    @java.lang.Override
     public int getActionValue() {
       return action_;
     }
@@ -1435,6 +1453,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
+
       action_ = value;
       onChanged();
       return this;
@@ -1452,6 +1471,7 @@ public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The action.
      */
+    @java.lang.Override
     public com.google.container.v1.SetMasterAuthRequest.Action getAction() {
       @SuppressWarnings("deprecation")
       com.google.container.v1.SetMasterAuthRequest.Action result =

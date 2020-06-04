@@ -129,6 +129,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The acceleratorCount.
    */
+  @java.lang.Override
   public long getAcceleratorCount() {
     return acceleratorCount_;
   }
@@ -147,6 +148,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The acceleratorType.
    */
+  @java.lang.Override
   public java.lang.String getAcceleratorType() {
     java.lang.Object ref = acceleratorType_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +172,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for acceleratorType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAcceleratorTypeBytes() {
     java.lang.Object ref = acceleratorType_;
     if (ref instanceof java.lang.String) {
@@ -525,6 +528,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The acceleratorCount.
      */
+    @java.lang.Override
     public long getAcceleratorCount() {
       return acceleratorCount_;
     }

@@ -171,6 +171,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * @return The enableNodeAutoprovisioning.
    */
+  @java.lang.Override
   public boolean getEnableNodeAutoprovisioning() {
     return enableNodeAutoprovisioning_;
   }
@@ -187,6 +188,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.container.v1.ResourceLimit resource_limits = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.container.v1.ResourceLimit> getResourceLimitsList() {
     return resourceLimits_;
   }
@@ -200,6 +202,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.container.v1.ResourceLimit resource_limits = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.container.v1.ResourceLimitOrBuilder>
       getResourceLimitsOrBuilderList() {
     return resourceLimits_;
@@ -214,6 +217,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.container.v1.ResourceLimit resource_limits = 2;</code>
    */
+  @java.lang.Override
   public int getResourceLimitsCount() {
     return resourceLimits_.size();
   }
@@ -227,6 +231,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.container.v1.ResourceLimit resource_limits = 2;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceLimit getResourceLimits(int index) {
     return resourceLimits_.get(index);
   }
@@ -240,6 +245,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.container.v1.ResourceLimit resource_limits = 2;</code>
    */
+  @java.lang.Override
   public com.google.container.v1.ResourceLimitOrBuilder getResourceLimitsOrBuilder(int index) {
     return resourceLimits_.get(index);
   }
@@ -261,6 +267,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the autoprovisioningNodePoolDefaults field is set.
    */
+  @java.lang.Override
   public boolean hasAutoprovisioningNodePoolDefaults() {
     return autoprovisioningNodePoolDefaults_ != null;
   }
@@ -278,6 +285,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    *
    * @return The autoprovisioningNodePoolDefaults.
    */
+  @java.lang.Override
   public com.google.container.v1.AutoprovisioningNodePoolDefaults
       getAutoprovisioningNodePoolDefaults() {
     return autoprovisioningNodePoolDefaults_ == null
@@ -296,6 +304,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
    * .google.container.v1.AutoprovisioningNodePoolDefaults autoprovisioning_node_pool_defaults = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.container.v1.AutoprovisioningNodePoolDefaultsOrBuilder
       getAutoprovisioningNodePoolDefaultsOrBuilder() {
     return getAutoprovisioningNodePoolDefaults();
@@ -821,6 +830,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      *
      * @return The enableNodeAutoprovisioning.
      */
+    @java.lang.Override
     public boolean getEnableNodeAutoprovisioning() {
       return enableNodeAutoprovisioning_;
     }
