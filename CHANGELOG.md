@@ -1,5 +1,25 @@
 # Changelog
 
+### [0.133.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.2...v0.133.3) (2020-06-04)
+
+
+### Bug Fixes
+
+* add retry logic for readrows v1beta1 ([#314](https://www.github.com/googleapis/java-bigquerystorage/issues/314)) ([5290cec](https://www.github.com/googleapis/java-bigquerystorage/commit/5290cec444eaf1a21bcea543ac002276b82957e8))
+* add retry logic for readrows v1beta2 ([#315](https://www.github.com/googleapis/java-bigquerystorage/issues/315)) ([cf1ab06](https://www.github.com/googleapis/java-bigquerystorage/commit/cf1ab06b4324219d2558bef6d30389dbf5d37ab7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.116.1 ([#321](https://www.github.com/googleapis/java-bigquerystorage/issues/321)) ([c08116b](https://www.github.com/googleapis/java-bigquerystorage/commit/c08116b0fdabe256635bc8ba96b2c307f33a3998))
+* update libraries-bom version ([dd21613](https://www.github.com/googleapis/java-bigquerystorage/commit/dd216134b98816f4b3cc6bd036eab01ebf04df35))
+
+
+### Documentation
+
+* **samples:** add codeowners file ([#317](https://www.github.com/googleapis/java-bigquerystorage/issues/317)) ([fc351c7](https://www.github.com/googleapis/java-bigquerystorage/commit/fc351c702ab0674f668a396559e18898f4653fdb))
+* **samples:** add samples ([#309](https://www.github.com/googleapis/java-bigquerystorage/issues/309)) ([f142827](https://www.github.com/googleapis/java-bigquerystorage/commit/f142827253f7262f1d47d4c557c92076e1fa5fbe))
+
 ### [0.133.2](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.1...v0.133.2) (2020-05-28)
 
 
