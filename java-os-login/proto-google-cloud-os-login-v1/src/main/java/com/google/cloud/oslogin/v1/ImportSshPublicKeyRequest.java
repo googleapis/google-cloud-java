@@ -151,6 +151,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -175,6 +176,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +204,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    * @return Whether the sshPublicKey field is set.
    */
+  @java.lang.Override
   public boolean hasSshPublicKey() {
     return sshPublicKey_ != null;
   }
@@ -218,6 +221,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    * @return The sshPublicKey.
    */
+  @java.lang.Override
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey() {
     return sshPublicKey_ == null
         ? com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.getDefaultInstance()
@@ -234,6 +238,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    * .google.cloud.oslogin.common.SshPublicKey ssh_public_key = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder
       getSshPublicKeyOrBuilder() {
     return getSshPublicKey();
@@ -252,6 +257,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -274,6 +280,7 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {

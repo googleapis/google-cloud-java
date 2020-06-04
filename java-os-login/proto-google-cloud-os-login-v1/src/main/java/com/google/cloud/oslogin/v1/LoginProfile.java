@@ -174,6 +174,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +197,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -219,6 +221,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>
       getPosixAccountsList() {
     return posixAccounts_;
@@ -232,6 +235,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>
       getPosixAccountsOrBuilderList() {
@@ -246,6 +250,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
+  @java.lang.Override
   public int getPosixAccountsCount() {
     return posixAccounts_.size();
   }
@@ -258,6 +263,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount getPosixAccounts(int index) {
     return posixAccounts_.get(index);
   }
@@ -270,6 +276,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder
       getPosixAccountsOrBuilder(int index) {
     return posixAccounts_.get(index);
@@ -319,6 +326,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
+  @java.lang.Override
   public boolean containsSshPublicKeys(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -326,6 +334,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     return internalGetSshPublicKeys().getMap().containsKey(key);
   }
   /** Use {@link #getSshPublicKeysMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       getSshPublicKeys() {
@@ -340,6 +349,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       getSshPublicKeysMap() {
     return internalGetSshPublicKeys().getMap();
@@ -353,6 +363,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrDefault(
       java.lang.String key,
       com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
@@ -372,6 +383,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -1321,6 +1333,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
      * </code>
      */
+    @java.lang.Override
     public boolean containsSshPublicKeys(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1328,6 +1341,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       return internalGetSshPublicKeys().getMap().containsKey(key);
     }
     /** Use {@link #getSshPublicKeysMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
@@ -1344,6 +1358,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
         getSshPublicKeysMap() {
@@ -1359,6 +1374,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrDefault(
         java.lang.String key,
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
@@ -1379,6 +1395,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrThrow(
         java.lang.String key) {
       if (key == null) {

@@ -151,6 +151,10 @@ public final class OsLoginProto {
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -607,6 +611,7 @@ public final class OsLoginProto {
      *
      * @return The primary.
      */
+    @java.lang.Override
     public boolean getPrimary() {
       return primary_;
     }
@@ -624,6 +629,7 @@ public final class OsLoginProto {
      *
      * @return The username.
      */
+    @java.lang.Override
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
@@ -646,6 +652,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for username.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUsernameBytes() {
       java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
@@ -671,6 +678,7 @@ public final class OsLoginProto {
      *
      * @return The uid.
      */
+    @java.lang.Override
     public long getUid() {
       return uid_;
     }
@@ -688,6 +696,7 @@ public final class OsLoginProto {
      *
      * @return The gid.
      */
+    @java.lang.Override
     public long getGid() {
       return gid_;
     }
@@ -705,6 +714,7 @@ public final class OsLoginProto {
      *
      * @return The homeDirectory.
      */
+    @java.lang.Override
     public java.lang.String getHomeDirectory() {
       java.lang.Object ref = homeDirectory_;
       if (ref instanceof java.lang.String) {
@@ -727,6 +737,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for homeDirectory.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getHomeDirectoryBytes() {
       java.lang.Object ref = homeDirectory_;
       if (ref instanceof java.lang.String) {
@@ -752,6 +763,7 @@ public final class OsLoginProto {
      *
      * @return The shell.
      */
+    @java.lang.Override
     public java.lang.String getShell() {
       java.lang.Object ref = shell_;
       if (ref instanceof java.lang.String) {
@@ -774,6 +786,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for shell.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getShellBytes() {
       java.lang.Object ref = shell_;
       if (ref instanceof java.lang.String) {
@@ -799,6 +812,7 @@ public final class OsLoginProto {
      *
      * @return The gecos.
      */
+    @java.lang.Override
     public java.lang.String getGecos() {
       java.lang.Object ref = gecos_;
       if (ref instanceof java.lang.String) {
@@ -821,6 +835,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for gecos.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getGecosBytes() {
       java.lang.Object ref = gecos_;
       if (ref instanceof java.lang.String) {
@@ -847,6 +862,7 @@ public final class OsLoginProto {
      *
      * @return The systemId.
      */
+    @java.lang.Override
     public java.lang.String getSystemId() {
       java.lang.Object ref = systemId_;
       if (ref instanceof java.lang.String) {
@@ -870,6 +886,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for systemId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSystemIdBytes() {
       java.lang.Object ref = systemId_;
       if (ref instanceof java.lang.String) {
@@ -895,6 +912,7 @@ public final class OsLoginProto {
      *
      * @return The accountId.
      */
+    @java.lang.Override
     public java.lang.String getAccountId() {
       java.lang.Object ref = accountId_;
       if (ref instanceof java.lang.String) {
@@ -917,6 +935,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for accountId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAccountIdBytes() {
       java.lang.Object ref = accountId_;
       if (ref instanceof java.lang.String) {
@@ -942,6 +961,7 @@ public final class OsLoginProto {
      *
      * @return The enum numeric value on the wire for operatingSystemType.
      */
+    @java.lang.Override
     public int getOperatingSystemTypeValue() {
       return operatingSystemType_;
     }
@@ -956,6 +976,7 @@ public final class OsLoginProto {
      *
      * @return The operatingSystemType.
      */
+    @java.lang.Override
     public com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType
         getOperatingSystemType() {
       @SuppressWarnings("deprecation")
@@ -980,6 +1001,7 @@ public final class OsLoginProto {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1002,6 +1024,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1511,6 +1534,7 @@ public final class OsLoginProto {
        *
        * @return The primary.
        */
+      @java.lang.Override
       public boolean getPrimary() {
         return primary_;
       }
@@ -1668,6 +1692,7 @@ public final class OsLoginProto {
        *
        * @return The uid.
        */
+      @java.lang.Override
       public long getUid() {
         return uid_;
       }
@@ -1719,6 +1744,7 @@ public final class OsLoginProto {
        *
        * @return The gid.
        */
+      @java.lang.Override
       public long getGid() {
         return gid_;
       }
@@ -2305,6 +2331,7 @@ public final class OsLoginProto {
        *
        * @return The enum numeric value on the wire for operatingSystemType.
        */
+      @java.lang.Override
       public int getOperatingSystemTypeValue() {
         return operatingSystemType_;
       }
@@ -2321,6 +2348,7 @@ public final class OsLoginProto {
        * @return This builder for chaining.
        */
       public Builder setOperatingSystemTypeValue(int value) {
+
         operatingSystemType_ = value;
         onChanged();
         return this;
@@ -2336,6 +2364,7 @@ public final class OsLoginProto {
        *
        * @return The operatingSystemType.
        */
+      @java.lang.Override
       public com.google.cloud.oslogin.common.OsLoginProto.OperatingSystemType
           getOperatingSystemType() {
         @SuppressWarnings("deprecation")
@@ -2770,6 +2799,7 @@ public final class OsLoginProto {
      *
      * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -2794,6 +2824,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -2819,6 +2850,7 @@ public final class OsLoginProto {
      *
      * @return The expirationTimeUsec.
      */
+    @java.lang.Override
     public long getExpirationTimeUsec() {
       return expirationTimeUsec_;
     }
@@ -2836,6 +2868,7 @@ public final class OsLoginProto {
      *
      * @return The fingerprint.
      */
+    @java.lang.Override
     public java.lang.String getFingerprint() {
       java.lang.Object ref = fingerprint_;
       if (ref instanceof java.lang.String) {
@@ -2858,6 +2891,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for fingerprint.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFingerprintBytes() {
       java.lang.Object ref = fingerprint_;
       if (ref instanceof java.lang.String) {
@@ -2883,6 +2917,7 @@ public final class OsLoginProto {
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2905,6 +2940,7 @@ public final class OsLoginProto {
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -3415,6 +3451,7 @@ public final class OsLoginProto {
        *
        * @return The expirationTimeUsec.
        */
+      @java.lang.Override
       public long getExpirationTimeUsec() {
         return expirationTimeUsec_;
       }

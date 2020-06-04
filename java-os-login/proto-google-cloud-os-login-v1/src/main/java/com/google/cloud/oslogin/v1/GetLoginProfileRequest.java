@@ -142,6 +142,7 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -166,6 +167,7 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +216,7 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +242,7 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    *
    * @return The systemId.
    */
+  @java.lang.Override
   public java.lang.String getSystemId() {
     java.lang.Object ref = systemId_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +265,7 @@ public final class GetLoginProfileRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for systemId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSystemIdBytes() {
     java.lang.Object ref = systemId_;
     if (ref instanceof java.lang.String) {

@@ -131,6 +131,7 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
    *
    * @return Whether the loginProfile field is set.
    */
+  @java.lang.Override
   public boolean hasLoginProfile() {
     return loginProfile_ != null;
   }
@@ -145,6 +146,7 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
    *
    * @return The loginProfile.
    */
+  @java.lang.Override
   public com.google.cloud.oslogin.v1.LoginProfile getLoginProfile() {
     return loginProfile_ == null
         ? com.google.cloud.oslogin.v1.LoginProfile.getDefaultInstance()
@@ -159,6 +161,7 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
    *
    * <code>.google.cloud.oslogin.v1.LoginProfile login_profile = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.oslogin.v1.LoginProfileOrBuilder getLoginProfileOrBuilder() {
     return getLoginProfile();
   }
