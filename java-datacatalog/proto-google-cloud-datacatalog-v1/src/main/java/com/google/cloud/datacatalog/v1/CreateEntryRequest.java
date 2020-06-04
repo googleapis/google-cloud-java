@@ -154,6 +154,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +182,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +208,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The entryId.
    */
+  @java.lang.Override
   public java.lang.String getEntryId() {
     java.lang.Object ref = entryId_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +231,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for entryId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEntryIdBytes() {
     java.lang.Object ref = entryId_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +258,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the entry field is set.
    */
+  @java.lang.Override
   public boolean hasEntry() {
     return entry_ != null;
   }
@@ -269,6 +274,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The entry.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.Entry getEntry() {
     return entry_ == null ? com.google.cloud.datacatalog.v1.Entry.getDefaultInstance() : entry_;
   }
@@ -282,6 +288,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    * <code>.google.cloud.datacatalog.v1.Entry entry = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.EntryOrBuilder getEntryOrBuilder() {
     return getEntry();
   }

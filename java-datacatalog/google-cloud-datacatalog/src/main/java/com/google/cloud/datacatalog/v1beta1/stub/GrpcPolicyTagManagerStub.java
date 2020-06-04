@@ -15,6 +15,9 @@
  */
 package com.google.cloud.datacatalog.v1beta1.stub;
 
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListPolicyTagsPagedResponse;
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListTaxonomiesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -185,11 +188,15 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
   private final UnaryCallable<DeleteTaxonomyRequest, Empty> deleteTaxonomyCallable;
   private final UnaryCallable<UpdateTaxonomyRequest, Taxonomy> updateTaxonomyCallable;
   private final UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> listTaxonomiesCallable;
+  private final UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesPagedResponse>
+      listTaxonomiesPagedCallable;
   private final UnaryCallable<GetTaxonomyRequest, Taxonomy> getTaxonomyCallable;
   private final UnaryCallable<CreatePolicyTagRequest, PolicyTag> createPolicyTagCallable;
   private final UnaryCallable<DeletePolicyTagRequest, Empty> deletePolicyTagCallable;
   private final UnaryCallable<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagCallable;
   private final UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> listPolicyTagsCallable;
+  private final UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsPagedResponse>
+      listPolicyTagsPagedCallable;
   private final UnaryCallable<GetPolicyTagRequest, PolicyTag> getPolicyTagCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
@@ -422,6 +429,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
     this.listTaxonomiesCallable =
         callableFactory.createUnaryCallable(
             listTaxonomiesTransportSettings, settings.listTaxonomiesSettings(), clientContext);
+    this.listTaxonomiesPagedCallable =
+        callableFactory.createPagedCallable(
+            listTaxonomiesTransportSettings, settings.listTaxonomiesSettings(), clientContext);
     this.getTaxonomyCallable =
         callableFactory.createUnaryCallable(
             getTaxonomyTransportSettings, settings.getTaxonomySettings(), clientContext);
@@ -436,6 +446,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             updatePolicyTagTransportSettings, settings.updatePolicyTagSettings(), clientContext);
     this.listPolicyTagsCallable =
         callableFactory.createUnaryCallable(
+            listPolicyTagsTransportSettings, settings.listPolicyTagsSettings(), clientContext);
+    this.listPolicyTagsPagedCallable =
+        callableFactory.createPagedCallable(
             listPolicyTagsTransportSettings, settings.listPolicyTagsSettings(), clientContext);
     this.getPolicyTagCallable =
         callableFactory.createUnaryCallable(
@@ -467,6 +480,11 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
     return updateTaxonomyCallable;
   }
 
+  public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesPagedResponse>
+      listTaxonomiesPagedCallable() {
+    return listTaxonomiesPagedCallable;
+  }
+
   public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> listTaxonomiesCallable() {
     return listTaxonomiesCallable;
   }
@@ -485,6 +503,11 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
 
   public UnaryCallable<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagCallable() {
     return updatePolicyTagCallable;
+  }
+
+  public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsPagedResponse>
+      listPolicyTagsPagedCallable() {
+    return listPolicyTagsPagedCallable;
   }
 
   public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> listPolicyTagsCallable() {

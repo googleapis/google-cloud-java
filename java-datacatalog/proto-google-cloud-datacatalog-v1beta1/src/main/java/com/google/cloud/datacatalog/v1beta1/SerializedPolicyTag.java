@@ -151,6 +151,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +202,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -224,6 +227,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -248,6 +252,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag child_policy_tags = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag>
       getChildPolicyTagsList() {
     return childPolicyTags_;
@@ -262,6 +267,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag child_policy_tags = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder>
       getChildPolicyTagsOrBuilderList() {
     return childPolicyTags_;
@@ -276,6 +282,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag child_policy_tags = 4;
    * </code>
    */
+  @java.lang.Override
   public int getChildPolicyTagsCount() {
     return childPolicyTags_.size();
   }
@@ -289,6 +296,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag child_policy_tags = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag getChildPolicyTags(int index) {
     return childPolicyTags_.get(index);
   }
@@ -302,6 +310,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag child_policy_tags = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder
       getChildPolicyTagsOrBuilder(int index) {
     return childPolicyTags_.get(index);

@@ -15,6 +15,9 @@
  */
 package com.google.cloud.datacatalog.v1beta1;
 
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListPolicyTagsPagedResponse;
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListTaxonomiesPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -23,6 +26,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.datacatalog.v1beta1.stub.PolicyTagManagerStubSettings;
@@ -86,7 +90,9 @@ public class PolicyTagManagerSettings extends ClientSettings<PolicyTagManagerSet
   }
 
   /** Returns the object with the settings used for calls to listTaxonomies. */
-  public UnaryCallSettings<ListTaxonomiesRequest, ListTaxonomiesResponse> listTaxonomiesSettings() {
+  public PagedCallSettings<
+          ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
+      listTaxonomiesSettings() {
     return ((PolicyTagManagerStubSettings) getStubSettings()).listTaxonomiesSettings();
   }
 
@@ -111,7 +117,9 @@ public class PolicyTagManagerSettings extends ClientSettings<PolicyTagManagerSet
   }
 
   /** Returns the object with the settings used for calls to listPolicyTags. */
-  public UnaryCallSettings<ListPolicyTagsRequest, ListPolicyTagsResponse> listPolicyTagsSettings() {
+  public PagedCallSettings<
+          ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
+      listPolicyTagsSettings() {
     return ((PolicyTagManagerStubSettings) getStubSettings()).listPolicyTagsSettings();
   }
 
@@ -249,7 +257,8 @@ public class PolicyTagManagerSettings extends ClientSettings<PolicyTagManagerSet
     }
 
     /** Returns the builder for the settings used for calls to listTaxonomies. */
-    public UnaryCallSettings.Builder<ListTaxonomiesRequest, ListTaxonomiesResponse>
+    public PagedCallSettings.Builder<
+            ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
         listTaxonomiesSettings() {
       return getStubSettingsBuilder().listTaxonomiesSettings();
     }
@@ -275,7 +284,8 @@ public class PolicyTagManagerSettings extends ClientSettings<PolicyTagManagerSet
     }
 
     /** Returns the builder for the settings used for calls to listPolicyTags. */
-    public UnaryCallSettings.Builder<ListPolicyTagsRequest, ListPolicyTagsResponse>
+    public PagedCallSettings.Builder<
+            ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
         listPolicyTagsSettings() {
       return getStubSettingsBuilder().listPolicyTagsSettings();
     }

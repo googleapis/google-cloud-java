@@ -15,6 +15,9 @@
  */
 package com.google.cloud.datacatalog.v1beta1;
 
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListPolicyTagsPagedResponse;
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListTaxonomiesPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -22,6 +25,8 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
+import com.google.common.collect.Lists;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -33,8 +38,10 @@ import com.google.protobuf.Empty;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -90,26 +97,29 @@ public class PolicyTagManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void createTaxonomyTest() {
-    String name = "name3373707";
+    TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Taxonomy expectedResponse =
         Taxonomy.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    CreateTaxonomyRequest request = CreateTaxonomyRequest.newBuilder().build();
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Taxonomy taxonomy = Taxonomy.newBuilder().build();
 
-    Taxonomy actualResponse = client.createTaxonomy(request);
+    Taxonomy actualResponse = client.createTaxonomy(parent, taxonomy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateTaxonomyRequest actualRequest = (CreateTaxonomyRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(taxonomy, actualRequest.getTaxonomy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -123,9 +133,10 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      CreateTaxonomyRequest request = CreateTaxonomyRequest.newBuilder().build();
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Taxonomy taxonomy = Taxonomy.newBuilder().build();
 
-      client.createTaxonomy(request);
+      client.createTaxonomy(parent, taxonomy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -138,14 +149,15 @@ public class PolicyTagManagerClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    DeleteTaxonomyRequest request = DeleteTaxonomyRequest.newBuilder().build();
+    TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
 
-    client.deleteTaxonomy(request);
+    client.deleteTaxonomy(name);
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteTaxonomyRequest actualRequest = (DeleteTaxonomyRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, TaxonomyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -159,9 +171,9 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      DeleteTaxonomyRequest request = DeleteTaxonomyRequest.newBuilder().build();
+      TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
 
-      client.deleteTaxonomy(request);
+      client.deleteTaxonomy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -171,26 +183,27 @@ public class PolicyTagManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateTaxonomyTest() {
-    String name = "name3373707";
+    TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Taxonomy expectedResponse =
         Taxonomy.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    UpdateTaxonomyRequest request = UpdateTaxonomyRequest.newBuilder().build();
+    Taxonomy taxonomy = Taxonomy.newBuilder().build();
 
-    Taxonomy actualResponse = client.updateTaxonomy(request);
+    Taxonomy actualResponse = client.updateTaxonomy(taxonomy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateTaxonomyRequest actualRequest = (UpdateTaxonomyRequest) actualRequests.get(0);
 
+    Assert.assertEquals(taxonomy, actualRequest.getTaxonomy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -204,9 +217,9 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      UpdateTaxonomyRequest request = UpdateTaxonomyRequest.newBuilder().build();
+      Taxonomy taxonomy = Taxonomy.newBuilder().build();
 
-      client.updateTaxonomy(request);
+      client.updateTaxonomy(taxonomy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -216,20 +229,29 @@ public class PolicyTagManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void listTaxonomiesTest() {
-    String nextPageToken = "nextPageToken-1530815211";
+    String nextPageToken = "";
+    Taxonomy taxonomiesElement = Taxonomy.newBuilder().build();
+    List<Taxonomy> taxonomies = Arrays.asList(taxonomiesElement);
     ListTaxonomiesResponse expectedResponse =
-        ListTaxonomiesResponse.newBuilder().setNextPageToken(nextPageToken).build();
+        ListTaxonomiesResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllTaxonomies(taxonomies)
+            .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    ListTaxonomiesRequest request = ListTaxonomiesRequest.newBuilder().build();
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-    ListTaxonomiesResponse actualResponse = client.listTaxonomies(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListTaxonomiesPagedResponse pagedListResponse = client.listTaxonomies(parent);
+
+    List<Taxonomy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTaxonomiesList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTaxonomiesRequest actualRequest = (ListTaxonomiesRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -243,9 +265,9 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      ListTaxonomiesRequest request = ListTaxonomiesRequest.newBuilder().build();
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-      client.listTaxonomies(request);
+      client.listTaxonomies(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -255,26 +277,27 @@ public class PolicyTagManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTaxonomyTest() {
-    String name = "name3373707";
+    TaxonomyName name2 = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     Taxonomy expectedResponse =
         Taxonomy.newBuilder()
-            .setName(name)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    GetTaxonomyRequest request = GetTaxonomyRequest.newBuilder().build();
+    TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
 
-    Taxonomy actualResponse = client.getTaxonomy(request);
+    Taxonomy actualResponse = client.getTaxonomy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTaxonomyRequest actualRequest = (GetTaxonomyRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, TaxonomyName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -288,9 +311,9 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      GetTaxonomyRequest request = GetTaxonomyRequest.newBuilder().build();
+      TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
 
-      client.getTaxonomy(request);
+      client.getTaxonomy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -300,28 +323,31 @@ public class PolicyTagManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void createPolicyTagTest() {
-    String name = "name3373707";
+    PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     String parentPolicyTag = "parentPolicyTag2071382466";
     PolicyTag expectedResponse =
         PolicyTag.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setParentPolicyTag(parentPolicyTag)
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    CreatePolicyTagRequest request = CreatePolicyTagRequest.newBuilder().build();
+    TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+    PolicyTag policyTag = PolicyTag.newBuilder().build();
 
-    PolicyTag actualResponse = client.createPolicyTag(request);
+    PolicyTag actualResponse = client.createPolicyTag(parent, policyTag);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreatePolicyTagRequest actualRequest = (CreatePolicyTagRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, TaxonomyName.parse(actualRequest.getParent()));
+    Assert.assertEquals(policyTag, actualRequest.getPolicyTag());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -335,9 +361,10 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      CreatePolicyTagRequest request = CreatePolicyTagRequest.newBuilder().build();
+      TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+      PolicyTag policyTag = PolicyTag.newBuilder().build();
 
-      client.createPolicyTag(request);
+      client.createPolicyTag(parent, policyTag);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -350,14 +377,15 @@ public class PolicyTagManagerClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    DeletePolicyTagRequest request = DeletePolicyTagRequest.newBuilder().build();
+    PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
 
-    client.deletePolicyTag(request);
+    client.deletePolicyTag(name);
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeletePolicyTagRequest actualRequest = (DeletePolicyTagRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, PolicyTagName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -371,9 +399,10 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      DeletePolicyTagRequest request = DeletePolicyTagRequest.newBuilder().build();
+      PolicyTagName name =
+          PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
 
-      client.deletePolicyTag(request);
+      client.deletePolicyTag(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -383,28 +412,29 @@ public class PolicyTagManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void updatePolicyTagTest() {
-    String name = "name3373707";
+    PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     String parentPolicyTag = "parentPolicyTag2071382466";
     PolicyTag expectedResponse =
         PolicyTag.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setParentPolicyTag(parentPolicyTag)
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    UpdatePolicyTagRequest request = UpdatePolicyTagRequest.newBuilder().build();
+    PolicyTag policyTag = PolicyTag.newBuilder().build();
 
-    PolicyTag actualResponse = client.updatePolicyTag(request);
+    PolicyTag actualResponse = client.updatePolicyTag(policyTag);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdatePolicyTagRequest actualRequest = (UpdatePolicyTagRequest) actualRequests.get(0);
 
+    Assert.assertEquals(policyTag, actualRequest.getPolicyTag());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -418,9 +448,9 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      UpdatePolicyTagRequest request = UpdatePolicyTagRequest.newBuilder().build();
+      PolicyTag policyTag = PolicyTag.newBuilder().build();
 
-      client.updatePolicyTag(request);
+      client.updatePolicyTag(policyTag);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -430,20 +460,29 @@ public class PolicyTagManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void listPolicyTagsTest() {
-    String nextPageToken = "nextPageToken-1530815211";
+    String nextPageToken = "";
+    PolicyTag policyTagsElement = PolicyTag.newBuilder().build();
+    List<PolicyTag> policyTags = Arrays.asList(policyTagsElement);
     ListPolicyTagsResponse expectedResponse =
-        ListPolicyTagsResponse.newBuilder().setNextPageToken(nextPageToken).build();
+        ListPolicyTagsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllPolicyTags(policyTags)
+            .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    ListPolicyTagsRequest request = ListPolicyTagsRequest.newBuilder().build();
+    TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
 
-    ListPolicyTagsResponse actualResponse = client.listPolicyTags(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListPolicyTagsPagedResponse pagedListResponse = client.listPolicyTags(parent);
+
+    List<PolicyTag> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPolicyTagsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListPolicyTagsRequest actualRequest = (ListPolicyTagsRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, TaxonomyName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -457,9 +496,9 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      ListPolicyTagsRequest request = ListPolicyTagsRequest.newBuilder().build();
+      TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
 
-      client.listPolicyTags(request);
+      client.listPolicyTags(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -469,28 +508,29 @@ public class PolicyTagManagerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getPolicyTagTest() {
-    String name = "name3373707";
+    PolicyTagName name2 = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     String parentPolicyTag = "parentPolicyTag2071382466";
     PolicyTag expectedResponse =
         PolicyTag.newBuilder()
-            .setName(name)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .setParentPolicyTag(parentPolicyTag)
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    GetPolicyTagRequest request = GetPolicyTagRequest.newBuilder().build();
+    PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
 
-    PolicyTag actualResponse = client.getPolicyTag(request);
+    PolicyTag actualResponse = client.getPolicyTag(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPolicyTagManager.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetPolicyTagRequest actualRequest = (GetPolicyTagRequest) actualRequests.get(0);
 
+    Assert.assertEquals(name, PolicyTagName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -504,9 +544,10 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      GetPolicyTagRequest request = GetPolicyTagRequest.newBuilder().build();
+      PolicyTagName name =
+          PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
 
-      client.getPolicyTag(request);
+      client.getPolicyTag(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -521,7 +562,9 @@ public class PolicyTagManagerClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().build();
+    ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
     Policy actualResponse = client.getIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -530,6 +573,7 @@ public class PolicyTagManagerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -543,7 +587,9 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().build();
+      ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
       client.getIamPolicy(request);
       Assert.fail("No exception raised");
@@ -560,7 +606,10 @@ public class PolicyTagManagerClientTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder().build();
+    ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+    Policy policy = Policy.newBuilder().build();
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
 
     Policy actualResponse = client.setIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -569,6 +618,8 @@ public class PolicyTagManagerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
+    Assert.assertEquals(policy, actualRequest.getPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -582,7 +633,13 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder().build();
+      ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+      Policy policy = Policy.newBuilder().build();
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(resource.toString())
+              .setPolicy(policy)
+              .build();
 
       client.setIamPolicy(request);
       Assert.fail("No exception raised");
@@ -597,7 +654,13 @@ public class PolicyTagManagerClientTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
-    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder().build();
+    ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+    List<String> permissions = new ArrayList<>();
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource.toString())
+            .addAllPermissions(permissions)
+            .build();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -606,6 +669,8 @@ public class PolicyTagManagerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
+    Assert.assertEquals(permissions, actualRequest.getPermissionsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -619,7 +684,13 @@ public class PolicyTagManagerClientTest {
     mockPolicyTagManager.addException(exception);
 
     try {
-      TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder().build();
+      ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+      List<String> permissions = new ArrayList<>();
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(resource.toString())
+              .addAllPermissions(permissions)
+              .build();
 
       client.testIamPermissions(request);
       Assert.fail("No exception raised");

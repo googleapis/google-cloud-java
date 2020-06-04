@@ -140,6 +140,7 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy> getTaxonomiesList() {
     return taxonomies_;
   }
@@ -152,6 +153,7 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder>
       getTaxonomiesOrBuilderList() {
     return taxonomies_;
@@ -165,6 +167,7 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public int getTaxonomiesCount() {
     return taxonomies_.size();
   }
@@ -177,6 +180,7 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomies(int index) {
     return taxonomies_.get(index);
   }
@@ -189,6 +193,7 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder getTaxonomiesOrBuilder(int index) {
     return taxonomies_.get(index);
   }
@@ -207,6 +212,7 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +236,7 @@ public final class ListTaxonomiesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

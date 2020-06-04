@@ -134,8 +134,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the resource to attach this tag to. Tags can be attached to
-   * Entries. Example:
+   * Required. The name of the resource to attach this tag to. Tags can be
+   * attached to Entries. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Tag and its child resources may not actually be stored in
    * the location in this name.
@@ -147,6 +147,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -162,8 +163,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the resource to attach this tag to. Tags can be attached to
-   * Entries. Example:
+   * Required. The name of the resource to attach this tag to. Tags can be
+   * attached to Entries. Example:
    * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    * Note that this Tag and its child resources may not actually be stored in
    * the location in this name.
@@ -175,6 +176,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the tag field is set.
    */
+  @java.lang.Override
   public boolean hasTag() {
     return tag_ != null;
   }
@@ -216,6 +219,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The tag.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.Tag getTag() {
     return tag_ == null ? com.google.cloud.datacatalog.v1.Tag.getDefaultInstance() : tag_;
   }
@@ -229,6 +233,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.datacatalog.v1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.TagOrBuilder getTagOrBuilder() {
     return getTag();
   }
@@ -584,8 +589,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. Example:
+     * Required. The name of the resource to attach this tag to. Tags can be
+     * attached to Entries. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
@@ -612,8 +617,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. Example:
+     * Required. The name of the resource to attach this tag to. Tags can be
+     * attached to Entries. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
@@ -640,8 +645,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. Example:
+     * Required. The name of the resource to attach this tag to. Tags can be
+     * attached to Entries. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
@@ -667,8 +672,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. Example:
+     * Required. The name of the resource to attach this tag to. Tags can be
+     * attached to Entries. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.
@@ -690,8 +695,8 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the resource to attach this tag to. Tags can be attached to
-     * Entries. Example:
+     * Required. The name of the resource to attach this tag to. Tags can be
+     * attached to Entries. Example:
      * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
      * Note that this Tag and its child resources may not actually be stored in
      * the location in this name.

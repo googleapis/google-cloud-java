@@ -132,6 +132,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy> getTaxonomiesList() {
     return taxonomies_;
   }
@@ -144,6 +145,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder>
       getTaxonomiesOrBuilderList() {
     return taxonomies_;
@@ -157,6 +159,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public int getTaxonomiesCount() {
     return taxonomies_.size();
   }
@@ -169,6 +172,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomies(int index) {
     return taxonomies_.get(index);
   }
@@ -181,6 +185,7 @@ public final class ImportTaxonomiesResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.Taxonomy taxonomies = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder getTaxonomiesOrBuilder(int index) {
     return taxonomies_.get(index);
   }

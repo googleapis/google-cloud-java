@@ -136,6 +136,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +188,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return The newTagTemplateFieldId.
    */
+  @java.lang.Override
   public java.lang.String getNewTagTemplateFieldId() {
     java.lang.Object ref = newTagTemplateFieldId_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +211,7 @@ public final class RenameTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for newTagTemplateFieldId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNewTagTemplateFieldIdBytes() {
     java.lang.Object ref = newTagTemplateFieldId_;
     if (ref instanceof java.lang.String) {

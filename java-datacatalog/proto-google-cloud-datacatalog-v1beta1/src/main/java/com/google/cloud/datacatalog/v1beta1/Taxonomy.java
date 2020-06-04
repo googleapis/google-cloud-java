@@ -262,6 +262,10 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -308,6 +312,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -331,6 +336,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -358,6 +364,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -382,6 +389,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -409,6 +417,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -433,6 +442,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -476,6 +486,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the activatedPolicyTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
       getActivatedPolicyTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -496,6 +507,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of activatedPolicyTypes.
    */
+  @java.lang.Override
   public int getActivatedPolicyTypesCount() {
     return activatedPolicyTypes_.size();
   }
@@ -514,6 +526,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The activatedPolicyTypes at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType getActivatedPolicyTypes(
       int index) {
     return activatedPolicyTypes_converter_.convert(activatedPolicyTypes_.get(index));
@@ -532,6 +545,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for activatedPolicyTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
     return activatedPolicyTypes_;
   }
@@ -550,6 +564,7 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of activatedPolicyTypes at the given index.
    */
+  @java.lang.Override
   public int getActivatedPolicyTypesValue(int index) {
     return activatedPolicyTypes_.get(index);
   }

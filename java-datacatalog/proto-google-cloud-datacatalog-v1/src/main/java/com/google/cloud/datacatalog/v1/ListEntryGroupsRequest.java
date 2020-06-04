@@ -131,8 +131,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the location that contains the entry groups, which can be
-   * provided in URL format. Example:
+   * Required. The name of the location that contains the entry groups, which
+   * can be provided in URL format. Example:
    * * projects/{project_id}/locations/{location}
    * </pre>
    *
@@ -142,6 +142,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -157,8 +158,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the location that contains the entry groups, which can be
-   * provided in URL format. Example:
+   * Required. The name of the location that contains the entry groups, which
+   * can be provided in URL format. Example:
    * * projects/{project_id}/locations/{location}
    * </pre>
    *
@@ -168,6 +169,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -186,14 +188,15 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
-   * Throws an invalid argument for `page_size &gt; 1000`.
+   * Optional. The maximum number of items to return. Default is 10. Max limit
+   * is 1000. Throws an invalid argument for `page_size &gt; 1000`.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -204,14 +207,15 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Optional. Token that specifies which page is requested. If empty, the first
+   * page is returned.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -227,14 +231,15 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Optional. Token that specifies which page is requested. If empty, the first
+   * page is returned.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -603,8 +608,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the location that contains the entry groups, which can be
-     * provided in URL format. Example:
+     * Required. The name of the location that contains the entry groups, which
+     * can be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -629,8 +634,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the location that contains the entry groups, which can be
-     * provided in URL format. Example:
+     * Required. The name of the location that contains the entry groups, which
+     * can be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -655,8 +660,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the location that contains the entry groups, which can be
-     * provided in URL format. Example:
+     * Required. The name of the location that contains the entry groups, which
+     * can be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -680,8 +685,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the location that contains the entry groups, which can be
-     * provided in URL format. Example:
+     * Required. The name of the location that contains the entry groups, which
+     * can be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -701,8 +706,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the location that contains the entry groups, which can be
-     * provided in URL format. Example:
+     * Required. The name of the location that contains the entry groups, which
+     * can be provided in URL format. Example:
      * * projects/{project_id}/locations/{location}
      * </pre>
      *
@@ -729,14 +734,15 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
-     * Throws an invalid argument for `page_size &gt; 1000`.
+     * Optional. The maximum number of items to return. Default is 10. Max limit
+     * is 1000. Throws an invalid argument for `page_size &gt; 1000`.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -744,8 +750,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
-     * Throws an invalid argument for `page_size &gt; 1000`.
+     * Optional. The maximum number of items to return. Default is 10. Max limit
+     * is 1000. Throws an invalid argument for `page_size &gt; 1000`.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -763,8 +769,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
-     * Throws an invalid argument for `page_size &gt; 1000`.
+     * Optional. The maximum number of items to return. Default is 10. Max limit
+     * is 1000. Throws an invalid argument for `page_size &gt; 1000`.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -783,8 +789,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Optional. Token that specifies which page is requested. If empty, the first
+     * page is returned.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -806,8 +812,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Optional. Token that specifies which page is requested. If empty, the first
+     * page is returned.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -829,8 +835,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Optional. Token that specifies which page is requested. If empty, the first
+     * page is returned.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -851,8 +857,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Optional. Token that specifies which page is requested. If empty, the first
+     * page is returned.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -869,8 +875,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Optional. Token that specifies which page is requested. If empty, the first
+     * page is returned.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

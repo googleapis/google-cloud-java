@@ -702,6 +702,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The linkedResource.
      */
+    @java.lang.Override
     public java.lang.String getLinkedResource() {
       java.lang.Object ref = "";
       if (targetNameCase_ == 1) {
@@ -735,6 +736,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for linkedResource.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLinkedResourceBytes() {
       java.lang.Object ref = "";
       if (targetNameCase_ == 1) {
@@ -851,6 +853,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The sqlResource.
      */
+    @java.lang.Override
     public java.lang.String getSqlResource() {
       java.lang.Object ref = "";
       if (targetNameCase_ == 3) {
@@ -886,6 +889,7 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for sqlResource.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSqlResourceBytes() {
       java.lang.Object ref = "";
       if (targetNameCase_ == 3) {

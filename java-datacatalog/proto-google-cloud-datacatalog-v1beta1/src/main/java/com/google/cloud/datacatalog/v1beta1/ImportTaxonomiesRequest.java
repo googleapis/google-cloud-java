@@ -190,6 +190,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +216,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +241,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    * @return Whether the inlineSource field is set.
    */
+  @java.lang.Override
   public boolean hasInlineSource() {
     return sourceCase_ == 2;
   }
@@ -253,6 +256,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    * @return The inlineSource.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.InlineSource getInlineSource() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.datacatalog.v1beta1.InlineSource) source_;
@@ -268,6 +272,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.InlineSourceOrBuilder getInlineSourceOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.datacatalog.v1beta1.InlineSource) source_;
@@ -793,6 +798,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      * @return Whether the inlineSource field is set.
      */
+    @java.lang.Override
     public boolean hasInlineSource() {
       return sourceCase_ == 2;
     }
@@ -807,6 +813,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      * @return The inlineSource.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.InlineSource getInlineSource() {
       if (inlineSourceBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -939,6 +946,7 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
      *
      * <code>.google.cloud.datacatalog.v1beta1.InlineSource inline_source = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.InlineSourceOrBuilder getInlineSourceOrBuilder() {
       if ((sourceCase_ == 2) && (inlineSourceBuilder_ != null)) {
         return inlineSourceBuilder_.getMessageOrBuilder();

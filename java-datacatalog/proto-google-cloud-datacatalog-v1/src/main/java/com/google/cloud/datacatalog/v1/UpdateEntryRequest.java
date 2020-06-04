@@ -148,6 +148,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the entry field is set.
    */
+  @java.lang.Override
   public boolean hasEntry() {
     return entry_ != null;
   }
@@ -163,6 +164,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The entry.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.Entry getEntry() {
     return entry_ == null ? com.google.cloud.datacatalog.v1.Entry.getDefaultInstance() : entry_;
   }
@@ -176,6 +178,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.EntryOrBuilder getEntryOrBuilder() {
     return getEntry();
   }
@@ -211,6 +214,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -243,6 +247,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -273,6 +278,7 @@ public final class UpdateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

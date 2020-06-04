@@ -130,6 +130,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The groupedEntry.
    */
+  @java.lang.Override
   public java.lang.String getGroupedEntry() {
     java.lang.Object ref = groupedEntry_;
     if (ref instanceof java.lang.String) {
@@ -158,6 +159,7 @@ public final class TableSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for groupedEntry.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGroupedEntryBytes() {
     java.lang.Object ref = groupedEntry_;
     if (ref instanceof java.lang.String) {

@@ -133,6 +133,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> getColumnsList() {
     return columns_;
   }
@@ -148,6 +149,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder>
       getColumnsOrBuilderList() {
     return columns_;
@@ -164,6 +166,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getColumnsCount() {
     return columns_.size();
   }
@@ -179,6 +182,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.ColumnSchema getColumns(int index) {
     return columns_.get(index);
   }
@@ -194,6 +198,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.ColumnSchema columns = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder getColumnsOrBuilder(int index) {
     return columns_.get(index);
   }

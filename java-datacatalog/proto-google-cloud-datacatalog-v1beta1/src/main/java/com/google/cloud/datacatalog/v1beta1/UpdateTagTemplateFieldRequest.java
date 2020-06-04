@@ -160,6 +160,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +214,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return Whether the tagTemplateField field is set.
    */
+  @java.lang.Override
   public boolean hasTagTemplateField() {
     return tagTemplateField_ != null;
   }
@@ -228,6 +231,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return The tagTemplateField.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagTemplateField getTagTemplateField() {
     return tagTemplateField_ == null
         ? com.google.cloud.datacatalog.v1beta1.TagTemplateField.getDefaultInstance()
@@ -244,6 +248,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * .google.cloud.datacatalog.v1beta1.TagTemplateField tag_template_field = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagTemplateFieldOrBuilder
       getTagTemplateFieldOrBuilder() {
     return getTagTemplateField();
@@ -273,6 +278,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -298,6 +304,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -321,6 +328,7 @@ public final class UpdateTagTemplateFieldRequest extends com.google.protobuf.Gen
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

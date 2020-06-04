@@ -763,6 +763,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The includeGcpPublicDatasets.
      */
+    @java.lang.Override
     public boolean getIncludeGcpPublicDatasets() {
       return includeGcpPublicDatasets_;
     }
@@ -1778,6 +1779,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * @return The includeGcpPublicDatasets.
        */
+      @java.lang.Override
       public boolean getIncludeGcpPublicDatasets() {
         return includeGcpPublicDatasets_;
       }
@@ -2368,6 +2370,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the scope field is set.
    */
+  @java.lang.Override
   public boolean hasScope() {
     return scope_ != null;
   }
@@ -2387,6 +2390,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The scope.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope getScope() {
     return scope_ == null
         ? com.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.getDefaultInstance()
@@ -2406,6 +2410,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.datacatalog.v1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.SearchCatalogRequest.ScopeOrBuilder getScopeOrBuilder() {
     return getScope();
   }
@@ -2416,7 +2421,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be non-empty.
+   * Required. The query string in search query syntax. The query must be
+   * non-empty.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
@@ -2431,6 +2437,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The query.
    */
+  @java.lang.Override
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -2446,7 +2453,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The query string in search query syntax. The query must be non-empty.
+   * Required. The query string in search query syntax. The query must be
+   * non-empty.
    * Query strings can be simple as "x" or more qualified as:
    * * name:x
    * * column:x
@@ -2461,6 +2469,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for query.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQueryBytes() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -2487,6 +2496,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -2498,8 +2508,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -2509,6 +2519,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -2525,8 +2536,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
+   * which indicates that this is a continuation of a prior
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
    * call, and that the system should return the next page of data. If empty,
    * the first page is returned.
@@ -2536,6 +2547,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -2566,6 +2578,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The orderBy.
    */
+  @java.lang.Override
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -2593,6 +2606,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for orderBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -3235,7 +3249,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3265,7 +3280,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3295,7 +3311,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3324,7 +3341,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3349,7 +3367,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The query string in search query syntax. The query must be non-empty.
+     * Required. The query string in search query syntax. The query must be
+     * non-empty.
      * Query strings can be simple as "x" or more qualified as:
      * * name:x
      * * column:x
@@ -3389,6 +3408,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -3436,8 +3456,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -3463,8 +3483,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -3490,8 +3510,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -3516,8 +3536,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.
@@ -3538,8 +3558,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Pagination token returned in an earlier
-     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-     * indicates that this is a continuation of a prior
+     * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token],
+     * which indicates that this is a continuation of a prior
      * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
      * call, and that the system should return the next page of data. If empty,
      * the first page is returned.

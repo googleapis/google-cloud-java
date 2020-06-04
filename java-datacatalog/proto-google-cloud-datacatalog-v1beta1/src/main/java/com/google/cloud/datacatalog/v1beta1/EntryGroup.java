@@ -162,6 +162,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +188,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +215,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +239,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +267,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -287,6 +292,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -314,6 +320,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dataCatalogTimestamps field is set.
    */
+  @java.lang.Override
   public boolean hasDataCatalogTimestamps() {
     return dataCatalogTimestamps_ != null;
   }
@@ -330,6 +337,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataCatalogTimestamps.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getDataCatalogTimestamps() {
     return dataCatalogTimestamps_ == null
         ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
@@ -346,6 +354,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps data_catalog_timestamps = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder
       getDataCatalogTimestampsOrBuilder() {
     return getDataCatalogTimestamps();

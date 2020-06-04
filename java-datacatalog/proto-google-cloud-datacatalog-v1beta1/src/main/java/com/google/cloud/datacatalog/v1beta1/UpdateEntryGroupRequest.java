@@ -149,6 +149,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return Whether the entryGroup field is set.
    */
+  @java.lang.Override
   public boolean hasEntryGroup() {
     return entryGroup_ != null;
   }
@@ -165,6 +166,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return The entryGroup.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.EntryGroup getEntryGroup() {
     return entryGroup_ == null
         ? com.google.cloud.datacatalog.v1beta1.EntryGroup.getDefaultInstance()
@@ -181,6 +183,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    * .google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.EntryGroupOrBuilder getEntryGroupOrBuilder() {
     return getEntryGroup();
   }
@@ -199,6 +202,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -214,6 +218,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -227,6 +232,7 @@ public final class UpdateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

@@ -226,6 +226,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +252,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -278,6 +280,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The template.
    */
+  @java.lang.Override
   public java.lang.String getTemplate() {
     java.lang.Object ref = template_;
     if (ref instanceof java.lang.String) {
@@ -302,6 +305,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for template.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTemplateBytes() {
     java.lang.Object ref = template_;
     if (ref instanceof java.lang.String) {
@@ -327,6 +331,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The templateDisplayName.
    */
+  @java.lang.Override
   public java.lang.String getTemplateDisplayName() {
     java.lang.Object ref = templateDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -349,6 +354,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for templateDisplayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTemplateDisplayNameBytes() {
     java.lang.Object ref = templateDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -468,6 +474,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.datacatalog.v1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public boolean containsFields(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -475,6 +482,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     return internalGetFields().getMap().containsKey(key);
   }
   /** Use {@link #getFieldsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.TagField> getFields() {
     return getFieldsMap();
@@ -492,6 +500,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.datacatalog.v1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.TagField> getFieldsMap() {
     return internalGetFields().getMap();
   }
@@ -508,6 +517,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.datacatalog.v1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.TagField getFieldsOrDefault(
       java.lang.String key, com.google.cloud.datacatalog.v1.TagField defaultValue) {
     if (key == null) {
@@ -530,6 +540,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.datacatalog.v1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.TagField getFieldsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1349,6 +1360,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The column.
      */
+    @java.lang.Override
     public java.lang.String getColumn() {
       java.lang.Object ref = "";
       if (scopeCase_ == 4) {
@@ -1380,6 +1392,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for column.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getColumnBytes() {
       java.lang.Object ref = "";
       if (scopeCase_ == 4) {
@@ -1511,6 +1524,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.datacatalog.v1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public boolean containsFields(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1518,6 +1532,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       return internalGetFields().getMap().containsKey(key);
     }
     /** Use {@link #getFieldsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.TagField> getFields() {
       return getFieldsMap();
@@ -1535,6 +1550,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.datacatalog.v1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.TagField>
         getFieldsMap() {
       return internalGetFields().getMap();
@@ -1552,6 +1568,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.datacatalog.v1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1.TagField getFieldsOrDefault(
         java.lang.String key, com.google.cloud.datacatalog.v1.TagField defaultValue) {
       if (key == null) {
@@ -1574,6 +1591,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.datacatalog.v1.TagField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1.TagField getFieldsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

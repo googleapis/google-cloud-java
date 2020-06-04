@@ -277,6 +277,10 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -623,6 +627,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The displayName.
        */
+      @java.lang.Override
       public java.lang.String getDisplayName() {
         java.lang.Object ref = displayName_;
         if (ref instanceof java.lang.String) {
@@ -645,6 +650,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for displayName.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getDisplayNameBytes() {
         java.lang.Object ref = displayName_;
         if (ref instanceof java.lang.String) {
@@ -1155,6 +1161,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue>
         getAllowedValuesList() {
       return allowedValues_;
@@ -1174,6 +1181,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.datacatalog.v1.FieldType.EnumType.EnumValueOrBuilder>
         getAllowedValuesOrBuilderList() {
@@ -1194,6 +1202,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
+    @java.lang.Override
     public int getAllowedValuesCount() {
       return allowedValues_.size();
     }
@@ -1212,6 +1221,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue getAllowedValues(
         int index) {
       return allowedValues_.get(index);
@@ -1231,6 +1241,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1.FieldType.EnumType.EnumValueOrBuilder
         getAllowedValuesOrBuilder(int index) {
       return allowedValues_.get(index);
@@ -2242,6 +2253,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the enumType field is set.
    */
+  @java.lang.Override
   public boolean hasEnumType() {
     return typeDeclCase_ == 2;
   }
@@ -2256,6 +2268,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enumType.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.FieldType.EnumType getEnumType() {
     if (typeDeclCase_ == 2) {
       return (com.google.cloud.datacatalog.v1.FieldType.EnumType) typeDecl_;
@@ -2271,6 +2284,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datacatalog.v1.FieldType.EnumType enum_type = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.FieldType.EnumTypeOrBuilder getEnumTypeOrBuilder() {
     if (typeDeclCase_ == 2) {
       return (com.google.cloud.datacatalog.v1.FieldType.EnumType) typeDecl_;
@@ -2662,6 +2676,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for primitiveType.
      */
+    @java.lang.Override
     public int getPrimitiveTypeValue() {
       if (typeDeclCase_ == 1) {
         return ((java.lang.Integer) typeDecl_).intValue();
@@ -2697,6 +2712,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The primitiveType.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1.FieldType.PrimitiveType getPrimitiveType() {
       if (typeDeclCase_ == 1) {
         @SuppressWarnings("deprecation")
@@ -2766,6 +2782,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the enumType field is set.
      */
+    @java.lang.Override
     public boolean hasEnumType() {
       return typeDeclCase_ == 2;
     }
@@ -2780,6 +2797,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enumType.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1.FieldType.EnumType getEnumType() {
       if (enumTypeBuilder_ == null) {
         if (typeDeclCase_ == 2) {
@@ -2913,6 +2931,7 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datacatalog.v1.FieldType.EnumType enum_type = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1.FieldType.EnumTypeOrBuilder getEnumTypeOrBuilder() {
       if ((typeDeclCase_ == 2) && (enumTypeBuilder_ != null)) {
         return enumTypeBuilder_.getMessageOrBuilder();

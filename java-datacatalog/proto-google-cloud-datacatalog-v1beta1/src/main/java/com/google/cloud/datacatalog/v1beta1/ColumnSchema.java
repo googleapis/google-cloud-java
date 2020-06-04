@@ -167,6 +167,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The column.
    */
+  @java.lang.Override
   public java.lang.String getColumn() {
     java.lang.Object ref = column_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +190,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for column.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getColumnBytes() {
     java.lang.Object ref = column_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +216,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public java.lang.String getType() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +239,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for type.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -261,6 +265,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -283,6 +288,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -310,6 +316,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mode.
    */
+  @java.lang.Override
   public java.lang.String getMode() {
     java.lang.Object ref = mode_;
     if (ref instanceof java.lang.String) {
@@ -334,6 +341,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModeBytes() {
     java.lang.Object ref = mode_;
     if (ref instanceof java.lang.String) {
@@ -359,6 +367,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1beta1.ColumnSchema> getSubcolumnsList() {
     return subcolumns_;
   }
@@ -373,6 +382,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1beta1.ColumnSchemaOrBuilder>
       getSubcolumnsOrBuilderList() {
     return subcolumns_;
@@ -388,6 +398,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getSubcolumnsCount() {
     return subcolumns_.size();
   }
@@ -402,6 +413,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.ColumnSchema getSubcolumns(int index) {
     return subcolumns_.get(index);
   }
@@ -416,6 +428,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.ColumnSchema subcolumns = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.ColumnSchemaOrBuilder getSubcolumnsOrBuilder(
       int index) {
     return subcolumns_.get(index);

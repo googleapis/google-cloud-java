@@ -15,7 +15,11 @@
  */
 package com.google.cloud.datacatalog.v1beta1.stub;
 
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListPolicyTagsPagedResponse;
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListTaxonomiesPagedResponse;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -24,12 +28,18 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1beta1.CreatePolicyTagRequest;
 import com.google.cloud.datacatalog.v1beta1.CreateTaxonomyRequest;
 import com.google.cloud.datacatalog.v1beta1.DeletePolicyTagRequest;
@@ -100,13 +110,15 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
   private final UnaryCallSettings<CreateTaxonomyRequest, Taxonomy> createTaxonomySettings;
   private final UnaryCallSettings<DeleteTaxonomyRequest, Empty> deleteTaxonomySettings;
   private final UnaryCallSettings<UpdateTaxonomyRequest, Taxonomy> updateTaxonomySettings;
-  private final UnaryCallSettings<ListTaxonomiesRequest, ListTaxonomiesResponse>
+  private final PagedCallSettings<
+          ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
       listTaxonomiesSettings;
   private final UnaryCallSettings<GetTaxonomyRequest, Taxonomy> getTaxonomySettings;
   private final UnaryCallSettings<CreatePolicyTagRequest, PolicyTag> createPolicyTagSettings;
   private final UnaryCallSettings<DeletePolicyTagRequest, Empty> deletePolicyTagSettings;
   private final UnaryCallSettings<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagSettings;
-  private final UnaryCallSettings<ListPolicyTagsRequest, ListPolicyTagsResponse>
+  private final PagedCallSettings<
+          ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
       listPolicyTagsSettings;
   private final UnaryCallSettings<GetPolicyTagRequest, PolicyTag> getPolicyTagSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -130,7 +142,9 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
   }
 
   /** Returns the object with the settings used for calls to listTaxonomies. */
-  public UnaryCallSettings<ListTaxonomiesRequest, ListTaxonomiesResponse> listTaxonomiesSettings() {
+  public PagedCallSettings<
+          ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
+      listTaxonomiesSettings() {
     return listTaxonomiesSettings;
   }
 
@@ -155,7 +169,9 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
   }
 
   /** Returns the object with the settings used for calls to listPolicyTags. */
-  public UnaryCallSettings<ListPolicyTagsRequest, ListPolicyTagsResponse> listPolicyTagsSettings() {
+  public PagedCallSettings<
+          ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
+      listPolicyTagsSettings() {
     return listPolicyTagsSettings;
   }
 
@@ -264,6 +280,114 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
+  private static final PagedListDescriptor<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy>
+      LIST_TAXONOMIES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTaxonomiesRequest injectToken(ListTaxonomiesRequest payload, String token) {
+              return ListTaxonomiesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTaxonomiesRequest injectPageSize(
+                ListTaxonomiesRequest payload, int pageSize) {
+              return ListTaxonomiesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTaxonomiesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTaxonomiesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Taxonomy> extractResources(ListTaxonomiesResponse payload) {
+              return payload.getTaxonomiesList() != null
+                  ? payload.getTaxonomiesList()
+                  : ImmutableList.<Taxonomy>of();
+            }
+          };
+
+  private static final PagedListDescriptor<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag>
+      LIST_POLICY_TAGS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPolicyTagsRequest injectToken(ListPolicyTagsRequest payload, String token) {
+              return ListPolicyTagsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPolicyTagsRequest injectPageSize(
+                ListPolicyTagsRequest payload, int pageSize) {
+              return ListPolicyTagsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPolicyTagsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPolicyTagsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PolicyTag> extractResources(ListPolicyTagsResponse payload) {
+              return payload.getPolicyTagsList() != null
+                  ? payload.getPolicyTagsList()
+                  : ImmutableList.<PolicyTag>of();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
+      LIST_TAXONOMIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTaxonomiesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> callable,
+                ListTaxonomiesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTaxonomiesResponse> futureResponse) {
+              PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> pageContext =
+                  PageContext.create(callable, LIST_TAXONOMIES_PAGE_STR_DESC, request, context);
+              return ListTaxonomiesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
+      LIST_POLICY_TAGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPolicyTagsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> callable,
+                ListPolicyTagsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPolicyTagsResponse> futureResponse) {
+              PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> pageContext =
+                  PageContext.create(callable, LIST_POLICY_TAGS_PAGE_STR_DESC, request, context);
+              return ListPolicyTagsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for PolicyTagManagerStubSettings. */
   public static class Builder extends StubSettings.Builder<PolicyTagManagerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -271,7 +395,8 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     private final UnaryCallSettings.Builder<CreateTaxonomyRequest, Taxonomy> createTaxonomySettings;
     private final UnaryCallSettings.Builder<DeleteTaxonomyRequest, Empty> deleteTaxonomySettings;
     private final UnaryCallSettings.Builder<UpdateTaxonomyRequest, Taxonomy> updateTaxonomySettings;
-    private final UnaryCallSettings.Builder<ListTaxonomiesRequest, ListTaxonomiesResponse>
+    private final PagedCallSettings.Builder<
+            ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
         listTaxonomiesSettings;
     private final UnaryCallSettings.Builder<GetTaxonomyRequest, Taxonomy> getTaxonomySettings;
     private final UnaryCallSettings.Builder<CreatePolicyTagRequest, PolicyTag>
@@ -279,7 +404,8 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     private final UnaryCallSettings.Builder<DeletePolicyTagRequest, Empty> deletePolicyTagSettings;
     private final UnaryCallSettings.Builder<UpdatePolicyTagRequest, PolicyTag>
         updatePolicyTagSettings;
-    private final UnaryCallSettings.Builder<ListPolicyTagsRequest, ListPolicyTagsResponse>
+    private final PagedCallSettings.Builder<
+            ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
         listPolicyTagsSettings;
     private final UnaryCallSettings.Builder<GetPolicyTagRequest, PolicyTag> getPolicyTagSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -334,7 +460,7 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
 
       updateTaxonomySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listTaxonomiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listTaxonomiesSettings = PagedCallSettings.newBuilder(LIST_TAXONOMIES_PAGE_STR_FACT);
 
       getTaxonomySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -344,7 +470,7 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
 
       updatePolicyTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listPolicyTagsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPolicyTagsSettings = PagedCallSettings.newBuilder(LIST_POLICY_TAGS_PAGE_STR_FACT);
 
       getPolicyTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -518,7 +644,8 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     }
 
     /** Returns the builder for the settings used for calls to listTaxonomies. */
-    public UnaryCallSettings.Builder<ListTaxonomiesRequest, ListTaxonomiesResponse>
+    public PagedCallSettings.Builder<
+            ListTaxonomiesRequest, ListTaxonomiesResponse, ListTaxonomiesPagedResponse>
         listTaxonomiesSettings() {
       return listTaxonomiesSettings;
     }
@@ -544,7 +671,8 @@ public class PolicyTagManagerStubSettings extends StubSettings<PolicyTagManagerS
     }
 
     /** Returns the builder for the settings used for calls to listPolicyTags. */
-    public UnaryCallSettings.Builder<ListPolicyTagsRequest, ListPolicyTagsResponse>
+    public PagedCallSettings.Builder<
+            ListPolicyTagsRequest, ListPolicyTagsResponse, ListPolicyTagsPagedResponse>
         listPolicyTagsSettings() {
       return listPolicyTagsSettings;
     }

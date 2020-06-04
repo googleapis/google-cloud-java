@@ -150,6 +150,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for searchResultType.
    */
+  @java.lang.Override
   public int getSearchResultTypeValue() {
     return searchResultType_;
   }
@@ -165,6 +166,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    * @return The searchResultType.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SearchResultType getSearchResultType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1beta1.SearchResultType result =
@@ -190,6 +192,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    * @return The searchResultSubtype.
    */
+  @java.lang.Override
   public java.lang.String getSearchResultSubtype() {
     java.lang.Object ref = searchResultSubtype_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +218,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for searchResultSubtype.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSearchResultSubtypeBytes() {
     java.lang.Object ref = searchResultSubtype_;
     if (ref instanceof java.lang.String) {
@@ -243,6 +247,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    * @return The relativeResourceName.
    */
+  @java.lang.Override
   public java.lang.String getRelativeResourceName() {
     java.lang.Object ref = relativeResourceName_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +273,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for relativeResourceName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRelativeResourceNameBytes() {
     java.lang.Object ref = relativeResourceName_;
     if (ref instanceof java.lang.String) {
@@ -296,6 +302,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    * @return The linkedResource.
    */
+  @java.lang.Override
   public java.lang.String getLinkedResource() {
     java.lang.Object ref = linkedResource_;
     if (ref instanceof java.lang.String) {
@@ -321,6 +328,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for linkedResource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLinkedResourceBytes() {
     java.lang.Object ref = linkedResource_;
     if (ref instanceof java.lang.String) {
@@ -717,6 +725,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for searchResultType.
      */
+    @java.lang.Override
     public int getSearchResultTypeValue() {
       return searchResultType_;
     }
@@ -734,6 +743,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setSearchResultTypeValue(int value) {
+
       searchResultType_ = value;
       onChanged();
       return this;
@@ -750,6 +760,7 @@ public final class SearchCatalogResult extends com.google.protobuf.GeneratedMess
      *
      * @return The searchResultType.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.SearchResultType getSearchResultType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1beta1.SearchResultType result =

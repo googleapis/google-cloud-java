@@ -154,6 +154,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +182,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +210,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return The entryGroupId.
    */
+  @java.lang.Override
   public java.lang.String getEntryGroupId() {
     java.lang.Object ref = entryGroupId_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +235,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for entryGroupId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEntryGroupIdBytes() {
     java.lang.Object ref = entryGroupId_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +261,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return Whether the entryGroup field is set.
    */
+  @java.lang.Override
   public boolean hasEntryGroup() {
     return entryGroup_ != null;
   }
@@ -271,6 +276,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * @return The entryGroup.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.EntryGroup getEntryGroup() {
     return entryGroup_ == null
         ? com.google.cloud.datacatalog.v1beta1.EntryGroup.getDefaultInstance()
@@ -285,6 +291,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.datacatalog.v1beta1.EntryGroup entry_group = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.EntryGroupOrBuilder getEntryGroupOrBuilder() {
     return getEntryGroup();
   }

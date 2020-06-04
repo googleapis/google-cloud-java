@@ -143,6 +143,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +194,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the taxonomy field is set.
    */
+  @java.lang.Override
   public boolean hasTaxonomy() {
     return taxonomy_ != null;
   }
@@ -206,6 +209,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The taxonomy.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.Taxonomy getTaxonomy() {
     return taxonomy_ == null
         ? com.google.cloud.datacatalog.v1beta1.Taxonomy.getDefaultInstance()
@@ -220,6 +224,7 @@ public final class CreateTaxonomyRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.datacatalog.v1beta1.Taxonomy taxonomy = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TaxonomyOrBuilder getTaxonomyOrBuilder() {
     return getTaxonomy();
   }

@@ -424,6 +424,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -449,6 +450,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -482,6 +484,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The linkedResource.
    */
+  @java.lang.Override
   public java.lang.String getLinkedResource() {
     java.lang.Object ref = linkedResource_;
     if (ref instanceof java.lang.String) {
@@ -512,6 +515,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for linkedResource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLinkedResourceBytes() {
     java.lang.Object ref = linkedResource_;
     if (ref instanceof java.lang.String) {
@@ -762,6 +766,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsFilesetSpec field is set.
    */
+  @java.lang.Override
   public boolean hasGcsFilesetSpec() {
     return typeSpecCase_ == 6;
   }
@@ -777,6 +782,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsFilesetSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec getGcsFilesetSpec() {
     if (typeSpecCase_ == 6) {
       return (com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec) typeSpec_;
@@ -793,6 +799,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.GcsFilesetSpecOrBuilder getGcsFilesetSpecOrBuilder() {
     if (typeSpecCase_ == 6) {
       return (com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec) typeSpec_;
@@ -813,6 +820,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the bigqueryTableSpec field is set.
    */
+  @java.lang.Override
   public boolean hasBigqueryTableSpec() {
     return typeSpecCase_ == 12;
   }
@@ -828,6 +836,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bigqueryTableSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec getBigqueryTableSpec() {
     if (typeSpecCase_ == 12) {
       return (com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec) typeSpec_;
@@ -844,6 +853,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.BigQueryTableSpecOrBuilder
       getBigqueryTableSpecOrBuilder() {
     if (typeSpecCase_ == 12) {
@@ -868,6 +878,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the bigqueryDateShardedSpec field is set.
    */
+  @java.lang.Override
   public boolean hasBigqueryDateShardedSpec() {
     return typeSpecCase_ == 15;
   }
@@ -886,6 +897,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bigqueryDateShardedSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec getBigqueryDateShardedSpec() {
     if (typeSpecCase_ == 15) {
       return (com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec) typeSpec_;
@@ -905,6 +917,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpecOrBuilder
       getBigqueryDateShardedSpecOrBuilder() {
     if (typeSpecCase_ == 15) {
@@ -928,6 +941,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -952,6 +966,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -978,6 +993,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1001,6 +1017,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1026,6 +1043,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the schema field is set.
    */
+  @java.lang.Override
   public boolean hasSchema() {
     return schema_ != null;
   }
@@ -1040,6 +1058,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The schema.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.Schema getSchema() {
     return schema_ == null
         ? com.google.cloud.datacatalog.v1beta1.Schema.getDefaultInstance()
@@ -1054,6 +1073,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datacatalog.v1beta1.Schema schema = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SchemaOrBuilder getSchemaOrBuilder() {
     return getSchema();
   }
@@ -1076,6 +1096,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sourceSystemTimestamps field is set.
    */
+  @java.lang.Override
   public boolean hasSourceSystemTimestamps() {
     return sourceSystemTimestamps_ != null;
   }
@@ -1095,6 +1116,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sourceSystemTimestamps.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getSourceSystemTimestamps() {
     return sourceSystemTimestamps_ == null
         ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
@@ -1114,6 +1136,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps source_system_timestamps = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder
       getSourceSystemTimestampsOrBuilder() {
     return getSourceSystemTimestamps();
@@ -2096,6 +2119,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       if (entryTypeCase_ == 2) {
         return ((java.lang.Integer) entryType_).intValue();
@@ -2133,6 +2157,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.EntryType getType() {
       if (entryTypeCase_ == 2) {
         @SuppressWarnings("deprecation")
@@ -2206,6 +2231,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The userSpecifiedType.
      */
+    @java.lang.Override
     public java.lang.String getUserSpecifiedType() {
       java.lang.Object ref = "";
       if (entryTypeCase_ == 16) {
@@ -2241,6 +2267,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for userSpecifiedType.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUserSpecifiedTypeBytes() {
       java.lang.Object ref = "";
       if (entryTypeCase_ == 16) {
@@ -2358,6 +2385,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for integratedSystem.
      */
+    @java.lang.Override
     public int getIntegratedSystemValue() {
       if (systemCase_ == 17) {
         return ((java.lang.Integer) system_).intValue();
@@ -2399,6 +2427,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The integratedSystem.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.IntegratedSystem getIntegratedSystem() {
       if (systemCase_ == 17) {
         @SuppressWarnings("deprecation")
@@ -2474,6 +2503,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The userSpecifiedSystem.
      */
+    @java.lang.Override
     public java.lang.String getUserSpecifiedSystem() {
       java.lang.Object ref = "";
       if (systemCase_ == 18) {
@@ -2505,6 +2535,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for userSpecifiedSystem.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUserSpecifiedSystemBytes() {
       java.lang.Object ref = "";
       if (systemCase_ == 18) {
@@ -2613,6 +2644,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsFilesetSpec field is set.
      */
+    @java.lang.Override
     public boolean hasGcsFilesetSpec() {
       return typeSpecCase_ == 6;
     }
@@ -2628,6 +2660,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsFilesetSpec.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.GcsFilesetSpec getGcsFilesetSpec() {
       if (gcsFilesetSpecBuilder_ == null) {
         if (typeSpecCase_ == 6) {
@@ -2767,6 +2800,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datacatalog.v1beta1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.GcsFilesetSpecOrBuilder
         getGcsFilesetSpecOrBuilder() {
       if ((typeSpecCase_ == 6) && (gcsFilesetSpecBuilder_ != null)) {
@@ -2830,6 +2864,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the bigqueryTableSpec field is set.
      */
+    @java.lang.Override
     public boolean hasBigqueryTableSpec() {
       return typeSpecCase_ == 12;
     }
@@ -2845,6 +2880,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bigqueryTableSpec.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.BigQueryTableSpec getBigqueryTableSpec() {
       if (bigqueryTableSpecBuilder_ == null) {
         if (typeSpecCase_ == 12) {
@@ -2987,6 +3023,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datacatalog.v1beta1.BigQueryTableSpec bigquery_table_spec = 12;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.BigQueryTableSpecOrBuilder
         getBigqueryTableSpecOrBuilder() {
       if ((typeSpecCase_ == 12) && (bigqueryTableSpecBuilder_ != null)) {
@@ -3053,6 +3090,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the bigqueryDateShardedSpec field is set.
      */
+    @java.lang.Override
     public boolean hasBigqueryDateShardedSpec() {
       return typeSpecCase_ == 15;
     }
@@ -3071,6 +3109,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bigqueryDateShardedSpec.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec
         getBigqueryDateShardedSpec() {
       if (bigqueryDateShardedSpecBuilder_ == null) {
@@ -3233,6 +3272,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.BigQueryDateShardedSpecOrBuilder
         getBigqueryDateShardedSpecOrBuilder() {
       if ((typeSpecCase_ == 15) && (bigqueryDateShardedSpecBuilder_ != null)) {

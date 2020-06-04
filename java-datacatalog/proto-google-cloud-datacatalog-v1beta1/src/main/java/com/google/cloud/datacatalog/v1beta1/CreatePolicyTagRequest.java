@@ -143,6 +143,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +194,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the policyTag field is set.
    */
+  @java.lang.Override
   public boolean hasPolicyTag() {
     return policyTag_ != null;
   }
@@ -206,6 +209,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    * @return The policyTag.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.PolicyTag getPolicyTag() {
     return policyTag_ == null
         ? com.google.cloud.datacatalog.v1beta1.PolicyTag.getDefaultInstance()
@@ -220,6 +224,7 @@ public final class CreatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    * <code>.google.cloud.datacatalog.v1beta1.PolicyTag policy_tag = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.PolicyTagOrBuilder getPolicyTagOrBuilder() {
     return getPolicyTag();
   }

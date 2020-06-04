@@ -140,6 +140,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.PolicyTag policy_tags = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1beta1.PolicyTag> getPolicyTagsList() {
     return policyTags_;
   }
@@ -152,6 +153,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.PolicyTag policy_tags = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1beta1.PolicyTagOrBuilder>
       getPolicyTagsOrBuilderList() {
     return policyTags_;
@@ -165,6 +167,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.PolicyTag policy_tags = 1;</code>
    */
+  @java.lang.Override
   public int getPolicyTagsCount() {
     return policyTags_.size();
   }
@@ -177,6 +180,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.PolicyTag policy_tags = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.PolicyTag getPolicyTags(int index) {
     return policyTags_.get(index);
   }
@@ -189,6 +193,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.PolicyTag policy_tags = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.PolicyTagOrBuilder getPolicyTagsOrBuilder(int index) {
     return policyTags_.get(index);
   }
@@ -207,6 +212,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +236,7 @@ public final class ListPolicyTagsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

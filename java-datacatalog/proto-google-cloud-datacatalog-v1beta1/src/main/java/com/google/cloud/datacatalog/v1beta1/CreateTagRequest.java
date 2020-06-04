@@ -147,6 +147,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -175,6 +176,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the tag field is set.
    */
+  @java.lang.Override
   public boolean hasTag() {
     return tag_ != null;
   }
@@ -216,6 +219,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The tag.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.Tag getTag() {
     return tag_ == null ? com.google.cloud.datacatalog.v1beta1.Tag.getDefaultInstance() : tag_;
   }
@@ -229,6 +233,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.datacatalog.v1beta1.Tag tag = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagOrBuilder getTagOrBuilder() {
     return getTag();
   }

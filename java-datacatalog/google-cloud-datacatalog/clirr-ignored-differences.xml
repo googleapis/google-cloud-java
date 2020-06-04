@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/DataCatalogClient</className>
+    <method>java.lang.String format*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/DataCatalogClient</className>
+    <method>java.lang.String parse*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/DataCatalogClient</className>
+    <method>* testIamPermissions(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/DataCatalogClient</className>
+    <method>com.google.cloud.datacatalog.v1beta1.List*Response list*(*)</method>
+    <to>com.google.cloud.datacatalog.v1beta1.DataCatalogClient$List*PagedResponse</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/DataCatalogSettings*</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings* list*Settings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/stub/DataCatalogStubSettings*</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings* list*Settings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/PolicyTagManagerClient</className>
+    <method>com.google.cloud.datacatalog.v1beta1.List*Response list*(*)</method>
+    <to>com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient$List*PagedResponse</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/PolicyTagManagerSettings*</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings* list*Settings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/stub/PolicyTagManagerStubSettings*</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings* list*Settings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/DataCatalogClient</className>
+    <method>com.google.cloud.datacatalog.v1beta1.DataCatalogClient$SearchCatalogPagedResponse searchCatalog(com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest$Scope, java.lang.String, java.lang.String)</method>
+  </difference>
+</differences>

@@ -146,6 +146,7 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The filePath.
    */
+  @java.lang.Override
   public java.lang.String getFilePath() {
     java.lang.Object ref = filePath_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for filePath.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilePathBytes() {
     java.lang.Object ref = filePath_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsTimestamps field is set.
    */
+  @java.lang.Override
   public boolean hasGcsTimestamps() {
     return gcsTimestamps_ != null;
   }
@@ -211,6 +214,7 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsTimestamps.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SystemTimestamps getGcsTimestamps() {
     return gcsTimestamps_ == null
         ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
@@ -227,6 +231,7 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.datacatalog.v1beta1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder
       getGcsTimestampsOrBuilder() {
     return getGcsTimestamps();
@@ -245,6 +250,7 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sizeBytes.
    */
+  @java.lang.Override
   public long getSizeBytes() {
     return sizeBytes_;
   }
@@ -932,6 +938,7 @@ public final class GcsFileSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sizeBytes.
      */
+    @java.lang.Override
     public long getSizeBytes() {
       return sizeBytes_;
     }

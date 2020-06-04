@@ -143,6 +143,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the readMask field is set.
    */
+  @java.lang.Override
   public boolean hasReadMask() {
     return readMask_ != null;
   }
@@ -207,6 +210,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The readMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
@@ -219,6 +223,7 @@ public final class GetEntryGroupRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
     return getReadMask();
   }

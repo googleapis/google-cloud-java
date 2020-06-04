@@ -154,6 +154,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +182,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +208,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return The tagTemplateId.
    */
+  @java.lang.Override
   public java.lang.String getTagTemplateId() {
     java.lang.Object ref = tagTemplateId_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +231,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for tagTemplateId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTagTemplateIdBytes() {
     java.lang.Object ref = tagTemplateId_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +259,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return Whether the tagTemplate field is set.
    */
+  @java.lang.Override
   public boolean hasTagTemplate() {
     return tagTemplate_ != null;
   }
@@ -271,6 +276,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return The tagTemplate.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagTemplate getTagTemplate() {
     return tagTemplate_ == null
         ? com.google.cloud.datacatalog.v1beta1.TagTemplate.getDefaultInstance()
@@ -287,6 +293,7 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
    * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagTemplateOrBuilder getTagTemplateOrBuilder() {
     return getTagTemplate();
   }

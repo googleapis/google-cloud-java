@@ -293,6 +293,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.GcsFileSpec sample_gcs_file_specs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1.GcsFileSpec> getSampleGcsFileSpecsList() {
     return sampleGcsFileSpecs_;
   }
@@ -308,6 +309,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.GcsFileSpec sample_gcs_file_specs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1.GcsFileSpecOrBuilder>
       getSampleGcsFileSpecsOrBuilderList() {
     return sampleGcsFileSpecs_;
@@ -324,6 +326,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.GcsFileSpec sample_gcs_file_specs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getSampleGcsFileSpecsCount() {
     return sampleGcsFileSpecs_.size();
   }
@@ -339,6 +342,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.GcsFileSpec sample_gcs_file_specs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.GcsFileSpec getSampleGcsFileSpecs(int index) {
     return sampleGcsFileSpecs_.get(index);
   }
@@ -354,6 +358,7 @@ public final class GcsFilesetSpec extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1.GcsFileSpec sample_gcs_file_specs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.GcsFileSpecOrBuilder getSampleGcsFileSpecsOrBuilder(
       int index) {
     return sampleGcsFileSpecs_.get(index);

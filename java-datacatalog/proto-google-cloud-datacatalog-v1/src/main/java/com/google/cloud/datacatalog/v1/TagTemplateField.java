@@ -161,6 +161,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +187,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +213,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +236,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +264,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the type field is set.
    */
+  @java.lang.Override
   public boolean hasType() {
     return type_ != null;
   }
@@ -276,6 +281,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.FieldType getType() {
     return type_ == null ? com.google.cloud.datacatalog.v1.FieldType.getDefaultInstance() : type_;
   }
@@ -290,6 +296,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    * .google.cloud.datacatalog.v1.FieldType type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1.FieldTypeOrBuilder getTypeOrBuilder() {
     return getType();
   }
@@ -307,6 +314,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * @return The isRequired.
    */
+  @java.lang.Override
   public boolean getIsRequired() {
     return isRequired_;
   }
@@ -327,6 +335,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    * @return The order.
    */
+  @java.lang.Override
   public int getOrder() {
     return order_;
   }
@@ -1164,6 +1173,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * @return The isRequired.
      */
+    @java.lang.Override
     public boolean getIsRequired() {
       return isRequired_;
     }
@@ -1218,6 +1228,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      * @return The order.
      */
+    @java.lang.Override
     public int getOrder() {
       return order_;
     }

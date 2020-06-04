@@ -15,6 +15,9 @@
  */
 package com.google.cloud.datacatalog.v1beta1.stub;
 
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListPolicyTagsPagedResponse;
+import static com.google.cloud.datacatalog.v1beta1.PolicyTagManagerClient.ListTaxonomiesPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -62,6 +65,11 @@ public abstract class PolicyTagManagerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateTaxonomyCallable()");
   }
 
+  public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesPagedResponse>
+      listTaxonomiesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTaxonomiesPagedCallable()");
+  }
+
   public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> listTaxonomiesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTaxonomiesCallable()");
   }
@@ -80,6 +88,11 @@ public abstract class PolicyTagManagerStub implements BackgroundResource {
 
   public UnaryCallable<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagCallable() {
     throw new UnsupportedOperationException("Not implemented: updatePolicyTagCallable()");
+  }
+
+  public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsPagedResponse>
+      listPolicyTagsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPolicyTagsPagedCallable()");
   }
 
   public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> listPolicyTagsCallable() {

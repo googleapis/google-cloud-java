@@ -15,6 +15,8 @@
  */
 package com.google.cloud.datacatalog.v1beta1.stub;
 
+import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListEntriesPagedResponse;
+import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListTagsPagedResponse;
 import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.SearchCatalogPagedResponse;
 
@@ -93,24 +95,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchCatalogResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<CreateEntryGroupRequest, EntryGroup>
-      createEntryGroupMethodDescriptor =
-          MethodDescriptor.<CreateEntryGroupRequest, EntryGroup>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/CreateEntryGroup")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateEntryGroupRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<GetEntryGroupRequest, EntryGroup>
-      getEntryGroupMethodDescriptor =
-          MethodDescriptor.<GetEntryGroupRequest, EntryGroup>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/GetEntryGroup")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetEntryGroupRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<DeleteEntryGroupRequest, Empty>
       deleteEntryGroupMethodDescriptor =
           MethodDescriptor.<DeleteEntryGroupRequest, Empty>newBuilder()
@@ -120,20 +104,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(DeleteEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<CreateEntryRequest, Entry> createEntryMethodDescriptor =
-      MethodDescriptor.<CreateEntryRequest, Entry>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/CreateEntry")
-          .setRequestMarshaller(ProtoUtils.marshaller(CreateEntryRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<UpdateEntryRequest, Entry> updateEntryMethodDescriptor =
-      MethodDescriptor.<UpdateEntryRequest, Entry>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/UpdateEntry")
-          .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntryRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<DeleteEntryRequest, Empty> deleteEntryMethodDescriptor =
       MethodDescriptor.<DeleteEntryRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -155,6 +125,66 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(LookupEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<DeleteTagTemplateRequest, Empty>
+      deleteTagTemplateMethodDescriptor =
+          MethodDescriptor.<DeleteTagTemplateRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTagTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTagTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteTagTemplateFieldRequest, Empty>
+      deleteTagTemplateFieldMethodDescriptor =
+          MethodDescriptor.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTagTemplateField")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTagTemplateFieldRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteTagRequest, Empty> deleteTagMethodDescriptor =
+      MethodDescriptor.<DeleteTagRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTag")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<CreateEntryGroupRequest, EntryGroup>
+      createEntryGroupMethodDescriptor =
+          MethodDescriptor.<CreateEntryGroupRequest, EntryGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/CreateEntryGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEntryGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateEntryGroupRequest, EntryGroup>
+      updateEntryGroupMethodDescriptor =
+          MethodDescriptor.<UpdateEntryGroupRequest, EntryGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/UpdateEntryGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEntryGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetEntryGroupRequest, EntryGroup>
+      getEntryGroupMethodDescriptor =
+          MethodDescriptor.<GetEntryGroupRequest, EntryGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/GetEntryGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEntryGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<ListEntryGroupsRequest, ListEntryGroupsResponse>
       listEntryGroupsMethodDescriptor =
           MethodDescriptor.<ListEntryGroupsRequest, ListEntryGroupsResponse>newBuilder()
@@ -165,6 +195,20 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntryGroupsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<CreateEntryRequest, Entry> createEntryMethodDescriptor =
+      MethodDescriptor.<CreateEntryRequest, Entry>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/CreateEntry")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateEntryRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateEntryRequest, Entry> updateEntryMethodDescriptor =
+      MethodDescriptor.<UpdateEntryRequest, Entry>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/UpdateEntry")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntryRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<ListEntriesRequest, ListEntriesResponse>
       listEntriesMethodDescriptor =
           MethodDescriptor.<ListEntriesRequest, ListEntriesResponse>newBuilder()
@@ -173,15 +217,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntriesResponse.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<UpdateEntryGroupRequest, EntryGroup>
-      updateEntryGroupMethodDescriptor =
-          MethodDescriptor.<UpdateEntryGroupRequest, EntryGroup>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/UpdateEntryGroup")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateEntryGroupRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<CreateTagTemplateRequest, TagTemplate>
       createTagTemplateMethodDescriptor =
@@ -209,15 +244,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteTagTemplateRequest, Empty>
-      deleteTagTemplateMethodDescriptor =
-          MethodDescriptor.<DeleteTagTemplateRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTagTemplate")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteTagTemplateRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<CreateTagTemplateFieldRequest, TagTemplateField>
       createTagTemplateFieldMethodDescriptor =
@@ -249,16 +275,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(RenameTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteTagTemplateFieldRequest, Empty>
-      deleteTagTemplateFieldMethodDescriptor =
-          MethodDescriptor.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTagTemplateField")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteTagTemplateFieldRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<CreateTagRequest, Tag> createTagMethodDescriptor =
       MethodDescriptor.<CreateTagRequest, Tag>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -273,13 +289,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
           .build();
-  private static final MethodDescriptor<DeleteTagRequest, Empty> deleteTagMethodDescriptor =
-      MethodDescriptor.<DeleteTagRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/DeleteTag")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<ListTagsRequest, ListTagsResponse>
       listTagsMethodDescriptor =
           MethodDescriptor.<ListTagsRequest, ListTagsResponse>newBuilder()
@@ -293,13 +302,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
-      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.datacatalog.v1beta1.DataCatalog/GetIamPolicy")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -318,36 +320,40 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable;
-  private final UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable;
-  private final UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable;
   private final UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable;
-  private final UnaryCallable<CreateEntryRequest, Entry> createEntryCallable;
-  private final UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable;
   private final UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable;
   private final UnaryCallable<GetEntryRequest, Entry> getEntryCallable;
   private final UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable;
+  private final UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable;
+  private final UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable;
+  private final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable;
+  private final UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable;
+  private final UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable;
   private final UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse>
       listEntryGroupsCallable;
+  private final UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsPagedResponse>
+      listEntryGroupsPagedCallable;
+  private final UnaryCallable<CreateEntryRequest, Entry> createEntryCallable;
+  private final UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable;
   private final UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable;
-  private final UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable;
+  private final UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse>
+      listEntriesPagedCallable;
   private final UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable;
   private final UnaryCallable<GetTagTemplateRequest, TagTemplate> getTagTemplateCallable;
   private final UnaryCallable<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateCallable;
-  private final UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable;
   private final UnaryCallable<CreateTagTemplateFieldRequest, TagTemplateField>
       createTagTemplateFieldCallable;
   private final UnaryCallable<UpdateTagTemplateFieldRequest, TagTemplateField>
       updateTagTemplateFieldCallable;
   private final UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable;
-  private final UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable;
   private final UnaryCallable<CreateTagRequest, Tag> createTagCallable;
   private final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable;
-  private final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
@@ -394,32 +400,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
         GrpcCallSettings.<SearchCatalogRequest, SearchCatalogResponse>newBuilder()
             .setMethodDescriptor(searchCatalogMethodDescriptor)
             .build();
-    GrpcCallSettings<CreateEntryGroupRequest, EntryGroup> createEntryGroupTransportSettings =
-        GrpcCallSettings.<CreateEntryGroupRequest, EntryGroup>newBuilder()
-            .setMethodDescriptor(createEntryGroupMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateEntryGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateEntryGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupTransportSettings =
-        GrpcCallSettings.<GetEntryGroupRequest, EntryGroup>newBuilder()
-            .setMethodDescriptor(getEntryGroupMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetEntryGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEntryGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupTransportSettings =
         GrpcCallSettings.<DeleteEntryGroupRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEntryGroupMethodDescriptor)
@@ -429,32 +409,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   public Map<String, String> extract(DeleteEntryGroupRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
-        GrpcCallSettings.<CreateEntryRequest, Entry>newBuilder()
-            .setMethodDescriptor(createEntryMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<CreateEntryRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateEntryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
-        GrpcCallSettings.<UpdateEntryRequest, Entry>newBuilder()
-            .setMethodDescriptor(updateEntryMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<UpdateEntryRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateEntryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("entry.name", String.valueOf(request.getEntry().getName()));
                     return params.build();
                   }
                 })
@@ -489,27 +443,65 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
         GrpcCallSettings.<LookupEntryRequest, Entry>newBuilder()
             .setMethodDescriptor(lookupEntryMethodDescriptor)
             .build();
-    GrpcCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
-        listEntryGroupsTransportSettings =
-            GrpcCallSettings.<ListEntryGroupsRequest, ListEntryGroupsResponse>newBuilder()
-                .setMethodDescriptor(listEntryGroupsMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<ListEntryGroupsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListEntryGroupsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
-                    })
-                .build();
-    GrpcCallSettings<ListEntriesRequest, ListEntriesResponse> listEntriesTransportSettings =
-        GrpcCallSettings.<ListEntriesRequest, ListEntriesResponse>newBuilder()
-            .setMethodDescriptor(listEntriesMethodDescriptor)
+    GrpcCallSettings<DeleteTagTemplateRequest, Empty> deleteTagTemplateTransportSettings =
+        GrpcCallSettings.<DeleteTagTemplateRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTagTemplateMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListEntriesRequest>() {
+                new RequestParamsExtractor<DeleteTagTemplateRequest>() {
                   @Override
-                  public Map<String, String> extract(ListEntriesRequest request) {
+                  public Map<String, String> extract(DeleteTagTemplateRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldTransportSettings =
+        GrpcCallSettings.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTagTemplateFieldMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTagTemplateFieldRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTagTemplateFieldRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteTagRequest, Empty> deleteTagTransportSettings =
+        GrpcCallSettings.<DeleteTagRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTagMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTagRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTagRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<CreateEntryGroupRequest, EntryGroup> createEntryGroupTransportSettings =
+        GrpcCallSettings.<CreateEntryGroupRequest, EntryGroup>newBuilder()
+            .setMethodDescriptor(createEntryGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateEntryGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateEntryGroupRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
@@ -526,6 +518,72 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put(
                         "entry_group.name", String.valueOf(request.getEntryGroup().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetEntryGroupRequest, EntryGroup> getEntryGroupTransportSettings =
+        GrpcCallSettings.<GetEntryGroupRequest, EntryGroup>newBuilder()
+            .setMethodDescriptor(getEntryGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetEntryGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetEntryGroupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
+        listEntryGroupsTransportSettings =
+            GrpcCallSettings.<ListEntryGroupsRequest, ListEntryGroupsResponse>newBuilder()
+                .setMethodDescriptor(listEntryGroupsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListEntryGroupsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListEntryGroupsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
+        GrpcCallSettings.<CreateEntryRequest, Entry>newBuilder()
+            .setMethodDescriptor(createEntryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateEntryRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateEntryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
+        GrpcCallSettings.<UpdateEntryRequest, Entry>newBuilder()
+            .setMethodDescriptor(updateEntryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateEntryRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateEntryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("entry.name", String.valueOf(request.getEntry().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListEntriesRequest, ListEntriesResponse> listEntriesTransportSettings =
+        GrpcCallSettings.<ListEntriesRequest, ListEntriesResponse>newBuilder()
+            .setMethodDescriptor(listEntriesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListEntriesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListEntriesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
                   }
                 })
@@ -566,19 +624,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put(
                         "tag_template.name", String.valueOf(request.getTagTemplate().getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteTagTemplateRequest, Empty> deleteTagTemplateTransportSettings =
-        GrpcCallSettings.<DeleteTagTemplateRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteTagTemplateMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTagTemplateRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTagTemplateRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
                     return params.build();
                   }
                 })
@@ -625,19 +670,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldTransportSettings =
-        GrpcCallSettings.<DeleteTagTemplateFieldRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteTagTemplateFieldMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTagTemplateFieldRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTagTemplateFieldRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<CreateTagRequest, Tag> createTagTransportSettings =
         GrpcCallSettings.<CreateTagRequest, Tag>newBuilder()
             .setMethodDescriptor(createTagMethodDescriptor)
@@ -660,19 +692,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   public Map<String, String> extract(UpdateTagRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("tag.name", String.valueOf(request.getTag().getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteTagRequest, Empty> deleteTagTransportSettings =
-        GrpcCallSettings.<DeleteTagRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteTagMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTagRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTagRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
                     return params.build();
                   }
                 })
@@ -703,19 +722,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   }
                 })
             .build();
-    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
-        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
-            .setMethodDescriptor(getIamPolicyMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -737,21 +743,9 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     this.searchCatalogPagedCallable =
         callableFactory.createPagedCallable(
             searchCatalogTransportSettings, settings.searchCatalogSettings(), clientContext);
-    this.createEntryGroupCallable =
-        callableFactory.createUnaryCallable(
-            createEntryGroupTransportSettings, settings.createEntryGroupSettings(), clientContext);
-    this.getEntryGroupCallable =
-        callableFactory.createUnaryCallable(
-            getEntryGroupTransportSettings, settings.getEntryGroupSettings(), clientContext);
     this.deleteEntryGroupCallable =
         callableFactory.createUnaryCallable(
             deleteEntryGroupTransportSettings, settings.deleteEntryGroupSettings(), clientContext);
-    this.createEntryCallable =
-        callableFactory.createUnaryCallable(
-            createEntryTransportSettings, settings.createEntrySettings(), clientContext);
-    this.updateEntryCallable =
-        callableFactory.createUnaryCallable(
-            updateEntryTransportSettings, settings.updateEntrySettings(), clientContext);
     this.deleteEntryCallable =
         callableFactory.createUnaryCallable(
             deleteEntryTransportSettings, settings.deleteEntrySettings(), clientContext);
@@ -761,15 +755,49 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     this.lookupEntryCallable =
         callableFactory.createUnaryCallable(
             lookupEntryTransportSettings, settings.lookupEntrySettings(), clientContext);
-    this.listEntryGroupsCallable =
+    this.deleteTagTemplateCallable =
         callableFactory.createUnaryCallable(
-            listEntryGroupsTransportSettings, settings.listEntryGroupsSettings(), clientContext);
-    this.listEntriesCallable =
+            deleteTagTemplateTransportSettings,
+            settings.deleteTagTemplateSettings(),
+            clientContext);
+    this.deleteTagTemplateFieldCallable =
         callableFactory.createUnaryCallable(
-            listEntriesTransportSettings, settings.listEntriesSettings(), clientContext);
+            deleteTagTemplateFieldTransportSettings,
+            settings.deleteTagTemplateFieldSettings(),
+            clientContext);
+    this.deleteTagCallable =
+        callableFactory.createUnaryCallable(
+            deleteTagTransportSettings, settings.deleteTagSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.createEntryGroupCallable =
+        callableFactory.createUnaryCallable(
+            createEntryGroupTransportSettings, settings.createEntryGroupSettings(), clientContext);
     this.updateEntryGroupCallable =
         callableFactory.createUnaryCallable(
             updateEntryGroupTransportSettings, settings.updateEntryGroupSettings(), clientContext);
+    this.getEntryGroupCallable =
+        callableFactory.createUnaryCallable(
+            getEntryGroupTransportSettings, settings.getEntryGroupSettings(), clientContext);
+    this.listEntryGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listEntryGroupsTransportSettings, settings.listEntryGroupsSettings(), clientContext);
+    this.listEntryGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listEntryGroupsTransportSettings, settings.listEntryGroupsSettings(), clientContext);
+    this.createEntryCallable =
+        callableFactory.createUnaryCallable(
+            createEntryTransportSettings, settings.createEntrySettings(), clientContext);
+    this.updateEntryCallable =
+        callableFactory.createUnaryCallable(
+            updateEntryTransportSettings, settings.updateEntrySettings(), clientContext);
+    this.listEntriesCallable =
+        callableFactory.createUnaryCallable(
+            listEntriesTransportSettings, settings.listEntriesSettings(), clientContext);
+    this.listEntriesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEntriesTransportSettings, settings.listEntriesSettings(), clientContext);
     this.createTagTemplateCallable =
         callableFactory.createUnaryCallable(
             createTagTemplateTransportSettings,
@@ -782,11 +810,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
         callableFactory.createUnaryCallable(
             updateTagTemplateTransportSettings,
             settings.updateTagTemplateSettings(),
-            clientContext);
-    this.deleteTagTemplateCallable =
-        callableFactory.createUnaryCallable(
-            deleteTagTemplateTransportSettings,
-            settings.deleteTagTemplateSettings(),
             clientContext);
     this.createTagTemplateFieldCallable =
         callableFactory.createUnaryCallable(
@@ -803,20 +826,12 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             renameTagTemplateFieldTransportSettings,
             settings.renameTagTemplateFieldSettings(),
             clientContext);
-    this.deleteTagTemplateFieldCallable =
-        callableFactory.createUnaryCallable(
-            deleteTagTemplateFieldTransportSettings,
-            settings.deleteTagTemplateFieldSettings(),
-            clientContext);
     this.createTagCallable =
         callableFactory.createUnaryCallable(
             createTagTransportSettings, settings.createTagSettings(), clientContext);
     this.updateTagCallable =
         callableFactory.createUnaryCallable(
             updateTagTransportSettings, settings.updateTagSettings(), clientContext);
-    this.deleteTagCallable =
-        callableFactory.createUnaryCallable(
-            deleteTagTransportSettings, settings.deleteTagSettings(), clientContext);
     this.listTagsCallable =
         callableFactory.createUnaryCallable(
             listTagsTransportSettings, settings.listTagsSettings(), clientContext);
@@ -826,9 +841,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
-    this.getIamPolicyCallable =
-        callableFactory.createUnaryCallable(
-            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -847,24 +859,8 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     return searchCatalogCallable;
   }
 
-  public UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
-    return createEntryGroupCallable;
-  }
-
-  public UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable() {
-    return getEntryGroupCallable;
-  }
-
   public UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
     return deleteEntryGroupCallable;
-  }
-
-  public UnaryCallable<CreateEntryRequest, Entry> createEntryCallable() {
-    return createEntryCallable;
-  }
-
-  public UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
-    return updateEntryCallable;
   }
 
   public UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
@@ -879,16 +875,57 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     return lookupEntryCallable;
   }
 
-  public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
-    return listEntryGroupsCallable;
+  public UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
+    return deleteTagTemplateCallable;
   }
 
-  public UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
-    return listEntriesCallable;
+  public UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable() {
+    return deleteTagTemplateFieldCallable;
+  }
+
+  public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
+    return deleteTagCallable;
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  public UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
+    return createEntryGroupCallable;
   }
 
   public UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
     return updateEntryGroupCallable;
+  }
+
+  public UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable() {
+    return getEntryGroupCallable;
+  }
+
+  public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsPagedResponse>
+      listEntryGroupsPagedCallable() {
+    return listEntryGroupsPagedCallable;
+  }
+
+  public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
+    return listEntryGroupsCallable;
+  }
+
+  public UnaryCallable<CreateEntryRequest, Entry> createEntryCallable() {
+    return createEntryCallable;
+  }
+
+  public UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
+    return updateEntryCallable;
+  }
+
+  public UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse> listEntriesPagedCallable() {
+    return listEntriesPagedCallable;
+  }
+
+  public UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
+    return listEntriesCallable;
   }
 
   public UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
@@ -901,10 +938,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
 
   public UnaryCallable<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateCallable() {
     return updateTagTemplateCallable;
-  }
-
-  public UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
-    return deleteTagTemplateCallable;
   }
 
   public UnaryCallable<CreateTagTemplateFieldRequest, TagTemplateField>
@@ -922,20 +955,12 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     return renameTagTemplateFieldCallable;
   }
 
-  public UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable() {
-    return deleteTagTemplateFieldCallable;
-  }
-
   public UnaryCallable<CreateTagRequest, Tag> createTagCallable() {
     return createTagCallable;
   }
 
   public UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
     return updateTagCallable;
-  }
-
-  public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
-    return deleteTagCallable;
   }
 
   public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
@@ -948,10 +973,6 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return getIamPolicyCallable;
   }
 
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>

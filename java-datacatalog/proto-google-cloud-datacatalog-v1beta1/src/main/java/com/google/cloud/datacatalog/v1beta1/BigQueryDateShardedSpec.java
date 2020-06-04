@@ -143,6 +143,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * @return The dataset.
    */
+  @java.lang.Override
   public java.lang.String getDataset() {
     java.lang.Object ref = dataset_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * @return The bytes for dataset.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDatasetBytes() {
     java.lang.Object ref = dataset_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * @return The tablePrefix.
    */
+  @java.lang.Override
   public java.lang.String getTablePrefix() {
     java.lang.Object ref = tablePrefix_;
     if (ref instanceof java.lang.String) {
@@ -220,6 +223,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * @return The bytes for tablePrefix.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTablePrefixBytes() {
     java.lang.Object ref = tablePrefix_;
     if (ref instanceof java.lang.String) {
@@ -245,6 +249,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * @return The shardCount.
    */
+  @java.lang.Override
   public long getShardCount() {
     return shardCount_;
   }
@@ -857,6 +862,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * @return The shardCount.
      */
+    @java.lang.Override
     public long getShardCount() {
       return shardCount_;
     }

@@ -124,6 +124,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The viewQuery.
    */
+  @java.lang.Override
   public java.lang.String getViewQuery() {
     java.lang.Object ref = viewQuery_;
     if (ref instanceof java.lang.String) {
@@ -146,6 +147,7 @@ public final class ViewSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for viewQuery.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getViewQueryBytes() {
     java.lang.Object ref = viewQuery_;
     if (ref instanceof java.lang.String) {

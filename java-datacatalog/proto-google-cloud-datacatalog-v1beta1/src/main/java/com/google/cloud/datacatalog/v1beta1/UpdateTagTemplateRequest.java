@@ -149,6 +149,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return Whether the tagTemplate field is set.
    */
+  @java.lang.Override
   public boolean hasTagTemplate() {
     return tagTemplate_ != null;
   }
@@ -165,6 +166,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return The tagTemplate.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagTemplate getTagTemplate() {
     return tagTemplate_ == null
         ? com.google.cloud.datacatalog.v1beta1.TagTemplate.getDefaultInstance()
@@ -181,6 +183,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    * .google.cloud.datacatalog.v1beta1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagTemplateOrBuilder getTagTemplateOrBuilder() {
     return getTagTemplate();
   }
@@ -201,6 +204,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -218,6 +222,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -233,6 +238,7 @@ public final class UpdateTagTemplateRequest extends com.google.protobuf.Generate
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

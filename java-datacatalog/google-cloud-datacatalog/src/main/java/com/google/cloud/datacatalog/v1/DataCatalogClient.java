@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.datacatalog.v1.stub.DataCatalogStub;
 import com.google.cloud.datacatalog.v1.stub.DataCatalogStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -3125,6 +3126,77 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
    *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = dataCatalogClient.setIamPolicy(resource, policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy for a resource. Replaces any existing policy. Supported
+   * resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to
+   * manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced
+   * to Data Catalog.
+   *
+   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.setIamPolicy`
+   * to set policies on tag templates. - `datacatalog.entries.setIamPolicy` to set policies on
+   * entries. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = dataCatalogClient.setIamPolicy(resource.toString(), policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(String resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy for a resource. Replaces any existing policy. Supported
+   * resources are: - Tag templates. - Entries. - Entry groups. Note, this method cannot be used to
+   * manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform resources synced
+   * to Data Catalog.
+   *
+   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.setIamPolicy`
+   * to set policies on tag templates. - `datacatalog.entries.setIamPolicy` to set policies on
+   * entries. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(resource.toString())
    *     .setPolicy(policy)
@@ -3169,6 +3241,73 @@ public class DataCatalogClient implements BackgroundResource {
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
+   * does not exist. An empty policy is returned if the resource exists but does not have a policy
+   * set on it.
+   *
+   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
+   *
+   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
+   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
+   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   Policy response = dataCatalogClient.getIamPolicy(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(ResourceName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. A `NOT_FOUND` error is returned if the resource
+   * does not exist. An empty policy is returned if the resource exists but does not have a policy
+   * set on it.
+   *
+   * <p>Supported resources are: - Tag templates. - Entries. - Entry groups. Note, this method
+   * cannot be used to manage policies for BigQuery, Pub/Sub and any external Google Cloud Platform
+   * resources synced to Data Catalog.
+   *
+   * <p>Callers must have following Google IAM permission - `datacatalog.tagTemplates.getIamPolicy`
+   * to get policies on tag templates. - `datacatalog.entries.getIamPolicy` to get policies on
+   * entries. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   Policy response = dataCatalogClient.getIamPolicy(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

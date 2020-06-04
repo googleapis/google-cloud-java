@@ -26,6 +26,7 @@ import com.google.protobuf.AbstractMessage;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -86,7 +87,9 @@ public class PolicyTagManagerSerializationClientTest {
     ImportTaxonomiesResponse expectedResponse = ImportTaxonomiesResponse.newBuilder().build();
     mockPolicyTagManagerSerialization.addResponse(expectedResponse);
 
-    ImportTaxonomiesRequest request = ImportTaxonomiesRequest.newBuilder().build();
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ImportTaxonomiesRequest request =
+        ImportTaxonomiesRequest.newBuilder().setParent(parent.toString()).build();
 
     ImportTaxonomiesResponse actualResponse = client.importTaxonomies(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -95,6 +98,7 @@ public class PolicyTagManagerSerializationClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ImportTaxonomiesRequest actualRequest = (ImportTaxonomiesRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -108,7 +112,9 @@ public class PolicyTagManagerSerializationClientTest {
     mockPolicyTagManagerSerialization.addException(exception);
 
     try {
-      ImportTaxonomiesRequest request = ImportTaxonomiesRequest.newBuilder().build();
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ImportTaxonomiesRequest request =
+          ImportTaxonomiesRequest.newBuilder().setParent(parent.toString()).build();
 
       client.importTaxonomies(request);
       Assert.fail("No exception raised");
@@ -123,7 +129,13 @@ public class PolicyTagManagerSerializationClientTest {
     ExportTaxonomiesResponse expectedResponse = ExportTaxonomiesResponse.newBuilder().build();
     mockPolicyTagManagerSerialization.addResponse(expectedResponse);
 
-    ExportTaxonomiesRequest request = ExportTaxonomiesRequest.newBuilder().build();
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<TaxonomyName> taxonomies = new ArrayList<>();
+    ExportTaxonomiesRequest request =
+        ExportTaxonomiesRequest.newBuilder()
+            .setParent(parent.toString())
+            .addAllTaxonomies(TaxonomyName.toStringList(taxonomies))
+            .build();
 
     ExportTaxonomiesResponse actualResponse = client.exportTaxonomies(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -132,6 +144,8 @@ public class PolicyTagManagerSerializationClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ExportTaxonomiesRequest actualRequest = (ExportTaxonomiesRequest) actualRequests.get(0);
 
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(taxonomies, TaxonomyName.parseList(actualRequest.getTaxonomiesList()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -145,7 +159,13 @@ public class PolicyTagManagerSerializationClientTest {
     mockPolicyTagManagerSerialization.addException(exception);
 
     try {
-      ExportTaxonomiesRequest request = ExportTaxonomiesRequest.newBuilder().build();
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<TaxonomyName> taxonomies = new ArrayList<>();
+      ExportTaxonomiesRequest request =
+          ExportTaxonomiesRequest.newBuilder()
+              .setParent(parent.toString())
+              .addAllTaxonomies(TaxonomyName.toStringList(taxonomies))
+              .build();
 
       client.exportTaxonomies(request);
       Assert.fail("No exception raised");

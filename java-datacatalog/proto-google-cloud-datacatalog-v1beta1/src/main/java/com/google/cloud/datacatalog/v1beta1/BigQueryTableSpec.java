@@ -207,6 +207,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for tableSourceType.
    */
+  @java.lang.Override
   public int getTableSourceTypeValue() {
     return tableSourceType_;
   }
@@ -223,6 +224,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * @return The tableSourceType.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TableSourceType getTableSourceType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datacatalog.v1beta1.TableSourceType result =
@@ -245,6 +247,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the viewSpec field is set.
    */
+  @java.lang.Override
   public boolean hasViewSpec() {
     return typeSpecCase_ == 2;
   }
@@ -260,6 +263,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * @return The viewSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.ViewSpec getViewSpec() {
     if (typeSpecCase_ == 2) {
       return (com.google.cloud.datacatalog.v1beta1.ViewSpec) typeSpec_;
@@ -276,6 +280,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.ViewSpecOrBuilder getViewSpecOrBuilder() {
     if (typeSpecCase_ == 2) {
       return (com.google.cloud.datacatalog.v1beta1.ViewSpec) typeSpec_;
@@ -296,6 +301,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the tableSpec field is set.
    */
+  @java.lang.Override
   public boolean hasTableSpec() {
     return typeSpecCase_ == 3;
   }
@@ -311,6 +317,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * @return The tableSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TableSpec getTableSpec() {
     if (typeSpecCase_ == 3) {
       return (com.google.cloud.datacatalog.v1beta1.TableSpec) typeSpec_;
@@ -327,6 +334,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TableSpecOrBuilder getTableSpecOrBuilder() {
     if (typeSpecCase_ == 3) {
       return (com.google.cloud.datacatalog.v1beta1.TableSpec) typeSpec_;
@@ -756,6 +764,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for tableSourceType.
      */
+    @java.lang.Override
     public int getTableSourceTypeValue() {
       return tableSourceType_;
     }
@@ -774,6 +783,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setTableSourceTypeValue(int value) {
+
       tableSourceType_ = value;
       onChanged();
       return this;
@@ -791,6 +801,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * @return The tableSourceType.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.TableSourceType getTableSourceType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datacatalog.v1beta1.TableSourceType result =
@@ -859,6 +870,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the viewSpec field is set.
      */
+    @java.lang.Override
     public boolean hasViewSpec() {
       return typeSpecCase_ == 2;
     }
@@ -874,6 +886,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * @return The viewSpec.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.ViewSpec getViewSpec() {
       if (viewSpecBuilder_ == null) {
         if (typeSpecCase_ == 2) {
@@ -1012,6 +1025,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datacatalog.v1beta1.ViewSpec view_spec = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.ViewSpecOrBuilder getViewSpecOrBuilder() {
       if ((typeSpecCase_ == 2) && (viewSpecBuilder_ != null)) {
         return viewSpecBuilder_.getMessageOrBuilder();
@@ -1074,6 +1088,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the tableSpec field is set.
      */
+    @java.lang.Override
     public boolean hasTableSpec() {
       return typeSpecCase_ == 3;
     }
@@ -1089,6 +1104,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * @return The tableSpec.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.TableSpec getTableSpec() {
       if (tableSpecBuilder_ == null) {
         if (typeSpecCase_ == 3) {
@@ -1227,6 +1243,7 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datacatalog.v1beta1.TableSpec table_spec = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.TableSpecOrBuilder getTableSpecOrBuilder() {
       if ((typeSpecCase_ == 3) && (tableSpecBuilder_ != null)) {
         return tableSpecBuilder_.getMessageOrBuilder();

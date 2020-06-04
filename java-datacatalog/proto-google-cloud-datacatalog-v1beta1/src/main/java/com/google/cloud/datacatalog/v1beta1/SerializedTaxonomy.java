@@ -152,6 +152,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +175,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +228,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -248,6 +252,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag policy_tags = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag>
       getPolicyTagsList() {
     return policyTags_;
@@ -261,6 +266,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag policy_tags = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder>
       getPolicyTagsOrBuilderList() {
     return policyTags_;
@@ -274,6 +280,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag policy_tags = 3;</code>
    */
+  @java.lang.Override
   public int getPolicyTagsCount() {
     return policyTags_.size();
   }
@@ -286,6 +293,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag policy_tags = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag getPolicyTags(int index) {
     return policyTags_.get(index);
   }
@@ -298,6 +306,7 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag policy_tags = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder getPolicyTagsOrBuilder(
       int index) {
     return policyTags_.get(index);

@@ -305,6 +305,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The displayName.
      */
+    @java.lang.Override
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -327,6 +328,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for displayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -889,6 +891,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -911,6 +914,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -935,6 +939,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The doubleValue.
    */
+  @java.lang.Override
   public double getDoubleValue() {
     if (kindCase_ == 2) {
       return (java.lang.Double) kind_;
@@ -1010,6 +1015,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boolValue.
    */
+  @java.lang.Override
   public boolean getBoolValue() {
     if (kindCase_ == 4) {
       return (java.lang.Boolean) kind_;
@@ -1029,6 +1035,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timestampValue field is set.
    */
+  @java.lang.Override
   public boolean hasTimestampValue() {
     return kindCase_ == 5;
   }
@@ -1043,6 +1050,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timestampValue.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getTimestampValue() {
     if (kindCase_ == 5) {
       return (com.google.protobuf.Timestamp) kind_;
@@ -1058,6 +1066,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
     if (kindCase_ == 5) {
       return (com.google.protobuf.Timestamp) kind_;
@@ -1078,6 +1087,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the enumValue field is set.
    */
+  @java.lang.Override
   public boolean hasEnumValue() {
     return kindCase_ == 6;
   }
@@ -1093,6 +1103,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enumValue.
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagField.EnumValue getEnumValue() {
     if (kindCase_ == 6) {
       return (com.google.cloud.datacatalog.v1beta1.TagField.EnumValue) kind_;
@@ -1109,6 +1120,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datacatalog.v1beta1.TagField.EnumValue enum_value = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.TagField.EnumValueOrBuilder getEnumValueOrBuilder() {
     if (kindCase_ == 6) {
       return (com.google.cloud.datacatalog.v1beta1.TagField.EnumValue) kind_;
@@ -1133,6 +1145,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The order.
    */
+  @java.lang.Override
   public int getOrder() {
     return order_;
   }
@@ -1800,6 +1813,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stringValue.
      */
+    @java.lang.Override
     public java.lang.String getStringValue() {
       java.lang.Object ref = "";
       if (kindCase_ == 3) {
@@ -1827,6 +1841,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for stringValue.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getStringValueBytes() {
       java.lang.Object ref = "";
       if (kindCase_ == 3) {
@@ -1977,6 +1992,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timestampValue field is set.
      */
+    @java.lang.Override
     public boolean hasTimestampValue() {
       return kindCase_ == 5;
     }
@@ -1991,6 +2007,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timestampValue.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getTimestampValue() {
       if (timestampValueBuilder_ == null) {
         if (kindCase_ == 5) {
@@ -2120,6 +2137,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
       if ((kindCase_ == 5) && (timestampValueBuilder_ != null)) {
         return timestampValueBuilder_.getMessageOrBuilder();
@@ -2179,6 +2197,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the enumValue field is set.
      */
+    @java.lang.Override
     public boolean hasEnumValue() {
       return kindCase_ == 6;
     }
@@ -2194,6 +2213,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enumValue.
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.TagField.EnumValue getEnumValue() {
       if (enumValueBuilder_ == null) {
         if (kindCase_ == 6) {
@@ -2333,6 +2353,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datacatalog.v1beta1.TagField.EnumValue enum_value = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datacatalog.v1beta1.TagField.EnumValueOrBuilder
         getEnumValueOrBuilder() {
       if ((kindCase_ == 6) && (enumValueBuilder_ != null)) {
@@ -2395,6 +2416,7 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The order.
      */
+    @java.lang.Override
     public int getOrder() {
       return order_;
     }

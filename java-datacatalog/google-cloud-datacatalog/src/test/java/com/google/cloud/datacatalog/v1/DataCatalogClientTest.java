@@ -1534,10 +1534,8 @@ public class DataCatalogClientTest {
 
     ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
     Policy policy = Policy.newBuilder().build();
-    SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
 
-    Policy actualResponse = client.setIamPolicy(request);
+    Policy actualResponse = client.setIamPolicy(resource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
@@ -1561,13 +1559,8 @@ public class DataCatalogClientTest {
     try {
       ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
       Policy policy = Policy.newBuilder().build();
-      SetIamPolicyRequest request =
-          SetIamPolicyRequest.newBuilder()
-              .setResource(resource.toString())
-              .setPolicy(policy)
-              .build();
 
-      client.setIamPolicy(request);
+      client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -1583,10 +1576,8 @@ public class DataCatalogClientTest {
     mockDataCatalog.addResponse(expectedResponse);
 
     ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-    GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
-    Policy actualResponse = client.getIamPolicy(request);
+    Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
@@ -1608,10 +1599,8 @@ public class DataCatalogClientTest {
 
     try {
       ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
-      GetIamPolicyRequest request =
-          GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
 
-      client.getIamPolicy(request);
+      client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

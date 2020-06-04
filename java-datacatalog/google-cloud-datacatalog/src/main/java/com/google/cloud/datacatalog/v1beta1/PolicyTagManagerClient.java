@@ -15,11 +15,19 @@
  */
 package com.google.cloud.datacatalog.v1beta1;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1beta1.stub.PolicyTagManagerStub;
 import com.google.cloud.datacatalog.v1beta1.stub.PolicyTagManagerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -27,6 +35,7 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -41,8 +50,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
- *   CreateTaxonomyRequest request = CreateTaxonomyRequest.newBuilder().build();
- *   Taxonomy response = policyTagManagerClient.createTaxonomy(request);
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Taxonomy taxonomy = Taxonomy.newBuilder().build();
+ *   Taxonomy response = policyTagManagerClient.createTaxonomy(parent, taxonomy);
  * }
  * </code>
  * </pre>
@@ -160,7 +170,61 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   CreateTaxonomyRequest request = CreateTaxonomyRequest.newBuilder().build();
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Taxonomy taxonomy = Taxonomy.newBuilder().build();
+   *   Taxonomy response = policyTagManagerClient.createTaxonomy(parent, taxonomy);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the project that the taxonomy will belong to.
+   * @param taxonomy The taxonomy to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Taxonomy createTaxonomy(LocationName parent, Taxonomy taxonomy) {
+    CreateTaxonomyRequest request =
+        CreateTaxonomyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTaxonomy(taxonomy)
+            .build();
+    return createTaxonomy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a taxonomy in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Taxonomy taxonomy = Taxonomy.newBuilder().build();
+   *   Taxonomy response = policyTagManagerClient.createTaxonomy(parent.toString(), taxonomy);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the project that the taxonomy will belong to.
+   * @param taxonomy The taxonomy to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Taxonomy createTaxonomy(String parent, Taxonomy taxonomy) {
+    CreateTaxonomyRequest request =
+        CreateTaxonomyRequest.newBuilder().setParent(parent).setTaxonomy(taxonomy).build();
+    return createTaxonomy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a taxonomy in the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   CreateTaxonomyRequest request = CreateTaxonomyRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   Taxonomy response = policyTagManagerClient.createTaxonomy(request);
    * }
    * </code></pre>
@@ -180,7 +244,10 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   CreateTaxonomyRequest request = CreateTaxonomyRequest.newBuilder().build();
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   CreateTaxonomyRequest request = CreateTaxonomyRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   ApiFuture&lt;Taxonomy&gt; future = policyTagManagerClient.createTaxonomyCallable().futureCall(request);
    *   // Do something
    *   Taxonomy response = future.get();
@@ -200,7 +267,57 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   DeleteTaxonomyRequest request = DeleteTaxonomyRequest.newBuilder().build();
+   *   TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   policyTagManagerClient.deleteTaxonomy(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the taxonomy to be deleted. All policy tags in this
+   *     taxonomy will also be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTaxonomy(TaxonomyName name) {
+    DeleteTaxonomyRequest request =
+        DeleteTaxonomyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteTaxonomy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a taxonomy. This operation will also delete all policy tags in this taxonomy along with
+   * their associated policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   policyTagManagerClient.deleteTaxonomy(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the taxonomy to be deleted. All policy tags in this
+   *     taxonomy will also be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTaxonomy(String name) {
+    DeleteTaxonomyRequest request = DeleteTaxonomyRequest.newBuilder().setName(name).build();
+    deleteTaxonomy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a taxonomy. This operation will also delete all policy tags in this taxonomy along with
+   * their associated policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   DeleteTaxonomyRequest request = DeleteTaxonomyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   policyTagManagerClient.deleteTaxonomy(request);
    * }
    * </code></pre>
@@ -221,7 +338,10 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   DeleteTaxonomyRequest request = DeleteTaxonomyRequest.newBuilder().build();
+   *   TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   DeleteTaxonomyRequest request = DeleteTaxonomyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;Void&gt; future = policyTagManagerClient.deleteTaxonomyCallable().futureCall(request);
    *   // Do something
    *   future.get();
@@ -230,6 +350,29 @@ public class PolicyTagManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteTaxonomyRequest, Empty> deleteTaxonomyCallable() {
     return stub.deleteTaxonomyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a taxonomy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   Taxonomy taxonomy = Taxonomy.newBuilder().build();
+   *   Taxonomy response = policyTagManagerClient.updateTaxonomy(taxonomy);
+   * }
+   * </code></pre>
+   *
+   * @param taxonomy The taxonomy to update. Only description, display_name, and activated policy
+   *     types can be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Taxonomy updateTaxonomy(Taxonomy taxonomy) {
+    UpdateTaxonomyRequest request =
+        UpdateTaxonomyRequest.newBuilder().setTaxonomy(taxonomy).build();
+    return updateTaxonomy(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -280,16 +423,22 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   ListTaxonomiesRequest request = ListTaxonomiesRequest.newBuilder().build();
-   *   ListTaxonomiesResponse response = policyTagManagerClient.listTaxonomies(request);
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Taxonomy element : policyTagManagerClient.listTaxonomies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * </code></pre>
    *
-   * @param request The request object containing all of the parameters for the API call.
+   * @param parent Required. Resource name of the project to list the taxonomies of.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTaxonomiesResponse listTaxonomies(ListTaxonomiesRequest request) {
-    return listTaxonomiesCallable().call(request);
+  public final ListTaxonomiesPagedResponse listTaxonomies(LocationName parent) {
+    ListTaxonomiesRequest request =
+        ListTaxonomiesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTaxonomies(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -301,10 +450,98 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   ListTaxonomiesRequest request = ListTaxonomiesRequest.newBuilder().build();
-   *   ApiFuture&lt;ListTaxonomiesResponse&gt; future = policyTagManagerClient.listTaxonomiesCallable().futureCall(request);
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Taxonomy element : policyTagManagerClient.listTaxonomies(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the project to list the taxonomies of.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTaxonomiesPagedResponse listTaxonomies(String parent) {
+    ListTaxonomiesRequest request = ListTaxonomiesRequest.newBuilder().setParent(parent).build();
+    return listTaxonomies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all taxonomies in a project in a particular location that the caller has permission to
+   * view.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListTaxonomiesRequest request = ListTaxonomiesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (Taxonomy element : policyTagManagerClient.listTaxonomies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTaxonomiesPagedResponse listTaxonomies(ListTaxonomiesRequest request) {
+    return listTaxonomiesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all taxonomies in a project in a particular location that the caller has permission to
+   * view.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListTaxonomiesRequest request = ListTaxonomiesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListTaxonomiesPagedResponse&gt; future = policyTagManagerClient.listTaxonomiesPagedCallable().futureCall(request);
    *   // Do something
-   *   ListTaxonomiesResponse response = future.get();
+   *   for (Taxonomy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesPagedResponse>
+      listTaxonomiesPagedCallable() {
+    return stub.listTaxonomiesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all taxonomies in a project in a particular location that the caller has permission to
+   * view.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListTaxonomiesRequest request = ListTaxonomiesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListTaxonomiesResponse response = policyTagManagerClient.listTaxonomiesCallable().call(request);
+   *     for (Taxonomy element : response.getTaxonomiesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
    * }
    * </code></pre>
    */
@@ -321,7 +558,53 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   GetTaxonomyRequest request = GetTaxonomyRequest.newBuilder().build();
+   *   TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   Taxonomy response = policyTagManagerClient.getTaxonomy(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the requested taxonomy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Taxonomy getTaxonomy(TaxonomyName name) {
+    GetTaxonomyRequest request =
+        GetTaxonomyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getTaxonomy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a taxonomy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   Taxonomy response = policyTagManagerClient.getTaxonomy(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the requested taxonomy.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Taxonomy getTaxonomy(String name) {
+    GetTaxonomyRequest request = GetTaxonomyRequest.newBuilder().setName(name).build();
+    return getTaxonomy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a taxonomy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   GetTaxonomyRequest request = GetTaxonomyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   Taxonomy response = policyTagManagerClient.getTaxonomy(request);
    * }
    * </code></pre>
@@ -341,7 +624,10 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   GetTaxonomyRequest request = GetTaxonomyRequest.newBuilder().build();
+   *   TaxonomyName name = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   GetTaxonomyRequest request = GetTaxonomyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;Taxonomy&gt; future = policyTagManagerClient.getTaxonomyCallable().futureCall(request);
    *   // Do something
    *   Taxonomy response = future.get();
@@ -360,7 +646,61 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   CreatePolicyTagRequest request = CreatePolicyTagRequest.newBuilder().build();
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   PolicyTag policyTag = PolicyTag.newBuilder().build();
+   *   PolicyTag response = policyTagManagerClient.createPolicyTag(parent, policyTag);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.
+   * @param policyTag The policy tag to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PolicyTag createPolicyTag(TaxonomyName parent, PolicyTag policyTag) {
+    CreatePolicyTagRequest request =
+        CreatePolicyTagRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPolicyTag(policyTag)
+            .build();
+    return createPolicyTag(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a policy tag in the specified taxonomy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   PolicyTag policyTag = PolicyTag.newBuilder().build();
+   *   PolicyTag response = policyTagManagerClient.createPolicyTag(parent.toString(), policyTag);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the taxonomy that the policy tag will belong to.
+   * @param policyTag The policy tag to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PolicyTag createPolicyTag(String parent, PolicyTag policyTag) {
+    CreatePolicyTagRequest request =
+        CreatePolicyTagRequest.newBuilder().setParent(parent).setPolicyTag(policyTag).build();
+    return createPolicyTag(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a policy tag in the specified taxonomy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   CreatePolicyTagRequest request = CreatePolicyTagRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   PolicyTag response = policyTagManagerClient.createPolicyTag(request);
    * }
    * </code></pre>
@@ -380,7 +720,10 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   CreatePolicyTagRequest request = CreatePolicyTagRequest.newBuilder().build();
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   CreatePolicyTagRequest request = CreatePolicyTagRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
    *   ApiFuture&lt;PolicyTag&gt; future = policyTagManagerClient.createPolicyTagCallable().futureCall(request);
    *   // Do something
    *   PolicyTag response = future.get();
@@ -399,7 +742,55 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   DeletePolicyTagRequest request = DeletePolicyTagRequest.newBuilder().build();
+   *   PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
+   *   policyTagManagerClient.deletePolicyTag(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the policy tag to be deleted. All of its descendant
+   *     policy tags will also be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePolicyTag(PolicyTagName name) {
+    DeletePolicyTagRequest request =
+        DeletePolicyTagRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deletePolicyTag(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a policy tag. Also deletes all of its descendant policy tags.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
+   *   policyTagManagerClient.deletePolicyTag(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the policy tag to be deleted. All of its descendant
+   *     policy tags will also be deleted.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePolicyTag(String name) {
+    DeletePolicyTagRequest request = DeletePolicyTagRequest.newBuilder().setName(name).build();
+    deletePolicyTag(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a policy tag. Also deletes all of its descendant policy tags.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
+   *   DeletePolicyTagRequest request = DeletePolicyTagRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   policyTagManagerClient.deletePolicyTag(request);
    * }
    * </code></pre>
@@ -419,7 +810,10 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   DeletePolicyTagRequest request = DeletePolicyTagRequest.newBuilder().build();
+   *   PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
+   *   DeletePolicyTagRequest request = DeletePolicyTagRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;Void&gt; future = policyTagManagerClient.deletePolicyTagCallable().futureCall(request);
    *   // Do something
    *   future.get();
@@ -428,6 +822,29 @@ public class PolicyTagManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<DeletePolicyTagRequest, Empty> deletePolicyTagCallable() {
     return stub.deletePolicyTagCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a policy tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   PolicyTag policyTag = PolicyTag.newBuilder().build();
+   *   PolicyTag response = policyTagManagerClient.updatePolicyTag(policyTag);
+   * }
+   * </code></pre>
+   *
+   * @param policyTag The policy tag to update. Only the description, display_name, and
+   *     parent_policy_tag fields can be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PolicyTag updatePolicyTag(PolicyTag policyTag) {
+    UpdatePolicyTagRequest request =
+        UpdatePolicyTagRequest.newBuilder().setPolicyTag(policyTag).build();
+    return updatePolicyTag(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -477,16 +894,22 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   ListPolicyTagsRequest request = ListPolicyTagsRequest.newBuilder().build();
-   *   ListPolicyTagsResponse response = policyTagManagerClient.listPolicyTags(request);
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   for (PolicyTag element : policyTagManagerClient.listPolicyTags(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * </code></pre>
    *
-   * @param request The request object containing all of the parameters for the API call.
+   * @param parent Required. Resource name of the taxonomy to list the policy tags of.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyTagsResponse listPolicyTags(ListPolicyTagsRequest request) {
-    return listPolicyTagsCallable().call(request);
+  public final ListPolicyTagsPagedResponse listPolicyTags(TaxonomyName parent) {
+    ListPolicyTagsRequest request =
+        ListPolicyTagsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPolicyTags(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -497,10 +920,95 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   ListPolicyTagsRequest request = ListPolicyTagsRequest.newBuilder().build();
-   *   ApiFuture&lt;ListPolicyTagsResponse&gt; future = policyTagManagerClient.listPolicyTagsCallable().futureCall(request);
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   for (PolicyTag element : policyTagManagerClient.listPolicyTags(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. Resource name of the taxonomy to list the policy tags of.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPolicyTagsPagedResponse listPolicyTags(String parent) {
+    ListPolicyTagsRequest request = ListPolicyTagsRequest.newBuilder().setParent(parent).build();
+    return listPolicyTags(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all policy tags in a taxonomy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   ListPolicyTagsRequest request = ListPolicyTagsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (PolicyTag element : policyTagManagerClient.listPolicyTags(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPolicyTagsPagedResponse listPolicyTags(ListPolicyTagsRequest request) {
+    return listPolicyTagsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all policy tags in a taxonomy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   ListPolicyTagsRequest request = ListPolicyTagsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListPolicyTagsPagedResponse&gt; future = policyTagManagerClient.listPolicyTagsPagedCallable().futureCall(request);
    *   // Do something
-   *   ListPolicyTagsResponse response = future.get();
+   *   for (PolicyTag element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsPagedResponse>
+      listPolicyTagsPagedCallable() {
+    return stub.listPolicyTagsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all policy tags in a taxonomy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   TaxonomyName parent = TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]");
+   *   ListPolicyTagsRequest request = ListPolicyTagsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListPolicyTagsResponse response = policyTagManagerClient.listPolicyTagsCallable().call(request);
+   *     for (PolicyTag element : response.getPolicyTagsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
    * }
    * </code></pre>
    */
@@ -517,7 +1025,53 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   GetPolicyTagRequest request = GetPolicyTagRequest.newBuilder().build();
+   *   PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
+   *   PolicyTag response = policyTagManagerClient.getPolicyTag(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the requested policy tag.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PolicyTag getPolicyTag(PolicyTagName name) {
+    GetPolicyTagRequest request =
+        GetPolicyTagRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPolicyTag(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a policy tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
+   *   PolicyTag response = policyTagManagerClient.getPolicyTag(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the requested policy tag.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PolicyTag getPolicyTag(String name) {
+    GetPolicyTagRequest request = GetPolicyTagRequest.newBuilder().setName(name).build();
+    return getPolicyTag(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a policy tag.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
+   *   PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
+   *   GetPolicyTagRequest request = GetPolicyTagRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   PolicyTag response = policyTagManagerClient.getPolicyTag(request);
    * }
    * </code></pre>
@@ -537,7 +1091,10 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   GetPolicyTagRequest request = GetPolicyTagRequest.newBuilder().build();
+   *   PolicyTagName name = PolicyTagName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
+   *   GetPolicyTagRequest request = GetPolicyTagRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
    *   ApiFuture&lt;PolicyTag&gt; future = policyTagManagerClient.getPolicyTagCallable().futureCall(request);
    *   // Do something
    *   PolicyTag response = future.get();
@@ -556,7 +1113,10 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().build();
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
    *   Policy response = policyTagManagerClient.getIamPolicy(request);
    * }
    * </code></pre>
@@ -576,7 +1136,10 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().build();
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
    *   ApiFuture&lt;Policy&gt; future = policyTagManagerClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
@@ -595,7 +1158,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder().build();
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setPolicy(policy)
+   *     .build();
    *   Policy response = policyTagManagerClient.setIamPolicy(request);
    * }
    * </code></pre>
@@ -615,7 +1183,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder().build();
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setPolicy(policy)
+   *     .build();
    *   ApiFuture&lt;Policy&gt; future = policyTagManagerClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
@@ -634,7 +1207,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder().build();
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
+   *     .build();
    *   TestIamPermissionsResponse response = policyTagManagerClient.testIamPermissions(request);
    * }
    * </code></pre>
@@ -654,7 +1232,12 @@ public class PolicyTagManagerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder().build();
+   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
+   *     .build();
    *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = policyTagManagerClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something
    *   TestIamPermissionsResponse response = future.get();
@@ -694,5 +1277,167 @@ public class PolicyTagManagerClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListTaxonomiesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTaxonomiesRequest,
+          ListTaxonomiesResponse,
+          Taxonomy,
+          ListTaxonomiesPage,
+          ListTaxonomiesFixedSizeCollection> {
+
+    public static ApiFuture<ListTaxonomiesPagedResponse> createAsync(
+        PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
+        ApiFuture<ListTaxonomiesResponse> futureResponse) {
+      ApiFuture<ListTaxonomiesPage> futurePage =
+          ListTaxonomiesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListTaxonomiesPage, ListTaxonomiesPagedResponse>() {
+            @Override
+            public ListTaxonomiesPagedResponse apply(ListTaxonomiesPage input) {
+              return new ListTaxonomiesPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListTaxonomiesPagedResponse(ListTaxonomiesPage page) {
+      super(page, ListTaxonomiesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTaxonomiesPage
+      extends AbstractPage<
+          ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy, ListTaxonomiesPage> {
+
+    private ListTaxonomiesPage(
+        PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
+        ListTaxonomiesResponse response) {
+      super(context, response);
+    }
+
+    private static ListTaxonomiesPage createEmptyPage() {
+      return new ListTaxonomiesPage(null, null);
+    }
+
+    @Override
+    protected ListTaxonomiesPage createPage(
+        PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
+        ListTaxonomiesResponse response) {
+      return new ListTaxonomiesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTaxonomiesPage> createPageAsync(
+        PageContext<ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy> context,
+        ApiFuture<ListTaxonomiesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTaxonomiesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTaxonomiesRequest,
+          ListTaxonomiesResponse,
+          Taxonomy,
+          ListTaxonomiesPage,
+          ListTaxonomiesFixedSizeCollection> {
+
+    private ListTaxonomiesFixedSizeCollection(List<ListTaxonomiesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTaxonomiesFixedSizeCollection createEmptyCollection() {
+      return new ListTaxonomiesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTaxonomiesFixedSizeCollection createCollection(
+        List<ListTaxonomiesPage> pages, int collectionSize) {
+      return new ListTaxonomiesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPolicyTagsPagedResponse
+      extends AbstractPagedListResponse<
+          ListPolicyTagsRequest,
+          ListPolicyTagsResponse,
+          PolicyTag,
+          ListPolicyTagsPage,
+          ListPolicyTagsFixedSizeCollection> {
+
+    public static ApiFuture<ListPolicyTagsPagedResponse> createAsync(
+        PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
+        ApiFuture<ListPolicyTagsResponse> futureResponse) {
+      ApiFuture<ListPolicyTagsPage> futurePage =
+          ListPolicyTagsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListPolicyTagsPage, ListPolicyTagsPagedResponse>() {
+            @Override
+            public ListPolicyTagsPagedResponse apply(ListPolicyTagsPage input) {
+              return new ListPolicyTagsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPolicyTagsPagedResponse(ListPolicyTagsPage page) {
+      super(page, ListPolicyTagsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPolicyTagsPage
+      extends AbstractPage<
+          ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag, ListPolicyTagsPage> {
+
+    private ListPolicyTagsPage(
+        PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
+        ListPolicyTagsResponse response) {
+      super(context, response);
+    }
+
+    private static ListPolicyTagsPage createEmptyPage() {
+      return new ListPolicyTagsPage(null, null);
+    }
+
+    @Override
+    protected ListPolicyTagsPage createPage(
+        PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
+        ListPolicyTagsResponse response) {
+      return new ListPolicyTagsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPolicyTagsPage> createPageAsync(
+        PageContext<ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag> context,
+        ApiFuture<ListPolicyTagsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPolicyTagsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPolicyTagsRequest,
+          ListPolicyTagsResponse,
+          PolicyTag,
+          ListPolicyTagsPage,
+          ListPolicyTagsFixedSizeCollection> {
+
+    private ListPolicyTagsFixedSizeCollection(List<ListPolicyTagsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPolicyTagsFixedSizeCollection createEmptyCollection() {
+      return new ListPolicyTagsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPolicyTagsFixedSizeCollection createCollection(
+        List<ListPolicyTagsPage> pages, int collectionSize) {
+      return new ListPolicyTagsFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

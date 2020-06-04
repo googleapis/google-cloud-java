@@ -135,6 +135,7 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy>
       getTaxonomiesList() {
     return taxonomies_;
@@ -150,6 +151,7 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1beta1.SerializedTaxonomyOrBuilder>
       getTaxonomiesOrBuilderList() {
     return taxonomies_;
@@ -165,6 +167,7 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getTaxonomiesCount() {
     return taxonomies_.size();
   }
@@ -179,6 +182,7 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy getTaxonomies(int index) {
     return taxonomies_.get(index);
   }
@@ -193,6 +197,7 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datacatalog.v1beta1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datacatalog.v1beta1.SerializedTaxonomyOrBuilder getTaxonomiesOrBuilder(
       int index) {
     return taxonomies_.get(index);
