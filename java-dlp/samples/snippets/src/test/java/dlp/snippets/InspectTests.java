@@ -107,6 +107,17 @@ public class InspectTests {
   }
 
   @Test
+  public void testInspectStringWithExclusionDictSubstring() {
+    InspectStringWithExclusionDictSubstring.inspectStringWithExclusionDictSubstring(PROJECT_ID,
+        "Some email addresses: gary@example.com, TEST@example.com",
+        Arrays.asList("TEST"));
+
+    String output = bout.toString();
+    assertThat(output, containsString("gary@example.com"));
+    assertThat(output, not(containsString("TEST@example.com")));
+  }
+
+  @Test
   public void testInspectStringWithExclusionRegex() {
     InspectStringWithExclusionRegex.inspectStringWithExclusionRegex(PROJECT_ID,
         "Some email addresses: gary@example.com, bob@example.org",
