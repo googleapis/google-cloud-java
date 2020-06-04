@@ -24,11 +24,6 @@ if [[ -z "${STAGING_BUCKET}" ]]; then
   exit 1
 fi
 
-if [[ -z "${STAGING_BUCKET_V2}" ]]; then
-  echo "Need to set STAGING_BUCKET_V2 environment variable"
-  exit 1
-fi
-
 # work from the git root directory
 pushd $(dirname "$0")/../../
 
@@ -58,19 +53,3 @@ python3 -m docuploader upload . \
   --staging-bucket ${STAGING_BUCKET}
 
 popd
-
-# V2
-mvn clean site -B -Ddevsite.template="$(dirname `pwd`)/doc-templates/java/"
-
-pushd target/devsite
-
-# create metadata
-python3 -m docuploader create-metadata \
-  --name ${NAME} \
-  --version ${VERSION} \
-  --language java
-
-# upload docs
-python3 -m docuploader upload . \
-  --credentials ${CREDENTIALS} \
-  --staging-bucket ${STAGING_BUCKET_V2}
