@@ -182,10 +182,21 @@ If you already have an OAuth2 access token, you can use it to authenticate (noti
 access token will not be automatically refreshed):
 
 ```java
+Credentials credentials = GoogleCredentials.create(new AccessToken(accessToken, expirationTime));
 Storage storage = StorageOptions.newBuilder()
-    .setCredentials(GoogleCredentials.create(new AccessToken(accessToken, expirationTime)))
+    .setCredentials(credentials)
     .build()
     .getService();
+```
+
+or:
+
+```java
+Credentials credentials = GoogleCredentials.create(new AccessToken(accessToken, expirationTime));
+CloudTasksSettings cloudTasksSettings = CloudTasksSettings.newBuilder()
+    .setCredentialProvider(FixedCredentialsProvider.create(credentials))
+    .build();
+CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
 ```
 
 ### Application Default Credentials
