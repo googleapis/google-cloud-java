@@ -383,6 +383,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the field field is set.
      */
+    @java.lang.Override
     public boolean hasField() {
       return field_ != null;
     }
@@ -398,6 +399,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The field.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
@@ -411,6 +413,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
       return getField();
     }
@@ -1165,6 +1168,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the field field is set.
      */
+    @java.lang.Override
     public boolean hasField() {
       return field_ != null;
     }
@@ -1182,6 +1186,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The field.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
@@ -1197,6 +1202,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
       return getField();
     }
@@ -2071,6 +2077,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.FieldId> getQuasiIdsList() {
       return quasiIds_;
     }
@@ -2087,6 +2094,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getQuasiIdsOrBuilderList() {
       return quasiIds_;
@@ -2104,6 +2112,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public int getQuasiIdsCount() {
       return quasiIds_.size();
     }
@@ -2120,6 +2129,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldId getQuasiIds(int index) {
       return quasiIds_.get(index);
     }
@@ -2136,6 +2146,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
     }
@@ -2161,6 +2172,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the entityId field is set.
      */
+    @java.lang.Override
     public boolean hasEntityId() {
       return entityId_ != null;
     }
@@ -2183,6 +2195,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The entityId.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.EntityId getEntityId() {
       return entityId_ == null
           ? com.google.privacy.dlp.v2.EntityId.getDefaultInstance()
@@ -2205,6 +2218,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.EntityIdOrBuilder getEntityIdOrBuilder() {
       return getEntityId();
     }
@@ -3562,6 +3576,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.FieldId> getQuasiIdsList() {
       return quasiIds_;
     }
@@ -3576,6 +3591,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getQuasiIdsOrBuilderList() {
       return quasiIds_;
@@ -3591,6 +3607,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public int getQuasiIdsCount() {
       return quasiIds_.size();
     }
@@ -3605,6 +3622,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldId getQuasiIds(int index) {
       return quasiIds_.get(index);
     }
@@ -3619,6 +3637,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
     }
@@ -3636,6 +3655,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the sensitiveAttribute field is set.
      */
+    @java.lang.Override
     public boolean hasSensitiveAttribute() {
       return sensitiveAttribute_ != null;
     }
@@ -3650,6 +3670,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sensitiveAttribute.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldId getSensitiveAttribute() {
       return sensitiveAttribute_ == null
           ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
@@ -3664,6 +3685,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getSensitiveAttributeOrBuilder() {
       return getSensitiveAttribute();
     }
@@ -5369,6 +5391,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the field field is set.
        */
+      @java.lang.Override
       public boolean hasField() {
         return field_ != null;
       }
@@ -5384,6 +5407,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The field.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.FieldId getField() {
         return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
@@ -5397,6 +5421,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
         return getField();
       }
@@ -5417,6 +5442,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the infoType field is set.
        */
+      @java.lang.Override
       public boolean hasInfoType() {
         return tagCase_ == 2;
       }
@@ -5435,6 +5461,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The infoType.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.InfoType getInfoType() {
         if (tagCase_ == 2) {
           return (com.google.privacy.dlp.v2.InfoType) tag_;
@@ -5454,6 +5481,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
         if (tagCase_ == 2) {
           return (com.google.privacy.dlp.v2.InfoType) tag_;
@@ -5534,6 +5562,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the inferred field is set.
        */
+      @java.lang.Override
       public boolean hasInferred() {
         return tagCase_ == 4;
       }
@@ -5549,6 +5578,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The inferred.
        */
+      @java.lang.Override
       public com.google.protobuf.Empty getInferred() {
         if (tagCase_ == 4) {
           return (com.google.protobuf.Empty) tag_;
@@ -5565,6 +5595,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.protobuf.Empty inferred = 4;</code>
        */
+      @java.lang.Override
       public com.google.protobuf.EmptyOrBuilder getInferredOrBuilder() {
         if (tagCase_ == 4) {
           return (com.google.protobuf.Empty) tag_;
@@ -6247,6 +6278,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the infoType field is set.
          */
+        @java.lang.Override
         public boolean hasInfoType() {
           return tagCase_ == 2;
         }
@@ -6265,6 +6297,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The infoType.
          */
+        @java.lang.Override
         public com.google.privacy.dlp.v2.InfoType getInfoType() {
           if (infoTypeBuilder_ == null) {
             if (tagCase_ == 2) {
@@ -6419,6 +6452,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
          */
+        @java.lang.Override
         public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
           if ((tagCase_ == 2) && (infoTypeBuilder_ != null)) {
             return infoTypeBuilder_.getMessageOrBuilder();
@@ -6478,6 +6512,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The customTag.
          */
+        @java.lang.Override
         public java.lang.String getCustomTag() {
           java.lang.Object ref = "";
           if (tagCase_ == 3) {
@@ -6507,6 +6542,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for customTag.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getCustomTagBytes() {
           java.lang.Object ref = "";
           if (tagCase_ == 3) {
@@ -6609,6 +6645,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the inferred field is set.
          */
+        @java.lang.Override
         public boolean hasInferred() {
           return tagCase_ == 4;
         }
@@ -6624,6 +6661,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The inferred.
          */
+        @java.lang.Override
         public com.google.protobuf.Empty getInferred() {
           if (inferredBuilder_ == null) {
             if (tagCase_ == 4) {
@@ -6759,6 +6797,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * <code>.google.protobuf.Empty inferred = 4;</code>
          */
+        @java.lang.Override
         public com.google.protobuf.EmptyOrBuilder getInferredOrBuilder() {
           if ((tagCase_ == 4) && (inferredBuilder_ != null)) {
             return inferredBuilder_.getMessageOrBuilder();
@@ -7357,6 +7396,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the field field is set.
          */
+        @java.lang.Override
         public boolean hasField() {
           return field_ != null;
         }
@@ -7371,6 +7411,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The field.
          */
+        @java.lang.Override
         public com.google.privacy.dlp.v2.FieldId getField() {
           return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
         }
@@ -7383,6 +7424,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          */
+        @java.lang.Override
         public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
           return getField();
         }
@@ -7400,6 +7442,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The customTag.
          */
+        @java.lang.Override
         public java.lang.String getCustomTag() {
           java.lang.Object ref = customTag_;
           if (ref instanceof java.lang.String) {
@@ -7422,6 +7465,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for customTag.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getCustomTagBytes() {
           java.lang.Object ref = customTag_;
           if (ref instanceof java.lang.String) {
@@ -8210,6 +8254,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the table field is set.
        */
+      @java.lang.Override
       public boolean hasTable() {
         return table_ != null;
       }
@@ -8226,6 +8271,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The table.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.BigQueryTable getTable() {
         return table_ == null
             ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
@@ -8242,6 +8288,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * .google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
         return getTable();
       }
@@ -8262,6 +8309,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
                   .QuasiIdField>
@@ -8279,6 +8327,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
@@ -8297,6 +8346,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public int getQuasiIdsCount() {
         return quasiIds_.size();
       }
@@ -8311,6 +8361,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
               .QuasiIdField
           getQuasiIds(int index) {
@@ -8327,6 +8378,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
               .QuasiIdFieldOrBuilder
           getQuasiIdsOrBuilder(int index) {
@@ -8349,6 +8401,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the relativeFrequency field is set.
        */
+      @java.lang.Override
       public boolean hasRelativeFrequency() {
         return relativeFrequency_ != null;
       }
@@ -8366,6 +8419,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The relativeFrequency.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.FieldId getRelativeFrequency() {
         return relativeFrequency_ == null
             ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
@@ -8383,6 +8437,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
         return getRelativeFrequency();
       }
@@ -9771,6 +9826,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
         getQuasiIdsList() {
       return quasiIds_;
@@ -9787,6 +9843,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder>
@@ -9805,6 +9862,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public int getQuasiIdsCount() {
       return quasiIds_.size();
     }
@@ -9820,6 +9878,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(
         int index) {
       return quasiIds_.get(index);
@@ -9836,6 +9895,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder
         getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
@@ -9856,6 +9916,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The regionCode.
      */
+    @java.lang.Override
     public java.lang.String getRegionCode() {
       java.lang.Object ref = regionCode_;
       if (ref instanceof java.lang.String) {
@@ -9880,6 +9941,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for regionCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRegionCodeBytes() {
       java.lang.Object ref = regionCode_;
       if (ref instanceof java.lang.String) {
@@ -9909,6 +9971,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>
         getAuxiliaryTablesList() {
@@ -9927,6 +9990,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
@@ -9947,6 +10011,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
      * </code>
      */
+    @java.lang.Override
     public int getAuxiliaryTablesCount() {
       return auxiliaryTables_.size();
     }
@@ -9963,6 +10028,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
         getAuxiliaryTables(int index) {
       return auxiliaryTables_.get(index);
@@ -9980,6 +10046,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder
         getAuxiliaryTablesOrBuilder(int index) {
       return auxiliaryTables_.get(index);
@@ -11803,6 +11870,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList() {
       return quasiIds_;
     }
@@ -11818,6 +11886,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder>
         getQuasiIdsOrBuilderList() {
       return quasiIds_;
@@ -11834,6 +11903,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public int getQuasiIdsCount() {
       return quasiIds_.size();
     }
@@ -11849,6 +11919,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index) {
       return quasiIds_.get(index);
     }
@@ -11864,6 +11935,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
     }
@@ -11883,6 +11955,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The regionCode.
      */
+    @java.lang.Override
     public java.lang.String getRegionCode() {
       java.lang.Object ref = regionCode_;
       if (ref instanceof java.lang.String) {
@@ -11907,6 +11980,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for regionCode.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRegionCodeBytes() {
       java.lang.Object ref = regionCode_;
       if (ref instanceof java.lang.String) {
@@ -11932,6 +12006,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.StatisticalTable> getAuxiliaryTablesList() {
       return auxiliaryTables_;
     }
@@ -11946,6 +12021,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder>
         getAuxiliaryTablesOrBuilderList() {
       return auxiliaryTables_;
@@ -11961,6 +12037,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
+    @java.lang.Override
     public int getAuxiliaryTablesCount() {
       return auxiliaryTables_.size();
     }
@@ -11975,6 +12052,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.StatisticalTable getAuxiliaryTables(int index) {
       return auxiliaryTables_.get(index);
     }
@@ -11989,6 +12067,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.StatisticalTableOrBuilder getAuxiliaryTablesOrBuilder(
         int index) {
       return auxiliaryTables_.get(index);
@@ -13485,6 +13564,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the numericalStatsConfig field is set.
    */
+  @java.lang.Override
   public boolean hasNumericalStatsConfig() {
     return typeCase_ == 1;
   }
@@ -13500,6 +13580,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The numericalStatsConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig() {
     if (typeCase_ == 1) {
       return (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_;
@@ -13516,6 +13597,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder
       getNumericalStatsConfigOrBuilder() {
     if (typeCase_ == 1) {
@@ -13537,6 +13619,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the categoricalStatsConfig field is set.
    */
+  @java.lang.Override
   public boolean hasCategoricalStatsConfig() {
     return typeCase_ == 2;
   }
@@ -13552,6 +13635,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The categoricalStatsConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
       getCategoricalStatsConfig() {
     if (typeCase_ == 2) {
@@ -13569,6 +13653,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder
       getCategoricalStatsConfigOrBuilder() {
     if (typeCase_ == 2) {
@@ -13589,6 +13674,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the kAnonymityConfig field is set.
    */
+  @java.lang.Override
   public boolean hasKAnonymityConfig() {
     return typeCase_ == 3;
   }
@@ -13603,6 +13689,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kAnonymityConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getKAnonymityConfig() {
     if (typeCase_ == 3) {
       return (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_;
@@ -13618,6 +13705,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder
       getKAnonymityConfigOrBuilder() {
     if (typeCase_ == 3) {
@@ -13638,6 +13726,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lDiversityConfig field is set.
    */
+  @java.lang.Override
   public boolean hasLDiversityConfig() {
     return typeCase_ == 4;
   }
@@ -13652,6 +13741,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lDiversityConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getLDiversityConfig() {
     if (typeCase_ == 4) {
       return (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_;
@@ -13667,6 +13757,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder
       getLDiversityConfigOrBuilder() {
     if (typeCase_ == 4) {
@@ -13688,6 +13779,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the kMapEstimationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasKMapEstimationConfig() {
     return typeCase_ == 5;
   }
@@ -13703,6 +13795,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kMapEstimationConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig() {
     if (typeCase_ == 5) {
       return (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_;
@@ -13719,6 +13812,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder
       getKMapEstimationConfigOrBuilder() {
     if (typeCase_ == 5) {
@@ -13741,6 +13835,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deltaPresenceEstimationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDeltaPresenceEstimationConfig() {
     return typeCase_ == 6;
   }
@@ -13757,6 +13852,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deltaPresenceEstimationConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
       getDeltaPresenceEstimationConfig() {
     if (typeCase_ == 6) {
@@ -13776,6 +13872,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
    * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder
       getDeltaPresenceEstimationConfigOrBuilder() {
     if (typeCase_ == 6) {
@@ -14298,6 +14395,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the numericalStatsConfig field is set.
      */
+    @java.lang.Override
     public boolean hasNumericalStatsConfig() {
       return typeCase_ == 1;
     }
@@ -14313,6 +14411,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The numericalStatsConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig() {
       if (numericalStatsConfigBuilder_ == null) {
         if (typeCase_ == 1) {
@@ -14456,6 +14555,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder
         getNumericalStatsConfigOrBuilder() {
       if ((typeCase_ == 1) && (numericalStatsConfigBuilder_ != null)) {
@@ -14520,6 +14620,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the categoricalStatsConfig field is set.
      */
+    @java.lang.Override
     public boolean hasCategoricalStatsConfig() {
       return typeCase_ == 2;
     }
@@ -14536,6 +14637,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The categoricalStatsConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
         getCategoricalStatsConfig() {
       if (categoricalStatsConfigBuilder_ == null) {
@@ -14686,6 +14788,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder
         getCategoricalStatsConfigOrBuilder() {
       if ((typeCase_ == 2) && (categoricalStatsConfigBuilder_ != null)) {
@@ -14750,6 +14853,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the kAnonymityConfig field is set.
      */
+    @java.lang.Override
     public boolean hasKAnonymityConfig() {
       return typeCase_ == 3;
     }
@@ -14764,6 +14868,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The kAnonymityConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getKAnonymityConfig() {
       if (kAnonymityConfigBuilder_ == null) {
         if (typeCase_ == 3) {
@@ -14900,6 +15005,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder
         getKAnonymityConfigOrBuilder() {
       if ((typeCase_ == 3) && (kAnonymityConfigBuilder_ != null)) {
@@ -14961,6 +15067,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the lDiversityConfig field is set.
      */
+    @java.lang.Override
     public boolean hasLDiversityConfig() {
       return typeCase_ == 4;
     }
@@ -14975,6 +15082,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The lDiversityConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getLDiversityConfig() {
       if (lDiversityConfigBuilder_ == null) {
         if (typeCase_ == 4) {
@@ -15111,6 +15219,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder
         getLDiversityConfigOrBuilder() {
       if ((typeCase_ == 4) && (lDiversityConfigBuilder_ != null)) {
@@ -15173,6 +15282,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the kMapEstimationConfig field is set.
      */
+    @java.lang.Override
     public boolean hasKMapEstimationConfig() {
       return typeCase_ == 5;
     }
@@ -15188,6 +15298,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The kMapEstimationConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig() {
       if (kMapEstimationConfigBuilder_ == null) {
         if (typeCase_ == 5) {
@@ -15331,6 +15442,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder
         getKMapEstimationConfigOrBuilder() {
       if ((typeCase_ == 5) && (kMapEstimationConfigBuilder_ != null)) {
@@ -15395,6 +15507,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the deltaPresenceEstimationConfig field is set.
      */
+    @java.lang.Override
     public boolean hasDeltaPresenceEstimationConfig() {
       return typeCase_ == 6;
     }
@@ -15411,6 +15524,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The deltaPresenceEstimationConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
         getDeltaPresenceEstimationConfig() {
       if (deltaPresenceEstimationConfigBuilder_ == null) {
@@ -15564,6 +15678,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
      * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder
         getDeltaPresenceEstimationConfigOrBuilder() {
       if ((typeCase_ == 6) && (deltaPresenceEstimationConfigBuilder_ != null)) {

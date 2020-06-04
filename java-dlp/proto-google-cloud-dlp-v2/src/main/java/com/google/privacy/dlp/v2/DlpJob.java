@@ -448,6 +448,10 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -540,6 +544,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -562,6 +567,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -587,6 +593,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -601,6 +608,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DlpJobType getType() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.DlpJobType result =
@@ -621,6 +629,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -635,6 +644,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DlpJob.JobState getState() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.DlpJob.JobState result =
@@ -654,6 +664,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the riskDetails field is set.
    */
+  @java.lang.Override
   public boolean hasRiskDetails() {
     return detailsCase_ == 4;
   }
@@ -668,6 +679,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The riskDetails.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getRiskDetails() {
     if (detailsCase_ == 4) {
       return (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails) details_;
@@ -683,6 +695,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails risk_details = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetailsOrBuilder getRiskDetailsOrBuilder() {
     if (detailsCase_ == 4) {
       return (com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails) details_;
@@ -702,6 +715,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the inspectDetails field is set.
    */
+  @java.lang.Override
   public boolean hasInspectDetails() {
     return detailsCase_ == 5;
   }
@@ -716,6 +730,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The inspectDetails.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectDataSourceDetails getInspectDetails() {
     if (detailsCase_ == 5) {
       return (com.google.privacy.dlp.v2.InspectDataSourceDetails) details_;
@@ -731,6 +746,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails inspect_details = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectDataSourceDetailsOrBuilder getInspectDetailsOrBuilder() {
     if (detailsCase_ == 5) {
       return (com.google.privacy.dlp.v2.InspectDataSourceDetails) details_;
@@ -751,6 +767,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -765,6 +782,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -777,6 +795,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -794,6 +813,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -808,6 +828,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -820,6 +841,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp start_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -837,6 +859,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -851,6 +874,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -863,6 +887,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -881,6 +906,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobTriggerName.
    */
+  @java.lang.Override
   public java.lang.String getJobTriggerName() {
     java.lang.Object ref = jobTriggerName_;
     if (ref instanceof java.lang.String) {
@@ -904,6 +930,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for jobTriggerName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobTriggerNameBytes() {
     java.lang.Object ref = jobTriggerName_;
     if (ref instanceof java.lang.String) {
@@ -927,6 +954,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
@@ -939,6 +967,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
       getErrorsOrBuilderList() {
     return errors_;
@@ -952,6 +981,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
+  @java.lang.Override
   public int getErrorsCount() {
     return errors_.size();
   }
@@ -964,6 +994,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
@@ -976,6 +1007,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
     return errors_.get(index);
   }
@@ -1685,6 +1717,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1701,6 +1734,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -1716,6 +1750,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DlpJobType getType() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DlpJobType result =
@@ -1773,6 +1808,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1789,6 +1825,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1804,6 +1841,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DlpJob.JobState getState() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DlpJob.JobState result =
@@ -1865,6 +1903,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the riskDetails field is set.
      */
+    @java.lang.Override
     public boolean hasRiskDetails() {
       return detailsCase_ == 4;
     }
@@ -1879,6 +1918,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The riskDetails.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getRiskDetails() {
       if (riskDetailsBuilder_ == null) {
         if (detailsCase_ == 4) {
@@ -2012,6 +2052,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails risk_details = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetailsOrBuilder
         getRiskDetailsOrBuilder() {
       if ((detailsCase_ == 4) && (riskDetailsBuilder_ != null)) {
@@ -2073,6 +2114,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the inspectDetails field is set.
      */
+    @java.lang.Override
     public boolean hasInspectDetails() {
       return detailsCase_ == 5;
     }
@@ -2087,6 +2129,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The inspectDetails.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectDataSourceDetails getInspectDetails() {
       if (inspectDetailsBuilder_ == null) {
         if (detailsCase_ == 5) {
@@ -2220,6 +2263,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails inspect_details = 5;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectDataSourceDetailsOrBuilder
         getInspectDetailsOrBuilder() {
       if ((detailsCase_ == 5) && (inspectDetailsBuilder_ != null)) {

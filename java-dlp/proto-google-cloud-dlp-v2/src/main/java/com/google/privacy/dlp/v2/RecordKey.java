@@ -203,6 +203,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the datastoreKey field is set.
    */
+  @java.lang.Override
   public boolean hasDatastoreKey() {
     return typeCase_ == 2;
   }
@@ -211,6 +212,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The datastoreKey.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DatastoreKey getDatastoreKey() {
     if (typeCase_ == 2) {
       return (com.google.privacy.dlp.v2.DatastoreKey) type_;
@@ -218,6 +220,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.DatastoreKey.getDefaultInstance();
   }
   /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DatastoreKeyOrBuilder getDatastoreKeyOrBuilder() {
     if (typeCase_ == 2) {
       return (com.google.privacy.dlp.v2.DatastoreKey) type_;
@@ -231,6 +234,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the bigQueryKey field is set.
    */
+  @java.lang.Override
   public boolean hasBigQueryKey() {
     return typeCase_ == 3;
   }
@@ -239,6 +243,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bigQueryKey.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryKey getBigQueryKey() {
     if (typeCase_ == 3) {
       return (com.google.privacy.dlp.v2.BigQueryKey) type_;
@@ -246,6 +251,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance();
   }
   /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryKeyOrBuilder getBigQueryKeyOrBuilder() {
     if (typeCase_ == 3) {
       return (com.google.privacy.dlp.v2.BigQueryKey) type_;
@@ -747,6 +753,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the datastoreKey field is set.
      */
+    @java.lang.Override
     public boolean hasDatastoreKey() {
       return typeCase_ == 2;
     }
@@ -755,6 +762,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The datastoreKey.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DatastoreKey getDatastoreKey() {
       if (datastoreKeyBuilder_ == null) {
         if (typeCase_ == 2) {
@@ -838,6 +846,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       return getDatastoreKeyFieldBuilder().getBuilder();
     }
     /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DatastoreKeyOrBuilder getDatastoreKeyOrBuilder() {
       if ((typeCase_ == 2) && (datastoreKeyBuilder_ != null)) {
         return datastoreKeyBuilder_.getMessageOrBuilder();
@@ -882,6 +891,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the bigQueryKey field is set.
      */
+    @java.lang.Override
     public boolean hasBigQueryKey() {
       return typeCase_ == 3;
     }
@@ -890,6 +900,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bigQueryKey.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryKey getBigQueryKey() {
       if (bigQueryKeyBuilder_ == null) {
         if (typeCase_ == 3) {
@@ -972,6 +983,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       return getBigQueryKeyFieldBuilder().getBuilder();
     }
     /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryKeyOrBuilder getBigQueryKeyOrBuilder() {
       if ((typeCase_ == 3) && (bigQueryKeyBuilder_ != null)) {
         return bigQueryKeyBuilder_.getMessageOrBuilder();

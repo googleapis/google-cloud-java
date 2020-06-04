@@ -125,6 +125,7 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
    *
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -148,6 +149,7 @@ public final class CloudStorageFileSet extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {

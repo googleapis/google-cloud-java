@@ -205,6 +205,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The upperBoundDays.
    */
+  @java.lang.Override
   public int getUpperBoundDays() {
     return upperBoundDays_;
   }
@@ -223,6 +224,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The lowerBoundDays.
    */
+  @java.lang.Override
   public int getLowerBoundDays() {
     return lowerBoundDays_;
   }
@@ -242,6 +244,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the context field is set.
    */
+  @java.lang.Override
   public boolean hasContext() {
     return context_ != null;
   }
@@ -258,6 +261,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The context.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
@@ -272,6 +276,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder() {
     return getContext();
   }
@@ -290,6 +295,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the cryptoKey field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoKey() {
     return methodCase_ == 4;
   }
@@ -306,6 +312,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The cryptoKey.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     if (methodCase_ == 4) {
       return (com.google.privacy.dlp.v2.CryptoKey) method_;
@@ -323,6 +330,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     if (methodCase_ == 4) {
       return (com.google.privacy.dlp.v2.CryptoKey) method_;
@@ -764,6 +772,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The upperBoundDays.
      */
+    @java.lang.Override
     public int getUpperBoundDays() {
       return upperBoundDays_;
     }
@@ -822,6 +831,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The lowerBoundDays.
      */
+    @java.lang.Override
     public int getLowerBoundDays() {
       return lowerBoundDays_;
     }
@@ -1080,6 +1090,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the cryptoKey field is set.
      */
+    @java.lang.Override
     public boolean hasCryptoKey() {
       return methodCase_ == 4;
     }
@@ -1096,6 +1107,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The cryptoKey.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
         if (methodCase_ == 4) {
@@ -1239,6 +1251,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
       if ((methodCase_ == 4) && (cryptoKeyBuilder_ != null)) {
         return cryptoKeyBuilder_.getMessageOrBuilder();

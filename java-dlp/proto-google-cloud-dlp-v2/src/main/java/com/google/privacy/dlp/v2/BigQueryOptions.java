@@ -273,6 +273,10 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -318,6 +322,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the tableReference field is set.
    */
+  @java.lang.Override
   public boolean hasTableReference() {
     return tableReference_ != null;
   }
@@ -332,6 +337,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return The tableReference.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTable getTableReference() {
     return tableReference_ == null
         ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
@@ -346,6 +352,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableReferenceOrBuilder() {
     return getTableReference();
   }
@@ -365,6 +372,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getIdentifyingFieldsList() {
     return identifyingFields_;
   }
@@ -381,6 +389,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getIdentifyingFieldsOrBuilderList() {
     return identifyingFields_;
@@ -398,6 +407,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
+  @java.lang.Override
   public int getIdentifyingFieldsCount() {
     return identifyingFields_.size();
   }
@@ -414,6 +424,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getIdentifyingFields(int index) {
     return identifyingFields_.get(index);
   }
@@ -430,6 +441,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getIdentifyingFieldsOrBuilder(int index) {
     return identifyingFields_.get(index);
   }
@@ -450,6 +462,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return The rowsLimit.
    */
+  @java.lang.Override
   public long getRowsLimit() {
     return rowsLimit_;
   }
@@ -471,6 +484,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return The rowsLimitPercent.
    */
+  @java.lang.Override
   public int getRowsLimitPercent() {
     return rowsLimitPercent_;
   }
@@ -482,6 +496,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for sampleMethod.
    */
+  @java.lang.Override
   public int getSampleMethodValue() {
     return sampleMethod_;
   }
@@ -490,6 +505,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * @return The sampleMethod.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod result =
@@ -511,6 +527,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getExcludedFieldsList() {
     return excludedFields_;
   }
@@ -524,6 +541,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getExcludedFieldsOrBuilderList() {
     return excludedFields_;
@@ -538,6 +556,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
+  @java.lang.Override
   public int getExcludedFieldsCount() {
     return excludedFields_.size();
   }
@@ -551,6 +570,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getExcludedFields(int index) {
     return excludedFields_.get(index);
   }
@@ -564,6 +584,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getExcludedFieldsOrBuilder(int index) {
     return excludedFields_.get(index);
   }
@@ -1684,6 +1705,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * @return The rowsLimit.
      */
+    @java.lang.Override
     public long getRowsLimit() {
       return rowsLimit_;
     }
@@ -1745,6 +1767,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * @return The rowsLimitPercent.
      */
+    @java.lang.Override
     public int getRowsLimitPercent() {
       return rowsLimitPercent_;
     }
@@ -1798,6 +1821,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for sampleMethod.
      */
+    @java.lang.Override
     public int getSampleMethodValue() {
       return sampleMethod_;
     }
@@ -1808,6 +1832,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setSampleMethodValue(int value) {
+
       sampleMethod_ = value;
       onChanged();
       return this;
@@ -1817,6 +1842,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      *
      * @return The sampleMethod.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod result =

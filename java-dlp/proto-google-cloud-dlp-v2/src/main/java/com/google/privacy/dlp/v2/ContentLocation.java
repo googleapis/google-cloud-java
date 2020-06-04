@@ -272,6 +272,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The containerName.
    */
+  @java.lang.Override
   public java.lang.String getContainerName() {
     java.lang.Object ref = containerName_;
     if (ref instanceof java.lang.String) {
@@ -301,6 +302,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for containerName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContainerNameBytes() {
     java.lang.Object ref = containerName_;
     if (ref instanceof java.lang.String) {
@@ -325,6 +327,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the recordLocation field is set.
    */
+  @java.lang.Override
   public boolean hasRecordLocation() {
     return locationCase_ == 2;
   }
@@ -339,6 +342,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The recordLocation.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordLocation getRecordLocation() {
     if (locationCase_ == 2) {
       return (com.google.privacy.dlp.v2.RecordLocation) location_;
@@ -354,6 +358,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordLocationOrBuilder getRecordLocationOrBuilder() {
     if (locationCase_ == 2) {
       return (com.google.privacy.dlp.v2.RecordLocation) location_;
@@ -373,6 +378,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the imageLocation field is set.
    */
+  @java.lang.Override
   public boolean hasImageLocation() {
     return locationCase_ == 3;
   }
@@ -387,6 +393,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The imageLocation.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ImageLocation getImageLocation() {
     if (locationCase_ == 3) {
       return (com.google.privacy.dlp.v2.ImageLocation) location_;
@@ -402,6 +409,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ImageLocationOrBuilder getImageLocationOrBuilder() {
     if (locationCase_ == 3) {
       return (com.google.privacy.dlp.v2.ImageLocation) location_;
@@ -421,6 +429,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the documentLocation field is set.
    */
+  @java.lang.Override
   public boolean hasDocumentLocation() {
     return locationCase_ == 5;
   }
@@ -435,6 +444,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The documentLocation.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation() {
     if (locationCase_ == 5) {
       return (com.google.privacy.dlp.v2.DocumentLocation) location_;
@@ -450,6 +460,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DocumentLocationOrBuilder getDocumentLocationOrBuilder() {
     if (locationCase_ == 5) {
       return (com.google.privacy.dlp.v2.DocumentLocation) location_;
@@ -469,6 +480,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the metadataLocation field is set.
    */
+  @java.lang.Override
   public boolean hasMetadataLocation() {
     return locationCase_ == 8;
   }
@@ -483,6 +495,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The metadataLocation.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.MetadataLocation getMetadataLocation() {
     if (locationCase_ == 8) {
       return (com.google.privacy.dlp.v2.MetadataLocation) location_;
@@ -498,6 +511,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.MetadataLocationOrBuilder getMetadataLocationOrBuilder() {
     if (locationCase_ == 8) {
       return (com.google.privacy.dlp.v2.MetadataLocation) location_;
@@ -521,6 +535,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the containerTimestamp field is set.
    */
+  @java.lang.Override
   public boolean hasContainerTimestamp() {
     return containerTimestamp_ != null;
   }
@@ -538,6 +553,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The containerTimestamp.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getContainerTimestamp() {
     return containerTimestamp_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -555,6 +571,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getContainerTimestampOrBuilder() {
     return getContainerTimestamp();
   }
@@ -573,6 +590,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The containerVersion.
    */
+  @java.lang.Override
   public java.lang.String getContainerVersion() {
     java.lang.Object ref = containerVersion_;
     if (ref instanceof java.lang.String) {
@@ -596,6 +614,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for containerVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getContainerVersionBytes() {
     java.lang.Object ref = containerVersion_;
     if (ref instanceof java.lang.String) {
@@ -1266,6 +1285,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the recordLocation field is set.
      */
+    @java.lang.Override
     public boolean hasRecordLocation() {
       return locationCase_ == 2;
     }
@@ -1280,6 +1300,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The recordLocation.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.RecordLocation getRecordLocation() {
       if (recordLocationBuilder_ == null) {
         if (locationCase_ == 2) {
@@ -1412,6 +1433,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.RecordLocationOrBuilder getRecordLocationOrBuilder() {
       if ((locationCase_ == 2) && (recordLocationBuilder_ != null)) {
         return recordLocationBuilder_.getMessageOrBuilder();
@@ -1472,6 +1494,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the imageLocation field is set.
      */
+    @java.lang.Override
     public boolean hasImageLocation() {
       return locationCase_ == 3;
     }
@@ -1486,6 +1509,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The imageLocation.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ImageLocation getImageLocation() {
       if (imageLocationBuilder_ == null) {
         if (locationCase_ == 3) {
@@ -1618,6 +1642,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ImageLocationOrBuilder getImageLocationOrBuilder() {
       if ((locationCase_ == 3) && (imageLocationBuilder_ != null)) {
         return imageLocationBuilder_.getMessageOrBuilder();
@@ -1678,6 +1703,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the documentLocation field is set.
      */
+    @java.lang.Override
     public boolean hasDocumentLocation() {
       return locationCase_ == 5;
     }
@@ -1692,6 +1718,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The documentLocation.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation() {
       if (documentLocationBuilder_ == null) {
         if (locationCase_ == 5) {
@@ -1824,6 +1851,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DocumentLocationOrBuilder getDocumentLocationOrBuilder() {
       if ((locationCase_ == 5) && (documentLocationBuilder_ != null)) {
         return documentLocationBuilder_.getMessageOrBuilder();
@@ -1884,6 +1912,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the metadataLocation field is set.
      */
+    @java.lang.Override
     public boolean hasMetadataLocation() {
       return locationCase_ == 8;
     }
@@ -1898,6 +1927,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * @return The metadataLocation.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.MetadataLocation getMetadataLocation() {
       if (metadataLocationBuilder_ == null) {
         if (locationCase_ == 8) {
@@ -2030,6 +2060,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.privacy.dlp.v2.MetadataLocation metadata_location = 8;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.MetadataLocationOrBuilder getMetadataLocationOrBuilder() {
       if ((locationCase_ == 8) && (metadataLocationBuilder_ != null)) {
         return metadataLocationBuilder_.getMessageOrBuilder();

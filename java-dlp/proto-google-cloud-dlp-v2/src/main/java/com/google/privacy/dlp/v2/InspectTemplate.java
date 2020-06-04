@@ -192,6 +192,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +218,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +244,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +267,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -289,6 +293,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -311,6 +316,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -337,6 +343,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -352,6 +359,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -365,6 +373,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -383,6 +392,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -398,6 +408,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -411,6 +422,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -428,6 +440,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the inspectConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
   }
@@ -442,6 +455,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * @return The inspectConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
@@ -456,6 +470,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder() {
     return getInspectConfig();
   }

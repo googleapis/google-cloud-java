@@ -260,6 +260,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the table field is set.
    */
+  @java.lang.Override
   public boolean hasTable() {
     return dataItemCase_ == 4;
   }
@@ -276,6 +277,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The table.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Table getTable() {
     if (dataItemCase_ == 4) {
       return (com.google.privacy.dlp.v2.Table) dataItem_;
@@ -293,6 +295,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TableOrBuilder getTableOrBuilder() {
     if (dataItemCase_ == 4) {
       return (com.google.privacy.dlp.v2.Table) dataItem_;
@@ -312,6 +315,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the byteItem field is set.
    */
+  @java.lang.Override
   public boolean hasByteItem() {
     return dataItemCase_ == 5;
   }
@@ -326,6 +330,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The byteItem.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
     if (dataItemCase_ == 5) {
       return (com.google.privacy.dlp.v2.ByteContentItem) dataItem_;
@@ -341,6 +346,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ByteContentItemOrBuilder getByteItemOrBuilder() {
     if (dataItemCase_ == 5) {
       return (com.google.privacy.dlp.v2.ByteContentItem) dataItem_;
@@ -766,6 +772,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = "";
       if (dataItemCase_ == 3) {
@@ -793,6 +800,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = "";
       if (dataItemCase_ == 3) {
@@ -890,6 +898,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the table field is set.
      */
+    @java.lang.Override
     public boolean hasTable() {
       return dataItemCase_ == 4;
     }
@@ -906,6 +915,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The table.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Table getTable() {
       if (tableBuilder_ == null) {
         if (dataItemCase_ == 4) {
@@ -1049,6 +1059,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TableOrBuilder getTableOrBuilder() {
       if ((dataItemCase_ == 4) && (tableBuilder_ != null)) {
         return tableBuilder_.getMessageOrBuilder();
@@ -1109,6 +1120,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the byteItem field is set.
      */
+    @java.lang.Override
     public boolean hasByteItem() {
       return dataItemCase_ == 5;
     }
@@ -1123,6 +1135,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The byteItem.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
       if (byteItemBuilder_ == null) {
         if (dataItemCase_ == 5) {
@@ -1254,6 +1267,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 5;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ByteContentItemOrBuilder getByteItemOrBuilder() {
       if ((dataItemCase_ == 5) && (byteItemBuilder_ != null)) {
         return byteItemBuilder_.getMessageOrBuilder();

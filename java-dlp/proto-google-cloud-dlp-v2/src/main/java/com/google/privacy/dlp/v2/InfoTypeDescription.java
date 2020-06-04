@@ -170,6 +170,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +193,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +219,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +242,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -278,6 +282,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return A list containing the supportedBy.
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeSupportedBy> getSupportedByList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.privacy.dlp.v2.InfoTypeSupportedBy>(
@@ -294,6 +299,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return The count of supportedBy.
    */
+  @java.lang.Override
   public int getSupportedByCount() {
     return supportedBy_.size();
   }
@@ -309,6 +315,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    * @param index The index of the element to return.
    * @return The supportedBy at the given index.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index) {
     return supportedBy_converter_.convert(supportedBy_.get(index));
   }
@@ -323,6 +330,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return A list containing the enum numeric values on the wire for supportedBy.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getSupportedByValueList() {
     return supportedBy_;
   }
@@ -338,6 +346,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of supportedBy at the given index.
    */
+  @java.lang.Override
   public int getSupportedByValue(int index) {
     return supportedBy_.get(index);
   }
@@ -358,6 +367,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -381,6 +391,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {

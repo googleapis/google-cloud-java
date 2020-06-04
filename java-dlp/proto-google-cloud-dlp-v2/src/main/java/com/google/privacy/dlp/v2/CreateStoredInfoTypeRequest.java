@@ -159,6 +159,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +185,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +213,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -227,6 +230,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
     return config_ == null
         ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
@@ -243,6 +247,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    * .google.privacy.dlp.v2.StoredInfoTypeConfig config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -263,6 +268,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The storedInfoTypeId.
    */
+  @java.lang.Override
   public java.lang.String getStoredInfoTypeId() {
     java.lang.Object ref = storedInfoTypeId_;
     if (ref instanceof java.lang.String) {
@@ -288,6 +294,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for storedInfoTypeId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getStoredInfoTypeIdBytes() {
     java.lang.Object ref = storedInfoTypeId_;
     if (ref instanceof java.lang.String) {
@@ -313,6 +320,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -335,6 +343,7 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {

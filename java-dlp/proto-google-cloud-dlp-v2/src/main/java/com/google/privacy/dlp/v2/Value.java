@@ -257,6 +257,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The integerValue.
    */
+  @java.lang.Override
   public long getIntegerValue() {
     if (typeCase_ == 1) {
       return (java.lang.Long) type_;
@@ -276,6 +277,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The floatValue.
    */
+  @java.lang.Override
   public double getFloatValue() {
     if (typeCase_ == 2) {
       return (java.lang.Double) type_;
@@ -351,6 +353,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The booleanValue.
    */
+  @java.lang.Override
   public boolean getBooleanValue() {
     if (typeCase_ == 4) {
       return (java.lang.Boolean) type_;
@@ -370,6 +373,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timestampValue field is set.
    */
+  @java.lang.Override
   public boolean hasTimestampValue() {
     return typeCase_ == 5;
   }
@@ -384,6 +388,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timestampValue.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getTimestampValue() {
     if (typeCase_ == 5) {
       return (com.google.protobuf.Timestamp) type_;
@@ -399,6 +404,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
     if (typeCase_ == 5) {
       return (com.google.protobuf.Timestamp) type_;
@@ -418,6 +424,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeValue field is set.
    */
+  @java.lang.Override
   public boolean hasTimeValue() {
     return typeCase_ == 6;
   }
@@ -432,6 +439,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeValue.
    */
+  @java.lang.Override
   public com.google.type.TimeOfDay getTimeValue() {
     if (typeCase_ == 6) {
       return (com.google.type.TimeOfDay) type_;
@@ -447,6 +455,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.TimeOfDay time_value = 6;</code>
    */
+  @java.lang.Override
   public com.google.type.TimeOfDayOrBuilder getTimeValueOrBuilder() {
     if (typeCase_ == 6) {
       return (com.google.type.TimeOfDay) type_;
@@ -466,6 +475,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dateValue field is set.
    */
+  @java.lang.Override
   public boolean hasDateValue() {
     return typeCase_ == 7;
   }
@@ -480,6 +490,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dateValue.
    */
+  @java.lang.Override
   public com.google.type.Date getDateValue() {
     if (typeCase_ == 7) {
       return (com.google.type.Date) type_;
@@ -495,6 +506,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date date_value = 7;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getDateValueOrBuilder() {
     if (typeCase_ == 7) {
       return (com.google.type.Date) type_;
@@ -1192,6 +1204,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stringValue.
      */
+    @java.lang.Override
     public java.lang.String getStringValue() {
       java.lang.Object ref = "";
       if (typeCase_ == 3) {
@@ -1219,6 +1232,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for stringValue.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getStringValueBytes() {
       java.lang.Object ref = "";
       if (typeCase_ == 3) {
@@ -1369,6 +1383,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timestampValue field is set.
      */
+    @java.lang.Override
     public boolean hasTimestampValue() {
       return typeCase_ == 5;
     }
@@ -1383,6 +1398,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timestampValue.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getTimestampValue() {
       if (timestampValueBuilder_ == null) {
         if (typeCase_ == 5) {
@@ -1512,6 +1528,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder() {
       if ((typeCase_ == 5) && (timestampValueBuilder_ != null)) {
         return timestampValueBuilder_.getMessageOrBuilder();
@@ -1570,6 +1587,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timeValue field is set.
      */
+    @java.lang.Override
     public boolean hasTimeValue() {
       return typeCase_ == 6;
     }
@@ -1584,6 +1602,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timeValue.
      */
+    @java.lang.Override
     public com.google.type.TimeOfDay getTimeValue() {
       if (timeValueBuilder_ == null) {
         if (typeCase_ == 6) {
@@ -1713,6 +1732,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.TimeOfDay time_value = 6;</code>
      */
+    @java.lang.Override
     public com.google.type.TimeOfDayOrBuilder getTimeValueOrBuilder() {
       if ((typeCase_ == 6) && (timeValueBuilder_ != null)) {
         return timeValueBuilder_.getMessageOrBuilder();
@@ -1769,6 +1789,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the dateValue field is set.
      */
+    @java.lang.Override
     public boolean hasDateValue() {
       return typeCase_ == 7;
     }
@@ -1783,6 +1804,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dateValue.
      */
+    @java.lang.Override
     public com.google.type.Date getDateValue() {
       if (dateValueBuilder_ == null) {
         if (typeCase_ == 7) {
@@ -1912,6 +1934,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.Date date_value = 7;</code>
      */
+    @java.lang.Override
     public com.google.type.DateOrBuilder getDateValueOrBuilder() {
       if ((typeCase_ == 7) && (dateValueBuilder_ != null)) {
         return dateValueBuilder_.getMessageOrBuilder();
@@ -1961,6 +1984,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for dayOfWeekValue.
      */
+    @java.lang.Override
     public int getDayOfWeekValueValue() {
       if (typeCase_ == 8) {
         return ((java.lang.Integer) type_).intValue();
@@ -1996,6 +2020,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dayOfWeekValue.
      */
+    @java.lang.Override
     public com.google.type.DayOfWeek getDayOfWeekValue() {
       if (typeCase_ == 8) {
         @SuppressWarnings("deprecation")

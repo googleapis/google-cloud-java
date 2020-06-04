@@ -164,6 +164,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the privacyMetric field is set.
    */
+  @java.lang.Override
   public boolean hasPrivacyMetric() {
     return privacyMetric_ != null;
   }
@@ -178,6 +179,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The privacyMetric.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric getPrivacyMetric() {
     return privacyMetric_ == null
         ? com.google.privacy.dlp.v2.PrivacyMetric.getDefaultInstance()
@@ -192,6 +194,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric privacy_metric = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetricOrBuilder getPrivacyMetricOrBuilder() {
     return getPrivacyMetric();
   }
@@ -209,6 +212,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the sourceTable field is set.
    */
+  @java.lang.Override
   public boolean hasSourceTable() {
     return sourceTable_ != null;
   }
@@ -223,6 +227,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The sourceTable.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTable getSourceTable() {
     return sourceTable_ == null
         ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
@@ -237,6 +242,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable source_table = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSourceTableOrBuilder() {
     return getSourceTable();
   }
@@ -253,6 +259,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Action> getActionsList() {
     return actions_;
   }
@@ -266,6 +273,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder>
       getActionsOrBuilderList() {
     return actions_;
@@ -280,6 +288,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
+  @java.lang.Override
   public int getActionsCount() {
     return actions_.size();
   }
@@ -293,6 +302,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action getActions(int index) {
     return actions_.get(index);
   }
@@ -306,6 +316,7 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ActionOrBuilder getActionsOrBuilder(int index) {
     return actions_.get(index);
   }

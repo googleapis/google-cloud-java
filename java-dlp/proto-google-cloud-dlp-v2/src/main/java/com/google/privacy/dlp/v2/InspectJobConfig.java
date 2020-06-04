@@ -171,6 +171,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the storageConfig field is set.
    */
+  @java.lang.Override
   public boolean hasStorageConfig() {
     return storageConfig_ != null;
   }
@@ -185,6 +186,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The storageConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StorageConfig getStorageConfig() {
     return storageConfig_ == null
         ? com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance()
@@ -199,6 +201,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StorageConfigOrBuilder getStorageConfigOrBuilder() {
     return getStorageConfig();
   }
@@ -216,6 +219,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the inspectConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
   }
@@ -230,6 +234,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The inspectConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
@@ -244,6 +249,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder() {
     return getInspectConfig();
   }
@@ -263,6 +269,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The inspectTemplateName.
    */
+  @java.lang.Override
   public java.lang.String getInspectTemplateName() {
     java.lang.Object ref = inspectTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -287,6 +294,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for inspectTemplateName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
     java.lang.Object ref = inspectTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -310,6 +318,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Action> getActionsList() {
     return actions_;
   }
@@ -322,6 +331,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder>
       getActionsOrBuilderList() {
     return actions_;
@@ -335,6 +345,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
+  @java.lang.Override
   public int getActionsCount() {
     return actions_.size();
   }
@@ -347,6 +358,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action getActions(int index) {
     return actions_.get(index);
   }
@@ -359,6 +371,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ActionOrBuilder getActionsOrBuilder(int index) {
     return actions_.get(index);
   }

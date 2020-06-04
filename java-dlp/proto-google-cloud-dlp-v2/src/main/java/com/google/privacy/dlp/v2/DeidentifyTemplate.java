@@ -190,6 +190,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +216,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +242,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +265,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -287,6 +291,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -309,6 +314,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -335,6 +341,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -350,6 +357,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -363,6 +371,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -381,6 +390,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -396,6 +406,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -409,6 +420,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -426,6 +438,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the deidentifyConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDeidentifyConfig() {
     return deidentifyConfig_ != null;
   }
@@ -440,6 +453,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * @return The deidentifyConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyConfig getDeidentifyConfig() {
     return deidentifyConfig_ == null
         ? com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance()
@@ -454,6 +468,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder getDeidentifyConfigOrBuilder() {
     return getDeidentifyConfig();
   }

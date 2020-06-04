@@ -138,6 +138,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
    *
    * @return The transformedBytes.
    */
+  @java.lang.Override
   public long getTransformedBytes() {
     return transformedBytes_;
   }
@@ -154,6 +155,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary transformation_summaries = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.TransformationSummary>
       getTransformationSummariesList() {
     return transformationSummaries_;
@@ -168,6 +170,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary transformation_summaries = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.TransformationSummaryOrBuilder>
       getTransformationSummariesOrBuilderList() {
     return transformationSummaries_;
@@ -182,6 +185,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary transformation_summaries = 3;
    * </code>
    */
+  @java.lang.Override
   public int getTransformationSummariesCount() {
     return transformationSummaries_.size();
   }
@@ -195,6 +199,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary transformation_summaries = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationSummary getTransformationSummaries(int index) {
     return transformationSummaries_.get(index);
   }
@@ -208,6 +213,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary transformation_summaries = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationSummaryOrBuilder
       getTransformationSummariesOrBuilder(int index) {
     return transformationSummaries_.get(index);
@@ -603,6 +609,7 @@ public final class TransformationOverview extends com.google.protobuf.GeneratedM
      *
      * @return The transformedBytes.
      */
+    @java.lang.Override
     public long getTransformedBytes() {
       return transformedBytes_;
     }

@@ -130,6 +130,7 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.BoundingBox bounding_boxes = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.BoundingBox> getBoundingBoxesList() {
     return boundingBoxes_;
   }
@@ -142,6 +143,7 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.BoundingBox bounding_boxes = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.BoundingBoxOrBuilder>
       getBoundingBoxesOrBuilderList() {
     return boundingBoxes_;
@@ -155,6 +157,7 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.BoundingBox bounding_boxes = 1;</code>
    */
+  @java.lang.Override
   public int getBoundingBoxesCount() {
     return boundingBoxes_.size();
   }
@@ -167,6 +170,7 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.BoundingBox bounding_boxes = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BoundingBox getBoundingBoxes(int index) {
     return boundingBoxes_.get(index);
   }
@@ -179,6 +183,7 @@ public final class ImageLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.BoundingBox bounding_boxes = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BoundingBoxOrBuilder getBoundingBoxesOrBuilder(int index) {
     return boundingBoxes_.get(index);
   }

@@ -134,6 +134,7 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the field field is set.
    */
+  @java.lang.Override
   public boolean hasField() {
     return field_ != null;
   }
@@ -148,6 +149,7 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The field.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
@@ -160,6 +162,7 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
     return getField();
   }

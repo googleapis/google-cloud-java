@@ -135,6 +135,7 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The top.
    */
+  @java.lang.Override
   public int getTop() {
     return top_;
   }
@@ -152,6 +153,7 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The left.
    */
+  @java.lang.Override
   public int getLeft() {
     return left_;
   }
@@ -169,6 +171,7 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The width.
    */
+  @java.lang.Override
   public int getWidth() {
     return width_;
   }
@@ -186,6 +189,7 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The height.
    */
+  @java.lang.Override
   public int getHeight() {
     return height_;
   }
@@ -560,6 +564,7 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The top.
      */
+    @java.lang.Override
     public int getTop() {
       return top_;
     }
@@ -611,6 +616,7 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The left.
      */
+    @java.lang.Override
     public int getLeft() {
       return left_;
     }
@@ -662,6 +668,7 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The width.
      */
+    @java.lang.Override
     public int getWidth() {
       return width_;
     }
@@ -713,6 +720,7 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The height.
      */
+    @java.lang.Override
     public int getHeight() {
       return height_;
     }

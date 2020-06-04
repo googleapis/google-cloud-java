@@ -129,6 +129,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The red.
    */
+  @java.lang.Override
   public float getRed() {
     return red_;
   }
@@ -146,6 +147,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The green.
    */
+  @java.lang.Override
   public float getGreen() {
     return green_;
   }
@@ -163,6 +165,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The blue.
    */
+  @java.lang.Override
   public float getBlue() {
     return blue_;
   }
@@ -523,6 +526,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The red.
      */
+    @java.lang.Override
     public float getRed() {
       return red_;
     }
@@ -574,6 +578,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The green.
      */
+    @java.lang.Override
     public float getGreen() {
       return green_;
     }
@@ -625,6 +630,7 @@ public final class Color extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The blue.
      */
+    @java.lang.Override
     public float getBlue() {
       return blue_;
     }

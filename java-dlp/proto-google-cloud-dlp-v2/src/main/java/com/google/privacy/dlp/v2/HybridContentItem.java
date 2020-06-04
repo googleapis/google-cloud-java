@@ -148,6 +148,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the item field is set.
    */
+  @java.lang.Override
   public boolean hasItem() {
     return item_ != null;
   }
@@ -162,6 +163,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return The item.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
@@ -174,6 +176,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder() {
     return getItem();
   }
@@ -191,6 +194,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the findingDetails field is set.
    */
+  @java.lang.Override
   public boolean hasFindingDetails() {
     return findingDetails_ != null;
   }
@@ -205,6 +209,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
    *
    * @return The findingDetails.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.HybridFindingDetails getFindingDetails() {
     return findingDetails_ == null
         ? com.google.privacy.dlp.v2.HybridFindingDetails.getDefaultInstance()
@@ -219,6 +224,7 @@ public final class HybridContentItem extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.privacy.dlp.v2.HybridFindingDetails finding_details = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.HybridFindingDetailsOrBuilder getFindingDetailsOrBuilder() {
     return getFindingDetails();
   }

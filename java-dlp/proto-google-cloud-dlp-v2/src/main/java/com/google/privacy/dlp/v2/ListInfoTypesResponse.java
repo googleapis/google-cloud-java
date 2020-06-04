@@ -131,6 +131,7 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription> getInfoTypesList() {
     return infoTypes_;
   }
@@ -143,6 +144,7 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>
       getInfoTypesOrBuilderList() {
     return infoTypes_;
@@ -156,6 +158,7 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
+  @java.lang.Override
   public int getInfoTypesCount() {
     return infoTypes_.size();
   }
@@ -168,6 +171,7 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeDescription getInfoTypes(int index) {
     return infoTypes_.get(index);
   }
@@ -180,6 +184,7 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder getInfoTypesOrBuilder(int index) {
     return infoTypes_.get(index);
   }

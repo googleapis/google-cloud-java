@@ -331,6 +331,10 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -554,6 +558,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }
@@ -571,6 +576,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      * @return The enum numeric value on the wire for code.
      */
+    @java.lang.Override
     public int getCodeValue() {
       return code_;
     }
@@ -585,6 +591,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      * @return The code.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode getCode() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode result =
@@ -608,6 +615,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      * @return The details.
      */
+    @java.lang.Override
     public java.lang.String getDetails() {
       java.lang.Object ref = details_;
       if (ref instanceof java.lang.String) {
@@ -631,6 +639,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      * @return The bytes for details.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDetailsBytes() {
       java.lang.Object ref = details_;
       if (ref instanceof java.lang.String) {
@@ -1019,6 +1028,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
        *
        * @return The count.
        */
+      @java.lang.Override
       public long getCount() {
         return count_;
       }
@@ -1071,6 +1081,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
        *
        * @return The enum numeric value on the wire for code.
        */
+      @java.lang.Override
       public int getCodeValue() {
         return code_;
       }
@@ -1088,6 +1099,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder setCodeValue(int value) {
+
         code_ = value;
         onChanged();
         return this;
@@ -1104,6 +1116,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
        *
        * @return The code.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode getCode() {
         @SuppressWarnings("deprecation")
         com.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode result =
@@ -1333,6 +1346,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the infoType field is set.
    */
+  @java.lang.Override
   public boolean hasInfoType() {
     return infoType_ != null;
   }
@@ -1347,6 +1361,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return The infoType.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
@@ -1359,6 +1374,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
     return getInfoType();
   }
@@ -1376,6 +1392,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the field field is set.
    */
+  @java.lang.Override
   public boolean hasField() {
     return field_ != null;
   }
@@ -1390,6 +1407,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return The field.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
@@ -1402,6 +1420,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
     return getField();
   }
@@ -1419,6 +1438,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the transformation field is set.
    */
+  @java.lang.Override
   public boolean hasTransformation() {
     return transformation_ != null;
   }
@@ -1433,6 +1453,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return The transformation.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrimitiveTransformation getTransformation() {
     return transformation_ == null
         ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()
@@ -1447,6 +1468,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation transformation = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getTransformationOrBuilder() {
     return getTransformation();
   }
@@ -1464,6 +1486,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.FieldTransformation>
       getFieldTransformationsList() {
     return fieldTransformations_;
@@ -1479,6 +1502,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldTransformationOrBuilder>
       getFieldTransformationsOrBuilderList() {
     return fieldTransformations_;
@@ -1494,6 +1518,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 5;</code>
    */
+  @java.lang.Override
   public int getFieldTransformationsCount() {
     return fieldTransformations_.size();
   }
@@ -1508,6 +1533,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldTransformation getFieldTransformations(int index) {
     return fieldTransformations_.get(index);
   }
@@ -1522,6 +1548,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldTransformationOrBuilder getFieldTransformationsOrBuilder(
       int index) {
     return fieldTransformations_.get(index);
@@ -1540,6 +1567,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the recordSuppress field is set.
    */
+  @java.lang.Override
   public boolean hasRecordSuppress() {
     return recordSuppress_ != null;
   }
@@ -1554,6 +1582,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return The recordSuppress.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordSuppression getRecordSuppress() {
     return recordSuppress_ == null
         ? com.google.privacy.dlp.v2.RecordSuppression.getDefaultInstance()
@@ -1568,6 +1597,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.RecordSuppression record_suppress = 6;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordSuppressionOrBuilder getRecordSuppressOrBuilder() {
     return getRecordSuppress();
   }
@@ -1583,6 +1613,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.TransformationSummary.SummaryResult>
       getResultsList() {
     return results_;
@@ -1596,6 +1627,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder>
       getResultsOrBuilderList() {
@@ -1610,6 +1642,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
+  @java.lang.Override
   public int getResultsCount() {
     return results_.size();
   }
@@ -1622,6 +1655,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationSummary.SummaryResult getResults(int index) {
     return results_.get(index);
   }
@@ -1634,6 +1668,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.TransformationSummary.SummaryResult results = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationSummary.SummaryResultOrBuilder getResultsOrBuilder(
       int index) {
     return results_.get(index);
@@ -1652,6 +1687,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    * @return The transformedBytes.
    */
+  @java.lang.Override
   public long getTransformedBytes() {
     return transformedBytes_;
   }
@@ -3710,6 +3746,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      * @return The transformedBytes.
      */
+    @java.lang.Override
     public long getTransformedBytes() {
       return transformedBytes_;
     }

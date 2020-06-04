@@ -161,6 +161,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +189,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +215,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return Whether the deidentifyTemplate field is set.
    */
+  @java.lang.Override
   public boolean hasDeidentifyTemplate() {
     return deidentifyTemplate_ != null;
   }
@@ -227,6 +230,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The deidentifyTemplate.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate() {
     return deidentifyTemplate_ == null
         ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()
@@ -241,6 +245,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * <code>.google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder() {
     return getDeidentifyTemplate();
   }
@@ -258,6 +263,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -272,6 +278,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -284,6 +291,7 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

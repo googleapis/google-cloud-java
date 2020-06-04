@@ -135,6 +135,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the infoType field is set.
    */
+  @java.lang.Override
   public boolean hasInfoType() {
     return infoType_ != null;
   }
@@ -149,6 +150,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The infoType.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
@@ -161,6 +163,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
     return getInfoType();
   }
@@ -178,6 +181,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count.
    */
+  @java.lang.Override
   public long getCount() {
     return count_;
   }
@@ -721,6 +725,7 @@ public final class InfoTypeStats extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }

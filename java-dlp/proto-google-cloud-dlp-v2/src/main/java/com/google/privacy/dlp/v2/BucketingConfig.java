@@ -388,6 +388,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the min field is set.
      */
+    @java.lang.Override
     public boolean hasMin() {
       return min_ != null;
     }
@@ -403,6 +404,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The min.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Value getMin() {
       return min_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : min_;
     }
@@ -416,6 +418,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.privacy.dlp.v2.Value min = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getMinOrBuilder() {
       return getMin();
     }
@@ -433,6 +436,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the max field is set.
      */
+    @java.lang.Override
     public boolean hasMax() {
       return max_ != null;
     }
@@ -447,6 +451,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The max.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Value getMax() {
       return max_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : max_;
     }
@@ -459,6 +464,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.privacy.dlp.v2.Value max = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getMaxOrBuilder() {
       return getMax();
     }
@@ -477,6 +483,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the replacementValue field is set.
      */
+    @java.lang.Override
     public boolean hasReplacementValue() {
       return replacementValue_ != null;
     }
@@ -492,6 +499,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The replacementValue.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Value getReplacementValue() {
       return replacementValue_ == null
           ? com.google.privacy.dlp.v2.Value.getDefaultInstance()
@@ -507,6 +515,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getReplacementValueOrBuilder() {
       return getReplacementValue();
     }
@@ -1523,6 +1532,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> getBucketsList() {
     return buckets_;
   }
@@ -1535,6 +1545,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>
       getBucketsOrBuilderList() {
     return buckets_;
@@ -1548,6 +1559,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
+  @java.lang.Override
   public int getBucketsCount() {
     return buckets_.size();
   }
@@ -1560,6 +1572,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BucketingConfig.Bucket getBuckets(int index) {
     return buckets_.get(index);
   }
@@ -1572,6 +1585,7 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder getBucketsOrBuilder(int index) {
     return buckets_.get(index);
   }

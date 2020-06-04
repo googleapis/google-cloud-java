@@ -172,6 +172,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +198,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +246,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -288,6 +291,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -313,6 +317,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -330,6 +335,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -352,6 +358,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -377,6 +384,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -391,6 +399,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DlpJobType getType() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.DlpJobType result =
@@ -420,6 +429,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The orderBy.
    */
+  @java.lang.Override
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -451,6 +461,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for orderBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -476,6 +487,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -498,6 +510,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -1269,6 +1282,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -1426,6 +1440,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -1442,6 +1457,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -1457,6 +1473,7 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DlpJobType getType() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.DlpJobType result =

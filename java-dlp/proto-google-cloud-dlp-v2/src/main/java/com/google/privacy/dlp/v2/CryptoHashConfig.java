@@ -137,6 +137,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the cryptoKey field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
   }
@@ -151,6 +152,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The cryptoKey.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     return cryptoKey_ == null
         ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
@@ -165,6 +167,7 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
   }

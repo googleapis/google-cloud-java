@@ -392,6 +392,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The kind.
      */
+    @java.lang.Override
     public java.lang.String getKind() {
       java.lang.Object ref = kind_;
       if (ref instanceof java.lang.String) {
@@ -417,6 +418,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for kind.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKindBytes() {
       java.lang.Object ref = kind_;
       if (ref instanceof java.lang.String) {
@@ -443,6 +445,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The id.
      */
+    @java.lang.Override
     public long getId() {
       if (idTypeCase_ == 2) {
         return (java.lang.Long) idType_;
@@ -1108,6 +1111,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The name.
        */
+      @java.lang.Override
       public java.lang.String getName() {
         java.lang.Object ref = "";
         if (idTypeCase_ == 3) {
@@ -1138,6 +1142,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for name.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = "";
         if (idTypeCase_ == 3) {
@@ -1293,6 +1298,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the partitionId field is set.
    */
+  @java.lang.Override
   public boolean hasPartitionId() {
     return partitionId_ != null;
   }
@@ -1309,6 +1315,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The partitionId.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PartitionId getPartitionId() {
     return partitionId_ == null
         ? com.google.privacy.dlp.v2.PartitionId.getDefaultInstance()
@@ -1325,6 +1332,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.PartitionId partition_id = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PartitionIdOrBuilder getPartitionIdOrBuilder() {
     return getPartitionId();
   }
@@ -1347,6 +1355,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Key.PathElement> getPathList() {
     return path_;
   }
@@ -1366,6 +1375,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.Key.PathElementOrBuilder>
       getPathOrBuilderList() {
     return path_;
@@ -1386,6 +1396,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
+  @java.lang.Override
   public int getPathCount() {
     return path_.size();
   }
@@ -1405,6 +1416,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Key.PathElement getPath(int index) {
     return path_.get(index);
   }
@@ -1424,6 +1436,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Key.PathElementOrBuilder getPathOrBuilder(int index) {
     return path_.get(index);
   }

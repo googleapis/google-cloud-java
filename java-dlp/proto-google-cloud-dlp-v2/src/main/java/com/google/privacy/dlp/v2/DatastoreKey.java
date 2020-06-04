@@ -130,6 +130,7 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the entityKey field is set.
    */
+  @java.lang.Override
   public boolean hasEntityKey() {
     return entityKey_ != null;
   }
@@ -144,6 +145,7 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The entityKey.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Key getEntityKey() {
     return entityKey_ == null ? com.google.privacy.dlp.v2.Key.getDefaultInstance() : entityKey_;
   }
@@ -156,6 +158,7 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Key entity_key = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.KeyOrBuilder getEntityKeyOrBuilder() {
     return getEntityKey();
   }

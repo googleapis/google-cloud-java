@@ -125,6 +125,7 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
    *
    * @return The path.
    */
+  @java.lang.Override
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
@@ -148,6 +149,7 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for path.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPathBytes() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {

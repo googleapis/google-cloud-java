@@ -141,6 +141,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.DeidentifyTemplate> getDeidentifyTemplatesList() {
     return deidentifyTemplates_;
   }
@@ -154,6 +155,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder>
       getDeidentifyTemplatesOrBuilderList() {
     return deidentifyTemplates_;
@@ -168,6 +170,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
+  @java.lang.Override
   public int getDeidentifyTemplatesCount() {
     return deidentifyTemplates_.size();
   }
@@ -181,6 +184,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplates(int index) {
     return deidentifyTemplates_.get(index);
   }
@@ -194,6 +198,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
    *
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplatesOrBuilder(
       int index) {
     return deidentifyTemplates_.get(index);
@@ -213,6 +218,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +242,7 @@ public final class ListDeidentifyTemplatesResponse extends com.google.protobuf.G
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

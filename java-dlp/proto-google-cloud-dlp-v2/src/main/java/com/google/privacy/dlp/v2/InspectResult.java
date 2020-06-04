@@ -134,6 +134,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Finding> getFindingsList() {
     return findings_;
   }
@@ -146,6 +147,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.FindingOrBuilder>
       getFindingsOrBuilderList() {
     return findings_;
@@ -159,6 +161,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public int getFindingsCount() {
     return findings_.size();
   }
@@ -171,6 +174,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Finding getFindings(int index) {
     return findings_.get(index);
   }
@@ -183,6 +187,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FindingOrBuilder getFindingsOrBuilder(int index) {
     return findings_.get(index);
   }
@@ -205,6 +210,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The findingsTruncated.
    */
+  @java.lang.Override
   public boolean getFindingsTruncated() {
     return findingsTruncated_;
   }
@@ -946,6 +952,7 @@ public final class InspectResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The findingsTruncated.
      */
+    @java.lang.Override
     public boolean getFindingsTruncated() {
       return findingsTruncated_;
     }

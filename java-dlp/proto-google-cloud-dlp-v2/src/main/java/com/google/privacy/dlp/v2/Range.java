@@ -124,6 +124,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The start.
    */
+  @java.lang.Override
   public long getStart() {
     return start_;
   }
@@ -141,6 +142,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The end.
    */
+  @java.lang.Override
   public long getEnd() {
     return end_;
   }
@@ -483,6 +485,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The start.
      */
+    @java.lang.Override
     public long getStart() {
       return start_;
     }
@@ -534,6 +537,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The end.
      */
+    @java.lang.Override
     public long getEnd() {
       return end_;
     }

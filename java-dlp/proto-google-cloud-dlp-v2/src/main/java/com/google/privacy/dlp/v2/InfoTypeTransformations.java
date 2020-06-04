@@ -368,6 +368,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList() {
       return infoTypes_;
     }
@@ -382,6 +383,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         getInfoTypesOrBuilderList() {
       return infoTypes_;
@@ -397,6 +399,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
+    @java.lang.Override
     public int getInfoTypesCount() {
       return infoTypes_.size();
     }
@@ -411,6 +414,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoType getInfoTypes(int index) {
       return infoTypes_.get(index);
     }
@@ -425,6 +429,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index) {
       return infoTypes_.get(index);
     }
@@ -444,6 +449,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      * @return Whether the primitiveTransformation field is set.
      */
+    @java.lang.Override
     public boolean hasPrimitiveTransformation() {
       return primitiveTransformation_ != null;
     }
@@ -460,6 +466,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      *
      * @return The primitiveTransformation.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
       return primitiveTransformation_ == null
           ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()
@@ -476,6 +483,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
      * .google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
         getPrimitiveTransformationOrBuilder() {
       return getPrimitiveTransformation();
@@ -1560,6 +1568,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
       getTransformationsList() {
     return transformations_;
@@ -1576,6 +1585,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>
@@ -1594,6 +1604,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getTransformationsCount() {
     return transformations_.size();
   }
@@ -1609,6 +1620,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
       getTransformations(int index) {
     return transformations_.get(index);
@@ -1625,6 +1637,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
    * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder
       getTransformationsOrBuilder(int index) {
     return transformations_.get(index);

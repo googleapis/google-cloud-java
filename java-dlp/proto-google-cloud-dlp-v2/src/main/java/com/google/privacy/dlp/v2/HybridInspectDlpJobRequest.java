@@ -143,6 +143,7 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
    *
    * @return Whether the hybridItem field is set.
    */
+  @java.lang.Override
   public boolean hasHybridItem() {
     return hybridItem_ != null;
   }
@@ -207,6 +210,7 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
    *
    * @return The hybridItem.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.HybridContentItem getHybridItem() {
     return hybridItem_ == null
         ? com.google.privacy.dlp.v2.HybridContentItem.getDefaultInstance()
@@ -221,6 +225,7 @@ public final class HybridInspectDlpJobRequest extends com.google.protobuf.Genera
    *
    * <code>.google.privacy.dlp.v2.HybridContentItem hybrid_item = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.HybridContentItemOrBuilder getHybridItemOrBuilder() {
     return getHybridItem();
   }

@@ -160,6 +160,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +214,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return Whether the deidentifyTemplate field is set.
    */
+  @java.lang.Override
   public boolean hasDeidentifyTemplate() {
     return deidentifyTemplate_ != null;
   }
@@ -228,6 +231,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The deidentifyTemplate.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate() {
     return deidentifyTemplate_ == null
         ? com.google.privacy.dlp.v2.DeidentifyTemplate.getDefaultInstance()
@@ -244,6 +248,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    * .google.privacy.dlp.v2.DeidentifyTemplate deidentify_template = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplateOrBuilder() {
     return getDeidentifyTemplate();
   }
@@ -264,6 +269,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The templateId.
    */
+  @java.lang.Override
   public java.lang.String getTemplateId() {
     java.lang.Object ref = templateId_;
     if (ref instanceof java.lang.String) {
@@ -289,6 +295,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The bytes for templateId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTemplateIdBytes() {
     java.lang.Object ref = templateId_;
     if (ref instanceof java.lang.String) {
@@ -314,6 +321,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -336,6 +344,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {

@@ -216,6 +216,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the transient field is set.
    */
+  @java.lang.Override
   public boolean hasTransient() {
     return sourceCase_ == 1;
   }
@@ -230,6 +231,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The transient.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransientCryptoKey getTransient() {
     if (sourceCase_ == 1) {
       return (com.google.privacy.dlp.v2.TransientCryptoKey) source_;
@@ -245,6 +247,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder getTransientOrBuilder() {
     if (sourceCase_ == 1) {
       return (com.google.privacy.dlp.v2.TransientCryptoKey) source_;
@@ -264,6 +267,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the unwrapped field is set.
    */
+  @java.lang.Override
   public boolean hasUnwrapped() {
     return sourceCase_ == 2;
   }
@@ -278,6 +282,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The unwrapped.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped() {
     if (sourceCase_ == 2) {
       return (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_;
@@ -293,6 +298,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder getUnwrappedOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_;
@@ -312,6 +318,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the kmsWrapped field is set.
    */
+  @java.lang.Override
   public boolean hasKmsWrapped() {
     return sourceCase_ == 3;
   }
@@ -326,6 +333,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kmsWrapped.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped() {
     if (sourceCase_ == 3) {
       return (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_;
@@ -341,6 +349,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder() {
     if (sourceCase_ == 3) {
       return (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_;
@@ -778,6 +787,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the transient field is set.
      */
+    @java.lang.Override
     public boolean hasTransient() {
       return sourceCase_ == 1;
     }
@@ -792,6 +802,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The transient.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TransientCryptoKey getTransient() {
       if (transientBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -924,6 +935,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder getTransientOrBuilder() {
       if ((sourceCase_ == 1) && (transientBuilder_ != null)) {
         return transientBuilder_.getMessageOrBuilder();
@@ -984,6 +996,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the unwrapped field is set.
      */
+    @java.lang.Override
     public boolean hasUnwrapped() {
       return sourceCase_ == 2;
     }
@@ -998,6 +1011,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The unwrapped.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped() {
       if (unwrappedBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -1130,6 +1144,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder getUnwrappedOrBuilder() {
       if ((sourceCase_ == 2) && (unwrappedBuilder_ != null)) {
         return unwrappedBuilder_.getMessageOrBuilder();
@@ -1190,6 +1205,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the kmsWrapped field is set.
      */
+    @java.lang.Override
     public boolean hasKmsWrapped() {
       return sourceCase_ == 3;
     }
@@ -1204,6 +1220,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The kmsWrapped.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped() {
       if (kmsWrappedBuilder_ == null) {
         if (sourceCase_ == 3) {
@@ -1336,6 +1353,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder() {
       if ((sourceCase_ == 3) && (kmsWrappedBuilder_ != null)) {
         return kmsWrappedBuilder_.getMessageOrBuilder();

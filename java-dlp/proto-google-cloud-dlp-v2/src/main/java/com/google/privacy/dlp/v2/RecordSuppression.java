@@ -133,6 +133,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the condition field is set.
    */
+  @java.lang.Override
   public boolean hasCondition() {
     return condition_ != null;
   }
@@ -148,6 +149,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
    *
    * @return The condition.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordCondition getCondition() {
     return condition_ == null
         ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()
@@ -163,6 +165,7 @@ public final class RecordSuppression extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordConditionOrBuilder getConditionOrBuilder() {
     return getCondition();
   }

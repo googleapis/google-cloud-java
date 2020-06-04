@@ -1148,6 +1148,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
    *
    * @return Whether the throwError field is set.
    */
+  @java.lang.Override
   public boolean hasThrowError() {
     return modeCase_ == 1;
   }
@@ -1162,6 +1163,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
    *
    * @return The throwError.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError getThrowError() {
     if (modeCase_ == 1) {
       return (com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError) mode_;
@@ -1177,6 +1179,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
    *
    * <code>.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError throw_error = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowErrorOrBuilder
       getThrowErrorOrBuilder() {
     if (modeCase_ == 1) {
@@ -1199,6 +1202,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
    *
    * @return Whether the leaveUntransformed field is set.
    */
+  @java.lang.Override
   public boolean hasLeaveUntransformed() {
     return modeCase_ == 2;
   }
@@ -1215,6 +1219,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
    *
    * @return The leaveUntransformed.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed
       getLeaveUntransformed() {
     if (modeCase_ == 2) {
@@ -1234,6 +1239,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
    * .google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed leave_untransformed = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformedOrBuilder
       getLeaveUntransformedOrBuilder() {
     if (modeCase_ == 2) {
@@ -1657,6 +1663,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
      *
      * @return Whether the throwError field is set.
      */
+    @java.lang.Override
     public boolean hasThrowError() {
       return modeCase_ == 1;
     }
@@ -1671,6 +1678,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
      *
      * @return The throwError.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError getThrowError() {
       if (throwErrorBuilder_ == null) {
         if (modeCase_ == 1) {
@@ -1810,6 +1818,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
      *
      * <code>.google.privacy.dlp.v2.TransformationErrorHandling.ThrowError throw_error = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationErrorHandling.ThrowErrorOrBuilder
         getThrowErrorOrBuilder() {
       if ((modeCase_ == 1) && (throwErrorBuilder_ != null)) {
@@ -1875,6 +1884,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
      *
      * @return Whether the leaveUntransformed field is set.
      */
+    @java.lang.Override
     public boolean hasLeaveUntransformed() {
       return modeCase_ == 2;
     }
@@ -1891,6 +1901,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
      *
      * @return The leaveUntransformed.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed
         getLeaveUntransformed() {
       if (leaveUntransformedBuilder_ == null) {
@@ -2045,6 +2056,7 @@ public final class TransformationErrorHandling extends com.google.protobuf.Gener
      * .google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed leave_untransformed = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformedOrBuilder
         getLeaveUntransformedOrBuilder() {
       if ((modeCase_ == 2) && (leaveUntransformedBuilder_ != null)) {

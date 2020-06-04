@@ -197,6 +197,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -220,6 +221,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +249,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return Whether the deidentifyConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDeidentifyConfig() {
     return deidentifyConfig_ != null;
   }
@@ -263,6 +266,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The deidentifyConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyConfig getDeidentifyConfig() {
     return deidentifyConfig_ == null
         ? com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance()
@@ -279,6 +283,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder getDeidentifyConfigOrBuilder() {
     return getDeidentifyConfig();
   }
@@ -298,6 +303,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return Whether the inspectConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
   }
@@ -314,6 +320,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The inspectConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
@@ -330,6 +337,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder() {
     return getInspectConfig();
   }
@@ -347,6 +355,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return Whether the item field is set.
    */
+  @java.lang.Override
   public boolean hasItem() {
     return item_ != null;
   }
@@ -361,6 +370,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The item.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
@@ -373,6 +383,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder() {
     return getItem();
   }
@@ -394,6 +405,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The inspectTemplateName.
    */
+  @java.lang.Override
   public java.lang.String getInspectTemplateName() {
     java.lang.Object ref = inspectTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -420,6 +432,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for inspectTemplateName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
     java.lang.Object ref = inspectTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -449,6 +462,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The deidentifyTemplateName.
    */
+  @java.lang.Override
   public java.lang.String getDeidentifyTemplateName() {
     java.lang.Object ref = deidentifyTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -475,6 +489,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for deidentifyTemplateName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDeidentifyTemplateNameBytes() {
     java.lang.Object ref = deidentifyTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -500,6 +515,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -522,6 +538,7 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {

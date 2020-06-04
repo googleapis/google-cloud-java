@@ -557,6 +557,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return Whether the minValue field is set.
      */
+    @java.lang.Override
     public boolean hasMinValue() {
       return minValue_ != null;
     }
@@ -571,6 +572,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return The minValue.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Value getMinValue() {
       return minValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : minValue_;
     }
@@ -583,6 +585,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * <code>.google.privacy.dlp.v2.Value min_value = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getMinValueOrBuilder() {
       return getMinValue();
     }
@@ -600,6 +603,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return Whether the maxValue field is set.
      */
+    @java.lang.Override
     public boolean hasMaxValue() {
       return maxValue_ != null;
     }
@@ -614,6 +618,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return The maxValue.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Value getMaxValue() {
       return maxValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : maxValue_;
     }
@@ -626,6 +631,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * <code>.google.privacy.dlp.v2.Value max_value = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getMaxValueOrBuilder() {
       return getMaxValue();
     }
@@ -642,6 +648,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * <code>repeated .google.privacy.dlp.v2.Value quantile_values = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.Value> getQuantileValuesList() {
       return quantileValues_;
     }
@@ -655,6 +662,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * <code>repeated .google.privacy.dlp.v2.Value quantile_values = 4;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder>
         getQuantileValuesOrBuilderList() {
       return quantileValues_;
@@ -669,6 +677,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * <code>repeated .google.privacy.dlp.v2.Value quantile_values = 4;</code>
      */
+    @java.lang.Override
     public int getQuantileValuesCount() {
       return quantileValues_.size();
     }
@@ -682,6 +691,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * <code>repeated .google.privacy.dlp.v2.Value quantile_values = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Value getQuantileValues(int index) {
       return quantileValues_.get(index);
     }
@@ -695,6 +705,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * <code>repeated .google.privacy.dlp.v2.Value quantile_values = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getQuantileValuesOrBuilder(int index) {
       return quantileValues_.get(index);
     }
@@ -2377,6 +2388,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The valueFrequencyLowerBound.
        */
+      @java.lang.Override
       public long getValueFrequencyLowerBound() {
         return valueFrequencyLowerBound_;
       }
@@ -2394,6 +2406,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The valueFrequencyUpperBound.
        */
+      @java.lang.Override
       public long getValueFrequencyUpperBound() {
         return valueFrequencyUpperBound_;
       }
@@ -2411,6 +2424,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketSize.
        */
+      @java.lang.Override
       public long getBucketSize() {
         return bucketSize_;
       }
@@ -2427,6 +2441,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency bucket_values = 4;</code>
        */
+      @java.lang.Override
       public java.util.List<com.google.privacy.dlp.v2.ValueFrequency> getBucketValuesList() {
         return bucketValues_;
       }
@@ -2440,6 +2455,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency bucket_values = 4;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends com.google.privacy.dlp.v2.ValueFrequencyOrBuilder>
           getBucketValuesOrBuilderList() {
         return bucketValues_;
@@ -2454,6 +2470,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency bucket_values = 4;</code>
        */
+      @java.lang.Override
       public int getBucketValuesCount() {
         return bucketValues_.size();
       }
@@ -2467,6 +2484,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency bucket_values = 4;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ValueFrequency getBucketValues(int index) {
         return bucketValues_.get(index);
       }
@@ -2480,6 +2498,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency bucket_values = 4;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ValueFrequencyOrBuilder getBucketValuesOrBuilder(int index) {
         return bucketValues_.get(index);
       }
@@ -2497,6 +2516,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketValueCount.
        */
+      @java.lang.Override
       public long getBucketValueCount() {
         return bucketValueCount_;
       }
@@ -3000,6 +3020,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The valueFrequencyLowerBound.
          */
+        @java.lang.Override
         public long getValueFrequencyLowerBound() {
           return valueFrequencyLowerBound_;
         }
@@ -3051,6 +3072,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The valueFrequencyUpperBound.
          */
+        @java.lang.Override
         public long getValueFrequencyUpperBound() {
           return valueFrequencyUpperBound_;
         }
@@ -3102,6 +3124,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketSize.
          */
+        @java.lang.Override
         public long getBucketSize() {
           return bucketSize_;
         }
@@ -3526,6 +3549,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketValueCount.
          */
+        @java.lang.Override
         public long getBucketValueCount() {
           return bucketValueCount_;
         }
@@ -3641,6 +3665,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
                 .CategoricalStatsHistogramBucket>
@@ -3658,6 +3683,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
@@ -3676,6 +3702,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public int getValueFrequencyHistogramBucketsCount() {
       return valueFrequencyHistogramBuckets_.size();
     }
@@ -3690,6 +3717,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
             .CategoricalStatsHistogramBucket
         getValueFrequencyHistogramBuckets(int index) {
@@ -3706,6 +3734,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
             .CategoricalStatsHistogramBucketOrBuilder
         getValueFrequencyHistogramBucketsOrBuilder(int index) {
@@ -5003,6 +5032,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public java.util.List<com.google.privacy.dlp.v2.Value> getQuasiIdsValuesList() {
         return quasiIdsValues_;
       }
@@ -5017,6 +5047,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder>
           getQuasiIdsValuesOrBuilderList() {
         return quasiIdsValues_;
@@ -5032,6 +5063,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public int getQuasiIdsValuesCount() {
         return quasiIdsValues_.size();
       }
@@ -5046,6 +5078,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.Value getQuasiIdsValues(int index) {
         return quasiIdsValues_.get(index);
       }
@@ -5060,6 +5093,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ValueOrBuilder getQuasiIdsValuesOrBuilder(int index) {
         return quasiIdsValues_.get(index);
       }
@@ -5078,6 +5112,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The equivalenceClassSize.
        */
+      @java.lang.Override
       public long getEquivalenceClassSize() {
         return equivalenceClassSize_;
       }
@@ -5925,6 +5960,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The equivalenceClassSize.
          */
+        @java.lang.Override
         public long getEquivalenceClassSize() {
           return equivalenceClassSize_;
         }
@@ -6304,6 +6340,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The equivalenceClassSizeLowerBound.
        */
+      @java.lang.Override
       public long getEquivalenceClassSizeLowerBound() {
         return equivalenceClassSizeLowerBound_;
       }
@@ -6321,6 +6358,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The equivalenceClassSizeUpperBound.
        */
+      @java.lang.Override
       public long getEquivalenceClassSizeUpperBound() {
         return equivalenceClassSizeUpperBound_;
       }
@@ -6338,6 +6376,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketSize.
        */
+      @java.lang.Override
       public long getBucketSize() {
         return bucketSize_;
       }
@@ -6359,6 +6398,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                   .KAnonymityEquivalenceClass>
@@ -6377,6 +6417,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
@@ -6396,6 +6437,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public int getBucketValuesCount() {
         return bucketValues_.size();
       }
@@ -6411,6 +6453,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
               .KAnonymityEquivalenceClass
           getBucketValues(int index) {
@@ -6428,6 +6471,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
               .KAnonymityEquivalenceClassOrBuilder
           getBucketValuesOrBuilder(int index) {
@@ -6447,6 +6491,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketValueCount.
        */
+      @java.lang.Override
       public long getBucketValueCount() {
         return bucketValueCount_;
       }
@@ -6958,6 +7003,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The equivalenceClassSizeLowerBound.
          */
+        @java.lang.Override
         public long getEquivalenceClassSizeLowerBound() {
           return equivalenceClassSizeLowerBound_;
         }
@@ -7009,6 +7055,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The equivalenceClassSizeUpperBound.
          */
+        @java.lang.Override
         public long getEquivalenceClassSizeUpperBound() {
           return equivalenceClassSizeUpperBound_;
         }
@@ -7060,6 +7107,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketSize.
          */
+        @java.lang.Override
         public long getBucketSize() {
           return bucketSize_;
         }
@@ -7578,6 +7626,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketValueCount.
          */
+        @java.lang.Override
         public long getBucketValueCount() {
           return bucketValueCount_;
         }
@@ -7693,6 +7742,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket equivalence_class_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
                 .KAnonymityHistogramBucket>
@@ -7710,6 +7760,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket equivalence_class_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
@@ -7728,6 +7779,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket equivalence_class_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public int getEquivalenceClassHistogramBucketsCount() {
       return equivalenceClassHistogramBuckets_.size();
     }
@@ -7742,6 +7794,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket equivalence_class_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
             .KAnonymityHistogramBucket
         getEquivalenceClassHistogramBuckets(int index) {
@@ -7758,6 +7811,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket equivalence_class_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
             .KAnonymityHistogramBucketOrBuilder
         getEquivalenceClassHistogramBucketsOrBuilder(int index) {
@@ -9125,6 +9179,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public java.util.List<com.google.privacy.dlp.v2.Value> getQuasiIdsValuesList() {
         return quasiIdsValues_;
       }
@@ -9138,6 +9193,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder>
           getQuasiIdsValuesOrBuilderList() {
         return quasiIdsValues_;
@@ -9152,6 +9208,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public int getQuasiIdsValuesCount() {
         return quasiIdsValues_.size();
       }
@@ -9165,6 +9222,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.Value getQuasiIdsValues(int index) {
         return quasiIdsValues_.get(index);
       }
@@ -9178,6 +9236,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ValueOrBuilder getQuasiIdsValuesOrBuilder(int index) {
         return quasiIdsValues_.get(index);
       }
@@ -9195,6 +9254,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The equivalenceClassSize.
        */
+      @java.lang.Override
       public long getEquivalenceClassSize() {
         return equivalenceClassSize_;
       }
@@ -9212,6 +9272,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The numDistinctSensitiveValues.
        */
+      @java.lang.Override
       public long getNumDistinctSensitiveValues() {
         return numDistinctSensitiveValues_;
       }
@@ -9227,6 +9288,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency top_sensitive_values = 4;</code>
        */
+      @java.lang.Override
       public java.util.List<com.google.privacy.dlp.v2.ValueFrequency> getTopSensitiveValuesList() {
         return topSensitiveValues_;
       }
@@ -9239,6 +9301,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency top_sensitive_values = 4;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends com.google.privacy.dlp.v2.ValueFrequencyOrBuilder>
           getTopSensitiveValuesOrBuilderList() {
         return topSensitiveValues_;
@@ -9252,6 +9315,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency top_sensitive_values = 4;</code>
        */
+      @java.lang.Override
       public int getTopSensitiveValuesCount() {
         return topSensitiveValues_.size();
       }
@@ -9264,6 +9328,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency top_sensitive_values = 4;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ValueFrequency getTopSensitiveValues(int index) {
         return topSensitiveValues_.get(index);
       }
@@ -9276,6 +9341,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.ValueFrequency top_sensitive_values = 4;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ValueFrequencyOrBuilder getTopSensitiveValuesOrBuilder(
           int index) {
         return topSensitiveValues_.get(index);
@@ -10178,6 +10244,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The equivalenceClassSize.
          */
+        @java.lang.Override
         public long getEquivalenceClassSize() {
           return equivalenceClassSize_;
         }
@@ -10229,6 +10296,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The numDistinctSensitiveValues.
          */
+        @java.lang.Override
         public long getNumDistinctSensitiveValues() {
           return numDistinctSensitiveValues_;
         }
@@ -10970,6 +11038,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The sensitiveValueFrequencyLowerBound.
        */
+      @java.lang.Override
       public long getSensitiveValueFrequencyLowerBound() {
         return sensitiveValueFrequencyLowerBound_;
       }
@@ -10988,6 +11057,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The sensitiveValueFrequencyUpperBound.
        */
+      @java.lang.Override
       public long getSensitiveValueFrequencyUpperBound() {
         return sensitiveValueFrequencyUpperBound_;
       }
@@ -11005,6 +11075,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketSize.
        */
+      @java.lang.Override
       public long getBucketSize() {
         return bucketSize_;
       }
@@ -11026,6 +11097,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                   .LDiversityEquivalenceClass>
@@ -11044,6 +11116,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
@@ -11063,6 +11136,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public int getBucketValuesCount() {
         return bucketValues_.size();
       }
@@ -11078,6 +11152,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
               .LDiversityEquivalenceClass
           getBucketValues(int index) {
@@ -11095,6 +11170,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityEquivalenceClass bucket_values = 4;
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
               .LDiversityEquivalenceClassOrBuilder
           getBucketValuesOrBuilder(int index) {
@@ -11114,6 +11190,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketValueCount.
        */
+      @java.lang.Override
       public long getBucketValueCount() {
         return bucketValueCount_;
       }
@@ -11626,6 +11703,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The sensitiveValueFrequencyLowerBound.
          */
+        @java.lang.Override
         public long getSensitiveValueFrequencyLowerBound() {
           return sensitiveValueFrequencyLowerBound_;
         }
@@ -11680,6 +11758,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The sensitiveValueFrequencyUpperBound.
          */
+        @java.lang.Override
         public long getSensitiveValueFrequencyUpperBound() {
           return sensitiveValueFrequencyUpperBound_;
         }
@@ -11733,6 +11812,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketSize.
          */
+        @java.lang.Override
         public long getBucketSize() {
           return bucketSize_;
         }
@@ -12251,6 +12331,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketValueCount.
          */
+        @java.lang.Override
         public long getBucketValueCount() {
           return bucketValueCount_;
         }
@@ -12366,6 +12447,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket sensitive_value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
                 .LDiversityHistogramBucket>
@@ -12383,6 +12465,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket sensitive_value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
@@ -12401,6 +12484,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket sensitive_value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public int getSensitiveValueFrequencyHistogramBucketsCount() {
       return sensitiveValueFrequencyHistogramBuckets_.size();
     }
@@ -12415,6 +12499,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket sensitive_value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
             .LDiversityHistogramBucket
         getSensitiveValueFrequencyHistogramBuckets(int index) {
@@ -12431,6 +12516,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket sensitive_value_frequency_histogram_buckets = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
             .LDiversityHistogramBucketOrBuilder
         getSensitiveValueFrequencyHistogramBucketsOrBuilder(int index) {
@@ -13748,6 +13834,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public java.util.List<com.google.privacy.dlp.v2.Value> getQuasiIdsValuesList() {
         return quasiIdsValues_;
       }
@@ -13760,6 +13847,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder>
           getQuasiIdsValuesOrBuilderList() {
         return quasiIdsValues_;
@@ -13773,6 +13861,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public int getQuasiIdsValuesCount() {
         return quasiIdsValues_.size();
       }
@@ -13785,6 +13874,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.Value getQuasiIdsValues(int index) {
         return quasiIdsValues_.get(index);
       }
@@ -13797,6 +13887,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ValueOrBuilder getQuasiIdsValuesOrBuilder(int index) {
         return quasiIdsValues_.get(index);
       }
@@ -13814,6 +13905,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The estimatedAnonymity.
        */
+      @java.lang.Override
       public long getEstimatedAnonymity() {
         return estimatedAnonymity_;
       }
@@ -14624,6 +14716,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The estimatedAnonymity.
          */
+        @java.lang.Override
         public long getEstimatedAnonymity() {
           return estimatedAnonymity_;
         }
@@ -15009,6 +15102,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The minAnonymity.
        */
+      @java.lang.Override
       public long getMinAnonymity() {
         return minAnonymity_;
       }
@@ -15026,6 +15120,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The maxAnonymity.
        */
+      @java.lang.Override
       public long getMaxAnonymity() {
         return maxAnonymity_;
       }
@@ -15043,6 +15138,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketSize.
        */
+      @java.lang.Override
       public long getBucketSize() {
         return bucketSize_;
       }
@@ -15064,6 +15160,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                   .KMapEstimationQuasiIdValues>
@@ -15082,6 +15179,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
@@ -15101,6 +15199,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public int getBucketValuesCount() {
         return bucketValues_.size();
       }
@@ -15116,6 +15215,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
               .KMapEstimationQuasiIdValues
           getBucketValues(int index) {
@@ -15133,6 +15233,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
               .KMapEstimationQuasiIdValuesOrBuilder
           getBucketValuesOrBuilder(int index) {
@@ -15152,6 +15253,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketValueCount.
        */
+      @java.lang.Override
       public long getBucketValueCount() {
         return bucketValueCount_;
       }
@@ -15660,6 +15762,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The minAnonymity.
          */
+        @java.lang.Override
         public long getMinAnonymity() {
           return minAnonymity_;
         }
@@ -15711,6 +15814,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The maxAnonymity.
          */
+        @java.lang.Override
         public long getMaxAnonymity() {
           return maxAnonymity_;
         }
@@ -15762,6 +15866,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketSize.
          */
+        @java.lang.Override
         public long getBucketSize() {
           return bucketSize_;
         }
@@ -16280,6 +16385,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketValueCount.
          */
+        @java.lang.Override
         public long getBucketValueCount() {
           return bucketValueCount_;
         }
@@ -16402,6 +16508,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket k_map_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
                 .KMapEstimationHistogramBucket>
@@ -16426,6 +16533,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket k_map_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
@@ -16451,6 +16559,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket k_map_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public int getKMapEstimationHistogramCount() {
       return kMapEstimationHistogram_.size();
     }
@@ -16472,6 +16581,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket k_map_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
             .KMapEstimationHistogramBucket
         getKMapEstimationHistogram(int index) {
@@ -16495,6 +16605,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult.KMapEstimationHistogramBucket k_map_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
             .KMapEstimationHistogramBucketOrBuilder
         getKMapEstimationHistogramOrBuilder(int index) {
@@ -17949,6 +18060,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public java.util.List<com.google.privacy.dlp.v2.Value> getQuasiIdsValuesList() {
         return quasiIdsValues_;
       }
@@ -17961,6 +18073,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder>
           getQuasiIdsValuesOrBuilderList() {
         return quasiIdsValues_;
@@ -17974,6 +18087,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public int getQuasiIdsValuesCount() {
         return quasiIdsValues_.size();
       }
@@ -17986,6 +18100,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.Value getQuasiIdsValues(int index) {
         return quasiIdsValues_.get(index);
       }
@@ -17998,6 +18113,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * <code>repeated .google.privacy.dlp.v2.Value quasi_ids_values = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ValueOrBuilder getQuasiIdsValuesOrBuilder(int index) {
         return quasiIdsValues_.get(index);
       }
@@ -18022,6 +18138,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The estimatedProbability.
        */
+      @java.lang.Override
       public double getEstimatedProbability() {
         return estimatedProbability_;
       }
@@ -18846,6 +18963,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The estimatedProbability.
          */
+        @java.lang.Override
         public double getEstimatedProbability() {
           return estimatedProbability_;
         }
@@ -19248,6 +19366,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The minProbability.
        */
+      @java.lang.Override
       public double getMinProbability() {
         return minProbability_;
       }
@@ -19265,6 +19384,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The maxProbability.
        */
+      @java.lang.Override
       public double getMaxProbability() {
         return maxProbability_;
       }
@@ -19282,6 +19402,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketSize.
        */
+      @java.lang.Override
       public long getBucketSize() {
         return bucketSize_;
       }
@@ -19303,6 +19424,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
                   .DeltaPresenceEstimationQuasiIdValues>
@@ -19321,6 +19443,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
@@ -19340,6 +19463,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public int getBucketValuesCount() {
         return bucketValues_.size();
       }
@@ -19355,6 +19479,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
               .DeltaPresenceEstimationQuasiIdValues
           getBucketValues(int index) {
@@ -19372,6 +19497,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationQuasiIdValues bucket_values = 6;
        * </code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
               .DeltaPresenceEstimationQuasiIdValuesOrBuilder
           getBucketValuesOrBuilder(int index) {
@@ -19391,6 +19517,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
        *
        * @return The bucketValueCount.
        */
+      @java.lang.Override
       public long getBucketValueCount() {
         return bucketValueCount_;
       }
@@ -19911,6 +20038,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The minProbability.
          */
+        @java.lang.Override
         public double getMinProbability() {
           return minProbability_;
         }
@@ -19962,6 +20090,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The maxProbability.
          */
+        @java.lang.Override
         public double getMaxProbability() {
           return maxProbability_;
         }
@@ -20013,6 +20142,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketSize.
          */
+        @java.lang.Override
         public long getBucketSize() {
           return bucketSize_;
         }
@@ -20536,6 +20666,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
          *
          * @return The bucketValueCount.
          */
+        @java.lang.Override
         public long getBucketValueCount() {
           return bucketValueCount_;
         }
@@ -20659,6 +20790,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
                 .DeltaPresenceEstimationHistogramBucket>
@@ -20683,6 +20815,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
@@ -20708,6 +20841,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public int getDeltaPresenceEstimationHistogramCount() {
       return deltaPresenceEstimationHistogram_.size();
     }
@@ -20729,6 +20863,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
             .DeltaPresenceEstimationHistogramBucket
         getDeltaPresenceEstimationHistogram(int index) {
@@ -20752,6 +20887,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * repeated .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult.DeltaPresenceEstimationHistogramBucket delta_presence_estimation_histogram = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
             .DeltaPresenceEstimationHistogramBucketOrBuilder
         getDeltaPresenceEstimationHistogramOrBuilder(int index) {
@@ -21883,6 +22019,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return Whether the requestedPrivacyMetric field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedPrivacyMetric() {
     return requestedPrivacyMetric_ != null;
   }
@@ -21897,6 +22034,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return The requestedPrivacyMetric.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetric getRequestedPrivacyMetric() {
     return requestedPrivacyMetric_ == null
         ? com.google.privacy.dlp.v2.PrivacyMetric.getDefaultInstance()
@@ -21911,6 +22049,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * <code>.google.privacy.dlp.v2.PrivacyMetric requested_privacy_metric = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.PrivacyMetricOrBuilder getRequestedPrivacyMetricOrBuilder() {
     return getRequestedPrivacyMetric();
   }
@@ -21928,6 +22067,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return Whether the requestedSourceTable field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedSourceTable() {
     return requestedSourceTable_ != null;
   }
@@ -21942,6 +22082,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return The requestedSourceTable.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTable getRequestedSourceTable() {
     return requestedSourceTable_ == null
         ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
@@ -21956,6 +22097,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable requested_source_table = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getRequestedSourceTableOrBuilder() {
     return getRequestedSourceTable();
   }
@@ -21974,6 +22116,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return Whether the numericalStatsResult field is set.
    */
+  @java.lang.Override
   public boolean hasNumericalStatsResult() {
     return resultCase_ == 3;
   }
@@ -21990,6 +22133,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return The numericalStatsResult.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult
       getNumericalStatsResult() {
     if (resultCase_ == 3) {
@@ -22009,6 +22153,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResultOrBuilder
       getNumericalStatsResultOrBuilder() {
     if (resultCase_ == 3) {
@@ -22032,6 +22177,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return Whether the categoricalStatsResult field is set.
    */
+  @java.lang.Override
   public boolean hasCategoricalStatsResult() {
     return resultCase_ == 4;
   }
@@ -22048,6 +22194,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return The categoricalStatsResult.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
       getCategoricalStatsResult() {
     if (resultCase_ == 4) {
@@ -22068,6 +22215,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResultOrBuilder
       getCategoricalStatsResultOrBuilder() {
     if (resultCase_ == 4) {
@@ -22092,6 +22240,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return Whether the kAnonymityResult field is set.
    */
+  @java.lang.Override
   public boolean hasKAnonymityResult() {
     return resultCase_ == 5;
   }
@@ -22108,6 +22257,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return The kAnonymityResult.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
       getKAnonymityResult() {
     if (resultCase_ == 5) {
@@ -22127,6 +22277,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResultOrBuilder
       getKAnonymityResultOrBuilder() {
     if (resultCase_ == 5) {
@@ -22150,6 +22301,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return Whether the lDiversityResult field is set.
    */
+  @java.lang.Override
   public boolean hasLDiversityResult() {
     return resultCase_ == 6;
   }
@@ -22166,6 +22318,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return The lDiversityResult.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
       getLDiversityResult() {
     if (resultCase_ == 6) {
@@ -22185,6 +22338,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResultOrBuilder
       getLDiversityResultOrBuilder() {
     if (resultCase_ == 6) {
@@ -22208,6 +22362,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return Whether the kMapEstimationResult field is set.
    */
+  @java.lang.Override
   public boolean hasKMapEstimationResult() {
     return resultCase_ == 7;
   }
@@ -22224,6 +22379,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return The kMapEstimationResult.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
       getKMapEstimationResult() {
     if (resultCase_ == 7) {
@@ -22243,6 +22399,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResultOrBuilder
       getKMapEstimationResultOrBuilder() {
     if (resultCase_ == 7) {
@@ -22266,6 +22423,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return Whether the deltaPresenceEstimationResult field is set.
    */
+  @java.lang.Override
   public boolean hasDeltaPresenceEstimationResult() {
     return resultCase_ == 9;
   }
@@ -22282,6 +22440,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    *
    * @return The deltaPresenceEstimationResult.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
       getDeltaPresenceEstimationResult() {
     if (resultCase_ == 9) {
@@ -22302,6 +22461,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
    * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
           .DeltaPresenceEstimationResultOrBuilder
       getDeltaPresenceEstimationResultOrBuilder() {
@@ -23276,6 +23436,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return Whether the numericalStatsResult field is set.
      */
+    @java.lang.Override
     public boolean hasNumericalStatsResult() {
       return resultCase_ == 3;
     }
@@ -23292,6 +23453,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return The numericalStatsResult.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult
         getNumericalStatsResult() {
       if (numericalStatsResultBuilder_ == null) {
@@ -23448,6 +23610,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResultOrBuilder
         getNumericalStatsResultOrBuilder() {
       if ((resultCase_ == 3) && (numericalStatsResultBuilder_ != null)) {
@@ -23519,6 +23682,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return Whether the categoricalStatsResult field is set.
      */
+    @java.lang.Override
     public boolean hasCategoricalStatsResult() {
       return resultCase_ == 4;
     }
@@ -23535,6 +23699,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return The categoricalStatsResult.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult
         getCategoricalStatsResult() {
       if (categoricalStatsResultBuilder_ == null) {
@@ -23692,6 +23857,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResultOrBuilder
         getCategoricalStatsResultOrBuilder() {
       if ((resultCase_ == 4) && (categoricalStatsResultBuilder_ != null)) {
@@ -23764,6 +23930,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return Whether the kAnonymityResult field is set.
      */
+    @java.lang.Override
     public boolean hasKAnonymityResult() {
       return resultCase_ == 5;
     }
@@ -23780,6 +23947,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return The kAnonymityResult.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult
         getKAnonymityResult() {
       if (kAnonymityResultBuilder_ == null) {
@@ -23934,6 +24102,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResultOrBuilder
         getKAnonymityResultOrBuilder() {
       if ((resultCase_ == 5) && (kAnonymityResultBuilder_ != null)) {
@@ -24002,6 +24171,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return Whether the lDiversityResult field is set.
      */
+    @java.lang.Override
     public boolean hasLDiversityResult() {
       return resultCase_ == 6;
     }
@@ -24018,6 +24188,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return The lDiversityResult.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult
         getLDiversityResult() {
       if (lDiversityResultBuilder_ == null) {
@@ -24172,6 +24343,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResultOrBuilder
         getLDiversityResultOrBuilder() {
       if ((resultCase_ == 6) && (lDiversityResultBuilder_ != null)) {
@@ -24240,6 +24412,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return Whether the kMapEstimationResult field is set.
      */
+    @java.lang.Override
     public boolean hasKMapEstimationResult() {
       return resultCase_ == 7;
     }
@@ -24256,6 +24429,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return The kMapEstimationResult.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult
         getKMapEstimationResult() {
       if (kMapEstimationResultBuilder_ == null) {
@@ -24412,6 +24586,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResultOrBuilder
         getKMapEstimationResultOrBuilder() {
       if ((resultCase_ == 7) && (kMapEstimationResultBuilder_ != null)) {
@@ -24485,6 +24660,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return Whether the deltaPresenceEstimationResult field is set.
      */
+    @java.lang.Override
     public boolean hasDeltaPresenceEstimationResult() {
       return resultCase_ == 9;
     }
@@ -24501,6 +24677,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      *
      * @return The deltaPresenceEstimationResult.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult
         getDeltaPresenceEstimationResult() {
       if (deltaPresenceEstimationResultBuilder_ == null) {
@@ -24662,6 +24839,7 @@ public final class AnalyzeDataSourceRiskDetails extends com.google.protobuf.Gene
      * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails
             .DeltaPresenceEstimationResultOrBuilder
         getDeltaPresenceEstimationResultOrBuilder() {

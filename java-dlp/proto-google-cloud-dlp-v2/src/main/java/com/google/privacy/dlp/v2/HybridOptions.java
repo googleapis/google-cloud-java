@@ -181,6 +181,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +205,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -339,6 +341,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -346,6 +349,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -367,6 +371,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -387,6 +392,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -411,6 +417,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -436,6 +443,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the tableOptions field is set.
    */
+  @java.lang.Override
   public boolean hasTableOptions() {
     return tableOptions_ != null;
   }
@@ -451,6 +459,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tableOptions.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TableOptions getTableOptions() {
     return tableOptions_ == null
         ? com.google.privacy.dlp.v2.TableOptions.getDefaultInstance()
@@ -466,6 +475,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.TableOptions table_options = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TableOptionsOrBuilder getTableOptionsOrBuilder() {
     return getTableOptions();
   }
@@ -1260,6 +1270,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1267,6 +1278,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1288,6 +1300,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1308,6 +1321,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1333,6 +1347,7 @@ public final class HybridOptions extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

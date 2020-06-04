@@ -162,6 +162,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the recordKey field is set.
    */
+  @java.lang.Override
   public boolean hasRecordKey() {
     return recordKey_ != null;
   }
@@ -176,6 +177,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The recordKey.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordKey getRecordKey() {
     return recordKey_ == null
         ? com.google.privacy.dlp.v2.RecordKey.getDefaultInstance()
@@ -190,6 +192,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.RecordKey record_key = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordKeyOrBuilder getRecordKeyOrBuilder() {
     return getRecordKey();
   }
@@ -207,6 +210,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the fieldId field is set.
    */
+  @java.lang.Override
   public boolean hasFieldId() {
     return fieldId_ != null;
   }
@@ -221,6 +225,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The fieldId.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getFieldId() {
     return fieldId_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : fieldId_;
   }
@@ -233,6 +238,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.FieldId field_id = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldIdOrBuilder() {
     return getFieldId();
   }
@@ -250,6 +256,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the tableLocation field is set.
    */
+  @java.lang.Override
   public boolean hasTableLocation() {
     return tableLocation_ != null;
   }
@@ -264,6 +271,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tableLocation.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TableLocation getTableLocation() {
     return tableLocation_ == null
         ? com.google.privacy.dlp.v2.TableLocation.getDefaultInstance()
@@ -278,6 +286,7 @@ public final class RecordLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.TableLocation table_location = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TableLocationOrBuilder getTableLocationOrBuilder() {
     return getTableLocation();
   }

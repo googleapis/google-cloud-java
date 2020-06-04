@@ -217,6 +217,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the infoTypeTransformations field is set.
    */
+  @java.lang.Override
   public boolean hasInfoTypeTransformations() {
     return transformationCase_ == 1;
   }
@@ -232,6 +233,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The infoTypeTransformations.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
     if (transformationCase_ == 1) {
       return (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_;
@@ -248,6 +250,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder
       getInfoTypeTransformationsOrBuilder() {
     if (transformationCase_ == 1) {
@@ -270,6 +273,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the recordTransformations field is set.
    */
+  @java.lang.Override
   public boolean hasRecordTransformations() {
     return transformationCase_ == 2;
   }
@@ -286,6 +290,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The recordTransformations.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordTransformations getRecordTransformations() {
     if (transformationCase_ == 2) {
       return (com.google.privacy.dlp.v2.RecordTransformations) transformation_;
@@ -303,6 +308,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordTransformationsOrBuilder
       getRecordTransformationsOrBuilder() {
     if (transformationCase_ == 2) {
@@ -326,6 +332,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the transformationErrorHandling field is set.
    */
+  @java.lang.Override
   public boolean hasTransformationErrorHandling() {
     return transformationErrorHandling_ != null;
   }
@@ -342,6 +349,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The transformationErrorHandling.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationErrorHandling getTransformationErrorHandling() {
     return transformationErrorHandling_ == null
         ? com.google.privacy.dlp.v2.TransformationErrorHandling.getDefaultInstance()
@@ -358,6 +366,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
    * <code>.google.privacy.dlp.v2.TransformationErrorHandling transformation_error_handling = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder
       getTransformationErrorHandlingOrBuilder() {
     return getTransformationErrorHandling();
@@ -797,6 +806,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the infoTypeTransformations field is set.
      */
+    @java.lang.Override
     public boolean hasInfoTypeTransformations() {
       return transformationCase_ == 1;
     }
@@ -812,6 +822,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The infoTypeTransformations.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
       if (infoTypeTransformationsBuilder_ == null) {
         if (transformationCase_ == 1) {
@@ -954,6 +965,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder
         getInfoTypeTransformationsOrBuilder() {
       if ((transformationCase_ == 1) && (infoTypeTransformationsBuilder_ != null)) {
@@ -1018,6 +1030,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the recordTransformations field is set.
      */
+    @java.lang.Override
     public boolean hasRecordTransformations() {
       return transformationCase_ == 2;
     }
@@ -1034,6 +1047,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The recordTransformations.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.RecordTransformations getRecordTransformations() {
       if (recordTransformationsBuilder_ == null) {
         if (transformationCase_ == 2) {
@@ -1181,6 +1195,7 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.privacy.dlp.v2.RecordTransformations record_transformations = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.RecordTransformationsOrBuilder
         getRecordTransformationsOrBuilder() {
       if ((transformationCase_ == 2) && (recordTransformationsBuilder_ != null)) {

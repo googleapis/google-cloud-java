@@ -130,6 +130,7 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the newValue field is set.
    */
+  @java.lang.Override
   public boolean hasNewValue() {
     return newValue_ != null;
   }
@@ -144,6 +145,7 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The newValue.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Value getNewValue() {
     return newValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : newValue_;
   }
@@ -156,6 +158,7 @@ public final class ReplaceValueConfig extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.privacy.dlp.v2.Value new_value = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ValueOrBuilder getNewValueOrBuilder() {
     return getNewValue();
   }

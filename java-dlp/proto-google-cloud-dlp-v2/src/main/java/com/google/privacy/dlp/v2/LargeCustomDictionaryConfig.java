@@ -218,6 +218,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * @return Whether the outputPath field is set.
    */
+  @java.lang.Override
   public boolean hasOutputPath() {
     return outputPath_ != null;
   }
@@ -235,6 +236,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * @return The outputPath.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStoragePath getOutputPath() {
     return outputPath_ == null
         ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()
@@ -252,6 +254,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStoragePathOrBuilder getOutputPathOrBuilder() {
     return getOutputPath();
   }
@@ -268,6 +271,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * @return Whether the cloudStorageFileSet field is set.
    */
+  @java.lang.Override
   public boolean hasCloudStorageFileSet() {
     return sourceCase_ == 2;
   }
@@ -282,6 +286,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * @return The cloudStorageFileSet.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageFileSet getCloudStorageFileSet() {
     if (sourceCase_ == 2) {
       return (com.google.privacy.dlp.v2.CloudStorageFileSet) source_;
@@ -297,6 +302,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder getCloudStorageFileSetOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.privacy.dlp.v2.CloudStorageFileSet) source_;
@@ -316,6 +322,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * @return Whether the bigQueryField field is set.
    */
+  @java.lang.Override
   public boolean hasBigQueryField() {
     return sourceCase_ == 3;
   }
@@ -330,6 +337,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * @return The bigQueryField.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryField getBigQueryField() {
     if (sourceCase_ == 3) {
       return (com.google.privacy.dlp.v2.BigQueryField) source_;
@@ -345,6 +353,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    *
    * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryFieldOrBuilder getBigQueryFieldOrBuilder() {
     if (sourceCase_ == 3) {
       return (com.google.privacy.dlp.v2.BigQueryField) source_;
@@ -1003,6 +1012,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      *
      * @return Whether the cloudStorageFileSet field is set.
      */
+    @java.lang.Override
     public boolean hasCloudStorageFileSet() {
       return sourceCase_ == 2;
     }
@@ -1017,6 +1027,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      *
      * @return The cloudStorageFileSet.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageFileSet getCloudStorageFileSet() {
       if (cloudStorageFileSetBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -1149,6 +1160,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      *
      * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder
         getCloudStorageFileSetOrBuilder() {
       if ((sourceCase_ == 2) && (cloudStorageFileSetBuilder_ != null)) {
@@ -1210,6 +1222,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      *
      * @return Whether the bigQueryField field is set.
      */
+    @java.lang.Override
     public boolean hasBigQueryField() {
       return sourceCase_ == 3;
     }
@@ -1224,6 +1237,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      *
      * @return The bigQueryField.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryField getBigQueryField() {
       if (bigQueryFieldBuilder_ == null) {
         if (sourceCase_ == 3) {
@@ -1356,6 +1370,7 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
      *
      * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryFieldOrBuilder getBigQueryFieldOrBuilder() {
       if ((sourceCase_ == 3) && (bigQueryFieldBuilder_ != null)) {
         return bigQueryFieldBuilder_.getMessageOrBuilder();

@@ -178,6 +178,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    *
    * @return The bucketName.
    */
+  @java.lang.Override
   public java.lang.String getBucketName() {
     java.lang.Object ref = bucketName_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +201,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
    *
    * @return The bytes for bucketName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBucketNameBytes() {
     java.lang.Object ref = bucketName_;
     if (ref instanceof java.lang.String) {

@@ -134,6 +134,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    *
    * @return The wrappedKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getWrappedKey() {
     return wrappedKey_;
   }
@@ -151,6 +152,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    *
    * @return The cryptoKeyName.
    */
+  @java.lang.Override
   public java.lang.String getCryptoKeyName() {
     java.lang.Object ref = cryptoKeyName_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +175,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for cryptoKeyName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCryptoKeyNameBytes() {
     java.lang.Object ref = cryptoKeyName_;
     if (ref instanceof java.lang.String) {
@@ -532,6 +535,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
      *
      * @return The wrappedKey.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getWrappedKey() {
       return wrappedKey_;
     }

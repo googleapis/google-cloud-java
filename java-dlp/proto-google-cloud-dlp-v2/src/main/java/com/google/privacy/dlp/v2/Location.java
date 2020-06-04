@@ -183,6 +183,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the byteRange field is set.
    */
+  @java.lang.Override
   public boolean hasByteRange() {
     return byteRange_ != null;
   }
@@ -201,6 +202,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The byteRange.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Range getByteRange() {
     return byteRange_ == null ? com.google.privacy.dlp.v2.Range.getDefaultInstance() : byteRange_;
   }
@@ -217,6 +219,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Range byte_range = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RangeOrBuilder getByteRangeOrBuilder() {
     return getByteRange();
   }
@@ -236,6 +239,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the codepointRange field is set.
    */
+  @java.lang.Override
   public boolean hasCodepointRange() {
     return codepointRange_ != null;
   }
@@ -252,6 +256,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The codepointRange.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Range getCodepointRange() {
     return codepointRange_ == null
         ? com.google.privacy.dlp.v2.Range.getDefaultInstance()
@@ -268,6 +273,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Range codepoint_range = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RangeOrBuilder getCodepointRangeOrBuilder() {
     return getCodepointRange();
   }
@@ -284,6 +290,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.ContentLocation> getContentLocationsList() {
     return contentLocations_;
   }
@@ -297,6 +304,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.ContentLocationOrBuilder>
       getContentLocationsOrBuilderList() {
     return contentLocations_;
@@ -311,6 +319,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
+  @java.lang.Override
   public int getContentLocationsCount() {
     return contentLocations_.size();
   }
@@ -324,6 +333,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentLocation getContentLocations(int index) {
     return contentLocations_.get(index);
   }
@@ -337,6 +347,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentLocationOrBuilder getContentLocationsOrBuilder(
       int index) {
     return contentLocations_.get(index);
@@ -355,6 +366,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the container field is set.
    */
+  @java.lang.Override
   public boolean hasContainer() {
     return container_ != null;
   }
@@ -369,6 +381,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The container.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Container getContainer() {
     return container_ == null
         ? com.google.privacy.dlp.v2.Container.getDefaultInstance()
@@ -383,6 +396,7 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Container container = 8;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContainerOrBuilder getContainerOrBuilder() {
     return getContainer();
   }

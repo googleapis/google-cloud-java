@@ -187,6 +187,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -201,6 +202,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
     return config_ == null
         ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
@@ -215,6 +217,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -233,6 +236,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -248,6 +252,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -261,6 +266,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -279,6 +285,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -294,6 +301,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeState getState() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.StoredInfoTypeState result =
@@ -322,6 +330,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
@@ -344,6 +353,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
       getErrorsOrBuilderList() {
     return errors_;
@@ -367,6 +377,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
+  @java.lang.Override
   public int getErrorsCount() {
     return errors_.size();
   }
@@ -389,6 +400,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
@@ -411,6 +423,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
     return errors_.get(index);
   }
@@ -428,6 +441,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the stats field is set.
    */
+  @java.lang.Override
   public boolean hasStats() {
     return stats_ != null;
   }
@@ -442,6 +456,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * @return The stats.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeStats getStats() {
     return stats_ == null
         ? com.google.privacy.dlp.v2.StoredInfoTypeStats.getDefaultInstance()
@@ -456,6 +471,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder getStatsOrBuilder() {
     return getStats();
   }
@@ -1314,6 +1330,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1331,6 +1348,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1347,6 +1365,7 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.StoredInfoTypeState getState() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.StoredInfoTypeState result =

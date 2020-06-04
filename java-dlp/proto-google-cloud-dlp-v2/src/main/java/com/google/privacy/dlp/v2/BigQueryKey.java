@@ -136,6 +136,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the tableReference field is set.
    */
+  @java.lang.Override
   public boolean hasTableReference() {
     return tableReference_ != null;
   }
@@ -150,6 +151,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tableReference.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTable getTableReference() {
     return tableReference_ == null
         ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
@@ -164,6 +166,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table_reference = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableReferenceOrBuilder() {
     return getTableReference();
   }
@@ -185,6 +188,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rowNumber.
    */
+  @java.lang.Override
   public long getRowNumber() {
     return rowNumber_;
   }
@@ -732,6 +736,7 @@ public final class BigQueryKey extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The rowNumber.
      */
+    @java.lang.Override
     public long getRowNumber() {
       return rowNumber_;
     }

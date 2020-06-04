@@ -283,6 +283,10 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -527,6 +531,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return The url.
      */
+    @java.lang.Override
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
@@ -556,6 +561,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return The bytes for url.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
@@ -582,6 +588,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the regexFileSet field is set.
      */
+    @java.lang.Override
     public boolean hasRegexFileSet() {
       return regexFileSet_ != null;
     }
@@ -597,6 +604,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return The regexFileSet.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageRegexFileSet getRegexFileSet() {
       return regexFileSet_ == null
           ? com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance()
@@ -612,6 +620,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder getRegexFileSetOrBuilder() {
       return getRegexFileSet();
     }
@@ -1369,6 +1378,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the fileSet field is set.
    */
+  @java.lang.Override
   public boolean hasFileSet() {
     return fileSet_ != null;
   }
@@ -1383,6 +1393,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return The fileSet.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet() {
     return fileSet_ == null
         ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance()
@@ -1397,6 +1408,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder getFileSetOrBuilder() {
     return getFileSet();
   }
@@ -1416,6 +1428,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return The bytesLimitPerFile.
    */
+  @java.lang.Override
   public long getBytesLimitPerFile() {
     return bytesLimitPerFile_;
   }
@@ -1436,6 +1449,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return The bytesLimitPerFilePercent.
    */
+  @java.lang.Override
   public int getBytesLimitPerFilePercent() {
     return bytesLimitPerFilePercent_;
   }
@@ -1471,6 +1485,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return A list containing the fileTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.privacy.dlp.v2.FileType>(fileTypes_, fileTypes_converter_);
@@ -1492,6 +1507,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return The count of fileTypes.
    */
+  @java.lang.Override
   public int getFileTypesCount() {
     return fileTypes_.size();
   }
@@ -1513,6 +1529,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * @param index The index of the element to return.
    * @return The fileTypes at the given index.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FileType getFileTypes(int index) {
     return fileTypes_converter_.convert(fileTypes_.get(index));
   }
@@ -1533,6 +1550,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return A list containing the enum numeric values on the wire for fileTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getFileTypesValueList() {
     return fileTypes_;
   }
@@ -1554,6 +1572,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of fileTypes at the given index.
    */
+  @java.lang.Override
   public int getFileTypesValue(int index) {
     return fileTypes_.get(index);
   }
@@ -1567,6 +1586,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for sampleMethod.
    */
+  @java.lang.Override
   public int getSampleMethodValue() {
     return sampleMethod_;
   }
@@ -1575,6 +1595,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return The sampleMethod.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result =
@@ -1599,6 +1620,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    *
    * @return The filesLimitPercent.
    */
+  @java.lang.Override
   public int getFilesLimitPercent() {
     return filesLimitPercent_;
   }
@@ -2241,6 +2263,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return The bytesLimitPerFile.
      */
+    @java.lang.Override
     public long getBytesLimitPerFile() {
       return bytesLimitPerFile_;
     }
@@ -2299,6 +2322,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return The bytesLimitPerFilePercent.
      */
+    @java.lang.Override
     public int getBytesLimitPerFilePercent() {
       return bytesLimitPerFilePercent_;
     }
@@ -2642,6 +2666,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for sampleMethod.
      */
+    @java.lang.Override
     public int getSampleMethodValue() {
       return sampleMethod_;
     }
@@ -2652,6 +2677,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setSampleMethodValue(int value) {
+
       sampleMethod_ = value;
       onChanged();
       return this;
@@ -2661,6 +2687,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return The sampleMethod.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result =
@@ -2711,6 +2738,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * @return The filesLimitPercent.
      */
+    @java.lang.Override
     public int getFilesLimitPercent() {
       return filesLimitPercent_;
     }

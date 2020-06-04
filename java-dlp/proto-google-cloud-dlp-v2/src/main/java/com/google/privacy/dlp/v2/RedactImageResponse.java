@@ -146,6 +146,7 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The redactedImage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRedactedImage() {
     return redactedImage_;
   }
@@ -165,6 +166,7 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The extractedText.
    */
+  @java.lang.Override
   public java.lang.String getExtractedText() {
     java.lang.Object ref = extractedText_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for extractedText.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getExtractedTextBytes() {
     java.lang.Object ref = extractedText_;
     if (ref instanceof java.lang.String) {
@@ -214,6 +217,7 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the inspectResult field is set.
    */
+  @java.lang.Override
   public boolean hasInspectResult() {
     return inspectResult_ != null;
   }
@@ -228,6 +232,7 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The inspectResult.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectResult getInspectResult() {
     return inspectResult_ == null
         ? com.google.privacy.dlp.v2.InspectResult.getDefaultInstance()
@@ -242,6 +247,7 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.privacy.dlp.v2.InspectResult inspect_result = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectResultOrBuilder getInspectResultOrBuilder() {
     return getInspectResult();
   }
@@ -617,6 +623,7 @@ public final class RedactImageResponse extends com.google.protobuf.GeneratedMess
      *
      * @return The redactedImage.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getRedactedImage() {
       return redactedImage_;
     }

@@ -130,6 +130,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
    *
    * @return The processedCount.
    */
+  @java.lang.Override
   public long getProcessedCount() {
     return processedCount_;
   }
@@ -148,6 +149,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
    *
    * @return The abortedCount.
    */
+  @java.lang.Override
   public long getAbortedCount() {
     return abortedCount_;
   }
@@ -169,6 +171,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
    *
    * @return The pendingCount.
    */
+  @java.lang.Override
   public long getPendingCount() {
     return pendingCount_;
   }
@@ -532,6 +535,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
      *
      * @return The processedCount.
      */
+    @java.lang.Override
     public long getProcessedCount() {
       return processedCount_;
     }
@@ -584,6 +588,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
      *
      * @return The abortedCount.
      */
+    @java.lang.Override
     public long getAbortedCount() {
       return abortedCount_;
     }
@@ -641,6 +646,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
      *
      * @return The pendingCount.
      */
+    @java.lang.Override
     public long getPendingCount() {
       return pendingCount_;
     }

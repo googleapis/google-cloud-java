@@ -345,6 +345,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * @return Whether the snapshotInspectTemplate field is set.
      */
+    @java.lang.Override
     public boolean hasSnapshotInspectTemplate() {
       return snapshotInspectTemplate_ != null;
     }
@@ -360,6 +361,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * @return The snapshotInspectTemplate.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectTemplate getSnapshotInspectTemplate() {
       return snapshotInspectTemplate_ == null
           ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()
@@ -375,6 +377,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectTemplateOrBuilder
         getSnapshotInspectTemplateOrBuilder() {
       return getSnapshotInspectTemplate();
@@ -393,6 +396,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * @return Whether the jobConfig field is set.
      */
+    @java.lang.Override
     public boolean hasJobConfig() {
       return jobConfig_ != null;
     }
@@ -407,6 +411,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * @return The jobConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfig getJobConfig() {
       return jobConfig_ == null
           ? com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance()
@@ -421,6 +426,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig job_config = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getJobConfigOrBuilder() {
       return getJobConfig();
     }
@@ -1509,6 +1515,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * @return The processedBytes.
      */
+    @java.lang.Override
     public long getProcessedBytes() {
       return processedBytes_;
     }
@@ -1526,6 +1533,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * @return The totalEstimatedBytes.
      */
+    @java.lang.Override
     public long getTotalEstimatedBytes() {
       return totalEstimatedBytes_;
     }
@@ -1542,6 +1550,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.InfoTypeStats> getInfoTypeStatsList() {
       return infoTypeStats_;
     }
@@ -1555,6 +1564,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeStatsOrBuilder>
         getInfoTypeStatsOrBuilderList() {
       return infoTypeStats_;
@@ -1569,6 +1579,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
+    @java.lang.Override
     public int getInfoTypeStatsCount() {
       return infoTypeStats_.size();
     }
@@ -1582,6 +1593,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeStats getInfoTypeStats(int index) {
       return infoTypeStats_.get(index);
     }
@@ -1595,6 +1607,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeStats info_type_stats = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeStatsOrBuilder getInfoTypeStatsOrBuilder(int index) {
       return infoTypeStats_.get(index);
     }
@@ -1615,6 +1628,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * @return Whether the hybridStats field is set.
      */
+    @java.lang.Override
     public boolean hasHybridStats() {
       return hybridStats_ != null;
     }
@@ -1632,6 +1646,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * @return The hybridStats.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.HybridInspectStatistics getHybridStats() {
       return hybridStats_ == null
           ? com.google.privacy.dlp.v2.HybridInspectStatistics.getDefaultInstance()
@@ -1649,6 +1664,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.HybridInspectStatisticsOrBuilder getHybridStatsOrBuilder() {
       return getHybridStats();
     }
@@ -2088,6 +2104,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        * @return The processedBytes.
        */
+      @java.lang.Override
       public long getProcessedBytes() {
         return processedBytes_;
       }
@@ -2139,6 +2156,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        * @return The totalEstimatedBytes.
        */
+      @java.lang.Override
       public long getTotalEstimatedBytes() {
         return totalEstimatedBytes_;
       }
@@ -2829,6 +2847,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    * @return Whether the requestedOptions field is set.
    */
+  @java.lang.Override
   public boolean hasRequestedOptions() {
     return requestedOptions_ != null;
   }
@@ -2844,6 +2863,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    * @return The requestedOptions.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions getRequestedOptions() {
     return requestedOptions_ == null
         ? com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions.getDefaultInstance()
@@ -2859,6 +2879,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptionsOrBuilder
       getRequestedOptionsOrBuilder() {
     return getRequestedOptions();
@@ -2877,6 +2898,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    * @return Whether the result field is set.
    */
+  @java.lang.Override
   public boolean hasResult() {
     return result_ != null;
   }
@@ -2891,6 +2913,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    * @return The result.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectDataSourceDetails.Result getResult() {
     return result_ == null
         ? com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.getDefaultInstance()
@@ -2905,6 +2928,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectDataSourceDetails.ResultOrBuilder getResultOrBuilder() {
     return getResult();
   }

@@ -321,6 +321,10 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -366,6 +370,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for partToExtract.
    */
+  @java.lang.Override
   public int getPartToExtractValue() {
     return partToExtract_;
   }
@@ -380,6 +385,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The partToExtract.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.TimePartConfig.TimePart result =
@@ -716,6 +722,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for partToExtract.
      */
+    @java.lang.Override
     public int getPartToExtractValue() {
       return partToExtract_;
     }
@@ -732,6 +739,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPartToExtractValue(int value) {
+
       partToExtract_ = value;
       onChanged();
       return this;
@@ -747,6 +755,7 @@ public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The partToExtract.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.TimePartConfig.TimePart result =

@@ -139,6 +139,7 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InspectTemplate> getInspectTemplatesList() {
     return inspectTemplates_;
   }
@@ -151,6 +152,7 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.InspectTemplateOrBuilder>
       getInspectTemplatesOrBuilderList() {
     return inspectTemplates_;
@@ -164,6 +166,7 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
+  @java.lang.Override
   public int getInspectTemplatesCount() {
     return inspectTemplates_.size();
   }
@@ -176,6 +179,7 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectTemplate getInspectTemplates(int index) {
     return inspectTemplates_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplatesOrBuilder(
       int index) {
     return inspectTemplates_.get(index);
@@ -207,6 +212,7 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +236,7 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

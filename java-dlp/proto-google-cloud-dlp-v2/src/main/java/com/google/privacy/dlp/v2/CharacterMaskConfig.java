@@ -159,6 +159,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The maskingCharacter.
    */
+  @java.lang.Override
   public java.lang.String getMaskingCharacter() {
     java.lang.Object ref = maskingCharacter_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +185,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for maskingCharacter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMaskingCharacterBytes() {
     java.lang.Object ref = maskingCharacter_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The numberToMask.
    */
+  @java.lang.Override
   public int getNumberToMask() {
     return numberToMask_;
   }
@@ -231,6 +234,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The reverseOrder.
    */
+  @java.lang.Override
   public boolean getReverseOrder() {
     return reverseOrder_;
   }
@@ -249,6 +253,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.CharsToIgnore> getCharactersToIgnoreList() {
     return charactersToIgnore_;
   }
@@ -264,6 +269,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.CharsToIgnoreOrBuilder>
       getCharactersToIgnoreOrBuilderList() {
     return charactersToIgnore_;
@@ -280,6 +286,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
+  @java.lang.Override
   public int getCharactersToIgnoreCount() {
     return charactersToIgnore_.size();
   }
@@ -295,6 +302,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CharsToIgnore getCharactersToIgnore(int index) {
     return charactersToIgnore_.get(index);
   }
@@ -310,6 +318,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CharsToIgnoreOrBuilder getCharactersToIgnoreOrBuilder(
       int index) {
     return charactersToIgnore_.get(index);
@@ -859,6 +868,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The numberToMask.
      */
+    @java.lang.Override
     public int getNumberToMask() {
       return numberToMask_;
     }
@@ -916,6 +926,7 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The reverseOrder.
      */
+    @java.lang.Override
     public boolean getReverseOrder() {
       return reverseOrder_;
     }

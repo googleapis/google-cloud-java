@@ -373,6 +373,10 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -665,6 +669,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the schedule field is set.
      */
+    @java.lang.Override
     public boolean hasSchedule() {
       return triggerCase_ == 1;
     }
@@ -679,6 +684,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The schedule.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Schedule getSchedule() {
       if (triggerCase_ == 1) {
         return (com.google.privacy.dlp.v2.Schedule) trigger_;
@@ -694,6 +700,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ScheduleOrBuilder getScheduleOrBuilder() {
       if (triggerCase_ == 1) {
         return (com.google.privacy.dlp.v2.Schedule) trigger_;
@@ -716,6 +723,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the manual field is set.
      */
+    @java.lang.Override
     public boolean hasManual() {
       return triggerCase_ == 2;
     }
@@ -733,6 +741,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The manual.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Manual getManual() {
       if (triggerCase_ == 2) {
         return (com.google.privacy.dlp.v2.Manual) trigger_;
@@ -751,6 +760,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ManualOrBuilder getManualOrBuilder() {
       if (triggerCase_ == 2) {
         return (com.google.privacy.dlp.v2.Manual) trigger_;
@@ -1164,6 +1174,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the schedule field is set.
        */
+      @java.lang.Override
       public boolean hasSchedule() {
         return triggerCase_ == 1;
       }
@@ -1178,6 +1189,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The schedule.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.Schedule getSchedule() {
         if (scheduleBuilder_ == null) {
           if (triggerCase_ == 1) {
@@ -1309,6 +1321,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ScheduleOrBuilder getScheduleOrBuilder() {
         if ((triggerCase_ == 1) && (scheduleBuilder_ != null)) {
           return scheduleBuilder_.getMessageOrBuilder();
@@ -1370,6 +1383,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the manual field is set.
        */
+      @java.lang.Override
       public boolean hasManual() {
         return triggerCase_ == 2;
       }
@@ -1387,6 +1401,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The manual.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.Manual getManual() {
         if (manualBuilder_ == null) {
           if (triggerCase_ == 2) {
@@ -1536,6 +1551,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.privacy.dlp.v2.Manual manual = 2;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.ManualOrBuilder getManualOrBuilder() {
         if ((triggerCase_ == 2) && (manualBuilder_ != null)) {
           return manualBuilder_.getMessageOrBuilder();
@@ -1692,6 +1708,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1716,6 +1733,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1741,6 +1759,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1763,6 +1782,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1788,6 +1808,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1810,6 +1831,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1834,6 +1856,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the inspectJob field is set.
    */
+  @java.lang.Override
   public boolean hasInspectJob() {
     return jobCase_ == 4;
   }
@@ -1848,6 +1871,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The inspectJob.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
     if (jobCase_ == 4) {
       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
@@ -1863,6 +1887,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
     if (jobCase_ == 4) {
       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
@@ -1883,6 +1908,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> getTriggersList() {
     return triggers_;
   }
@@ -1897,6 +1923,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>
       getTriggersOrBuilderList() {
     return triggers_;
@@ -1912,6 +1939,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
+  @java.lang.Override
   public int getTriggersCount() {
     return triggers_.size();
   }
@@ -1926,6 +1954,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTrigger.Trigger getTriggers(int index) {
     return triggers_.get(index);
   }
@@ -1940,6 +1969,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder getTriggersOrBuilder(int index) {
     return triggers_.get(index);
   }
@@ -1960,6 +1990,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
@@ -1977,6 +2008,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
       getErrorsOrBuilderList() {
     return errors_;
@@ -1995,6 +2027,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public int getErrorsCount() {
     return errors_.size();
   }
@@ -2012,6 +2045,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
@@ -2029,6 +2063,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.privacy.dlp.v2.Error errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
     return errors_.get(index);
   }
@@ -2047,6 +2082,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -2062,6 +2098,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -2075,6 +2112,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -2093,6 +2131,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -2108,6 +2147,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -2121,6 +2161,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -2140,6 +2181,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastRunTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastRunTime() {
     return lastRunTime_ != null;
   }
@@ -2156,6 +2198,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastRunTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastRunTime() {
     return lastRunTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastRunTime_;
   }
@@ -2170,6 +2213,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    * .google.protobuf.Timestamp last_run_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastRunTimeOrBuilder() {
     return getLastRunTime();
   }
@@ -2189,6 +2233,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for status.
    */
+  @java.lang.Override
   public int getStatusValue() {
     return status_;
   }
@@ -2205,6 +2250,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The status.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTrigger.Status getStatus() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.JobTrigger.Status result =
@@ -3172,6 +3218,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the inspectJob field is set.
      */
+    @java.lang.Override
     public boolean hasInspectJob() {
       return jobCase_ == 4;
     }
@@ -3186,6 +3233,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The inspectJob.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 4) {
@@ -3318,6 +3366,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
       if ((jobCase_ == 4) && (inspectJobBuilder_ != null)) {
         return inspectJobBuilder_.getMessageOrBuilder();
@@ -4804,6 +4853,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for status.
      */
+    @java.lang.Override
     public int getStatusValue() {
       return status_;
     }
@@ -4822,6 +4872,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+
       status_ = value;
       onChanged();
       return this;
@@ -4839,6 +4890,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.JobTrigger.Status getStatus() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.JobTrigger.Status result =

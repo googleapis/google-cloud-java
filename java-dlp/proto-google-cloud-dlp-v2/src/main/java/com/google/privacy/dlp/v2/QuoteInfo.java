@@ -173,6 +173,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dateTime field is set.
    */
+  @java.lang.Override
   public boolean hasDateTime() {
     return parsedQuoteCase_ == 2;
   }
@@ -187,6 +188,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dateTime.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DateTime getDateTime() {
     if (parsedQuoteCase_ == 2) {
       return (com.google.privacy.dlp.v2.DateTime) parsedQuote_;
@@ -202,6 +204,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DateTimeOrBuilder getDateTimeOrBuilder() {
     if (parsedQuoteCase_ == 2) {
       return (com.google.privacy.dlp.v2.DateTime) parsedQuote_;
@@ -581,6 +584,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the dateTime field is set.
      */
+    @java.lang.Override
     public boolean hasDateTime() {
       return parsedQuoteCase_ == 2;
     }
@@ -595,6 +599,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dateTime.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DateTime getDateTime() {
       if (dateTimeBuilder_ == null) {
         if (parsedQuoteCase_ == 2) {
@@ -726,6 +731,7 @@ public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DateTimeOrBuilder getDateTimeOrBuilder() {
       if ((parsedQuoteCase_ == 2) && (dateTimeBuilder_ != null)) {
         return dateTimeBuilder_.getMessageOrBuilder();

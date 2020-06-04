@@ -164,6 +164,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    *
    * @return Whether the lowerBound field is set.
    */
+  @java.lang.Override
   public boolean hasLowerBound() {
     return lowerBound_ != null;
   }
@@ -181,6 +182,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    *
    * @return The lowerBound.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Value getLowerBound() {
     return lowerBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : lowerBound_;
   }
@@ -196,6 +198,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * <code>.google.privacy.dlp.v2.Value lower_bound = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ValueOrBuilder getLowerBoundOrBuilder() {
     return getLowerBound();
   }
@@ -216,6 +219,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    *
    * @return Whether the upperBound field is set.
    */
+  @java.lang.Override
   public boolean hasUpperBound() {
     return upperBound_ != null;
   }
@@ -233,6 +237,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    *
    * @return The upperBound.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Value getUpperBound() {
     return upperBound_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : upperBound_;
   }
@@ -248,6 +253,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * <code>.google.privacy.dlp.v2.Value upper_bound = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ValueOrBuilder getUpperBoundOrBuilder() {
     return getUpperBound();
   }
@@ -268,6 +274,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    *
    * @return The bucketSize.
    */
+  @java.lang.Override
   public double getBucketSize() {
     return bucketSize_;
   }
@@ -1099,6 +1106,7 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
      *
      * @return The bucketSize.
      */
+    @java.lang.Override
     public double getBucketSize() {
       return bucketSize_;
     }

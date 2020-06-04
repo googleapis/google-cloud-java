@@ -148,6 +148,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +224,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +251,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -270,6 +275,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -295,6 +301,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +324,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {

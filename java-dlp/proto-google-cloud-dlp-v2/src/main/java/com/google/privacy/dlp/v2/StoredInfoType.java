@@ -158,6 +158,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +181,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +207,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the currentVersion field is set.
    */
+  @java.lang.Override
   public boolean hasCurrentVersion() {
     return currentVersion_ != null;
   }
@@ -219,6 +222,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The currentVersion.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeVersion getCurrentVersion() {
     return currentVersion_ == null
         ? com.google.privacy.dlp.v2.StoredInfoTypeVersion.getDefaultInstance()
@@ -233,6 +237,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeVersion current_version = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder getCurrentVersionOrBuilder() {
     return getCurrentVersion();
   }
@@ -249,6 +254,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.StoredInfoTypeVersion pending_versions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.StoredInfoTypeVersion> getPendingVersionsList() {
     return pendingVersions_;
   }
@@ -262,6 +268,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.StoredInfoTypeVersion pending_versions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder>
       getPendingVersionsOrBuilderList() {
     return pendingVersions_;
@@ -276,6 +283,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.StoredInfoTypeVersion pending_versions = 3;</code>
    */
+  @java.lang.Override
   public int getPendingVersionsCount() {
     return pendingVersions_.size();
   }
@@ -289,6 +297,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.StoredInfoTypeVersion pending_versions = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeVersion getPendingVersions(int index) {
     return pendingVersions_.get(index);
   }
@@ -302,6 +311,7 @@ public final class StoredInfoType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.StoredInfoTypeVersion pending_versions = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder getPendingVersionsOrBuilder(
       int index) {
     return pendingVersions_.get(index);

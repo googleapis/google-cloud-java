@@ -306,6 +306,10 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -879,6 +883,7 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The charactersToSkip.
      */
+    @java.lang.Override
     public java.lang.String getCharactersToSkip() {
       java.lang.Object ref = "";
       if (charactersCase_ == 1) {
@@ -906,6 +911,7 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for charactersToSkip.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCharactersToSkipBytes() {
       java.lang.Object ref = "";
       if (charactersCase_ == 1) {
@@ -999,6 +1005,7 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for commonCharactersToIgnore.
      */
+    @java.lang.Override
     public int getCommonCharactersToIgnoreValue() {
       if (charactersCase_ == 2) {
         return ((java.lang.Integer) characters_).intValue();
@@ -1040,6 +1047,7 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The commonCharactersToIgnore.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore
         getCommonCharactersToIgnore() {
       if (charactersCase_ == 2) {

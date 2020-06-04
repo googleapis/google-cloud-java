@@ -182,6 +182,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the containerDetails field is set.
    */
+  @java.lang.Override
   public boolean hasContainerDetails() {
     return containerDetails_ != null;
   }
@@ -196,6 +197,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * @return The containerDetails.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Container getContainerDetails() {
     return containerDetails_ == null
         ? com.google.privacy.dlp.v2.Container.getDefaultInstance()
@@ -210,6 +212,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.privacy.dlp.v2.Container container_details = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContainerOrBuilder getContainerDetailsOrBuilder() {
     return getContainerDetails();
   }
@@ -230,6 +233,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * @return The fileOffset.
    */
+  @java.lang.Override
   public long getFileOffset() {
     return fileOffset_;
   }
@@ -249,6 +253,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * @return The rowOffset.
    */
+  @java.lang.Override
   public long getRowOffset() {
     return rowOffset_;
   }
@@ -270,6 +275,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the tableOptions field is set.
    */
+  @java.lang.Override
   public boolean hasTableOptions() {
     return tableOptions_ != null;
   }
@@ -288,6 +294,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * @return The tableOptions.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TableOptions getTableOptions() {
     return tableOptions_ == null
         ? com.google.privacy.dlp.v2.TableOptions.getDefaultInstance()
@@ -306,6 +313,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.privacy.dlp.v2.TableOptions table_options = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TableOptionsOrBuilder getTableOptionsOrBuilder() {
     return getTableOptions();
   }
@@ -355,6 +363,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -362,6 +371,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -386,6 +396,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -409,6 +420,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -436,6 +448,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1078,6 +1091,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      *
      * @return The fileOffset.
      */
+    @java.lang.Override
     public long getFileOffset() {
       return fileOffset_;
     }
@@ -1137,6 +1151,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      *
      * @return The rowOffset.
      */
+    @java.lang.Override
     public long getRowOffset() {
       return rowOffset_;
     }
@@ -1446,6 +1461,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1453,6 +1469,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1477,6 +1494,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1500,6 +1518,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1528,6 +1547,7 @@ public final class HybridFindingDetails extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

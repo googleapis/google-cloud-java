@@ -146,6 +146,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList() {
     return infoTypes_;
   }
@@ -158,6 +159,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
       getInfoTypesOrBuilderList() {
     return infoTypes_;
@@ -171,6 +173,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public int getInfoTypesCount() {
     return infoTypes_.size();
   }
@@ -183,6 +186,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoType getInfoTypes(int index) {
     return infoTypes_.get(index);
   }
@@ -195,6 +199,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index) {
     return infoTypes_.get(index);
   }
@@ -210,6 +215,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRule rules = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InspectionRule> getRulesList() {
     return rules_;
   }
@@ -222,6 +228,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRule rules = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleOrBuilder>
       getRulesOrBuilderList() {
     return rules_;
@@ -235,6 +242,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRule rules = 2;</code>
    */
+  @java.lang.Override
   public int getRulesCount() {
     return rules_.size();
   }
@@ -247,6 +255,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRule rules = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectionRule getRules(int index) {
     return rules_.get(index);
   }
@@ -259,6 +268,7 @@ public final class InspectionRuleSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRule rules = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectionRuleOrBuilder getRulesOrBuilder(int index) {
     return rules_.get(index);
   }

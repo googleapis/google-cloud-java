@@ -494,6 +494,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the startTime field is set.
      */
+    @java.lang.Override
     public boolean hasStartTime() {
       return startTime_ != null;
     }
@@ -508,6 +509,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The startTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
@@ -520,6 +522,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       return getStartTime();
     }
@@ -538,6 +541,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the endTime field is set.
      */
+    @java.lang.Override
     public boolean hasEndTime() {
       return endTime_ != null;
     }
@@ -553,6 +557,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The endTime.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
@@ -566,6 +571,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       return getEndTime();
     }
@@ -594,6 +600,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timestampField field is set.
      */
+    @java.lang.Override
     public boolean hasTimestampField() {
       return timestampField_ != null;
     }
@@ -619,6 +626,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timestampField.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldId getTimestampField() {
       return timestampField_ == null
           ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
@@ -644,6 +652,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getTimestampFieldOrBuilder() {
       return getTimestampField();
     }
@@ -664,6 +673,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableAutoPopulationOfTimespanConfig.
      */
+    @java.lang.Override
     public boolean getEnableAutoPopulationOfTimespanConfig() {
       return enableAutoPopulationOfTimespanConfig_;
     }
@@ -1752,6 +1762,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enableAutoPopulationOfTimespanConfig.
        */
+      @java.lang.Override
       public boolean getEnableAutoPopulationOfTimespanConfig() {
         return enableAutoPopulationOfTimespanConfig_;
       }
@@ -1914,6 +1925,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the datastoreOptions field is set.
    */
+  @java.lang.Override
   public boolean hasDatastoreOptions() {
     return typeCase_ == 2;
   }
@@ -1928,6 +1940,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The datastoreOptions.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions() {
     if (typeCase_ == 2) {
       return (com.google.privacy.dlp.v2.DatastoreOptions) type_;
@@ -1943,6 +1956,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder getDatastoreOptionsOrBuilder() {
     if (typeCase_ == 2) {
       return (com.google.privacy.dlp.v2.DatastoreOptions) type_;
@@ -1962,6 +1976,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the cloudStorageOptions field is set.
    */
+  @java.lang.Override
   public boolean hasCloudStorageOptions() {
     return typeCase_ == 3;
   }
@@ -1976,6 +1991,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cloudStorageOptions.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions() {
     if (typeCase_ == 3) {
       return (com.google.privacy.dlp.v2.CloudStorageOptions) type_;
@@ -1991,6 +2007,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder getCloudStorageOptionsOrBuilder() {
     if (typeCase_ == 3) {
       return (com.google.privacy.dlp.v2.CloudStorageOptions) type_;
@@ -2010,6 +2027,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the bigQueryOptions field is set.
    */
+  @java.lang.Override
   public boolean hasBigQueryOptions() {
     return typeCase_ == 4;
   }
@@ -2024,6 +2042,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bigQueryOptions.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions() {
     if (typeCase_ == 4) {
       return (com.google.privacy.dlp.v2.BigQueryOptions) type_;
@@ -2039,6 +2058,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder getBigQueryOptionsOrBuilder() {
     if (typeCase_ == 4) {
       return (com.google.privacy.dlp.v2.BigQueryOptions) type_;
@@ -2061,6 +2081,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the hybridOptions field is set.
    */
+  @java.lang.Override
   public boolean hasHybridOptions() {
     return typeCase_ == 9;
   }
@@ -2078,6 +2099,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The hybridOptions.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.HybridOptions getHybridOptions() {
     if (typeCase_ == 9) {
       return (com.google.privacy.dlp.v2.HybridOptions) type_;
@@ -2096,6 +2118,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.HybridOptionsOrBuilder getHybridOptionsOrBuilder() {
     if (typeCase_ == 9) {
       return (com.google.privacy.dlp.v2.HybridOptions) type_;
@@ -2110,6 +2133,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timespanConfig field is set.
    */
+  @java.lang.Override
   public boolean hasTimespanConfig() {
     return timespanConfig_ != null;
   }
@@ -2118,12 +2142,14 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timespanConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig() {
     return timespanConfig_ == null
         ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()
         : timespanConfig_;
   }
   /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder
       getTimespanConfigOrBuilder() {
     return getTimespanConfig();
@@ -2612,6 +2638,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the datastoreOptions field is set.
      */
+    @java.lang.Override
     public boolean hasDatastoreOptions() {
       return typeCase_ == 2;
     }
@@ -2626,6 +2653,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The datastoreOptions.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions() {
       if (datastoreOptionsBuilder_ == null) {
         if (typeCase_ == 2) {
@@ -2758,6 +2786,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder getDatastoreOptionsOrBuilder() {
       if ((typeCase_ == 2) && (datastoreOptionsBuilder_ != null)) {
         return datastoreOptionsBuilder_.getMessageOrBuilder();
@@ -2818,6 +2847,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the cloudStorageOptions field is set.
      */
+    @java.lang.Override
     public boolean hasCloudStorageOptions() {
       return typeCase_ == 3;
     }
@@ -2832,6 +2862,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The cloudStorageOptions.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions() {
       if (cloudStorageOptionsBuilder_ == null) {
         if (typeCase_ == 3) {
@@ -2964,6 +2995,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder
         getCloudStorageOptionsOrBuilder() {
       if ((typeCase_ == 3) && (cloudStorageOptionsBuilder_ != null)) {
@@ -3025,6 +3057,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the bigQueryOptions field is set.
      */
+    @java.lang.Override
     public boolean hasBigQueryOptions() {
       return typeCase_ == 4;
     }
@@ -3039,6 +3072,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bigQueryOptions.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions() {
       if (bigQueryOptionsBuilder_ == null) {
         if (typeCase_ == 4) {
@@ -3171,6 +3205,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder getBigQueryOptionsOrBuilder() {
       if ((typeCase_ == 4) && (bigQueryOptionsBuilder_ != null)) {
         return bigQueryOptionsBuilder_.getMessageOrBuilder();
@@ -3234,6 +3269,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the hybridOptions field is set.
      */
+    @java.lang.Override
     public boolean hasHybridOptions() {
       return typeCase_ == 9;
     }
@@ -3251,6 +3287,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The hybridOptions.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.HybridOptions getHybridOptions() {
       if (hybridOptionsBuilder_ == null) {
         if (typeCase_ == 9) {
@@ -3401,6 +3438,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.HybridOptions hybrid_options = 9;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.HybridOptionsOrBuilder getHybridOptionsOrBuilder() {
       if ((typeCase_ == 9) && (hybridOptionsBuilder_ != null)) {
         return hybridOptionsBuilder_.getMessageOrBuilder();

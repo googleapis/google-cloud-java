@@ -224,6 +224,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -249,6 +250,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -273,6 +275,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the inspectJob field is set.
    */
+  @java.lang.Override
   public boolean hasInspectJob() {
     return jobCase_ == 2;
   }
@@ -287,6 +290,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The inspectJob.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
     if (jobCase_ == 2) {
       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
@@ -302,6 +306,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
     if (jobCase_ == 2) {
       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
@@ -321,6 +326,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the riskJob field is set.
    */
+  @java.lang.Override
   public boolean hasRiskJob() {
     return jobCase_ == 3;
   }
@@ -335,6 +341,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The riskJob.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob() {
     if (jobCase_ == 3) {
       return (com.google.privacy.dlp.v2.RiskAnalysisJobConfig) job_;
@@ -350,6 +357,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getRiskJobOrBuilder() {
     if (jobCase_ == 3) {
       return (com.google.privacy.dlp.v2.RiskAnalysisJobConfig) job_;
@@ -373,6 +381,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The jobId.
    */
+  @java.lang.Override
   public java.lang.String getJobId() {
     java.lang.Object ref = jobId_;
     if (ref instanceof java.lang.String) {
@@ -398,6 +407,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for jobId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getJobIdBytes() {
     java.lang.Object ref = jobId_;
     if (ref instanceof java.lang.String) {
@@ -423,6 +433,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -445,6 +456,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -1030,6 +1042,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the inspectJob field is set.
      */
+    @java.lang.Override
     public boolean hasInspectJob() {
       return jobCase_ == 2;
     }
@@ -1044,6 +1057,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The inspectJob.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 2) {
@@ -1176,6 +1190,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
       if ((jobCase_ == 2) && (inspectJobBuilder_ != null)) {
         return inspectJobBuilder_.getMessageOrBuilder();
@@ -1236,6 +1251,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the riskJob field is set.
      */
+    @java.lang.Override
     public boolean hasRiskJob() {
       return jobCase_ == 3;
     }
@@ -1250,6 +1266,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The riskJob.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob() {
       if (riskJobBuilder_ == null) {
         if (jobCase_ == 3) {
@@ -1382,6 +1399,7 @@ public final class CreateDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder getRiskJobOrBuilder() {
       if ((jobCase_ == 3) && (riskJobBuilder_ != null)) {
         return riskJobBuilder_.getMessageOrBuilder();

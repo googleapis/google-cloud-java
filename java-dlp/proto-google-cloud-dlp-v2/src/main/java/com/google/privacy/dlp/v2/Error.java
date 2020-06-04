@@ -145,6 +145,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the details field is set.
    */
+  @java.lang.Override
   public boolean hasDetails() {
     return details_ != null;
   }
@@ -159,6 +160,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The details.
    */
+  @java.lang.Override
   public com.google.rpc.Status getDetails() {
     return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
   }
@@ -171,6 +173,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.rpc.Status details = 1;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getDetailsOrBuilder() {
     return getDetails();
   }
@@ -186,6 +189,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.protobuf.Timestamp> getTimestampsList() {
     return timestamps_;
   }
@@ -198,6 +202,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.protobuf.TimestampOrBuilder>
       getTimestampsOrBuilderList() {
     return timestamps_;
@@ -211,6 +216,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
+  @java.lang.Override
   public int getTimestampsCount() {
     return timestamps_.size();
   }
@@ -223,6 +229,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getTimestamps(int index) {
     return timestamps_.get(index);
   }
@@ -235,6 +242,7 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimestampsOrBuilder(int index) {
     return timestamps_.get(index);
   }

@@ -145,6 +145,7 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The datasetId.
    */
+  @java.lang.Override
   public java.lang.String getDatasetId() {
     java.lang.Object ref = datasetId_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +218,7 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for datasetId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDatasetIdBytes() {
     java.lang.Object ref = datasetId_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +244,7 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tableId.
    */
+  @java.lang.Override
   public java.lang.String getTableId() {
     java.lang.Object ref = tableId_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +267,7 @@ public final class BigQueryTable extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for tableId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTableIdBytes() {
     java.lang.Object ref = tableId_;
     if (ref instanceof java.lang.String) {

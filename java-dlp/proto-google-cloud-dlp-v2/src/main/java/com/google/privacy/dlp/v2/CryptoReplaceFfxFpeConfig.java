@@ -205,7 +205,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [0-9] (radix of 10)
+     * `[0-9]` (radix of 10)
      * </pre>
      *
      * <code>NUMERIC = 1;</code>
@@ -215,7 +215,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [0-9A-F] (radix of 16)
+     * `[0-9A-F]` (radix of 16)
      * </pre>
      *
      * <code>HEXADECIMAL = 2;</code>
@@ -225,7 +225,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [0-9A-Z] (radix of 36)
+     * `[0-9A-Z]` (radix of 36)
      * </pre>
      *
      * <code>UPPER_CASE_ALPHA_NUMERIC = 3;</code>
@@ -235,7 +235,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [0-9A-Za-z] (radix of 62)
+     * `[0-9A-Za-z]` (radix of 62)
      * </pre>
      *
      * <code>ALPHA_NUMERIC = 4;</code>
@@ -258,7 +258,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [0-9] (radix of 10)
+     * `[0-9]` (radix of 10)
      * </pre>
      *
      * <code>NUMERIC = 1;</code>
@@ -268,7 +268,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [0-9A-F] (radix of 16)
+     * `[0-9A-F]` (radix of 16)
      * </pre>
      *
      * <code>HEXADECIMAL = 2;</code>
@@ -278,7 +278,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [0-9A-Z] (radix of 36)
+     * `[0-9A-Z]` (radix of 36)
      * </pre>
      *
      * <code>UPPER_CASE_ALPHA_NUMERIC = 3;</code>
@@ -288,7 +288,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [0-9A-Za-z] (radix of 62)
+     * `[0-9A-Za-z]` (radix of 62)
      * </pre>
      *
      * <code>ALPHA_NUMERIC = 4;</code>
@@ -348,6 +348,10 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -448,6 +452,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * @return Whether the cryptoKey field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
   }
@@ -464,6 +469,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * @return The cryptoKey.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     return cryptoKey_ == null
         ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
@@ -480,6 +486,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * .google.privacy.dlp.v2.CryptoKey crypto_key = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
   }
@@ -510,6 +517,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * @return Whether the context field is set.
    */
+  @java.lang.Override
   public boolean hasContext() {
     return context_ != null;
   }
@@ -537,6 +545,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * @return The context.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
@@ -562,6 +571,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder() {
     return getContext();
   }
@@ -694,6 +704,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * @return The radix.
    */
+  @java.lang.Override
   public int getRadix() {
     if (alphabetCase_ == 6) {
       return (java.lang.Integer) alphabet_;
@@ -717,7 +728,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
-   * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+   * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
@@ -735,6 +746,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * @return Whether the surrogateInfoType field is set.
    */
+  @java.lang.Override
   public boolean hasSurrogateInfoType() {
     return surrogateInfoType_ != null;
   }
@@ -752,7 +764,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
-   * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+   * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
@@ -770,6 +782,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * @return The surrogateInfoType.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
     return surrogateInfoType_ == null
         ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
@@ -789,7 +802,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
-   * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+   * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
@@ -805,6 +818,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getSurrogateInfoTypeOrBuilder() {
     return getSurrogateInfoType();
   }
@@ -1820,6 +1834,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      * @return The enum numeric value on the wire for commonAlphabet.
      */
+    @java.lang.Override
     public int getCommonAlphabetValue() {
       if (alphabetCase_ == 4) {
         return ((java.lang.Integer) alphabet_).intValue();
@@ -1859,6 +1874,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      * @return The commonAlphabet.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
         getCommonAlphabet() {
       if (alphabetCase_ == 4) {
@@ -1937,6 +1953,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      * @return The customAlphabet.
      */
+    @java.lang.Override
     public java.lang.String getCustomAlphabet() {
       java.lang.Object ref = "";
       if (alphabetCase_ == 5) {
@@ -1970,6 +1987,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      *
      * @return The bytes for customAlphabet.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCustomAlphabetBytes() {
       java.lang.Object ref = "";
       if (alphabetCase_ == 5) {
@@ -2142,7 +2160,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
@@ -2177,7 +2195,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
@@ -2218,7 +2236,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
@@ -2261,7 +2279,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
@@ -2302,7 +2320,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
@@ -2349,7 +2367,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
@@ -2390,7 +2408,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
@@ -2425,7 +2443,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may
@@ -2464,7 +2482,7 @@ public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.Generat
      * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
      * This annotation identifies the surrogate when inspecting content using the
      * custom infoType
-     * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+     * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
      * This facilitates reversal of the surrogate when it occurs in free text.
      * In order for inspection to work properly, the name of this infoType must
      * not occur naturally anywhere in your data; otherwise, inspection may

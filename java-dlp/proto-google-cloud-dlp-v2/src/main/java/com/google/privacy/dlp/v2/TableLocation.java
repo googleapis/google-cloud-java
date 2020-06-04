@@ -125,6 +125,7 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rowIndex.
    */
+  @java.lang.Override
   public long getRowIndex() {
     return rowIndex_;
   }
@@ -460,6 +461,7 @@ public final class TableLocation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The rowIndex.
      */
+    @java.lang.Override
     public long getRowIndex() {
       return rowIndex_;
     }

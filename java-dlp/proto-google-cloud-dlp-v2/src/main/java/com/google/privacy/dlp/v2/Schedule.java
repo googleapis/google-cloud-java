@@ -177,6 +177,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the recurrencePeriodDuration field is set.
    */
+  @java.lang.Override
   public boolean hasRecurrencePeriodDuration() {
     return optionCase_ == 1;
   }
@@ -196,6 +197,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The recurrencePeriodDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getRecurrencePeriodDuration() {
     if (optionCase_ == 1) {
       return (com.google.protobuf.Duration) option_;
@@ -216,6 +218,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getRecurrencePeriodDurationOrBuilder() {
     if (optionCase_ == 1) {
       return (com.google.protobuf.Duration) option_;
@@ -601,6 +604,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the recurrencePeriodDuration field is set.
      */
+    @java.lang.Override
     public boolean hasRecurrencePeriodDuration() {
       return optionCase_ == 1;
     }
@@ -620,6 +624,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The recurrencePeriodDuration.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getRecurrencePeriodDuration() {
       if (recurrencePeriodDurationBuilder_ == null) {
         if (optionCase_ == 1) {
@@ -780,6 +785,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Duration recurrence_period_duration = 1;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getRecurrencePeriodDurationOrBuilder() {
       if ((optionCase_ == 1) && (recurrencePeriodDurationBuilder_ != null)) {
         return recurrencePeriodDurationBuilder_.getMessageOrBuilder();

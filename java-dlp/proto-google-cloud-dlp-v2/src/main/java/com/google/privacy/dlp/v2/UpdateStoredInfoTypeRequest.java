@@ -159,6 +159,7 @@ public final class UpdateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class UpdateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +214,7 @@ public final class UpdateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -228,6 +231,7 @@ public final class UpdateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
     return config_ == null
         ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
@@ -244,6 +248,7 @@ public final class UpdateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -261,6 +266,7 @@ public final class UpdateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -275,6 +281,7 @@ public final class UpdateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -287,6 +294,7 @@ public final class UpdateStoredInfoTypeRequest extends com.google.protobuf.Gener
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

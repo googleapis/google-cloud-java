@@ -141,6 +141,7 @@ public final class StoredType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -165,6 +166,7 @@ public final class StoredType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class StoredType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -206,6 +209,7 @@ public final class StoredType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -219,6 +223,7 @@ public final class StoredType extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }

@@ -137,6 +137,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList() {
     return infoTypes_;
   }
@@ -156,6 +157,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
       getInfoTypesOrBuilderList() {
     return infoTypes_;
@@ -176,6 +178,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public int getInfoTypesCount() {
     return infoTypes_.size();
   }
@@ -195,6 +198,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoType getInfoTypes(int index) {
     return infoTypes_.get(index);
   }
@@ -214,6 +218,7 @@ public final class ExcludeInfoTypes extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index) {
     return infoTypes_.get(index);
   }

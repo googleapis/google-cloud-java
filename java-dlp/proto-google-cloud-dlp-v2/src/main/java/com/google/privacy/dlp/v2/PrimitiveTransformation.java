@@ -388,6 +388,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the replaceConfig field is set.
    */
+  @java.lang.Override
   public boolean hasReplaceConfig() {
     return transformationCase_ == 1;
   }
@@ -402,6 +403,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The replaceConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ReplaceValueConfig getReplaceConfig() {
     if (transformationCase_ == 1) {
       return (com.google.privacy.dlp.v2.ReplaceValueConfig) transformation_;
@@ -417,6 +419,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder getReplaceConfigOrBuilder() {
     if (transformationCase_ == 1) {
       return (com.google.privacy.dlp.v2.ReplaceValueConfig) transformation_;
@@ -436,6 +439,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the redactConfig field is set.
    */
+  @java.lang.Override
   public boolean hasRedactConfig() {
     return transformationCase_ == 2;
   }
@@ -450,6 +454,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The redactConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RedactConfig getRedactConfig() {
     if (transformationCase_ == 2) {
       return (com.google.privacy.dlp.v2.RedactConfig) transformation_;
@@ -465,6 +470,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RedactConfigOrBuilder getRedactConfigOrBuilder() {
     if (transformationCase_ == 2) {
       return (com.google.privacy.dlp.v2.RedactConfig) transformation_;
@@ -484,6 +490,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the characterMaskConfig field is set.
    */
+  @java.lang.Override
   public boolean hasCharacterMaskConfig() {
     return transformationCase_ == 3;
   }
@@ -498,6 +505,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The characterMaskConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CharacterMaskConfig getCharacterMaskConfig() {
     if (transformationCase_ == 3) {
       return (com.google.privacy.dlp.v2.CharacterMaskConfig) transformation_;
@@ -513,6 +521,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder getCharacterMaskConfigOrBuilder() {
     if (transformationCase_ == 3) {
       return (com.google.privacy.dlp.v2.CharacterMaskConfig) transformation_;
@@ -533,6 +542,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the cryptoReplaceFfxFpeConfig field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoReplaceFfxFpeConfig() {
     return transformationCase_ == 4;
   }
@@ -548,6 +558,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The cryptoReplaceFfxFpeConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig getCryptoReplaceFfxFpeConfig() {
     if (transformationCase_ == 4) {
       return (com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) transformation_;
@@ -564,6 +575,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfigOrBuilder
       getCryptoReplaceFfxFpeConfigOrBuilder() {
     if (transformationCase_ == 4) {
@@ -584,6 +596,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the fixedSizeBucketingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasFixedSizeBucketingConfig() {
     return transformationCase_ == 5;
   }
@@ -598,6 +611,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The fixedSizeBucketingConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FixedSizeBucketingConfig getFixedSizeBucketingConfig() {
     if (transformationCase_ == 5) {
       return (com.google.privacy.dlp.v2.FixedSizeBucketingConfig) transformation_;
@@ -613,6 +627,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder
       getFixedSizeBucketingConfigOrBuilder() {
     if (transformationCase_ == 5) {
@@ -633,6 +648,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the bucketingConfig field is set.
    */
+  @java.lang.Override
   public boolean hasBucketingConfig() {
     return transformationCase_ == 6;
   }
@@ -647,6 +663,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The bucketingConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BucketingConfig getBucketingConfig() {
     if (transformationCase_ == 6) {
       return (com.google.privacy.dlp.v2.BucketingConfig) transformation_;
@@ -662,6 +679,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BucketingConfigOrBuilder getBucketingConfigOrBuilder() {
     if (transformationCase_ == 6) {
       return (com.google.privacy.dlp.v2.BucketingConfig) transformation_;
@@ -682,6 +700,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the replaceWithInfoTypeConfig field is set.
    */
+  @java.lang.Override
   public boolean hasReplaceWithInfoTypeConfig() {
     return transformationCase_ == 7;
   }
@@ -697,6 +716,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The replaceWithInfoTypeConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig getReplaceWithInfoTypeConfig() {
     if (transformationCase_ == 7) {
       return (com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig) transformation_;
@@ -713,6 +733,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfigOrBuilder
       getReplaceWithInfoTypeConfigOrBuilder() {
     if (transformationCase_ == 7) {
@@ -733,6 +754,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the timePartConfig field is set.
    */
+  @java.lang.Override
   public boolean hasTimePartConfig() {
     return transformationCase_ == 8;
   }
@@ -747,6 +769,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The timePartConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TimePartConfig getTimePartConfig() {
     if (transformationCase_ == 8) {
       return (com.google.privacy.dlp.v2.TimePartConfig) transformation_;
@@ -762,6 +785,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TimePartConfigOrBuilder getTimePartConfigOrBuilder() {
     if (transformationCase_ == 8) {
       return (com.google.privacy.dlp.v2.TimePartConfig) transformation_;
@@ -781,6 +805,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the cryptoHashConfig field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoHashConfig() {
     return transformationCase_ == 9;
   }
@@ -795,6 +820,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The cryptoHashConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoHashConfig getCryptoHashConfig() {
     if (transformationCase_ == 9) {
       return (com.google.privacy.dlp.v2.CryptoHashConfig) transformation_;
@@ -810,6 +836,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder getCryptoHashConfigOrBuilder() {
     if (transformationCase_ == 9) {
       return (com.google.privacy.dlp.v2.CryptoHashConfig) transformation_;
@@ -829,6 +856,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the dateShiftConfig field is set.
    */
+  @java.lang.Override
   public boolean hasDateShiftConfig() {
     return transformationCase_ == 11;
   }
@@ -843,6 +871,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The dateShiftConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DateShiftConfig getDateShiftConfig() {
     if (transformationCase_ == 11) {
       return (com.google.privacy.dlp.v2.DateShiftConfig) transformation_;
@@ -858,6 +887,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DateShiftConfigOrBuilder getDateShiftConfigOrBuilder() {
     if (transformationCase_ == 11) {
       return (com.google.privacy.dlp.v2.DateShiftConfig) transformation_;
@@ -877,6 +907,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return Whether the cryptoDeterministicConfig field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoDeterministicConfig() {
     return transformationCase_ == 12;
   }
@@ -891,6 +922,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * @return The cryptoDeterministicConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoDeterministicConfig getCryptoDeterministicConfig() {
     if (transformationCase_ == 12) {
       return (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_;
@@ -906,6 +938,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder
       getCryptoDeterministicConfigOrBuilder() {
     if (transformationCase_ == 12) {
@@ -1566,6 +1599,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the replaceConfig field is set.
      */
+    @java.lang.Override
     public boolean hasReplaceConfig() {
       return transformationCase_ == 1;
     }
@@ -1580,6 +1614,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The replaceConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ReplaceValueConfig getReplaceConfig() {
       if (replaceConfigBuilder_ == null) {
         if (transformationCase_ == 1) {
@@ -1713,6 +1748,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * <code>.google.privacy.dlp.v2.ReplaceValueConfig replace_config = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ReplaceValueConfigOrBuilder getReplaceConfigOrBuilder() {
       if ((transformationCase_ == 1) && (replaceConfigBuilder_ != null)) {
         return replaceConfigBuilder_.getMessageOrBuilder();
@@ -1773,6 +1809,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the redactConfig field is set.
      */
+    @java.lang.Override
     public boolean hasRedactConfig() {
       return transformationCase_ == 2;
     }
@@ -1787,6 +1824,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The redactConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.RedactConfig getRedactConfig() {
       if (redactConfigBuilder_ == null) {
         if (transformationCase_ == 2) {
@@ -1918,6 +1956,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * <code>.google.privacy.dlp.v2.RedactConfig redact_config = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.RedactConfigOrBuilder getRedactConfigOrBuilder() {
       if ((transformationCase_ == 2) && (redactConfigBuilder_ != null)) {
         return redactConfigBuilder_.getMessageOrBuilder();
@@ -1978,6 +2017,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the characterMaskConfig field is set.
      */
+    @java.lang.Override
     public boolean hasCharacterMaskConfig() {
       return transformationCase_ == 3;
     }
@@ -1992,6 +2032,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The characterMaskConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CharacterMaskConfig getCharacterMaskConfig() {
       if (characterMaskConfigBuilder_ == null) {
         if (transformationCase_ == 3) {
@@ -2125,6 +2166,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * <code>.google.privacy.dlp.v2.CharacterMaskConfig character_mask_config = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CharacterMaskConfigOrBuilder
         getCharacterMaskConfigOrBuilder() {
       if ((transformationCase_ == 3) && (characterMaskConfigBuilder_ != null)) {
@@ -2187,6 +2229,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the cryptoReplaceFfxFpeConfig field is set.
      */
+    @java.lang.Override
     public boolean hasCryptoReplaceFfxFpeConfig() {
       return transformationCase_ == 4;
     }
@@ -2202,6 +2245,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The cryptoReplaceFfxFpeConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig getCryptoReplaceFfxFpeConfig() {
       if (cryptoReplaceFfxFpeConfigBuilder_ == null) {
         if (transformationCase_ == 4) {
@@ -2344,6 +2388,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig crypto_replace_ffx_fpe_config = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfigOrBuilder
         getCryptoReplaceFfxFpeConfigOrBuilder() {
       if ((transformationCase_ == 4) && (cryptoReplaceFfxFpeConfigBuilder_ != null)) {
@@ -2407,6 +2452,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the fixedSizeBucketingConfig field is set.
      */
+    @java.lang.Override
     public boolean hasFixedSizeBucketingConfig() {
       return transformationCase_ == 5;
     }
@@ -2421,6 +2467,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The fixedSizeBucketingConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FixedSizeBucketingConfig getFixedSizeBucketingConfig() {
       if (fixedSizeBucketingConfigBuilder_ == null) {
         if (transformationCase_ == 5) {
@@ -2557,6 +2604,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * <code>.google.privacy.dlp.v2.FixedSizeBucketingConfig fixed_size_bucketing_config = 5;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FixedSizeBucketingConfigOrBuilder
         getFixedSizeBucketingConfigOrBuilder() {
       if ((transformationCase_ == 5) && (fixedSizeBucketingConfigBuilder_ != null)) {
@@ -2618,6 +2666,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the bucketingConfig field is set.
      */
+    @java.lang.Override
     public boolean hasBucketingConfig() {
       return transformationCase_ == 6;
     }
@@ -2632,6 +2681,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The bucketingConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BucketingConfig getBucketingConfig() {
       if (bucketingConfigBuilder_ == null) {
         if (transformationCase_ == 6) {
@@ -2764,6 +2814,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * <code>.google.privacy.dlp.v2.BucketingConfig bucketing_config = 6;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BucketingConfigOrBuilder getBucketingConfigOrBuilder() {
       if ((transformationCase_ == 6) && (bucketingConfigBuilder_ != null)) {
         return bucketingConfigBuilder_.getMessageOrBuilder();
@@ -2825,6 +2876,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the replaceWithInfoTypeConfig field is set.
      */
+    @java.lang.Override
     public boolean hasReplaceWithInfoTypeConfig() {
       return transformationCase_ == 7;
     }
@@ -2840,6 +2892,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The replaceWithInfoTypeConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig getReplaceWithInfoTypeConfig() {
       if (replaceWithInfoTypeConfigBuilder_ == null) {
         if (transformationCase_ == 7) {
@@ -2982,6 +3035,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      * <code>.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig replace_with_info_type_config = 7;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfigOrBuilder
         getReplaceWithInfoTypeConfigOrBuilder() {
       if ((transformationCase_ == 7) && (replaceWithInfoTypeConfigBuilder_ != null)) {
@@ -3045,6 +3099,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the timePartConfig field is set.
      */
+    @java.lang.Override
     public boolean hasTimePartConfig() {
       return transformationCase_ == 8;
     }
@@ -3059,6 +3114,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The timePartConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TimePartConfig getTimePartConfig() {
       if (timePartConfigBuilder_ == null) {
         if (transformationCase_ == 8) {
@@ -3191,6 +3247,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * <code>.google.privacy.dlp.v2.TimePartConfig time_part_config = 8;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.TimePartConfigOrBuilder getTimePartConfigOrBuilder() {
       if ((transformationCase_ == 8) && (timePartConfigBuilder_ != null)) {
         return timePartConfigBuilder_.getMessageOrBuilder();
@@ -3251,6 +3308,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the cryptoHashConfig field is set.
      */
+    @java.lang.Override
     public boolean hasCryptoHashConfig() {
       return transformationCase_ == 9;
     }
@@ -3265,6 +3323,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The cryptoHashConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoHashConfig getCryptoHashConfig() {
       if (cryptoHashConfigBuilder_ == null) {
         if (transformationCase_ == 9) {
@@ -3397,6 +3456,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * <code>.google.privacy.dlp.v2.CryptoHashConfig crypto_hash_config = 9;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoHashConfigOrBuilder getCryptoHashConfigOrBuilder() {
       if ((transformationCase_ == 9) && (cryptoHashConfigBuilder_ != null)) {
         return cryptoHashConfigBuilder_.getMessageOrBuilder();
@@ -3457,6 +3517,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the dateShiftConfig field is set.
      */
+    @java.lang.Override
     public boolean hasDateShiftConfig() {
       return transformationCase_ == 11;
     }
@@ -3471,6 +3532,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The dateShiftConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DateShiftConfig getDateShiftConfig() {
       if (dateShiftConfigBuilder_ == null) {
         if (transformationCase_ == 11) {
@@ -3603,6 +3665,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * <code>.google.privacy.dlp.v2.DateShiftConfig date_shift_config = 11;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DateShiftConfigOrBuilder getDateShiftConfigOrBuilder() {
       if ((transformationCase_ == 11) && (dateShiftConfigBuilder_ != null)) {
         return dateShiftConfigBuilder_.getMessageOrBuilder();
@@ -3664,6 +3727,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return Whether the cryptoDeterministicConfig field is set.
      */
+    @java.lang.Override
     public boolean hasCryptoDeterministicConfig() {
       return transformationCase_ == 12;
     }
@@ -3679,6 +3743,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      *
      * @return The cryptoDeterministicConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoDeterministicConfig getCryptoDeterministicConfig() {
       if (cryptoDeterministicConfigBuilder_ == null) {
         if (transformationCase_ == 12) {
@@ -3821,6 +3886,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
      * <code>.google.privacy.dlp.v2.CryptoDeterministicConfig crypto_deterministic_config = 12;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoDeterministicConfigOrBuilder
         getCryptoDeterministicConfigOrBuilder() {
       if ((transformationCase_ == 12) && (cryptoDeterministicConfigBuilder_ != null)) {

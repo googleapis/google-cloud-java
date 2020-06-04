@@ -158,6 +158,7 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +184,7 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +210,7 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return Whether the jobTrigger field is set.
    */
+  @java.lang.Override
   public boolean hasJobTrigger() {
     return jobTrigger_ != null;
   }
@@ -222,6 +225,7 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The jobTrigger.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTrigger getJobTrigger() {
     return jobTrigger_ == null
         ? com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance()
@@ -236,6 +240,7 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * <code>.google.privacy.dlp.v2.JobTrigger job_trigger = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder() {
     return getJobTrigger();
   }
@@ -253,6 +258,7 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -267,6 +273,7 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -279,6 +286,7 @@ public final class UpdateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

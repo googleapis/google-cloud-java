@@ -369,6 +369,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the outputConfig field is set.
      */
+    @java.lang.Override
     public boolean hasOutputConfig() {
       return outputConfig_ != null;
     }
@@ -383,6 +384,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The outputConfig.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.OutputStorageConfig getOutputConfig() {
       return outputConfig_ == null
           ? com.google.privacy.dlp.v2.OutputStorageConfig.getDefaultInstance()
@@ -397,6 +399,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig output_config = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.OutputStorageConfigOrBuilder getOutputConfigOrBuilder() {
       return getOutputConfig();
     }
@@ -1018,7 +1021,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * Publish a message into given Pub/Sub topic when DlpJob has completed. The
    * message contains a single field, `DlpJobName`, which is equal to the
    * finished job's
-   * [`DlpJob.name`](/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
+   * [`DlpJob.name`](https://cloud.google.com/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
    * Compatible with: Inspect, Risk
    * </pre>
    *
@@ -1124,6 +1127,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The topic.
      */
+    @java.lang.Override
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
       if (ref instanceof java.lang.String) {
@@ -1149,6 +1153,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for topic.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getTopicBytes() {
       java.lang.Object ref = topic_;
       if (ref instanceof java.lang.String) {
@@ -1328,7 +1333,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * Publish a message into given Pub/Sub topic when DlpJob has completed. The
      * message contains a single field, `DlpJobName`, which is equal to the
      * finished job's
-     * [`DlpJob.name`](/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
+     * [`DlpJob.name`](https://cloud.google.com/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
      * Compatible with: Inspect, Risk
      * </pre>
      *
@@ -3576,6 +3581,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the saveFindings field is set.
    */
+  @java.lang.Override
   public boolean hasSaveFindings() {
     return actionCase_ == 1;
   }
@@ -3590,6 +3596,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The saveFindings.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings() {
     if (actionCase_ == 1) {
       return (com.google.privacy.dlp.v2.Action.SaveFindings) action_;
@@ -3605,6 +3612,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.SaveFindingsOrBuilder getSaveFindingsOrBuilder() {
     if (actionCase_ == 1) {
       return (com.google.privacy.dlp.v2.Action.SaveFindings) action_;
@@ -3624,6 +3632,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pubSub field is set.
    */
+  @java.lang.Override
   public boolean hasPubSub() {
     return actionCase_ == 2;
   }
@@ -3638,6 +3647,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pubSub.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub() {
     if (actionCase_ == 2) {
       return (com.google.privacy.dlp.v2.Action.PublishToPubSub) action_;
@@ -3653,6 +3663,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.PublishToPubSubOrBuilder getPubSubOrBuilder() {
     if (actionCase_ == 2) {
       return (com.google.privacy.dlp.v2.Action.PublishToPubSub) action_;
@@ -3672,6 +3683,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the publishSummaryToCscc field is set.
    */
+  @java.lang.Override
   public boolean hasPublishSummaryToCscc() {
     return actionCase_ == 3;
   }
@@ -3686,6 +3698,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publishSummaryToCscc.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc() {
     if (actionCase_ == 3) {
       return (com.google.privacy.dlp.v2.Action.PublishSummaryToCscc) action_;
@@ -3701,6 +3714,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.PublishSummaryToCsccOrBuilder
       getPublishSummaryToCsccOrBuilder() {
     if (actionCase_ == 3) {
@@ -3723,6 +3737,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
+  @java.lang.Override
   public boolean hasPublishFindingsToCloudDataCatalog() {
     return actionCase_ == 5;
   }
@@ -3739,6 +3754,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publishFindingsToCloudDataCatalog.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
       getPublishFindingsToCloudDataCatalog() {
     if (actionCase_ == 5) {
@@ -3757,6 +3773,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
       getPublishFindingsToCloudDataCatalogOrBuilder() {
     if (actionCase_ == 5) {
@@ -3778,6 +3795,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the jobNotificationEmails field is set.
    */
+  @java.lang.Override
   public boolean hasJobNotificationEmails() {
     return actionCase_ == 8;
   }
@@ -3793,6 +3811,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobNotificationEmails.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails() {
     if (actionCase_ == 8) {
       return (com.google.privacy.dlp.v2.Action.JobNotificationEmails) action_;
@@ -3809,6 +3828,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder
       getJobNotificationEmailsOrBuilder() {
     if (actionCase_ == 8) {
@@ -3829,6 +3849,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the publishToStackdriver field is set.
    */
+  @java.lang.Override
   public boolean hasPublishToStackdriver() {
     return actionCase_ == 9;
   }
@@ -3843,6 +3864,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publishToStackdriver.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver() {
     if (actionCase_ == 9) {
       return (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_;
@@ -3858,6 +3880,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder
       getPublishToStackdriverOrBuilder() {
     if (actionCase_ == 9) {
@@ -4376,6 +4399,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the saveFindings field is set.
      */
+    @java.lang.Override
     public boolean hasSaveFindings() {
       return actionCase_ == 1;
     }
@@ -4390,6 +4414,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The saveFindings.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings() {
       if (saveFindingsBuilder_ == null) {
         if (actionCase_ == 1) {
@@ -4522,6 +4547,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.Action.SaveFindings save_findings = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.SaveFindingsOrBuilder getSaveFindingsOrBuilder() {
       if ((actionCase_ == 1) && (saveFindingsBuilder_ != null)) {
         return saveFindingsBuilder_.getMessageOrBuilder();
@@ -4582,6 +4608,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the pubSub field is set.
      */
+    @java.lang.Override
     public boolean hasPubSub() {
       return actionCase_ == 2;
     }
@@ -4596,6 +4623,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pubSub.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub() {
       if (pubSubBuilder_ == null) {
         if (actionCase_ == 2) {
@@ -4728,6 +4756,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToPubSub pub_sub = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.PublishToPubSubOrBuilder getPubSubOrBuilder() {
       if ((actionCase_ == 2) && (pubSubBuilder_ != null)) {
         return pubSubBuilder_.getMessageOrBuilder();
@@ -4788,6 +4817,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the publishSummaryToCscc field is set.
      */
+    @java.lang.Override
     public boolean hasPublishSummaryToCscc() {
       return actionCase_ == 3;
     }
@@ -4802,6 +4832,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The publishSummaryToCscc.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc() {
       if (publishSummaryToCsccBuilder_ == null) {
         if (actionCase_ == 3) {
@@ -4938,6 +4969,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.Action.PublishSummaryToCscc publish_summary_to_cscc = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.PublishSummaryToCsccOrBuilder
         getPublishSummaryToCsccOrBuilder() {
       if ((actionCase_ == 3) && (publishSummaryToCsccBuilder_ != null)) {
@@ -5001,6 +5033,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the publishFindingsToCloudDataCatalog field is set.
      */
+    @java.lang.Override
     public boolean hasPublishFindingsToCloudDataCatalog() {
       return actionCase_ == 5;
     }
@@ -5017,6 +5050,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The publishFindingsToCloudDataCatalog.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
         getPublishFindingsToCloudDataCatalog() {
       if (publishFindingsToCloudDataCatalogBuilder_ == null) {
@@ -5170,6 +5204,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
         getPublishFindingsToCloudDataCatalogOrBuilder() {
       if ((actionCase_ == 5) && (publishFindingsToCloudDataCatalogBuilder_ != null)) {
@@ -5237,6 +5272,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the jobNotificationEmails field is set.
      */
+    @java.lang.Override
     public boolean hasJobNotificationEmails() {
       return actionCase_ == 8;
     }
@@ -5252,6 +5288,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The jobNotificationEmails.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails() {
       if (jobNotificationEmailsBuilder_ == null) {
         if (actionCase_ == 8) {
@@ -5394,6 +5431,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder
         getJobNotificationEmailsOrBuilder() {
       if ((actionCase_ == 8) && (jobNotificationEmailsBuilder_ != null)) {
@@ -5456,6 +5494,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the publishToStackdriver field is set.
      */
+    @java.lang.Override
     public boolean hasPublishToStackdriver() {
       return actionCase_ == 9;
     }
@@ -5470,6 +5509,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The publishToStackdriver.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.PublishToStackdriver getPublishToStackdriver() {
       if (publishToStackdriverBuilder_ == null) {
         if (actionCase_ == 9) {
@@ -5606,6 +5646,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.Action.PublishToStackdriver publish_to_stackdriver = 9;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Action.PublishToStackdriverOrBuilder
         getPublishToStackdriverOrBuilder() {
       if ((actionCase_ == 9) && (publishToStackdriverBuilder_ != null)) {

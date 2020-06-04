@@ -224,6 +224,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dictionary field is set.
    */
+  @java.lang.Override
   public boolean hasDictionary() {
     return typeCase_ == 1;
   }
@@ -238,6 +239,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dictionary.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
     if (typeCase_ == 1) {
       return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
@@ -253,6 +255,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder() {
     if (typeCase_ == 1) {
       return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
@@ -272,6 +275,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the regex field is set.
    */
+  @java.lang.Override
   public boolean hasRegex() {
     return typeCase_ == 2;
   }
@@ -286,6 +290,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The regex.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
     if (typeCase_ == 2) {
       return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
@@ -301,6 +306,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder() {
     if (typeCase_ == 2) {
       return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
@@ -320,6 +326,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the excludeInfoTypes field is set.
    */
+  @java.lang.Override
   public boolean hasExcludeInfoTypes() {
     return typeCase_ == 3;
   }
@@ -334,6 +341,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The excludeInfoTypes.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ExcludeInfoTypes getExcludeInfoTypes() {
     if (typeCase_ == 3) {
       return (com.google.privacy.dlp.v2.ExcludeInfoTypes) type_;
@@ -349,6 +357,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.ExcludeInfoTypes exclude_info_types = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ExcludeInfoTypesOrBuilder getExcludeInfoTypesOrBuilder() {
     if (typeCase_ == 3) {
       return (com.google.privacy.dlp.v2.ExcludeInfoTypes) type_;
@@ -369,6 +378,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for matchingType.
    */
+  @java.lang.Override
   public int getMatchingTypeValue() {
     return matchingType_;
   }
@@ -383,6 +393,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The matchingType.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.MatchingType getMatchingType() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.MatchingType result =
@@ -836,6 +847,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the dictionary field is set.
      */
+    @java.lang.Override
     public boolean hasDictionary() {
       return typeCase_ == 1;
     }
@@ -850,6 +862,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dictionary.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
       if (dictionaryBuilder_ == null) {
         if (typeCase_ == 1) {
@@ -982,6 +995,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder() {
       if ((typeCase_ == 1) && (dictionaryBuilder_ != null)) {
         return dictionaryBuilder_.getMessageOrBuilder();
@@ -1042,6 +1056,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the regex field is set.
      */
+    @java.lang.Override
     public boolean hasRegex() {
       return typeCase_ == 2;
     }
@@ -1056,6 +1071,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The regex.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
       if (regexBuilder_ == null) {
         if (typeCase_ == 2) {
@@ -1188,6 +1204,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder() {
       if ((typeCase_ == 2) && (regexBuilder_ != null)) {
         return regexBuilder_.getMessageOrBuilder();
@@ -1248,6 +1265,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the excludeInfoTypes field is set.
      */
+    @java.lang.Override
     public boolean hasExcludeInfoTypes() {
       return typeCase_ == 3;
     }
@@ -1262,6 +1280,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The excludeInfoTypes.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ExcludeInfoTypes getExcludeInfoTypes() {
       if (excludeInfoTypesBuilder_ == null) {
         if (typeCase_ == 3) {
@@ -1394,6 +1413,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.ExcludeInfoTypes exclude_info_types = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ExcludeInfoTypesOrBuilder getExcludeInfoTypesOrBuilder() {
       if ((typeCase_ == 3) && (excludeInfoTypesBuilder_ != null)) {
         return excludeInfoTypesBuilder_.getMessageOrBuilder();
@@ -1450,6 +1470,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for matchingType.
      */
+    @java.lang.Override
     public int getMatchingTypeValue() {
       return matchingType_;
     }
@@ -1466,6 +1487,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMatchingTypeValue(int value) {
+
       matchingType_ = value;
       onChanged();
       return this;
@@ -1481,6 +1503,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The matchingType.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.MatchingType getMatchingType() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.MatchingType result =

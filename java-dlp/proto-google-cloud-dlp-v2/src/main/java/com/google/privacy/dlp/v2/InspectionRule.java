@@ -199,6 +199,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the hotwordRule field is set.
    */
+  @java.lang.Override
   public boolean hasHotwordRule() {
     return typeCase_ == 1;
   }
@@ -213,6 +214,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The hotwordRule.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule() {
     if (typeCase_ == 1) {
       return (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_;
@@ -228,6 +230,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder
       getHotwordRuleOrBuilder() {
     if (typeCase_ == 1) {
@@ -248,6 +251,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the exclusionRule field is set.
    */
+  @java.lang.Override
   public boolean hasExclusionRule() {
     return typeCase_ == 2;
   }
@@ -262,6 +266,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The exclusionRule.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ExclusionRule getExclusionRule() {
     if (typeCase_ == 2) {
       return (com.google.privacy.dlp.v2.ExclusionRule) type_;
@@ -277,6 +282,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.ExclusionRule exclusion_rule = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ExclusionRuleOrBuilder getExclusionRuleOrBuilder() {
     if (typeCase_ == 2) {
       return (com.google.privacy.dlp.v2.ExclusionRule) type_;
@@ -688,6 +694,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the hotwordRule field is set.
      */
+    @java.lang.Override
     public boolean hasHotwordRule() {
       return typeCase_ == 1;
     }
@@ -703,6 +710,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The hotwordRule.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule() {
       if (hotwordRuleBuilder_ == null) {
         if (typeCase_ == 1) {
@@ -849,6 +857,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder
         getHotwordRuleOrBuilder() {
       if ((typeCase_ == 1) && (hotwordRuleBuilder_ != null)) {
@@ -914,6 +923,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the exclusionRule field is set.
      */
+    @java.lang.Override
     public boolean hasExclusionRule() {
       return typeCase_ == 2;
     }
@@ -928,6 +938,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The exclusionRule.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ExclusionRule getExclusionRule() {
       if (exclusionRuleBuilder_ == null) {
         if (typeCase_ == 2) {
@@ -1060,6 +1071,7 @@ public final class InspectionRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.ExclusionRule exclusion_rule = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ExclusionRuleOrBuilder getExclusionRuleOrBuilder() {
       if ((typeCase_ == 2) && (exclusionRuleBuilder_ != null)) {
         return exclusionRuleBuilder_.getMessageOrBuilder();

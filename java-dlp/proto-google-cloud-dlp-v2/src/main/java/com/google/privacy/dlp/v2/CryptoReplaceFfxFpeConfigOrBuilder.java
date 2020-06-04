@@ -231,7 +231,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
-   * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+   * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
@@ -264,7 +264,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
-   * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+   * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may
@@ -297,7 +297,7 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder
    * will be: 'MY_TOKEN_INFO_TYPE(3):abc'
    * This annotation identifies the surrogate when inspecting content using the
    * custom infoType
-   * [`SurrogateType`](/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
+   * [`SurrogateType`](https://cloud.google.com/dlp/docs/reference/rest/v2/InspectConfig#surrogatetype).
    * This facilitates reversal of the surrogate when it occurs in free text.
    * In order for inspection to work properly, the name of this infoType must
    * not occur naturally anywhere in your data; otherwise, inspection may

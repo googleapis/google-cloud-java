@@ -121,6 +121,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
    *
    * @return The fileOffset.
    */
+  @java.lang.Override
   public long getFileOffset() {
     return fileOffset_;
   }
@@ -453,6 +454,7 @@ public final class DocumentLocation extends com.google.protobuf.GeneratedMessage
      *
      * @return The fileOffset.
      */
+    @java.lang.Override
     public long getFileOffset() {
       return fileOffset_;
     }

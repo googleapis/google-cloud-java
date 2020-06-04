@@ -132,6 +132,7 @@ public final class TableOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getIdentifyingFieldsList() {
     return identifyingFields_;
   }
@@ -147,6 +148,7 @@ public final class TableOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getIdentifyingFieldsOrBuilderList() {
     return identifyingFields_;
@@ -163,6 +165,7 @@ public final class TableOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 1;</code>
    */
+  @java.lang.Override
   public int getIdentifyingFieldsCount() {
     return identifyingFields_.size();
   }
@@ -178,6 +181,7 @@ public final class TableOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getIdentifyingFields(int index) {
     return identifyingFields_.get(index);
   }
@@ -193,6 +197,7 @@ public final class TableOptions extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getIdentifyingFieldsOrBuilder(int index) {
     return identifyingFields_.get(index);
   }

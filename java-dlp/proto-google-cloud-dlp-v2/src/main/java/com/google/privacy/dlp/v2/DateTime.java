@@ -278,6 +278,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The offsetMinutes.
      */
+    @java.lang.Override
     public int getOffsetMinutes() {
       return offsetMinutes_;
     }
@@ -614,6 +615,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The offsetMinutes.
        */
+      @java.lang.Override
       public int getOffsetMinutes() {
         return offsetMinutes_;
       }
@@ -721,6 +723,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the date field is set.
    */
+  @java.lang.Override
   public boolean hasDate() {
     return date_ != null;
   }
@@ -736,6 +739,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The date.
    */
+  @java.lang.Override
   public com.google.type.Date getDate() {
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
@@ -749,6 +753,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Date date = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.DateOrBuilder getDateOrBuilder() {
     return getDate();
   }
@@ -766,6 +771,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for dayOfWeek.
    */
+  @java.lang.Override
   public int getDayOfWeekValue() {
     return dayOfWeek_;
   }
@@ -780,6 +786,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dayOfWeek.
    */
+  @java.lang.Override
   public com.google.type.DayOfWeek getDayOfWeek() {
     @SuppressWarnings("deprecation")
     com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
@@ -799,6 +806,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the time field is set.
    */
+  @java.lang.Override
   public boolean hasTime() {
     return time_ != null;
   }
@@ -813,6 +821,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The time.
    */
+  @java.lang.Override
   public com.google.type.TimeOfDay getTime() {
     return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
   }
@@ -825,6 +834,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.TimeOfDay time = 3;</code>
    */
+  @java.lang.Override
   public com.google.type.TimeOfDayOrBuilder getTimeOrBuilder() {
     return getTime();
   }
@@ -842,6 +852,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeZone field is set.
    */
+  @java.lang.Override
   public boolean hasTimeZone() {
     return timeZone_ != null;
   }
@@ -856,6 +867,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeZone.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone() {
     return timeZone_ == null
         ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance()
@@ -870,6 +882,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder() {
     return getTimeZone();
   }
@@ -1464,6 +1477,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for dayOfWeek.
      */
+    @java.lang.Override
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
@@ -1480,6 +1494,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDayOfWeekValue(int value) {
+
       dayOfWeek_ = value;
       onChanged();
       return this;
@@ -1495,6 +1510,7 @@ public final class DateTime extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dayOfWeek.
      */
+    @java.lang.Override
     public com.google.type.DayOfWeek getDayOfWeek() {
       @SuppressWarnings("deprecation")
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);

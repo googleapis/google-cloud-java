@@ -131,6 +131,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
    *
    * @return Whether the result field is set.
    */
+  @java.lang.Override
   public boolean hasResult() {
     return result_ != null;
   }
@@ -145,6 +146,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
    *
    * @return The result.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectResult getResult() {
     return result_ == null ? com.google.privacy.dlp.v2.InspectResult.getDefaultInstance() : result_;
   }
@@ -157,6 +159,7 @@ public final class InspectContentResponse extends com.google.protobuf.GeneratedM
    *
    * <code>.google.privacy.dlp.v2.InspectResult result = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectResultOrBuilder getResultOrBuilder() {
     return getResult();
   }

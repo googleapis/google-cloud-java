@@ -317,6 +317,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -416,6 +420,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the table field is set.
    */
+  @java.lang.Override
   public boolean hasTable() {
     return typeCase_ == 1;
   }
@@ -441,6 +446,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The table.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTable getTable() {
     if (typeCase_ == 1) {
       return (com.google.privacy.dlp.v2.BigQueryTable) type_;
@@ -467,6 +473,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
     if (typeCase_ == 1) {
       return (com.google.privacy.dlp.v2.BigQueryTable) type_;
@@ -495,6 +502,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for outputSchema.
    */
+  @java.lang.Override
   public int getOutputSchemaValue() {
     return outputSchema_;
   }
@@ -517,6 +525,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The outputSchema.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema result =
@@ -931,6 +940,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the table field is set.
      */
+    @java.lang.Override
     public boolean hasTable() {
       return typeCase_ == 1;
     }
@@ -956,6 +966,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The table.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryTable getTable() {
       if (tableBuilder_ == null) {
         if (typeCase_ == 1) {
@@ -1153,6 +1164,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
       if ((typeCase_ == 1) && (tableBuilder_ != null)) {
         return tableBuilder_.getMessageOrBuilder();
@@ -1226,6 +1238,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for outputSchema.
      */
+    @java.lang.Override
     public int getOutputSchemaValue() {
       return outputSchema_;
     }
@@ -1250,6 +1263,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setOutputSchemaValue(int value) {
+
       outputSchema_ = value;
       onChanged();
       return this;
@@ -1273,6 +1287,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The outputSchema.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema getOutputSchema() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema result =

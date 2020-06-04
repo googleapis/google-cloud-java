@@ -618,6 +618,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the infoType field is set.
        */
+      @java.lang.Override
       public boolean hasInfoType() {
         return infoType_ != null;
       }
@@ -635,6 +636,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The infoType.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.InfoType getInfoType() {
         return infoType_ == null
             ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
@@ -652,6 +654,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
         return getInfoType();
       }
@@ -669,6 +672,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The maxFindings.
        */
+      @java.lang.Override
       public int getMaxFindings() {
         return maxFindings_;
       }
@@ -1260,6 +1264,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The maxFindings.
          */
+        @java.lang.Override
         public int getMaxFindings() {
           return maxFindings_;
         }
@@ -1371,6 +1376,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxFindingsPerItem.
      */
+    @java.lang.Override
     public int getMaxFindingsPerItem() {
       return maxFindingsPerItem_;
     }
@@ -1390,6 +1396,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxFindingsPerRequest.
      */
+    @java.lang.Override
     public int getMaxFindingsPerRequest() {
       return maxFindingsPerRequest_;
     }
@@ -1408,6 +1415,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit max_findings_per_info_type = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit>
         getMaxFindingsPerInfoTypeList() {
       return maxFindingsPerInfoType_;
@@ -1423,6 +1431,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit max_findings_per_info_type = 3;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimitOrBuilder>
         getMaxFindingsPerInfoTypeOrBuilderList() {
@@ -1439,6 +1448,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit max_findings_per_info_type = 3;
      * </code>
      */
+    @java.lang.Override
     public int getMaxFindingsPerInfoTypeCount() {
       return maxFindingsPerInfoType_.size();
     }
@@ -1453,6 +1463,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit max_findings_per_info_type = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit
         getMaxFindingsPerInfoType(int index) {
       return maxFindingsPerInfoType_.get(index);
@@ -1468,6 +1479,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimit max_findings_per_info_type = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectConfig.FindingLimits.InfoTypeLimitOrBuilder
         getMaxFindingsPerInfoTypeOrBuilder(int index) {
       return maxFindingsPerInfoType_.get(index);
@@ -1887,6 +1899,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The maxFindingsPerItem.
        */
+      @java.lang.Override
       public int getMaxFindingsPerItem() {
         return maxFindingsPerItem_;
       }
@@ -1946,6 +1959,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The maxFindingsPerRequest.
        */
+      @java.lang.Override
       public int getMaxFindingsPerRequest() {
         return maxFindingsPerRequest_;
       }
@@ -2476,6 +2490,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList() {
     return infoTypes_;
   }
@@ -2496,6 +2511,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
       getInfoTypesOrBuilderList() {
     return infoTypes_;
@@ -2517,6 +2533,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public int getInfoTypesCount() {
     return infoTypes_.size();
   }
@@ -2537,6 +2554,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoType getInfoTypes(int index) {
     return infoTypes_.get(index);
   }
@@ -2557,6 +2575,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index) {
     return infoTypes_.get(index);
   }
@@ -2576,6 +2595,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for minLikelihood.
    */
+  @java.lang.Override
   public int getMinLikelihoodValue() {
     return minLikelihood_;
   }
@@ -2592,6 +2612,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The minLikelihood.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Likelihood getMinLikelihood() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.Likelihood result =
@@ -2612,6 +2633,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the limits field is set.
    */
+  @java.lang.Override
   public boolean hasLimits() {
     return limits_ != null;
   }
@@ -2626,6 +2648,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The limits.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfig.FindingLimits getLimits() {
     return limits_ == null
         ? com.google.privacy.dlp.v2.InspectConfig.FindingLimits.getDefaultInstance()
@@ -2640,6 +2663,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfig.FindingLimitsOrBuilder getLimitsOrBuilder() {
     return getLimits();
   }
@@ -2658,6 +2682,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The includeQuote.
    */
+  @java.lang.Override
   public boolean getIncludeQuote() {
     return includeQuote_;
   }
@@ -2675,6 +2700,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The excludeInfoTypes.
    */
+  @java.lang.Override
   public boolean getExcludeInfoTypes() {
     return excludeInfoTypes_;
   }
@@ -2691,6 +2717,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.CustomInfoType> getCustomInfoTypesList() {
     return customInfoTypes_;
   }
@@ -2704,6 +2731,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder>
       getCustomInfoTypesOrBuilderList() {
     return customInfoTypes_;
@@ -2718,6 +2746,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
+  @java.lang.Override
   public int getCustomInfoTypesCount() {
     return customInfoTypes_.size();
   }
@@ -2731,6 +2760,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType getCustomInfoTypes(int index) {
     return customInfoTypes_.get(index);
   }
@@ -2744,6 +2774,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder getCustomInfoTypesOrBuilder(int index) {
     return customInfoTypes_.get(index);
   }
@@ -2774,6 +2805,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the contentOptions.
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.ContentOption> getContentOptionsList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.privacy.dlp.v2.ContentOption>(
@@ -2791,6 +2823,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of contentOptions.
    */
+  @java.lang.Override
   public int getContentOptionsCount() {
     return contentOptions_.size();
   }
@@ -2807,6 +2840,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The contentOptions at the given index.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentOption getContentOptions(int index) {
     return contentOptions_converter_.convert(contentOptions_.get(index));
   }
@@ -2822,6 +2856,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for contentOptions.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getContentOptionsValueList() {
     return contentOptions_;
   }
@@ -2838,6 +2873,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of contentOptions at the given index.
    */
+  @java.lang.Override
   public int getContentOptionsValue(int index) {
     return contentOptions_.get(index);
   }
@@ -2857,6 +2893,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> getRuleSetList() {
     return ruleSet_;
   }
@@ -2871,6 +2908,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder>
       getRuleSetOrBuilderList() {
     return ruleSet_;
@@ -2886,6 +2924,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
+  @java.lang.Override
   public int getRuleSetCount() {
     return ruleSet_.size();
   }
@@ -2900,6 +2939,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectionRuleSet getRuleSet(int index) {
     return ruleSet_.get(index);
   }
@@ -2914,6 +2954,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder getRuleSetOrBuilder(int index) {
     return ruleSet_.get(index);
   }
@@ -4007,6 +4048,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for minLikelihood.
      */
+    @java.lang.Override
     public int getMinLikelihoodValue() {
       return minLikelihood_;
     }
@@ -4025,6 +4067,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMinLikelihoodValue(int value) {
+
       minLikelihood_ = value;
       onChanged();
       return this;
@@ -4042,6 +4085,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The minLikelihood.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Likelihood getMinLikelihood() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.Likelihood result =
@@ -4290,6 +4334,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The includeQuote.
      */
+    @java.lang.Override
     public boolean getIncludeQuote() {
       return includeQuote_;
     }
@@ -4343,6 +4388,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The excludeInfoTypes.
      */
+    @java.lang.Override
     public boolean getExcludeInfoTypes() {
       return excludeInfoTypes_;
     }

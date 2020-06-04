@@ -163,6 +163,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * @return Whether the cryptoKey field is set.
    */
+  @java.lang.Override
   public boolean hasCryptoKey() {
     return cryptoKey_ != null;
   }
@@ -177,6 +178,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * @return The cryptoKey.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
     return cryptoKey_ == null
         ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
@@ -191,6 +193,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
     return getCryptoKey();
   }
@@ -233,6 +236,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * @return Whether the surrogateInfoType field is set.
    */
+  @java.lang.Override
   public boolean hasSurrogateInfoType() {
     return surrogateInfoType_ != null;
   }
@@ -272,6 +276,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * @return The surrogateInfoType.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
     return surrogateInfoType_ == null
         ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
@@ -311,6 +316,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getSurrogateInfoTypeOrBuilder() {
     return getSurrogateInfoType();
   }
@@ -341,6 +347,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * @return Whether the context field is set.
    */
+  @java.lang.Override
   public boolean hasContext() {
     return context_ != null;
   }
@@ -368,6 +375,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * @return The context.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
@@ -393,6 +401,7 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
    *
    * <code>.google.privacy.dlp.v2.FieldId context = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder() {
     return getContext();
   }

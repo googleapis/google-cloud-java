@@ -176,6 +176,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the largeCustomDictionary field is set.
    */
+  @java.lang.Override
   public boolean hasLargeCustomDictionary() {
     return typeCase_ == 1;
   }
@@ -190,6 +191,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
    *
    * @return The largeCustomDictionary.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.LargeCustomDictionaryStats getLargeCustomDictionary() {
     if (typeCase_ == 1) {
       return (com.google.privacy.dlp.v2.LargeCustomDictionaryStats) type_;
@@ -205,6 +207,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryStats large_custom_dictionary = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.LargeCustomDictionaryStatsOrBuilder
       getLargeCustomDictionaryOrBuilder() {
     if (typeCase_ == 1) {
@@ -588,6 +591,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the largeCustomDictionary field is set.
      */
+    @java.lang.Override
     public boolean hasLargeCustomDictionary() {
       return typeCase_ == 1;
     }
@@ -602,6 +606,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
      *
      * @return The largeCustomDictionary.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.LargeCustomDictionaryStats getLargeCustomDictionary() {
       if (largeCustomDictionaryBuilder_ == null) {
         if (typeCase_ == 1) {
@@ -737,6 +742,7 @@ public final class StoredInfoTypeStats extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.privacy.dlp.v2.LargeCustomDictionaryStats large_custom_dictionary = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.LargeCustomDictionaryStatsOrBuilder
         getLargeCustomDictionaryOrBuilder() {
       if ((typeCase_ == 1) && (largeCustomDictionaryBuilder_ != null)) {

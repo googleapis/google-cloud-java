@@ -217,6 +217,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the field field is set.
    */
+  @java.lang.Override
   public boolean hasField() {
     return field_ != null;
   }
@@ -232,6 +233,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The field.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
@@ -245,6 +247,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.privacy.dlp.v2.FieldId field = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
     return getField();
   }
@@ -265,6 +268,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the infoType field is set.
    */
+  @java.lang.Override
   public boolean hasInfoType() {
     return tagCase_ == 2;
   }
@@ -283,6 +287,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The infoType.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     if (tagCase_ == 2) {
       return (com.google.privacy.dlp.v2.InfoType) tag_;
@@ -302,6 +307,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
     if (tagCase_ == 2) {
       return (com.google.privacy.dlp.v2.InfoType) tag_;
@@ -382,6 +388,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the inferred field is set.
    */
+  @java.lang.Override
   public boolean hasInferred() {
     return tagCase_ == 4;
   }
@@ -397,6 +404,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The inferred.
    */
+  @java.lang.Override
   public com.google.protobuf.Empty getInferred() {
     if (tagCase_ == 4) {
       return (com.google.protobuf.Empty) tag_;
@@ -413,6 +421,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Empty inferred = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.EmptyOrBuilder getInferredOrBuilder() {
     if (tagCase_ == 4) {
       return (com.google.protobuf.Empty) tag_;
@@ -1062,6 +1071,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the infoType field is set.
      */
+    @java.lang.Override
     public boolean hasInfoType() {
       return tagCase_ == 2;
     }
@@ -1080,6 +1090,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The infoType.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (infoTypeBuilder_ == null) {
         if (tagCase_ == 2) {
@@ -1234,6 +1245,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
       if ((tagCase_ == 2) && (infoTypeBuilder_ != null)) {
         return infoTypeBuilder_.getMessageOrBuilder();
@@ -1293,6 +1305,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The customTag.
      */
+    @java.lang.Override
     public java.lang.String getCustomTag() {
       java.lang.Object ref = "";
       if (tagCase_ == 3) {
@@ -1322,6 +1335,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for customTag.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCustomTagBytes() {
       java.lang.Object ref = "";
       if (tagCase_ == 3) {
@@ -1424,6 +1438,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the inferred field is set.
      */
+    @java.lang.Override
     public boolean hasInferred() {
       return tagCase_ == 4;
     }
@@ -1439,6 +1454,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The inferred.
      */
+    @java.lang.Override
     public com.google.protobuf.Empty getInferred() {
       if (inferredBuilder_ == null) {
         if (tagCase_ == 4) {
@@ -1574,6 +1590,7 @@ public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Empty inferred = 4;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.EmptyOrBuilder getInferredOrBuilder() {
       if ((tagCase_ == 4) && (inferredBuilder_ != null)) {
         return inferredBuilder_.getMessageOrBuilder();

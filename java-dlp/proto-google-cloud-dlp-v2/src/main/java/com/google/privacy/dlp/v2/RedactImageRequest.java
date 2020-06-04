@@ -463,6 +463,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the infoType field is set.
      */
+    @java.lang.Override
     public boolean hasInfoType() {
       return targetCase_ == 1;
     }
@@ -480,6 +481,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The infoType.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (targetCase_ == 1) {
         return (com.google.privacy.dlp.v2.InfoType) target_;
@@ -498,6 +500,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
       if (targetCase_ == 1) {
         return (com.google.privacy.dlp.v2.InfoType) target_;
@@ -518,6 +521,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The redactAllText.
      */
+    @java.lang.Override
     public boolean getRedactAllText() {
       if (targetCase_ == 2) {
         return (java.lang.Boolean) target_;
@@ -539,6 +543,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the redactionColor field is set.
      */
+    @java.lang.Override
     public boolean hasRedactionColor() {
       return redactionColor_ != null;
     }
@@ -554,6 +559,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The redactionColor.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Color getRedactionColor() {
       return redactionColor_ == null
           ? com.google.privacy.dlp.v2.Color.getDefaultInstance()
@@ -569,6 +575,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * <code>.google.privacy.dlp.v2.Color redaction_color = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ColorOrBuilder getRedactionColorOrBuilder() {
       return getRedactionColor();
     }
@@ -1017,6 +1024,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        *
        * @return Whether the infoType field is set.
        */
+      @java.lang.Override
       public boolean hasInfoType() {
         return targetCase_ == 1;
       }
@@ -1034,6 +1042,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        *
        * @return The infoType.
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.InfoType getInfoType() {
         if (infoTypeBuilder_ == null) {
           if (targetCase_ == 1) {
@@ -1183,6 +1192,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
        *
        * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
        */
+      @java.lang.Override
       public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
         if ((targetCase_ == 1) && (infoTypeBuilder_ != null)) {
           return infoTypeBuilder_.getMessageOrBuilder();
@@ -1549,6 +1559,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -1572,6 +1583,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -1597,6 +1609,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -1619,6 +1632,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -1644,6 +1658,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the inspectConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
   }
@@ -1658,6 +1673,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The inspectConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
@@ -1672,6 +1688,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder() {
     return getInspectConfig();
   }
@@ -1690,6 +1707,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>
       getImageRedactionConfigsList() {
     return imageRedactionConfigs_;
@@ -1705,6 +1723,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder>
       getImageRedactionConfigsOrBuilderList() {
@@ -1721,6 +1740,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
    * </code>
    */
+  @java.lang.Override
   public int getImageRedactionConfigsCount() {
     return imageRedactionConfigs_.size();
   }
@@ -1735,6 +1755,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig getImageRedactionConfigs(
       int index) {
     return imageRedactionConfigs_.get(index);
@@ -1750,6 +1771,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder
       getImageRedactionConfigsOrBuilder(int index) {
     return imageRedactionConfigs_.get(index);
@@ -1769,6 +1791,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The includeFindings.
    */
+  @java.lang.Override
   public boolean getIncludeFindings() {
     return includeFindings_;
   }
@@ -1786,6 +1809,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the byteItem field is set.
    */
+  @java.lang.Override
   public boolean hasByteItem() {
     return byteItem_ != null;
   }
@@ -1800,6 +1824,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The byteItem.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ByteContentItem getByteItem() {
     return byteItem_ == null
         ? com.google.privacy.dlp.v2.ByteContentItem.getDefaultInstance()
@@ -1814,6 +1839,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ByteContentItemOrBuilder getByteItemOrBuilder() {
     return getByteItem();
   }
@@ -3109,6 +3135,7 @@ public final class RedactImageRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The includeFindings.
      */
+    @java.lang.Override
     public boolean getIncludeFindings() {
       return includeFindings_;
     }

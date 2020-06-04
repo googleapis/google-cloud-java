@@ -147,6 +147,7 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    *
    * @return Whether the item field is set.
    */
+  @java.lang.Override
   public boolean hasItem() {
     return item_ != null;
   }
@@ -161,6 +162,7 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    *
    * @return The item.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
@@ -173,6 +175,7 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder() {
     return getItem();
   }
@@ -190,6 +193,7 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    *
    * @return Whether the overview field is set.
    */
+  @java.lang.Override
   public boolean hasOverview() {
     return overview_ != null;
   }
@@ -204,6 +208,7 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    *
    * @return The overview.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationOverview getOverview() {
     return overview_ == null
         ? com.google.privacy.dlp.v2.TransformationOverview.getDefaultInstance()
@@ -218,6 +223,7 @@ public final class ReidentifyContentResponse extends com.google.protobuf.Generat
    *
    * <code>.google.privacy.dlp.v2.TransformationOverview overview = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.TransformationOverviewOrBuilder getOverviewOrBuilder() {
     return getOverview();
   }

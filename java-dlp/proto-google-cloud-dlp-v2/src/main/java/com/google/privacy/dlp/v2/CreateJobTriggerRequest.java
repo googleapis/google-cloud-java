@@ -159,6 +159,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +185,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +213,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return Whether the jobTrigger field is set.
    */
+  @java.lang.Override
   public boolean hasJobTrigger() {
     return jobTrigger_ != null;
   }
@@ -227,6 +230,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The jobTrigger.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTrigger getJobTrigger() {
     return jobTrigger_ == null
         ? com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance()
@@ -243,6 +247,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    * .google.privacy.dlp.v2.JobTrigger job_trigger = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder() {
     return getJobTrigger();
   }
@@ -263,6 +268,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The triggerId.
    */
+  @java.lang.Override
   public java.lang.String getTriggerId() {
     java.lang.Object ref = triggerId_;
     if (ref instanceof java.lang.String) {
@@ -288,6 +294,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for triggerId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTriggerIdBytes() {
     java.lang.Object ref = triggerId_;
     if (ref instanceof java.lang.String) {
@@ -313,6 +320,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -335,6 +343,7 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {

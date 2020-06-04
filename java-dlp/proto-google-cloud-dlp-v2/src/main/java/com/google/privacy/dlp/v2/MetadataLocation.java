@@ -184,6 +184,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -198,6 +199,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.MetadataType getType() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.MetadataType result =
@@ -217,6 +219,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the storageLabel field is set.
    */
+  @java.lang.Override
   public boolean hasStorageLabel() {
     return labelCase_ == 3;
   }
@@ -231,6 +234,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
    *
    * @return The storageLabel.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StorageMetadataLabel getStorageLabel() {
     if (labelCase_ == 3) {
       return (com.google.privacy.dlp.v2.StorageMetadataLabel) label_;
@@ -246,6 +250,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.privacy.dlp.v2.StorageMetadataLabel storage_label = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StorageMetadataLabelOrBuilder getStorageLabelOrBuilder() {
     if (labelCase_ == 3) {
       return (com.google.privacy.dlp.v2.StorageMetadataLabel) label_;
@@ -639,6 +644,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -655,6 +661,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -670,6 +677,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.MetadataType getType() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.MetadataType result =
@@ -731,6 +739,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the storageLabel field is set.
      */
+    @java.lang.Override
     public boolean hasStorageLabel() {
       return labelCase_ == 3;
     }
@@ -745,6 +754,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      *
      * @return The storageLabel.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.StorageMetadataLabel getStorageLabel() {
       if (storageLabelBuilder_ == null) {
         if (labelCase_ == 3) {
@@ -877,6 +887,7 @@ public final class MetadataLocation extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.privacy.dlp.v2.StorageMetadataLabel storage_label = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.StorageMetadataLabelOrBuilder getStorageLabelOrBuilder() {
       if ((labelCase_ == 3) && (storageLabelBuilder_ != null)) {
         return storageLabelBuilder_.getMessageOrBuilder();

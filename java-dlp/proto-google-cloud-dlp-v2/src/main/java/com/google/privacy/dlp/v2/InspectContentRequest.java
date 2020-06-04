@@ -173,6 +173,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +197,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the inspectConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInspectConfig() {
     return inspectConfig_ != null;
   }
@@ -237,6 +240,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The inspectConfig.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
     return inspectConfig_ == null
         ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
@@ -252,6 +256,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder() {
     return getInspectConfig();
   }
@@ -269,6 +274,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the item field is set.
    */
+  @java.lang.Override
   public boolean hasItem() {
     return item_ != null;
   }
@@ -283,6 +289,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The item.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItem getItem() {
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
@@ -295,6 +302,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder() {
     return getItem();
   }
@@ -316,6 +324,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The inspectTemplateName.
    */
+  @java.lang.Override
   public java.lang.String getInspectTemplateName() {
     java.lang.Object ref = inspectTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -342,6 +351,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for inspectTemplateName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
     java.lang.Object ref = inspectTemplateName_;
     if (ref instanceof java.lang.String) {
@@ -367,6 +377,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -389,6 +400,7 @@ public final class InspectContentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {

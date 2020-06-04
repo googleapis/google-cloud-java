@@ -138,6 +138,7 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.JobTrigger> getJobTriggersList() {
     return jobTriggers_;
   }
@@ -150,6 +151,7 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.JobTriggerOrBuilder>
       getJobTriggersOrBuilderList() {
     return jobTriggers_;
@@ -163,6 +165,7 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
+  @java.lang.Override
   public int getJobTriggersCount() {
     return jobTriggers_.size();
   }
@@ -175,6 +178,7 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTrigger getJobTriggers(int index) {
     return jobTriggers_.get(index);
   }
@@ -187,6 +191,7 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggersOrBuilder(int index) {
     return jobTriggers_.get(index);
   }
@@ -205,6 +210,7 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +234,7 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -148,6 +148,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.FieldTransformation>
       getFieldTransformationsList() {
     return fieldTransformations_;
@@ -161,6 +162,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldTransformationOrBuilder>
       getFieldTransformationsOrBuilderList() {
     return fieldTransformations_;
@@ -174,6 +176,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
+  @java.lang.Override
   public int getFieldTransformationsCount() {
     return fieldTransformations_.size();
   }
@@ -186,6 +189,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldTransformation getFieldTransformations(int index) {
     return fieldTransformations_.get(index);
   }
@@ -198,6 +202,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldTransformationOrBuilder getFieldTransformationsOrBuilder(
       int index) {
     return fieldTransformations_.get(index);
@@ -215,6 +220,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.RecordSuppression> getRecordSuppressionsList() {
     return recordSuppressions_;
   }
@@ -228,6 +234,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.RecordSuppressionOrBuilder>
       getRecordSuppressionsOrBuilderList() {
     return recordSuppressions_;
@@ -242,6 +249,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
+  @java.lang.Override
   public int getRecordSuppressionsCount() {
     return recordSuppressions_.size();
   }
@@ -255,6 +263,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordSuppression getRecordSuppressions(int index) {
     return recordSuppressions_.get(index);
   }
@@ -268,6 +277,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.RecordSuppressionOrBuilder getRecordSuppressionsOrBuilder(
       int index) {
     return recordSuppressions_.get(index);

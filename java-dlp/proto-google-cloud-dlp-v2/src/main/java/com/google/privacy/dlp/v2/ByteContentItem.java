@@ -392,6 +392,10 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -437,6 +441,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for type.
    */
+  @java.lang.Override
   public int getTypeValue() {
     return type_;
   }
@@ -451,6 +456,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    *
    * @return The type.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ByteContentItem.BytesType getType() {
     @SuppressWarnings("deprecation")
     com.google.privacy.dlp.v2.ByteContentItem.BytesType result =
@@ -473,6 +479,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    *
    * @return The data.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getData() {
     return data_;
   }
@@ -821,6 +828,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -837,6 +845,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+
       type_ = value;
       onChanged();
       return this;
@@ -852,6 +861,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ByteContentItem.BytesType getType() {
       @SuppressWarnings("deprecation")
       com.google.privacy.dlp.v2.ByteContentItem.BytesType result =
@@ -911,6 +921,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
      *
      * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }

@@ -351,6 +351,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the field field is set.
      */
+    @java.lang.Override
     public boolean hasField() {
       return field_ != null;
     }
@@ -365,6 +366,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      * @return The field.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldId getField() {
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
@@ -377,6 +379,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
       return getField();
     }
@@ -396,6 +399,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      * @return The customTag.
      */
+    @java.lang.Override
     public java.lang.String getCustomTag() {
       java.lang.Object ref = customTag_;
       if (ref instanceof java.lang.String) {
@@ -420,6 +424,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      *
      * @return The bytes for customTag.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCustomTagBytes() {
       java.lang.Object ref = customTag_;
       if (ref instanceof java.lang.String) {
@@ -1156,6 +1161,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the table field is set.
    */
+  @java.lang.Override
   public boolean hasTable() {
     return table_ != null;
   }
@@ -1171,6 +1177,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    * @return The table.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTable getTable() {
     return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
   }
@@ -1184,6 +1191,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
     return getTable();
   }
@@ -1201,6 +1209,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField>
       getQuasiIdsList() {
     return quasiIds_;
@@ -1216,6 +1225,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder>
       getQuasiIdsOrBuilderList() {
@@ -1232,6 +1242,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getQuasiIdsCount() {
     return quasiIds_.size();
   }
@@ -1246,6 +1257,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField getQuasiIds(int index) {
     return quasiIds_.get(index);
   }
@@ -1260,6 +1272,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * repeated .google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierField quasi_ids = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StatisticalTable.QuasiIdentifierFieldOrBuilder
       getQuasiIdsOrBuilder(int index) {
     return quasiIds_.get(index);
@@ -1281,6 +1294,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the relativeFrequency field is set.
    */
+  @java.lang.Override
   public boolean hasRelativeFrequency() {
     return relativeFrequency_ != null;
   }
@@ -1298,6 +1312,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    *
    * @return The relativeFrequency.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getRelativeFrequency() {
     return relativeFrequency_ == null
         ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
@@ -1315,6 +1330,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
    * .google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder() {
     return getRelativeFrequency();
   }

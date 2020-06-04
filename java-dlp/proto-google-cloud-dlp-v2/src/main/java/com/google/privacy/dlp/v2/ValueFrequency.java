@@ -135,6 +135,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the value field is set.
    */
+  @java.lang.Override
   public boolean hasValue() {
     return value_ != null;
   }
@@ -149,6 +150,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Value getValue() {
     return value_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : value_;
   }
@@ -161,6 +163,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.Value value = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ValueOrBuilder getValueOrBuilder() {
     return getValue();
   }
@@ -178,6 +181,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count.
    */
+  @java.lang.Override
   public long getCount() {
     return count_;
   }
@@ -715,6 +719,7 @@ public final class ValueFrequency extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }

@@ -136,6 +136,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -158,6 +159,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +185,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The namespaceId.
    */
+  @java.lang.Override
   public java.lang.String getNamespaceId() {
     java.lang.Object ref = namespaceId_;
     if (ref instanceof java.lang.String) {
@@ -205,6 +208,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for namespaceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNamespaceIdBytes() {
     java.lang.Object ref = namespaceId_;
     if (ref instanceof java.lang.String) {

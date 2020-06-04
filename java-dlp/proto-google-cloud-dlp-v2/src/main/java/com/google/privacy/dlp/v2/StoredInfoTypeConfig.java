@@ -236,6 +236,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -258,6 +259,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -283,6 +285,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +308,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -329,6 +333,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the largeCustomDictionary field is set.
    */
+  @java.lang.Override
   public boolean hasLargeCustomDictionary() {
     return typeCase_ == 3;
   }
@@ -343,6 +348,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The largeCustomDictionary.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary() {
     if (typeCase_ == 3) {
       return (com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) type_;
@@ -358,6 +364,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.LargeCustomDictionaryConfigOrBuilder
       getLargeCustomDictionaryOrBuilder() {
     if (typeCase_ == 3) {
@@ -378,6 +385,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the dictionary field is set.
    */
+  @java.lang.Override
   public boolean hasDictionary() {
     return typeCase_ == 4;
   }
@@ -392,6 +400,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The dictionary.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
     if (typeCase_ == 4) {
       return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
@@ -407,6 +416,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder() {
     if (typeCase_ == 4) {
       return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
@@ -426,6 +436,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the regex field is set.
    */
+  @java.lang.Override
   public boolean hasRegex() {
     return typeCase_ == 5;
   }
@@ -440,6 +451,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The regex.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
     if (typeCase_ == 5) {
       return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
@@ -455,6 +467,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder() {
     if (typeCase_ == 5) {
       return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
@@ -1137,6 +1150,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the largeCustomDictionary field is set.
      */
+    @java.lang.Override
     public boolean hasLargeCustomDictionary() {
       return typeCase_ == 3;
     }
@@ -1151,6 +1165,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The largeCustomDictionary.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary() {
       if (largeCustomDictionaryBuilder_ == null) {
         if (typeCase_ == 3) {
@@ -1287,6 +1302,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.LargeCustomDictionaryConfigOrBuilder
         getLargeCustomDictionaryOrBuilder() {
       if ((typeCase_ == 3) && (largeCustomDictionaryBuilder_ != null)) {
@@ -1348,6 +1364,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the dictionary field is set.
      */
+    @java.lang.Override
     public boolean hasDictionary() {
       return typeCase_ == 4;
     }
@@ -1362,6 +1379,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The dictionary.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
       if (dictionaryBuilder_ == null) {
         if (typeCase_ == 4) {
@@ -1494,6 +1512,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder() {
       if ((typeCase_ == 4) && (dictionaryBuilder_ != null)) {
         return dictionaryBuilder_.getMessageOrBuilder();
@@ -1554,6 +1573,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * @return Whether the regex field is set.
      */
+    @java.lang.Override
     public boolean hasRegex() {
       return typeCase_ == 5;
     }
@@ -1568,6 +1588,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The regex.
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
       if (regexBuilder_ == null) {
         if (typeCase_ == 5) {
@@ -1700,6 +1721,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder() {
       if ((typeCase_ == 5) && (regexBuilder_ != null)) {
         return regexBuilder_.getMessageOrBuilder();

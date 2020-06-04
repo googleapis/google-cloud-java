@@ -120,6 +120,7 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
    *
    * @return The approxNumPhrases.
    */
+  @java.lang.Override
   public long getApproxNumPhrases() {
     return approxNumPhrases_;
   }
@@ -453,6 +454,7 @@ public final class LargeCustomDictionaryStats extends com.google.protobuf.Genera
      *
      * @return The approxNumPhrases.
      */
+    @java.lang.Override
     public long getApproxNumPhrases() {
       return approxNumPhrases_;
     }

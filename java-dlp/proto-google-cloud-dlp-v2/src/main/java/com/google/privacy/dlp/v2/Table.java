@@ -301,6 +301,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.privacy.dlp.v2.Value> getValuesList() {
       return values_;
     }
@@ -313,6 +314,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.privacy.dlp.v2.ValueOrBuilder>
         getValuesOrBuilderList() {
       return values_;
@@ -326,6 +328,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
+    @java.lang.Override
     public int getValuesCount() {
       return values_.size();
     }
@@ -338,6 +341,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.Value getValues(int index) {
       return values_.get(index);
     }
@@ -350,6 +354,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.Value values = 1;</code>
      */
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ValueOrBuilder getValuesOrBuilder(int index) {
       return values_.get(index);
     }
@@ -1122,6 +1127,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getHeadersList() {
     return headers_;
   }
@@ -1134,6 +1140,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getHeadersOrBuilderList() {
     return headers_;
@@ -1147,6 +1154,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
+  @java.lang.Override
   public int getHeadersCount() {
     return headers_.size();
   }
@@ -1159,6 +1167,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getHeaders(int index) {
     return headers_.get(index);
   }
@@ -1171,6 +1180,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId headers = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getHeadersOrBuilder(int index) {
     return headers_.get(index);
   }
@@ -1186,6 +1196,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Table.Row> getRowsList() {
     return rows_;
   }
@@ -1198,6 +1209,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.Table.RowOrBuilder>
       getRowsOrBuilderList() {
     return rows_;
@@ -1211,6 +1223,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
+  @java.lang.Override
   public int getRowsCount() {
     return rows_.size();
   }
@@ -1223,6 +1236,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Table.Row getRows(int index) {
     return rows_.get(index);
   }
@@ -1235,6 +1249,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.privacy.dlp.v2.Table.Row rows = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.Table.RowOrBuilder getRowsOrBuilder(int index) {
     return rows_.get(index);
   }

@@ -123,6 +123,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
    *
    * @return The key.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKey() {
     return key_;
   }
@@ -455,6 +456,7 @@ public final class UnwrappedCryptoKey extends com.google.protobuf.GeneratedMessa
      *
      * @return The key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }

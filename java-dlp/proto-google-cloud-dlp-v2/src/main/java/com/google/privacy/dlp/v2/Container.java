@@ -180,6 +180,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The type.
    */
+  @java.lang.Override
   public java.lang.String getType() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +203,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for type.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +230,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +254,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -279,6 +283,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The fullPath.
    */
+  @java.lang.Override
   public java.lang.String getFullPath() {
     java.lang.Object ref = fullPath_;
     if (ref instanceof java.lang.String) {
@@ -304,6 +309,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for fullPath.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFullPathBytes() {
     java.lang.Object ref = fullPath_;
     if (ref instanceof java.lang.String) {
@@ -334,6 +340,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rootPath.
    */
+  @java.lang.Override
   public java.lang.String getRootPath() {
     java.lang.Object ref = rootPath_;
     if (ref instanceof java.lang.String) {
@@ -361,6 +368,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for rootPath.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRootPathBytes() {
     java.lang.Object ref = rootPath_;
     if (ref instanceof java.lang.String) {
@@ -391,6 +399,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The relativePath.
    */
+  @java.lang.Override
   public java.lang.String getRelativePath() {
     java.lang.Object ref = relativePath_;
     if (ref instanceof java.lang.String) {
@@ -418,6 +427,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for relativePath.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRelativePathBytes() {
     java.lang.Object ref = relativePath_;
     if (ref instanceof java.lang.String) {
@@ -446,6 +456,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -463,6 +474,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -478,6 +490,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -496,6 +509,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The version.
    */
+  @java.lang.Override
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -519,6 +533,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for version.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {

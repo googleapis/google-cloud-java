@@ -159,6 +159,7 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    * @return Whether the inspectTemplate field is set.
    */
+  @java.lang.Override
   public boolean hasInspectTemplate() {
     return inspectTemplate_ != null;
   }
@@ -224,6 +227,7 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    * @return The inspectTemplate.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate() {
     return inspectTemplate_ == null
         ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()
@@ -238,6 +242,7 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplateOrBuilder() {
     return getInspectTemplate();
   }
@@ -255,6 +260,7 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -269,6 +275,7 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -281,6 +288,7 @@ public final class UpdateInspectTemplateRequest extends com.google.protobuf.Gene
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

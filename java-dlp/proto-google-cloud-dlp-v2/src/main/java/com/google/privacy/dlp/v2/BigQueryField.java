@@ -146,6 +146,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the table field is set.
    */
+  @java.lang.Override
   public boolean hasTable() {
     return table_ != null;
   }
@@ -160,6 +161,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The table.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTable getTable() {
     return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
   }
@@ -172,6 +174,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.BigQueryTable table = 1;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder() {
     return getTable();
   }
@@ -189,6 +192,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the field field is set.
    */
+  @java.lang.Override
   public boolean hasField() {
     return field_ != null;
   }
@@ -203,6 +207,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The field.
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
@@ -215,6 +220,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.privacy.dlp.v2.FieldId field = 2;</code>
    */
+  @java.lang.Override
   public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
     return getField();
   }
