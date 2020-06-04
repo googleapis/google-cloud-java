@@ -144,6 +144,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the appEngineRoutingOverride field is set.
    */
+  @java.lang.Override
   public boolean hasAppEngineRoutingOverride() {
     return appEngineRoutingOverride_ != null;
   }
@@ -162,6 +163,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *
    * @return The appEngineRoutingOverride.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AppEngineRouting getAppEngineRoutingOverride() {
     return appEngineRoutingOverride_ == null
         ? com.google.cloud.tasks.v2beta2.AppEngineRouting.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing_override = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AppEngineRoutingOrBuilder
       getAppEngineRoutingOverrideOrBuilder() {
     return getAppEngineRoutingOverride();

@@ -146,6 +146,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +175,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the queue field is set.
    */
+  @java.lang.Override
   public boolean hasQueue() {
     return queue_ != null;
   }
@@ -217,6 +220,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The queue.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.Queue getQueue() {
     return queue_ == null ? com.google.cloud.tasks.v2beta2.Queue.getDefaultInstance() : queue_;
   }
@@ -231,6 +235,7 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.QueueOrBuilder getQueueOrBuilder() {
     return getQueue();
   }

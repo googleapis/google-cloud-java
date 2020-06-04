@@ -387,6 +387,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -495,6 +499,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -533,6 +538,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -558,6 +564,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the appEngineHttpRequest field is set.
    */
+  @java.lang.Override
   public boolean hasAppEngineHttpRequest() {
     return payloadTypeCase_ == 3;
   }
@@ -573,6 +580,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The appEngineHttpRequest.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.AppEngineHttpRequest getAppEngineHttpRequest() {
     if (payloadTypeCase_ == 3) {
       return (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_;
@@ -589,6 +597,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder
       getAppEngineHttpRequestOrBuilder() {
     if (payloadTypeCase_ == 3) {
@@ -610,6 +619,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the httpRequest field is set.
    */
+  @java.lang.Override
   public boolean hasHttpRequest() {
     return payloadTypeCase_ == 11;
   }
@@ -625,6 +635,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpRequest.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest() {
     if (payloadTypeCase_ == 11) {
       return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
@@ -641,6 +652,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder getHttpRequestOrBuilder() {
     if (payloadTypeCase_ == 11) {
       return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
@@ -663,6 +675,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the scheduleTime field is set.
    */
+  @java.lang.Override
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
   }
@@ -679,6 +692,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The scheduleTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -695,6 +709,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp schedule_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
     return getScheduleTime();
   }
@@ -713,6 +728,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -728,6 +744,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -741,6 +758,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -783,6 +801,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dispatchDeadline field is set.
    */
+  @java.lang.Override
   public boolean hasDispatchDeadline() {
     return dispatchDeadline_ != null;
   }
@@ -822,6 +841,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dispatchDeadline.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getDispatchDeadline() {
     return dispatchDeadline_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -861,6 +881,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDispatchDeadlineOrBuilder() {
     return getDispatchDeadline();
   }
@@ -880,6 +901,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dispatchCount.
    */
+  @java.lang.Override
   public int getDispatchCount() {
     return dispatchCount_;
   }
@@ -897,6 +919,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The responseCount.
    */
+  @java.lang.Override
   public int getResponseCount() {
     return responseCount_;
   }
@@ -916,6 +939,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the firstAttempt field is set.
    */
+  @java.lang.Override
   public boolean hasFirstAttempt() {
     return firstAttempt_ != null;
   }
@@ -932,6 +956,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The firstAttempt.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.Attempt getFirstAttempt() {
     return firstAttempt_ == null
         ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance()
@@ -948,6 +973,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.AttemptOrBuilder getFirstAttemptOrBuilder() {
     return getFirstAttempt();
   }
@@ -965,6 +991,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastAttempt field is set.
    */
+  @java.lang.Override
   public boolean hasLastAttempt() {
     return lastAttempt_ != null;
   }
@@ -979,6 +1006,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastAttempt.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.Attempt getLastAttempt() {
     return lastAttempt_ == null
         ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance()
@@ -993,6 +1021,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt last_attempt = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.AttemptOrBuilder getLastAttemptOrBuilder() {
     return getLastAttempt();
   }
@@ -1011,6 +1040,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for view.
    */
+  @java.lang.Override
   public int getViewValue() {
     return view_;
   }
@@ -1026,6 +1056,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The view.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.Task.View getView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2beta3.Task.View result =
@@ -1820,6 +1851,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the appEngineHttpRequest field is set.
      */
+    @java.lang.Override
     public boolean hasAppEngineHttpRequest() {
       return payloadTypeCase_ == 3;
     }
@@ -1835,6 +1867,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The appEngineHttpRequest.
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta3.AppEngineHttpRequest getAppEngineHttpRequest() {
       if (appEngineHttpRequestBuilder_ == null) {
         if (payloadTypeCase_ == 3) {
@@ -1977,6 +2010,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder
         getAppEngineHttpRequestOrBuilder() {
       if ((payloadTypeCase_ == 3) && (appEngineHttpRequestBuilder_ != null)) {
@@ -2040,6 +2074,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the httpRequest field is set.
      */
+    @java.lang.Override
     public boolean hasHttpRequest() {
       return payloadTypeCase_ == 11;
     }
@@ -2055,6 +2090,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The httpRequest.
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest() {
       if (httpRequestBuilder_ == null) {
         if (payloadTypeCase_ == 11) {
@@ -2193,6 +2229,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder getHttpRequestOrBuilder() {
       if ((payloadTypeCase_ == 11) && (httpRequestBuilder_ != null)) {
         return httpRequestBuilder_.getMessageOrBuilder();
@@ -3057,6 +3094,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dispatchCount.
      */
+    @java.lang.Override
     public int getDispatchCount() {
       return dispatchCount_;
     }
@@ -3112,6 +3150,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The responseCount.
      */
+    @java.lang.Override
     public int getResponseCount() {
       return responseCount_;
     }
@@ -3552,6 +3591,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for view.
      */
+    @java.lang.Override
     public int getViewValue() {
       return view_;
     }
@@ -3569,6 +3609,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
+
       view_ = value;
       onChanged();
       return this;
@@ -3585,6 +3626,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The view.
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta3.Task.View getView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2beta3.Task.View result =

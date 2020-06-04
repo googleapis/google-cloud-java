@@ -159,6 +159,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The attemptDispatchCount.
    */
+  @java.lang.Override
   public int getAttemptDispatchCount() {
     return attemptDispatchCount_;
   }
@@ -177,6 +178,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The attemptResponseCount.
    */
+  @java.lang.Override
   public int getAttemptResponseCount() {
     return attemptResponseCount_;
   }
@@ -197,6 +199,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the firstAttemptStatus field is set.
    */
+  @java.lang.Override
   public boolean hasFirstAttemptStatus() {
     return firstAttemptStatus_ != null;
   }
@@ -214,6 +217,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The firstAttemptStatus.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AttemptStatus getFirstAttemptStatus() {
     return firstAttemptStatus_ == null
         ? com.google.cloud.tasks.v2beta2.AttemptStatus.getDefaultInstance()
@@ -231,6 +235,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AttemptStatusOrBuilder getFirstAttemptStatusOrBuilder() {
     return getFirstAttemptStatus();
   }
@@ -249,6 +254,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastAttemptStatus field is set.
    */
+  @java.lang.Override
   public boolean hasLastAttemptStatus() {
     return lastAttemptStatus_ != null;
   }
@@ -264,6 +270,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastAttemptStatus.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AttemptStatus getLastAttemptStatus() {
     return lastAttemptStatus_ == null
         ? com.google.cloud.tasks.v2beta2.AttemptStatus.getDefaultInstance()
@@ -279,6 +286,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AttemptStatusOrBuilder getLastAttemptStatusOrBuilder() {
     return getLastAttemptStatus();
   }
@@ -683,6 +691,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The attemptDispatchCount.
      */
+    @java.lang.Override
     public int getAttemptDispatchCount() {
       return attemptDispatchCount_;
     }
@@ -739,6 +748,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The attemptResponseCount.
      */
+    @java.lang.Override
     public int getAttemptResponseCount() {
       return attemptResponseCount_;
     }

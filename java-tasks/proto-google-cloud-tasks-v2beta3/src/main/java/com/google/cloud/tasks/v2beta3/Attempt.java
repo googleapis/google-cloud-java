@@ -176,6 +176,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the scheduleTime field is set.
    */
+  @java.lang.Override
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
   }
@@ -191,6 +192,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The scheduleTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -206,6 +208,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
     return getScheduleTime();
   }
@@ -224,6 +227,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the dispatchTime field is set.
    */
+  @java.lang.Override
   public boolean hasDispatchTime() {
     return dispatchTime_ != null;
   }
@@ -239,6 +243,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dispatchTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDispatchTime() {
     return dispatchTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -254,6 +259,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDispatchTimeOrBuilder() {
     return getDispatchTime();
   }
@@ -272,6 +278,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the responseTime field is set.
    */
+  @java.lang.Override
   public boolean hasResponseTime() {
     return responseTime_ != null;
   }
@@ -287,6 +294,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The responseTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getResponseTime() {
     return responseTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -302,6 +310,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp response_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getResponseTimeOrBuilder() {
     return getResponseTime();
   }
@@ -321,6 +330,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the responseStatus field is set.
    */
+  @java.lang.Override
   public boolean hasResponseStatus() {
     return responseStatus_ != null;
   }
@@ -337,6 +347,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The responseStatus.
    */
+  @java.lang.Override
   public com.google.rpc.Status getResponseStatus() {
     return responseStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : responseStatus_;
   }
@@ -351,6 +362,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.rpc.Status response_status = 4;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getResponseStatusOrBuilder() {
     return getResponseStatus();
   }

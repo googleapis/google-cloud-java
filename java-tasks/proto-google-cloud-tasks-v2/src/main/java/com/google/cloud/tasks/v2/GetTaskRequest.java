@@ -135,6 +135,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -160,6 +161,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for responseView.
    */
+  @java.lang.Override
   public int getResponseViewValue() {
     return responseView_;
   }
@@ -217,6 +220,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The responseView.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2.Task.View result =
@@ -696,6 +700,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for responseView.
      */
+    @java.lang.Override
     public int getResponseViewValue() {
       return responseView_;
     }
@@ -721,6 +726,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
+
       responseView_ = value;
       onChanged();
       return this;
@@ -745,6 +751,7 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The responseView.
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2.Task.View result =

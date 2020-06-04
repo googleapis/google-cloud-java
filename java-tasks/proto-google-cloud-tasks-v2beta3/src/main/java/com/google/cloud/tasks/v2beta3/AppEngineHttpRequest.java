@@ -238,6 +238,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for httpMethod.
    */
+  @java.lang.Override
   public int getHttpMethodValue() {
     return httpMethod_;
   }
@@ -261,6 +262,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The httpMethod.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod() {
     @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2beta3.HttpMethod result =
@@ -285,6 +287,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the appEngineRouting field is set.
    */
+  @java.lang.Override
   public boolean hasAppEngineRouting() {
     return appEngineRouting_ != null;
   }
@@ -303,6 +306,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The appEngineRouting.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.AppEngineRouting getAppEngineRouting() {
     return appEngineRouting_ == null
         ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance()
@@ -321,6 +325,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder getAppEngineRoutingOrBuilder() {
     return getAppEngineRouting();
   }
@@ -342,6 +347,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The relativeUri.
    */
+  @java.lang.Override
   public java.lang.String getRelativeUri() {
     java.lang.Object ref = relativeUri_;
     if (ref instanceof java.lang.String) {
@@ -368,6 +374,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for relativeUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRelativeUriBytes() {
     java.lang.Object ref = relativeUri_;
     if (ref instanceof java.lang.String) {
@@ -446,6 +453,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
+  @java.lang.Override
   public boolean containsHeaders(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -453,6 +461,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     return internalGetHeaders().getMap().containsKey(key);
   }
   /** Use {@link #getHeadersMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
     return getHeadersMap();
@@ -498,6 +507,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
     return internalGetHeaders().getMap();
   }
@@ -542,6 +552,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -590,6 +601,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getHeadersOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -616,6 +628,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The body.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBody() {
     return body_;
   }
@@ -1112,6 +1125,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for httpMethod.
      */
+    @java.lang.Override
     public int getHttpMethodValue() {
       return httpMethod_;
     }
@@ -1137,6 +1151,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setHttpMethodValue(int value) {
+
       httpMethod_ = value;
       onChanged();
       return this;
@@ -1161,6 +1176,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The httpMethod.
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod() {
       @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2beta3.HttpMethod result =
@@ -1638,6 +1654,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
+    @java.lang.Override
     public boolean containsHeaders(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1645,6 +1662,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       return internalGetHeaders().getMap().containsKey(key);
     }
     /** Use {@link #getHeadersMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
@@ -1690,6 +1708,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
@@ -1734,6 +1753,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getHeadersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1783,6 +1803,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getHeadersOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1962,6 +1983,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The body.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBody() {
       return body_;
     }

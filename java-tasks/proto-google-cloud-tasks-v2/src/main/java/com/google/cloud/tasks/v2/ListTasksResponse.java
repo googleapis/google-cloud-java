@@ -137,6 +137,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.tasks.v2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.tasks.v2.Task> getTasksList() {
     return tasks_;
   }
@@ -149,6 +150,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.tasks.v2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.tasks.v2.TaskOrBuilder> getTasksOrBuilderList() {
     return tasks_;
   }
@@ -161,6 +163,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.tasks.v2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public int getTasksCount() {
     return tasks_.size();
   }
@@ -173,6 +176,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.tasks.v2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2.Task getTasks(int index) {
     return tasks_.get(index);
   }
@@ -185,6 +189,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.tasks.v2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2.TaskOrBuilder getTasksOrBuilder(int index) {
     return tasks_.get(index);
   }
@@ -206,6 +211,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +238,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

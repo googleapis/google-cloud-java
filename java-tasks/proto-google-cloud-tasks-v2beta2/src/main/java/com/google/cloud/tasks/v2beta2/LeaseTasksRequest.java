@@ -163,6 +163,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +189,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -219,6 +221,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The maxTasks.
    */
+  @java.lang.Override
   public int getMaxTasks() {
     return maxTasks_;
   }
@@ -251,6 +254,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the leaseDuration field is set.
    */
+  @java.lang.Override
   public boolean hasLeaseDuration() {
     return leaseDuration_ != null;
   }
@@ -280,6 +284,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The leaseDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getLeaseDuration() {
     return leaseDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -309,6 +314,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    * <code>.google.protobuf.Duration lease_duration = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getLeaseDurationOrBuilder() {
     return getLeaseDuration();
   }
@@ -335,6 +341,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for responseView.
    */
+  @java.lang.Override
   public int getResponseViewValue() {
     return responseView_;
   }
@@ -358,6 +365,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The responseView.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2beta2.Task.View result =
@@ -398,6 +406,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -440,6 +449,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -982,6 +992,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The maxTasks.
      */
+    @java.lang.Override
     public int getMaxTasks() {
       return maxTasks_;
     }
@@ -1374,6 +1385,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for responseView.
      */
+    @java.lang.Override
     public int getResponseViewValue() {
       return responseView_;
     }
@@ -1399,6 +1411,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
+
       responseView_ = value;
       onChanged();
       return this;
@@ -1423,6 +1436,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The responseView.
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2beta2.Task.View result =

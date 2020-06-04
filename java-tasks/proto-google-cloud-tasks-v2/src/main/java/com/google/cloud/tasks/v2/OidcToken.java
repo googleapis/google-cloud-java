@@ -141,6 +141,7 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serviceAccountEmail.
    */
+  @java.lang.Override
   public java.lang.String getServiceAccountEmail() {
     java.lang.Object ref = serviceAccountEmail_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for serviceAccountEmail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
     java.lang.Object ref = serviceAccountEmail_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The audience.
    */
+  @java.lang.Override
   public java.lang.String getAudience() {
     java.lang.Object ref = audience_;
     if (ref instanceof java.lang.String) {
@@ -216,6 +219,7 @@ public final class OidcToken extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for audience.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAudienceBytes() {
     java.lang.Object ref = audience_;
     if (ref instanceof java.lang.String) {

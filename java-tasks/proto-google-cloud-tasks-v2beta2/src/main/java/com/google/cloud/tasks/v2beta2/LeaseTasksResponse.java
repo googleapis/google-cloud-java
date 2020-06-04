@@ -130,6 +130,7 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.tasks.v2beta2.Task> getTasksList() {
     return tasks_;
   }
@@ -142,6 +143,7 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.tasks.v2beta2.TaskOrBuilder>
       getTasksOrBuilderList() {
     return tasks_;
@@ -155,6 +157,7 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public int getTasksCount() {
     return tasks_.size();
   }
@@ -167,6 +170,7 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.Task getTasks(int index) {
     return tasks_.get(index);
   }
@@ -179,6 +183,7 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.TaskOrBuilder getTasksOrBuilder(int index) {
     return tasks_.get(index);
   }

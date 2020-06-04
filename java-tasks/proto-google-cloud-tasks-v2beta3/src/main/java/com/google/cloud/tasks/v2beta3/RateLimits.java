@@ -141,6 +141,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxDispatchesPerSecond.
    */
+  @java.lang.Override
   public double getMaxDispatchesPerSecond() {
     return maxDispatchesPerSecond_;
   }
@@ -185,6 +186,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxBurstSize.
    */
+  @java.lang.Override
   public int getMaxBurstSize() {
     return maxBurstSize_;
   }
@@ -211,6 +213,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxConcurrentDispatches.
    */
+  @java.lang.Override
   public int getMaxConcurrentDispatches() {
     return maxConcurrentDispatches_;
   }
@@ -587,6 +590,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxDispatchesPerSecond.
      */
+    @java.lang.Override
     public double getMaxDispatchesPerSecond() {
       return maxDispatchesPerSecond_;
     }
@@ -679,6 +683,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxBurstSize.
      */
+    @java.lang.Override
     public int getMaxBurstSize() {
       return maxBurstSize_;
     }
@@ -793,6 +798,7 @@ public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxConcurrentDispatches.
      */
+    @java.lang.Override
     public int getMaxConcurrentDispatches() {
       return maxConcurrentDispatches_;
     }

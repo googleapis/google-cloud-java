@@ -124,6 +124,7 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
    *
    * @return The samplingRatio.
    */
+  @java.lang.Override
   public double getSamplingRatio() {
     return samplingRatio_;
   }
@@ -465,6 +466,7 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
      *
      * @return The samplingRatio.
      */
+    @java.lang.Override
     public double getSamplingRatio() {
       return samplingRatio_;
     }

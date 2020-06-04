@@ -148,6 +148,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -207,6 +209,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for responseView.
    */
+  @java.lang.Override
   public int getResponseViewValue() {
     return responseView_;
   }
@@ -230,6 +233,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The responseView.
    */
+  @java.lang.Override
   public com.google.cloud.tasks.v2.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2.Task.View result =
@@ -255,6 +259,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -278,6 +283,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -306,6 +312,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -822,6 +829,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for responseView.
      */
+    @java.lang.Override
     public int getResponseViewValue() {
       return responseView_;
     }
@@ -847,6 +855,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
+
       responseView_ = value;
       onChanged();
       return this;
@@ -871,6 +880,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The responseView.
      */
+    @java.lang.Override
     public com.google.cloud.tasks.v2.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2.Task.View result =
@@ -951,6 +961,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

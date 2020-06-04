@@ -133,6 +133,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The payload.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPayload() {
     return payload_;
   }
@@ -164,6 +165,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tag.
    */
+  @java.lang.Override
   public java.lang.String getTag() {
     java.lang.Object ref = tag_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +202,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for tag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTagBytes() {
     java.lang.Object ref = tag_;
     if (ref instanceof java.lang.String) {
@@ -558,6 +561,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The payload.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
     }

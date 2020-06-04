@@ -143,6 +143,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    * @return Whether the scheduleTime field is set.
    */
+  @java.lang.Override
   public boolean hasScheduleTime() {
     return scheduleTime_ != null;
   }
@@ -217,6 +220,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    *
    * @return The scheduleTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getScheduleTime() {
     return scheduleTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -236,6 +240,7 @@ public final class AcknowledgeTaskRequest extends com.google.protobuf.GeneratedM
    * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
     return getScheduleTime();
   }
