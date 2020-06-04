@@ -140,6 +140,7 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Evaluation evaluations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.Evaluation> getEvaluationsList() {
     return evaluations_;
   }
@@ -152,6 +153,7 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Evaluation evaluations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.EvaluationOrBuilder>
       getEvaluationsOrBuilderList() {
     return evaluations_;
@@ -165,6 +167,7 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Evaluation evaluations = 1;</code>
    */
+  @java.lang.Override
   public int getEvaluationsCount() {
     return evaluations_.size();
   }
@@ -177,6 +180,7 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Evaluation evaluations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.Evaluation getEvaluations(int index) {
     return evaluations_.get(index);
   }
@@ -189,6 +193,7 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Evaluation evaluations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationOrBuilder getEvaluationsOrBuilder(
       int index) {
     return evaluations_.get(index);
@@ -207,6 +212,7 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +235,7 @@ public final class SearchEvaluationsResponse extends com.google.protobuf.Generat
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

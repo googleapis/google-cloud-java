@@ -140,6 +140,7 @@ public final class ListEvaluationJobsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_jobs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.EvaluationJob>
       getEvaluationJobsList() {
     return evaluationJobs_;
@@ -153,6 +154,7 @@ public final class ListEvaluationJobsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_jobs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder>
       getEvaluationJobsOrBuilderList() {
     return evaluationJobs_;
@@ -166,6 +168,7 @@ public final class ListEvaluationJobsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_jobs = 1;</code>
    */
+  @java.lang.Override
   public int getEvaluationJobsCount() {
     return evaluationJobs_.size();
   }
@@ -178,6 +181,7 @@ public final class ListEvaluationJobsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_jobs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJob getEvaluationJobs(int index) {
     return evaluationJobs_.get(index);
   }
@@ -190,6 +194,7 @@ public final class ListEvaluationJobsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.EvaluationJob evaluation_jobs = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder getEvaluationJobsOrBuilder(
       int index) {
     return evaluationJobs_.get(index);
@@ -208,6 +213,7 @@ public final class ListEvaluationJobsResponse extends com.google.protobuf.Genera
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +236,7 @@ public final class ListEvaluationJobsResponse extends com.google.protobuf.Genera
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -202,6 +202,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsDestination field is set.
    */
+  @java.lang.Override
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
@@ -217,6 +218,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsDestination.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.GcsDestination getGcsDestination() {
     if (destinationCase_ == 1) {
       return (com.google.cloud.datalabeling.v1beta1.GcsDestination) destination_;
@@ -233,6 +235,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.GcsDestinationOrBuilder
       getGcsDestinationOrBuilder() {
     if (destinationCase_ == 1) {
@@ -255,6 +258,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsFolderDestination field is set.
    */
+  @java.lang.Override
   public boolean hasGcsFolderDestination() {
     return destinationCase_ == 2;
   }
@@ -271,6 +275,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsFolderDestination.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.GcsFolderDestination getGcsFolderDestination() {
     if (destinationCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.GcsFolderDestination) destination_;
@@ -288,6 +293,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.datalabeling.v1beta1.GcsFolderDestination gcs_folder_destination = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.GcsFolderDestinationOrBuilder
       getGcsFolderDestinationOrBuilder() {
     if (destinationCase_ == 2) {
@@ -702,6 +708,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsDestination field is set.
      */
+    @java.lang.Override
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
@@ -717,6 +724,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsDestination.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.GcsDestination getGcsDestination() {
       if (gcsDestinationBuilder_ == null) {
         if (destinationCase_ == 1) {
@@ -856,6 +864,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.GcsDestination gcs_destination = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.GcsDestinationOrBuilder
         getGcsDestinationOrBuilder() {
       if ((destinationCase_ == 1) && (gcsDestinationBuilder_ != null)) {
@@ -920,6 +929,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsFolderDestination field is set.
      */
+    @java.lang.Override
     public boolean hasGcsFolderDestination() {
       return destinationCase_ == 2;
     }
@@ -936,6 +946,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsFolderDestination.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.GcsFolderDestination getGcsFolderDestination() {
       if (gcsFolderDestinationBuilder_ == null) {
         if (destinationCase_ == 2) {
@@ -1085,6 +1096,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datalabeling.v1beta1.GcsFolderDestination gcs_folder_destination = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.GcsFolderDestinationOrBuilder
         getGcsFolderDestinationOrBuilder() {
       if ((destinationCase_ == 2) && (gcsFolderDestinationBuilder_ != null)) {

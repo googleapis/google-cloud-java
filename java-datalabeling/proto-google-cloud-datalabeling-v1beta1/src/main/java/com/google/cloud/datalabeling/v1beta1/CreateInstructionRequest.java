@@ -144,6 +144,7 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    *
    * @return Whether the instruction field is set.
    */
+  @java.lang.Override
   public boolean hasInstruction() {
     return instruction_ != null;
   }
@@ -212,6 +215,7 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    *
    * @return The instruction.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.Instruction getInstruction() {
     return instruction_ == null
         ? com.google.cloud.datalabeling.v1beta1.Instruction.getDefaultInstance()
@@ -228,6 +232,7 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
    * .google.cloud.datalabeling.v1beta1.Instruction instruction = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InstructionOrBuilder getInstructionOrBuilder() {
     return getInstruction();
   }

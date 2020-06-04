@@ -234,6 +234,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -258,6 +259,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -285,6 +287,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -309,6 +312,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -336,6 +340,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -360,6 +365,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -385,6 +391,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for annotationSource.
    */
+  @java.lang.Override
   public int getAnnotationSourceValue() {
     return annotationSource_;
   }
@@ -399,6 +406,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The annotationSource.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationSource result =
@@ -422,6 +430,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for annotationType.
    */
+  @java.lang.Override
   public int getAnnotationTypeValue() {
     return annotationType_;
   }
@@ -437,6 +446,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The annotationType.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationType result =
@@ -459,6 +469,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The exampleCount.
    */
+  @java.lang.Override
   public long getExampleCount() {
     return exampleCount_;
   }
@@ -477,6 +488,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The completedExampleCount.
    */
+  @java.lang.Override
   public long getCompletedExampleCount() {
     return completedExampleCount_;
   }
@@ -494,6 +506,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the labelStats field is set.
    */
+  @java.lang.Override
   public boolean hasLabelStats() {
     return labelStats_ != null;
   }
@@ -508,6 +521,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The labelStats.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelStats getLabelStats() {
     return labelStats_ == null
         ? com.google.cloud.datalabeling.v1beta1.LabelStats.getDefaultInstance()
@@ -522,6 +536,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelStatsOrBuilder getLabelStatsOrBuilder() {
     return getLabelStats();
   }
@@ -539,6 +554,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -553,6 +569,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -565,6 +582,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -582,6 +600,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -596,6 +615,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata getMetadata() {
     return metadata_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata.getDefaultInstance()
@@ -610,6 +630,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadata metadata = 10;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetMetadataOrBuilder
       getMetadataOrBuilder() {
     return getMetadata();
@@ -1581,6 +1602,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for annotationSource.
      */
+    @java.lang.Override
     public int getAnnotationSourceValue() {
       return annotationSource_;
     }
@@ -1597,6 +1619,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAnnotationSourceValue(int value) {
+
       annotationSource_ = value;
       onChanged();
       return this;
@@ -1612,6 +1635,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      *
      * @return The annotationSource.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationSource result =
@@ -1673,6 +1697,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for annotationType.
      */
+    @java.lang.Override
     public int getAnnotationTypeValue() {
       return annotationType_;
     }
@@ -1690,6 +1715,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAnnotationTypeValue(int value) {
+
       annotationType_ = value;
       onChanged();
       return this;
@@ -1706,6 +1732,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      *
      * @return The annotationType.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationType result =
@@ -1767,6 +1794,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      *
      * @return The exampleCount.
      */
+    @java.lang.Override
     public long getExampleCount() {
       return exampleCount_;
     }
@@ -1819,6 +1847,7 @@ public final class AnnotatedDataset extends com.google.protobuf.GeneratedMessage
      *
      * @return The completedExampleCount.
      */
+    @java.lang.Override
     public long getCompletedExampleCount() {
       return completedExampleCount_;
     }

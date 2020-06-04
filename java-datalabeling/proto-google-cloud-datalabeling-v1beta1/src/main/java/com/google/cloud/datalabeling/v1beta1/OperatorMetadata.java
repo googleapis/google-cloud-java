@@ -148,6 +148,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -165,6 +166,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The totalVotes.
    */
+  @java.lang.Override
   public int getTotalVotes() {
     return totalVotes_;
   }
@@ -182,6 +184,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
    *
    * @return The labelVotes.
    */
+  @java.lang.Override
   public int getLabelVotes() {
     return labelVotes_;
   }
@@ -646,6 +649,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      *
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
@@ -701,6 +705,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      *
      * @return The totalVotes.
      */
+    @java.lang.Override
     public int getTotalVotes() {
       return totalVotes_;
     }
@@ -752,6 +757,7 @@ public final class OperatorMetadata extends com.google.protobuf.GeneratedMessage
      *
      * @return The labelVotes.
      */
+    @java.lang.Override
     public int getLabelVotes() {
       return labelVotes_;
     }

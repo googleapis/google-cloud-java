@@ -155,6 +155,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * @return The instruction.
    */
+  @java.lang.Override
   public java.lang.String getInstruction() {
     java.lang.Object ref = instruction_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * @return The bytes for instruction.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstructionBytes() {
     java.lang.Object ref = instruction_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +205,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
@@ -217,6 +220,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder>
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
@@ -232,6 +236,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
@@ -246,6 +251,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
@@ -260,6 +266,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index) {
     return partialFailures_.get(index);
   }
@@ -277,6 +284,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -291,6 +299,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -303,6 +312,7 @@ public final class CreateInstructionMetadata extends com.google.protobuf.Generat
    *
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }

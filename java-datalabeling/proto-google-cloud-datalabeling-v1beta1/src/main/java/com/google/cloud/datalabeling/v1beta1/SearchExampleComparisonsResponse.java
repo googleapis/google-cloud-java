@@ -361,6 +361,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      * @return Whether the groundTruthExample field is set.
      */
+    @java.lang.Override
     public boolean hasGroundTruthExample() {
       return groundTruthExample_ != null;
     }
@@ -375,6 +376,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      * @return The groundTruthExample.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.Example getGroundTruthExample() {
       return groundTruthExample_ == null
           ? com.google.cloud.datalabeling.v1beta1.Example.getDefaultInstance()
@@ -389,6 +391,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      * <code>.google.cloud.datalabeling.v1beta1.Example ground_truth_example = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getGroundTruthExampleOrBuilder() {
       return getGroundTruthExample();
     }
@@ -404,6 +407,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.datalabeling.v1beta1.Example>
         getModelCreatedExamplesList() {
       return modelCreatedExamples_;
@@ -417,6 +421,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
         getModelCreatedExamplesOrBuilderList() {
       return modelCreatedExamples_;
@@ -430,6 +435,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
+    @java.lang.Override
     public int getModelCreatedExamplesCount() {
       return modelCreatedExamples_.size();
     }
@@ -442,6 +448,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.Example getModelCreatedExamples(int index) {
       return modelCreatedExamples_.get(index);
     }
@@ -454,6 +461,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
      *
      * <code>repeated .google.cloud.datalabeling.v1beta1.Example model_created_examples = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getModelCreatedExamplesOrBuilder(
         int index) {
       return modelCreatedExamples_.get(index);
@@ -1549,6 +1557,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison>
       getExampleComparisonsList() {
@@ -1565,6 +1574,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse
@@ -1583,6 +1593,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
    */
+  @java.lang.Override
   public int getExampleComparisonsCount() {
     return exampleComparisons_.size();
   }
@@ -1597,6 +1608,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison
       getExampleComparisons(int index) {
     return exampleComparisons_.get(index);
@@ -1612,6 +1624,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    * repeated .google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse.ExampleComparison example_comparisons = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse
           .ExampleComparisonOrBuilder
       getExampleComparisonsOrBuilder(int index) {
@@ -1631,6 +1644,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -1653,6 +1667,7 @@ public final class SearchExampleComparisonsResponse extends com.google.protobuf.
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

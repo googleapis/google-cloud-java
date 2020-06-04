@@ -120,6 +120,7 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The isMultiLabel.
    */
+  @java.lang.Override
   public boolean getIsMultiLabel() {
     return isMultiLabel_;
   }
@@ -456,6 +457,7 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The isMultiLabel.
      */
+    @java.lang.Override
     public boolean getIsMultiLabel() {
       return isMultiLabel_;
     }

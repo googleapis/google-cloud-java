@@ -144,6 +144,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    * @return Whether the job field is set.
    */
+  @java.lang.Override
   public boolean hasJob() {
     return job_ != null;
   }
@@ -212,6 +215,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    *
    * @return The job.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJob getJob() {
     return job_ == null
         ? com.google.cloud.datalabeling.v1beta1.EvaluationJob.getDefaultInstance()
@@ -228,6 +232,7 @@ public final class CreateEvaluationJobRequest extends com.google.protobuf.Genera
    * .google.cloud.datalabeling.v1beta1.EvaluationJob job = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobOrBuilder getJobOrBuilder() {
     return getJob();
   }

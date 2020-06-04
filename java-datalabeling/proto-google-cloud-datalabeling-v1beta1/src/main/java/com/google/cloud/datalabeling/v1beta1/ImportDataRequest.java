@@ -152,6 +152,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -220,6 +223,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.InputConfig.getDefaultInstance()
@@ -236,6 +240,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    * .google.cloud.datalabeling.v1beta1.InputConfig input_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -254,6 +259,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The userEmailAddress.
    */
+  @java.lang.Override
   public java.lang.String getUserEmailAddress() {
     java.lang.Object ref = userEmailAddress_;
     if (ref instanceof java.lang.String) {
@@ -277,6 +283,7 @@ public final class ImportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for userEmailAddress.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserEmailAddressBytes() {
     java.lang.Object ref = userEmailAddress_;
     if (ref instanceof java.lang.String) {

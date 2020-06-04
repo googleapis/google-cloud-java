@@ -168,6 +168,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +194,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -224,6 +226,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The annotatedDataset.
    */
+  @java.lang.Override
   public java.lang.String getAnnotatedDataset() {
     java.lang.Object ref = annotatedDataset_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +255,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for annotatedDataset.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotatedDatasetBytes() {
     java.lang.Object ref = annotatedDataset_;
     if (ref instanceof java.lang.String) {
@@ -277,6 +281,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -299,6 +304,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -326,6 +332,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -342,6 +349,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.OutputConfig.getDefaultInstance()
@@ -358,6 +366,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * .google.cloud.datalabeling.v1beta1.OutputConfig output_config = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }
@@ -376,6 +385,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The userEmailAddress.
    */
+  @java.lang.Override
   public java.lang.String getUserEmailAddress() {
     java.lang.Object ref = userEmailAddress_;
     if (ref instanceof java.lang.String) {
@@ -399,6 +409,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for userEmailAddress.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserEmailAddressBytes() {
     java.lang.Object ref = userEmailAddress_;
     if (ref instanceof java.lang.String) {

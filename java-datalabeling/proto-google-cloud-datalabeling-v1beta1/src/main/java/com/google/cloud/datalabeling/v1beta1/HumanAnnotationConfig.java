@@ -199,6 +199,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The instruction.
    */
+  @java.lang.Override
   public java.lang.String getInstruction() {
     java.lang.Object ref = instruction_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +222,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for instruction.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstructionBytes() {
     java.lang.Object ref = instruction_;
     if (ref instanceof java.lang.String) {
@@ -249,6 +251,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The annotatedDatasetDisplayName.
    */
+  @java.lang.Override
   public java.lang.String getAnnotatedDatasetDisplayName() {
     java.lang.Object ref = annotatedDatasetDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -274,6 +277,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for annotatedDatasetDisplayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotatedDatasetDisplayNameBytes() {
     java.lang.Object ref = annotatedDatasetDisplayName_;
     if (ref instanceof java.lang.String) {
@@ -301,6 +305,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The annotatedDatasetDescription.
    */
+  @java.lang.Override
   public java.lang.String getAnnotatedDatasetDescription() {
     java.lang.Object ref = annotatedDatasetDescription_;
     if (ref instanceof java.lang.String) {
@@ -325,6 +330,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for annotatedDatasetDescription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotatedDatasetDescriptionBytes() {
     java.lang.Object ref = annotatedDatasetDescription_;
     if (ref instanceof java.lang.String) {
@@ -351,6 +357,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The labelGroup.
    */
+  @java.lang.Override
   public java.lang.String getLabelGroup() {
     java.lang.Object ref = labelGroup_;
     if (ref instanceof java.lang.String) {
@@ -374,6 +381,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for labelGroup.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLabelGroupBytes() {
     java.lang.Object ref = labelGroup_;
     if (ref instanceof java.lang.String) {
@@ -403,6 +411,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -429,6 +438,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -457,6 +467,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The replicaCount.
    */
+  @java.lang.Override
   public int getReplicaCount() {
     return replicaCount_;
   }
@@ -477,6 +488,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the questionDuration field is set.
    */
+  @java.lang.Override
   public boolean hasQuestionDuration() {
     return questionDuration_ != null;
   }
@@ -494,6 +506,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The questionDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getQuestionDuration() {
     return questionDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -511,6 +524,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    * .google.protobuf.Duration question_duration = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getQuestionDurationOrBuilder() {
     return getQuestionDuration();
   }
@@ -606,6 +620,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The userEmailAddress.
    */
+  @java.lang.Override
   public java.lang.String getUserEmailAddress() {
     java.lang.Object ref = userEmailAddress_;
     if (ref instanceof java.lang.String) {
@@ -629,6 +644,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for userEmailAddress.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserEmailAddressBytes() {
     java.lang.Object ref = userEmailAddress_;
     if (ref instanceof java.lang.String) {
@@ -1718,6 +1734,7 @@ public final class HumanAnnotationConfig extends com.google.protobuf.GeneratedMe
      *
      * @return The replicaCount.
      */
+    @java.lang.Override
     public int getReplicaCount() {
       return replicaCount_;
     }

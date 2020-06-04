@@ -132,6 +132,7 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the operatorMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasOperatorMetadata() {
     return operatorMetadata_ != null;
   }
@@ -146,6 +147,7 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
    *
    * @return The operatorMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OperatorMetadata getOperatorMetadata() {
     return operatorMetadata_ == null
         ? com.google.cloud.datalabeling.v1beta1.OperatorMetadata.getDefaultInstance()
@@ -160,6 +162,7 @@ public final class AnnotationMetadata extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.cloud.datalabeling.v1beta1.OperatorMetadata operator_metadata = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OperatorMetadataOrBuilder
       getOperatorMetadataOrBuilder() {
     return getOperatorMetadata();

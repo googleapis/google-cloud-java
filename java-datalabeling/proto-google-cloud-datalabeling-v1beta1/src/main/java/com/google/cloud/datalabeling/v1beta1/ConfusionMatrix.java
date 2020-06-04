@@ -292,6 +292,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the annotationSpec field is set.
      */
+    @java.lang.Override
     public boolean hasAnnotationSpec() {
       return annotationSpec_ != null;
     }
@@ -306,6 +307,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      * @return The annotationSpec.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
       return annotationSpec_ == null
           ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
@@ -320,6 +322,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
         getAnnotationSpecOrBuilder() {
       return getAnnotationSpec();
@@ -339,6 +342,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      * @return The itemCount.
      */
+    @java.lang.Override
     public int getItemCount() {
       return itemCount_;
     }
@@ -908,6 +912,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
        *
        * @return The itemCount.
        */
+      @java.lang.Override
       public int getItemCount() {
         return itemCount_;
       }
@@ -1254,6 +1259,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the annotationSpec field is set.
      */
+    @java.lang.Override
     public boolean hasAnnotationSpec() {
       return annotationSpec_ != null;
     }
@@ -1268,6 +1274,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      * @return The annotationSpec.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
       return annotationSpec_ == null
           ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
@@ -1282,6 +1289,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
         getAnnotationSpecOrBuilder() {
       return getAnnotationSpec();
@@ -1303,6 +1311,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      * repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry entries = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry>
         getEntriesList() {
@@ -1320,6 +1329,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      * repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry entries = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntryOrBuilder>
@@ -1338,6 +1348,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      * repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry entries = 2;
      * </code>
      */
+    @java.lang.Override
     public int getEntriesCount() {
       return entries_.size();
     }
@@ -1353,6 +1364,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      * repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry entries = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry getEntries(
         int index) {
       return entries_.get(index);
@@ -1369,6 +1381,7 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
      * repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntry entries = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.ConfusionMatrixEntryOrBuilder
         getEntriesOrBuilder(int index) {
       return entries_.get(index);
@@ -2451,24 +2464,29 @@ public final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV
   public static final int ROW_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row> row_;
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row> getRowList() {
     return row_;
   }
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.RowOrBuilder>
       getRowOrBuilderList() {
     return row_;
   }
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
+  @java.lang.Override
   public int getRowCount() {
     return row_.size();
   }
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row getRow(int index) {
     return row_.get(index);
   }
   /** <code>repeated .google.cloud.datalabeling.v1beta1.ConfusionMatrix.Row row = 1;</code> */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.RowOrBuilder getRowOrBuilder(
       int index) {
     return row_.get(index);

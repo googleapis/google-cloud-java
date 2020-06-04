@@ -147,6 +147,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    *
    * @return The allowMultiLabel.
    */
+  @java.lang.Override
   public boolean getAllowMultiLabel() {
     return allowMultiLabel_;
   }
@@ -164,6 +165,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    *
    * @return The annotationSpecSet.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +188,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    *
    * @return The bytes for annotationSpecSet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +216,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    *
    * @return Whether the sentimentConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSentimentConfig() {
     return sentimentConfig_ != null;
   }
@@ -229,6 +233,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    *
    * @return The sentimentConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SentimentConfig getSentimentConfig() {
     return sentimentConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.SentimentConfig.getDefaultInstance()
@@ -245,6 +250,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
    * .google.cloud.datalabeling.v1beta1.SentimentConfig sentiment_config = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SentimentConfigOrBuilder
       getSentimentConfigOrBuilder() {
     return getSentimentConfig();
@@ -628,6 +634,7 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
      *
      * @return The allowMultiLabel.
      */
+    @java.lang.Override
     public boolean getAllowMultiLabel() {
       return allowMultiLabel_;
     }

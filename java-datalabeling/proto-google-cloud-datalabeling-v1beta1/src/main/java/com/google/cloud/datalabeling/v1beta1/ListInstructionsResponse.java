@@ -140,6 +140,7 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Instruction instructions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.Instruction> getInstructionsList() {
     return instructions_;
   }
@@ -152,6 +153,7 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Instruction instructions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.InstructionOrBuilder>
       getInstructionsOrBuilderList() {
     return instructions_;
@@ -165,6 +167,7 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Instruction instructions = 1;</code>
    */
+  @java.lang.Override
   public int getInstructionsCount() {
     return instructions_.size();
   }
@@ -177,6 +180,7 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Instruction instructions = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.Instruction getInstructions(int index) {
     return instructions_.get(index);
   }
@@ -189,6 +193,7 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Instruction instructions = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InstructionOrBuilder getInstructionsOrBuilder(
       int index) {
     return instructions_.get(index);
@@ -207,6 +212,7 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +235,7 @@ public final class ListInstructionsResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

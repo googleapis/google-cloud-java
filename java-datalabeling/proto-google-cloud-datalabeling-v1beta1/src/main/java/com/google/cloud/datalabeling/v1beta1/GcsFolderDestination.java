@@ -124,6 +124,7 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
    *
    * @return The outputFolderUri.
    */
+  @java.lang.Override
   public java.lang.String getOutputFolderUri() {
     java.lang.Object ref = outputFolderUri_;
     if (ref instanceof java.lang.String) {
@@ -146,6 +147,7 @@ public final class GcsFolderDestination extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for outputFolderUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutputFolderUriBytes() {
     java.lang.Object ref = outputFolderUri_;
     if (ref instanceof java.lang.String) {

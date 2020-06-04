@@ -229,6 +229,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +253,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -277,6 +279,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -299,6 +302,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -325,6 +329,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -348,6 +353,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -373,6 +379,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -387,6 +394,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -399,6 +407,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -416,6 +425,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -430,6 +440,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -442,6 +453,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -459,6 +471,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for dataType.
    */
+  @java.lang.Override
   public int getDataTypeValue() {
     return dataType_;
   }
@@ -473,6 +486,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataType.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.DataType getDataType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.DataType result =
@@ -499,6 +513,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the csvInstruction field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean hasCsvInstruction() {
     return csvInstruction_ != null;
@@ -520,6 +535,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The csvInstruction.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.datalabeling.v1beta1.CsvInstruction getCsvInstruction() {
     return csvInstruction_ == null
@@ -541,6 +557,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.datalabeling.v1beta1.CsvInstruction csv_instruction = 7 [deprecated = true];
    * </code>
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.datalabeling.v1beta1.CsvInstructionOrBuilder
       getCsvInstructionOrBuilder() {
@@ -561,6 +578,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pdfInstruction field is set.
    */
+  @java.lang.Override
   public boolean hasPdfInstruction() {
     return pdfInstruction_ != null;
   }
@@ -576,6 +594,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pdfInstruction.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PdfInstruction getPdfInstruction() {
     return pdfInstruction_ == null
         ? com.google.cloud.datalabeling.v1beta1.PdfInstruction.getDefaultInstance()
@@ -591,6 +610,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.PdfInstruction pdf_instruction = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PdfInstructionOrBuilder
       getPdfInstructionOrBuilder() {
     return getPdfInstruction();
@@ -1883,6 +1903,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for dataType.
      */
+    @java.lang.Override
     public int getDataTypeValue() {
       return dataType_;
     }
@@ -1899,6 +1920,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataTypeValue(int value) {
+
       dataType_ = value;
       onChanged();
       return this;
@@ -1914,6 +1936,7 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dataType.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.DataType getDataType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.DataType result =

@@ -169,6 +169,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return Whether the annotationSpec field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
   }
@@ -183,6 +184,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return The annotationSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
@@ -197,6 +199,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
     return getAnnotationSpec();
@@ -215,6 +218,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return Whether the timeSegment field is set.
    */
+  @java.lang.Override
   public boolean hasTimeSegment() {
     return timeSegment_ != null;
   }
@@ -229,6 +233,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * @return The timeSegment.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TimeSegment getTimeSegment() {
     return timeSegment_ == null
         ? com.google.cloud.datalabeling.v1beta1.TimeSegment.getDefaultInstance()
@@ -243,6 +248,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder() {
     return getTimeSegment();
   }
@@ -261,6 +267,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * repeated .google.cloud.datalabeling.v1beta1.ObjectTrackingFrame object_tracking_frames = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame>
       getObjectTrackingFramesList() {
     return objectTrackingFrames_;
@@ -276,6 +283,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * repeated .google.cloud.datalabeling.v1beta1.ObjectTrackingFrame object_tracking_frames = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrameOrBuilder>
       getObjectTrackingFramesOrBuilderList() {
@@ -292,6 +300,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * repeated .google.cloud.datalabeling.v1beta1.ObjectTrackingFrame object_tracking_frames = 3;
    * </code>
    */
+  @java.lang.Override
   public int getObjectTrackingFramesCount() {
     return objectTrackingFrames_.size();
   }
@@ -306,6 +315,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * repeated .google.cloud.datalabeling.v1beta1.ObjectTrackingFrame object_tracking_frames = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame getObjectTrackingFrames(
       int index) {
     return objectTrackingFrames_.get(index);
@@ -321,6 +331,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    * repeated .google.cloud.datalabeling.v1beta1.ObjectTrackingFrame object_tracking_frames = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrameOrBuilder
       getObjectTrackingFramesOrBuilder(int index) {
     return objectTrackingFrames_.get(index);

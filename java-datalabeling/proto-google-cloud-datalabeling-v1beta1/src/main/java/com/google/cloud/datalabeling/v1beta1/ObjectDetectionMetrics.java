@@ -131,6 +131,7 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
    *
    * @return Whether the prCurve field is set.
    */
+  @java.lang.Override
   public boolean hasPrCurve() {
     return prCurve_ != null;
   }
@@ -145,6 +146,7 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
    *
    * @return The prCurve.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve() {
     return prCurve_ == null
         ? com.google.cloud.datalabeling.v1beta1.PrCurve.getDefaultInstance()
@@ -159,6 +161,7 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PrCurveOrBuilder getPrCurveOrBuilder() {
     return getPrCurve();
   }

@@ -149,6 +149,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the prCurve field is set.
    */
+  @java.lang.Override
   public boolean hasPrCurve() {
     return prCurve_ != null;
   }
@@ -164,6 +165,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    * @return The prCurve.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve() {
     return prCurve_ == null
         ? com.google.cloud.datalabeling.v1beta1.PrCurve.getDefaultInstance()
@@ -179,6 +181,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.datalabeling.v1beta1.PrCurve pr_curve = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PrCurveOrBuilder getPrCurveOrBuilder() {
     return getPrCurve();
   }
@@ -196,6 +199,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the confusionMatrix field is set.
    */
+  @java.lang.Override
   public boolean hasConfusionMatrix() {
     return confusionMatrix_ != null;
   }
@@ -210,6 +214,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    * @return The confusionMatrix.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ConfusionMatrix getConfusionMatrix() {
     return confusionMatrix_ == null
         ? com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.getDefaultInstance()
@@ -224,6 +229,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.cloud.datalabeling.v1beta1.ConfusionMatrix confusion_matrix = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ConfusionMatrixOrBuilder
       getConfusionMatrixOrBuilder() {
     return getConfusionMatrix();

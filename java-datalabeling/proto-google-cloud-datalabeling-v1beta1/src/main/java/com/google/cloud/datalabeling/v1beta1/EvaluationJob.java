@@ -413,6 +413,10 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -462,6 +466,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -486,6 +491,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -512,6 +518,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -535,6 +542,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -560,6 +568,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -574,6 +583,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJob.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.EvaluationJob.State result =
@@ -604,6 +614,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The schedule.
    */
+  @java.lang.Override
   public java.lang.String getSchedule() {
     java.lang.Object ref = schedule_;
     if (ref instanceof java.lang.String) {
@@ -634,6 +645,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for schedule.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getScheduleBytes() {
     java.lang.Object ref = schedule_;
     if (ref instanceof java.lang.String) {
@@ -664,6 +676,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The modelVersion.
    */
+  @java.lang.Override
   public java.lang.String getModelVersion() {
     java.lang.Object ref = modelVersion_;
     if (ref instanceof java.lang.String) {
@@ -691,6 +704,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for modelVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelVersionBytes() {
     java.lang.Object ref = modelVersion_;
     if (ref instanceof java.lang.String) {
@@ -716,6 +730,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the evaluationJobConfig field is set.
    */
+  @java.lang.Override
   public boolean hasEvaluationJobConfig() {
     return evaluationJobConfig_ != null;
   }
@@ -730,6 +745,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The evaluationJobConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig getEvaluationJobConfig() {
     return evaluationJobConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig.getDefaultInstance()
@@ -744,6 +760,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationJobConfig evaluation_job_config = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobConfigOrBuilder
       getEvaluationJobConfigOrBuilder() {
     return getEvaluationJobConfig();
@@ -766,6 +783,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The annotationSpecSet.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -792,6 +810,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for annotationSpecSet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -821,6 +840,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The labelMissingGroundTruth.
    */
+  @java.lang.Override
   public boolean getLabelMissingGroundTruth() {
     return labelMissingGroundTruth_;
   }
@@ -837,6 +857,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.Attempt> getAttemptsList() {
     return attempts_;
   }
@@ -850,6 +871,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AttemptOrBuilder>
       getAttemptsOrBuilderList() {
     return attempts_;
@@ -864,6 +886,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
    */
+  @java.lang.Override
   public int getAttemptsCount() {
     return attempts_.size();
   }
@@ -877,6 +900,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.Attempt getAttempts(int index) {
     return attempts_.get(index);
   }
@@ -890,6 +914,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AttemptOrBuilder getAttemptsOrBuilder(int index) {
     return attempts_.get(index);
   }
@@ -907,6 +932,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -921,6 +947,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -933,6 +960,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -1709,6 +1737,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1725,6 +1754,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1740,6 +1770,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.EvaluationJob.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.EvaluationJob.State result =
@@ -2406,6 +2437,7 @@ public final class EvaluationJob extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The labelMissingGroundTruth.
      */
+    @java.lang.Override
     public boolean getLabelMissingGroundTruth() {
       return labelMissingGroundTruth_;
     }

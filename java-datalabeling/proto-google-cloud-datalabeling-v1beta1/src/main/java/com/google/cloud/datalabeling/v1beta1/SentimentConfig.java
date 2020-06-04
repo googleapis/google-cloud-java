@@ -122,6 +122,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enableLabelSentimentSelection.
    */
+  @java.lang.Override
   public boolean getEnableLabelSentimentSelection() {
     return enableLabelSentimentSelection_;
   }
@@ -461,6 +462,7 @@ public final class SentimentConfig extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enableLabelSentimentSelection.
      */
+    @java.lang.Override
     public boolean getEnableLabelSentimentSelection() {
       return enableLabelSentimentSelection_;
     }

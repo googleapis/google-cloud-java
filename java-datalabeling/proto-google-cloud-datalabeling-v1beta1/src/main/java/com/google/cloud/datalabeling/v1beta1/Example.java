@@ -246,6 +246,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the imagePayload field is set.
    */
+  @java.lang.Override
   public boolean hasImagePayload() {
     return payloadCase_ == 2;
   }
@@ -260,6 +261,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imagePayload.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload() {
     if (payloadCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.ImagePayload) payload_;
@@ -275,6 +277,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ImagePayloadOrBuilder getImagePayloadOrBuilder() {
     if (payloadCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.ImagePayload) payload_;
@@ -294,6 +297,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the textPayload field is set.
    */
+  @java.lang.Override
   public boolean hasTextPayload() {
     return payloadCase_ == 6;
   }
@@ -308,6 +312,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The textPayload.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload() {
     if (payloadCase_ == 6) {
       return (com.google.cloud.datalabeling.v1beta1.TextPayload) payload_;
@@ -323,6 +328,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextPayloadOrBuilder getTextPayloadOrBuilder() {
     if (payloadCase_ == 6) {
       return (com.google.cloud.datalabeling.v1beta1.TextPayload) payload_;
@@ -342,6 +348,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the videoPayload field is set.
    */
+  @java.lang.Override
   public boolean hasVideoPayload() {
     return payloadCase_ == 7;
   }
@@ -356,6 +363,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The videoPayload.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload() {
     if (payloadCase_ == 7) {
       return (com.google.cloud.datalabeling.v1beta1.VideoPayload) payload_;
@@ -371,6 +379,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.VideoPayloadOrBuilder getVideoPayloadOrBuilder() {
     if (payloadCase_ == 7) {
       return (com.google.cloud.datalabeling.v1beta1.VideoPayload) payload_;
@@ -393,6 +402,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -417,6 +427,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -441,6 +452,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Annotation annotations = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.Annotation> getAnnotationsList() {
     return annotations_;
   }
@@ -454,6 +466,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Annotation annotations = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AnnotationOrBuilder>
       getAnnotationsOrBuilderList() {
     return annotations_;
@@ -468,6 +481,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Annotation annotations = 5;</code>
    */
+  @java.lang.Override
   public int getAnnotationsCount() {
     return annotations_.size();
   }
@@ -481,6 +495,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Annotation annotations = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.Annotation getAnnotations(int index) {
     return annotations_.get(index);
   }
@@ -494,6 +509,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Annotation annotations = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationOrBuilder getAnnotationsOrBuilder(
       int index) {
     return annotations_.get(index);
@@ -1003,6 +1019,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the imagePayload field is set.
      */
+    @java.lang.Override
     public boolean hasImagePayload() {
       return payloadCase_ == 2;
     }
@@ -1017,6 +1034,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The imagePayload.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload() {
       if (imagePayloadBuilder_ == null) {
         if (payloadCase_ == 2) {
@@ -1150,6 +1168,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.ImagePayload image_payload = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ImagePayloadOrBuilder getImagePayloadOrBuilder() {
       if ((payloadCase_ == 2) && (imagePayloadBuilder_ != null)) {
         return imagePayloadBuilder_.getMessageOrBuilder();
@@ -1210,6 +1229,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textPayload field is set.
      */
+    @java.lang.Override
     public boolean hasTextPayload() {
       return payloadCase_ == 6;
     }
@@ -1224,6 +1244,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textPayload.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload() {
       if (textPayloadBuilder_ == null) {
         if (payloadCase_ == 6) {
@@ -1356,6 +1377,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.TextPayload text_payload = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextPayloadOrBuilder getTextPayloadOrBuilder() {
       if ((payloadCase_ == 6) && (textPayloadBuilder_ != null)) {
         return textPayloadBuilder_.getMessageOrBuilder();
@@ -1416,6 +1438,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the videoPayload field is set.
      */
+    @java.lang.Override
     public boolean hasVideoPayload() {
       return payloadCase_ == 7;
     }
@@ -1430,6 +1453,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The videoPayload.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload() {
       if (videoPayloadBuilder_ == null) {
         if (payloadCase_ == 7) {
@@ -1563,6 +1587,7 @@ public final class Example extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.VideoPayload video_payload = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.VideoPayloadOrBuilder getVideoPayloadOrBuilder() {
       if ((payloadCase_ == 7) && (videoPayloadBuilder_ != null)) {
         return videoPayloadBuilder_.getMessageOrBuilder();

@@ -124,6 +124,7 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The textContent.
    */
+  @java.lang.Override
   public java.lang.String getTextContent() {
     java.lang.Object ref = textContent_;
     if (ref instanceof java.lang.String) {
@@ -146,6 +147,7 @@ public final class TextPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for textContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTextContentBytes() {
     java.lang.Object ref = textContent_;
     if (ref instanceof java.lang.String) {

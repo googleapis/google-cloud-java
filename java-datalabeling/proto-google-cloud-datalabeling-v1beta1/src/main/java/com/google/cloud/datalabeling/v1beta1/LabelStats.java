@@ -168,6 +168,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, int64&gt; example_count = 1;</code>
    */
+  @java.lang.Override
   public boolean containsExampleCount(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -175,6 +176,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     return internalGetExampleCount().getMap().containsKey(key);
   }
   /** Use {@link #getExampleCountMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getExampleCount() {
     return getExampleCountMap();
@@ -192,6 +194,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, int64&gt; example_count = 1;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.Long> getExampleCountMap() {
     return internalGetExampleCount().getMap();
   }
@@ -208,6 +211,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, int64&gt; example_count = 1;</code>
    */
+  @java.lang.Override
   public long getExampleCountOrDefault(java.lang.String key, long defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -228,6 +232,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, int64&gt; example_count = 1;</code>
    */
+  @java.lang.Override
   public long getExampleCountOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -625,6 +630,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, int64&gt; example_count = 1;</code>
      */
+    @java.lang.Override
     public boolean containsExampleCount(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -632,6 +638,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       return internalGetExampleCount().getMap().containsKey(key);
     }
     /** Use {@link #getExampleCountMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getExampleCount() {
       return getExampleCountMap();
@@ -649,6 +656,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, int64&gt; example_count = 1;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.Long> getExampleCountMap() {
       return internalGetExampleCount().getMap();
     }
@@ -665,6 +673,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, int64&gt; example_count = 1;</code>
      */
+    @java.lang.Override
     public long getExampleCountOrDefault(java.lang.String key, long defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -685,6 +694,7 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, int64&gt; example_count = 1;</code>
      */
+    @java.lang.Override
     public long getExampleCountOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

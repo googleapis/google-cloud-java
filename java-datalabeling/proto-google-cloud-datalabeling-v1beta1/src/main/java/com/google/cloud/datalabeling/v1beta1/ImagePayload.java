@@ -146,6 +146,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageThumbnail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageThumbnail() {
     return imageThumbnail_;
   }
@@ -210,6 +213,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The imageUri.
    */
+  @java.lang.Override
   public java.lang.String getImageUri() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +236,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for imageUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageUriBytes() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +262,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The signedUri.
    */
+  @java.lang.Override
   public java.lang.String getSignedUri() {
     java.lang.Object ref = signedUri_;
     if (ref instanceof java.lang.String) {
@@ -279,6 +285,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for signedUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignedUriBytes() {
     java.lang.Object ref = signedUri_;
     if (ref instanceof java.lang.String) {
@@ -774,6 +781,7 @@ public final class ImagePayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The imageThumbnail.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getImageThumbnail() {
       return imageThumbnail_;
     }

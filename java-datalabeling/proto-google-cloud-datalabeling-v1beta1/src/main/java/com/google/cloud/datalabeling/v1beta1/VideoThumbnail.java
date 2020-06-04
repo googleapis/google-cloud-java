@@ -137,6 +137,7 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The thumbnail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getThumbnail() {
     return thumbnail_;
   }
@@ -155,6 +156,7 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeOffset field is set.
    */
+  @java.lang.Override
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
   }
@@ -170,6 +172,7 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
@@ -183,6 +186,7 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
     return getTimeOffset();
   }
@@ -544,6 +548,7 @@ public final class VideoThumbnail extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The thumbnail.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getThumbnail() {
       return thumbnail_;
     }

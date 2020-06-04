@@ -150,6 +150,7 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    *
    * @return Whether the annotationSpec field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
   }
@@ -164,6 +165,7 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    *
    * @return The annotationSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
@@ -178,6 +180,7 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
     return getAnnotationSpec();
@@ -196,6 +199,7 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    *
    * @return Whether the sequentialSegment field is set.
    */
+  @java.lang.Override
   public boolean hasSequentialSegment() {
     return sequentialSegment_ != null;
   }
@@ -210,6 +214,7 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    *
    * @return The sequentialSegment.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SequentialSegment getSequentialSegment() {
     return sequentialSegment_ == null
         ? com.google.cloud.datalabeling.v1beta1.SequentialSegment.getDefaultInstance()
@@ -224,6 +229,7 @@ public final class TextEntityExtractionAnnotation extends com.google.protobuf.Ge
    *
    * <code>.google.cloud.datalabeling.v1beta1.SequentialSegment sequential_segment = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SequentialSegmentOrBuilder
       getSequentialSegmentOrBuilder() {
     return getSequentialSegment();

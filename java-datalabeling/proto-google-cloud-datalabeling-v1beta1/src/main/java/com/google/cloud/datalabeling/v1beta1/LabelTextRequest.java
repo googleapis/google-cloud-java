@@ -287,6 +287,10 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -384,6 +388,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the textClassificationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasTextClassificationConfig() {
     return requestConfigCase_ == 4;
   }
@@ -402,6 +407,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The textClassificationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
       getTextClassificationConfig() {
     if (requestConfigCase_ == 4) {
@@ -422,6 +428,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextClassificationConfigOrBuilder
       getTextClassificationConfigOrBuilder() {
     if (requestConfigCase_ == 4) {
@@ -446,6 +453,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the textEntityExtractionConfig field is set.
    */
+  @java.lang.Override
   public boolean hasTextEntityExtractionConfig() {
     return requestConfigCase_ == 5;
   }
@@ -464,6 +472,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The textEntityExtractionConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig
       getTextEntityExtractionConfig() {
     if (requestConfigCase_ == 5) {
@@ -484,6 +493,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfigOrBuilder
       getTextEntityExtractionConfigOrBuilder() {
     if (requestConfigCase_ == 5) {
@@ -508,6 +518,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -533,6 +544,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -560,6 +572,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the basicConfig field is set.
    */
+  @java.lang.Override
   public boolean hasBasicConfig() {
     return basicConfig_ != null;
   }
@@ -576,6 +589,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The basicConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
     return basicConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
@@ -592,6 +606,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getBasicConfigOrBuilder() {
     return getBasicConfig();
@@ -612,6 +627,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for feature.
    */
+  @java.lang.Override
   public int getFeatureValue() {
     return feature_;
   }
@@ -628,6 +644,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The feature.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature getFeature() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature result =
@@ -1113,6 +1130,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the textClassificationConfig field is set.
      */
+    @java.lang.Override
     public boolean hasTextClassificationConfig() {
       return requestConfigCase_ == 4;
     }
@@ -1131,6 +1149,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The textClassificationConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
         getTextClassificationConfig() {
       if (textClassificationConfigBuilder_ == null) {
@@ -1294,6 +1313,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextClassificationConfigOrBuilder
         getTextClassificationConfigOrBuilder() {
       if ((requestConfigCase_ == 4) && (textClassificationConfigBuilder_ != null)) {
@@ -1364,6 +1384,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the textEntityExtractionConfig field is set.
      */
+    @java.lang.Override
     public boolean hasTextEntityExtractionConfig() {
       return requestConfigCase_ == 5;
     }
@@ -1382,6 +1403,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The textEntityExtractionConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig
         getTextEntityExtractionConfig() {
       if (textEntityExtractionConfigBuilder_ == null) {
@@ -1547,6 +1569,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * .google.cloud.datalabeling.v1beta1.TextEntityExtractionConfig text_entity_extraction_config = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextEntityExtractionConfigOrBuilder
         getTextEntityExtractionConfigOrBuilder() {
       if ((requestConfigCase_ == 5) && (textEntityExtractionConfigBuilder_ != null)) {
@@ -1941,6 +1964,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for feature.
      */
+    @java.lang.Override
     public int getFeatureValue() {
       return feature_;
     }
@@ -1959,6 +1983,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
+
       feature_ = value;
       onChanged();
       return this;
@@ -1976,6 +2001,7 @@ public final class LabelTextRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The feature.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature getFeature() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.LabelTextRequest.Feature result =

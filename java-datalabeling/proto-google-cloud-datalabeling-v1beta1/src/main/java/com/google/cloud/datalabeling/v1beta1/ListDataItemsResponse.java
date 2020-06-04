@@ -139,6 +139,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.DataItem data_items = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.DataItem> getDataItemsList() {
     return dataItems_;
   }
@@ -151,6 +152,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.DataItem data_items = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.DataItemOrBuilder>
       getDataItemsOrBuilderList() {
     return dataItems_;
@@ -164,6 +166,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.DataItem data_items = 1;</code>
    */
+  @java.lang.Override
   public int getDataItemsCount() {
     return dataItems_.size();
   }
@@ -176,6 +179,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.DataItem data_items = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.DataItem getDataItems(int index) {
     return dataItems_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.DataItem data_items = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.DataItemOrBuilder getDataItemsOrBuilder(int index) {
     return dataItems_.get(index);
   }
@@ -205,6 +210,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +233,7 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

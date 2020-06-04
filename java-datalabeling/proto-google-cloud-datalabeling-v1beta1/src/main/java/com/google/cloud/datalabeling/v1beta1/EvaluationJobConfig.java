@@ -349,6 +349,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the imageClassificationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasImageClassificationConfig() {
     return humanAnnotationRequestConfigCase_ == 4;
   }
@@ -370,6 +371,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The imageClassificationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
       getImageClassificationConfig() {
     if (humanAnnotationRequestConfigCase_ == 4) {
@@ -394,6 +396,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfigOrBuilder
       getImageClassificationConfigOrBuilder() {
     if (humanAnnotationRequestConfigCase_ == 4) {
@@ -418,6 +421,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the boundingPolyConfig field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPolyConfig() {
     return humanAnnotationRequestConfigCase_ == 5;
   }
@@ -435,6 +439,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The boundingPolyConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
     if (humanAnnotationRequestConfigCase_ == 5) {
       return (com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig)
@@ -454,6 +459,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfigOrBuilder
       getBoundingPolyConfigOrBuilder() {
     if (humanAnnotationRequestConfigCase_ == 5) {
@@ -481,6 +487,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the textClassificationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasTextClassificationConfig() {
     return humanAnnotationRequestConfigCase_ == 8;
   }
@@ -501,6 +508,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The textClassificationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
       getTextClassificationConfig() {
     if (humanAnnotationRequestConfigCase_ == 8) {
@@ -524,6 +532,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextClassificationConfigOrBuilder
       getTextClassificationConfigOrBuilder() {
     if (humanAnnotationRequestConfigCase_ == 8) {
@@ -554,6 +563,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -576,6 +586,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.InputConfig.getDefaultInstance()
@@ -598,6 +609,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.datalabeling.v1beta1.InputConfig input_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder() {
     return getInputConfig();
   }
@@ -619,6 +631,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the evaluationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasEvaluationConfig() {
     return evaluationConfig_ != null;
   }
@@ -637,6 +650,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The evaluationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationConfig getEvaluationConfig() {
     return evaluationConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.EvaluationConfig.getDefaultInstance()
@@ -655,6 +669,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig evaluation_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationConfigOrBuilder
       getEvaluationConfigOrBuilder() {
     return getEvaluationConfig();
@@ -680,6 +695,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the humanAnnotationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasHumanAnnotationConfig() {
     return humanAnnotationConfig_ != null;
   }
@@ -701,6 +717,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The humanAnnotationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig() {
     return humanAnnotationConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
@@ -722,6 +739,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig human_annotation_config = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getHumanAnnotationConfigOrBuilder() {
     return getHumanAnnotationConfig();
@@ -778,6 +796,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
+  @java.lang.Override
   public boolean containsBigqueryImportKeys(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -785,6 +804,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
     return internalGetBigqueryImportKeys().getMap().containsKey(key);
   }
   /** Use {@link #getBigqueryImportKeysMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getBigqueryImportKeys() {
     return getBigqueryImportKeysMap();
@@ -813,6 +833,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getBigqueryImportKeysMap() {
     return internalGetBigqueryImportKeys().getMap();
   }
@@ -840,6 +861,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
+  @java.lang.Override
   public java.lang.String getBigqueryImportKeysOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -873,6 +895,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
+  @java.lang.Override
   public java.lang.String getBigqueryImportKeysOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -902,6 +925,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The exampleCount.
    */
+  @java.lang.Override
   public int getExampleCount() {
     return exampleCount_;
   }
@@ -921,6 +945,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The exampleSamplePercentage.
    */
+  @java.lang.Override
   public double getExampleSamplePercentage() {
     return exampleSamplePercentage_;
   }
@@ -942,6 +967,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the evaluationJobAlertConfig field is set.
    */
+  @java.lang.Override
   public boolean hasEvaluationJobAlertConfig() {
     return evaluationJobAlertConfig_ != null;
   }
@@ -960,6 +986,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The evaluationJobAlertConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig
       getEvaluationJobAlertConfig() {
     return evaluationJobAlertConfig_ == null
@@ -979,6 +1006,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
    * .google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig evaluation_job_alert_config = 13;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfigOrBuilder
       getEvaluationJobAlertConfigOrBuilder() {
     return getEvaluationJobAlertConfig();
@@ -1638,6 +1666,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the imageClassificationConfig field is set.
      */
+    @java.lang.Override
     public boolean hasImageClassificationConfig() {
       return humanAnnotationRequestConfigCase_ == 4;
     }
@@ -1659,6 +1688,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The imageClassificationConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
         getImageClassificationConfig() {
       if (imageClassificationConfigBuilder_ == null) {
@@ -1841,6 +1871,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfigOrBuilder
         getImageClassificationConfigOrBuilder() {
       if ((humanAnnotationRequestConfigCase_ == 4) && (imageClassificationConfigBuilder_ != null)) {
@@ -1915,6 +1946,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the boundingPolyConfig field is set.
      */
+    @java.lang.Override
     public boolean hasBoundingPolyConfig() {
       return humanAnnotationRequestConfigCase_ == 5;
     }
@@ -1932,6 +1964,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The boundingPolyConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
       if (boundingPolyConfigBuilder_ == null) {
         if (humanAnnotationRequestConfigCase_ == 5) {
@@ -2088,6 +2121,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfigOrBuilder
         getBoundingPolyConfigOrBuilder() {
       if ((humanAnnotationRequestConfigCase_ == 5) && (boundingPolyConfigBuilder_ != null)) {
@@ -2161,6 +2195,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the textClassificationConfig field is set.
      */
+    @java.lang.Override
     public boolean hasTextClassificationConfig() {
       return humanAnnotationRequestConfigCase_ == 8;
     }
@@ -2181,6 +2216,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The textClassificationConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextClassificationConfig
         getTextClassificationConfig() {
       if (textClassificationConfigBuilder_ == null) {
@@ -2357,6 +2393,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      * .google.cloud.datalabeling.v1beta1.TextClassificationConfig text_classification_config = 8;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextClassificationConfigOrBuilder
         getTextClassificationConfigOrBuilder() {
       if ((humanAnnotationRequestConfigCase_ == 8) && (textClassificationConfigBuilder_ != null)) {
@@ -3202,6 +3239,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
      */
+    @java.lang.Override
     public boolean containsBigqueryImportKeys(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3209,6 +3247,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
       return internalGetBigqueryImportKeys().getMap().containsKey(key);
     }
     /** Use {@link #getBigqueryImportKeysMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getBigqueryImportKeys() {
       return getBigqueryImportKeysMap();
@@ -3237,6 +3276,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getBigqueryImportKeysMap() {
       return internalGetBigqueryImportKeys().getMap();
     }
@@ -3264,6 +3304,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
      */
+    @java.lang.Override
     public java.lang.String getBigqueryImportKeysOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -3297,6 +3338,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
      */
+    @java.lang.Override
     public java.lang.String getBigqueryImportKeysOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3429,6 +3471,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The exampleCount.
      */
+    @java.lang.Override
     public int getExampleCount() {
       return exampleCount_;
     }
@@ -3490,6 +3533,7 @@ public final class EvaluationJobConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The exampleSamplePercentage.
      */
+    @java.lang.Override
     public double getExampleSamplePercentage() {
       return exampleSamplePercentage_;
     }

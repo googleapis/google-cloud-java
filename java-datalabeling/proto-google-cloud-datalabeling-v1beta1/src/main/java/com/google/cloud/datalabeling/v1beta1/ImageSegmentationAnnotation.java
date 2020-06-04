@@ -195,6 +195,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    * map&lt;string, .google.cloud.datalabeling.v1beta1.AnnotationSpec&gt; annotation_colors = 1;
    * </code>
    */
+  @java.lang.Override
   public boolean containsAnnotationColors(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -202,6 +203,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
     return internalGetAnnotationColors().getMap().containsKey(key);
   }
   /** Use {@link #getAnnotationColorsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
       getAnnotationColors() {
@@ -220,6 +222,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    * map&lt;string, .google.cloud.datalabeling.v1beta1.AnnotationSpec&gt; annotation_colors = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
       getAnnotationColorsMap() {
     return internalGetAnnotationColors().getMap();
@@ -237,6 +240,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    * map&lt;string, .google.cloud.datalabeling.v1beta1.AnnotationSpec&gt; annotation_colors = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrDefault(
       java.lang.String key, com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue) {
     if (key == null) {
@@ -259,6 +263,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    * map&lt;string, .google.cloud.datalabeling.v1beta1.AnnotationSpec&gt; annotation_colors = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrThrow(
       java.lang.String key) {
     if (key == null) {
@@ -285,6 +290,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -307,6 +313,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -332,6 +339,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
    *
    * @return The imageBytes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageBytes() {
     return imageBytes_;
   }
@@ -768,6 +776,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * map&lt;string, .google.cloud.datalabeling.v1beta1.AnnotationSpec&gt; annotation_colors = 1;
      * </code>
      */
+    @java.lang.Override
     public boolean containsAnnotationColors(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -775,6 +784,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
       return internalGetAnnotationColors().getMap().containsKey(key);
     }
     /** Use {@link #getAnnotationColorsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
         getAnnotationColors() {
@@ -793,6 +803,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * map&lt;string, .google.cloud.datalabeling.v1beta1.AnnotationSpec&gt; annotation_colors = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
         getAnnotationColorsMap() {
       return internalGetAnnotationColors().getMap();
@@ -810,6 +821,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * map&lt;string, .google.cloud.datalabeling.v1beta1.AnnotationSpec&gt; annotation_colors = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrDefault(
         java.lang.String key, com.google.cloud.datalabeling.v1beta1.AnnotationSpec defaultValue) {
       if (key == null) {
@@ -832,6 +844,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      * map&lt;string, .google.cloud.datalabeling.v1beta1.AnnotationSpec&gt; annotation_colors = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationColorsOrThrow(
         java.lang.String key) {
       if (key == null) {
@@ -1037,6 +1050,7 @@ public final class ImageSegmentationAnnotation extends com.google.protobuf.Gener
      *
      * @return The imageBytes.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getImageBytes() {
       return imageBytes_;
     }

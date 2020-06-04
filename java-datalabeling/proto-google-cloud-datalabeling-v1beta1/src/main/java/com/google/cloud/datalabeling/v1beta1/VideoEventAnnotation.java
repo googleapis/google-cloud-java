@@ -149,6 +149,7 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the annotationSpec field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
   }
@@ -163,6 +164,7 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The annotationSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
@@ -177,6 +179,7 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
     return getAnnotationSpec();
@@ -195,6 +198,7 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the timeSegment field is set.
    */
+  @java.lang.Override
   public boolean hasTimeSegment() {
     return timeSegment_ != null;
   }
@@ -209,6 +213,7 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
    *
    * @return The timeSegment.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TimeSegment getTimeSegment() {
     return timeSegment_ == null
         ? com.google.cloud.datalabeling.v1beta1.TimeSegment.getDefaultInstance()
@@ -223,6 +228,7 @@ public final class VideoEventAnnotation extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder() {
     return getTimeSegment();
   }

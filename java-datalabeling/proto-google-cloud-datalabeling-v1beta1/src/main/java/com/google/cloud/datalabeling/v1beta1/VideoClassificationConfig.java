@@ -292,6 +292,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      *
      * @return The annotationSpecSet.
      */
+    @java.lang.Override
     public java.lang.String getAnnotationSpecSet() {
       java.lang.Object ref = annotationSpecSet_;
       if (ref instanceof java.lang.String) {
@@ -314,6 +315,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      *
      * @return The bytes for annotationSpecSet.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
       java.lang.Object ref = annotationSpecSet_;
       if (ref instanceof java.lang.String) {
@@ -340,6 +342,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      *
      * @return The allowMultiLabel.
      */
+    @java.lang.Override
     public boolean getAllowMultiLabel() {
       return allowMultiLabel_;
     }
@@ -850,6 +853,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
        *
        * @return The allowMultiLabel.
        */
+      @java.lang.Override
       public boolean getAllowMultiLabel() {
         return allowMultiLabel_;
       }
@@ -970,6 +974,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig>
       getAnnotationSpecSetConfigsList() {
@@ -991,6 +996,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
@@ -1014,6 +1020,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getAnnotationSpecSetConfigsCount() {
     return annotationSpecSetConfigs_.size();
   }
@@ -1033,6 +1040,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig
       getAnnotationSpecSetConfigs(int index) {
     return annotationSpecSetConfigs_.get(index);
@@ -1053,6 +1061,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig annotation_spec_set_configs = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
           .AnnotationSpecSetConfigOrBuilder
       getAnnotationSpecSetConfigsOrBuilder(int index) {
@@ -1072,6 +1081,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
    *
    * @return The applyShotDetection.
    */
+  @java.lang.Override
   public boolean getApplyShotDetection() {
     return applyShotDetection_;
   }
@@ -2007,6 +2017,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      *
      * @return The applyShotDetection.
      */
+    @java.lang.Override
     public boolean getApplyShotDetection() {
       return applyShotDetection_;
     }

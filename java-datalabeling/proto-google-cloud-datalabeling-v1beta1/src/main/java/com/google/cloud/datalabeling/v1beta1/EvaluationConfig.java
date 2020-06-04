@@ -186,6 +186,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the boundingBoxEvaluationOptions field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingBoxEvaluationOptions() {
     return verticalOptionCase_ == 1;
   }
@@ -204,6 +205,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The boundingBoxEvaluationOptions.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions
       getBoundingBoxEvaluationOptions() {
     if (verticalOptionCase_ == 1) {
@@ -224,6 +226,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptionsOrBuilder
       getBoundingBoxEvaluationOptionsOrBuilder() {
     if (verticalOptionCase_ == 1) {
@@ -618,6 +621,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return Whether the boundingBoxEvaluationOptions field is set.
      */
+    @java.lang.Override
     public boolean hasBoundingBoxEvaluationOptions() {
       return verticalOptionCase_ == 1;
     }
@@ -636,6 +640,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The boundingBoxEvaluationOptions.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions
         getBoundingBoxEvaluationOptions() {
       if (boundingBoxEvaluationOptionsBuilder_ == null) {
@@ -803,6 +808,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * .google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions bounding_box_evaluation_options = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptionsOrBuilder
         getBoundingBoxEvaluationOptionsOrBuilder() {
       if ((verticalOptionCase_ == 1) && (boundingBoxEvaluationOptionsBuilder_ != null)) {

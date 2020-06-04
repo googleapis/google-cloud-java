@@ -296,6 +296,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the textMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasTextMetadata() {
     return dataTypeMetadataCase_ == 6;
   }
@@ -310,6 +311,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The textMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextMetadata getTextMetadata() {
     if (dataTypeMetadataCase_ == 6) {
       return (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_;
@@ -325,6 +327,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder getTextMetadataOrBuilder() {
     if (dataTypeMetadataCase_ == 6) {
       return (com.google.cloud.datalabeling.v1beta1.TextMetadata) dataTypeMetadata_;
@@ -344,6 +347,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
@@ -358,6 +362,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.GcsSource) source_;
@@ -373,6 +378,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.GcsSource) source_;
@@ -393,6 +399,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the bigquerySource field is set.
    */
+  @java.lang.Override
   public boolean hasBigquerySource() {
     return sourceCase_ == 5;
   }
@@ -408,6 +415,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bigquerySource.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource() {
     if (sourceCase_ == 5) {
       return (com.google.cloud.datalabeling.v1beta1.BigQuerySource) source_;
@@ -424,6 +432,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder
       getBigquerySourceOrBuilder() {
     if (sourceCase_ == 5) {
@@ -445,6 +454,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for dataType.
    */
+  @java.lang.Override
   public int getDataTypeValue() {
     return dataType_;
   }
@@ -459,6 +469,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataType.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.DataType getDataType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.DataType result =
@@ -481,6 +492,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for annotationType.
    */
+  @java.lang.Override
   public int getAnnotationTypeValue() {
     return annotationType_;
   }
@@ -497,6 +509,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The annotationType.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationType result =
@@ -522,6 +535,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the classificationMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasClassificationMetadata() {
     return classificationMetadata_ != null;
   }
@@ -539,6 +553,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The classificationMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ClassificationMetadata getClassificationMetadata() {
     return classificationMetadata_ == null
         ? com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.getDefaultInstance()
@@ -556,6 +571,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetadata classification_metadata = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder
       getClassificationMetadataOrBuilder() {
     return getClassificationMetadata();
@@ -1090,6 +1106,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the textMetadata field is set.
      */
+    @java.lang.Override
     public boolean hasTextMetadata() {
       return dataTypeMetadataCase_ == 6;
     }
@@ -1104,6 +1121,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The textMetadata.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextMetadata getTextMetadata() {
       if (textMetadataBuilder_ == null) {
         if (dataTypeMetadataCase_ == 6) {
@@ -1237,6 +1255,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.TextMetadata text_metadata = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder getTextMetadataOrBuilder() {
       if ((dataTypeMetadataCase_ == 6) && (textMetadataBuilder_ != null)) {
         return textMetadataBuilder_.getMessageOrBuilder();
@@ -1298,6 +1317,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
@@ -1312,6 +1332,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -1444,6 +1465,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.GcsSource gcs_source = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 2) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();
@@ -1505,6 +1527,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the bigquerySource field is set.
      */
+    @java.lang.Override
     public boolean hasBigquerySource() {
       return sourceCase_ == 5;
     }
@@ -1520,6 +1543,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bigquerySource.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BigQuerySource getBigquerySource() {
       if (bigquerySourceBuilder_ == null) {
         if (sourceCase_ == 5) {
@@ -1659,6 +1683,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.datalabeling.v1beta1.BigQuerySource bigquery_source = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder
         getBigquerySourceOrBuilder() {
       if ((sourceCase_ == 5) && (bigquerySourceBuilder_ != null)) {
@@ -1717,6 +1742,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for dataType.
      */
+    @java.lang.Override
     public int getDataTypeValue() {
       return dataType_;
     }
@@ -1733,6 +1759,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDataTypeValue(int value) {
+
       dataType_ = value;
       onChanged();
       return this;
@@ -1748,6 +1775,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dataType.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.DataType getDataType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.DataType result =
@@ -1807,6 +1835,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for annotationType.
      */
+    @java.lang.Override
     public int getAnnotationTypeValue() {
       return annotationType_;
     }
@@ -1825,6 +1854,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnnotationTypeValue(int value) {
+
       annotationType_ = value;
       onChanged();
       return this;
@@ -1842,6 +1872,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The annotationType.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationType result =

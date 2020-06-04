@@ -134,6 +134,7 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The dataset.
    */
+  @java.lang.Override
   public java.lang.String getDataset() {
     java.lang.Object ref = dataset_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The bytes for dataset.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDatasetBytes() {
     java.lang.Object ref = dataset_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +183,7 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The totalCount.
    */
+  @java.lang.Override
   public int getTotalCount() {
     return totalCount_;
   }
@@ -198,6 +201,7 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The importCount.
    */
+  @java.lang.Override
   public int getImportCount() {
     return importCount_;
   }
@@ -675,6 +679,7 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
      *
      * @return The totalCount.
      */
+    @java.lang.Override
     public int getTotalCount() {
       return totalCount_;
     }
@@ -726,6 +731,7 @@ public final class ImportDataOperationResponse extends com.google.protobuf.Gener
      *
      * @return The importCount.
      */
+    @java.lang.Override
     public int getImportCount() {
       return importCount_;
     }

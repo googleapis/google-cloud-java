@@ -137,6 +137,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    *
    * @return The annotationSpecSet.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -159,6 +160,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    *
    * @return The bytes for annotationSpecSet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +187,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    *
    * @return The allowMultiLabel.
    */
+  @java.lang.Override
   public boolean getAllowMultiLabel() {
     return allowMultiLabel_;
   }
@@ -204,6 +207,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    *
    * @return The enum numeric value on the wire for answerAggregationType.
    */
+  @java.lang.Override
   public int getAnswerAggregationTypeValue() {
     return answerAggregationType_;
   }
@@ -220,6 +224,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
    *
    * @return The answerAggregationType.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.StringAggregationType getAnswerAggregationType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.StringAggregationType result =
@@ -707,6 +712,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      *
      * @return The allowMultiLabel.
      */
+    @java.lang.Override
     public boolean getAllowMultiLabel() {
       return allowMultiLabel_;
     }
@@ -762,6 +768,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      *
      * @return The enum numeric value on the wire for answerAggregationType.
      */
+    @java.lang.Override
     public int getAnswerAggregationTypeValue() {
       return answerAggregationType_;
     }
@@ -780,6 +787,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setAnswerAggregationTypeValue(int value) {
+
       answerAggregationType_ = value;
       onChanged();
       return this;
@@ -797,6 +805,7 @@ public final class ImageClassificationConfig extends com.google.protobuf.Generat
      *
      * @return The answerAggregationType.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.StringAggregationType getAnswerAggregationType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.StringAggregationType result =

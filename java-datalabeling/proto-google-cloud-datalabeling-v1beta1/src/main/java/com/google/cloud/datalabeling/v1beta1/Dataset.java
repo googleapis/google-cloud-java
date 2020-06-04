@@ -194,6 +194,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +218,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +244,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +267,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -290,6 +294,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -313,6 +318,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -338,6 +344,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -352,6 +359,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -364,6 +372,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -381,6 +390,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.InputConfig> getInputConfigsList() {
     return inputConfigs_;
   }
@@ -395,6 +405,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder>
       getInputConfigsOrBuilderList() {
     return inputConfigs_;
@@ -410,6 +421,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public int getInputConfigsCount() {
     return inputConfigs_.size();
   }
@@ -424,6 +436,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfigs(int index) {
     return inputConfigs_.get(index);
   }
@@ -438,6 +451,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.InputConfig input_configs = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.InputConfigOrBuilder getInputConfigsOrBuilder(
       int index) {
     return inputConfigs_.get(index);
@@ -521,6 +535,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dataItemCount.
    */
+  @java.lang.Override
   public long getDataItemCount() {
     return dataItemCount_;
   }
@@ -2102,6 +2117,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dataItemCount.
      */
+    @java.lang.Override
     public long getDataItemCount() {
       return dataItemCount_;
     }

@@ -133,6 +133,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The annotationSpecSet.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -155,6 +156,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for annotationSpecSet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +182,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The extractionFrameRate.
    */
+  @java.lang.Override
   public double getExtractionFrameRate() {
     return extractionFrameRate_;
   }
@@ -644,6 +647,7 @@ public final class ObjectDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * @return The extractionFrameRate.
      */
+    @java.lang.Override
     public double getExtractionFrameRate() {
       return extractionFrameRate_;
     }

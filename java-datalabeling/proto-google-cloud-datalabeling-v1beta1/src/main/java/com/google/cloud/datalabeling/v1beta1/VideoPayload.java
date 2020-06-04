@@ -163,6 +163,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The videoUri.
    */
+  @java.lang.Override
   public java.lang.String getVideoUri() {
     java.lang.Object ref = videoUri_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +235,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for videoUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVideoUriBytes() {
     java.lang.Object ref = videoUri_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +259,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.VideoThumbnail video_thumbnails = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.VideoThumbnail>
       getVideoThumbnailsList() {
     return videoThumbnails_;
@@ -268,6 +273,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.VideoThumbnail video_thumbnails = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.VideoThumbnailOrBuilder>
       getVideoThumbnailsOrBuilderList() {
     return videoThumbnails_;
@@ -281,6 +287,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.VideoThumbnail video_thumbnails = 3;</code>
    */
+  @java.lang.Override
   public int getVideoThumbnailsCount() {
     return videoThumbnails_.size();
   }
@@ -293,6 +300,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.VideoThumbnail video_thumbnails = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.VideoThumbnail getVideoThumbnails(int index) {
     return videoThumbnails_.get(index);
   }
@@ -305,6 +313,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.VideoThumbnail video_thumbnails = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.VideoThumbnailOrBuilder getVideoThumbnailsOrBuilder(
       int index) {
     return videoThumbnails_.get(index);
@@ -323,6 +332,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The frameRate.
    */
+  @java.lang.Override
   public float getFrameRate() {
     return frameRate_;
   }
@@ -340,6 +350,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The signedUri.
    */
+  @java.lang.Override
   public java.lang.String getSignedUri() {
     java.lang.Object ref = signedUri_;
     if (ref instanceof java.lang.String) {
@@ -362,6 +373,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for signedUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSignedUriBytes() {
     java.lang.Object ref = signedUri_;
     if (ref instanceof java.lang.String) {
@@ -1385,6 +1397,7 @@ public final class VideoPayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The frameRate.
      */
+    @java.lang.Override
     public float getFrameRate() {
       return frameRate_;
     }

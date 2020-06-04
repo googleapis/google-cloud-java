@@ -144,6 +144,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_sets = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>
       getAnnotationSpecSetsList() {
     return annotationSpecSets_;
@@ -158,6 +159,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_sets = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOrBuilder>
       getAnnotationSpecSetsOrBuilderList() {
     return annotationSpecSets_;
@@ -172,6 +174,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_sets = 1;
    * </code>
    */
+  @java.lang.Override
   public int getAnnotationSpecSetsCount() {
     return annotationSpecSets_.size();
   }
@@ -185,6 +188,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_sets = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet getAnnotationSpecSets(int index) {
     return annotationSpecSets_.get(index);
   }
@@ -198,6 +202,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpecSet annotation_spec_sets = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOrBuilder
       getAnnotationSpecSetsOrBuilder(int index) {
     return annotationSpecSets_.get(index);
@@ -216,6 +221,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +244,7 @@ public final class ListAnnotationSpecSetsResponse extends com.google.protobuf.Ge
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

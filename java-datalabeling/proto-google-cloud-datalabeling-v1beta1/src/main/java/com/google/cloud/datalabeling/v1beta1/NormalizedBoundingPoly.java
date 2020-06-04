@@ -135,6 +135,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.datalabeling.v1beta1.NormalizedVertex normalized_vertices = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.NormalizedVertex>
       getNormalizedVerticesList() {
     return normalizedVertices_;
@@ -149,6 +150,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.datalabeling.v1beta1.NormalizedVertex normalized_vertices = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.NormalizedVertexOrBuilder>
       getNormalizedVerticesOrBuilderList() {
     return normalizedVertices_;
@@ -163,6 +165,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.datalabeling.v1beta1.NormalizedVertex normalized_vertices = 1;
    * </code>
    */
+  @java.lang.Override
   public int getNormalizedVerticesCount() {
     return normalizedVertices_.size();
   }
@@ -176,6 +179,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.datalabeling.v1beta1.NormalizedVertex normalized_vertices = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.NormalizedVertex getNormalizedVertices(int index) {
     return normalizedVertices_.get(index);
   }
@@ -189,6 +193,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.datalabeling.v1beta1.NormalizedVertex normalized_vertices = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.NormalizedVertexOrBuilder
       getNormalizedVerticesOrBuilder(int index) {
     return normalizedVertices_.get(index);

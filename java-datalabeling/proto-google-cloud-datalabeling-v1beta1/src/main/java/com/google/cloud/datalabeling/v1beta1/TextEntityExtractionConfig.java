@@ -124,6 +124,7 @@ public final class TextEntityExtractionConfig extends com.google.protobuf.Genera
    *
    * @return The annotationSpecSet.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -146,6 +147,7 @@ public final class TextEntityExtractionConfig extends com.google.protobuf.Genera
    *
    * @return The bytes for annotationSpecSet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {

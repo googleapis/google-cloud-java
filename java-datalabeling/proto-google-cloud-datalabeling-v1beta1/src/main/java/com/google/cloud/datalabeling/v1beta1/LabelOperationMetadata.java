@@ -537,6 +537,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the imageClassificationDetails field is set.
    */
+  @java.lang.Override
   public boolean hasImageClassificationDetails() {
     return detailsCase_ == 3;
   }
@@ -553,6 +554,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The imageClassificationDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
       getImageClassificationDetails() {
     if (detailsCase_ == 3) {
@@ -573,6 +575,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataOrBuilder
       getImageClassificationDetailsOrBuilder() {
     if (detailsCase_ == 3) {
@@ -597,6 +600,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the imageBoundingBoxDetails field is set.
    */
+  @java.lang.Override
   public boolean hasImageBoundingBoxDetails() {
     return detailsCase_ == 4;
   }
@@ -613,6 +617,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The imageBoundingBoxDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
       getImageBoundingBoxDetails() {
     if (detailsCase_ == 4) {
@@ -633,6 +638,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder
       getImageBoundingBoxDetailsOrBuilder() {
     if (detailsCase_ == 4) {
@@ -657,6 +663,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the imageBoundingPolyDetails field is set.
    */
+  @java.lang.Override
   public boolean hasImageBoundingPolyDetails() {
     return detailsCase_ == 11;
   }
@@ -673,6 +680,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The imageBoundingPolyDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
       getImageBoundingPolyDetails() {
     if (detailsCase_ == 11) {
@@ -693,6 +701,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder
       getImageBoundingPolyDetailsOrBuilder() {
     if (detailsCase_ == 11) {
@@ -717,6 +726,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the imageOrientedBoundingBoxDetails field is set.
    */
+  @java.lang.Override
   public boolean hasImageOrientedBoundingBoxDetails() {
     return detailsCase_ == 14;
   }
@@ -733,6 +743,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The imageOrientedBoundingBoxDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
       getImageOrientedBoundingBoxDetails() {
     if (detailsCase_ == 14) {
@@ -753,6 +764,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1
           .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
       getImageOrientedBoundingBoxDetailsOrBuilder() {
@@ -778,6 +790,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the imagePolylineDetails field is set.
    */
+  @java.lang.Override
   public boolean hasImagePolylineDetails() {
     return detailsCase_ == 12;
   }
@@ -794,6 +807,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The imagePolylineDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
       getImagePolylineDetails() {
     if (detailsCase_ == 12) {
@@ -813,6 +827,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder
       getImagePolylineDetailsOrBuilder() {
     if (detailsCase_ == 12) {
@@ -836,6 +851,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the imageSegmentationDetails field is set.
    */
+  @java.lang.Override
   public boolean hasImageSegmentationDetails() {
     return detailsCase_ == 15;
   }
@@ -852,6 +868,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The imageSegmentationDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
       getImageSegmentationDetails() {
     if (detailsCase_ == 15) {
@@ -872,6 +889,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder
       getImageSegmentationDetailsOrBuilder() {
     if (detailsCase_ == 15) {
@@ -896,6 +914,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the videoClassificationDetails field is set.
    */
+  @java.lang.Override
   public boolean hasVideoClassificationDetails() {
     return detailsCase_ == 5;
   }
@@ -912,6 +931,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The videoClassificationDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
       getVideoClassificationDetails() {
     if (detailsCase_ == 5) {
@@ -932,6 +952,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataOrBuilder
       getVideoClassificationDetailsOrBuilder() {
     if (detailsCase_ == 5) {
@@ -956,6 +977,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the videoObjectDetectionDetails field is set.
    */
+  @java.lang.Override
   public boolean hasVideoObjectDetectionDetails() {
     return detailsCase_ == 6;
   }
@@ -972,6 +994,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The videoObjectDetectionDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
       getVideoObjectDetectionDetails() {
     if (detailsCase_ == 6) {
@@ -992,6 +1015,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataOrBuilder
       getVideoObjectDetectionDetailsOrBuilder() {
     if (detailsCase_ == 6) {
@@ -1016,6 +1040,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the videoObjectTrackingDetails field is set.
    */
+  @java.lang.Override
   public boolean hasVideoObjectTrackingDetails() {
     return detailsCase_ == 7;
   }
@@ -1032,6 +1057,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The videoObjectTrackingDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
       getVideoObjectTrackingDetails() {
     if (detailsCase_ == 7) {
@@ -1052,6 +1078,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataOrBuilder
       getVideoObjectTrackingDetailsOrBuilder() {
     if (detailsCase_ == 7) {
@@ -1076,6 +1103,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the videoEventDetails field is set.
    */
+  @java.lang.Override
   public boolean hasVideoEventDetails() {
     return detailsCase_ == 8;
   }
@@ -1092,6 +1120,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The videoEventDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
       getVideoEventDetails() {
     if (detailsCase_ == 8) {
@@ -1111,6 +1140,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder
       getVideoEventDetailsOrBuilder() {
     if (detailsCase_ == 8) {
@@ -1134,6 +1164,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the textClassificationDetails field is set.
    */
+  @java.lang.Override
   public boolean hasTextClassificationDetails() {
     return detailsCase_ == 9;
   }
@@ -1150,6 +1181,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The textClassificationDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
       getTextClassificationDetails() {
     if (detailsCase_ == 9) {
@@ -1170,6 +1202,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder
       getTextClassificationDetailsOrBuilder() {
     if (detailsCase_ == 9) {
@@ -1194,6 +1227,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the textEntityExtractionDetails field is set.
    */
+  @java.lang.Override
   public boolean hasTextEntityExtractionDetails() {
     return detailsCase_ == 13;
   }
@@ -1210,6 +1244,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The textEntityExtractionDetails.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
       getTextEntityExtractionDetails() {
     if (detailsCase_ == 13) {
@@ -1230,6 +1265,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataOrBuilder
       getTextEntityExtractionDetailsOrBuilder() {
     if (detailsCase_ == 13) {
@@ -1253,6 +1289,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The progressPercent.
    */
+  @java.lang.Override
   public int getProgressPercent() {
     return progressPercent_;
   }
@@ -1270,6 +1307,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
@@ -1284,6 +1322,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder>
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
@@ -1299,6 +1338,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
@@ -1313,6 +1353,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
@@ -1327,6 +1368,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index) {
     return partialFailures_.get(index);
   }
@@ -1344,6 +1386,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -1358,6 +1401,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -1370,6 +1414,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp create_time = 16;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -2215,6 +2260,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the imageClassificationDetails field is set.
      */
+    @java.lang.Override
     public boolean hasImageClassificationDetails() {
       return detailsCase_ == 3;
     }
@@ -2231,6 +2277,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The imageClassificationDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
         getImageClassificationDetails() {
       if (imageClassificationDetailsBuilder_ == null) {
@@ -2388,6 +2435,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata image_classification_details = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadataOrBuilder
         getImageClassificationDetailsOrBuilder() {
       if ((detailsCase_ == 3) && (imageClassificationDetailsBuilder_ != null)) {
@@ -2461,6 +2509,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the imageBoundingBoxDetails field is set.
      */
+    @java.lang.Override
     public boolean hasImageBoundingBoxDetails() {
       return detailsCase_ == 4;
     }
@@ -2477,6 +2526,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The imageBoundingBoxDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
         getImageBoundingBoxDetails() {
       if (imageBoundingBoxDetailsBuilder_ == null) {
@@ -2633,6 +2683,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder
         getImageBoundingBoxDetailsOrBuilder() {
       if ((detailsCase_ == 4) && (imageBoundingBoxDetailsBuilder_ != null)) {
@@ -2705,6 +2756,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the imageBoundingPolyDetails field is set.
      */
+    @java.lang.Override
     public boolean hasImageBoundingPolyDetails() {
       return detailsCase_ == 11;
     }
@@ -2721,6 +2773,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The imageBoundingPolyDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
         getImageBoundingPolyDetails() {
       if (imageBoundingPolyDetailsBuilder_ == null) {
@@ -2878,6 +2931,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder
         getImageBoundingPolyDetailsOrBuilder() {
       if ((detailsCase_ == 11) && (imageBoundingPolyDetailsBuilder_ != null)) {
@@ -2952,6 +3006,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the imageOrientedBoundingBoxDetails field is set.
      */
+    @java.lang.Override
     public boolean hasImageOrientedBoundingBoxDetails() {
       return detailsCase_ == 14;
     }
@@ -2968,6 +3023,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The imageOrientedBoundingBoxDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
         getImageOrientedBoundingBoxDetails() {
       if (imageOrientedBoundingBoxDetailsBuilder_ == null) {
@@ -3129,6 +3185,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1
             .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder
         getImageOrientedBoundingBoxDetailsOrBuilder() {
@@ -3207,6 +3264,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the imagePolylineDetails field is set.
      */
+    @java.lang.Override
     public boolean hasImagePolylineDetails() {
       return detailsCase_ == 12;
     }
@@ -3223,6 +3281,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The imagePolylineDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
         getImagePolylineDetails() {
       if (imagePolylineDetailsBuilder_ == null) {
@@ -3378,6 +3437,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata image_polyline_details = 12;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder
         getImagePolylineDetailsOrBuilder() {
       if ((detailsCase_ == 12) && (imagePolylineDetailsBuilder_ != null)) {
@@ -3448,6 +3508,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the imageSegmentationDetails field is set.
      */
+    @java.lang.Override
     public boolean hasImageSegmentationDetails() {
       return detailsCase_ == 15;
     }
@@ -3464,6 +3525,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The imageSegmentationDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
         getImageSegmentationDetails() {
       if (imageSegmentationDetailsBuilder_ == null) {
@@ -3621,6 +3683,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder
         getImageSegmentationDetailsOrBuilder() {
       if ((detailsCase_ == 15) && (imageSegmentationDetailsBuilder_ != null)) {
@@ -3694,6 +3757,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the videoClassificationDetails field is set.
      */
+    @java.lang.Override
     public boolean hasVideoClassificationDetails() {
       return detailsCase_ == 5;
     }
@@ -3710,6 +3774,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The videoClassificationDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
         getVideoClassificationDetails() {
       if (videoClassificationDetailsBuilder_ == null) {
@@ -3867,6 +3932,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata video_classification_details = 5;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadataOrBuilder
         getVideoClassificationDetailsOrBuilder() {
       if ((detailsCase_ == 5) && (videoClassificationDetailsBuilder_ != null)) {
@@ -3942,6 +4008,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the videoObjectDetectionDetails field is set.
      */
+    @java.lang.Override
     public boolean hasVideoObjectDetectionDetails() {
       return detailsCase_ == 6;
     }
@@ -3958,6 +4025,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The videoObjectDetectionDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
         getVideoObjectDetectionDetails() {
       if (videoObjectDetectionDetailsBuilder_ == null) {
@@ -4115,6 +4183,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadataOrBuilder
         getVideoObjectDetectionDetailsOrBuilder() {
       if ((detailsCase_ == 6) && (videoObjectDetectionDetailsBuilder_ != null)) {
@@ -4190,6 +4259,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the videoObjectTrackingDetails field is set.
      */
+    @java.lang.Override
     public boolean hasVideoObjectTrackingDetails() {
       return detailsCase_ == 7;
     }
@@ -4206,6 +4276,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The videoObjectTrackingDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
         getVideoObjectTrackingDetails() {
       if (videoObjectTrackingDetailsBuilder_ == null) {
@@ -4363,6 +4434,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadataOrBuilder
         getVideoObjectTrackingDetailsOrBuilder() {
       if ((detailsCase_ == 7) && (videoObjectTrackingDetailsBuilder_ != null)) {
@@ -4436,6 +4508,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the videoEventDetails field is set.
      */
+    @java.lang.Override
     public boolean hasVideoEventDetails() {
       return detailsCase_ == 8;
     }
@@ -4452,6 +4525,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The videoEventDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
         getVideoEventDetails() {
       if (videoEventDetailsBuilder_ == null) {
@@ -4606,6 +4680,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata video_event_details = 8;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder
         getVideoEventDetailsOrBuilder() {
       if ((detailsCase_ == 8) && (videoEventDetailsBuilder_ != null)) {
@@ -4674,6 +4749,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the textClassificationDetails field is set.
      */
+    @java.lang.Override
     public boolean hasTextClassificationDetails() {
       return detailsCase_ == 9;
     }
@@ -4690,6 +4766,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The textClassificationDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
         getTextClassificationDetails() {
       if (textClassificationDetailsBuilder_ == null) {
@@ -4847,6 +4924,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata text_classification_details = 9;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder
         getTextClassificationDetailsOrBuilder() {
       if ((detailsCase_ == 9) && (textClassificationDetailsBuilder_ != null)) {
@@ -4921,6 +4999,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return Whether the textEntityExtractionDetails field is set.
      */
+    @java.lang.Override
     public boolean hasTextEntityExtractionDetails() {
       return detailsCase_ == 13;
     }
@@ -4937,6 +5016,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The textEntityExtractionDetails.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
         getTextEntityExtractionDetails() {
       if (textEntityExtractionDetailsBuilder_ == null) {
@@ -5094,6 +5174,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      * .google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadataOrBuilder
         getTextEntityExtractionDetailsOrBuilder() {
       if ((detailsCase_ == 13) && (textEntityExtractionDetailsBuilder_ != null)) {
@@ -5162,6 +5243,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
      *
      * @return The progressPercent.
      */
+    @java.lang.Override
     public int getProgressPercent() {
       return progressPercent_;
     }

@@ -177,6 +177,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -200,6 +201,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +227,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for annotationSource.
    */
+  @java.lang.Override
   public int getAnnotationSourceValue() {
     return annotationSource_;
   }
@@ -239,6 +242,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The annotationSource.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationSource result =
@@ -262,6 +266,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the annotationValue field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationValue() {
     return annotationValue_ != null;
   }
@@ -277,6 +282,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The annotationValue.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationValue getAnnotationValue() {
     return annotationValue_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationValue.getDefaultInstance()
@@ -292,6 +298,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationValue annotation_value = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationValueOrBuilder
       getAnnotationValueOrBuilder() {
     return getAnnotationValue();
@@ -311,6 +318,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the annotationMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationMetadata() {
     return annotationMetadata_ != null;
   }
@@ -326,6 +334,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The annotationMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationMetadata getAnnotationMetadata() {
     return annotationMetadata_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationMetadata.getDefaultInstance()
@@ -341,6 +350,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationMetadata annotation_metadata = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationMetadataOrBuilder
       getAnnotationMetadataOrBuilder() {
     return getAnnotationMetadata();
@@ -359,6 +369,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for annotationSentiment.
    */
+  @java.lang.Override
   public int getAnnotationSentimentValue() {
     return annotationSentiment_;
   }
@@ -373,6 +384,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The annotationSentiment.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSentiment getAnnotationSentiment() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationSentiment result =
@@ -920,6 +932,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for annotationSource.
      */
+    @java.lang.Override
     public int getAnnotationSourceValue() {
       return annotationSource_;
     }
@@ -936,6 +949,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnnotationSourceValue(int value) {
+
       annotationSource_ = value;
       onChanged();
       return this;
@@ -951,6 +965,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The annotationSource.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSource getAnnotationSource() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationSource result =
@@ -1409,6 +1424,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for annotationSentiment.
      */
+    @java.lang.Override
     public int getAnnotationSentimentValue() {
       return annotationSentiment_;
     }
@@ -1425,6 +1441,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnnotationSentimentValue(int value) {
+
       annotationSentiment_ = value;
       onChanged();
       return this;
@@ -1440,6 +1457,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The annotationSentiment.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationSentiment getAnnotationSentiment() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationSentiment result =

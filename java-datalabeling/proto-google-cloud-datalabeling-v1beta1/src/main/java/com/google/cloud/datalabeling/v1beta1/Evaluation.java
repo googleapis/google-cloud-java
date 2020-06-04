@@ -204,6 +204,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +229,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +256,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the config field is set.
    */
+  @java.lang.Override
   public boolean hasConfig() {
     return config_ != null;
   }
@@ -269,6 +272,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The config.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationConfig getConfig() {
     return config_ == null
         ? com.google.cloud.datalabeling.v1beta1.EvaluationConfig.getDefaultInstance()
@@ -284,6 +288,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationConfig config = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationConfigOrBuilder getConfigOrBuilder() {
     return getConfig();
   }
@@ -302,6 +307,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the evaluationJobRunTime field is set.
    */
+  @java.lang.Override
   public boolean hasEvaluationJobRunTime() {
     return evaluationJobRunTime_ != null;
   }
@@ -317,6 +323,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The evaluationJobRunTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEvaluationJobRunTime() {
     return evaluationJobRunTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -332,6 +339,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp evaluation_job_run_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEvaluationJobRunTimeOrBuilder() {
     return getEvaluationJobRunTime();
   }
@@ -349,6 +357,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -363,6 +372,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -375,6 +385,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -392,6 +403,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the evaluationMetrics field is set.
    */
+  @java.lang.Override
   public boolean hasEvaluationMetrics() {
     return evaluationMetrics_ != null;
   }
@@ -406,6 +418,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The evaluationMetrics.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationMetrics getEvaluationMetrics() {
     return evaluationMetrics_ == null
         ? com.google.cloud.datalabeling.v1beta1.EvaluationMetrics.getDefaultInstance()
@@ -420,6 +433,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.EvaluationMetrics evaluation_metrics = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.EvaluationMetricsOrBuilder
       getEvaluationMetricsOrBuilder() {
     return getEvaluationMetrics();
@@ -441,6 +455,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for annotationType.
    */
+  @java.lang.Override
   public int getAnnotationTypeValue() {
     return annotationType_;
   }
@@ -458,6 +473,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The annotationType.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.AnnotationType result =
@@ -482,6 +498,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The evaluatedItemCount.
    */
+  @java.lang.Override
   public long getEvaluatedItemCount() {
     return evaluatedItemCount_;
   }
@@ -1844,6 +1861,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for annotationType.
      */
+    @java.lang.Override
     public int getAnnotationTypeValue() {
       return annotationType_;
     }
@@ -1863,6 +1881,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAnnotationTypeValue(int value) {
+
       annotationType_ = value;
       onChanged();
       return this;
@@ -1881,6 +1900,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The annotationType.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.AnnotationType getAnnotationType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.AnnotationType result =
@@ -1948,6 +1968,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The evaluatedItemCount.
      */
+    @java.lang.Override
     public long getEvaluatedItemCount() {
       return evaluatedItemCount_;
     }

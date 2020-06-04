@@ -125,6 +125,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
    *
    * @return The start.
    */
+  @java.lang.Override
   public int getStart() {
     return start_;
   }
@@ -142,6 +143,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
    *
    * @return The end.
    */
+  @java.lang.Override
   public int getEnd() {
     return end_;
   }
@@ -491,6 +493,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      *
      * @return The start.
      */
+    @java.lang.Override
     public int getStart() {
       return start_;
     }
@@ -542,6 +545,7 @@ public final class SequentialSegment extends com.google.protobuf.GeneratedMessag
      *
      * @return The end.
      */
+    @java.lang.Override
     public int getEnd() {
       return end_;
     }

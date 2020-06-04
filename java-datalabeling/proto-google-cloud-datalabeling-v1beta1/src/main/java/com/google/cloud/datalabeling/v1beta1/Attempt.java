@@ -140,6 +140,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the attemptTime field is set.
    */
+  @java.lang.Override
   public boolean hasAttemptTime() {
     return attemptTime_ != null;
   }
@@ -148,10 +149,12 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The attemptTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getAttemptTime() {
     return attemptTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : attemptTime_;
   }
   /** <code>.google.protobuf.Timestamp attempt_time = 1;</code> */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getAttemptTimeOrBuilder() {
     return getAttemptTime();
   }
@@ -167,6 +170,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
@@ -179,6 +183,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder>
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
@@ -192,6 +197,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
@@ -204,6 +210,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
@@ -216,6 +223,7 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index) {
     return partialFailures_.get(index);
   }

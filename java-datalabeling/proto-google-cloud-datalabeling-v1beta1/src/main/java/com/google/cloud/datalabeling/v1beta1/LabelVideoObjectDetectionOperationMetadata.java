@@ -136,6 +136,7 @@ public final class LabelVideoObjectDetectionOperationMetadata
    *
    * @return Whether the basicConfig field is set.
    */
+  @java.lang.Override
   public boolean hasBasicConfig() {
     return basicConfig_ != null;
   }
@@ -150,6 +151,7 @@ public final class LabelVideoObjectDetectionOperationMetadata
    *
    * @return The basicConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
     return basicConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
@@ -164,6 +166,7 @@ public final class LabelVideoObjectDetectionOperationMetadata
    *
    * <code>.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getBasicConfigOrBuilder() {
     return getBasicConfig();

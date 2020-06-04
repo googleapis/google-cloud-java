@@ -432,6 +432,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidenceThreshold.
      */
+    @java.lang.Override
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
@@ -449,6 +450,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The recall.
      */
+    @java.lang.Override
     public float getRecall() {
       return recall_;
     }
@@ -466,6 +468,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The precision.
      */
+    @java.lang.Override
     public float getPrecision() {
       return precision_;
     }
@@ -483,6 +486,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The f1Score.
      */
+    @java.lang.Override
     public float getF1Score() {
       return f1Score_;
     }
@@ -500,6 +504,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The recallAt1.
      */
+    @java.lang.Override
     public float getRecallAt1() {
       return recallAt1_;
     }
@@ -517,6 +522,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The precisionAt1.
      */
+    @java.lang.Override
     public float getPrecisionAt1() {
       return precisionAt1_;
     }
@@ -534,6 +540,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The f1ScoreAt1.
      */
+    @java.lang.Override
     public float getF1ScoreAt1() {
       return f1ScoreAt1_;
     }
@@ -551,6 +558,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The recallAt5.
      */
+    @java.lang.Override
     public float getRecallAt5() {
       return recallAt5_;
     }
@@ -568,6 +576,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The precisionAt5.
      */
+    @java.lang.Override
     public float getPrecisionAt5() {
       return precisionAt5_;
     }
@@ -585,6 +594,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The f1ScoreAt5.
      */
+    @java.lang.Override
     public float getF1ScoreAt5() {
       return f1ScoreAt5_;
     }
@@ -1077,6 +1087,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The confidenceThreshold.
        */
+      @java.lang.Override
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
@@ -1144,6 +1155,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The recall.
        */
+      @java.lang.Override
       public float getRecall() {
         return recall_;
       }
@@ -1195,6 +1207,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The precision.
        */
+      @java.lang.Override
       public float getPrecision() {
         return precision_;
       }
@@ -1246,6 +1259,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The f1Score.
        */
+      @java.lang.Override
       public float getF1Score() {
         return f1Score_;
       }
@@ -1297,6 +1311,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The recallAt1.
        */
+      @java.lang.Override
       public float getRecallAt1() {
         return recallAt1_;
       }
@@ -1348,6 +1363,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The precisionAt1.
        */
+      @java.lang.Override
       public float getPrecisionAt1() {
         return precisionAt1_;
       }
@@ -1399,6 +1415,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The f1ScoreAt1.
        */
+      @java.lang.Override
       public float getF1ScoreAt1() {
         return f1ScoreAt1_;
       }
@@ -1450,6 +1467,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The recallAt5.
        */
+      @java.lang.Override
       public float getRecallAt5() {
         return recallAt5_;
       }
@@ -1501,6 +1519,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The precisionAt5.
        */
+      @java.lang.Override
       public float getPrecisionAt5() {
         return precisionAt5_;
       }
@@ -1552,6 +1571,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The f1ScoreAt5.
        */
+      @java.lang.Override
       public float getF1ScoreAt5() {
         return f1ScoreAt5_;
       }
@@ -1661,6 +1681,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the annotationSpec field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
   }
@@ -1677,6 +1698,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The annotationSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
@@ -1693,6 +1715,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
     return getAnnotationSpec();
@@ -1712,6 +1735,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The areaUnderCurve.
    */
+  @java.lang.Override
   public float getAreaUnderCurve() {
     return areaUnderCurve_;
   }
@@ -1731,6 +1755,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry confidence_metrics_entries = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry>
       getConfidenceMetricsEntriesList() {
     return confidenceMetricsEntries_;
@@ -1747,6 +1772,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry confidence_metrics_entries = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntryOrBuilder>
       getConfidenceMetricsEntriesOrBuilderList() {
@@ -1764,6 +1790,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry confidence_metrics_entries = 3;
    * </code>
    */
+  @java.lang.Override
   public int getConfidenceMetricsEntriesCount() {
     return confidenceMetricsEntries_.size();
   }
@@ -1779,6 +1806,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry confidence_metrics_entries = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry
       getConfidenceMetricsEntries(int index) {
     return confidenceMetricsEntries_.get(index);
@@ -1795,6 +1823,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry confidence_metrics_entries = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntryOrBuilder
       getConfidenceMetricsEntriesOrBuilder(int index) {
     return confidenceMetricsEntries_.get(index);
@@ -1813,6 +1842,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The meanAveragePrecision.
    */
+  @java.lang.Override
   public float getMeanAveragePrecision() {
     return meanAveragePrecision_;
   }
@@ -2449,6 +2479,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The areaUnderCurve.
      */
+    @java.lang.Override
     public float getAreaUnderCurve() {
       return areaUnderCurve_;
     }
@@ -2935,6 +2966,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The meanAveragePrecision.
      */
+    @java.lang.Override
     public float getMeanAveragePrecision() {
       return meanAveragePrecision_;
     }

@@ -124,6 +124,7 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
    *
    * @return The iouThreshold.
    */
+  @java.lang.Override
   public float getIouThreshold() {
     return iouThreshold_;
   }
@@ -471,6 +472,7 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
      *
      * @return The iouThreshold.
      */
+    @java.lang.Override
     public float getIouThreshold() {
       return iouThreshold_;
     }

@@ -139,6 +139,7 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Example examples = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.Example> getExamplesList() {
     return examples_;
   }
@@ -151,6 +152,7 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Example examples = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder>
       getExamplesOrBuilderList() {
     return examples_;
@@ -164,6 +166,7 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Example examples = 1;</code>
    */
+  @java.lang.Override
   public int getExamplesCount() {
     return examples_.size();
   }
@@ -176,6 +179,7 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Example examples = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.Example getExamples(int index) {
     return examples_.get(index);
   }
@@ -188,6 +192,7 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.Example examples = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ExampleOrBuilder getExamplesOrBuilder(int index) {
     return examples_.get(index);
   }
@@ -205,6 +210,7 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +233,7 @@ public final class ListExamplesResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

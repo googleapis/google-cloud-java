@@ -125,6 +125,7 @@ public final class CsvInstruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsFileUri.
    */
+  @java.lang.Override
   public java.lang.String getGcsFileUri() {
     java.lang.Object ref = gcsFileUri_;
     if (ref instanceof java.lang.String) {
@@ -147,6 +148,7 @@ public final class CsvInstruction extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for gcsFileUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGcsFileUriBytes() {
     java.lang.Object ref = gcsFileUri_;
     if (ref instanceof java.lang.String) {

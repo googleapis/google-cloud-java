@@ -420,6 +420,10 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -523,6 +527,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the imageClassificationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasImageClassificationConfig() {
     return requestConfigCase_ == 4;
   }
@@ -541,6 +546,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The imageClassificationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
       getImageClassificationConfig() {
     if (requestConfigCase_ == 4) {
@@ -561,6 +567,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfigOrBuilder
       getImageClassificationConfigOrBuilder() {
     if (requestConfigCase_ == 4) {
@@ -583,6 +590,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the boundingPolyConfig field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPolyConfig() {
     return requestConfigCase_ == 5;
   }
@@ -599,6 +607,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The boundingPolyConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
     if (requestConfigCase_ == 5) {
       return (com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig) requestConfig_;
@@ -616,6 +625,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfigOrBuilder
       getBoundingPolyConfigOrBuilder() {
     if (requestConfigCase_ == 5) {
@@ -638,6 +648,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the polylineConfig field is set.
    */
+  @java.lang.Override
   public boolean hasPolylineConfig() {
     return requestConfigCase_ == 6;
   }
@@ -654,6 +665,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The polylineConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig() {
     if (requestConfigCase_ == 6) {
       return (com.google.cloud.datalabeling.v1beta1.PolylineConfig) requestConfig_;
@@ -671,6 +683,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.PolylineConfigOrBuilder
       getPolylineConfigOrBuilder() {
     if (requestConfigCase_ == 6) {
@@ -693,6 +706,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the segmentationConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSegmentationConfig() {
     return requestConfigCase_ == 7;
   }
@@ -709,6 +723,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The segmentationConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig() {
     if (requestConfigCase_ == 7) {
       return (com.google.cloud.datalabeling.v1beta1.SegmentationConfig) requestConfig_;
@@ -726,6 +741,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.SegmentationConfigOrBuilder
       getSegmentationConfigOrBuilder() {
     if (requestConfigCase_ == 7) {
@@ -750,6 +766,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -775,6 +792,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -802,6 +820,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the basicConfig field is set.
    */
+  @java.lang.Override
   public boolean hasBasicConfig() {
     return basicConfig_ != null;
   }
@@ -818,6 +837,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The basicConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig() {
     return basicConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
@@ -834,6 +854,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    * .google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basic_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder
       getBasicConfigOrBuilder() {
     return getBasicConfig();
@@ -854,6 +875,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for feature.
    */
+  @java.lang.Override
   public int getFeatureValue() {
     return feature_;
   }
@@ -870,6 +892,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The feature.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature getFeature() {
     @SuppressWarnings("deprecation")
     com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature result =
@@ -1409,6 +1432,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the imageClassificationConfig field is set.
      */
+    @java.lang.Override
     public boolean hasImageClassificationConfig() {
       return requestConfigCase_ == 4;
     }
@@ -1427,6 +1451,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The imageClassificationConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig
         getImageClassificationConfig() {
       if (imageClassificationConfigBuilder_ == null) {
@@ -1590,6 +1615,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * .google.cloud.datalabeling.v1beta1.ImageClassificationConfig image_classification_config = 4;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ImageClassificationConfigOrBuilder
         getImageClassificationConfigOrBuilder() {
       if ((requestConfigCase_ == 4) && (imageClassificationConfigBuilder_ != null)) {
@@ -1658,6 +1684,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the boundingPolyConfig field is set.
      */
+    @java.lang.Override
     public boolean hasBoundingPolyConfig() {
       return requestConfigCase_ == 5;
     }
@@ -1674,6 +1701,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The boundingPolyConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig() {
       if (boundingPolyConfigBuilder_ == null) {
         if (requestConfigCase_ == 5) {
@@ -1822,6 +1850,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPolyConfig bounding_poly_config = 5;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyConfigOrBuilder
         getBoundingPolyConfigOrBuilder() {
       if ((requestConfigCase_ == 5) && (boundingPolyConfigBuilder_ != null)) {
@@ -1888,6 +1917,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the polylineConfig field is set.
      */
+    @java.lang.Override
     public boolean hasPolylineConfig() {
       return requestConfigCase_ == 6;
     }
@@ -1904,6 +1934,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The polylineConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.PolylineConfig getPolylineConfig() {
       if (polylineConfigBuilder_ == null) {
         if (requestConfigCase_ == 6) {
@@ -2049,6 +2080,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datalabeling.v1beta1.PolylineConfig polyline_config = 6;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.PolylineConfigOrBuilder
         getPolylineConfigOrBuilder() {
       if ((requestConfigCase_ == 6) && (polylineConfigBuilder_ != null)) {
@@ -2115,6 +2147,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the segmentationConfig field is set.
      */
+    @java.lang.Override
     public boolean hasSegmentationConfig() {
       return requestConfigCase_ == 7;
     }
@@ -2131,6 +2164,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The segmentationConfig.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.SegmentationConfig getSegmentationConfig() {
       if (segmentationConfigBuilder_ == null) {
         if (requestConfigCase_ == 7) {
@@ -2279,6 +2313,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>.google.cloud.datalabeling.v1beta1.SegmentationConfig segmentation_config = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.SegmentationConfigOrBuilder
         getSegmentationConfigOrBuilder() {
       if ((requestConfigCase_ == 7) && (segmentationConfigBuilder_ != null)) {
@@ -2670,6 +2705,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for feature.
      */
+    @java.lang.Override
     public int getFeatureValue() {
       return feature_;
     }
@@ -2688,6 +2724,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
+
       feature_ = value;
       onChanged();
       return this;
@@ -2705,6 +2742,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The feature.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature getFeature() {
       @SuppressWarnings("deprecation")
       com.google.cloud.datalabeling.v1beta1.LabelImageRequest.Feature result =

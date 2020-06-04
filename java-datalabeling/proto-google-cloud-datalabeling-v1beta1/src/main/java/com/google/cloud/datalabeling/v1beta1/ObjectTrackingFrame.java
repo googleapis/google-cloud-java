@@ -210,6 +210,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the boundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPoly() {
     return boundedAreaCase_ == 1;
   }
@@ -218,6 +219,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * @return The boundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPoly getBoundingPoly() {
     if (boundedAreaCase_ == 1) {
       return (com.google.cloud.datalabeling.v1beta1.BoundingPoly) boundedArea_;
@@ -225,6 +227,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     return com.google.cloud.datalabeling.v1beta1.BoundingPoly.getDefaultInstance();
   }
   /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
     if (boundedAreaCase_ == 1) {
       return (com.google.cloud.datalabeling.v1beta1.BoundingPoly) boundedArea_;
@@ -239,6 +242,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the normalizedBoundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasNormalizedBoundingPoly() {
     return boundedAreaCase_ == 2;
   }
@@ -248,6 +252,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * @return The normalizedBoundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly getNormalizedBoundingPoly() {
     if (boundedAreaCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly) boundedArea_;
@@ -258,6 +263,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPolyOrBuilder
       getNormalizedBoundingPolyOrBuilder() {
     if (boundedAreaCase_ == 2) {
@@ -279,6 +285,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the timeOffset field is set.
    */
+  @java.lang.Override
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
   }
@@ -293,6 +300,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * @return The timeOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
@@ -305,6 +313,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.Duration time_offset = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
     return getTimeOffset();
   }
@@ -737,6 +746,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the boundingPoly field is set.
      */
+    @java.lang.Override
     public boolean hasBoundingPoly() {
       return boundedAreaCase_ == 1;
     }
@@ -745,6 +755,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      *
      * @return The boundingPoly.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
         if (boundedAreaCase_ == 1) {
@@ -830,6 +841,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       return getBoundingPolyFieldBuilder().getBuilder();
     }
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
       if ((boundedAreaCase_ == 1) && (boundingPolyBuilder_ != null)) {
         return boundingPolyBuilder_.getMessageOrBuilder();
@@ -877,6 +889,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      *
      * @return Whether the normalizedBoundingPoly field is set.
      */
+    @java.lang.Override
     public boolean hasNormalizedBoundingPoly() {
       return boundedAreaCase_ == 2;
     }
@@ -886,6 +899,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      *
      * @return The normalizedBoundingPoly.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly
         getNormalizedBoundingPoly() {
       if (normalizedBoundingPolyBuilder_ == null) {
@@ -994,6 +1008,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPolyOrBuilder
         getNormalizedBoundingPolyOrBuilder() {
       if ((boundedAreaCase_ == 2) && (normalizedBoundingPolyBuilder_ != null)) {

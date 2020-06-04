@@ -175,6 +175,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +199,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -224,6 +226,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +250,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -273,6 +277,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -296,6 +301,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -320,6 +326,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotationSpec>
       getAnnotationSpecsList() {
     return annotationSpecs_;
@@ -334,6 +341,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
       getAnnotationSpecsOrBuilderList() {
     return annotationSpecs_;
@@ -348,6 +356,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
    */
+  @java.lang.Override
   public int getAnnotationSpecsCount() {
     return annotationSpecs_.size();
   }
@@ -361,6 +370,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpecs(int index) {
     return annotationSpecs_.get(index);
   }
@@ -374,6 +384,7 @@ public final class AnnotationSpecSet extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_specs = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder getAnnotationSpecsOrBuilder(
       int index) {
     return annotationSpecs_.get(index);

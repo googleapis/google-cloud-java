@@ -149,6 +149,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    *
    * @return Whether the timeSegment field is set.
    */
+  @java.lang.Override
   public boolean hasTimeSegment() {
     return timeSegment_ != null;
   }
@@ -163,6 +164,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    *
    * @return The timeSegment.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TimeSegment getTimeSegment() {
     return timeSegment_ == null
         ? com.google.cloud.datalabeling.v1beta1.TimeSegment.getDefaultInstance()
@@ -177,6 +179,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.datalabeling.v1beta1.TimeSegment time_segment = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder() {
     return getTimeSegment();
   }
@@ -194,6 +197,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    *
    * @return Whether the annotationSpec field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
   }
@@ -208,6 +212,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    *
    * @return The annotationSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
@@ -222,6 +227,7 @@ public final class VideoClassificationAnnotation extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
     return getAnnotationSpec();

@@ -168,6 +168,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The dataset.
    */
+  @java.lang.Override
   public java.lang.String getDataset() {
     java.lang.Object ref = dataset_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +192,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The bytes for dataset.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDatasetBytes() {
     java.lang.Object ref = dataset_;
     if (ref instanceof java.lang.String) {
@@ -216,6 +218,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The totalCount.
    */
+  @java.lang.Override
   public int getTotalCount() {
     return totalCount_;
   }
@@ -233,6 +236,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The exportCount.
    */
+  @java.lang.Override
   public int getExportCount() {
     return exportCount_;
   }
@@ -250,6 +254,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return Whether the labelStats field is set.
    */
+  @java.lang.Override
   public boolean hasLabelStats() {
     return labelStats_ != null;
   }
@@ -264,6 +269,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The labelStats.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelStats getLabelStats() {
     return labelStats_ == null
         ? com.google.cloud.datalabeling.v1beta1.LabelStats.getDefaultInstance()
@@ -278,6 +284,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * <code>.google.cloud.datalabeling.v1beta1.LabelStats label_stats = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.LabelStatsOrBuilder getLabelStatsOrBuilder() {
     return getLabelStats();
   }
@@ -295,6 +302,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -309,6 +317,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OutputConfig getOutputConfig() {
     return outputConfig_ == null
         ? com.google.cloud.datalabeling.v1beta1.OutputConfig.getDefaultInstance()
@@ -323,6 +332,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
    *
    * <code>.google.cloud.datalabeling.v1beta1.OutputConfig output_config = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }
@@ -861,6 +871,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      *
      * @return The totalCount.
      */
+    @java.lang.Override
     public int getTotalCount() {
       return totalCount_;
     }
@@ -912,6 +923,7 @@ public final class ExportDataOperationResponse extends com.google.protobuf.Gener
      *
      * @return The exportCount.
      */
+    @java.lang.Override
     public int getExportCount() {
       return exportCount_;
     }

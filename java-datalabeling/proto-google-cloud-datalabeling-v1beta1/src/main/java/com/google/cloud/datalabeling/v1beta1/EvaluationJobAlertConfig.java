@@ -130,6 +130,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    *
    * @return The email.
    */
+  @java.lang.Override
   public java.lang.String getEmail() {
     java.lang.Object ref = email_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    *
    * @return The bytes for email.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEmailBytes() {
     java.lang.Object ref = email_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +183,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
    *
    * @return The minAcceptableMeanAveragePrecision.
    */
+  @java.lang.Override
   public double getMinAcceptableMeanAveragePrecision() {
     return minAcceptableMeanAveragePrecision_;
   }
@@ -652,6 +655,7 @@ public final class EvaluationJobAlertConfig extends com.google.protobuf.Generate
      *
      * @return The minAcceptableMeanAveragePrecision.
      */
+    @java.lang.Override
     public double getMinAcceptableMeanAveragePrecision() {
       return minAcceptableMeanAveragePrecision_;
     }

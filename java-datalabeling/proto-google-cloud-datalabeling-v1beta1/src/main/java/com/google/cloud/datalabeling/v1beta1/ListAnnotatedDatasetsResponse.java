@@ -142,6 +142,7 @@ public final class ListAnnotatedDatasetsResponse extends com.google.protobuf.Gen
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotatedDataset annotated_datasets = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotatedDataset>
       getAnnotatedDatasetsList() {
     return annotatedDatasets_;
@@ -156,6 +157,7 @@ public final class ListAnnotatedDatasetsResponse extends com.google.protobuf.Gen
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotatedDataset annotated_datasets = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetOrBuilder>
       getAnnotatedDatasetsOrBuilderList() {
     return annotatedDatasets_;
@@ -170,6 +172,7 @@ public final class ListAnnotatedDatasetsResponse extends com.google.protobuf.Gen
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotatedDataset annotated_datasets = 1;
    * </code>
    */
+  @java.lang.Override
   public int getAnnotatedDatasetsCount() {
     return annotatedDatasets_.size();
   }
@@ -183,6 +186,7 @@ public final class ListAnnotatedDatasetsResponse extends com.google.protobuf.Gen
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotatedDataset annotated_datasets = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotatedDataset getAnnotatedDatasets(int index) {
     return annotatedDatasets_.get(index);
   }
@@ -196,6 +200,7 @@ public final class ListAnnotatedDatasetsResponse extends com.google.protobuf.Gen
    * <code>repeated .google.cloud.datalabeling.v1beta1.AnnotatedDataset annotated_datasets = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotatedDatasetOrBuilder
       getAnnotatedDatasetsOrBuilder(int index) {
     return annotatedDatasets_.get(index);
@@ -214,6 +219,7 @@ public final class ListAnnotatedDatasetsResponse extends com.google.protobuf.Gen
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +242,7 @@ public final class ListAnnotatedDatasetsResponse extends com.google.protobuf.Gen
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

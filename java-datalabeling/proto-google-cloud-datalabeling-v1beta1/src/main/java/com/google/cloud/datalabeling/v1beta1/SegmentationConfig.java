@@ -133,6 +133,7 @@ public final class SegmentationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The annotationSpecSet.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationSpecSet() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class SegmentationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for annotationSpecSet.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationSpecSetBytes() {
     java.lang.Object ref = annotationSpecSet_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +183,7 @@ public final class SegmentationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The instructionMessage.
    */
+  @java.lang.Override
   public java.lang.String getInstructionMessage() {
     java.lang.Object ref = instructionMessage_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +206,7 @@ public final class SegmentationConfig extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for instructionMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInstructionMessageBytes() {
     java.lang.Object ref = instructionMessage_;
     if (ref instanceof java.lang.String) {

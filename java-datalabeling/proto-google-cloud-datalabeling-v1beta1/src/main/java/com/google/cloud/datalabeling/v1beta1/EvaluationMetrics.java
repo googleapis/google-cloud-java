@@ -189,6 +189,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the classificationMetrics field is set.
    */
+  @java.lang.Override
   public boolean hasClassificationMetrics() {
     return metricsCase_ == 1;
   }
@@ -198,6 +199,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
    *
    * @return The classificationMetrics.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ClassificationMetrics getClassificationMetrics() {
     if (metricsCase_ == 1) {
       return (com.google.cloud.datalabeling.v1beta1.ClassificationMetrics) metrics_;
@@ -208,6 +210,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ClassificationMetricsOrBuilder
       getClassificationMetricsOrBuilder() {
     if (metricsCase_ == 1) {
@@ -223,6 +226,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the objectDetectionMetrics field is set.
    */
+  @java.lang.Override
   public boolean hasObjectDetectionMetrics() {
     return metricsCase_ == 2;
   }
@@ -232,6 +236,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
    *
    * @return The objectDetectionMetrics.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics getObjectDetectionMetrics() {
     if (metricsCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics) metrics_;
@@ -242,6 +247,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetricsOrBuilder
       getObjectDetectionMetricsOrBuilder() {
     if (metricsCase_ == 2) {
@@ -644,6 +650,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the classificationMetrics field is set.
      */
+    @java.lang.Override
     public boolean hasClassificationMetrics() {
       return metricsCase_ == 1;
     }
@@ -653,6 +660,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
      *
      * @return The classificationMetrics.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ClassificationMetrics getClassificationMetrics() {
       if (classificationMetricsBuilder_ == null) {
         if (metricsCase_ == 1) {
@@ -760,6 +768,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ClassificationMetricsOrBuilder
         getClassificationMetricsOrBuilder() {
       if ((metricsCase_ == 1) && (classificationMetricsBuilder_ != null)) {
@@ -812,6 +821,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
      *
      * @return Whether the objectDetectionMetrics field is set.
      */
+    @java.lang.Override
     public boolean hasObjectDetectionMetrics() {
       return metricsCase_ == 2;
     }
@@ -821,6 +831,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
      *
      * @return The objectDetectionMetrics.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics
         getObjectDetectionMetrics() {
       if (objectDetectionMetricsBuilder_ == null) {
@@ -929,6 +940,7 @@ public final class EvaluationMetrics extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetricsOrBuilder
         getObjectDetectionMetricsOrBuilder() {
       if ((metricsCase_ == 2) && (objectDetectionMetricsBuilder_ != null)) {

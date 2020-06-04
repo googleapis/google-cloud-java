@@ -213,6 +213,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
    *
    * @return Whether the boundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingPoly() {
     return boundedAreaCase_ == 2;
   }
@@ -221,6 +222,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
    *
    * @return The boundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPoly getBoundingPoly() {
     if (boundedAreaCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.BoundingPoly) boundedArea_;
@@ -228,6 +230,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
     return com.google.cloud.datalabeling.v1beta1.BoundingPoly.getDefaultInstance();
   }
   /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
     if (boundedAreaCase_ == 2) {
       return (com.google.cloud.datalabeling.v1beta1.BoundingPoly) boundedArea_;
@@ -242,6 +245,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
    *
    * @return Whether the normalizedBoundingPoly field is set.
    */
+  @java.lang.Override
   public boolean hasNormalizedBoundingPoly() {
     return boundedAreaCase_ == 3;
   }
@@ -251,6 +255,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
    *
    * @return The normalizedBoundingPoly.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly getNormalizedBoundingPoly() {
     if (boundedAreaCase_ == 3) {
       return (com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly) boundedArea_;
@@ -261,6 +266,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPolyOrBuilder
       getNormalizedBoundingPolyOrBuilder() {
     if (boundedAreaCase_ == 3) {
@@ -282,6 +288,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
    *
    * @return Whether the annotationSpec field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationSpec() {
     return annotationSpec_ != null;
   }
@@ -296,6 +303,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
    *
    * @return The annotationSpec.
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec() {
     return annotationSpec_ == null
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
@@ -310,6 +318,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
    *
    * <code>.google.cloud.datalabeling.v1beta1.AnnotationSpec annotation_spec = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder
       getAnnotationSpecOrBuilder() {
     return getAnnotationSpec();
@@ -750,6 +759,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      *
      * @return Whether the boundingPoly field is set.
      */
+    @java.lang.Override
     public boolean hasBoundingPoly() {
       return boundedAreaCase_ == 2;
     }
@@ -758,6 +768,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      *
      * @return The boundingPoly.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
         if (boundedAreaCase_ == 2) {
@@ -843,6 +854,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
       return getBoundingPolyFieldBuilder().getBuilder();
     }
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 2;</code> */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
       if ((boundedAreaCase_ == 2) && (boundingPolyBuilder_ != null)) {
         return boundingPolyBuilder_.getMessageOrBuilder();
@@ -890,6 +902,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      *
      * @return Whether the normalizedBoundingPoly field is set.
      */
+    @java.lang.Override
     public boolean hasNormalizedBoundingPoly() {
       return boundedAreaCase_ == 3;
     }
@@ -899,6 +912,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      *
      * @return The normalizedBoundingPoly.
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly
         getNormalizedBoundingPoly() {
       if (normalizedBoundingPolyBuilder_ == null) {
@@ -1007,6 +1021,7 @@ public final class ImageBoundingPolyAnnotation extends com.google.protobuf.Gener
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPolyOrBuilder
         getNormalizedBoundingPolyOrBuilder() {
       if ((boundedAreaCase_ == 3) && (normalizedBoundingPolyBuilder_ != null)) {
