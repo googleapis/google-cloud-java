@@ -177,6 +177,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the eventTime field is set.
    */
+  @java.lang.Override
   public boolean hasEventTime() {
     return eventTime_ != null;
   }
@@ -193,6 +194,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
@@ -207,6 +209,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp event_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEventTimeOrBuilder() {
     return getEventTime();
   }
@@ -224,6 +227,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the serviceContext field is set.
    */
+  @java.lang.Override
   public boolean hasServiceContext() {
     return serviceContext_ != null;
   }
@@ -238,6 +242,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The serviceContext.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getServiceContext() {
     return serviceContext_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance()
@@ -252,6 +257,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContext service_context = 2;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder
       getServiceContextOrBuilder() {
     return getServiceContext();
@@ -270,6 +276,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The message.
    */
+  @java.lang.Override
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
@@ -292,6 +299,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for message.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMessageBytes() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
@@ -317,6 +325,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the context field is set.
    */
+  @java.lang.Override
   public boolean hasContext() {
     return context_ != null;
   }
@@ -331,6 +340,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The context.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorContext getContext() {
     return context_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.getDefaultInstance()
@@ -345,6 +355,7 @@ public final class ErrorEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorContext context = 5;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorContextOrBuilder
       getContextOrBuilder() {
     return getContext();

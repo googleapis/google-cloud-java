@@ -141,6 +141,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The filePath.
    */
+  @java.lang.Override
   public java.lang.String getFilePath() {
     java.lang.Object ref = filePath_;
     if (ref instanceof java.lang.String) {
@@ -164,6 +165,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for filePath.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilePathBytes() {
     java.lang.Object ref = filePath_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lineNumber.
    */
+  @java.lang.Override
   public int getLineNumber() {
     return lineNumber_;
   }
@@ -208,6 +211,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The functionName.
    */
+  @java.lang.Override
   public java.lang.String getFunctionName() {
     java.lang.Object ref = functionName_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +236,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for functionName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFunctionNameBytes() {
     java.lang.Object ref = functionName_;
     if (ref instanceof java.lang.String) {
@@ -723,6 +728,7 @@ public final class SourceLocation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The lineNumber.
      */
+    @java.lang.Override
     public int getLineNumber() {
       return lineNumber_;
     }

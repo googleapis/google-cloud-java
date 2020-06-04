@@ -159,6 +159,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
       getErrorGroupStatsList() {
     return errorGroupStats_;
@@ -174,6 +175,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>
       getErrorGroupStatsOrBuilderList() {
@@ -190,6 +192,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public int getErrorGroupStatsCount() {
     return errorGroupStats_.size();
   }
@@ -204,6 +207,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getErrorGroupStats(
       int index) {
     return errorGroupStats_.get(index);
@@ -219,6 +223,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder
       getErrorGroupStatsOrBuilder(int index) {
     return errorGroupStats_.get(index);
@@ -239,6 +244,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +269,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +298,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    *
    * @return Whether the timeRangeBegin field is set.
    */
+  @java.lang.Override
   public boolean hasTimeRangeBegin() {
     return timeRangeBegin_ != null;
   }
@@ -308,6 +316,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The timeRangeBegin.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getTimeRangeBegin() {
     return timeRangeBegin_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -325,6 +334,7 @@ public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimeRangeBeginOrBuilder() {
     return getTimeRangeBegin();
   }

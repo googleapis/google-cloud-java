@@ -144,6 +144,7 @@ public final class ServiceContextFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The service.
    */
+  @java.lang.Override
   public java.lang.String getService() {
     java.lang.Object ref = service_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class ServiceContextFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for service.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceBytes() {
     java.lang.Object ref = service_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class ServiceContextFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The version.
    */
+  @java.lang.Override
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -216,6 +219,7 @@ public final class ServiceContextFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for version.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +246,7 @@ public final class ServiceContextFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The resourceType.
    */
+  @java.lang.Override
   public java.lang.String getResourceType() {
     java.lang.Object ref = resourceType_;
     if (ref instanceof java.lang.String) {
@@ -265,6 +270,7 @@ public final class ServiceContextFilter extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for resourceType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResourceTypeBytes() {
     java.lang.Object ref = resourceType_;
     if (ref instanceof java.lang.String) {

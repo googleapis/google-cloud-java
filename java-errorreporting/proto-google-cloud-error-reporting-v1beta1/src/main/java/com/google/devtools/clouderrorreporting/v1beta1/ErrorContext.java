@@ -164,6 +164,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the httpRequest field is set.
    */
+  @java.lang.Override
   public boolean hasHttpRequest() {
     return httpRequest_ != null;
   }
@@ -179,6 +180,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The httpRequest.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext getHttpRequest() {
     return httpRequest_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext.getDefaultInstance()
@@ -194,6 +196,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext http_request = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContextOrBuilder
       getHttpRequestOrBuilder() {
     return getHttpRequest();
@@ -219,6 +222,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The user.
    */
+  @java.lang.Override
   public java.lang.String getUser() {
     java.lang.Object ref = user_;
     if (ref instanceof java.lang.String) {
@@ -248,6 +252,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for user.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserBytes() {
     java.lang.Object ref = user_;
     if (ref instanceof java.lang.String) {
@@ -277,6 +282,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the reportLocation field is set.
    */
+  @java.lang.Override
   public boolean hasReportLocation() {
     return reportLocation_ != null;
   }
@@ -295,6 +301,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The reportLocation.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.SourceLocation getReportLocation() {
     return reportLocation_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.SourceLocation.getDefaultInstance()
@@ -313,6 +320,7 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.SourceLocationOrBuilder
       getReportLocationOrBuilder() {
     return getReportLocation();

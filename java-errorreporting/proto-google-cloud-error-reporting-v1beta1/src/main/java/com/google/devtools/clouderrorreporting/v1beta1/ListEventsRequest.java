@@ -187,6 +187,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The projectName.
    */
+  @java.lang.Override
   public java.lang.String getProjectName() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +216,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for projectName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectNameBytes() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +242,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The groupId.
    */
+  @java.lang.Override
   public java.lang.String getGroupId() {
     java.lang.Object ref = groupId_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +265,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for groupId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGroupIdBytes() {
     java.lang.Object ref = groupId_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +295,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the serviceFilter field is set.
    */
+  @java.lang.Override
   public boolean hasServiceFilter() {
     return serviceFilter_ != null;
   }
@@ -309,6 +314,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The serviceFilter.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter getServiceFilter() {
     return serviceFilter_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.getDefaultInstance()
@@ -327,6 +333,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilterOrBuilder
       getServiceFilterOrBuilder() {
     return getServiceFilter();
@@ -349,6 +356,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the timeRange field is set.
    */
+  @java.lang.Override
   public boolean hasTimeRange() {
     return timeRange_ != null;
   }
@@ -367,6 +375,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The timeRange.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange getTimeRange() {
     return timeRange_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.getDefaultInstance()
@@ -385,6 +394,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRangeOrBuilder
       getTimeRangeOrBuilder() {
     return getTimeRange();
@@ -403,6 +413,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -420,6 +431,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -442,6 +454,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -1592,6 +1605,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

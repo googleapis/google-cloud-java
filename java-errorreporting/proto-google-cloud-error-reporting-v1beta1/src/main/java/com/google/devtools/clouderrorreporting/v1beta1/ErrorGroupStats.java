@@ -233,6 +233,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the group field is set.
    */
+  @java.lang.Override
   public boolean hasGroup() {
     return group_ != null;
   }
@@ -247,6 +248,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return The group.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup() {
     return group_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()
@@ -261,6 +263,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder getGroupOrBuilder() {
     return getGroup();
   }
@@ -279,6 +282,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return The count.
    */
+  @java.lang.Override
   public long getCount() {
     return count_;
   }
@@ -307,6 +311,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return The affectedUsersCount.
    */
+  @java.lang.Override
   public long getAffectedUsersCount() {
     return affectedUsersCount_;
   }
@@ -326,6 +331,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount>
       getTimedCountsList() {
     return timedCounts_;
@@ -343,6 +349,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>
       getTimedCountsOrBuilderList() {
@@ -361,6 +368,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
+  @java.lang.Override
   public int getTimedCountsCount() {
     return timedCounts_.size();
   }
@@ -377,6 +385,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.TimedCount getTimedCounts(int index) {
     return timedCounts_.get(index);
   }
@@ -393,6 +402,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder
       getTimedCountsOrBuilder(int index) {
     return timedCounts_.get(index);
@@ -413,6 +423,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the firstSeenTime field is set.
    */
+  @java.lang.Override
   public boolean hasFirstSeenTime() {
     return firstSeenTime_ != null;
   }
@@ -429,6 +440,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return The firstSeenTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getFirstSeenTime() {
     return firstSeenTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -445,6 +457,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp first_seen_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getFirstSeenTimeOrBuilder() {
     return getFirstSeenTime();
   }
@@ -464,6 +477,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the lastSeenTime field is set.
    */
+  @java.lang.Override
   public boolean hasLastSeenTime() {
     return lastSeenTime_ != null;
   }
@@ -480,6 +494,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return The lastSeenTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastSeenTime() {
     return lastSeenTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -496,6 +511,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Timestamp last_seen_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastSeenTimeOrBuilder() {
     return getLastSeenTime();
   }
@@ -516,6 +532,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
       getAffectedServicesList() {
     return affectedServices_;
@@ -533,6 +550,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>
       getAffectedServicesOrBuilderList() {
@@ -551,6 +569,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
    * </code>
    */
+  @java.lang.Override
   public int getAffectedServicesCount() {
     return affectedServices_.size();
   }
@@ -567,6 +586,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getAffectedServices(
       int index) {
     return affectedServices_.get(index);
@@ -584,6 +604,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder
       getAffectedServicesOrBuilder(int index) {
     return affectedServices_.get(index);
@@ -603,6 +624,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return The numAffectedServices.
    */
+  @java.lang.Override
   public int getNumAffectedServices() {
     return numAffectedServices_;
   }
@@ -624,6 +646,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the representative field is set.
    */
+  @java.lang.Override
   public boolean hasRepresentative() {
     return representative_ != null;
   }
@@ -642,6 +665,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * @return The representative.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getRepresentative() {
     return representative_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance()
@@ -660,6 +684,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder
       getRepresentativeOrBuilder() {
     return getRepresentative();
@@ -1441,6 +1466,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
      *
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }
@@ -1505,6 +1531,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
      *
      * @return The affectedUsersCount.
      */
+    @java.lang.Override
     public long getAffectedUsersCount() {
       return affectedUsersCount_;
     }
@@ -2885,6 +2912,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
      *
      * @return The numAffectedServices.
      */
+    @java.lang.Override
     public int getNumAffectedServices() {
       return numAffectedServices_;
     }

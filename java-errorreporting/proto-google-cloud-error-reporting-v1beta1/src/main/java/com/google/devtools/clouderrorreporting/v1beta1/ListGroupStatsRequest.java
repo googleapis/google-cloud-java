@@ -240,6 +240,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The projectName.
    */
+  @java.lang.Override
   public java.lang.String getProjectName() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +269,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for projectName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectNameBytes() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {
@@ -358,6 +360,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the serviceFilter field is set.
    */
+  @java.lang.Override
   public boolean hasServiceFilter() {
     return serviceFilter_ != null;
   }
@@ -376,6 +379,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The serviceFilter.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter getServiceFilter() {
     return serviceFilter_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter.getDefaultInstance()
@@ -394,6 +398,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    * .google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilterOrBuilder
       getServiceFilterOrBuilder() {
     return getServiceFilter();
@@ -421,6 +426,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the timeRange field is set.
    */
+  @java.lang.Override
   public boolean hasTimeRange() {
     return timeRange_ != null;
   }
@@ -444,6 +450,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The timeRange.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange getTimeRange() {
     return timeRange_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.getDefaultInstance()
@@ -467,6 +474,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    * .google.devtools.clouderrorreporting.v1beta1.QueryTimeRange time_range = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRangeOrBuilder
       getTimeRangeOrBuilder() {
     return getTimeRange();
@@ -488,6 +496,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the timedCountDuration field is set.
    */
+  @java.lang.Override
   public boolean hasTimedCountDuration() {
     return timedCountDuration_ != null;
   }
@@ -505,6 +514,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The timedCountDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimedCountDuration() {
     return timedCountDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -522,6 +532,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    * .google.protobuf.Duration timed_count_duration = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimedCountDurationOrBuilder() {
     return getTimedCountDuration();
   }
@@ -542,6 +553,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The enum numeric value on the wire for alignment.
    */
+  @java.lang.Override
   public int getAlignmentValue() {
     return alignment_;
   }
@@ -559,6 +571,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The alignment.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment getAlignment() {
     @SuppressWarnings("deprecation")
     com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment result =
@@ -583,6 +596,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the alignmentTime field is set.
    */
+  @java.lang.Override
   public boolean hasAlignmentTime() {
     return alignmentTime_ != null;
   }
@@ -599,6 +613,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The alignmentTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getAlignmentTime() {
     return alignmentTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -615,6 +630,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.protobuf.Timestamp alignment_time = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getAlignmentTimeOrBuilder() {
     return getAlignmentTime();
   }
@@ -635,6 +651,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The enum numeric value on the wire for order.
    */
+  @java.lang.Override
   public int getOrderValue() {
     return order_;
   }
@@ -652,6 +669,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The order.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder getOrder() {
     @SuppressWarnings("deprecation")
     com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder result =
@@ -675,6 +693,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -694,6 +713,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -718,6 +738,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -2308,6 +2329,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The enum numeric value on the wire for alignment.
      */
+    @java.lang.Override
     public int getAlignmentValue() {
       return alignment_;
     }
@@ -2327,6 +2349,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setAlignmentValue(int value) {
+
       alignment_ = value;
       onChanged();
       return this;
@@ -2345,6 +2368,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The alignment.
      */
+    @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment getAlignment() {
       @SuppressWarnings("deprecation")
       com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment result =
@@ -2626,6 +2650,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The enum numeric value on the wire for order.
      */
+    @java.lang.Override
     public int getOrderValue() {
       return order_;
     }
@@ -2645,6 +2670,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setOrderValue(int value) {
+
       order_ = value;
       onChanged();
       return this;
@@ -2663,6 +2689,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The order.
      */
+    @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder getOrder() {
       @SuppressWarnings("deprecation")
       com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder result =
@@ -2729,6 +2756,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

@@ -148,6 +148,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    * @return The projectName.
    */
+  @java.lang.Override
   public java.lang.String getProjectName() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for projectName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectNameBytes() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +205,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    * @return Whether the event field is set.
    */
+  @java.lang.Override
   public boolean hasEvent() {
     return event_ != null;
   }
@@ -219,6 +222,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    *
    * @return The event.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent getEvent() {
     return event_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.getDefaultInstance()
@@ -235,6 +239,7 @@ public final class ReportErrorEventRequest extends com.google.protobuf.Generated
    * .google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder
       getEventOrBuilder() {
     return getEvent();

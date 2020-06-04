@@ -164,6 +164,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The method.
    */
+  @java.lang.Override
   public java.lang.String getMethod() {
     java.lang.Object ref = method_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +187,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for method.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMethodBytes() {
     java.lang.Object ref = method_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +213,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +236,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -258,6 +262,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The userAgent.
    */
+  @java.lang.Override
   public java.lang.String getUserAgent() {
     java.lang.Object ref = userAgent_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +285,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for userAgent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserAgentBytes() {
     java.lang.Object ref = userAgent_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +311,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The referrer.
    */
+  @java.lang.Override
   public java.lang.String getReferrer() {
     java.lang.Object ref = referrer_;
     if (ref instanceof java.lang.String) {
@@ -327,6 +334,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for referrer.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getReferrerBytes() {
     java.lang.Object ref = referrer_;
     if (ref instanceof java.lang.String) {
@@ -352,6 +360,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The responseStatusCode.
    */
+  @java.lang.Override
   public int getResponseStatusCode() {
     return responseStatusCode_;
   }
@@ -372,6 +381,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The remoteIp.
    */
+  @java.lang.Override
   public java.lang.String getRemoteIp() {
     java.lang.Object ref = remoteIp_;
     if (ref instanceof java.lang.String) {
@@ -397,6 +407,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for remoteIp.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRemoteIpBytes() {
     java.lang.Object ref = remoteIp_;
     if (ref instanceof java.lang.String) {
@@ -1254,6 +1265,7 @@ public final class HttpRequestContext extends com.google.protobuf.GeneratedMessa
      *
      * @return The responseStatusCode.
      */
+    @java.lang.Override
     public int getResponseStatusCode() {
       return responseStatusCode_;
     }

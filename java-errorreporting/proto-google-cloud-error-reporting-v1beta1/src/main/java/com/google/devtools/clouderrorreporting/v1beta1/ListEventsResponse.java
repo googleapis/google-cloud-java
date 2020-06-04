@@ -156,6 +156,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>
       getErrorEventsList() {
     return errorEvents_;
@@ -169,6 +170,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
       getErrorEventsOrBuilderList() {
@@ -183,6 +185,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
+  @java.lang.Override
   public int getErrorEventsCount() {
     return errorEvents_.size();
   }
@@ -195,6 +198,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getErrorEvents(int index) {
     return errorEvents_.get(index);
   }
@@ -207,6 +211,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder
       getErrorEventsOrBuilder(int index) {
     return errorEvents_.get(index);
@@ -227,6 +232,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +257,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -276,6 +283,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the timeRangeBegin field is set.
    */
+  @java.lang.Override
   public boolean hasTimeRangeBegin() {
     return timeRangeBegin_ != null;
   }
@@ -290,6 +298,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The timeRangeBegin.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getTimeRangeBegin() {
     return timeRangeBegin_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -304,6 +313,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimeRangeBeginOrBuilder() {
     return getTimeRangeBegin();
   }

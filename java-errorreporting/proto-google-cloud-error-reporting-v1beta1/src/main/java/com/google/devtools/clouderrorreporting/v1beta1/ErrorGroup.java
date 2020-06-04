@@ -152,6 +152,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -175,6 +176,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The groupId.
    */
+  @java.lang.Override
   public java.lang.String getGroupId() {
     java.lang.Object ref = groupId_;
     if (ref instanceof java.lang.String) {
@@ -224,6 +227,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for groupId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGroupIdBytes() {
     java.lang.Object ref = groupId_;
     if (ref instanceof java.lang.String) {
@@ -249,6 +253,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>
       getTrackingIssuesList() {
     return trackingIssues_;
@@ -263,6 +268,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>
       getTrackingIssuesOrBuilderList() {
@@ -278,6 +284,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
    * </code>
    */
+  @java.lang.Override
   public int getTrackingIssuesCount() {
     return trackingIssues_.size();
   }
@@ -291,6 +298,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue getTrackingIssues(
       int index) {
     return trackingIssues_.get(index);
@@ -305,6 +313,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder
       getTrackingIssuesOrBuilder(int index) {
     return trackingIssues_.get(index);

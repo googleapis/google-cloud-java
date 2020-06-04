@@ -309,6 +309,10 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -356,6 +360,7 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for period.
    */
+  @java.lang.Override
   public int getPeriodValue() {
     return period_;
   }
@@ -370,6 +375,7 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The period.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period getPeriod() {
     @SuppressWarnings("deprecation")
     com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period result =
@@ -717,6 +723,7 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for period.
      */
+    @java.lang.Override
     public int getPeriodValue() {
       return period_;
     }
@@ -733,6 +740,7 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPeriodValue(int value) {
+
       period_ = value;
       onChanged();
       return this;
@@ -748,6 +756,7 @@ public final class QueryTimeRange extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The period.
      */
+    @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period getPeriod() {
       @SuppressWarnings("deprecation")
       com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange.Period result =

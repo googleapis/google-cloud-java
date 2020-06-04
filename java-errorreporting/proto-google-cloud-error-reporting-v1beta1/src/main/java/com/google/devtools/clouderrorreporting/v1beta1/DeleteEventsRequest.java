@@ -130,6 +130,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The projectName.
    */
+  @java.lang.Override
   public java.lang.String getProjectName() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {
@@ -158,6 +159,7 @@ public final class DeleteEventsRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for projectName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectNameBytes() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {

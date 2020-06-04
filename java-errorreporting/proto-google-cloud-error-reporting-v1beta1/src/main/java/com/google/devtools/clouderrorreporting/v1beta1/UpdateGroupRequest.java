@@ -134,6 +134,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the group field is set.
    */
+  @java.lang.Override
   public boolean hasGroup() {
     return group_ != null;
   }
@@ -150,6 +151,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The group.
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup() {
     return group_ == null
         ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()
@@ -166,6 +168,7 @@ public final class UpdateGroupRequest extends com.google.protobuf.GeneratedMessa
    * .google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder getGroupOrBuilder() {
     return getGroup();
   }

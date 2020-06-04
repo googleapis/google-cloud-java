@@ -132,6 +132,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The groupName.
    */
+  @java.lang.Override
   public java.lang.String getGroupName() {
     java.lang.Object ref = groupName_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class GetGroupRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for groupName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGroupNameBytes() {
     java.lang.Object ref = groupName_;
     if (ref instanceof java.lang.String) {
