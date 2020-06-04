@@ -922,6 +922,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The location.
        */
+      @java.lang.Override
       public java.lang.String getLocation() {
         java.lang.Object ref = location_;
         if (ref instanceof java.lang.String) {
@@ -945,6 +946,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for location.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getLocationBytes() {
         java.lang.Object ref = location_;
         if (ref instanceof java.lang.String) {
@@ -1483,6 +1485,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.secrets.v1beta1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.secretmanager.v1beta1.Replication.UserManaged.Replica>
         getReplicasList() {
       return replicas_;
@@ -1499,6 +1502,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.secrets.v1beta1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends
                 com.google.cloud.secretmanager.v1beta1.Replication.UserManaged.ReplicaOrBuilder>
@@ -1517,6 +1521,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.secrets.v1beta1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public int getReplicasCount() {
       return replicas_.size();
     }
@@ -1532,6 +1537,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.secrets.v1beta1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.secretmanager.v1beta1.Replication.UserManaged.Replica getReplicas(
         int index) {
       return replicas_.get(index);
@@ -1548,6 +1554,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.secrets.v1beta1.Replication.UserManaged.Replica replicas = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.secretmanager.v1beta1.Replication.UserManaged.ReplicaOrBuilder
         getReplicasOrBuilder(int index) {
       return replicas_.get(index);
@@ -2468,6 +2475,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the automatic field is set.
    */
+  @java.lang.Override
   public boolean hasAutomatic() {
     return replicationCase_ == 1;
   }
@@ -2482,6 +2490,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The automatic.
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.Replication.Automatic getAutomatic() {
     if (replicationCase_ == 1) {
       return (com.google.cloud.secretmanager.v1beta1.Replication.Automatic) replication_;
@@ -2497,6 +2506,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.Replication.AutomaticOrBuilder
       getAutomaticOrBuilder() {
     if (replicationCase_ == 1) {
@@ -2517,6 +2527,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the userManaged field is set.
    */
+  @java.lang.Override
   public boolean hasUserManaged() {
     return replicationCase_ == 2;
   }
@@ -2531,6 +2542,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userManaged.
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.Replication.UserManaged getUserManaged() {
     if (replicationCase_ == 2) {
       return (com.google.cloud.secretmanager.v1beta1.Replication.UserManaged) replication_;
@@ -2546,6 +2558,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.Replication.UserManagedOrBuilder
       getUserManagedOrBuilder() {
     if (replicationCase_ == 2) {
@@ -2960,6 +2973,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the automatic field is set.
      */
+    @java.lang.Override
     public boolean hasAutomatic() {
       return replicationCase_ == 1;
     }
@@ -2974,6 +2988,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The automatic.
      */
+    @java.lang.Override
     public com.google.cloud.secretmanager.v1beta1.Replication.Automatic getAutomatic() {
       if (automaticBuilder_ == null) {
         if (replicationCase_ == 1) {
@@ -3111,6 +3126,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.secretmanager.v1beta1.Replication.AutomaticOrBuilder
         getAutomaticOrBuilder() {
       if ((replicationCase_ == 1) && (automaticBuilder_ != null)) {
@@ -3173,6 +3189,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the userManaged field is set.
      */
+    @java.lang.Override
     public boolean hasUserManaged() {
       return replicationCase_ == 2;
     }
@@ -3187,6 +3204,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The userManaged.
      */
+    @java.lang.Override
     public com.google.cloud.secretmanager.v1beta1.Replication.UserManaged getUserManaged() {
       if (userManagedBuilder_ == null) {
         if (replicationCase_ == 2) {
@@ -3324,6 +3342,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.secretmanager.v1beta1.Replication.UserManagedOrBuilder
         getUserManagedOrBuilder() {
       if ((replicationCase_ == 2) && (userManagedBuilder_ != null)) {

@@ -145,6 +145,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.secretmanager.v1.SecretVersion versions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.secretmanager.v1.SecretVersion> getVersionsList() {
     return versions_;
   }
@@ -158,6 +159,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.secretmanager.v1.SecretVersion versions = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.secretmanager.v1.SecretVersionOrBuilder>
       getVersionsOrBuilderList() {
     return versions_;
@@ -172,6 +174,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.secretmanager.v1.SecretVersion versions = 1;</code>
    */
+  @java.lang.Override
   public int getVersionsCount() {
     return versions_.size();
   }
@@ -185,6 +188,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.secretmanager.v1.SecretVersion versions = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1.SecretVersion getVersions(int index) {
     return versions_.get(index);
   }
@@ -198,6 +202,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.secretmanager.v1.SecretVersion versions = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1.SecretVersionOrBuilder getVersionsOrBuilder(int index) {
     return versions_.get(index);
   }
@@ -216,6 +221,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +245,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +271,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -1155,6 +1163,7 @@ public final class ListSecretVersionsResponse extends com.google.protobuf.Genera
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

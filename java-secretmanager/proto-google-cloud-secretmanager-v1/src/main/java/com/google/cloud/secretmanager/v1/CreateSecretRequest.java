@@ -151,6 +151,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The secretId.
    */
+  @java.lang.Override
   public java.lang.String getSecretId() {
     java.lang.Object ref = secretId_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +232,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for secretId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSecretIdBytes() {
     java.lang.Object ref = secretId_;
     if (ref instanceof java.lang.String) {
@@ -256,6 +260,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the secret field is set.
    */
+  @java.lang.Override
   public boolean hasSecret() {
     return secret_ != null;
   }
@@ -272,6 +277,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The secret.
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1.Secret getSecret() {
     return secret_ == null
         ? com.google.cloud.secretmanager.v1.Secret.getDefaultInstance()
@@ -288,6 +294,7 @@ public final class CreateSecretRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.secretmanager.v1.Secret secret = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1.SecretOrBuilder getSecretOrBuilder() {
     return getSecret();
   }

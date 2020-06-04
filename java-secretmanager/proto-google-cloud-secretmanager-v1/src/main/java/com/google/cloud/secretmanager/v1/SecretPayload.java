@@ -123,6 +123,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The data.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getData() {
     return data_;
   }
@@ -456,6 +457,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }

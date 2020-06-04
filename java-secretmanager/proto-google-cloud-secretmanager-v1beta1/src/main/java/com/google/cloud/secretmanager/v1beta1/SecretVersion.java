@@ -298,6 +298,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -348,6 +352,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -373,6 +378,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -399,6 +405,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -414,6 +421,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -427,6 +435,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -447,6 +456,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the destroyTime field is set.
    */
+  @java.lang.Override
   public boolean hasDestroyTime() {
     return destroyTime_ != null;
   }
@@ -464,6 +474,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The destroyTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDestroyTime() {
     return destroyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : destroyTime_;
   }
@@ -479,6 +490,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp destroy_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDestroyTimeOrBuilder() {
     return getDestroyTime();
   }
@@ -498,6 +510,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -514,6 +527,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.SecretVersion.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.secretmanager.v1beta1.SecretVersion.State result =
@@ -1473,6 +1487,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1491,6 +1506,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1508,6 +1524,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.secretmanager.v1beta1.SecretVersion.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.secretmanager.v1beta1.SecretVersion.State result =

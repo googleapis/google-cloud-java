@@ -148,6 +148,7 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the secret field is set.
    */
+  @java.lang.Override
   public boolean hasSecret() {
     return secret_ != null;
   }
@@ -164,6 +165,7 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The secret.
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1.Secret getSecret() {
     return secret_ == null
         ? com.google.cloud.secretmanager.v1.Secret.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.secretmanager.v1.Secret secret = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1.SecretOrBuilder getSecretOrBuilder() {
     return getSecret();
   }
@@ -198,6 +201,7 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -213,6 +217,7 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -226,6 +231,7 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

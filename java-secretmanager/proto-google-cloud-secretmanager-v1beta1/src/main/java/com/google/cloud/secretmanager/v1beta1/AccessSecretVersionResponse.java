@@ -142,6 +142,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -165,6 +166,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +192,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    *
    * @return Whether the payload field is set.
    */
+  @java.lang.Override
   public boolean hasPayload() {
     return payload_ != null;
   }
@@ -204,6 +207,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    *
    * @return The payload.
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.SecretPayload getPayload() {
     return payload_ == null
         ? com.google.cloud.secretmanager.v1beta1.SecretPayload.getDefaultInstance()
@@ -218,6 +222,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    *
    * <code>.google.cloud.secrets.v1beta1.SecretPayload payload = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.SecretPayloadOrBuilder getPayloadOrBuilder() {
     return getPayload();
   }

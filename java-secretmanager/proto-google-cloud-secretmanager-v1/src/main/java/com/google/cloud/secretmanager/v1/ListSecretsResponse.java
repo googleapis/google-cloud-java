@@ -144,6 +144,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.secretmanager.v1.Secret> getSecretsList() {
     return secrets_;
   }
@@ -157,6 +158,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.secretmanager.v1.SecretOrBuilder>
       getSecretsOrBuilderList() {
     return secrets_;
@@ -171,6 +173,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
    */
+  @java.lang.Override
   public int getSecretsCount() {
     return secrets_.size();
   }
@@ -184,6 +187,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1.Secret getSecrets(int index) {
     return secrets_.get(index);
   }
@@ -197,6 +201,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1.SecretOrBuilder getSecretsOrBuilder(int index) {
     return secrets_.get(index);
   }
@@ -215,6 +220,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +244,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +270,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -1149,6 +1157,7 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

@@ -144,6 +144,7 @@ public final class AddSecretVersionRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class AddSecretVersionRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class AddSecretVersionRequest extends com.google.protobuf.Generated
    *
    * @return Whether the payload field is set.
    */
+  @java.lang.Override
   public boolean hasPayload() {
     return payload_ != null;
   }
@@ -212,6 +215,7 @@ public final class AddSecretVersionRequest extends com.google.protobuf.Generated
    *
    * @return The payload.
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.SecretPayload getPayload() {
     return payload_ == null
         ? com.google.cloud.secretmanager.v1beta1.SecretPayload.getDefaultInstance()
@@ -228,6 +232,7 @@ public final class AddSecretVersionRequest extends com.google.protobuf.Generated
    * .google.cloud.secrets.v1beta1.SecretPayload payload = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.secretmanager.v1beta1.SecretPayloadOrBuilder getPayloadOrBuilder() {
     return getPayload();
   }
