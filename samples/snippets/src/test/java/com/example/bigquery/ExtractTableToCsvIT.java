@@ -26,7 +26,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ExtractTableToJsonIT {
+public class ExtractTableToCsvIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -64,7 +64,7 @@ public class ExtractTableToJsonIT {
     String dataFormat = "CSV";
 
     // Extract table content to GCS in CSV format
-    ExtractTableToJson.extractTableToJson(projectId, datasetName, tableName, destinationUri,
+    ExtractTableToCsv.extractTableToCsv(projectId, datasetName, tableName, destinationUri,
             dataFormat);
     assertThat(bout.toString())
         .contains("Table export successful. Check in GCS bucket for the " + dataFormat + " file.");

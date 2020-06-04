@@ -26,9 +26,9 @@ import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import org.threeten.bp.Duration;
 
-public class ExtractTableToJson {
+public class ExtractTableToCsv {
 
-  public static void runExtractTableToJson() {
+  public static void runExtractTableToCsv() {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "bigquery-public-data";
     String datasetName = "samples";
@@ -41,11 +41,11 @@ public class ExtractTableToJson {
     // https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html
 
     String dataFormat = "CSV";
-    extractTableToJson(projectId, datasetName, tableName, destinationUri, dataFormat);
+    extractTableToCsv(projectId, datasetName, tableName, destinationUri, dataFormat);
   }
 
   // Exports datasetName:tableName to destinationUri as raw CSV
-  public static void extractTableToJson(
+  public static void extractTableToCsv(
       String projectId, String datasetName, String tableName, String destinationUri,
       String dataFormat) {
     try {
@@ -71,7 +71,8 @@ public class ExtractTableToJson {
             "BigQuery was unable to extract due to an error: \n" + job.getStatus().getError());
         return;
       }
-      System.out.println("Table export successful. Check in GCS bucket for the " + dataFormat + " file.");
+      System.out.println("Table export successful. Check in GCS bucket for the " +
+          dataFormat + " file.");
     } catch (BigQueryException | InterruptedException e) {
       System.out.println("Table extraction job was interrupted. \n" + e.toString());
     }
