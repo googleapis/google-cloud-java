@@ -11,7 +11,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-automl.git",
-        "sha": "a78541a3f9314ea24e9e37a239ef1d207abdc1d5"
+        "sha": "4f03190c8a5aef90bdc55f0765f2e8d2b150fa52"
       }
     },
     {
@@ -34,7 +34,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b48b0716a36ca069db3038da7e205c87a22ed19"
+        "sha": "8b65daa222d193b689279162781baf0aa1f0ffd2"
       }
     }
   ],
