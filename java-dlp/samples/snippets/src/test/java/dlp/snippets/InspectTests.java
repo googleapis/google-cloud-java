@@ -107,6 +107,17 @@ public class InspectTests {
   }
 
   @Test
+  public void testInspectStringWithExclusionRegex() {
+    InspectStringWithExclusionRegex.inspectStringWithExclusionRegex(PROJECT_ID,
+        "Some email addresses: gary@example.com, bob@example.org",
+        ".+@example.com");
+
+    String output = bout.toString();
+    assertThat(output, containsString("bob@example.org"));
+    assertThat(output, not(containsString("gary@example.com")));
+  }
+
+  @Test
   public void textInspectTestFile() {
     InspectTextFile.inspectTextFile(PROJECT_ID, "src/test/resources/test.txt");
     String output = bout.toString();
