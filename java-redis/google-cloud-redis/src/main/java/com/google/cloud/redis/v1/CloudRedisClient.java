@@ -451,7 +451,7 @@ public class CloudRedisClient implements BackgroundResource {
    * Creates a Redis instance based on the specified tier and memory size.
    *
    * <p>By default, the instance is accessible from the project's [default
-   * network](/compute/docs/networks-and-firewalls#networks).
+   * network](https://cloud.google.com/vpc/docs/vpc).
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
@@ -505,7 +505,7 @@ public class CloudRedisClient implements BackgroundResource {
    * Creates a Redis instance based on the specified tier and memory size.
    *
    * <p>By default, the instance is accessible from the project's [default
-   * network](/compute/docs/networks-and-firewalls#networks).
+   * network](https://cloud.google.com/vpc/docs/vpc).
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
@@ -559,7 +559,7 @@ public class CloudRedisClient implements BackgroundResource {
    * Creates a Redis instance based on the specified tier and memory size.
    *
    * <p>By default, the instance is accessible from the project's [default
-   * network](/compute/docs/networks-and-firewalls#networks).
+   * network](https://cloud.google.com/vpc/docs/vpc).
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
@@ -605,7 +605,7 @@ public class CloudRedisClient implements BackgroundResource {
    * Creates a Redis instance based on the specified tier and memory size.
    *
    * <p>By default, the instance is accessible from the project's [default
-   * network](/compute/docs/networks-and-firewalls#networks).
+   * network](https://cloud.google.com/vpc/docs/vpc).
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
@@ -649,7 +649,7 @@ public class CloudRedisClient implements BackgroundResource {
    * Creates a Redis instance based on the specified tier and memory size.
    *
    * <p>By default, the instance is accessible from the project's [default
-   * network](/compute/docs/networks-and-firewalls#networks).
+   * network](https://cloud.google.com/vpc/docs/vpc).
    *
    * <p>The creation is executed asynchronously and callers may check the returned operation to
    * track its progress. Once the operation is completed the Redis instance will be fully
