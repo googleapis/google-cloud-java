@@ -138,6 +138,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgress annotation_progress = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgress>
       getAnnotationProgressList() {
     return annotationProgress_;
@@ -153,6 +154,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgress annotation_progress = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgressOrBuilder>
       getAnnotationProgressOrBuilderList() {
@@ -169,6 +171,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgress annotation_progress = 1;
    * </code>
    */
+  @java.lang.Override
   public int getAnnotationProgressCount() {
     return annotationProgress_.size();
   }
@@ -183,6 +186,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgress annotation_progress = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgress getAnnotationProgress(
       int index) {
     return annotationProgress_.get(index);
@@ -198,6 +202,7 @@ public final class AnnotateVideoProgress extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgress annotation_progress = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p2beta1.VideoAnnotationProgressOrBuilder
       getAnnotationProgressOrBuilder(int index) {
     return annotationProgress_.get(index);

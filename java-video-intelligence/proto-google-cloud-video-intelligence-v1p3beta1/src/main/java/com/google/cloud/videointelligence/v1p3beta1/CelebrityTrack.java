@@ -316,6 +316,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the celebrity field is set.
      */
+    @java.lang.Override
     public boolean hasCelebrity() {
       return celebrity_ != null;
     }
@@ -330,6 +331,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The celebrity.
      */
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.Celebrity getCelebrity() {
       return celebrity_ == null
           ? com.google.cloud.videointelligence.v1p3beta1.Celebrity.getDefaultInstance()
@@ -344,6 +346,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.Celebrity celebrity = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.CelebrityOrBuilder getCelebrityOrBuilder() {
       return getCelebrity();
     }
@@ -361,6 +364,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }
@@ -941,6 +945,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The confidence.
        */
+      @java.lang.Override
       public float getConfidence() {
         return confidence_;
       }
@@ -1052,6 +1057,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity celebrities = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity>
       getCelebritiesList() {
@@ -1068,6 +1074,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity celebrities = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack
@@ -1086,6 +1093,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity celebrities = 1;
    * </code>
    */
+  @java.lang.Override
   public int getCelebritiesCount() {
     return celebrities_.size();
   }
@@ -1100,6 +1108,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity celebrities = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity
       getCelebrities(int index) {
     return celebrities_.get(index);
@@ -1115,6 +1124,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity celebrities = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrityOrBuilder
       getCelebritiesOrBuilder(int index) {
     return celebrities_.get(index);
@@ -1133,6 +1143,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the faceTrack field is set.
    */
+  @java.lang.Override
   public boolean hasFaceTrack() {
     return faceTrack_ != null;
   }
@@ -1147,6 +1158,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The faceTrack.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.Track getFaceTrack() {
     return faceTrack_ == null
         ? com.google.cloud.videointelligence.v1p3beta1.Track.getDefaultInstance()
@@ -1161,6 +1173,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Track face_track = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder getFaceTrackOrBuilder() {
     return getFaceTrack();
   }

@@ -151,6 +151,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the rotatedBoundingBox field is set.
    */
+  @java.lang.Override
   public boolean hasRotatedBoundingBox() {
     return rotatedBoundingBox_ != null;
   }
@@ -166,6 +167,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rotatedBoundingBox.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.NormalizedBoundingPoly getRotatedBoundingBox() {
     return rotatedBoundingBox_ == null
         ? com.google.cloud.videointelligence.v1.NormalizedBoundingPoly.getDefaultInstance()
@@ -181,6 +183,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.videointelligence.v1.NormalizedBoundingPoly rotated_bounding_box = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.NormalizedBoundingPolyOrBuilder
       getRotatedBoundingBoxOrBuilder() {
     return getRotatedBoundingBox();
@@ -199,6 +202,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeOffset field is set.
    */
+  @java.lang.Override
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
   }
@@ -213,6 +217,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
@@ -225,6 +230,7 @@ public final class TextFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
     return getTimeOffset();
   }

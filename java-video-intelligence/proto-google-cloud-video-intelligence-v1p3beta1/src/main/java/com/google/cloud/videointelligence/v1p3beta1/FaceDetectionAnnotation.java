@@ -138,6 +138,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.Track> getTracksList() {
     return tracks_;
   }
@@ -150,6 +151,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder>
       getTracksOrBuilderList() {
     return tracks_;
@@ -163,6 +165,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 3;</code>
    */
+  @java.lang.Override
   public int getTracksCount() {
     return tracks_.size();
   }
@@ -175,6 +178,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.Track getTracks(int index) {
     return tracks_.get(index);
   }
@@ -187,6 +191,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder getTracksOrBuilder(int index) {
     return tracks_.get(index);
   }
@@ -204,6 +209,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
    *
    * @return The thumbnail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getThumbnail() {
     return thumbnail_;
   }
@@ -957,6 +963,7 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
      *
      * @return The thumbnail.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getThumbnail() {
       return thumbnail_;
     }

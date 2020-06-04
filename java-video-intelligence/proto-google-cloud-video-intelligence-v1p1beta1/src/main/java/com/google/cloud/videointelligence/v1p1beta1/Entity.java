@@ -142,6 +142,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The entityId.
    */
+  @java.lang.Override
   public java.lang.String getEntityId() {
     java.lang.Object ref = entityId_;
     if (ref instanceof java.lang.String) {
@@ -166,6 +167,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for entityId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEntityIdBytes() {
     java.lang.Object ref = entityId_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +216,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +242,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +265,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {

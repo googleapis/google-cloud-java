@@ -230,6 +230,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * @return Whether the segment field is set.
    */
+  @java.lang.Override
   public boolean hasSegment() {
     return trackInfoCase_ == 3;
   }
@@ -245,6 +246,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * @return The segment.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
     if (trackInfoCase_ == 3) {
       return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
@@ -261,6 +263,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder() {
     if (trackInfoCase_ == 3) {
       return (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_;
@@ -285,6 +288,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * @return The trackId.
    */
+  @java.lang.Override
   public long getTrackId() {
     if (trackInfoCase_ == 5) {
       return (java.lang.Long) trackInfo_;
@@ -305,6 +309,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * @return Whether the entity field is set.
    */
+  @java.lang.Override
   public boolean hasEntity() {
     return entity_ != null;
   }
@@ -319,6 +324,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * @return The entity.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.Entity getEntity() {
     return entity_ == null
         ? com.google.cloud.videointelligence.v1p3beta1.Entity.getDefaultInstance()
@@ -333,6 +339,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.EntityOrBuilder getEntityOrBuilder() {
     return getEntity();
   }
@@ -350,6 +357,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -368,6 +376,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame frames = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame>
       getFramesList() {
     return frames_;
@@ -384,6 +393,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame frames = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrameOrBuilder>
       getFramesOrBuilderList() {
@@ -401,6 +411,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame frames = 2;</code>
    */
+  @java.lang.Override
   public int getFramesCount() {
     return frames_.size();
   }
@@ -416,6 +427,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame frames = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame getFrames(int index) {
     return frames_.get(index);
   }
@@ -431,6 +443,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame frames = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrameOrBuilder
       getFramesOrBuilder(int index) {
     return frames_.get(index);
@@ -949,6 +962,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      *
      * @return Whether the segment field is set.
      */
+    @java.lang.Override
     public boolean hasSegment() {
       return trackInfoCase_ == 3;
     }
@@ -964,6 +978,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      *
      * @return The segment.
      */
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
       if (segmentBuilder_ == null) {
         if (trackInfoCase_ == 3) {
@@ -1103,6 +1118,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder
         getSegmentOrBuilder() {
       if ((trackInfoCase_ == 3) && (segmentBuilder_ != null)) {
@@ -1418,6 +1434,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

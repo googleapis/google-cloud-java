@@ -136,6 +136,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame frames = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame>
       getFramesList() {
     return frames_;
@@ -150,6 +151,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame frames = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrameOrBuilder>
       getFramesOrBuilderList() {
@@ -165,6 +167,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame frames = 1;
    * </code>
    */
+  @java.lang.Override
   public int getFramesCount() {
     return frames_.size();
   }
@@ -178,6 +181,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame frames = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame getFrames(int index) {
     return frames_.get(index);
   }
@@ -191,6 +195,7 @@ public final class ExplicitContentAnnotation extends com.google.protobuf.Generat
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame frames = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrameOrBuilder
       getFramesOrBuilder(int index) {
     return frames_.get(index);

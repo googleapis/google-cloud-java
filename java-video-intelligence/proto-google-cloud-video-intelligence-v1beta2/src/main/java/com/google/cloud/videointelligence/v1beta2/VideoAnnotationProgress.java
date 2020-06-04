@@ -160,6 +160,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The inputUri.
    */
+  @java.lang.Override
   public java.lang.String getInputUri() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +184,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The bytes for inputUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +211,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The progressPercent.
    */
+  @java.lang.Override
   public int getProgressPercent() {
     return progressPercent_;
   }
@@ -226,6 +229,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -240,6 +244,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -252,6 +257,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -269,6 +275,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -283,6 +290,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -295,6 +303,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -821,6 +830,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * @return The progressPercent.
      */
+    @java.lang.Override
     public int getProgressPercent() {
       return progressPercent_;
     }

@@ -137,6 +137,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
    *
    * @return The left.
    */
+  @java.lang.Override
   public float getLeft() {
     return left_;
   }
@@ -154,6 +155,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
    *
    * @return The top.
    */
+  @java.lang.Override
   public float getTop() {
     return top_;
   }
@@ -171,6 +173,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
    *
    * @return The right.
    */
+  @java.lang.Override
   public float getRight() {
     return right_;
   }
@@ -188,6 +191,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
    *
    * @return The bottom.
    */
+  @java.lang.Override
   public float getBottom() {
     return bottom_;
   }
@@ -573,6 +577,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      *
      * @return The left.
      */
+    @java.lang.Override
     public float getLeft() {
       return left_;
     }
@@ -624,6 +629,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      *
      * @return The top.
      */
+    @java.lang.Override
     public float getTop() {
       return top_;
     }
@@ -675,6 +681,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      *
      * @return The right.
      */
+    @java.lang.Override
     public float getRight() {
       return right_;
     }
@@ -726,6 +733,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      *
      * @return The bottom.
      */
+    @java.lang.Override
     public float getBottom() {
       return bottom_;
     }

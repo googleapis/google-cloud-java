@@ -138,6 +138,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p1beta1.VideoAnnotationResults annotation_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.VideoAnnotationResults>
       getAnnotationResultsList() {
     return annotationResults_;
@@ -153,6 +154,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p1beta1.VideoAnnotationResults annotation_results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p1beta1.VideoAnnotationResultsOrBuilder>
       getAnnotationResultsOrBuilderList() {
@@ -169,6 +171,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p1beta1.VideoAnnotationResults annotation_results = 1;
    * </code>
    */
+  @java.lang.Override
   public int getAnnotationResultsCount() {
     return annotationResults_.size();
   }
@@ -183,6 +186,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p1beta1.VideoAnnotationResults annotation_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.VideoAnnotationResults getAnnotationResults(
       int index) {
     return annotationResults_.get(index);
@@ -198,6 +202,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.videointelligence.v1p1beta1.VideoAnnotationResults annotation_results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.VideoAnnotationResultsOrBuilder
       getAnnotationResultsOrBuilder(int index) {
     return annotationResults_.get(index);

@@ -210,6 +210,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment segments = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.VideoSegment>
       getSegmentsList() {
     return segments_;
@@ -225,6 +226,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment segments = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p1beta1.VideoSegmentOrBuilder>
       getSegmentsOrBuilderList() {
@@ -241,6 +243,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment segments = 1;</code>
    */
+  @java.lang.Override
   public int getSegmentsCount() {
     return segments_.size();
   }
@@ -255,6 +258,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment segments = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.VideoSegment getSegments(int index) {
     return segments_.get(index);
   }
@@ -269,6 +273,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment segments = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.VideoSegmentOrBuilder getSegmentsOrBuilder(
       int index) {
     return segments_.get(index);
@@ -289,6 +294,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the labelDetectionConfig field is set.
    */
+  @java.lang.Override
   public boolean hasLabelDetectionConfig() {
     return labelDetectionConfig_ != null;
   }
@@ -305,6 +311,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The labelDetectionConfig.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig
       getLabelDetectionConfig() {
     return labelDetectionConfig_ == null
@@ -322,6 +329,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig label_detection_config = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfigOrBuilder
       getLabelDetectionConfigOrBuilder() {
     return getLabelDetectionConfig();
@@ -343,6 +351,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the shotChangeDetectionConfig field is set.
    */
+  @java.lang.Override
   public boolean hasShotChangeDetectionConfig() {
     return shotChangeDetectionConfig_ != null;
   }
@@ -359,6 +368,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The shotChangeDetectionConfig.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig
       getShotChangeDetectionConfig() {
     return shotChangeDetectionConfig_ == null
@@ -377,6 +387,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfigOrBuilder
       getShotChangeDetectionConfigOrBuilder() {
     return getShotChangeDetectionConfig();
@@ -398,6 +409,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the explicitContentDetectionConfig field is set.
    */
+  @java.lang.Override
   public boolean hasExplicitContentDetectionConfig() {
     return explicitContentDetectionConfig_ != null;
   }
@@ -414,6 +426,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The explicitContentDetectionConfig.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig
       getExplicitContentDetectionConfig() {
     return explicitContentDetectionConfig_ == null
@@ -432,6 +445,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfigOrBuilder
       getExplicitContentDetectionConfigOrBuilder() {
     return getExplicitContentDetectionConfig();
@@ -453,6 +467,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the speechTranscriptionConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSpeechTranscriptionConfig() {
     return speechTranscriptionConfig_ != null;
   }
@@ -469,6 +484,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The speechTranscriptionConfig.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
       getSpeechTranscriptionConfig() {
     return speechTranscriptionConfig_ == null
@@ -487,6 +503,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig speech_transcription_config = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfigOrBuilder
       getSpeechTranscriptionConfigOrBuilder() {
     return getSpeechTranscriptionConfig();

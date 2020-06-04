@@ -185,6 +185,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The inputUri.
    */
+  @java.lang.Override
   public java.lang.String getInputUri() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +209,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The bytes for inputUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +236,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The progressPercent.
    */
+  @java.lang.Override
   public int getProgressPercent() {
     return progressPercent_;
   }
@@ -251,6 +254,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -265,6 +269,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -277,6 +282,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.Timestamp start_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -294,6 +300,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -308,6 +315,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -320,6 +328,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -338,6 +347,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The enum numeric value on the wire for feature.
    */
+  @java.lang.Override
   public int getFeatureValue() {
     return feature_;
   }
@@ -353,6 +363,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The feature.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.Feature getFeature() {
     @SuppressWarnings("deprecation")
     com.google.cloud.videointelligence.v1p3beta1.Feature result =
@@ -376,6 +387,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return Whether the segment field is set.
    */
+  @java.lang.Override
   public boolean hasSegment() {
     return segment_ != null;
   }
@@ -391,6 +403,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * @return The segment.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
     return segment_ == null
         ? com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance()
@@ -406,6 +419,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder() {
     return getSegment();
   }
@@ -977,6 +991,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * @return The progressPercent.
      */
+    @java.lang.Override
     public int getProgressPercent() {
       return progressPercent_;
     }
@@ -1393,6 +1408,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * @return The enum numeric value on the wire for feature.
      */
+    @java.lang.Override
     public int getFeatureValue() {
       return feature_;
     }
@@ -1410,6 +1426,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
+
       feature_ = value;
       onChanged();
       return this;
@@ -1426,6 +1443,7 @@ public final class VideoAnnotationProgress extends com.google.protobuf.Generated
      *
      * @return The feature.
      */
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.Feature getFeature() {
       @SuppressWarnings("deprecation")
       com.google.cloud.videointelligence.v1p3beta1.Feature result =

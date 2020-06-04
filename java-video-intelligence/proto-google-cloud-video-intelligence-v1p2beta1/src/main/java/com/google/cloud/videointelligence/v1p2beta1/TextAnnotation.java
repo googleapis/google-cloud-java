@@ -145,6 +145,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public java.lang.String getText() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for text.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +192,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextSegment segments = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextSegment>
       getSegmentsList() {
     return segments_;
@@ -203,6 +206,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextSegment segments = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextSegmentOrBuilder>
       getSegmentsOrBuilderList() {
     return segments_;
@@ -216,6 +220,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextSegment segments = 2;</code>
    */
+  @java.lang.Override
   public int getSegmentsCount() {
     return segments_.size();
   }
@@ -228,6 +233,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextSegment segments = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p2beta1.TextSegment getSegments(int index) {
     return segments_.get(index);
   }
@@ -240,6 +246,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextSegment segments = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p2beta1.TextSegmentOrBuilder getSegmentsOrBuilder(
       int index) {
     return segments_.get(index);

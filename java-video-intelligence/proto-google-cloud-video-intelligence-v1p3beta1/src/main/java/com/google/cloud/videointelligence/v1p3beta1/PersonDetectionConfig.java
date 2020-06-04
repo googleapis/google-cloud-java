@@ -131,6 +131,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The includeBoundingBoxes.
    */
+  @java.lang.Override
   public boolean getIncludeBoundingBoxes() {
     return includeBoundingBoxes_;
   }
@@ -149,6 +150,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The includePoseLandmarks.
    */
+  @java.lang.Override
   public boolean getIncludePoseLandmarks() {
     return includePoseLandmarks_;
   }
@@ -169,6 +171,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
    *
    * @return The includeAttributes.
    */
+  @java.lang.Override
   public boolean getIncludeAttributes() {
     return includeAttributes_;
   }
@@ -542,6 +545,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * @return The includeBoundingBoxes.
      */
+    @java.lang.Override
     public boolean getIncludeBoundingBoxes() {
       return includeBoundingBoxes_;
     }
@@ -596,6 +600,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * @return The includePoseLandmarks.
      */
+    @java.lang.Override
     public boolean getIncludePoseLandmarks() {
       return includePoseLandmarks_;
     }
@@ -652,6 +657,7 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
      *
      * @return The includeAttributes.
      */
+    @java.lang.Override
     public boolean getIncludeAttributes() {
       return includeAttributes_;
     }

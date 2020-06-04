@@ -175,6 +175,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the segment field is set.
    */
+  @java.lang.Override
   public boolean hasSegment() {
     return segment_ != null;
   }
@@ -189,6 +190,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The segment.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegment() {
     return segment_ == null
         ? com.google.cloud.videointelligence.v1p3beta1.VideoSegment.getDefaultInstance()
@@ -203,6 +205,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.VideoSegment segment = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentOrBuilder() {
     return getSegment();
   }
@@ -221,6 +224,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.TimestampedObject timestamped_objects = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.TimestampedObject>
       getTimestampedObjectsList() {
     return timestampedObjects_;
@@ -236,6 +240,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.TimestampedObject timestamped_objects = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.TimestampedObjectOrBuilder>
       getTimestampedObjectsOrBuilderList() {
@@ -252,6 +257,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.TimestampedObject timestamped_objects = 2;
    * </code>
    */
+  @java.lang.Override
   public int getTimestampedObjectsCount() {
     return timestampedObjects_.size();
   }
@@ -266,6 +272,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.TimestampedObject timestamped_objects = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.TimestampedObject getTimestampedObjects(
       int index) {
     return timestampedObjects_.get(index);
@@ -281,6 +288,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.TimestampedObject timestamped_objects = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.TimestampedObjectOrBuilder
       getTimestampedObjectsOrBuilder(int index) {
     return timestampedObjects_.get(index);
@@ -300,6 +308,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>
       getAttributesList() {
     return attributes_;
@@ -315,6 +324,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder>
       getAttributesOrBuilderList() {
@@ -331,6 +341,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getAttributesCount() {
     return attributes_.size();
   }
@@ -345,6 +356,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute getAttributes(int index) {
     return attributes_.get(index);
   }
@@ -359,6 +371,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1p3beta1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.DetectedAttributeOrBuilder
       getAttributesOrBuilder(int index) {
     return attributes_.get(index);
@@ -377,6 +390,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -1849,6 +1863,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

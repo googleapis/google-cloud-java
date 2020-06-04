@@ -170,6 +170,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * @return Whether the entity field is set.
    */
+  @java.lang.Override
   public boolean hasEntity() {
     return entity_ != null;
   }
@@ -185,6 +186,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * @return The entity.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.Entity getEntity() {
     return entity_ == null
         ? com.google.cloud.videointelligence.v1p3beta1.Entity.getDefaultInstance()
@@ -200,6 +202,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.Entity entity = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.EntityOrBuilder getEntityOrBuilder() {
     return getEntity();
   }
@@ -216,6 +219,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.Track> getTracksList() {
     return tracks_;
   }
@@ -229,6 +233,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder>
       getTracksOrBuilderList() {
     return tracks_;
@@ -243,6 +248,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 2;</code>
    */
+  @java.lang.Override
   public int getTracksCount() {
     return tracks_.size();
   }
@@ -256,6 +262,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.Track getTracks(int index) {
     return tracks_.get(index);
   }
@@ -269,6 +276,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder getTracksOrBuilder(int index) {
     return tracks_.get(index);
   }
@@ -285,6 +293,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment segments = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.VideoSegment>
       getSegmentsList() {
     return segments_;
@@ -299,6 +308,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment segments = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
       getSegmentsOrBuilderList() {
@@ -314,6 +324,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment segments = 3;</code>
    */
+  @java.lang.Override
   public int getSegmentsCount() {
     return segments_.size();
   }
@@ -327,6 +338,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment segments = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getSegments(int index) {
     return segments_.get(index);
   }
@@ -340,6 +352,7 @@ public final class LogoRecognitionAnnotation extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment segments = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder getSegmentsOrBuilder(
       int index) {
     return segments_.get(index);

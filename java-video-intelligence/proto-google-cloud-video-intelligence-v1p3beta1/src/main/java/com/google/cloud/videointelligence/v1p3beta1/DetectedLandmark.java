@@ -148,6 +148,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the point field is set.
    */
+  @java.lang.Override
   public boolean hasPoint() {
     return point_ != null;
   }
@@ -211,6 +214,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    *
    * @return The point.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.NormalizedVertex getPoint() {
     return point_ == null
         ? com.google.cloud.videointelligence.v1p3beta1.NormalizedVertex.getDefaultInstance()
@@ -226,6 +230,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.NormalizedVertex point = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.NormalizedVertexOrBuilder
       getPointOrBuilder() {
     return getPoint();
@@ -244,6 +249,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -929,6 +935,7 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

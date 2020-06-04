@@ -188,6 +188,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the normalizedBoundingBox field is set.
    */
+  @java.lang.Override
   public boolean hasNormalizedBoundingBox() {
     return normalizedBoundingBox_ != null;
   }
@@ -203,6 +204,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    *
    * @return The normalizedBoundingBox.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.NormalizedBoundingBox getNormalizedBoundingBox() {
     return normalizedBoundingBox_ == null
         ? com.google.cloud.videointelligence.v1.NormalizedBoundingBox.getDefaultInstance()
@@ -218,6 +220,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.videointelligence.v1.NormalizedBoundingBox normalized_bounding_box = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.NormalizedBoundingBoxOrBuilder
       getNormalizedBoundingBoxOrBuilder() {
     return getNormalizedBoundingBox();
@@ -237,6 +240,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the timeOffset field is set.
    */
+  @java.lang.Override
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
   }
@@ -252,6 +256,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    *
    * @return The timeOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
@@ -265,6 +270,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
     return getTimeOffset();
   }
@@ -282,6 +288,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.DetectedAttribute>
       getAttributesList() {
     return attributes_;
@@ -297,6 +304,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.DetectedAttributeOrBuilder>
       getAttributesOrBuilderList() {
     return attributes_;
@@ -312,6 +320,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getAttributesCount() {
     return attributes_.size();
   }
@@ -326,6 +335,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.DetectedAttribute getAttributes(int index) {
     return attributes_.get(index);
   }
@@ -340,6 +350,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedAttribute attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.DetectedAttributeOrBuilder getAttributesOrBuilder(
       int index) {
     return attributes_.get(index);
@@ -358,6 +369,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.DetectedLandmark> getLandmarksList() {
     return landmarks_;
   }
@@ -372,6 +384,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.DetectedLandmarkOrBuilder>
       getLandmarksOrBuilderList() {
     return landmarks_;
@@ -387,6 +400,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getLandmarksCount() {
     return landmarks_.size();
   }
@@ -401,6 +415,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.DetectedLandmark getLandmarks(int index) {
     return landmarks_.get(index);
   }
@@ -415,6 +430,7 @@ public final class TimestampedObject extends com.google.protobuf.GeneratedMessag
    * repeated .google.cloud.videointelligence.v1.DetectedLandmark landmarks = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.DetectedLandmarkOrBuilder getLandmarksOrBuilder(
       int index) {
     return landmarks_.get(index);

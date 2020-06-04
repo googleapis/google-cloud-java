@@ -126,6 +126,7 @@ public final class ShotChangeDetectionConfig extends com.google.protobuf.Generat
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -150,6 +151,7 @@ public final class ShotChangeDetectionConfig extends com.google.protobuf.Generat
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {

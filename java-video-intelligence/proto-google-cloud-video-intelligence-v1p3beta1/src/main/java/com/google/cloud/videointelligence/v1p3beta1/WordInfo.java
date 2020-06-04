@@ -169,6 +169,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -186,6 +187,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getStartTime() {
     return startTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startTime_;
   }
@@ -201,6 +203,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration start_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -221,6 +224,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -238,6 +242,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getEndTime() {
     return endTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endTime_;
   }
@@ -253,6 +258,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration end_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -270,6 +276,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The word.
    */
+  @java.lang.Override
   public java.lang.String getWord() {
     java.lang.Object ref = word_;
     if (ref instanceof java.lang.String) {
@@ -292,6 +299,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for word.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getWordBytes() {
     java.lang.Object ref = word_;
     if (ref instanceof java.lang.String) {
@@ -322,6 +330,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -342,6 +351,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The speakerTag.
    */
+  @java.lang.Override
   public int getSpeakerTag() {
     return speakerTag_;
   }
@@ -1289,6 +1299,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }
@@ -1353,6 +1364,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The speakerTag.
      */
+    @java.lang.Override
     public int getSpeakerTag() {
       return speakerTag_;
     }

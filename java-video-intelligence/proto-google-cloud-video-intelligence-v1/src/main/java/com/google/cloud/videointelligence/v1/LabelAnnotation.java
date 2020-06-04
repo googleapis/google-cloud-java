@@ -183,6 +183,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the entity field is set.
    */
+  @java.lang.Override
   public boolean hasEntity() {
     return entity_ != null;
   }
@@ -197,6 +198,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * @return The entity.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.Entity getEntity() {
     return entity_ == null
         ? com.google.cloud.videointelligence.v1.Entity.getDefaultInstance()
@@ -211,6 +213,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.videointelligence.v1.Entity entity = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.EntityOrBuilder getEntityOrBuilder() {
     return getEntity();
   }
@@ -229,6 +232,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.Entity> getCategoryEntitiesList() {
     return categoryEntities_;
   }
@@ -244,6 +248,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.EntityOrBuilder>
       getCategoryEntitiesOrBuilderList() {
     return categoryEntities_;
@@ -260,6 +265,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
    */
+  @java.lang.Override
   public int getCategoryEntitiesCount() {
     return categoryEntities_.size();
   }
@@ -275,6 +281,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.Entity getCategoryEntities(int index) {
     return categoryEntities_.get(index);
   }
@@ -290,6 +297,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.EntityOrBuilder getCategoryEntitiesOrBuilder(
       int index) {
     return categoryEntities_.get(index);
@@ -306,6 +314,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelSegment segments = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.LabelSegment> getSegmentsList() {
     return segments_;
   }
@@ -318,6 +327,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelSegment segments = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.LabelSegmentOrBuilder>
       getSegmentsOrBuilderList() {
     return segments_;
@@ -331,6 +341,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelSegment segments = 3;</code>
    */
+  @java.lang.Override
   public int getSegmentsCount() {
     return segments_.size();
   }
@@ -343,6 +354,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelSegment segments = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.LabelSegment getSegments(int index) {
     return segments_.get(index);
   }
@@ -355,6 +367,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelSegment segments = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.LabelSegmentOrBuilder getSegmentsOrBuilder(
       int index) {
     return segments_.get(index);
@@ -371,6 +384,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelFrame frames = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.LabelFrame> getFramesList() {
     return frames_;
   }
@@ -383,6 +397,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelFrame frames = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.LabelFrameOrBuilder>
       getFramesOrBuilderList() {
     return frames_;
@@ -396,6 +411,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelFrame frames = 4;</code>
    */
+  @java.lang.Override
   public int getFramesCount() {
     return frames_.size();
   }
@@ -408,6 +424,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelFrame frames = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.LabelFrame getFrames(int index) {
     return frames_.get(index);
   }
@@ -420,6 +437,7 @@ public final class LabelAnnotation extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelFrame frames = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.LabelFrameOrBuilder getFramesOrBuilder(int index) {
     return frames_.get(index);
   }

@@ -202,6 +202,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The inputUri.
    */
+  @java.lang.Override
   public java.lang.String getInputUri() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +234,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for inputUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +262,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The inputContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInputContent() {
     return inputContent_;
   }
@@ -294,6 +297,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return A list containing the features.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.Feature> getFeaturesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.videointelligence.v1p1beta1.Feature>(
@@ -312,6 +316,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The count of features.
    */
+  @java.lang.Override
   public int getFeaturesCount() {
     return features_.size();
   }
@@ -329,6 +334,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * @param index The index of the element to return.
    * @return The features at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.Feature getFeatures(int index) {
     return features_converter_.convert(features_.get(index));
   }
@@ -345,6 +351,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return A list containing the enum numeric values on the wire for features.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getFeaturesValueList() {
     return features_;
   }
@@ -362,6 +369,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of features at the given index.
    */
+  @java.lang.Override
   public int getFeaturesValue(int index) {
     return features_.get(index);
   }
@@ -381,6 +389,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the videoContext field is set.
    */
+  @java.lang.Override
   public boolean hasVideoContext() {
     return videoContext_ != null;
   }
@@ -395,6 +404,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The videoContext.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.VideoContext getVideoContext() {
     return videoContext_ == null
         ? com.google.cloud.videointelligence.v1p1beta1.VideoContext.getDefaultInstance()
@@ -409,6 +419,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * <code>.google.cloud.videointelligence.v1p1beta1.VideoContext video_context = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.VideoContextOrBuilder
       getVideoContextOrBuilder() {
     return getVideoContext();
@@ -432,6 +443,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The outputUri.
    */
+  @java.lang.Override
   public java.lang.String getOutputUri() {
     java.lang.Object ref = outputUri_;
     if (ref instanceof java.lang.String) {
@@ -459,6 +471,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for outputUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOutputUriBytes() {
     java.lang.Object ref = outputUri_;
     if (ref instanceof java.lang.String) {
@@ -486,6 +499,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The locationId.
    */
+  @java.lang.Override
   public java.lang.String getLocationId() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -510,6 +524,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for locationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
@@ -1132,6 +1147,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The inputContent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getInputContent() {
       return inputContent_;
     }

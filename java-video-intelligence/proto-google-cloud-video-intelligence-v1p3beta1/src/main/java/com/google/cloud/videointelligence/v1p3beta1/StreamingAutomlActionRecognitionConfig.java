@@ -130,6 +130,7 @@ public final class StreamingAutomlActionRecognitionConfig
    *
    * @return The modelName.
    */
+  @java.lang.Override
   public java.lang.String getModelName() {
     java.lang.Object ref = modelName_;
     if (ref instanceof java.lang.String) {
@@ -153,6 +154,7 @@ public final class StreamingAutomlActionRecognitionConfig
    *
    * @return The bytes for modelName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelNameBytes() {
     java.lang.Object ref = modelName_;
     if (ref instanceof java.lang.String) {

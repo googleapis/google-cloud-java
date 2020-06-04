@@ -194,6 +194,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment shot_annotations = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.VideoSegment>
       getShotAnnotationsList() {
     return shotAnnotations_;
@@ -208,6 +209,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment shot_annotations = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder>
       getShotAnnotationsOrBuilderList() {
@@ -223,6 +225,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment shot_annotations = 1;
    * </code>
    */
+  @java.lang.Override
   public int getShotAnnotationsCount() {
     return shotAnnotations_.size();
   }
@@ -236,6 +239,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment shot_annotations = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegment getShotAnnotations(int index) {
     return shotAnnotations_.get(index);
   }
@@ -249,6 +253,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.VideoSegment shot_annotations = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.VideoSegmentOrBuilder
       getShotAnnotationsOrBuilder(int index) {
     return shotAnnotations_.get(index);
@@ -267,6 +272,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation>
       getLabelAnnotationsList() {
     return labelAnnotations_;
@@ -281,6 +287,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder>
       getLabelAnnotationsOrBuilderList() {
@@ -296,6 +303,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public int getLabelAnnotationsCount() {
     return labelAnnotations_.size();
   }
@@ -309,6 +317,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation getLabelAnnotations(
       int index) {
     return labelAnnotations_.get(index);
@@ -323,6 +332,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.LabelAnnotation label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.LabelAnnotationOrBuilder
       getLabelAnnotationsOrBuilder(int index) {
     return labelAnnotations_.get(index);
@@ -344,6 +354,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    *
    * @return Whether the explicitAnnotation field is set.
    */
+  @java.lang.Override
   public boolean hasExplicitAnnotation() {
     return explicitAnnotation_ != null;
   }
@@ -360,6 +371,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    *
    * @return The explicitAnnotation.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation
       getExplicitAnnotation() {
     return explicitAnnotation_ == null
@@ -378,6 +390,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * .google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation explicit_annotation = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotationOrBuilder
       getExplicitAnnotationOrBuilder() {
     return getExplicitAnnotation();
@@ -397,6 +410,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation object_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation>
       getObjectAnnotationsList() {
     return objectAnnotations_;
@@ -412,6 +426,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation object_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotationOrBuilder>
       getObjectAnnotationsOrBuilderList() {
@@ -428,6 +443,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation object_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public int getObjectAnnotationsCount() {
     return objectAnnotations_.size();
   }
@@ -442,6 +458,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation object_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation getObjectAnnotations(
       int index) {
     return objectAnnotations_.get(index);
@@ -457,6 +474,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
    * repeated .google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation object_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotationOrBuilder
       getObjectAnnotationsOrBuilder(int index) {
     return objectAnnotations_.get(index);

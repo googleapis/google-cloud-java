@@ -149,6 +149,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative alternatives = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative>
       getAlternativesList() {
     return alternatives_;
@@ -167,6 +168,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative alternatives = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternativeOrBuilder>
@@ -187,6 +189,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative alternatives = 1;
    * </code>
    */
+  @java.lang.Override
   public int getAlternativesCount() {
     return alternatives_.size();
   }
@@ -204,6 +207,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative alternatives = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative getAlternatives(
       int index) {
     return alternatives_.get(index);
@@ -222,6 +226,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternative alternatives = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.SpeechRecognitionAlternativeOrBuilder
       getAlternativesOrBuilder(int index) {
     return alternatives_.get(index);
@@ -242,6 +247,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +272,7 @@ public final class SpeechTranscription extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {

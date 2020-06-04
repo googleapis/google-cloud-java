@@ -147,6 +147,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.videointelligence.v1.NormalizedVertex vertices = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.NormalizedVertex> getVerticesList() {
     return vertices_;
   }
@@ -159,6 +160,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.videointelligence.v1.NormalizedVertex vertices = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.NormalizedVertexOrBuilder>
       getVerticesOrBuilderList() {
     return vertices_;
@@ -172,6 +174,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.videointelligence.v1.NormalizedVertex vertices = 1;</code>
    */
+  @java.lang.Override
   public int getVerticesCount() {
     return vertices_.size();
   }
@@ -184,6 +187,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.videointelligence.v1.NormalizedVertex vertices = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.NormalizedVertex getVertices(int index) {
     return vertices_.get(index);
   }
@@ -196,6 +200,7 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.videointelligence.v1.NormalizedVertex vertices = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.NormalizedVertexOrBuilder getVerticesOrBuilder(
       int index) {
     return vertices_.get(index);

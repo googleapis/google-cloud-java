@@ -123,6 +123,7 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
    *
    * @return The stationaryCamera.
    */
+  @java.lang.Override
   public boolean getStationaryCamera() {
     return stationaryCamera_;
   }
@@ -478,6 +479,7 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
      *
      * @return The stationaryCamera.
      */
+    @java.lang.Override
     public boolean getStationaryCamera() {
       return stationaryCamera_;
     }

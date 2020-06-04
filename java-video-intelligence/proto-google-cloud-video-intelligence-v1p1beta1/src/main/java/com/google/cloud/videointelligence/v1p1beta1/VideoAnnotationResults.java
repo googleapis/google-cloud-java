@@ -249,6 +249,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * @return The inputUri.
    */
+  @java.lang.Override
   public java.lang.String getInputUri() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -272,6 +273,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for inputUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
@@ -299,6 +301,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation segment_label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.LabelAnnotation>
       getSegmentLabelAnnotationsList() {
     return segmentLabelAnnotations_;
@@ -315,6 +318,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation segment_label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p1beta1.LabelAnnotationOrBuilder>
       getSegmentLabelAnnotationsOrBuilderList() {
@@ -332,6 +336,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation segment_label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public int getSegmentLabelAnnotationsCount() {
     return segmentLabelAnnotations_.size();
   }
@@ -347,6 +352,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation segment_label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelAnnotation getSegmentLabelAnnotations(
       int index) {
     return segmentLabelAnnotations_.get(index);
@@ -363,6 +369,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation segment_label_annotations = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelAnnotationOrBuilder
       getSegmentLabelAnnotationsOrBuilder(int index) {
     return segmentLabelAnnotations_.get(index);
@@ -383,6 +390,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation shot_label_annotations = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.LabelAnnotation>
       getShotLabelAnnotationsList() {
     return shotLabelAnnotations_;
@@ -399,6 +407,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation shot_label_annotations = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p1beta1.LabelAnnotationOrBuilder>
       getShotLabelAnnotationsOrBuilderList() {
@@ -416,6 +425,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation shot_label_annotations = 3;
    * </code>
    */
+  @java.lang.Override
   public int getShotLabelAnnotationsCount() {
     return shotLabelAnnotations_.size();
   }
@@ -431,6 +441,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation shot_label_annotations = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelAnnotation getShotLabelAnnotations(
       int index) {
     return shotLabelAnnotations_.get(index);
@@ -447,6 +458,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation shot_label_annotations = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelAnnotationOrBuilder
       getShotLabelAnnotationsOrBuilder(int index) {
     return shotLabelAnnotations_.get(index);
@@ -467,6 +479,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation frame_label_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.LabelAnnotation>
       getFrameLabelAnnotationsList() {
     return frameLabelAnnotations_;
@@ -483,6 +496,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation frame_label_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p1beta1.LabelAnnotationOrBuilder>
       getFrameLabelAnnotationsOrBuilderList() {
@@ -500,6 +514,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation frame_label_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public int getFrameLabelAnnotationsCount() {
     return frameLabelAnnotations_.size();
   }
@@ -515,6 +530,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation frame_label_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelAnnotation getFrameLabelAnnotations(
       int index) {
     return frameLabelAnnotations_.get(index);
@@ -531,6 +547,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.LabelAnnotation frame_label_annotations = 4;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelAnnotationOrBuilder
       getFrameLabelAnnotationsOrBuilder(int index) {
     return frameLabelAnnotations_.get(index);
@@ -549,6 +566,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment shot_annotations = 6;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.VideoSegment>
       getShotAnnotationsList() {
     return shotAnnotations_;
@@ -563,6 +581,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment shot_annotations = 6;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p1beta1.VideoSegmentOrBuilder>
       getShotAnnotationsOrBuilderList() {
@@ -578,6 +597,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment shot_annotations = 6;
    * </code>
    */
+  @java.lang.Override
   public int getShotAnnotationsCount() {
     return shotAnnotations_.size();
   }
@@ -591,6 +611,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment shot_annotations = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.VideoSegment getShotAnnotations(int index) {
     return shotAnnotations_.get(index);
   }
@@ -604,6 +625,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.VideoSegment shot_annotations = 6;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.VideoSegmentOrBuilder
       getShotAnnotationsOrBuilder(int index) {
     return shotAnnotations_.get(index);
@@ -625,6 +647,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * @return Whether the explicitAnnotation field is set.
    */
+  @java.lang.Override
   public boolean hasExplicitAnnotation() {
     return explicitAnnotation_ != null;
   }
@@ -641,6 +664,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * @return The explicitAnnotation.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.ExplicitContentAnnotation
       getExplicitAnnotation() {
     return explicitAnnotation_ == null
@@ -659,6 +683,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * .google.cloud.videointelligence.v1p1beta1.ExplicitContentAnnotation explicit_annotation = 7;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.ExplicitContentAnnotationOrBuilder
       getExplicitAnnotationOrBuilder() {
     return getExplicitAnnotation();
@@ -678,6 +703,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.SpeechTranscription speech_transcriptions = 11;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription>
       getSpeechTranscriptionsList() {
     return speechTranscriptions_;
@@ -693,6 +719,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.SpeechTranscription speech_transcriptions = 11;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionOrBuilder>
       getSpeechTranscriptionsOrBuilderList() {
@@ -709,6 +736,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.SpeechTranscription speech_transcriptions = 11;
    * </code>
    */
+  @java.lang.Override
   public int getSpeechTranscriptionsCount() {
     return speechTranscriptions_.size();
   }
@@ -723,6 +751,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.SpeechTranscription speech_transcriptions = 11;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscription getSpeechTranscriptions(
       int index) {
     return speechTranscriptions_.get(index);
@@ -738,6 +767,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    * repeated .google.cloud.videointelligence.v1p1beta1.SpeechTranscription speech_transcriptions = 11;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionOrBuilder
       getSpeechTranscriptionsOrBuilder(int index) {
     return speechTranscriptions_.get(index);
@@ -757,6 +787,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * @return Whether the error field is set.
    */
+  @java.lang.Override
   public boolean hasError() {
     return error_ != null;
   }
@@ -772,6 +803,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * @return The error.
    */
+  @java.lang.Override
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
@@ -785,6 +817,7 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
    *
    * <code>.google.rpc.Status error = 9;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
   }

@@ -203,6 +203,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +230,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -258,6 +260,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return The maxAlternatives.
    */
+  @java.lang.Override
   public int getMaxAlternatives() {
     return maxAlternatives_;
   }
@@ -278,6 +281,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return The filterProfanity.
    */
+  @java.lang.Override
   public boolean getFilterProfanity() {
     return filterProfanity_;
   }
@@ -295,6 +299,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.videointelligence.v1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.SpeechContext>
       getSpeechContextsList() {
     return speechContexts_;
@@ -310,6 +315,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.videointelligence.v1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList() {
     return speechContexts_;
@@ -325,6 +331,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.videointelligence.v1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getSpeechContextsCount() {
     return speechContexts_.size();
   }
@@ -339,6 +346,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.videointelligence.v1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.SpeechContext getSpeechContexts(int index) {
     return speechContexts_.get(index);
   }
@@ -353,6 +361,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    * repeated .google.cloud.videointelligence.v1.SpeechContext speech_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
       int index) {
     return speechContexts_.get(index);
@@ -376,6 +385,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return The enableAutomaticPunctuation.
    */
+  @java.lang.Override
   public boolean getEnableAutomaticPunctuation() {
     return enableAutomaticPunctuation_;
   }
@@ -394,6 +404,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return A list containing the audioTracks.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getAudioTracksList() {
     return audioTracks_;
   }
@@ -450,6 +461,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return The enableSpeakerDiarization.
    */
+  @java.lang.Override
   public boolean getEnableSpeakerDiarization() {
     return enableSpeakerDiarization_;
   }
@@ -469,6 +481,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return The diarizationSpeakerCount.
    */
+  @java.lang.Override
   public int getDiarizationSpeakerCount() {
     return diarizationSpeakerCount_;
   }
@@ -488,6 +501,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
    *
    * @return The enableWordConfidence.
    */
+  @java.lang.Override
   public boolean getEnableWordConfidence() {
     return enableWordConfidence_;
   }
@@ -1148,6 +1162,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      * @return The maxAlternatives.
      */
+    @java.lang.Override
     public int getMaxAlternatives() {
       return maxAlternatives_;
     }
@@ -1210,6 +1225,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      * @return The filterProfanity.
      */
+    @java.lang.Override
     public boolean getFilterProfanity() {
       return filterProfanity_;
     }
@@ -1670,6 +1686,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      * @return The enableAutomaticPunctuation.
      */
+    @java.lang.Override
     public boolean getEnableAutomaticPunctuation() {
       return enableAutomaticPunctuation_;
     }
@@ -1870,6 +1887,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      * @return The enableSpeakerDiarization.
      */
+    @java.lang.Override
     public boolean getEnableSpeakerDiarization() {
       return enableSpeakerDiarization_;
     }
@@ -1935,6 +1953,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      * @return The diarizationSpeakerCount.
      */
+    @java.lang.Override
     public int getDiarizationSpeakerCount() {
       return diarizationSpeakerCount_;
     }
@@ -1992,6 +2011,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      *
      * @return The enableWordConfidence.
      */
+    @java.lang.Override
     public boolean getEnableWordConfidence() {
       return enableWordConfidence_;
     }

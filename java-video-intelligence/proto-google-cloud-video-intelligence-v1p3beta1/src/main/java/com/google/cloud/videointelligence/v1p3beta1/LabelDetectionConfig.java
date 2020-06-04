@@ -150,6 +150,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for labelDetectionMode.
    */
+  @java.lang.Override
   public int getLabelDetectionModeValue() {
     return labelDetectionMode_;
   }
@@ -167,6 +168,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The labelDetectionMode.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.LabelDetectionMode getLabelDetectionMode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.videointelligence.v1p3beta1.LabelDetectionMode result =
@@ -192,6 +194,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The stationaryCamera.
    */
+  @java.lang.Override
   public boolean getStationaryCamera() {
     return stationaryCamera_;
   }
@@ -211,6 +214,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -235,6 +239,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -265,6 +270,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The frameConfidenceThreshold.
    */
+  @java.lang.Override
   public float getFrameConfidenceThreshold() {
     return frameConfidenceThreshold_;
   }
@@ -287,6 +293,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    *
    * @return The videoConfidenceThreshold.
    */
+  @java.lang.Override
   public float getVideoConfidenceThreshold() {
     return videoConfidenceThreshold_;
   }
@@ -699,6 +706,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for labelDetectionMode.
      */
+    @java.lang.Override
     public int getLabelDetectionModeValue() {
       return labelDetectionMode_;
     }
@@ -718,6 +726,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setLabelDetectionModeValue(int value) {
+
       labelDetectionMode_ = value;
       onChanged();
       return this;
@@ -736,6 +745,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The labelDetectionMode.
      */
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.LabelDetectionMode getLabelDetectionMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.videointelligence.v1p3beta1.LabelDetectionMode result =
@@ -805,6 +815,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The stationaryCamera.
      */
+    @java.lang.Override
     public boolean getStationaryCamera() {
       return stationaryCamera_;
     }
@@ -981,6 +992,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The frameConfidenceThreshold.
      */
+    @java.lang.Override
     public float getFrameConfidenceThreshold() {
       return frameConfidenceThreshold_;
     }
@@ -1047,6 +1059,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      *
      * @return The videoConfidenceThreshold.
      */
+    @java.lang.Override
     public float getVideoConfidenceThreshold() {
       return videoConfidenceThreshold_;
     }

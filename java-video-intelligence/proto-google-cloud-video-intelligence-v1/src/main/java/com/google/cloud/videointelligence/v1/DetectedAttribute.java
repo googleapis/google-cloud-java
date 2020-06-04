@@ -138,6 +138,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -186,6 +188,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -204,6 +207,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
    *
    * @return The value.
    */
+  @java.lang.Override
   public java.lang.String getValue() {
     java.lang.Object ref = value_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +231,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for value.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValueBytes() {
     java.lang.Object ref = value_;
     if (ref instanceof java.lang.String) {
@@ -713,6 +718,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

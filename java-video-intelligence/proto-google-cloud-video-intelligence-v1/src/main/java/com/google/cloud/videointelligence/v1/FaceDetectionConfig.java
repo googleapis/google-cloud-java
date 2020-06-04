@@ -131,6 +131,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -155,6 +156,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +182,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
    *
    * @return The includeBoundingBoxes.
    */
+  @java.lang.Override
   public boolean getIncludeBoundingBoxes() {
     return includeBoundingBoxes_;
   }
@@ -646,6 +649,7 @@ public final class FaceDetectionConfig extends com.google.protobuf.GeneratedMess
      *
      * @return The includeBoundingBoxes.
      */
+    @java.lang.Override
     public boolean getIncludeBoundingBoxes() {
       return includeBoundingBoxes_;
     }

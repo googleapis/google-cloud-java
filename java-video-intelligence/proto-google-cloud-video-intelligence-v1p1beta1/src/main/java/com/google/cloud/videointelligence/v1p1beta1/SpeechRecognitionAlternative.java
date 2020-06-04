@@ -149,6 +149,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * @return The transcript.
    */
+  @java.lang.Override
   public java.lang.String getTranscript() {
     java.lang.Object ref = transcript_;
     if (ref instanceof java.lang.String) {
@@ -171,6 +172,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * @return The bytes for transcript.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTranscriptBytes() {
     java.lang.Object ref = transcript_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -216,6 +219,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p1beta1.WordInfo> getWordsList() {
     return words_;
   }
@@ -228,6 +232,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder>
       getWordsOrBuilderList() {
     return words_;
@@ -241,6 +246,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
+  @java.lang.Override
   public int getWordsCount() {
     return words_.size();
   }
@@ -253,6 +259,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.WordInfo getWords(int index) {
     return words_.get(index);
   }
@@ -265,6 +272,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder getWordsOrBuilder(
       int index) {
     return words_.get(index);
@@ -800,6 +808,7 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

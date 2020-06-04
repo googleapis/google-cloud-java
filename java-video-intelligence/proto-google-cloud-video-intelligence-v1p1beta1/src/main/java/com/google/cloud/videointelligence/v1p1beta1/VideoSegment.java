@@ -146,6 +146,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTimeOffset field is set.
    */
+  @java.lang.Override
   public boolean hasStartTimeOffset() {
     return startTimeOffset_ != null;
   }
@@ -161,6 +162,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTimeOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getStartTimeOffset() {
     return startTimeOffset_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -176,6 +178,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration start_time_offset = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getStartTimeOffsetOrBuilder() {
     return getStartTimeOffset();
   }
@@ -194,6 +197,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTimeOffset field is set.
    */
+  @java.lang.Override
   public boolean hasEndTimeOffset() {
     return endTimeOffset_ != null;
   }
@@ -209,6 +213,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTimeOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getEndTimeOffset() {
     return endTimeOffset_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -224,6 +229,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration end_time_offset = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getEndTimeOffsetOrBuilder() {
     return getEndTimeOffset();
   }

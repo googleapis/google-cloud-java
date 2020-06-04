@@ -196,6 +196,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
    *
    * @return Whether the videoConfig field is set.
    */
+  @java.lang.Override
   public boolean hasVideoConfig() {
     return streamingRequestCase_ == 1;
   }
@@ -212,6 +213,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
    *
    * @return The videoConfig.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig getVideoConfig() {
     if (streamingRequestCase_ == 1) {
       return (com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig) streamingRequest_;
@@ -229,6 +231,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfigOrBuilder
       getVideoConfigOrBuilder() {
     if (streamingRequestCase_ == 1) {
@@ -255,6 +258,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
    *
    * @return The inputContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInputContent() {
     if (streamingRequestCase_ == 2) {
       return (com.google.protobuf.ByteString) streamingRequest_;
@@ -690,6 +694,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
      *
      * @return Whether the videoConfig field is set.
      */
+    @java.lang.Override
     public boolean hasVideoConfig() {
       return streamingRequestCase_ == 1;
     }
@@ -706,6 +711,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
      *
      * @return The videoConfig.
      */
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig getVideoConfig() {
       if (videoConfigBuilder_ == null) {
         if (streamingRequestCase_ == 1) {
@@ -859,6 +865,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
      *
      * <code>.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig video_config = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfigOrBuilder
         getVideoConfigOrBuilder() {
       if ((streamingRequestCase_ == 1) && (videoConfigBuilder_ != null)) {

@@ -153,6 +153,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1beta2.NormalizedBoundingBox normalized_bounding_boxes = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBox>
       getNormalizedBoundingBoxesList() {
     return normalizedBoundingBoxes_;
@@ -170,6 +171,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1beta2.NormalizedBoundingBox normalized_bounding_boxes = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBoxOrBuilder>
       getNormalizedBoundingBoxesOrBuilderList() {
@@ -188,6 +190,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1beta2.NormalizedBoundingBox normalized_bounding_boxes = 1;
    * </code>
    */
+  @java.lang.Override
   public int getNormalizedBoundingBoxesCount() {
     return normalizedBoundingBoxes_.size();
   }
@@ -204,6 +207,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1beta2.NormalizedBoundingBox normalized_bounding_boxes = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBox
       getNormalizedBoundingBoxes(int index) {
     return normalizedBoundingBoxes_.get(index);
@@ -221,6 +225,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.videointelligence.v1beta2.NormalizedBoundingBox normalized_bounding_boxes = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1beta2.NormalizedBoundingBoxOrBuilder
       getNormalizedBoundingBoxesOrBuilder(int index) {
     return normalizedBoundingBoxes_.get(index);
@@ -240,6 +245,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the timeOffset field is set.
    */
+  @java.lang.Override
   public boolean hasTimeOffset() {
     return timeOffset_ != null;
   }
@@ -255,6 +261,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
@@ -268,6 +275,7 @@ public final class FaceFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration time_offset = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
     return getTimeOffset();
   }

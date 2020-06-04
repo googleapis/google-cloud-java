@@ -156,6 +156,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The thumbnail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getThumbnail() {
     return thumbnail_;
   }
@@ -171,6 +172,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceSegment segments = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.FaceSegment> getSegmentsList() {
     return segments_;
   }
@@ -183,6 +185,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceSegment segments = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.FaceSegmentOrBuilder>
       getSegmentsOrBuilderList() {
     return segments_;
@@ -196,6 +199,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceSegment segments = 2;</code>
    */
+  @java.lang.Override
   public int getSegmentsCount() {
     return segments_.size();
   }
@@ -208,6 +212,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceSegment segments = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.FaceSegment getSegments(int index) {
     return segments_.get(index);
   }
@@ -220,6 +225,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceSegment segments = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.FaceSegmentOrBuilder getSegmentsOrBuilder(
       int index) {
     return segments_.get(index);
@@ -236,6 +242,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceFrame frames = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1.FaceFrame> getFramesList() {
     return frames_;
   }
@@ -248,6 +255,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceFrame frames = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.videointelligence.v1.FaceFrameOrBuilder>
       getFramesOrBuilderList() {
     return frames_;
@@ -261,6 +269,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceFrame frames = 3;</code>
    */
+  @java.lang.Override
   public int getFramesCount() {
     return frames_.size();
   }
@@ -273,6 +282,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceFrame frames = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.FaceFrame getFrames(int index) {
     return frames_.get(index);
   }
@@ -285,6 +295,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.videointelligence.v1.FaceFrame frames = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.FaceFrameOrBuilder getFramesOrBuilder(int index) {
     return frames_.get(index);
   }
@@ -730,6 +741,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The thumbnail.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getThumbnail() {
       return thumbnail_;
     }

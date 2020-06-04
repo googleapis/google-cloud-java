@@ -162,6 +162,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    * @return Whether the error field is set.
    */
+  @java.lang.Override
   public boolean hasError() {
     return error_ != null;
   }
@@ -177,6 +178,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    * @return The error.
    */
+  @java.lang.Override
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
@@ -190,6 +192,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    * <code>.google.rpc.Status error = 1;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
   }
@@ -210,6 +213,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    * @return Whether the annotationResults field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationResults() {
     return annotationResults_ != null;
   }
@@ -226,6 +230,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    * @return The annotationResults.
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults
       getAnnotationResults() {
     return annotationResults_ == null
@@ -244,6 +249,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    * .google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults annotation_results = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResultsOrBuilder
       getAnnotationResultsOrBuilder() {
     return getAnnotationResults();
@@ -265,6 +271,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    * @return The annotationResultsUri.
    */
+  @java.lang.Override
   public java.lang.String getAnnotationResultsUri() {
     java.lang.Object ref = annotationResultsUri_;
     if (ref instanceof java.lang.String) {
@@ -290,6 +297,7 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
    *
    * @return The bytes for annotationResultsUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAnnotationResultsUriBytes() {
     java.lang.Object ref = annotationResultsUri_;
     if (ref instanceof java.lang.String) {

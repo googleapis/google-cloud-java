@@ -138,6 +138,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack celebrity_tracks = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack>
       getCelebrityTracksList() {
     return celebrityTracks_;
@@ -153,6 +154,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack celebrity_tracks = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.videointelligence.v1p3beta1.CelebrityTrackOrBuilder>
       getCelebrityTracksOrBuilderList() {
@@ -169,6 +171,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack celebrity_tracks = 1;
    * </code>
    */
+  @java.lang.Override
   public int getCelebrityTracksCount() {
     return celebrityTracks_.size();
   }
@@ -183,6 +186,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack celebrity_tracks = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack getCelebrityTracks(int index) {
     return celebrityTracks_.get(index);
   }
@@ -197,6 +201,7 @@ public final class CelebrityRecognitionAnnotation extends com.google.protobuf.Ge
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.CelebrityTrack celebrity_tracks = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.CelebrityTrackOrBuilder
       getCelebrityTracksOrBuilder(int index) {
     return celebrityTracks_.get(index);
