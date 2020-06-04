@@ -215,6 +215,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +240,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -265,6 +267,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -288,6 +291,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -316,6 +320,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the budgetFilter field is set.
    */
+  @java.lang.Override
   public boolean hasBudgetFilter() {
     return budgetFilter_ != null;
   }
@@ -333,6 +338,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The budgetFilter.
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.Filter getBudgetFilter() {
     return budgetFilter_ == null
         ? com.google.cloud.billing.budgets.v1beta1.Filter.getDefaultInstance()
@@ -350,6 +356,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.billing.budgets.v1beta1.Filter budget_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.FilterOrBuilder getBudgetFilterOrBuilder() {
     return getBudgetFilter();
   }
@@ -369,6 +376,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the amount field is set.
    */
+  @java.lang.Override
   public boolean hasAmount() {
     return amount_ != null;
   }
@@ -385,6 +393,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The amount.
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.BudgetAmount getAmount() {
     return amount_ == null
         ? com.google.cloud.billing.budgets.v1beta1.BudgetAmount.getDefaultInstance()
@@ -401,6 +410,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.billing.budgets.v1beta1.BudgetAmount amount = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.BudgetAmountOrBuilder getAmountOrBuilder() {
     return getAmount();
   }
@@ -419,6 +429,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.billing.budgets.v1beta1.ThresholdRule>
       getThresholdRulesList() {
     return thresholdRules_;
@@ -435,6 +446,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder>
       getThresholdRulesOrBuilderList() {
     return thresholdRules_;
@@ -451,6 +463,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getThresholdRulesCount() {
     return thresholdRules_.size();
   }
@@ -466,6 +479,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.ThresholdRule getThresholdRules(int index) {
     return thresholdRules_.get(index);
   }
@@ -481,6 +495,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.billing.budgets.v1beta1.ThresholdRule threshold_rules = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.ThresholdRuleOrBuilder getThresholdRulesOrBuilder(
       int index) {
     return thresholdRules_.get(index);
@@ -502,6 +517,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the allUpdatesRule field is set.
    */
+  @java.lang.Override
   public boolean hasAllUpdatesRule() {
     return allUpdatesRule_ != null;
   }
@@ -519,6 +535,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The allUpdatesRule.
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule getAllUpdatesRule() {
     return allUpdatesRule_ == null
         ? com.google.cloud.billing.budgets.v1beta1.AllUpdatesRule.getDefaultInstance()
@@ -536,6 +553,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.billing.budgets.v1beta1.AllUpdatesRule all_updates_rule = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.AllUpdatesRuleOrBuilder
       getAllUpdatesRuleOrBuilder() {
     return getAllUpdatesRule();
@@ -556,6 +574,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The etag.
    */
+  @java.lang.Override
   public java.lang.String getEtag() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {
@@ -580,6 +599,7 @@ public final class Budget extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for etag.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEtagBytes() {
     java.lang.Object ref = etag_;
     if (ref instanceof java.lang.String) {

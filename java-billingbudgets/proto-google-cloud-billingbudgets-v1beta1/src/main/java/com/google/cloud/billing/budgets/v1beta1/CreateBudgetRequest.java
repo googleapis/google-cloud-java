@@ -143,6 +143,7 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the budget field is set.
    */
+  @java.lang.Override
   public boolean hasBudget() {
     return budget_ != null;
   }
@@ -211,6 +214,7 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The budget.
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.Budget getBudget() {
     return budget_ == null
         ? com.google.cloud.billing.budgets.v1beta1.Budget.getDefaultInstance()
@@ -227,6 +231,7 @@ public final class CreateBudgetRequest extends com.google.protobuf.GeneratedMess
    * .google.cloud.billing.budgets.v1beta1.Budget budget = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.BudgetOrBuilder getBudgetOrBuilder() {
     return getBudget();
   }

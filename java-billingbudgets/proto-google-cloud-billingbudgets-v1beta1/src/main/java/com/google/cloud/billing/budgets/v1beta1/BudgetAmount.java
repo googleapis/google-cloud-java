@@ -198,6 +198,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the specifiedAmount field is set.
    */
+  @java.lang.Override
   public boolean hasSpecifiedAmount() {
     return budgetAmountCase_ == 1;
   }
@@ -215,6 +216,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The specifiedAmount.
    */
+  @java.lang.Override
   public com.google.type.Money getSpecifiedAmount() {
     if (budgetAmountCase_ == 1) {
       return (com.google.type.Money) budgetAmount_;
@@ -233,6 +235,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.type.Money specified_amount = 1;</code>
    */
+  @java.lang.Override
   public com.google.type.MoneyOrBuilder getSpecifiedAmountOrBuilder() {
     if (budgetAmountCase_ == 1) {
       return (com.google.type.Money) budgetAmount_;
@@ -252,6 +255,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the lastPeriodAmount field is set.
    */
+  @java.lang.Override
   public boolean hasLastPeriodAmount() {
     return budgetAmountCase_ == 2;
   }
@@ -266,6 +270,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The lastPeriodAmount.
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.LastPeriodAmount getLastPeriodAmount() {
     if (budgetAmountCase_ == 2) {
       return (com.google.cloud.billing.budgets.v1beta1.LastPeriodAmount) budgetAmount_;
@@ -281,6 +286,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.LastPeriodAmountOrBuilder
       getLastPeriodAmountOrBuilder() {
     if (budgetAmountCase_ == 2) {
@@ -696,6 +702,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the specifiedAmount field is set.
      */
+    @java.lang.Override
     public boolean hasSpecifiedAmount() {
       return budgetAmountCase_ == 1;
     }
@@ -713,6 +720,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The specifiedAmount.
      */
+    @java.lang.Override
     public com.google.type.Money getSpecifiedAmount() {
       if (specifiedAmountBuilder_ == null) {
         if (budgetAmountCase_ == 1) {
@@ -860,6 +868,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.type.Money specified_amount = 1;</code>
      */
+    @java.lang.Override
     public com.google.type.MoneyOrBuilder getSpecifiedAmountOrBuilder() {
       if ((budgetAmountCase_ == 1) && (specifiedAmountBuilder_ != null)) {
         return specifiedAmountBuilder_.getMessageOrBuilder();
@@ -919,6 +928,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the lastPeriodAmount field is set.
      */
+    @java.lang.Override
     public boolean hasLastPeriodAmount() {
       return budgetAmountCase_ == 2;
     }
@@ -933,6 +943,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The lastPeriodAmount.
      */
+    @java.lang.Override
     public com.google.cloud.billing.budgets.v1beta1.LastPeriodAmount getLastPeriodAmount() {
       if (lastPeriodAmountBuilder_ == null) {
         if (budgetAmountCase_ == 2) {
@@ -1069,6 +1080,7 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.billing.budgets.v1beta1.LastPeriodAmount last_period_amount = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.billing.budgets.v1beta1.LastPeriodAmountOrBuilder
         getLastPeriodAmountOrBuilder() {
       if ((budgetAmountCase_ == 2) && (lastPeriodAmountBuilder_ != null)) {

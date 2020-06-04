@@ -292,6 +292,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -417,6 +421,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for creditTypesTreatment.
    */
+  @java.lang.Override
   public int getCreditTypesTreatmentValue() {
     return creditTypesTreatment_;
   }
@@ -433,6 +438,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The creditTypesTreatment.
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment
       getCreditTypesTreatment() {
     @SuppressWarnings("deprecation")
@@ -644,6 +650,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -651,6 +658,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabels() {
     return getLabelsMap();
@@ -669,6 +677,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -686,6 +695,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.ListValue getLabelsOrDefault(
       java.lang.String key, com.google.protobuf.ListValue defaultValue) {
     if (key == null) {
@@ -709,6 +719,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.ListValue getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1404,6 +1415,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for creditTypesTreatment.
      */
+    @java.lang.Override
     public int getCreditTypesTreatmentValue() {
       return creditTypesTreatment_;
     }
@@ -1422,6 +1434,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCreditTypesTreatmentValue(int value) {
+
       creditTypesTreatment_ = value;
       onChanged();
       return this;
@@ -1439,6 +1452,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The creditTypesTreatment.
      */
+    @java.lang.Override
     public com.google.cloud.billing.budgets.v1beta1.Filter.CreditTypesTreatment
         getCreditTypesTreatment() {
       @SuppressWarnings("deprecation")
@@ -1950,6 +1964,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1957,6 +1972,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabels() {
       return getLabelsMap();
@@ -1975,6 +1991,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1992,6 +2009,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.ListValue getLabelsOrDefault(
         java.lang.String key, com.google.protobuf.ListValue defaultValue) {
       if (key == null) {
@@ -2015,6 +2033,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.protobuf.ListValue&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.ListValue getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

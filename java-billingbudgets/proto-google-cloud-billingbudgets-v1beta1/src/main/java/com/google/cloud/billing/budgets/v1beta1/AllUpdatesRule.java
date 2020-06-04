@@ -144,6 +144,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pubsubTopic.
    */
+  @java.lang.Override
   public java.lang.String getPubsubTopic() {
     java.lang.Object ref = pubsubTopic_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for pubsubTopic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPubsubTopicBytes() {
     java.lang.Object ref = pubsubTopic_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +205,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The schemaVersion.
    */
+  @java.lang.Override
   public java.lang.String getSchemaVersion() {
     java.lang.Object ref = schemaVersion_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +230,7 @@ public final class AllUpdatesRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for schemaVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSchemaVersionBytes() {
     java.lang.Object ref = schemaVersion_;
     if (ref instanceof java.lang.String) {

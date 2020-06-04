@@ -245,6 +245,10 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -294,6 +298,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The thresholdPercent.
    */
+  @java.lang.Override
   public double getThresholdPercent() {
     return thresholdPercent_;
   }
@@ -314,6 +319,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for spendBasis.
    */
+  @java.lang.Override
   public int getSpendBasisValue() {
     return spendBasis_;
   }
@@ -331,6 +337,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The spendBasis.
    */
+  @java.lang.Override
   public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis getSpendBasis() {
     @SuppressWarnings("deprecation")
     com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis result =
@@ -701,6 +708,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The thresholdPercent.
      */
+    @java.lang.Override
     public double getThresholdPercent() {
       return thresholdPercent_;
     }
@@ -759,6 +767,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for spendBasis.
      */
+    @java.lang.Override
     public int getSpendBasisValue() {
       return spendBasis_;
     }
@@ -778,6 +787,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSpendBasisValue(int value) {
+
       spendBasis_ = value;
       onChanged();
       return this;
@@ -796,6 +806,7 @@ public final class ThresholdRule extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The spendBasis.
      */
+    @java.lang.Override
     public com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis getSpendBasis() {
       @SuppressWarnings("deprecation")
       com.google.cloud.billing.budgets.v1beta1.ThresholdRule.Basis result =
