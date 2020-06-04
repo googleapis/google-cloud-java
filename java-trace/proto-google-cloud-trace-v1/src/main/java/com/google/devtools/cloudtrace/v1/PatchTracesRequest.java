@@ -140,6 +140,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the traces field is set.
    */
+  @java.lang.Override
   public boolean hasTraces() {
     return traces_ != null;
   }
@@ -205,6 +208,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The traces.
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.Traces getTraces() {
     return traces_ == null
         ? com.google.devtools.cloudtrace.v1.Traces.getDefaultInstance()
@@ -221,6 +225,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    * .google.devtools.cloudtrace.v1.Traces traces = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.TracesOrBuilder getTracesOrBuilder() {
     return getTraces();
   }

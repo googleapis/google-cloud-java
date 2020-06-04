@@ -150,6 +150,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -199,6 +201,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The traceId.
    */
+  @java.lang.Override
   public java.lang.String getTraceId() {
     java.lang.Object ref = traceId_;
     if (ref instanceof java.lang.String) {
@@ -223,6 +226,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for traceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTraceIdBytes() {
     java.lang.Object ref = traceId_;
     if (ref instanceof java.lang.String) {
@@ -246,6 +250,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.devtools.cloudtrace.v1.TraceSpan> getSpansList() {
     return spans_;
   }
@@ -258,6 +263,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder>
       getSpansOrBuilderList() {
     return spans_;
@@ -271,6 +277,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
+  @java.lang.Override
   public int getSpansCount() {
     return spans_.size();
   }
@@ -283,6 +290,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.TraceSpan getSpans(int index) {
     return spans_.get(index);
   }
@@ -295,6 +303,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder getSpansOrBuilder(int index) {
     return spans_.get(index);
   }

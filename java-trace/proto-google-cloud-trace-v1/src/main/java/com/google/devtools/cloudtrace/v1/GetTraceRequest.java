@@ -132,6 +132,7 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +155,7 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -179,6 +181,7 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The traceId.
    */
+  @java.lang.Override
   public java.lang.String getTraceId() {
     java.lang.Object ref = traceId_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +204,7 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for traceId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTraceIdBytes() {
     java.lang.Object ref = traceId_;
     if (ref instanceof java.lang.String) {

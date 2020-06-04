@@ -194,6 +194,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the stringValue field is set.
    */
+  @java.lang.Override
   public boolean hasStringValue() {
     return valueCase_ == 1;
   }
@@ -208,6 +209,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stringValue.
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableString getStringValue() {
     if (valueCase_ == 1) {
       return (com.google.devtools.cloudtrace.v2.TruncatableString) value_;
@@ -223,6 +225,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getStringValueOrBuilder() {
     if (valueCase_ == 1) {
       return (com.google.devtools.cloudtrace.v2.TruncatableString) value_;
@@ -242,6 +245,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The intValue.
    */
+  @java.lang.Override
   public long getIntValue() {
     if (valueCase_ == 2) {
       return (java.lang.Long) value_;
@@ -261,6 +265,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boolValue.
    */
+  @java.lang.Override
   public boolean getBoolValue() {
     if (valueCase_ == 3) {
       return (java.lang.Boolean) value_;
@@ -690,6 +695,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the stringValue field is set.
      */
+    @java.lang.Override
     public boolean hasStringValue() {
       return valueCase_ == 1;
     }
@@ -704,6 +710,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stringValue.
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableString getStringValue() {
       if (stringValueBuilder_ == null) {
         if (valueCase_ == 1) {
@@ -836,6 +843,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getStringValueOrBuilder() {
       if ((valueCase_ == 1) && (stringValueBuilder_ != null)) {
         return stringValueBuilder_.getMessageOrBuilder();

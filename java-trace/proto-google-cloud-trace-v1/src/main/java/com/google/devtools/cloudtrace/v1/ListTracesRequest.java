@@ -330,6 +330,10 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -377,6 +381,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The projectId.
    */
+  @java.lang.Override
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -399,6 +404,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for projectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -427,6 +433,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for view.
    */
+  @java.lang.Override
   public int getViewValue() {
     return view_;
   }
@@ -444,6 +451,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The view.
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType getView() {
     @SuppressWarnings("deprecation")
     com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType result =
@@ -468,6 +476,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -486,6 +495,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -509,6 +519,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -535,6 +546,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -550,6 +562,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -563,6 +576,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp start_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -581,6 +595,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -596,6 +611,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -609,6 +625,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -653,6 +670,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -702,6 +720,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -736,6 +755,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The orderBy.
    */
+  @java.lang.Override
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -767,6 +787,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for orderBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -1357,6 +1378,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for view.
      */
+    @java.lang.Override
     public int getViewValue() {
       return view_;
     }
@@ -1376,6 +1398,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
+
       view_ = value;
       onChanged();
       return this;
@@ -1394,6 +1417,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The view.
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType getView() {
       @SuppressWarnings("deprecation")
       com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType result =
@@ -1461,6 +1485,7 @@ public final class ListTracesRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

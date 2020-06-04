@@ -134,6 +134,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
    *
    * @return The value.
    */
+  @java.lang.Override
   public java.lang.String getValue() {
     java.lang.Object ref = value_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for value.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getValueBytes() {
     java.lang.Object ref = value_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
    *
    * @return The truncatedByteCount.
    */
+  @java.lang.Override
   public int getTruncatedByteCount() {
     return truncatedByteCount_;
   }
@@ -668,6 +671,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      *
      * @return The truncatedByteCount.
      */
+    @java.lang.Override
     public int getTruncatedByteCount() {
       return truncatedByteCount_;
     }

@@ -150,6 +150,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the module field is set.
    */
+  @java.lang.Override
   public boolean hasModule() {
     return module_ != null;
   }
@@ -165,6 +166,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The module.
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableString getModule() {
     return module_ == null
         ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
@@ -180,6 +182,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudtrace.v2.TruncatableString module = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getModuleOrBuilder() {
     return getModule();
   }
@@ -198,6 +201,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the buildId field is set.
    */
+  @java.lang.Override
   public boolean hasBuildId() {
     return buildId_ != null;
   }
@@ -213,6 +217,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The buildId.
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableString getBuildId() {
     return buildId_ == null
         ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
@@ -228,6 +233,7 @@ public final class Module extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudtrace.v2.TruncatableString build_id = 2;</code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getBuildIdOrBuilder() {
     return getBuildId();
   }

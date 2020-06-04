@@ -314,6 +314,10 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -360,6 +364,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The spanId.
    */
+  @java.lang.Override
   public long getSpanId() {
     return spanId_;
   }
@@ -379,6 +384,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for kind.
    */
+  @java.lang.Override
   public int getKindValue() {
     return kind_;
   }
@@ -395,6 +401,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kind.
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind getKind() {
     @SuppressWarnings("deprecation")
     com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind result =
@@ -423,6 +430,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -451,6 +459,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -476,6 +485,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -490,6 +500,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -502,6 +513,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp start_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -519,6 +531,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -533,6 +546,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -545,6 +559,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -562,6 +577,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parentSpanId.
    */
+  @java.lang.Override
   public long getParentSpanId() {
     return parentSpanId_;
   }
@@ -630,6 +646,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -637,6 +654,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -680,6 +698,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -722,6 +741,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -768,6 +788,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1259,6 +1280,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The spanId.
      */
+    @java.lang.Override
     public long getSpanId() {
       return spanId_;
     }
@@ -1314,6 +1336,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for kind.
      */
+    @java.lang.Override
     public int getKindValue() {
       return kind_;
     }
@@ -1332,6 +1355,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
+
       kind_ = value;
       onChanged();
       return this;
@@ -1349,6 +1373,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The kind.
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind getKind() {
       @SuppressWarnings("deprecation")
       com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind result =
@@ -1906,6 +1931,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The parentSpanId.
      */
+    @java.lang.Override
     public long getParentSpanId() {
       return parentSpanId_;
     }
@@ -2009,6 +2035,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2016,6 +2043,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2059,6 +2087,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2101,6 +2130,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2148,6 +2178,7 @@ public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

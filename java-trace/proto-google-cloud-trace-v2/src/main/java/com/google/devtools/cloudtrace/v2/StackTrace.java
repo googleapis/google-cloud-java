@@ -535,6 +535,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the functionName field is set.
      */
+    @java.lang.Override
     public boolean hasFunctionName() {
       return functionName_ != null;
     }
@@ -550,6 +551,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The functionName.
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableString getFunctionName() {
       return functionName_ == null
           ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
@@ -565,6 +567,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString function_name = 1;</code>
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getFunctionNameOrBuilder() {
       return getFunctionName();
     }
@@ -584,6 +587,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the originalFunctionName field is set.
      */
+    @java.lang.Override
     public boolean hasOriginalFunctionName() {
       return originalFunctionName_ != null;
     }
@@ -600,6 +604,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The originalFunctionName.
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableString getOriginalFunctionName() {
       return originalFunctionName_ == null
           ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
@@ -616,6 +621,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString original_function_name = 2;</code>
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder
         getOriginalFunctionNameOrBuilder() {
       return getOriginalFunctionName();
@@ -635,6 +641,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the fileName field is set.
      */
+    @java.lang.Override
     public boolean hasFileName() {
       return fileName_ != null;
     }
@@ -650,6 +657,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The fileName.
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableString getFileName() {
       return fileName_ == null
           ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
@@ -665,6 +673,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString file_name = 3;</code>
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getFileNameOrBuilder() {
       return getFileName();
     }
@@ -682,6 +691,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The lineNumber.
      */
+    @java.lang.Override
     public long getLineNumber() {
       return lineNumber_;
     }
@@ -700,6 +710,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The columnNumber.
      */
+    @java.lang.Override
     public long getColumnNumber() {
       return columnNumber_;
     }
@@ -717,6 +728,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the loadModule field is set.
      */
+    @java.lang.Override
     public boolean hasLoadModule() {
       return loadModule_ != null;
     }
@@ -731,6 +743,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The loadModule.
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.Module getLoadModule() {
       return loadModule_ == null
           ? com.google.devtools.cloudtrace.v2.Module.getDefaultInstance()
@@ -745,6 +758,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudtrace.v2.Module load_module = 6;</code>
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.ModuleOrBuilder getLoadModuleOrBuilder() {
       return getLoadModule();
     }
@@ -762,6 +776,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the sourceVersion field is set.
      */
+    @java.lang.Override
     public boolean hasSourceVersion() {
       return sourceVersion_ != null;
     }
@@ -776,6 +791,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sourceVersion.
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableString getSourceVersion() {
       return sourceVersion_ == null
           ? com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()
@@ -790,6 +806,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.devtools.cloudtrace.v2.TruncatableString source_version = 7;</code>
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder
         getSourceVersionOrBuilder() {
       return getSourceVersion();
@@ -1885,6 +1902,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The lineNumber.
        */
+      @java.lang.Override
       public long getLineNumber() {
         return lineNumber_;
       }
@@ -1937,6 +1955,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The columnNumber.
        */
+      @java.lang.Override
       public long getColumnNumber() {
         return columnNumber_;
       }
@@ -2595,6 +2614,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudtrace.v2.StackTrace.StackFrame frame = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.devtools.cloudtrace.v2.StackTrace.StackFrame> getFrameList() {
       return frame_;
     }
@@ -2607,6 +2627,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudtrace.v2.StackTrace.StackFrame frame = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.devtools.cloudtrace.v2.StackTrace.StackFrameOrBuilder>
         getFrameOrBuilderList() {
@@ -2621,6 +2642,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudtrace.v2.StackTrace.StackFrame frame = 1;</code>
      */
+    @java.lang.Override
     public int getFrameCount() {
       return frame_.size();
     }
@@ -2633,6 +2655,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudtrace.v2.StackTrace.StackFrame frame = 1;</code>
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.StackTrace.StackFrame getFrame(int index) {
       return frame_.get(index);
     }
@@ -2645,6 +2668,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.devtools.cloudtrace.v2.StackTrace.StackFrame frame = 1;</code>
      */
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v2.StackTrace.StackFrameOrBuilder getFrameOrBuilder(
         int index) {
       return frame_.get(index);
@@ -2665,6 +2689,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The droppedFramesCount.
      */
+    @java.lang.Override
     public int getDroppedFramesCount() {
       return droppedFramesCount_;
     }
@@ -3428,6 +3453,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The droppedFramesCount.
        */
+      @java.lang.Override
       public int getDroppedFramesCount() {
         return droppedFramesCount_;
       }
@@ -3536,6 +3562,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the stackFrames field is set.
    */
+  @java.lang.Override
   public boolean hasStackFrames() {
     return stackFrames_ != null;
   }
@@ -3550,6 +3577,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stackFrames.
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.StackTrace.StackFrames getStackFrames() {
     return stackFrames_ == null
         ? com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.getDefaultInstance()
@@ -3564,6 +3592,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.devtools.cloudtrace.v2.StackTrace.StackFrames stack_frames = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.StackTrace.StackFramesOrBuilder
       getStackFramesOrBuilder() {
     return getStackFrames();
@@ -3588,6 +3617,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stackTraceHashId.
    */
+  @java.lang.Override
   public long getStackTraceHashId() {
     return stackTraceHashId_;
   }
@@ -4142,6 +4172,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stackTraceHashId.
      */
+    @java.lang.Override
     public long getStackTraceHashId() {
       return stackTraceHashId_;
     }

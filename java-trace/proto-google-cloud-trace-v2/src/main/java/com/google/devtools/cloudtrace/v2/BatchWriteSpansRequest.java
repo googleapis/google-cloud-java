@@ -143,6 +143,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.devtools.cloudtrace.v2.Span> getSpansList() {
     return spans_;
   }
@@ -209,6 +212,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.devtools.cloudtrace.v2.SpanOrBuilder>
       getSpansOrBuilderList() {
     return spans_;
@@ -225,6 +229,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getSpansCount() {
     return spans_.size();
   }
@@ -240,6 +245,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.Span getSpans(int index) {
     return spans_.get(index);
   }
@@ -255,6 +261,7 @@ public final class BatchWriteSpansRequest extends com.google.protobuf.GeneratedM
    * repeated .google.devtools.cloudtrace.v2.Span spans = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v2.SpanOrBuilder getSpansOrBuilder(int index) {
     return spans_.get(index);
   }

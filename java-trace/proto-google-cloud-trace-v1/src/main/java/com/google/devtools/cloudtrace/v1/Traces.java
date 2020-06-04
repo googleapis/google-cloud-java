@@ -130,6 +130,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.devtools.cloudtrace.v1.Trace> getTracesList() {
     return traces_;
   }
@@ -142,6 +143,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.devtools.cloudtrace.v1.TraceOrBuilder>
       getTracesOrBuilderList() {
     return traces_;
@@ -155,6 +157,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
+  @java.lang.Override
   public int getTracesCount() {
     return traces_.size();
   }
@@ -167,6 +170,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.Trace getTraces(int index) {
     return traces_.get(index);
   }
@@ -179,6 +183,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.devtools.cloudtrace.v1.Trace traces = 1;</code>
    */
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.TraceOrBuilder getTracesOrBuilder(int index) {
     return traces_.get(index);
   }
