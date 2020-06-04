@@ -30,8 +30,12 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.concurrent.TimeoutException;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -43,6 +47,17 @@ public class ITLocalDatastoreHelperTest {
   private static final double TOLERANCE = 0.00001;
   private static final String PROJECT_ID_PREFIX = "test-project-";
   private static final String NAMESPACE = "namespace";
+  private Path dataDir;
+
+  @Before
+  public void setUp() throws IOException {
+    dataDir = Files.createTempDirectory("gcd");
+  }
+
+  @After
+  public void tearDown() throws IOException {
+    LocalDatastoreHelper.deleteRecursively(dataDir);
+  }
 
   @Test
   public void testCreate() {
@@ -52,6 +67,57 @@ public class ITLocalDatastoreHelperTest {
     helper = LocalDatastoreHelper.create();
     assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
     assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+  }
+
+  @Test
+  public void testCreateWithBuilder() {
+    LocalDatastoreHelper helper =
+        LocalDatastoreHelper.newBuilder()
+            .setConsistency(0.75)
+            .setPort(8081)
+            .setStoreOnDisk(false)
+            .setDataDir(dataDir)
+            .build();
+    assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    assertFalse(helper.isStoreOnDisk());
+    assertEquals(8081, helper.getPort());
+    assertEquals(dataDir, helper.getGcdPath());
+    LocalDatastoreHelper incompleteHelper = LocalDatastoreHelper.newBuilder().build();
+    assertTrue(Math.abs(0.9 - incompleteHelper.getConsistency()) < TOLERANCE);
+    assertTrue(incompleteHelper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+  }
+
+  @Test
+  public void testCreateWithToBuilder() throws IOException {
+    LocalDatastoreHelper helper =
+        LocalDatastoreHelper.newBuilder()
+            .setConsistency(0.75)
+            .setPort(8081)
+            .setStoreOnDisk(false)
+            .setDataDir(dataDir)
+            .build();
+    assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    assertFalse(helper.isStoreOnDisk());
+    assertEquals(8081, helper.getPort());
+    assertEquals(dataDir, helper.getGcdPath());
+    LocalDatastoreHelper actualHelper = helper.toBuilder().build();
+    assertLocalDatastoreHelpersEquivelent(helper, actualHelper);
+    Path dataDir = Files.createTempDirectory("gcd_data_dir");
+    actualHelper =
+        helper
+            .toBuilder()
+            .setConsistency(0.85)
+            .setPort(9091)
+            .setStoreOnDisk(true)
+            .setDataDir(dataDir)
+            .build();
+    assertTrue(Math.abs(0.85 - actualHelper.getConsistency()) < TOLERANCE);
+    assertTrue(actualHelper.isStoreOnDisk());
+    assertEquals(9091, actualHelper.getPort());
+    assertEquals(dataDir, actualHelper.getGcdPath());
+    LocalDatastoreHelper.deleteRecursively(dataDir);
   }
 
   @Test
@@ -102,5 +168,32 @@ public class ITLocalDatastoreHelperTest {
     } catch (DatastoreException ex) {
       assertNotNull(ex.getMessage());
     }
+  }
+
+  @Test
+  public void testStartStopResetWithBuilder()
+      throws IOException, InterruptedException, TimeoutException {
+    try {
+      LocalDatastoreHelper helper = LocalDatastoreHelper.newBuilder().build();
+      helper.start();
+      Datastore datastore = helper.getOptions().getService();
+      Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
+      datastore.put(Entity.newBuilder(key).build());
+      assertNotNull(datastore.get(key));
+      helper.reset();
+      assertNull(datastore.get(key));
+      helper.stop(Duration.ofMinutes(1));
+      datastore.get(key);
+      Assert.fail();
+    } catch (DatastoreException ex) {
+      assertNotNull(ex.getMessage());
+    }
+  }
+
+  public void assertLocalDatastoreHelpersEquivelent(
+      LocalDatastoreHelper expected, LocalDatastoreHelper actual) {
+    assertEquals(expected.getConsistency(), actual.getConsistency(), 0);
+    assertEquals(expected.isStoreOnDisk(), actual.isStoreOnDisk());
+    assertEquals(expected.getGcdPath(), actual.getGcdPath());
   }
 }

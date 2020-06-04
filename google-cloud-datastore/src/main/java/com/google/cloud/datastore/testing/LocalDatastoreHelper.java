@@ -35,7 +35,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 
@@ -50,6 +49,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   private final List<EmulatorRunner> emulatorRunners;
   private final double consistency;
   private final Path gcdPath;
+  private boolean storeOnDisk;
 
   // Gcloud emulator settings
   private static final String GCLOUD_CMD_TEXT = "gcloud beta emulators datastore start";
@@ -78,39 +78,87 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     }
   }
 
-  private LocalDatastoreHelper(double consistency, int port) {
+  /** A builder for {@code LocalDatastoreHelper} objects. */
+  public static class Builder {
+    private double consistency;
+    private int port;
+    private Path dataDir;
+    private boolean storeOnDisk = true;
+
+    private Builder() {}
+
+    private Builder(LocalDatastoreHelper helper) {
+      this.consistency = helper.consistency;
+      this.dataDir = helper.gcdPath;
+      this.storeOnDisk = helper.storeOnDisk;
+    }
+
+    public Builder setConsistency(double consistency) {
+      this.consistency = consistency;
+      return this;
+    }
+
+    public Builder setPort(int port) {
+      this.port = port;
+      return this;
+    }
+
+    public Builder setDataDir(Path dataDir) {
+      this.dataDir = dataDir;
+      return this;
+    }
+
+    public Builder setStoreOnDisk(boolean storeOnDisk) {
+      this.storeOnDisk = storeOnDisk;
+      return this;
+    }
+
+    /** Creates a {@code LocalDatastoreHelper} object. */
+    public LocalDatastoreHelper build() {
+      return new LocalDatastoreHelper(this);
+    }
+  }
+
+  private LocalDatastoreHelper(Builder builder) {
     super(
         "datastore",
-        port > 0 ? port : BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
+        builder.port > 0 ? builder.port : BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
         PROJECT_ID_PREFIX + UUID.randomUUID().toString());
-    Path tmpDirectory = null;
-    try {
-      tmpDirectory = Files.createTempDirectory("gcd");
-    } catch (IOException ex) {
-      getLogger().log(Level.WARNING, "Failed to create temporary directory");
-    }
-    this.gcdPath = tmpDirectory;
-    this.consistency = consistency;
+    this.consistency = builder.consistency > 0 ? builder.consistency : DEFAULT_CONSISTENCY;
+    this.gcdPath = builder.dataDir;
+    this.storeOnDisk = builder.storeOnDisk;
     String binName = BIN_NAME;
     if (isWindows()) {
       binName = BIN_NAME.replace("/", "\\");
     }
     List<String> gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
     gcloudCommand.add(GCLOUD_CMD_PORT_FLAG + "localhost:" + getPort());
-    gcloudCommand.add(CONSISTENCY_FLAG + consistency);
-    gcloudCommand.add("--no-store-on-disk");
+    gcloudCommand.add(CONSISTENCY_FLAG + builder.consistency);
+    if (!builder.storeOnDisk) {
+      gcloudCommand.add("--no-store-on-disk");
+    }
     GcloudEmulatorRunner gcloudRunner =
         new GcloudEmulatorRunner(gcloudCommand, VERSION_PREFIX, MIN_VERSION);
     List<String> binCommand = new ArrayList<>(Arrays.asList(binName, "start"));
     binCommand.add("--testing");
     binCommand.add(BIN_CMD_PORT_FLAG + getPort());
-    binCommand.add(CONSISTENCY_FLAG + consistency);
-    if (gcdPath != null) {
-      gcloudCommand.add("--data-dir=" + gcdPath.toString());
+    binCommand.add(CONSISTENCY_FLAG + getConsistency());
+    if (builder.dataDir != null) {
+      gcloudCommand.add("--data-dir=" + getGcdPath());
     }
     DownloadableEmulatorRunner downloadRunner =
         new DownloadableEmulatorRunner(binCommand, EMULATOR_URL, MD5_CHECKSUM);
-    emulatorRunners = ImmutableList.of(gcloudRunner, downloadRunner);
+    this.emulatorRunners = ImmutableList.of(gcloudRunner, downloadRunner);
+  }
+
+  /** Returns a builder for {@code LocalDatastoreHelper} object. */
+  public LocalDatastoreHelper.Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  /** Returns a builder for {@code LocalDatastoreHelper} object. */
+  public static LocalDatastoreHelper.Builder newBuilder() {
+    return new LocalDatastoreHelper.Builder();
   }
 
   @Override
@@ -153,6 +201,16 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     return consistency;
   }
 
+  /** Returns the data directory path of the local Datastore emulator. */
+  public Path getGcdPath() {
+    return gcdPath;
+  }
+
+  /** Returns {@code true} data persist on disk, otherwise {@code false} data not store on disk. */
+  public boolean isStoreOnDisk() {
+    return storeOnDisk;
+  }
+
   /**
    * Creates a local Datastore helper with the specified settings for project ID and consistency.
    *
@@ -162,7 +220,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    *     consistency of non-ancestor queries; non-ancestor queries are eventually consistent.
    */
   public static LocalDatastoreHelper create(double consistency) {
-    return create(consistency, 0);
+    return LocalDatastoreHelper.newBuilder().setConsistency(consistency).setPort(0).build();
   }
 
   /**
@@ -176,7 +234,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    *     emulator will search for a free random port.
    */
   public static LocalDatastoreHelper create(double consistency, int port) {
-    return new LocalDatastoreHelper(consistency, port);
+    return LocalDatastoreHelper.newBuilder().setConsistency(consistency).setPort(port).build();
   }
 
   /**
@@ -187,7 +245,10 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    *     emulator will search for a free random port.
    */
   public static LocalDatastoreHelper create(int port) {
-    return new LocalDatastoreHelper(DEFAULT_CONSISTENCY, port);
+    return LocalDatastoreHelper.newBuilder()
+        .setConsistency(DEFAULT_CONSISTENCY)
+        .setPort(port)
+        .build();
   }
 
   /**
@@ -197,7 +258,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    * all writes are immediately visible.
    */
   public static LocalDatastoreHelper create() {
-    return create(DEFAULT_CONSISTENCY);
+    return LocalDatastoreHelper.newBuilder().setConsistency(DEFAULT_CONSISTENCY).build();
   }
 
   /**
@@ -254,7 +315,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     stop(Duration.ofSeconds(20));
   }
 
-  private static void deleteRecursively(Path path) throws IOException {
+  static void deleteRecursively(Path path) throws IOException {
     if (path == null || !Files.exists(path)) {
       return;
     }
