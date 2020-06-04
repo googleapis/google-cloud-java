@@ -109,7 +109,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-bom</artifactId>
-        <version>1.93.4</version>
+        <version>1.93.5</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -182,7 +182,7 @@
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-core</artifactId>
-    <version>1.93.4</version>
+    <version>1.93.5</version>
   </dependency>
   <dependency>
     <groupId>com.google.api</groupId>
@@ -246,7 +246,7 @@
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-core</artifactId>
-    <version>1.93.4</version>
+    <version>1.93.5</version>
     <type>test-jar</type>
     <scope>test</scope>
   </dependency>
