@@ -129,6 +129,18 @@ public class InspectTests {
   }
 
   @Test
+  public void testInspectStringCustomExcludingSubstring() {
+    InspectStringCustomExcludingSubstring.inspectStringCustomExcludingSubstring(PROJECT_ID,
+        "Name: Doe, John. Name: Example, Jimmy",
+        "[A-Z][a-z]{1,15}, [A-Z][a-z]{1,15}",
+        Arrays.asList("Jimmy"));
+
+    String output = bout.toString();
+    assertThat(output, containsString("Doe, John"));
+    assertThat(output, not(containsString("Example, Jimmy")));
+  }
+
+  @Test
   public void textInspectTestFile() {
     InspectTextFile.inspectTextFile(PROJECT_ID, "src/test/resources/test.txt");
     String output = bout.toString();
