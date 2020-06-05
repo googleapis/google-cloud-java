@@ -30,12 +30,13 @@ import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 class RedactImageFile {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
     String inputPath = "src/test/resources/test.png";
@@ -43,7 +44,8 @@ class RedactImageFile {
     redactImageFile(projectId, inputPath, outputPath);
   }
 
-  static void redactImageFile(String projectId, String inputPath, String outputPath) {
+  static void redactImageFile(String projectId, String inputPath, String outputPath)
+      throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -82,8 +84,6 @@ class RedactImageFile {
       redacted.close();
       System.out.println("Redacted image written to " + outputPath);
 
-    } catch (Exception e) {
-      System.out.println("Error during inspectFile: \n" + e.toString());
     }
   }
 }

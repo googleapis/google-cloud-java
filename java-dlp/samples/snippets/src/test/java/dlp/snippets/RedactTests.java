@@ -72,7 +72,7 @@ public class RedactTests {
   }
 
   @Test
-  public void testRedactImage() {
+  public void testRedactImage() throws Exception {
     RedactImageFile.redactImageFile(PROJECT_ID, INPUT_FILE, OUTPUT_FILE);
 
     String output = bout.toString();

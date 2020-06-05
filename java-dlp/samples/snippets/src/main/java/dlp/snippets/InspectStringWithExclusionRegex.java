@@ -34,12 +34,13 @@ import com.google.privacy.dlp.v2.InspectionRuleSet;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.MatchingType;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class InspectStringWithExclusionRegex {
 
-  public static void inspectStringWithExclusionRegex() {
+  public static void inspectStringWithExclusionRegex() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToInspect = "Some email addresses: gary@example.com, bob@example.org";
@@ -49,7 +50,7 @@ public class InspectStringWithExclusionRegex {
 
   // Inspects the provided text, avoiding matches specified in the exclusion list.
   public static void inspectStringWithExclusionRegex(String projectId, String textToInspect,
-      String excludedRegex) {
+      String excludedRegex) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -107,8 +108,6 @@ public class InspectStringWithExclusionRegex {
         System.out.println("\tInfo type: " + f.getInfoType().getName());
         System.out.println("\tLikelihood: " + f.getLikelihood());
       }
-    } catch (Exception e) {
-      System.out.println("Error during inspectString: \n" + e.toString());
     }
   }
 }

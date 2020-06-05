@@ -30,12 +30,13 @@ import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class InspectTextFile {
 
-  public static void inspectTextFile() {
+  public static void inspectTextFile() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String filePath = "path/to/file.txt";
@@ -43,7 +44,7 @@ public class InspectTextFile {
   }
 
   // Inspects the specified text file.
-  public static void inspectTextFile(String projectId, String filePath) {
+  public static void inspectTextFile(String projectId, String filePath) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -83,8 +84,6 @@ public class InspectTextFile {
         System.out.println("\tInfo type: " + f.getInfoType().getName());
         System.out.println("\tLikelihood: " + f.getLikelihood());
       }
-    } catch (Exception e) {
-      System.out.println("Error during inspectFile: \n" + e.toString());
     }
   }
 }

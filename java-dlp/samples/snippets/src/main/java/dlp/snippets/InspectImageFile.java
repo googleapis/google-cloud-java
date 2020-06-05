@@ -30,12 +30,13 @@ import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class InspectImageFile {
 
-  public static void inspectImageFile() {
+  public static void inspectImageFile() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String filePath = "path/to/image.png";
@@ -43,7 +44,7 @@ public class InspectImageFile {
   }
 
   // Inspects the specified image file.
-  public static void inspectImageFile(String projectId, String filePath) {
+  public static void inspectImageFile(String projectId, String filePath) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -83,8 +84,6 @@ public class InspectImageFile {
         System.out.println("\tInfo type: " + f.getInfoType().getName());
         System.out.println("\tLikelihood: " + f.getLikelihood());
       }
-    } catch (Exception e) {
-      System.out.println("Error during inspectImageFile: \n" + e.toString());
     }
   }
 }

@@ -27,10 +27,11 @@ import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.Likelihood;
 import com.google.privacy.dlp.v2.LocationName;
+import java.io.IOException;
 
 public class InspectPhoneNumber {
 
-  public static void inspectString() {
+  public static void inspectString() throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToInspect = "My name is Gary and my email is gary@example.com";
@@ -38,7 +39,7 @@ public class InspectPhoneNumber {
   }
 
   // Inspects the provided text.
-  public static void inspectString(String projectId, String textToInspect) {
+  public static void inspectString(String projectId, String textToInspect) throws IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -78,8 +79,6 @@ public class InspectPhoneNumber {
         System.out.println("\tInfo type: " + f.getInfoType().getName());
         System.out.println("\tLikelihood: " + f.getLikelihood());
       }
-    } catch (Exception e) {
-      System.out.println("Error during inspectString: \n" + e.toString());
     }
   }
 }
