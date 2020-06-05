@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
@@ -45,6 +46,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -110,165 +112,17 @@ public class GroupServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listGroupsTest() {
-    String nextPageToken = "";
-    Group groupElement = Group.newBuilder().build();
-    List<Group> group = Arrays.asList(groupElement);
-    ListGroupsResponse expectedResponse =
-        ListGroupsResponse.newBuilder().setNextPageToken(nextPageToken).addAllGroup(group).build();
-    mockGroupService.addResponse(expectedResponse);
-
-    ProjectName name = ProjectName.of("[PROJECT]");
-
-    ListGroupsPagedResponse pagedListResponse = client.listGroups(name);
-
-    List<Group> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getGroupList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListGroupsRequest actualRequest = (ListGroupsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listGroupsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockGroupService.addException(exception);
-
-    try {
-      ProjectName name = ProjectName.of("[PROJECT]");
-
-      client.listGroups(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getGroupTest() {
-    GroupName name2 = GroupName.of("[PROJECT]", "[GROUP]");
-    String displayName = "displayName1615086568";
-    GroupName parentName = GroupName.of("[PROJECT]", "[GROUP]");
-    String filter = "filter-1274492040";
-    boolean isCluster = false;
-    Group expectedResponse =
-        Group.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setParentName(parentName.toString())
-            .setFilter(filter)
-            .setIsCluster(isCluster)
-            .build();
-    mockGroupService.addResponse(expectedResponse);
-
-    GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
-
-    Group actualResponse = client.getGroup(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, GroupName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockGroupService.addException(exception);
-
-    try {
-      GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
-
-      client.getGroup(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createGroupTest() {
-    GroupName name2 = GroupName.of("[PROJECT]", "[GROUP]");
-    String displayName = "displayName1615086568";
-    GroupName parentName = GroupName.of("[PROJECT]", "[GROUP]");
-    String filter = "filter-1274492040";
-    boolean isCluster = false;
-    Group expectedResponse =
-        Group.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setParentName(parentName.toString())
-            .setFilter(filter)
-            .setIsCluster(isCluster)
-            .build();
-    mockGroupService.addResponse(expectedResponse);
-
-    ProjectName name = ProjectName.of("[PROJECT]");
-    Group group = Group.newBuilder().build();
-
-    Group actualResponse = client.createGroup(name, group);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateGroupRequest actualRequest = (CreateGroupRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
-    Assert.assertEquals(group, actualRequest.getGroup());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createGroupExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockGroupService.addException(exception);
-
-    try {
-      ProjectName name = ProjectName.of("[PROJECT]");
-      Group group = Group.newBuilder().build();
-
-      client.createGroup(name, group);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void updateGroupTest() {
-    GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+    GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
     String displayName = "displayName1615086568";
-    GroupName parentName = GroupName.of("[PROJECT]", "[GROUP]");
+    String parentName = "parentName1015022848";
     String filter = "filter-1274492040";
     boolean isCluster = false;
     Group expectedResponse =
         Group.newBuilder()
             .setName(name.toString())
             .setDisplayName(displayName)
-            .setParentName(parentName.toString())
+            .setParentName(parentName)
             .setFilter(filter)
             .setIsCluster(isCluster)
             .build();
@@ -312,7 +166,7 @@ public class GroupServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockGroupService.addResponse(expectedResponse);
 
-    GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+    GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
 
     client.deleteGroup(name);
 
@@ -334,9 +188,157 @@ public class GroupServiceClientTest {
     mockGroupService.addException(exception);
 
     try {
-      GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+      GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
 
       client.deleteGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listGroupsTest() {
+    String nextPageToken = "";
+    Group groupElement = Group.newBuilder().build();
+    List<Group> group = Arrays.asList(groupElement);
+    ListGroupsResponse expectedResponse =
+        ListGroupsResponse.newBuilder().setNextPageToken(nextPageToken).addAllGroup(group).build();
+    mockGroupService.addResponse(expectedResponse);
+
+    ResourceName name = ProjectName.of("[PROJECT]");
+
+    ListGroupsPagedResponse pagedListResponse = client.listGroups(name);
+
+    List<Group> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGroupList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGroupsRequest actualRequest = (ListGroupsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGroupService.addException(exception);
+
+    try {
+      ResourceName name = ProjectName.of("[PROJECT]");
+
+      client.listGroups(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getGroupTest() {
+    GroupName name2 = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+    String displayName = "displayName1615086568";
+    String parentName = "parentName1015022848";
+    String filter = "filter-1274492040";
+    boolean isCluster = false;
+    Group expectedResponse =
+        Group.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setParentName(parentName)
+            .setFilter(filter)
+            .setIsCluster(isCluster)
+            .build();
+    mockGroupService.addResponse(expectedResponse);
+
+    GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+
+    Group actualResponse = client.getGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, GroupName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGroupService.addException(exception);
+
+    try {
+      GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+
+      client.getGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createGroupTest() {
+    GroupName name2 = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+    String displayName = "displayName1615086568";
+    String parentName = "parentName1015022848";
+    String filter = "filter-1274492040";
+    boolean isCluster = false;
+    Group expectedResponse =
+        Group.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setParentName(parentName)
+            .setFilter(filter)
+            .setIsCluster(isCluster)
+            .build();
+    mockGroupService.addResponse(expectedResponse);
+
+    ResourceName name = ProjectName.of("[PROJECT]");
+    Group group = Group.newBuilder().build();
+
+    Group actualResponse = client.createGroup(name, group);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGroupService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGroupRequest actualRequest = (CreateGroupRequest) actualRequests.get(0);
+
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
+    Assert.assertEquals(group, actualRequest.getGroup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockGroupService.addException(exception);
+
+    try {
+      ResourceName name = ProjectName.of("[PROJECT]");
+      Group group = Group.newBuilder().build();
+
+      client.createGroup(name, group);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -358,7 +360,7 @@ public class GroupServiceClientTest {
             .build();
     mockGroupService.addResponse(expectedResponse);
 
-    GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+    GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
 
     ListGroupMembersPagedResponse pagedListResponse = client.listGroupMembers(name);
 
@@ -384,7 +386,7 @@ public class GroupServiceClientTest {
     mockGroupService.addException(exception);
 
     try {
-      GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+      GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
 
       client.listGroupMembers(name);
       Assert.fail("No exception raised");

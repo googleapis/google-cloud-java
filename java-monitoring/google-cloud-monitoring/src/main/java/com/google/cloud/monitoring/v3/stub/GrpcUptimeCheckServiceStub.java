@@ -54,6 +54,15 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
 
+  private static final MethodDescriptor<DeleteUptimeCheckConfigRequest, Empty>
+      deleteUptimeCheckConfigMethodDescriptor =
+          MethodDescriptor.<DeleteUptimeCheckConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.monitoring.v3.UptimeCheckService/DeleteUptimeCheckConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteUptimeCheckConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<
           ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
       listUptimeCheckConfigsMethodDescriptor =
@@ -93,15 +102,6 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                   ProtoUtils.marshaller(UpdateUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UptimeCheckConfig.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteUptimeCheckConfigRequest, Empty>
-      deleteUptimeCheckConfigMethodDescriptor =
-          MethodDescriptor.<DeleteUptimeCheckConfigRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.monitoring.v3.UptimeCheckService/DeleteUptimeCheckConfig")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteUptimeCheckConfigRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
       listUptimeCheckIpsMethodDescriptor =
           MethodDescriptor.<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>newBuilder()
@@ -115,6 +115,8 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<DeleteUptimeCheckConfigRequest, Empty>
+      deleteUptimeCheckConfigCallable;
   private final UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
       listUptimeCheckConfigsCallable;
   private final UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsPagedResponse>
@@ -125,8 +127,6 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
       createUptimeCheckConfigCallable;
   private final UnaryCallable<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigCallable;
-  private final UnaryCallable<DeleteUptimeCheckConfigRequest, Empty>
-      deleteUptimeCheckConfigCallable;
   private final UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
       listUptimeCheckIpsCallable;
   private final UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsPagedResponse>
@@ -173,6 +173,20 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<DeleteUptimeCheckConfigRequest, Empty>
+        deleteUptimeCheckConfigTransportSettings =
+            GrpcCallSettings.<DeleteUptimeCheckConfigRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteUptimeCheckConfigMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeleteUptimeCheckConfigRequest>() {
+                      @Override
+                      public Map<String, String> extract(DeleteUptimeCheckConfigRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
     GrpcCallSettings<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
         listUptimeCheckConfigsTransportSettings =
             GrpcCallSettings
@@ -232,26 +246,17 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<DeleteUptimeCheckConfigRequest, Empty>
-        deleteUptimeCheckConfigTransportSettings =
-            GrpcCallSettings.<DeleteUptimeCheckConfigRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteUptimeCheckConfigMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteUptimeCheckConfigRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteUptimeCheckConfigRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
         listUptimeCheckIpsTransportSettings =
             GrpcCallSettings.<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>newBuilder()
                 .setMethodDescriptor(listUptimeCheckIpsMethodDescriptor)
                 .build();
 
+    this.deleteUptimeCheckConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteUptimeCheckConfigTransportSettings,
+            settings.deleteUptimeCheckConfigSettings(),
+            clientContext);
     this.listUptimeCheckConfigsCallable =
         callableFactory.createUnaryCallable(
             listUptimeCheckConfigsTransportSettings,
@@ -277,11 +282,6 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
             updateUptimeCheckConfigTransportSettings,
             settings.updateUptimeCheckConfigSettings(),
             clientContext);
-    this.deleteUptimeCheckConfigCallable =
-        callableFactory.createUnaryCallable(
-            deleteUptimeCheckConfigTransportSettings,
-            settings.deleteUptimeCheckConfigSettings(),
-            clientContext);
     this.listUptimeCheckIpsCallable =
         callableFactory.createUnaryCallable(
             listUptimeCheckIpsTransportSettings,
@@ -294,6 +294,10 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<DeleteUptimeCheckConfigRequest, Empty> deleteUptimeCheckConfigCallable() {
+    return deleteUptimeCheckConfigCallable;
   }
 
   public UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsPagedResponse>
@@ -319,10 +323,6 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
   public UnaryCallable<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigCallable() {
     return updateUptimeCheckConfigCallable;
-  }
-
-  public UnaryCallable<DeleteUptimeCheckConfigRequest, Empty> deleteUptimeCheckConfigCallable() {
-    return deleteUptimeCheckConfigCallable;
   }
 
   public UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsPagedResponse>

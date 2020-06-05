@@ -16,25 +16,39 @@
 
 package com.google.monitoring.v3;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ServiceName implements ResourceName {
 
-  private static final PathTemplate PATH_TEMPLATE =
+  @Deprecated
+  protected ServiceName() {}
+
+  private static final PathTemplate PROJECT_SERVICE_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/services/{service}");
+  private static final PathTemplate ORGANIZATION_SERVICE_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/services/{service}");
+  private static final PathTemplate FOLDER_SERVICE_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("folders/{folder}/services/{service}");
 
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
 
-  private final String project;
-  private final String service;
+  private String project;
+  private String service;
+  private String organization;
+  private String folder;
 
   public String getProject() {
     return project;
@@ -44,35 +58,115 @@ public class ServiceName implements ResourceName {
     return service;
   }
 
+  public String getOrganization() {
+    return organization;
+  }
+
+  public String getFolder() {
+    return folder;
+  }
+
+  private ServiceName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    service = Preconditions.checkNotNull(builder.getService());
+    pathTemplate = PROJECT_SERVICE_PATH_TEMPLATE;
+  }
+
+  private ServiceName(OrganizationServiceBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    service = Preconditions.checkNotNull(builder.getService());
+    pathTemplate = ORGANIZATION_SERVICE_PATH_TEMPLATE;
+  }
+
+  private ServiceName(FolderServiceBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    service = Preconditions.checkNotNull(builder.getService());
+    pathTemplate = FOLDER_SERVICE_PATH_TEMPLATE;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectServiceBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static OrganizationServiceBuilder newOrganizationServiceBuilder() {
+    return new OrganizationServiceBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static FolderServiceBuilder newFolderServiceBuilder() {
+    return new FolderServiceBuilder();
   }
 
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  private ServiceName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    service = Preconditions.checkNotNull(builder.getService());
+  public static ServiceName of(String project, String service) {
+    return newProjectServiceBuilder().setProject(project).setService(service).build();
   }
 
-  public static ServiceName of(String project, String service) {
-    return newBuilder().setProject(project).setService(service).build();
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ServiceName ofProjectServiceName(String project, String service) {
+    return newProjectServiceBuilder().setProject(project).setService(service).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ServiceName ofOrganizationServiceName(String organization, String service) {
+    return newOrganizationServiceBuilder()
+        .setOrganization(organization)
+        .setService(service)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static ServiceName ofFolderServiceName(String folder, String service) {
+    return newFolderServiceBuilder().setFolder(folder).setService(service).build();
   }
 
   public static String format(String project, String service) {
     return newBuilder().setProject(project).setService(service).build().toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectServiceName(String project, String service) {
+    return newBuilder().setProject(project).setService(service).build().toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationServiceName(String organization, String service) {
+    return newOrganizationServiceBuilder()
+        .setOrganization(organization)
+        .setService(service)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatFolderServiceName(String folder, String service) {
+    return newFolderServiceBuilder().setFolder(folder).setService(service).build().toString();
+  }
+
   public static ServiceName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString, "ServiceName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("service"));
+    if (PROJECT_SERVICE_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SERVICE_PATH_TEMPLATE.match(formattedString);
+      return ofProjectServiceName(matchMap.get("project"), matchMap.get("service"));
+    } else if (ORGANIZATION_SERVICE_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_SERVICE_PATH_TEMPLATE.match(formattedString);
+      return ofOrganizationServiceName(matchMap.get("organization"), matchMap.get("service"));
+    } else if (FOLDER_SERVICE_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_SERVICE_PATH_TEMPLATE.match(formattedString);
+      return ofFolderServiceName(matchMap.get("folder"), matchMap.get("service"));
+    }
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<ServiceName> parseList(List<String> formattedStrings) {
@@ -84,7 +178,7 @@ public class ServiceName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ServiceName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ServiceName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +190,29 @@ public class ServiceName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SERVICE_PATH_TEMPLATE.matches(formattedString)
+        || ORGANIZATION_SERVICE_PATH_TEMPLATE.matches(formattedString)
+        || FOLDER_SERVICE_PATH_TEMPLATE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("service", service);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (service != null) {
+            fieldMapBuilder.put("service", service);
+          }
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +226,16 @@ public class ServiceName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "service", service);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for ServiceName. */
+  /** Builder for projects/{project}/services/{service}. */
   public static class Builder {
 
     private String project;
     private String service;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,11 +255,77 @@ public class ServiceName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ServiceName serviceName) {
+      Preconditions.checkArgument(
+          serviceName.pathTemplate == PROJECT_SERVICE_PATH_TEMPLATE,
+          "toBuilder is only supported when ServiceName has the pattern of "
+              + "projects/{project}/services/{service}.");
       project = serviceName.project;
       service = serviceName.service;
+    }
+
+    public ServiceName build() {
+      return new ServiceName(this);
+    }
+  }
+
+  /** Builder for organizations/{organization}/services/{service}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class OrganizationServiceBuilder {
+
+    private String organization;
+    private String service;
+
+    private OrganizationServiceBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getService() {
+      return service;
+    }
+
+    public OrganizationServiceBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationServiceBuilder setService(String service) {
+      this.service = service;
+      return this;
+    }
+
+    public ServiceName build() {
+      return new ServiceName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/services/{service}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class FolderServiceBuilder {
+
+    private String folder;
+    private String service;
+
+    private FolderServiceBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getService() {
+      return service;
+    }
+
+    public FolderServiceBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderServiceBuilder setService(String service) {
+      this.service = service;
+      return this;
     }
 
     public ServiceName build() {
@@ -163,9 +338,12 @@ public class ServiceName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o instanceof ServiceName) {
+    if (o != null || getClass() == o.getClass()) {
       ServiceName that = (ServiceName) o;
-      return (this.project.equals(that.project)) && (this.service.equals(that.service));
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.service, that.service))
+          && (Objects.equals(this.organization, that.organization))
+          && (Objects.equals(this.folder, that.folder));
     }
     return false;
   }
@@ -174,9 +352,15 @@ public class ServiceName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= project.hashCode();
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
-    h ^= service.hashCode();
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(service);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
     return h;
   }
 }

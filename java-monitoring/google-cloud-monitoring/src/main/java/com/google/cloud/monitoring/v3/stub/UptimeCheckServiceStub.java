@@ -43,6 +43,10 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class UptimeCheckServiceStub implements BackgroundResource {
 
+  public UnaryCallable<DeleteUptimeCheckConfigRequest, Empty> deleteUptimeCheckConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteUptimeCheckConfigCallable()");
+  }
+
   public UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsPagedResponse>
       listUptimeCheckConfigsPagedCallable() {
     throw new UnsupportedOperationException(
@@ -67,10 +71,6 @@ public abstract class UptimeCheckServiceStub implements BackgroundResource {
   public UnaryCallable<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateUptimeCheckConfigCallable()");
-  }
-
-  public UnaryCallable<DeleteUptimeCheckConfigRequest, Empty> deleteUptimeCheckConfigCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteUptimeCheckConfigCallable()");
   }
 
   public UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsPagedResponse>

@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.AlertPolicy;
 import com.google.monitoring.v3.AlertPolicyName;
@@ -42,6 +43,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -107,6 +109,44 @@ public class AlertPolicyServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteAlertPolicyTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAlertPolicyService.addResponse(expectedResponse);
+
+    AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+
+    client.deleteAlertPolicy(name);
+
+    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAlertPolicyRequest actualRequest = (DeleteAlertPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, AlertPolicyName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteAlertPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockAlertPolicyService.addException(exception);
+
+    try {
+      AlertPolicyName name =
+          AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+
+      client.deleteAlertPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listAlertPoliciesTest() {
     String nextPageToken = "";
     AlertPolicy alertPoliciesElement = AlertPolicy.newBuilder().build();
@@ -118,7 +158,7 @@ public class AlertPolicyServiceClientTest {
             .build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    ResourceName name = ProjectName.of("[PROJECT]");
 
     ListAlertPoliciesPagedResponse pagedListResponse = client.listAlertPolicies(name);
 
@@ -130,7 +170,7 @@ public class AlertPolicyServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListAlertPoliciesRequest actualRequest = (ListAlertPoliciesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -144,7 +184,7 @@ public class AlertPolicyServiceClientTest {
     mockAlertPolicyService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      ResourceName name = ProjectName.of("[PROJECT]");
 
       client.listAlertPolicies(name);
       Assert.fail("No exception raised");
@@ -156,13 +196,13 @@ public class AlertPolicyServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAlertPolicyTest() {
-    String name2 = "name2-1052831874";
+    AlertPolicyName name2 = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
     String displayName = "displayName1615086568";
     AlertPolicy expectedResponse =
-        AlertPolicy.newBuilder().setName(name2).setDisplayName(displayName).build();
+        AlertPolicy.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
-    AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
+    AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
 
     AlertPolicy actualResponse = client.getAlertPolicy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -185,7 +225,8 @@ public class AlertPolicyServiceClientTest {
     mockAlertPolicyService.addException(exception);
 
     try {
-      AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
+      AlertPolicyName name =
+          AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
 
       client.getAlertPolicy(name);
       Assert.fail("No exception raised");
@@ -197,13 +238,13 @@ public class AlertPolicyServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createAlertPolicyTest() {
-    String name2 = "name2-1052831874";
+    AlertPolicyName name2 = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
     String displayName = "displayName1615086568";
     AlertPolicy expectedResponse =
-        AlertPolicy.newBuilder().setName(name2).setDisplayName(displayName).build();
+        AlertPolicy.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    ResourceName name = ProjectName.of("[PROJECT]");
     AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
 
     AlertPolicy actualResponse = client.createAlertPolicy(name, alertPolicy);
@@ -213,7 +254,7 @@ public class AlertPolicyServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateAlertPolicyRequest actualRequest = (CreateAlertPolicyRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertEquals(alertPolicy, actualRequest.getAlertPolicy());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -228,7 +269,7 @@ public class AlertPolicyServiceClientTest {
     mockAlertPolicyService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      ResourceName name = ProjectName.of("[PROJECT]");
       AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
 
       client.createAlertPolicy(name, alertPolicy);
@@ -240,48 +281,11 @@ public class AlertPolicyServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteAlertPolicyTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockAlertPolicyService.addResponse(expectedResponse);
-
-    AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
-
-    client.deleteAlertPolicy(name);
-
-    List<AbstractMessage> actualRequests = mockAlertPolicyService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteAlertPolicyRequest actualRequest = (DeleteAlertPolicyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, AlertPolicyName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteAlertPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockAlertPolicyService.addException(exception);
-
-    try {
-      AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
-
-      client.deleteAlertPolicy(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void updateAlertPolicyTest() {
-    String name = "name3373707";
+    AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
     String displayName = "displayName1615086568";
     AlertPolicy expectedResponse =
-        AlertPolicy.newBuilder().setName(name).setDisplayName(displayName).build();
+        AlertPolicy.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
     mockAlertPolicyService.addResponse(expectedResponse);
 
     FieldMask updateMask = FieldMask.newBuilder().build();

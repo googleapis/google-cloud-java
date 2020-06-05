@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
@@ -53,6 +54,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -131,7 +133,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    ResourceName name = ProjectName.of("[PROJECT]");
 
     ListMonitoredResourceDescriptorsPagedResponse pagedListResponse =
         client.listMonitoredResourceDescriptors(name);
@@ -146,7 +148,7 @@ public class MetricServiceClientTest {
     ListMonitoredResourceDescriptorsRequest actualRequest =
         (ListMonitoredResourceDescriptorsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -160,7 +162,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      ResourceName name = ProjectName.of("[PROJECT]");
 
       client.listMonitoredResourceDescriptors(name);
       Assert.fail("No exception raised");
@@ -186,7 +188,8 @@ public class MetricServiceClientTest {
     mockMetricService.addResponse(expectedResponse);
 
     MonitoredResourceDescriptorName name =
-        MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+        MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+            "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
 
     MonitoredResourceDescriptor actualResponse = client.getMonitoredResourceDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -211,7 +214,8 @@ public class MetricServiceClientTest {
 
     try {
       MonitoredResourceDescriptorName name =
-          MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+          MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+              "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
 
       client.getMonitoredResourceDescriptor(name);
       Assert.fail("No exception raised");
@@ -233,7 +237,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    ResourceName name = ProjectName.of("[PROJECT]");
 
     ListMetricDescriptorsPagedResponse pagedListResponse = client.listMetricDescriptors(name);
 
@@ -246,7 +250,7 @@ public class MetricServiceClientTest {
     ListMetricDescriptorsRequest actualRequest =
         (ListMetricDescriptorsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -260,7 +264,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      ResourceName name = ProjectName.of("[PROJECT]");
 
       client.listMetricDescriptors(name);
       Assert.fail("No exception raised");
@@ -287,7 +291,8 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
+    MetricDescriptorName name =
+        MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
     MetricDescriptor actualResponse = client.getMetricDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -310,7 +315,8 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
+      MetricDescriptorName name =
+          MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
       client.getMetricDescriptor(name);
       Assert.fail("No exception raised");
@@ -337,7 +343,7 @@ public class MetricServiceClientTest {
             .build();
     mockMetricService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    ResourceName name = ProjectName.of("[PROJECT]");
     MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
 
     MetricDescriptor actualResponse = client.createMetricDescriptor(name, metricDescriptor);
@@ -348,7 +354,7 @@ public class MetricServiceClientTest {
     CreateMetricDescriptorRequest actualRequest =
         (CreateMetricDescriptorRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertEquals(metricDescriptor, actualRequest.getMetricDescriptor());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -363,7 +369,7 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      ResourceName name = ProjectName.of("[PROJECT]");
       MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
 
       client.createMetricDescriptor(name, metricDescriptor);
@@ -379,7 +385,8 @@ public class MetricServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockMetricService.addResponse(expectedResponse);
 
-    MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
+    MetricDescriptorName name =
+        MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
     client.deleteMetricDescriptor(name);
 
@@ -402,7 +409,8 @@ public class MetricServiceClientTest {
     mockMetricService.addException(exception);
 
     try {
-      MetricDescriptorName name = MetricDescriptorName.of("[PROJECT]", "[METRIC_DESCRIPTOR]");
+      MetricDescriptorName name =
+          MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
       client.deleteMetricDescriptor(name);
       Assert.fail("No exception raised");

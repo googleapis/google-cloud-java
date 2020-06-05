@@ -71,16 +71,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAlertPolicy to 30 seconds:
+ * <p>For example, to set the total timeout of deleteAlertPolicy to 30 seconds:
  *
  * <pre>
  * <code>
  * AlertPolicyServiceStubSettings.Builder alertPolicyServiceSettingsBuilder =
  *     AlertPolicyServiceStubSettings.newBuilder();
  * alertPolicyServiceSettingsBuilder
- *     .getAlertPolicySettings()
+ *     .deleteAlertPolicySettings()
  *     .setRetrySettings(
- *         alertPolicyServiceSettingsBuilder.getAlertPolicySettings().getRetrySettings().toBuilder()
+ *         alertPolicyServiceSettingsBuilder.deleteAlertPolicySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AlertPolicyServiceStubSettings alertPolicyServiceSettings = alertPolicyServiceSettingsBuilder.build();
@@ -98,13 +98,18 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
           .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
+  private final UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings;
   private final PagedCallSettings<
           ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
       listAlertPoliciesSettings;
   private final UnaryCallSettings<GetAlertPolicyRequest, AlertPolicy> getAlertPolicySettings;
   private final UnaryCallSettings<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicySettings;
-  private final UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings;
   private final UnaryCallSettings<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicySettings;
+
+  /** Returns the object with the settings used for calls to deleteAlertPolicy. */
+  public UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
+    return deleteAlertPolicySettings;
+  }
 
   /** Returns the object with the settings used for calls to listAlertPolicies. */
   public PagedCallSettings<
@@ -121,11 +126,6 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
   /** Returns the object with the settings used for calls to createAlertPolicy. */
   public UnaryCallSettings<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicySettings() {
     return createAlertPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteAlertPolicy. */
-  public UnaryCallSettings<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
-    return deleteAlertPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to updateAlertPolicy. */
@@ -202,10 +202,10 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
   protected AlertPolicyServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteAlertPolicySettings = settingsBuilder.deleteAlertPolicySettings().build();
     listAlertPoliciesSettings = settingsBuilder.listAlertPoliciesSettings().build();
     getAlertPolicySettings = settingsBuilder.getAlertPolicySettings().build();
     createAlertPolicySettings = settingsBuilder.createAlertPolicySettings().build();
-    deleteAlertPolicySettings = settingsBuilder.deleteAlertPolicySettings().build();
     updateAlertPolicySettings = settingsBuilder.updateAlertPolicySettings().build();
   }
 
@@ -275,6 +275,8 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
       extends StubSettings.Builder<AlertPolicyServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty>
+        deleteAlertPolicySettings;
     private final PagedCallSettings.Builder<
             ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
         listAlertPoliciesSettings;
@@ -282,8 +284,6 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
         getAlertPolicySettings;
     private final UnaryCallSettings.Builder<CreateAlertPolicyRequest, AlertPolicy>
         createAlertPolicySettings;
-    private final UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty>
-        deleteAlertPolicySettings;
     private final UnaryCallSettings.Builder<UpdateAlertPolicyRequest, AlertPolicy>
         updateAlertPolicySettings;
 
@@ -328,22 +328,22 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listAlertPoliciesSettings = PagedCallSettings.newBuilder(LIST_ALERT_POLICIES_PAGE_STR_FACT);
 
       getAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateAlertPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteAlertPolicySettings,
               listAlertPoliciesSettings,
               getAlertPolicySettings,
               createAlertPolicySettings,
-              deleteAlertPolicySettings,
               updateAlertPolicySettings);
 
       initDefaults(this);
@@ -361,6 +361,11 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     private static Builder initDefaults(Builder builder) {
 
       builder
+          .deleteAlertPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .listAlertPoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -376,11 +381,6 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteAlertPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .updateAlertPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -391,18 +391,18 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     protected Builder(AlertPolicyServiceStubSettings settings) {
       super(settings);
 
+      deleteAlertPolicySettings = settings.deleteAlertPolicySettings.toBuilder();
       listAlertPoliciesSettings = settings.listAlertPoliciesSettings.toBuilder();
       getAlertPolicySettings = settings.getAlertPolicySettings.toBuilder();
       createAlertPolicySettings = settings.createAlertPolicySettings.toBuilder();
-      deleteAlertPolicySettings = settings.deleteAlertPolicySettings.toBuilder();
       updateAlertPolicySettings = settings.updateAlertPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteAlertPolicySettings,
               listAlertPoliciesSettings,
               getAlertPolicySettings,
               createAlertPolicySettings,
-              deleteAlertPolicySettings,
               updateAlertPolicySettings);
     }
 
@@ -422,6 +422,11 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to deleteAlertPolicy. */
+    public UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
+      return deleteAlertPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to listAlertPolicies. */
     public PagedCallSettings.Builder<
             ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
@@ -438,11 +443,6 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
     public UnaryCallSettings.Builder<CreateAlertPolicyRequest, AlertPolicy>
         createAlertPolicySettings() {
       return createAlertPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteAlertPolicy. */
-    public UnaryCallSettings.Builder<DeleteAlertPolicyRequest, Empty> deleteAlertPolicySettings() {
-      return deleteAlertPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to updateAlertPolicy. */

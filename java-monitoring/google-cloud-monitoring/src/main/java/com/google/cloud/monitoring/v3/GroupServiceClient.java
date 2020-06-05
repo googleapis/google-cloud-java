@@ -26,6 +26,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStub;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -38,7 +39,6 @@ import com.google.monitoring.v3.ListGroupMembersRequest;
 import com.google.monitoring.v3.ListGroupMembersResponse;
 import com.google.monitoring.v3.ListGroupsRequest;
 import com.google.monitoring.v3.ListGroupsResponse;
-import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -64,8 +64,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
- *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
- *   Group response = groupServiceClient.getGroup(name);
+ *   Group group = Group.newBuilder().build();
+ *   Group response = groupServiceClient.updateGroup(group);
  * }
  * </code>
  * </pre>
@@ -174,329 +174,6 @@ public class GroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the existing groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   for (Group element : groupServiceClient.listGroups(name).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The project whose groups are to be listed. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListGroupsPagedResponse listGroups(ProjectName name) {
-    ListGroupsRequest request =
-        ListGroupsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return listGroups(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists the existing groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   for (Group element : groupServiceClient.listGroups(name.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The project whose groups are to be listed. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListGroupsPagedResponse listGroups(String name) {
-    ListGroupsRequest request = ListGroupsRequest.newBuilder().setName(name).build();
-    return listGroups(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists the existing groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   for (Group element : groupServiceClient.listGroups(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListGroupsPagedResponse listGroups(ListGroupsRequest request) {
-    return listGroupsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists the existing groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ListGroupsPagedResponse&gt; future = groupServiceClient.listGroupsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Group element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
-    return stub.listGroupsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists the existing groups.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   while (true) {
-   *     ListGroupsResponse response = groupServiceClient.listGroupsCallable().call(request);
-   *     for (Group element : response.getGroupList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
-    return stub.listGroupsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a single group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
-   *   Group response = groupServiceClient.getGroup(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The group to retrieve. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Group getGroup(GroupName name) {
-    GetGroupRequest request =
-        GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a single group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
-   *   Group response = groupServiceClient.getGroup(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The group to retrieve. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Group getGroup(String name) {
-    GetGroupRequest request = GetGroupRequest.newBuilder().setName(name).build();
-    return getGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a single group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
-   *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Group response = groupServiceClient.getGroup(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Group getGroup(GetGroupRequest request) {
-    return getGroupCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a single group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
-   *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Group&gt; future = groupServiceClient.getGroupCallable().futureCall(request);
-   *   // Do something
-   *   Group response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetGroupRequest, Group> getGroupCallable() {
-    return stub.getGroupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   Group group = Group.newBuilder().build();
-   *   Group response = groupServiceClient.createGroup(name, group);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The project in which to create the group. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
-   * @param group Required. A group definition. It is an error to define the `name` field because
-   *     the system assigns the name.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Group createGroup(ProjectName name, Group group) {
-    CreateGroupRequest request =
-        CreateGroupRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setGroup(group)
-            .build();
-    return createGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   Group group = Group.newBuilder().build();
-   *   Group response = groupServiceClient.createGroup(name.toString(), group);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The project in which to create the group. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]
-   * @param group Required. A group definition. It is an error to define the `name` field because
-   *     the system assigns the name.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Group createGroup(String name, Group group) {
-    CreateGroupRequest request =
-        CreateGroupRequest.newBuilder().setName(name).setGroup(group).build();
-    return createGroup(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   Group group = Group.newBuilder().build();
-   *   CreateGroupRequest request = CreateGroupRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setGroup(group)
-   *     .build();
-   *   Group response = groupServiceClient.createGroup(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Group createGroup(CreateGroupRequest request) {
-    return createGroupCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new group.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   Group group = Group.newBuilder().build();
-   *   CreateGroupRequest request = CreateGroupRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setGroup(group)
-   *     .build();
-   *   ApiFuture&lt;Group&gt; future = groupServiceClient.createGroupCallable().futureCall(request);
-   *   // Do something
-   *   Group response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CreateGroupRequest, Group> createGroupCallable() {
-    return stub.createGroupCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Updates an existing group. You can change any group attributes except `name`.
    *
    * <p>Sample code:
@@ -570,7 +247,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   groupServiceClient.deleteGroup(name);
    * }
    * </code></pre>
@@ -593,7 +270,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   groupServiceClient.deleteGroup(name.toString());
    * }
    * </code></pre>
@@ -615,7 +292,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -638,7 +315,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -654,13 +331,336 @@ public class GroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Lists the existing groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   for (Group element : groupServiceClient.listGroups(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The project whose groups are to be listed. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupsPagedResponse listGroups(ResourceName name) {
+    ListGroupsRequest request =
+        ListGroupsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return listGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   for (Group element : groupServiceClient.listGroups(name.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The project whose groups are to be listed. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupsPagedResponse listGroups(String name) {
+    ListGroupsRequest request = ListGroupsRequest.newBuilder().setName(name).build();
+    return listGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   for (Group element : groupServiceClient.listGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupsPagedResponse listGroups(ListGroupsRequest request) {
+    return listGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;ListGroupsPagedResponse&gt; future = groupServiceClient.listGroupsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Group element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
+    return stub.listGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the existing groups.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   while (true) {
+   *     ListGroupsResponse response = groupServiceClient.listGroupsCallable().call(request);
+   *     for (Group element : response.getGroupList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
+    return stub.listGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+   *   Group response = groupServiceClient.getGroup(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The group to retrieve. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group getGroup(GroupName name) {
+    GetGroupRequest request =
+        GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+   *   Group response = groupServiceClient.getGroup(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The group to retrieve. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group getGroup(String name) {
+    GetGroupRequest request = GetGroupRequest.newBuilder().setName(name).build();
+    return getGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+   *   GetGroupRequest request = GetGroupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   Group response = groupServiceClient.getGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group getGroup(GetGroupRequest request) {
+    return getGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+   *   GetGroupRequest request = GetGroupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Group&gt; future = groupServiceClient.getGroupCallable().futureCall(request);
+   *   // Do something
+   *   Group response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetGroupRequest, Group> getGroupCallable() {
+    return stub.getGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   Group group = Group.newBuilder().build();
+   *   Group response = groupServiceClient.createGroup(name, group);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The project in which to create the group. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param group Required. A group definition. It is an error to define the `name` field because
+   *     the system assigns the name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group createGroup(ResourceName name, Group group) {
+    CreateGroupRequest request =
+        CreateGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setGroup(group)
+            .build();
+    return createGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   Group group = Group.newBuilder().build();
+   *   Group response = groupServiceClient.createGroup(name.toString(), group);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The project in which to create the group. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param group Required. A group definition. It is an error to define the `name` field because
+   *     the system assigns the name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group createGroup(String name, Group group) {
+    CreateGroupRequest request =
+        CreateGroupRequest.newBuilder().setName(name).setGroup(group).build();
+    return createGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   Group group = Group.newBuilder().build();
+   *   CreateGroupRequest request = CreateGroupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setGroup(group)
+   *     .build();
+   *   Group response = groupServiceClient.createGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group createGroup(CreateGroupRequest request) {
+    return createGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new group.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+   *   ResourceName name = ProjectName.of("[PROJECT]");
+   *   Group group = Group.newBuilder().build();
+   *   CreateGroupRequest request = CreateGroupRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setGroup(group)
+   *     .build();
+   *   ApiFuture&lt;Group&gt; future = groupServiceClient.createGroupCallable().futureCall(request);
+   *   // Do something
+   *   Group response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateGroupRequest, Group> createGroupCallable() {
+    return stub.createGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lists the monitored resources that are members of a group.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   for (MonitoredResource element : groupServiceClient.listGroupMembers(name).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -685,7 +685,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   for (MonitoredResource element : groupServiceClient.listGroupMembers(name.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -709,7 +709,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -734,7 +734,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -759,7 +759,7 @@ public class GroupServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();

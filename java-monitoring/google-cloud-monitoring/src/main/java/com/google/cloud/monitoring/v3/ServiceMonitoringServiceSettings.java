@@ -64,16 +64,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createService to 30 seconds:
+ * <p>For example, to set the total timeout of deleteService to 30 seconds:
  *
  * <pre>
  * <code>
  * ServiceMonitoringServiceSettings.Builder serviceMonitoringServiceSettingsBuilder =
  *     ServiceMonitoringServiceSettings.newBuilder();
  * serviceMonitoringServiceSettingsBuilder
- *     .createServiceSettings()
+ *     .deleteServiceSettings()
  *     .setRetrySettings(
- *         serviceMonitoringServiceSettingsBuilder.createServiceSettings().getRetrySettings().toBuilder()
+ *         serviceMonitoringServiceSettingsBuilder.deleteServiceSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ServiceMonitoringServiceSettings serviceMonitoringServiceSettings = serviceMonitoringServiceSettingsBuilder.build();
@@ -83,6 +83,18 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 public class ServiceMonitoringServiceSettings
     extends ClientSettings<ServiceMonitoringServiceSettings> {
+  /** Returns the object with the settings used for calls to deleteService. */
+  public UnaryCallSettings<DeleteServiceRequest, Empty> deleteServiceSettings() {
+    return ((ServiceMonitoringServiceStubSettings) getStubSettings()).deleteServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteServiceLevelObjective. */
+  public UnaryCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
+      deleteServiceLevelObjectiveSettings() {
+    return ((ServiceMonitoringServiceStubSettings) getStubSettings())
+        .deleteServiceLevelObjectiveSettings();
+  }
+
   /** Returns the object with the settings used for calls to createService. */
   public UnaryCallSettings<CreateServiceRequest, Service> createServiceSettings() {
     return ((ServiceMonitoringServiceStubSettings) getStubSettings()).createServiceSettings();
@@ -102,11 +114,6 @@ public class ServiceMonitoringServiceSettings
   /** Returns the object with the settings used for calls to updateService. */
   public UnaryCallSettings<UpdateServiceRequest, Service> updateServiceSettings() {
     return ((ServiceMonitoringServiceStubSettings) getStubSettings()).updateServiceSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteService. */
-  public UnaryCallSettings<DeleteServiceRequest, Empty> deleteServiceSettings() {
-    return ((ServiceMonitoringServiceStubSettings) getStubSettings()).deleteServiceSettings();
   }
 
   /** Returns the object with the settings used for calls to createServiceLevelObjective. */
@@ -138,13 +145,6 @@ public class ServiceMonitoringServiceSettings
       updateServiceLevelObjectiveSettings() {
     return ((ServiceMonitoringServiceStubSettings) getStubSettings())
         .updateServiceLevelObjectiveSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteServiceLevelObjective. */
-  public UnaryCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
-      deleteServiceLevelObjectiveSettings() {
-    return ((ServiceMonitoringServiceStubSettings) getStubSettings())
-        .deleteServiceLevelObjectiveSettings();
   }
 
   public static final ServiceMonitoringServiceSettings create(
@@ -245,6 +245,17 @@ public class ServiceMonitoringServiceSettings
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to deleteService. */
+    public UnaryCallSettings.Builder<DeleteServiceRequest, Empty> deleteServiceSettings() {
+      return getStubSettingsBuilder().deleteServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServiceLevelObjective. */
+    public UnaryCallSettings.Builder<DeleteServiceLevelObjectiveRequest, Empty>
+        deleteServiceLevelObjectiveSettings() {
+      return getStubSettingsBuilder().deleteServiceLevelObjectiveSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createService. */
     public UnaryCallSettings.Builder<CreateServiceRequest, Service> createServiceSettings() {
       return getStubSettingsBuilder().createServiceSettings();
@@ -265,11 +276,6 @@ public class ServiceMonitoringServiceSettings
     /** Returns the builder for the settings used for calls to updateService. */
     public UnaryCallSettings.Builder<UpdateServiceRequest, Service> updateServiceSettings() {
       return getStubSettingsBuilder().updateServiceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteService. */
-    public UnaryCallSettings.Builder<DeleteServiceRequest, Empty> deleteServiceSettings() {
-      return getStubSettingsBuilder().deleteServiceSettings();
     }
 
     /** Returns the builder for the settings used for calls to createServiceLevelObjective. */
@@ -297,12 +303,6 @@ public class ServiceMonitoringServiceSettings
     public UnaryCallSettings.Builder<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
         updateServiceLevelObjectiveSettings() {
       return getStubSettingsBuilder().updateServiceLevelObjectiveSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteServiceLevelObjective. */
-    public UnaryCallSettings.Builder<DeleteServiceLevelObjectiveRequest, Empty>
-        deleteServiceLevelObjectiveSettings() {
-      return getStubSettingsBuilder().deleteServiceLevelObjectiveSettings();
     }
 
     @Override

@@ -33,8 +33,8 @@
  * <pre>
  * <code>
  * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
- *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
- *   AlertPolicy response = alertPolicyServiceClient.getAlertPolicy(name);
+ *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+ *   alertPolicyServiceClient.deleteAlertPolicy(name);
  * }
  * </code>
  * </pre>
@@ -56,8 +56,8 @@
  * <pre>
  * <code>
  * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
- *   GroupName name = GroupName.of("[PROJECT]", "[GROUP]");
- *   Group response = groupServiceClient.getGroup(name);
+ *   Group group = Group.newBuilder().build();
+ *   Group response = groupServiceClient.updateGroup(group);
  * }
  * </code>
  * </pre>
@@ -72,7 +72,7 @@
  * <pre>
  * <code>
  * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
- *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.of("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+ *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
  *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
  * }
  * </code>
@@ -89,8 +89,9 @@
  * <pre>
  * <code>
  * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
- *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
- *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name);
+ *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+ *   boolean force = false;
+ *   notificationChannelServiceClient.deleteNotificationChannel(name, force);
  * }
  * </code>
  * </pre>
@@ -106,9 +107,8 @@
  * <pre>
  * <code>
  * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Service service = Service.newBuilder().build();
- *   Service response = serviceMonitoringServiceClient.createService(parent, service);
+ *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+ *   serviceMonitoringServiceClient.deleteService(name);
  * }
  * </code>
  * </pre>
@@ -127,8 +127,8 @@
  * <pre>
  * <code>
  * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
- *   UptimeCheckConfigName name = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
- *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(name);
+ *   UptimeCheckConfigName name = UptimeCheckConfigName.ofProjectUptimeCheckConfigName("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+ *   uptimeCheckServiceClient.deleteUptimeCheckConfig(name);
  * }
  * </code>
  * </pre>

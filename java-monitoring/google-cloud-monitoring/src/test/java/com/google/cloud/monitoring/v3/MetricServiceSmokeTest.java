@@ -17,6 +17,7 @@ package com.google.cloud.monitoring.v3;
 
 import static com.google.cloud.monitoring.v3.MetricServiceClient.ListMonitoredResourceDescriptorsPagedResponse;
 
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.monitoring.v3.ProjectName;
 import java.util.logging.Level;
@@ -47,7 +48,7 @@ public class MetricServiceSmokeTest {
 
   public static void executeNoCatch(String projectId) throws Exception {
     try (MetricServiceClient client = MetricServiceClient.create()) {
-      ProjectName name = ProjectName.of(projectId);
+      ResourceName name = ProjectName.of(projectId);
 
       ListMonitoredResourceDescriptorsPagedResponse pagedResponse =
           client.listMonitoredResourceDescriptors(name);

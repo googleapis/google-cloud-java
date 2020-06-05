@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateNotificationChannelRequest;
 import com.google.monitoring.v3.DeleteNotificationChannelRequest;
@@ -52,6 +53,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -117,6 +119,155 @@ public class NotificationChannelServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteNotificationChannelTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockNotificationChannelService.addResponse(expectedResponse);
+
+    NotificationChannelName name =
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
+    boolean force = false;
+
+    client.deleteNotificationChannel(name, force);
+
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteNotificationChannelRequest actualRequest =
+        (DeleteNotificationChannelRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, NotificationChannelName.parse(actualRequest.getName()));
+    Assert.assertEquals(force, actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteNotificationChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockNotificationChannelService.addException(exception);
+
+    try {
+      NotificationChannelName name =
+          NotificationChannelName.ofProjectNotificationChannelName(
+              "[PROJECT]", "[NOTIFICATION_CHANNEL]");
+      boolean force = false;
+
+      client.deleteNotificationChannel(name, force);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getNotificationChannelVerificationCodeTest() {
+    String code = "code3059181";
+    GetNotificationChannelVerificationCodeResponse expectedResponse =
+        GetNotificationChannelVerificationCodeResponse.newBuilder().setCode(code).build();
+    mockNotificationChannelService.addResponse(expectedResponse);
+
+    NotificationChannelName name =
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
+
+    GetNotificationChannelVerificationCodeResponse actualResponse =
+        client.getNotificationChannelVerificationCode(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNotificationChannelVerificationCodeRequest actualRequest =
+        (GetNotificationChannelVerificationCodeRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, NotificationChannelName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getNotificationChannelVerificationCodeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockNotificationChannelService.addException(exception);
+
+    try {
+      NotificationChannelName name =
+          NotificationChannelName.ofProjectNotificationChannelName(
+              "[PROJECT]", "[NOTIFICATION_CHANNEL]");
+
+      client.getNotificationChannelVerificationCode(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void verifyNotificationChannelTest() {
+    String type = "type3575610";
+    NotificationChannelName name2 =
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
+    String displayName = "displayName1615086568";
+    String description = "description-1724546052";
+    NotificationChannel expectedResponse =
+        NotificationChannel.newBuilder()
+            .setType(type)
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setDescription(description)
+            .build();
+    mockNotificationChannelService.addResponse(expectedResponse);
+
+    NotificationChannelName name =
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
+    String code = "code3059181";
+
+    NotificationChannel actualResponse = client.verifyNotificationChannel(name, code);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifyNotificationChannelRequest actualRequest =
+        (VerifyNotificationChannelRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, NotificationChannelName.parse(actualRequest.getName()));
+    Assert.assertEquals(code, actualRequest.getCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void verifyNotificationChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockNotificationChannelService.addException(exception);
+
+    try {
+      NotificationChannelName name =
+          NotificationChannelName.ofProjectNotificationChannelName(
+              "[PROJECT]", "[NOTIFICATION_CHANNEL]");
+      String code = "code3059181";
+
+      client.verifyNotificationChannel(name, code);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listNotificationChannelDescriptorsTest() {
     String nextPageToken = "";
     NotificationChannelDescriptor channelDescriptorsElement =
@@ -130,7 +281,7 @@ public class NotificationChannelServiceClientTest {
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    ResourceName name = ProjectName.of("[PROJECT]");
 
     ListNotificationChannelDescriptorsPagedResponse pagedListResponse =
         client.listNotificationChannelDescriptors(name);
@@ -145,7 +296,7 @@ public class NotificationChannelServiceClientTest {
     ListNotificationChannelDescriptorsRequest actualRequest =
         (ListNotificationChannelDescriptorsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -159,7 +310,7 @@ public class NotificationChannelServiceClientTest {
     mockNotificationChannelService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      ResourceName name = ProjectName.of("[PROJECT]");
 
       client.listNotificationChannelDescriptors(name);
       Assert.fail("No exception raised");
@@ -171,13 +322,15 @@ public class NotificationChannelServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getNotificationChannelDescriptorTest() {
-    String name2 = "name2-1052831874";
+    NotificationChannelDescriptorName name2 =
+        NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
+            "[PROJECT]", "[CHANNEL_DESCRIPTOR]");
     String type = "type3575610";
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     NotificationChannelDescriptor expectedResponse =
         NotificationChannelDescriptor.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setType(type)
             .setDisplayName(displayName)
             .setDescription(description)
@@ -185,7 +338,8 @@ public class NotificationChannelServiceClientTest {
     mockNotificationChannelService.addResponse(expectedResponse);
 
     NotificationChannelDescriptorName name =
-        NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+        NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
+            "[PROJECT]", "[CHANNEL_DESCRIPTOR]");
 
     NotificationChannelDescriptor actualResponse = client.getNotificationChannelDescriptor(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -210,7 +364,8 @@ public class NotificationChannelServiceClientTest {
 
     try {
       NotificationChannelDescriptorName name =
-          NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+          NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
+              "[PROJECT]", "[CHANNEL_DESCRIPTOR]");
 
       client.getNotificationChannelDescriptor(name);
       Assert.fail("No exception raised");
@@ -232,7 +387,7 @@ public class NotificationChannelServiceClientTest {
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    ResourceName name = ProjectName.of("[PROJECT]");
 
     ListNotificationChannelsPagedResponse pagedListResponse = client.listNotificationChannels(name);
 
@@ -245,7 +400,7 @@ public class NotificationChannelServiceClientTest {
     ListNotificationChannelsRequest actualRequest =
         (ListNotificationChannelsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -259,7 +414,7 @@ public class NotificationChannelServiceClientTest {
     mockNotificationChannelService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      ResourceName name = ProjectName.of("[PROJECT]");
 
       client.listNotificationChannels(name);
       Assert.fail("No exception raised");
@@ -272,20 +427,23 @@ public class NotificationChannelServiceClientTest {
   @SuppressWarnings("all")
   public void getNotificationChannelTest() {
     String type = "type3575610";
-    String name2 = "name2-1052831874";
+    NotificationChannelName name2 =
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     NotificationChannel expectedResponse =
         NotificationChannel.newBuilder()
             .setType(type)
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
     NotificationChannelName name =
-        NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
 
     NotificationChannel actualResponse = client.getNotificationChannel(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -310,7 +468,8 @@ public class NotificationChannelServiceClientTest {
 
     try {
       NotificationChannelName name =
-          NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+          NotificationChannelName.ofProjectNotificationChannelName(
+              "[PROJECT]", "[NOTIFICATION_CHANNEL]");
 
       client.getNotificationChannel(name);
       Assert.fail("No exception raised");
@@ -323,19 +482,21 @@ public class NotificationChannelServiceClientTest {
   @SuppressWarnings("all")
   public void createNotificationChannelTest() {
     String type = "type3575610";
-    String name2 = "name2-1052831874";
+    NotificationChannelName name2 =
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     NotificationChannel expectedResponse =
         NotificationChannel.newBuilder()
             .setType(type)
-            .setName(name2)
+            .setName(name2.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
-    ProjectName name = ProjectName.of("[PROJECT]");
+    ResourceName name = ProjectName.of("[PROJECT]");
     NotificationChannel notificationChannel = NotificationChannel.newBuilder().build();
 
     NotificationChannel actualResponse =
@@ -347,7 +508,7 @@ public class NotificationChannelServiceClientTest {
     CreateNotificationChannelRequest actualRequest =
         (CreateNotificationChannelRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, ProjectName.parse(actualRequest.getName()));
+    Assert.assertEquals(Objects.toString(name), Objects.toString(actualRequest.getName()));
     Assert.assertEquals(notificationChannel, actualRequest.getNotificationChannel());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -362,7 +523,7 @@ public class NotificationChannelServiceClientTest {
     mockNotificationChannelService.addException(exception);
 
     try {
-      ProjectName name = ProjectName.of("[PROJECT]");
+      ResourceName name = ProjectName.of("[PROJECT]");
       NotificationChannel notificationChannel = NotificationChannel.newBuilder().build();
 
       client.createNotificationChannel(name, notificationChannel);
@@ -376,13 +537,15 @@ public class NotificationChannelServiceClientTest {
   @SuppressWarnings("all")
   public void updateNotificationChannelTest() {
     String type = "type3575610";
-    String name = "name3373707";
+    NotificationChannelName name =
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
     String displayName = "displayName1615086568";
     String description = "description-1724546052";
     NotificationChannel expectedResponse =
         NotificationChannel.newBuilder()
             .setType(type)
-            .setName(name)
+            .setName(name.toString())
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
@@ -427,55 +590,13 @@ public class NotificationChannelServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteNotificationChannelTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockNotificationChannelService.addResponse(expectedResponse);
-
-    NotificationChannelName name =
-        NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-    boolean force = false;
-
-    client.deleteNotificationChannel(name, force);
-
-    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteNotificationChannelRequest actualRequest =
-        (DeleteNotificationChannelRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, NotificationChannelName.parse(actualRequest.getName()));
-    Assert.assertEquals(force, actualRequest.getForce());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteNotificationChannelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockNotificationChannelService.addException(exception);
-
-    try {
-      NotificationChannelName name =
-          NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-      boolean force = false;
-
-      client.deleteNotificationChannel(name, force);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void sendNotificationChannelVerificationCodeTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
     NotificationChannelName name =
-        NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+        NotificationChannelName.ofProjectNotificationChannelName(
+            "[PROJECT]", "[NOTIFICATION_CHANNEL]");
 
     client.sendNotificationChannelVerificationCode(name);
 
@@ -499,107 +620,10 @@ public class NotificationChannelServiceClientTest {
 
     try {
       NotificationChannelName name =
-          NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+          NotificationChannelName.ofProjectNotificationChannelName(
+              "[PROJECT]", "[NOTIFICATION_CHANNEL]");
 
       client.sendNotificationChannelVerificationCode(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getNotificationChannelVerificationCodeTest() {
-    String code = "code3059181";
-    GetNotificationChannelVerificationCodeResponse expectedResponse =
-        GetNotificationChannelVerificationCodeResponse.newBuilder().setCode(code).build();
-    mockNotificationChannelService.addResponse(expectedResponse);
-
-    NotificationChannelName name =
-        NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-
-    GetNotificationChannelVerificationCodeResponse actualResponse =
-        client.getNotificationChannelVerificationCode(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetNotificationChannelVerificationCodeRequest actualRequest =
-        (GetNotificationChannelVerificationCodeRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, NotificationChannelName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getNotificationChannelVerificationCodeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockNotificationChannelService.addException(exception);
-
-    try {
-      NotificationChannelName name =
-          NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-
-      client.getNotificationChannelVerificationCode(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void verifyNotificationChannelTest() {
-    String type = "type3575610";
-    String name2 = "name2-1052831874";
-    String displayName = "displayName1615086568";
-    String description = "description-1724546052";
-    NotificationChannel expectedResponse =
-        NotificationChannel.newBuilder()
-            .setType(type)
-            .setName(name2)
-            .setDisplayName(displayName)
-            .setDescription(description)
-            .build();
-    mockNotificationChannelService.addResponse(expectedResponse);
-
-    NotificationChannelName name =
-        NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-    String code = "code3059181";
-
-    NotificationChannel actualResponse = client.verifyNotificationChannel(name, code);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockNotificationChannelService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    VerifyNotificationChannelRequest actualRequest =
-        (VerifyNotificationChannelRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, NotificationChannelName.parse(actualRequest.getName()));
-    Assert.assertEquals(code, actualRequest.getCode());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void verifyNotificationChannelExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockNotificationChannelService.addException(exception);
-
-    try {
-      NotificationChannelName name =
-          NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-      String code = "code3059181";
-
-      client.verifyNotificationChannel(name, code);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

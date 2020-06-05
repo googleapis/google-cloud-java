@@ -40,6 +40,10 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class AlertPolicyServiceStub implements BackgroundResource {
 
+  public UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAlertPolicyCallable()");
+  }
+
   public UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesPagedResponse>
       listAlertPoliciesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAlertPoliciesPagedCallable()");
@@ -56,10 +60,6 @@ public abstract class AlertPolicyServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: createAlertPolicyCallable()");
-  }
-
-  public UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteAlertPolicyCallable()");
   }
 
   public UnaryCallable<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyCallable() {

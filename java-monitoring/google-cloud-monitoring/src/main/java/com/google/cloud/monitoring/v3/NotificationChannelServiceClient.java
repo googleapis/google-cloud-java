@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.monitoring.v3.stub.NotificationChannelServiceStub;
 import com.google.cloud.monitoring.v3.stub.NotificationChannelServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -42,7 +43,6 @@ import com.google.monitoring.v3.NotificationChannel;
 import com.google.monitoring.v3.NotificationChannelDescriptor;
 import com.google.monitoring.v3.NotificationChannelDescriptorName;
 import com.google.monitoring.v3.NotificationChannelName;
-import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest;
 import com.google.monitoring.v3.UpdateNotificationChannelRequest;
 import com.google.monitoring.v3.VerifyNotificationChannelRequest;
@@ -64,8 +64,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
- *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
- *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name);
+ *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+ *   boolean force = false;
+ *   notificationChannelServiceClient.deleteNotificationChannel(name, force);
  * }
  * </code>
  * </pre>
@@ -178,6 +179,390 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes a notification channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   boolean force = false;
+   *   notificationChannelServiceClient.deleteNotificationChannel(name, force);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The channel for which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+   * @param force If true, the notification channel will be deleted regardless of its use in alert
+   *     policies (the policies will be updated to remove the channel). If false, channels that are
+   *     still referenced by an existing alerting policy will fail to be deleted in a delete
+   *     operation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNotificationChannel(NotificationChannelName name, boolean force) {
+    DeleteNotificationChannelRequest request =
+        DeleteNotificationChannelRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    deleteNotificationChannel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a notification channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   boolean force = false;
+   *   notificationChannelServiceClient.deleteNotificationChannel(name.toString(), force);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The channel for which to execute the request. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
+   * @param force If true, the notification channel will be deleted regardless of its use in alert
+   *     policies (the policies will be updated to remove the channel). If false, channels that are
+   *     still referenced by an existing alerting policy will fail to be deleted in a delete
+   *     operation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNotificationChannel(String name, boolean force) {
+    DeleteNotificationChannelRequest request =
+        DeleteNotificationChannelRequest.newBuilder().setName(name).setForce(force).build();
+    deleteNotificationChannel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a notification channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   DeleteNotificationChannelRequest request = DeleteNotificationChannelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   notificationChannelServiceClient.deleteNotificationChannel(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteNotificationChannel(DeleteNotificationChannelRequest request) {
+    deleteNotificationChannelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a notification channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   DeleteNotificationChannelRequest request = DeleteNotificationChannelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = notificationChannelServiceClient.deleteNotificationChannelCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteNotificationChannelRequest, Empty>
+      deleteNotificationChannelCallable() {
+    return stub.deleteNotificationChannelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Requests a verification code for an already verified channel that can then be used in a call to
+   * VerifyNotificationChannel() on a different channel with an equivalent identity in the same or
+   * in a different project. This makes it possible to copy a channel between projects without
+   * requiring manual reverification of the channel. If the channel is not in the verified state,
+   * this method will fail (in other words, this may only be used if the
+   * SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been
+   * used to put the given channel into the verified state).
+   *
+   * <p>There is no guarantee that the verification codes returned by this method will be of a
+   * similar structure or form as the ones that are delivered to the channel via
+   * SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both
+   * the codes delivered via SendNotificationChannelVerificationCode() and returned from
+   * GetNotificationChannelVerificationCode(), it is typically the case that the verification codes
+   * delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter
+   * expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return
+   * a much longer, websafe base 64 encoded string that has a longer expiration time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   GetNotificationChannelVerificationCodeResponse response = notificationChannelServiceClient.getNotificationChannelVerificationCode(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The notification channel for which a verification code is to be generated
+   *     and retrieved. This must name a channel that is already verified; if the specified channel
+   *     is not verified, the request will fail.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetNotificationChannelVerificationCodeResponse
+      getNotificationChannelVerificationCode(NotificationChannelName name) {
+    GetNotificationChannelVerificationCodeRequest request =
+        GetNotificationChannelVerificationCodeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getNotificationChannelVerificationCode(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Requests a verification code for an already verified channel that can then be used in a call to
+   * VerifyNotificationChannel() on a different channel with an equivalent identity in the same or
+   * in a different project. This makes it possible to copy a channel between projects without
+   * requiring manual reverification of the channel. If the channel is not in the verified state,
+   * this method will fail (in other words, this may only be used if the
+   * SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been
+   * used to put the given channel into the verified state).
+   *
+   * <p>There is no guarantee that the verification codes returned by this method will be of a
+   * similar structure or form as the ones that are delivered to the channel via
+   * SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both
+   * the codes delivered via SendNotificationChannelVerificationCode() and returned from
+   * GetNotificationChannelVerificationCode(), it is typically the case that the verification codes
+   * delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter
+   * expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return
+   * a much longer, websafe base 64 encoded string that has a longer expiration time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   GetNotificationChannelVerificationCodeResponse response = notificationChannelServiceClient.getNotificationChannelVerificationCode(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The notification channel for which a verification code is to be generated
+   *     and retrieved. This must name a channel that is already verified; if the specified channel
+   *     is not verified, the request will fail.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetNotificationChannelVerificationCodeResponse
+      getNotificationChannelVerificationCode(String name) {
+    GetNotificationChannelVerificationCodeRequest request =
+        GetNotificationChannelVerificationCodeRequest.newBuilder().setName(name).build();
+    return getNotificationChannelVerificationCode(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Requests a verification code for an already verified channel that can then be used in a call to
+   * VerifyNotificationChannel() on a different channel with an equivalent identity in the same or
+   * in a different project. This makes it possible to copy a channel between projects without
+   * requiring manual reverification of the channel. If the channel is not in the verified state,
+   * this method will fail (in other words, this may only be used if the
+   * SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been
+   * used to put the given channel into the verified state).
+   *
+   * <p>There is no guarantee that the verification codes returned by this method will be of a
+   * similar structure or form as the ones that are delivered to the channel via
+   * SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both
+   * the codes delivered via SendNotificationChannelVerificationCode() and returned from
+   * GetNotificationChannelVerificationCode(), it is typically the case that the verification codes
+   * delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter
+   * expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return
+   * a much longer, websafe base 64 encoded string that has a longer expiration time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   GetNotificationChannelVerificationCodeRequest request = GetNotificationChannelVerificationCodeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   GetNotificationChannelVerificationCodeResponse response = notificationChannelServiceClient.getNotificationChannelVerificationCode(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetNotificationChannelVerificationCodeResponse
+      getNotificationChannelVerificationCode(
+          GetNotificationChannelVerificationCodeRequest request) {
+    return getNotificationChannelVerificationCodeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Requests a verification code for an already verified channel that can then be used in a call to
+   * VerifyNotificationChannel() on a different channel with an equivalent identity in the same or
+   * in a different project. This makes it possible to copy a channel between projects without
+   * requiring manual reverification of the channel. If the channel is not in the verified state,
+   * this method will fail (in other words, this may only be used if the
+   * SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been
+   * used to put the given channel into the verified state).
+   *
+   * <p>There is no guarantee that the verification codes returned by this method will be of a
+   * similar structure or form as the ones that are delivered to the channel via
+   * SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both
+   * the codes delivered via SendNotificationChannelVerificationCode() and returned from
+   * GetNotificationChannelVerificationCode(), it is typically the case that the verification codes
+   * delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter
+   * expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return
+   * a much longer, websafe base 64 encoded string that has a longer expiration time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   GetNotificationChannelVerificationCodeRequest request = GetNotificationChannelVerificationCodeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;GetNotificationChannelVerificationCodeResponse&gt; future = notificationChannelServiceClient.getNotificationChannelVerificationCodeCallable().futureCall(request);
+   *   // Do something
+   *   GetNotificationChannelVerificationCodeResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<
+          GetNotificationChannelVerificationCodeRequest,
+          GetNotificationChannelVerificationCodeResponse>
+      getNotificationChannelVerificationCodeCallable() {
+    return stub.getNotificationChannelVerificationCodeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a
+   * result of calling `SendNotificationChannelVerificationCode`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   String code = "";
+   *   NotificationChannel response = notificationChannelServiceClient.verifyNotificationChannel(name, code);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The notification channel to verify.
+   * @param code Required. The verification code that was delivered to the channel as a result of
+   *     invoking the `SendNotificationChannelVerificationCode` API method or that was retrieved
+   *     from a verified channel via `GetNotificationChannelVerificationCode`. For example, one
+   *     might have "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that
+   *     the code is valid UTF-8; one should not make any assumptions regarding the structure or
+   *     format of the code).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationChannel verifyNotificationChannel(
+      NotificationChannelName name, String code) {
+    VerifyNotificationChannelRequest request =
+        VerifyNotificationChannelRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setCode(code)
+            .build();
+    return verifyNotificationChannel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a
+   * result of calling `SendNotificationChannelVerificationCode`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   String code = "";
+   *   NotificationChannel response = notificationChannelServiceClient.verifyNotificationChannel(name.toString(), code);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The notification channel to verify.
+   * @param code Required. The verification code that was delivered to the channel as a result of
+   *     invoking the `SendNotificationChannelVerificationCode` API method or that was retrieved
+   *     from a verified channel via `GetNotificationChannelVerificationCode`. For example, one
+   *     might have "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that
+   *     the code is valid UTF-8; one should not make any assumptions regarding the structure or
+   *     format of the code).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationChannel verifyNotificationChannel(String name, String code) {
+    VerifyNotificationChannelRequest request =
+        VerifyNotificationChannelRequest.newBuilder().setName(name).setCode(code).build();
+    return verifyNotificationChannel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a
+   * result of calling `SendNotificationChannelVerificationCode`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   String code = "";
+   *   VerifyNotificationChannelRequest request = VerifyNotificationChannelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setCode(code)
+   *     .build();
+   *   NotificationChannel response = notificationChannelServiceClient.verifyNotificationChannel(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationChannel verifyNotificationChannel(
+      VerifyNotificationChannelRequest request) {
+    return verifyNotificationChannelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a
+   * result of calling `SendNotificationChannelVerificationCode`.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   String code = "";
+   *   VerifyNotificationChannelRequest request = VerifyNotificationChannelRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setCode(code)
+   *     .build();
+   *   ApiFuture&lt;NotificationChannel&gt; future = notificationChannelServiceClient.verifyNotificationChannelCallable().futureCall(request);
+   *   // Do something
+   *   NotificationChannel response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
+      verifyNotificationChannelCallable() {
+    return stub.verifyNotificationChannelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lists the descriptors for supported channel types. The use of descriptors makes it possible for
    * new channel types to be dynamically added.
    *
@@ -185,7 +570,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   for (NotificationChannelDescriptor element : notificationChannelServiceClient.listNotificationChannelDescriptors(name).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -202,7 +587,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationChannelDescriptorsPagedResponse listNotificationChannelDescriptors(
-      ProjectName name) {
+      ResourceName name) {
     ListNotificationChannelDescriptorsRequest request =
         ListNotificationChannelDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -219,7 +604,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   for (NotificationChannelDescriptor element : notificationChannelServiceClient.listNotificationChannelDescriptors(name.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -251,7 +636,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListNotificationChannelDescriptorsRequest request = ListNotificationChannelDescriptorsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -278,7 +663,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListNotificationChannelDescriptorsRequest request = ListNotificationChannelDescriptorsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -306,7 +691,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListNotificationChannelDescriptorsRequest request = ListNotificationChannelDescriptorsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -340,7 +725,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.ofProjectChannelDescriptorName("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
    *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name);
    * }
    * </code></pre>
@@ -367,7 +752,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.ofProjectChannelDescriptorName("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
    *   NotificationChannelDescriptor response = notificationChannelServiceClient.getNotificationChannelDescriptor(name.toString());
    * }
    * </code></pre>
@@ -391,7 +776,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.ofProjectChannelDescriptorName("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
    *   GetNotificationChannelDescriptorRequest request = GetNotificationChannelDescriptorRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -416,7 +801,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.of("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+   *   NotificationChannelDescriptorName name = NotificationChannelDescriptorName.ofProjectChannelDescriptorName("[PROJECT]", "[CHANNEL_DESCRIPTOR]");
    *   GetNotificationChannelDescriptorRequest request = GetNotificationChannelDescriptorRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -439,7 +824,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   for (NotificationChannel element : notificationChannelServiceClient.listNotificationChannels(name).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -454,7 +839,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *     operation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNotificationChannelsPagedResponse listNotificationChannels(ProjectName name) {
+  public final ListNotificationChannelsPagedResponse listNotificationChannels(ResourceName name) {
     ListNotificationChannelsRequest request =
         ListNotificationChannelsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -470,7 +855,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   for (NotificationChannel element : notificationChannelServiceClient.listNotificationChannels(name.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -499,7 +884,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListNotificationChannelsRequest request = ListNotificationChannelsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -525,7 +910,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListNotificationChannelsRequest request = ListNotificationChannelsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -550,7 +935,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListNotificationChannelsRequest request = ListNotificationChannelsRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -585,7 +970,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
    *   NotificationChannel response = notificationChannelServiceClient.getNotificationChannel(name);
    * }
    * </code></pre>
@@ -613,7 +998,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
    *   NotificationChannel response = notificationChannelServiceClient.getNotificationChannel(name.toString());
    * }
    * </code></pre>
@@ -639,7 +1024,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
    *   GetNotificationChannelRequest request = GetNotificationChannelRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -665,7 +1050,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
    *   GetNotificationChannelRequest request = GetNotificationChannelRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -689,7 +1074,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   NotificationChannel notificationChannel = NotificationChannel.newBuilder().build();
    *   NotificationChannel response = notificationChannelServiceClient.createNotificationChannel(name, notificationChannel);
    * }
@@ -705,7 +1090,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationChannel createNotificationChannel(
-      ProjectName name, NotificationChannel notificationChannel) {
+      ResourceName name, NotificationChannel notificationChannel) {
     CreateNotificationChannelRequest request =
         CreateNotificationChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -723,7 +1108,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   NotificationChannel notificationChannel = NotificationChannel.newBuilder().build();
    *   NotificationChannel response = notificationChannelServiceClient.createNotificationChannel(name.toString(), notificationChannel);
    * }
@@ -757,7 +1142,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   NotificationChannel notificationChannel = NotificationChannel.newBuilder().build();
    *   CreateNotificationChannelRequest request = CreateNotificationChannelRequest.newBuilder()
    *     .setName(name.toString())
@@ -784,7 +1169,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   NotificationChannel notificationChannel = NotificationChannel.newBuilder().build();
    *   CreateNotificationChannelRequest request = CreateNotificationChannelRequest.newBuilder()
    *     .setName(name.toString())
@@ -880,111 +1265,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a notification channel.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   boolean force = false;
-   *   notificationChannelServiceClient.deleteNotificationChannel(name, force);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The channel for which to execute the request. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
-   * @param force If true, the notification channel will be deleted regardless of its use in alert
-   *     policies (the policies will be updated to remove the channel). If false, channels that are
-   *     still referenced by an existing alerting policy will fail to be deleted in a delete
-   *     operation.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteNotificationChannel(NotificationChannelName name, boolean force) {
-    DeleteNotificationChannelRequest request =
-        DeleteNotificationChannelRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setForce(force)
-            .build();
-    deleteNotificationChannel(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a notification channel.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   boolean force = false;
-   *   notificationChannelServiceClient.deleteNotificationChannel(name.toString(), force);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The channel for which to execute the request. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
-   * @param force If true, the notification channel will be deleted regardless of its use in alert
-   *     policies (the policies will be updated to remove the channel). If false, channels that are
-   *     still referenced by an existing alerting policy will fail to be deleted in a delete
-   *     operation.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteNotificationChannel(String name, boolean force) {
-    DeleteNotificationChannelRequest request =
-        DeleteNotificationChannelRequest.newBuilder().setName(name).setForce(force).build();
-    deleteNotificationChannel(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a notification channel.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   DeleteNotificationChannelRequest request = DeleteNotificationChannelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   notificationChannelServiceClient.deleteNotificationChannel(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteNotificationChannel(DeleteNotificationChannelRequest request) {
-    deleteNotificationChannelCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a notification channel.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   DeleteNotificationChannelRequest request = DeleteNotificationChannelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = notificationChannelServiceClient.deleteNotificationChannelCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteNotificationChannelRequest, Empty>
-      deleteNotificationChannelCallable() {
-    return stub.deleteNotificationChannelCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Causes a verification code to be delivered to the channel. The code can then be supplied in
    * `VerifyNotificationChannel` to verify the channel.
    *
@@ -992,7 +1272,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
    *   notificationChannelServiceClient.sendNotificationChannelVerificationCode(name);
    * }
    * </code></pre>
@@ -1017,7 +1297,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
    *   notificationChannelServiceClient.sendNotificationChannelVerificationCode(name.toString());
    * }
    * </code></pre>
@@ -1040,7 +1320,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
    *   SendNotificationChannelVerificationCodeRequest request = SendNotificationChannelVerificationCodeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1065,7 +1345,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
+   *   NotificationChannelName name = NotificationChannelName.ofProjectNotificationChannelName("[PROJECT]", "[NOTIFICATION_CHANNEL]");
    *   SendNotificationChannelVerificationCodeRequest request = SendNotificationChannelVerificationCodeRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -1078,285 +1358,6 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   public final UnaryCallable<SendNotificationChannelVerificationCodeRequest, Empty>
       sendNotificationChannelVerificationCodeCallable() {
     return stub.sendNotificationChannelVerificationCodeCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Requests a verification code for an already verified channel that can then be used in a call to
-   * VerifyNotificationChannel() on a different channel with an equivalent identity in the same or
-   * in a different project. This makes it possible to copy a channel between projects without
-   * requiring manual reverification of the channel. If the channel is not in the verified state,
-   * this method will fail (in other words, this may only be used if the
-   * SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been
-   * used to put the given channel into the verified state).
-   *
-   * <p>There is no guarantee that the verification codes returned by this method will be of a
-   * similar structure or form as the ones that are delivered to the channel via
-   * SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both
-   * the codes delivered via SendNotificationChannelVerificationCode() and returned from
-   * GetNotificationChannelVerificationCode(), it is typically the case that the verification codes
-   * delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter
-   * expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return
-   * a much longer, websafe base 64 encoded string that has a longer expiration time.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   GetNotificationChannelVerificationCodeResponse response = notificationChannelServiceClient.getNotificationChannelVerificationCode(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The notification channel for which a verification code is to be generated
-   *     and retrieved. This must name a channel that is already verified; if the specified channel
-   *     is not verified, the request will fail.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GetNotificationChannelVerificationCodeResponse
-      getNotificationChannelVerificationCode(NotificationChannelName name) {
-    GetNotificationChannelVerificationCodeRequest request =
-        GetNotificationChannelVerificationCodeRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getNotificationChannelVerificationCode(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Requests a verification code for an already verified channel that can then be used in a call to
-   * VerifyNotificationChannel() on a different channel with an equivalent identity in the same or
-   * in a different project. This makes it possible to copy a channel between projects without
-   * requiring manual reverification of the channel. If the channel is not in the verified state,
-   * this method will fail (in other words, this may only be used if the
-   * SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been
-   * used to put the given channel into the verified state).
-   *
-   * <p>There is no guarantee that the verification codes returned by this method will be of a
-   * similar structure or form as the ones that are delivered to the channel via
-   * SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both
-   * the codes delivered via SendNotificationChannelVerificationCode() and returned from
-   * GetNotificationChannelVerificationCode(), it is typically the case that the verification codes
-   * delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter
-   * expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return
-   * a much longer, websafe base 64 encoded string that has a longer expiration time.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   GetNotificationChannelVerificationCodeResponse response = notificationChannelServiceClient.getNotificationChannelVerificationCode(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The notification channel for which a verification code is to be generated
-   *     and retrieved. This must name a channel that is already verified; if the specified channel
-   *     is not verified, the request will fail.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GetNotificationChannelVerificationCodeResponse
-      getNotificationChannelVerificationCode(String name) {
-    GetNotificationChannelVerificationCodeRequest request =
-        GetNotificationChannelVerificationCodeRequest.newBuilder().setName(name).build();
-    return getNotificationChannelVerificationCode(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Requests a verification code for an already verified channel that can then be used in a call to
-   * VerifyNotificationChannel() on a different channel with an equivalent identity in the same or
-   * in a different project. This makes it possible to copy a channel between projects without
-   * requiring manual reverification of the channel. If the channel is not in the verified state,
-   * this method will fail (in other words, this may only be used if the
-   * SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been
-   * used to put the given channel into the verified state).
-   *
-   * <p>There is no guarantee that the verification codes returned by this method will be of a
-   * similar structure or form as the ones that are delivered to the channel via
-   * SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both
-   * the codes delivered via SendNotificationChannelVerificationCode() and returned from
-   * GetNotificationChannelVerificationCode(), it is typically the case that the verification codes
-   * delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter
-   * expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return
-   * a much longer, websafe base 64 encoded string that has a longer expiration time.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   GetNotificationChannelVerificationCodeRequest request = GetNotificationChannelVerificationCodeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   GetNotificationChannelVerificationCodeResponse response = notificationChannelServiceClient.getNotificationChannelVerificationCode(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final GetNotificationChannelVerificationCodeResponse
-      getNotificationChannelVerificationCode(
-          GetNotificationChannelVerificationCodeRequest request) {
-    return getNotificationChannelVerificationCodeCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Requests a verification code for an already verified channel that can then be used in a call to
-   * VerifyNotificationChannel() on a different channel with an equivalent identity in the same or
-   * in a different project. This makes it possible to copy a channel between projects without
-   * requiring manual reverification of the channel. If the channel is not in the verified state,
-   * this method will fail (in other words, this may only be used if the
-   * SendNotificationChannelVerificationCode and VerifyNotificationChannel paths have already been
-   * used to put the given channel into the verified state).
-   *
-   * <p>There is no guarantee that the verification codes returned by this method will be of a
-   * similar structure or form as the ones that are delivered to the channel via
-   * SendNotificationChannelVerificationCode; while VerifyNotificationChannel() will recognize both
-   * the codes delivered via SendNotificationChannelVerificationCode() and returned from
-   * GetNotificationChannelVerificationCode(), it is typically the case that the verification codes
-   * delivered via SendNotificationChannelVerificationCode() will be shorter and also have a shorter
-   * expiration (e.g. codes such as "G-123456") whereas GetVerificationCode() will typically return
-   * a much longer, websafe base 64 encoded string that has a longer expiration time.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   GetNotificationChannelVerificationCodeRequest request = GetNotificationChannelVerificationCodeRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;GetNotificationChannelVerificationCodeResponse&gt; future = notificationChannelServiceClient.getNotificationChannelVerificationCodeCallable().futureCall(request);
-   *   // Do something
-   *   GetNotificationChannelVerificationCodeResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<
-          GetNotificationChannelVerificationCodeRequest,
-          GetNotificationChannelVerificationCodeResponse>
-      getNotificationChannelVerificationCodeCallable() {
-    return stub.getNotificationChannelVerificationCodeCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a
-   * result of calling `SendNotificationChannelVerificationCode`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   String code = "";
-   *   NotificationChannel response = notificationChannelServiceClient.verifyNotificationChannel(name, code);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The notification channel to verify.
-   * @param code Required. The verification code that was delivered to the channel as a result of
-   *     invoking the `SendNotificationChannelVerificationCode` API method or that was retrieved
-   *     from a verified channel via `GetNotificationChannelVerificationCode`. For example, one
-   *     might have "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that
-   *     the code is valid UTF-8; one should not make any assumptions regarding the structure or
-   *     format of the code).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final NotificationChannel verifyNotificationChannel(
-      NotificationChannelName name, String code) {
-    VerifyNotificationChannelRequest request =
-        VerifyNotificationChannelRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setCode(code)
-            .build();
-    return verifyNotificationChannel(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a
-   * result of calling `SendNotificationChannelVerificationCode`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   String code = "";
-   *   NotificationChannel response = notificationChannelServiceClient.verifyNotificationChannel(name.toString(), code);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The notification channel to verify.
-   * @param code Required. The verification code that was delivered to the channel as a result of
-   *     invoking the `SendNotificationChannelVerificationCode` API method or that was retrieved
-   *     from a verified channel via `GetNotificationChannelVerificationCode`. For example, one
-   *     might have "G-123456" or "TKNZGhhd2EyN3I1MnRnMjRv" (in general, one is only guaranteed that
-   *     the code is valid UTF-8; one should not make any assumptions regarding the structure or
-   *     format of the code).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final NotificationChannel verifyNotificationChannel(String name, String code) {
-    VerifyNotificationChannelRequest request =
-        VerifyNotificationChannelRequest.newBuilder().setName(name).setCode(code).build();
-    return verifyNotificationChannel(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a
-   * result of calling `SendNotificationChannelVerificationCode`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   String code = "";
-   *   VerifyNotificationChannelRequest request = VerifyNotificationChannelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setCode(code)
-   *     .build();
-   *   NotificationChannel response = notificationChannelServiceClient.verifyNotificationChannel(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final NotificationChannel verifyNotificationChannel(
-      VerifyNotificationChannelRequest request) {
-    return verifyNotificationChannelCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Verifies a `NotificationChannel` by proving receipt of the code delivered to the channel as a
-   * result of calling `SendNotificationChannelVerificationCode`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.create()) {
-   *   NotificationChannelName name = NotificationChannelName.of("[PROJECT]", "[NOTIFICATION_CHANNEL]");
-   *   String code = "";
-   *   VerifyNotificationChannelRequest request = VerifyNotificationChannelRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setCode(code)
-   *     .build();
-   *   ApiFuture&lt;NotificationChannel&gt; future = notificationChannelServiceClient.verifyNotificationChannelCallable().futureCall(request);
-   *   // Do something
-   *   NotificationChannel response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
-      verifyNotificationChannelCallable() {
-    return stub.verifyNotificationChannelCallable();
   }
 
   @Override

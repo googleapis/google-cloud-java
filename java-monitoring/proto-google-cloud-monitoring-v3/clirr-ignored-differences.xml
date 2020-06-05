@@ -16,4 +16,25 @@
     <className>com/google/monitoring/v3/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <!-- TODO: remove after 2.0.0 is released -->
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/monitoring/v3/AlertPolicy$Condition$ConditionCase</className>
+    <field>CONDITION_TIME_SERIES_QUERY_LANGUAGE</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/monitoring/v3/AlertPolicy$Condition</className>
+    <field>CONDITION_TIME_SERIES_QUERY_LANGUAGE_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/monitoring/v3/AlertPolicy$Condition*</className>
+    <method>* *ConditionTimeSeriesQueryLanguage*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/monitoring/v3/AlertPolicy$Condition$TimeSeriesQueryLanguageCondition*</className>
+  </difference>
 </differences>

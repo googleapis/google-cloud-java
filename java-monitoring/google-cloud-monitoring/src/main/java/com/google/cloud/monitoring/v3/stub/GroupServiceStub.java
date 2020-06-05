@@ -43,6 +43,14 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class GroupServiceStub implements BackgroundResource {
 
+  public UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateGroupCallable()");
+  }
+
+  public UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteGroupCallable()");
+  }
+
   public UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listGroupsPagedCallable()");
   }
@@ -57,14 +65,6 @@ public abstract class GroupServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateGroupRequest, Group> createGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: createGroupCallable()");
-  }
-
-  public UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateGroupCallable()");
-  }
-
-  public UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteGroupCallable()");
   }
 
   public UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>

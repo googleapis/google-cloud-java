@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.monitoring.v3.stub.AlertPolicyServiceStub;
 import com.google.cloud.monitoring.v3.stub.AlertPolicyServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -35,7 +36,6 @@ import com.google.monitoring.v3.DeleteAlertPolicyRequest;
 import com.google.monitoring.v3.GetAlertPolicyRequest;
 import com.google.monitoring.v3.ListAlertPoliciesRequest;
 import com.google.monitoring.v3.ListAlertPoliciesResponse;
-import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateAlertPolicyRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -59,8 +59,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
- *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
- *   AlertPolicy response = alertPolicyServiceClient.getAlertPolicy(name);
+ *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+ *   alertPolicyServiceClient.deleteAlertPolicy(name);
  * }
  * </code>
  * </pre>
@@ -171,13 +171,107 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Deletes an alerting policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+   *   alertPolicyServiceClient.deleteAlertPolicy(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The alerting policy to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
+   *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAlertPolicy(AlertPolicyName name) {
+    DeleteAlertPolicyRequest request =
+        DeleteAlertPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAlertPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an alerting policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+   *   alertPolicyServiceClient.deleteAlertPolicy(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The alerting policy to delete. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
+   *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAlertPolicy(String name) {
+    DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder().setName(name).build();
+    deleteAlertPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an alerting policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+   *   DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   alertPolicyServiceClient.deleteAlertPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAlertPolicy(DeleteAlertPolicyRequest request) {
+    deleteAlertPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an alerting policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+   *   DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = alertPolicyServiceClient.deleteAlertPolicyCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
+    return stub.deleteAlertPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Lists the existing alerting policies for the project.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   for (AlertPolicy element : alertPolicyServiceClient.listAlertPolicies(name).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -192,7 +286,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     instead.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAlertPoliciesPagedResponse listAlertPolicies(ProjectName name) {
+  public final ListAlertPoliciesPagedResponse listAlertPolicies(ResourceName name) {
     ListAlertPoliciesRequest request =
         ListAlertPoliciesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -208,7 +302,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   for (AlertPolicy element : alertPolicyServiceClient.listAlertPolicies(name.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -236,7 +330,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListAlertPoliciesRequest request = ListAlertPoliciesRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -261,7 +355,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListAlertPoliciesRequest request = ListAlertPoliciesRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -286,7 +380,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   ListAlertPoliciesRequest request = ListAlertPoliciesRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -318,7 +412,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
    *   AlertPolicy response = alertPolicyServiceClient.getAlertPolicy(name);
    * }
    * </code></pre>
@@ -341,7 +435,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
    *   AlertPolicy response = alertPolicyServiceClient.getAlertPolicy(name.toString());
    * }
    * </code></pre>
@@ -363,7 +457,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
    *   GetAlertPolicyRequest request = GetAlertPolicyRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -386,7 +480,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
+   *   AlertPolicyName name = AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
    *   GetAlertPolicyRequest request = GetAlertPolicyRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
@@ -408,7 +502,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
    *   AlertPolicy response = alertPolicyServiceClient.createAlertPolicy(name, alertPolicy);
    * }
@@ -425,7 +519,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     `[ALERT_POLICY_ID]` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AlertPolicy createAlertPolicy(ProjectName name, AlertPolicy alertPolicy) {
+  public final AlertPolicy createAlertPolicy(ResourceName name, AlertPolicy alertPolicy) {
     CreateAlertPolicyRequest request =
         CreateAlertPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -442,7 +536,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
    *   AlertPolicy response = alertPolicyServiceClient.createAlertPolicy(name.toString(), alertPolicy);
    * }
@@ -473,7 +567,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
    *   CreateAlertPolicyRequest request = CreateAlertPolicyRequest.newBuilder()
    *     .setName(name.toString())
@@ -498,7 +592,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ResourceName name = ProjectName.of("[PROJECT]");
    *   AlertPolicy alertPolicy = AlertPolicy.newBuilder().build();
    *   CreateAlertPolicyRequest request = CreateAlertPolicyRequest.newBuilder()
    *     .setName(name.toString())
@@ -512,100 +606,6 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicyCallable() {
     return stub.createAlertPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an alerting policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
-   *   alertPolicyServiceClient.deleteAlertPolicy(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The alerting policy to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAlertPolicy(AlertPolicyName name) {
-    DeleteAlertPolicyRequest request =
-        DeleteAlertPolicyRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteAlertPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an alerting policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
-   *   alertPolicyServiceClient.deleteAlertPolicy(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The alerting policy to delete. The format is:
-   *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAlertPolicy(String name) {
-    DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder().setName(name).build();
-    deleteAlertPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an alerting policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
-   *   DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   alertPolicyServiceClient.deleteAlertPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteAlertPolicy(DeleteAlertPolicyRequest request) {
-    deleteAlertPolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes an alerting policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
-   *   AlertPolicyName name = AlertPolicyName.of("[PROJECT]", "[ALERT_POLICY]");
-   *   DeleteAlertPolicyRequest request = DeleteAlertPolicyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = alertPolicyServiceClient.deleteAlertPolicyCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
-    return stub.deleteAlertPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateServiceLevelObjectiveRequest;
 import com.google.monitoring.v3.CreateServiceRequest;
@@ -50,6 +51,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -115,14 +117,93 @@ public class ServiceMonitoringServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteServiceTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockServiceMonitoringService.addResponse(expectedResponse);
+
+    ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+
+    client.deleteService(name);
+
+    List<AbstractMessage> actualRequests = mockServiceMonitoringService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteServiceRequest actualRequest = (DeleteServiceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ServiceName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockServiceMonitoringService.addException(exception);
+
+    try {
+      ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
+
+      client.deleteService(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceLevelObjectiveTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockServiceMonitoringService.addResponse(expectedResponse);
+
+    ServiceLevelObjectiveName name =
+        ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+            "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+
+    client.deleteServiceLevelObjective(name);
+
+    List<AbstractMessage> actualRequests = mockServiceMonitoringService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteServiceLevelObjectiveRequest actualRequest =
+        (DeleteServiceLevelObjectiveRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ServiceLevelObjectiveName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteServiceLevelObjectiveExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockServiceMonitoringService.addException(exception);
+
+    try {
+      ServiceLevelObjectiveName name =
+          ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+              "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+
+      client.deleteServiceLevelObjective(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createServiceTest() {
-    ServiceName name = ServiceName.of("[PROJECT]", "[SERVICE]");
+    ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
     String displayName = "displayName1615086568";
     Service expectedResponse =
         Service.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    ResourceName parent = ProjectName.of("[PROJECT]");
     Service service = Service.newBuilder().build();
 
     Service actualResponse = client.createService(parent, service);
@@ -132,7 +213,7 @@ public class ServiceMonitoringServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateServiceRequest actualRequest = (CreateServiceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(Objects.toString(parent), Objects.toString(actualRequest.getParent()));
     Assert.assertEquals(service, actualRequest.getService());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -147,7 +228,7 @@ public class ServiceMonitoringServiceClientTest {
     mockServiceMonitoringService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      ResourceName parent = ProjectName.of("[PROJECT]");
       Service service = Service.newBuilder().build();
 
       client.createService(parent, service);
@@ -160,13 +241,13 @@ public class ServiceMonitoringServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getServiceTest() {
-    ServiceName name2 = ServiceName.of("[PROJECT]", "[SERVICE]");
+    ServiceName name2 = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
     String displayName = "displayName1615086568";
     Service expectedResponse =
         Service.newBuilder().setName(name2.toString()).setDisplayName(displayName).build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
-    ServiceName name = ServiceName.of("[PROJECT]", "[SERVICE]");
+    ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
 
     Service actualResponse = client.getService(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -189,7 +270,7 @@ public class ServiceMonitoringServiceClientTest {
     mockServiceMonitoringService.addException(exception);
 
     try {
-      ServiceName name = ServiceName.of("[PROJECT]", "[SERVICE]");
+      ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
 
       client.getService(name);
       Assert.fail("No exception raised");
@@ -211,7 +292,7 @@ public class ServiceMonitoringServiceClientTest {
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    ResourceName parent = ProjectName.of("[PROJECT]");
 
     ListServicesPagedResponse pagedListResponse = client.listServices(parent);
 
@@ -223,7 +304,7 @@ public class ServiceMonitoringServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListServicesRequest actualRequest = (ListServicesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(Objects.toString(parent), Objects.toString(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -237,7 +318,7 @@ public class ServiceMonitoringServiceClientTest {
     mockServiceMonitoringService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      ResourceName parent = ProjectName.of("[PROJECT]");
 
       client.listServices(parent);
       Assert.fail("No exception raised");
@@ -249,7 +330,7 @@ public class ServiceMonitoringServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateServiceTest() {
-    ServiceName name = ServiceName.of("[PROJECT]", "[SERVICE]");
+    ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
     String displayName = "displayName1615086568";
     Service expectedResponse =
         Service.newBuilder().setName(name.toString()).setDisplayName(displayName).build();
@@ -289,46 +370,10 @@ public class ServiceMonitoringServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteServiceTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockServiceMonitoringService.addResponse(expectedResponse);
-
-    ServiceName name = ServiceName.of("[PROJECT]", "[SERVICE]");
-
-    client.deleteService(name);
-
-    List<AbstractMessage> actualRequests = mockServiceMonitoringService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteServiceRequest actualRequest = (DeleteServiceRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ServiceName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteServiceExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockServiceMonitoringService.addException(exception);
-
-    try {
-      ServiceName name = ServiceName.of("[PROJECT]", "[SERVICE]");
-
-      client.deleteService(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createServiceLevelObjectiveTest() {
     ServiceLevelObjectiveName name =
-        ServiceLevelObjectiveName.of("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+        ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+            "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
     String displayName = "displayName1615086568";
     double goal = 317825.0;
     ServiceLevelObjective expectedResponse =
@@ -339,7 +384,7 @@ public class ServiceMonitoringServiceClientTest {
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
-    ServiceName parent = ServiceName.of("[PROJECT]", "[SERVICE]");
+    ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
     ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
 
     ServiceLevelObjective actualResponse =
@@ -366,7 +411,7 @@ public class ServiceMonitoringServiceClientTest {
     mockServiceMonitoringService.addException(exception);
 
     try {
-      ServiceName parent = ServiceName.of("[PROJECT]", "[SERVICE]");
+      ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
       ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
 
       client.createServiceLevelObjective(parent, serviceLevelObjective);
@@ -380,7 +425,8 @@ public class ServiceMonitoringServiceClientTest {
   @SuppressWarnings("all")
   public void getServiceLevelObjectiveTest() {
     ServiceLevelObjectiveName name2 =
-        ServiceLevelObjectiveName.of("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+        ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+            "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
     String displayName = "displayName1615086568";
     double goal = 317825.0;
     ServiceLevelObjective expectedResponse =
@@ -392,7 +438,8 @@ public class ServiceMonitoringServiceClientTest {
     mockServiceMonitoringService.addResponse(expectedResponse);
 
     ServiceLevelObjectiveName name =
-        ServiceLevelObjectiveName.of("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+        ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+            "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
 
     ServiceLevelObjective actualResponse = client.getServiceLevelObjective(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -417,7 +464,8 @@ public class ServiceMonitoringServiceClientTest {
 
     try {
       ServiceLevelObjectiveName name =
-          ServiceLevelObjectiveName.of("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+          ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+              "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
 
       client.getServiceLevelObjective(name);
       Assert.fail("No exception raised");
@@ -441,7 +489,7 @@ public class ServiceMonitoringServiceClientTest {
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
-    ServiceName parent = ServiceName.of("[PROJECT]", "[SERVICE]");
+    ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
 
     ListServiceLevelObjectivesPagedResponse pagedListResponse =
         client.listServiceLevelObjectives(parent);
@@ -469,7 +517,7 @@ public class ServiceMonitoringServiceClientTest {
     mockServiceMonitoringService.addException(exception);
 
     try {
-      ServiceName parent = ServiceName.of("[PROJECT]", "[SERVICE]");
+      ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
 
       client.listServiceLevelObjectives(parent);
       Assert.fail("No exception raised");
@@ -482,7 +530,8 @@ public class ServiceMonitoringServiceClientTest {
   @SuppressWarnings("all")
   public void updateServiceLevelObjectiveTest() {
     ServiceLevelObjectiveName name =
-        ServiceLevelObjectiveName.of("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
+        ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName(
+            "[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
     String displayName = "displayName1615086568";
     double goal = 317825.0;
     ServiceLevelObjective expectedResponse =
@@ -521,46 +570,6 @@ public class ServiceMonitoringServiceClientTest {
       ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
 
       client.updateServiceLevelObjective(serviceLevelObjective);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteServiceLevelObjectiveTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockServiceMonitoringService.addResponse(expectedResponse);
-
-    ServiceLevelObjectiveName name =
-        ServiceLevelObjectiveName.of("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-
-    client.deleteServiceLevelObjective(name);
-
-    List<AbstractMessage> actualRequests = mockServiceMonitoringService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteServiceLevelObjectiveRequest actualRequest =
-        (DeleteServiceLevelObjectiveRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ServiceLevelObjectiveName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteServiceLevelObjectiveExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockServiceMonitoringService.addException(exception);
-
-    try {
-      ServiceLevelObjectiveName name =
-          ServiceLevelObjectiveName.of("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-
-      client.deleteServiceLevelObjective(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

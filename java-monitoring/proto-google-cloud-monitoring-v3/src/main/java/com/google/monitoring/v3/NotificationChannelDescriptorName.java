@@ -16,26 +16,42 @@
 
 package com.google.monitoring.v3;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class NotificationChannelDescriptorName implements ResourceName {
 
-  private static final PathTemplate PATH_TEMPLATE =
+  @Deprecated
+  protected NotificationChannelDescriptorName() {}
+
+  private static final PathTemplate PROJECT_CHANNEL_DESCRIPTOR_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
+  private static final PathTemplate ORGANIZATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/notificationChannelDescriptors/{channel_descriptor}");
+  private static final PathTemplate FOLDER_CHANNEL_DESCRIPTOR_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "folders/{folder}/notificationChannelDescriptors/{channel_descriptor}");
 
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
 
-  private final String project;
-  private final String channelDescriptor;
+  private String project;
+  private String channelDescriptor;
+  private String organization;
+  private String folder;
 
   public String getProject() {
     return project;
@@ -45,21 +61,87 @@ public class NotificationChannelDescriptorName implements ResourceName {
     return channelDescriptor;
   }
 
+  public String getOrganization() {
+    return organization;
+  }
+
+  public String getFolder() {
+    return folder;
+  }
+
+  private NotificationChannelDescriptorName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    channelDescriptor = Preconditions.checkNotNull(builder.getChannelDescriptor());
+    pathTemplate = PROJECT_CHANNEL_DESCRIPTOR_PATH_TEMPLATE;
+  }
+
+  private NotificationChannelDescriptorName(OrganizationChannelDescriptorBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    channelDescriptor = Preconditions.checkNotNull(builder.getChannelDescriptor());
+    pathTemplate = ORGANIZATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE;
+  }
+
+  private NotificationChannelDescriptorName(FolderChannelDescriptorBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    channelDescriptor = Preconditions.checkNotNull(builder.getChannelDescriptor());
+    pathTemplate = FOLDER_CHANNEL_DESCRIPTOR_PATH_TEMPLATE;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectChannelDescriptorBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static OrganizationChannelDescriptorBuilder newOrganizationChannelDescriptorBuilder() {
+    return new OrganizationChannelDescriptorBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static FolderChannelDescriptorBuilder newFolderChannelDescriptorBuilder() {
+    return new FolderChannelDescriptorBuilder();
   }
 
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  private NotificationChannelDescriptorName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    channelDescriptor = Preconditions.checkNotNull(builder.getChannelDescriptor());
+  public static NotificationChannelDescriptorName of(String project, String channelDescriptor) {
+    return newProjectChannelDescriptorBuilder()
+        .setProject(project)
+        .setChannelDescriptor(channelDescriptor)
+        .build();
   }
 
-  public static NotificationChannelDescriptorName of(String project, String channelDescriptor) {
-    return newBuilder().setProject(project).setChannelDescriptor(channelDescriptor).build();
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static NotificationChannelDescriptorName ofProjectChannelDescriptorName(
+      String project, String channelDescriptor) {
+    return newProjectChannelDescriptorBuilder()
+        .setProject(project)
+        .setChannelDescriptor(channelDescriptor)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static NotificationChannelDescriptorName ofOrganizationChannelDescriptorName(
+      String organization, String channelDescriptor) {
+    return newOrganizationChannelDescriptorBuilder()
+        .setOrganization(organization)
+        .setChannelDescriptor(channelDescriptor)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static NotificationChannelDescriptorName ofFolderChannelDescriptorName(
+      String folder, String channelDescriptor) {
+    return newFolderChannelDescriptorBuilder()
+        .setFolder(folder)
+        .setChannelDescriptor(channelDescriptor)
+        .build();
   }
 
   public static String format(String project, String channelDescriptor) {
@@ -70,15 +152,55 @@ public class NotificationChannelDescriptorName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectChannelDescriptorName(
+      String project, String channelDescriptor) {
+    return newBuilder()
+        .setProject(project)
+        .setChannelDescriptor(channelDescriptor)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationChannelDescriptorName(
+      String organization, String channelDescriptor) {
+    return newOrganizationChannelDescriptorBuilder()
+        .setOrganization(organization)
+        .setChannelDescriptor(channelDescriptor)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatFolderChannelDescriptorName(String folder, String channelDescriptor) {
+    return newFolderChannelDescriptorBuilder()
+        .setFolder(folder)
+        .setChannelDescriptor(channelDescriptor)
+        .build()
+        .toString();
+  }
+
   public static NotificationChannelDescriptorName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString,
-            "NotificationChannelDescriptorName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("channel_descriptor"));
+    if (PROJECT_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+      return ofProjectChannelDescriptorName(
+          matchMap.get("project"), matchMap.get("channel_descriptor"));
+    } else if (ORGANIZATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          ORGANIZATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+      return ofOrganizationChannelDescriptorName(
+          matchMap.get("organization"), matchMap.get("channel_descriptor"));
+    } else if (FOLDER_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+      return ofFolderChannelDescriptorName(
+          matchMap.get("folder"), matchMap.get("channel_descriptor"));
+    }
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<NotificationChannelDescriptorName> parseList(List<String> formattedStrings) {
@@ -90,7 +212,7 @@ public class NotificationChannelDescriptorName implements ResourceName {
   }
 
   public static List<String> toStringList(List<NotificationChannelDescriptorName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (NotificationChannelDescriptorName value : values) {
       if (value == null) {
         list.add("");
@@ -102,16 +224,29 @@ public class NotificationChannelDescriptorName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)
+        || ORGANIZATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)
+        || FOLDER_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("channelDescriptor", channelDescriptor);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (channelDescriptor != null) {
+            fieldMapBuilder.put("channel_descriptor", channelDescriptor);
+          }
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -125,14 +260,16 @@ public class NotificationChannelDescriptorName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "channel_descriptor", channelDescriptor);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for NotificationChannelDescriptorName. */
+  /** Builder for projects/{project}/notificationChannelDescriptors/{channel_descriptor}. */
   public static class Builder {
 
     private String project;
     private String channelDescriptor;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -152,11 +289,80 @@ public class NotificationChannelDescriptorName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(NotificationChannelDescriptorName notificationChannelDescriptorName) {
+      Preconditions.checkArgument(
+          notificationChannelDescriptorName.pathTemplate
+              == PROJECT_CHANNEL_DESCRIPTOR_PATH_TEMPLATE,
+          "toBuilder is only supported when NotificationChannelDescriptorName has the pattern of "
+              + "projects/{project}/notificationChannelDescriptors/{channel_descriptor}.");
       project = notificationChannelDescriptorName.project;
       channelDescriptor = notificationChannelDescriptorName.channelDescriptor;
+    }
+
+    public NotificationChannelDescriptorName build() {
+      return new NotificationChannelDescriptorName(this);
+    }
+  }
+
+  /**
+   * Builder for organizations/{organization}/notificationChannelDescriptors/{channel_descriptor}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class OrganizationChannelDescriptorBuilder {
+
+    private String organization;
+    private String channelDescriptor;
+
+    private OrganizationChannelDescriptorBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getChannelDescriptor() {
+      return channelDescriptor;
+    }
+
+    public OrganizationChannelDescriptorBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationChannelDescriptorBuilder setChannelDescriptor(String channelDescriptor) {
+      this.channelDescriptor = channelDescriptor;
+      return this;
+    }
+
+    public NotificationChannelDescriptorName build() {
+      return new NotificationChannelDescriptorName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/notificationChannelDescriptors/{channel_descriptor}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class FolderChannelDescriptorBuilder {
+
+    private String folder;
+    private String channelDescriptor;
+
+    private FolderChannelDescriptorBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getChannelDescriptor() {
+      return channelDescriptor;
+    }
+
+    public FolderChannelDescriptorBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderChannelDescriptorBuilder setChannelDescriptor(String channelDescriptor) {
+      this.channelDescriptor = channelDescriptor;
+      return this;
     }
 
     public NotificationChannelDescriptorName build() {
@@ -169,10 +375,12 @@ public class NotificationChannelDescriptorName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o instanceof NotificationChannelDescriptorName) {
+    if (o != null || getClass() == o.getClass()) {
       NotificationChannelDescriptorName that = (NotificationChannelDescriptorName) o;
-      return (this.project.equals(that.project))
-          && (this.channelDescriptor.equals(that.channelDescriptor));
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.channelDescriptor, that.channelDescriptor))
+          && (Objects.equals(this.organization, that.organization))
+          && (Objects.equals(this.folder, that.folder));
     }
     return false;
   }
@@ -181,9 +389,15 @@ public class NotificationChannelDescriptorName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= project.hashCode();
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
-    h ^= channelDescriptor.hashCode();
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(channelDescriptor);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
     return h;
   }
 }

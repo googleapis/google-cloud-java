@@ -75,16 +75,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getUptimeCheckConfig to 30 seconds:
+ * <p>For example, to set the total timeout of deleteUptimeCheckConfig to 30 seconds:
  *
  * <pre>
  * <code>
  * UptimeCheckServiceStubSettings.Builder uptimeCheckServiceSettingsBuilder =
  *     UptimeCheckServiceStubSettings.newBuilder();
  * uptimeCheckServiceSettingsBuilder
- *     .getUptimeCheckConfigSettings()
+ *     .deleteUptimeCheckConfigSettings()
  *     .setRetrySettings(
- *         uptimeCheckServiceSettingsBuilder.getUptimeCheckConfigSettings().getRetrySettings().toBuilder()
+ *         uptimeCheckServiceSettingsBuilder.deleteUptimeCheckConfigSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * UptimeCheckServiceStubSettings uptimeCheckServiceSettings = uptimeCheckServiceSettingsBuilder.build();
@@ -102,6 +102,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
+  private final UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
+      deleteUptimeCheckConfigSettings;
   private final PagedCallSettings<
           ListUptimeCheckConfigsRequest,
           ListUptimeCheckConfigsResponse,
@@ -113,11 +115,15 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       createUptimeCheckConfigSettings;
   private final UnaryCallSettings<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigSettings;
-  private final UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
-      deleteUptimeCheckConfigSettings;
   private final PagedCallSettings<
           ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
       listUptimeCheckIpsSettings;
+
+  /** Returns the object with the settings used for calls to deleteUptimeCheckConfig. */
+  public UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
+      deleteUptimeCheckConfigSettings() {
+    return deleteUptimeCheckConfigSettings;
+  }
 
   /** Returns the object with the settings used for calls to listUptimeCheckConfigs. */
   public PagedCallSettings<
@@ -144,12 +150,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
   public UnaryCallSettings<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigSettings() {
     return updateUptimeCheckConfigSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteUptimeCheckConfig. */
-  public UnaryCallSettings<DeleteUptimeCheckConfigRequest, Empty>
-      deleteUptimeCheckConfigSettings() {
-    return deleteUptimeCheckConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to listUptimeCheckIps. */
@@ -228,11 +228,11 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
   protected UptimeCheckServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteUptimeCheckConfigSettings = settingsBuilder.deleteUptimeCheckConfigSettings().build();
     listUptimeCheckConfigsSettings = settingsBuilder.listUptimeCheckConfigsSettings().build();
     getUptimeCheckConfigSettings = settingsBuilder.getUptimeCheckConfigSettings().build();
     createUptimeCheckConfigSettings = settingsBuilder.createUptimeCheckConfigSettings().build();
     updateUptimeCheckConfigSettings = settingsBuilder.updateUptimeCheckConfigSettings().build();
-    deleteUptimeCheckConfigSettings = settingsBuilder.deleteUptimeCheckConfigSettings().build();
     listUptimeCheckIpsSettings = settingsBuilder.listUptimeCheckIpsSettings().build();
   }
 
@@ -372,6 +372,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       extends StubSettings.Builder<UptimeCheckServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
+        deleteUptimeCheckConfigSettings;
     private final PagedCallSettings.Builder<
             ListUptimeCheckConfigsRequest,
             ListUptimeCheckConfigsResponse,
@@ -383,8 +385,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
         createUptimeCheckConfigSettings;
     private final UnaryCallSettings.Builder<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
         updateUptimeCheckConfigSettings;
-    private final UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
-        deleteUptimeCheckConfigSettings;
     private final PagedCallSettings.Builder<
             ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
         listUptimeCheckIpsSettings;
@@ -430,6 +430,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listUptimeCheckConfigsSettings =
           PagedCallSettings.newBuilder(LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_FACT);
 
@@ -439,18 +441,16 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
       updateUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listUptimeCheckIpsSettings =
           PagedCallSettings.newBuilder(LIST_UPTIME_CHECK_IPS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteUptimeCheckConfigSettings,
               listUptimeCheckConfigsSettings,
               getUptimeCheckConfigSettings,
               createUptimeCheckConfigSettings,
               updateUptimeCheckConfigSettings,
-              deleteUptimeCheckConfigSettings,
               listUptimeCheckIpsSettings);
 
       initDefaults(this);
@@ -466,6 +466,11 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteUptimeCheckConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .listUptimeCheckConfigsSettings()
@@ -488,11 +493,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .listUptimeCheckIpsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -503,20 +503,20 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     protected Builder(UptimeCheckServiceStubSettings settings) {
       super(settings);
 
+      deleteUptimeCheckConfigSettings = settings.deleteUptimeCheckConfigSettings.toBuilder();
       listUptimeCheckConfigsSettings = settings.listUptimeCheckConfigsSettings.toBuilder();
       getUptimeCheckConfigSettings = settings.getUptimeCheckConfigSettings.toBuilder();
       createUptimeCheckConfigSettings = settings.createUptimeCheckConfigSettings.toBuilder();
       updateUptimeCheckConfigSettings = settings.updateUptimeCheckConfigSettings.toBuilder();
-      deleteUptimeCheckConfigSettings = settings.deleteUptimeCheckConfigSettings.toBuilder();
       listUptimeCheckIpsSettings = settings.listUptimeCheckIpsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteUptimeCheckConfigSettings,
               listUptimeCheckConfigsSettings,
               getUptimeCheckConfigSettings,
               createUptimeCheckConfigSettings,
               updateUptimeCheckConfigSettings,
-              deleteUptimeCheckConfigSettings,
               listUptimeCheckIpsSettings);
     }
 
@@ -534,6 +534,12 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUptimeCheckConfig. */
+    public UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
+        deleteUptimeCheckConfigSettings() {
+      return deleteUptimeCheckConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listUptimeCheckConfigs. */
@@ -561,12 +567,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     public UnaryCallSettings.Builder<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
         updateUptimeCheckConfigSettings() {
       return updateUptimeCheckConfigSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteUptimeCheckConfig. */
-    public UnaryCallSettings.Builder<DeleteUptimeCheckConfigRequest, Empty>
-        deleteUptimeCheckConfigSettings() {
-      return deleteUptimeCheckConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listUptimeCheckIps. */

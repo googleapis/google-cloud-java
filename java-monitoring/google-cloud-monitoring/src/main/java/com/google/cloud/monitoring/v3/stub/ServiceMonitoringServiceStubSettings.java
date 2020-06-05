@@ -79,16 +79,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createService to 30 seconds:
+ * <p>For example, to set the total timeout of deleteService to 30 seconds:
  *
  * <pre>
  * <code>
  * ServiceMonitoringServiceStubSettings.Builder serviceMonitoringServiceSettingsBuilder =
  *     ServiceMonitoringServiceStubSettings.newBuilder();
  * serviceMonitoringServiceSettingsBuilder
- *     .createServiceSettings()
+ *     .deleteServiceSettings()
  *     .setRetrySettings(
- *         serviceMonitoringServiceSettingsBuilder.createServiceSettings().getRetrySettings().toBuilder()
+ *         serviceMonitoringServiceSettingsBuilder.deleteServiceSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ServiceMonitoringServiceStubSettings serviceMonitoringServiceSettings = serviceMonitoringServiceSettingsBuilder.build();
@@ -107,13 +107,15 @@ public class ServiceMonitoringServiceStubSettings
           .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
+  private final UnaryCallSettings<DeleteServiceRequest, Empty> deleteServiceSettings;
+  private final UnaryCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
+      deleteServiceLevelObjectiveSettings;
   private final UnaryCallSettings<CreateServiceRequest, Service> createServiceSettings;
   private final UnaryCallSettings<GetServiceRequest, Service> getServiceSettings;
   private final PagedCallSettings<
           ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
       listServicesSettings;
   private final UnaryCallSettings<UpdateServiceRequest, Service> updateServiceSettings;
-  private final UnaryCallSettings<DeleteServiceRequest, Empty> deleteServiceSettings;
   private final UnaryCallSettings<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
       createServiceLevelObjectiveSettings;
   private final UnaryCallSettings<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -125,8 +127,17 @@ public class ServiceMonitoringServiceStubSettings
       listServiceLevelObjectivesSettings;
   private final UnaryCallSettings<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
       updateServiceLevelObjectiveSettings;
-  private final UnaryCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
-      deleteServiceLevelObjectiveSettings;
+
+  /** Returns the object with the settings used for calls to deleteService. */
+  public UnaryCallSettings<DeleteServiceRequest, Empty> deleteServiceSettings() {
+    return deleteServiceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteServiceLevelObjective. */
+  public UnaryCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
+      deleteServiceLevelObjectiveSettings() {
+    return deleteServiceLevelObjectiveSettings;
+  }
 
   /** Returns the object with the settings used for calls to createService. */
   public UnaryCallSettings<CreateServiceRequest, Service> createServiceSettings() {
@@ -147,11 +158,6 @@ public class ServiceMonitoringServiceStubSettings
   /** Returns the object with the settings used for calls to updateService. */
   public UnaryCallSettings<UpdateServiceRequest, Service> updateServiceSettings() {
     return updateServiceSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteService. */
-  public UnaryCallSettings<DeleteServiceRequest, Empty> deleteServiceSettings() {
-    return deleteServiceSettings;
   }
 
   /** Returns the object with the settings used for calls to createServiceLevelObjective. */
@@ -179,12 +185,6 @@ public class ServiceMonitoringServiceStubSettings
   public UnaryCallSettings<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
       updateServiceLevelObjectiveSettings() {
     return updateServiceLevelObjectiveSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteServiceLevelObjective. */
-  public UnaryCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
-      deleteServiceLevelObjectiveSettings() {
-    return deleteServiceLevelObjectiveSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -256,11 +256,13 @@ public class ServiceMonitoringServiceStubSettings
   protected ServiceMonitoringServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    deleteServiceSettings = settingsBuilder.deleteServiceSettings().build();
+    deleteServiceLevelObjectiveSettings =
+        settingsBuilder.deleteServiceLevelObjectiveSettings().build();
     createServiceSettings = settingsBuilder.createServiceSettings().build();
     getServiceSettings = settingsBuilder.getServiceSettings().build();
     listServicesSettings = settingsBuilder.listServicesSettings().build();
     updateServiceSettings = settingsBuilder.updateServiceSettings().build();
-    deleteServiceSettings = settingsBuilder.deleteServiceSettings().build();
     createServiceLevelObjectiveSettings =
         settingsBuilder.createServiceLevelObjectiveSettings().build();
     getServiceLevelObjectiveSettings = settingsBuilder.getServiceLevelObjectiveSettings().build();
@@ -268,8 +270,6 @@ public class ServiceMonitoringServiceStubSettings
         settingsBuilder.listServiceLevelObjectivesSettings().build();
     updateServiceLevelObjectiveSettings =
         settingsBuilder.updateServiceLevelObjectiveSettings().build();
-    deleteServiceLevelObjectiveSettings =
-        settingsBuilder.deleteServiceLevelObjectiveSettings().build();
   }
 
   private static final PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>
@@ -407,13 +407,15 @@ public class ServiceMonitoringServiceStubSettings
       extends StubSettings.Builder<ServiceMonitoringServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<DeleteServiceRequest, Empty> deleteServiceSettings;
+    private final UnaryCallSettings.Builder<DeleteServiceLevelObjectiveRequest, Empty>
+        deleteServiceLevelObjectiveSettings;
     private final UnaryCallSettings.Builder<CreateServiceRequest, Service> createServiceSettings;
     private final UnaryCallSettings.Builder<GetServiceRequest, Service> getServiceSettings;
     private final PagedCallSettings.Builder<
             ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
         listServicesSettings;
     private final UnaryCallSettings.Builder<UpdateServiceRequest, Service> updateServiceSettings;
-    private final UnaryCallSettings.Builder<DeleteServiceRequest, Empty> deleteServiceSettings;
     private final UnaryCallSettings.Builder<
             CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
         createServiceLevelObjectiveSettings;
@@ -427,8 +429,6 @@ public class ServiceMonitoringServiceStubSettings
     private final UnaryCallSettings.Builder<
             UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
         updateServiceLevelObjectiveSettings;
-    private final UnaryCallSettings.Builder<DeleteServiceLevelObjectiveRequest, Empty>
-        deleteServiceLevelObjectiveSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -471,6 +471,10 @@ public class ServiceMonitoringServiceStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      deleteServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteServiceLevelObjectiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -478,8 +482,6 @@ public class ServiceMonitoringServiceStubSettings
       listServicesSettings = PagedCallSettings.newBuilder(LIST_SERVICES_PAGE_STR_FACT);
 
       updateServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createServiceLevelObjectiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -490,20 +492,18 @@ public class ServiceMonitoringServiceStubSettings
 
       updateServiceLevelObjectiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      deleteServiceLevelObjectiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteServiceSettings,
+              deleteServiceLevelObjectiveSettings,
               createServiceSettings,
               getServiceSettings,
               listServicesSettings,
               updateServiceSettings,
-              deleteServiceSettings,
               createServiceLevelObjectiveSettings,
               getServiceLevelObjectiveSettings,
               listServiceLevelObjectivesSettings,
-              updateServiceLevelObjectiveSettings,
-              deleteServiceLevelObjectiveSettings);
+              updateServiceLevelObjectiveSettings);
 
       initDefaults(this);
     }
@@ -518,6 +518,16 @@ public class ServiceMonitoringServiceStubSettings
     }
 
     private static Builder initDefaults(Builder builder) {
+
+      builder
+          .deleteServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteServiceLevelObjectiveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .createServiceSettings()
@@ -540,11 +550,6 @@ public class ServiceMonitoringServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .deleteServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createServiceLevelObjectiveSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -564,43 +569,38 @@ public class ServiceMonitoringServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      builder
-          .deleteServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
       return builder;
     }
 
     protected Builder(ServiceMonitoringServiceStubSettings settings) {
       super(settings);
 
+      deleteServiceSettings = settings.deleteServiceSettings.toBuilder();
+      deleteServiceLevelObjectiveSettings =
+          settings.deleteServiceLevelObjectiveSettings.toBuilder();
       createServiceSettings = settings.createServiceSettings.toBuilder();
       getServiceSettings = settings.getServiceSettings.toBuilder();
       listServicesSettings = settings.listServicesSettings.toBuilder();
       updateServiceSettings = settings.updateServiceSettings.toBuilder();
-      deleteServiceSettings = settings.deleteServiceSettings.toBuilder();
       createServiceLevelObjectiveSettings =
           settings.createServiceLevelObjectiveSettings.toBuilder();
       getServiceLevelObjectiveSettings = settings.getServiceLevelObjectiveSettings.toBuilder();
       listServiceLevelObjectivesSettings = settings.listServiceLevelObjectivesSettings.toBuilder();
       updateServiceLevelObjectiveSettings =
           settings.updateServiceLevelObjectiveSettings.toBuilder();
-      deleteServiceLevelObjectiveSettings =
-          settings.deleteServiceLevelObjectiveSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteServiceSettings,
+              deleteServiceLevelObjectiveSettings,
               createServiceSettings,
               getServiceSettings,
               listServicesSettings,
               updateServiceSettings,
-              deleteServiceSettings,
               createServiceLevelObjectiveSettings,
               getServiceLevelObjectiveSettings,
               listServiceLevelObjectivesSettings,
-              updateServiceLevelObjectiveSettings,
-              deleteServiceLevelObjectiveSettings);
+              updateServiceLevelObjectiveSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -617,6 +617,17 @@ public class ServiceMonitoringServiceStubSettings
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteService. */
+    public UnaryCallSettings.Builder<DeleteServiceRequest, Empty> deleteServiceSettings() {
+      return deleteServiceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServiceLevelObjective. */
+    public UnaryCallSettings.Builder<DeleteServiceLevelObjectiveRequest, Empty>
+        deleteServiceLevelObjectiveSettings() {
+      return deleteServiceLevelObjectiveSettings;
     }
 
     /** Returns the builder for the settings used for calls to createService. */
@@ -639,11 +650,6 @@ public class ServiceMonitoringServiceStubSettings
     /** Returns the builder for the settings used for calls to updateService. */
     public UnaryCallSettings.Builder<UpdateServiceRequest, Service> updateServiceSettings() {
       return updateServiceSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteService. */
-    public UnaryCallSettings.Builder<DeleteServiceRequest, Empty> deleteServiceSettings() {
-      return deleteServiceSettings;
     }
 
     /** Returns the builder for the settings used for calls to createServiceLevelObjective. */
@@ -671,12 +677,6 @@ public class ServiceMonitoringServiceStubSettings
     public UnaryCallSettings.Builder<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
         updateServiceLevelObjectiveSettings() {
       return updateServiceLevelObjectiveSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteServiceLevelObjective. */
-    public UnaryCallSettings.Builder<DeleteServiceLevelObjectiveRequest, Empty>
-        deleteServiceLevelObjectiveSettings() {
-      return deleteServiceLevelObjectiveSettings;
     }
 
     @Override

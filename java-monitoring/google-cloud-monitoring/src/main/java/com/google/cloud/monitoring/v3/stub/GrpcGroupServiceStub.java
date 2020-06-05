@@ -54,6 +54,20 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcGroupServiceStub extends GroupServiceStub {
 
+  private static final MethodDescriptor<UpdateGroupRequest, Group> updateGroupMethodDescriptor =
+      MethodDescriptor.<UpdateGroupRequest, Group>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.monitoring.v3.GroupService/UpdateGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteGroupRequest, Empty> deleteGroupMethodDescriptor =
+      MethodDescriptor.<DeleteGroupRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.monitoring.v3.GroupService/DeleteGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<ListGroupsRequest, ListGroupsResponse>
       listGroupsMethodDescriptor =
           MethodDescriptor.<ListGroupsRequest, ListGroupsResponse>newBuilder()
@@ -76,20 +90,6 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
           .build();
-  private static final MethodDescriptor<UpdateGroupRequest, Group> updateGroupMethodDescriptor =
-      MethodDescriptor.<UpdateGroupRequest, Group>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.monitoring.v3.GroupService/UpdateGroup")
-          .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<DeleteGroupRequest, Empty> deleteGroupMethodDescriptor =
-      MethodDescriptor.<DeleteGroupRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.monitoring.v3.GroupService/DeleteGroup")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
   private static final MethodDescriptor<ListGroupMembersRequest, ListGroupMembersResponse>
       listGroupMembersMethodDescriptor =
           MethodDescriptor.<ListGroupMembersRequest, ListGroupMembersResponse>newBuilder()
@@ -103,12 +103,12 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
 
   private final BackgroundResource backgroundResources;
 
+  private final UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable;
+  private final UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable;
   private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
   private final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable;
   private final UnaryCallable<GetGroupRequest, Group> getGroupCallable;
   private final UnaryCallable<CreateGroupRequest, Group> createGroupCallable;
-  private final UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable;
-  private final UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable;
   private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse>
       listGroupMembersCallable;
   private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
@@ -153,6 +153,32 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    GrpcCallSettings<UpdateGroupRequest, Group> updateGroupTransportSettings =
+        GrpcCallSettings.<UpdateGroupRequest, Group>newBuilder()
+            .setMethodDescriptor(updateGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateGroupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("group.name", String.valueOf(request.getGroup().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteGroupRequest, Empty> deleteGroupTransportSettings =
+        GrpcCallSettings.<DeleteGroupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteGroupMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteGroupRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteGroupRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =
         GrpcCallSettings.<ListGroupsRequest, ListGroupsResponse>newBuilder()
             .setMethodDescriptor(listGroupsMethodDescriptor)
@@ -192,32 +218,6 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                   }
                 })
             .build();
-    GrpcCallSettings<UpdateGroupRequest, Group> updateGroupTransportSettings =
-        GrpcCallSettings.<UpdateGroupRequest, Group>newBuilder()
-            .setMethodDescriptor(updateGroupMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<UpdateGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("group.name", String.valueOf(request.getGroup().getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteGroupRequest, Empty> deleteGroupTransportSettings =
-        GrpcCallSettings.<DeleteGroupRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteGroupMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteGroupRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteGroupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ListGroupMembersRequest, ListGroupMembersResponse>
         listGroupMembersTransportSettings =
             GrpcCallSettings.<ListGroupMembersRequest, ListGroupMembersResponse>newBuilder()
@@ -233,6 +233,12 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
                     })
                 .build();
 
+    this.updateGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
+    this.deleteGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteGroupTransportSettings, settings.deleteGroupSettings(), clientContext);
     this.listGroupsCallable =
         callableFactory.createUnaryCallable(
             listGroupsTransportSettings, settings.listGroupsSettings(), clientContext);
@@ -245,12 +251,6 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
     this.createGroupCallable =
         callableFactory.createUnaryCallable(
             createGroupTransportSettings, settings.createGroupSettings(), clientContext);
-    this.updateGroupCallable =
-        callableFactory.createUnaryCallable(
-            updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
-    this.deleteGroupCallable =
-        callableFactory.createUnaryCallable(
-            deleteGroupTransportSettings, settings.deleteGroupSettings(), clientContext);
     this.listGroupMembersCallable =
         callableFactory.createUnaryCallable(
             listGroupMembersTransportSettings, settings.listGroupMembersSettings(), clientContext);
@@ -259,6 +259,14 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
             listGroupMembersTransportSettings, settings.listGroupMembersSettings(), clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
+    return updateGroupCallable;
+  }
+
+  public UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
+    return deleteGroupCallable;
   }
 
   public UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
@@ -275,14 +283,6 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
 
   public UnaryCallable<CreateGroupRequest, Group> createGroupCallable() {
     return createGroupCallable;
-  }
-
-  public UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
-    return updateGroupCallable;
-  }
-
-  public UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
-    return deleteGroupCallable;
   }
 
   public UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>

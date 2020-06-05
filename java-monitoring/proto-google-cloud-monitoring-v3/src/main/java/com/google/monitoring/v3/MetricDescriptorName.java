@@ -16,26 +16,42 @@
 
 package com.google.monitoring.v3;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /** AUTO-GENERATED DOCUMENTATION AND CLASS */
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class MetricDescriptorName implements ResourceName {
 
-  private static final PathTemplate PATH_TEMPLATE =
+  @Deprecated
+  protected MetricDescriptorName() {}
+
+  private static final PathTemplate PROJECT_METRIC_DESCRIPTOR_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/metricDescriptors/{metric_descriptor=**}");
+  private static final PathTemplate ORGANIZATION_METRIC_DESCRIPTOR_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/metricDescriptors/{metric_descriptor=**}");
+  private static final PathTemplate FOLDER_METRIC_DESCRIPTOR_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "folders/{folder}/metricDescriptors/{metric_descriptor=**}");
 
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
 
-  private final String project;
-  private final String metricDescriptor;
+  private String project;
+  private String metricDescriptor;
+  private String organization;
+  private String folder;
 
   public String getProject() {
     return project;
@@ -45,21 +61,87 @@ public class MetricDescriptorName implements ResourceName {
     return metricDescriptor;
   }
 
+  public String getOrganization() {
+    return organization;
+  }
+
+  public String getFolder() {
+    return folder;
+  }
+
+  private MetricDescriptorName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    metricDescriptor = Preconditions.checkNotNull(builder.getMetricDescriptor());
+    pathTemplate = PROJECT_METRIC_DESCRIPTOR_PATH_TEMPLATE;
+  }
+
+  private MetricDescriptorName(OrganizationMetricDescriptorBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    metricDescriptor = Preconditions.checkNotNull(builder.getMetricDescriptor());
+    pathTemplate = ORGANIZATION_METRIC_DESCRIPTOR_PATH_TEMPLATE;
+  }
+
+  private MetricDescriptorName(FolderMetricDescriptorBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    metricDescriptor = Preconditions.checkNotNull(builder.getMetricDescriptor());
+    pathTemplate = FOLDER_METRIC_DESCRIPTOR_PATH_TEMPLATE;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectMetricDescriptorBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static OrganizationMetricDescriptorBuilder newOrganizationMetricDescriptorBuilder() {
+    return new OrganizationMetricDescriptorBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static FolderMetricDescriptorBuilder newFolderMetricDescriptorBuilder() {
+    return new FolderMetricDescriptorBuilder();
   }
 
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  private MetricDescriptorName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    metricDescriptor = Preconditions.checkNotNull(builder.getMetricDescriptor());
+  public static MetricDescriptorName of(String project, String metricDescriptor) {
+    return newProjectMetricDescriptorBuilder()
+        .setProject(project)
+        .setMetricDescriptor(metricDescriptor)
+        .build();
   }
 
-  public static MetricDescriptorName of(String project, String metricDescriptor) {
-    return newBuilder().setProject(project).setMetricDescriptor(metricDescriptor).build();
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static MetricDescriptorName ofProjectMetricDescriptorName(
+      String project, String metricDescriptor) {
+    return newProjectMetricDescriptorBuilder()
+        .setProject(project)
+        .setMetricDescriptor(metricDescriptor)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static MetricDescriptorName ofOrganizationMetricDescriptorName(
+      String organization, String metricDescriptor) {
+    return newOrganizationMetricDescriptorBuilder()
+        .setOrganization(organization)
+        .setMetricDescriptor(metricDescriptor)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static MetricDescriptorName ofFolderMetricDescriptorName(
+      String folder, String metricDescriptor) {
+    return newFolderMetricDescriptorBuilder()
+        .setFolder(folder)
+        .setMetricDescriptor(metricDescriptor)
+        .build();
   }
 
   public static String format(String project, String metricDescriptor) {
@@ -70,14 +152,53 @@ public class MetricDescriptorName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectMetricDescriptorName(String project, String metricDescriptor) {
+    return newBuilder()
+        .setProject(project)
+        .setMetricDescriptor(metricDescriptor)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatOrganizationMetricDescriptorName(
+      String organization, String metricDescriptor) {
+    return newOrganizationMetricDescriptorBuilder()
+        .setOrganization(organization)
+        .setMetricDescriptor(metricDescriptor)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatFolderMetricDescriptorName(String folder, String metricDescriptor) {
+    return newFolderMetricDescriptorBuilder()
+        .setFolder(folder)
+        .setMetricDescriptor(metricDescriptor)
+        .build()
+        .toString();
+  }
+
   public static MetricDescriptorName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
-            formattedString, "MetricDescriptorName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("metric_descriptor"));
+    if (PROJECT_METRIC_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_METRIC_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+      return ofProjectMetricDescriptorName(
+          matchMap.get("project"), matchMap.get("metric_descriptor"));
+    } else if (ORGANIZATION_METRIC_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          ORGANIZATION_METRIC_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+      return ofOrganizationMetricDescriptorName(
+          matchMap.get("organization"), matchMap.get("metric_descriptor"));
+    } else if (FOLDER_METRIC_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_METRIC_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+      return ofFolderMetricDescriptorName(
+          matchMap.get("folder"), matchMap.get("metric_descriptor"));
+    }
+    throw new ValidationException("JobName.parse: formattedString not in valid format");
   }
 
   public static List<MetricDescriptorName> parseList(List<String> formattedStrings) {
@@ -89,7 +210,7 @@ public class MetricDescriptorName implements ResourceName {
   }
 
   public static List<String> toStringList(List<MetricDescriptorName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (MetricDescriptorName value : values) {
       if (value == null) {
         list.add("");
@@ -101,16 +222,29 @@ public class MetricDescriptorName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_METRIC_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)
+        || ORGANIZATION_METRIC_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)
+        || FOLDER_METRIC_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("metricDescriptor", metricDescriptor);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (metricDescriptor != null) {
+            fieldMapBuilder.put("metric_descriptor", metricDescriptor);
+          }
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -124,14 +258,16 @@ public class MetricDescriptorName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "metric_descriptor", metricDescriptor);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for MetricDescriptorName. */
+  /** Builder for projects/{project}/metricDescriptors/{metric_descriptor=**}. */
   public static class Builder {
 
     private String project;
     private String metricDescriptor;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -151,11 +287,77 @@ public class MetricDescriptorName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(MetricDescriptorName metricDescriptorName) {
+      Preconditions.checkArgument(
+          metricDescriptorName.pathTemplate == PROJECT_METRIC_DESCRIPTOR_PATH_TEMPLATE,
+          "toBuilder is only supported when MetricDescriptorName has the pattern of "
+              + "projects/{project}/metricDescriptors/{metric_descriptor=**}.");
       project = metricDescriptorName.project;
       metricDescriptor = metricDescriptorName.metricDescriptor;
+    }
+
+    public MetricDescriptorName build() {
+      return new MetricDescriptorName(this);
+    }
+  }
+
+  /** Builder for organizations/{organization}/metricDescriptors/{metric_descriptor=**}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class OrganizationMetricDescriptorBuilder {
+
+    private String organization;
+    private String metricDescriptor;
+
+    private OrganizationMetricDescriptorBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getMetricDescriptor() {
+      return metricDescriptor;
+    }
+
+    public OrganizationMetricDescriptorBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationMetricDescriptorBuilder setMetricDescriptor(String metricDescriptor) {
+      this.metricDescriptor = metricDescriptor;
+      return this;
+    }
+
+    public MetricDescriptorName build() {
+      return new MetricDescriptorName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/metricDescriptors/{metric_descriptor=**}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class FolderMetricDescriptorBuilder {
+
+    private String folder;
+    private String metricDescriptor;
+
+    private FolderMetricDescriptorBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public String getMetricDescriptor() {
+      return metricDescriptor;
+    }
+
+    public FolderMetricDescriptorBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public FolderMetricDescriptorBuilder setMetricDescriptor(String metricDescriptor) {
+      this.metricDescriptor = metricDescriptor;
+      return this;
     }
 
     public MetricDescriptorName build() {
@@ -168,10 +370,12 @@ public class MetricDescriptorName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o instanceof MetricDescriptorName) {
+    if (o != null || getClass() == o.getClass()) {
       MetricDescriptorName that = (MetricDescriptorName) o;
-      return (this.project.equals(that.project))
-          && (this.metricDescriptor.equals(that.metricDescriptor));
+      return (Objects.equals(this.project, that.project))
+          && (Objects.equals(this.metricDescriptor, that.metricDescriptor))
+          && (Objects.equals(this.organization, that.organization))
+          && (Objects.equals(this.folder, that.folder));
     }
     return false;
   }
@@ -180,9 +384,15 @@ public class MetricDescriptorName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= project.hashCode();
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
-    h ^= metricDescriptor.hashCode();
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(metricDescriptor);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
     return h;
   }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 2.0.0 is released -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/monitoring/v3/AlertPolicyServiceClient</className>
+    <method>* *AlertPolic*(com.google.monitoring.v3.ProjectName*)</method>
+    <to>* *AlertPolic*(com.google.api.resourcenames.ResourceName*)</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/monitoring/v3/GroupServiceClient</className>
+    <method>* *Group*(com.google.monitoring.v3.ProjectName*)</method>
+    <to>* *Group*(com.google.api.resourcenames.ResourceName*)</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/monitoring/v3/MetricServiceClient</className>
+    <method>* *(com.google.monitoring.v3.ProjectName*)</method>
+    <to>* *(com.google.api.resourcenames.ResourceName*)</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/monitoring/v3/NotificationChannelServiceClient</className>
+    <method>* *NotificationChannel*(com.google.monitoring.v3.ProjectName*)</method>
+    <to>* *NotificationChannel*(com.google.api.resourcenames.ResourceName*)</to>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/monitoring/v3/ServiceMonitoringServiceClient</className>
+    <method>* *Service*(com.google.monitoring.v3.ProjectName*)</method>
+    <to>* *Service*(com.google.api.resourcenames.ResourceName*)</to>
+  </difference>
+</differences>
