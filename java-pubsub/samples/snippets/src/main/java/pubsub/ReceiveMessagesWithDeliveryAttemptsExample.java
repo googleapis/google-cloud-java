@@ -30,9 +30,9 @@ public class ReceiveMessagesWithDeliveryAttemptsExample {
 
   public static void main(String... args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "Your Project ID";
+    String projectId = "your-project-id";
     // This is an existing subscription with a dead letter policy.
-    String subscriptionId = "Your Subscription ID";
+    String subscriptionId = "your-subscription-id";
 
     ReceiveMessagesWithDeliveryAttemptsExample.receiveMessagesWithDeliveryAttemptsExample(
         projectId, subscriptionId);

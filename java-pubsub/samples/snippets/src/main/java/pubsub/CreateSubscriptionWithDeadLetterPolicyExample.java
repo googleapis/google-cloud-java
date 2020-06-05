@@ -28,15 +28,15 @@ public class CreateSubscriptionWithDeadLetterPolicyExample {
 
   public static void main(String... args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
-    String projectId = "Your Project ID";
+    String projectId = "your-project-id";
     // This is the subscription you want to create with a dead letter policy.
-    String subscriptionId = "Your Subscription ID";
+    String subscriptionId = "your-subscription-id";
     // This is an existing topic that you want to attach the subscription with dead letter policy
     // to.
-    String topicId = "Your Topic ID";
+    String topicId = "your-topic-id";
     // This is an existing topic that the subscription with dead letter policy forwards dead letter
     // messages to.
-    String deadLetterTopicId = "Your Dead Letter Topic ID";
+    String deadLetterTopicId = "your-dead-letter-topic-id";
 
     CreateSubscriptionWithDeadLetterPolicyExample.createSubscriptionWithDeadLetterPolicyExample(
         projectId, subscriptionId, topicId, deadLetterTopicId);

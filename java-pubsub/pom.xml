@@ -149,16 +149,6 @@
     <module>google-cloud-pubsub-bom</module>
   </modules>
 
-  <!--  // The samples CI build is configured to run with `-Penable-samples` (.kokoro/build.sh L78) -->
-  <profiles>
-    <profile>
-      <id>enable-samples</id>
-      <modules>
-        <module>samples</module>
-      </modules>
-    </profile>
-  </profiles>
-
   <reporting>
     <plugins>
       <plugin>
