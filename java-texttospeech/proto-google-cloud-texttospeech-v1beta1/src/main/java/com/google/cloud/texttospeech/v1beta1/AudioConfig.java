@@ -161,6 +161,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for audioEncoding.
    */
+  @java.lang.Override
   public int getAudioEncodingValue() {
     return audioEncoding_;
   }
@@ -177,6 +178,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The audioEncoding.
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.AudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
     com.google.cloud.texttospeech.v1beta1.AudioEncoding result =
@@ -204,6 +206,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The speakingRate.
    */
+  @java.lang.Override
   public double getSpeakingRate() {
     return speakingRate_;
   }
@@ -225,6 +228,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pitch.
    */
+  @java.lang.Override
   public double getPitch() {
     return pitch_;
   }
@@ -251,6 +255,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The volumeGainDb.
    */
+  @java.lang.Override
   public double getVolumeGainDb() {
     return volumeGainDb_;
   }
@@ -274,6 +279,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sampleRateHertz.
    */
+  @java.lang.Override
   public int getSampleRateHertz() {
     return sampleRateHertz_;
   }
@@ -809,6 +815,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for audioEncoding.
      */
+    @java.lang.Override
     public int getAudioEncodingValue() {
       return audioEncoding_;
     }
@@ -827,6 +834,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
+
       audioEncoding_ = value;
       onChanged();
       return this;
@@ -844,6 +852,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The audioEncoding.
      */
+    @java.lang.Override
     public com.google.cloud.texttospeech.v1beta1.AudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
       com.google.cloud.texttospeech.v1beta1.AudioEncoding result =
@@ -912,6 +921,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The speakingRate.
      */
+    @java.lang.Override
     public double getSpeakingRate() {
       return speakingRate_;
     }
@@ -977,6 +987,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pitch.
      */
+    @java.lang.Override
     public double getPitch() {
       return pitch_;
     }
@@ -1045,6 +1056,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The volumeGainDb.
      */
+    @java.lang.Override
     public double getVolumeGainDb() {
       return volumeGainDb_;
     }
@@ -1120,6 +1132,7 @@ public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The sampleRateHertz.
      */
+    @java.lang.Override
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }

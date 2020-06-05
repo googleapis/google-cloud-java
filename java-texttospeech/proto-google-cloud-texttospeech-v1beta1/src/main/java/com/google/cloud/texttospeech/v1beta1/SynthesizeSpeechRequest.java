@@ -168,6 +168,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    * @return Whether the input field is set.
    */
+  @java.lang.Override
   public boolean hasInput() {
     return input_ != null;
   }
@@ -184,6 +185,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    * @return The input.
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.SynthesisInput getInput() {
     return input_ == null
         ? com.google.cloud.texttospeech.v1beta1.SynthesisInput.getDefaultInstance()
@@ -200,6 +202,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * .google.cloud.texttospeech.v1beta1.SynthesisInput input = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.SynthesisInputOrBuilder getInputOrBuilder() {
     return getInput();
   }
@@ -219,6 +222,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    * @return Whether the voice field is set.
    */
+  @java.lang.Override
   public boolean hasVoice() {
     return voice_ != null;
   }
@@ -235,6 +239,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    * @return The voice.
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams getVoice() {
     return voice_ == null
         ? com.google.cloud.texttospeech.v1beta1.VoiceSelectionParams.getDefaultInstance()
@@ -251,6 +256,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * .google.cloud.texttospeech.v1beta1.VoiceSelectionParams voice = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder() {
     return getVoice();
   }
@@ -270,6 +276,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    * @return Whether the audioConfig field is set.
    */
+  @java.lang.Override
   public boolean hasAudioConfig() {
     return audioConfig_ != null;
   }
@@ -286,6 +293,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    *
    * @return The audioConfig.
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig() {
     return audioConfig_ == null
         ? com.google.cloud.texttospeech.v1beta1.AudioConfig.getDefaultInstance()
@@ -302,6 +310,7 @@ public final class SynthesizeSpeechRequest extends com.google.protobuf.Generated
    * .google.cloud.texttospeech.v1beta1.AudioConfig audio_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder getAudioConfigOrBuilder() {
     return getAudioConfig();
   }

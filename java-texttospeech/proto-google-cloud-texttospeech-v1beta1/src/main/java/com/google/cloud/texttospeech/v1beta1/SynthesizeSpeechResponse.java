@@ -126,6 +126,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
    *
    * @return The audioContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAudioContent() {
     return audioContent_;
   }
@@ -467,6 +468,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
      *
      * @return The audioContent.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAudioContent() {
       return audioContent_;
     }

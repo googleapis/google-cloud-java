@@ -130,6 +130,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.texttospeech.v1.Voice voices = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.texttospeech.v1.Voice> getVoicesList() {
     return voices_;
   }
@@ -142,6 +143,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.texttospeech.v1.Voice voices = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.texttospeech.v1.VoiceOrBuilder>
       getVoicesOrBuilderList() {
     return voices_;
@@ -155,6 +157,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.texttospeech.v1.Voice voices = 1;</code>
    */
+  @java.lang.Override
   public int getVoicesCount() {
     return voices_.size();
   }
@@ -167,6 +170,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.texttospeech.v1.Voice voices = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1.Voice getVoices(int index) {
     return voices_.get(index);
   }
@@ -179,6 +183,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.cloud.texttospeech.v1.Voice voices = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1.VoiceOrBuilder getVoicesOrBuilder(int index) {
     return voices_.get(index);
   }
