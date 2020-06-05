@@ -912,7 +912,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels with user-defined metadata. For more information, see
-   * [Labeling Keys](/kms/docs/labeling-keys).
+   * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -935,7 +935,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels with user-defined metadata. For more information, see
-   * [Labeling Keys](/kms/docs/labeling-keys).
+   * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -949,7 +949,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels with user-defined metadata. For more information, see
-   * [Labeling Keys](/kms/docs/labeling-keys).
+   * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -967,7 +967,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels with user-defined metadata. For more information, see
-   * [Labeling Keys](/kms/docs/labeling-keys).
+   * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -2986,7 +2986,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels with user-defined metadata. For more information, see
-     * [Labeling Keys](/kms/docs/labeling-keys).
+     * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -3009,7 +3009,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels with user-defined metadata. For more information, see
-     * [Labeling Keys](/kms/docs/labeling-keys).
+     * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -3023,7 +3023,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels with user-defined metadata. For more information, see
-     * [Labeling Keys](/kms/docs/labeling-keys).
+     * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -3042,7 +3042,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels with user-defined metadata. For more information, see
-     * [Labeling Keys](/kms/docs/labeling-keys).
+     * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -3068,7 +3068,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels with user-defined metadata. For more information, see
-     * [Labeling Keys](/kms/docs/labeling-keys).
+     * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -3090,7 +3090,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels with user-defined metadata. For more information, see
-     * [Labeling Keys](/kms/docs/labeling-keys).
+     * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
@@ -3110,7 +3110,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels with user-defined metadata. For more information, see
-     * [Labeling Keys](/kms/docs/labeling-keys).
+     * [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10;</code>
