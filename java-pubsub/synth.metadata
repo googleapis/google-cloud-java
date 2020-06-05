@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-pubsub.git",
-        "sha": "ed222384f58d1b3b61d9844bfefe55d71961fbc4"
+        "sha": "63a0e7a423ca0e9de9e446f0686aec6e6368f67c"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "edd3b80fb770548d6ad780105f1782de6ff73ea0",
-        "internalRef": "311053644"
+        "sha": "f5f268f5293e60143ac742a4eeb7dd6306ebf505",
+        "internalRef": "313276022"
       }
     },
     {

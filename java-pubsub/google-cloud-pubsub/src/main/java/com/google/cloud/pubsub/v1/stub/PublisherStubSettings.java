@@ -60,6 +60,8 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
+import com.google.pubsub.v1.DetachSubscriptionRequest;
+import com.google.pubsub.v1.DetachSubscriptionResponse;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsResponse;
@@ -137,6 +139,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionSettings;
 
   /** Returns the object with the settings used for calls to createTopic. */
   public UnaryCallSettings<Topic, Topic> createTopicSettings() {
@@ -199,6 +203,12 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to detachSubscription. */
+  public UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionSettings() {
+    return detachSubscriptionSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -280,6 +290,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    detachSubscriptionSettings = settingsBuilder.detachSubscriptionSettings().build();
   }
 
   private static final PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
@@ -551,6 +562,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
+        detachSubscriptionSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -563,6 +576,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
+      definitions.put(
+          "non_idempotent2", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "non_idempotent",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
@@ -648,6 +663,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      detachSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createTopicSettings,
@@ -660,7 +677,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               deleteTopicSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              detachSubscriptionSettings);
 
       initDefaults(this);
     }
@@ -743,6 +761,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .detachSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent2"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -760,6 +783,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      detachSubscriptionSettings = settings.detachSubscriptionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -773,7 +797,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
               deleteTopicSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              detachSubscriptionSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -853,6 +878,12 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to detachSubscription. */
+    public UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
+        detachSubscriptionSettings() {
+      return detachSubscriptionSettings;
     }
 
     @Override

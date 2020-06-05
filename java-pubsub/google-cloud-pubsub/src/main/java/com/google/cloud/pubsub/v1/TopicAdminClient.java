@@ -37,6 +37,8 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
+import com.google.pubsub.v1.DetachSubscriptionRequest;
+import com.google.pubsub.v1.DetachSubscriptionResponse;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsResponse;
@@ -724,7 +726,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the subscriptions on this topic.
+   * Lists the names of the attached subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -751,7 +753,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the subscriptions on this topic.
+   * Lists the names of the attached subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -804,7 +806,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the subscriptions on this topic.
+   * Lists the names of the attached subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -830,7 +832,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the subscriptions on this topic.
+   * Lists the names of the attached subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -855,7 +857,7 @@ public class TopicAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the names of the subscriptions on this topic.
+   * Lists the names of the attached subscriptions on this topic.
    *
    * <p>Sample code:
    *
@@ -1414,6 +1416,56 @@ public class TopicAdminClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Detaches a subscription from this topic. All messages retained in the subscription are dropped.
+   * Subsequent `Pull` and `StreamingPull` requests will return FAILED_PRECONDITION. If the
+   * subscription is a push subscription, pushes to the endpoint will stop.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName subscription = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   DetachSubscriptionRequest request = DetachSubscriptionRequest.newBuilder()
+   *     .setSubscription(subscription.toString())
+   *     .build();
+   *   DetachSubscriptionResponse response = topicAdminClient.detachSubscription(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DetachSubscriptionResponse detachSubscription(DetachSubscriptionRequest request) {
+    return detachSubscriptionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Detaches a subscription from this topic. All messages retained in the subscription are dropped.
+   * Subsequent `Pull` and `StreamingPull` requests will return FAILED_PRECONDITION. If the
+   * subscription is a push subscription, pushes to the endpoint will stop.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+   *   TopicName subscription = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   DetachSubscriptionRequest request = DetachSubscriptionRequest.newBuilder()
+   *     .setSubscription(subscription.toString())
+   *     .build();
+   *   ApiFuture&lt;DetachSubscriptionResponse&gt; future = topicAdminClient.detachSubscriptionCallable().futureCall(request);
+   *   // Do something
+   *   DetachSubscriptionResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionCallable() {
+    return stub.detachSubscriptionCallable();
   }
 
   @Override

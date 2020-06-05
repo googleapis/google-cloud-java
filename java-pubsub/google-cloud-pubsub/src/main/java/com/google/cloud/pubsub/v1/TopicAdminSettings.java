@@ -39,6 +39,8 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
+import com.google.pubsub.v1.DetachSubscriptionRequest;
+import com.google.pubsub.v1.DetachSubscriptionResponse;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsResponse;
@@ -148,6 +150,12 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((PublisherStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to detachSubscription. */
+  public UnaryCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionSettings() {
+    return ((PublisherStubSettings) getStubSettings()).detachSubscriptionSettings();
   }
 
   public static final TopicAdminSettings create(PublisherStubSettings stub) throws IOException {
@@ -308,6 +316,12 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to detachSubscription. */
+    public UnaryCallSettings.Builder<DetachSubscriptionRequest, DetachSubscriptionResponse>
+        detachSubscriptionSettings() {
+      return getStubSettingsBuilder().detachSubscriptionSettings();
     }
 
     @Override

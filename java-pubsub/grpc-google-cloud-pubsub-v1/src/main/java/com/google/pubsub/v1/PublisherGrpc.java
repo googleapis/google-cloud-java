@@ -369,6 +369,51 @@ public final class PublisherGrpc {
     return getDeleteTopicMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.DetachSubscriptionRequest,
+          com.google.pubsub.v1.DetachSubscriptionResponse>
+      getDetachSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DetachSubscription",
+      requestType = com.google.pubsub.v1.DetachSubscriptionRequest.class,
+      responseType = com.google.pubsub.v1.DetachSubscriptionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.DetachSubscriptionRequest,
+          com.google.pubsub.v1.DetachSubscriptionResponse>
+      getDetachSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.pubsub.v1.DetachSubscriptionRequest,
+            com.google.pubsub.v1.DetachSubscriptionResponse>
+        getDetachSubscriptionMethod;
+    if ((getDetachSubscriptionMethod = PublisherGrpc.getDetachSubscriptionMethod) == null) {
+      synchronized (PublisherGrpc.class) {
+        if ((getDetachSubscriptionMethod = PublisherGrpc.getDetachSubscriptionMethod) == null) {
+          PublisherGrpc.getDetachSubscriptionMethod =
+              getDetachSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.pubsub.v1.DetachSubscriptionRequest,
+                          com.google.pubsub.v1.DetachSubscriptionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DetachSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.DetachSubscriptionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.DetachSubscriptionResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PublisherMethodDescriptorSupplier("DetachSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getDetachSubscriptionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PublisherStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PublisherStub> factory =
@@ -492,7 +537,7 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Lists the names of the subscriptions on this topic.
+     * Lists the names of the attached subscriptions on this topic.
      * </pre>
      */
     public void listTopicSubscriptions(
@@ -536,6 +581,23 @@ public final class PublisherGrpc {
         com.google.pubsub.v1.DeleteTopicRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteTopicMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detaches a subscription from this topic. All messages retained in the
+     * subscription are dropped. Subsequent `Pull` and `StreamingPull` requests
+     * will return FAILED_PRECONDITION. If the subscription is a push
+     * subscription, pushes to the endpoint will stop.
+     * </pre>
+     */
+    public void detachSubscription(
+        com.google.pubsub.v1.DetachSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.DetachSubscriptionResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getDetachSubscriptionMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -590,6 +652,13 @@ public final class PublisherGrpc {
                   new MethodHandlers<
                       com.google.pubsub.v1.DeleteTopicRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_TOPIC)))
+          .addMethod(
+              getDetachSubscriptionMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.pubsub.v1.DetachSubscriptionRequest,
+                      com.google.pubsub.v1.DetachSubscriptionResponse>(
+                      this, METHODID_DETACH_SUBSCRIPTION)))
           .build();
     }
   }
@@ -694,7 +763,7 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Lists the names of the subscriptions on this topic.
+     * Lists the names of the attached subscriptions on this topic.
      * </pre>
      */
     public void listTopicSubscriptions(
@@ -745,6 +814,26 @@ public final class PublisherGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteTopicMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detaches a subscription from this topic. All messages retained in the
+     * subscription are dropped. Subsequent `Pull` and `StreamingPull` requests
+     * will return FAILED_PRECONDITION. If the subscription is a push
+     * subscription, pushes to the endpoint will stop.
+     * </pre>
+     */
+    public void detachSubscription(
+        com.google.pubsub.v1.DetachSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.DetachSubscriptionResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDetachSubscriptionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -835,7 +924,7 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Lists the names of the subscriptions on this topic.
+     * Lists the names of the attached subscriptions on this topic.
      * </pre>
      */
     public com.google.pubsub.v1.ListTopicSubscriptionsResponse listTopicSubscriptions(
@@ -875,6 +964,22 @@ public final class PublisherGrpc {
      */
     public com.google.protobuf.Empty deleteTopic(com.google.pubsub.v1.DeleteTopicRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detaches a subscription from this topic. All messages retained in the
+     * subscription are dropped. Subsequent `Pull` and `StreamingPull` requests
+     * will return FAILED_PRECONDITION. If the subscription is a push
+     * subscription, pushes to the endpoint will stop.
+     * </pre>
+     */
+    public com.google.pubsub.v1.DetachSubscriptionResponse detachSubscription(
+        com.google.pubsub.v1.DetachSubscriptionRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDetachSubscriptionMethod(), getCallOptions(), request);
     }
   }
 
@@ -969,7 +1074,7 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Lists the names of the subscriptions on this topic.
+     * Lists the names of the attached subscriptions on this topic.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1014,6 +1119,23 @@ public final class PublisherGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteTopicMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detaches a subscription from this topic. All messages retained in the
+     * subscription are dropped. Subsequent `Pull` and `StreamingPull` requests
+     * will return FAILED_PRECONDITION. If the subscription is a push
+     * subscription, pushes to the endpoint will stop.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.pubsub.v1.DetachSubscriptionResponse>
+        detachSubscription(com.google.pubsub.v1.DetachSubscriptionRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDetachSubscriptionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TOPIC = 0;
@@ -1024,6 +1146,7 @@ public final class PublisherGrpc {
   private static final int METHODID_LIST_TOPIC_SUBSCRIPTIONS = 5;
   private static final int METHODID_LIST_TOPIC_SNAPSHOTS = 6;
   private static final int METHODID_DELETE_TOPIC = 7;
+  private static final int METHODID_DETACH_SUBSCRIPTION = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1084,6 +1207,12 @@ public final class PublisherGrpc {
           serviceImpl.deleteTopic(
               (com.google.pubsub.v1.DeleteTopicRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_DETACH_SUBSCRIPTION:
+          serviceImpl.detachSubscription(
+              (com.google.pubsub.v1.DetachSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.pubsub.v1.DetachSubscriptionResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1157,6 +1286,7 @@ public final class PublisherGrpc {
                       .addMethod(getListTopicSubscriptionsMethod())
                       .addMethod(getListTopicSnapshotsMethod())
                       .addMethod(getDeleteTopicMethod())
+                      .addMethod(getDetachSubscriptionMethod())
                       .build();
         }
       }

@@ -38,6 +38,8 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.pubsub.v1.DeleteTopicRequest;
+import com.google.pubsub.v1.DetachSubscriptionRequest;
+import com.google.pubsub.v1.DetachSubscriptionResponse;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsResponse;
@@ -617,6 +619,48 @@ public class TopicAdminClientTest {
               .build();
 
       client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void detachSubscriptionTest() {
+    DetachSubscriptionResponse expectedResponse = DetachSubscriptionResponse.newBuilder().build();
+    mockPublisher.addResponse(expectedResponse);
+
+    TopicName subscription = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+    DetachSubscriptionRequest request =
+        DetachSubscriptionRequest.newBuilder().setSubscription(subscription.toString()).build();
+
+    DetachSubscriptionResponse actualResponse = client.detachSubscription(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DetachSubscriptionRequest actualRequest = (DetachSubscriptionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(subscription, TopicName.parse(actualRequest.getSubscription()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void detachSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockPublisher.addException(exception);
+
+    try {
+      TopicName subscription = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+      DetachSubscriptionRequest request =
+          DetachSubscriptionRequest.newBuilder().setSubscription(subscription.toString()).build();
+
+      client.detachSubscription(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -35,6 +35,8 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
+import com.google.pubsub.v1.DetachSubscriptionRequest;
+import com.google.pubsub.v1.DetachSubscriptionResponse;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsResponse;
@@ -152,6 +154,16 @@ public class GrpcPublisherStub extends PublisherStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionMethodDescriptor =
+          MethodDescriptor.<DetachSubscriptionRequest, DetachSubscriptionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.pubsub.v1.Publisher/DetachSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DetachSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DetachSubscriptionResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -174,6 +186,8 @@ public class GrpcPublisherStub extends PublisherStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -360,6 +374,20 @@ public class GrpcPublisherStub extends PublisherStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
+        detachSubscriptionTransportSettings =
+            GrpcCallSettings.<DetachSubscriptionRequest, DetachSubscriptionResponse>newBuilder()
+                .setMethodDescriptor(detachSubscriptionMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DetachSubscriptionRequest>() {
+                      @Override
+                      public Map<String, String> extract(DetachSubscriptionRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("subscription", String.valueOf(request.getSubscription()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.createTopicCallable =
         callableFactory.createUnaryCallable(
@@ -412,6 +440,11 @@ public class GrpcPublisherStub extends PublisherStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.detachSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            detachSubscriptionTransportSettings,
+            settings.detachSubscriptionSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -476,6 +509,11 @@ public class GrpcPublisherStub extends PublisherStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  public UnaryCallable<DetachSubscriptionRequest, DetachSubscriptionResponse>
+      detachSubscriptionCallable() {
+    return detachSubscriptionCallable;
   }
 
   @Override
