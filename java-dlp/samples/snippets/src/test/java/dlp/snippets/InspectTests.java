@@ -155,6 +155,16 @@ public class InspectTests {
   }
 
   @Test
+  public void testInspectStringWithoutOverlap() throws Exception {
+    InspectStringWithoutOverlap.inspectStringWithoutOverlap(PROJECT_ID,
+        "example.com is a domain, james@example.org is an email.");
+
+    String output = bout.toString();
+    assertThat(output, containsString("example.com"));
+    assertThat(output, not(containsString("example.org")));
+  }
+
+  @Test
   public void textInspectTestFile() throws Exception {
     InspectTextFile.inspectTextFile(PROJECT_ID, "src/test/resources/test.txt");
     String output = bout.toString();
