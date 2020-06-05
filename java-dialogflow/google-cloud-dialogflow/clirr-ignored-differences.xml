@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-  <!-- TODO: remove after 2.0.0 is released -->
+  <!-- TODO: remove after 2.1.0 is released -->
   <difference>
-    <differenceType>7004</differenceType>
-    <className>com/google/cloud/dialogflow/v2/ContextsClient</className>
-    <method>com.google.cloud.dialogflow.v2.Context updateContext(com.google.cloud.dialogflow.v2.Context)</method>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/EnvironmentsClient</className>
+    <method>com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse listEnvironments(com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest)</method>
+    <to>com.google.cloud.dialogflow.v2beta1.EnvironmentsClient$ListEnvironmentsPagedResponse</to>
   </difference>
   <difference>
-    <differenceType>7005</differenceType>
-    <className>com/google/cloud/dialogflow/v2/EntityTypesClient</className>
-    <method>* *EntityType*(com.google.cloud.dialogflow.v2.ProjectAgentName*)</method>
-    <to>* *EntityType*(com.google.cloud.dialogflow.v2.AgentName*)</to>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/EnvironmentsSettings*</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings* listEnvironmentsSettings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
   </difference>
   <difference>
-    <differenceType>7005</differenceType>
-    <className>com/google/cloud/dialogflow/v2/IntentsClient</className>
-    <method>* *Intent*(com.google.cloud.dialogflow.v2.ProjectAgentName*)</method>
-    <to>* *Intent*(com.google.cloud.dialogflow.v2.AgentName*)</to>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/dialogflow/v2beta1/stub/EnvironmentsStubSettings*</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings* listEnvironmentsSettings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings*</to>
   </difference>
 </differences>
