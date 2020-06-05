@@ -233,6 +233,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return The session.
    */
+  @java.lang.Override
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +267,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return The bytes for session.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
     if (ref instanceof java.lang.String) {
@@ -291,6 +293,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return Whether the queryParams field is set.
    */
+  @java.lang.Override
   public boolean hasQueryParams() {
     return queryParams_ != null;
   }
@@ -305,6 +308,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return The queryParams.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryParameters getQueryParams() {
     return queryParams_ == null
         ? com.google.cloud.dialogflow.v2.QueryParameters.getDefaultInstance()
@@ -319,6 +323,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryParametersOrBuilder getQueryParamsOrBuilder() {
     return getQueryParams();
   }
@@ -342,6 +347,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return Whether the queryInput field is set.
    */
+  @java.lang.Override
   public boolean hasQueryInput() {
     return queryInput_ != null;
   }
@@ -362,6 +368,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return The queryInput.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryInput getQueryInput() {
     return queryInput_ == null
         ? com.google.cloud.dialogflow.v2.QueryInput.getDefaultInstance()
@@ -382,6 +389,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * .google.cloud.dialogflow.v2.QueryInput query_input = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryInputOrBuilder getQueryInputOrBuilder() {
     return getQueryInput();
   }
@@ -406,6 +414,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return The singleUtterance.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean getSingleUtterance() {
     return singleUtterance_;
@@ -426,6 +435,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return Whether the outputAudioConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputAudioConfig() {
     return outputAudioConfig_ != null;
   }
@@ -442,6 +452,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return The outputAudioConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.OutputAudioConfig getOutputAudioConfig() {
     return outputAudioConfig_ == null
         ? com.google.cloud.dialogflow.v2.OutputAudioConfig.getDefaultInstance()
@@ -458,6 +469,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <code>.google.cloud.dialogflow.v2.OutputAudioConfig output_audio_config = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
     return getOutputAudioConfig();
   }
@@ -479,6 +491,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return Whether the outputAudioConfigMask field is set.
    */
+  @java.lang.Override
   public boolean hasOutputAudioConfigMask() {
     return outputAudioConfigMask_ != null;
   }
@@ -497,6 +510,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return The outputAudioConfigMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getOutputAudioConfigMask() {
     return outputAudioConfigMask_ == null
         ? com.google.protobuf.FieldMask.getDefaultInstance()
@@ -515,6 +529,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <code>.google.protobuf.FieldMask output_audio_config_mask = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getOutputAudioConfigMaskOrBuilder() {
     return getOutputAudioConfigMask();
   }
@@ -534,6 +549,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * @return The inputAudio.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getInputAudio() {
     return inputAudio_;
   }
@@ -1630,6 +1646,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * @return The singleUtterance.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public boolean getSingleUtterance() {
       return singleUtterance_;
@@ -2126,6 +2143,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * @return The inputAudio.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getInputAudio() {
       return inputAudio_;
     }

@@ -31,7 +31,9 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -156,7 +160,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -168,7 +173,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -180,7 +186,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 5;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 

@@ -148,6 +148,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return Whether the sessionEntityType field is set.
    */
+  @java.lang.Override
   public boolean hasSessionEntityType() {
     return sessionEntityType_ != null;
   }
@@ -220,6 +223,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return The sessionEntityType.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityType() {
     return sessionEntityType_ == null
         ? com.google.cloud.dialogflow.v2.SessionEntityType.getDefaultInstance()
@@ -236,6 +240,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    * .google.cloud.dialogflow.v2.SessionEntityType session_entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder() {
     return getSessionEntityType();
   }

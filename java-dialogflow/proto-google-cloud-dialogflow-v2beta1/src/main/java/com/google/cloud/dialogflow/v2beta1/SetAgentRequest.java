@@ -146,6 +146,7 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the agent field is set.
    */
+  @java.lang.Override
   public boolean hasAgent() {
     return agent_ != null;
   }
@@ -160,6 +161,7 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The agent.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Agent getAgent() {
     return agent_ == null ? com.google.cloud.dialogflow.v2beta1.Agent.getDefaultInstance() : agent_;
   }
@@ -172,6 +174,7 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.dialogflow.v2beta1.Agent agent = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AgentOrBuilder getAgentOrBuilder() {
     return getAgent();
   }
@@ -189,6 +192,7 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -203,6 +207,7 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -215,6 +220,7 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

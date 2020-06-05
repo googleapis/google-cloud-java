@@ -60,7 +60,7 @@ public interface KnowledgeBaseOrBuilder
    * bytes or less; otherwise, the creation request fails.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -73,7 +73,7 @@ public interface KnowledgeBaseOrBuilder
    * bytes or less; otherwise, the creation request fails.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */

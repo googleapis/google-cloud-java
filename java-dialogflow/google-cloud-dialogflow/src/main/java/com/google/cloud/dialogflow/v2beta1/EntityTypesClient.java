@@ -902,9 +902,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates/Creates multiple entity types in the specified agent.
-   *
-   * <p>Operation &lt;response:
+   * Updates/Creates multiple entity types in the specified agent. Operation &lt;response:
    * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
    *
    * <p>Sample code:
@@ -931,9 +929,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates/Creates multiple entity types in the specified agent.
-   *
-   * <p>Operation &lt;response:
+   * Updates/Creates multiple entity types in the specified agent. Operation &lt;response:
    * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
    *
    * <p>Sample code:
@@ -959,9 +955,7 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates/Creates multiple entity types in the specified agent.
-   *
-   * <p>Operation &lt;response:
+   * Updates/Creates multiple entity types in the specified agent. Operation &lt;response:
    * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
    *
    * <p>Sample code:
@@ -985,9 +979,8 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent. Operation &lt;response:
+   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1019,9 +1012,8 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent. Operation &lt;response:
+   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1053,9 +1045,8 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent. Operation &lt;response:
+   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1083,9 +1074,8 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent. Operation &lt;response:
+   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *
@@ -1111,9 +1101,8 @@ public class EntityTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes entity types in the specified agent.
-   *
-   * <p>Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+   * Deletes entity types in the specified agent. Operation &lt;response:
+   * [google.protobuf.Empty][google.protobuf.Empty]&gt;
    *
    * <p>Sample code:
    *

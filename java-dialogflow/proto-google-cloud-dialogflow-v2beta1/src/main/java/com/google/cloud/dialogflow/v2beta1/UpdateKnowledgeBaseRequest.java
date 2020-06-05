@@ -143,10 +143,13 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * Required. The knowledge base to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the knowledgeBase field is set.
    */
+  @java.lang.Override
   public boolean hasKnowledgeBase() {
     return knowledgeBase_ != null;
   }
@@ -157,10 +160,13 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * Required. The knowledge base to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The knowledgeBase.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase() {
     return knowledgeBase_ == null
         ? com.google.cloud.dialogflow.v2beta1.KnowledgeBase.getDefaultInstance()
@@ -173,8 +179,11 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * Required. The knowledge base to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBaseOrBuilder() {
     return getKnowledgeBase();
   }
@@ -190,10 +199,12 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -206,10 +217,12 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -222,8 +235,10 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -603,7 +618,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the knowledgeBase field is set.
      */
@@ -617,7 +634,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The knowledgeBase.
      */
@@ -637,7 +656,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKnowledgeBase(com.google.cloud.dialogflow.v2beta1.KnowledgeBase value) {
       if (knowledgeBaseBuilder_ == null) {
@@ -659,7 +680,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.KnowledgeBase.Builder builderForValue) {
@@ -679,7 +702,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeKnowledgeBase(com.google.cloud.dialogflow.v2beta1.KnowledgeBase value) {
       if (knowledgeBaseBuilder_ == null) {
@@ -705,7 +730,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearKnowledgeBase() {
       if (knowledgeBaseBuilder_ == null) {
@@ -725,7 +752,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase.Builder getKnowledgeBaseBuilder() {
 
@@ -739,7 +768,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBaseOrBuilder() {
       if (knowledgeBaseBuilder_ != null) {
@@ -757,7 +788,9 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase,
@@ -791,7 +824,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -807,7 +841,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -829,7 +864,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -853,7 +889,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -874,7 +911,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -900,7 +938,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -922,7 +961,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -938,7 +978,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -958,7 +999,8 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

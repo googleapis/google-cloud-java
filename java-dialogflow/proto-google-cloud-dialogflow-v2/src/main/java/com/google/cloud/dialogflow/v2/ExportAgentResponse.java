@@ -232,6 +232,7 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The agentContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAgentContent() {
     if (agentCase_ == 2) {
       return (com.google.protobuf.ByteString) agent_;
@@ -631,6 +632,7 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      * @return The agentUri.
      */
+    @java.lang.Override
     public java.lang.String getAgentUri() {
       java.lang.Object ref = "";
       if (agentCase_ == 1) {
@@ -659,6 +661,7 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      * @return The bytes for agentUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAgentUriBytes() {
       java.lang.Object ref = "";
       if (agentCase_ == 1) {

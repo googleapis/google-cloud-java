@@ -139,6 +139,7 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> getIntentsList() {
     return intents_;
   }
@@ -152,6 +153,7 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
       getIntentsOrBuilderList() {
     return intents_;
@@ -166,6 +168,7 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public int getIntentsCount() {
     return intents_.size();
   }
@@ -179,6 +182,7 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent getIntents(int index) {
     return intents_.get(index);
   }
@@ -192,6 +196,7 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentsOrBuilder(int index) {
     return intents_.get(index);
   }
@@ -210,6 +215,7 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +239,7 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

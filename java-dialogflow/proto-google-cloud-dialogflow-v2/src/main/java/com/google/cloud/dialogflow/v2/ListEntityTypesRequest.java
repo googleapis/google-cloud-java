@@ -148,6 +148,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +204,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +231,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +258,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -271,6 +276,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -293,6 +299,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -931,6 +938,7 @@ public final class ListEntityTypesRequest extends com.google.protobuf.GeneratedM
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

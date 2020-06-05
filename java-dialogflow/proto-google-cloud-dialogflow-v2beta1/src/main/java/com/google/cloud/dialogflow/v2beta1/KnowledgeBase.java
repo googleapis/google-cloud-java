@@ -144,6 +144,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -190,10 +192,11 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    * bytes or less; otherwise, the creation request fails.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -213,10 +216,11 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    * bytes or less; otherwise, the creation request fails.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +248,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +273,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -757,7 +763,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * bytes or less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -780,7 +786,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * bytes or less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -803,7 +809,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * bytes or less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -825,7 +831,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * bytes or less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -843,7 +849,7 @@ public final class KnowledgeBase extends com.google.protobuf.GeneratedMessageV3
      * bytes or less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.

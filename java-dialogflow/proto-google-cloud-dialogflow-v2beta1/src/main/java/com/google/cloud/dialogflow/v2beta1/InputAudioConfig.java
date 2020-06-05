@@ -195,6 +195,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for audioEncoding.
    */
+  @java.lang.Override
   public int getAudioEncodingValue() {
     return audioEncoding_;
   }
@@ -209,6 +210,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The audioEncoding.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.AudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.AudioEncoding result =
@@ -233,6 +235,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The sampleRateHertz.
    */
+  @java.lang.Override
   public int getSampleRateHertz() {
     return sampleRateHertz_;
   }
@@ -254,6 +257,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -280,6 +284,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -308,6 +313,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The enableWordInfo.
    */
+  @java.lang.Override
   public boolean getEnableWordInfo() {
     return enableWordInfo_;
   }
@@ -419,6 +425,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechContext> getSpeechContextsList() {
     return speechContexts_;
   }
@@ -434,6 +441,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList() {
     return speechContexts_;
@@ -450,6 +458,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
    */
+  @java.lang.Override
   public int getSpeechContextsCount() {
     return speechContexts_.size();
   }
@@ -465,6 +474,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SpeechContext getSpeechContexts(int index) {
     return speechContexts_.get(index);
   }
@@ -480,6 +490,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechContext speech_contexts = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
       int index) {
     return speechContexts_.get(index);
@@ -508,6 +519,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The model.
    */
+  @java.lang.Override
   public java.lang.String getModel() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -540,6 +552,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for model.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
@@ -565,6 +578,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for modelVariant.
    */
+  @java.lang.Override
   public int getModelVariantValue() {
     return modelVariant_;
   }
@@ -579,6 +593,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The modelVariant.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SpeechModelVariant getModelVariant() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.SpeechModelVariant result =
@@ -610,6 +625,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    *
    * @return The singleUtterance.
    */
+  @java.lang.Override
   public boolean getSingleUtterance() {
     return singleUtterance_;
   }
@@ -1134,6 +1150,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for audioEncoding.
      */
+    @java.lang.Override
     public int getAudioEncodingValue() {
       return audioEncoding_;
     }
@@ -1150,6 +1167,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
+
       audioEncoding_ = value;
       onChanged();
       return this;
@@ -1165,6 +1183,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The audioEncoding.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.AudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.AudioEncoding result =
@@ -1228,6 +1247,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The sampleRateHertz.
      */
+    @java.lang.Override
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
@@ -1416,6 +1436,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The enableWordInfo.
      */
+    @java.lang.Override
     public boolean getEnableWordInfo() {
       return enableWordInfo_;
     }
@@ -2285,6 +2306,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for modelVariant.
      */
+    @java.lang.Override
     public int getModelVariantValue() {
       return modelVariant_;
     }
@@ -2301,6 +2323,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setModelVariantValue(int value) {
+
       modelVariant_ = value;
       onChanged();
       return this;
@@ -2316,6 +2339,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The modelVariant.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SpeechModelVariant getModelVariant() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.SpeechModelVariant result =
@@ -2384,6 +2408,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      *
      * @return The singleUtterance.
      */
+    @java.lang.Override
     public boolean getSingleUtterance() {
       return singleUtterance_;
     }

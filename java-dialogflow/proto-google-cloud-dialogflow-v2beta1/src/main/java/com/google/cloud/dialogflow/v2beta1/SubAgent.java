@@ -133,6 +133,7 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The project.
    */
+  @java.lang.Override
   public java.lang.String getProject() {
     java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for project.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getProjectBytes() {
     java.lang.Object ref = project_;
     if (ref instanceof java.lang.String) {
@@ -183,6 +185,7 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The environment.
    */
+  @java.lang.Override
   public java.lang.String getEnvironment() {
     java.lang.Object ref = environment_;
     if (ref instanceof java.lang.String) {
@@ -207,6 +210,7 @@ public final class SubAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for environment.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEnvironmentBytes() {
     java.lang.Object ref = environment_;
     if (ref instanceof java.lang.String) {

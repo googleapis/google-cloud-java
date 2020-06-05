@@ -211,6 +211,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return The timeZone.
    */
+  @java.lang.Override
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +237,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for timeZone.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
     if (ref instanceof java.lang.String) {
@@ -261,6 +263,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the geoLocation field is set.
    */
+  @java.lang.Override
   public boolean hasGeoLocation() {
     return geoLocation_ != null;
   }
@@ -275,6 +278,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return The geoLocation.
    */
+  @java.lang.Override
   public com.google.type.LatLng getGeoLocation() {
     return geoLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : geoLocation_;
   }
@@ -287,6 +291,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.type.LatLng geo_location = 2;</code>
    */
+  @java.lang.Override
   public com.google.type.LatLngOrBuilder getGeoLocationOrBuilder() {
     return getGeoLocation();
   }
@@ -303,6 +308,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Context> getContextsList() {
     return contexts_;
   }
@@ -316,6 +322,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getContextsOrBuilderList() {
     return contexts_;
@@ -330,6 +337,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
+  @java.lang.Override
   public int getContextsCount() {
     return contexts_.size();
   }
@@ -343,6 +351,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Context getContexts(int index) {
     return contexts_.get(index);
   }
@@ -356,6 +365,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context contexts = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.ContextOrBuilder getContextsOrBuilder(int index) {
     return contexts_.get(index);
   }
@@ -374,6 +384,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return The resetContexts.
    */
+  @java.lang.Override
   public boolean getResetContexts() {
     return resetContexts_;
   }
@@ -391,6 +402,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType>
       getSessionEntityTypesList() {
     return sessionEntityTypes_;
@@ -406,6 +418,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList() {
     return sessionEntityTypes_;
@@ -421,6 +434,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
+  @java.lang.Override
   public int getSessionEntityTypesCount() {
     return sessionEntityTypes_.size();
   }
@@ -435,6 +449,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index) {
     return sessionEntityTypes_.get(index);
   }
@@ -449,6 +464,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder getSessionEntityTypesOrBuilder(
       int index) {
     return sessionEntityTypes_.get(index);
@@ -471,6 +487,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the payload field is set.
    */
+  @java.lang.Override
   public boolean hasPayload() {
     return payload_ != null;
   }
@@ -489,6 +506,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return The payload.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getPayload() {
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
   }
@@ -505,6 +523,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Struct payload = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
     return getPayload();
   }
@@ -526,6 +545,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the sentimentAnalysisRequestConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSentimentAnalysisRequestConfig() {
     return sentimentAnalysisRequestConfig_ != null;
   }
@@ -543,6 +563,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @return The sentimentAnalysisRequestConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig
       getSentimentAnalysisRequestConfig() {
     return sentimentAnalysisRequestConfig_ == null
@@ -561,6 +582,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * .google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder
       getSentimentAnalysisRequestConfigOrBuilder() {
     return getSentimentAnalysisRequestConfig();
@@ -1773,6 +1795,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * @return The resetContexts.
      */
+    @java.lang.Override
     public boolean getResetContexts() {
       return resetContexts_;
     }

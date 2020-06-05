@@ -586,7 +586,7 @@ public class DocumentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the document to delete. Format: `projects/&lt;Project
+   * @param name Required. The name of the document to delete. Format: `projects/&lt;Project
    *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -615,7 +615,7 @@ public class DocumentsClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param name The name of the document to delete. Format: `projects/&lt;Project
+   * @param name Required. The name of the document to delete. Format: `projects/&lt;Project
    *     ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

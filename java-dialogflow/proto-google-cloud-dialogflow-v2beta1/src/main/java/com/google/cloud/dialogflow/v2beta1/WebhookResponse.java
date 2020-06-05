@@ -232,6 +232,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The fulfillmentText.
    */
+  @java.lang.Override
   public java.lang.String getFulfillmentText() {
     java.lang.Object ref = fulfillmentText_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +258,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for fulfillmentText.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFulfillmentTextBytes() {
     java.lang.Object ref = fulfillmentText_;
     if (ref instanceof java.lang.String) {
@@ -282,6 +284,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message>
       getFulfillmentMessagesList() {
     return fulfillmentMessages_;
@@ -297,6 +300,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>
       getFulfillmentMessagesOrBuilderList() {
     return fulfillmentMessages_;
@@ -312,6 +316,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
    */
+  @java.lang.Override
   public int getFulfillmentMessagesCount() {
     return fulfillmentMessages_.size();
   }
@@ -326,6 +331,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent.Message getFulfillmentMessages(int index) {
     return fulfillmentMessages_.get(index);
   }
@@ -340,6 +346,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder
       getFulfillmentMessagesOrBuilder(int index) {
     return fulfillmentMessages_.get(index);
@@ -361,6 +368,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The source.
    */
+  @java.lang.Override
   public java.lang.String getSource() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
@@ -386,6 +394,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for source.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceBytes() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
@@ -420,6 +429,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the payload field is set.
    */
+  @java.lang.Override
   public boolean hasPayload() {
     return payload_ != null;
   }
@@ -443,6 +453,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The payload.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getPayload() {
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
   }
@@ -464,6 +475,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.protobuf.Struct payload = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
     return getPayload();
   }
@@ -482,6 +494,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getOutputContextsList() {
     return outputContexts_;
   }
@@ -497,6 +510,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getOutputContextsOrBuilderList() {
     return outputContexts_;
@@ -513,6 +527,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
    */
+  @java.lang.Override
   public int getOutputContextsCount() {
     return outputContexts_.size();
   }
@@ -528,6 +543,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Context getOutputContexts(int index) {
     return outputContexts_.get(index);
   }
@@ -543,6 +559,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getOutputContextsOrBuilder(
       int index) {
     return outputContexts_.get(index);
@@ -563,6 +580,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the followupEventInput field is set.
    */
+  @java.lang.Override
   public boolean hasFollowupEventInput() {
     return followupEventInput_ != null;
   }
@@ -579,6 +597,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The followupEventInput.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EventInput getFollowupEventInput() {
     return followupEventInput_ == null
         ? com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance()
@@ -595,6 +614,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder getFollowupEventInputOrBuilder() {
     return getFollowupEventInput();
   }
@@ -614,6 +634,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The endInteraction.
    */
+  @java.lang.Override
   public boolean getEndInteraction() {
     return endInteraction_;
   }
@@ -634,6 +655,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 10;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.SessionEntityType>
       getSessionEntityTypesList() {
     return sessionEntityTypes_;
@@ -652,6 +674,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 10;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList() {
     return sessionEntityTypes_;
@@ -670,6 +693,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 10;
    * </code>
    */
+  @java.lang.Override
   public int getSessionEntityTypesCount() {
     return sessionEntityTypes_.size();
   }
@@ -687,6 +711,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityTypes(int index) {
     return sessionEntityTypes_.get(index);
   }
@@ -704,6 +729,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 10;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
       getSessionEntityTypesOrBuilder(int index) {
     return sessionEntityTypes_.get(index);
@@ -2840,6 +2866,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
      *
      * @return The endInteraction.
      */
+    @java.lang.Override
     public boolean getEndInteraction() {
       return endInteraction_;
     }

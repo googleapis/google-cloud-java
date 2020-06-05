@@ -319,6 +319,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -367,6 +371,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The enum numeric value on the wire for messageType.
    */
+  @java.lang.Override
   public int getMessageTypeValue() {
     return messageType_;
   }
@@ -382,6 +387,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The messageType.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType
       getMessageType() {
     @SuppressWarnings("deprecation")
@@ -407,6 +413,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The transcript.
    */
+  @java.lang.Override
   public java.lang.String getTranscript() {
     java.lang.Object ref = transcript_;
     if (ref instanceof java.lang.String) {
@@ -430,6 +437,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The bytes for transcript.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTranscriptBytes() {
     java.lang.Object ref = transcript_;
     if (ref instanceof java.lang.String) {
@@ -458,6 +466,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The isFinal.
    */
+  @java.lang.Override
   public boolean getIsFinal() {
     return isFinal_;
   }
@@ -480,6 +489,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -503,6 +513,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The stability.
    */
+  @java.lang.Override
   public float getStability() {
     return stability_;
   }
@@ -520,6 +531,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.SpeechWordInfo>
       getSpeechWordInfoList() {
     return speechWordInfo_;
@@ -535,6 +547,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SpeechWordInfoOrBuilder>
       getSpeechWordInfoOrBuilderList() {
     return speechWordInfo_;
@@ -550,6 +563,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
    */
+  @java.lang.Override
   public int getSpeechWordInfoCount() {
     return speechWordInfo_.size();
   }
@@ -564,6 +578,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SpeechWordInfo getSpeechWordInfo(int index) {
     return speechWordInfo_.get(index);
   }
@@ -578,6 +593,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.SpeechWordInfo speech_word_info = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SpeechWordInfoOrBuilder getSpeechWordInfoOrBuilder(
       int index) {
     return speechWordInfo_.get(index);
@@ -597,6 +613,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return Whether the speechEndOffset field is set.
    */
+  @java.lang.Override
   public boolean hasSpeechEndOffset() {
     return speechEndOffset_ != null;
   }
@@ -612,6 +629,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * @return The speechEndOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getSpeechEndOffset() {
     return speechEndOffset_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -627,6 +645,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    *
    * <code>.google.protobuf.Duration speech_end_offset = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getSpeechEndOffsetOrBuilder() {
     return getSpeechEndOffset();
   }
@@ -1140,6 +1159,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * @return The enum numeric value on the wire for messageType.
      */
+    @java.lang.Override
     public int getMessageTypeValue() {
       return messageType_;
     }
@@ -1158,6 +1178,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setMessageTypeValue(int value) {
+
       messageType_ = value;
       onChanged();
       return this;
@@ -1175,6 +1196,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * @return The messageType.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType
         getMessageType() {
       @SuppressWarnings("deprecation")
@@ -1355,6 +1377,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * @return The isFinal.
      */
+    @java.lang.Override
     public boolean getIsFinal() {
       return isFinal_;
     }
@@ -1417,6 +1440,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }
@@ -1484,6 +1508,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      * @return The stability.
      */
+    @java.lang.Override
     public float getStability() {
       return stability_;
     }

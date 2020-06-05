@@ -30,7 +30,9 @@ public interface UpdateEntityTypeRequestOrBuilder
    * Required. The entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the entityType field is set.
    */
@@ -42,7 +44,9 @@ public interface UpdateEntityTypeRequestOrBuilder
    * Required. The entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The entityType.
    */
@@ -54,7 +58,9 @@ public interface UpdateEntityTypeRequestOrBuilder
    * Required. The entity type to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType entity_type = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType entity_type = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.EntityTypeOrBuilder getEntityTypeOrBuilder();
 
@@ -98,7 +104,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -110,7 +117,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -122,7 +130,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -139,6 +139,7 @@ public final class ListContextsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getContextsList() {
     return contexts_;
   }
@@ -152,6 +153,7 @@ public final class ListContextsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getContextsOrBuilderList() {
     return contexts_;
@@ -166,6 +168,7 @@ public final class ListContextsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 1;</code>
    */
+  @java.lang.Override
   public int getContextsCount() {
     return contexts_.size();
   }
@@ -179,6 +182,7 @@ public final class ListContextsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Context getContexts(int index) {
     return contexts_.get(index);
   }
@@ -192,6 +196,7 @@ public final class ListContextsResponse extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getContextsOrBuilder(int index) {
     return contexts_.get(index);
   }
@@ -210,6 +215,7 @@ public final class ListContextsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +239,7 @@ public final class ListContextsResponse extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

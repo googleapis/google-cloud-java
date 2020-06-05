@@ -136,10 +136,13 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -159,10 +162,13 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -185,7 +191,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * same agent as `parent`.
    * </pre>
    *
-   * <code>repeated string entity_type_names = 2;</code>
+   * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return A list containing the entityTypeNames.
    */
@@ -200,7 +206,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * same agent as `parent`.
    * </pre>
    *
-   * <code>repeated string entity_type_names = 2;</code>
+   * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count of entityTypeNames.
    */
@@ -215,7 +221,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * same agent as `parent`.
    * </pre>
    *
-   * <code>repeated string entity_type_names = 2;</code>
+   * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the element to return.
    * @return The entityTypeNames at the given index.
@@ -231,7 +237,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
    * same agent as `parent`.
    * </pre>
    *
-   * <code>repeated string entity_type_names = 2;</code>
+   * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the entityTypeNames at the given index.
@@ -610,7 +616,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -633,7 +641,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -656,7 +666,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -678,7 +690,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -696,7 +710,9 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -729,7 +745,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return A list containing the entityTypeNames.
      */
@@ -744,7 +760,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The count of entityTypeNames.
      */
@@ -759,7 +775,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index of the element to return.
      * @return The entityTypeNames at the given index.
@@ -775,7 +791,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the entityTypeNames at the given index.
@@ -791,7 +807,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param index The index to set the value at.
      * @param value The entityTypeNames to set.
@@ -814,7 +830,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The entityTypeNames to add.
      * @return This builder for chaining.
@@ -836,7 +852,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param values The entityTypeNames to add.
      * @return This builder for chaining.
@@ -855,7 +871,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -873,7 +889,7 @@ public final class BatchDeleteEntityTypesRequest extends com.google.protobuf.Gen
      * same agent as `parent`.
      * </pre>
      *
-     * <code>repeated string entity_type_names = 2;</code>
+     * <code>repeated string entity_type_names = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes of the entityTypeNames to add.
      * @return This builder for chaining.

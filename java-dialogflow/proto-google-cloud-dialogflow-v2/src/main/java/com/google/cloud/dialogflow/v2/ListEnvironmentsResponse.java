@@ -140,6 +140,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.dialogflow.v2.Environment environments = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Environment> getEnvironmentsList() {
     return environments_;
   }
@@ -153,6 +154,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.dialogflow.v2.Environment environments = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.EnvironmentOrBuilder>
       getEnvironmentsOrBuilderList() {
     return environments_;
@@ -167,6 +169,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.dialogflow.v2.Environment environments = 1;</code>
    */
+  @java.lang.Override
   public int getEnvironmentsCount() {
     return environments_.size();
   }
@@ -180,6 +183,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.dialogflow.v2.Environment environments = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Environment getEnvironments(int index) {
     return environments_.get(index);
   }
@@ -193,6 +197,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.dialogflow.v2.Environment environments = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.EnvironmentOrBuilder getEnvironmentsOrBuilder(int index) {
     return environments_.get(index);
   }
@@ -211,6 +216,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +240,7 @@ public final class ListEnvironmentsResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

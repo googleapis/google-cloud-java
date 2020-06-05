@@ -187,6 +187,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +213,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -294,6 +296,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The agentContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAgentContent() {
     if (agentCase_ == 3) {
       return (com.google.protobuf.ByteString) agent_;
@@ -830,6 +833,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The agentUri.
      */
+    @java.lang.Override
     public java.lang.String getAgentUri() {
       java.lang.Object ref = "";
       if (agentCase_ == 2) {
@@ -858,6 +862,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The bytes for agentUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAgentUriBytes() {
       java.lang.Object ref = "";
       if (agentCase_ == 2) {

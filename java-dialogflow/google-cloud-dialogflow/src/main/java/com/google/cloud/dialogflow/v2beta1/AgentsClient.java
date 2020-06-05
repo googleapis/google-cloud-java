@@ -443,11 +443,9 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of agents.
-   *
-   * <p>Since there is at most one conversational agent per project, this method is useful primarily
-   * for listing all agents across projects the caller has access to. One can achieve that with a
-   * wildcard project collection id "-". Refer to [List
+   * Returns the list of agents. Since there is at most one conversational agent per project, this
+   * method is useful primarily for listing all agents across projects the caller has access to. One
+   * can achieve that with a wildcard project collection id "-". Refer to [List
    * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
    *
    * <p>Sample code:
@@ -475,11 +473,9 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of agents.
-   *
-   * <p>Since there is at most one conversational agent per project, this method is useful primarily
-   * for listing all agents across projects the caller has access to. One can achieve that with a
-   * wildcard project collection id "-". Refer to [List
+   * Returns the list of agents. Since there is at most one conversational agent per project, this
+   * method is useful primarily for listing all agents across projects the caller has access to. One
+   * can achieve that with a wildcard project collection id "-". Refer to [List
    * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
    *
    * <p>Sample code:
@@ -504,11 +500,9 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of agents.
-   *
-   * <p>Since there is at most one conversational agent per project, this method is useful primarily
-   * for listing all agents across projects the caller has access to. One can achieve that with a
-   * wildcard project collection id "-". Refer to [List
+   * Returns the list of agents. Since there is at most one conversational agent per project, this
+   * method is useful primarily for listing all agents across projects the caller has access to. One
+   * can achieve that with a wildcard project collection id "-". Refer to [List
    * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
    *
    * <p>Sample code:
@@ -534,11 +528,9 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of agents.
-   *
-   * <p>Since there is at most one conversational agent per project, this method is useful primarily
-   * for listing all agents across projects the caller has access to. One can achieve that with a
-   * wildcard project collection id "-". Refer to [List
+   * Returns the list of agents. Since there is at most one conversational agent per project, this
+   * method is useful primarily for listing all agents across projects the caller has access to. One
+   * can achieve that with a wildcard project collection id "-". Refer to [List
    * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
    *
    * <p>Sample code:
@@ -564,11 +556,9 @@ public class AgentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the list of agents.
-   *
-   * <p>Since there is at most one conversational agent per project, this method is useful primarily
-   * for listing all agents across projects the caller has access to. One can achieve that with a
-   * wildcard project collection id "-". Refer to [List
+   * Returns the list of agents. Since there is at most one conversational agent per project, this
+   * method is useful primarily for listing all agents across projects the caller has access to. One
+   * can achieve that with a wildcard project collection id "-". Refer to [List
    * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
    *
    * <p>Sample code:

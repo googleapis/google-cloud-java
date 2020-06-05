@@ -143,10 +143,13 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    * default '-' user.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -170,10 +173,13 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    * default '-' user.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -199,6 +205,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return Whether the sessionEntityType field is set.
    */
+  @java.lang.Override
   public boolean hasSessionEntityType() {
     return sessionEntityType_ != null;
   }
@@ -213,6 +220,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return The sessionEntityType.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType() {
     return sessionEntityType_ == null
         ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
@@ -227,6 +235,7 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
       getSessionEntityTypeOrBuilder() {
     return getSessionEntityType();
@@ -600,7 +609,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -627,7 +638,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -654,7 +667,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -680,7 +695,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -702,7 +719,9 @@ public final class CreateSessionEntityTypeRequest extends com.google.protobuf.Ge
      * default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

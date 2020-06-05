@@ -540,6 +540,10 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
               };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -590,6 +594,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The source.
      */
+    @java.lang.Override
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
       if (ref instanceof java.lang.String) {
@@ -614,6 +619,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The bytes for source.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSourceBytes() {
       java.lang.Object ref = source_;
       if (ref instanceof java.lang.String) {
@@ -640,6 +646,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The faqQuestion.
      */
+    @java.lang.Override
     public java.lang.String getFaqQuestion() {
       java.lang.Object ref = faqQuestion_;
       if (ref instanceof java.lang.String) {
@@ -663,6 +670,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The bytes for faqQuestion.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFaqQuestionBytes() {
       java.lang.Object ref = faqQuestion_;
       if (ref instanceof java.lang.String) {
@@ -689,6 +697,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The answer.
      */
+    @java.lang.Override
     public java.lang.String getAnswer() {
       java.lang.Object ref = answer_;
       if (ref instanceof java.lang.String) {
@@ -712,6 +721,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The bytes for answer.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAnswerBytes() {
       java.lang.Object ref = answer_;
       if (ref instanceof java.lang.String) {
@@ -745,6 +755,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for matchConfidenceLevel.
      */
+    @java.lang.Override
     public int getMatchConfidenceLevelValue() {
       return matchConfidenceLevel_;
     }
@@ -767,6 +778,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The matchConfidenceLevel.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
         getMatchConfidenceLevel() {
       @SuppressWarnings("deprecation")
@@ -798,6 +810,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
      *
      * @return The matchConfidence.
      */
+    @java.lang.Override
     public float getMatchConfidence() {
       return matchConfidence_;
     }
@@ -1555,6 +1568,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        *
        * @return The enum numeric value on the wire for matchConfidenceLevel.
        */
+      @java.lang.Override
       public int getMatchConfidenceLevelValue() {
         return matchConfidenceLevel_;
       }
@@ -1579,6 +1593,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setMatchConfidenceLevelValue(int value) {
+
         matchConfidenceLevel_ = value;
         onChanged();
         return this;
@@ -1602,6 +1617,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        *
        * @return The matchConfidenceLevel.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
           getMatchConfidenceLevel() {
         @SuppressWarnings("deprecation")
@@ -1687,6 +1703,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
        *
        * @return The matchConfidence.
        */
+      @java.lang.Override
       public float getMatchConfidence() {
         return matchConfidence_;
       }
@@ -1802,6 +1819,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>
       getAnswersList() {
     return answers_;
@@ -1815,6 +1833,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>
       getAnswersOrBuilderList() {
@@ -1829,6 +1848,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
+  @java.lang.Override
   public int getAnswersCount() {
     return answers_.size();
   }
@@ -1841,6 +1861,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer getAnswers(int index) {
     return answers_.get(index);
   }
@@ -1853,6 +1874,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder getAnswersOrBuilder(
       int index) {
     return answers_.get(index);

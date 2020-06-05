@@ -132,6 +132,7 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
    *
    * @return Whether the queryTextSentiment field is set.
    */
+  @java.lang.Override
   public boolean hasQueryTextSentiment() {
     return queryTextSentiment_ != null;
   }
@@ -146,6 +147,7 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
    *
    * @return The queryTextSentiment.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Sentiment getQueryTextSentiment() {
     return queryTextSentiment_ == null
         ? com.google.cloud.dialogflow.v2beta1.Sentiment.getDefaultInstance()
@@ -160,6 +162,7 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.dialogflow.v2beta1.Sentiment query_text_sentiment = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SentimentOrBuilder getQueryTextSentimentOrBuilder() {
     return getQueryTextSentiment();
   }

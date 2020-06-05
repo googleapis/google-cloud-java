@@ -132,6 +132,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.ValidationError validation_errors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.ValidationError>
       getValidationErrorsList() {
     return validationErrors_;
@@ -145,6 +146,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.ValidationError validation_errors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ValidationErrorOrBuilder>
       getValidationErrorsOrBuilderList() {
     return validationErrors_;
@@ -158,6 +160,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.ValidationError validation_errors = 1;</code>
    */
+  @java.lang.Override
   public int getValidationErrorsCount() {
     return validationErrors_.size();
   }
@@ -170,6 +173,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.ValidationError validation_errors = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ValidationError getValidationErrors(int index) {
     return validationErrors_.get(index);
   }
@@ -182,6 +186,7 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.ValidationError validation_errors = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ValidationErrorOrBuilder getValidationErrorsOrBuilder(
       int index) {
     return validationErrors_.get(index);

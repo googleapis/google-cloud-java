@@ -61,7 +61,7 @@ public interface EntityTypeOrBuilder
    * Required. The name of the entity type.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -73,7 +73,7 @@ public interface EntityTypeOrBuilder
    * Required. The name of the entity type.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -86,7 +86,9 @@ public interface EntityTypeOrBuilder
    * Required. Indicates the kind of entity type.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for kind.
    */
@@ -98,7 +100,9 @@ public interface EntityTypeOrBuilder
    * Required. Indicates the kind of entity type.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The kind.
    */
@@ -112,7 +116,8 @@ public interface EntityTypeOrBuilder
    * expanded.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for autoExpansionMode.
@@ -126,7 +131,8 @@ public interface EntityTypeOrBuilder
    * expanded.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The autoExpansionMode.
@@ -140,7 +146,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList();
   /**
@@ -150,7 +158,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index);
   /**
@@ -160,7 +170,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getEntitiesCount();
   /**
@@ -170,7 +182,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
@@ -181,7 +195,9 @@ public interface EntityTypeOrBuilder
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(int index);
 
@@ -192,7 +208,7 @@ public interface EntityTypeOrBuilder
    * Optional. Enables fuzzy entity extraction during classification.
    * </pre>
    *
-   * <code>bool enable_fuzzy_extraction = 7;</code>
+   * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enableFuzzyExtraction.
    */

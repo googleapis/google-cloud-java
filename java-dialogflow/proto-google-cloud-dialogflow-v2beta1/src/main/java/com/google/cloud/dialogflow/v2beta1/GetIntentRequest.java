@@ -137,10 +137,13 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -160,10 +163,13 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +199,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -219,6 +226,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +252,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for intentView.
    */
+  @java.lang.Override
   public int getIntentViewValue() {
     return intentView_;
   }
@@ -258,6 +267,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The intentView.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.IntentView result =
@@ -625,7 +635,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -648,7 +660,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -671,7 +685,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -693,7 +709,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -711,7 +729,9 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -865,6 +885,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for intentView.
      */
+    @java.lang.Override
     public int getIntentViewValue() {
       return intentView_;
     }
@@ -881,6 +902,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
+
       intentView_ = value;
       onChanged();
       return this;
@@ -896,6 +918,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The intentView.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.IntentView result =

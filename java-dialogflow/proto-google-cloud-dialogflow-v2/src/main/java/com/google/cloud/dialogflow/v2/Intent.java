@@ -437,6 +437,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -880,7 +884,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>TEMPLATE = 2 [deprecated = true];</code>
        */
-      public static final int TEMPLATE_VALUE = 2;
+      @java.lang.Deprecated public static final int TEMPLATE_VALUE = 2;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -929,6 +933,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -1193,6 +1201,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The text.
        */
+      @java.lang.Override
       public java.lang.String getText() {
         java.lang.Object ref = text_;
         if (ref instanceof java.lang.String) {
@@ -1215,6 +1224,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for text.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTextBytes() {
         java.lang.Object ref = text_;
         if (ref instanceof java.lang.String) {
@@ -1241,6 +1251,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The entityType.
        */
+      @java.lang.Override
       public java.lang.String getEntityType() {
         java.lang.Object ref = entityType_;
         if (ref instanceof java.lang.String) {
@@ -1264,6 +1275,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for entityType.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getEntityTypeBytes() {
         java.lang.Object ref = entityType_;
         if (ref instanceof java.lang.String) {
@@ -1291,6 +1303,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The alias.
        */
+      @java.lang.Override
       public java.lang.String getAlias() {
         java.lang.Object ref = alias_;
         if (ref instanceof java.lang.String) {
@@ -1315,6 +1328,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for alias.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getAliasBytes() {
         java.lang.Object ref = alias_;
         if (ref instanceof java.lang.String) {
@@ -1343,6 +1357,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The userDefined.
        */
+      @java.lang.Override
       public boolean getUserDefined() {
         return userDefined_;
       }
@@ -2068,6 +2083,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The userDefined.
          */
+        @java.lang.Override
         public boolean getUserDefined() {
           return userDefined_;
         }
@@ -2179,6 +2195,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2201,6 +2218,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2228,6 +2246,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for type.
      */
+    @java.lang.Override
     public int getTypeValue() {
       return type_;
     }
@@ -2244,6 +2263,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The type.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type result =
@@ -2279,6 +2299,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part>
         getPartsList() {
       return parts_;
@@ -2307,6 +2328,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public java.util.List<
             ? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder>
         getPartsOrBuilderList() {
@@ -2336,6 +2358,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public int getPartsCount() {
       return parts_.size();
     }
@@ -2363,6 +2386,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part getParts(int index) {
       return parts_.get(index);
     }
@@ -2390,6 +2414,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase.Part parts = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.PartOrBuilder getPartsOrBuilder(
         int index) {
       return parts_.get(index);
@@ -2410,6 +2435,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timesAddedCount.
      */
+    @java.lang.Override
     public int getTimesAddedCount() {
       return timesAddedCount_;
     }
@@ -2949,6 +2975,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for type.
        */
+      @java.lang.Override
       public int getTypeValue() {
         return type_;
       }
@@ -2967,6 +2994,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
+
         type_ = value;
         onChanged();
         return this;
@@ -2984,6 +3012,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The type.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type getType() {
         @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2.Intent.TrainingPhrase.Type result =
@@ -3684,6 +3713,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The timesAddedCount.
        */
+      @java.lang.Override
       public int getTimesAddedCount() {
         return timesAddedCount_;
       }
@@ -4175,6 +4205,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -4197,6 +4228,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -4222,6 +4254,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The displayName.
      */
+    @java.lang.Override
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -4244,6 +4277,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for displayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
@@ -4274,6 +4308,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -4301,6 +4336,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -4329,6 +4365,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The defaultValue.
      */
+    @java.lang.Override
     public java.lang.String getDefaultValue() {
       java.lang.Object ref = defaultValue_;
       if (ref instanceof java.lang.String) {
@@ -4354,6 +4391,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for defaultValue.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDefaultValueBytes() {
       java.lang.Object ref = defaultValue_;
       if (ref instanceof java.lang.String) {
@@ -4381,6 +4419,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The entityTypeDisplayName.
      */
+    @java.lang.Override
     public java.lang.String getEntityTypeDisplayName() {
       java.lang.Object ref = entityTypeDisplayName_;
       if (ref instanceof java.lang.String) {
@@ -4405,6 +4444,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for entityTypeDisplayName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEntityTypeDisplayNameBytes() {
       java.lang.Object ref = entityTypeDisplayName_;
       if (ref instanceof java.lang.String) {
@@ -4432,6 +4472,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mandatory.
      */
+    @java.lang.Override
     public boolean getMandatory() {
       return mandatory_;
     }
@@ -4514,6 +4555,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isList.
      */
+    @java.lang.Override
     public boolean getIsList() {
       return isList_;
     }
@@ -5564,6 +5606,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The mandatory.
        */
+      @java.lang.Override
       public boolean getMandatory() {
         return mandatory_;
       }
@@ -5796,6 +5839,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The isList.
        */
+      @java.lang.Override
       public boolean getIsList() {
         return isList_;
       }
@@ -7081,6 +7125,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
         return getDescriptor().getValues().get(ordinal());
       }
 
@@ -8066,6 +8114,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The imageUri.
        */
+      @java.lang.Override
       public java.lang.String getImageUri() {
         java.lang.Object ref = imageUri_;
         if (ref instanceof java.lang.String) {
@@ -8088,6 +8137,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for imageUri.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getImageUriBytes() {
         java.lang.Object ref = imageUri_;
         if (ref instanceof java.lang.String) {
@@ -8114,6 +8164,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The accessibilityText.
        */
+      @java.lang.Override
       public java.lang.String getAccessibilityText() {
         java.lang.Object ref = accessibilityText_;
         if (ref instanceof java.lang.String) {
@@ -8137,6 +8188,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for accessibilityText.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getAccessibilityTextBytes() {
         java.lang.Object ref = accessibilityText_;
         if (ref instanceof java.lang.String) {
@@ -8960,6 +9012,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The title.
        */
+      @java.lang.Override
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -8982,6 +9035,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for title.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -10190,6 +10244,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The text.
          */
+        @java.lang.Override
         public java.lang.String getText() {
           java.lang.Object ref = text_;
           if (ref instanceof java.lang.String) {
@@ -10212,6 +10267,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for text.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getTextBytes() {
           java.lang.Object ref = text_;
           if (ref instanceof java.lang.String) {
@@ -10238,6 +10294,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The postback.
          */
+        @java.lang.Override
         public java.lang.String getPostback() {
           java.lang.Object ref = postback_;
           if (ref instanceof java.lang.String) {
@@ -10261,6 +10318,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for postback.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getPostbackBytes() {
           java.lang.Object ref = postback_;
           if (ref instanceof java.lang.String) {
@@ -10903,6 +10961,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The title.
        */
+      @java.lang.Override
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -10925,6 +10984,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for title.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -10950,6 +11010,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The subtitle.
        */
+      @java.lang.Override
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
         if (ref instanceof java.lang.String) {
@@ -10972,6 +11033,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for subtitle.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
         if (ref instanceof java.lang.String) {
@@ -10997,6 +11059,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The imageUri.
        */
+      @java.lang.Override
       public java.lang.String getImageUri() {
         java.lang.Object ref = imageUri_;
         if (ref instanceof java.lang.String) {
@@ -11019,6 +11082,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for imageUri.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getImageUriBytes() {
         java.lang.Object ref = imageUri_;
         if (ref instanceof java.lang.String) {
@@ -11044,6 +11108,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Card.Button>
           getButtonsList() {
         return buttons_;
@@ -11059,6 +11124,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder>
           getButtonsOrBuilderList() {
@@ -11075,6 +11141,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public int getButtonsCount() {
         return buttons_.size();
       }
@@ -11089,6 +11156,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Card.Button getButtons(int index) {
         return buttons_.get(index);
       }
@@ -11103,6 +11171,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Card.Button buttons = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Card.ButtonOrBuilder getButtonsOrBuilder(
           int index) {
         return buttons_.get(index);
@@ -12503,6 +12572,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The textToSpeech.
        */
+      @java.lang.Override
       public java.lang.String getTextToSpeech() {
         java.lang.Object ref = textToSpeech_;
         if (ref instanceof java.lang.String) {
@@ -12526,6 +12596,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for textToSpeech.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTextToSpeechBytes() {
         java.lang.Object ref = textToSpeech_;
         if (ref instanceof java.lang.String) {
@@ -12553,6 +12624,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The ssml.
        */
+      @java.lang.Override
       public java.lang.String getSsml() {
         java.lang.Object ref = ssml_;
         if (ref instanceof java.lang.String) {
@@ -12577,6 +12649,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for ssml.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSsmlBytes() {
         java.lang.Object ref = ssml_;
         if (ref instanceof java.lang.String) {
@@ -12602,6 +12675,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The displayText.
        */
+      @java.lang.Override
       public java.lang.String getDisplayText() {
         java.lang.Object ref = displayText_;
         if (ref instanceof java.lang.String) {
@@ -12624,6 +12698,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for displayText.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getDisplayTextBytes() {
         java.lang.Object ref = displayText_;
         if (ref instanceof java.lang.String) {
@@ -13575,6 +13650,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse>
           getSimpleResponsesList() {
         return simpleResponses_;
@@ -13590,6 +13666,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponseOrBuilder>
           getSimpleResponsesOrBuilderList() {
@@ -13606,6 +13683,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public int getSimpleResponsesCount() {
         return simpleResponses_.size();
       }
@@ -13620,6 +13698,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponse getSimpleResponses(
           int index) {
         return simpleResponses_.get(index);
@@ -13635,6 +13714,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.SimpleResponse simple_responses = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponseOrBuilder
           getSimpleResponsesOrBuilder(int index) {
         return simpleResponses_.get(index);
@@ -15140,6 +15220,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The uri.
            */
+          @java.lang.Override
           public java.lang.String getUri() {
             java.lang.Object ref = uri_;
             if (ref instanceof java.lang.String) {
@@ -15162,6 +15243,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The bytes for uri.
            */
+          @java.lang.Override
           public com.google.protobuf.ByteString getUriBytes() {
             java.lang.Object ref = uri_;
             if (ref instanceof java.lang.String) {
@@ -15707,6 +15789,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The title.
          */
+        @java.lang.Override
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
           if (ref instanceof java.lang.String) {
@@ -15729,6 +15812,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for title.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
           if (ref instanceof java.lang.String) {
@@ -15757,6 +15841,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the openUriAction field is set.
          */
+        @java.lang.Override
         public boolean hasOpenUriAction() {
           return openUriAction_ != null;
         }
@@ -15773,6 +15858,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The openUriAction.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction
             getOpenUriAction() {
           return openUriAction_ == null
@@ -15791,6 +15877,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriAction open_uri_action = 2 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button.OpenUriActionOrBuilder
             getOpenUriActionOrBuilder() {
           return getOpenUriAction();
@@ -16554,6 +16641,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The title.
        */
+      @java.lang.Override
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -16576,6 +16664,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for title.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -16601,6 +16690,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The subtitle.
        */
+      @java.lang.Override
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
         if (ref instanceof java.lang.String) {
@@ -16623,6 +16713,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for subtitle.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
         if (ref instanceof java.lang.String) {
@@ -16648,6 +16739,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The formattedText.
        */
+      @java.lang.Override
       public java.lang.String getFormattedText() {
         java.lang.Object ref = formattedText_;
         if (ref instanceof java.lang.String) {
@@ -16670,6 +16762,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for formattedText.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getFormattedTextBytes() {
         java.lang.Object ref = formattedText_;
         if (ref instanceof java.lang.String) {
@@ -16697,6 +16790,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the image field is set.
        */
+      @java.lang.Override
       public boolean hasImage() {
         return image_ != null;
       }
@@ -16713,6 +16807,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The image.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
         return image_ == null
             ? com.google.cloud.dialogflow.v2.Intent.Message.Image.getDefaultInstance()
@@ -16729,6 +16824,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
         return getImage();
       }
@@ -16747,6 +16843,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>
           getButtonsList() {
         return buttons_;
@@ -16762,6 +16859,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder>
           getButtonsOrBuilderList() {
@@ -16778,6 +16876,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public int getButtonsCount() {
         return buttons_.size();
       }
@@ -16792,6 +16891,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button getButtons(int index) {
         return buttons_.get(index);
       }
@@ -16806,6 +16906,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder
           getButtonsOrBuilder(int index) {
         return buttons_.get(index);
@@ -18375,6 +18476,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The title.
        */
+      @java.lang.Override
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -18397,6 +18499,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for title.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -19080,6 +19183,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Suggestion>
           getSuggestionsList() {
         return suggestions_;
@@ -19095,6 +19199,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.SuggestionOrBuilder>
           getSuggestionsOrBuilderList() {
@@ -19111,6 +19216,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public int getSuggestionsCount() {
         return suggestions_.size();
       }
@@ -19125,6 +19231,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Suggestion getSuggestions(int index) {
         return suggestions_.get(index);
       }
@@ -19139,6 +19246,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.Suggestion suggestions = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SuggestionOrBuilder
           getSuggestionsOrBuilder(int index) {
         return suggestions_.get(index);
@@ -20144,6 +20252,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The destinationName.
        */
+      @java.lang.Override
       public java.lang.String getDestinationName() {
         java.lang.Object ref = destinationName_;
         if (ref instanceof java.lang.String) {
@@ -20166,6 +20275,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for destinationName.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getDestinationNameBytes() {
         java.lang.Object ref = destinationName_;
         if (ref instanceof java.lang.String) {
@@ -20192,6 +20302,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The uri.
        */
+      @java.lang.Override
       public java.lang.String getUri() {
         java.lang.Object ref = uri_;
         if (ref instanceof java.lang.String) {
@@ -20215,6 +20326,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for uri.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getUriBytes() {
         java.lang.Object ref = uri_;
         if (ref instanceof java.lang.String) {
@@ -21377,6 +21489,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the info field is set.
          */
+        @java.lang.Override
         public boolean hasInfo() {
           return info_ != null;
         }
@@ -21393,6 +21506,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The info.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
           return info_ == null
               ? com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.getDefaultInstance()
@@ -21409,6 +21523,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfoOrBuilder
             getInfoOrBuilder() {
           return getInfo();
@@ -21427,6 +21542,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The title.
          */
+        @java.lang.Override
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
           if (ref instanceof java.lang.String) {
@@ -21449,6 +21565,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for title.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
           if (ref instanceof java.lang.String) {
@@ -21474,6 +21591,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The description.
          */
+        @java.lang.Override
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
           if (ref instanceof java.lang.String) {
@@ -21496,6 +21614,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for description.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
           if (ref instanceof java.lang.String) {
@@ -21523,6 +21642,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the image field is set.
          */
+        @java.lang.Override
         public boolean hasImage() {
           return image_ != null;
         }
@@ -21539,6 +21659,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The image.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           return image_ == null
               ? com.google.cloud.dialogflow.v2.Intent.Message.Image.getDefaultInstance()
@@ -21555,6 +21676,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
           return getImage();
         }
@@ -22660,6 +22782,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The title.
        */
+      @java.lang.Override
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -22682,6 +22805,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for title.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -22707,6 +22831,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item>
           getItemsList() {
         return items_;
@@ -22722,6 +22847,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder>
           getItemsOrBuilderList() {
@@ -22738,6 +22864,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public int getItemsCount() {
         return items_.size();
       }
@@ -22752,6 +22879,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item getItems(int index) {
         return items_.get(index);
       }
@@ -22766,6 +22894,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ListSelect.Item items = 2 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect.ItemOrBuilder
           getItemsOrBuilder(int index) {
         return items_.get(index);
@@ -22784,6 +22913,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The subtitle.
        */
+      @java.lang.Override
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
         if (ref instanceof java.lang.String) {
@@ -22806,6 +22936,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for subtitle.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
         if (ref instanceof java.lang.String) {
@@ -24353,6 +24484,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the info field is set.
          */
+        @java.lang.Override
         public boolean hasInfo() {
           return info_ != null;
         }
@@ -24369,6 +24501,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The info.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo getInfo() {
           return info_ == null
               ? com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo.getDefaultInstance()
@@ -24385,6 +24518,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.SelectItemInfo info = 1 [(.google.api.field_behavior) = REQUIRED];
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.SelectItemInfoOrBuilder
             getInfoOrBuilder() {
           return getInfo();
@@ -24403,6 +24537,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The title.
          */
+        @java.lang.Override
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
           if (ref instanceof java.lang.String) {
@@ -24425,6 +24560,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for title.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
           if (ref instanceof java.lang.String) {
@@ -24450,6 +24586,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The description.
          */
+        @java.lang.Override
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
           if (ref instanceof java.lang.String) {
@@ -24472,6 +24609,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for description.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
           if (ref instanceof java.lang.String) {
@@ -24499,6 +24637,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the image field is set.
          */
+        @java.lang.Override
         public boolean hasImage() {
           return image_ != null;
         }
@@ -24515,6 +24654,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The image.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           return image_ == null
               ? com.google.cloud.dialogflow.v2.Intent.Message.Image.getDefaultInstance()
@@ -24531,6 +24671,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
           return getImage();
         }
@@ -25641,6 +25782,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item>
           getItemsList() {
         return items_;
@@ -25656,6 +25798,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.ItemOrBuilder>
           getItemsOrBuilderList() {
@@ -25672,6 +25815,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public int getItemsCount() {
         return items_.size();
       }
@@ -25686,6 +25830,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item getItems(int index) {
         return items_.get(index);
       }
@@ -25700,6 +25845,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.Item items = 1 [(.google.api.field_behavior) = REQUIRED];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect.ItemOrBuilder
           getItemsOrBuilder(int index) {
         return items_.get(index);
@@ -26752,6 +26898,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The key.
        */
+      @java.lang.Override
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
         if (ref instanceof java.lang.String) {
@@ -26775,6 +26922,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for key.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getKeyBytes() {
         java.lang.Object ref = key_;
         if (ref instanceof java.lang.String) {
@@ -27878,6 +28026,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 };
 
         public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
           return getDescriptor().getValues().get(ordinal());
         }
 
@@ -28293,6 +28445,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The name.
          */
+        @java.lang.Override
         public java.lang.String getName() {
           java.lang.Object ref = name_;
           if (ref instanceof java.lang.String) {
@@ -28315,6 +28468,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for name.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getNameBytes() {
           java.lang.Object ref = name_;
           if (ref instanceof java.lang.String) {
@@ -28340,6 +28494,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The description.
          */
+        @java.lang.Override
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
           if (ref instanceof java.lang.String) {
@@ -28362,6 +28517,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for description.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
           if (ref instanceof java.lang.String) {
@@ -28388,6 +28544,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the largeImage field is set.
          */
+        @java.lang.Override
         public boolean hasLargeImage() {
           return imageCase_ == 3;
         }
@@ -28404,6 +28561,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The largeImage.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getLargeImage() {
           if (imageCase_ == 3) {
             return (com.google.cloud.dialogflow.v2.Intent.Message.Image) image_;
@@ -28421,6 +28579,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.Image large_image = 3 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder
             getLargeImageOrBuilder() {
           if (imageCase_ == 3) {
@@ -28443,6 +28602,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the icon field is set.
          */
+        @java.lang.Override
         public boolean hasIcon() {
           return imageCase_ == 4;
         }
@@ -28459,6 +28619,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The icon.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getIcon() {
           if (imageCase_ == 4) {
             return (com.google.cloud.dialogflow.v2.Intent.Message.Image) image_;
@@ -28476,6 +28637,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.Image icon = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getIconOrBuilder() {
           if (imageCase_ == 4) {
             return (com.google.cloud.dialogflow.v2.Intent.Message.Image) image_;
@@ -28496,6 +28658,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The contentUrl.
          */
+        @java.lang.Override
         public java.lang.String getContentUrl() {
           java.lang.Object ref = contentUrl_;
           if (ref instanceof java.lang.String) {
@@ -28518,6 +28681,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for contentUrl.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getContentUrlBytes() {
           java.lang.Object ref = contentUrl_;
           if (ref instanceof java.lang.String) {
@@ -29235,6 +29399,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return Whether the largeImage field is set.
            */
+          @java.lang.Override
           public boolean hasLargeImage() {
             return imageCase_ == 3;
           }
@@ -29251,6 +29416,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The largeImage.
            */
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getLargeImage() {
             if (largeImageBuilder_ == null) {
               if (imageCase_ == 3) {
@@ -29398,6 +29564,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * .google.cloud.dialogflow.v2.Intent.Message.Image large_image = 3 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
            */
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder
               getLargeImageOrBuilder() {
             if ((imageCase_ == 3) && (largeImageBuilder_ != null)) {
@@ -29463,6 +29630,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return Whether the icon field is set.
            */
+          @java.lang.Override
           public boolean hasIcon() {
             return imageCase_ == 4;
           }
@@ -29479,6 +29647,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The icon.
            */
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.Image getIcon() {
             if (iconBuilder_ == null) {
               if (imageCase_ == 4) {
@@ -29624,6 +29793,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            * .google.cloud.dialogflow.v2.Intent.Message.Image icon = 4 [(.google.api.field_behavior) = OPTIONAL];
            * </code>
            */
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getIconOrBuilder() {
             if ((imageCase_ == 4) && (iconBuilder_ != null)) {
               return iconBuilder_.getMessageOrBuilder();
@@ -29848,6 +30018,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for mediaType.
        */
+      @java.lang.Override
       public int getMediaTypeValue() {
         return mediaType_;
       }
@@ -29864,6 +30035,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The mediaType.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType
           getMediaType() {
         @SuppressWarnings("deprecation")
@@ -29891,6 +30063,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObject media_objects = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObject>
           getMediaObjectsList() {
@@ -29907,6 +30080,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObject media_objects = 2;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.cloud.dialogflow.v2.Intent.Message.MediaContent
@@ -29925,6 +30099,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObject media_objects = 2;
        * </code>
        */
+      @java.lang.Override
       public int getMediaObjectsCount() {
         return mediaObjects_.size();
       }
@@ -29939,6 +30114,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObject media_objects = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObject
           getMediaObjects(int index) {
         return mediaObjects_.get(index);
@@ -29954,6 +30130,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObject media_objects = 2;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaObjectOrBuilder
           getMediaObjectsOrBuilder(int index) {
         return mediaObjects_.get(index);
@@ -30362,6 +30539,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The enum numeric value on the wire for mediaType.
          */
+        @java.lang.Override
         public int getMediaTypeValue() {
           return mediaType_;
         }
@@ -30380,6 +30558,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setMediaTypeValue(int value) {
+
           mediaType_ = value;
           onChanged();
           return this;
@@ -30397,6 +30576,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The mediaType.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent.ResponseMediaType
             getMediaType() {
           @SuppressWarnings("deprecation")
@@ -31358,6 +31538,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 };
 
         public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
           return getDescriptor().getValues().get(ordinal());
         }
 
@@ -32009,6 +32193,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     };
 
             public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+              if (this == UNRECOGNIZED) {
+                throw new java.lang.IllegalStateException(
+                    "Can't get the descriptor of an unrecognized enum value.");
+              }
               return getDescriptor().getValues().get(ordinal());
             }
 
@@ -32059,6 +32247,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The url.
            */
+          @java.lang.Override
           public java.lang.String getUrl() {
             java.lang.Object ref = url_;
             if (ref instanceof java.lang.String) {
@@ -32081,6 +32270,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The bytes for url.
            */
+          @java.lang.Override
           public com.google.protobuf.ByteString getUrlBytes() {
             java.lang.Object ref = url_;
             if (ref instanceof java.lang.String) {
@@ -32109,6 +32299,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The enum numeric value on the wire for urlTypeHint.
            */
+          @java.lang.Override
           public int getUrlTypeHintValue() {
             return urlTypeHint_;
           }
@@ -32126,6 +32317,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * @return The urlTypeHint.
            */
+          @java.lang.Override
           public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                   .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint
               getUrlTypeHint() {
@@ -32669,6 +32861,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              *
              * @return The enum numeric value on the wire for urlTypeHint.
              */
+            @java.lang.Override
             public int getUrlTypeHintValue() {
               return urlTypeHint_;
             }
@@ -32688,6 +32881,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              * @return This builder for chaining.
              */
             public Builder setUrlTypeHintValue(int value) {
+
               urlTypeHint_ = value;
               onChanged();
               return this;
@@ -32706,6 +32900,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
              *
              * @return The urlTypeHint.
              */
+            @java.lang.Override
             public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                     .BrowseCarouselCardItem.OpenUrlAction.UrlTypeHint
                 getUrlTypeHint() {
@@ -32845,6 +33040,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the openUriAction field is set.
          */
+        @java.lang.Override
         public boolean hasOpenUriAction() {
           return openUriAction_ != null;
         }
@@ -32861,6 +33057,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The openUriAction.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                 .BrowseCarouselCardItem.OpenUrlAction
             getOpenUriAction() {
@@ -32880,6 +33077,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem.OpenUrlAction open_uri_action = 1;
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                 .BrowseCarouselCardItem.OpenUrlActionOrBuilder
             getOpenUriActionOrBuilder() {
@@ -32899,6 +33097,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The title.
          */
+        @java.lang.Override
         public java.lang.String getTitle() {
           java.lang.Object ref = title_;
           if (ref instanceof java.lang.String) {
@@ -32921,6 +33120,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for title.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getTitleBytes() {
           java.lang.Object ref = title_;
           if (ref instanceof java.lang.String) {
@@ -32947,6 +33147,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The description.
          */
+        @java.lang.Override
         public java.lang.String getDescription() {
           java.lang.Object ref = description_;
           if (ref instanceof java.lang.String) {
@@ -32970,6 +33171,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for description.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getDescriptionBytes() {
           java.lang.Object ref = description_;
           if (ref instanceof java.lang.String) {
@@ -32997,6 +33199,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return Whether the image field is set.
          */
+        @java.lang.Override
         public boolean hasImage() {
           return image_ != null;
         }
@@ -33013,6 +33216,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The image.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
           return image_ == null
               ? com.google.cloud.dialogflow.v2.Intent.Message.Image.getDefaultInstance()
@@ -33029,6 +33233,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * .google.cloud.dialogflow.v2.Intent.Message.Image image = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
           return getImage();
         }
@@ -33047,6 +33252,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The footer.
          */
+        @java.lang.Override
         public java.lang.String getFooter() {
           java.lang.Object ref = footer_;
           if (ref instanceof java.lang.String) {
@@ -33070,6 +33276,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The bytes for footer.
          */
+        @java.lang.Override
         public com.google.protobuf.ByteString getFooterBytes() {
           java.lang.Object ref = footer_;
           if (ref instanceof java.lang.String) {
@@ -34392,6 +34599,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem items = 1;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
                   .BrowseCarouselCardItem>
@@ -34410,6 +34618,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem items = 1;
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
@@ -34429,6 +34638,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem items = 1;
        * </code>
        */
+      @java.lang.Override
       public int getItemsCount() {
         return items_.size();
       }
@@ -34444,6 +34654,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem items = 1;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem
           getItems(int index) {
         return items_.get(index);
@@ -34460,6 +34671,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.BrowseCarouselCardItem items = 1;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
               .BrowseCarouselCardItemOrBuilder
           getItemsOrBuilder(int index) {
@@ -34482,6 +34694,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for imageDisplayOptions.
        */
+      @java.lang.Override
       public int getImageDisplayOptionsValue() {
         return imageDisplayOptions_;
       }
@@ -34499,6 +34712,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The imageDisplayOptions.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions
           getImageDisplayOptions() {
         @SuppressWarnings("deprecation")
@@ -35384,6 +35598,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The enum numeric value on the wire for imageDisplayOptions.
          */
+        @java.lang.Override
         public int getImageDisplayOptionsValue() {
           return imageDisplayOptions_;
         }
@@ -35403,6 +35618,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setImageDisplayOptionsValue(int value) {
+
           imageDisplayOptions_ = value;
           onChanged();
           return this;
@@ -35421,6 +35637,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The imageDisplayOptions.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard.ImageDisplayOptions
             getImageDisplayOptions() {
           @SuppressWarnings("deprecation")
@@ -36011,6 +36228,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The title.
        */
+      @java.lang.Override
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -36033,6 +36251,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for title.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof java.lang.String) {
@@ -36058,6 +36277,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The subtitle.
        */
+      @java.lang.Override
       public java.lang.String getSubtitle() {
         java.lang.Object ref = subtitle_;
         if (ref instanceof java.lang.String) {
@@ -36080,6 +36300,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for subtitle.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSubtitleBytes() {
         java.lang.Object ref = subtitle_;
         if (ref instanceof java.lang.String) {
@@ -36107,6 +36328,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the image field is set.
        */
+      @java.lang.Override
       public boolean hasImage() {
         return image_ != null;
       }
@@ -36123,6 +36345,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The image.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
         return image_ == null
             ? com.google.cloud.dialogflow.v2.Intent.Message.Image.getDefaultInstance()
@@ -36139,6 +36362,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.dialogflow.v2.Intent.Message.Image image = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
         return getImage();
       }
@@ -36157,6 +36381,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties column_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties>
           getColumnPropertiesList() {
         return columnProperties_;
@@ -36172,6 +36397,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties column_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.ColumnPropertiesOrBuilder>
           getColumnPropertiesOrBuilderList() {
@@ -36188,6 +36414,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties column_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public int getColumnPropertiesCount() {
         return columnProperties_.size();
       }
@@ -36202,6 +36429,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties column_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties getColumnProperties(
           int index) {
         return columnProperties_.get(index);
@@ -36217,6 +36445,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.ColumnProperties column_properties = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ColumnPropertiesOrBuilder
           getColumnPropertiesOrBuilder(int index) {
         return columnProperties_.get(index);
@@ -36235,6 +36464,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardRow rows = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow>
           getRowsList() {
         return rows_;
@@ -36250,6 +36480,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardRow rows = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.TableCardRowOrBuilder>
           getRowsOrBuilderList() {
@@ -36266,6 +36497,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardRow rows = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public int getRowsCount() {
         return rows_.size();
       }
@@ -36280,6 +36512,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardRow rows = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.TableCardRow getRows(int index) {
         return rows_.get(index);
       }
@@ -36294,6 +36527,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardRow rows = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.TableCardRowOrBuilder getRowsOrBuilder(
           int index) {
         return rows_.get(index);
@@ -36313,6 +36547,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button>
           getButtonsList() {
         return buttons_;
@@ -36328,6 +36563,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder>
           getButtonsOrBuilderList() {
@@ -36344,6 +36580,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public int getButtonsCount() {
         return buttons_.size();
       }
@@ -36358,6 +36595,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button getButtons(int index) {
         return buttons_.get(index);
       }
@@ -36372,6 +36610,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.BasicCard.Button buttons = 6 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard.ButtonOrBuilder
           getButtonsOrBuilder(int index) {
         return buttons_.get(index);
@@ -38914,6 +39153,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 };
 
         public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
           return getDescriptor().getValues().get(ordinal());
         }
 
@@ -38963,6 +39206,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The header.
        */
+      @java.lang.Override
       public java.lang.String getHeader() {
         java.lang.Object ref = header_;
         if (ref instanceof java.lang.String) {
@@ -38985,6 +39229,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for header.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getHeaderBytes() {
         java.lang.Object ref = header_;
         if (ref instanceof java.lang.String) {
@@ -39012,6 +39257,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for horizontalAlignment.
        */
+      @java.lang.Override
       public int getHorizontalAlignmentValue() {
         return horizontalAlignment_;
       }
@@ -39028,6 +39274,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The horizontalAlignment.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment
           getHorizontalAlignment() {
         @SuppressWarnings("deprecation")
@@ -39513,6 +39760,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The enum numeric value on the wire for horizontalAlignment.
          */
+        @java.lang.Override
         public int getHorizontalAlignmentValue() {
           return horizontalAlignment_;
         }
@@ -39531,6 +39779,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder setHorizontalAlignmentValue(int value) {
+
           horizontalAlignment_ = value;
           onChanged();
           return this;
@@ -39548,6 +39797,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The horizontalAlignment.
          */
+        @java.lang.Override
         public com.google.cloud.dialogflow.v2.Intent.Message.ColumnProperties.HorizontalAlignment
             getHorizontalAlignment() {
           @SuppressWarnings("deprecation")
@@ -39864,6 +40114,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardCell cells = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.TableCardCell>
           getCellsList() {
         return cells_;
@@ -39879,6 +40130,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardCell cells = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public java.util.List<
               ? extends com.google.cloud.dialogflow.v2.Intent.Message.TableCardCellOrBuilder>
           getCellsOrBuilderList() {
@@ -39895,6 +40147,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardCell cells = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public int getCellsCount() {
         return cells_.size();
       }
@@ -39909,6 +40162,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardCell cells = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.TableCardCell getCells(int index) {
         return cells_.get(index);
       }
@@ -39923,6 +40177,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.dialogflow.v2.Intent.Message.TableCardCell cells = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.TableCardCellOrBuilder getCellsOrBuilder(
           int index) {
         return cells_.get(index);
@@ -39941,6 +40196,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The dividerAfter.
        */
+      @java.lang.Override
       public boolean getDividerAfter() {
         return dividerAfter_;
       }
@@ -40743,6 +40999,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * @return The dividerAfter.
          */
+        @java.lang.Override
         public boolean getDividerAfter() {
           return dividerAfter_;
         }
@@ -40974,6 +41231,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The text.
        */
+      @java.lang.Override
       public java.lang.String getText() {
         java.lang.Object ref = text_;
         if (ref instanceof java.lang.String) {
@@ -40996,6 +41254,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The bytes for text.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getTextBytes() {
         java.lang.Object ref = text_;
         if (ref instanceof java.lang.String) {
@@ -41591,6 +41850,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the text field is set.
      */
+    @java.lang.Override
     public boolean hasText() {
       return messageCase_ == 1;
     }
@@ -41605,6 +41865,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The text.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.Text getText() {
       if (messageCase_ == 1) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.Text) message_;
@@ -41620,6 +41881,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Text text = 1;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.TextOrBuilder getTextOrBuilder() {
       if (messageCase_ == 1) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.Text) message_;
@@ -41639,6 +41901,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the image field is set.
      */
+    @java.lang.Override
     public boolean hasImage() {
       return messageCase_ == 2;
     }
@@ -41653,6 +41916,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The image.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
       if (messageCase_ == 2) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.Image) message_;
@@ -41668,6 +41932,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
       if (messageCase_ == 2) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.Image) message_;
@@ -41687,6 +41952,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the quickReplies field is set.
      */
+    @java.lang.Override
     public boolean hasQuickReplies() {
       return messageCase_ == 3;
     }
@@ -41701,6 +41967,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The quickReplies.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies getQuickReplies() {
       if (messageCase_ == 3) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies) message_;
@@ -41716,6 +41983,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.QuickReplies quick_replies = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.QuickRepliesOrBuilder
         getQuickRepliesOrBuilder() {
       if (messageCase_ == 3) {
@@ -41736,6 +42004,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the card field is set.
      */
+    @java.lang.Override
     public boolean hasCard() {
       return messageCase_ == 4;
     }
@@ -41750,6 +42019,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The card.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.Card getCard() {
       if (messageCase_ == 4) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.Card) message_;
@@ -41765,6 +42035,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Card card = 4;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.CardOrBuilder getCardOrBuilder() {
       if (messageCase_ == 4) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.Card) message_;
@@ -41784,6 +42055,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the payload field is set.
      */
+    @java.lang.Override
     public boolean hasPayload() {
       return messageCase_ == 5;
     }
@@ -41798,6 +42070,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The payload.
      */
+    @java.lang.Override
     public com.google.protobuf.Struct getPayload() {
       if (messageCase_ == 5) {
         return (com.google.protobuf.Struct) message_;
@@ -41813,6 +42086,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Struct payload = 5;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
       if (messageCase_ == 5) {
         return (com.google.protobuf.Struct) message_;
@@ -41832,6 +42106,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the simpleResponses field is set.
      */
+    @java.lang.Override
     public boolean hasSimpleResponses() {
       return messageCase_ == 7;
     }
@@ -41846,6 +42121,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The simpleResponses.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses getSimpleResponses() {
       if (messageCase_ == 7) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses) message_;
@@ -41861,6 +42137,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses simple_responses = 7;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponsesOrBuilder
         getSimpleResponsesOrBuilder() {
       if (messageCase_ == 7) {
@@ -41881,6 +42158,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the basicCard field is set.
      */
+    @java.lang.Override
     public boolean hasBasicCard() {
       return messageCase_ == 8;
     }
@@ -41895,6 +42173,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The basicCard.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard getBasicCard() {
       if (messageCase_ == 8) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.BasicCard) message_;
@@ -41910,6 +42189,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.BasicCard basic_card = 8;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.BasicCardOrBuilder
         getBasicCardOrBuilder() {
       if (messageCase_ == 8) {
@@ -41930,6 +42210,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the suggestions field is set.
      */
+    @java.lang.Override
     public boolean hasSuggestions() {
       return messageCase_ == 9;
     }
@@ -41944,6 +42225,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The suggestions.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.Suggestions getSuggestions() {
       if (messageCase_ == 9) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.Suggestions) message_;
@@ -41959,6 +42241,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.Suggestions suggestions = 9;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.SuggestionsOrBuilder
         getSuggestionsOrBuilder() {
       if (messageCase_ == 9) {
@@ -41980,6 +42263,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the linkOutSuggestion field is set.
      */
+    @java.lang.Override
     public boolean hasLinkOutSuggestion() {
       return messageCase_ == 10;
     }
@@ -41995,6 +42279,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The linkOutSuggestion.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion getLinkOutSuggestion() {
       if (messageCase_ == 10) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion) message_;
@@ -42011,6 +42296,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion link_out_suggestion = 10;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestionOrBuilder
         getLinkOutSuggestionOrBuilder() {
       if (messageCase_ == 10) {
@@ -42031,6 +42317,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the listSelect field is set.
      */
+    @java.lang.Override
     public boolean hasListSelect() {
       return messageCase_ == 11;
     }
@@ -42045,6 +42332,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The listSelect.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect getListSelect() {
       if (messageCase_ == 11) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.ListSelect) message_;
@@ -42060,6 +42348,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.ListSelect list_select = 11;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.ListSelectOrBuilder
         getListSelectOrBuilder() {
       if (messageCase_ == 11) {
@@ -42080,6 +42369,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the carouselSelect field is set.
      */
+    @java.lang.Override
     public boolean hasCarouselSelect() {
       return messageCase_ == 12;
     }
@@ -42094,6 +42384,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The carouselSelect.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect getCarouselSelect() {
       if (messageCase_ == 12) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect) message_;
@@ -42109,6 +42400,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect carousel_select = 12;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelectOrBuilder
         getCarouselSelectOrBuilder() {
       if (messageCase_ == 12) {
@@ -42131,6 +42423,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the browseCarouselCard field is set.
      */
+    @java.lang.Override
     public boolean hasBrowseCarouselCard() {
       return messageCase_ == 22;
     }
@@ -42147,6 +42440,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The browseCarouselCard.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
         getBrowseCarouselCard() {
       if (messageCase_ == 22) {
@@ -42165,6 +42459,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard browse_carousel_card = 22;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCardOrBuilder
         getBrowseCarouselCardOrBuilder() {
       if (messageCase_ == 22) {
@@ -42185,6 +42480,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the tableCard field is set.
      */
+    @java.lang.Override
     public boolean hasTableCard() {
       return messageCase_ == 23;
     }
@@ -42199,6 +42495,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The tableCard.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.TableCard getTableCard() {
       if (messageCase_ == 23) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.TableCard) message_;
@@ -42214,6 +42511,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.TableCard table_card = 23;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.TableCardOrBuilder
         getTableCardOrBuilder() {
       if (messageCase_ == 23) {
@@ -42234,6 +42532,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the mediaContent field is set.
      */
+    @java.lang.Override
     public boolean hasMediaContent() {
       return messageCase_ == 24;
     }
@@ -42248,6 +42547,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mediaContent.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent getMediaContent() {
       if (messageCase_ == 24) {
         return (com.google.cloud.dialogflow.v2.Intent.Message.MediaContent) message_;
@@ -42263,6 +42563,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.dialogflow.v2.Intent.Message.MediaContent media_content = 24;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.MediaContentOrBuilder
         getMediaContentOrBuilder() {
       if (messageCase_ == 24) {
@@ -42286,6 +42587,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for platform.
      */
+    @java.lang.Override
     public int getPlatformValue() {
       return platform_;
     }
@@ -42302,6 +42604,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The platform.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Intent.Message.Platform result =
@@ -43073,6 +43376,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the text field is set.
        */
+      @java.lang.Override
       public boolean hasText() {
         return messageCase_ == 1;
       }
@@ -43087,6 +43391,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The text.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Text getText() {
         if (textBuilder_ == null) {
           if (messageCase_ == 1) {
@@ -43220,6 +43525,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Text text = 1;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.TextOrBuilder getTextOrBuilder() {
         if ((messageCase_ == 1) && (textBuilder_ != null)) {
           return textBuilder_.getMessageOrBuilder();
@@ -43280,6 +43586,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the image field is set.
        */
+      @java.lang.Override
       public boolean hasImage() {
         return messageCase_ == 2;
       }
@@ -43294,6 +43601,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The image.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Image getImage() {
         if (imageBuilder_ == null) {
           if (messageCase_ == 2) {
@@ -43427,6 +43735,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Image image = 2;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ImageOrBuilder getImageOrBuilder() {
         if ((messageCase_ == 2) && (imageBuilder_ != null)) {
           return imageBuilder_.getMessageOrBuilder();
@@ -43487,6 +43796,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the quickReplies field is set.
        */
+      @java.lang.Override
       public boolean hasQuickReplies() {
         return messageCase_ == 3;
       }
@@ -43501,6 +43811,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The quickReplies.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.QuickReplies getQuickReplies() {
         if (quickRepliesBuilder_ == null) {
           if (messageCase_ == 3) {
@@ -43638,6 +43949,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.QuickReplies quick_replies = 3;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.QuickRepliesOrBuilder
           getQuickRepliesOrBuilder() {
         if ((messageCase_ == 3) && (quickRepliesBuilder_ != null)) {
@@ -43700,6 +44012,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the card field is set.
        */
+      @java.lang.Override
       public boolean hasCard() {
         return messageCase_ == 4;
       }
@@ -43714,6 +44027,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The card.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Card getCard() {
         if (cardBuilder_ == null) {
           if (messageCase_ == 4) {
@@ -43847,6 +44161,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Card card = 4;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.CardOrBuilder getCardOrBuilder() {
         if ((messageCase_ == 4) && (cardBuilder_ != null)) {
           return cardBuilder_.getMessageOrBuilder();
@@ -43907,6 +44222,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the payload field is set.
        */
+      @java.lang.Override
       public boolean hasPayload() {
         return messageCase_ == 5;
       }
@@ -43921,6 +44237,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The payload.
        */
+      @java.lang.Override
       public com.google.protobuf.Struct getPayload() {
         if (payloadBuilder_ == null) {
           if (messageCase_ == 5) {
@@ -44050,6 +44367,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.protobuf.Struct payload = 5;</code>
        */
+      @java.lang.Override
       public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
         if ((messageCase_ == 5) && (payloadBuilder_ != null)) {
           return payloadBuilder_.getMessageOrBuilder();
@@ -44109,6 +44427,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the simpleResponses field is set.
        */
+      @java.lang.Override
       public boolean hasSimpleResponses() {
         return messageCase_ == 7;
       }
@@ -44124,6 +44443,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The simpleResponses.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses getSimpleResponses() {
         if (simpleResponsesBuilder_ == null) {
           if (messageCase_ == 7) {
@@ -44267,6 +44587,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.dialogflow.v2.Intent.Message.SimpleResponses simple_responses = 7;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SimpleResponsesOrBuilder
           getSimpleResponsesOrBuilder() {
         if ((messageCase_ == 7) && (simpleResponsesBuilder_ != null)) {
@@ -44330,6 +44651,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the basicCard field is set.
        */
+      @java.lang.Override
       public boolean hasBasicCard() {
         return messageCase_ == 8;
       }
@@ -44344,6 +44666,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The basicCard.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCard getBasicCard() {
         if (basicCardBuilder_ == null) {
           if (messageCase_ == 8) {
@@ -44477,6 +44800,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.BasicCard basic_card = 8;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BasicCardOrBuilder
           getBasicCardOrBuilder() {
         if ((messageCase_ == 8) && (basicCardBuilder_ != null)) {
@@ -44538,6 +44862,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the suggestions field is set.
        */
+      @java.lang.Override
       public boolean hasSuggestions() {
         return messageCase_ == 9;
       }
@@ -44552,6 +44877,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The suggestions.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Suggestions getSuggestions() {
         if (suggestionsBuilder_ == null) {
           if (messageCase_ == 9) {
@@ -44689,6 +45015,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.Suggestions suggestions = 9;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.SuggestionsOrBuilder
           getSuggestionsOrBuilder() {
         if ((messageCase_ == 9) && (suggestionsBuilder_ != null)) {
@@ -44753,6 +45080,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the linkOutSuggestion field is set.
        */
+      @java.lang.Override
       public boolean hasLinkOutSuggestion() {
         return messageCase_ == 10;
       }
@@ -44769,6 +45097,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The linkOutSuggestion.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion
           getLinkOutSuggestion() {
         if (linkOutSuggestionBuilder_ == null) {
@@ -44921,6 +45250,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestion link_out_suggestion = 10;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.LinkOutSuggestionOrBuilder
           getLinkOutSuggestionOrBuilder() {
         if ((messageCase_ == 10) && (linkOutSuggestionBuilder_ != null)) {
@@ -44987,6 +45317,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the listSelect field is set.
        */
+      @java.lang.Override
       public boolean hasListSelect() {
         return messageCase_ == 11;
       }
@@ -45001,6 +45332,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The listSelect.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ListSelect getListSelect() {
         if (listSelectBuilder_ == null) {
           if (messageCase_ == 11) {
@@ -45137,6 +45469,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.ListSelect list_select = 11;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.ListSelectOrBuilder
           getListSelectOrBuilder() {
         if ((messageCase_ == 11) && (listSelectBuilder_ != null)) {
@@ -45200,6 +45533,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the carouselSelect field is set.
        */
+      @java.lang.Override
       public boolean hasCarouselSelect() {
         return messageCase_ == 12;
       }
@@ -45215,6 +45549,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The carouselSelect.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect getCarouselSelect() {
         if (carouselSelectBuilder_ == null) {
           if (messageCase_ == 12) {
@@ -45358,6 +45693,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.cloud.dialogflow.v2.Intent.Message.CarouselSelect carousel_select = 12;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.CarouselSelectOrBuilder
           getCarouselSelectOrBuilder() {
         if ((messageCase_ == 12) && (carouselSelectBuilder_ != null)) {
@@ -45423,6 +45759,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the browseCarouselCard field is set.
        */
+      @java.lang.Override
       public boolean hasBrowseCarouselCard() {
         return messageCase_ == 22;
       }
@@ -45439,6 +45776,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The browseCarouselCard.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard
           getBrowseCarouselCard() {
         if (browseCarouselCardBuilder_ == null) {
@@ -45592,6 +45930,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * .google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCard browse_carousel_card = 22;
        * </code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.BrowseCarouselCardOrBuilder
           getBrowseCarouselCardOrBuilder() {
         if ((messageCase_ == 22) && (browseCarouselCardBuilder_ != null)) {
@@ -45658,6 +45997,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the tableCard field is set.
        */
+      @java.lang.Override
       public boolean hasTableCard() {
         return messageCase_ == 23;
       }
@@ -45672,6 +46012,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The tableCard.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.TableCard getTableCard() {
         if (tableCardBuilder_ == null) {
           if (messageCase_ == 23) {
@@ -45805,6 +46146,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.TableCard table_card = 23;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.TableCardOrBuilder
           getTableCardOrBuilder() {
         if ((messageCase_ == 23) && (tableCardBuilder_ != null)) {
@@ -45866,6 +46208,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return Whether the mediaContent field is set.
        */
+      @java.lang.Override
       public boolean hasMediaContent() {
         return messageCase_ == 24;
       }
@@ -45880,6 +46223,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The mediaContent.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.MediaContent getMediaContent() {
         if (mediaContentBuilder_ == null) {
           if (messageCase_ == 24) {
@@ -46017,6 +46361,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>.google.cloud.dialogflow.v2.Intent.Message.MediaContent media_content = 24;</code>
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.MediaContentOrBuilder
           getMediaContentOrBuilder() {
         if ((messageCase_ == 24) && (mediaContentBuilder_ != null)) {
@@ -46077,6 +46422,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The enum numeric value on the wire for platform.
        */
+      @java.lang.Override
       public int getPlatformValue() {
         return platform_;
       }
@@ -46095,6 +46441,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setPlatformValue(int value) {
+
         platform_ = value;
         onChanged();
         return this;
@@ -46112,6 +46459,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The platform.
        */
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2.Intent.Message.Platform getPlatform() {
         @SuppressWarnings("deprecation")
         com.google.cloud.dialogflow.v2.Intent.Message.Platform result =
@@ -46389,6 +46737,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The followupIntentName.
      */
+    @java.lang.Override
     public java.lang.String getFollowupIntentName() {
       java.lang.Object ref = followupIntentName_;
       if (ref instanceof java.lang.String) {
@@ -46412,6 +46761,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for followupIntentName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getFollowupIntentNameBytes() {
       java.lang.Object ref = followupIntentName_;
       if (ref instanceof java.lang.String) {
@@ -46438,6 +46788,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The parentFollowupIntentName.
      */
+    @java.lang.Override
     public java.lang.String getParentFollowupIntentName() {
       java.lang.Object ref = parentFollowupIntentName_;
       if (ref instanceof java.lang.String) {
@@ -46461,6 +46812,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for parentFollowupIntentName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getParentFollowupIntentNameBytes() {
       java.lang.Object ref = parentFollowupIntentName_;
       if (ref instanceof java.lang.String) {
@@ -47103,6 +47455,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -47128,6 +47481,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -47153,6 +47507,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -47175,6 +47530,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -47202,6 +47558,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for webhookState.
    */
+  @java.lang.Override
   public int getWebhookStateValue() {
     return webhookState_;
   }
@@ -47218,6 +47575,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The webhookState.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Intent.WebhookState result =
@@ -47246,6 +47604,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The priority.
    */
+  @java.lang.Override
   public int getPriority() {
     return priority_;
   }
@@ -47263,6 +47622,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isFallback.
    */
+  @java.lang.Override
   public boolean getIsFallback() {
     return isFallback_;
   }
@@ -47283,6 +47643,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mlDisabled.
    */
+  @java.lang.Override
   public boolean getMlDisabled() {
     return mlDisabled_;
   }
@@ -47443,6 +47804,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase>
       getTrainingPhrasesList() {
     return trainingPhrases_;
@@ -47459,6 +47821,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder>
       getTrainingPhrasesOrBuilderList() {
     return trainingPhrases_;
@@ -47475,6 +47838,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getTrainingPhrasesCount() {
     return trainingPhrases_.size();
   }
@@ -47490,6 +47854,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.TrainingPhrase getTrainingPhrases(int index) {
     return trainingPhrases_.get(index);
   }
@@ -47505,6 +47870,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder getTrainingPhrasesOrBuilder(
       int index) {
     return trainingPhrases_.get(index);
@@ -47524,6 +47890,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -47547,6 +47914,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -47576,6 +47944,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList() {
     return outputContexts_;
   }
@@ -47594,6 +47963,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getOutputContextsOrBuilderList() {
     return outputContexts_;
@@ -47613,6 +47983,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getOutputContextsCount() {
     return outputContexts_.size();
   }
@@ -47631,6 +48002,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Context getOutputContexts(int index) {
     return outputContexts_.get(index);
   }
@@ -47649,6 +48021,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Context output_contexts = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(int index) {
     return outputContexts_.get(index);
   }
@@ -47667,6 +48040,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resetContexts.
    */
+  @java.lang.Override
   public boolean getResetContexts() {
     return resetContexts_;
   }
@@ -47684,6 +48058,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.Parameter> getParametersList() {
     return parameters_;
   }
@@ -47698,6 +48073,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder>
       getParametersOrBuilderList() {
     return parameters_;
@@ -47713,6 +48089,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getParametersCount() {
     return parameters_.size();
   }
@@ -47727,6 +48104,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.Parameter getParameters(int index) {
     return parameters_.get(index);
   }
@@ -47741,6 +48119,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder getParametersOrBuilder(
       int index) {
     return parameters_.get(index);
@@ -47760,6 +48139,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getMessagesList() {
     return messages_;
   }
@@ -47775,6 +48155,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
       getMessagesOrBuilderList() {
     return messages_;
@@ -47791,6 +48172,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getMessagesCount() {
     return messages_.size();
   }
@@ -47806,6 +48188,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.Message getMessages(int index) {
     return messages_.get(index);
   }
@@ -47821,6 +48204,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getMessagesOrBuilder(int index) {
     return messages_.get(index);
   }
@@ -47856,6 +48240,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the defaultResponsePlatforms.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
       getDefaultResponsePlatformsList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -47876,6 +48261,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The count of defaultResponsePlatforms.
    */
+  @java.lang.Override
   public int getDefaultResponsePlatformsCount() {
     return defaultResponsePlatforms_.size();
   }
@@ -47894,6 +48280,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the element to return.
    * @return The defaultResponsePlatforms at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(
       int index) {
     return defaultResponsePlatforms_converter_.convert(defaultResponsePlatforms_.get(index));
@@ -47912,6 +48299,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return A list containing the enum numeric values on the wire for defaultResponsePlatforms.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList() {
     return defaultResponsePlatforms_;
   }
@@ -47930,6 +48318,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of defaultResponsePlatforms at the given index.
    */
+  @java.lang.Override
   public int getDefaultResponsePlatformsValue(int index) {
     return defaultResponsePlatforms_.get(index);
   }
@@ -47952,6 +48341,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rootFollowupIntentName.
    */
+  @java.lang.Override
   public java.lang.String getRootFollowupIntentName() {
     java.lang.Object ref = rootFollowupIntentName_;
     if (ref instanceof java.lang.String) {
@@ -47977,6 +48367,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for rootFollowupIntentName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRootFollowupIntentNameBytes() {
     java.lang.Object ref = rootFollowupIntentName_;
     if (ref instanceof java.lang.String) {
@@ -48008,6 +48399,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parentFollowupIntentName.
    */
+  @java.lang.Override
   public java.lang.String getParentFollowupIntentName() {
     java.lang.Object ref = parentFollowupIntentName_;
     if (ref instanceof java.lang.String) {
@@ -48036,6 +48428,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for parentFollowupIntentName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentFollowupIntentNameBytes() {
     java.lang.Object ref = parentFollowupIntentName_;
     if (ref instanceof java.lang.String) {
@@ -48062,6 +48455,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo>
       getFollowupIntentInfoList() {
     return followupIntentInfo_;
@@ -48077,6 +48471,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder>
       getFollowupIntentInfoOrBuilderList() {
     return followupIntentInfo_;
@@ -48092,6 +48487,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
    * </code>
    */
+  @java.lang.Override
   public int getFollowupIntentInfoCount() {
     return followupIntentInfo_.size();
   }
@@ -48106,6 +48502,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getFollowupIntentInfo(int index) {
     return followupIntentInfo_.get(index);
   }
@@ -48120,6 +48517,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder
       getFollowupIntentInfoOrBuilder(int index) {
     return followupIntentInfo_.get(index);
@@ -49212,6 +49610,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for webhookState.
      */
+    @java.lang.Override
     public int getWebhookStateValue() {
       return webhookState_;
     }
@@ -49230,6 +49629,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setWebhookStateValue(int value) {
+
       webhookState_ = value;
       onChanged();
       return this;
@@ -49247,6 +49647,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The webhookState.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Intent.WebhookState result =
@@ -49316,6 +49717,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The priority.
      */
+    @java.lang.Override
     public int getPriority() {
       return priority_;
     }
@@ -49379,6 +49781,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isFallback.
      */
+    @java.lang.Override
     public boolean getIsFallback() {
       return isFallback_;
     }
@@ -49433,6 +49836,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The mlDisabled.
      */
+    @java.lang.Override
     public boolean getMlDisabled() {
       return mlDisabled_;
     }
@@ -50871,6 +51275,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resetContexts.
      */
+    @java.lang.Override
     public boolean getResetContexts() {
       return resetContexts_;
     }

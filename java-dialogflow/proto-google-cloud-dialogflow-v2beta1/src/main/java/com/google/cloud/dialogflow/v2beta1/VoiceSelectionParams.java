@@ -134,6 +134,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -158,6 +159,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    *
    * @return The enum numeric value on the wire for ssmlGender.
    */
+  @java.lang.Override
   public int getSsmlGenderValue() {
     return ssmlGender_;
   }
@@ -205,6 +208,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    *
    * @return The ssmlGender.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender getSsmlGender() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender result =
@@ -684,6 +688,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for ssmlGender.
      */
+    @java.lang.Override
     public int getSsmlGenderValue() {
       return ssmlGender_;
     }
@@ -704,6 +709,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setSsmlGenderValue(int value) {
+
       ssmlGender_ = value;
       onChanged();
       return this;
@@ -723,6 +729,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      *
      * @return The ssmlGender.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender getSsmlGender() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.SsmlVoiceGender result =

@@ -138,10 +138,13 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -161,10 +164,13 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -186,10 +192,13 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * Required. The knowledge base to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the knowledgeBase field is set.
    */
+  @java.lang.Override
   public boolean hasKnowledgeBase() {
     return knowledgeBase_ != null;
   }
@@ -200,10 +209,13 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * Required. The knowledge base to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The knowledgeBase.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase() {
     return knowledgeBase_ == null
         ? com.google.cloud.dialogflow.v2beta1.KnowledgeBase.getDefaultInstance()
@@ -216,8 +228,11 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
    * Required. The knowledge base to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBaseOrBuilder() {
     return getKnowledgeBase();
   }
@@ -581,7 +596,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -604,7 +621,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -627,7 +646,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -649,7 +670,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -667,7 +690,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -696,7 +721,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the knowledgeBase field is set.
      */
@@ -710,7 +737,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The knowledgeBase.
      */
@@ -730,7 +759,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKnowledgeBase(com.google.cloud.dialogflow.v2beta1.KnowledgeBase value) {
       if (knowledgeBaseBuilder_ == null) {
@@ -752,7 +783,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setKnowledgeBase(
         com.google.cloud.dialogflow.v2beta1.KnowledgeBase.Builder builderForValue) {
@@ -772,7 +805,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeKnowledgeBase(com.google.cloud.dialogflow.v2beta1.KnowledgeBase value) {
       if (knowledgeBaseBuilder_ == null) {
@@ -798,7 +833,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearKnowledgeBase() {
       if (knowledgeBaseBuilder_ == null) {
@@ -818,7 +855,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBase.Builder getKnowledgeBaseBuilder() {
 
@@ -832,7 +871,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBaseOrBuilder() {
       if (knowledgeBaseBuilder_ != null) {
@@ -850,7 +891,9 @@ public final class CreateKnowledgeBaseRequest extends com.google.protobuf.Genera
      * Required. The knowledge base to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.KnowledgeBase,

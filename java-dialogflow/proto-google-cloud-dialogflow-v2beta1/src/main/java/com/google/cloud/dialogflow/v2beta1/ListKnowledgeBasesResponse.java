@@ -140,6 +140,7 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_bases = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> getKnowledgeBasesList() {
     return knowledgeBases_;
   }
@@ -152,6 +153,7 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_bases = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder>
       getKnowledgeBasesOrBuilderList() {
     return knowledgeBases_;
@@ -165,6 +167,7 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_bases = 1;</code>
    */
+  @java.lang.Override
   public int getKnowledgeBasesCount() {
     return knowledgeBases_.size();
   }
@@ -177,6 +180,7 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_bases = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBases(int index) {
     return knowledgeBases_.get(index);
   }
@@ -189,6 +193,7 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_bases = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBasesOrBuilder(
       int index) {
     return knowledgeBases_.get(index);
@@ -208,6 +213,7 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class ListKnowledgeBasesResponse extends com.google.protobuf.Genera
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

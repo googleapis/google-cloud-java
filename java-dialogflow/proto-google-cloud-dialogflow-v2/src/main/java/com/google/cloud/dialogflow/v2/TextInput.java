@@ -133,6 +133,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The text.
    */
+  @java.lang.Override
   public java.lang.String getText() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for text.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTextBytes() {
     java.lang.Object ref = text_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +186,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +212,7 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {

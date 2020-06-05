@@ -35,7 +35,9 @@ public interface CreateContextRequestOrBuilder
    * default '-' user.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -52,7 +54,9 @@ public interface CreateContextRequestOrBuilder
    * default '-' user.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -65,7 +69,9 @@ public interface CreateContextRequestOrBuilder
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the context field is set.
    */
@@ -77,7 +83,9 @@ public interface CreateContextRequestOrBuilder
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The context.
    */
@@ -89,7 +97,9 @@ public interface CreateContextRequestOrBuilder
    * Required. The context to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getContextOrBuilder();
 }

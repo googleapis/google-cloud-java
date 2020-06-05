@@ -151,6 +151,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -210,6 +212,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the parameters field is set.
    */
+  @java.lang.Override
   public boolean hasParameters() {
     return parameters_ != null;
   }
@@ -236,6 +239,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parameters.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getParameters() {
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
   }
@@ -260,6 +264,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Struct parameters = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
     return getParameters();
   }
@@ -280,6 +285,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +311,7 @@ public final class EventInput extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {

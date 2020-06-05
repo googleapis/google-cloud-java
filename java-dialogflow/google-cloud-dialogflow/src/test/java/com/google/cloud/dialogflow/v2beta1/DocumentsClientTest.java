@@ -163,12 +163,14 @@ public class DocumentsClientTest {
     String displayName = "displayName1615086568";
     String mimeType = "mimeType-196041627";
     String contentUri = "contentUri-388807514";
+    boolean enableAutoReload = false;
     Document expectedResponse =
         Document.newBuilder()
             .setName(name2.toString())
             .setDisplayName(displayName)
             .setMimeType(mimeType)
             .setContentUri(contentUri)
+            .setEnableAutoReload(enableAutoReload)
             .build();
     mockDocuments.addResponse(expectedResponse);
 
@@ -211,12 +213,14 @@ public class DocumentsClientTest {
     String displayName = "displayName1615086568";
     String mimeType = "mimeType-196041627";
     String contentUri = "contentUri-388807514";
+    boolean enableAutoReload = false;
     Document expectedResponse =
         Document.newBuilder()
             .setName(name.toString())
             .setDisplayName(displayName)
             .setMimeType(mimeType)
             .setContentUri(contentUri)
+            .setEnableAutoReload(enableAutoReload)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -316,12 +320,14 @@ public class DocumentsClientTest {
     String displayName = "displayName1615086568";
     String mimeType = "mimeType-196041627";
     String contentUri = "contentUri-388807514";
+    boolean enableAutoReload = false;
     Document expectedResponse =
         Document.newBuilder()
             .setName(name.toString())
             .setDisplayName(displayName)
             .setMimeType(mimeType)
             .setContentUri(contentUri)
+            .setEnableAutoReload(enableAutoReload)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

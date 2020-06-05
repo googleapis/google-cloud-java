@@ -131,6 +131,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -160,6 +161,7 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {

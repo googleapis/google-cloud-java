@@ -135,6 +135,7 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -160,6 +161,7 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -215,6 +218,7 @@ public final class GetValidationResultRequest extends com.google.protobuf.Genera
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {

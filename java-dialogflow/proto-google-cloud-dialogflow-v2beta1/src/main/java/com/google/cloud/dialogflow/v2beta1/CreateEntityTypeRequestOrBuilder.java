@@ -31,7 +31,9 @@ public interface CreateEntityTypeRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface CreateEntityTypeRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -57,7 +61,9 @@ public interface CreateEntityTypeRequestOrBuilder
    * Required. The entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the entityType field is set.
    */
@@ -69,7 +75,9 @@ public interface CreateEntityTypeRequestOrBuilder
    * Required. The entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The entityType.
    */
@@ -81,7 +89,9 @@ public interface CreateEntityTypeRequestOrBuilder
    * Required. The entity type to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType entity_type = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.EntityTypeOrBuilder getEntityTypeOrBuilder();
 

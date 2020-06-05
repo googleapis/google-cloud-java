@@ -137,10 +137,13 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -160,10 +163,13 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -188,6 +194,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> getIntentsList() {
     return intents_;
   }
@@ -201,6 +208,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
       getIntentsOrBuilderList() {
     return intents_;
@@ -215,6 +223,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
    */
+  @java.lang.Override
   public int getIntentsCount() {
     return intents_.size();
   }
@@ -228,6 +237,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent getIntents(int index) {
     return intents_.get(index);
   }
@@ -241,6 +251,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentsOrBuilder(int index) {
     return intents_.get(index);
   }
@@ -634,7 +645,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -657,7 +670,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -680,7 +695,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -702,7 +719,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -720,7 +739,9 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
      * `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

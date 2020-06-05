@@ -138,10 +138,13 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -165,10 +168,13 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +201,7 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -212,6 +219,7 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +242,7 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -615,7 +624,9 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -642,7 +653,9 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -669,7 +682,9 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -695,7 +710,9 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -717,7 +734,9 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -746,6 +765,7 @@ public final class ListSessionEntityTypesRequest extends com.google.protobuf.Gen
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

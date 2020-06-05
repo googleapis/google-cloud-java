@@ -159,6 +159,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The word.
    */
+  @java.lang.Override
   public java.lang.String getWord() {
     java.lang.Object ref = word_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +182,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for word.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getWordBytes() {
     java.lang.Object ref = word_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +210,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startOffset field is set.
    */
+  @java.lang.Override
   public boolean hasStartOffset() {
     return startOffset_ != null;
   }
@@ -224,6 +227,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getStartOffset() {
     return startOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startOffset_;
   }
@@ -238,6 +242,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration start_offset = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getStartOffsetOrBuilder() {
     return getStartOffset();
   }
@@ -257,6 +262,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endOffset field is set.
    */
+  @java.lang.Override
   public boolean hasEndOffset() {
     return endOffset_ != null;
   }
@@ -273,6 +279,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endOffset.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getEndOffset() {
     return endOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endOffset_;
   }
@@ -287,6 +294,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration end_offset = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getEndOffsetOrBuilder() {
     return getEndOffset();
   }
@@ -309,6 +317,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The confidence.
    */
+  @java.lang.Override
   public float getConfidence() {
     return confidence_;
   }
@@ -1224,6 +1233,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The confidence.
      */
+    @java.lang.Override
     public float getConfidence() {
       return confidence_;
     }

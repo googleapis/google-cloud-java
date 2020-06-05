@@ -22,7 +22,15 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Represents a conversational agent.
+ * A Dialogflow agent is a virtual agent that handles conversations with your
+ * end-users. It is a natural language understanding module that understands the
+ * nuances of human language. Dialogflow translates end-user text or audio
+ * during a conversation to structured data that your apps and services can
+ * understand. You design and build a Dialogflow agent to handle the types of
+ * conversations required for your system.
+ * For more information about agents, see the
+ * [Agents
+ * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.Agent}
@@ -325,6 +333,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -500,6 +512,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -675,6 +691,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -723,6 +743,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -748,6 +769,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -773,6 +795,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -795,6 +818,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -824,6 +848,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The defaultLanguageCode.
    */
+  @java.lang.Override
   public java.lang.String getDefaultLanguageCode() {
     java.lang.Object ref = defaultLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -850,6 +875,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for defaultLanguageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDefaultLanguageCodeBytes() {
     java.lang.Object ref = defaultLanguageCode_;
     if (ref instanceof java.lang.String) {
@@ -946,6 +972,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The timeZone.
    */
+  @java.lang.Override
   public java.lang.String getTimeZone() {
     java.lang.Object ref = timeZone_;
     if (ref instanceof java.lang.String) {
@@ -970,6 +997,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for timeZone.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
     if (ref instanceof java.lang.String) {
@@ -996,6 +1024,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1019,6 +1048,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1048,6 +1078,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The avatarUri.
    */
+  @java.lang.Override
   public java.lang.String getAvatarUri() {
     java.lang.Object ref = avatarUri_;
     if (ref instanceof java.lang.String) {
@@ -1074,6 +1105,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for avatarUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAvatarUriBytes() {
     java.lang.Object ref = avatarUri_;
     if (ref instanceof java.lang.String) {
@@ -1099,6 +1131,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enableLogging.
    */
+  @java.lang.Override
   public boolean getEnableLogging() {
     return enableLogging_;
   }
@@ -1118,6 +1151,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for matchMode.
    */
+  @java.lang.Override
   public int getMatchModeValue() {
     return matchMode_;
   }
@@ -1134,6 +1168,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The matchMode.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Agent.MatchMode result =
@@ -1160,6 +1195,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The classificationThreshold.
    */
+  @java.lang.Override
   public float getClassificationThreshold() {
     return classificationThreshold_;
   }
@@ -1182,6 +1218,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for apiVersion.
    */
+  @java.lang.Override
   public int getApiVersionValue() {
     return apiVersion_;
   }
@@ -1201,6 +1238,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The apiVersion.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Agent.ApiVersion getApiVersion() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Agent.ApiVersion result =
@@ -1223,6 +1261,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for tier.
    */
+  @java.lang.Override
   public int getTierValue() {
     return tier_;
   }
@@ -1239,6 +1278,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The tier.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Agent.Tier getTier() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Agent.Tier result =
@@ -1520,7 +1560,15 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a conversational agent.
+   * A Dialogflow agent is a virtual agent that handles conversations with your
+   * end-users. It is a natural language understanding module that understands the
+   * nuances of human language. Dialogflow translates end-user text or audio
+   * during a conversation to structured data that your apps and services can
+   * understand. You design and build a Dialogflow agent to handle the types of
+   * conversations required for your system.
+   * For more information about agents, see the
+   * [Agents
+   * documentation](https://cloud.google.com/dialogflow/docs/agents-overview).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.Agent}
@@ -2662,6 +2710,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableLogging.
      */
+    @java.lang.Override
     public boolean getEnableLogging() {
       return enableLogging_;
     }
@@ -2715,6 +2764,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for matchMode.
      */
+    @java.lang.Override
     public int getMatchModeValue() {
       return matchMode_;
     }
@@ -2733,6 +2783,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMatchModeValue(int value) {
+
       matchMode_ = value;
       onChanged();
       return this;
@@ -2750,6 +2801,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The matchMode.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Agent.MatchMode result =
@@ -2817,6 +2869,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The classificationThreshold.
      */
+    @java.lang.Override
     public float getClassificationThreshold() {
       return classificationThreshold_;
     }
@@ -2885,6 +2938,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for apiVersion.
      */
+    @java.lang.Override
     public int getApiVersionValue() {
       return apiVersion_;
     }
@@ -2906,6 +2960,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setApiVersionValue(int value) {
+
       apiVersion_ = value;
       onChanged();
       return this;
@@ -2926,6 +2981,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The apiVersion.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Agent.ApiVersion getApiVersion() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Agent.ApiVersion result =
@@ -2995,6 +3051,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for tier.
      */
+    @java.lang.Override
     public int getTierValue() {
       return tier_;
     }
@@ -3013,6 +3070,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTierValue(int value) {
+
       tier_ = value;
       onChanged();
       return this;
@@ -3030,6 +3088,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The tier.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Agent.Tier getTier() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Agent.Tier result =

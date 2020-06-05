@@ -147,6 +147,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +205,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return Whether the context field is set.
    */
+  @java.lang.Override
   public boolean hasContext() {
     return context_ != null;
   }
@@ -219,6 +222,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The context.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Context getContext() {
     return context_ == null
         ? com.google.cloud.dialogflow.v2.Context.getDefaultInstance()
@@ -235,6 +239,7 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    * .google.cloud.dialogflow.v2.Context context = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.ContextOrBuilder getContextOrBuilder() {
     return getContext();
   }

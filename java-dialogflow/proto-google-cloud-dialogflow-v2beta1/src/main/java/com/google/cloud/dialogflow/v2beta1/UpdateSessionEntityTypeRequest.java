@@ -148,6 +148,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return Whether the sessionEntityType field is set.
    */
+  @java.lang.Override
   public boolean hasSessionEntityType() {
     return sessionEntityType_ != null;
   }
@@ -162,6 +163,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return The sessionEntityType.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType() {
     return sessionEntityType_ == null
         ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
@@ -176,6 +178,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
       getSessionEntityTypeOrBuilder() {
     return getSessionEntityType();
@@ -194,6 +197,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -208,6 +212,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -220,6 +225,7 @@ public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.Ge
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

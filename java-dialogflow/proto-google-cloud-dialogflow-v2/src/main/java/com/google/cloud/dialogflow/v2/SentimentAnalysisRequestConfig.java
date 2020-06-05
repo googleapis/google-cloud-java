@@ -123,6 +123,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
    *
    * @return The analyzeQueryTextSentiment.
    */
+  @java.lang.Override
   public boolean getAnalyzeQueryTextSentiment() {
     return analyzeQueryTextSentiment_;
   }
@@ -462,6 +463,7 @@ public final class SentimentAnalysisRequestConfig extends com.google.protobuf.Ge
      *
      * @return The analyzeQueryTextSentiment.
      */
+    @java.lang.Override
     public boolean getAnalyzeQueryTextSentiment() {
       return analyzeQueryTextSentiment_;
     }

@@ -177,15 +177,18 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the document to reload.
+   * Required. The name of the document to reload.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
    * ID&gt;/documents/&lt;Document ID&gt;`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -201,15 +204,18 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The name of the document to reload.
+   * Required. The name of the document to reload.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
    * ID&gt;/documents/&lt;Document ID&gt;`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -227,7 +233,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The path for a Cloud Storage source file for reloading document content.
+   * The path for a Cloud Storage source file for reloading document content.
    * If not provided, the Document's existing source will be reloaded.
    * </pre>
    *
@@ -235,6 +241,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 3;
   }
@@ -242,7 +249,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The path for a Cloud Storage source file for reloading document content.
+   * The path for a Cloud Storage source file for reloading document content.
    * If not provided, the Document's existing source will be reloaded.
    * </pre>
    *
@@ -250,6 +257,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 3) {
       return (com.google.cloud.dialogflow.v2beta1.GcsSource) source_;
@@ -260,12 +268,13 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The path for a Cloud Storage source file for reloading document content.
+   * The path for a Cloud Storage source file for reloading document content.
    * If not provided, the Document's existing source will be reloaded.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 3) {
       return (com.google.cloud.dialogflow.v2beta1.GcsSource) source_;
@@ -656,12 +665,14 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the document to reload.
+     * Required. The name of the document to reload.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -680,12 +691,14 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the document to reload.
+     * Required. The name of the document to reload.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -704,12 +717,14 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the document to reload.
+     * Required. The name of the document to reload.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -727,12 +742,14 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the document to reload.
+     * Required. The name of the document to reload.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -746,12 +763,14 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The name of the document to reload.
+     * Required. The name of the document to reload.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -776,7 +795,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
@@ -784,6 +803,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 3;
     }
@@ -791,7 +811,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
@@ -799,6 +819,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 3) {
@@ -816,7 +837,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
@@ -839,7 +860,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
@@ -860,7 +881,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
@@ -892,7 +913,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
@@ -918,7 +939,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
@@ -931,12 +952,13 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
       if ((sourceCase_ == 3) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();
@@ -951,7 +973,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The path for a Cloud Storage source file for reloading document content.
+     * The path for a Cloud Storage source file for reloading document content.
      * If not provided, the Document's existing source will be reloaded.
      * </pre>
      *

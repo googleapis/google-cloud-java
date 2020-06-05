@@ -148,6 +148,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    * @return The source.
    */
+  @java.lang.Override
   public java.lang.String getSource() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
@@ -171,6 +172,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for source.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceBytes() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    * @return The version.
    */
+  @java.lang.Override
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -220,6 +223,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    * @return The bytes for version.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +261,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    * @return Whether the payload field is set.
    */
+  @java.lang.Override
   public boolean hasPayload() {
     return payload_ != null;
   }
@@ -283,6 +288,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    * @return The payload.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getPayload() {
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
   }
@@ -307,6 +313,7 @@ public final class OriginalDetectIntentRequest extends com.google.protobuf.Gener
    *
    * <code>.google.protobuf.Struct payload = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPayloadOrBuilder() {
     return getPayload();
   }

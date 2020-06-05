@@ -140,6 +140,7 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType entity_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType> getEntityTypesList() {
     return entityTypes_;
   }
@@ -153,6 +154,7 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType entity_types = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityTypeOrBuilder>
       getEntityTypesOrBuilderList() {
     return entityTypes_;
@@ -167,6 +169,7 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType entity_types = 1;</code>
    */
+  @java.lang.Override
   public int getEntityTypesCount() {
     return entityTypes_.size();
   }
@@ -180,6 +183,7 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType entity_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType getEntityTypes(int index) {
     return entityTypes_.get(index);
   }
@@ -193,6 +197,7 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType entity_types = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityTypeOrBuilder getEntityTypesOrBuilder(
       int index) {
     return entityTypes_.get(index);
@@ -212,6 +217,7 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -235,6 +241,7 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

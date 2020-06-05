@@ -130,6 +130,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Intent> getIntentsList() {
     return intents_;
   }
@@ -142,6 +143,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder>
       getIntentsOrBuilderList() {
     return intents_;
@@ -155,6 +157,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public int getIntentsCount() {
     return intents_.size();
   }
@@ -167,6 +170,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent getIntents(int index) {
     return intents_.get(index);
   }
@@ -179,6 +183,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(int index) {
     return intents_.get(index);
   }

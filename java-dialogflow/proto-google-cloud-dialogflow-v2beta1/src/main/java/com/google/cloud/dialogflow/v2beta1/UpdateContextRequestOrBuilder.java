@@ -30,7 +30,9 @@ public interface UpdateContextRequestOrBuilder
    * Required. The context to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the context field is set.
    */
@@ -42,7 +44,9 @@ public interface UpdateContextRequestOrBuilder
    * Required. The context to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The context.
    */
@@ -54,7 +58,9 @@ public interface UpdateContextRequestOrBuilder
    * Required. The context to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Context context = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getContextOrBuilder();
 
@@ -65,7 +71,8 @@ public interface UpdateContextRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -77,7 +84,8 @@ public interface UpdateContextRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -89,7 +97,8 @@ public interface UpdateContextRequestOrBuilder
    * Optional. The mask to control which fields get updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

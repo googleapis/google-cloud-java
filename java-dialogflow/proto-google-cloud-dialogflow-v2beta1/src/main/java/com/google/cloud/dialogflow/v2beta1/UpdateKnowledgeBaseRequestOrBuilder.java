@@ -30,7 +30,9 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * Required. The knowledge base to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the knowledgeBase field is set.
    */
@@ -42,7 +44,9 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * Required. The knowledge base to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The knowledgeBase.
    */
@@ -54,7 +58,9 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * Required. The knowledge base to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_base = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBaseOrBuilder();
 
@@ -67,7 +73,8 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -81,7 +88,8 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -95,7 +103,8 @@ public interface UpdateKnowledgeBaseRequestOrBuilder
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -127,6 +127,7 @@ public final class GetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class GetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {

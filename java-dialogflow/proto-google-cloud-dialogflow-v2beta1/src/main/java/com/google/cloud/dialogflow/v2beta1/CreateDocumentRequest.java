@@ -137,10 +137,13 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -160,10 +163,13 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -185,10 +191,13 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    * Required. The document to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Override
   public boolean hasDocument() {
     return document_ != null;
   }
@@ -199,10 +208,13 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    * Required. The document to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The document.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Document getDocument() {
     return document_ == null
         ? com.google.cloud.dialogflow.v2beta1.Document.getDefaultInstance()
@@ -215,8 +227,11 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    * Required. The document to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
@@ -577,7 +592,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -600,7 +617,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -623,7 +642,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -645,7 +666,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -663,7 +686,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -692,7 +717,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the document field is set.
      */
@@ -706,7 +733,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The document.
      */
@@ -726,7 +755,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(com.google.cloud.dialogflow.v2beta1.Document value) {
       if (documentBuilder_ == null) {
@@ -748,7 +779,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(
         com.google.cloud.dialogflow.v2beta1.Document.Builder builderForValue) {
@@ -768,7 +801,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDocument(com.google.cloud.dialogflow.v2beta1.Document value) {
       if (documentBuilder_ == null) {
@@ -794,7 +829,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDocument() {
       if (documentBuilder_ == null) {
@@ -814,7 +851,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Document.Builder getDocumentBuilder() {
 
@@ -828,7 +867,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentOrBuilder() {
       if (documentBuilder_ != null) {
@@ -846,7 +887,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to create.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Document,

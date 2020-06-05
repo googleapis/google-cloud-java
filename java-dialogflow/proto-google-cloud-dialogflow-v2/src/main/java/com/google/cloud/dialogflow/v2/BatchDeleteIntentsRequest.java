@@ -143,6 +143,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +196,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.dialogflow.v2.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Intent> getIntentsList() {
     return intents_;
   }
@@ -209,6 +212,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.dialogflow.v2.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder>
       getIntentsOrBuilderList() {
     return intents_;
@@ -225,6 +229,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.dialogflow.v2.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getIntentsCount() {
     return intents_.size();
   }
@@ -240,6 +245,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.dialogflow.v2.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent getIntents(int index) {
     return intents_.get(index);
   }
@@ -255,6 +261,7 @@ public final class BatchDeleteIntentsRequest extends com.google.protobuf.Generat
    * repeated .google.cloud.dialogflow.v2.Intent intents = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(int index) {
     return intents_.get(index);
   }

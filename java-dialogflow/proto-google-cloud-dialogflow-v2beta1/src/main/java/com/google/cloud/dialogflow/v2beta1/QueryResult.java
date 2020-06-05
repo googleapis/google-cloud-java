@@ -307,6 +307,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The queryText.
    */
+  @java.lang.Override
   public java.lang.String getQueryText() {
     java.lang.Object ref = queryText_;
     if (ref instanceof java.lang.String) {
@@ -336,6 +337,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for queryText.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getQueryTextBytes() {
     java.lang.Object ref = queryText_;
     if (ref instanceof java.lang.String) {
@@ -364,6 +366,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -389,6 +392,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -421,6 +425,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The speechRecognitionConfidence.
    */
+  @java.lang.Override
   public float getSpeechRecognitionConfidence() {
     return speechRecognitionConfidence_;
   }
@@ -438,6 +443,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -460,6 +466,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getActionBytes() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -497,6 +504,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the parameters field is set.
    */
+  @java.lang.Override
   public boolean hasParameters() {
     return parameters_ != null;
   }
@@ -523,6 +531,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parameters.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getParameters() {
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
   }
@@ -547,6 +556,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
     return getParameters();
   }
@@ -568,6 +578,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The allRequiredParamsPresent.
    */
+  @java.lang.Override
   public boolean getAllRequiredParamsPresent() {
     return allRequiredParamsPresent_;
   }
@@ -586,6 +597,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The fulfillmentText.
    */
+  @java.lang.Override
   public java.lang.String getFulfillmentText() {
     java.lang.Object ref = fulfillmentText_;
     if (ref instanceof java.lang.String) {
@@ -609,6 +621,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for fulfillmentText.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFulfillmentTextBytes() {
     java.lang.Object ref = fulfillmentText_;
     if (ref instanceof java.lang.String) {
@@ -632,6 +645,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message>
       getFulfillmentMessagesList() {
     return fulfillmentMessages_;
@@ -645,6 +659,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>
       getFulfillmentMessagesOrBuilderList() {
     return fulfillmentMessages_;
@@ -658,6 +673,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 7;</code>
    */
+  @java.lang.Override
   public int getFulfillmentMessagesCount() {
     return fulfillmentMessages_.size();
   }
@@ -670,6 +686,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent.Message getFulfillmentMessages(int index) {
     return fulfillmentMessages_.get(index);
   }
@@ -682,6 +699,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 7;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder
       getFulfillmentMessagesOrBuilder(int index) {
     return fulfillmentMessages_.get(index);
@@ -701,6 +719,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The webhookSource.
    */
+  @java.lang.Override
   public java.lang.String getWebhookSource() {
     java.lang.Object ref = webhookSource_;
     if (ref instanceof java.lang.String) {
@@ -724,6 +743,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for webhookSource.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getWebhookSourceBytes() {
     java.lang.Object ref = webhookSource_;
     if (ref instanceof java.lang.String) {
@@ -750,6 +770,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the webhookPayload field is set.
    */
+  @java.lang.Override
   public boolean hasWebhookPayload() {
     return webhookPayload_ != null;
   }
@@ -765,6 +786,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The webhookPayload.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getWebhookPayload() {
     return webhookPayload_ == null
         ? com.google.protobuf.Struct.getDefaultInstance()
@@ -780,6 +802,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Struct webhook_payload = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getWebhookPayloadOrBuilder() {
     return getWebhookPayload();
   }
@@ -798,6 +821,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getOutputContextsList() {
     return outputContexts_;
   }
@@ -813,6 +837,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 10;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getOutputContextsOrBuilderList() {
     return outputContexts_;
@@ -829,6 +854,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 10;</code>
    */
+  @java.lang.Override
   public int getOutputContextsCount() {
     return outputContexts_.size();
   }
@@ -844,6 +870,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 10;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Context getOutputContexts(int index) {
     return outputContexts_.get(index);
   }
@@ -859,6 +886,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 10;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getOutputContextsOrBuilder(
       int index) {
     return outputContexts_.get(index);
@@ -879,6 +907,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the intent field is set.
    */
+  @java.lang.Override
   public boolean hasIntent() {
     return intent_ != null;
   }
@@ -895,6 +924,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The intent.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent getIntent() {
     return intent_ == null
         ? com.google.cloud.dialogflow.v2beta1.Intent.getDefaultInstance()
@@ -911,6 +941,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 11;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentOrBuilder() {
     return getIntent();
   }
@@ -935,6 +966,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The intentDetectionConfidence.
    */
+  @java.lang.Override
   public float getIntentDetectionConfidence() {
     return intentDetectionConfidence_;
   }
@@ -957,6 +989,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the diagnosticInfo field is set.
    */
+  @java.lang.Override
   public boolean hasDiagnosticInfo() {
     return diagnosticInfo_ != null;
   }
@@ -976,6 +1009,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The diagnosticInfo.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getDiagnosticInfo() {
     return diagnosticInfo_ == null
         ? com.google.protobuf.Struct.getDefaultInstance()
@@ -995,6 +1029,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Struct diagnostic_info = 14;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getDiagnosticInfoOrBuilder() {
     return getDiagnosticInfo();
   }
@@ -1014,6 +1049,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the sentimentAnalysisResult field is set.
    */
+  @java.lang.Override
   public boolean hasSentimentAnalysisResult() {
     return sentimentAnalysisResult_ != null;
   }
@@ -1030,6 +1066,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The sentimentAnalysisResult.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getSentimentAnalysisResult() {
     return sentimentAnalysisResult_ == null
         ? com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.getDefaultInstance()
@@ -1046,6 +1083,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult sentiment_analysis_result = 17;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResultOrBuilder
       getSentimentAnalysisResultOrBuilder() {
     return getSentimentAnalysisResult();
@@ -1065,6 +1103,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the knowledgeAnswers field is set.
    */
+  @java.lang.Override
   public boolean hasKnowledgeAnswers() {
     return knowledgeAnswers_ != null;
   }
@@ -1080,6 +1119,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The knowledgeAnswers.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getKnowledgeAnswers() {
     return knowledgeAnswers_ == null
         ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.getDefaultInstance()
@@ -1095,6 +1135,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers knowledge_answers = 18;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswersOrBuilder
       getKnowledgeAnswersOrBuilder() {
     return getKnowledgeAnswers();
@@ -2094,6 +2135,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The speechRecognitionConfidence.
      */
+    @java.lang.Override
     public float getSpeechRecognitionConfidence() {
       return speechRecognitionConfidence_;
     }
@@ -2556,6 +2598,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The allRequiredParamsPresent.
      */
+    @java.lang.Override
     public boolean getAllRequiredParamsPresent() {
       return allRequiredParamsPresent_;
     }
@@ -4032,6 +4075,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The intentDetectionConfidence.
      */
+    @java.lang.Override
     public float getIntentDetectionConfidence() {
       return intentDetectionConfidence_;
     }

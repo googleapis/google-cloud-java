@@ -297,6 +297,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -344,6 +348,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -368,6 +373,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -394,6 +400,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -417,6 +424,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -443,6 +451,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The agentVersion.
    */
+  @java.lang.Override
   public java.lang.String getAgentVersion() {
     java.lang.Object ref = agentVersion_;
     if (ref instanceof java.lang.String) {
@@ -466,6 +475,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for agentVersion.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAgentVersionBytes() {
     java.lang.Object ref = agentVersion_;
     if (ref instanceof java.lang.String) {
@@ -494,6 +504,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -511,6 +522,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.Environment.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Environment.State result =
@@ -533,6 +545,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -549,6 +562,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -563,6 +577,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -1311,6 +1326,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1330,6 +1346,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1348,6 +1365,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.Environment.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Environment.State result =

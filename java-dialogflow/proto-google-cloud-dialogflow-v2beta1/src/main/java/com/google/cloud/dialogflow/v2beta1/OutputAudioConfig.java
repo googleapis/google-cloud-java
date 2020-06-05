@@ -150,6 +150,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for audioEncoding.
    */
+  @java.lang.Override
   public int getAudioEncodingValue() {
     return audioEncoding_;
   }
@@ -166,6 +167,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The audioEncoding.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding result =
@@ -192,6 +194,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The sampleRateHertz.
    */
+  @java.lang.Override
   public int getSampleRateHertz() {
     return sampleRateHertz_;
   }
@@ -210,6 +213,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return Whether the synthesizeSpeechConfig field is set.
    */
+  @java.lang.Override
   public boolean hasSynthesizeSpeechConfig() {
     return synthesizeSpeechConfig_ != null;
   }
@@ -225,6 +229,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * @return The synthesizeSpeechConfig.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getSynthesizeSpeechConfig() {
     return synthesizeSpeechConfig_ == null
         ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()
@@ -240,6 +245,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder
       getSynthesizeSpeechConfigOrBuilder() {
     return getSynthesizeSpeechConfig();
@@ -627,6 +633,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for audioEncoding.
      */
+    @java.lang.Override
     public int getAudioEncodingValue() {
       return audioEncoding_;
     }
@@ -645,6 +652,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setAudioEncodingValue(int value) {
+
       audioEncoding_ = value;
       onChanged();
       return this;
@@ -662,6 +670,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The audioEncoding.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding result =
@@ -729,6 +738,7 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * @return The sampleRateHertz.
      */
+    @java.lang.Override
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }

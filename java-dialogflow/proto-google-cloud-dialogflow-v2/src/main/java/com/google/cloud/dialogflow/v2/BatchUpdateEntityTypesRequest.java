@@ -222,6 +222,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -247,6 +248,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -333,6 +335,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return Whether the entityTypeBatchInline field is set.
    */
+  @java.lang.Override
   public boolean hasEntityTypeBatchInline() {
     return entityTypeBatchCase_ == 3;
   }
@@ -347,6 +350,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The entityTypeBatchInline.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.EntityTypeBatch getEntityTypeBatchInline() {
     if (entityTypeBatchCase_ == 3) {
       return (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_;
@@ -362,6 +366,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder
       getEntityTypeBatchInlineOrBuilder() {
     if (entityTypeBatchCase_ == 3) {
@@ -387,6 +392,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -413,6 +419,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -439,6 +446,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -454,6 +462,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -467,6 +476,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
    * <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -1053,6 +1063,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * @return The entityTypeBatchUri.
      */
+    @java.lang.Override
     public java.lang.String getEntityTypeBatchUri() {
       java.lang.Object ref = "";
       if (entityTypeBatchCase_ == 2) {
@@ -1083,6 +1094,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * @return The bytes for entityTypeBatchUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getEntityTypeBatchUriBytes() {
       java.lang.Object ref = "";
       if (entityTypeBatchCase_ == 2) {
@@ -1187,6 +1199,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * @return Whether the entityTypeBatchInline field is set.
      */
+    @java.lang.Override
     public boolean hasEntityTypeBatchInline() {
       return entityTypeBatchCase_ == 3;
     }
@@ -1201,6 +1214,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * @return The entityTypeBatchInline.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.EntityTypeBatch getEntityTypeBatchInline() {
       if (entityTypeBatchInlineBuilder_ == null) {
         if (entityTypeBatchCase_ == 3) {
@@ -1336,6 +1350,7 @@ public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.Gen
      *
      * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder
         getEntityTypeBatchInlineOrBuilder() {
       if ((entityTypeBatchCase_ == 3) && (entityTypeBatchInlineBuilder_ != null)) {

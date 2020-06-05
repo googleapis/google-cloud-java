@@ -151,6 +151,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +205,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    *
    * @return Whether the entityType field is set.
    */
+  @java.lang.Override
   public boolean hasEntityType() {
     return entityType_ != null;
   }
@@ -219,6 +222,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    *
    * @return The entityType.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.EntityType getEntityType() {
     return entityType_ == null
         ? com.google.cloud.dialogflow.v2.EntityType.getDefaultInstance()
@@ -235,6 +239,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * .google.cloud.dialogflow.v2.EntityType entity_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.EntityTypeOrBuilder getEntityTypeOrBuilder() {
     return getEntityType();
   }
@@ -256,6 +261,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -282,6 +288,7 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {

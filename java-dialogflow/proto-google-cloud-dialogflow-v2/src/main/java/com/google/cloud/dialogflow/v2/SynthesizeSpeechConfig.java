@@ -166,6 +166,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    *
    * @return The speakingRate.
    */
+  @java.lang.Override
   public double getSpeakingRate() {
     return speakingRate_;
   }
@@ -185,6 +186,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    *
    * @return The pitch.
    */
+  @java.lang.Override
   public double getPitch() {
     return pitch_;
   }
@@ -209,6 +211,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    *
    * @return The volumeGainDb.
    */
+  @java.lang.Override
   public double getVolumeGainDb() {
     return volumeGainDb_;
   }
@@ -295,6 +298,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    *
    * @return Whether the voice field is set.
    */
+  @java.lang.Override
   public boolean hasVoice() {
     return voice_ != null;
   }
@@ -309,6 +313,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    *
    * @return The voice.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.VoiceSelectionParams getVoice() {
     return voice_ == null
         ? com.google.cloud.dialogflow.v2.VoiceSelectionParams.getDefaultInstance()
@@ -323,6 +328,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
    *
    * <code>.google.cloud.dialogflow.v2.VoiceSelectionParams voice = 4;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.VoiceSelectionParamsOrBuilder getVoiceOrBuilder() {
     return getVoice();
   }
@@ -765,6 +771,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      *
      * @return The speakingRate.
      */
+    @java.lang.Override
     public double getSpeakingRate() {
       return speakingRate_;
     }
@@ -824,6 +831,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      *
      * @return The pitch.
      */
+    @java.lang.Override
     public double getPitch() {
       return pitch_;
     }
@@ -886,6 +894,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      *
      * @return The volumeGainDb.
      */
+    @java.lang.Override
     public double getVolumeGainDb() {
       return volumeGainDb_;
     }

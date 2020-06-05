@@ -35,7 +35,9 @@ public interface GetSessionEntityTypeRequestOrBuilder
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -52,7 +54,9 @@ public interface GetSessionEntityTypeRequestOrBuilder
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

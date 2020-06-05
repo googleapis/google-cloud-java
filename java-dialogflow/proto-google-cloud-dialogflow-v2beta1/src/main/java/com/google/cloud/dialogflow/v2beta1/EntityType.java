@@ -312,6 +312,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -449,6 +453,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -721,6 +729,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The value.
      */
+    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -750,6 +759,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for value.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
@@ -1611,6 +1621,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1636,6 +1647,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -1657,10 +1669,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of the entity type.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1679,10 +1692,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Required. The name of the entity type.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -1704,10 +1718,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Required. Indicates the kind of entity type.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for kind.
    */
+  @java.lang.Override
   public int getKindValue() {
     return kind_;
   }
@@ -1718,10 +1735,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Required. Indicates the kind of entity type.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The kind.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.Kind getKind() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.EntityType.Kind result =
@@ -1741,11 +1761,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * expanded.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for autoExpansionMode.
    */
+  @java.lang.Override
   public int getAutoExpansionModeValue() {
     return autoExpansionMode_;
   }
@@ -1757,11 +1779,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * expanded.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The autoExpansionMode.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode getAutoExpansionMode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode result =
@@ -1781,8 +1805,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList() {
     return entities_;
   }
@@ -1793,8 +1820,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList() {
     return entities_;
@@ -1806,8 +1836,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public int getEntitiesCount() {
     return entities_.size();
   }
@@ -1818,8 +1851,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index) {
     return entities_.get(index);
   }
@@ -1830,8 +1866,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Optional. The collection of entity entries associated with the entity type.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(
       int index) {
     return entities_.get(index);
@@ -1846,10 +1885,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    * Optional. Enables fuzzy entity extraction during classification.
    * </pre>
    *
-   * <code>bool enable_fuzzy_extraction = 7;</code>
+   * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enableFuzzyExtraction.
    */
+  @java.lang.Override
   public boolean getEnableFuzzyExtraction() {
     return enableFuzzyExtraction_;
   }
@@ -2426,7 +2466,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the entity type.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -2448,7 +2488,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the entity type.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -2470,7 +2510,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the entity type.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2491,7 +2531,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the entity type.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -2508,7 +2548,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. The name of the entity type.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -2532,10 +2572,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. Indicates the kind of entity type.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for kind.
      */
+    @java.lang.Override
     public int getKindValue() {
       return kind_;
     }
@@ -2546,12 +2589,15 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. Indicates the kind of entity type.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for kind to set.
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
+
       kind_ = value;
       onChanged();
       return this;
@@ -2563,10 +2609,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. Indicates the kind of entity type.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The kind.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.EntityType.Kind getKind() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.EntityType.Kind result =
@@ -2582,7 +2631,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. Indicates the kind of entity type.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The kind to set.
      * @return This builder for chaining.
@@ -2603,7 +2654,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Required. Indicates the kind of entity type.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.Kind kind = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2623,11 +2676,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * expanded.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for autoExpansionMode.
      */
+    @java.lang.Override
     public int getAutoExpansionModeValue() {
       return autoExpansionMode_;
     }
@@ -2639,13 +2694,15 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * expanded.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for autoExpansionMode to set.
      * @return This builder for chaining.
      */
     public Builder setAutoExpansionModeValue(int value) {
+
       autoExpansionMode_ = value;
       onChanged();
       return this;
@@ -2658,11 +2715,13 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * expanded.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The autoExpansionMode.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode getAutoExpansionMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode result =
@@ -2680,7 +2739,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * expanded.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The autoExpansionMode to set.
@@ -2704,7 +2764,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * expanded.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4;
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.EntityType.AutoExpansionMode auto_expansion_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -2741,7 +2802,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList() {
       if (entitiesBuilder_ == null) {
@@ -2757,7 +2820,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getEntitiesCount() {
       if (entitiesBuilder_ == null) {
@@ -2773,7 +2838,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index) {
       if (entitiesBuilder_ == null) {
@@ -2789,7 +2856,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEntities(
         int index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity value) {
@@ -2812,7 +2881,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEntities(
         int index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder builderForValue) {
@@ -2832,7 +2903,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEntities(com.google.cloud.dialogflow.v2beta1.EntityType.Entity value) {
       if (entitiesBuilder_ == null) {
@@ -2854,7 +2927,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEntities(
         int index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity value) {
@@ -2877,7 +2952,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEntities(
         com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder builderForValue) {
@@ -2897,7 +2974,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEntities(
         int index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder builderForValue) {
@@ -2917,7 +2996,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllEntities(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.EntityType.Entity>
@@ -2938,7 +3019,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
@@ -2957,7 +3040,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeEntities(int index) {
       if (entitiesBuilder_ == null) {
@@ -2976,7 +3061,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder getEntitiesBuilder(
         int index) {
@@ -2989,7 +3076,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(
         int index) {
@@ -3006,7 +3095,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
         getEntitiesOrBuilderList() {
@@ -3023,7 +3114,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder addEntitiesBuilder() {
       return getEntitiesFieldBuilder()
@@ -3036,7 +3129,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder addEntitiesBuilder(
         int index) {
@@ -3051,7 +3146,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. The collection of entity entries associated with the entity type.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6;</code>
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder>
         getEntitiesBuilderList() {
@@ -3083,10 +3180,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. Enables fuzzy entity extraction during classification.
      * </pre>
      *
-     * <code>bool enable_fuzzy_extraction = 7;</code>
+     * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The enableFuzzyExtraction.
      */
+    @java.lang.Override
     public boolean getEnableFuzzyExtraction() {
       return enableFuzzyExtraction_;
     }
@@ -3097,7 +3195,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. Enables fuzzy entity extraction during classification.
      * </pre>
      *
-     * <code>bool enable_fuzzy_extraction = 7;</code>
+     * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The enableFuzzyExtraction to set.
      * @return This builder for chaining.
@@ -3115,7 +3213,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      * Optional. Enables fuzzy entity extraction during classification.
      * </pre>
      *
-     * <code>bool enable_fuzzy_extraction = 7;</code>
+     * <code>bool enable_fuzzy_extraction = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

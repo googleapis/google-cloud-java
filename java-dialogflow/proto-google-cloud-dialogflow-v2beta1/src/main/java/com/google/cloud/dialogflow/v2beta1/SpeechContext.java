@@ -240,6 +240,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boost.
    */
+  @java.lang.Override
   public float getBoost() {
     return boost_;
   }
@@ -866,6 +867,7 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The boost.
      */
+    @java.lang.Override
     public float getBoost() {
       return boost_;
     }

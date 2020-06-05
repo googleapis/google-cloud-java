@@ -143,6 +143,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -223,6 +226,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +254,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The enum numeric value on the wire for intentView.
    */
+  @java.lang.Override
   public int getIntentViewValue() {
     return intentView_;
   }
@@ -266,6 +271,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    * @return The intentView.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.IntentView getIntentView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.IntentView result =
@@ -884,6 +890,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The enum numeric value on the wire for intentView.
      */
+    @java.lang.Override
     public int getIntentViewValue() {
       return intentView_;
     }
@@ -902,6 +909,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
+
       intentView_ = value;
       onChanged();
       return this;
@@ -919,6 +927,7 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
      *
      * @return The intentView.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.IntentView getIntentView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.IntentView result =

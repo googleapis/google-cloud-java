@@ -125,10 +125,13 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -152,10 +155,13 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -504,7 +510,9 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -531,7 +539,9 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -558,7 +568,9 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -584,7 +596,9 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -606,7 +620,9 @@ public final class GetSessionEntityTypeRequest extends com.google.protobuf.Gener
      * environment. If `User ID` is not specified, we assume default '-' user.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

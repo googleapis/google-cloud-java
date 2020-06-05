@@ -281,6 +281,10 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -337,6 +341,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -367,6 +372,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -395,6 +401,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * @return The enum numeric value on the wire for entityOverrideMode.
    */
+  @java.lang.Override
   public int getEntityOverrideModeValue() {
     return entityOverrideMode_;
   }
@@ -412,6 +419,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * @return The entityOverrideMode.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode
       getEntityOverrideMode() {
     @SuppressWarnings("deprecation")
@@ -435,6 +443,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList() {
     return entities_;
   }
@@ -448,6 +457,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList() {
     return entities_;
@@ -462,6 +472,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public int getEntitiesCount() {
     return entities_.size();
   }
@@ -475,6 +486,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index) {
     return entities_.get(index);
   }
@@ -488,6 +500,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(
       int index) {
     return entities_.get(index);
@@ -1056,6 +1069,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * @return The enum numeric value on the wire for entityOverrideMode.
      */
+    @java.lang.Override
     public int getEntityOverrideModeValue() {
       return entityOverrideMode_;
     }
@@ -1075,6 +1089,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setEntityOverrideModeValue(int value) {
+
       entityOverrideMode_ = value;
       onChanged();
       return this;
@@ -1093,6 +1108,7 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      * @return The entityOverrideMode.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType.EntityOverrideMode
         getEntityOverrideMode() {
       @SuppressWarnings("deprecation")

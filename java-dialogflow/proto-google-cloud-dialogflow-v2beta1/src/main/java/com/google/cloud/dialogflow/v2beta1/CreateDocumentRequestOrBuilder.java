@@ -31,7 +31,9 @@ public interface CreateDocumentRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,7 +46,9 @@ public interface CreateDocumentRequestOrBuilder
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -57,7 +61,9 @@ public interface CreateDocumentRequestOrBuilder
    * Required. The document to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the document field is set.
    */
@@ -69,7 +75,9 @@ public interface CreateDocumentRequestOrBuilder
    * Required. The document to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The document.
    */
@@ -81,7 +89,9 @@ public interface CreateDocumentRequestOrBuilder
    * Required. The document to create.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentOrBuilder();
 }

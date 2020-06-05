@@ -34,7 +34,9 @@ public interface DeleteAllContextsRequestOrBuilder
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -50,7 +52,9 @@ public interface DeleteAllContextsRequestOrBuilder
    * environment. If `User ID` is not specified, we assume default '-' user.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

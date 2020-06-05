@@ -142,6 +142,28 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               source_ = input.readBytes();
               break;
             }
+          case 88:
+            {
+              enableAutoReload_ = input.readBool();
+              break;
+            }
+          case 98:
+            {
+              com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.Builder subBuilder = null;
+              if (latestReloadStatus_ != null) {
+                subBuilder = latestReloadStatus_.toBuilder();
+              }
+              latestReloadStatus_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(latestReloadStatus_);
+                latestReloadStatus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -312,6 +334,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -342,6 +368,1082 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.Document.KnowledgeType)
+  }
+
+  public interface ReloadStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Document.ReloadStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time of a reload attempt.
+     * This reload may have been triggered automatically or manually and may
+     * not have succeeded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 1;</code>
+     *
+     * @return Whether the time field is set.
+     */
+    boolean hasTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time of a reload attempt.
+     * This reload may have been triggered automatically or manually and may
+     * not have succeeded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 1;</code>
+     *
+     * @return The time.
+     */
+    com.google.protobuf.Timestamp getTime();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time of a reload attempt.
+     * This reload may have been triggered automatically or manually and may
+     * not have succeeded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of a reload attempt or the initial load.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    boolean hasStatus();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of a reload attempt or the initial load.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return The status.
+     */
+    com.google.rpc.Status getStatus();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of a reload attempt or the initial load.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     */
+    com.google.rpc.StatusOrBuilder getStatusOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The status of a reload attempt.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document.ReloadStatus}
+   */
+  public static final class ReloadStatus extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Document.ReloadStatus)
+      ReloadStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ReloadStatus.newBuilder() to construct.
+    private ReloadStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReloadStatus() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReloadStatus();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ReloadStatus(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (time_ != null) {
+                  subBuilder = time_.toBuilder();
+                }
+                time_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(time_);
+                  time_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                com.google.rpc.Status.Builder subBuilder = null;
+                if (status_ != null) {
+                  subBuilder = status_.toBuilder();
+                }
+                status_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(status_);
+                  status_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.DocumentProto
+          .internal_static_google_cloud_dialogflow_v2beta1_Document_ReloadStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2beta1.DocumentProto
+          .internal_static_google_cloud_dialogflow_v2beta1_Document_ReloadStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.class,
+              com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.Builder.class);
+    }
+
+    public static final int TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp time_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time of a reload attempt.
+     * This reload may have been triggered automatically or manually and may
+     * not have succeeded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 1;</code>
+     *
+     * @return Whether the time field is set.
+     */
+    @java.lang.Override
+    public boolean hasTime() {
+      return time_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time of a reload attempt.
+     * This reload may have been triggered automatically or manually and may
+     * not have succeeded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 1;</code>
+     *
+     * @return The time.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getTime() {
+      return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time of a reload attempt.
+     * This reload may have been triggered automatically or manually and may
+     * not have succeeded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
+      return getTime();
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private com.google.rpc.Status status_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of a reload attempt or the initial load.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return status_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of a reload attempt or the initial load.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.rpc.Status getStatus() {
+      return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of a reload attempt or the initial load.
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
+      return getStatus();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (time_ != null) {
+        output.writeMessage(1, getTime());
+      }
+      if (status_ != null) {
+        output.writeMessage(2, getStatus());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (time_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTime());
+      }
+      if (status_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStatus());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus other =
+          (com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus) obj;
+
+      if (hasTime() != other.hasTime()) return false;
+      if (hasTime()) {
+        if (!getTime().equals(other.getTime())) return false;
+      }
+      if (hasStatus() != other.hasStatus()) return false;
+      if (hasStatus()) {
+        if (!getStatus().equals(other.getStatus())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTime()) {
+        hash = (37 * hash) + TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getTime().hashCode();
+      }
+      if (hasStatus()) {
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatus().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of a reload attempt.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document.ReloadStatus}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Document.ReloadStatus)
+        com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.DocumentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Document_ReloadStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2beta1.DocumentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Document_ReloadStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.class,
+                com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (timeBuilder_ == null) {
+          time_ = null;
+        } else {
+          time_ = null;
+          timeBuilder_ = null;
+        }
+        if (statusBuilder_ == null) {
+          status_ = null;
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2beta1.DocumentProto
+            .internal_static_google_cloud_dialogflow_v2beta1_Document_ReloadStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus build() {
+        com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus buildPartial() {
+        com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus result =
+            new com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus(this);
+        if (timeBuilder_ == null) {
+          result.time_ = time_;
+        } else {
+          result.time_ = timeBuilder_.build();
+        }
+        if (statusBuilder_ == null) {
+          result.status_ = status_;
+        } else {
+          result.status_ = statusBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus) {
+          return mergeFrom((com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus other) {
+        if (other == com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.getDefaultInstance())
+          return this;
+        if (other.hasTime()) {
+          mergeTime(other.getTime());
+        }
+        if (other.hasStatus()) {
+          mergeStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp time_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          timeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       *
+       * @return Whether the time field is set.
+       */
+      public boolean hasTime() {
+        return timeBuilder_ != null || time_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       *
+       * @return The time.
+       */
+      public com.google.protobuf.Timestamp getTime() {
+        if (timeBuilder_ == null) {
+          return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
+        } else {
+          return timeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       */
+      public Builder setTime(com.google.protobuf.Timestamp value) {
+        if (timeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          time_ = value;
+          onChanged();
+        } else {
+          timeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       */
+      public Builder setTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (timeBuilder_ == null) {
+          time_ = builderForValue.build();
+          onChanged();
+        } else {
+          timeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       */
+      public Builder mergeTime(com.google.protobuf.Timestamp value) {
+        if (timeBuilder_ == null) {
+          if (time_ != null) {
+            time_ = com.google.protobuf.Timestamp.newBuilder(time_).mergeFrom(value).buildPartial();
+          } else {
+            time_ = value;
+          }
+          onChanged();
+        } else {
+          timeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       */
+      public Builder clearTime() {
+        if (timeBuilder_ == null) {
+          time_ = null;
+          onChanged();
+        } else {
+          time_ = null;
+          timeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
+
+        onChanged();
+        return getTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
+        if (timeBuilder_ != null) {
+          return timeBuilder_.getMessageOrBuilder();
+        } else {
+          return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time of a reload attempt.
+       * This reload may have been triggered automatically or manually and may
+       * not have succeeded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getTimeFieldBuilder() {
+        if (timeBuilder_ == null) {
+          timeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getTime(), getParentForChildren(), isClean());
+          time_ = null;
+        }
+        return timeBuilder_;
+      }
+
+      private com.google.rpc.Status status_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          statusBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       *
+       * @return Whether the status field is set.
+       */
+      public boolean hasStatus() {
+        return statusBuilder_ != null || status_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       *
+       * @return The status.
+       */
+      public com.google.rpc.Status getStatus() {
+        if (statusBuilder_ == null) {
+          return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+        } else {
+          return statusBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public Builder setStatus(com.google.rpc.Status value) {
+        if (statusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
+        if (statusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          statusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public Builder mergeStatus(com.google.rpc.Status value) {
+        if (statusBuilder_ == null) {
+          if (status_ != null) {
+            status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          statusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public Builder clearStatus() {
+        if (statusBuilder_ == null) {
+          status_ = null;
+          onChanged();
+        } else {
+          status_ = null;
+          statusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public com.google.rpc.Status.Builder getStatusBuilder() {
+
+        onChanged();
+        return getStatusFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
+        if (statusBuilder_ != null) {
+          return statusBuilder_.getMessageOrBuilder();
+        } else {
+          return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The status of a reload attempt or the initial load.
+       * </pre>
+       *
+       * <code>.google.rpc.Status status = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          getStatusFieldBuilder() {
+        if (statusBuilder_ == null) {
+          statusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.rpc.Status,
+                  com.google.rpc.Status.Builder,
+                  com.google.rpc.StatusOrBuilder>(getStatus(), getParentForChildren(), isClean());
+          status_ = null;
+        }
+        return statusBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Document.ReloadStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Document.ReloadStatus)
+    private static final com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus();
+    }
+
+    public static com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReloadStatus> PARSER =
+        new com.google.protobuf.AbstractParser<ReloadStatus>() {
+          @java.lang.Override
+          public ReloadStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ReloadStatus(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReloadStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReloadStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int sourceCase_ = 0;
@@ -401,16 +1503,17 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The document resource name.
+   * Optional. The document resource name.
    * The name must be empty when creating a document.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
    * ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -426,16 +1529,17 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The document resource name.
+   * Optional. The document resource name.
    * The name must be empty when creating a document.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
    * ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -458,10 +1562,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * less; otherwise, the creation request fails.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -481,10 +1586,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * less; otherwise, the creation request fails.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -506,10 +1612,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Required. The MIME type of this document.
    * </pre>
    *
-   * <code>string mime_type = 3;</code>
+   * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The mimeType.
    */
+  @java.lang.Override
   public java.lang.String getMimeType() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -528,10 +1635,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Required. The MIME type of this document.
    * </pre>
    *
-   * <code>string mime_type = 3;</code>
+   * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for mimeType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
@@ -568,11 +1676,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return A list containing the knowledgeTypes.
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
       getKnowledgeTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -586,11 +1696,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The count of knowledgeTypes.
    */
+  @java.lang.Override
   public int getKnowledgeTypesCount() {
     return knowledgeTypes_.size();
   }
@@ -601,12 +1713,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @param index The index of the element to return.
    * @return The knowledgeTypes at the given index.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index) {
     return knowledgeTypes_converter_.convert(knowledgeTypes_.get(index));
   }
@@ -617,11 +1731,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for knowledgeTypes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getKnowledgeTypesValueList() {
     return knowledgeTypes_;
   }
@@ -632,12 +1748,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of knowledgeTypes at the given index.
    */
+  @java.lang.Override
   public int getKnowledgeTypesValue(int index) {
     return knowledgeTypes_.get(index);
   }
@@ -789,11 +1907,103 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The rawContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRawContent() {
     if (sourceCase_ == 9) {
       return (com.google.protobuf.ByteString) source_;
     }
     return com.google.protobuf.ByteString.EMPTY;
+  }
+
+  public static final int ENABLE_AUTO_RELOAD_FIELD_NUMBER = 11;
+  private boolean enableAutoReload_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, we try to automatically reload the document every day
+   * (at a time picked by the system). If false or unspecified, we don't try
+   * to automatically reload the document.
+   * Currently you can only enable automatic reload for documents sourced from
+   * a public url, see `source` field for the source types.
+   * Reload status can be tracked in `latest_reload_status`. If a reload
+   * fails, we will keep the document unchanged.
+   * If a reload fails with internal errors, the system will try to reload the
+   * document on the next day.
+   * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+   * system will not try to reload the document anymore. You need to manually
+   * reload the document successfully by calling `ReloadDocument` and clear the
+   * errors.
+   * </pre>
+   *
+   * <code>bool enable_auto_reload = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableAutoReload.
+   */
+  @java.lang.Override
+  public boolean getEnableAutoReload() {
+    return enableAutoReload_;
+  }
+
+  public static final int LATEST_RELOAD_STATUS_FIELD_NUMBER = 12;
+  private com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus latestReloadStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time and status of the latest reload.
+   * This reload may have been triggered automatically or manually
+   * and may not have succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the latestReloadStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatestReloadStatus() {
+    return latestReloadStatus_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time and status of the latest reload.
+   * This reload may have been triggered automatically or manually
+   * and may not have succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The latestReloadStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus getLatestReloadStatus() {
+    return latestReloadStatus_ == null
+        ? com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.getDefaultInstance()
+        : latestReloadStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time and status of the latest reload.
+   * This reload may have been triggered automatically or manually
+   * and may not have succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder
+      getLatestReloadStatusOrBuilder() {
+    return getLatestReloadStatus();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -835,6 +2045,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
     if (sourceCase_ == 9) {
       output.writeBytes(9, (com.google.protobuf.ByteString) source_);
+    }
+    if (enableAutoReload_ != false) {
+      output.writeBool(11, enableAutoReload_);
+    }
+    if (latestReloadStatus_ != null) {
+      output.writeMessage(12, getLatestReloadStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -878,6 +2094,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeBytesSize(
               9, (com.google.protobuf.ByteString) source_);
     }
+    if (enableAutoReload_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, enableAutoReload_);
+    }
+    if (latestReloadStatus_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getLatestReloadStatus());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -898,6 +2120,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getMimeType().equals(other.getMimeType())) return false;
     if (!knowledgeTypes_.equals(other.knowledgeTypes_)) return false;
+    if (getEnableAutoReload() != other.getEnableAutoReload()) return false;
+    if (hasLatestReloadStatus() != other.hasLatestReloadStatus()) return false;
+    if (hasLatestReloadStatus()) {
+      if (!getLatestReloadStatus().equals(other.getLatestReloadStatus())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 5:
@@ -932,6 +2159,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (getKnowledgeTypesCount() > 0) {
       hash = (37 * hash) + KNOWLEDGE_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + knowledgeTypes_.hashCode();
+    }
+    hash = (37 * hash) + ENABLE_AUTO_RELOAD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutoReload());
+    if (hasLatestReloadStatus()) {
+      hash = (37 * hash) + LATEST_RELOAD_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getLatestReloadStatus().hashCode();
     }
     switch (sourceCase_) {
       case 5:
@@ -1104,6 +2337,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
       knowledgeTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      enableAutoReload_ = false;
+
+      if (latestReloadStatusBuilder_ == null) {
+        latestReloadStatus_ = null;
+      } else {
+        latestReloadStatus_ = null;
+        latestReloadStatusBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -1150,6 +2391,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceCase_ == 9) {
         result.source_ = source_;
+      }
+      result.enableAutoReload_ = enableAutoReload_;
+      if (latestReloadStatusBuilder_ == null) {
+        result.latestReloadStatus_ = latestReloadStatus_;
+      } else {
+        result.latestReloadStatus_ = latestReloadStatusBuilder_.build();
       }
       result.sourceCase_ = sourceCase_;
       onBuilt();
@@ -1222,6 +2469,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           knowledgeTypes_.addAll(other.knowledgeTypes_);
         }
         onChanged();
+      }
+      if (other.getEnableAutoReload() != false) {
+        setEnableAutoReload(other.getEnableAutoReload());
+      }
+      if (other.hasLatestReloadStatus()) {
+        mergeLatestReloadStatus(other.getLatestReloadStatus());
       }
       switch (other.getSourceCase()) {
         case CONTENT_URI:
@@ -1298,13 +2551,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document resource name.
+     * Optional. The document resource name.
      * The name must be empty when creating a document.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -1323,13 +2576,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document resource name.
+     * Optional. The document resource name.
      * The name must be empty when creating a document.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -1348,13 +2601,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document resource name.
+     * Optional. The document resource name.
      * The name must be empty when creating a document.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1372,13 +2625,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document resource name.
+     * Optional. The document resource name.
      * The name must be empty when creating a document.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1392,13 +2645,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The document resource name.
+     * Optional. The document resource name.
      * The name must be empty when creating a document.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
      * ID&gt;/documents/&lt;Document ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1423,7 +2676,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -1446,7 +2699,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1469,7 +2722,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1491,7 +2744,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1509,7 +2762,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * less; otherwise, the creation request fails.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1533,7 +2786,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The MIME type of this document.
      * </pre>
      *
-     * <code>string mime_type = 3;</code>
+     * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The mimeType.
      */
@@ -1555,7 +2808,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The MIME type of this document.
      * </pre>
      *
-     * <code>string mime_type = 3;</code>
+     * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for mimeType.
      */
@@ -1577,7 +2830,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The MIME type of this document.
      * </pre>
      *
-     * <code>string mime_type = 3;</code>
+     * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The mimeType to set.
      * @return This builder for chaining.
@@ -1598,7 +2851,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The MIME type of this document.
      * </pre>
      *
-     * <code>string mime_type = 3;</code>
+     * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1615,7 +2868,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The MIME type of this document.
      * </pre>
      *
-     * <code>string mime_type = 3;</code>
+     * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for mimeType to set.
      * @return This builder for chaining.
@@ -1646,7 +2899,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return A list containing the knowledgeTypes.
@@ -1664,7 +2918,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The count of knowledgeTypes.
@@ -1679,7 +2934,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param index The index of the element to return.
@@ -1695,7 +2951,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param index The index to set the value at.
@@ -1719,7 +2976,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The knowledgeTypes to add.
@@ -1742,7 +3000,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param values The knowledgeTypes to add.
@@ -1765,7 +3024,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -1783,7 +3043,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for knowledgeTypes.
@@ -1798,7 +3059,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param index The index of the value to return.
@@ -1814,7 +3076,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param index The index of the value to return.
@@ -1834,7 +3097,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for knowledgeTypes to add.
@@ -1853,7 +3117,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param values The enum numeric values on the wire for knowledgeTypes to add.
@@ -1885,6 +3150,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The contentUri.
      */
+    @java.lang.Override
     public java.lang.String getContentUri() {
       java.lang.Object ref = "";
       if (sourceCase_ == 5) {
@@ -1918,6 +3184,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for contentUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getContentUriBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 5) {
@@ -2029,6 +3296,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The content.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.lang.String getContent() {
       java.lang.Object ref = "";
@@ -2060,6 +3328,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for content.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
@@ -2211,6 +3480,321 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       return this;
+    }
+
+    private boolean enableAutoReload_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, we try to automatically reload the document every day
+     * (at a time picked by the system). If false or unspecified, we don't try
+     * to automatically reload the document.
+     * Currently you can only enable automatic reload for documents sourced from
+     * a public url, see `source` field for the source types.
+     * Reload status can be tracked in `latest_reload_status`. If a reload
+     * fails, we will keep the document unchanged.
+     * If a reload fails with internal errors, the system will try to reload the
+     * document on the next day.
+     * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+     * system will not try to reload the document anymore. You need to manually
+     * reload the document successfully by calling `ReloadDocument` and clear the
+     * errors.
+     * </pre>
+     *
+     * <code>bool enable_auto_reload = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableAutoReload.
+     */
+    @java.lang.Override
+    public boolean getEnableAutoReload() {
+      return enableAutoReload_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, we try to automatically reload the document every day
+     * (at a time picked by the system). If false or unspecified, we don't try
+     * to automatically reload the document.
+     * Currently you can only enable automatic reload for documents sourced from
+     * a public url, see `source` field for the source types.
+     * Reload status can be tracked in `latest_reload_status`. If a reload
+     * fails, we will keep the document unchanged.
+     * If a reload fails with internal errors, the system will try to reload the
+     * document on the next day.
+     * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+     * system will not try to reload the document anymore. You need to manually
+     * reload the document successfully by calling `ReloadDocument` and clear the
+     * errors.
+     * </pre>
+     *
+     * <code>bool enable_auto_reload = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableAutoReload to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableAutoReload(boolean value) {
+
+      enableAutoReload_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, we try to automatically reload the document every day
+     * (at a time picked by the system). If false or unspecified, we don't try
+     * to automatically reload the document.
+     * Currently you can only enable automatic reload for documents sourced from
+     * a public url, see `source` field for the source types.
+     * Reload status can be tracked in `latest_reload_status`. If a reload
+     * fails, we will keep the document unchanged.
+     * If a reload fails with internal errors, the system will try to reload the
+     * document on the next day.
+     * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+     * system will not try to reload the document anymore. You need to manually
+     * reload the document successfully by calling `ReloadDocument` and clear the
+     * errors.
+     * </pre>
+     *
+     * <code>bool enable_auto_reload = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableAutoReload() {
+
+      enableAutoReload_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus latestReloadStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus,
+            com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.Builder,
+            com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder>
+        latestReloadStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the latestReloadStatus field is set.
+     */
+    public boolean hasLatestReloadStatus() {
+      return latestReloadStatusBuilder_ != null || latestReloadStatus_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The latestReloadStatus.
+     */
+    public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus getLatestReloadStatus() {
+      if (latestReloadStatusBuilder_ == null) {
+        return latestReloadStatus_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.getDefaultInstance()
+            : latestReloadStatus_;
+      } else {
+        return latestReloadStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLatestReloadStatus(
+        com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus value) {
+      if (latestReloadStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        latestReloadStatus_ = value;
+        onChanged();
+      } else {
+        latestReloadStatusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLatestReloadStatus(
+        com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.Builder builderForValue) {
+      if (latestReloadStatusBuilder_ == null) {
+        latestReloadStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        latestReloadStatusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLatestReloadStatus(
+        com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus value) {
+      if (latestReloadStatusBuilder_ == null) {
+        if (latestReloadStatus_ != null) {
+          latestReloadStatus_ =
+              com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.newBuilder(
+                      latestReloadStatus_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          latestReloadStatus_ = value;
+        }
+        onChanged();
+      } else {
+        latestReloadStatusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLatestReloadStatus() {
+      if (latestReloadStatusBuilder_ == null) {
+        latestReloadStatus_ = null;
+        onChanged();
+      } else {
+        latestReloadStatus_ = null;
+        latestReloadStatusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.Builder
+        getLatestReloadStatusBuilder() {
+
+      onChanged();
+      return getLatestReloadStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder
+        getLatestReloadStatusOrBuilder() {
+      if (latestReloadStatusBuilder_ != null) {
+        return latestReloadStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return latestReloadStatus_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.getDefaultInstance()
+            : latestReloadStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time and status of the latest reload.
+     * This reload may have been triggered automatically or manually
+     * and may not have succeeded.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus,
+            com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.Builder,
+            com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder>
+        getLatestReloadStatusFieldBuilder() {
+      if (latestReloadStatusBuilder_ == null) {
+        latestReloadStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus,
+                com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus.Builder,
+                com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder>(
+                getLatestReloadStatus(), getParentForChildren(), isClean());
+        latestReloadStatus_ = null;
+      }
+      return latestReloadStatusBuilder_;
     }
 
     @java.lang.Override

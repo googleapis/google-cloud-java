@@ -163,6 +163,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the intent field is set.
    */
+  @java.lang.Override
   public boolean hasIntent() {
     return intent_ != null;
   }
@@ -177,6 +178,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The intent.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Intent getIntent() {
     return intent_ == null
         ? com.google.cloud.dialogflow.v2beta1.Intent.getDefaultInstance()
@@ -191,6 +193,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.cloud.dialogflow.v2beta1.Intent intent = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentOrBuilder() {
     return getIntent();
   }
@@ -212,6 +215,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +242,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +268,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -277,6 +283,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -289,6 +296,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -306,6 +314,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for intentView.
    */
+  @java.lang.Override
   public int getIntentViewValue() {
     return intentView_;
   }
@@ -320,6 +329,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    * @return The intentView.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.IntentView result =
@@ -1225,6 +1235,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for intentView.
      */
+    @java.lang.Override
     public int getIntentViewValue() {
       return intentView_;
     }
@@ -1241,6 +1252,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
+
       intentView_ = value;
       onChanged();
       return this;
@@ -1256,6 +1268,7 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
      *
      * @return The intentView.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.IntentView result =

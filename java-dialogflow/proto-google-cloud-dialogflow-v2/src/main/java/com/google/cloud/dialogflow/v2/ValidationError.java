@@ -299,6 +299,10 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -344,6 +348,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for severity.
    */
+  @java.lang.Override
   public int getSeverityValue() {
     return severity_;
   }
@@ -358,6 +363,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    *
    * @return The severity.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.ValidationError.Severity getSeverity() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.ValidationError.Severity result =
@@ -489,6 +495,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    *
    * @return The errorMessage.
    */
+  @java.lang.Override
   public java.lang.String getErrorMessage() {
     java.lang.Object ref = errorMessage_;
     if (ref instanceof java.lang.String) {
@@ -511,6 +518,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for errorMessage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getErrorMessageBytes() {
     java.lang.Object ref = errorMessage_;
     if (ref instanceof java.lang.String) {
@@ -906,6 +914,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for severity.
      */
+    @java.lang.Override
     public int getSeverityValue() {
       return severity_;
     }
@@ -922,6 +931,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
+
       severity_ = value;
       onChanged();
       return this;
@@ -937,6 +947,7 @@ public final class ValidationError extends com.google.protobuf.GeneratedMessageV
      *
      * @return The severity.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.ValidationError.Severity getSeverity() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.ValidationError.Severity result =

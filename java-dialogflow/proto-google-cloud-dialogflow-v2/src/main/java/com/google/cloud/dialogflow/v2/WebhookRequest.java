@@ -169,6 +169,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The session.
    */
+  @java.lang.Override
   public java.lang.String getSession() {
     java.lang.Object ref = session_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +196,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for session.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +223,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The responseId.
    */
+  @java.lang.Override
   public java.lang.String getResponseId() {
     java.lang.Object ref = responseId_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +247,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for responseId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getResponseIdBytes() {
     java.lang.Object ref = responseId_;
     if (ref instanceof java.lang.String) {
@@ -270,6 +274,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the queryResult field is set.
    */
+  @java.lang.Override
   public boolean hasQueryResult() {
     return queryResult_ != null;
   }
@@ -285,6 +290,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The queryResult.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryResult getQueryResult() {
     return queryResult_ == null
         ? com.google.cloud.dialogflow.v2.QueryResult.getDefaultInstance()
@@ -300,6 +306,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.dialogflow.v2.QueryResult query_result = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.QueryResultOrBuilder getQueryResultOrBuilder() {
     return getQueryResult();
   }
@@ -320,6 +327,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the originalDetectIntentRequest field is set.
    */
+  @java.lang.Override
   public boolean hasOriginalDetectIntentRequest() {
     return originalDetectIntentRequest_ != null;
   }
@@ -337,6 +345,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The originalDetectIntentRequest.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest
       getOriginalDetectIntentRequest() {
     return originalDetectIntentRequest_ == null
@@ -355,6 +364,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.OriginalDetectIntentRequestOrBuilder
       getOriginalDetectIntentRequestOrBuilder() {
     return getOriginalDetectIntentRequest();

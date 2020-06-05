@@ -181,10 +181,13 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -204,10 +207,13 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    * Format: `projects/&lt;Project ID&gt;`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -290,6 +296,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The agentContent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAgentContent() {
     if (agentCase_ == 3) {
       return (com.google.protobuf.ByteString) agent_;
@@ -703,7 +710,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -726,7 +735,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -749,7 +760,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -771,7 +784,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -789,7 +804,9 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -817,6 +834,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The agentUri.
      */
+    @java.lang.Override
     public java.lang.String getAgentUri() {
       java.lang.Object ref = "";
       if (agentCase_ == 2) {
@@ -845,6 +863,7 @@ public final class ImportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for agentUri.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAgentUriBytes() {
       java.lang.Object ref = "";
       if (agentCase_ == 2) {

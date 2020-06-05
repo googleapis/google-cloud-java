@@ -142,10 +142,13 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    * Required. The document to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Override
   public boolean hasDocument() {
     return document_ != null;
   }
@@ -156,10 +159,13 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    * Required. The document to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The document.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Document getDocument() {
     return document_ == null
         ? com.google.cloud.dialogflow.v2beta1.Document.getDefaultInstance()
@@ -172,8 +178,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    * Required. The document to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
@@ -189,10 +198,12 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -205,10 +216,12 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -221,8 +234,10 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    * returned for attempting to update other fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -599,7 +614,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the document field is set.
      */
@@ -613,7 +630,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The document.
      */
@@ -633,7 +652,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(com.google.cloud.dialogflow.v2beta1.Document value) {
       if (documentBuilder_ == null) {
@@ -655,7 +676,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDocument(
         com.google.cloud.dialogflow.v2beta1.Document.Builder builderForValue) {
@@ -675,7 +698,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDocument(com.google.cloud.dialogflow.v2beta1.Document value) {
       if (documentBuilder_ == null) {
@@ -701,7 +726,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDocument() {
       if (documentBuilder_ == null) {
@@ -721,7 +748,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Document.Builder getDocumentBuilder() {
 
@@ -735,7 +764,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentOrBuilder() {
       if (documentBuilder_ != null) {
@@ -753,7 +784,9 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * Required. The document to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.Document document = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.Document document = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.Document,
@@ -787,7 +820,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -803,7 +837,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -825,7 +860,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -849,7 +885,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -870,7 +907,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -896,7 +934,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -918,7 +957,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -934,7 +974,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -954,7 +995,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      * returned for attempting to update other fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

@@ -150,10 +150,13 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -173,10 +176,13 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    * Format: `projects/&lt;Project ID&gt;/agent`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +212,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +239,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +265,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for intentView.
    */
+  @java.lang.Override
   public int getIntentViewValue() {
     return intentView_;
   }
@@ -271,6 +280,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The intentView.
    */
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2beta1.IntentView result =
@@ -292,6 +302,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -309,6 +320,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -331,6 +343,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -735,7 +748,9 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -758,7 +773,9 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -781,7 +798,9 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -803,7 +822,9 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -821,7 +842,9 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * Format: `projects/&lt;Project ID&gt;/agent`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -975,6 +998,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for intentView.
      */
+    @java.lang.Override
     public int getIntentViewValue() {
       return intentView_;
     }
@@ -991,6 +1015,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setIntentViewValue(int value) {
+
       intentView_ = value;
       onChanged();
       return this;
@@ -1006,6 +1031,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The intentView.
      */
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.IntentView getIntentView() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2beta1.IntentView result =
@@ -1064,6 +1090,7 @@ public final class ListIntentsRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

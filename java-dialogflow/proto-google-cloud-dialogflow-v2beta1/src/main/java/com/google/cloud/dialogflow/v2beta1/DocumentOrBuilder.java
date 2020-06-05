@@ -27,13 +27,13 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * The document resource name.
+   * Optional. The document resource name.
    * The name must be empty when creating a document.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
    * ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -42,13 +42,13 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * The document resource name.
+   * Optional. The document resource name.
    * The name must be empty when creating a document.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
    * ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -62,7 +62,7 @@ public interface DocumentOrBuilder
    * less; otherwise, the creation request fails.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -75,7 +75,7 @@ public interface DocumentOrBuilder
    * less; otherwise, the creation request fails.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -88,7 +88,7 @@ public interface DocumentOrBuilder
    * Required. The MIME type of this document.
    * </pre>
    *
-   * <code>string mime_type = 3;</code>
+   * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The mimeType.
    */
@@ -100,7 +100,7 @@ public interface DocumentOrBuilder
    * Required. The MIME type of this document.
    * </pre>
    *
-   * <code>string mime_type = 3;</code>
+   * <code>string mime_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for mimeType.
    */
@@ -113,7 +113,8 @@ public interface DocumentOrBuilder
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return A list containing the knowledgeTypes.
@@ -127,7 +128,8 @@ public interface DocumentOrBuilder
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The count of knowledgeTypes.
@@ -140,7 +142,8 @@ public interface DocumentOrBuilder
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @param index The index of the element to return.
@@ -154,7 +157,8 @@ public interface DocumentOrBuilder
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for knowledgeTypes.
@@ -167,7 +171,8 @@ public interface DocumentOrBuilder
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @param index The index of the value to return.
@@ -258,6 +263,79 @@ public interface DocumentOrBuilder
    * @return The rawContent.
    */
   com.google.protobuf.ByteString getRawContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, we try to automatically reload the document every day
+   * (at a time picked by the system). If false or unspecified, we don't try
+   * to automatically reload the document.
+   * Currently you can only enable automatic reload for documents sourced from
+   * a public url, see `source` field for the source types.
+   * Reload status can be tracked in `latest_reload_status`. If a reload
+   * fails, we will keep the document unchanged.
+   * If a reload fails with internal errors, the system will try to reload the
+   * document on the next day.
+   * If a reload fails with non-retriable errors (e.g. PERMISION_DENIED), the
+   * system will not try to reload the document anymore. You need to manually
+   * reload the document successfully by calling `ReloadDocument` and clear the
+   * errors.
+   * </pre>
+   *
+   * <code>bool enable_auto_reload = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableAutoReload.
+   */
+  boolean getEnableAutoReload();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time and status of the latest reload.
+   * This reload may have been triggered automatically or manually
+   * and may not have succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the latestReloadStatus field is set.
+   */
+  boolean hasLatestReloadStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time and status of the latest reload.
+   * This reload may have been triggered automatically or manually
+   * and may not have succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The latestReloadStatus.
+   */
+  com.google.cloud.dialogflow.v2beta1.Document.ReloadStatus getLatestReloadStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time and status of the latest reload.
+   * This reload may have been triggered automatically or manually
+   * and may not have succeeded.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Document.ReloadStatus latest_reload_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.Document.ReloadStatusOrBuilder
+      getLatestReloadStatusOrBuilder();
 
   public com.google.cloud.dialogflow.v2beta1.Document.SourceCase getSourceCase();
 }
