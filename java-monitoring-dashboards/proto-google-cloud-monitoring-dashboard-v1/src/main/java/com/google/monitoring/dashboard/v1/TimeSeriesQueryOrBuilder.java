@@ -104,7 +104,7 @@ public interface TimeSeriesQueryOrBuilder
    * The unit of data contained in fetched time series. If non-empty, this
    * unit will override any unit that accompanies fetched data. The format is
    * the same as the
-   * [`unit`](/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors)
+   * [`unit`](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors)
    * field in `MetricDescriptor`.
    * </pre>
    *
@@ -120,7 +120,7 @@ public interface TimeSeriesQueryOrBuilder
    * The unit of data contained in fetched time series. If non-empty, this
    * unit will override any unit that accompanies fetched data. The format is
    * the same as the
-   * [`unit`](/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors)
+   * [`unit`](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors)
    * field in `MetricDescriptor`.
    * </pre>
    *

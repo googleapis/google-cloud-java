@@ -27,7 +27,7 @@ public interface TimeSeriesFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
    * metric types, resources, and projects to query.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface TimeSeriesFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
    * metric types, resources, and projects to query.
    * </pre>
    *

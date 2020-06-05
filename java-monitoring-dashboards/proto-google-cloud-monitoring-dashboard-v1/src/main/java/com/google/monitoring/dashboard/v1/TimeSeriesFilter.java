@@ -24,7 +24,7 @@ package com.google.monitoring.dashboard.v1;
  * <pre>
  * A filter that defines a subset of time series data that is displayed in a
  * widget. Time series data is fetched using the
- * [`ListTimeSeries`](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+ * [`ListTimeSeries`](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
  * method.
  * </pre>
  *
@@ -224,7 +224,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
    * metric types, resources, and projects to query.
    * </pre>
    *
@@ -248,7 +248,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
    * metric types, resources, and projects to query.
    * </pre>
    *
@@ -655,7 +655,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    * <pre>
    * A filter that defines a subset of time series data that is displayed in a
    * widget. Time series data is fetched using the
-   * [`ListTimeSeries`](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
+   * [`ListTimeSeries`](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list)
    * method.
    * </pre>
    *
@@ -877,7 +877,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
      * metric types, resources, and projects to query.
      * </pre>
      *
@@ -900,7 +900,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
      * metric types, resources, and projects to query.
      * </pre>
      *
@@ -923,7 +923,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
      * metric types, resources, and projects to query.
      * </pre>
      *
@@ -945,7 +945,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
      * metric types, resources, and projects to query.
      * </pre>
      *
@@ -963,7 +963,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](/monitoring/api/v3/filters) that identifies the
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
      * metric types, resources, and projects to query.
      * </pre>
      *

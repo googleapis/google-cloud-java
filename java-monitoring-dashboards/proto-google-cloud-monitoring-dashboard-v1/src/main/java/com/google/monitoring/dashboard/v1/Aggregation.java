@@ -27,7 +27,7 @@ package com.google.monitoring.dashboard.v1;
  * series (`alignment_period` and `per_series_aligner`) followed by an optional
  * reduction step of the data across the aligned time series
  * (`cross_series_reducer` and `group_by_fields`).  For more details, see
- * [Aggregation](/monitoring/api/learn_more#aggregation).
+ * [Aggregation](https://cloud.google.com/monitoring/api/learn_more#aggregation).
  * </pre>
  *
  * Protobuf type {@code google.monitoring.dashboard.v1.Aggregation}
@@ -1831,7 +1831,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    * series (`alignment_period` and `per_series_aligner`) followed by an optional
    * reduction step of the data across the aligned time series
    * (`cross_series_reducer` and `group_by_fields`).  For more details, see
-   * [Aggregation](/monitoring/api/learn_more#aggregation).
+   * [Aggregation](https://cloud.google.com/monitoring/api/learn_more#aggregation).
    * </pre>
    *
    * Protobuf type {@code google.monitoring.dashboard.v1.Aggregation}
