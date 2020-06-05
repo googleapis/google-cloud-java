@@ -367,9 +367,9 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(10000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(10000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
       definitions.put("default", settings);
