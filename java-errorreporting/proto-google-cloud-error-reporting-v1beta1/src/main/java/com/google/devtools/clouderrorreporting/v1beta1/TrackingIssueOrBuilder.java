@@ -28,7 +28,7 @@ public interface TrackingIssueOrBuilder
    *
    * <pre>
    * A URL pointing to a related entry in an issue tracking system.
-   * Example: https://github.com/user/project/issues/4
+   * Example: `https://github.com/user/project/issues/4`
    * </pre>
    *
    * <code>string url = 1;</code>
@@ -41,7 +41,7 @@ public interface TrackingIssueOrBuilder
    *
    * <pre>
    * A URL pointing to a related entry in an issue tracking system.
-   * Example: https://github.com/user/project/issues/4
+   * Example: `https://github.com/user/project/issues/4`
    * </pre>
    *
    * <code>string url = 1;</code>

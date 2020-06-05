@@ -261,12 +261,11 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param groupName Required. The group resource name. Written as
-   *     &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
-   *     Call &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
-   *     &lt;code&gt;groupStats.list&lt;/code&gt;&lt;/a&gt; to return a list of groups belonging to
-   *     this project.
-   *     <p>Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
+   * @param groupName The group resource name. Written as
+   *     `projects/{projectID}/groups/{group_name}`. Call
+   *     [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
+   *     to return a list of groups belonging to this project.
+   *     <p>Example: `projects/my-project-123/groups/my-group`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ErrorGroup getGroup(ErrorGroupName groupName) {
@@ -290,12 +289,11 @@ public class ErrorGroupServiceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param groupName Required. The group resource name. Written as
-   *     &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
-   *     Call &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
-   *     &lt;code&gt;groupStats.list&lt;/code&gt;&lt;/a&gt; to return a list of groups belonging to
-   *     this project.
-   *     <p>Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
+   * @param groupName The group resource name. Written as
+   *     `projects/{projectID}/groups/{group_name}`. Call
+   *     [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
+   *     to return a list of groups belonging to this project.
+   *     <p>Example: `projects/my-project-123/groups/my-group`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ErrorGroup getGroup(String groupName) {
