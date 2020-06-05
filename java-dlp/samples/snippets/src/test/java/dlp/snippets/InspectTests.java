@@ -21,12 +21,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertNotNull;
 
-import com.google.cloud.dlp.v2.DlpServiceClient;
-import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -136,6 +133,16 @@ public class InspectTests {
     String output = bout.toString();
     assertThat(output, containsString("Doe, John"));
     assertThat(output, not(containsString("Example, Jimmy")));
+  }
+
+  @Test
+  public void testInspectStringCustomOmitOverlap() throws Exception {
+    InspectStringCustomOmitOverlap.inspectStringCustomOmitOverlap(PROJECT_ID,
+        "Name: Jane Doe. Name: Larry Page.");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Jane Doe"));
+    assertThat(output, not(containsString("Larry Page")));
   }
 
   @Test
