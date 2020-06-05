@@ -158,6 +158,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The visitorId.
    */
+  @java.lang.Override
   public java.lang.String getVisitorId() {
     java.lang.Object ref = visitorId_;
     if (ref instanceof java.lang.String) {
@@ -185,6 +186,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for visitorId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getVisitorIdBytes() {
     java.lang.Object ref = visitorId_;
     if (ref instanceof java.lang.String) {
@@ -211,6 +213,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +237,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserIdBytes() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -262,6 +266,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The ipAddress.
    */
+  @java.lang.Override
   public java.lang.String getIpAddress() {
     java.lang.Object ref = ipAddress_;
     if (ref instanceof java.lang.String) {
@@ -287,6 +292,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for ipAddress.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIpAddressBytes() {
     java.lang.Object ref = ipAddress_;
     if (ref instanceof java.lang.String) {
@@ -315,6 +321,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userAgent.
    */
+  @java.lang.Override
   public java.lang.String getUserAgent() {
     java.lang.Object ref = userAgent_;
     if (ref instanceof java.lang.String) {
@@ -340,6 +347,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for userAgent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserAgentBytes() {
     java.lang.Object ref = userAgent_;
     if (ref instanceof java.lang.String) {
@@ -370,6 +378,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The directUserRequest.
    */
+  @java.lang.Override
   public boolean getDirectUserRequest() {
     return directUserRequest_;
   }
@@ -1257,6 +1266,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The directUserRequest.
      */
+    @java.lang.Override
     public boolean getDirectUserRequest() {
       return directUserRequest_;
     }

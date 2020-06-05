@@ -142,6 +142,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
    *
    * @return The purgedEventsCount.
    */
+  @java.lang.Override
   public long getPurgedEventsCount() {
     return purgedEventsCount_;
   }
@@ -159,6 +160,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events_sample = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent>
       getUserEventsSampleList() {
     return userEventsSample_;
@@ -174,6 +176,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events_sample = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder>
       getUserEventsSampleOrBuilderList() {
     return userEventsSample_;
@@ -189,6 +192,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events_sample = 2;
    * </code>
    */
+  @java.lang.Override
   public int getUserEventsSampleCount() {
     return userEventsSample_.size();
   }
@@ -203,6 +207,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events_sample = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEventsSample(int index) {
     return userEventsSample_.get(index);
   }
@@ -217,6 +222,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events_sample = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder
       getUserEventsSampleOrBuilder(int index) {
     return userEventsSample_.get(index);
@@ -620,6 +626,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
      *
      * @return The purgedEventsCount.
      */
+    @java.lang.Override
     public long getPurgedEventsCount() {
       return purgedEventsCount_;
     }

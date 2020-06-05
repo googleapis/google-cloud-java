@@ -141,6 +141,7 @@ public final class ListCatalogItemsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
       getCatalogItemsList() {
     return catalogItems_;
@@ -154,6 +155,7 @@ public final class ListCatalogItemsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder>
       getCatalogItemsOrBuilderList() {
@@ -168,6 +170,7 @@ public final class ListCatalogItemsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1;</code>
    */
+  @java.lang.Override
   public int getCatalogItemsCount() {
     return catalogItems_.size();
   }
@@ -180,6 +183,7 @@ public final class ListCatalogItemsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItems(int index) {
     return catalogItems_.get(index);
   }
@@ -192,6 +196,7 @@ public final class ListCatalogItemsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder
       getCatalogItemsOrBuilder(int index) {
     return catalogItems_.get(index);
@@ -211,6 +216,7 @@ public final class ListCatalogItemsResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +240,7 @@ public final class ListCatalogItemsResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

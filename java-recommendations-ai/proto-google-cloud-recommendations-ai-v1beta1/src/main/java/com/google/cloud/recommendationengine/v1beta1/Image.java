@@ -134,6 +134,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -156,6 +157,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -181,6 +183,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The height.
    */
+  @java.lang.Override
   public int getHeight() {
     return height_;
   }
@@ -198,6 +201,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The width.
    */
+  @java.lang.Override
   public int getWidth() {
     return width_;
   }
@@ -668,6 +672,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The height.
      */
+    @java.lang.Override
     public int getHeight() {
       return height_;
     }
@@ -719,6 +724,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The width.
      */
+    @java.lang.Override
     public int getWidth() {
       return width_;
     }

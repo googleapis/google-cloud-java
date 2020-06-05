@@ -144,6 +144,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return Whether the catalogItem field is set.
    */
+  @java.lang.Override
   public boolean hasCatalogItem() {
     return catalogItem_ != null;
   }
@@ -212,6 +215,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return The catalogItem.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItem() {
     return catalogItem_ == null
         ? com.google.cloud.recommendationengine.v1beta1.CatalogItem.getDefaultInstance()
@@ -228,6 +232,7 @@ public final class CreateCatalogItemRequest extends com.google.protobuf.Generate
    * .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_item = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder
       getCatalogItemOrBuilder() {
     return getCatalogItem();

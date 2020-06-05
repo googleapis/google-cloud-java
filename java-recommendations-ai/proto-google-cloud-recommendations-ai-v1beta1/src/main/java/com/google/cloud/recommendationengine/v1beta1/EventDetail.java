@@ -182,6 +182,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +207,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +234,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The referrerUri.
    */
+  @java.lang.Override
   public java.lang.String getReferrerUri() {
     java.lang.Object ref = referrerUri_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +258,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for referrerUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getReferrerUriBytes() {
     java.lang.Object ref = referrerUri_;
     if (ref instanceof java.lang.String) {
@@ -286,6 +290,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pageViewId.
    */
+  @java.lang.Override
   public java.lang.String getPageViewId() {
     java.lang.Object ref = pageViewId_;
     if (ref instanceof java.lang.String) {
@@ -314,6 +319,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for pageViewId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageViewIdBytes() {
     java.lang.Object ref = pageViewId_;
     if (ref instanceof java.lang.String) {
@@ -423,6 +429,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The recommendationToken.
    */
+  @java.lang.Override
   public java.lang.String getRecommendationToken() {
     java.lang.Object ref = recommendationToken_;
     if (ref instanceof java.lang.String) {
@@ -456,6 +463,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for recommendationToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRecommendationTokenBytes() {
     java.lang.Object ref = recommendationToken_;
     if (ref instanceof java.lang.String) {
@@ -488,6 +496,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the eventAttributes field is set.
    */
+  @java.lang.Override
   public boolean hasEventAttributes() {
     return eventAttributes_ != null;
   }
@@ -509,6 +518,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventAttributes.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap getEventAttributes() {
     return eventAttributes_ == null
         ? com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance()
@@ -530,6 +540,7 @@ public final class EventDetail extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.FeatureMap event_attributes = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMapOrBuilder
       getEventAttributesOrBuilder() {
     return getEventAttributes();

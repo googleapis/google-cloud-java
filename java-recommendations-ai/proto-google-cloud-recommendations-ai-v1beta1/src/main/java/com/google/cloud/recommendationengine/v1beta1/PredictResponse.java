@@ -433,6 +433,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -455,6 +456,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -510,6 +512,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
      */
+    @java.lang.Override
     public boolean containsItemMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -517,6 +520,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       return internalGetItemMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getItemMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getItemMetadata() {
       return getItemMetadataMap();
@@ -535,6 +539,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getItemMetadataMap() {
       return internalGetItemMetadata().getMap();
     }
@@ -552,6 +557,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getItemMetadataOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
@@ -575,6 +581,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getItemMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1129,6 +1136,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
        */
+      @java.lang.Override
       public boolean containsItemMetadata(java.lang.String key) {
         if (key == null) {
           throw new java.lang.NullPointerException();
@@ -1136,6 +1144,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         return internalGetItemMetadata().getMap().containsKey(key);
       }
       /** Use {@link #getItemMetadataMap()} instead. */
+      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getItemMetadata() {
         return getItemMetadataMap();
@@ -1154,6 +1163,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
        */
+      @java.lang.Override
       public java.util.Map<java.lang.String, com.google.protobuf.Value> getItemMetadataMap() {
         return internalGetItemMetadata().getMap();
       }
@@ -1171,6 +1181,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
        */
+      @java.lang.Override
       public com.google.protobuf.Value getItemMetadataOrDefault(
           java.lang.String key, com.google.protobuf.Value defaultValue) {
         if (key == null) {
@@ -1194,6 +1205,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; item_metadata = 2;</code>
        */
+      @java.lang.Override
       public com.google.protobuf.Value getItemMetadataOrThrow(java.lang.String key) {
         if (key == null) {
           throw new java.lang.NullPointerException();
@@ -1353,6 +1365,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * repeated .google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult>
       getResultsList() {
@@ -1370,6 +1383,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * repeated .google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult results = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.recommendationengine.v1beta1.PredictResponse
@@ -1389,6 +1403,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * repeated .google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult results = 1;
    * </code>
    */
+  @java.lang.Override
   public int getResultsCount() {
     return results_.size();
   }
@@ -1404,6 +1419,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * repeated .google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult getResults(
       int index) {
     return results_.get(index);
@@ -1420,6 +1436,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * repeated .google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult results = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResultOrBuilder
       getResultsOrBuilder(int index) {
     return results_.get(index);
@@ -1440,6 +1457,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The recommendationToken.
    */
+  @java.lang.Override
   public java.lang.String getRecommendationToken() {
     java.lang.Object ref = recommendationToken_;
     if (ref instanceof java.lang.String) {
@@ -1464,6 +1482,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for recommendationToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRecommendationTokenBytes() {
     java.lang.Object ref = recommendationToken_;
     if (ref instanceof java.lang.String) {
@@ -1550,6 +1569,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The dryRun.
    */
+  @java.lang.Override
   public boolean getDryRun() {
     return dryRun_;
   }
@@ -1591,6 +1611,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
+  @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1598,6 +1619,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     return internalGetMetadata().getMap().containsKey(key);
   }
   /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata() {
     return getMetadataMap();
@@ -1611,6 +1633,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
@@ -1623,6 +1646,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getMetadataOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
@@ -1640,6 +1664,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1665,6 +1690,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -1688,6 +1714,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -2922,6 +2949,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * @return The dryRun.
      */
+    @java.lang.Override
     public boolean getDryRun() {
       return dryRun_;
     }
@@ -2997,6 +3025,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
      */
+    @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3004,6 +3033,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       return internalGetMetadata().getMap().containsKey(key);
     }
     /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata() {
       return getMetadataMap();
@@ -3017,6 +3047,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
@@ -3029,6 +3060,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getMetadataOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
@@ -3047,6 +3079,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

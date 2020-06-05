@@ -173,6 +173,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The operationName.
    */
+  @java.lang.Override
   public java.lang.String getOperationName() {
     java.lang.Object ref = operationName_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +196,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for operationName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOperationNameBytes() {
     java.lang.Object ref = operationName_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +223,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The requestId.
    */
+  @java.lang.Override
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +247,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -269,6 +273,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -283,6 +288,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -295,6 +301,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }
@@ -312,6 +319,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The successCount.
    */
+  @java.lang.Override
   public long getSuccessCount() {
     return successCount_;
   }
@@ -329,6 +337,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The failureCount.
    */
+  @java.lang.Override
   public long getFailureCount() {
     return failureCount_;
   }
@@ -347,6 +356,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -362,6 +372,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -375,6 +386,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp update_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -1215,6 +1227,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The successCount.
      */
+    @java.lang.Override
     public long getSuccessCount() {
       return successCount_;
     }
@@ -1266,6 +1279,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The failureCount.
      */
+    @java.lang.Override
     public long getFailureCount() {
       return failureCount_;
     }

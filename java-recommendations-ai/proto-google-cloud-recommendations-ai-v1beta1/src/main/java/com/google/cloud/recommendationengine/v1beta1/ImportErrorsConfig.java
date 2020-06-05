@@ -591,6 +591,7 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return The gcsPrefix.
      */
+    @java.lang.Override
     public java.lang.String getGcsPrefix() {
       java.lang.Object ref = "";
       if (destinationCase_ == 1) {
@@ -621,6 +622,7 @@ public final class ImportErrorsConfig extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for gcsPrefix.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getGcsPrefixBytes() {
       java.lang.Object ref = "";
       if (destinationCase_ == 1) {

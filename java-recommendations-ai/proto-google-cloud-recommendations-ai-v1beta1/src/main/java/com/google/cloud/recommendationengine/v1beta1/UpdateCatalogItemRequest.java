@@ -159,6 +159,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -184,6 +185,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +214,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return Whether the catalogItem field is set.
    */
+  @java.lang.Override
   public boolean hasCatalogItem() {
     return catalogItem_ != null;
   }
@@ -229,6 +232,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return The catalogItem.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItem() {
     return catalogItem_ == null
         ? com.google.cloud.recommendationengine.v1beta1.CatalogItem.getDefaultInstance()
@@ -246,6 +250,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    * .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_item = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder
       getCatalogItemOrBuilder() {
     return getCatalogItem();
@@ -265,6 +270,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -280,6 +286,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -293,6 +300,7 @@ public final class UpdateCatalogItemRequest extends com.google.protobuf.Generate
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

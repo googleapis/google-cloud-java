@@ -199,6 +199,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * @return The searchQuery.
    */
+  @java.lang.Override
   public java.lang.String getSearchQuery() {
     java.lang.Object ref = searchQuery_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +223,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for searchQuery.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSearchQueryBytes() {
     java.lang.Object ref = searchQuery_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +256,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy page_categories = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy>
       getPageCategoriesList() {
     return pageCategories_;
@@ -274,6 +277,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy page_categories = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchyOrBuilder>
@@ -296,6 +300,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy page_categories = 2;
    * </code>
    */
+  @java.lang.Override
   public int getPageCategoriesCount() {
     return pageCategories_.size();
   }
@@ -315,6 +320,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy page_categories = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy
       getPageCategories(int index) {
     return pageCategories_.get(index);
@@ -335,6 +341,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy page_categories = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchyOrBuilder
       getPageCategoriesOrBuilder(int index) {
     return pageCategories_.get(index);
@@ -370,6 +377,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.recommendationengine.v1beta1.ProductDetail product_details = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.ProductDetail>
       getProductDetailsList() {
     return productDetails_;
@@ -401,6 +409,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.recommendationengine.v1beta1.ProductDetail product_details = 3;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.recommendationengine.v1beta1.ProductDetailOrBuilder>
       getProductDetailsOrBuilderList() {
@@ -433,6 +442,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.recommendationengine.v1beta1.ProductDetail product_details = 3;
    * </code>
    */
+  @java.lang.Override
   public int getProductDetailsCount() {
     return productDetails_.size();
   }
@@ -463,6 +473,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.recommendationengine.v1beta1.ProductDetail product_details = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductDetail getProductDetails(int index) {
     return productDetails_.get(index);
   }
@@ -493,6 +504,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * <code>repeated .google.cloud.recommendationengine.v1beta1.ProductDetail product_details = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductDetailOrBuilder
       getProductDetailsOrBuilder(int index) {
     return productDetails_.get(index);
@@ -513,6 +525,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * @return The listId.
    */
+  @java.lang.Override
   public java.lang.String getListId() {
     java.lang.Object ref = listId_;
     if (ref instanceof java.lang.String) {
@@ -537,6 +550,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for listId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getListIdBytes() {
     java.lang.Object ref = listId_;
     if (ref instanceof java.lang.String) {
@@ -565,6 +579,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * @return The cartId.
    */
+  @java.lang.Override
   public java.lang.String getCartId() {
     java.lang.Object ref = cartId_;
     if (ref instanceof java.lang.String) {
@@ -590,6 +605,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for cartId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCartIdBytes() {
     java.lang.Object ref = cartId_;
     if (ref instanceof java.lang.String) {
@@ -619,6 +635,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the purchaseTransaction field is set.
    */
+  @java.lang.Override
   public boolean hasPurchaseTransaction() {
     return purchaseTransaction_ != null;
   }
@@ -637,6 +654,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * @return The purchaseTransaction.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.PurchaseTransaction
       getPurchaseTransaction() {
     return purchaseTransaction_ == null
@@ -656,6 +674,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * .google.cloud.recommendationengine.v1beta1.PurchaseTransaction purchase_transaction = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.PurchaseTransactionOrBuilder
       getPurchaseTransactionOrBuilder() {
     return getPurchaseTransaction();

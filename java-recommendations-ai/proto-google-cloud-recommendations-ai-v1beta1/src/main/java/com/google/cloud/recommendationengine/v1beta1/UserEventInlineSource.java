@@ -135,6 +135,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent>
       getUserEventsList() {
     return userEvents_;
@@ -150,6 +151,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder>
       getUserEventsOrBuilderList() {
     return userEvents_;
@@ -165,6 +167,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getUserEventsCount() {
     return userEvents_.size();
   }
@@ -179,6 +182,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvents(int index) {
     return userEvents_.get(index);
   }
@@ -193,6 +197,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
    * repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder getUserEventsOrBuilder(
       int index) {
     return userEvents_.get(index);

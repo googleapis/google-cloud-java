@@ -178,6 +178,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +202,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +229,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The currencyCode.
    */
+  @java.lang.Override
   public java.lang.String getCurrencyCode() {
     java.lang.Object ref = currencyCode_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +253,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for currencyCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCurrencyCodeBytes() {
     java.lang.Object ref = currencyCode_;
     if (ref instanceof java.lang.String) {
@@ -276,6 +280,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The originalPrice.
    */
+  @java.lang.Override
   public float getOriginalPrice() {
     return originalPrice_;
   }
@@ -294,6 +299,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayPrice.
    */
+  @java.lang.Override
   public float getDisplayPrice() {
     return displayPrice_;
   }
@@ -314,6 +320,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for stockState.
    */
+  @java.lang.Override
   public int getStockStateValue() {
     return stockState_;
   }
@@ -331,6 +338,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The stockState.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState
       getStockState() {
     @SuppressWarnings("deprecation")
@@ -359,6 +367,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The quantity.
    */
+  @java.lang.Override
   public int getQuantity() {
     return quantity_;
   }
@@ -381,6 +390,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The availableQuantity.
    */
+  @java.lang.Override
   public int getAvailableQuantity() {
     return availableQuantity_;
   }
@@ -400,6 +410,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the itemAttributes field is set.
    */
+  @java.lang.Override
   public boolean hasItemAttributes() {
     return itemAttributes_ != null;
   }
@@ -416,6 +427,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The itemAttributes.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap getItemAttributes() {
     return itemAttributes_ == null
         ? com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance()
@@ -432,6 +444,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.FeatureMap item_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMapOrBuilder
       getItemAttributesOrBuilder() {
     return getItemAttributes();
@@ -1118,6 +1131,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The originalPrice.
      */
+    @java.lang.Override
     public float getOriginalPrice() {
       return originalPrice_;
     }
@@ -1172,6 +1186,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The displayPrice.
      */
+    @java.lang.Override
     public float getDisplayPrice() {
       return displayPrice_;
     }
@@ -1228,6 +1243,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for stockState.
      */
+    @java.lang.Override
     public int getStockStateValue() {
       return stockState_;
     }
@@ -1247,6 +1263,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStockStateValue(int value) {
+
       stockState_ = value;
       onChanged();
       return this;
@@ -1265,6 +1282,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stockState.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState
         getStockState() {
       @SuppressWarnings("deprecation")
@@ -1337,6 +1355,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The quantity.
      */
+    @java.lang.Override
     public int getQuantity() {
       return quantity_;
     }
@@ -1401,6 +1420,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The availableQuantity.
      */
+    @java.lang.Override
     public int getAvailableQuantity() {
       return availableQuantity_;
     }

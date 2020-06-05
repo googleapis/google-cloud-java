@@ -149,6 +149,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
@@ -161,6 +162,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
@@ -173,6 +175,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
@@ -185,6 +188,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
@@ -197,6 +201,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorSamplesOrBuilder(int index) {
     return errorSamples_.get(index);
   }
@@ -214,6 +219,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
    *
    * @return Whether the errorsConfig field is set.
    */
+  @java.lang.Override
   public boolean hasErrorsConfig() {
     return errorsConfig_ != null;
   }
@@ -228,6 +234,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
    *
    * @return The errorsConfig.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig getErrorsConfig() {
     return errorsConfig_ == null
         ? com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.getDefaultInstance()
@@ -242,6 +249,7 @@ public final class ImportCatalogItemsResponse extends com.google.protobuf.Genera
    *
    * <code>.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig errors_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfigOrBuilder
       getErrorsConfigOrBuilder() {
     return getErrorsConfig();

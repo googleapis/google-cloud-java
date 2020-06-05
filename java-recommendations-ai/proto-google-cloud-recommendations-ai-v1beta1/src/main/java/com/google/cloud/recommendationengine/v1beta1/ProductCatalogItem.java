@@ -386,6 +386,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (index == -1) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(index);
     }
 
@@ -399,9 +403,13 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           .get(0);
     }
 
-    private static final StockState[] VALUES = {
-      STOCK_STATE_UNSPECIFIED, IN_STOCK, OUT_OF_STOCK, PREORDER, BACKORDER,
-    };
+    private static final StockState[] VALUES = getStaticValuesArray();
+
+    private static StockState[] getStaticValuesArray() {
+      return new StockState[] {
+        STOCK_STATE_UNSPECIFIED, IN_STOCK, OUT_OF_STOCK, PREORDER, BACKORDER,
+      };
+    }
 
     public static StockState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -564,6 +572,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The displayPrice.
      */
+    @java.lang.Override
     public float getDisplayPrice() {
       return displayPrice_;
     }
@@ -582,6 +591,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The originalPrice.
      */
+    @java.lang.Override
     public float getOriginalPrice() {
       return originalPrice_;
     }
@@ -957,6 +967,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
        *
        * @return The displayPrice.
        */
+      @java.lang.Override
       public float getDisplayPrice() {
         return displayPrice_;
       }
@@ -1009,6 +1020,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
        *
        * @return The originalPrice.
        */
+      @java.lang.Override
       public float getOriginalPrice() {
         return originalPrice_;
       }
@@ -1246,6 +1258,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The min.
      */
+    @java.lang.Override
     public float getMin() {
       return min_;
     }
@@ -1263,6 +1276,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The max.
      */
+    @java.lang.Override
     public float getMax() {
       return max_;
     }
@@ -1639,6 +1653,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
        *
        * @return The min.
        */
+      @java.lang.Override
       public float getMin() {
         return min_;
       }
@@ -1690,6 +1705,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
        *
        * @return The max.
        */
+      @java.lang.Override
       public float getMax() {
         return max_;
       }
@@ -1846,6 +1862,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the exactPrice field is set.
    */
+  @java.lang.Override
   public boolean hasExactPrice() {
     return priceCase_ == 1;
   }
@@ -1862,6 +1879,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The exactPrice.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice
       getExactPrice() {
     if (priceCase_ == 1) {
@@ -1881,6 +1899,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    * .google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice exact_price = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPriceOrBuilder
       getExactPriceOrBuilder() {
     if (priceCase_ == 1) {
@@ -1904,6 +1923,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the priceRange field is set.
    */
+  @java.lang.Override
   public boolean hasPriceRange() {
     return priceCase_ == 2;
   }
@@ -1920,6 +1940,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The priceRange.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange
       getPriceRange() {
     if (priceCase_ == 2) {
@@ -1939,6 +1960,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    * .google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange price_range = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRangeOrBuilder
       getPriceRangeOrBuilder() {
     if (priceCase_ == 2) {
@@ -1987,6 +2009,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsCosts(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1994,6 +2017,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     return internalGetCosts().getMap().containsKey(key);
   }
   /** Use {@link #getCostsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Float> getCosts() {
     return getCostsMap();
@@ -2012,6 +2036,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.Float> getCostsMap() {
     return internalGetCosts().getMap();
   }
@@ -2029,6 +2054,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public float getCostsOrDefault(java.lang.String key, float defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -2050,6 +2076,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public float getCostsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -2075,6 +2102,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The currencyCode.
    */
+  @java.lang.Override
   public java.lang.String getCurrencyCode() {
     java.lang.Object ref = currencyCode_;
     if (ref instanceof java.lang.String) {
@@ -2098,6 +2126,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for currencyCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCurrencyCodeBytes() {
     java.lang.Object ref = currencyCode_;
     if (ref instanceof java.lang.String) {
@@ -2125,6 +2154,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for stockState.
    */
+  @java.lang.Override
   public int getStockStateValue() {
     return stockState_;
   }
@@ -2141,6 +2171,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The stockState.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState
       getStockState() {
     @SuppressWarnings("deprecation")
@@ -2165,6 +2196,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The availableQuantity.
    */
+  @java.lang.Override
   public long getAvailableQuantity() {
     return availableQuantity_;
   }
@@ -2183,6 +2215,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The canonicalProductUri.
    */
+  @java.lang.Override
   public java.lang.String getCanonicalProductUri() {
     java.lang.Object ref = canonicalProductUri_;
     if (ref instanceof java.lang.String) {
@@ -2206,6 +2239,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for canonicalProductUri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCanonicalProductUriBytes() {
     java.lang.Object ref = canonicalProductUri_;
     if (ref instanceof java.lang.String) {
@@ -2231,6 +2265,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.Image images = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.Image> getImagesList() {
     return images_;
   }
@@ -2245,6 +2280,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.Image images = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.ImageOrBuilder>
       getImagesOrBuilderList() {
     return images_;
@@ -2260,6 +2296,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.Image images = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getImagesCount() {
     return images_.size();
   }
@@ -2274,6 +2311,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.Image images = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.Image getImages(int index) {
     return images_.get(index);
   }
@@ -2288,6 +2326,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
    * repeated .google.cloud.recommendationengine.v1beta1.Image images = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ImageOrBuilder getImagesOrBuilder(
       int index) {
     return images_.get(index);
@@ -2875,6 +2914,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the exactPrice field is set.
      */
+    @java.lang.Override
     public boolean hasExactPrice() {
       return priceCase_ == 1;
     }
@@ -2891,6 +2931,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The exactPrice.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice
         getExactPrice() {
       if (exactPriceBuilder_ == null) {
@@ -3047,6 +3088,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * .google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice exact_price = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPriceOrBuilder
         getExactPriceOrBuilder() {
       if ((priceCase_ == 1) && (exactPriceBuilder_ != null)) {
@@ -3118,6 +3160,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return Whether the priceRange field is set.
      */
+    @java.lang.Override
     public boolean hasPriceRange() {
       return priceCase_ == 2;
     }
@@ -3134,6 +3177,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The priceRange.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange
         getPriceRange() {
       if (priceRangeBuilder_ == null) {
@@ -3290,6 +3334,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * .google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange price_range = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRangeOrBuilder
         getPriceRangeOrBuilder() {
       if ((priceCase_ == 2) && (priceRangeBuilder_ != null)) {
@@ -3382,6 +3427,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsCosts(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3389,6 +3435,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       return internalGetCosts().getMap().containsKey(key);
     }
     /** Use {@link #getCostsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getCosts() {
       return getCostsMap();
@@ -3407,6 +3454,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.Float> getCostsMap() {
       return internalGetCosts().getMap();
     }
@@ -3424,6 +3472,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public float getCostsOrDefault(java.lang.String key, float defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3445,6 +3494,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * <code>map&lt;string, float&gt; costs = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public float getCostsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -3652,6 +3702,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for stockState.
      */
+    @java.lang.Override
     public int getStockStateValue() {
       return stockState_;
     }
@@ -3670,6 +3721,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setStockStateValue(int value) {
+
       stockState_ = value;
       onChanged();
       return this;
@@ -3687,6 +3739,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The stockState.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.StockState
         getStockState() {
       @SuppressWarnings("deprecation")
@@ -3753,6 +3806,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
      *
      * @return The availableQuantity.
      */
+    @java.lang.Override
     public long getAvailableQuantity() {
       return availableQuantity_;
     }

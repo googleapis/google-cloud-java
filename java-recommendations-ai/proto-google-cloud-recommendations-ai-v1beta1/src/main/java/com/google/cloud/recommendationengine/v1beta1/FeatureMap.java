@@ -1118,6 +1118,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      *
      * @return A list containing the value.
      */
+    @java.lang.Override
     public java.util.List<java.lang.Float> getValueList() {
       return value_;
     }
@@ -1744,6 +1745,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
    * </code>
    */
+  @java.lang.Override
   public boolean containsCategoricalFeatures(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1751,6 +1753,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     return internalGetCategoricalFeatures().getMap().containsKey(key);
   }
   /** Use {@link #getCategoricalFeaturesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
@@ -1773,6 +1776,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
       getCategoricalFeaturesMap() {
@@ -1794,6 +1798,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
       getCategoricalFeaturesOrDefault(
           java.lang.String key,
@@ -1822,6 +1827,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
       getCategoricalFeaturesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -1887,6 +1893,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
    * </code>
    */
+  @java.lang.Override
   public boolean containsNumericalFeatures(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1894,6 +1901,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     return internalGetNumericalFeatures().getMap().containsKey(key);
   }
   /** Use {@link #getNumericalFeaturesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
@@ -1915,6 +1923,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<
           java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
       getNumericalFeaturesMap() {
@@ -1935,6 +1944,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
       getNumericalFeaturesOrDefault(
           java.lang.String key,
@@ -1962,6 +1972,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
       getNumericalFeaturesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -2412,6 +2423,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
      * </code>
      */
+    @java.lang.Override
     public boolean containsCategoricalFeatures(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2419,6 +2431,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       return internalGetCategoricalFeatures().getMap().containsKey(key);
     }
     /** Use {@link #getCategoricalFeaturesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
@@ -2441,6 +2454,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList>
         getCategoricalFeaturesMap() {
@@ -2462,6 +2476,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
         getCategoricalFeaturesOrDefault(
             java.lang.String key,
@@ -2490,6 +2505,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.StringList&gt; categorical_features = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList
         getCategoricalFeaturesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -2639,6 +2655,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
      * </code>
      */
+    @java.lang.Override
     public boolean containsNumericalFeatures(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2646,6 +2663,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       return internalGetNumericalFeatures().getMap().containsKey(key);
     }
     /** Use {@link #getNumericalFeaturesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
@@ -2667,6 +2685,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<
             java.lang.String, com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList>
         getNumericalFeaturesMap() {
@@ -2687,6 +2706,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
         getNumericalFeaturesOrDefault(
             java.lang.String key,
@@ -2714,6 +2734,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList&gt; numerical_features = 2;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.FeatureMap.FloatList
         getNumericalFeaturesOrThrow(java.lang.String key) {
       if (key == null) {

@@ -140,6 +140,7 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
    *
    * @return The operationName.
    */
+  @java.lang.Override
   public java.lang.String getOperationName() {
     java.lang.Object ref = operationName_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +163,7 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
    *
    * @return The bytes for operationName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOperationNameBytes() {
     java.lang.Object ref = operationName_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +189,7 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
    *
    * @return Whether the createTime field is set.
    */
+  @java.lang.Override
   public boolean hasCreateTime() {
     return createTime_ != null;
   }
@@ -201,6 +204,7 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
    *
    * @return The createTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
@@ -213,6 +217,7 @@ public final class PurgeUserEventsMetadata extends com.google.protobuf.Generated
    *
    * <code>.google.protobuf.Timestamp create_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
   }

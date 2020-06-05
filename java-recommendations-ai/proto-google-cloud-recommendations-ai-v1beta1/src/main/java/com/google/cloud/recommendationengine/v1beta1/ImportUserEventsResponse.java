@@ -167,6 +167,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
@@ -179,6 +180,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
@@ -191,6 +193,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
@@ -203,6 +206,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
@@ -215,6 +219,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorSamplesOrBuilder(int index) {
     return errorSamples_.get(index);
   }
@@ -233,6 +238,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * @return Whether the errorsConfig field is set.
    */
+  @java.lang.Override
   public boolean hasErrorsConfig() {
     return errorsConfig_ != null;
   }
@@ -248,6 +254,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * @return The errorsConfig.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig getErrorsConfig() {
     return errorsConfig_ == null
         ? com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.getDefaultInstance()
@@ -263,6 +270,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig errors_config = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfigOrBuilder
       getErrorsConfigOrBuilder() {
     return getErrorsConfig();
@@ -282,6 +290,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * @return Whether the importSummary field is set.
    */
+  @java.lang.Override
   public boolean hasImportSummary() {
     return importSummary_ != null;
   }
@@ -297,6 +306,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    *
    * @return The importSummary.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventImportSummary getImportSummary() {
     return importSummary_ == null
         ? com.google.cloud.recommendationengine.v1beta1.UserEventImportSummary.getDefaultInstance()
@@ -312,6 +322,7 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
    * <code>.google.cloud.recommendationengine.v1beta1.UserEventImportSummary import_summary = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventImportSummaryOrBuilder
       getImportSummaryOrBuilder() {
     return getImportSummary();

@@ -144,6 +144,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the userEvent field is set.
    */
+  @java.lang.Override
   public boolean hasUserEvent() {
     return userEvent_ != null;
   }
@@ -212,6 +215,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The userEvent.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvent() {
     return userEvent_ == null
         ? com.google.cloud.recommendationengine.v1beta1.UserEvent.getDefaultInstance()
@@ -228,6 +232,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    * .google.cloud.recommendationengine.v1beta1.UserEvent user_event = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder getUserEventOrBuilder() {
     return getUserEvent();
   }

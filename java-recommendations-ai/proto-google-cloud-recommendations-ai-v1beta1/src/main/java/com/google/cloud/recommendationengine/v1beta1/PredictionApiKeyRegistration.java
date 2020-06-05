@@ -125,6 +125,7 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
    *
    * @return The apiKey.
    */
+  @java.lang.Override
   public java.lang.String getApiKey() {
     java.lang.Object ref = apiKey_;
     if (ref instanceof java.lang.String) {
@@ -147,6 +148,7 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
    *
    * @return The bytes for apiKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getApiKeyBytes() {
     java.lang.Object ref = apiKey_;
     if (ref instanceof java.lang.String) {

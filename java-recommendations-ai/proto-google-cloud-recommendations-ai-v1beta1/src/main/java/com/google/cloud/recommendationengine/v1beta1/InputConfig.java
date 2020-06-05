@@ -226,6 +226,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the catalogInlineSource field is set.
    */
+  @java.lang.Override
   public boolean hasCatalogInlineSource() {
     return sourceCase_ == 1;
   }
@@ -241,6 +242,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The catalogInlineSource.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource
       getCatalogInlineSource() {
     if (sourceCase_ == 1) {
@@ -258,6 +260,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.recommendationengine.v1beta1.CatalogInlineSource catalog_inline_source = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogInlineSourceOrBuilder
       getCatalogInlineSourceOrBuilder() {
     if (sourceCase_ == 1) {
@@ -278,6 +281,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the gcsSource field is set.
    */
+  @java.lang.Override
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
@@ -292,6 +296,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The gcsSource.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.GcsSource getGcsSource() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.recommendationengine.v1beta1.GcsSource) source_;
@@ -307,6 +312,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.cloud.recommendationengine.v1beta1.GcsSource gcs_source = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
     if (sourceCase_ == 2) {
       return (com.google.cloud.recommendationengine.v1beta1.GcsSource) source_;
@@ -328,6 +334,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the userEventInlineSource field is set.
    */
+  @java.lang.Override
   public boolean hasUserEventInlineSource() {
     return sourceCase_ == 3;
   }
@@ -344,6 +351,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userEventInlineSource.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventInlineSource
       getUserEventInlineSource() {
     if (sourceCase_ == 3) {
@@ -362,6 +370,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.UserEventInlineSource user_event_inline_source = 3;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventInlineSourceOrBuilder
       getUserEventInlineSourceOrBuilder() {
     if (sourceCase_ == 3) {
@@ -806,6 +815,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the catalogInlineSource field is set.
      */
+    @java.lang.Override
     public boolean hasCatalogInlineSource() {
       return sourceCase_ == 1;
     }
@@ -822,6 +832,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The catalogInlineSource.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.CatalogInlineSource
         getCatalogInlineSource() {
       if (catalogInlineSourceBuilder_ == null) {
@@ -974,6 +985,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.recommendationengine.v1beta1.CatalogInlineSource catalog_inline_source = 1;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.CatalogInlineSourceOrBuilder
         getCatalogInlineSourceOrBuilder() {
       if ((sourceCase_ == 1) && (catalogInlineSourceBuilder_ != null)) {
@@ -1040,6 +1052,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the gcsSource field is set.
      */
+    @java.lang.Override
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
@@ -1054,6 +1067,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The gcsSource.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.GcsSource getGcsSource() {
       if (gcsSourceBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -1187,6 +1201,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.cloud.recommendationengine.v1beta1.GcsSource gcs_source = 2;</code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.GcsSourceOrBuilder
         getGcsSourceOrBuilder() {
       if ((sourceCase_ == 2) && (gcsSourceBuilder_ != null)) {
@@ -1250,6 +1265,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the userEventInlineSource field is set.
      */
+    @java.lang.Override
     public boolean hasUserEventInlineSource() {
       return sourceCase_ == 3;
     }
@@ -1266,6 +1282,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The userEventInlineSource.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.UserEventInlineSource
         getUserEventInlineSource() {
       if (userEventInlineSourceBuilder_ == null) {
@@ -1419,6 +1436,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.recommendationengine.v1beta1.UserEventInlineSource user_event_inline_source = 3;
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.UserEventInlineSourceOrBuilder
         getUserEventInlineSourceOrBuilder() {
       if ((sourceCase_ == 3) && (userEventInlineSourceBuilder_ != null)) {

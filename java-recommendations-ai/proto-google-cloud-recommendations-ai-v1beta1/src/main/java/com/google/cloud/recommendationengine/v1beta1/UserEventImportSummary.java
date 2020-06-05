@@ -126,6 +126,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
    *
    * @return The joinedEventsCount.
    */
+  @java.lang.Override
   public long getJoinedEventsCount() {
     return joinedEventsCount_;
   }
@@ -144,6 +145,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
    *
    * @return The unjoinedEventsCount.
    */
+  @java.lang.Override
   public long getUnjoinedEventsCount() {
     return unjoinedEventsCount_;
   }
@@ -502,6 +504,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
      *
      * @return The joinedEventsCount.
      */
+    @java.lang.Override
     public long getJoinedEventsCount() {
       return joinedEventsCount_;
     }
@@ -554,6 +557,7 @@ public final class UserEventImportSummary extends com.google.protobuf.GeneratedM
      *
      * @return The unjoinedEventsCount.
      */
+    @java.lang.Override
     public long getUnjoinedEventsCount() {
       return unjoinedEventsCount_;
     }

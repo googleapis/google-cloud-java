@@ -334,6 +334,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -397,6 +401,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventType.
    */
+  @java.lang.Override
   public java.lang.String getEventType() {
     java.lang.Object ref = eventType_;
     if (ref instanceof java.lang.String) {
@@ -435,6 +440,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for eventType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getEventTypeBytes() {
     java.lang.Object ref = eventType_;
     if (ref instanceof java.lang.String) {
@@ -462,6 +468,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the userInfo field is set.
    */
+  @java.lang.Override
   public boolean hasUserInfo() {
     return userInfo_ != null;
   }
@@ -478,6 +485,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userInfo.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserInfo getUserInfo() {
     return userInfo_ == null
         ? com.google.cloud.recommendationengine.v1beta1.UserInfo.getDefaultInstance()
@@ -494,6 +502,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.UserInfo user_info = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserInfoOrBuilder getUserInfoOrBuilder() {
     return getUserInfo();
   }
@@ -514,6 +523,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the eventDetail field is set.
    */
+  @java.lang.Override
   public boolean hasEventDetail() {
     return eventDetail_ != null;
   }
@@ -531,6 +541,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventDetail.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.EventDetail getEventDetail() {
     return eventDetail_ == null
         ? com.google.cloud.recommendationengine.v1beta1.EventDetail.getDefaultInstance()
@@ -548,6 +559,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.EventDetail event_detail = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.EventDetailOrBuilder
       getEventDetailOrBuilder() {
     return getEventDetail();
@@ -585,6 +597,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the productEventDetail field is set.
    */
+  @java.lang.Override
   public boolean hasProductEventDetail() {
     return productEventDetail_ != null;
   }
@@ -618,6 +631,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The productEventDetail.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductEventDetail getProductEventDetail() {
     return productEventDetail_ == null
         ? com.google.cloud.recommendationengine.v1beta1.ProductEventDetail.getDefaultInstance()
@@ -651,6 +665,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.ProductEventDetail product_event_detail = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductEventDetailOrBuilder
       getProductEventDetailOrBuilder() {
     return getProductEventDetail();
@@ -671,6 +686,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the eventTime field is set.
    */
+  @java.lang.Override
   public boolean hasEventTime() {
     return eventTime_ != null;
   }
@@ -687,6 +703,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
@@ -701,6 +718,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp event_time = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEventTimeOrBuilder() {
     return getEventTime();
   }
@@ -721,6 +739,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for eventSource.
    */
+  @java.lang.Override
   public int getEventSourceValue() {
     return eventSource_;
   }
@@ -738,6 +757,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The eventSource.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEvent.EventSource getEventSource() {
     @SuppressWarnings("deprecation")
     com.google.cloud.recommendationengine.v1beta1.UserEvent.EventSource result =
@@ -2381,6 +2401,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for eventSource.
      */
+    @java.lang.Override
     public int getEventSourceValue() {
       return eventSource_;
     }
@@ -2400,6 +2421,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setEventSourceValue(int value) {
+
       eventSource_ = value;
       onChanged();
       return this;
@@ -2418,6 +2440,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The eventSource.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.UserEvent.EventSource getEventSource() {
       @SuppressWarnings("deprecation")
       com.google.cloud.recommendationengine.v1beta1.UserEvent.EventSource result =

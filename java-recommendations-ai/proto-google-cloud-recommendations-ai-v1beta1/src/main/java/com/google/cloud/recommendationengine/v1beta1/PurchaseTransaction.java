@@ -177,6 +177,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -199,6 +200,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +229,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * @return The revenue.
    */
+  @java.lang.Override
   public float getRevenue() {
     return revenue_;
   }
@@ -265,6 +268,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsTaxes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -272,6 +276,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     return internalGetTaxes().getMap().containsKey(key);
   }
   /** Use {@link #getTaxesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Float> getTaxes() {
     return getTaxesMap();
@@ -285,6 +290,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.Float> getTaxesMap() {
     return internalGetTaxes().getMap();
   }
@@ -297,6 +303,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public float getTaxesOrDefault(java.lang.String key, float defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -313,6 +320,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public float getTaxesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -366,6 +374,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsCosts(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -373,6 +382,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
     return internalGetCosts().getMap().containsKey(key);
   }
   /** Use {@link #getCostsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Float> getCosts() {
     return getCostsMap();
@@ -394,6 +404,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.Float> getCostsMap() {
     return internalGetCosts().getMap();
   }
@@ -414,6 +425,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public float getCostsOrDefault(java.lang.String key, float defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -438,6 +450,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public float getCostsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -463,6 +476,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * @return The currencyCode.
    */
+  @java.lang.Override
   public java.lang.String getCurrencyCode() {
     java.lang.Object ref = currencyCode_;
     if (ref instanceof java.lang.String) {
@@ -486,6 +500,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for currencyCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCurrencyCodeBytes() {
     java.lang.Object ref = currencyCode_;
     if (ref instanceof java.lang.String) {
@@ -1045,6 +1060,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * @return The revenue.
      */
+    @java.lang.Override
     public float getRevenue() {
       return revenue_;
     }
@@ -1124,6 +1140,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsTaxes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1131,6 +1148,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       return internalGetTaxes().getMap().containsKey(key);
     }
     /** Use {@link #getTaxesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getTaxes() {
       return getTaxesMap();
@@ -1144,6 +1162,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.Float> getTaxesMap() {
       return internalGetTaxes().getMap();
     }
@@ -1156,6 +1175,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public float getTaxesOrDefault(java.lang.String key, float defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1172,6 +1192,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, float&gt; taxes = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public float getTaxesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1281,6 +1302,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsCosts(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1288,6 +1310,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
       return internalGetCosts().getMap().containsKey(key);
     }
     /** Use {@link #getCostsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Float> getCosts() {
       return getCostsMap();
@@ -1309,6 +1332,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.Float> getCostsMap() {
       return internalGetCosts().getMap();
     }
@@ -1329,6 +1353,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public float getCostsOrDefault(java.lang.String key, float defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1353,6 +1378,7 @@ public final class PurchaseTransaction extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, float&gt; costs = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public float getCostsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

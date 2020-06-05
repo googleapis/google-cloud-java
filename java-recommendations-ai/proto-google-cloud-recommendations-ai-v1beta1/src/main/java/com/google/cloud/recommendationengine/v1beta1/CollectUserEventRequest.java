@@ -148,6 +148,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * @return The userEvent.
    */
+  @java.lang.Override
   public java.lang.String getUserEvent() {
     java.lang.Object ref = userEvent_;
     if (ref instanceof java.lang.String) {
@@ -220,6 +223,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for userEvent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUserEventBytes() {
     java.lang.Object ref = userEvent_;
     if (ref instanceof java.lang.String) {
@@ -248,6 +252,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * @return The uri.
    */
+  @java.lang.Override
   public java.lang.String getUri() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -273,6 +278,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for uri.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
@@ -300,6 +306,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * @return The ets.
    */
+  @java.lang.Override
   public long getEts() {
     return ets_;
   }
@@ -1040,6 +1047,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * @return The ets.
      */
+    @java.lang.Override
     public long getEts() {
       return ets_;
     }

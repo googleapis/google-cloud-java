@@ -1135,6 +1135,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -1161,6 +1162,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -1197,6 +1199,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy category_hierarchies = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy>
       getCategoryHierarchiesList() {
     return categoryHierarchies_;
@@ -1221,6 +1224,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy category_hierarchies = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends
               com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchyOrBuilder>
@@ -1247,6 +1251,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy category_hierarchies = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getCategoryHierarchiesCount() {
     return categoryHierarchies_.size();
   }
@@ -1270,6 +1275,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy category_hierarchies = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy
       getCategoryHierarchies(int index) {
     return categoryHierarchies_.get(index);
@@ -1294,6 +1300,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy category_hierarchies = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchyOrBuilder
       getCategoryHierarchiesOrBuilder(int index) {
     return categoryHierarchies_.get(index);
@@ -1313,6 +1320,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -1336,6 +1344,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -1362,6 +1371,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1385,6 +1395,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -1416,6 +1427,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the itemAttributes field is set.
    */
+  @java.lang.Override
   public boolean hasItemAttributes() {
     return itemAttributes_ != null;
   }
@@ -1436,6 +1448,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The itemAttributes.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMap getItemAttributes() {
     return itemAttributes_ == null
         ? com.google.cloud.recommendationengine.v1beta1.FeatureMap.getDefaultInstance()
@@ -1456,6 +1469,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.FeatureMap item_attributes = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.FeatureMapOrBuilder
       getItemAttributesOrBuilder() {
     return getItemAttributes();
@@ -1478,6 +1492,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The languageCode.
    */
+  @java.lang.Override
   public java.lang.String getLanguageCode() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -1504,6 +1519,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for languageCode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
@@ -1605,6 +1621,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The itemGroupId.
    */
+  @java.lang.Override
   public java.lang.String getItemGroupId() {
     java.lang.Object ref = itemGroupId_;
     if (ref instanceof java.lang.String) {
@@ -1630,6 +1647,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for itemGroupId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getItemGroupIdBytes() {
     java.lang.Object ref = itemGroupId_;
     if (ref instanceof java.lang.String) {
@@ -1656,6 +1674,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the productMetadata field is set.
    */
+  @java.lang.Override
   public boolean hasProductMetadata() {
     return recommendationTypeCase_ == 10;
   }
@@ -1672,6 +1691,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The productMetadata.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem getProductMetadata() {
     if (recommendationTypeCase_ == 10) {
       return (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem) recommendationType_;
@@ -1689,6 +1709,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.ProductCatalogItem product_metadata = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItemOrBuilder
       getProductMetadataOrBuilder() {
     if (recommendationTypeCase_ == 10) {
@@ -3900,6 +3921,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the productMetadata field is set.
      */
+    @java.lang.Override
     public boolean hasProductMetadata() {
       return recommendationTypeCase_ == 10;
     }
@@ -3916,6 +3938,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The productMetadata.
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem getProductMetadata() {
       if (productMetadataBuilder_ == null) {
         if (recommendationTypeCase_ == 10) {
@@ -4069,6 +4092,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * .google.cloud.recommendationengine.v1beta1.ProductCatalogItem product_metadata = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.recommendationengine.v1beta1.ProductCatalogItemOrBuilder
         getProductMetadataOrBuilder() {
       if ((recommendationTypeCase_ == 10) && (productMetadataBuilder_ != null)) {

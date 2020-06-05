@@ -169,6 +169,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +194,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -221,6 +223,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    * @return The requestId.
    */
+  @java.lang.Override
   public java.lang.String getRequestId() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -246,6 +249,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    * @return The bytes for requestId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
@@ -273,6 +277,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    * @return Whether the inputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasInputConfig() {
     return inputConfig_ != null;
   }
@@ -289,6 +294,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    * @return The inputConfig.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.InputConfig getInputConfig() {
     return inputConfig_ == null
         ? com.google.cloud.recommendationengine.v1beta1.InputConfig.getDefaultInstance()
@@ -305,6 +311,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    * .google.cloud.recommendationengine.v1beta1.InputConfig input_config = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.InputConfigOrBuilder
       getInputConfigOrBuilder() {
     return getInputConfig();
@@ -325,6 +332,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    * @return Whether the errorsConfig field is set.
    */
+  @java.lang.Override
   public boolean hasErrorsConfig() {
     return errorsConfig_ != null;
   }
@@ -341,6 +349,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    *
    * @return The errorsConfig.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig getErrorsConfig() {
     return errorsConfig_ == null
         ? com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.getDefaultInstance()
@@ -357,6 +366,7 @@ public final class ImportCatalogItemsRequest extends com.google.protobuf.Generat
    * .google.cloud.recommendationengine.v1beta1.ImportErrorsConfig errors_config = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfigOrBuilder
       getErrorsConfigOrBuilder() {
     return getErrorsConfig();

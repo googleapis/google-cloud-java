@@ -141,6 +141,7 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent>
       getUserEventsList() {
     return userEvents_;
@@ -154,6 +155,7 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder>
       getUserEventsOrBuilderList() {
     return userEvents_;
@@ -167,6 +169,7 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1;</code>
    */
+  @java.lang.Override
   public int getUserEventsCount() {
     return userEvents_.size();
   }
@@ -179,6 +182,7 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvents(int index) {
     return userEvents_.get(index);
   }
@@ -191,6 +195,7 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.cloud.recommendationengine.v1beta1.UserEvent user_events = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder getUserEventsOrBuilder(
       int index) {
     return userEvents_.get(index);
@@ -210,6 +215,7 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +239,7 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

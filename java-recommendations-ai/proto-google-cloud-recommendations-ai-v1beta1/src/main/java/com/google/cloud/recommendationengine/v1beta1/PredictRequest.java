@@ -231,6 +231,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -277,6 +278,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -307,6 +309,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the userEvent field is set.
    */
+  @java.lang.Override
   public boolean hasUserEvent() {
     return userEvent_ != null;
   }
@@ -326,6 +329,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The userEvent.
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvent() {
     return userEvent_ == null
         ? com.google.cloud.recommendationengine.v1beta1.UserEvent.getDefaultInstance()
@@ -345,6 +349,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * .google.cloud.recommendationengine.v1beta1.UserEvent user_event = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder getUserEventOrBuilder() {
     return getUserEvent();
   }
@@ -364,6 +369,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -381,6 +387,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -403,6 +410,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -441,6 +449,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -476,6 +485,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -504,6 +514,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The dryRun.
    */
+  @java.lang.Override
   public boolean getDryRun() {
     return dryRun_;
   }
@@ -557,6 +568,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public boolean containsParams(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -564,6 +576,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     return internalGetParams().getMap().containsKey(key);
   }
   /** Use {@link #getParamsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getParams() {
     return getParamsMap();
@@ -589,6 +602,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getParamsMap() {
     return internalGetParams().getMap();
   }
@@ -613,6 +627,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getParamsOrDefault(
       java.lang.String key, com.google.protobuf.Value defaultValue) {
     if (key == null) {
@@ -642,6 +657,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.Value getParamsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -693,6 +709,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -700,6 +717,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -719,6 +737,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -737,6 +756,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -759,6 +779,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1722,6 +1743,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }
@@ -2057,6 +2079,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The dryRun.
      */
+    @java.lang.Override
     public boolean getDryRun() {
       return dryRun_;
     }
@@ -2149,6 +2172,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public boolean containsParams(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2156,6 +2180,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       return internalGetParams().getMap().containsKey(key);
     }
     /** Use {@link #getParamsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getParams() {
       return getParamsMap();
@@ -2181,6 +2206,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getParamsMap() {
       return internalGetParams().getMap();
     }
@@ -2205,6 +2231,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getParamsOrDefault(
         java.lang.String key, com.google.protobuf.Value defaultValue) {
       if (key == null) {
@@ -2234,6 +2261,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * map&lt;string, .google.protobuf.Value&gt; params = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Override
     public com.google.protobuf.Value getParamsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2379,6 +2407,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2386,6 +2415,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2405,6 +2435,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2423,6 +2454,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2446,6 +2478,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

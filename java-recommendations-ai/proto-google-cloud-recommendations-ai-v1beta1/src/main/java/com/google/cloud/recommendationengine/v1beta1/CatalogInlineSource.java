@@ -136,6 +136,7 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
       getCatalogItemsList() {
     return catalogItems_;
@@ -152,6 +153,7 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder>
       getCatalogItemsOrBuilderList() {
@@ -169,6 +171,7 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public int getCatalogItemsCount() {
     return catalogItems_.size();
   }
@@ -184,6 +187,7 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItems(int index) {
     return catalogItems_.get(index);
   }
@@ -199,6 +203,7 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
    * repeated .google.cloud.recommendationengine.v1beta1.CatalogItem catalog_items = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.recommendationengine.v1beta1.CatalogItemOrBuilder
       getCatalogItemsOrBuilder(int index) {
     return catalogItems_.get(index);
