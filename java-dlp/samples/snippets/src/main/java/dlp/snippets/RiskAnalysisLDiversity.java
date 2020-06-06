@@ -143,6 +143,9 @@ class RiskAnalysisLDiversity {
         Thread.sleep(500); // Wait for the job to become available
       } catch (TimeoutException e) {
         System.out.println("Unable to verify job completion.");
+      } finally {
+        subscriber.stopAsync();
+        subscriber.awaitTerminated();
       }
 
       // Build a request to get the completed job

@@ -141,6 +141,9 @@ public class InspectDatastoreEntity {
       } catch (TimeoutException e) {
         System.out.println("Job was not completed after 15 minutes.");
         return;
+      } finally {
+        subscriber.stopAsync();
+        subscriber.awaitTerminated();
       }
 
       // Get the latest state of the job from the service

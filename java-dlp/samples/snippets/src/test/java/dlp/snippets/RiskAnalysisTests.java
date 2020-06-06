@@ -21,8 +21,15 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.rpc.ApiException;
+import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.pubsub.v1.ProjectSubscriptionName;
+import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.TopicName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.UUID;
 import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.Before;
@@ -39,7 +46,16 @@ public class RiskAnalysisTests {
   private static final String SUBSCRIPTION_ID = System.getenv("PUB_SUB_SUBSCRIPTION");
   private static final String DATASET_ID = System.getenv("BIGQUERY_DATASET");
   private static final String TABLE_ID = System.getenv("BIGQUERY_TABLE");
+
   private ByteArrayOutputStream bout;
+  private UUID testRunUuid = UUID.randomUUID();
+  private TopicName topicName = TopicName.of(
+      PROJECT_ID,
+      String.format("%s-%s", TOPIC_ID, testRunUuid.toString()));
+  private ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(
+      PROJECT_ID,
+      String.format("%s-%s", SUBSCRIPTION_ID, testRunUuid.toString()));
+  private PrintStream originalOut = System.out;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -58,15 +74,52 @@ public class RiskAnalysisTests {
   }
 
   @Before
-  public void setUp() {
+  public void setUp() throws Exception {
+    // Create a new topic
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+      topicAdminClient.createTopic(topicName);
+    }
+    // Create a new subscription
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+      subscriptionAdminClient
+          .createSubscription(subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
+    }
+
+    // Capture stdout
     bout = new ByteArrayOutputStream();
     System.setOut(new PrintStream(bout));
+  }
+
+
+  @After
+  public void tearDown() throws Exception {
+    // Restore stdout
+    System.setOut(originalOut);
+    bout.reset();
+
+    // Delete the test topic
+    try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+      topicAdminClient.deleteTopic(topicName);
+    } catch (ApiException e) {
+      System.err.println(String.format("Error deleting topic %s: %s",
+          topicName.getTopic(), e));
+      // Keep trying to clean up
+    }
+
+    // Delete the test subscription
+    try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+      subscriptionAdminClient.deleteSubscription(subscriptionName);
+    } catch (ApiException e) {
+      System.err.println(String.format("Error deleting subscription %s: %s",
+          subscriptionName.getSubscription(), e));
+      // Keep trying to clean up
+    }
   }
 
   @Test
   public void testNumericalStats() throws Exception {
     RiskAnalysisNumericalStats.numericalStatsAnalysis(
-        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
+        PROJECT_ID, DATASET_ID, TABLE_ID, topicName.getTopic(), subscriptionName.getSubscription());
     String output = bout.toString();
     assertThat(output, containsString("Value at "));
   }
@@ -74,7 +127,7 @@ public class RiskAnalysisTests {
   @Test
   public void testCategoricalStats() throws Exception {
     RiskAnalysisCategoricalStats.categoricalStatsAnalysis(
-        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
+        PROJECT_ID, DATASET_ID, TABLE_ID, topicName.getTopic(), subscriptionName.getSubscription());
 
     String output = bout.toString();
 
@@ -85,7 +138,7 @@ public class RiskAnalysisTests {
   @Test
   public void testKAnonymity() throws Exception {
     RiskAnalysisKAnonymity.calculateKAnonymity(
-        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
+        PROJECT_ID, DATASET_ID, TABLE_ID, topicName.getTopic(), subscriptionName.getSubscription());
     String output = bout.toString();
     assertTrue(Pattern.compile("Bucket size range: \\[\\d, \\d\\]").matcher(output).find());
     assertTrue(output.contains("Quasi-ID values: integer_value: 19"));
@@ -95,7 +148,7 @@ public class RiskAnalysisTests {
   @Test
   public void testLDiversity() throws Exception {
     RiskAnalysisLDiversity.calculateLDiversity(
-        PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
+        PROJECT_ID, DATASET_ID, TABLE_ID, topicName.getTopic(), subscriptionName.getSubscription());
     String output = bout.toString();
     assertTrue(output.contains("Quasi-ID values: integer_value: 19"));
     assertTrue(output.contains("Class size: 1"));
@@ -104,18 +157,13 @@ public class RiskAnalysisTests {
 
   @Test
   public void testKMap() throws Exception {
-    RiskAnalysisKMap.calculateKMap(PROJECT_ID, DATASET_ID, TABLE_ID, TOPIC_ID, SUBSCRIPTION_ID);
+    RiskAnalysisKMap.calculateKMap(
+        PROJECT_ID, DATASET_ID, TABLE_ID, topicName.getTopic(), subscriptionName.getSubscription());
 
     String output = bout.toString();
 
     assertTrue(Pattern.compile("Anonymity range: \\[\\d, \\d]").matcher(output).find());
     assertTrue(Pattern.compile("Size: \\d").matcher(output).find());
     assertTrue(Pattern.compile("Values: \\{\\d{2}, \"Female\"\\}").matcher(output).find());
-  }
-
-  @After
-  public void tearDown() {
-    System.setOut(null);
-    bout.reset();
   }
 }

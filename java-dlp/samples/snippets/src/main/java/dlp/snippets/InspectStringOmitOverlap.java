@@ -16,7 +16,7 @@
 
 package dlp.snippets;
 
-// [START dlp_inspect_string_with_exclusion_dict]
+// [START dlp_inspect_string_omit_overlap]
 
 import com.google.cloud.dlp.v2.DlpServiceClient;
 import com.google.privacy.dlp.v2.ByteContentItem;
@@ -114,4 +114,4 @@ public class InspectStringOmitOverlap {
     }
   }
 }
-// [END dlp_inspect_string_with_exclusion_dict]
+// [END dlp_inspect_string_omit_overlap]
