@@ -17,14 +17,13 @@
 package dlp.snippets;
 
 import static junit.framework.TestCase.assertNotNull;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
-import static org.junit.Assert.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.After;
 import org.junit.Before;
@@ -37,8 +36,12 @@ import org.junit.runners.JUnit4;
 public class RedactTests {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String INPUT_FILE = "src/test/resources/test.png";
-  private static final String OUTPUT_FILE = "redacted.png";
+  private static final String SIMPLE_INPUT_FILE = "src/test/resources/test.png";
+  private static final String SIMPLE_OUTPUT_FILE = "redacted.png";
+  private static final String DOCUMENT_INPUT_FILE =
+      "src/test/resources/sensitive-data-image.jpg";
+  private static final String DOCUMENT_OUTPUT_FILE =
+      "sensitive-data-image-redacted.jpg";
   private ByteArrayOutputStream bout;
 
   private static void requireEnvVar(String varName) {
@@ -67,13 +70,49 @@ public class RedactTests {
 
   @After
   public void cleanUp() throws IOException {
-    Path outputFile = Paths.get(OUTPUT_FILE);
-    Files.delete(outputFile);
+    Files.deleteIfExists(Paths.get(SIMPLE_OUTPUT_FILE));
+    Files.deleteIfExists(Paths.get(DOCUMENT_OUTPUT_FILE));
   }
 
   @Test
   public void testRedactImage() throws Exception {
-    RedactImageFile.redactImageFile(PROJECT_ID, INPUT_FILE, OUTPUT_FILE);
+    RedactImageFile.redactImageFile(PROJECT_ID, SIMPLE_INPUT_FILE, SIMPLE_OUTPUT_FILE);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Redacted image written"));
+  }
+
+  @Test
+  public void testRedactImageAllInfoTypes() throws Exception {
+    RedactImageFileAllInfoTypes.redactImageFileAllInfoTypes(PROJECT_ID, DOCUMENT_INPUT_FILE,
+        DOCUMENT_OUTPUT_FILE);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Redacted image written"));
+  }
+
+  @Test
+  public void testRedactImageListedInfoTypes() throws Exception {
+    RedactImageFileListedInfoTypes.redactImageFileListedInfoTypes(PROJECT_ID, DOCUMENT_INPUT_FILE,
+        DOCUMENT_OUTPUT_FILE);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Redacted image written"));
+  }
+
+  @Test
+  public void testRedactImageColoredInfoTypes() throws Exception {
+    RedactImageFileColoredInfoTypes.redactImageFileColoredInfoTypes(PROJECT_ID, DOCUMENT_INPUT_FILE,
+        DOCUMENT_OUTPUT_FILE);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Redacted image written"));
+  }
+
+  @Test
+  public void testRedactImageAllText() throws Exception {
+    RedactImageFileAllText.redactImageFileAllText(PROJECT_ID, DOCUMENT_INPUT_FILE,
+        DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
     assertThat(output, containsString("Redacted image written"));
