@@ -154,6 +154,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the interval field is set.
    */
+  @java.lang.Override
   public boolean hasInterval() {
     return interval_ != null;
   }
@@ -176,6 +177,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The interval.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeInterval getInterval() {
     return interval_ == null
         ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
@@ -198,6 +200,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.TimeInterval interval = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder() {
     return getInterval();
   }
@@ -215,6 +218,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the value field is set.
    */
+  @java.lang.Override
   public boolean hasValue() {
     return value_ != null;
   }
@@ -229,6 +233,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The value.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TypedValue getValue() {
     return value_ == null ? com.google.monitoring.v3.TypedValue.getDefaultInstance() : value_;
   }
@@ -241,6 +246,7 @@ public final class Point extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.TypedValue value = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TypedValueOrBuilder getValueOrBuilder() {
     return getValue();
   }

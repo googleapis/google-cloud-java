@@ -144,6 +144,7 @@ public final class GetNotificationChannelVerificationCodeResponse
    *
    * @return The code.
    */
+  @java.lang.Override
   public java.lang.String getCode() {
     java.lang.Object ref = code_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class GetNotificationChannelVerificationCodeResponse
    *
    * @return The bytes for code.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getCodeBytes() {
     java.lang.Object ref = code_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class GetNotificationChannelVerificationCodeResponse
    *
    * @return Whether the expireTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpireTime() {
     return expireTime_ != null;
   }
@@ -212,6 +215,7 @@ public final class GetNotificationChannelVerificationCodeResponse
    *
    * @return The expireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
@@ -226,6 +230,7 @@ public final class GetNotificationChannelVerificationCodeResponse
    *
    * <code>.google.protobuf.Timestamp expire_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
     return getExpireTime();
   }

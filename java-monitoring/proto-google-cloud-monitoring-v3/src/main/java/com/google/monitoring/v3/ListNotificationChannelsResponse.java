@@ -140,6 +140,7 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.monitoring.v3.NotificationChannel notification_channels = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.NotificationChannel>
       getNotificationChannelsList() {
     return notificationChannels_;
@@ -153,6 +154,7 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.monitoring.v3.NotificationChannel notification_channels = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.NotificationChannelOrBuilder>
       getNotificationChannelsOrBuilderList() {
     return notificationChannels_;
@@ -166,6 +168,7 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.monitoring.v3.NotificationChannel notification_channels = 3;</code>
    */
+  @java.lang.Override
   public int getNotificationChannelsCount() {
     return notificationChannels_.size();
   }
@@ -178,6 +181,7 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.monitoring.v3.NotificationChannel notification_channels = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.NotificationChannel getNotificationChannels(int index) {
     return notificationChannels_.get(index);
   }
@@ -190,6 +194,7 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
    *
    * <code>repeated .google.monitoring.v3.NotificationChannel notification_channels = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.NotificationChannelOrBuilder getNotificationChannelsOrBuilder(
       int index) {
     return notificationChannels_.get(index);
@@ -211,6 +216,7 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +242,7 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

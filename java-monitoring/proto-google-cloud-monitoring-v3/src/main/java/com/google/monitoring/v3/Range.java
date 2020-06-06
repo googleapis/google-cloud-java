@@ -126,6 +126,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The min.
    */
+  @java.lang.Override
   public double getMin() {
     return min_;
   }
@@ -143,6 +144,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The max.
    */
+  @java.lang.Override
   public double getMax() {
     return max_;
   }
@@ -493,6 +495,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The min.
      */
+    @java.lang.Override
     public double getMin() {
       return min_;
     }
@@ -544,6 +547,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The max.
      */
+    @java.lang.Override
     public double getMax() {
       return max_;
     }

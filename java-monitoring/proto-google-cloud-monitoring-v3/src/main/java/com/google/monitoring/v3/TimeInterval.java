@@ -22,7 +22,11 @@ package com.google.monitoring.v3;
  *
  *
  * <pre>
- * A closed time interval. It extends from the start time to the end time, and includes both: `[startTime, endTime]`. Valid time intervals depend on the [`MetricKind`](/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors#MetricKind) of the metric value. In no case can the end time be earlier than the start time.
+ * A closed time interval. It extends from the start time to the end time, and
+ * includes both: `[startTime, endTime]`. Valid time intervals depend on the
+ * [`MetricKind`](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors#MetricKind)
+ * of the metric value. In no case can the end time be earlier than the start
+ * time.
  * * For a `GAUGE` metric, the `startTime` value is technically optional; if
  *   no value is specified, the start time defaults to the value of the
  *   end time, and the interval represents a single point in time. If both
@@ -159,6 +163,7 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -173,6 +178,7 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -185,6 +191,7 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -204,6 +211,7 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -220,6 +228,7 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -234,6 +243,7 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -418,7 +428,11 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A closed time interval. It extends from the start time to the end time, and includes both: `[startTime, endTime]`. Valid time intervals depend on the [`MetricKind`](/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors#MetricKind) of the metric value. In no case can the end time be earlier than the start time.
+   * A closed time interval. It extends from the start time to the end time, and
+   * includes both: `[startTime, endTime]`. Valid time intervals depend on the
+   * [`MetricKind`](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors#MetricKind)
+   * of the metric value. In no case can the end time be earlier than the start
+   * time.
    * * For a `GAUGE` metric, the `startTime` value is technically optional; if
    *   no value is specified, the start time defaults to the value of the
    *   end time, and the interval represents a single point in time. If both

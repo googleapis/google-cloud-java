@@ -137,6 +137,7 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.Group> getGroupList() {
     return group_;
   }
@@ -149,6 +150,7 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.GroupOrBuilder> getGroupOrBuilderList() {
     return group_;
   }
@@ -161,6 +163,7 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
+  @java.lang.Override
   public int getGroupCount() {
     return group_.size();
   }
@@ -173,6 +176,7 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Group getGroup(int index) {
     return group_.get(index);
   }
@@ -185,6 +189,7 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder(int index) {
     return group_.get(index);
   }
@@ -204,6 +209,7 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +234,7 @@ public final class ListGroupsResponse extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

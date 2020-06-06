@@ -149,6 +149,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -180,6 +181,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +211,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * @return Whether the alertPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasAlertPolicy() {
     return alertPolicy_ != null;
   }
@@ -227,6 +230,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * @return The alertPolicy.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.AlertPolicy getAlertPolicy() {
     return alertPolicy_ == null
         ? com.google.monitoring.v3.AlertPolicy.getDefaultInstance()
@@ -245,6 +249,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
    * .google.monitoring.v3.AlertPolicy alert_policy = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPolicyOrBuilder() {
     return getAlertPolicy();
   }

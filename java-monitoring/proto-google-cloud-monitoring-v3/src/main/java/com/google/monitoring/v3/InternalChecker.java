@@ -294,6 +294,10 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -342,6 +346,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -367,6 +372,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -394,6 +400,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -418,6 +425,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -444,6 +452,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The network.
    */
+  @java.lang.Override
   public java.lang.String getNetwork() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -467,6 +476,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for network.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNetworkBytes() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
@@ -493,6 +503,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The gcpZone.
    */
+  @java.lang.Override
   public java.lang.String getGcpZone() {
     java.lang.Object ref = gcpZone_;
     if (ref instanceof java.lang.String) {
@@ -516,6 +527,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for gcpZone.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGcpZoneBytes() {
     java.lang.Object ref = gcpZone_;
     if (ref instanceof java.lang.String) {
@@ -542,6 +554,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The peerProjectId.
    */
+  @java.lang.Override
   public java.lang.String getPeerProjectId() {
     java.lang.Object ref = peerProjectId_;
     if (ref instanceof java.lang.String) {
@@ -565,6 +578,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for peerProjectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPeerProjectIdBytes() {
     java.lang.Object ref = peerProjectId_;
     if (ref instanceof java.lang.String) {
@@ -590,6 +604,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -604,6 +619,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.InternalChecker.State getState() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.v3.InternalChecker.State result =
@@ -1588,6 +1604,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1604,6 +1621,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1619,6 +1637,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.InternalChecker.State getState() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.v3.InternalChecker.State result =

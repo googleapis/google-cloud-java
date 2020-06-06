@@ -144,6 +144,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    * @return Whether the uptimeCheckConfig field is set.
    */
+  @java.lang.Override
   public boolean hasUptimeCheckConfig() {
     return uptimeCheckConfig_ != null;
   }
@@ -212,6 +215,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    *
    * @return The uptimeCheckConfig.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig() {
     return uptimeCheckConfig_ == null
         ? com.google.monitoring.v3.UptimeCheckConfig.getDefaultInstance()
@@ -228,6 +232,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    * .google.monitoring.v3.UptimeCheckConfig uptime_check_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckConfigOrBuilder getUptimeCheckConfigOrBuilder() {
     return getUptimeCheckConfig();
   }

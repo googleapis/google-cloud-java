@@ -138,6 +138,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.api.MetricDescriptor> getMetricDescriptorsList() {
     return metricDescriptors_;
   }
@@ -151,6 +152,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.api.MetricDescriptorOrBuilder>
       getMetricDescriptorsOrBuilderList() {
     return metricDescriptors_;
@@ -165,6 +167,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
+  @java.lang.Override
   public int getMetricDescriptorsCount() {
     return metricDescriptors_.size();
   }
@@ -178,6 +181,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.MetricDescriptor getMetricDescriptors(int index) {
     return metricDescriptors_.get(index);
   }
@@ -191,6 +195,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.MetricDescriptorOrBuilder getMetricDescriptorsOrBuilder(int index) {
     return metricDescriptors_.get(index);
   }
@@ -210,6 +215,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +240,7 @@ public final class ListMetricDescriptorsResponse extends com.google.protobuf.Gen
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

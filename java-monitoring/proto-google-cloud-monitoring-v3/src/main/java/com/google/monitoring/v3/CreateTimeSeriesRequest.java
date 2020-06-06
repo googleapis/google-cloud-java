@@ -143,6 +143,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList() {
     return timeSeries_;
   }
@@ -217,6 +220,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
       getTimeSeriesOrBuilderList() {
     return timeSeries_;
@@ -237,6 +241,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getTimeSeriesCount() {
     return timeSeries_.size();
   }
@@ -256,6 +261,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeries getTimeSeries(int index) {
     return timeSeries_.get(index);
   }
@@ -275,6 +281,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * repeated .google.monitoring.v3.TimeSeries time_series = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(int index) {
     return timeSeries_.get(index);
   }

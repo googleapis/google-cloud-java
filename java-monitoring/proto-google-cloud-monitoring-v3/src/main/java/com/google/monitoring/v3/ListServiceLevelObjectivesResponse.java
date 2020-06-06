@@ -140,6 +140,7 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
    *
    * <code>repeated .google.monitoring.v3.ServiceLevelObjective service_level_objectives = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.ServiceLevelObjective>
       getServiceLevelObjectivesList() {
     return serviceLevelObjectives_;
@@ -153,6 +154,7 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
    *
    * <code>repeated .google.monitoring.v3.ServiceLevelObjective service_level_objectives = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder>
       getServiceLevelObjectivesOrBuilderList() {
     return serviceLevelObjectives_;
@@ -166,6 +168,7 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
    *
    * <code>repeated .google.monitoring.v3.ServiceLevelObjective service_level_objectives = 1;</code>
    */
+  @java.lang.Override
   public int getServiceLevelObjectivesCount() {
     return serviceLevelObjectives_.size();
   }
@@ -178,6 +181,7 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
    *
    * <code>repeated .google.monitoring.v3.ServiceLevelObjective service_level_objectives = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjectives(int index) {
     return serviceLevelObjectives_.get(index);
   }
@@ -190,6 +194,7 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
    *
    * <code>repeated .google.monitoring.v3.ServiceLevelObjective service_level_objectives = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder getServiceLevelObjectivesOrBuilder(
       int index) {
     return serviceLevelObjectives_.get(index);
@@ -210,6 +215,7 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +240,7 @@ public final class ListServiceLevelObjectivesResponse extends com.google.protobu
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

@@ -195,6 +195,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the goodTotalRatio field is set.
    */
+  @java.lang.Override
   public boolean hasGoodTotalRatio() {
     return methodCase_ == 1;
   }
@@ -210,6 +211,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    *
    * @return The goodTotalRatio.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesRatio getGoodTotalRatio() {
     if (methodCase_ == 1) {
       return (com.google.monitoring.v3.TimeSeriesRatio) method_;
@@ -226,6 +228,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.monitoring.v3.TimeSeriesRatio good_total_ratio = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesRatioOrBuilder getGoodTotalRatioOrBuilder() {
     if (methodCase_ == 1) {
       return (com.google.monitoring.v3.TimeSeriesRatio) method_;
@@ -248,6 +251,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the distributionCut field is set.
    */
+  @java.lang.Override
   public boolean hasDistributionCut() {
     return methodCase_ == 3;
   }
@@ -265,6 +269,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    *
    * @return The distributionCut.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.DistributionCut getDistributionCut() {
     if (methodCase_ == 3) {
       return (com.google.monitoring.v3.DistributionCut) method_;
@@ -283,6 +288,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.monitoring.v3.DistributionCut distribution_cut = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.DistributionCutOrBuilder getDistributionCutOrBuilder() {
     if (methodCase_ == 3) {
       return (com.google.monitoring.v3.DistributionCut) method_;
@@ -693,6 +699,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the goodTotalRatio field is set.
      */
+    @java.lang.Override
     public boolean hasGoodTotalRatio() {
       return methodCase_ == 1;
     }
@@ -708,6 +715,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      *
      * @return The goodTotalRatio.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.TimeSeriesRatio getGoodTotalRatio() {
       if (goodTotalRatioBuilder_ == null) {
         if (methodCase_ == 1) {
@@ -846,6 +854,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.monitoring.v3.TimeSeriesRatio good_total_ratio = 1;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.TimeSeriesRatioOrBuilder getGoodTotalRatioOrBuilder() {
       if ((methodCase_ == 1) && (goodTotalRatioBuilder_ != null)) {
         return goodTotalRatioBuilder_.getMessageOrBuilder();
@@ -910,6 +919,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      *
      * @return Whether the distributionCut field is set.
      */
+    @java.lang.Override
     public boolean hasDistributionCut() {
       return methodCase_ == 3;
     }
@@ -927,6 +937,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      *
      * @return The distributionCut.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.DistributionCut getDistributionCut() {
       if (distributionCutBuilder_ == null) {
         if (methodCase_ == 3) {
@@ -1077,6 +1088,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.monitoring.v3.DistributionCut distribution_cut = 3;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.DistributionCutOrBuilder getDistributionCutOrBuilder() {
       if ((methodCase_ == 3) && (distributionCutBuilder_ != null)) {
         return distributionCutBuilder_.getMessageOrBuilder();

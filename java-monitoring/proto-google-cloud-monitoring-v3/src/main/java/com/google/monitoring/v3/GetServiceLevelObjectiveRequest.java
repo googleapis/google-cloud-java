@@ -136,6 +136,7 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +162,7 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +191,7 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    *
    * @return The enum numeric value on the wire for view.
    */
+  @java.lang.Override
   public int getViewValue() {
     return view_;
   }
@@ -206,6 +209,7 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
    *
    * @return The view.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelObjective.View getView() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.v3.ServiceLevelObjective.View result =
@@ -685,6 +689,7 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      * @return The enum numeric value on the wire for view.
      */
+    @java.lang.Override
     public int getViewValue() {
       return view_;
     }
@@ -704,6 +709,7 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
+
       view_ = value;
       onChanged();
       return this;
@@ -722,6 +728,7 @@ public final class GetServiceLevelObjectiveRequest extends com.google.protobuf.G
      *
      * @return The view.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.ServiceLevelObjective.View getView() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.v3.ServiceLevelObjective.View result =

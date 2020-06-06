@@ -138,6 +138,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.AlertPolicy> getAlertPoliciesList() {
     return alertPolicies_;
   }
@@ -150,6 +151,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.AlertPolicyOrBuilder>
       getAlertPoliciesOrBuilderList() {
     return alertPolicies_;
@@ -163,6 +165,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
+  @java.lang.Override
   public int getAlertPoliciesCount() {
     return alertPolicies_.size();
   }
@@ -175,6 +178,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.AlertPolicy getAlertPolicies(int index) {
     return alertPolicies_.get(index);
   }
@@ -187,6 +191,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPoliciesOrBuilder(int index) {
     return alertPolicies_.get(index);
   }
@@ -206,6 +211,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +236,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

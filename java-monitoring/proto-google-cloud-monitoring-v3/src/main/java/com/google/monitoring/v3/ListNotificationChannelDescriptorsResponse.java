@@ -146,6 +146,7 @@ public final class ListNotificationChannelDescriptorsResponse
    * <code>repeated .google.monitoring.v3.NotificationChannelDescriptor channel_descriptors = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.NotificationChannelDescriptor>
       getChannelDescriptorsList() {
     return channelDescriptors_;
@@ -161,6 +162,7 @@ public final class ListNotificationChannelDescriptorsResponse
    * <code>repeated .google.monitoring.v3.NotificationChannelDescriptor channel_descriptors = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.NotificationChannelDescriptorOrBuilder>
       getChannelDescriptorsOrBuilderList() {
     return channelDescriptors_;
@@ -176,6 +178,7 @@ public final class ListNotificationChannelDescriptorsResponse
    * <code>repeated .google.monitoring.v3.NotificationChannelDescriptor channel_descriptors = 1;
    * </code>
    */
+  @java.lang.Override
   public int getChannelDescriptorsCount() {
     return channelDescriptors_.size();
   }
@@ -190,6 +193,7 @@ public final class ListNotificationChannelDescriptorsResponse
    * <code>repeated .google.monitoring.v3.NotificationChannelDescriptor channel_descriptors = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.NotificationChannelDescriptor getChannelDescriptors(int index) {
     return channelDescriptors_.get(index);
   }
@@ -204,6 +208,7 @@ public final class ListNotificationChannelDescriptorsResponse
    * <code>repeated .google.monitoring.v3.NotificationChannelDescriptor channel_descriptors = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.NotificationChannelDescriptorOrBuilder
       getChannelDescriptorsOrBuilder(int index) {
     return channelDescriptors_.get(index);
@@ -225,6 +230,7 @@ public final class ListNotificationChannelDescriptorsResponse
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +256,7 @@ public final class ListNotificationChannelDescriptorsResponse
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

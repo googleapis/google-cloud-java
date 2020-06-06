@@ -141,6 +141,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the locator field is set.
    */
+  @java.lang.Override
   public boolean hasLocator() {
     return locator_ != null;
   }
@@ -156,6 +157,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The locator.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TextLocator getLocator() {
     return locator_ == null ? com.google.monitoring.v3.TextLocator.getDefaultInstance() : locator_;
   }
@@ -169,6 +171,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.TextLocator locator = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TextLocatorOrBuilder getLocatorOrBuilder() {
     return getLocator();
   }
@@ -186,6 +189,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The message.
    */
+  @java.lang.Override
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
@@ -208,6 +212,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for message.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMessageBytes() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {

@@ -152,6 +152,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList() {
     return timeSeries_;
   }
@@ -164,6 +165,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
       getTimeSeriesOrBuilderList() {
     return timeSeries_;
@@ -177,6 +179,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
+  @java.lang.Override
   public int getTimeSeriesCount() {
     return timeSeries_.size();
   }
@@ -189,6 +192,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeries getTimeSeries(int index) {
     return timeSeries_.get(index);
   }
@@ -201,6 +205,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(int index) {
     return timeSeries_.get(index);
   }
@@ -220,6 +225,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +250,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +275,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getExecutionErrorsList() {
     return executionErrors_;
   }
@@ -281,6 +289,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder>
       getExecutionErrorsOrBuilderList() {
     return executionErrors_;
@@ -295,6 +304,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
+  @java.lang.Override
   public int getExecutionErrorsCount() {
     return executionErrors_.size();
   }
@@ -308,6 +318,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getExecutionErrors(int index) {
     return executionErrors_.get(index);
   }
@@ -321,6 +332,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
    *
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getExecutionErrorsOrBuilder(int index) {
     return executionErrors_.get(index);
   }

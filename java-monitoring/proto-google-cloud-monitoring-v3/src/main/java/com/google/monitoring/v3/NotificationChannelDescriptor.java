@@ -204,6 +204,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +229,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -254,6 +256,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The type.
    */
+  @java.lang.Override
   public java.lang.String getType() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -277,6 +280,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The bytes for type.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +307,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -326,6 +331,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -353,6 +359,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -377,6 +384,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -402,6 +410,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.api.LabelDescriptor> getLabelsList() {
     return labels_;
   }
@@ -416,6 +425,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.api.LabelDescriptorOrBuilder>
       getLabelsOrBuilderList() {
     return labels_;
@@ -431,6 +441,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
+  @java.lang.Override
   public int getLabelsCount() {
     return labels_.size();
   }
@@ -445,6 +456,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
+  @java.lang.Override
   public com.google.api.LabelDescriptor getLabels(int index) {
     return labels_.get(index);
   }
@@ -459,6 +471,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
+  @java.lang.Override
   public com.google.api.LabelDescriptorOrBuilder getLabelsOrBuilder(int index) {
     return labels_.get(index);
   }
@@ -490,6 +503,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return A list containing the supportedTiers.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -509,6 +523,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The count of supportedTiers.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public int getSupportedTiersCount() {
     return supportedTiers_.size();
@@ -527,6 +542,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * @param index The index of the element to return.
    * @return The supportedTiers at the given index.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
     return supportedTiers_converter_.convert(supportedTiers_.get(index));
@@ -544,6 +560,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return A list containing the enum numeric values on the wire for supportedTiers.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.List<java.lang.Integer> getSupportedTiersValueList() {
     return supportedTiers_;
@@ -562,6 +579,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of supportedTiers at the given index.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public int getSupportedTiersValue(int index) {
     return supportedTiers_.get(index);
@@ -582,6 +600,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The enum numeric value on the wire for launchStage.
    */
+  @java.lang.Override
   public int getLaunchStageValue() {
     return launchStage_;
   }
@@ -596,6 +615,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    *
    * @return The launchStage.
    */
+  @java.lang.Override
   public com.google.api.LaunchStage getLaunchStage() {
     @SuppressWarnings("deprecation")
     com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
@@ -2192,6 +2212,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * @return The enum numeric value on the wire for launchStage.
      */
+    @java.lang.Override
     public int getLaunchStageValue() {
       return launchStage_;
     }
@@ -2208,6 +2229,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setLaunchStageValue(int value) {
+
       launchStage_ = value;
       onChanged();
       return this;
@@ -2223,6 +2245,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * @return The launchStage.
      */
+    @java.lang.Override
     public com.google.api.LaunchStage getLaunchStage() {
       @SuppressWarnings("deprecation")
       com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);

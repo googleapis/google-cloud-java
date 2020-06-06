@@ -147,6 +147,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +200,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the group field is set.
    */
+  @java.lang.Override
   public boolean hasGroup() {
     return group_ != null;
   }
@@ -213,6 +216,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The group.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Group getGroup() {
     return group_ == null ? com.google.monitoring.v3.Group.getDefaultInstance() : group_;
   }
@@ -226,6 +230,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder() {
     return getGroup();
   }
@@ -243,6 +248,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The validateOnly.
    */
+  @java.lang.Override
   public boolean getValidateOnly() {
     return validateOnly_;
   }
@@ -927,6 +933,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      *
      * @return The validateOnly.
      */
+    @java.lang.Override
     public boolean getValidateOnly() {
       return validateOnly_;
     }

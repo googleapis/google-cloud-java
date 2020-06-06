@@ -301,6 +301,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      *
      * @return Whether the status field is set.
      */
+    @java.lang.Override
     public boolean hasStatus() {
       return status_ != null;
     }
@@ -315,6 +316,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      *
      * @return The status.
      */
+    @java.lang.Override
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
@@ -327,6 +329,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      *
      * <code>.google.rpc.Status status = 1;</code>
      */
+    @java.lang.Override
     public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
       return getStatus();
     }
@@ -344,6 +347,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      *
      * @return The pointCount.
      */
+    @java.lang.Override
     public int getPointCount() {
       return pointCount_;
     }
@@ -883,6 +887,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
        *
        * @return The pointCount.
        */
+      @java.lang.Override
       public int getPointCount() {
         return pointCount_;
       }
@@ -987,6 +992,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    *
    * @return The totalPointCount.
    */
+  @java.lang.Override
   public int getTotalPointCount() {
     return totalPointCount_;
   }
@@ -1004,6 +1010,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    *
    * @return The successPointCount.
    */
+  @java.lang.Override
   public int getSuccessPointCount() {
     return successPointCount_;
   }
@@ -1019,6 +1026,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.CreateTimeSeriesSummary.Error errors = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.CreateTimeSeriesSummary.Error> getErrorsList() {
     return errors_;
   }
@@ -1031,6 +1039,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.CreateTimeSeriesSummary.Error errors = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.CreateTimeSeriesSummary.ErrorOrBuilder>
       getErrorsOrBuilderList() {
     return errors_;
@@ -1044,6 +1053,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.CreateTimeSeriesSummary.Error errors = 3;</code>
    */
+  @java.lang.Override
   public int getErrorsCount() {
     return errors_.size();
   }
@@ -1056,6 +1066,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.CreateTimeSeriesSummary.Error errors = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.CreateTimeSeriesSummary.Error getErrors(int index) {
     return errors_.get(index);
   }
@@ -1068,6 +1079,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.CreateTimeSeriesSummary.Error errors = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.CreateTimeSeriesSummary.ErrorOrBuilder getErrorsOrBuilder(
       int index) {
     return errors_.get(index);
@@ -1474,6 +1486,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      *
      * @return The totalPointCount.
      */
+    @java.lang.Override
     public int getTotalPointCount() {
       return totalPointCount_;
     }
@@ -1525,6 +1538,7 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      *
      * @return The successPointCount.
      */
+    @java.lang.Override
     public int getSuccessPointCount() {
       return successPointCount_;
     }

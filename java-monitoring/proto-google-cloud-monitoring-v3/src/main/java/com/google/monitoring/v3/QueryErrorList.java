@@ -139,6 +139,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.QueryError> getErrorsList() {
     return errors_;
   }
@@ -152,6 +153,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.QueryErrorOrBuilder>
       getErrorsOrBuilderList() {
     return errors_;
@@ -166,6 +168,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
+  @java.lang.Override
   public int getErrorsCount() {
     return errors_.size();
   }
@@ -179,6 +182,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.QueryError getErrors(int index) {
     return errors_.get(index);
   }
@@ -192,6 +196,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.QueryErrorOrBuilder getErrorsOrBuilder(int index) {
     return errors_.get(index);
   }
@@ -209,6 +214,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The errorSummary.
    */
+  @java.lang.Override
   public java.lang.String getErrorSummary() {
     java.lang.Object ref = errorSummary_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +237,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for errorSummary.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getErrorSummaryBytes() {
     java.lang.Object ref = errorSummary_;
     if (ref instanceof java.lang.String) {

@@ -148,6 +148,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    *
    * @return Whether the notificationChannel field is set.
    */
+  @java.lang.Override
   public boolean hasNotificationChannel() {
     return notificationChannel_ != null;
   }
@@ -220,6 +223,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    *
    * @return The notificationChannel.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.NotificationChannel getNotificationChannel() {
     return notificationChannel_ == null
         ? com.google.monitoring.v3.NotificationChannel.getDefaultInstance()
@@ -236,6 +240,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    * .google.monitoring.v3.NotificationChannel notification_channel = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.NotificationChannelOrBuilder getNotificationChannelOrBuilder() {
     return getNotificationChannel();
   }

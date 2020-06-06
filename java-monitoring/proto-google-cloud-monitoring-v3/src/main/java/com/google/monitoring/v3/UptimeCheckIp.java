@@ -141,6 +141,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for region.
    */
+  @java.lang.Override
   public int getRegionValue() {
     return region_;
   }
@@ -155,6 +156,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The region.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckRegion getRegion() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.v3.UptimeCheckRegion result =
@@ -177,6 +179,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The location.
    */
+  @java.lang.Override
   public java.lang.String getLocation() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +204,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for location.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getLocationBytes() {
     java.lang.Object ref = location_;
     if (ref instanceof java.lang.String) {
@@ -230,6 +234,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The ipAddress.
    */
+  @java.lang.Override
   public java.lang.String getIpAddress() {
     java.lang.Object ref = ipAddress_;
     if (ref instanceof java.lang.String) {
@@ -256,6 +261,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for ipAddress.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getIpAddressBytes() {
     java.lang.Object ref = ipAddress_;
     if (ref instanceof java.lang.String) {
@@ -627,6 +633,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for region.
      */
+    @java.lang.Override
     public int getRegionValue() {
       return region_;
     }
@@ -643,6 +650,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRegionValue(int value) {
+
       region_ = value;
       onChanged();
       return this;
@@ -658,6 +666,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The region.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.UptimeCheckRegion getRegion() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.v3.UptimeCheckRegion result =

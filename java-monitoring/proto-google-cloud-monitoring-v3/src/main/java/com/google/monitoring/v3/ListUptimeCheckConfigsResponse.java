@@ -145,6 +145,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.UptimeCheckConfig> getUptimeCheckConfigsList() {
     return uptimeCheckConfigs_;
   }
@@ -157,6 +158,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfigOrBuilder>
       getUptimeCheckConfigsOrBuilderList() {
     return uptimeCheckConfigs_;
@@ -170,6 +172,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
+  @java.lang.Override
   public int getUptimeCheckConfigsCount() {
     return uptimeCheckConfigs_.size();
   }
@@ -182,6 +185,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfigs(int index) {
     return uptimeCheckConfigs_.get(index);
   }
@@ -194,6 +198,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckConfigOrBuilder getUptimeCheckConfigsOrBuilder(
       int index) {
     return uptimeCheckConfigs_.get(index);
@@ -216,6 +221,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +248,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -268,6 +275,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -1164,6 +1172,7 @@ public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.Ge
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

@@ -793,6 +793,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the threshold field is set.
      */
+    @java.lang.Override
     public boolean hasThreshold() {
       return threshold_ != null;
     }
@@ -808,6 +809,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The threshold.
      */
+    @java.lang.Override
     public com.google.protobuf.Duration getThreshold() {
       return threshold_ == null ? com.google.protobuf.Duration.getDefaultInstance() : threshold_;
     }
@@ -821,6 +823,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Duration threshold = 3;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getThresholdOrBuilder() {
       return getThreshold();
     }
@@ -1694,6 +1697,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the availability field is set.
    */
+  @java.lang.Override
   public boolean hasAvailability() {
     return sliCriteriaCase_ == 2;
   }
@@ -1709,6 +1713,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The availability.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.BasicSli.AvailabilityCriteria getAvailability() {
     if (sliCriteriaCase_ == 2) {
       return (com.google.monitoring.v3.BasicSli.AvailabilityCriteria) sliCriteria_;
@@ -1725,6 +1730,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.BasicSli.AvailabilityCriteria availability = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.BasicSli.AvailabilityCriteriaOrBuilder
       getAvailabilityOrBuilder() {
     if (sliCriteriaCase_ == 2) {
@@ -1746,6 +1752,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the latency field is set.
    */
+  @java.lang.Override
   public boolean hasLatency() {
     return sliCriteriaCase_ == 3;
   }
@@ -1761,6 +1768,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The latency.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.BasicSli.LatencyCriteria getLatency() {
     if (sliCriteriaCase_ == 3) {
       return (com.google.monitoring.v3.BasicSli.LatencyCriteria) sliCriteria_;
@@ -1777,6 +1785,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.BasicSli.LatencyCriteria latency = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.BasicSli.LatencyCriteriaOrBuilder getLatencyOrBuilder() {
     if (sliCriteriaCase_ == 3) {
       return (com.google.monitoring.v3.BasicSli.LatencyCriteria) sliCriteria_;
@@ -2903,6 +2912,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the availability field is set.
      */
+    @java.lang.Override
     public boolean hasAvailability() {
       return sliCriteriaCase_ == 2;
     }
@@ -2918,6 +2928,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The availability.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.BasicSli.AvailabilityCriteria getAvailability() {
       if (availabilityBuilder_ == null) {
         if (sliCriteriaCase_ == 2) {
@@ -3057,6 +3068,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.BasicSli.AvailabilityCriteria availability = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.BasicSli.AvailabilityCriteriaOrBuilder
         getAvailabilityOrBuilder() {
       if ((sliCriteriaCase_ == 2) && (availabilityBuilder_ != null)) {
@@ -3121,6 +3133,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the latency field is set.
      */
+    @java.lang.Override
     public boolean hasLatency() {
       return sliCriteriaCase_ == 3;
     }
@@ -3136,6 +3149,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The latency.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.BasicSli.LatencyCriteria getLatency() {
       if (latencyBuilder_ == null) {
         if (sliCriteriaCase_ == 3) {
@@ -3275,6 +3289,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.BasicSli.LatencyCriteria latency = 3;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.BasicSli.LatencyCriteriaOrBuilder getLatencyOrBuilder() {
       if ((sliCriteriaCase_ == 3) && (latencyBuilder_ != null)) {
         return latencyBuilder_.getMessageOrBuilder();

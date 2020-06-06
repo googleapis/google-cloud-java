@@ -223,6 +223,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the basicSli field is set.
    */
+  @java.lang.Override
   public boolean hasBasicSli() {
     return typeCase_ == 4;
   }
@@ -237,6 +238,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * @return The basicSli.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.BasicSli getBasicSli() {
     if (typeCase_ == 4) {
       return (com.google.monitoring.v3.BasicSli) type_;
@@ -252,6 +254,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.v3.BasicSli basic_sli = 4;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.BasicSliOrBuilder getBasicSliOrBuilder() {
     if (typeCase_ == 4) {
       return (com.google.monitoring.v3.BasicSli) type_;
@@ -271,6 +274,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the requestBased field is set.
    */
+  @java.lang.Override
   public boolean hasRequestBased() {
     return typeCase_ == 1;
   }
@@ -285,6 +289,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * @return The requestBased.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.RequestBasedSli getRequestBased() {
     if (typeCase_ == 1) {
       return (com.google.monitoring.v3.RequestBasedSli) type_;
@@ -300,6 +305,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.v3.RequestBasedSli request_based = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.RequestBasedSliOrBuilder getRequestBasedOrBuilder() {
     if (typeCase_ == 1) {
       return (com.google.monitoring.v3.RequestBasedSli) type_;
@@ -319,6 +325,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the windowsBased field is set.
    */
+  @java.lang.Override
   public boolean hasWindowsBased() {
     return typeCase_ == 2;
   }
@@ -333,6 +340,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * @return The windowsBased.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.WindowsBasedSli getWindowsBased() {
     if (typeCase_ == 2) {
       return (com.google.monitoring.v3.WindowsBasedSli) type_;
@@ -348,6 +356,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.v3.WindowsBasedSli windows_based = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.WindowsBasedSliOrBuilder getWindowsBasedOrBuilder() {
     if (typeCase_ == 2) {
       return (com.google.monitoring.v3.WindowsBasedSli) type_;
@@ -796,6 +805,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the basicSli field is set.
      */
+    @java.lang.Override
     public boolean hasBasicSli() {
       return typeCase_ == 4;
     }
@@ -810,6 +820,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * @return The basicSli.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.BasicSli getBasicSli() {
       if (basicSliBuilder_ == null) {
         if (typeCase_ == 4) {
@@ -940,6 +951,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.monitoring.v3.BasicSli basic_sli = 4;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.BasicSliOrBuilder getBasicSliOrBuilder() {
       if ((typeCase_ == 4) && (basicSliBuilder_ != null)) {
         return basicSliBuilder_.getMessageOrBuilder();
@@ -998,6 +1010,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the requestBased field is set.
      */
+    @java.lang.Override
     public boolean hasRequestBased() {
       return typeCase_ == 1;
     }
@@ -1012,6 +1025,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * @return The requestBased.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.RequestBasedSli getRequestBased() {
       if (requestBasedBuilder_ == null) {
         if (typeCase_ == 1) {
@@ -1144,6 +1158,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.monitoring.v3.RequestBasedSli request_based = 1;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.RequestBasedSliOrBuilder getRequestBasedOrBuilder() {
       if ((typeCase_ == 1) && (requestBasedBuilder_ != null)) {
         return requestBasedBuilder_.getMessageOrBuilder();
@@ -1204,6 +1219,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * @return Whether the windowsBased field is set.
      */
+    @java.lang.Override
     public boolean hasWindowsBased() {
       return typeCase_ == 2;
     }
@@ -1218,6 +1234,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * @return The windowsBased.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.WindowsBasedSli getWindowsBased() {
       if (windowsBasedBuilder_ == null) {
         if (typeCase_ == 2) {
@@ -1350,6 +1367,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
      *
      * <code>.google.monitoring.v3.WindowsBasedSli windows_based = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.WindowsBasedSliOrBuilder getWindowsBasedOrBuilder() {
       if ((typeCase_ == 2) && (windowsBasedBuilder_ != null)) {
         return windowsBasedBuilder_.getMessageOrBuilder();

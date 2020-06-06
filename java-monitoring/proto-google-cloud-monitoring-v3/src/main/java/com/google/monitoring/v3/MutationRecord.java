@@ -139,6 +139,7 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the mutateTime field is set.
    */
+  @java.lang.Override
   public boolean hasMutateTime() {
     return mutateTime_ != null;
   }
@@ -153,6 +154,7 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mutateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getMutateTime() {
     return mutateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : mutateTime_;
   }
@@ -165,6 +167,7 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp mutate_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getMutateTimeOrBuilder() {
     return getMutateTime();
   }
@@ -182,6 +185,7 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The mutatedBy.
    */
+  @java.lang.Override
   public java.lang.String getMutatedBy() {
     java.lang.Object ref = mutatedBy_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +208,7 @@ public final class MutationRecord extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for mutatedBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMutatedByBytes() {
     java.lang.Object ref = mutatedBy_;
     if (ref instanceof java.lang.String) {

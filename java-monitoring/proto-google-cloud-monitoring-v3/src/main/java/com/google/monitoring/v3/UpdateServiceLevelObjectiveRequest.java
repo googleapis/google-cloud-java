@@ -150,6 +150,7 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return Whether the serviceLevelObjective field is set.
    */
+  @java.lang.Override
   public boolean hasServiceLevelObjective() {
     return serviceLevelObjective_ != null;
   }
@@ -167,6 +168,7 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return The serviceLevelObjective.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective() {
     return serviceLevelObjective_ == null
         ? com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance()
@@ -184,6 +186,7 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder
       getServiceLevelObjectiveOrBuilder() {
     return getServiceLevelObjective();
@@ -202,6 +205,7 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -216,6 +220,7 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -228,6 +233,7 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

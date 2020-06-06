@@ -139,6 +139,7 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckIp uptime_check_ips = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.UptimeCheckIp> getUptimeCheckIpsList() {
     return uptimeCheckIps_;
   }
@@ -152,6 +153,7 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckIp uptime_check_ips = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.UptimeCheckIpOrBuilder>
       getUptimeCheckIpsOrBuilderList() {
     return uptimeCheckIps_;
@@ -166,6 +168,7 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckIp uptime_check_ips = 1;</code>
    */
+  @java.lang.Override
   public int getUptimeCheckIpsCount() {
     return uptimeCheckIps_.size();
   }
@@ -179,6 +182,7 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckIp uptime_check_ips = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckIp getUptimeCheckIps(int index) {
     return uptimeCheckIps_.get(index);
   }
@@ -192,6 +196,7 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckIp uptime_check_ips = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckIpOrBuilder getUptimeCheckIpsOrBuilder(int index) {
     return uptimeCheckIps_.get(index);
   }
@@ -214,6 +219,7 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -241,6 +247,7 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

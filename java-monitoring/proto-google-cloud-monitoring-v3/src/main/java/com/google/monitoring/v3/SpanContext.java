@@ -133,6 +133,7 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The spanName.
    */
+  @java.lang.Override
   public java.lang.String getSpanName() {
     java.lang.Object ref = spanName_;
     if (ref instanceof java.lang.String) {
@@ -160,6 +161,7 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for spanName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSpanNameBytes() {
     java.lang.Object ref = spanName_;
     if (ref instanceof java.lang.String) {

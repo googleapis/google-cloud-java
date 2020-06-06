@@ -148,6 +148,7 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    *
    * @return The goodServiceFilter.
    */
+  @java.lang.Override
   public java.lang.String getGoodServiceFilter() {
     java.lang.Object ref = goodServiceFilter_;
     if (ref instanceof java.lang.String) {
@@ -173,6 +174,7 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for goodServiceFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getGoodServiceFilterBytes() {
     java.lang.Object ref = goodServiceFilter_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +204,7 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    *
    * @return The badServiceFilter.
    */
+  @java.lang.Override
   public java.lang.String getBadServiceFilter() {
     java.lang.Object ref = badServiceFilter_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +231,7 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for badServiceFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBadServiceFilterBytes() {
     java.lang.Object ref = badServiceFilter_;
     if (ref instanceof java.lang.String) {
@@ -256,6 +260,7 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    *
    * @return The totalServiceFilter.
    */
+  @java.lang.Override
   public java.lang.String getTotalServiceFilter() {
     java.lang.Object ref = totalServiceFilter_;
     if (ref instanceof java.lang.String) {
@@ -281,6 +286,7 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for totalServiceFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTotalServiceFilterBytes() {
     java.lang.Object ref = totalServiceFilter_;
     if (ref instanceof java.lang.String) {

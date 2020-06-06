@@ -142,6 +142,7 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    * @return Whether the metricDescriptor field is set.
    */
+  @java.lang.Override
   public boolean hasMetricDescriptor() {
     return metricDescriptor_ != null;
   }
@@ -212,6 +215,7 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    * @return The metricDescriptor.
    */
+  @java.lang.Override
   public com.google.api.MetricDescriptor getMetricDescriptor() {
     return metricDescriptor_ == null
         ? com.google.api.MetricDescriptor.getDefaultInstance()
@@ -229,6 +233,7 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    * .google.api.MetricDescriptor metric_descriptor = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder() {
     return getMetricDescriptor();
   }

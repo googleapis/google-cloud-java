@@ -358,6 +358,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.google.monitoring.v3.TypedValue> getValuesList() {
       return values_;
     }
@@ -370,6 +371,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<? extends com.google.monitoring.v3.TypedValueOrBuilder>
         getValuesOrBuilderList() {
       return values_;
@@ -383,6 +385,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
+    @java.lang.Override
     public int getValuesCount() {
       return values_.size();
     }
@@ -395,6 +398,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.TypedValue getValues(int index) {
       return values_.get(index);
     }
@@ -407,6 +411,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.TypedValueOrBuilder getValuesOrBuilder(int index) {
       return values_.get(index);
     }
@@ -424,6 +429,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the timeInterval field is set.
      */
+    @java.lang.Override
     public boolean hasTimeInterval() {
       return timeInterval_ != null;
     }
@@ -438,6 +444,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The timeInterval.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.TimeInterval getTimeInterval() {
       return timeInterval_ == null
           ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
@@ -452,6 +459,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.TimeInterval time_interval = 2;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.TimeIntervalOrBuilder getTimeIntervalOrBuilder() {
       return getTimeInterval();
     }
@@ -1450,6 +1458,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.LabelValue label_values = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.LabelValue> getLabelValuesList() {
     return labelValues_;
   }
@@ -1465,6 +1474,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.LabelValue label_values = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.LabelValueOrBuilder>
       getLabelValuesOrBuilderList() {
     return labelValues_;
@@ -1481,6 +1491,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.LabelValue label_values = 1;</code>
    */
+  @java.lang.Override
   public int getLabelValuesCount() {
     return labelValues_.size();
   }
@@ -1496,6 +1507,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.LabelValue label_values = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.LabelValue getLabelValues(int index) {
     return labelValues_.get(index);
   }
@@ -1511,6 +1523,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.LabelValue label_values = 1;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.LabelValueOrBuilder getLabelValuesOrBuilder(int index) {
     return labelValues_.get(index);
   }
@@ -1526,6 +1539,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData.PointData point_data = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.TimeSeriesData.PointData> getPointDataList() {
     return pointData_;
   }
@@ -1538,6 +1552,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData.PointData point_data = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.TimeSeriesData.PointDataOrBuilder>
       getPointDataOrBuilderList() {
     return pointData_;
@@ -1551,6 +1566,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData.PointData point_data = 2;</code>
    */
+  @java.lang.Override
   public int getPointDataCount() {
     return pointData_.size();
   }
@@ -1563,6 +1579,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData.PointData point_data = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesData.PointData getPointData(int index) {
     return pointData_.get(index);
   }
@@ -1575,6 +1592,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData.PointData point_data = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesData.PointDataOrBuilder getPointDataOrBuilder(
       int index) {
     return pointData_.get(index);

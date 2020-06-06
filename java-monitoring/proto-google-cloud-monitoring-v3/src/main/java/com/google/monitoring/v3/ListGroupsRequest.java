@@ -211,6 +211,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -236,6 +237,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -453,6 +455,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -472,6 +475,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -496,6 +500,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -1091,6 +1096,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The childrenOfGroup.
      */
+    @java.lang.Override
     public java.lang.String getChildrenOfGroup() {
       java.lang.Object ref = "";
       if (filterCase_ == 2) {
@@ -1121,6 +1127,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The bytes for childrenOfGroup.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getChildrenOfGroupBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 2) {
@@ -1225,6 +1232,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The ancestorsOfGroup.
      */
+    @java.lang.Override
     public java.lang.String getAncestorsOfGroup() {
       java.lang.Object ref = "";
       if (filterCase_ == 3) {
@@ -1257,6 +1265,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The bytes for ancestorsOfGroup.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAncestorsOfGroupBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 3) {
@@ -1366,6 +1375,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The descendantsOfGroup.
      */
+    @java.lang.Override
     public java.lang.String getDescendantsOfGroup() {
       java.lang.Object ref = "";
       if (filterCase_ == 4) {
@@ -1397,6 +1407,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The bytes for descendantsOfGroup.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getDescendantsOfGroupBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 4) {
@@ -1500,6 +1511,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

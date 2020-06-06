@@ -145,6 +145,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the timeSeries field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean hasTimeSeries() {
     return timeSeries_ != null;
@@ -160,6 +161,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    * @return The timeSeries.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.monitoring.v3.TimeSeries getTimeSeries() {
     return timeSeries_ == null
@@ -175,6 +177,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder() {
     return getTimeSeries();
@@ -193,6 +196,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean hasStatus() {
     return status_ != null;
@@ -208,6 +212,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    * @return The status.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
@@ -221,6 +226,7 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();

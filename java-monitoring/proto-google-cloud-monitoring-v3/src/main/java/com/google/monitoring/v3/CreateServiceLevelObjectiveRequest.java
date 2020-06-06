@@ -152,6 +152,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +178,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return The serviceLevelObjectiveId.
    */
+  @java.lang.Override
   public java.lang.String getServiceLevelObjectiveId() {
     java.lang.Object ref = serviceLevelObjectiveId_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +231,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return The bytes for serviceLevelObjectiveId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getServiceLevelObjectiveIdBytes() {
     java.lang.Object ref = serviceLevelObjectiveId_;
     if (ref instanceof java.lang.String) {
@@ -257,6 +261,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return Whether the serviceLevelObjective field is set.
    */
+  @java.lang.Override
   public boolean hasServiceLevelObjective() {
     return serviceLevelObjective_ != null;
   }
@@ -275,6 +280,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    *
    * @return The serviceLevelObjective.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective() {
     return serviceLevelObjective_ == null
         ? com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance()
@@ -293,6 +299,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
    * .google.monitoring.v3.ServiceLevelObjective service_level_objective = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder
       getServiceLevelObjectiveOrBuilder() {
     return getServiceLevelObjective();

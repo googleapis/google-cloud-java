@@ -145,6 +145,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    *
    * @return The distributionFilter.
    */
+  @java.lang.Override
   public java.lang.String getDistributionFilter() {
     java.lang.Object ref = distributionFilter_;
     if (ref instanceof java.lang.String) {
@@ -169,6 +170,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for distributionFilter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDistributionFilterBytes() {
     java.lang.Object ref = distributionFilter_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +197,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the range field is set.
    */
+  @java.lang.Override
   public boolean hasRange() {
     return range_ != null;
   }
@@ -210,6 +213,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    *
    * @return The range.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Range getRange() {
     return range_ == null ? com.google.monitoring.v3.Range.getDefaultInstance() : range_;
   }
@@ -223,6 +227,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.monitoring.v3.Range range = 5;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.RangeOrBuilder getRangeOrBuilder() {
     return getRange();
   }

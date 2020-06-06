@@ -346,6 +346,10 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -393,6 +397,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The type.
    */
+  @java.lang.Override
   public java.lang.String getType() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -416,6 +421,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for type.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -443,6 +449,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -467,6 +474,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -495,6 +503,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -520,6 +529,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -547,6 +557,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -571,6 +582,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -620,6 +632,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -627,6 +640,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -643,6 +657,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -658,6 +673,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -677,6 +693,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -729,6 +746,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
+  @java.lang.Override
   public boolean containsUserLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -736,6 +754,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     return internalGetUserLabels().getMap().containsKey(key);
   }
   /** Use {@link #getUserLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
     return getUserLabelsMap();
@@ -756,6 +775,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
     return internalGetUserLabels().getMap();
   }
@@ -775,6 +795,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
+  @java.lang.Override
   public java.lang.String getUserLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -799,6 +820,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
+  @java.lang.Override
   public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -839,6 +861,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The enum numeric value on the wire for verificationStatus.
    */
+  @java.lang.Override
   public int getVerificationStatusValue() {
     return verificationStatus_;
   }
@@ -869,6 +892,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The verificationStatus.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.v3.NotificationChannel.VerificationStatus result =
@@ -897,6 +921,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return Whether the enabled field is set.
    */
+  @java.lang.Override
   public boolean hasEnabled() {
     return enabled_ != null;
   }
@@ -916,6 +941,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * @return The enabled.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getEnabled() {
     return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
   }
@@ -933,6 +959,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    *
    * <code>.google.protobuf.BoolValue enabled = 11;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getEnabledOrBuilder() {
     return getEnabled();
   }
@@ -1924,6 +1951,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1931,6 +1959,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1947,6 +1976,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1962,6 +1992,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1982,6 +2013,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2104,6 +2136,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
+    @java.lang.Override
     public boolean containsUserLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2111,6 +2144,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       return internalGetUserLabels().getMap().containsKey(key);
     }
     /** Use {@link #getUserLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
       return getUserLabelsMap();
@@ -2131,6 +2165,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
       return internalGetUserLabels().getMap();
     }
@@ -2150,6 +2185,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
+    @java.lang.Override
     public java.lang.String getUserLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2174,6 +2210,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
+    @java.lang.Override
     public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2292,6 +2329,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * @return The enum numeric value on the wire for verificationStatus.
      */
+    @java.lang.Override
     public int getVerificationStatusValue() {
       return verificationStatus_;
     }
@@ -2324,6 +2362,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setVerificationStatusValue(int value) {
+
       verificationStatus_ = value;
       onChanged();
       return this;
@@ -2355,6 +2394,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      *
      * @return The verificationStatus.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.v3.NotificationChannel.VerificationStatus result =

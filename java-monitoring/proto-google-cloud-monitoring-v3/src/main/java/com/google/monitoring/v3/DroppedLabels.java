@@ -173,6 +173,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; label = 1;</code>
    */
+  @java.lang.Override
   public boolean containsLabel(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -180,6 +181,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabel().getMap().containsKey(key);
   }
   /** Use {@link #getLabelMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabel() {
     return getLabelMap();
@@ -193,6 +195,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; label = 1;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelMap() {
     return internalGetLabel().getMap();
   }
@@ -205,6 +208,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; label = 1;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -221,6 +225,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; label = 1;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -621,6 +626,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
+    @java.lang.Override
     public boolean containsLabel(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -628,6 +634,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabel().getMap().containsKey(key);
     }
     /** Use {@link #getLabelMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabel() {
       return getLabelMap();
@@ -641,6 +648,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelMap() {
       return internalGetLabel().getMap();
     }
@@ -653,6 +661,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelOrDefault(java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -669,6 +678,7 @@ public final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

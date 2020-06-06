@@ -163,6 +163,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -194,6 +195,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -223,6 +225,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }
@@ -245,6 +248,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * @return Whether the alertPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasAlertPolicy() {
     return alertPolicy_ != null;
   }
@@ -264,6 +268,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    *
    * @return The alertPolicy.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.AlertPolicy getAlertPolicy() {
     return alertPolicy_ == null
         ? com.google.monitoring.v3.AlertPolicy.getDefaultInstance()
@@ -283,6 +288,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    * .google.monitoring.v3.AlertPolicy alert_policy = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPolicyOrBuilder() {
     return getAlertPolicy();
   }

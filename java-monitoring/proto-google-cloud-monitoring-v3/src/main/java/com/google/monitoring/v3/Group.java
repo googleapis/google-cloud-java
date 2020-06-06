@@ -178,6 +178,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +205,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -229,6 +231,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +254,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -278,6 +282,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The parentName.
    */
+  @java.lang.Override
   public java.lang.String getParentName() {
     java.lang.Object ref = parentName_;
     if (ref instanceof java.lang.String) {
@@ -302,6 +307,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for parentName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentNameBytes() {
     java.lang.Object ref = parentName_;
     if (ref instanceof java.lang.String) {
@@ -328,6 +334,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -351,6 +358,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -377,6 +385,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The isCluster.
    */
+  @java.lang.Override
   public boolean getIsCluster() {
     return isCluster_;
   }
@@ -1250,6 +1259,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The isCluster.
      */
+    @java.lang.Override
     public boolean getIsCluster() {
       return isCluster_;
     }

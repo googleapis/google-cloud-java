@@ -283,6 +283,10 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -331,6 +335,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -356,6 +361,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -386,6 +392,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -413,6 +420,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -442,6 +450,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the interval field is set.
    */
+  @java.lang.Override
   public boolean hasInterval() {
     return interval_ != null;
   }
@@ -460,6 +469,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The interval.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeInterval getInterval() {
     return interval_ == null
         ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
@@ -478,6 +488,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    * .google.monitoring.v3.TimeInterval interval = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder() {
     return getInterval();
   }
@@ -498,6 +509,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the aggregation field is set.
    */
+  @java.lang.Override
   public boolean hasAggregation() {
     return aggregation_ != null;
   }
@@ -515,6 +527,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The aggregation.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Aggregation getAggregation() {
     return aggregation_ == null
         ? com.google.monitoring.v3.Aggregation.getDefaultInstance()
@@ -532,6 +545,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.AggregationOrBuilder getAggregationOrBuilder() {
     return getAggregation();
   }
@@ -550,6 +564,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The orderBy.
    */
+  @java.lang.Override
   public java.lang.String getOrderBy() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -573,6 +588,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for orderBy.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
@@ -600,6 +616,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The enum numeric value on the wire for view.
    */
+  @java.lang.Override
   public int getViewValue() {
     return view_;
   }
@@ -616,6 +633,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The view.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView() {
     @SuppressWarnings("deprecation")
     com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView result =
@@ -642,6 +660,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The pageSize.
    */
+  @java.lang.Override
   public int getPageSize() {
     return pageSize_;
   }
@@ -661,6 +680,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The pageToken.
    */
+  @java.lang.Override
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -685,6 +705,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for pageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -1957,6 +1978,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The enum numeric value on the wire for view.
      */
+    @java.lang.Override
     public int getViewValue() {
       return view_;
     }
@@ -1975,6 +1997,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
+
       view_ = value;
       onChanged();
       return this;
@@ -1992,6 +2015,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The view.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView() {
       @SuppressWarnings("deprecation")
       com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView result =
@@ -2059,6 +2083,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      *
      * @return The pageSize.
      */
+    @java.lang.Override
     public int getPageSize() {
       return pageSize_;
     }

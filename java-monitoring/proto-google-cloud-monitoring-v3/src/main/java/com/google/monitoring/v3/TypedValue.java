@@ -209,6 +209,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boolValue.
    */
+  @java.lang.Override
   public boolean getBoolValue() {
     if (valueCase_ == 1) {
       return (java.lang.Boolean) value_;
@@ -228,6 +229,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The int64Value.
    */
+  @java.lang.Override
   public long getInt64Value() {
     if (valueCase_ == 2) {
       return (java.lang.Long) value_;
@@ -249,6 +251,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The doubleValue.
    */
+  @java.lang.Override
   public double getDoubleValue() {
     if (valueCase_ == 3) {
       return (java.lang.Double) value_;
@@ -324,6 +327,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the distributionValue field is set.
    */
+  @java.lang.Override
   public boolean hasDistributionValue() {
     return valueCase_ == 5;
   }
@@ -338,6 +342,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The distributionValue.
    */
+  @java.lang.Override
   public com.google.api.Distribution getDistributionValue() {
     if (valueCase_ == 5) {
       return (com.google.api.Distribution) value_;
@@ -353,6 +358,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.api.Distribution distribution_value = 5;</code>
    */
+  @java.lang.Override
   public com.google.api.DistributionOrBuilder getDistributionValueOrBuilder() {
     if (valueCase_ == 5) {
       return (com.google.api.Distribution) value_;
@@ -994,6 +1000,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stringValue.
      */
+    @java.lang.Override
     public java.lang.String getStringValue() {
       java.lang.Object ref = "";
       if (valueCase_ == 4) {
@@ -1021,6 +1028,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for stringValue.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getStringValueBytes() {
       java.lang.Object ref = "";
       if (valueCase_ == 4) {
@@ -1116,6 +1124,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the distributionValue field is set.
      */
+    @java.lang.Override
     public boolean hasDistributionValue() {
       return valueCase_ == 5;
     }
@@ -1130,6 +1139,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The distributionValue.
      */
+    @java.lang.Override
     public com.google.api.Distribution getDistributionValue() {
       if (distributionValueBuilder_ == null) {
         if (valueCase_ == 5) {
@@ -1259,6 +1269,7 @@ public final class TypedValue extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.api.Distribution distribution_value = 5;</code>
      */
+    @java.lang.Override
     public com.google.api.DistributionOrBuilder getDistributionValueOrBuilder() {
       if ((valueCase_ == 5) && (distributionValueBuilder_ != null)) {
         return distributionValueBuilder_.getMessageOrBuilder();

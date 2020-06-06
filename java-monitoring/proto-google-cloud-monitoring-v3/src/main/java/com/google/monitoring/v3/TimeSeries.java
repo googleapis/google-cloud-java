@@ -196,6 +196,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the metric field is set.
    */
+  @java.lang.Override
   public boolean hasMetric() {
     return metric_ != null;
   }
@@ -211,6 +212,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The metric.
    */
+  @java.lang.Override
   public com.google.api.Metric getMetric() {
     return metric_ == null ? com.google.api.Metric.getDefaultInstance() : metric_;
   }
@@ -224,6 +226,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.api.Metric metric = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.MetricOrBuilder getMetricOrBuilder() {
     return getMetric();
   }
@@ -242,6 +245,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the resource field is set.
    */
+  @java.lang.Override
   public boolean hasResource() {
     return resource_ != null;
   }
@@ -257,6 +261,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The resource.
    */
+  @java.lang.Override
   public com.google.api.MonitoredResource getResource() {
     return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
   }
@@ -270,6 +275,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.api.MonitoredResource resource = 2;</code>
    */
+  @java.lang.Override
   public com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder() {
     return getResource();
   }
@@ -289,6 +295,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -305,6 +312,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.api.MonitoredResourceMetadata getMetadata() {
     return metadata_ == null
         ? com.google.api.MonitoredResourceMetadata.getDefaultInstance()
@@ -321,6 +329,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
    */
+  @java.lang.Override
   public com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -345,6 +354,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for metricKind.
    */
+  @java.lang.Override
   public int getMetricKindValue() {
     return metricKind_;
   }
@@ -366,6 +376,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The metricKind.
    */
+  @java.lang.Override
   public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
     @SuppressWarnings("deprecation")
     com.google.api.MetricDescriptor.MetricKind result =
@@ -390,6 +401,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for valueType.
    */
+  @java.lang.Override
   public int getValueTypeValue() {
     return valueType_;
   }
@@ -408,6 +420,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The valueType.
    */
+  @java.lang.Override
   public com.google.api.MetricDescriptor.ValueType getValueType() {
     @SuppressWarnings("deprecation")
     com.google.api.MetricDescriptor.ValueType result =
@@ -432,6 +445,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.Point> getPointsList() {
     return points_;
   }
@@ -450,6 +464,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.PointOrBuilder>
       getPointsOrBuilderList() {
     return points_;
@@ -469,6 +484,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
+  @java.lang.Override
   public int getPointsCount() {
     return points_.size();
   }
@@ -487,6 +503,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Point getPoints(int index) {
     return points_.get(index);
   }
@@ -505,6 +522,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.PointOrBuilder getPointsOrBuilder(int index) {
     return points_.get(index);
   }
@@ -1583,6 +1601,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for metricKind.
      */
+    @java.lang.Override
     public int getMetricKindValue() {
       return metricKind_;
     }
@@ -1606,6 +1625,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMetricKindValue(int value) {
+
       metricKind_ = value;
       onChanged();
       return this;
@@ -1628,6 +1648,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The metricKind.
      */
+    @java.lang.Override
     public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
       @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.MetricKind result =
@@ -1703,6 +1724,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for valueType.
      */
+    @java.lang.Override
     public int getValueTypeValue() {
       return valueType_;
     }
@@ -1723,6 +1745,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValueTypeValue(int value) {
+
       valueType_ = value;
       onChanged();
       return this;
@@ -1742,6 +1765,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The valueType.
      */
+    @java.lang.Override
     public com.google.api.MetricDescriptor.ValueType getValueType() {
       @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.ValueType result =

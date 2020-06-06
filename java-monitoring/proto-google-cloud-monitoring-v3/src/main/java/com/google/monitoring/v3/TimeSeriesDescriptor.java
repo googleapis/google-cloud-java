@@ -338,6 +338,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      *
      * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -360,6 +361,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      *
      * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -385,6 +387,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for valueType.
      */
+    @java.lang.Override
     public int getValueTypeValue() {
       return valueType_;
     }
@@ -399,6 +402,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      *
      * @return The valueType.
      */
+    @java.lang.Override
     public com.google.api.MetricDescriptor.ValueType getValueType() {
       @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.ValueType result =
@@ -419,6 +423,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      *
      * @return The enum numeric value on the wire for metricKind.
      */
+    @java.lang.Override
     public int getMetricKindValue() {
       return metricKind_;
     }
@@ -433,6 +438,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      *
      * @return The metricKind.
      */
+    @java.lang.Override
     public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
       @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.MetricKind result =
@@ -919,6 +925,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        *
        * @return The enum numeric value on the wire for valueType.
        */
+      @java.lang.Override
       public int getValueTypeValue() {
         return valueType_;
       }
@@ -935,6 +942,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setValueTypeValue(int value) {
+
         valueType_ = value;
         onChanged();
         return this;
@@ -950,6 +958,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        *
        * @return The valueType.
        */
+      @java.lang.Override
       public com.google.api.MetricDescriptor.ValueType getValueType() {
         @SuppressWarnings("deprecation")
         com.google.api.MetricDescriptor.ValueType result =
@@ -1007,6 +1016,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        *
        * @return The enum numeric value on the wire for metricKind.
        */
+      @java.lang.Override
       public int getMetricKindValue() {
         return metricKind_;
       }
@@ -1023,6 +1033,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setMetricKindValue(int value) {
+
         metricKind_ = value;
         onChanged();
         return this;
@@ -1038,6 +1049,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        *
        * @return The metricKind.
        */
+      @java.lang.Override
       public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
         @SuppressWarnings("deprecation")
         com.google.api.MetricDescriptor.MetricKind result =
@@ -1149,6 +1161,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.api.LabelDescriptor label_descriptors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.api.LabelDescriptor> getLabelDescriptorsList() {
     return labelDescriptors_;
   }
@@ -1161,6 +1174,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.api.LabelDescriptor label_descriptors = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.api.LabelDescriptorOrBuilder>
       getLabelDescriptorsOrBuilderList() {
     return labelDescriptors_;
@@ -1174,6 +1188,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.api.LabelDescriptor label_descriptors = 1;</code>
    */
+  @java.lang.Override
   public int getLabelDescriptorsCount() {
     return labelDescriptors_.size();
   }
@@ -1186,6 +1201,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.api.LabelDescriptor label_descriptors = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.LabelDescriptor getLabelDescriptors(int index) {
     return labelDescriptors_.get(index);
   }
@@ -1198,6 +1214,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    *
    * <code>repeated .google.api.LabelDescriptor label_descriptors = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.LabelDescriptorOrBuilder getLabelDescriptorsOrBuilder(int index) {
     return labelDescriptors_.get(index);
   }
@@ -1216,6 +1233,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    * repeated .google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor point_descriptors = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor>
       getPointDescriptorsList() {
     return pointDescriptors_;
@@ -1231,6 +1249,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    * repeated .google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor point_descriptors = 5;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptorOrBuilder>
       getPointDescriptorsOrBuilderList() {
@@ -1247,6 +1266,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    * repeated .google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor point_descriptors = 5;
    * </code>
    */
+  @java.lang.Override
   public int getPointDescriptorsCount() {
     return pointDescriptors_.size();
   }
@@ -1261,6 +1281,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    * repeated .google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor point_descriptors = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor getPointDescriptors(
       int index) {
     return pointDescriptors_.get(index);
@@ -1276,6 +1297,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
    * repeated .google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor point_descriptors = 5;
    * </code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptorOrBuilder
       getPointDescriptorsOrBuilder(int index) {
     return pointDescriptors_.get(index);

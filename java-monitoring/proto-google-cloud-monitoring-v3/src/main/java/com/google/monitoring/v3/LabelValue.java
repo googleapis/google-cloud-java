@@ -183,6 +183,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The boolValue.
    */
+  @java.lang.Override
   public boolean getBoolValue() {
     if (valueCase_ == 1) {
       return (java.lang.Boolean) value_;
@@ -202,6 +203,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The int64Value.
    */
+  @java.lang.Override
   public long getInt64Value() {
     if (valueCase_ == 2) {
       return (java.lang.Long) value_;
@@ -784,6 +786,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The stringValue.
      */
+    @java.lang.Override
     public java.lang.String getStringValue() {
       java.lang.Object ref = "";
       if (valueCase_ == 3) {
@@ -811,6 +814,7 @@ public final class LabelValue extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for stringValue.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getStringValueBytes() {
       java.lang.Object ref = "";
       if (valueCase_ == 3) {

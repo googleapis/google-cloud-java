@@ -142,6 +142,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.api.MonitoredResource> getMembersList() {
     return members_;
   }
@@ -154,6 +155,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.api.MonitoredResourceOrBuilder>
       getMembersOrBuilderList() {
     return members_;
@@ -167,6 +169,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
+  @java.lang.Override
   public int getMembersCount() {
     return members_.size();
   }
@@ -179,6 +182,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.MonitoredResource getMembers(int index) {
     return members_.get(index);
   }
@@ -191,6 +195,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
+  @java.lang.Override
   public com.google.api.MonitoredResourceOrBuilder getMembersOrBuilder(int index) {
     return members_.get(index);
   }
@@ -210,6 +215,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -234,6 +240,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -259,6 +266,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
    *
    * @return The totalSize.
    */
+  @java.lang.Override
   public int getTotalSize() {
     return totalSize_;
   }
@@ -1128,6 +1136,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
      *
      * @return The totalSize.
      */
+    @java.lang.Override
     public int getTotalSize() {
       return totalSize_;
     }

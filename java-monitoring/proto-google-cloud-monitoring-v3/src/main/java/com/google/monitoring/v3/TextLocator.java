@@ -320,6 +320,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The line.
      */
+    @java.lang.Override
     public int getLine() {
       return line_;
     }
@@ -338,6 +339,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The column.
      */
+    @java.lang.Override
     public int getColumn() {
       return column_;
     }
@@ -689,6 +691,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The line.
        */
+      @java.lang.Override
       public int getLine() {
         return line_;
       }
@@ -741,6 +744,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
        *
        * @return The column.
        */
+      @java.lang.Override
       public int getColumn() {
         return column_;
       }
@@ -853,6 +857,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The source.
    */
+  @java.lang.Override
   public java.lang.String getSource() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
@@ -881,6 +886,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for source.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSourceBytes() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
@@ -906,6 +912,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the startPosition field is set.
    */
+  @java.lang.Override
   public boolean hasStartPosition() {
     return startPosition_ != null;
   }
@@ -920,6 +927,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The startPosition.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TextLocator.Position getStartPosition() {
     return startPosition_ == null
         ? com.google.monitoring.v3.TextLocator.Position.getDefaultInstance()
@@ -934,6 +942,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.TextLocator.Position start_position = 2;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TextLocator.PositionOrBuilder getStartPositionOrBuilder() {
     return getStartPosition();
   }
@@ -951,6 +960,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the endPosition field is set.
    */
+  @java.lang.Override
   public boolean hasEndPosition() {
     return endPosition_ != null;
   }
@@ -965,6 +975,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The endPosition.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TextLocator.Position getEndPosition() {
     return endPosition_ == null
         ? com.google.monitoring.v3.TextLocator.Position.getDefaultInstance()
@@ -979,6 +990,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.TextLocator.Position end_position = 3;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TextLocator.PositionOrBuilder getEndPositionOrBuilder() {
     return getEndPosition();
   }
@@ -999,6 +1011,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the nestedLocator field is set.
    */
+  @java.lang.Override
   public boolean hasNestedLocator() {
     return nestedLocator_ != null;
   }
@@ -1016,6 +1029,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nestedLocator.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TextLocator getNestedLocator() {
     return nestedLocator_ == null
         ? com.google.monitoring.v3.TextLocator.getDefaultInstance()
@@ -1033,6 +1047,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.TextLocator nested_locator = 4;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TextLocatorOrBuilder getNestedLocatorOrBuilder() {
     return getNestedLocator();
   }
@@ -1055,6 +1070,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The nestingReason.
    */
+  @java.lang.Override
   public java.lang.String getNestingReason() {
     java.lang.Object ref = nestingReason_;
     if (ref instanceof java.lang.String) {
@@ -1082,6 +1098,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for nestingReason.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNestingReasonBytes() {
     java.lang.Object ref = nestingReason_;
     if (ref instanceof java.lang.String) {

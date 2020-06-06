@@ -807,6 +807,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The moduleId.
      */
+    @java.lang.Override
     public java.lang.String getModuleId() {
       java.lang.Object ref = moduleId_;
       if (ref instanceof java.lang.String) {
@@ -831,6 +832,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for moduleId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getModuleIdBytes() {
       java.lang.Object ref = moduleId_;
       if (ref instanceof java.lang.String) {
@@ -1473,6 +1475,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The service.
      */
+    @java.lang.Override
     public java.lang.String getService() {
       java.lang.Object ref = service_;
       if (ref instanceof java.lang.String) {
@@ -1497,6 +1500,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for service.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getServiceBytes() {
       java.lang.Object ref = service_;
       if (ref instanceof java.lang.String) {
@@ -2251,6 +2255,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The location.
      */
+    @java.lang.Override
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
       if (ref instanceof java.lang.String) {
@@ -2275,6 +2280,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for location.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getLocationBytes() {
       java.lang.Object ref = location_;
       if (ref instanceof java.lang.String) {
@@ -2302,6 +2308,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The clusterName.
      */
+    @java.lang.Override
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
       if (ref instanceof java.lang.String) {
@@ -2326,6 +2333,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for clusterName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
       if (ref instanceof java.lang.String) {
@@ -2352,6 +2360,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The serviceNamespace.
      */
+    @java.lang.Override
     public java.lang.String getServiceNamespace() {
       java.lang.Object ref = serviceNamespace_;
       if (ref instanceof java.lang.String) {
@@ -2375,6 +2384,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for serviceNamespace.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getServiceNamespaceBytes() {
       java.lang.Object ref = serviceNamespace_;
       if (ref instanceof java.lang.String) {
@@ -2401,6 +2411,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The serviceName.
      */
+    @java.lang.Override
     public java.lang.String getServiceName() {
       java.lang.Object ref = serviceName_;
       if (ref instanceof java.lang.String) {
@@ -2424,6 +2435,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for serviceName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getServiceNameBytes() {
       java.lang.Object ref = serviceName_;
       if (ref instanceof java.lang.String) {
@@ -3521,6 +3533,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The meshUid.
      */
+    @java.lang.Override
     public java.lang.String getMeshUid() {
       java.lang.Object ref = meshUid_;
       if (ref instanceof java.lang.String) {
@@ -3544,6 +3557,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for meshUid.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getMeshUidBytes() {
       java.lang.Object ref = meshUid_;
       if (ref instanceof java.lang.String) {
@@ -3570,6 +3584,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The serviceNamespace.
      */
+    @java.lang.Override
     public java.lang.String getServiceNamespace() {
       java.lang.Object ref = serviceNamespace_;
       if (ref instanceof java.lang.String) {
@@ -3593,6 +3608,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for serviceNamespace.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getServiceNamespaceBytes() {
       java.lang.Object ref = serviceNamespace_;
       if (ref instanceof java.lang.String) {
@@ -3619,6 +3635,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The serviceName.
      */
+    @java.lang.Override
     public java.lang.String getServiceName() {
       java.lang.Object ref = serviceName_;
       if (ref instanceof java.lang.String) {
@@ -3642,6 +3659,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for serviceName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getServiceNameBytes() {
       java.lang.Object ref = serviceName_;
       if (ref instanceof java.lang.String) {
@@ -4530,6 +4548,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The resourceName.
      */
+    @java.lang.Override
     public java.lang.String getResourceName() {
       java.lang.Object ref = resourceName_;
       if (ref instanceof java.lang.String) {
@@ -4553,6 +4572,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for resourceName.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getResourceNameBytes() {
       java.lang.Object ref = resourceName_;
       if (ref instanceof java.lang.String) {
@@ -5119,6 +5139,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -5142,6 +5163,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -5167,6 +5189,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The displayName.
    */
+  @java.lang.Override
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -5189,6 +5212,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -5213,6 +5237,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the custom field is set.
    */
+  @java.lang.Override
   public boolean hasCustom() {
     return identifierCase_ == 6;
   }
@@ -5227,6 +5252,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The custom.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.Custom getCustom() {
     if (identifierCase_ == 6) {
       return (com.google.monitoring.v3.Service.Custom) identifier_;
@@ -5242,6 +5268,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.Service.Custom custom = 6;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.CustomOrBuilder getCustomOrBuilder() {
     if (identifierCase_ == 6) {
       return (com.google.monitoring.v3.Service.Custom) identifier_;
@@ -5261,6 +5288,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the appEngine field is set.
    */
+  @java.lang.Override
   public boolean hasAppEngine() {
     return identifierCase_ == 7;
   }
@@ -5275,6 +5303,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The appEngine.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.AppEngine getAppEngine() {
     if (identifierCase_ == 7) {
       return (com.google.monitoring.v3.Service.AppEngine) identifier_;
@@ -5290,6 +5319,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.Service.AppEngine app_engine = 7;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.AppEngineOrBuilder getAppEngineOrBuilder() {
     if (identifierCase_ == 7) {
       return (com.google.monitoring.v3.Service.AppEngine) identifier_;
@@ -5309,6 +5339,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the cloudEndpoints field is set.
    */
+  @java.lang.Override
   public boolean hasCloudEndpoints() {
     return identifierCase_ == 8;
   }
@@ -5323,6 +5354,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The cloudEndpoints.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.CloudEndpoints getCloudEndpoints() {
     if (identifierCase_ == 8) {
       return (com.google.monitoring.v3.Service.CloudEndpoints) identifier_;
@@ -5338,6 +5370,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.Service.CloudEndpoints cloud_endpoints = 8;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.CloudEndpointsOrBuilder getCloudEndpointsOrBuilder() {
     if (identifierCase_ == 8) {
       return (com.google.monitoring.v3.Service.CloudEndpoints) identifier_;
@@ -5357,6 +5390,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the clusterIstio field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean hasClusterIstio() {
     return identifierCase_ == 9;
@@ -5372,6 +5406,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The clusterIstio.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.monitoring.v3.Service.ClusterIstio getClusterIstio() {
     if (identifierCase_ == 9) {
@@ -5388,6 +5423,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public com.google.monitoring.v3.Service.ClusterIstioOrBuilder getClusterIstioOrBuilder() {
     if (identifierCase_ == 9) {
@@ -5408,6 +5444,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the meshIstio field is set.
    */
+  @java.lang.Override
   public boolean hasMeshIstio() {
     return identifierCase_ == 10;
   }
@@ -5422,6 +5459,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The meshIstio.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.MeshIstio getMeshIstio() {
     if (identifierCase_ == 10) {
       return (com.google.monitoring.v3.Service.MeshIstio) identifier_;
@@ -5437,6 +5475,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.Service.MeshIstio mesh_istio = 10;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.MeshIstioOrBuilder getMeshIstioOrBuilder() {
     if (identifierCase_ == 10) {
       return (com.google.monitoring.v3.Service.MeshIstio) identifier_;
@@ -5457,6 +5496,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the telemetry field is set.
    */
+  @java.lang.Override
   public boolean hasTelemetry() {
     return telemetry_ != null;
   }
@@ -5471,6 +5511,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The telemetry.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.Telemetry getTelemetry() {
     return telemetry_ == null
         ? com.google.monitoring.v3.Service.Telemetry.getDefaultInstance()
@@ -5485,6 +5526,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.Service.TelemetryOrBuilder getTelemetryOrBuilder() {
     return getTelemetry();
   }
@@ -6250,6 +6292,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the custom field is set.
      */
+    @java.lang.Override
     public boolean hasCustom() {
       return identifierCase_ == 6;
     }
@@ -6264,6 +6307,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The custom.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.Service.Custom getCustom() {
       if (customBuilder_ == null) {
         if (identifierCase_ == 6) {
@@ -6395,6 +6439,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.Service.Custom custom = 6;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.Service.CustomOrBuilder getCustomOrBuilder() {
       if ((identifierCase_ == 6) && (customBuilder_ != null)) {
         return customBuilder_.getMessageOrBuilder();
@@ -6455,6 +6500,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the appEngine field is set.
      */
+    @java.lang.Override
     public boolean hasAppEngine() {
       return identifierCase_ == 7;
     }
@@ -6469,6 +6515,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The appEngine.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.Service.AppEngine getAppEngine() {
       if (appEngineBuilder_ == null) {
         if (identifierCase_ == 7) {
@@ -6601,6 +6648,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.Service.AppEngine app_engine = 7;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.Service.AppEngineOrBuilder getAppEngineOrBuilder() {
       if ((identifierCase_ == 7) && (appEngineBuilder_ != null)) {
         return appEngineBuilder_.getMessageOrBuilder();
@@ -6661,6 +6709,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the cloudEndpoints field is set.
      */
+    @java.lang.Override
     public boolean hasCloudEndpoints() {
       return identifierCase_ == 8;
     }
@@ -6675,6 +6724,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The cloudEndpoints.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.Service.CloudEndpoints getCloudEndpoints() {
       if (cloudEndpointsBuilder_ == null) {
         if (identifierCase_ == 8) {
@@ -6808,6 +6858,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.Service.CloudEndpoints cloud_endpoints = 8;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.Service.CloudEndpointsOrBuilder getCloudEndpointsOrBuilder() {
       if ((identifierCase_ == 8) && (cloudEndpointsBuilder_ != null)) {
         return cloudEndpointsBuilder_.getMessageOrBuilder();
@@ -6869,6 +6920,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the clusterIstio field is set.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public boolean hasClusterIstio() {
       return identifierCase_ == 9;
@@ -6885,6 +6937,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The clusterIstio.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public com.google.monitoring.v3.Service.ClusterIstio getClusterIstio() {
       if (clusterIstioBuilder_ == null) {
@@ -7029,6 +7082,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.Service.ClusterIstio cluster_istio = 9 [deprecated = true];
      * </code>
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public com.google.monitoring.v3.Service.ClusterIstioOrBuilder getClusterIstioOrBuilder() {
       if ((identifierCase_ == 9) && (clusterIstioBuilder_ != null)) {
@@ -7091,6 +7145,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the meshIstio field is set.
      */
+    @java.lang.Override
     public boolean hasMeshIstio() {
       return identifierCase_ == 10;
     }
@@ -7105,6 +7160,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The meshIstio.
      */
+    @java.lang.Override
     public com.google.monitoring.v3.Service.MeshIstio getMeshIstio() {
       if (meshIstioBuilder_ == null) {
         if (identifierCase_ == 10) {
@@ -7237,6 +7293,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.monitoring.v3.Service.MeshIstio mesh_istio = 10;</code>
      */
+    @java.lang.Override
     public com.google.monitoring.v3.Service.MeshIstioOrBuilder getMeshIstioOrBuilder() {
       if ((identifierCase_ == 10) && (meshIstioBuilder_ != null)) {
         return meshIstioBuilder_.getMessageOrBuilder();

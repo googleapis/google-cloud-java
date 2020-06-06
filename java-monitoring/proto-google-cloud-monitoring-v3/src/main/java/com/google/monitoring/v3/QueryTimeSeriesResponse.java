@@ -171,6 +171,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * @return Whether the timeSeriesDescriptor field is set.
    */
+  @java.lang.Override
   public boolean hasTimeSeriesDescriptor() {
     return timeSeriesDescriptor_ != null;
   }
@@ -185,6 +186,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * @return The timeSeriesDescriptor.
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesDescriptor getTimeSeriesDescriptor() {
     return timeSeriesDescriptor_ == null
         ? com.google.monitoring.v3.TimeSeriesDescriptor.getDefaultInstance()
@@ -199,6 +201,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>.google.monitoring.v3.TimeSeriesDescriptor time_series_descriptor = 8;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesDescriptorOrBuilder getTimeSeriesDescriptorOrBuilder() {
     return getTimeSeriesDescriptor();
   }
@@ -214,6 +217,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData time_series_data = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.monitoring.v3.TimeSeriesData> getTimeSeriesDataList() {
     return timeSeriesData_;
   }
@@ -226,6 +230,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData time_series_data = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.monitoring.v3.TimeSeriesDataOrBuilder>
       getTimeSeriesDataOrBuilderList() {
     return timeSeriesData_;
@@ -239,6 +244,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData time_series_data = 9;</code>
    */
+  @java.lang.Override
   public int getTimeSeriesDataCount() {
     return timeSeriesData_.size();
   }
@@ -251,6 +257,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData time_series_data = 9;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesData getTimeSeriesData(int index) {
     return timeSeriesData_.get(index);
   }
@@ -263,6 +270,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.monitoring.v3.TimeSeriesData time_series_data = 9;</code>
    */
+  @java.lang.Override
   public com.google.monitoring.v3.TimeSeriesDataOrBuilder getTimeSeriesDataOrBuilder(int index) {
     return timeSeriesData_.get(index);
   }
@@ -282,6 +290,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -306,6 +315,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -331,6 +341,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
     return partialErrors_;
   }
@@ -345,6 +356,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList() {
     return partialErrors_;
   }
@@ -359,6 +371,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
+  @java.lang.Override
   public int getPartialErrorsCount() {
     return partialErrors_.size();
   }
@@ -373,6 +386,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
+  @java.lang.Override
   public com.google.rpc.Status getPartialErrors(int index) {
     return partialErrors_.get(index);
   }
@@ -387,6 +401,7 @@ public final class QueryTimeSeriesResponse extends com.google.protobuf.Generated
    *
    * <code>repeated .google.rpc.Status partial_errors = 11;</code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
     return partialErrors_.get(index);
   }
