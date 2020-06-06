@@ -51,9 +51,7 @@ test)
     RETURN_CODE=$?
     ;;
 lint)
-    mvn \
-      -Penable-samples \
-      com.coveo:fmt-maven-plugin:check
+    mvn com.coveo:fmt-maven-plugin:check
     RETURN_CODE=$?
     ;;
 javadoc)
