@@ -24,6 +24,10 @@ import static org.junit.Assert.assertNotNull;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.privacy.dlp.v2.FieldId;
+import com.google.privacy.dlp.v2.Table;
+import com.google.privacy.dlp.v2.Table.Row;
+import com.google.privacy.dlp.v2.Value;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.TopicName;
@@ -211,6 +215,21 @@ public class InspectTests {
     String output = bout.toString();
     assertThat(output, containsString("example.com"));
     assertThat(output, not(containsString("example.org")));
+  }
+  
+  @Test
+  public void testInspectTable() {
+    Table tableToInspect = Table.newBuilder()
+        .addHeaders(FieldId.newBuilder().setName("name").build())
+        .addHeaders(FieldId.newBuilder().setName("phone").build())
+        .addRows(Row.newBuilder()
+            .addValues(Value.newBuilder().setStringValue("John Doe").build())
+            .addValues(Value.newBuilder().setStringValue("(206) 555-0123").build()))
+        .build();
+    InspectTable.inspectTable(PROJECT_ID, tableToInspect);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Info type: PHONE_NUMBER"));
   }
 
   @Test
