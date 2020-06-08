@@ -136,6 +136,7 @@ public class SubscriptionAdminClientTest {
     boolean retainAckedMessages = false;
     boolean enableMessageOrdering = true;
     String filter = "filter-1274492040";
+    boolean detached = true;
     Subscription expectedResponse =
         Subscription.newBuilder()
             .setName(name2.toString())
@@ -144,6 +145,7 @@ public class SubscriptionAdminClientTest {
             .setRetainAckedMessages(retainAckedMessages)
             .setEnableMessageOrdering(enableMessageOrdering)
             .setFilter(filter)
+            .setDetached(detached)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -198,6 +200,7 @@ public class SubscriptionAdminClientTest {
     boolean retainAckedMessages = false;
     boolean enableMessageOrdering = true;
     String filter = "filter-1274492040";
+    boolean detached = true;
     Subscription expectedResponse =
         Subscription.newBuilder()
             .setName(name.toString())
@@ -206,6 +209,7 @@ public class SubscriptionAdminClientTest {
             .setRetainAckedMessages(retainAckedMessages)
             .setEnableMessageOrdering(enableMessageOrdering)
             .setFilter(filter)
+            .setDetached(detached)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -253,6 +257,7 @@ public class SubscriptionAdminClientTest {
     boolean retainAckedMessages = false;
     boolean enableMessageOrdering = true;
     String filter = "filter-1274492040";
+    boolean detached = true;
     Subscription expectedResponse =
         Subscription.newBuilder()
             .setName(name.toString())
@@ -261,6 +266,7 @@ public class SubscriptionAdminClientTest {
             .setRetainAckedMessages(retainAckedMessages)
             .setEnableMessageOrdering(enableMessageOrdering)
             .setFilter(filter)
+            .setDetached(detached)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 

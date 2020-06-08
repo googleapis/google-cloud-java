@@ -347,6 +347,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The serviceAccountEmail.
      */
+    @java.lang.Override
     public java.lang.String getServiceAccountEmail() {
       java.lang.Object ref = serviceAccountEmail_;
       if (ref instanceof java.lang.String) {
@@ -373,6 +374,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for serviceAccountEmail.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
       java.lang.Object ref = serviceAccountEmail_;
       if (ref instanceof java.lang.String) {
@@ -403,6 +405,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The audience.
      */
+    @java.lang.Override
     public java.lang.String getAudience() {
       java.lang.Object ref = audience_;
       if (ref instanceof java.lang.String) {
@@ -430,6 +433,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for audience.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getAudienceBytes() {
       java.lang.Object ref = audience_;
       if (ref instanceof java.lang.String) {
@@ -1147,6 +1151,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pushEndpoint.
    */
+  @java.lang.Override
   public java.lang.String getPushEndpoint() {
     java.lang.Object ref = pushEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -1170,6 +1175,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for pushEndpoint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getPushEndpointBytes() {
     java.lang.Object ref = pushEndpoint_;
     if (ref instanceof java.lang.String) {
@@ -1231,6 +1237,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  @java.lang.Override
   public boolean containsAttributes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1238,6 +1245,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     return internalGetAttributes().getMap().containsKey(key);
   }
   /** Use {@link #getAttributesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
     return getAttributesMap();
@@ -1266,6 +1274,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
     return internalGetAttributes().getMap();
   }
@@ -1293,6 +1302,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getAttributesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -1325,6 +1335,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getAttributesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1349,6 +1360,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the oidcToken field is set.
    */
+  @java.lang.Override
   public boolean hasOidcToken() {
     return authenticationMethodCase_ == 3;
   }
@@ -1364,6 +1376,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The oidcToken.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PushConfig.OidcToken getOidcToken() {
     if (authenticationMethodCase_ == 3) {
       return (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_;
@@ -1380,6 +1393,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder() {
     if (authenticationMethodCase_ == 3) {
       return (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_;
@@ -1965,6 +1979,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
+    @java.lang.Override
     public boolean containsAttributes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1972,6 +1987,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       return internalGetAttributes().getMap().containsKey(key);
     }
     /** Use {@link #getAttributesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
       return getAttributesMap();
@@ -2000,6 +2016,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
@@ -2027,6 +2044,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getAttributesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2059,6 +2077,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getAttributesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2190,6 +2209,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the oidcToken field is set.
      */
+    @java.lang.Override
     public boolean hasOidcToken() {
       return authenticationMethodCase_ == 3;
     }
@@ -2205,6 +2225,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The oidcToken.
      */
+    @java.lang.Override
     public com.google.pubsub.v1.PushConfig.OidcToken getOidcToken() {
       if (oidcTokenBuilder_ == null) {
         if (authenticationMethodCase_ == 3) {
@@ -2343,6 +2364,7 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
      */
+    @java.lang.Override
     public com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder() {
       if ((authenticationMethodCase_ == 3) && (oidcTokenBuilder_ != null)) {
         return oidcTokenBuilder_.getMessageOrBuilder();

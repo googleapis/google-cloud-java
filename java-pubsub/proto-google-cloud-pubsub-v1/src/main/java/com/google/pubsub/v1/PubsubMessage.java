@@ -188,6 +188,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The data.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getData() {
     return data_;
   }
@@ -227,6 +228,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  @java.lang.Override
   public boolean containsAttributes(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -234,6 +236,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     return internalGetAttributes().getMap().containsKey(key);
   }
   /** Use {@link #getAttributesMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
     return getAttributesMap();
@@ -248,6 +251,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
     return internalGetAttributes().getMap();
   }
@@ -261,6 +265,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getAttributesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
@@ -279,6 +284,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getAttributesOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -306,6 +312,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The messageId.
    */
+  @java.lang.Override
   public java.lang.String getMessageId() {
     java.lang.Object ref = messageId_;
     if (ref instanceof java.lang.String) {
@@ -331,6 +338,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for messageId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getMessageIdBytes() {
     java.lang.Object ref = messageId_;
     if (ref instanceof java.lang.String) {
@@ -358,6 +366,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the publishTime field is set.
    */
+  @java.lang.Override
   public boolean hasPublishTime() {
     return publishTime_ != null;
   }
@@ -374,6 +383,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The publishTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getPublishTime() {
     return publishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : publishTime_;
   }
@@ -388,6 +398,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder() {
     return getPublishTime();
   }
@@ -413,6 +424,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The orderingKey.
    */
+  @java.lang.Override
   public java.lang.String getOrderingKey() {
     java.lang.Object ref = orderingKey_;
     if (ref instanceof java.lang.String) {
@@ -443,6 +455,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for orderingKey.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getOrderingKeyBytes() {
     java.lang.Object ref = orderingKey_;
     if (ref instanceof java.lang.String) {
@@ -891,6 +904,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The data.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
@@ -973,6 +987,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
+    @java.lang.Override
     public boolean containsAttributes(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -980,6 +995,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       return internalGetAttributes().getMap().containsKey(key);
     }
     /** Use {@link #getAttributesMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
       return getAttributesMap();
@@ -994,6 +1010,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
@@ -1007,6 +1024,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getAttributesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1025,6 +1043,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getAttributesOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

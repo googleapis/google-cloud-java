@@ -18,7 +18,15 @@
 
 package com.google.pubsub.v1;
 
-/** Protobuf type {@code google.pubsub.v1.MessageStoragePolicy} */
+/**
+ *
+ *
+ * <pre>
+ * A policy constraining the storage of messages published to the topic.
+ * </pre>
+ *
+ * Protobuf type {@code google.pubsub.v1.MessageStoragePolicy}
+ */
 public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.MessageStoragePolicy)
@@ -355,7 +363,15 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.pubsub.v1.MessageStoragePolicy} */
+  /**
+   *
+   *
+   * <pre>
+   * A policy constraining the storage of messages published to the topic.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.MessageStoragePolicy}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.pubsub.v1.MessageStoragePolicy)

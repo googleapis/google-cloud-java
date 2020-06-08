@@ -1428,7 +1428,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName subscription = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
    *   DetachSubscriptionRequest request = DetachSubscriptionRequest.newBuilder()
    *     .setSubscription(subscription.toString())
    *     .build();
@@ -1453,7 +1453,7 @@ public class TopicAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
-   *   TopicName subscription = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+   *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
    *   DetachSubscriptionRequest request = DetachSubscriptionRequest.newBuilder()
    *     .setSubscription(subscription.toString())
    *     .build();

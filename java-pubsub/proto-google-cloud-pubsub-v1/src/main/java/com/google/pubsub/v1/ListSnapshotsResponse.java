@@ -137,6 +137,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.pubsub.v1.Snapshot> getSnapshotsList() {
     return snapshots_;
   }
@@ -149,6 +150,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.pubsub.v1.SnapshotOrBuilder>
       getSnapshotsOrBuilderList() {
     return snapshots_;
@@ -162,6 +164,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
    */
+  @java.lang.Override
   public int getSnapshotsCount() {
     return snapshots_.size();
   }
@@ -174,6 +177,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.Snapshot getSnapshots(int index) {
     return snapshots_.get(index);
   }
@@ -186,6 +190,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.Snapshot snapshots = 1;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.SnapshotOrBuilder getSnapshotsOrBuilder(int index) {
     return snapshots_.get(index);
   }
@@ -204,6 +209,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +233,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

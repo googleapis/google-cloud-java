@@ -200,6 +200,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The subscription.
    */
+  @java.lang.Override
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +228,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for subscription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -339,6 +341,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    * @return A list containing the modifyDeadlineSeconds.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer> getModifyDeadlineSecondsList() {
     return modifyDeadlineSeconds_;
   }
@@ -487,6 +490,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The streamAckDeadlineSeconds.
    */
+  @java.lang.Override
   public int getStreamAckDeadlineSeconds() {
     return streamAckDeadlineSeconds_;
   }
@@ -509,6 +513,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The clientId.
    */
+  @java.lang.Override
   public java.lang.String getClientId() {
     java.lang.Object ref = clientId_;
     if (ref instanceof java.lang.String) {
@@ -536,6 +541,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
    *
    * @return The bytes for clientId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getClientIdBytes() {
     java.lang.Object ref = clientId_;
     if (ref instanceof java.lang.String) {
@@ -1762,6 +1768,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
      *
      * @return The streamAckDeadlineSeconds.
      */
+    @java.lang.Override
     public int getStreamAckDeadlineSeconds() {
       return streamAckDeadlineSeconds_;
     }

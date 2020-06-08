@@ -131,6 +131,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.pubsub.v1.ReceivedMessage> getReceivedMessagesList() {
     return receivedMessages_;
   }
@@ -143,6 +144,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
       getReceivedMessagesOrBuilderList() {
     return receivedMessages_;
@@ -156,6 +158,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
+  @java.lang.Override
   public int getReceivedMessagesCount() {
     return receivedMessages_.size();
   }
@@ -168,6 +171,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.ReceivedMessage getReceivedMessages(int index) {
     return receivedMessages_.get(index);
   }
@@ -180,6 +184,7 @@ public final class StreamingPullResponse extends com.google.protobuf.GeneratedMe
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index) {
     return receivedMessages_.get(index);
   }

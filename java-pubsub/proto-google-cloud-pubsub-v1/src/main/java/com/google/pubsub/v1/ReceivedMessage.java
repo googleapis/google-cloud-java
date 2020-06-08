@@ -144,6 +144,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    * @return The ackId.
    */
+  @java.lang.Override
   public java.lang.String getAckId() {
     java.lang.Object ref = ackId_;
     if (ref instanceof java.lang.String) {
@@ -166,6 +167,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for ackId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAckIdBytes() {
     java.lang.Object ref = ackId_;
     if (ref instanceof java.lang.String) {
@@ -191,6 +193,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    * @return Whether the message field is set.
    */
+  @java.lang.Override
   public boolean hasMessage() {
     return message_ != null;
   }
@@ -205,6 +208,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    * @return The message.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PubsubMessage getMessage() {
     return message_ == null ? com.google.pubsub.v1.PubsubMessage.getDefaultInstance() : message_;
   }
@@ -217,6 +221,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.pubsub.v1.PubsubMessage message = 2;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PubsubMessageOrBuilder getMessageOrBuilder() {
     return getMessage();
   }
@@ -245,6 +250,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
    *
    * @return The deliveryAttempt.
    */
+  @java.lang.Override
   public int getDeliveryAttempt() {
     return deliveryAttempt_;
   }
@@ -919,6 +925,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
      *
      * @return The deliveryAttempt.
      */
+    @java.lang.Override
     public int getDeliveryAttempt() {
       return deliveryAttempt_;
     }

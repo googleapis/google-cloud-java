@@ -145,6 +145,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the snapshot field is set.
    */
+  @java.lang.Override
   public boolean hasSnapshot() {
     return snapshot_ != null;
   }
@@ -159,6 +160,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The snapshot.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.Snapshot getSnapshot() {
     return snapshot_ == null ? com.google.pubsub.v1.Snapshot.getDefaultInstance() : snapshot_;
   }
@@ -171,6 +173,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>.google.pubsub.v1.Snapshot snapshot = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.SnapshotOrBuilder getSnapshotOrBuilder() {
     return getSnapshot();
   }
@@ -190,6 +193,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -206,6 +210,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -220,6 +225,7 @@ public final class UpdateSnapshotRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

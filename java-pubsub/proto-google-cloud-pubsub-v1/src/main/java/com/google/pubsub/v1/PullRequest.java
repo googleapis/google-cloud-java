@@ -135,6 +135,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The subscription.
    */
+  @java.lang.Override
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -160,6 +161,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for subscription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -192,6 +194,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The returnImmediately.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public boolean getReturnImmediately() {
     return returnImmediately_;
@@ -212,6 +215,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The maxMessages.
    */
+  @java.lang.Override
   public int getMaxMessages() {
     return maxMessages_;
   }
@@ -700,6 +704,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The returnImmediately.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public boolean getReturnImmediately() {
       return returnImmediately_;
@@ -772,6 +777,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The maxMessages.
      */
+    @java.lang.Override
     public int getMaxMessages() {
       return maxMessages_;
     }

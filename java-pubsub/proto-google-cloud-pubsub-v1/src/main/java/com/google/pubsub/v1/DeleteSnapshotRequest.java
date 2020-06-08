@@ -127,6 +127,7 @@ public final class DeleteSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The snapshot.
    */
+  @java.lang.Override
   public java.lang.String getSnapshot() {
     java.lang.Object ref = snapshot_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class DeleteSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for snapshot.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSnapshotBytes() {
     java.lang.Object ref = snapshot_;
     if (ref instanceof java.lang.String) {

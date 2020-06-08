@@ -199,6 +199,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 120:
+            {
+              detached_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -262,6 +267,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -289,6 +295,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -318,6 +325,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The topic.
    */
+  @java.lang.Override
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
@@ -344,6 +352,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for topic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTopicBytes() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
@@ -371,6 +380,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the pushConfig field is set.
    */
+  @java.lang.Override
   public boolean hasPushConfig() {
     return pushConfig_ != null;
   }
@@ -387,6 +397,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The pushConfig.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PushConfig getPushConfig() {
     return pushConfig_ == null ? com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
   }
@@ -401,6 +412,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder() {
     return getPushConfig();
   }
@@ -434,6 +446,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The ackDeadlineSeconds.
    */
+  @java.lang.Override
   public int getAckDeadlineSeconds() {
     return ackDeadlineSeconds_;
   }
@@ -457,6 +470,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The retainAckedMessages.
    */
+  @java.lang.Override
   public boolean getRetainAckedMessages() {
     return retainAckedMessages_;
   }
@@ -479,6 +493,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the messageRetentionDuration field is set.
    */
+  @java.lang.Override
   public boolean hasMessageRetentionDuration() {
     return messageRetentionDuration_ != null;
   }
@@ -498,6 +513,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The messageRetentionDuration.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getMessageRetentionDuration() {
     return messageRetentionDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
@@ -517,6 +533,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder() {
     return getMessageRetentionDuration();
   }
@@ -556,6 +573,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -563,6 +581,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -577,6 +596,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -590,6 +610,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -607,6 +628,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -637,6 +659,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enableMessageOrdering.
    */
+  @java.lang.Override
   public boolean getEnableMessageOrdering() {
     return enableMessageOrdering_;
   }
@@ -659,6 +682,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the expirationPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasExpirationPolicy() {
     return expirationPolicy_ != null;
   }
@@ -678,6 +702,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expirationPolicy.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy() {
     return expirationPolicy_ == null
         ? com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance()
@@ -697,6 +722,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder() {
     return getExpirationPolicy();
   }
@@ -711,15 +737,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * then only `PubsubMessage`s whose `attributes` field matches the filter are
    * delivered on this subscription. If empty, then no messages are filtered
    * out.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string filter = 12;</code>
    *
    * @return The filter.
    */
+  @java.lang.Override
   public java.lang.String getFilter() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -739,15 +763,13 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * then only `PubsubMessage`s whose `attributes` field matches the filter are
    * delivered on this subscription. If empty, then no messages are filtered
    * out.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-   * API might be changed in backward-incompatible ways and is not recommended
-   * for production use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * <code>string filter = 12;</code>
    *
    * @return The bytes for filter.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
@@ -779,6 +801,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the deadLetterPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasDeadLetterPolicy() {
     return deadLetterPolicy_ != null;
   }
@@ -799,6 +822,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The deadLetterPolicy.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.DeadLetterPolicy getDeadLetterPolicy() {
     return deadLetterPolicy_ == null
         ? com.google.pubsub.v1.DeadLetterPolicy.getDefaultInstance()
@@ -819,6 +843,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.pubsub.v1.DeadLetterPolicy dead_letter_policy = 13;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.DeadLetterPolicyOrBuilder getDeadLetterPolicyOrBuilder() {
     return getDeadLetterPolicy();
   }
@@ -829,21 +854,19 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
    * exceeded events for a given message.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-   * ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
    *
    * @return Whether the retryPolicy field is set.
    */
+  @java.lang.Override
   public boolean hasRetryPolicy() {
     return retryPolicy_ != null;
   }
@@ -851,21 +874,19 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
    * exceeded events for a given message.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-   * ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
    *
    * @return The retryPolicy.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.RetryPolicy getRetryPolicy() {
     return retryPolicy_ == null
         ? com.google.pubsub.v1.RetryPolicy.getDefaultInstance()
@@ -875,21 +896,41 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * A policy that specifies how Pub/Sub retries message delivery for this
    * subscription.
    * If not set, the default retry policy is applied. This generally implies
    * that messages will be retried as soon as possible for healthy subscribers.
    * RetryPolicy will be triggered on NACKs or acknowledgement deadline
    * exceeded events for a given message.
-   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-   * ways and is not recommended for production use. It is not subject to any
-   * SLA or deprecation policy.
    * </pre>
    *
    * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.RetryPolicyOrBuilder getRetryPolicyOrBuilder() {
     return getRetryPolicy();
+  }
+
+  public static final int DETACHED_FIELD_NUMBER = 15;
+  private boolean detached_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the subscription is detached from its topic. Detached
+   * subscriptions don't receive messages from their topic and don't retain any
+   * backlog. `Pull` and `StreamingPull` requests will return
+   * FAILED_PRECONDITION. If the subscription is a push subscription, pushes to
+   * the endpoint will not be made.
+   * </pre>
+   *
+   * <code>bool detached = 15;</code>
+   *
+   * @return The detached.
+   */
+  @java.lang.Override
+  public boolean getDetached() {
+    return detached_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -940,6 +981,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     if (retryPolicy_ != null) {
       output.writeMessage(14, getRetryPolicy());
+    }
+    if (detached_ != false) {
+      output.writeBool(15, detached_);
     }
     unknownFields.writeTo(output);
   }
@@ -995,6 +1039,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (retryPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getRetryPolicy());
     }
+    if (detached_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, detached_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1037,6 +1084,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     if (hasRetryPolicy()) {
       if (!getRetryPolicy().equals(other.getRetryPolicy())) return false;
     }
+    if (getDetached() != other.getDetached()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1084,6 +1132,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RETRY_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getRetryPolicy().hashCode();
     }
+    hash = (37 * hash) + DETACHED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDetached());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1291,6 +1341,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         retryPolicy_ = null;
         retryPolicyBuilder_ = null;
       }
+      detached_ = false;
+
       return this;
     }
 
@@ -1351,6 +1403,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.retryPolicy_ = retryPolicyBuilder_.build();
       }
+      result.detached_ = detached_;
       onBuilt();
       return result;
     }
@@ -1436,6 +1489,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRetryPolicy()) {
         mergeRetryPolicy(other.getRetryPolicy());
+      }
+      if (other.getDetached() != false) {
+        setDetached(other.getDetached());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1956,6 +2012,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The ackDeadlineSeconds.
      */
+    @java.lang.Override
     public int getAckDeadlineSeconds() {
       return ackDeadlineSeconds_;
     }
@@ -2045,6 +2102,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The retainAckedMessages.
      */
+    @java.lang.Override
     public boolean getRetainAckedMessages() {
       return retainAckedMessages_;
     }
@@ -2362,6 +2420,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2369,6 +2428,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -2383,6 +2443,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -2396,6 +2457,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -2414,6 +2476,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -2504,6 +2567,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enableMessageOrdering.
      */
+    @java.lang.Override
     public boolean getEnableMessageOrdering() {
       return enableMessageOrdering_;
     }
@@ -2795,9 +2859,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * then only `PubsubMessage`s whose `attributes` field matches the filter are
      * delivered on this subscription. If empty, then no messages are filtered
      * out.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string filter = 12;</code>
@@ -2823,9 +2884,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * then only `PubsubMessage`s whose `attributes` field matches the filter are
      * delivered on this subscription. If empty, then no messages are filtered
      * out.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string filter = 12;</code>
@@ -2851,9 +2909,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * then only `PubsubMessage`s whose `attributes` field matches the filter are
      * delivered on this subscription. If empty, then no messages are filtered
      * out.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string filter = 12;</code>
@@ -2878,9 +2933,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * then only `PubsubMessage`s whose `attributes` field matches the filter are
      * delivered on this subscription. If empty, then no messages are filtered
      * out.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string filter = 12;</code>
@@ -2901,9 +2953,6 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * then only `PubsubMessage`s whose `attributes` field matches the filter are
      * delivered on this subscription. If empty, then no messages are filtered
      * out.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
-     * API might be changed in backward-incompatible ways and is not recommended
-     * for production use. It is not subject to any SLA or deprecation policy.
      * </pre>
      *
      * <code>string filter = 12;</code>
@@ -3172,15 +3221,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3194,15 +3240,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3222,15 +3265,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3252,15 +3292,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3279,15 +3316,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3313,15 +3347,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3341,15 +3372,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3363,15 +3391,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3389,15 +3414,12 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * A policy that specifies how Pub/Sub retries message delivery for this
      * subscription.
      * If not set, the default retry policy is applied. This generally implies
      * that messages will be retried as soon as possible for healthy subscribers.
      * RetryPolicy will be triggered on NACKs or acknowledgement deadline
      * exceeded events for a given message.
-     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
-     * ways and is not recommended for production use. It is not subject to any
-     * SLA or deprecation policy.
      * </pre>
      *
      * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
@@ -3417,6 +3439,70 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         retryPolicy_ = null;
       }
       return retryPolicyBuilder_;
+    }
+
+    private boolean detached_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the subscription is detached from its topic. Detached
+     * subscriptions don't receive messages from their topic and don't retain any
+     * backlog. `Pull` and `StreamingPull` requests will return
+     * FAILED_PRECONDITION. If the subscription is a push subscription, pushes to
+     * the endpoint will not be made.
+     * </pre>
+     *
+     * <code>bool detached = 15;</code>
+     *
+     * @return The detached.
+     */
+    @java.lang.Override
+    public boolean getDetached() {
+      return detached_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the subscription is detached from its topic. Detached
+     * subscriptions don't receive messages from their topic and don't retain any
+     * backlog. `Pull` and `StreamingPull` requests will return
+     * FAILED_PRECONDITION. If the subscription is a push subscription, pushes to
+     * the endpoint will not be made.
+     * </pre>
+     *
+     * <code>bool detached = 15;</code>
+     *
+     * @param value The detached to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDetached(boolean value) {
+
+      detached_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the subscription is detached from its topic. Detached
+     * subscriptions don't receive messages from their topic and don't retain any
+     * backlog. `Pull` and `StreamingPull` requests will return
+     * FAILED_PRECONDITION. If the subscription is a push subscription, pushes to
+     * the endpoint will not be made.
+     * </pre>
+     *
+     * <code>bool detached = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDetached() {
+
+      detached_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

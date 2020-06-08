@@ -143,6 +143,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The topic.
    */
+  @java.lang.Override
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for topic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTopicBytes() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +195,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList() {
     return messages_;
   }
@@ -207,6 +210,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder>
       getMessagesOrBuilderList() {
     return messages_;
@@ -222,6 +226,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public int getMessagesCount() {
     return messages_.size();
   }
@@ -236,6 +241,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PubsubMessage getMessages(int index) {
     return messages_.get(index);
   }
@@ -250,6 +256,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
    * repeated .google.pubsub.v1.PubsubMessage messages = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PubsubMessageOrBuilder getMessagesOrBuilder(int index) {
     return messages_.get(index);
   }

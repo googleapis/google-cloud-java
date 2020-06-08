@@ -175,6 +175,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +198,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +224,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The topic.
    */
+  @java.lang.Override
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +247,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for topic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTopicBytes() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
@@ -278,6 +282,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the expireTime field is set.
    */
+  @java.lang.Override
   public boolean hasExpireTime() {
     return expireTime_ != null;
   }
@@ -301,6 +306,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The expireTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
@@ -322,6 +328,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp expire_time = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
     return getExpireTime();
   }
@@ -361,6 +368,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -368,6 +376,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -382,6 +391,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -395,6 +405,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -412,6 +423,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1337,6 +1349,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1344,6 +1357,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1358,6 +1372,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1371,6 +1386,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1389,6 +1405,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

@@ -142,6 +142,7 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The subscription.
    */
+  @java.lang.Override
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class AcknowledgeRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for subscription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {

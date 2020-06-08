@@ -127,6 +127,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The snapshot.
    */
+  @java.lang.Override
   public java.lang.String getSnapshot() {
     java.lang.Object ref = snapshot_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for snapshot.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSnapshotBytes() {
     java.lang.Object ref = snapshot_;
     if (ref instanceof java.lang.String) {

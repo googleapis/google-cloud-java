@@ -127,6 +127,7 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The topic.
    */
+  @java.lang.Override
   public java.lang.String getTopic() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
@@ -152,6 +153,7 @@ public final class GetTopicRequest extends com.google.protobuf.GeneratedMessageV
    *
    * @return The bytes for topic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getTopicBytes() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {

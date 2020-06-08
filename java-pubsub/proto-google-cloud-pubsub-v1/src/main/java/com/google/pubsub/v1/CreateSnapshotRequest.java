@@ -164,6 +164,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +194,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +230,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The subscription.
    */
+  @java.lang.Override
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +263,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for subscription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -307,6 +311,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -314,6 +319,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -328,6 +334,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -341,6 +348,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -358,6 +366,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -1077,6 +1086,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -1084,6 +1094,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1098,6 +1109,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1111,6 +1123,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1129,6 +1142,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

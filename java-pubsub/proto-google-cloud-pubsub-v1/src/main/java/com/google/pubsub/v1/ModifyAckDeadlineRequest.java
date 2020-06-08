@@ -147,6 +147,7 @@ public final class ModifyAckDeadlineRequest extends com.google.protobuf.Generate
    *
    * @return The subscription.
    */
+  @java.lang.Override
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class ModifyAckDeadlineRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for subscription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -265,6 +267,7 @@ public final class ModifyAckDeadlineRequest extends com.google.protobuf.Generate
    *
    * @return The ackDeadlineSeconds.
    */
+  @java.lang.Override
   public int getAckDeadlineSeconds() {
     return ackDeadlineSeconds_;
   }
@@ -944,6 +947,7 @@ public final class ModifyAckDeadlineRequest extends com.google.protobuf.Generate
      *
      * @return The ackDeadlineSeconds.
      */
+    @java.lang.Override
     public int getAckDeadlineSeconds() {
       return ackDeadlineSeconds_;
     }

@@ -139,6 +139,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    *
    * @return The deadLetterTopic.
    */
+  @java.lang.Override
   public java.lang.String getDeadLetterTopic() {
     java.lang.Object ref = deadLetterTopic_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    *
    * @return The bytes for deadLetterTopic.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDeadLetterTopicBytes() {
     java.lang.Object ref = deadLetterTopic_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
    *
    * @return The maxDeliveryAttempts.
    */
+  @java.lang.Override
   public int getMaxDeliveryAttempts() {
     return maxDeliveryAttempts_;
   }
@@ -698,6 +701,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
      *
      * @return The maxDeliveryAttempts.
      */
+    @java.lang.Override
     public int getMaxDeliveryAttempts() {
       return maxDeliveryAttempts_;
     }

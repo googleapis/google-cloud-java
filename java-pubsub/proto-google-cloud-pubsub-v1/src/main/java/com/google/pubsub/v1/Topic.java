@@ -176,6 +176,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +204,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -250,6 +252,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
+  @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -257,6 +260,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     return internalGetLabels().getMap().containsKey(key);
   }
   /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
@@ -271,6 +275,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
+  @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -284,6 +289,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -301,6 +307,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
+  @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
       throw new java.lang.NullPointerException();
@@ -327,6 +334,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the messageStoragePolicy field is set.
    */
+  @java.lang.Override
   public boolean hasMessageStoragePolicy() {
     return messageStoragePolicy_ != null;
   }
@@ -343,6 +351,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The messageStoragePolicy.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy() {
     return messageStoragePolicy_ == null
         ? com.google.pubsub.v1.MessageStoragePolicy.getDefaultInstance()
@@ -359,6 +368,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.pubsub.v1.MessageStoragePolicy message_storage_policy = 3;</code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.MessageStoragePolicyOrBuilder getMessageStoragePolicyOrBuilder() {
     return getMessageStoragePolicy();
   }
@@ -378,6 +388,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The kmsKeyName.
    */
+  @java.lang.Override
   public java.lang.String getKmsKeyName() {
     java.lang.Object ref = kmsKeyName_;
     if (ref instanceof java.lang.String) {
@@ -402,6 +413,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for kmsKeyName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getKmsKeyNameBytes() {
     java.lang.Object ref = kmsKeyName_;
     if (ref instanceof java.lang.String) {
@@ -979,6 +991,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
+    @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();
@@ -986,6 +999,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       return internalGetLabels().getMap().containsKey(key);
     }
     /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
@@ -1000,6 +1014,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
+    @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1013,6 +1028,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
@@ -1031,6 +1047,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
+    @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
         throw new java.lang.NullPointerException();

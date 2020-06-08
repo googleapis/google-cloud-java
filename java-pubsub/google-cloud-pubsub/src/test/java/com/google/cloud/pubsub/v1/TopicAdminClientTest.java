@@ -631,7 +631,8 @@ public class TopicAdminClientTest {
     DetachSubscriptionResponse expectedResponse = DetachSubscriptionResponse.newBuilder().build();
     mockPublisher.addResponse(expectedResponse);
 
-    TopicName subscription = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+    ProjectSubscriptionName subscription =
+        ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
     DetachSubscriptionRequest request =
         DetachSubscriptionRequest.newBuilder().setSubscription(subscription.toString()).build();
 
@@ -642,7 +643,8 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DetachSubscriptionRequest actualRequest = (DetachSubscriptionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(subscription, TopicName.parse(actualRequest.getSubscription()));
+    Assert.assertEquals(
+        subscription, ProjectSubscriptionName.parse(actualRequest.getSubscription()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -656,7 +658,8 @@ public class TopicAdminClientTest {
     mockPublisher.addException(exception);
 
     try {
-      TopicName subscription = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+      ProjectSubscriptionName subscription =
+          ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
       DetachSubscriptionRequest request =
           DetachSubscriptionRequest.newBuilder().setSubscription(subscription.toString()).build();
 

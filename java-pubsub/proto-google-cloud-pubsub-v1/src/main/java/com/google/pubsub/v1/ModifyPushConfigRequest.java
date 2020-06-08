@@ -142,6 +142,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    * @return The subscription.
    */
+  @java.lang.Override
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +168,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for subscription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    * @return Whether the pushConfig field is set.
    */
+  @java.lang.Override
   public boolean hasPushConfig() {
     return pushConfig_ != null;
   }
@@ -216,6 +219,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    *
    * @return The pushConfig.
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PushConfig getPushConfig() {
     return pushConfig_ == null ? com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
   }
@@ -233,6 +237,7 @@ public final class ModifyPushConfigRequest extends com.google.protobuf.Generated
    * <code>.google.pubsub.v1.PushConfig push_config = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Override
   public com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder() {
     return getPushConfig();
   }

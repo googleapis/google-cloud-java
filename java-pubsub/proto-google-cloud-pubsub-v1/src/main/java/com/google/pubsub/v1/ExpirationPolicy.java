@@ -135,6 +135,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
    *
    * @return Whether the ttl field is set.
    */
+  @java.lang.Override
   public boolean hasTtl() {
     return ttl_ != null;
   }
@@ -154,6 +155,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
    *
    * @return The ttl.
    */
+  @java.lang.Override
   public com.google.protobuf.Duration getTtl() {
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
   }
@@ -171,6 +173,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
    *
    * <code>.google.protobuf.Duration ttl = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
     return getTtl();
   }

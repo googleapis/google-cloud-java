@@ -193,6 +193,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The subscription.
    */
+  @java.lang.Override
   public java.lang.String getSubscription() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -217,6 +218,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for subscription.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +253,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the time field is set.
    */
+  @java.lang.Override
   public boolean hasTime() {
     return targetCase_ == 2;
   }
@@ -275,6 +278,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The time.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getTime() {
     if (targetCase_ == 2) {
       return (com.google.protobuf.Timestamp) target_;
@@ -300,6 +304,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>.google.protobuf.Timestamp time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
     if (targetCase_ == 2) {
       return (com.google.protobuf.Timestamp) target_;
@@ -904,6 +909,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return Whether the time field is set.
      */
+    @java.lang.Override
     public boolean hasTime() {
       return targetCase_ == 2;
     }
@@ -928,6 +934,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The time.
      */
+    @java.lang.Override
     public com.google.protobuf.Timestamp getTime() {
       if (timeBuilder_ == null) {
         if (targetCase_ == 2) {
@@ -1117,6 +1124,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp time = 2;</code>
      */
+    @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
       if ((targetCase_ == 2) && (timeBuilder_ != null)) {
         return timeBuilder_.getMessageOrBuilder();
@@ -1182,6 +1190,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The snapshot.
      */
+    @java.lang.Override
     public java.lang.String getSnapshot() {
       java.lang.Object ref = "";
       if (targetCase_ == 3) {
@@ -1211,6 +1220,7 @@ public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The bytes for snapshot.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSnapshotBytes() {
       java.lang.Object ref = "";
       if (targetCase_ == 3) {
