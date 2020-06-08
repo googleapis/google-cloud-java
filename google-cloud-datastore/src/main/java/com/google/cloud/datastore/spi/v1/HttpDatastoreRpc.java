@@ -21,6 +21,8 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.TraceUtil;
+import com.google.cloud.http.CensusHttpModule;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
@@ -75,12 +77,18 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   private HttpRequestInitializer getHttpRequestInitializer(
       final DatastoreOptions options, HttpTransportOptions httpTransportOptions) {
-    final HttpRequestInitializer delegate = httpTransportOptions.getHttpRequestInitializer(options);
+    // Open Census initialization
+    CensusHttpModule censusHttpModule =
+        new CensusHttpModule(TraceUtil.getInstance().getTracer(), true);
+    final HttpRequestInitializer censusHttpModuleHttpRequestInitializer =
+        censusHttpModule.getHttpRequestInitializer(
+            httpTransportOptions.getHttpRequestInitializer(options));
+
     final String applicationName = options.getApplicationName();
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
-        delegate.initialize(httpRequest);
+        censusHttpModuleHttpRequestInitializer.initialize(httpRequest);
         httpRequest.getHeaders().setUserAgent(applicationName);
       }
     };

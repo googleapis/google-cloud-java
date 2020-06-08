@@ -34,6 +34,9 @@ import com.google.datastore.v1.ReadOptions.ReadConsistency;
 import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.TransactionOptions;
 import com.google.protobuf.ByteString;
+import io.opencensus.common.Scope;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Status;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -53,6 +56,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       TransactionExceptionHandler.build();
   private static final ExceptionHandler TRANSACTION_OPERATION_EXCEPTION_HANDLER =
       TransactionOperationExceptionHandler.build();
+  private final TraceUtil traceUtil = TraceUtil.getInstance();;
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
@@ -132,30 +136,36 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public <T> T runInTransaction(final TransactionCallable<T> callable) {
-    final DatastoreImpl self = this;
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_TRANSACTION);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
-          new ReadWriteTransactionCallable<T>(self, callable, null),
+          new ReadWriteTransactionCallable<T>(this, callable, null),
           retrySettings,
           TRANSACTION_EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 
   @Override
   public <T> T runInTransaction(
       final TransactionCallable<T> callable, TransactionOptions transactionOptions) {
-    final DatastoreImpl self = this;
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_TRANSACTION);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
-          new ReadWriteTransactionCallable<T>(self, callable, transactionOptions),
+          new ReadWriteTransactionCallable<T>(this, callable, transactionOptions),
           retrySettings,
           TRANSACTION_EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 
@@ -175,7 +185,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   com.google.datastore.v1.RunQueryResponse runQuery(
       final com.google.datastore.v1.RunQueryRequest requestPb) {
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_RUNQUERY);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.RunQueryResponse>() {
             @Override
@@ -189,7 +200,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
               : TRANSACTION_OPERATION_EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 
@@ -229,7 +243,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private com.google.datastore.v1.AllocateIdsResponse allocateIds(
       final com.google.datastore.v1.AllocateIdsRequest requestPb) {
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_ALLOCATEIDS);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.AllocateIdsResponse>() {
             @Override
@@ -241,7 +256,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
           EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 
@@ -389,7 +407,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   com.google.datastore.v1.LookupResponse lookup(
       final com.google.datastore.v1.LookupRequest requestPb) {
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_LOOKUP);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.LookupResponse>() {
             @Override
@@ -403,7 +422,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
               : TRANSACTION_OPERATION_EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 
@@ -425,7 +447,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   com.google.datastore.v1.ReserveIdsResponse reserveIds(
       final com.google.datastore.v1.ReserveIdsRequest requestPb) {
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_RESERVEIDS);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.ReserveIdsResponse>() {
             @Override
@@ -437,7 +460,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
           EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 
@@ -529,7 +555,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   com.google.datastore.v1.CommitResponse commit(
       final com.google.datastore.v1.CommitRequest requestPb) {
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_COMMIT);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.CommitResponse>() {
             @Override
@@ -543,7 +570,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
               : TRANSACTION_OPERATION_EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 
@@ -554,7 +584,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   com.google.datastore.v1.BeginTransactionResponse beginTransaction(
       final com.google.datastore.v1.BeginTransactionRequest requestPb) {
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_BEGINTRANSACTION);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.BeginTransactionResponse>() {
             @Override
@@ -567,7 +598,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
           EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 
@@ -579,7 +613,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   void rollback(final com.google.datastore.v1.RollbackRequest requestPb) {
-    try {
+    Span span = traceUtil.startSpan(TraceUtil.SPAN_NAME_ROLLBACK);
+    try (Scope scope = traceUtil.getTracer().withSpan(span)) {
       RetryHelper.runWithRetries(
           new Callable<Void>() {
             @Override
@@ -592,7 +627,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
           EXCEPTION_HANDLER,
           getOptions().getClock());
     } catch (RetryHelperException e) {
+      span.setStatus(Status.UNKNOWN.withDescription(e.getMessage()));
       throw DatastoreException.translateAndThrow(e);
+    } finally {
+      span.end(TraceUtil.END_SPAN_OPTIONS);
     }
   }
 }
