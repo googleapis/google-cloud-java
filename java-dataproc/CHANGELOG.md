@@ -1,5 +1,28 @@
 # Changelog
 
+### [0.122.2](https://www.github.com/googleapis/java-dataproc/compare/v0.122.1...v0.122.2) (2020-06-06)
+
+
+### Bug Fixes
+
+* dataproc/v1 raise timeouts in gapic v2 ([#207](https://www.github.com/googleapis/java-dataproc/issues/207)) ([0295e36](https://www.github.com/googleapis/java-dataproc/commit/0295e36c41b54d09e814d391f7e56349c91619ff))
+
+
+### Documentation
+
+* change relative URLs to absolute URLs to fix broken links. ([#202](https://www.github.com/googleapis/java-dataproc/issues/202)) ([8e2f707](https://www.github.com/googleapis/java-dataproc/commit/8e2f707becbd2302c4480b798a7d1d1335b79b3b))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#195](https://www.github.com/googleapis/java-dataproc/issues/195)) ([6fe7813](https://www.github.com/googleapis/java-dataproc/commit/6fe7813949bf54af974768822ef24c17d0b20db9))
+* update dependency com.google.api:api-common to v1.9.2 ([#204](https://www.github.com/googleapis/java-dataproc/issues/204)) ([dbae656](https://www.github.com/googleapis/java-dataproc/commit/dbae656ca82d705e7f725f5fbae49ef24a12f5ef))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#178](https://www.github.com/googleapis/java-dataproc/issues/178)) ([a70d3a5](https://www.github.com/googleapis/java-dataproc/commit/a70d3a5e75a195effe4be9f1d981178219ddcdf2))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#196](https://www.github.com/googleapis/java-dataproc/issues/196)) ([8867d5a](https://www.github.com/googleapis/java-dataproc/commit/8867d5a224f885b9281ac7d95834ad66e0b0a9fc))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#187](https://www.github.com/googleapis/java-dataproc/issues/187)) ([aa7379c](https://www.github.com/googleapis/java-dataproc/commit/aa7379c20b750acd59cdc521304c19e5b3b197da))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#170](https://www.github.com/googleapis/java-dataproc/issues/170)) ([6e256fd](https://www.github.com/googleapis/java-dataproc/commit/6e256fd8f2b7bb978fe598088f3ce1f04370bc46))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#172](https://www.github.com/googleapis/java-dataproc/issues/172)) ([8514a2e](https://www.github.com/googleapis/java-dataproc/commit/8514a2e840403f226f1a9fee52d3c782b2744869))
+
 ### [0.122.1](https://www.github.com/googleapis/java-dataproc/compare/v0.122.0...v0.122.1) (2020-04-20)
 
 
