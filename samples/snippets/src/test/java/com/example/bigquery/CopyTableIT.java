@@ -61,13 +61,14 @@ public class CopyTableIT {
 
   @Test
   public void testCopyTable() {
-    // Create a new destination and source table for each test since existing table cannot be overwritten
-    String generatedDestTableName = "gcloud_test_table_temp_" +
-        UUID.randomUUID().toString().replace('-', '_');
-    String generatedSourceTableName = "gcloud_test_table_temp_" +
-        UUID.randomUUID().toString().replace('-', '_');
+    // Create a new destination and source table for each test since existing table cannot be
+    // overwritten
+    String generatedDestTableName =
+        "gcloud_test_table_temp_" + UUID.randomUUID().toString().replace('-', '_');
+    String generatedSourceTableName =
+        "gcloud_test_table_temp_" + UUID.randomUUID().toString().replace('-', '_');
 
-    //Adding an arbitrary table schema so we aren't copying nothing.
+    // Adding an arbitrary table schema so we aren't copying nothing.
     Schema schema =
         Schema.of(
             Field.of("stringField", StandardSQLTypeName.STRING),
@@ -76,8 +77,11 @@ public class CopyTableIT {
     CreateTable.createTable(BIGQUERY_DATASET_NAME, generatedDestTableName, schema);
     CreateTable.createTable(BIGQUERY_DATASET_NAME, generatedSourceTableName, schema);
 
-    CopyTable.copyTable(BIGQUERY_DATASET_NAME, generatedSourceTableName,
-        BIGQUERY_DATASET_NAME, generatedDestTableName);
+    CopyTable.copyTable(
+        BIGQUERY_DATASET_NAME,
+        generatedSourceTableName,
+        BIGQUERY_DATASET_NAME,
+        generatedDestTableName);
     assertThat(bout.toString()).contains("Table copied successfully.");
 
     // Clean up

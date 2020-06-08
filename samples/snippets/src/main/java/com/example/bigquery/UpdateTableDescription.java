@@ -32,8 +32,8 @@ public class UpdateTableDescription {
     updateTableDescription(datasetName, tableName, newDescription);
   }
 
-  public static void updateTableDescription(String datasetName, String tableName,
-      String newDescription) {
+  public static void updateTableDescription(
+      String datasetName, String tableName, String newDescription) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.

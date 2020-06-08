@@ -44,8 +44,8 @@ public class LoadLocalFile {
     loadLocalFile(datasetName, tableName, csvPath, FormatOptions.csv());
   }
 
-  public static void loadLocalFile(String datasetName, String tableName, Path csvPath,
-                                   FormatOptions formatOptions)
+  public static void loadLocalFile(
+      String datasetName, String tableName, Path csvPath, FormatOptions formatOptions)
       throws IOException, InterruptedException {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
@@ -54,9 +54,7 @@ public class LoadLocalFile {
       TableId tableId = TableId.of(datasetName, tableName);
 
       WriteChannelConfiguration writeChannelConfiguration =
-          WriteChannelConfiguration.newBuilder(tableId)
-              .setFormatOptions(formatOptions)
-              .build();
+          WriteChannelConfiguration.newBuilder(tableId).setFormatOptions(formatOptions).build();
 
       // The location and JobName must be specified; other fields can be auto-detected.
       String jobName = "jobId_" + UUID.randomUUID().toString();

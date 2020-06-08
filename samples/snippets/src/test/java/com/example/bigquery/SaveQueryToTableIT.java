@@ -31,7 +31,6 @@ public class SaveQueryToTableIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
 
   private static void requireEnvVar(String varName) {
@@ -60,8 +59,7 @@ public class SaveQueryToTableIT {
   @Test
   public void testSaveQueryToTable() {
     String tableName = "MY_TABLE_NAME_" + UUID.randomUUID().toString().replace("-", "_");
-    String query =
-        "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
 
     SaveQueryToTable.saveQueryToTable(BIGQUERY_DATASET_NAME, tableName, query);
 

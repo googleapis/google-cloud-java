@@ -25,8 +25,6 @@ import com.google.cloud.bigquery.Schema;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
@@ -42,7 +40,7 @@ public class UpdateTableDMLIT {
   private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
   private static String requireEnvVar(String varName) {
-    String value =  System.getenv(varName);
+    String value = System.getenv(varName);
     assertNotNull(
         "Environment variable " + varName + " is required to perform these tests.",
         System.getenv(varName));

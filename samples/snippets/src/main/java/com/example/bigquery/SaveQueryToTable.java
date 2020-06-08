@@ -27,16 +27,15 @@ public class SaveQueryToTable {
 
   public static void runSaveQueryToTable() {
     // TODO(developer): Replace these variables before running the sample.
-    String query =
-        "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+    String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     String destinationTable = "MY_TABLE";
     String destinationDataset = "MY_DATASET";
 
     saveQueryToTable(destinationDataset, destinationTable, query);
   }
 
-  public static void saveQueryToTable(String destinationDataset,
-      String destinationTableId, String query) {
+  public static void saveQueryToTable(
+      String destinationDataset, String destinationTableId, String query) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.

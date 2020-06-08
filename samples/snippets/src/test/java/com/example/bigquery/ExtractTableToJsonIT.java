@@ -66,8 +66,8 @@ public class ExtractTableToJsonIT {
     String dataFormat = FormatOptions.json().toString();
 
     // Extract table content to GCS in JSON format
-    ExtractTableToJson.extractTableToJson(projectId, datasetName, tableName, destinationUri,
-            dataFormat);
+    ExtractTableToJson.extractTableToJson(
+        projectId, datasetName, tableName, destinationUri, dataFormat);
     assertThat(bout.toString())
         .contains("Table export successful. Check in GCS bucket for the " + dataFormat + " file.");
   }

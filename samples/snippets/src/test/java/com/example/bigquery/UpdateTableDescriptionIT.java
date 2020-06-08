@@ -33,7 +33,6 @@ public class UpdateTableDescriptionIT {
 
   private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
 
-
   private static void requireEnvVar(String varName) {
     assertNotNull(
         "Environment variable " + varName + " is required to perform these tests.",
@@ -72,6 +71,5 @@ public class UpdateTableDescriptionIT {
 
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
-
   }
 }

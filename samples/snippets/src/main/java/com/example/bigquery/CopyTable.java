@@ -37,8 +37,11 @@ public class CopyTable {
     copyTable(sourceDatasetName, sourceTableId, destinationDatasetName, destinationTableId);
   }
 
-  public static void copyTable(String sourceDatasetName, String sourceTableId,
-      String destinationDatasetName, String destinationTableId) {
+  public static void copyTable(
+      String sourceDatasetName,
+      String sourceTableId,
+      String destinationDatasetName,
+      String destinationTableId) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
@@ -50,10 +53,7 @@ public class CopyTable {
       // For more information on CopyJobConfiguration see:
       // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/JobConfiguration.html
       CopyJobConfiguration configuration =
-          CopyJobConfiguration.newBuilder(
-                destinationTable,
-                sourceTable
-              ).build();
+          CopyJobConfiguration.newBuilder(destinationTable, sourceTable).build();
 
       // For more information on Job see:
       // https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html

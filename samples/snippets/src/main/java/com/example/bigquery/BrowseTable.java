@@ -44,16 +44,16 @@ public class BrowseTable {
       TableId tableId = TableId.of(dataset, table);
 
       // Page over 100 records. If you don't need pagination, remove the pageSize parameter.
-      TableResult result =
-          bigquery.listTableData(tableId, TableDataListOption.pageSize(100));
+      TableResult result = bigquery.listTableData(tableId, TableDataListOption.pageSize(100));
 
       // Print the records
-      result.iterateAll().forEach(row -> {
-        row.forEach(fieldValue ->
-            System.out.print(fieldValue.toString() + ", ")
-        );
-        System.out.println();
-      });
+      result
+          .iterateAll()
+          .forEach(
+              row -> {
+                row.forEach(fieldValue -> System.out.print(fieldValue.toString() + ", "));
+                System.out.println();
+              });
 
       System.out.println("Query ran successfully");
     } catch (BigQueryException e) {

@@ -75,7 +75,8 @@ public class AddColumnLoadAppendIT {
 
     List<Field> fields = originalSchema.getFields();
     // Adding below additional column during the load job
-    Field newField = Field.newBuilder("post_abbr", LegacySQLTypeName.STRING)
+    Field newField =
+        Field.newBuilder("post_abbr", LegacySQLTypeName.STRING)
             .setMode(Field.Mode.NULLABLE)
             .build();
     List<Field> newFields = new ArrayList<>(fields);

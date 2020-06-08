@@ -76,6 +76,5 @@ public class BrowseTableIT {
 
     // Clean up
     DeleteTable.deleteTable(BIGQUERY_DATASET_NAME, tableName);
-
   }
 }

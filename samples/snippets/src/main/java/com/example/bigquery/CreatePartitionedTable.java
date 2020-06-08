@@ -35,10 +35,10 @@ public class CreatePartitionedTable {
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
     Schema schema =
-            Schema.of(
-                    Field.of("stringField", StandardSQLTypeName.STRING),
-                    Field.of("booleanField", StandardSQLTypeName.BOOL),
-                    Field.of("dateField", StandardSQLTypeName.DATE));
+        Schema.of(
+            Field.of("stringField", StandardSQLTypeName.STRING),
+            Field.of("booleanField", StandardSQLTypeName.BOOL),
+            Field.of("dateField", StandardSQLTypeName.DATE));
     createPartitionedTable(datasetName, tableName, schema);
   }
 

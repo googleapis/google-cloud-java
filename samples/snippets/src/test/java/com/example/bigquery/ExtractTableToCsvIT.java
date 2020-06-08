@@ -64,8 +64,8 @@ public class ExtractTableToCsvIT {
     String dataFormat = "CSV";
 
     // Extract table content to GCS in CSV format
-    ExtractTableToCsv.extractTableToCsv(projectId, datasetName, tableName, destinationUri,
-            dataFormat);
+    ExtractTableToCsv.extractTableToCsv(
+        projectId, datasetName, tableName, destinationUri, dataFormat);
     assertThat(bout.toString())
         .contains("Table export successful. Check in GCS bucket for the " + dataFormat + " file.");
   }

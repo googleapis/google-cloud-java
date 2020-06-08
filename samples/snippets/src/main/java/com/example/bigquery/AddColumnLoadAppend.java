@@ -47,14 +47,15 @@ public class AddColumnLoadAppend {
     // 'REQUIRED' fields cannot  be added to an existing schema, so the additional column must be
     // 'NULLABLE'.
     Schema schema =
-      Schema.of(
-        Field.newBuilder("name", LegacySQLTypeName.STRING)
+        Schema.of(
+            Field.newBuilder("name", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.REQUIRED)
                 .build());
 
     List<Field> fields = schema.getFields();
     // Adding below additional column during the load job
-    Field newField = Field.newBuilder("post_abbr", LegacySQLTypeName.STRING)
+    Field newField =
+        Field.newBuilder("post_abbr", LegacySQLTypeName.STRING)
             .setMode(Field.Mode.NULLABLE)
             .build();
     List<Field> newFields = new ArrayList<>(fields);
@@ -63,8 +64,8 @@ public class AddColumnLoadAppend {
     addColumnLoadAppend(datasetName, tableName, sourceUri, newSchema);
   }
 
-  public static void addColumnLoadAppend(String datasetName, String tableName,
-     String sourceUri, Schema newSchema) throws Exception {
+  public static void addColumnLoadAppend(
+      String datasetName, String tableName, String sourceUri, Schema newSchema) throws Exception {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.

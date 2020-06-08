@@ -24,7 +24,6 @@ import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
@@ -63,7 +62,8 @@ public class UpdateTableDML {
               .build();
 
       // Imports a local JSON file into a table.
-      Path jsonPath = FileSystems.getDefault().getPath("src/test/resources", "userSessionsData.json");
+      Path jsonPath =
+          FileSystems.getDefault().getPath("src/test/resources", "userSessionsData.json");
 
       // The location and JobName must be specified; other fields can be auto-detected.
       String jobName = "jobId_" + UUID.randomUUID().toString();
@@ -87,16 +87,19 @@ public class UpdateTableDML {
         return;
       }
 
-      System.out.println(job.getStatistics().toString() + " userSessionsData json uploaded successfully");
+      System.out.println(
+          job.getStatistics().toString() + " userSessionsData json uploaded successfully");
 
       // Write a DML query to modify UserSessions table
       // To create DML query job to mask the last octet in every row's ip_address column
-      String dmlQuery = String.format("UPDATE `%s.%s` \n"
-          + "SET ip_address = REGEXP_REPLACE(ip_address, r\"(\\.[0-9]+)$\", \".0\")\n"
-          + "WHERE TRUE", datasetName, tableName);
+      String dmlQuery =
+          String.format(
+              "UPDATE `%s.%s` \n"
+                  + "SET ip_address = REGEXP_REPLACE(ip_address, r\"(\\.[0-9]+)$\", \".0\")\n"
+                  + "WHERE TRUE",
+              datasetName, tableName);
 
-      QueryJobConfiguration dmlQueryConfig =
-          QueryJobConfiguration.newBuilder(dmlQuery).build();
+      QueryJobConfiguration dmlQueryConfig = QueryJobConfiguration.newBuilder(dmlQuery).build();
 
       // Execute the query.
       TableResult result = bigquery.query(dmlQueryConfig);

@@ -65,9 +65,9 @@ public class UpdateTableExpirationIT {
     String suffix = UUID.randomUUID().toString().replace('-', '_');
     String tableName = "update_expiration_table_" + suffix;
     Schema schema =
-            Schema.of(
-                    Field.of("stringField", StandardSQLTypeName.STRING),
-                    Field.of("booleanField", StandardSQLTypeName.BOOL));
+        Schema.of(
+            Field.of("stringField", StandardSQLTypeName.STRING),
+            Field.of("booleanField", StandardSQLTypeName.BOOL));
     CreateTable.createTable(BIGQUERY_DATASET_NAME, tableName, schema);
     Long newExpiration = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
     UpdateTableExpiration.updateTableExpiration(BIGQUERY_DATASET_NAME, tableName, newExpiration);

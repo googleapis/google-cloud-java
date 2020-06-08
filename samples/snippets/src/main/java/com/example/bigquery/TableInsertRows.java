@@ -42,8 +42,8 @@ public class TableInsertRows {
     tableInsertRows(datasetName, tableName, rowContent);
   }
 
-  public static void tableInsertRows(String datasetName, String tableName,
-     Map<String, Object> rowContent) {
+  public static void tableInsertRows(
+      String datasetName, String tableName, Map<String, Object> rowContent) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.

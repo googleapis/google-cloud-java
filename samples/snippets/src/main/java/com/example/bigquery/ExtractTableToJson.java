@@ -50,7 +50,10 @@ public class ExtractTableToJson {
 
   // Exports datasetName:tableName to destinationUri as a JSON file
   public static void extractTableToJson(
-      String projectId, String datasetName, String tableName, String destinationUri,
+      String projectId,
+      String datasetName,
+      String tableName,
+      String destinationUri,
       String dataFormat) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
@@ -75,8 +78,8 @@ public class ExtractTableToJson {
             "BigQuery was unable to extract due to an error: \n" + job.getStatus().getError());
         return;
       }
-      System.out.println("Table export successful. Check in GCS bucket for the " +
-          dataFormat + " file.");
+      System.out.println(
+          "Table export successful. Check in GCS bucket for the " + dataFormat + " file.");
     } catch (BigQueryException | InterruptedException e) {
       System.out.println("Table extraction job was interrupted. \n" + e.toString());
     }

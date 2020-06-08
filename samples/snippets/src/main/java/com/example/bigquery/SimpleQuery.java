@@ -38,8 +38,7 @@ public class SimpleQuery {
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
       // Create the query job.
-      QueryJobConfiguration queryConfig =
-          QueryJobConfiguration.newBuilder(query).build();
+      QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
 
       // Execute the query.
       TableResult result = bigquery.query(queryConfig);

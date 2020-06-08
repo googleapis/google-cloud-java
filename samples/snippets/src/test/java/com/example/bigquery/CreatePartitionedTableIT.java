@@ -62,10 +62,10 @@ public class CreatePartitionedTableIT {
   public void testCreatePartitionedTable() {
     String tableName = "MY_PARTITIONED_TABLE";
     Schema schema =
-            Schema.of(
-                    Field.of("stringField", StandardSQLTypeName.STRING),
-                    Field.of("booleanField", StandardSQLTypeName.BOOL),
-                    Field.of("dateField", StandardSQLTypeName.DATE));
+        Schema.of(
+            Field.of("stringField", StandardSQLTypeName.STRING),
+            Field.of("booleanField", StandardSQLTypeName.BOOL),
+            Field.of("dateField", StandardSQLTypeName.DATE));
 
     CreatePartitionedTable.createPartitionedTable(BIGQUERY_DATASET_NAME, tableName, schema);
 

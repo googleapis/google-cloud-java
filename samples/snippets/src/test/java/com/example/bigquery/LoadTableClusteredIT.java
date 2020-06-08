@@ -66,13 +66,13 @@ public class LoadTableClusteredIT {
     String tableName = "LOAD_CLUSTERED_TABLE_TEST";
 
     Schema schema =
-            Schema.of(
-                    Field.of("name", StandardSQLTypeName.STRING),
-                    Field.of("post_abbr", StandardSQLTypeName.STRING),
-                    Field.of("date", StandardSQLTypeName.DATE));
+        Schema.of(
+            Field.of("name", StandardSQLTypeName.STRING),
+            Field.of("post_abbr", StandardSQLTypeName.STRING),
+            Field.of("date", StandardSQLTypeName.DATE));
 
-    LoadTableClustered.loadTableClustered(BIGQUERY_DATASET_NAME, tableName, sourceUri,
-            schema, ImmutableList.of("name", "post_abbr"));
+    LoadTableClustered.loadTableClustered(
+        BIGQUERY_DATASET_NAME, tableName, sourceUri, schema, ImmutableList.of("name", "post_abbr"));
 
     assertThat(bout.toString())
         .contains("Data successfully loaded into clustered table during load job");

@@ -39,8 +39,8 @@ public class LoadParquetReplaceTable {
     loadParquetReplaceTable(datasetName, tableName, sourceUri);
   }
 
-  public static void loadParquetReplaceTable(String datasetName, String tableName,
-     String sourceUri) {
+  public static void loadParquetReplaceTable(
+      String datasetName, String tableName, String sourceUri) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
       // once, and can be reused for multiple requests.
