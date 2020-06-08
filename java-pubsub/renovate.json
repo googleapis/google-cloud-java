@@ -76,5 +76,6 @@
       "groupName": "jackson dependencies"
     }
   ],
-  "semanticCommits": true
+  "semanticCommits": true,
+  "masterIssue": true
 }
