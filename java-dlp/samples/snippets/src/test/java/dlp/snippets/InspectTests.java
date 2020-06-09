@@ -143,6 +143,14 @@ public class InspectTests {
     assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
   }
 
+  @Test
+  public void testInspectWithCustomRegex() throws Exception {
+    InspectWithCustomRegex.inspectWithCustomRegex(
+        PROJECT_ID, "Patients MRN 444-5-22222", "[1-9]{3}-[1-9]{1}-[1-9]{5}");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Info type: C_MRN"));
+  }
 
   @Test
   public void testInspectStringWithExclusionDict() throws Exception {
