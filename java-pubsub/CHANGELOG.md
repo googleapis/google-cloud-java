@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.107.0](https://www.github.com/googleapis/java-pubsub/compare/v1.106.0...v1.107.0) (2020-06-09)
+
+
+### Features
+
+* add detach subscription rpc ([#216](https://www.github.com/googleapis/java-pubsub/issues/216)) ([09866b0](https://www.github.com/googleapis/java-pubsub/commit/09866b0d36e2dd1c994b4c91807d71552b65c8e1))
+* regenerated to pick up changes in the API or client library generator ([#185](https://www.github.com/googleapis/java-pubsub/issues/185)) ([16624f8](https://www.github.com/googleapis/java-pubsub/commit/16624f88ad19ccaf2ea074a62242496be103659f)), closes [#533](https://www.github.com/googleapis/java-pubsub/issues/533) [#535](https://www.github.com/googleapis/java-pubsub/issues/535) [#534](https://www.github.com/googleapis/java-pubsub/issues/534)
+
+
+### Bug Fixes
+
+* update ignored diffs ([#206](https://www.github.com/googleapis/java-pubsub/issues/206)) ([240e141](https://www.github.com/googleapis/java-pubsub/commit/240e141a8b4f8e4d4e252672bb4ae4d091dde453)), closes [#6784](https://www.github.com/googleapis/java-pubsub/issues/6784) [#11](https://www.github.com/googleapis/java-pubsub/issues/11)
+
+
+### Dependencies
+
+* bump shared-deps version and add back certain test deps ([#218](https://www.github.com/googleapis/java-pubsub/issues/218)) ([49ecc69](https://www.github.com/googleapis/java-pubsub/commit/49ecc69fb6a63abf6a83f82f2820ff386cdaf5fb))
+* remove grpc test dep since it's now in shared-deps ([#220](https://www.github.com/googleapis/java-pubsub/issues/220)) ([28ab521](https://www.github.com/googleapis/java-pubsub/commit/28ab5211c344d60743c3cb11f568c8f2a4e2c040))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.6.0 ([#219](https://www.github.com/googleapis/java-pubsub/issues/219)) ([c6fc69d](https://www.github.com/googleapis/java-pubsub/commit/c6fc69d47dea6f3833a9a2945d27ed3f9e310c52))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.7.0 ([#221](https://www.github.com/googleapis/java-pubsub/issues/221)) ([89eae9a](https://www.github.com/googleapis/java-pubsub/commit/89eae9a6c3dc585926f85fc0de2b80f7dbfedb42))
+* update dependency com.google.errorprone:error_prone_annotations to v2.4.0 ([#225](https://www.github.com/googleapis/java-pubsub/issues/225)) ([f375ecb](https://www.github.com/googleapis/java-pubsub/commit/f375ecbbd66e518a25c1d0459ba0634121ddced1))
+
 ## [1.106.0](https://www.github.com/googleapis/java-pubsub/compare/v1.105.1...v1.106.0) (2020-05-20)
 
 
