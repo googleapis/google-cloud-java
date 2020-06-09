@@ -162,6 +162,10 @@
         <groupId>javax.annotation</groupId>
         <artifactId>javax.annotation-api</artifactId>
         <version>${javax.annotations.version}</version>
+        <!-- Marking the scope as provided since retention=SOURCE
+            https://docs.oracle.com/javase/7/docs/api/javax/annotation/Generated.html
+            -->
+        <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.codehaus.mojo</groupId>
