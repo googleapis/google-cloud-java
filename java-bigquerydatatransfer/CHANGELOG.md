@@ -1,5 +1,25 @@
 # Changelog
 
+### [0.127.3](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.127.2...v0.127.3) (2020-06-09)
+
+
+### Bug Fixes
+
+* restore GAPIC v2 retry configs ([#166](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/166)) ([64a92be](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/64a92be4d2e46d753cdaa491d2212cbe0124ceb9))
+
+
+### Documentation
+
+* **samples:** add codeowner file ([#180](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/180)) ([d7b5ba5](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/d7b5ba52a72d068fd6c51b234fdbe289d39aced9))
+* **samples:** migrate samples into client ([#177](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/177)) ([6c52fa8](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/6c52fa84bf3cbaeec01fee909879628fe720e65c))
+
+
+### Dependencies
+
+* bump shared-deps version and add back certain test deps ([#174](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/174)) ([ee0c674](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/ee0c6743dec8f0ffd69bfe9546f1e7736a27437d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.4.0 ([#169](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/169)) ([6a7949d](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/6a7949de6fb268427a908223dbc50c20a8810948))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.7.0 ([#175](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/175)) ([2d2fae3](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/2d2fae3dc08163cc76ec8e5ac7d59014b0a38413))
+
 ### [0.127.2](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.127.1...v0.127.2) (2020-05-14)
 
 
