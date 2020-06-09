@@ -118,4 +118,13 @@ public class DeIdentificationTests {
     assertThat(output, containsString("Text after redaction: "
         + "My name is Alicia Abernathy, and my email address is [email-address]."));
   }
+
+  @Test
+  public void testDeIdentifyWithSimpleWordList() throws IOException {
+    DeIdentifyWithSimpleWordList.deidentifyWithSimpleWordList(
+        PROJECT_ID, "Patient was seen in RM-YELLOW then transferred to rm green.");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Text after replace with infotype config: "));
+  }
 }
