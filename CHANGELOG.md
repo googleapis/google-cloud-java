@@ -1,5 +1,25 @@
 # Changelog
 
+### [1.116.2](https://www.github.com/googleapis/java-bigquery/compare/v1.116.1...v1.116.2) (2020-06-09)
+
+
+### Documentation
+
+* **samples:** add load CSV from GCS sample ([#426](https://www.github.com/googleapis/java-bigquery/issues/426)) ([3810366](https://www.github.com/googleapis/java-bigquery/commit/3810366451097a7f14db11504103865540ac242a))
+* **samples:** add load CSV from GCS to overwrite table sample ([#428](https://www.github.com/googleapis/java-bigquery/issues/428)) ([21a3606](https://www.github.com/googleapis/java-bigquery/commit/21a3606f5fb65287f808b12a6fef65817c8a8ba6))
+* **samples:** add update table using dml query sample ([#424](https://www.github.com/googleapis/java-bigquery/issues/424)) ([3902ba1](https://www.github.com/googleapis/java-bigquery/commit/3902ba1cf0d8a88d3e6f30b6606067503487c77d)), closes [#413](https://www.github.com/googleapis/java-bigquery/issues/413)
+* **samples:** added copy table and accompanying test ([#414](https://www.github.com/googleapis/java-bigquery/issues/414)) ([de0d97f](https://www.github.com/googleapis/java-bigquery/commit/de0d97f2f940c9cf507d19c5595e1a0e819ef19c))
+* **samples:** added extract to json and accompanying test ([#416](https://www.github.com/googleapis/java-bigquery/issues/416)) ([16a956d](https://www.github.com/googleapis/java-bigquery/commit/16a956db0aa545df84f7885ffb4425460cf55a16))
+* **samples:** adding browse table sample and test ([#422](https://www.github.com/googleapis/java-bigquery/issues/422)) ([dff4e5f](https://www.github.com/googleapis/java-bigquery/commit/dff4e5f86764b1c779c2ef131182483e2ffa1c1b))
+* **samples:** adding destination query sample and test ([#418](https://www.github.com/googleapis/java-bigquery/issues/418)) ([0f50961](https://www.github.com/googleapis/java-bigquery/commit/0f50961aaf1092f3ecc4e02fa9cebb50f6d45e90))
+* **samples:** adding simple query example for completeness ([#417](https://www.github.com/googleapis/java-bigquery/issues/417)) ([59426df](https://www.github.com/googleapis/java-bigquery/commit/59426df912f743b7927deb562366b625aba6f087))
+* **samples:** rename extract table json to extract table csv ([#415](https://www.github.com/googleapis/java-bigquery/issues/415)) ([c1f21e6](https://www.github.com/googleapis/java-bigquery/commit/c1f21e6c16df40bb3c71610f9d5b4fb4855b28fb))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20200523-1.30.9 ([#409](https://www.github.com/googleapis/java-bigquery/issues/409)) ([d30c823](https://www.github.com/googleapis/java-bigquery/commit/d30c823c5a604b195f17d8ac33894107cdee967e))
+
 ### [1.116.1](https://www.github.com/googleapis/java-bigquery/compare/v1.116.0...v1.116.1) (2020-06-01)
 
 
