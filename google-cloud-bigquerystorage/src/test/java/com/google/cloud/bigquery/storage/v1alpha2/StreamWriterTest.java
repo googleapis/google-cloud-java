@@ -294,8 +294,7 @@ public class StreamWriterTest {
     // Note we are not advancing time or reaching the count threshold but messages should
     // still get written by call to shutdown
 
-    writer.shutdown();
-    writer.awaitTermination(10, TimeUnit.SECONDS);
+    writer.close();
 
     // Verify the appends completed
     assertTrue(appendFuture1.isDone());
@@ -407,8 +406,7 @@ public class StreamWriterTest {
     // Wait is necessary for response to be scheduled before timer is advanced.
     fakeExecutor.advanceTime(Duration.ofSeconds(10));
     t.join();
-    writer.shutdown();
-    writer.awaitTermination(1, TimeUnit.MINUTES);
+    writer.close();
   }
 
   @Test
@@ -527,8 +525,7 @@ public class StreamWriterTest {
     } catch (ExecutionException e) {
       assertEquals(transientError.toString(), e.getCause().getCause().toString());
     }
-    writer.shutdown();
-    assertTrue(writer.awaitTermination(1, TimeUnit.MINUTES));
+    writer.close();
   }
 
   @Test
@@ -643,7 +640,7 @@ public class StreamWriterTest {
             .getFlowControlSettings()
             .getMaxOutstandingRequestBytes()
             .longValue());
-    writer.shutdown();
+    writer.close();
   }
 
   @Test
@@ -820,29 +817,6 @@ public class StreamWriterTest {
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
       // Expected
-    }
-  }
-
-  @Test
-  public void testAwaitTermination() throws Exception {
-    StreamWriter writer =
-        getTestStreamWriterBuilder("projects/p/datasets/d/tables/t/streams/await").build();
-    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
-    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"AWAIT"});
-    writer.shutdown();
-    assertTrue(writer.awaitTermination(1, TimeUnit.MINUTES));
-  }
-
-  @Test
-  public void testClose() throws Exception {
-    StreamWriter writer = getTestStreamWriterBuilder().build();
-    writer.close();
-    try {
-      writer.shutdown();
-      fail("Should throw");
-    } catch (IllegalStateException e) {
-      LOG.info(e.toString());
-      assertEquals("Cannot shut down a writer already shut-down.", e.getMessage());
     }
   }
 

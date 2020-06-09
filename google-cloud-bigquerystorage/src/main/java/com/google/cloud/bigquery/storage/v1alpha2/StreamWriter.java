@@ -164,14 +164,10 @@ public class StreamWriter implements AutoCloseable {
         Instant.ofEpochSecond(
             stream.getCreateTime().getSeconds(), stream.getCreateTime().getNanos());
     if (stream.getType() == Stream.WriteStream.Type.PENDING && stream.hasCommitTime()) {
-      backgroundResources.shutdown();
-      backgroundResources.awaitTermination(1, TimeUnit.MINUTES);
       throw new IllegalStateException(
           "Cannot write to a stream that is already committed: " + streamName);
     }
     if (createTime.plus(streamTTL).compareTo(Instant.now()) < 0) {
-      backgroundResources.shutdown();
-      backgroundResources.awaitTermination(1, TimeUnit.MINUTES);
       throw new IllegalStateException(
           "Cannot write to a stream that is already expired: " + streamName);
     }
@@ -360,7 +356,7 @@ public class StreamWriter implements AutoCloseable {
   /** Close the stream writer. Shut down all resources. */
   @Override
   public void close() {
-    LOG.info("Closing stream writer");
+    LOG.info("Closing stream writer:" + streamName);
     shutdown();
     try {
       awaitTermination(1, TimeUnit.MINUTES);
@@ -512,10 +508,12 @@ public class StreamWriter implements AutoCloseable {
    * should be invoked prior to deleting the {@link WriteStream} object in order to ensure that no
    * pending messages are lost.
    */
-  public void shutdown() {
-    Preconditions.checkState(
-        !shutdown.getAndSet(true), "Cannot shut down a writer already shut-down.");
-    LOG.info("Shutdown called on writer");
+  protected void shutdown() {
+    if (shutdown.getAndSet(true)) {
+      LOG.fine("Already shutdown.");
+      return;
+    }
+    LOG.fine("Shutdown called on writer");
     if (currentAlarmFuture != null && activeAlarm.getAndSet(false)) {
       currentAlarmFuture.cancel(false);
     }
@@ -535,7 +533,7 @@ public class StreamWriter implements AutoCloseable {
    *
    * <p>Call this method to make sure all resources are freed properly.
    */
-  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+  protected boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return backgroundResources.awaitTermination(duration, unit);
   }
 
