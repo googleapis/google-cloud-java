@@ -54,6 +54,7 @@ public class InspectTests {
   // TODO: Update as ENV_VARs
   private static final String datastoreNamespace = "";
   private static final String datastoreKind = "dlp";
+  private static final String DOCUMENT_INPUT_FILE = "src/test/resources/sensitive-data-image.jpg";
 
   private ByteArrayOutputStream bout;
   private UUID testRunUuid = UUID.randomUUID();
@@ -265,6 +266,27 @@ public class InspectTests {
     String output = bout.toString();
     assertThat(output, containsString("Info type: PHONE_NUMBER"));
     assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+  }
+
+  @Test
+  public void testRedactImageAllInfoTypes() throws Exception {
+    InspectImageFileAllInfoTypes.inspectImageFileAllInfoTypes(PROJECT_ID, DOCUMENT_INPUT_FILE);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Info type: PHONE_NUMBER"));
+    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+    assertThat(output, containsString("Info type: DATE"));
+  }
+
+  @Test
+  public void testRedactImageListedInfoTypes() throws Exception {
+    InspectImageFileListedInfoTypes.inspectImageFileListedInfoTypes(
+        PROJECT_ID, DOCUMENT_INPUT_FILE);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Info type: PHONE_NUMBER"));
+    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+    assertThat(output, not(containsString("Info type: DATE")));
   }
 
   @Test
