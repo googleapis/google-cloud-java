@@ -6,7 +6,7 @@
   <packaging>pom</packaging>
   <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
   <name>Google Cloud BigQuery Connections Parent</name>
-  <url>https://github.com/googleapis/java-bigquery-connection</url>
+  <url>https://github.com/googleapis/java-bigqueryconnection</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -32,13 +32,13 @@
     <name>Google LLC</name>
   </organization>
   <scm>
-    <connection>scm:git:git@github.com:googleapis/java-bigquery-connection.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-bigquery-connection.git</developerConnection>
-    <url>https://github.com/googleapis/java-bigquery-connection</url>
+    <connection>scm:git:git@github.com:googleapis/java-bigqueryconnection.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-bigqueryconnection.git</developerConnection>
+    <url>https://github.com/googleapis/java-bigqueryconnection</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
-    <url>https://github.com/googleapis/java-bigquery-connection/issues</url>
+    <url>https://github.com/googleapis/java-bigqueryconnection/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
   <distributionManagement>

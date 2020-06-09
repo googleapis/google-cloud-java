@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>bigquery-connection-install-without-bom</artifactId>
+  <artifactId>bigqueryconnection-install-without-bom</artifactId>
   <packaging>jar</packaging>
   <name>Google Cloud BigQuery Connections Install Without Bom</name>
-  <url>https://github.com/googleapis/java-bigquery-connection</url>
+  <url>https://github.com/googleapis/java-bigqueryconnection</url>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START bigquery-connection_install_without_bom] -->
+    <!-- [START bigqueryconnection_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigqueryconnection</artifactId>
       <version>0.1.0</version>
     </dependency>
-    <!-- [END bigquery-connection_install_without_bom] -->
+    <!-- [END bigqueryconnection_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
