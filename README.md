@@ -19,7 +19,7 @@ See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>5.5.0</version>
+      <version>5.6.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
