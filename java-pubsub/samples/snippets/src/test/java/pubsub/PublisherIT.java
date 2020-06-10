@@ -77,6 +77,11 @@ public class PublisherIT {
 
   @Test
   public void testPublisher() throws Exception {
+    // Test quickstart publish
+    PublisherExample.publisherExample(projectId, topicId);
+    assertThat(bout.toString()).contains("Published message ID: ");
+
+    bout.reset();
     // Test publish with error handling
     PublishWithErrorHandlerExample.publishWithErrorHandlerExample(projectId, topicId);
     assertThat(bout.toString()).contains("Published message ID: ");

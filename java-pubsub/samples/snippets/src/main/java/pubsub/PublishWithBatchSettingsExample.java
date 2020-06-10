@@ -55,7 +55,7 @@ public class PublishWithBatchSettingsExample {
       Duration publishDelayThreshold = Duration.ofMillis(100); // default : 1 ms
 
       // Publish request get triggered based on request size, messages count & time since last
-      // publish
+      // publish, whichever condition is met first.
       BatchingSettings batchingSettings =
           BatchingSettings.newBuilder()
               .setElementCountThreshold(messageCountBatchSize)
