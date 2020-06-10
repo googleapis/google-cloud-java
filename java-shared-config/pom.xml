@@ -212,6 +212,13 @@
             <style>google</style>
             <verbose>true</verbose>
           </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>com.google.googlejavaformat</groupId>
+              <artifactId>google-java-format</artifactId>
+              <version>1.7</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
