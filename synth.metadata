@@ -1,11 +1,10 @@
 {
-  "updateTime": "2020-02-29T09:42:45.087168Z",
   "sources": [
     {
-      "generator": {
-        "name": "artman",
-        "version": "0.47.0",
-        "dockerImage": "googleapis/artman@sha256:b3e50d6b8de03920b9f065bbc3d210e2ca93a043446f1fa16cdf567393c09678"
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-logging.git",
+        "sha": "83544fa5b9eaf36e5fbe112270e51421cdf09365"
       }
     },
     {
@@ -18,10 +17,10 @@
       }
     },
     {
-      "template": {
-        "name": "java_library",
-        "origin": "synthtool.gcp",
-        "version": "2020.2.4"
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "fc0fce9d9ae75b536754b2d0f49408205d4c7a53"
       }
     }
   ],
