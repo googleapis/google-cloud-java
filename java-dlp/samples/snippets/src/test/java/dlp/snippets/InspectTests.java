@@ -260,6 +260,42 @@ public class InspectTests {
   }
 
   @Test
+  public void testInspectStringMultipleRulesPatientRule() throws Exception {
+    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
+        "patient: Jane Doe");
+
+    String output = bout.toString();
+    assertThat(output, containsString("VERY_LIKELY"));
+  }
+
+  @Test
+  public void testInspectStringMultipleRulesDoctorRule() throws Exception {
+    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
+        "doctor: Jane Doe");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Findings: 0"));
+  }
+
+  @Test
+  public void testInspectStringMultipleRulesQuasimodoRule() throws Exception {
+    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
+        "patient: Quasimodo");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Findings: 0"));
+  }
+
+  @Test
+  public void testInspectStringMultipleRulesRedactedRule() throws Exception {
+    InspectStringMultipleRules.inspectStringMultipleRules(PROJECT_ID,
+        "name of patient: REDACTED");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Findings: 0"));
+  }
+
+  @Test
   public void textInspectTestFile() throws Exception {
     InspectTextFile.inspectTextFile(PROJECT_ID, "src/test/resources/test.txt");
     String output = bout.toString();
