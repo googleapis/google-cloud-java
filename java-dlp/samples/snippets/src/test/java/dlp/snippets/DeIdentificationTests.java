@@ -20,6 +20,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertNotNull;
 
+import com.google.privacy.dlp.v2.FieldId;
+import com.google.privacy.dlp.v2.Table;
+import com.google.privacy.dlp.v2.Table.Row;
+import com.google.privacy.dlp.v2.Value;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -91,6 +95,72 @@ public class DeIdentificationTests {
 
     String output = bout.toString();
     assertThat(output, containsString("Text after re-identification:"));
+  }
+
+  @Test
+  public void testDeIdentifyTextWithFpe() throws IOException {
+    DeIdentifyTextWithFpe.deIdentifyTextWithFpe(
+        PROJECT_ID, "My phone number is 4359916732", kmsKeyName, wrappedKey);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Text after format-preserving encryption: "));
+  }
+
+  @Test
+  public void testReIdentifyTextWithFpe() throws IOException {
+    ReIdentifyTextWithFpe.reIdentifyTextWithFpe(
+        PROJECT_ID,
+        "My phone number is PHONE_TOKEN(10):9617256398",
+        kmsKeyName,
+        wrappedKey);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Text after re-identification: "));
+  }
+
+  @Test
+  public void testDeIdentifyTableWithFpe() throws IOException {
+    Table tableToDeIdentify = Table.newBuilder()
+        .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
+        .addHeaders(FieldId.newBuilder().setName("Date").build())
+        .addHeaders(FieldId.newBuilder().setName("Compensation").build())
+        .addRows(Row.newBuilder()
+            .addValues(Value.newBuilder().setStringValue("11111").build())
+            .addValues(Value.newBuilder().setStringValue("2015").build())
+            .addValues(Value.newBuilder().setStringValue("$10").build())
+            .build())
+        .addRows(Row.newBuilder()
+            .addValues(Value.newBuilder().setStringValue("11111").build())
+            .addValues(Value.newBuilder().setStringValue("2016").build())
+            .addValues(Value.newBuilder().setStringValue("$20").build())
+            .build())
+        .addRows(Row.newBuilder()
+            .addValues(Value.newBuilder().setStringValue("22222").build())
+            .addValues(Value.newBuilder().setStringValue("2016").build())
+            .addValues(Value.newBuilder().setStringValue("$15").build())
+            .build())
+        .build();
+
+    DeIdentifyTableWithFpe.deIdentifyTableWithFpe(
+        PROJECT_ID, tableToDeIdentify, kmsKeyName, wrappedKey);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Table after format-preserving encryption:"));
+  }
+
+  @Test
+  public void testReIdentifyTableWithFpe() throws IOException {
+    Table tableToReIdentify = Table.newBuilder()
+        .addHeaders(FieldId.newBuilder().setName("Employee ID").build())
+        .addRows(Row.newBuilder()
+            .addValues(Value.newBuilder().setStringValue("28777").build()).build())
+        .build();
+
+    ReIdentifyTableWithFpe.reIdentifyTableWithFpe(
+        PROJECT_ID, tableToReIdentify, kmsKeyName, wrappedKey);
+
+    String output = bout.toString();
+    assertThat(output, containsString("Table after re-identification:"));
   }
 
   @Test
