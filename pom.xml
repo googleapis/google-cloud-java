@@ -17,12 +17,8 @@
     <logback.version>1.2.3</logback.version>
     <easymock.version>3.6</easymock.version>
     <truth.version>1.0.1</truth.version>
-    <gson.version>2.8.6</gson.version>
     <logging.version>1.101.2</logging.version>
-    <guava.version>29.0-android</guava.version>
     <slf4j.version>1.7.30</slf4j.version>
-    <google.auth.version>0.20.0</google.auth.version>
-    <junit.version>4.13</junit.version>
     <google.api-common.version>1.9.0</google.api-common.version>
   </properties>
 
@@ -76,21 +72,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava-bom</artifactId>
-        <version>${guava.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.code.gson</groupId>
-        <artifactId>gson</artifactId>
-        <version>${gson.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-bom</artifactId>
-        <version>${google.auth.version}</version>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>0.7.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -120,12 +104,10 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
-      <version>${google.api-common.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>1.93.5</version>
     </dependency>
     <dependency>
       <groupId>com.google.auth</groupId>
@@ -140,7 +122,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
+      <version>4.13</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -226,4 +208,13 @@
       </plugin>
     </plugins>
   </reporting>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>
