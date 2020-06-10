@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/googleapis/java-shared-config/compare/v0.7.0...v0.8.0) (2020-06-10)
+
+
+### Features
+
+* revert "feat: mark auto-value-annotations scope as provided" ([#154](https://www.github.com/googleapis/java-shared-config/issues/154)) ([88afb4e](https://www.github.com/googleapis/java-shared-config/commit/88afb4e7c57cb6e00929c098135314a926d9da30))
+
 ## [0.7.0](https://www.github.com/googleapis/java-shared-config/compare/v0.6.0...v0.7.0) (2020-06-10)
 
 
