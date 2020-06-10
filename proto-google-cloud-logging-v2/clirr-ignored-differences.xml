@@ -16,4 +16,14 @@
     <className>com/google/logging/v2/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <!-- TODO: remove after 1.102.0 is released -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/logging/type/HttpRequest*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/logging/type/LogSeverity*</className>
+  </difference>
 </differences>
