@@ -13,8 +13,29 @@ Java idiomatic client for [Cloud BigQuery Connection][product-docs].
 
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>5.6.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
 
-If you are using Maven, add this to your pom.xml file:
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-bigqueryconnection</artifactId>
+  </dependency>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 ```xml
 <dependency>
@@ -22,6 +43,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-bigqueryconnection</artifactId>
   <version>0.1.0</version>
 </dependency>
+
 ```
 
 [//]: # ({x-version-update-start:google-cloud-bigqueryconnection:released})
