@@ -95,7 +95,10 @@ public class InspectDatastoreEntity {
 
       // Specify how the content should be inspected.
       InspectConfig inspectConfig =
-          InspectConfig.newBuilder().addAllInfoTypes(infoTypes).setIncludeQuote(true).build();
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setIncludeQuote(true)
+              .build();
 
       // Specify the action that is triggered when the job completes.
       String pubSubTopic = String.format("projects/%s/topics/%s", projectId, topicId);

@@ -67,40 +67,45 @@ public class InspectStringMultipleRules {
       ContentItem item = ContentItem.newBuilder().setByteItem(byteItem).build();
 
       // Construct hotword rules
-      HotwordRule patientRule = HotwordRule.newBuilder()
-          .setHotwordRegex(Regex.newBuilder().setPattern("patient"))
-          .setProximity(Proximity.newBuilder().setWindowBefore(10))
-          .setLikelihoodAdjustment(
-              LikelihoodAdjustment.newBuilder().setFixedLikelihood(Likelihood.VERY_LIKELY))
-          .build();
+      HotwordRule patientRule =
+          HotwordRule.newBuilder()
+              .setHotwordRegex(Regex.newBuilder().setPattern("patient"))
+              .setProximity(Proximity.newBuilder().setWindowBefore(10))
+              .setLikelihoodAdjustment(
+                  LikelihoodAdjustment.newBuilder().setFixedLikelihood(Likelihood.VERY_LIKELY))
+              .build();
 
-      HotwordRule doctorRule = HotwordRule.newBuilder()
-          .setHotwordRegex(Regex.newBuilder().setPattern("doctor"))
-          .setProximity(Proximity.newBuilder().setWindowBefore(10))
-          .setLikelihoodAdjustment(
-              LikelihoodAdjustment.newBuilder().setFixedLikelihood(Likelihood.UNLIKELY))
-          .build();
+      HotwordRule doctorRule =
+          HotwordRule.newBuilder()
+              .setHotwordRegex(Regex.newBuilder().setPattern("doctor"))
+              .setProximity(Proximity.newBuilder().setWindowBefore(10))
+              .setLikelihoodAdjustment(
+                  LikelihoodAdjustment.newBuilder().setFixedLikelihood(Likelihood.UNLIKELY))
+              .build();
 
       // Construct exclusion rules
-      ExclusionRule quasimodoRule = ExclusionRule.newBuilder()
-          .setDictionary(
-              Dictionary.newBuilder().setWordList(WordList.newBuilder().addWords("Quasimodo")))
-          .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
-          .build();
+      ExclusionRule quasimodoRule =
+          ExclusionRule.newBuilder()
+              .setDictionary(
+                  Dictionary.newBuilder().setWordList(WordList.newBuilder().addWords("Quasimodo")))
+              .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
+              .build();
 
-      ExclusionRule redactedRule = ExclusionRule.newBuilder()
-          .setRegex(Regex.newBuilder().setPattern("REDACTED"))
-          .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
-          .build();
+      ExclusionRule redactedRule =
+          ExclusionRule.newBuilder()
+              .setRegex(Regex.newBuilder().setPattern("REDACTED"))
+              .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
+              .build();
 
       // Construct a ruleset that applies the rules to the PERSON_NAME infotype.
-      InspectionRuleSet ruleSet = InspectionRuleSet.newBuilder()
-          .addInfoTypes(InfoType.newBuilder().setName("PERSON_NAME"))
-          .addRules(InspectionRule.newBuilder().setHotwordRule(patientRule))
-          .addRules(InspectionRule.newBuilder().setHotwordRule(doctorRule))
-          .addRules(InspectionRule.newBuilder().setExclusionRule(quasimodoRule))
-          .addRules(InspectionRule.newBuilder().setExclusionRule(redactedRule))
-          .build();
+      InspectionRuleSet ruleSet =
+          InspectionRuleSet.newBuilder()
+              .addInfoTypes(InfoType.newBuilder().setName("PERSON_NAME"))
+              .addRules(InspectionRule.newBuilder().setHotwordRule(patientRule))
+              .addRules(InspectionRule.newBuilder().setHotwordRule(doctorRule))
+              .addRules(InspectionRule.newBuilder().setExclusionRule(quasimodoRule))
+              .addRules(InspectionRule.newBuilder().setExclusionRule(redactedRule))
+              .build();
 
       // Construct the configuration for the Inspect request, including the ruleset.
       InspectConfig config =

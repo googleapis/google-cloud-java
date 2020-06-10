@@ -72,26 +72,28 @@ public class InspectStringWithoutOverlap {
       }
 
       // Define a custom info type to exclude email addresses
-      CustomInfoType customInfoType = CustomInfoType.newBuilder()
-          .setInfoType(InfoType.newBuilder().setName("EMAIL_ADDRESS"))
-          .setExclusionType(ExclusionType.EXCLUSION_TYPE_EXCLUDE)
-          .build();
+      CustomInfoType customInfoType =
+          CustomInfoType.newBuilder()
+              .setInfoType(InfoType.newBuilder().setName("EMAIL_ADDRESS"))
+              .setExclusionType(ExclusionType.EXCLUSION_TYPE_EXCLUDE)
+              .build();
 
       // Exclude EMAIL_ADDRESS matches
-      ExclusionRule exclusionRule = ExclusionRule.newBuilder()
-          .setExcludeInfoTypes(
-              ExcludeInfoTypes.newBuilder()
+      ExclusionRule exclusionRule =
+          ExclusionRule.newBuilder()
+              .setExcludeInfoTypes(ExcludeInfoTypes.newBuilder()
                   .addInfoTypes(InfoType.newBuilder().setName("EMAIL_ADDRESS")))
-          .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
-          .build();
+              .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
+              .build();
 
       // Construct a ruleset that applies the exclusion rule to the DOMAIN_NAME infotype.
       // If a DOMAIN_NAME match is part of an EMAIL_ADDRESS match, the DOMAIN_NAME match will
       // be excluded.
-      InspectionRuleSet ruleSet = InspectionRuleSet.newBuilder()
-          .addInfoTypes(InfoType.newBuilder().setName("DOMAIN_NAME"))
-          .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
-          .build();
+      InspectionRuleSet ruleSet =
+          InspectionRuleSet.newBuilder()
+              .addInfoTypes(InfoType.newBuilder().setName("DOMAIN_NAME"))
+              .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
+              .build();
 
       // Construct the configuration for the Inspect request, including the ruleset.
       InspectConfig config =

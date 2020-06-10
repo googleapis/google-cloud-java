@@ -68,7 +68,10 @@ public class InspectWithCustomRegex {
       // Construct the custom regex detector.
       InfoType infoType = InfoType.newBuilder().setName("C_MRN").build();
       CustomInfoType customInfoType =
-          CustomInfoType.newBuilder().setInfoType(infoType).setRegex(regex).build();
+          CustomInfoType.newBuilder()
+              .setInfoType(infoType)
+              .setRegex(regex)
+              .build();
 
       // Construct the configuration for the Inspect request.
       InspectConfig config =

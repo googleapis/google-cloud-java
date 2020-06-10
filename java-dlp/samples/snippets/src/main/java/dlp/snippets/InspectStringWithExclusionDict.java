@@ -73,17 +73,19 @@ public class InspectStringWithExclusionDict {
       }
 
       // Exclude matches from the specified excludedMatchList.
-      ExclusionRule exclusionRule = ExclusionRule.newBuilder()
-          .setMatchingType(MatchingType.MATCHING_TYPE_FULL_MATCH)
-          .setDictionary(Dictionary.newBuilder()
-              .setWordList(WordList.newBuilder().addAllWords(excludedMatchList)))
-          .build();
+      ExclusionRule exclusionRule =
+          ExclusionRule.newBuilder()
+              .setMatchingType(MatchingType.MATCHING_TYPE_FULL_MATCH)
+              .setDictionary(Dictionary.newBuilder()
+                  .setWordList(WordList.newBuilder().addAllWords(excludedMatchList)))
+              .build();
 
       // Construct a ruleset that applies the exclusion rule to the EMAIL_ADDRESSES infotype.
-      InspectionRuleSet ruleSet = InspectionRuleSet.newBuilder()
-          .addInfoTypes(InfoType.newBuilder().setName("EMAIL_ADDRESS"))
-          .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
-          .build();
+      InspectionRuleSet ruleSet =
+          InspectionRuleSet.newBuilder()
+              .addInfoTypes(InfoType.newBuilder().setName("EMAIL_ADDRESS"))
+              .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
+              .build();
 
       // Construct the configuration for the Inspect request, including the ruleset.
       InspectConfig config =

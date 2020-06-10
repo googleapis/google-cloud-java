@@ -74,17 +74,19 @@ public class InspectStringWithExclusionDictSubstring {
       }
 
       // Exclude partial matches from the specified excludedSubstringList.
-      ExclusionRule exclusionRule = ExclusionRule.newBuilder()
-          .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
-          .setDictionary(Dictionary.newBuilder()
-              .setWordList(WordList.newBuilder().addAllWords(excludedSubstringList)))
-          .build();
+      ExclusionRule exclusionRule =
+          ExclusionRule.newBuilder()
+              .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
+              .setDictionary(Dictionary.newBuilder()
+                  .setWordList(WordList.newBuilder().addAllWords(excludedSubstringList)))
+              .build();
 
       // Construct a ruleset that applies the exclusion rule to the EMAIL_ADDRESSES infotype.
-      InspectionRuleSet ruleSet = InspectionRuleSet.newBuilder()
-          .addAllInfoTypes(infoTypes)
-          .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
-          .build();
+      InspectionRuleSet ruleSet =
+          InspectionRuleSet.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
+              .build();
 
       // Construct the configuration for the Inspect request, including the ruleset.
       InspectConfig config =

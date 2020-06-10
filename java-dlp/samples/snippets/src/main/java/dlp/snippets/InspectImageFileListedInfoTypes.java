@@ -61,6 +61,8 @@ class InspectImageFileListedInfoTypes {
           new String[] {"US_SOCIAL_SECURITY_NUMBER", "EMAIL_ADDRESS", "PHONE_NUMBER"}) {
         infoTypes.add(InfoType.newBuilder().setName(typeName).build());
       }
+
+      // Construct the configuration for the Inspect request.
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addAllInfoTypes(infoTypes)

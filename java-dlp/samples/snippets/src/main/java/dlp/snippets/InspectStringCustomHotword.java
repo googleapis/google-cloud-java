@@ -64,20 +64,20 @@ public class InspectStringCustomHotword {
       ContentItem item = ContentItem.newBuilder().setByteItem(byteItem).build();
 
       // Increase likelihood of matches that have customHotword nearby
-      HotwordRule hotwordRule = HotwordRule.newBuilder()
-          .setHotwordRegex(Regex.newBuilder()
-              .setPattern(customHotword))
-          .setProximity(Proximity.newBuilder()
-              .setWindowBefore(50))
-          .setLikelihoodAdjustment(LikelihoodAdjustment.newBuilder()
-              .setFixedLikelihood(Likelihood.VERY_LIKELY))
-          .build();
+      HotwordRule hotwordRule =
+          HotwordRule.newBuilder()
+              .setHotwordRegex(Regex.newBuilder().setPattern(customHotword))
+              .setProximity(Proximity.newBuilder().setWindowBefore(50))
+              .setLikelihoodAdjustment(
+                  LikelihoodAdjustment.newBuilder().setFixedLikelihood(Likelihood.VERY_LIKELY))
+              .build();
 
       // Construct a ruleset that applies the hotword rule to the PERSON_NAME infotype.
-      InspectionRuleSet ruleSet = InspectionRuleSet.newBuilder()
-          .addInfoTypes(InfoType.newBuilder().setName("PERSON_NAME").build())
-          .addRules(InspectionRule.newBuilder().setHotwordRule(hotwordRule))
-          .build();
+      InspectionRuleSet ruleSet =
+          InspectionRuleSet.newBuilder()
+              .addInfoTypes(InfoType.newBuilder().setName("PERSON_NAME").build())
+              .addRules(InspectionRule.newBuilder().setHotwordRule(hotwordRule))
+              .build();
 
       // Construct the configuration for the Inspect request.
       InspectConfig config =

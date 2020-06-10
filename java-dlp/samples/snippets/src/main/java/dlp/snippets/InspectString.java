@@ -65,7 +65,10 @@ public class InspectString {
 
       // Construct the configuration for the Inspect request.
       InspectConfig config =
-          InspectConfig.newBuilder().addAllInfoTypes(infoTypes).setIncludeQuote(true).build();
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .setIncludeQuote(true)
+              .build();
 
       // Construct the Inspect request to be sent by the client.
       InspectContentRequest request =

@@ -70,20 +70,21 @@ public class InspectStringOmitOverlap {
       }
 
       // Exclude EMAIL_ADDRESS matches
-      ExclusionRule exclusionRule = ExclusionRule.newBuilder()
-          .setExcludeInfoTypes(
-              ExcludeInfoTypes.newBuilder()
+      ExclusionRule exclusionRule =
+          ExclusionRule.newBuilder()
+              .setExcludeInfoTypes(ExcludeInfoTypes.newBuilder()
                   .addInfoTypes(InfoType.newBuilder().setName("EMAIL_ADDRESS")))
-          .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
-          .build();
+              .setMatchingType(MatchingType.MATCHING_TYPE_PARTIAL_MATCH)
+              .build();
 
       // Construct a ruleset that applies the exclusion rule to the PERSON_NAME infotype.
       // If a PERSON_NAME match overlaps with an EMAIL_ADDRESS match, the PERSON_NAME match will
       // be excluded.
-      InspectionRuleSet ruleSet = InspectionRuleSet.newBuilder()
-          .addInfoTypes(InfoType.newBuilder().setName("PERSON_NAME"))
-          .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
-          .build();
+      InspectionRuleSet ruleSet =
+          InspectionRuleSet.newBuilder()
+              .addInfoTypes(InfoType.newBuilder().setName("PERSON_NAME"))
+              .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
+              .build();
 
       // Construct the configuration for the Inspect request, including the ruleset.
       InspectConfig config =

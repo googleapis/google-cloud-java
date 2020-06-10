@@ -64,24 +64,27 @@ public class InspectStringCustomOmitOverlap {
       ContentItem item = ContentItem.newBuilder().setByteItem(byteItem).build();
 
       // Construct the custom infotype.
-      CustomInfoType customInfoType = CustomInfoType.newBuilder()
-          .setInfoType(InfoType.newBuilder().setName("VIP_DETECTOR"))
-          .setRegex(Regex.newBuilder().setPattern("Larry Page|Sergey Brin"))
-          .setExclusionType(ExclusionType.EXCLUSION_TYPE_EXCLUDE)
-          .build();
+      CustomInfoType customInfoType =
+          CustomInfoType.newBuilder()
+              .setInfoType(InfoType.newBuilder().setName("VIP_DETECTOR"))
+              .setRegex(Regex.newBuilder().setPattern("Larry Page|Sergey Brin"))
+              .setExclusionType(ExclusionType.EXCLUSION_TYPE_EXCLUDE)
+              .build();
 
       // Exclude matches that also match the custom infotype.
-      ExclusionRule exclusionRule = ExclusionRule.newBuilder()
-          .setExcludeInfoTypes(
-              ExcludeInfoTypes.newBuilder().addInfoTypes(customInfoType.getInfoType()))
-          .setMatchingType(MatchingType.MATCHING_TYPE_FULL_MATCH)
-          .build();
+      ExclusionRule exclusionRule =
+          ExclusionRule.newBuilder()
+              .setExcludeInfoTypes(
+                  ExcludeInfoTypes.newBuilder().addInfoTypes(customInfoType.getInfoType()))
+              .setMatchingType(MatchingType.MATCHING_TYPE_FULL_MATCH)
+              .build();
 
       // Construct a ruleset that applies the exclusion rule to the PERSON_NAME infotype.
-      InspectionRuleSet ruleSet = InspectionRuleSet.newBuilder()
-          .addInfoTypes(InfoType.newBuilder().setName("PERSON_NAME"))
-          .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
-          .build();
+      InspectionRuleSet ruleSet =
+          InspectionRuleSet.newBuilder()
+              .addInfoTypes(InfoType.newBuilder().setName("PERSON_NAME"))
+              .addRules(InspectionRule.newBuilder().setExclusionRule(exclusionRule))
+              .build();
 
       // Construct the configuration for the Inspect request, including the ruleset.
       InspectConfig config =
