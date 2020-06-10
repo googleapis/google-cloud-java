@@ -138,4 +138,13 @@ public class DeIdentificationTests {
     String output = bout.toString();
     assertThat(output, containsString("Text after replace with infotype config: "));
   }
+
+  @Test
+  public void testDeIdentifyWithExceptionList() throws IOException {
+    DeIdentifyWithExceptionList.deIdentifyWithExceptionList(
+        PROJECT_ID, "jack@example.org accessed customer record of user5@example.com");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Text after replace with infotype config: "));
+  }
 }
