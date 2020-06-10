@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.0](https://www.github.com/googleapis/java-shared-config/compare/v0.6.0...v0.7.0) (2020-06-10)
+
+
+### Features
+
+* mark auto-value-annotations scope as provided ([#151](https://www.github.com/googleapis/java-shared-config/issues/151)) ([44ea4cb](https://www.github.com/googleapis/java-shared-config/commit/44ea4cbbf92b4ad35ffaffb7a01a1bce05063daf))
+
+
+### Bug Fixes
+
+* lock the google-java-format version used by formatter plugin ([#149](https://www.github.com/googleapis/java-shared-config/issues/149)) ([d58c054](https://www.github.com/googleapis/java-shared-config/commit/d58c05437a4ea8767db2bebfcc405ec77aeb9705))
+
 ## [0.6.0](https://www.github.com/googleapis/java-shared-config/compare/v0.5.0...v0.6.0) (2020-05-19)
 
 
