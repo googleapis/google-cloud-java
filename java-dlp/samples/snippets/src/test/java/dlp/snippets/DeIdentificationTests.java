@@ -109,6 +109,17 @@ public class DeIdentificationTests {
   }
 
   @Test
+  public void testDeIdentifyWithRedaction() throws IOException {
+    DeIdentifyWithRedaction.deIdentifyWithRedaction(
+        PROJECT_ID,
+        "My name is Alicia Abernathy, and my email address is aabernathy@example.com.");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Text after redaction: "
+        + "My name is Alicia Abernathy, and my email address is ."));
+  }
+
+  @Test
   public void testDeIdentifyWithReplacement() throws IOException {
     DeIdentifyWithReplacement.deIdentifyWithReplacement(
         PROJECT_ID,
