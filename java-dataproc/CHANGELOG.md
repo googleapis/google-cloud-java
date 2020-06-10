@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.122.3](https://www.github.com/googleapis/java-dataproc/compare/v0.122.2...v0.122.3) (2020-06-09)
+
+
+### Bug Fixes
+
+* fix LRO polling and workflow template timeouts ([#213](https://www.github.com/googleapis/java-dataproc/issues/213)) ([c8ebb39](https://www.github.com/googleapis/java-dataproc/commit/c8ebb39e33bc3c622878ecdc4191c80511f95490))
+
 ### [0.122.2](https://www.github.com/googleapis/java-dataproc/compare/v0.122.1...v0.122.2) (2020-06-06)
 
 
