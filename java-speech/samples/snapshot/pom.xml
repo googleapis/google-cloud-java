@@ -23,14 +23,15 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start:google-cloud-speech:current} -->
+  
   <dependencies>
+    <!-- {x-version-update-start:google-cloud-speech:current} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-speech</artifactId>
       <version>1.23.1-SNAPSHOT</version>
     </dependency>
-
+    <!-- {x-version-update-end} -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -40,11 +41,11 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>1.23.1-SNAPSHOT</version>
+      <version>1.0.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-- {x-version-update-end} -->
+  
 
   <!-- compile and run all snippet tests -->
   <build>
