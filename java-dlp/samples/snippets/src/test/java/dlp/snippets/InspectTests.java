@@ -344,6 +344,16 @@ public class InspectTests {
   }
 
   @Test
+  public void testInspectGcsFileWithSampling() throws Exception {
+    InspectGcsFileWithSampling
+        .inspectGcsFileWithSampling(PROJECT_ID, GCS_PATH, topicName.getTopic(),
+            subscriptionName.getSubscription());
+
+    String output = bout.toString();
+    assertThat(output, containsString("Job status: DONE"));
+  }
+
+  @Test
   public void testInspectDatastoreEntity() throws Exception {
     InspectDatastoreEntity
         .insepctDatastoreEntity(PROJECT_ID, datastoreNamespace, datastoreKind, topicName.getTopic(),

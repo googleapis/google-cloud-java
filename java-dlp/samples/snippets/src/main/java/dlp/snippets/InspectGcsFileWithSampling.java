@@ -26,49 +26,54 @@ import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.privacy.dlp.v2.Action;
 import com.google.privacy.dlp.v2.CloudStorageOptions;
 import com.google.privacy.dlp.v2.CloudStorageOptions.FileSet;
+import com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FileType;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InfoTypeStats;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectDataSourceDetails;
 import com.google.privacy.dlp.v2.InspectJobConfig;
+import com.google.privacy.dlp.v2.Likelihood;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.StorageConfig;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
 import java.io.IOException;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class InspectGcsFile {
+public class InspectGcsFileWithSampling {
 
-  public static void inspectGcsFile() throws InterruptedException, ExecutionException, IOException {
+  public static void inspectGcsFileWithSampling()
+      throws InterruptedException, ExecutionException, IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String gcsUri = "gs://" + "your-bucket-name" + "/path/to/your/file.txt";
     String topicId = "your-pubsub-topic-id";
     String subscriptionId = "your-pubsub-subscription-id";
-    inspectGcsFile(projectId, gcsUri, topicId, subscriptionId);
+    inspectGcsFileWithSampling(projectId, gcsUri, topicId, subscriptionId);
   }
 
   // Inspects a file in a Google Cloud Storage Bucket.
-  public static void inspectGcsFile(
+  public static void inspectGcsFileWithSampling(
       String projectId, String gcsUri, String topicId, String subscriptionId)
       throws ExecutionException, InterruptedException, IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
-      // Specify the GCS file to be inspected.
+      // Specify the GCS file to be inspected and sampling configuration
       CloudStorageOptions cloudStorageOptions =
           CloudStorageOptions.newBuilder()
               .setFileSet(FileSet.newBuilder().setUrl(gcsUri))
+              .setBytesLimitPerFile(200)
+              .addFileTypes(FileType.TEXT_FILE)
+              .setFilesLimitPercent(90)
+              .setSampleMethod(SampleMethod.RANDOM_START)
               .build();
 
       StorageConfig storageConfig =
@@ -76,16 +81,15 @@ public class InspectGcsFile {
 
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
-      List<InfoType> infoTypes =
-          Stream.of("PHONE_NUMBER", "EMAIL_ADDRESS", "CREDIT_CARD_NUMBER")
-              .map(it -> InfoType.newBuilder().setName(it).build())
-              .collect(Collectors.toList());
+      InfoType infoType = InfoType.newBuilder().setName("PERSON_NAME").build();
 
       // Specify how the content should be inspected.
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
-              .addAllInfoTypes(infoTypes)
+              .addInfoTypes(infoType)
+              .setExcludeInfoTypes(true)
               .setIncludeQuote(true)
+              .setMinLikelihood(Likelihood.POSSIBLE)
               .build();
 
       // Specify the action that is triggered when the job completes.
