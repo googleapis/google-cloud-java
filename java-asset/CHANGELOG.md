@@ -1,5 +1,39 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/googleapis/java-asset/compare/v1.2.0...v1.3.0) (2020-06-11)
+
+
+### Features
+
+* **regen:** removes deprecated FeedName methods from v1p2beta1 client ([#157](https://www.github.com/googleapis/java-asset/issues/157)) ([6de4ad0](https://www.github.com/googleapis/java-asset/commit/6de4ad03536cc94539d99794cb27671fe6b1aee9))
+* **v1:** add SearchAllResources and SearchAllIamPolicies RPCs ([#180](https://www.github.com/googleapis/java-asset/issues/180)) ([6127fa0](https://www.github.com/googleapis/java-asset/commit/6127fa0a61bb9182458293eb9b453861952126b4))
+* **v1p1beta1:** add orderBy to SearchAllResourcesRequest, explanation to IamPolicySearchResults, location, labels, networkTags to StandardResourceMetadata ([#175](https://www.github.com/googleapis/java-asset/issues/175)) ([fac7154](https://www.github.com/googleapis/java-asset/commit/fac71543ed0a7e5a2730474d85f4ebdcacd3bf72))
+
+
+### Bug Fixes
+
+* update retry policies for all clients ([#209](https://www.github.com/googleapis/java-asset/issues/209)) ([037f5a0](https://www.github.com/googleapis/java-asset/commit/037f5a0bc751ef1c7ff5af649400fea56777437e))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#188](https://www.github.com/googleapis/java-asset/issues/188)) ([d6fb763](https://www.github.com/googleapis/java-asset/commit/d6fb76378f6ab664a9056a91deeb1d5151c7c516))
+* update dependency com.google.api:api-common to v1.9.2 ([#198](https://www.github.com/googleapis/java-asset/issues/198)) ([277158f](https://www.github.com/googleapis/java-asset/commit/277158faabad40640df1b413bb2393436b159e9d))
+* update dependency com.google.api.grpc:proto-google-cloud-pubsub-v1 to v1.88.0 ([#176](https://www.github.com/googleapis/java-asset/issues/176)) ([1b4c0f2](https://www.github.com/googleapis/java-asset/commit/1b4c0f2d0ab67f2cb5e2255fc2043571b6c0bb38))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#174](https://www.github.com/googleapis/java-asset/issues/174)) ([b2cb6b1](https://www.github.com/googleapis/java-asset/commit/b2cb6b1862d36fd5e53d95270c1d7cd244f9067b))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#191](https://www.github.com/googleapis/java-asset/issues/191)) ([ecb1564](https://www.github.com/googleapis/java-asset/commit/ecb1564fa12e45e90bd0dc0adcd9d9bff596b449))
+* update dependency com.google.guava:guava-bom to v29 ([#145](https://www.github.com/googleapis/java-asset/issues/145)) ([77d7de5](https://www.github.com/googleapis/java-asset/commit/77d7de54fda57cee74cd8ac19a1af99693723e54))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#181](https://www.github.com/googleapis/java-asset/issues/181)) ([a19d60e](https://www.github.com/googleapis/java-asset/commit/a19d60e79eb9043a4462deed8dc20bf196d4b907))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#186](https://www.github.com/googleapis/java-asset/issues/186)) ([786c9e7](https://www.github.com/googleapis/java-asset/commit/786c9e7d62b74099175d0cad3bad062537f7a2cd))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#163](https://www.github.com/googleapis/java-asset/issues/163)) ([5c5e6f1](https://www.github.com/googleapis/java-asset/commit/5c5e6f16d42150e655bd0a7c95005faafbd8a49b))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#203](https://www.github.com/googleapis/java-asset/issues/203)) ([912d0f2](https://www.github.com/googleapis/java-asset/commit/912d0f2ca22be0cfa5aa3e79d4e245eaa7b0fa88))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#168](https://www.github.com/googleapis/java-asset/issues/168)) ([b307f37](https://www.github.com/googleapis/java-asset/commit/b307f377020184fc19e75518c74da4722743d70c))
+
+
+### Documentation
+
+* properly format literal strings ([#192](https://www.github.com/googleapis/java-asset/issues/192)) ([ce5f488](https://www.github.com/googleapis/java-asset/commit/ce5f48839706a0d35cf0f85df632f049d1fb8f21))
+
 ## [1.2.0](https://www.github.com/googleapis/java-asset/compare/v1.1.0...v1.2.0) (2020-04-07)
 
 
