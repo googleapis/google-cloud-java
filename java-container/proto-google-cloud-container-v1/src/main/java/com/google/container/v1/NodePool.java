@@ -611,7 +611,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The initial node count for the pool. You must ensure that your
-   * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
+   * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
    * is sufficient for this number of instances. You must also have available
    * firewall and routes quota.
    * </pre>
@@ -2023,7 +2023,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The initial node count for the pool. You must ensure that your
-     * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
+     * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
      * is sufficient for this number of instances. You must also have available
      * firewall and routes quota.
      * </pre>
@@ -2041,7 +2041,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The initial node count for the pool. You must ensure that your
-     * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
+     * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
      * is sufficient for this number of instances. You must also have available
      * firewall and routes quota.
      * </pre>
@@ -2062,7 +2062,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The initial node count for the pool. You must ensure that your
-     * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
+     * Compute Engine [resource quota](https://cloud.google.com/compute/quotas)
      * is sufficient for this number of instances. You must also have available
      * firewall and routes quota.
      * </pre>
