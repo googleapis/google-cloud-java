@@ -247,11 +247,13 @@ public final class DocumentProto {
           + "ments\030\001 \003(\0132@.google.cloud.documentai.v1"
           + "beta1.Document.TextAnchor.TextSegment\0325\n"
           + "\013TextSegment\022\023\n\013start_index\030\001 \001(\003\022\021\n\tend"
-          + "_index\030\002 \001(\003B\010\n\006sourceB\201\001\n#com.google.cl"
+          + "_index\030\002 \001(\003B\010\n\006sourceB\352\001\n#com.google.cl"
           + "oud.documentai.v1beta1B\rDocumentProtoP\001Z"
           + "Igoogle.golang.org/genproto/googleapis/c"
-          + "loud/documentai/v1beta1;documentaib\006prot"
-          + "o3"
+          + "loud/documentai/v1beta1;documentai\252\002\037Goo"
+          + "gle.Cloud.DocumentAI.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\DocumentAi\\V1beta1\352\002\"Google::Cloud::"
+          + "DocumentAI::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

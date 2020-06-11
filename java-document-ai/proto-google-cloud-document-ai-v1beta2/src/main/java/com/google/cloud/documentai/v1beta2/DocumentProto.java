@@ -281,10 +281,13 @@ public final class DocumentProto {
           + "pe\022\033\n\027LAYOUT_TYPE_UNSPECIFIED\020\000\022\t\n\005BLOCK"
           + "\020\001\022\r\n\tPARAGRAPH\020\002\022\010\n\004LINE\020\003\022\t\n\005TOKEN\020\004\022\022"
           + "\n\016VISUAL_ELEMENT\020\005\022\t\n\005TABLE\020\006\022\016\n\nFORM_FI"
-          + "ELD\020\007B\010\n\006sourceB\201\001\n#com.google.cloud.doc"
+          + "ELD\020\007B\010\n\006sourceB\352\001\n#com.google.cloud.doc"
           + "umentai.v1beta2B\rDocumentProtoP\001ZIgoogle"
           + ".golang.org/genproto/googleapis/cloud/do"
-          + "cumentai/v1beta2;documentaib\006proto3"
+          + "cumentai/v1beta2;documentai\252\002\037Google.Clo"
+          + "ud.DocumentAI.V1Beta2\312\002\037Google\\Cloud\\Doc"
+          + "umentAi\\V1beta2\352\002\"Google::Cloud::Documen"
+          + "tAI::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
