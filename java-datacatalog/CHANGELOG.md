@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.36.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.35.0...v0.36.0) (2020-06-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **v1beta1:** return types for list methods now return paginated responses
+
+### Features
+
+* **v1beta1:** regenerate with Gapic V2 pagination settings ([#196](https://www.github.com/googleapis/java-datacatalog/issues/196)) ([9f27e23](https://www.github.com/googleapis/java-datacatalog/commit/9f27e23393e6f30959e39bae9502c937d276f8d9))
+
+
+### Documentation
+
+* change relative URLs to absolute URLs to fix broken links. ([#208](https://www.github.com/googleapis/java-datacatalog/issues/208)) ([7aa9ab6](https://www.github.com/googleapis/java-datacatalog/commit/7aa9ab6da80eca8dab4c52c04593d953e618ea44))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#192](https://www.github.com/googleapis/java-datacatalog/issues/192)) ([83ec28f](https://www.github.com/googleapis/java-datacatalog/commit/83ec28f1d8dd12dd3ab834e8434362b79342a0c0))
+* update dependency com.google.api:api-common to v1.9.2 ([#197](https://www.github.com/googleapis/java-datacatalog/issues/197)) ([c6afb39](https://www.github.com/googleapis/java-datacatalog/commit/c6afb394300f37821a04c104b140deeb73616312))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#181](https://www.github.com/googleapis/java-datacatalog/issues/181)) ([6cd2787](https://www.github.com/googleapis/java-datacatalog/commit/6cd2787cb134be74c20b18503d1f85e46d5ea19b))
+* update dependency com.google.cloud:google-cloud-core to v1.93.5 ([#193](https://www.github.com/googleapis/java-datacatalog/issues/193)) ([a666443](https://www.github.com/googleapis/java-datacatalog/commit/a666443380afe0e3555cc766ed0d7fc8582fb627))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#187](https://www.github.com/googleapis/java-datacatalog/issues/187)) ([4ddb267](https://www.github.com/googleapis/java-datacatalog/commit/4ddb26799bbcfb271e2adc75d69c383b69d1e2fd))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#191](https://www.github.com/googleapis/java-datacatalog/issues/191)) ([2bada56](https://www.github.com/googleapis/java-datacatalog/commit/2bada560b4e81963354de18c1dceddcef48c68a1))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#173](https://www.github.com/googleapis/java-datacatalog/issues/173)) ([8e5f628](https://www.github.com/googleapis/java-datacatalog/commit/8e5f628b7c2f09191179964bd72d14da9d7851da))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#202](https://www.github.com/googleapis/java-datacatalog/issues/202)) ([6fe1f63](https://www.github.com/googleapis/java-datacatalog/commit/6fe1f63b94b62169fb002aa45e3c119cac122f01))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#175](https://www.github.com/googleapis/java-datacatalog/issues/175)) ([500a5fc](https://www.github.com/googleapis/java-datacatalog/commit/500a5fcb479d93a989525e6e3ffc6097fe75fdd7))
+
 ## [0.35.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.34.1...v0.35.0) (2020-04-20)
 
 
