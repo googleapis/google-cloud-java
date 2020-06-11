@@ -55,7 +55,7 @@ public class QuickstartSample {
         TimeInterval.newBuilder()
             .setEndTime(Timestamps.fromMillis(System.currentTimeMillis()))
             .build();
-    TypedValue value = TypedValue.newBuilder().setDoubleValue(123.45).build();
+    TypedValue value = TypedValue.newBuilder().setDoubleValue(3.14).build();
     Point point = Point.newBuilder().setInterval(interval).setValue(value).build();
 
     List<Point> pointList = new ArrayList<>();
@@ -68,15 +68,16 @@ public class QuickstartSample {
     metricLabels.put("store_id", "Pittsburg");
     Metric metric =
         Metric.newBuilder()
-            .setType("custom.googleapis.com/stores/daily_sales")
+            .setType("custom.googleapis.com/my_metric")
             .putAllLabels(metricLabels)
             .build();
 
     // Prepares the monitored resource descriptor
     Map<String, String> resourceLabels = new HashMap<String, String>();
-    resourceLabels.put("project_id", projectId);
+    resourceLabels.put("instance_id", "1234567890123456789");
+    resourceLabels.put("zone", "us-central1-f");
     MonitoredResource resource =
-        MonitoredResource.newBuilder().setType("global").putAllLabels(resourceLabels).build();
+        MonitoredResource.newBuilder().setType("gce_instance").putAllLabels(resourceLabels).build();
 
     // Prepares the time series request
     TimeSeries timeSeries =
