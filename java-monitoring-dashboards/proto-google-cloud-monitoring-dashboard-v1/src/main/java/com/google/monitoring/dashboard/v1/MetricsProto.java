@@ -59,49 +59,52 @@ public final class MetricsProto {
       "\n,google/monitoring/dashboard/v1/metrics"
           + ".proto\022\036google.monitoring.dashboard.v1\032\037"
           + "google/api/field_behavior.proto\032+google/"
-          + "monitoring/dashboard/v1/common.proto\"\335\001\n"
+          + "monitoring/dashboard/v1/common.proto\"\203\002\n"
           + "\017TimeSeriesQuery\022N\n\022time_series_filter\030\001"
           + " \001(\01320.google.monitoring.dashboard.v1.Ti"
           + "meSeriesFilterH\000\022Y\n\030time_series_filter_r"
           + "atio\030\002 \001(\01325.google.monitoring.dashboard"
-          + ".v1.TimeSeriesFilterRatioH\000\022\025\n\runit_over"
-          + "ride\030\005 \001(\tB\010\n\006source\"\272\002\n\020TimeSeriesFilte"
-          + "r\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022@\n\013aggregation\030\002 "
-          + "\001(\0132+.google.monitoring.dashboard.v1.Agg"
-          + "regation\022W\n\027pick_time_series_filter\030\004 \001("
-          + "\01324.google.monitoring.dashboard.v1.PickT"
-          + "imeSeriesFilterH\000\022e\n\036statistical_time_se"
-          + "ries_filter\030\005 \001(\0132;.google.monitoring.da"
-          + "shboard.v1.StatisticalTimeSeriesFilterH\000"
-          + "B\017\n\routput_filter\"\302\004\n\025TimeSeriesFilterRa"
-          + "tio\022R\n\tnumerator\030\001 \001(\0132?.google.monitori"
-          + "ng.dashboard.v1.TimeSeriesFilterRatio.Ra"
-          + "tioPart\022T\n\013denominator\030\002 \001(\0132?.google.mo"
-          + "nitoring.dashboard.v1.TimeSeriesFilterRa"
-          + "tio.RatioPart\022J\n\025secondary_aggregation\030\003"
-          + " \001(\0132+.google.monitoring.dashboard.v1.Ag"
-          + "gregation\022W\n\027pick_time_series_filter\030\004 \001"
-          + "(\01324.google.monitoring.dashboard.v1.Pick"
-          + "TimeSeriesFilterH\000\022e\n\036statistical_time_s"
-          + "eries_filter\030\005 \001(\0132;.google.monitoring.d"
-          + "ashboard.v1.StatisticalTimeSeriesFilterH"
-          + "\000\032b\n\tRatioPart\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022@\n\013a"
-          + "ggregation\030\002 \001(\0132+.google.monitoring.das"
-          + "hboard.v1.AggregationB\017\n\routput_filter\"\244"
-          + "\002\n\tThreshold\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\001\022>\n\005color\030\003 \001(\0162/.google.monitoring.da"
-          + "shboard.v1.Threshold.Color\022F\n\tdirection\030"
-          + "\004 \001(\01623.google.monitoring.dashboard.v1.T"
-          + "hreshold.Direction\"3\n\005Color\022\025\n\021COLOR_UNS"
-          + "PECIFIED\020\000\022\n\n\006YELLOW\020\004\022\007\n\003RED\020\006\"<\n\tDirec"
-          + "tion\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\t\n\005ABOVE"
-          + "\020\001\022\t\n\005BELOW\020\002*Q\n\016SparkChartType\022 \n\034SPARK"
-          + "_CHART_TYPE_UNSPECIFIED\020\000\022\016\n\nSPARK_LINE\020"
-          + "\001\022\r\n\tSPARK_BAR\020\002B\250\001\n\"com.google.monitori"
-          + "ng.dashboard.v1B\014MetricsProtoP\001ZGgoogle."
-          + "golang.org/genproto/googleapis/monitorin"
-          + "g/dashboard/v1;dashboard\352\002(Google::Cloud"
-          + "::Monitoring::Dashboard::V1b\006proto3"
+          + ".v1.TimeSeriesFilterRatioH\000\022$\n\032time_seri"
+          + "es_query_language\030\003 \001(\tH\000\022\025\n\runit_overri"
+          + "de\030\005 \001(\tB\010\n\006source\"\212\003\n\020TimeSeriesFilter\022"
+          + "\023\n\006filter\030\001 \001(\tB\003\340A\002\022@\n\013aggregation\030\002 \001("
+          + "\0132+.google.monitoring.dashboard.v1.Aggre"
+          + "gation\022J\n\025secondary_aggregation\030\003 \001(\0132+."
+          + "google.monitoring.dashboard.v1.Aggregati"
+          + "on\022W\n\027pick_time_series_filter\030\004 \001(\01324.go"
+          + "ogle.monitoring.dashboard.v1.PickTimeSer"
+          + "iesFilterH\000\022i\n\036statistical_time_series_f"
+          + "ilter\030\005 \001(\0132;.google.monitoring.dashboar"
+          + "d.v1.StatisticalTimeSeriesFilterB\002\030\001H\000B\017"
+          + "\n\routput_filter\"\306\004\n\025TimeSeriesFilterRati"
+          + "o\022R\n\tnumerator\030\001 \001(\0132?.google.monitoring"
+          + ".dashboard.v1.TimeSeriesFilterRatio.Rati"
+          + "oPart\022T\n\013denominator\030\002 \001(\0132?.google.moni"
+          + "toring.dashboard.v1.TimeSeriesFilterRati"
+          + "o.RatioPart\022J\n\025secondary_aggregation\030\003 \001"
+          + "(\0132+.google.monitoring.dashboard.v1.Aggr"
+          + "egation\022W\n\027pick_time_series_filter\030\004 \001(\013"
+          + "24.google.monitoring.dashboard.v1.PickTi"
+          + "meSeriesFilterH\000\022i\n\036statistical_time_ser"
+          + "ies_filter\030\005 \001(\0132;.google.monitoring.das"
+          + "hboard.v1.StatisticalTimeSeriesFilterB\002\030"
+          + "\001H\000\032b\n\tRatioPart\022\023\n\006filter\030\001 \001(\tB\003\340A\002\022@\n"
+          + "\013aggregation\030\002 \001(\0132+.google.monitoring.d"
+          + "ashboard.v1.AggregationB\017\n\routput_filter"
+          + "\"\244\002\n\tThreshold\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\001\022>\n\005color\030\003 \001(\0162/.google.monitoring."
+          + "dashboard.v1.Threshold.Color\022F\n\tdirectio"
+          + "n\030\004 \001(\01623.google.monitoring.dashboard.v1"
+          + ".Threshold.Direction\"3\n\005Color\022\025\n\021COLOR_U"
+          + "NSPECIFIED\020\000\022\n\n\006YELLOW\020\004\022\007\n\003RED\020\006\"<\n\tDir"
+          + "ection\022\031\n\025DIRECTION_UNSPECIFIED\020\000\022\t\n\005ABO"
+          + "VE\020\001\022\t\n\005BELOW\020\002*Q\n\016SparkChartType\022 \n\034SPA"
+          + "RK_CHART_TYPE_UNSPECIFIED\020\000\022\016\n\nSPARK_LIN"
+          + "E\020\001\022\r\n\tSPARK_BAR\020\002B\250\001\n\"com.google.monito"
+          + "ring.dashboard.v1B\014MetricsProtoP\001ZGgoogl"
+          + "e.golang.org/genproto/googleapis/monitor"
+          + "ing/dashboard/v1;dashboard\352\002(Google::Clo"
+          + "ud::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -116,7 +119,11 @@ public final class MetricsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_dashboard_v1_TimeSeriesQuery_descriptor,
             new java.lang.String[] {
-              "TimeSeriesFilter", "TimeSeriesFilterRatio", "UnitOverride", "Source",
+              "TimeSeriesFilter",
+              "TimeSeriesFilterRatio",
+              "TimeSeriesQueryLanguage",
+              "UnitOverride",
+              "Source",
             });
     internal_static_google_monitoring_dashboard_v1_TimeSeriesFilter_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -126,6 +133,7 @@ public final class MetricsProto {
             new java.lang.String[] {
               "Filter",
               "Aggregation",
+              "SecondaryAggregation",
               "PickTimeSeriesFilter",
               "StatisticalTimeSeriesFilter",
               "OutputFilter",

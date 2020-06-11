@@ -233,10 +233,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the dashboard.
+   * Immutable. The resource name of the dashboard.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -256,10 +256,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the dashboard.
+   * Immutable. The resource name of the dashboard.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -282,10 +282,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mutable, human-readable name.
+   * Required. The mutable, human-readable name.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -305,10 +305,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mutable, human-readable name.
+   * Required. The mutable, human-readable name.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -1015,10 +1015,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the dashboard.
+     * Immutable. The resource name of the dashboard.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The name.
      */
@@ -1037,10 +1037,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the dashboard.
+     * Immutable. The resource name of the dashboard.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for name.
      */
@@ -1059,10 +1059,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the dashboard.
+     * Immutable. The resource name of the dashboard.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1080,10 +1080,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the dashboard.
+     * Immutable. The resource name of the dashboard.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */
@@ -1097,10 +1097,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the dashboard.
+     * Immutable. The resource name of the dashboard.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1121,10 +1121,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mutable, human-readable name.
+     * Required. The mutable, human-readable name.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -1143,10 +1143,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mutable, human-readable name.
+     * Required. The mutable, human-readable name.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1165,10 +1165,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mutable, human-readable name.
+     * Required. The mutable, human-readable name.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1186,10 +1186,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mutable, human-readable name.
+     * Required. The mutable, human-readable name.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1203,10 +1203,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mutable, human-readable name.
+     * Required. The mutable, human-readable name.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.

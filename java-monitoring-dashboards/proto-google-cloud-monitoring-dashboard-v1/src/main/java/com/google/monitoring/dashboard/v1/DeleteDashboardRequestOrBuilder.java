@@ -27,11 +27,13 @@ public interface DeleteDashboardRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Dashboard. The format is
-   * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+   * Required. The resource name of the Dashboard. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -40,11 +42,13 @@ public interface DeleteDashboardRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Dashboard. The format is
-   * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+   * Required. The resource name of the Dashboard. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

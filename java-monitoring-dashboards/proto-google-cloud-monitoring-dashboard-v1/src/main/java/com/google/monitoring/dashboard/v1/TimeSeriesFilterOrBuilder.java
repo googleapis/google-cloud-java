@@ -27,8 +27,8 @@ public interface TimeSeriesFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-   * metric types, resources, and projects to query.
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * that identifies the metric types, resources, and projects to query.
    * </pre>
    *
    * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface TimeSeriesFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-   * metric types, resources, and projects to query.
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * that identifies the metric types, resources, and projects to query.
    * </pre>
    *
    * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -95,6 +95,41 @@ public interface TimeSeriesFilterOrBuilder
    *
    *
    * <pre>
+   * Apply a second aggregation after `aggregation` is applied.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+   *
+   * @return Whether the secondaryAggregation field is set.
+   */
+  boolean hasSecondaryAggregation();
+  /**
+   *
+   *
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+   *
+   * @return The secondaryAggregation.
+   */
+  com.google.monitoring.dashboard.v1.Aggregation getSecondaryAggregation();
+  /**
+   *
+   *
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+   */
+  com.google.monitoring.dashboard.v1.AggregationOrBuilder getSecondaryAggregationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Ranking based time series filter.
    * </pre>
    *
@@ -132,40 +167,46 @@ public interface TimeSeriesFilterOrBuilder
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    *
    * @return Whether the statisticalTimeSeriesFilter field is set.
    */
+  @java.lang.Deprecated
   boolean hasStatisticalTimeSeriesFilter();
   /**
    *
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    *
    * @return The statisticalTimeSeriesFilter.
    */
+  @java.lang.Deprecated
   com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter getStatisticalTimeSeriesFilter();
   /**
    *
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
       getStatisticalTimeSeriesFilterOrBuilder();
 

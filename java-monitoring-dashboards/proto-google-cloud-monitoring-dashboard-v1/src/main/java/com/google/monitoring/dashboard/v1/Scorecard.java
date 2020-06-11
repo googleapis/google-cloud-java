@@ -863,10 +863,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of sparkchart to show in this chartView.
+     * Required. The type of sparkchart to show in this chartView.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for sparkChartType.
      */
@@ -875,10 +877,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of sparkchart to show in this chartView.
+     * Required. The type of sparkchart to show in this chartView.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The sparkChartType.
      */
@@ -1048,10 +1052,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of sparkchart to show in this chartView.
+     * Required. The type of sparkchart to show in this chartView.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for sparkChartType.
      */
@@ -1063,10 +1069,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of sparkchart to show in this chartView.
+     * Required. The type of sparkchart to show in this chartView.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The sparkChartType.
      */
@@ -1506,10 +1514,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of sparkchart to show in this chartView.
+       * Required. The type of sparkchart to show in this chartView.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The enum numeric value on the wire for sparkChartType.
        */
@@ -1521,10 +1531,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of sparkchart to show in this chartView.
+       * Required. The type of sparkchart to show in this chartView.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The enum numeric value on the wire for sparkChartType to set.
        * @return This builder for chaining.
@@ -1539,10 +1551,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of sparkchart to show in this chartView.
+       * Required. The type of sparkchart to show in this chartView.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The sparkChartType.
        */
@@ -1559,10 +1573,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of sparkchart to show in this chartView.
+       * Required. The type of sparkchart to show in this chartView.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The sparkChartType to set.
        * @return This builder for chaining.
@@ -1580,10 +1596,12 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of sparkchart to show in this chartView.
+       * Required. The type of sparkchart to show in this chartView.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.SparkChartType spark_chart_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -1921,11 +1939,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fields for querying time series data from the
+   * Required. Fields for querying time series data from the
    * Stackdriver metrics API.
    * </pre>
    *
-   * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the timeSeriesQuery field is set.
    */
@@ -1937,11 +1957,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fields for querying time series data from the
+   * Required. Fields for querying time series data from the
    * Stackdriver metrics API.
    * </pre>
    *
-   * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The timeSeriesQuery.
    */
@@ -1955,11 +1977,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fields for querying time series data from the
+   * Required. Fields for querying time series data from the
    * Stackdriver metrics API.
    * </pre>
    *
-   * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder getTimeSeriesQueryOrBuilder() {
@@ -2782,11 +2806,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the timeSeriesQuery field is set.
      */
@@ -2797,11 +2823,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The timeSeriesQuery.
      */
@@ -2818,11 +2846,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTimeSeriesQuery(com.google.monitoring.dashboard.v1.TimeSeriesQuery value) {
       if (timeSeriesQueryBuilder_ == null) {
@@ -2841,11 +2871,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTimeSeriesQuery(
         com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder builderForValue) {
@@ -2862,11 +2894,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTimeSeriesQuery(com.google.monitoring.dashboard.v1.TimeSeriesQuery value) {
       if (timeSeriesQueryBuilder_ == null) {
@@ -2889,11 +2923,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTimeSeriesQuery() {
       if (timeSeriesQueryBuilder_ == null) {
@@ -2910,11 +2946,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder getTimeSeriesQueryBuilder() {
 
@@ -2925,11 +2963,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder
         getTimeSeriesQueryOrBuilder() {
@@ -2945,11 +2985,13 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.dashboard.v1.TimeSeriesQuery,

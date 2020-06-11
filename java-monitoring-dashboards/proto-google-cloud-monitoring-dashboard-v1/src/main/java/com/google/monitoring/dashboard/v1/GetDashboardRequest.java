@@ -117,13 +117,15 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of the Dashboard. The format is one of
-   * `"dashboards/{dashboard_id}"` (for system dashboards) or
-   * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-   * (for custom dashboards).
+   * Required. The resource name of the Dashboard. The format is one of:
+   *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+   *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+   *       (for custom dashboards).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -143,13 +145,15 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of the Dashboard. The format is one of
-   * `"dashboards/{dashboard_id}"` (for system dashboards) or
-   * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-   * (for custom dashboards).
+   * Required. The resource name of the Dashboard. The format is one of:
+   *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+   *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+   *       (for custom dashboards).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -490,13 +494,15 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is one of
-     * `"dashboards/{dashboard_id}"` (for system dashboards) or
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-     * (for custom dashboards).
+     * Required. The resource name of the Dashboard. The format is one of:
+     *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+     *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+     *       (for custom dashboards).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -515,13 +521,15 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is one of
-     * `"dashboards/{dashboard_id}"` (for system dashboards) or
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-     * (for custom dashboards).
+     * Required. The resource name of the Dashboard. The format is one of:
+     *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+     *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+     *       (for custom dashboards).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -540,13 +548,15 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is one of
-     * `"dashboards/{dashboard_id}"` (for system dashboards) or
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-     * (for custom dashboards).
+     * Required. The resource name of the Dashboard. The format is one of:
+     *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+     *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+     *       (for custom dashboards).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -564,13 +574,15 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is one of
-     * `"dashboards/{dashboard_id}"` (for system dashboards) or
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-     * (for custom dashboards).
+     * Required. The resource name of the Dashboard. The format is one of:
+     *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+     *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+     *       (for custom dashboards).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -584,13 +596,15 @@ public final class GetDashboardRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is one of
-     * `"dashboards/{dashboard_id}"` (for system dashboards) or
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-     * (for custom dashboards).
+     * Required. The resource name of the Dashboard. The format is one of:
+     *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+     *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+     *       (for custom dashboards).
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

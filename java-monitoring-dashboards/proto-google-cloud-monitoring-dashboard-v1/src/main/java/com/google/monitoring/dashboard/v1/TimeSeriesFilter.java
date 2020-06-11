@@ -96,6 +96,22 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 26:
+            {
+              com.google.monitoring.dashboard.v1.Aggregation.Builder subBuilder = null;
+              if (secondaryAggregation_ != null) {
+                subBuilder = secondaryAggregation_.toBuilder();
+              }
+              secondaryAggregation_ =
+                  input.readMessage(
+                      com.google.monitoring.dashboard.v1.Aggregation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(secondaryAggregation_);
+                secondaryAggregation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 34:
             {
               com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Builder subBuilder = null;
@@ -179,6 +195,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PICK_TIME_SERIES_FILTER(4),
+    @java.lang.Deprecated
     STATISTICAL_TIME_SERIES_FILTER(5),
     OUTPUTFILTER_NOT_SET(0);
     private final int value;
@@ -224,8 +241,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-   * metric types, resources, and projects to query.
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * that identifies the metric types, resources, and projects to query.
    * </pre>
    *
    * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -248,8 +265,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-   * metric types, resources, and projects to query.
+   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   * that identifies the metric types, resources, and projects to query.
    * </pre>
    *
    * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -323,6 +340,55 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     return getAggregation();
   }
 
+  public static final int SECONDARY_AGGREGATION_FIELD_NUMBER = 3;
+  private com.google.monitoring.dashboard.v1.Aggregation secondaryAggregation_;
+  /**
+   *
+   *
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+   *
+   * @return Whether the secondaryAggregation field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecondaryAggregation() {
+    return secondaryAggregation_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+   *
+   * @return The secondaryAggregation.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.Aggregation getSecondaryAggregation() {
+    return secondaryAggregation_ == null
+        ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
+        : secondaryAggregation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Apply a second aggregation after `aggregation` is applied.
+   * </pre>
+   *
+   * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.AggregationOrBuilder
+      getSecondaryAggregationOrBuilder() {
+    return getSecondaryAggregation();
+  }
+
   public static final int PICK_TIME_SERIES_FILTER_FIELD_NUMBER = 4;
   /**
    *
@@ -381,15 +447,17 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    *
    * @return Whether the statisticalTimeSeriesFilter field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasStatisticalTimeSeriesFilter() {
     return outputFilterCase_ == 5;
   }
@@ -398,15 +466,17 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    *
    * @return The statisticalTimeSeriesFilter.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter
       getStatisticalTimeSeriesFilter() {
     if (outputFilterCase_ == 5) {
@@ -419,13 +489,15 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
       getStatisticalTimeSeriesFilterOrBuilder() {
     if (outputFilterCase_ == 5) {
@@ -454,6 +526,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     if (aggregation_ != null) {
       output.writeMessage(2, getAggregation());
     }
+    if (secondaryAggregation_ != null) {
+      output.writeMessage(3, getSecondaryAggregation());
+    }
     if (outputFilterCase_ == 4) {
       output.writeMessage(
           4, (com.google.monitoring.dashboard.v1.PickTimeSeriesFilter) outputFilter_);
@@ -476,6 +551,10 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     }
     if (aggregation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAggregation());
+    }
+    if (secondaryAggregation_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSecondaryAggregation());
     }
     if (outputFilterCase_ == 4) {
       size +=
@@ -508,6 +587,10 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     if (hasAggregation()) {
       if (!getAggregation().equals(other.getAggregation())) return false;
     }
+    if (hasSecondaryAggregation() != other.hasSecondaryAggregation()) return false;
+    if (hasSecondaryAggregation()) {
+      if (!getSecondaryAggregation().equals(other.getSecondaryAggregation())) return false;
+    }
     if (!getOutputFilterCase().equals(other.getOutputFilterCase())) return false;
     switch (outputFilterCase_) {
       case 4:
@@ -536,6 +619,10 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     if (hasAggregation()) {
       hash = (37 * hash) + AGGREGATION_FIELD_NUMBER;
       hash = (53 * hash) + getAggregation().hashCode();
+    }
+    if (hasSecondaryAggregation()) {
+      hash = (37 * hash) + SECONDARY_AGGREGATION_FIELD_NUMBER;
+      hash = (53 * hash) + getSecondaryAggregation().hashCode();
     }
     switch (outputFilterCase_) {
       case 4:
@@ -705,6 +792,12 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
         aggregation_ = null;
         aggregationBuilder_ = null;
       }
+      if (secondaryAggregationBuilder_ == null) {
+        secondaryAggregation_ = null;
+      } else {
+        secondaryAggregation_ = null;
+        secondaryAggregationBuilder_ = null;
+      }
       outputFilterCase_ = 0;
       outputFilter_ = null;
       return this;
@@ -739,6 +832,11 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
         result.aggregation_ = aggregation_;
       } else {
         result.aggregation_ = aggregationBuilder_.build();
+      }
+      if (secondaryAggregationBuilder_ == null) {
+        result.secondaryAggregation_ = secondaryAggregation_;
+      } else {
+        result.secondaryAggregation_ = secondaryAggregationBuilder_.build();
       }
       if (outputFilterCase_ == 4) {
         if (pickTimeSeriesFilterBuilder_ == null) {
@@ -812,6 +910,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       if (other.hasAggregation()) {
         mergeAggregation(other.getAggregation());
       }
+      if (other.hasSecondaryAggregation()) {
+        mergeSecondaryAggregation(other.getSecondaryAggregation());
+      }
       switch (other.getOutputFilterCase()) {
         case PICK_TIME_SERIES_FILTER:
           {
@@ -877,8 +978,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -900,8 +1001,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -923,8 +1024,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -945,8 +1046,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -963,8 +1064,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+     * that identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1185,6 +1286,193 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
         aggregation_ = null;
       }
       return aggregationBuilder_;
+    }
+
+    private com.google.monitoring.dashboard.v1.Aggregation secondaryAggregation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.Aggregation,
+            com.google.monitoring.dashboard.v1.Aggregation.Builder,
+            com.google.monitoring.dashboard.v1.AggregationOrBuilder>
+        secondaryAggregationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     *
+     * @return Whether the secondaryAggregation field is set.
+     */
+    public boolean hasSecondaryAggregation() {
+      return secondaryAggregationBuilder_ != null || secondaryAggregation_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     *
+     * @return The secondaryAggregation.
+     */
+    public com.google.monitoring.dashboard.v1.Aggregation getSecondaryAggregation() {
+      if (secondaryAggregationBuilder_ == null) {
+        return secondaryAggregation_ == null
+            ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
+            : secondaryAggregation_;
+      } else {
+        return secondaryAggregationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     */
+    public Builder setSecondaryAggregation(com.google.monitoring.dashboard.v1.Aggregation value) {
+      if (secondaryAggregationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        secondaryAggregation_ = value;
+        onChanged();
+      } else {
+        secondaryAggregationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     */
+    public Builder setSecondaryAggregation(
+        com.google.monitoring.dashboard.v1.Aggregation.Builder builderForValue) {
+      if (secondaryAggregationBuilder_ == null) {
+        secondaryAggregation_ = builderForValue.build();
+        onChanged();
+      } else {
+        secondaryAggregationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     */
+    public Builder mergeSecondaryAggregation(com.google.monitoring.dashboard.v1.Aggregation value) {
+      if (secondaryAggregationBuilder_ == null) {
+        if (secondaryAggregation_ != null) {
+          secondaryAggregation_ =
+              com.google.monitoring.dashboard.v1.Aggregation.newBuilder(secondaryAggregation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          secondaryAggregation_ = value;
+        }
+        onChanged();
+      } else {
+        secondaryAggregationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     */
+    public Builder clearSecondaryAggregation() {
+      if (secondaryAggregationBuilder_ == null) {
+        secondaryAggregation_ = null;
+        onChanged();
+      } else {
+        secondaryAggregation_ = null;
+        secondaryAggregationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     */
+    public com.google.monitoring.dashboard.v1.Aggregation.Builder getSecondaryAggregationBuilder() {
+
+      onChanged();
+      return getSecondaryAggregationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     */
+    public com.google.monitoring.dashboard.v1.AggregationOrBuilder
+        getSecondaryAggregationOrBuilder() {
+      if (secondaryAggregationBuilder_ != null) {
+        return secondaryAggregationBuilder_.getMessageOrBuilder();
+      } else {
+        return secondaryAggregation_ == null
+            ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
+            : secondaryAggregation_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apply a second aggregation after `aggregation` is applied.
+     * </pre>
+     *
+     * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.Aggregation,
+            com.google.monitoring.dashboard.v1.Aggregation.Builder,
+            com.google.monitoring.dashboard.v1.AggregationOrBuilder>
+        getSecondaryAggregationFieldBuilder() {
+      if (secondaryAggregationBuilder_ == null) {
+        secondaryAggregationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.dashboard.v1.Aggregation,
+                com.google.monitoring.dashboard.v1.Aggregation.Builder,
+                com.google.monitoring.dashboard.v1.AggregationOrBuilder>(
+                getSecondaryAggregation(), getParentForChildren(), isClean());
+        secondaryAggregation_ = null;
+      }
+      return secondaryAggregationBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1421,15 +1709,17 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      *
      * @return Whether the statisticalTimeSeriesFilter field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasStatisticalTimeSeriesFilter() {
       return outputFilterCase_ == 5;
     }
@@ -1438,15 +1728,17 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      *
      * @return The statisticalTimeSeriesFilter.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter
         getStatisticalTimeSeriesFilter() {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -1466,12 +1758,14 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setStatisticalTimeSeriesFilter(
         com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter value) {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -1491,12 +1785,14 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setStatisticalTimeSeriesFilter(
         com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Builder builderForValue) {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -1513,12 +1809,14 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeStatisticalTimeSeriesFilter(
         com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter value) {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -1550,12 +1848,14 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearStatisticalTimeSeriesFilter() {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
         if (outputFilterCase_ == 5) {
@@ -1577,12 +1877,14 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Builder
         getStatisticalTimeSeriesFilterBuilder() {
       return getStatisticalTimeSeriesFilterFieldBuilder().getBuilder();
@@ -1592,13 +1894,15 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
         getStatisticalTimeSeriesFilterOrBuilder() {
       if ((outputFilterCase_ == 5) && (statisticalTimeSeriesFilterBuilder_ != null)) {
@@ -1615,10 +1919,11 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

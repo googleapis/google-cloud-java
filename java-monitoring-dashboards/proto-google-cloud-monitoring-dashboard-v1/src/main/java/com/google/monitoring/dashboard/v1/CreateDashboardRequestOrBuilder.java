@@ -27,9 +27,9 @@ public interface CreateDashboardRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`. The {project_id_or_number} must match
-   * the dashboard resource name.
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
+   * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,9 +41,9 @@ public interface CreateDashboardRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`. The {project_id_or_number} must match
-   * the dashboard resource name.
+   * Required. The project on which to execute the request. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
+   * The `[PROJECT_ID_OR_NUMBER]` must match the dashboard resource name.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

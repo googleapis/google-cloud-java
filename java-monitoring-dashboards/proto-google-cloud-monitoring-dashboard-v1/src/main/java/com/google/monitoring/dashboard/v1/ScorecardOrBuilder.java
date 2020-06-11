@@ -27,11 +27,13 @@ public interface ScorecardOrBuilder
    *
    *
    * <pre>
-   * Fields for querying time series data from the
+   * Required. Fields for querying time series data from the
    * Stackdriver metrics API.
    * </pre>
    *
-   * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the timeSeriesQuery field is set.
    */
@@ -40,11 +42,13 @@ public interface ScorecardOrBuilder
    *
    *
    * <pre>
-   * Fields for querying time series data from the
+   * Required. Fields for querying time series data from the
    * Stackdriver metrics API.
    * </pre>
    *
-   * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The timeSeriesQuery.
    */
@@ -53,11 +57,13 @@ public interface ScorecardOrBuilder
    *
    *
    * <pre>
-   * Fields for querying time series data from the
+   * Required. Fields for querying time series data from the
    * Stackdriver metrics API.
    * </pre>
    *
-   * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder getTimeSeriesQueryOrBuilder();
 

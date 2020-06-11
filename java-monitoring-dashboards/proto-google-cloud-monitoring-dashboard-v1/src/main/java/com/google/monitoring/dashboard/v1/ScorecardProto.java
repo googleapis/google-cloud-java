@@ -50,31 +50,33 @@ public final class ScorecardProto {
     java.lang.String[] descriptorData = {
       "\n.google/monitoring/dashboard/v1/scoreca"
           + "rd.proto\022\036google.monitoring.dashboard.v1"
-          + "\032,google/monitoring/dashboard/v1/metrics"
-          + ".proto\032\036google/protobuf/duration.proto\"\221"
-          + "\004\n\tScorecard\022J\n\021time_series_query\030\001 \001(\0132"
-          + "/.google.monitoring.dashboard.v1.TimeSer"
-          + "iesQuery\022I\n\ngauge_view\030\004 \001(\01323.google.mo"
-          + "nitoring.dashboard.v1.Scorecard.GaugeVie"
-          + "wH\000\022T\n\020spark_chart_view\030\005 \001(\01328.google.m"
-          + "onitoring.dashboard.v1.Scorecard.SparkCh"
-          + "artViewH\000\022=\n\nthresholds\030\006 \003(\0132).google.m"
-          + "onitoring.dashboard.v1.Threshold\0325\n\tGaug"
-          + "eView\022\023\n\013lower_bound\030\001 \001(\001\022\023\n\013upper_boun"
-          + "d\030\002 \001(\001\032\223\001\n\016SparkChartView\022H\n\020spark_char"
-          + "t_type\030\001 \001(\0162..google.monitoring.dashboa"
-          + "rd.v1.SparkChartType\0227\n\024min_alignment_pe"
-          + "riod\030\002 \001(\0132\031.google.protobuf.DurationB\013\n"
-          + "\tdata_viewB\252\001\n\"com.google.monitoring.das"
-          + "hboard.v1B\016ScorecardProtoP\001ZGgoogle.gola"
-          + "ng.org/genproto/googleapis/monitoring/da"
-          + "shboard/v1;dashboard\352\002(Google::Cloud::Mo"
-          + "nitoring::Dashboard::V1b\006proto3"
+          + "\032\037google/api/field_behavior.proto\032,googl"
+          + "e/monitoring/dashboard/v1/metrics.proto\032"
+          + "\036google/protobuf/duration.proto\"\233\004\n\tScor"
+          + "ecard\022O\n\021time_series_query\030\001 \001(\0132/.googl"
+          + "e.monitoring.dashboard.v1.TimeSeriesQuer"
+          + "yB\003\340A\002\022I\n\ngauge_view\030\004 \001(\01323.google.moni"
+          + "toring.dashboard.v1.Scorecard.GaugeViewH"
+          + "\000\022T\n\020spark_chart_view\030\005 \001(\01328.google.mon"
+          + "itoring.dashboard.v1.Scorecard.SparkChar"
+          + "tViewH\000\022=\n\nthresholds\030\006 \003(\0132).google.mon"
+          + "itoring.dashboard.v1.Threshold\0325\n\tGaugeV"
+          + "iew\022\023\n\013lower_bound\030\001 \001(\001\022\023\n\013upper_bound\030"
+          + "\002 \001(\001\032\230\001\n\016SparkChartView\022M\n\020spark_chart_"
+          + "type\030\001 \001(\0162..google.monitoring.dashboard"
+          + ".v1.SparkChartTypeB\003\340A\002\0227\n\024min_alignment"
+          + "_period\030\002 \001(\0132\031.google.protobuf.Duration"
+          + "B\013\n\tdata_viewB\252\001\n\"com.google.monitoring."
+          + "dashboard.v1B\016ScorecardProtoP\001ZGgoogle.g"
+          + "olang.org/genproto/googleapis/monitoring"
+          + "/dashboard/v1;dashboard\352\002(Google::Cloud:"
+          + ":Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.monitoring.dashboard.v1.MetricsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
             });
@@ -102,6 +104,12 @@ public final class ScorecardProto {
             new java.lang.String[] {
               "SparkChartType", "MinAlignmentPeriod",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.monitoring.dashboard.v1.MetricsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
   }

@@ -234,9 +234,9 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
-   *   String parent = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListDashboardsRequest request = ListDashboardsRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Dashboard element : dashboardsServiceClient.listDashboards(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -262,9 +262,9 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
-   *   String parent = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListDashboardsRequest request = ListDashboardsRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListDashboardsPagedResponse&gt; future = dashboardsServiceClient.listDashboardsPagedCallable().futureCall(request);
    *   // Do something
@@ -290,9 +290,9 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
-   *   String parent = "";
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListDashboardsRequest request = ListDashboardsRequest.newBuilder()
-   *     .setParent(parent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListDashboardsResponse response = dashboardsServiceClient.listDashboardsCallable().call(request);
@@ -325,9 +325,9 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
-   *   String name = "";
+   *   DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
    *   GetDashboardRequest request = GetDashboardRequest.newBuilder()
-   *     .setName(name)
+   *     .setName(name.toString())
    *     .build();
    *   Dashboard response = dashboardsServiceClient.getDashboard(request);
    * }
@@ -351,9 +351,9 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
-   *   String name = "";
+   *   DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
    *   GetDashboardRequest request = GetDashboardRequest.newBuilder()
-   *     .setName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Dashboard&gt; future = dashboardsServiceClient.getDashboardCallable().futureCall(request);
    *   // Do something
@@ -376,9 +376,9 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
-   *   String name = "";
+   *   DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
    *   DeleteDashboardRequest request = DeleteDashboardRequest.newBuilder()
-   *     .setName(name)
+   *     .setName(name.toString())
    *     .build();
    *   dashboardsServiceClient.deleteDashboard(request);
    * }
@@ -402,9 +402,9 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
-   *   String name = "";
+   *   DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
    *   DeleteDashboardRequest request = DeleteDashboardRequest.newBuilder()
-   *     .setName(name)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = dashboardsServiceClient.deleteDashboardCallable().futureCall(request);
    *   // Do something

@@ -27,10 +27,10 @@ public interface DashboardOrBuilder
    *
    *
    * <pre>
-   * The resource name of the dashboard.
+   * Immutable. The resource name of the dashboard.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface DashboardOrBuilder
    *
    *
    * <pre>
-   * The resource name of the dashboard.
+   * Immutable. The resource name of the dashboard.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -52,10 +52,10 @@ public interface DashboardOrBuilder
    *
    *
    * <pre>
-   * The mutable, human-readable name.
+   * Required. The mutable, human-readable name.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -64,10 +64,10 @@ public interface DashboardOrBuilder
    *
    *
    * <pre>
-   * The mutable, human-readable name.
+   * Required. The mutable, human-readable name.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */

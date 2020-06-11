@@ -27,13 +27,15 @@ public interface GetDashboardRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Dashboard. The format is one of
-   * `"dashboards/{dashboard_id}"` (for system dashboards) or
-   * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-   * (for custom dashboards).
+   * Required. The resource name of the Dashboard. The format is one of:
+   *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+   *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+   *       (for custom dashboards).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -42,13 +44,15 @@ public interface GetDashboardRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Dashboard. The format is one of
-   * `"dashboards/{dashboard_id}"` (for system dashboards) or
-   * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`
-   * (for custom dashboards).
+   * Required. The resource name of the Dashboard. The format is one of:
+   *  -  `dashboards/[DASHBOARD_ID]` (for system dashboards)
+   *  -  `projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]`
+   *       (for custom dashboards).
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

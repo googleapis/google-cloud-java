@@ -27,10 +27,12 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.monitoring.dashboard.v1.CreateDashboardRequest;
 import com.google.monitoring.dashboard.v1.Dashboard;
+import com.google.monitoring.dashboard.v1.DashboardName;
 import com.google.monitoring.dashboard.v1.DeleteDashboardRequest;
 import com.google.monitoring.dashboard.v1.GetDashboardRequest;
 import com.google.monitoring.dashboard.v1.ListDashboardsRequest;
 import com.google.monitoring.dashboard.v1.ListDashboardsResponse;
+import com.google.monitoring.dashboard.v1.ProjectName;
 import com.google.monitoring.dashboard.v1.UpdateDashboardRequest;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
@@ -88,11 +90,15 @@ public class DashboardsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createDashboardTest() {
-    String name = "name3373707";
+    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
     String displayName = "displayName1615086568";
     String etag = "etag3123477";
     Dashboard expectedResponse =
-        Dashboard.newBuilder().setName(name).setDisplayName(displayName).setEtag(etag).build();
+        Dashboard.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setEtag(etag)
+            .build();
     mockDashboardsService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -147,8 +153,9 @@ public class DashboardsServiceClientTest {
             .build();
     mockDashboardsService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
-    ListDashboardsRequest request = ListDashboardsRequest.newBuilder().setParent(parent).build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    ListDashboardsRequest request =
+        ListDashboardsRequest.newBuilder().setParent(parent.toString()).build();
 
     ListDashboardsPagedResponse pagedListResponse = client.listDashboards(request);
 
@@ -160,7 +167,7 @@ public class DashboardsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListDashboardsRequest actualRequest = (ListDashboardsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -174,8 +181,9 @@ public class DashboardsServiceClientTest {
     mockDashboardsService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
-      ListDashboardsRequest request = ListDashboardsRequest.newBuilder().setParent(parent).build();
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      ListDashboardsRequest request =
+          ListDashboardsRequest.newBuilder().setParent(parent.toString()).build();
 
       client.listDashboards(request);
       Assert.fail("No exception raised");
@@ -187,15 +195,19 @@ public class DashboardsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getDashboardTest() {
-    String name2 = "name2-1052831874";
+    DashboardName name2 = DashboardName.of("[PROJECT]", "[DASHBOARD]");
     String displayName = "displayName1615086568";
     String etag = "etag3123477";
     Dashboard expectedResponse =
-        Dashboard.newBuilder().setName(name2).setDisplayName(displayName).setEtag(etag).build();
+        Dashboard.newBuilder()
+            .setName(name2.toString())
+            .setDisplayName(displayName)
+            .setEtag(etag)
+            .build();
     mockDashboardsService.addResponse(expectedResponse);
 
-    String name = "name3373707";
-    GetDashboardRequest request = GetDashboardRequest.newBuilder().setName(name).build();
+    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
+    GetDashboardRequest request = GetDashboardRequest.newBuilder().setName(name.toString()).build();
 
     Dashboard actualResponse = client.getDashboard(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -204,7 +216,7 @@ public class DashboardsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetDashboardRequest actualRequest = (GetDashboardRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(name, DashboardName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -218,8 +230,9 @@ public class DashboardsServiceClientTest {
     mockDashboardsService.addException(exception);
 
     try {
-      String name = "name3373707";
-      GetDashboardRequest request = GetDashboardRequest.newBuilder().setName(name).build();
+      DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
+      GetDashboardRequest request =
+          GetDashboardRequest.newBuilder().setName(name.toString()).build();
 
       client.getDashboard(request);
       Assert.fail("No exception raised");
@@ -234,8 +247,9 @@ public class DashboardsServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDashboardsService.addResponse(expectedResponse);
 
-    String name = "name3373707";
-    DeleteDashboardRequest request = DeleteDashboardRequest.newBuilder().setName(name).build();
+    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
+    DeleteDashboardRequest request =
+        DeleteDashboardRequest.newBuilder().setName(name.toString()).build();
 
     client.deleteDashboard(request);
 
@@ -243,7 +257,7 @@ public class DashboardsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteDashboardRequest actualRequest = (DeleteDashboardRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(name, DashboardName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -257,8 +271,9 @@ public class DashboardsServiceClientTest {
     mockDashboardsService.addException(exception);
 
     try {
-      String name = "name3373707";
-      DeleteDashboardRequest request = DeleteDashboardRequest.newBuilder().setName(name).build();
+      DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
+      DeleteDashboardRequest request =
+          DeleteDashboardRequest.newBuilder().setName(name.toString()).build();
 
       client.deleteDashboard(request);
       Assert.fail("No exception raised");
@@ -270,11 +285,15 @@ public class DashboardsServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateDashboardTest() {
-    String name = "name3373707";
+    DashboardName name = DashboardName.of("[PROJECT]", "[DASHBOARD]");
     String displayName = "displayName1615086568";
     String etag = "etag3123477";
     Dashboard expectedResponse =
-        Dashboard.newBuilder().setName(name).setDisplayName(displayName).setEtag(etag).build();
+        Dashboard.newBuilder()
+            .setName(name.toString())
+            .setDisplayName(displayName)
+            .setEtag(etag)
+            .build();
     mockDashboardsService.addResponse(expectedResponse);
 
     Dashboard dashboard = Dashboard.newBuilder().build();

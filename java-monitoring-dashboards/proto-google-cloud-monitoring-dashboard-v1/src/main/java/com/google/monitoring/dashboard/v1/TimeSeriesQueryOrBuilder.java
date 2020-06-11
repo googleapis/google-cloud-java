@@ -101,6 +101,31 @@ public interface TimeSeriesQueryOrBuilder
    *
    *
    * <pre>
+   * A query used to fetch time series.
+   * </pre>
+   *
+   * <code>string time_series_query_language = 3;</code>
+   *
+   * @return The timeSeriesQueryLanguage.
+   */
+  java.lang.String getTimeSeriesQueryLanguage();
+  /**
+   *
+   *
+   * <pre>
+   * A query used to fetch time series.
+   * </pre>
+   *
+   * <code>string time_series_query_language = 3;</code>
+   *
+   * @return The bytes for timeSeriesQueryLanguage.
+   */
+  com.google.protobuf.ByteString getTimeSeriesQueryLanguageBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The unit of data contained in fetched time series. If non-empty, this
    * unit will override any unit that accompanies fetched data. The format is
    * the same as the

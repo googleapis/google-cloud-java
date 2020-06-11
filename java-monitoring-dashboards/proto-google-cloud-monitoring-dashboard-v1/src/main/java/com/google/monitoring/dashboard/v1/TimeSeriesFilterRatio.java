@@ -206,8 +206,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+     * identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -219,8 +220,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+     * identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -386,8 +388,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+     * identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -410,8 +413,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-     * metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+     * identifies the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -850,8 +854,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-       * metric types, resources, and projects to query.
+       * Required. The [monitoring
+       * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies the metric types, resources, and projects to query.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -873,8 +878,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-       * metric types, resources, and projects to query.
+       * Required. The [monitoring
+       * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies the metric types, resources, and projects to query.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -896,8 +902,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-       * metric types, resources, and projects to query.
+       * Required. The [monitoring
+       * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies the metric types, resources, and projects to query.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -918,8 +925,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-       * metric types, resources, and projects to query.
+       * Required. The [monitoring
+       * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies the metric types, resources, and projects to query.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -936,8 +944,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies the
-       * metric types, resources, and projects to query.
+       * Required. The [monitoring
+       * filter](https://cloud.google.com/monitoring/api/v3/filters) that
+       * identifies the metric types, resources, and projects to query.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1223,6 +1232,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PICK_TIME_SERIES_FILTER(4),
+    @java.lang.Deprecated
     STATISTICAL_TIME_SERIES_FILTER(5),
     OUTPUTFILTER_NOT_SET(0);
     private final int value;
@@ -1467,15 +1477,17 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    *
    * @return Whether the statisticalTimeSeriesFilter field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasStatisticalTimeSeriesFilter() {
     return outputFilterCase_ == 5;
   }
@@ -1484,15 +1496,17 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    *
    * @return The statisticalTimeSeriesFilter.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter
       getStatisticalTimeSeriesFilter() {
     if (outputFilterCase_ == 5) {
@@ -1505,13 +1519,15 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Statistics based time series filter.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * <code>
-   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+   * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
       getStatisticalTimeSeriesFilterOrBuilder() {
     if (outputFilterCase_ == 5) {
@@ -2808,15 +2824,17 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      *
      * @return Whether the statisticalTimeSeriesFilter field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasStatisticalTimeSeriesFilter() {
       return outputFilterCase_ == 5;
     }
@@ -2825,15 +2843,17 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      *
      * @return The statisticalTimeSeriesFilter.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter
         getStatisticalTimeSeriesFilter() {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -2853,12 +2873,14 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setStatisticalTimeSeriesFilter(
         com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter value) {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -2878,12 +2900,14 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setStatisticalTimeSeriesFilter(
         com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Builder builderForValue) {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -2900,12 +2924,14 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeStatisticalTimeSeriesFilter(
         com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter value) {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
@@ -2937,12 +2963,14 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearStatisticalTimeSeriesFilter() {
       if (statisticalTimeSeriesFilterBuilder_ == null) {
         if (outputFilterCase_ == 5) {
@@ -2964,12 +2992,14 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Builder
         getStatisticalTimeSeriesFilterBuilder() {
       return getStatisticalTimeSeriesFilterFieldBuilder().getBuilder();
@@ -2979,13 +3009,15 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilterOrBuilder
         getStatisticalTimeSeriesFilterOrBuilder() {
       if ((outputFilterCase_ == 5) && (statisticalTimeSeriesFilterBuilder_ != null)) {
@@ -3002,10 +3034,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Statistics based time series filter.
+     * Note: This field is deprecated and completely ignored by the API.
      * </pre>
      *
      * <code>
-     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5;
+     * .google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter statistical_time_series_filter = 5 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

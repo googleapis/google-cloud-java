@@ -27,11 +27,13 @@ public interface ListDashboardsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The scope of the dashboards to list. A project scope must be
-   * specified in the form of `"projects/{project_id_or_number}"`.
+   * Required. The scope of the dashboards to list. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface ListDashboardsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The scope of the dashboards to list. A project scope must be
-   * specified in the form of `"projects/{project_id_or_number}"`.
+   * Required. The scope of the dashboards to list. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */

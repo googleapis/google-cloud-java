@@ -24,6 +24,7 @@ package com.google.monitoring.dashboard.v1;
  * <pre>
  * A filter that ranks streams based on their statistical relation to other
  * streams in a request.
+ * Note: This field is deprecated and completely ignored by the API.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter}
@@ -500,6 +501,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
    * <pre>
    * A filter that ranks streams based on their statistical relation to other
    * streams in a request.
+   * Note: This field is deprecated and completely ignored by the API.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter}

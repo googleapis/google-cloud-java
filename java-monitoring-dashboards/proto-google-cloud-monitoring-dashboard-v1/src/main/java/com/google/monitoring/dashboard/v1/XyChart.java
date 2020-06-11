@@ -209,11 +209,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the timeSeriesQuery field is set.
      */
@@ -222,11 +224,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The timeSeriesQuery.
      */
@@ -235,11 +239,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder getTimeSeriesQueryOrBuilder();
 
@@ -273,7 +279,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A template string for naming `TimeSeries` in the resulting data set.
-     * This should be a string with interpolations of the form ${label_name},
+     * This should be a string with interpolations of the form `${label_name}`,
      * which will resolve to the label's value.
      * </pre>
      *
@@ -287,7 +293,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A template string for naming `TimeSeries` in the resulting data set.
-     * This should be a string with interpolations of the form ${label_name},
+     * This should be a string with interpolations of the form `${label_name}`,
      * which will resolve to the label's value.
      * </pre>
      *
@@ -710,11 +716,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the timeSeriesQuery field is set.
      */
@@ -726,11 +734,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The timeSeriesQuery.
      */
@@ -744,11 +754,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fields for querying time series data from the
+     * Required. Fields for querying time series data from the
      * Stackdriver metrics API.
      * </pre>
      *
-     * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder
@@ -801,7 +813,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A template string for naming `TimeSeries` in the resulting data set.
-     * This should be a string with interpolations of the form ${label_name},
+     * This should be a string with interpolations of the form `${label_name}`,
      * which will resolve to the label's value.
      * </pre>
      *
@@ -826,7 +838,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A template string for naming `TimeSeries` in the resulting data set.
-     * This should be a string with interpolations of the form ${label_name},
+     * This should be a string with interpolations of the form `${label_name}`,
      * which will resolve to the label's value.
      * </pre>
      *
@@ -1321,11 +1333,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return Whether the timeSeriesQuery field is set.
        */
@@ -1336,11 +1350,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The timeSeriesQuery.
        */
@@ -1357,11 +1373,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setTimeSeriesQuery(com.google.monitoring.dashboard.v1.TimeSeriesQuery value) {
         if (timeSeriesQueryBuilder_ == null) {
@@ -1380,11 +1398,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder setTimeSeriesQuery(
           com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder builderForValue) {
@@ -1401,11 +1421,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder mergeTimeSeriesQuery(
           com.google.monitoring.dashboard.v1.TimeSeriesQuery value) {
@@ -1429,11 +1451,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public Builder clearTimeSeriesQuery() {
         if (timeSeriesQueryBuilder_ == null) {
@@ -1450,11 +1474,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder
           getTimeSeriesQueryBuilder() {
@@ -1466,11 +1492,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       public com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder
           getTimeSeriesQueryOrBuilder() {
@@ -1486,11 +1514,13 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fields for querying time series data from the
+       * Required. Fields for querying time series data from the
        * Stackdriver metrics API.
        * </pre>
        *
-       * <code>.google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1;</code>
+       * <code>
+       * .google.monitoring.dashboard.v1.TimeSeriesQuery time_series_query = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.monitoring.dashboard.v1.TimeSeriesQuery,
@@ -1609,7 +1639,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form ${label_name},
+       * This should be a string with interpolations of the form `${label_name}`,
        * which will resolve to the label's value.
        * </pre>
        *
@@ -1633,7 +1663,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form ${label_name},
+       * This should be a string with interpolations of the form `${label_name}`,
        * which will resolve to the label's value.
        * </pre>
        *
@@ -1657,7 +1687,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form ${label_name},
+       * This should be a string with interpolations of the form `${label_name}`,
        * which will resolve to the label's value.
        * </pre>
        *
@@ -1680,7 +1710,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form ${label_name},
+       * This should be a string with interpolations of the form `${label_name}`,
        * which will resolve to the label's value.
        * </pre>
        *
@@ -1699,7 +1729,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form ${label_name},
+       * This should be a string with interpolations of the form `${label_name}`,
        * which will resolve to the label's value.
        * </pre>
        *
@@ -3008,10 +3038,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.monitoring.dashboard.v1.XyChart.DataSet> getDataSetsList() {
@@ -3021,10 +3053,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder>
@@ -3035,10 +3069,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public int getDataSetsCount() {
@@ -3048,10 +3084,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart.DataSet getDataSets(int index) {
@@ -3061,10 +3099,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder getDataSetsOrBuilder(
@@ -3890,10 +3930,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.monitoring.dashboard.v1.XyChart.DataSet> getDataSetsList() {
       if (dataSetsBuilder_ == null) {
@@ -3906,10 +3948,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getDataSetsCount() {
       if (dataSetsBuilder_ == null) {
@@ -3922,10 +3966,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.dashboard.v1.XyChart.DataSet getDataSets(int index) {
       if (dataSetsBuilder_ == null) {
@@ -3938,10 +3984,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDataSets(
         int index, com.google.monitoring.dashboard.v1.XyChart.DataSet value) {
@@ -3961,10 +4009,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDataSets(
         int index, com.google.monitoring.dashboard.v1.XyChart.DataSet.Builder builderForValue) {
@@ -3981,10 +4031,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addDataSets(com.google.monitoring.dashboard.v1.XyChart.DataSet value) {
       if (dataSetsBuilder_ == null) {
@@ -4003,10 +4055,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addDataSets(
         int index, com.google.monitoring.dashboard.v1.XyChart.DataSet value) {
@@ -4026,10 +4080,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addDataSets(
         com.google.monitoring.dashboard.v1.XyChart.DataSet.Builder builderForValue) {
@@ -4046,10 +4102,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addDataSets(
         int index, com.google.monitoring.dashboard.v1.XyChart.DataSet.Builder builderForValue) {
@@ -4066,10 +4124,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllDataSets(
         java.lang.Iterable<? extends com.google.monitoring.dashboard.v1.XyChart.DataSet> values) {
@@ -4086,10 +4146,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDataSets() {
       if (dataSetsBuilder_ == null) {
@@ -4105,10 +4167,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeDataSets(int index) {
       if (dataSetsBuilder_ == null) {
@@ -4124,10 +4188,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.dashboard.v1.XyChart.DataSet.Builder getDataSetsBuilder(
         int index) {
@@ -4137,10 +4203,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder getDataSetsOrBuilder(
         int index) {
@@ -4154,10 +4222,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<? extends com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder>
         getDataSetsOrBuilderList() {
@@ -4171,10 +4241,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.dashboard.v1.XyChart.DataSet.Builder addDataSetsBuilder() {
       return getDataSetsFieldBuilder()
@@ -4184,10 +4256,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.monitoring.dashboard.v1.XyChart.DataSet.Builder addDataSetsBuilder(
         int index) {
@@ -4199,10 +4273,12 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The data displayed in this chart.
+     * Required. The data displayed in this chart.
      * </pre>
      *
-     * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<com.google.monitoring.dashboard.v1.XyChart.DataSet.Builder>
         getDataSetsBuilderList() {

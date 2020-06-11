@@ -27,8 +27,9 @@ public interface PickTimeSeriesFilterOrBuilder
    *
    *
    * <pre>
-   * `rankingMethod` is applied to each time series independently to produce the
-   * value which will be used to compare the time series to other time series.
+   * `ranking_method` is applied to each time series independently to produce
+   * the value which will be used to compare the time series to other time
+   * series.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -40,8 +41,9 @@ public interface PickTimeSeriesFilterOrBuilder
    *
    *
    * <pre>
-   * `rankingMethod` is applied to each time series independently to produce the
-   * value which will be used to compare the time series to other time series.
+   * `ranking_method` is applied to each time series independently to produce
+   * the value which will be used to compare the time series to other time
+   * series.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -54,7 +56,7 @@ public interface PickTimeSeriesFilterOrBuilder
    *
    *
    * <pre>
-   * How many time series to return.
+   * How many time series to allow to pass through the filter.
    * </pre>
    *
    * <code>int32 num_time_series = 2;</code>

@@ -109,6 +109,13 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
               sourceCase_ = 2;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              sourceCase_ = 3;
+              source_ = s;
+              break;
+            }
           case 42:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -159,6 +166,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TIME_SERIES_FILTER(1),
     TIME_SERIES_FILTER_RATIO(2),
+    TIME_SERIES_QUERY_LANGUAGE(3),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -181,6 +189,8 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
           return TIME_SERIES_FILTER;
         case 2:
           return TIME_SERIES_FILTER_RATIO;
+        case 3:
+          return TIME_SERIES_QUERY_LANGUAGE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -304,6 +314,62 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     return com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.getDefaultInstance();
   }
 
+  public static final int TIME_SERIES_QUERY_LANGUAGE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A query used to fetch time series.
+   * </pre>
+   *
+   * <code>string time_series_query_language = 3;</code>
+   *
+   * @return The timeSeriesQueryLanguage.
+   */
+  public java.lang.String getTimeSeriesQueryLanguage() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 3) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 3) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A query used to fetch time series.
+   * </pre>
+   *
+   * <code>string time_series_query_language = 3;</code>
+   *
+   * @return The bytes for timeSeriesQueryLanguage.
+   */
+  public com.google.protobuf.ByteString getTimeSeriesQueryLanguageBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 3) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 3) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int UNIT_OVERRIDE_FIELD_NUMBER = 5;
   private volatile java.lang.Object unitOverride_;
   /**
@@ -381,6 +447,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     if (sourceCase_ == 2) {
       output.writeMessage(2, (com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio) source_);
     }
+    if (sourceCase_ == 3) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, source_);
+    }
     if (!getUnitOverrideBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unitOverride_);
     }
@@ -402,6 +471,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio) source_);
+    }
+    if (sourceCase_ == 3) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, source_);
     }
     if (!getUnitOverrideBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unitOverride_);
@@ -431,6 +503,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       case 2:
         if (!getTimeSeriesFilterRatio().equals(other.getTimeSeriesFilterRatio())) return false;
         break;
+      case 3:
+        if (!getTimeSeriesQueryLanguage().equals(other.getTimeSeriesQueryLanguage())) return false;
+        break;
       case 0:
       default:
     }
@@ -455,6 +530,10 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       case 2:
         hash = (37 * hash) + TIME_SERIES_FILTER_RATIO_FIELD_NUMBER;
         hash = (53 * hash) + getTimeSeriesFilterRatio().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + TIME_SERIES_QUERY_LANGUAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getTimeSeriesQueryLanguage().hashCode();
         break;
       case 0:
       default:
@@ -650,6 +729,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
           result.source_ = timeSeriesFilterRatioBuilder_.build();
         }
       }
+      if (sourceCase_ == 3) {
+        result.source_ = source_;
+      }
       result.unitOverride_ = unitOverride_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
@@ -715,6 +797,13 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         case TIME_SERIES_FILTER_RATIO:
           {
             mergeTimeSeriesFilterRatio(other.getTimeSeriesFilterRatio());
+            break;
+          }
+        case TIME_SERIES_QUERY_LANGUAGE:
+          {
+            sourceCase_ = 3;
+            source_ = other.source_;
+            onChanged();
             break;
           }
         case SOURCE_NOT_SET:
@@ -1200,6 +1289,125 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return timeSeriesFilterRatioBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series.
+     * </pre>
+     *
+     * <code>string time_series_query_language = 3;</code>
+     *
+     * @return The timeSeriesQueryLanguage.
+     */
+    @java.lang.Override
+    public java.lang.String getTimeSeriesQueryLanguage() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 3) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 3) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series.
+     * </pre>
+     *
+     * <code>string time_series_query_language = 3;</code>
+     *
+     * @return The bytes for timeSeriesQueryLanguage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTimeSeriesQueryLanguageBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 3) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 3) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series.
+     * </pre>
+     *
+     * <code>string time_series_query_language = 3;</code>
+     *
+     * @param value The timeSeriesQueryLanguage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeSeriesQueryLanguage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 3;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series.
+     * </pre>
+     *
+     * <code>string time_series_query_language = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTimeSeriesQueryLanguage() {
+      if (sourceCase_ == 3) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series.
+     * </pre>
+     *
+     * <code>string time_series_query_language = 3;</code>
+     *
+     * @param value The bytes for timeSeriesQueryLanguage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeSeriesQueryLanguageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 3;
+      source_ = value;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object unitOverride_ = "";

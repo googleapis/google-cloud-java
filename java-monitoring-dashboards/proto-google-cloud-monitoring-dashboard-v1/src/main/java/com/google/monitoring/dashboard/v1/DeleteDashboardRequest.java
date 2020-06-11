@@ -117,11 +117,13 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The resource name of the Dashboard. The format is
-   * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+   * Required. The resource name of the Dashboard. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -141,11 +143,13 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The resource name of the Dashboard. The format is
-   * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+   * Required. The resource name of the Dashboard. The format is:
+   *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -486,11 +490,13 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+     * Required. The resource name of the Dashboard. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -509,11 +515,13 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+     * Required. The resource name of the Dashboard. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -532,11 +540,13 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+     * Required. The resource name of the Dashboard. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -554,11 +564,13 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+     * Required. The resource name of the Dashboard. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -572,11 +584,13 @@ public final class DeleteDashboardRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Dashboard. The format is
-     * `"projects/{project_id_or_number}/dashboards/{dashboard_id}"`.
+     * Required. The resource name of the Dashboard. The format is:
+     *     projects/[PROJECT_ID_OR_NUMBER]/dashboards/[DASHBOARD_ID]
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

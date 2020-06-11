@@ -37,15 +37,20 @@ public final class DrilldownsProto {
     java.lang.String[] descriptorData = {
       "\n/google/monitoring/dashboard/v1/drilldo"
           + "wns.proto\022\036google.monitoring.dashboard.v"
-          + "1B\253\001\n\"com.google.monitoring.dashboard.v1"
-          + "B\017DrilldownsProtoP\001ZGgoogle.golang.org/g"
-          + "enproto/googleapis/monitoring/dashboard/"
-          + "v1;dashboard\352\002(Google::Cloud::Monitoring"
-          + "::Dashboard::V1b\006proto3"
+          + "1\032+google/monitoring/dashboard/v1/common"
+          + ".protoB\253\001\n\"com.google.monitoring.dashboa"
+          + "rd.v1B\017DrilldownsProtoP\001ZGgoogle.golang."
+          + "org/genproto/googleapis/monitoring/dashb"
+          + "oard/v1;dashboard\352\002(Google::Cloud::Monit"
+          + "oring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.monitoring.dashboard.v1.CommonProto.getDescriptor(),
+            });
+    com.google.monitoring.dashboard.v1.CommonProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -27,40 +27,48 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.XyChart.DataSet> getDataSetsList();
   /**
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.dashboard.v1.XyChart.DataSet getDataSets(int index);
   /**
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getDataSetsCount();
   /**
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder>
       getDataSetsOrBuilderList();
@@ -68,10 +76,12 @@ public interface XyChartOrBuilder
    *
    *
    * <pre>
-   * The data displayed in this chart.
+   * Required. The data displayed in this chart.
    * </pre>
    *
-   * <code>repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1;</code>
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.XyChart.DataSet data_sets = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder getDataSetsOrBuilder(int index);
 

@@ -23,8 +23,11 @@ package com.google.monitoring.dashboard.v1;
  *
  * <pre>
  * Describes a ranking-based time series filter. Each input time series is
- * ranked with an aligner. The filter lets through up to `num_time_series` time
- * series, selecting them based on the relative ranking.
+ * ranked with an aligner. The filter will allow up to `num_time_series` time
+ * series to pass through it, selecting them based on the relative ranking.
+ * For example, if `ranking_method` is `METHOD_MEAN`,`direction` is `BOTTOM`,
+ * and `num_time_series` is 3, then the 3 times series with the lowest mean
+ * values will pass through the filter.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.dashboard.v1.PickTimeSeriesFilter}
@@ -130,7 +133,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The value reducers that can be applied to a PickTimeSeriesFilter.
+   * The value reducers that can be applied to a `PickTimeSeriesFilter`.
    * </pre>
    *
    * Protobuf enum {@code google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method}
@@ -140,7 +143,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Not allowed in well-formed requests.
+     * Not allowed. You must specify a different `Method` if you specify a
+     * `PickTimeSeriesFilter`.
      * </pre>
      *
      * <code>METHOD_UNSPECIFIED = 0;</code>
@@ -203,7 +207,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Not allowed in well-formed requests.
+     * Not allowed. You must specify a different `Method` if you specify a
+     * `PickTimeSeriesFilter`.
      * </pre>
      *
      * <code>METHOD_UNSPECIFIED = 0;</code>
@@ -365,7 +370,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Not allowed in well-formed requests.
+     * Not allowed. You must specify a different `Direction` if you specify a
+     * `PickTimeSeriesFilter`.
      * </pre>
      *
      * <code>DIRECTION_UNSPECIFIED = 0;</code>
@@ -375,7 +381,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass the highest ranking inputs.
+     * Pass the highest `num_time_series` ranking inputs.
      * </pre>
      *
      * <code>TOP = 1;</code>
@@ -385,7 +391,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass the lowest ranking inputs.
+     * Pass the lowest `num_time_series` ranking inputs.
      * </pre>
      *
      * <code>BOTTOM = 2;</code>
@@ -398,7 +404,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Not allowed in well-formed requests.
+     * Not allowed. You must specify a different `Direction` if you specify a
+     * `PickTimeSeriesFilter`.
      * </pre>
      *
      * <code>DIRECTION_UNSPECIFIED = 0;</code>
@@ -408,7 +415,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass the highest ranking inputs.
+     * Pass the highest `num_time_series` ranking inputs.
      * </pre>
      *
      * <code>TOP = 1;</code>
@@ -418,7 +425,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass the lowest ranking inputs.
+     * Pass the lowest `num_time_series` ranking inputs.
      * </pre>
      *
      * <code>BOTTOM = 2;</code>
@@ -516,8 +523,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * `rankingMethod` is applied to each time series independently to produce the
-   * value which will be used to compare the time series to other time series.
+   * `ranking_method` is applied to each time series independently to produce
+   * the value which will be used to compare the time series to other time
+   * series.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -532,8 +540,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * `rankingMethod` is applied to each time series independently to produce the
-   * value which will be used to compare the time series to other time series.
+   * `ranking_method` is applied to each time series independently to produce
+   * the value which will be used to compare the time series to other time
+   * series.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -556,7 +565,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * How many time series to return.
+   * How many time series to allow to pass through the filter.
    * </pre>
    *
    * <code>int32 num_time_series = 2;</code>
@@ -797,8 +806,11 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Describes a ranking-based time series filter. Each input time series is
-   * ranked with an aligner. The filter lets through up to `num_time_series` time
-   * series, selecting them based on the relative ranking.
+   * ranked with an aligner. The filter will allow up to `num_time_series` time
+   * series to pass through it, selecting them based on the relative ranking.
+   * For example, if `ranking_method` is `METHOD_MEAN`,`direction` is `BOTTOM`,
+   * and `num_time_series` is 3, then the 3 times series with the lowest mean
+   * values will pass through the filter.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.dashboard.v1.PickTimeSeriesFilter}
@@ -969,8 +981,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * `rankingMethod` is applied to each time series independently to produce the
-     * value which will be used to compare the time series to other time series.
+     * `ranking_method` is applied to each time series independently to produce
+     * the value which will be used to compare the time series to other time
+     * series.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -985,8 +998,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * `rankingMethod` is applied to each time series independently to produce the
-     * value which will be used to compare the time series to other time series.
+     * `ranking_method` is applied to each time series independently to produce
+     * the value which will be used to compare the time series to other time
+     * series.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -1004,8 +1018,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * `rankingMethod` is applied to each time series independently to produce the
-     * value which will be used to compare the time series to other time series.
+     * `ranking_method` is applied to each time series independently to produce
+     * the value which will be used to compare the time series to other time
+     * series.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -1025,8 +1040,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * `rankingMethod` is applied to each time series independently to produce the
-     * value which will be used to compare the time series to other time series.
+     * `ranking_method` is applied to each time series independently to produce
+     * the value which will be used to compare the time series to other time
+     * series.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -1048,8 +1064,9 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * `rankingMethod` is applied to each time series independently to produce the
-     * value which will be used to compare the time series to other time series.
+     * `ranking_method` is applied to each time series independently to produce
+     * the value which will be used to compare the time series to other time
+     * series.
      * </pre>
      *
      * <code>.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method ranking_method = 1;</code>
@@ -1068,7 +1085,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * How many time series to return.
+     * How many time series to allow to pass through the filter.
      * </pre>
      *
      * <code>int32 num_time_series = 2;</code>
@@ -1083,7 +1100,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * How many time series to return.
+     * How many time series to allow to pass through the filter.
      * </pre>
      *
      * <code>int32 num_time_series = 2;</code>
@@ -1101,7 +1118,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * How many time series to return.
+     * How many time series to allow to pass through the filter.
      * </pre>
      *
      * <code>int32 num_time_series = 2;</code>
