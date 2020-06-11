@@ -362,4 +362,17 @@ public class InspectTests {
     String output = bout.toString();
     assertThat(output, containsString("Job status: DONE"));
   }
+
+  @Test
+  public void testInspectWithHotwordRules() throws Exception {
+    InspectWithHotwordRules.inspectWithHotwordRules(
+        PROJECT_ID,
+        "Patient's MRN 444-5-22222 and just a number 333-2-33333",
+        "[1-9]{3}-[1-9]{1}-[1-9]{5}",
+        "(?i)(mrn|medical)(?-i)");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Findings: 2"));
+    assertThat(output, containsString("Info type: C_MRN"));
+  }
 }
