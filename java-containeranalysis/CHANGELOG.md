@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-containeranalysis/compare/v0.120.0...v1.0.0) (2020-06-11)
+
+
+### Features
+
+* promote to GA ([#173](https://www.github.com/googleapis/java-containeranalysis/issues/173)) ([8c1e3ce](https://www.github.com/googleapis/java-containeranalysis/commit/8c1e3cedf8c8e6d589fb2d831d258ff4c21ba940))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#156](https://www.github.com/googleapis/java-containeranalysis/issues/156)) ([acd2852](https://www.github.com/googleapis/java-containeranalysis/commit/acd2852ecc80750172b7a7068e0d8d34fd46d1a1))
+* update dependency com.google.api:api-common to v1.9.2 ([#164](https://www.github.com/googleapis/java-containeranalysis/issues/164)) ([3612ff5](https://www.github.com/googleapis/java-containeranalysis/commit/3612ff58a0017be26a01367dfe7777a1fa8be53a))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#145](https://www.github.com/googleapis/java-containeranalysis/issues/145)) ([9912bd2](https://www.github.com/googleapis/java-containeranalysis/commit/9912bd23baf352641f31fd7819e58f4cb5e5572f))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#151](https://www.github.com/googleapis/java-containeranalysis/issues/151)) ([50fb503](https://www.github.com/googleapis/java-containeranalysis/commit/50fb50393ae54022ac6769e27fd622a1935d82ff))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#154](https://www.github.com/googleapis/java-containeranalysis/issues/154)) ([8ed9e57](https://www.github.com/googleapis/java-containeranalysis/commit/8ed9e57cd7f11c9f9ef2decd7274a5d9e7e0338f))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#138](https://www.github.com/googleapis/java-containeranalysis/issues/138)) ([487d9c4](https://www.github.com/googleapis/java-containeranalysis/commit/487d9c449b114c3a72859bc6e7f51014f98a3c24))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#140](https://www.github.com/googleapis/java-containeranalysis/issues/140)) ([2507340](https://www.github.com/googleapis/java-containeranalysis/commit/250734033504fbf53708b7faa2ce9d57583b555f))
+
 ## [0.120.0](https://www.github.com/googleapis/java-containeranalysis/compare/v0.119.2...v0.120.0) (2020-04-20)
 
 
