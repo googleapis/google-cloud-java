@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.122.0](https://www.github.com/googleapis/java-securitycenter/compare/v0.121.0...v0.122.0) (2020-06-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **v1p1beta1:** Removed 'having' as a field in the List and Group Finding and Asset requests.
+* remove legacy resource name (#125)
+
+### Features
+
+* remove legacy resource name ([#125](https://www.github.com/googleapis/java-securitycenter/issues/125)) ([d5f88f6](https://www.github.com/googleapis/java-securitycenter/commit/d5f88f6c8c0b182170c405ccaa8f6159fecb4a86))
+* **v1p1beta1:** add `resource` to NotificationMessage, remove `having` from list requests ([#161](https://www.github.com/googleapis/java-securitycenter/issues/161)) ([e9c6709](https://www.github.com/googleapis/java-securitycenter/commit/e9c670944e25e6cf24394bdd8dbee7a94ae40846))
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#146](https://www.github.com/googleapis/java-securitycenter/issues/146)) ([ffba078](https://www.github.com/googleapis/java-securitycenter/commit/ffba078dd1da6ad9f78e5c4425f212892eac081f))
+* update dependency com.google.api:api-common to v1.9.2 ([#153](https://www.github.com/googleapis/java-securitycenter/issues/153)) ([cfb9e30](https://www.github.com/googleapis/java-securitycenter/commit/cfb9e30815ae07d472e327f30f8a069961a2a813))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#135](https://www.github.com/googleapis/java-securitycenter/issues/135)) ([760ebf4](https://www.github.com/googleapis/java-securitycenter/commit/760ebf4cf4bd26b10451113bd7141f8303cf238f))
+* update dependency com.google.guava:guava-bom to v29 ([#109](https://www.github.com/googleapis/java-securitycenter/issues/109)) ([00a1471](https://www.github.com/googleapis/java-securitycenter/commit/00a1471f0b32e08b9a0bd6fd9c3ff86a510c8d97))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#139](https://www.github.com/googleapis/java-securitycenter/issues/139)) ([213bb0e](https://www.github.com/googleapis/java-securitycenter/commit/213bb0e685eaf36b7ad730425a89e37098dc3f63))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#144](https://www.github.com/googleapis/java-securitycenter/issues/144)) ([455344f](https://www.github.com/googleapis/java-securitycenter/commit/455344f8ac059d845cf481e59007d43e8b06bfa3))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#124](https://www.github.com/googleapis/java-securitycenter/issues/124)) ([24fee0e](https://www.github.com/googleapis/java-securitycenter/commit/24fee0eef8d80ba3eb6999a315a18cbb458bdf53))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#157](https://www.github.com/googleapis/java-securitycenter/issues/157)) ([b97deb9](https://www.github.com/googleapis/java-securitycenter/commit/b97deb90aad2cf0e71480aa91dbe760cd1c5cf70))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#129](https://www.github.com/googleapis/java-securitycenter/issues/129)) ([5d62223](https://www.github.com/googleapis/java-securitycenter/commit/5d62223fc6c56a04aee99a8239914c650b4e3c9a))
+
 ## [0.121.0](https://www.github.com/googleapis/java-securitycenter/compare/v0.120.0...v0.121.0) (2020-04-09)
 
 
