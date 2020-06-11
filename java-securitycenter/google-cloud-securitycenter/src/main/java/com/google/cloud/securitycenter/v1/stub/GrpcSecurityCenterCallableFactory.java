@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC callable factory implementation for Cloud Security Command Center API.
+ * gRPC callable factory implementation for Security Command Center API.
  *
  * <p>This class is for advanced usage.
  */

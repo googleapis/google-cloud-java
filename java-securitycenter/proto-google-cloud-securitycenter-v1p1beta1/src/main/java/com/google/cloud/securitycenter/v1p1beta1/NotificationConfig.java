@@ -22,9 +22,10 @@ package com.google.cloud.securitycenter.v1p1beta1;
  *
  *
  * <pre>
- * Cloud Security Command Center (Cloud SCC) notification configs.
- * A notification config is a Cloud SCC resource that contains the configuration
- * to send notifications for create/update events of findings, assets and etc.
+ * Security Command Center notification configs.
+ * A notification config is a Security Command Center resource that contains the
+ * configuration to send notifications for create/update events of findings,
+ * assets and etc.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.NotificationConfig}
@@ -1318,7 +1319,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The PubSub topic to send notifications to. Its format is
+   * The Pub/Sub topic to send notifications to. Its format is
    * "projects/[project_id]/topics/[topic]".
    * </pre>
    *
@@ -1342,7 +1343,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The PubSub topic to send notifications to. Its format is
+   * The Pub/Sub topic to send notifications to. Its format is
    * "projects/[project_id]/topics/[topic]".
    * </pre>
    *
@@ -1370,7 +1371,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The service account that needs "pubsub.topics.publish"
-   * permission to publish to the PubSub topic.
+   * permission to publish to the Pub/Sub topic.
    * </pre>
    *
    * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1394,7 +1395,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The service account that needs "pubsub.topics.publish"
-   * permission to publish to the PubSub topic.
+   * permission to publish to the Pub/Sub topic.
    * </pre>
    *
    * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1712,9 +1713,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Cloud Security Command Center (Cloud SCC) notification configs.
-   * A notification config is a Cloud SCC resource that contains the configuration
-   * to send notifications for create/update events of findings, assets and etc.
+   * Security Command Center notification configs.
+   * A notification config is a Security Command Center resource that contains the
+   * configuration to send notifications for create/update events of findings,
+   * assets and etc.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.NotificationConfig}
@@ -2265,7 +2267,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The PubSub topic to send notifications to. Its format is
+     * The Pub/Sub topic to send notifications to. Its format is
      * "projects/[project_id]/topics/[topic]".
      * </pre>
      *
@@ -2288,7 +2290,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The PubSub topic to send notifications to. Its format is
+     * The Pub/Sub topic to send notifications to. Its format is
      * "projects/[project_id]/topics/[topic]".
      * </pre>
      *
@@ -2311,7 +2313,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The PubSub topic to send notifications to. Its format is
+     * The Pub/Sub topic to send notifications to. Its format is
      * "projects/[project_id]/topics/[topic]".
      * </pre>
      *
@@ -2333,7 +2335,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The PubSub topic to send notifications to. Its format is
+     * The Pub/Sub topic to send notifications to. Its format is
      * "projects/[project_id]/topics/[topic]".
      * </pre>
      *
@@ -2351,7 +2353,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The PubSub topic to send notifications to. Its format is
+     * The Pub/Sub topic to send notifications to. Its format is
      * "projects/[project_id]/topics/[topic]".
      * </pre>
      *
@@ -2377,7 +2379,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The service account that needs "pubsub.topics.publish"
-     * permission to publish to the PubSub topic.
+     * permission to publish to the Pub/Sub topic.
      * </pre>
      *
      * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2400,7 +2402,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The service account that needs "pubsub.topics.publish"
-     * permission to publish to the PubSub topic.
+     * permission to publish to the Pub/Sub topic.
      * </pre>
      *
      * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2423,7 +2425,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The service account that needs "pubsub.topics.publish"
-     * permission to publish to the PubSub topic.
+     * permission to publish to the Pub/Sub topic.
      * </pre>
      *
      * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2445,7 +2447,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The service account that needs "pubsub.topics.publish"
-     * permission to publish to the PubSub topic.
+     * permission to publish to the Pub/Sub topic.
      * </pre>
      *
      * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2463,7 +2465,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The service account that needs "pubsub.topics.publish"
-     * permission to publish to the PubSub topic.
+     * permission to publish to the Pub/Sub topic.
      * </pre>
      *
      * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

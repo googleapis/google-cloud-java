@@ -82,13 +82,13 @@ public interface ListAssetsRequestOrBuilder
    * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
-   *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-   *     "update_time = 1560208038000"
+   *     `update_time = "2019-06-10T16:07:18-07:00"`
+   *     `update_time = 1560208038000`
    * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
-   *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-   *     "create_time = 1560208038000"
+   *     `create_time = "2019-06-10T16:07:18-07:00"`
+   *     `create_time = 1560208038000`
    * * iam_policy.policy_blob: `=`, `:`
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
@@ -101,6 +101,10 @@ public interface ListAssetsRequestOrBuilder
    * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
+   * Use a partial match on the empty string to filter based on a property
+   * existing: `resource_properties.my_property : ""`
+   * Use a negated partial match on the empty string to filter based on a
+   * property not existing: `-resource_properties.my_property : ""`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -136,13 +140,13 @@ public interface ListAssetsRequestOrBuilder
    * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
-   *     "update_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-   *     "update_time = 1560208038000"
+   *     `update_time = "2019-06-10T16:07:18-07:00"`
+   *     `update_time = 1560208038000`
    * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
-   *     "create_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-   *     "create_time = 1560208038000"
+   *     `create_time = "2019-06-10T16:07:18-07:00"`
+   *     `create_time = 1560208038000`
    * * iam_policy.policy_blob: `=`, `:`
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
@@ -155,6 +159,10 @@ public interface ListAssetsRequestOrBuilder
    * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
    * For example, `resource_properties.size = 100` is a valid filter string.
+   * Use a partial match on the empty string to filter based on a property
+   * existing: `resource_properties.my_property : ""`
+   * Use a negated partial match on the empty string to filter based on a
+   * property not existing: `-resource_properties.my_property : ""`
    * </pre>
    *
    * <code>string filter = 2;</code>

@@ -22,8 +22,8 @@ package com.google.cloud.securitycenter.v1p1beta1;
  *
  *
  * <pre>
- * User specified settings that are attached to the Cloud Security Command
- * Center (Cloud SCC) organization.
+ * User specified settings that are attached to the Security Command
+ * Center organization.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.OrganizationSettings}
@@ -1686,8 +1686,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * User specified settings that are attached to the Cloud Security Command
-   * Center (Cloud SCC) organization.
+   * User specified settings that are attached to the Security Command
+   * Center organization.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.OrganizationSettings}

@@ -86,5 +86,40 @@ public interface NotificationMessageOrBuilder
    */
   com.google.cloud.securitycenter.v1p1beta1.FindingOrBuilder getFindingOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud resource tied to the notification.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+   *
+   * @return Whether the resource field is set.
+   */
+  boolean hasResource();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud resource tied to the notification.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+   *
+   * @return The resource.
+   */
+  com.google.cloud.securitycenter.v1p1beta1.Resource getResource();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud resource tied to the notification.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+   */
+  com.google.cloud.securitycenter.v1p1beta1.ResourceOrBuilder getResourceOrBuilder();
+
   public com.google.cloud.securitycenter.v1p1beta1.NotificationMessage.EventCase getEventCase();
 }

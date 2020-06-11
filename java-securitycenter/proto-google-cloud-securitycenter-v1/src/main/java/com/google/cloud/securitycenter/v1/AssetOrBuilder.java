@@ -58,8 +58,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Cloud SCC managed properties. These properties are managed by
-   * Cloud SCC and cannot be modified by the user.
+   * Security Command Center managed properties. These properties are managed by
+   * Security Command Center and cannot be modified by the user.
    * </pre>
    *
    * <code>
@@ -73,8 +73,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Cloud SCC managed properties. These properties are managed by
-   * Cloud SCC and cannot be modified by the user.
+   * Security Command Center managed properties. These properties are managed by
+   * Security Command Center and cannot be modified by the user.
    * </pre>
    *
    * <code>
@@ -88,8 +88,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Cloud SCC managed properties. These properties are managed by
-   * Cloud SCC and cannot be modified by the user.
+   * Security Command Center managed properties. These properties are managed by
+   * Security Command Center and cannot be modified by the user.
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -115,7 +115,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -129,7 +129,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -140,7 +140,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -152,7 +152,7 @@ public interface AssetOrBuilder
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -201,7 +201,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was created in Cloud SCC.
+   * The time at which the asset was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -213,7 +213,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was created in Cloud SCC.
+   * The time at which the asset was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -225,7 +225,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was created in Cloud SCC.
+   * The time at which the asset was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -236,8 +236,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Cloud
-   * SCC.
+   * The time at which the asset was last updated, added, or deleted in Security
+   * Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -249,8 +249,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Cloud
-   * SCC.
+   * The time at which the asset was last updated, added, or deleted in Security
+   * Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -262,8 +262,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The time at which the asset was last updated, added, or deleted in Cloud
-   * SCC.
+   * The time at which the asset was last updated, added, or deleted in Security
+   * Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 10;</code>
@@ -274,9 +274,10 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * IAM Policy information associated with the GCP resource described by the
-   * Cloud SCC asset. This information is managed and defined by the GCP
-   * resource and cannot be modified by the user.
+   * Cloud IAM Policy information associated with the Google Cloud resource
+   * described by the Security Command Center asset. This information is managed
+   * and defined by the Google Cloud resource and cannot be modified by the
+   * user.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>
@@ -288,9 +289,10 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * IAM Policy information associated with the GCP resource described by the
-   * Cloud SCC asset. This information is managed and defined by the GCP
-   * resource and cannot be modified by the user.
+   * Cloud IAM Policy information associated with the Google Cloud resource
+   * described by the Security Command Center asset. This information is managed
+   * and defined by the Google Cloud resource and cannot be modified by the
+   * user.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>
@@ -302,9 +304,10 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * IAM Policy information associated with the GCP resource described by the
-   * Cloud SCC asset. This information is managed and defined by the GCP
-   * resource and cannot be modified by the user.
+   * Cloud IAM Policy information associated with the Google Cloud resource
+   * described by the Security Command Center asset. This information is managed
+   * and defined by the Google Cloud resource and cannot be modified by the
+   * user.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Asset.IamPolicy iam_policy = 11;</code>

@@ -41,7 +41,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
     parent_ = "";
     filter_ = "";
     orderBy_ = "";
-    having_ = "";
     pageToken_ = "";
   }
 
@@ -123,13 +122,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
                 compareDuration_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              having_ = s;
               break;
             }
           case 58:
@@ -285,11 +277,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
-   *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-   *     "event_time = 1560208038000"
+   *     `event_time = "2019-06-10T16:07:18-07:00"`
+   *     `event_time = 1560208038000`
    * security_marks.marks: `=`, `:`
    * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
+   * Use a partial match on the empty string to filter based on a property
+   * existing: `source_properties.my_property : ""`
+   * Use a negated partial match on the empty string to filter based on a
+   * property not existing: `-source_properties.my_property : ""`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -339,11 +335,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
-   *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-   *     "event_time = 1560208038000"
+   *     `event_time = "2019-06-10T16:07:18-07:00"`
+   *     `event_time = 1560208038000`
    * security_marks.marks: `=`, `:`
    * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
+   * Use a partial match on the empty string to filter based on a property
+   * existing: `source_properties.my_property : ""`
+   * Use a negated partial match on the empty string to filter based on a
+   * property not existing: `-source_properties.my_property : ""`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -516,12 +516,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.
@@ -550,12 +556,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.
@@ -586,12 +598,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED", which will be the state_change set for all findings present at
    * read_time.
@@ -602,59 +620,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCompareDurationOrBuilder() {
     return getCompareDuration();
-  }
-
-  public static final int HAVING_FIELD_NUMBER = 6;
-  private volatile java.lang.Object having_;
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only `finding.state` and `state_change`
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   *
-   * @return The having.
-   */
-  @java.lang.Override
-  public java.lang.String getHaving() {
-    java.lang.Object ref = having_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      having_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only `finding.state` and `state_change`
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   *
-   * @return The bytes for having.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getHavingBytes() {
-    java.lang.Object ref = having_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      having_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int FIELD_MASK_FIELD_NUMBER = 7;
@@ -813,9 +778,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
     if (compareDuration_ != null) {
       output.writeMessage(5, getCompareDuration());
     }
-    if (!getHavingBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, having_);
-    }
     if (fieldMask_ != null) {
       output.writeMessage(7, getFieldMask());
     }
@@ -848,9 +810,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
     }
     if (compareDuration_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCompareDuration());
-    }
-    if (!getHavingBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, having_);
     }
     if (fieldMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFieldMask());
@@ -888,7 +847,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
     if (hasCompareDuration()) {
       if (!getCompareDuration().equals(other.getCompareDuration())) return false;
     }
-    if (!getHaving().equals(other.getHaving())) return false;
     if (hasFieldMask() != other.hasFieldMask()) return false;
     if (hasFieldMask()) {
       if (!getFieldMask().equals(other.getFieldMask())) return false;
@@ -920,8 +878,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + COMPARE_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getCompareDuration().hashCode();
     }
-    hash = (37 * hash) + HAVING_FIELD_NUMBER;
-    hash = (53 * hash) + getHaving().hashCode();
     if (hasFieldMask()) {
       hash = (37 * hash) + FIELD_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getFieldMask().hashCode();
@@ -1094,8 +1050,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
         compareDuration_ = null;
         compareDurationBuilder_ = null;
       }
-      having_ = "";
-
       if (fieldMaskBuilder_ == null) {
         fieldMask_ = null;
       } else {
@@ -1147,7 +1101,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
       } else {
         result.compareDuration_ = compareDurationBuilder_.build();
       }
-      result.having_ = having_;
       if (fieldMaskBuilder_ == null) {
         result.fieldMask_ = fieldMask_;
       } else {
@@ -1223,10 +1176,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.hasCompareDuration()) {
         mergeCompareDuration(other.getCompareDuration());
-      }
-      if (!other.getHaving().isEmpty()) {
-        having_ = other.having_;
-        onChanged();
       }
       if (other.hasFieldMask()) {
         mergeFieldMask(other.getFieldMask());
@@ -1432,11 +1381,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
-     *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-     *     "event_time = 1560208038000"
+     *     `event_time = "2019-06-10T16:07:18-07:00"`
+     *     `event_time = 1560208038000`
      * security_marks.marks: `=`, `:`
      * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
+     * Use a partial match on the empty string to filter based on a property
+     * existing: `source_properties.my_property : ""`
+     * Use a negated partial match on the empty string to filter based on a
+     * property not existing: `-source_properties.my_property : ""`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1485,11 +1438,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
-     *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-     *     "event_time = 1560208038000"
+     *     `event_time = "2019-06-10T16:07:18-07:00"`
+     *     `event_time = 1560208038000`
      * security_marks.marks: `=`, `:`
      * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
+     * Use a partial match on the empty string to filter based on a property
+     * existing: `source_properties.my_property : ""`
+     * Use a negated partial match on the empty string to filter based on a
+     * property not existing: `-source_properties.my_property : ""`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1538,11 +1495,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
-     *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-     *     "event_time = 1560208038000"
+     *     `event_time = "2019-06-10T16:07:18-07:00"`
+     *     `event_time = 1560208038000`
      * security_marks.marks: `=`, `:`
      * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
+     * Use a partial match on the empty string to filter based on a property
+     * existing: `source_properties.my_property : ""`
+     * Use a negated partial match on the empty string to filter based on a
+     * property not existing: `-source_properties.my_property : ""`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1590,11 +1551,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
-     *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-     *     "event_time = 1560208038000"
+     *     `event_time = "2019-06-10T16:07:18-07:00"`
+     *     `event_time = 1560208038000`
      * security_marks.marks: `=`, `:`
      * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
+     * Use a partial match on the empty string to filter based on a property
+     * existing: `source_properties.my_property : ""`
+     * Use a negated partial match on the empty string to filter based on a
+     * property not existing: `-source_properties.my_property : ""`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1638,11 +1603,15 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      *   Usage: This should be milliseconds since epoch or an RFC3339 string.
      *   Examples:
-     *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-     *     "event_time = 1560208038000"
+     *     `event_time = "2019-06-10T16:07:18-07:00"`
+     *     `event_time = 1560208038000`
      * security_marks.marks: `=`, `:`
      * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
      * For example, `source_properties.size = 100` is a valid filter string.
+     * Use a partial match on the empty string to filter based on a property
+     * existing: `source_properties.my_property : ""`
+     * Use a negated partial match on the empty string to filter based on a
+     * property not existing: `-source_properties.my_property : ""`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -2074,12 +2043,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2107,12 +2082,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2146,12 +2127,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2187,12 +2174,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2225,12 +2218,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2270,12 +2269,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2309,12 +2314,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2342,12 +2353,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2379,12 +2396,18 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
      * two times don't affect the result. For example, the results aren't affected
      * if the finding is made inactive and then active again.
      * Possible "state_change" values when compare_duration is specified:
-     * * "CHANGED":   indicates that the finding was present at the start of
-     *                  compare_duration, but changed its state at read_time.
-     * * "UNCHANGED": indicates that the finding was present at the start of
-     *                  compare_duration and did not change state at read_time.
-     * * "ADDED":     indicates that the finding was not present at the start
-     *                  of compare_duration, but was present at read_time.
+     * * "CHANGED":   indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration, but changed its
+     *                  state at read_time.
+     * * "UNCHANGED": indicates that the finding was present and matched the given
+     *                  filter at the start of compare_duration and did not change
+     *                  state at read_time.
+     * * "ADDED":     indicates that the finding did not match the given filter or
+     *                  was not present at the start of compare_duration, but was
+     *                  present at read_time.
+     * * "REMOVED":   indicates that the finding was present and matched the
+     *                  filter at the start of compare_duration, but did not match
+     *                  the filter at read_time.
      * If compare_duration is not specified, then the only possible state_change
      * is "UNUSED", which will be the state_change set for all findings present at
      * read_time.
@@ -2407,122 +2430,6 @@ public final class ListFindingsRequest extends com.google.protobuf.GeneratedMess
         compareDuration_ = null;
       }
       return compareDurationBuilder_;
-    }
-
-    private java.lang.Object having_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only `finding.state` and `state_change`
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     *
-     * @return The having.
-     */
-    public java.lang.String getHaving() {
-      java.lang.Object ref = having_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        having_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only `finding.state` and `state_change`
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     *
-     * @return The bytes for having.
-     */
-    public com.google.protobuf.ByteString getHavingBytes() {
-      java.lang.Object ref = having_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        having_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only `finding.state` and `state_change`
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     *
-     * @param value The having to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHaving(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      having_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only `finding.state` and `state_change`
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearHaving() {
-
-      having_ = getDefaultInstance().getHaving();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only `finding.state` and `state_change`
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     *
-     * @param value The bytes for having to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHavingBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      having_ = value;
-      onChanged();
-      return this;
     }
 
     private com.google.protobuf.FieldMask fieldMask_;

@@ -45,17 +45,20 @@ public final class NotificationMessageOuterClass {
           + ".securitycenter.v1p1beta1\032\034google/api/an"
           + "notations.proto\0321google/cloud/securityce"
           + "nter/v1p1beta1/asset.proto\0323google/cloud"
-          + "/securitycenter/v1p1beta1/finding.proto\""
-          + "\203\001\n\023NotificationMessage\022 \n\030notification_"
-          + "config_name\030\001 \001(\t\022A\n\007finding\030\002 \001(\0132..goo"
-          + "gle.cloud.securitycenter.v1p1beta1.Findi"
-          + "ngH\000B\007\n\005eventB\375\001\n)com.google.cloud.secur"
-          + "itycenter.v1p1beta1P\001ZSgoogle.golang.org"
-          + "/genproto/googleapis/cloud/securitycente"
-          + "r/v1p1beta1;securitycenter\252\002%Google.Clou"
-          + "d.SecurityCenter.V1P1Beta1\312\002%Google\\Clou"
-          + "d\\SecurityCenter\\V1p1beta1\352\002(Google::Clo"
-          + "ud::SecurityCenter::V1p1beta1b\006proto3"
+          + "/securitycenter/v1p1beta1/finding.proto\032"
+          + "4google/cloud/securitycenter/v1p1beta1/r"
+          + "esource.proto\"\306\001\n\023NotificationMessage\022 \n"
+          + "\030notification_config_name\030\001 \001(\t\022A\n\007findi"
+          + "ng\030\002 \001(\0132..google.cloud.securitycenter.v"
+          + "1p1beta1.FindingH\000\022A\n\010resource\030\003 \001(\0132/.g"
+          + "oogle.cloud.securitycenter.v1p1beta1.Res"
+          + "ourceB\007\n\005eventB\375\001\n)com.google.cloud.secu"
+          + "ritycenter.v1p1beta1P\001ZSgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/securitycent"
+          + "er/v1p1beta1;securitycenter\252\002%Google.Clo"
+          + "ud.SecurityCenter.V1P1Beta1\312\002%Google\\Clo"
+          + "ud\\SecurityCenter\\V1p1beta1\352\002(Google::Cl"
+          + "oud::SecurityCenter::V1p1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -64,6 +67,7 @@ public final class NotificationMessageOuterClass {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.cloud.securitycenter.v1p1beta1.AssetOuterClass.getDescriptor(),
               com.google.cloud.securitycenter.v1p1beta1.FindingOuterClass.getDescriptor(),
+              com.google.cloud.securitycenter.v1p1beta1.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_securitycenter_v1p1beta1_NotificationMessage_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -71,11 +75,12 @@ public final class NotificationMessageOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1p1beta1_NotificationMessage_descriptor,
             new java.lang.String[] {
-              "NotificationConfigName", "Finding", "Event",
+              "NotificationConfigName", "Finding", "Resource", "Event",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.securitycenter.v1p1beta1.AssetOuterClass.getDescriptor();
     com.google.cloud.securitycenter.v1p1beta1.FindingOuterClass.getDescriptor();
+    com.google.cloud.securitycenter.v1p1beta1.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

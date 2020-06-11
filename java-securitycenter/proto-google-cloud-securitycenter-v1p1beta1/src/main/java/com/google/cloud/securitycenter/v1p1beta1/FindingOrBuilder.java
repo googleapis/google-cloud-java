@@ -91,12 +91,12 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * For findings on Google Cloud Platform (GCP) resources, the full resource
-   * name of the GCP resource this finding is for. See:
+   * For findings on Google Cloud resources, the full resource
+   * name of the Google Cloud resource this finding is for. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * When the finding is for a non-GCP resource, the resourceName can be a
-   * customer or partner defined string.
-   * This field is immutable after creation time.
+   * When the finding is for a non-Google Cloud resource, the resourceName can
+   * be a customer or partner defined string. This field is immutable after
+   * creation time.
    * </pre>
    *
    * <code>string resource_name = 3;</code>
@@ -108,12 +108,12 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * For findings on Google Cloud Platform (GCP) resources, the full resource
-   * name of the GCP resource this finding is for. See:
+   * For findings on Google Cloud resources, the full resource
+   * name of the Google Cloud resource this finding is for. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * When the finding is for a non-GCP resource, the resourceName can be a
-   * customer or partner defined string.
-   * This field is immutable after creation time.
+   * When the finding is for a non-Google Cloud resource, the resourceName can
+   * be a customer or partner defined string. This field is immutable after
+   * creation time.
    * </pre>
    *
    * <code>string resource_name = 3;</code>
@@ -180,9 +180,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The URI that, if available, points to a web page outside of Cloud SCC
-   * where additional information about the finding can be found. This field is
-   * guaranteed to be either empty or a well formed URL.
+   * The URI that, if available, points to a web page outside of Security
+   * Command Center where additional information about the finding can be found.
+   * This field is guaranteed to be either empty or a well formed URL.
    * </pre>
    *
    * <code>string external_uri = 6;</code>
@@ -194,9 +194,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The URI that, if available, points to a web page outside of Cloud SCC
-   * where additional information about the finding can be found. This field is
-   * guaranteed to be either empty or a well formed URL.
+   * The URI that, if available, points to a web page outside of Security
+   * Command Center where additional information about the finding can be found.
+   * This field is guaranteed to be either empty or a well formed URL.
    * </pre>
    *
    * <code>string external_uri = 6;</code>
@@ -367,7 +367,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The time at which the finding was created in Cloud SCC.
+   * The time at which the finding was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -379,7 +379,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The time at which the finding was created in Cloud SCC.
+   * The time at which the finding was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -391,7 +391,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The time at which the finding was created in Cloud SCC.
+   * The time at which the finding was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>

@@ -22,11 +22,12 @@ package com.google.cloud.securitycenter.v1p1beta1;
  *
  *
  * <pre>
- * Cloud Security Command Center's (Cloud SCC) representation of a Google Cloud
- * Platform (GCP) resource.
- * The Asset is a Cloud SCC resource that captures information about a single
- * GCP resource. All modifications to an Asset are only within the context of
- * Cloud SCC and don't affect the referenced GCP resource.
+ * Security Command Center representation of a Google Cloud
+ * resource.
+ * The Asset is a Security Command Center resource that captures information
+ * about a single Google Cloud resource. All modifications to an Asset are only
+ * within the context of Security Command Center and don't affect the referenced
+ * Google Cloud resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.Asset}
@@ -237,7 +238,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the GCP resource this asset
+     * The full resource name of the Google Cloud resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
@@ -251,7 +252,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the GCP resource this asset
+     * The full resource name of the Google Cloud resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
@@ -266,10 +267,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the GCP resource. Examples include: APPLICATION,
+     * The type of the Google Cloud resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-     * Cloud SCC and/or the producer of the resource and is immutable
-     * after create time.
+     * Security Command Center and/or the producer of the resource and is
+     * immutable after create time.
      * </pre>
      *
      * <code>string resource_type = 2;</code>
@@ -281,10 +282,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the GCP resource. Examples include: APPLICATION,
+     * The type of the Google Cloud resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-     * Cloud SCC and/or the producer of the resource and is immutable
-     * after create time.
+     * Security Command Center and/or the producer of the resource and is
+     * immutable after create time.
      * </pre>
      *
      * <code>string resource_type = 2;</code>
@@ -477,8 +478,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud SCC managed properties. These properties are managed by Cloud SCC and
-   * cannot be modified by the user.
+   * Security Command Center managed properties. These properties are managed by
+   * Security Command Center and cannot be modified by the user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.Asset.SecurityCenterProperties}
@@ -637,7 +638,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the GCP resource this asset
+     * The full resource name of the Google Cloud resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
@@ -662,7 +663,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full resource name of the GCP resource this asset
+     * The full resource name of the Google Cloud resource this asset
      * represents. This field is immutable after create time. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
@@ -690,10 +691,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the GCP resource. Examples include: APPLICATION,
+     * The type of the Google Cloud resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-     * Cloud SCC and/or the producer of the resource and is immutable
-     * after create time.
+     * Security Command Center and/or the producer of the resource and is
+     * immutable after create time.
      * </pre>
      *
      * <code>string resource_type = 2;</code>
@@ -716,10 +717,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the GCP resource. Examples include: APPLICATION,
+     * The type of the Google Cloud resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-     * Cloud SCC and/or the producer of the resource and is immutable
-     * after create time.
+     * Security Command Center and/or the producer of the resource and is
+     * immutable after create time.
      * </pre>
      *
      * <code>string resource_type = 2;</code>
@@ -1296,8 +1297,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by Cloud SCC and
-     * cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.Asset.SecurityCenterProperties}
@@ -1534,7 +1535,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * The full resource name of the Google Cloud resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
@@ -1558,7 +1559,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * The full resource name of the Google Cloud resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
@@ -1582,7 +1583,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * The full resource name of the Google Cloud resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
@@ -1605,7 +1606,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * The full resource name of the Google Cloud resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
@@ -1624,7 +1625,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The full resource name of the GCP resource this asset
+       * The full resource name of the Google Cloud resource this asset
        * represents. This field is immutable after create time. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
        * </pre>
@@ -1650,10 +1651,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the GCP resource. Examples include: APPLICATION,
+       * The type of the Google Cloud resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-       * Cloud SCC and/or the producer of the resource and is immutable
-       * after create time.
+       * Security Command Center and/or the producer of the resource and is
+       * immutable after create time.
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -1675,10 +1676,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the GCP resource. Examples include: APPLICATION,
+       * The type of the Google Cloud resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-       * Cloud SCC and/or the producer of the resource and is immutable
-       * after create time.
+       * Security Command Center and/or the producer of the resource and is
+       * immutable after create time.
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -1700,10 +1701,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the GCP resource. Examples include: APPLICATION,
+       * The type of the Google Cloud resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-       * Cloud SCC and/or the producer of the resource and is immutable
-       * after create time.
+       * Security Command Center and/or the producer of the resource and is
+       * immutable after create time.
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -1724,10 +1725,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the GCP resource. Examples include: APPLICATION,
+       * The type of the Google Cloud resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-       * Cloud SCC and/or the producer of the resource and is immutable
-       * after create time.
+       * Security Command Center and/or the producer of the resource and is
+       * immutable after create time.
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -1744,10 +1745,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the GCP resource. Examples include: APPLICATION,
+       * The type of the Google Cloud resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
-       * Cloud SCC and/or the producer of the resource and is immutable
-       * after create time.
+       * Security Command Center and/or the producer of the resource and is
+       * immutable after create time.
        * </pre>
        *
        * <code>string resource_type = 2;</code>
@@ -2540,7 +2541,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON representation of the Policy associated with the asset.
-     * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+     * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
      * format details.
      * </pre>
      *
@@ -2554,7 +2555,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON representation of the Policy associated with the asset.
-     * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+     * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
      * format details.
      * </pre>
      *
@@ -2568,9 +2569,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IAM Policy information associated with the GCP resource described by the
-   * Cloud SCC asset. This information is managed and defined by the GCP
-   * resource and cannot be modified by the user.
+   * Cloud IAM Policy information associated with the Google Cloud resource
+   * described by the Security Command Center asset. This information is managed
+   * and defined by the Google Cloud resource and cannot be modified by the
+   * user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy}
@@ -2666,7 +2668,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON representation of the Policy associated with the asset.
-     * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+     * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
      * format details.
      * </pre>
      *
@@ -2691,7 +2693,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON representation of the Policy associated with the asset.
-     * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+     * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
      * format details.
      * </pre>
      *
@@ -2877,9 +2879,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy}
@@ -3043,7 +3046,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The JSON representation of the Policy associated with the asset.
-       * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+       * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
        * format details.
        * </pre>
        *
@@ -3067,7 +3070,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The JSON representation of the Policy associated with the asset.
-       * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+       * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
        * format details.
        * </pre>
        *
@@ -3091,7 +3094,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The JSON representation of the Policy associated with the asset.
-       * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+       * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
        * format details.
        * </pre>
        *
@@ -3114,7 +3117,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The JSON representation of the Policy associated with the asset.
-       * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+       * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
        * format details.
        * </pre>
        *
@@ -3133,7 +3136,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The JSON representation of the Policy associated with the asset.
-       * See https://cloud.google.com/iam/reference/rest/v1/Policy for
+       * See https://cloud.google.com/iam/docs/reference/rest/v1/Policy for
        * format details.
        * </pre>
        *
@@ -3267,8 +3270,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud SCC managed properties. These properties are managed by
-   * Cloud SCC and cannot be modified by the user.
+   * Security Command Center managed properties. These properties are managed by
+   * Security Command Center and cannot be modified by the user.
    * </pre>
    *
    * <code>
@@ -3285,8 +3288,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud SCC managed properties. These properties are managed by
-   * Cloud SCC and cannot be modified by the user.
+   * Security Command Center managed properties. These properties are managed by
+   * Security Command Center and cannot be modified by the user.
    * </pre>
    *
    * <code>
@@ -3307,8 +3310,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud SCC managed properties. These properties are managed by
-   * Cloud SCC and cannot be modified by the user.
+   * Security Command Center managed properties. These properties are managed by
+   * Security Command Center and cannot be modified by the user.
    * </pre>
    *
    * <code>
@@ -3356,7 +3359,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -3379,7 +3382,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -3393,7 +3396,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -3413,7 +3416,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
-   * the GCP resource and cannot be modified by the user.
+   * the Google Cloud resource and cannot be modified by the user.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -3489,7 +3492,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the asset was created in Cloud SCC.
+   * The time at which the asset was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -3504,7 +3507,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the asset was created in Cloud SCC.
+   * The time at which the asset was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -3519,7 +3522,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the asset was created in Cloud SCC.
+   * The time at which the asset was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -3584,9 +3587,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IAM Policy information associated with the GCP resource described by the
-   * Cloud SCC asset. This information is managed and defined by the GCP
-   * resource and cannot be modified by the user.
+   * Cloud IAM Policy information associated with the Google Cloud resource
+   * described by the Security Command Center asset. This information is managed
+   * and defined by the Google Cloud resource and cannot be modified by the
+   * user.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -3601,9 +3605,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IAM Policy information associated with the GCP resource described by the
-   * Cloud SCC asset. This information is managed and defined by the GCP
-   * resource and cannot be modified by the user.
+   * Cloud IAM Policy information associated with the Google Cloud resource
+   * described by the Security Command Center asset. This information is managed
+   * and defined by the Google Cloud resource and cannot be modified by the
+   * user.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -3620,9 +3625,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IAM Policy information associated with the GCP resource described by the
-   * Cloud SCC asset. This information is managed and defined by the GCP
-   * resource and cannot be modified by the user.
+   * Cloud IAM Policy information associated with the Google Cloud resource
+   * described by the Security Command Center asset. This information is managed
+   * and defined by the Google Cloud resource and cannot be modified by the
+   * user.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -3890,11 +3896,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Security Command Center's (Cloud SCC) representation of a Google Cloud
-   * Platform (GCP) resource.
-   * The Asset is a Cloud SCC resource that captures information about a single
-   * GCP resource. All modifications to an Asset are only within the context of
-   * Cloud SCC and don't affect the referenced GCP resource.
+   * Security Command Center representation of a Google Cloud
+   * resource.
+   * The Asset is a Security Command Center resource that captures information
+   * about a single Google Cloud resource. All modifications to an Asset are only
+   * within the context of Security Command Center and don't affect the referenced
+   * Google Cloud resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.Asset}
@@ -4277,8 +4284,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4294,8 +4301,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4319,8 +4326,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4345,8 +4352,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4369,8 +4376,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4400,8 +4407,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4423,8 +4430,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4441,8 +4448,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4464,8 +4471,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud SCC managed properties. These properties are managed by
-     * Cloud SCC and cannot be modified by the user.
+     * Security Command Center managed properties. These properties are managed by
+     * Security Command Center and cannot be modified by the user.
      * </pre>
      *
      * <code>
@@ -4524,7 +4531,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
-     * the GCP resource and cannot be modified by the user.
+     * the Google Cloud resource and cannot be modified by the user.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -4547,7 +4554,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
-     * the GCP resource and cannot be modified by the user.
+     * the Google Cloud resource and cannot be modified by the user.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -4561,7 +4568,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
-     * the GCP resource and cannot be modified by the user.
+     * the Google Cloud resource and cannot be modified by the user.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -4581,7 +4588,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
-     * the GCP resource and cannot be modified by the user.
+     * the Google Cloud resource and cannot be modified by the user.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -4608,7 +4615,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
-     * the GCP resource and cannot be modified by the user.
+     * the Google Cloud resource and cannot be modified by the user.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -4631,7 +4638,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
-     * the GCP resource and cannot be modified by the user.
+     * the Google Cloud resource and cannot be modified by the user.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -4651,7 +4658,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
-     * the GCP resource and cannot be modified by the user.
+     * the Google Cloud resource and cannot be modified by the user.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
@@ -4870,7 +4877,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -4884,7 +4891,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -4904,7 +4911,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -4926,7 +4933,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -4945,7 +4952,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -4969,7 +4976,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -4989,7 +4996,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -5003,7 +5010,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -5021,7 +5028,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the asset was created in Cloud SCC.
+     * The time at which the asset was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
@@ -5245,9 +5252,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -5261,9 +5269,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -5283,9 +5292,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -5307,9 +5317,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -5329,9 +5340,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -5357,9 +5369,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -5379,9 +5392,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -5395,9 +5409,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>
@@ -5416,9 +5431,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IAM Policy information associated with the GCP resource described by the
-     * Cloud SCC asset. This information is managed and defined by the GCP
-     * resource and cannot be modified by the user.
+     * Cloud IAM Policy information associated with the Google Cloud resource
+     * described by the Security Command Center asset. This information is managed
+     * and defined by the Google Cloud resource and cannot be modified by the
+     * user.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1p1beta1.Asset.IamPolicy iam_policy = 11;</code>

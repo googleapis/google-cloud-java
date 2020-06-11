@@ -748,7 +748,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Information related to the Google Cloud Platform (GCP) resource that is
+     * Information related to the Google Cloud resource that is
      * associated with this finding.
      * </pre>
      *
@@ -1346,7 +1346,7 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * Information related to the Google Cloud Platform (GCP) resource that is
+       * Information related to the Google Cloud resource that is
        * associated with this finding.
        * </pre>
        *

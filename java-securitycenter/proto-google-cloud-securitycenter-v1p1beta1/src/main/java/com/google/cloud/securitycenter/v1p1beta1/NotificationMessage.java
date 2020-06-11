@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1p1beta1;
  *
  *
  * <pre>
- * Cloud SCC's Notification
+ * Security Command Center's Notification
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.NotificationMessage}
@@ -93,6 +93,23 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
                 event_ = subBuilder.buildPartial();
               }
               eventCase_ = 2;
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.securitycenter.v1p1beta1.Resource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1p1beta1.Resource.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -276,6 +293,54 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     return com.google.cloud.securitycenter.v1p1beta1.Finding.getDefaultInstance();
   }
 
+  public static final int RESOURCE_FIELD_NUMBER = 3;
+  private com.google.cloud.securitycenter.v1p1beta1.Resource resource_;
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud resource tied to the notification.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+   *
+   * @return Whether the resource field is set.
+   */
+  @java.lang.Override
+  public boolean hasResource() {
+    return resource_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud resource tied to the notification.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+   *
+   * @return The resource.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1p1beta1.Resource getResource() {
+    return resource_ == null
+        ? com.google.cloud.securitycenter.v1p1beta1.Resource.getDefaultInstance()
+        : resource_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud resource tied to the notification.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1p1beta1.ResourceOrBuilder getResourceOrBuilder() {
+    return getResource();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -296,6 +361,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     if (eventCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.securitycenter.v1p1beta1.Finding) event_);
     }
+    if (resource_ != null) {
+      output.writeMessage(3, getResource());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -312,6 +380,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.securitycenter.v1p1beta1.Finding) event_);
+    }
+    if (resource_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,6 +401,10 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         (com.google.cloud.securitycenter.v1p1beta1.NotificationMessage) obj;
 
     if (!getNotificationConfigName().equals(other.getNotificationConfigName())) return false;
+    if (hasResource() != other.hasResource()) return false;
+    if (hasResource()) {
+      if (!getResource().equals(other.getResource())) return false;
+    }
     if (!getEventCase().equals(other.getEventCase())) return false;
     switch (eventCase_) {
       case 2:
@@ -351,6 +426,10 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NOTIFICATION_CONFIG_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getNotificationConfigName().hashCode();
+    if (hasResource()) {
+      hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getResource().hashCode();
+    }
     switch (eventCase_) {
       case 2:
         hash = (37 * hash) + FINDING_FIELD_NUMBER;
@@ -464,7 +543,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Cloud SCC's Notification
+   * Security Command Center's Notification
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1p1beta1.NotificationMessage}
@@ -507,6 +586,12 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       super.clear();
       notificationConfigName_ = "";
 
+      if (resourceBuilder_ == null) {
+        resource_ = null;
+      } else {
+        resource_ = null;
+        resourceBuilder_ = null;
+      }
       eventCase_ = 0;
       event_ = null;
       return this;
@@ -544,6 +629,11 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         } else {
           result.event_ = findingBuilder_.build();
         }
+      }
+      if (resourceBuilder_ == null) {
+        result.resource_ = resource_;
+      } else {
+        result.resource_ = resourceBuilder_.build();
       }
       result.eventCase_ = eventCase_;
       onBuilt();
@@ -600,6 +690,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       if (!other.getNotificationConfigName().isEmpty()) {
         notificationConfigName_ = other.notificationConfigName_;
         onChanged();
+      }
+      if (other.hasResource()) {
+        mergeResource(other.getResource());
       }
       switch (other.getEventCase()) {
         case FINDING:
@@ -979,6 +1072,192 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       onChanged();
       ;
       return findingBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1p1beta1.Resource resource_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1p1beta1.Resource,
+            com.google.cloud.securitycenter.v1p1beta1.Resource.Builder,
+            com.google.cloud.securitycenter.v1p1beta1.ResourceOrBuilder>
+        resourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     *
+     * @return Whether the resource field is set.
+     */
+    public boolean hasResource() {
+      return resourceBuilder_ != null || resource_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     *
+     * @return The resource.
+     */
+    public com.google.cloud.securitycenter.v1p1beta1.Resource getResource() {
+      if (resourceBuilder_ == null) {
+        return resource_ == null
+            ? com.google.cloud.securitycenter.v1p1beta1.Resource.getDefaultInstance()
+            : resource_;
+      } else {
+        return resourceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     */
+    public Builder setResource(com.google.cloud.securitycenter.v1p1beta1.Resource value) {
+      if (resourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resource_ = value;
+        onChanged();
+      } else {
+        resourceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     */
+    public Builder setResource(
+        com.google.cloud.securitycenter.v1p1beta1.Resource.Builder builderForValue) {
+      if (resourceBuilder_ == null) {
+        resource_ = builderForValue.build();
+        onChanged();
+      } else {
+        resourceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     */
+    public Builder mergeResource(com.google.cloud.securitycenter.v1p1beta1.Resource value) {
+      if (resourceBuilder_ == null) {
+        if (resource_ != null) {
+          resource_ =
+              com.google.cloud.securitycenter.v1p1beta1.Resource.newBuilder(resource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          resource_ = value;
+        }
+        onChanged();
+      } else {
+        resourceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     */
+    public Builder clearResource() {
+      if (resourceBuilder_ == null) {
+        resource_ = null;
+        onChanged();
+      } else {
+        resource_ = null;
+        resourceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     */
+    public com.google.cloud.securitycenter.v1p1beta1.Resource.Builder getResourceBuilder() {
+
+      onChanged();
+      return getResourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     */
+    public com.google.cloud.securitycenter.v1p1beta1.ResourceOrBuilder getResourceOrBuilder() {
+      if (resourceBuilder_ != null) {
+        return resourceBuilder_.getMessageOrBuilder();
+      } else {
+        return resource_ == null
+            ? com.google.cloud.securitycenter.v1p1beta1.Resource.getDefaultInstance()
+            : resource_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud resource tied to the notification.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1p1beta1.Resource resource = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1p1beta1.Resource,
+            com.google.cloud.securitycenter.v1p1beta1.Resource.Builder,
+            com.google.cloud.securitycenter.v1p1beta1.ResourceOrBuilder>
+        getResourceFieldBuilder() {
+      if (resourceBuilder_ == null) {
+        resourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1p1beta1.Resource,
+                com.google.cloud.securitycenter.v1p1beta1.Resource.Builder,
+                com.google.cloud.securitycenter.v1p1beta1.ResourceOrBuilder>(
+                getResource(), getParentForChildren(), isClean());
+        resource_ = null;
+      }
+      return resourceBuilder_;
     }
 
     @java.lang.Override

@@ -89,11 +89,15 @@ public interface GroupFindingsRequestOrBuilder
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
-   *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-   *     "event_time = 1560208038000"
+   *     `event_time = "2019-06-10T16:07:18-07:00"`
+   *     `event_time = 1560208038000`
    * * security_marks.marks: `=`, `:`
    * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
+   * Use a partial match on the empty string to filter based on a property
+   * existing: `source_properties.my_property : ""`
+   * Use a negated partial match on the empty string to filter based on a
+   * property not existing: `-source_properties.my_property : ""`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -132,11 +136,15 @@ public interface GroupFindingsRequestOrBuilder
    * * event_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
-   *     "event_time = &#92;"2019-06-10T16:07:18-07:00&#92;""
-   *     "event_time = 1560208038000"
+   *     `event_time = "2019-06-10T16:07:18-07:00"`
+   *     `event_time = 1560208038000`
    * * security_marks.marks: `=`, `:`
    * * source_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * For example, `source_properties.size = 100` is a valid filter string.
+   * Use a partial match on the empty string to filter based on a property
+   * existing: `source_properties.my_property : ""`
+   * Use a negated partial match on the empty string to filter based on a
+   * property not existing: `-source_properties.my_property : ""`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -246,12 +254,18 @@ public interface GroupFindingsRequestOrBuilder
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all findings present
    * at read_time.
@@ -278,12 +292,18 @@ public interface GroupFindingsRequestOrBuilder
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all findings present
    * at read_time.
@@ -310,12 +330,18 @@ public interface GroupFindingsRequestOrBuilder
    * two times don't affect the result. For example, the results aren't affected
    * if the finding is made inactive and then active again.
    * Possible "state_change" values when compare_duration is specified:
-   * * "CHANGED":   indicates that the finding was present at the start of
-   *                  compare_duration, but changed its state at read_time.
-   * * "UNCHANGED": indicates that the finding was present at the start of
-   *                  compare_duration and did not change state at read_time.
-   * * "ADDED":     indicates that the finding was not present at the start
-   *                  of compare_duration, but was present at read_time.
+   * * "CHANGED":   indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration, but changed its
+   *                  state at read_time.
+   * * "UNCHANGED": indicates that the finding was present and matched the given
+   *                  filter at the start of compare_duration and did not change
+   *                  state at read_time.
+   * * "ADDED":     indicates that the finding did not match the given filter or
+   *                  was not present at the start of compare_duration, but was
+   *                  present at read_time.
+   * * "REMOVED":   indicates that the finding was present and matched the
+   *                  filter at the start of compare_duration, but did not match
+   *                  the filter at read_time.
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all findings present
    * at read_time.
@@ -326,35 +352,6 @@ public interface GroupFindingsRequestOrBuilder
    * <code>.google.protobuf.Duration compare_duration = 5;</code>
    */
   com.google.protobuf.DurationOrBuilder getCompareDurationOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only `finding.state` and `state_change`
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   *
-   * @return The having.
-   */
-  java.lang.String getHaving();
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only `finding.state` and `state_change`
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   *
-   * @return The bytes for having.
-   */
-  com.google.protobuf.ByteString getHavingBytes();
 
   /**
    *

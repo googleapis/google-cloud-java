@@ -110,7 +110,7 @@ public interface NotificationConfigOrBuilder
    *
    *
    * <pre>
-   * The PubSub topic to send notifications to. Its format is
+   * The Pub/Sub topic to send notifications to. Its format is
    * "projects/[project_id]/topics/[topic]".
    * </pre>
    *
@@ -123,7 +123,7 @@ public interface NotificationConfigOrBuilder
    *
    *
    * <pre>
-   * The PubSub topic to send notifications to. Its format is
+   * The Pub/Sub topic to send notifications to. Its format is
    * "projects/[project_id]/topics/[topic]".
    * </pre>
    *
@@ -138,7 +138,7 @@ public interface NotificationConfigOrBuilder
    *
    * <pre>
    * Output only. The service account that needs "pubsub.topics.publish"
-   * permission to publish to the PubSub topic.
+   * permission to publish to the Pub/Sub topic.
    * </pre>
    *
    * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -151,7 +151,7 @@ public interface NotificationConfigOrBuilder
    *
    * <pre>
    * Output only. The service account that needs "pubsub.topics.publish"
-   * permission to publish to the PubSub topic.
+   * permission to publish to the Pub/Sub topic.
    * </pre>
    *
    * <code>string service_account = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

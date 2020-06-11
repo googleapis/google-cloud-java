@@ -22,10 +22,10 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Cloud Security Command Center (Cloud SCC) finding.
+ * Security Command Center finding.
  * A finding is a record of assessment data like security, risk, health, or
- * privacy, that is ingested into Cloud SCC for presentation, notification,
- * analysis, policy testing, and enforcement. For example, a
+ * privacy, that is ingested into Security Command Center for presentation,
+ * notification, analysis, policy testing, and enforcement. For example, a
  * cross-site scripting (XSS) vulnerability in an App Engine application is a
  * finding.
  * </pre>
@@ -509,12 +509,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For findings on Google Cloud Platform (GCP) resources, the full resource
-   * name of the GCP resource this finding is for. See:
+   * For findings on Google Cloud resources, the full resource
+   * name of the Google Cloud resource this finding is for. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * When the finding is for a non-GCP resource, the resourceName can be a
-   * customer or partner defined string.
-   * This field is immutable after creation time.
+   * When the finding is for a non-Google Cloud resource, the resourceName can
+   * be a customer or partner defined string. This field is immutable after
+   * creation time.
    * </pre>
    *
    * <code>string resource_name = 3;</code>
@@ -537,12 +537,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For findings on Google Cloud Platform (GCP) resources, the full resource
-   * name of the GCP resource this finding is for. See:
+   * For findings on Google Cloud resources, the full resource
+   * name of the Google Cloud resource this finding is for. See:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * When the finding is for a non-GCP resource, the resourceName can be a
-   * customer or partner defined string.
-   * This field is immutable after creation time.
+   * When the finding is for a non-Google Cloud resource, the resourceName can
+   * be a customer or partner defined string. This field is immutable after
+   * creation time.
    * </pre>
    *
    * <code>string resource_name = 3;</code>
@@ -657,9 +657,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URI that, if available, points to a web page outside of Cloud SCC
-   * where additional information about the finding can be found. This field is
-   * guaranteed to be either empty or a well formed URL.
+   * The URI that, if available, points to a web page outside of Security
+   * Command Center where additional information about the finding can be found.
+   * This field is guaranteed to be either empty or a well formed URL.
    * </pre>
    *
    * <code>string external_uri = 6;</code>
@@ -682,9 +682,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URI that, if available, points to a web page outside of Cloud SCC
-   * where additional information about the finding can be found. This field is
-   * guaranteed to be either empty or a well formed URL.
+   * The URI that, if available, points to a web page outside of Security
+   * Command Center where additional information about the finding can be found.
+   * This field is guaranteed to be either empty or a well formed URL.
    * </pre>
    *
    * <code>string external_uri = 6;</code>
@@ -940,7 +940,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the finding was created in Cloud SCC.
+   * The time at which the finding was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -955,7 +955,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the finding was created in Cloud SCC.
+   * The time at which the finding was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -970,7 +970,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time at which the finding was created in Cloud SCC.
+   * The time at which the finding was created in Security Command Center.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -1247,10 +1247,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Security Command Center (Cloud SCC) finding.
+   * Security Command Center finding.
    * A finding is a record of assessment data like security, risk, health, or
-   * privacy, that is ingested into Cloud SCC for presentation, notification,
-   * analysis, policy testing, and enforcement. For example, a
+   * privacy, that is ingested into Security Command Center for presentation,
+   * notification, analysis, policy testing, and enforcement. For example, a
    * cross-site scripting (XSS) vulnerability in an App Engine application is a
    * finding.
    * </pre>
@@ -1760,12 +1760,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For findings on Google Cloud Platform (GCP) resources, the full resource
-     * name of the GCP resource this finding is for. See:
+     * For findings on Google Cloud resources, the full resource
+     * name of the Google Cloud resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-GCP resource, the resourceName can be a
-     * customer or partner defined string.
-     * This field is immutable after creation time.
+     * When the finding is for a non-Google Cloud resource, the resourceName can
+     * be a customer or partner defined string. This field is immutable after
+     * creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -1787,12 +1787,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For findings on Google Cloud Platform (GCP) resources, the full resource
-     * name of the GCP resource this finding is for. See:
+     * For findings on Google Cloud resources, the full resource
+     * name of the Google Cloud resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-GCP resource, the resourceName can be a
-     * customer or partner defined string.
-     * This field is immutable after creation time.
+     * When the finding is for a non-Google Cloud resource, the resourceName can
+     * be a customer or partner defined string. This field is immutable after
+     * creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -1814,12 +1814,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For findings on Google Cloud Platform (GCP) resources, the full resource
-     * name of the GCP resource this finding is for. See:
+     * For findings on Google Cloud resources, the full resource
+     * name of the Google Cloud resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-GCP resource, the resourceName can be a
-     * customer or partner defined string.
-     * This field is immutable after creation time.
+     * When the finding is for a non-Google Cloud resource, the resourceName can
+     * be a customer or partner defined string. This field is immutable after
+     * creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -1840,12 +1840,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For findings on Google Cloud Platform (GCP) resources, the full resource
-     * name of the GCP resource this finding is for. See:
+     * For findings on Google Cloud resources, the full resource
+     * name of the Google Cloud resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-GCP resource, the resourceName can be a
-     * customer or partner defined string.
-     * This field is immutable after creation time.
+     * When the finding is for a non-Google Cloud resource, the resourceName can
+     * be a customer or partner defined string. This field is immutable after
+     * creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -1862,12 +1862,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For findings on Google Cloud Platform (GCP) resources, the full resource
-     * name of the GCP resource this finding is for. See:
+     * For findings on Google Cloud resources, the full resource
+     * name of the Google Cloud resource this finding is for. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-GCP resource, the resourceName can be a
-     * customer or partner defined string.
-     * This field is immutable after creation time.
+     * When the finding is for a non-Google Cloud resource, the resourceName can
+     * be a customer or partner defined string. This field is immutable after
+     * creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -2100,9 +2100,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI that, if available, points to a web page outside of Cloud SCC
-     * where additional information about the finding can be found. This field is
-     * guaranteed to be either empty or a well formed URL.
+     * The URI that, if available, points to a web page outside of Security
+     * Command Center where additional information about the finding can be found.
+     * This field is guaranteed to be either empty or a well formed URL.
      * </pre>
      *
      * <code>string external_uri = 6;</code>
@@ -2124,9 +2124,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI that, if available, points to a web page outside of Cloud SCC
-     * where additional information about the finding can be found. This field is
-     * guaranteed to be either empty or a well formed URL.
+     * The URI that, if available, points to a web page outside of Security
+     * Command Center where additional information about the finding can be found.
+     * This field is guaranteed to be either empty or a well formed URL.
      * </pre>
      *
      * <code>string external_uri = 6;</code>
@@ -2148,9 +2148,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI that, if available, points to a web page outside of Cloud SCC
-     * where additional information about the finding can be found. This field is
-     * guaranteed to be either empty or a well formed URL.
+     * The URI that, if available, points to a web page outside of Security
+     * Command Center where additional information about the finding can be found.
+     * This field is guaranteed to be either empty or a well formed URL.
      * </pre>
      *
      * <code>string external_uri = 6;</code>
@@ -2171,9 +2171,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI that, if available, points to a web page outside of Cloud SCC
-     * where additional information about the finding can be found. This field is
-     * guaranteed to be either empty or a well formed URL.
+     * The URI that, if available, points to a web page outside of Security
+     * Command Center where additional information about the finding can be found.
+     * This field is guaranteed to be either empty or a well formed URL.
      * </pre>
      *
      * <code>string external_uri = 6;</code>
@@ -2190,9 +2190,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URI that, if available, points to a web page outside of Cloud SCC
-     * where additional information about the finding can be found. This field is
-     * guaranteed to be either empty or a well formed URL.
+     * The URI that, if available, points to a web page outside of Security
+     * Command Center where additional information about the finding can be found.
+     * This field is guaranteed to be either empty or a well formed URL.
      * </pre>
      *
      * <code>string external_uri = 6;</code>
@@ -2826,7 +2826,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2840,7 +2840,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2860,7 +2860,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2882,7 +2882,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2901,7 +2901,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2925,7 +2925,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2945,7 +2945,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2959,7 +2959,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -2977,7 +2977,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time at which the finding was created in Cloud SCC.
+     * The time at which the finding was created in Security Command Center.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>

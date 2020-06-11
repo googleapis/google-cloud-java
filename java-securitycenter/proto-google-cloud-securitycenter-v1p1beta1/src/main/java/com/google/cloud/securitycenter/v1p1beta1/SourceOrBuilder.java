@@ -93,7 +93,7 @@ public interface SourceOrBuilder
    * <pre>
    * The description of the source (max of 1024 characters).
    * Example:
-   * "Cloud Security Scanner is a web security scanner for common
+   * "Web Security Scanner is a web security scanner for common
    * vulnerabilities in App Engine applications. It can automatically
    * scan and detect four common vulnerabilities, including cross-site-scripting
    * (XSS), Flash injection, mixed content (HTTP in HTTPS), and
@@ -111,7 +111,7 @@ public interface SourceOrBuilder
    * <pre>
    * The description of the source (max of 1024 characters).
    * Example:
-   * "Cloud Security Scanner is a web security scanner for common
+   * "Web Security Scanner is a web security scanner for common
    * vulnerabilities in App Engine applications. It can automatically
    * scan and detect four common vulnerabilities, including cross-site-scripting
    * (XSS), Flash injection, mixed content (HTTP in HTTPS), and

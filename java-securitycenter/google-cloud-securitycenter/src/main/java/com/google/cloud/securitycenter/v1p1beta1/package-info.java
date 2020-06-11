@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Cloud Security Command Center API.
+ * A client to Security Command Center API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
