@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/security-command-center",
   "client_documentation": "https://googleapis.dev/java/google-cloud-securitycenter/latest/",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559748",
-  "release_level": "beta",
+  "release_level": "ga",
   "language": "java",
   "repo": "googleapis/java-securitycenter",
   "repo_short": "java-securitycenter",
