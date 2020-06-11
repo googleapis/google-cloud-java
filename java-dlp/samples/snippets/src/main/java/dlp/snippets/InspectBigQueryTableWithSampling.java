@@ -16,7 +16,7 @@
 
 package dlp.snippets;
 
-// [START dlp_inspect_gcs_with_sampling]
+// [START dlp_inspect_bigquery_with_sampling]
 
 import com.google.api.core.SettableApiFuture;
 import com.google.cloud.dlp.v2.DlpServiceClient;
@@ -24,19 +24,18 @@ import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.privacy.dlp.v2.Action;
-import com.google.privacy.dlp.v2.CloudStorageOptions;
-import com.google.privacy.dlp.v2.CloudStorageOptions.FileSet;
-import com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod;
+import com.google.privacy.dlp.v2.BigQueryOptions;
+import com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod;
+import com.google.privacy.dlp.v2.BigQueryTable;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.DlpJob;
-import com.google.privacy.dlp.v2.FileType;
+import com.google.privacy.dlp.v2.FieldId;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.InfoType;
 import com.google.privacy.dlp.v2.InfoTypeStats;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectDataSourceDetails;
 import com.google.privacy.dlp.v2.InspectJobConfig;
-import com.google.privacy.dlp.v2.Likelihood;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.StorageConfig;
 import com.google.pubsub.v1.ProjectSubscriptionName;
@@ -46,38 +45,43 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class InspectGcsFileWithSampling {
+public class InspectBigQueryTableWithSampling {
 
-  public static void inspectGcsFileWithSampling()
+  public static void inspectBigQueryTableWithSampling()
       throws InterruptedException, ExecutionException, IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
-    String gcsUri = "gs://" + "your-bucket-name" + "/path/to/your/file.txt";
     String topicId = "your-pubsub-topic-id";
     String subscriptionId = "your-pubsub-subscription-id";
-    inspectGcsFileWithSampling(projectId, gcsUri, topicId, subscriptionId);
+    inspectBigQueryTableWithSampling(projectId, topicId, subscriptionId);
   }
 
-  // Inspects a file in a Google Cloud Storage Bucket.
-  public static void inspectGcsFileWithSampling(
-      String projectId, String gcsUri, String topicId, String subscriptionId)
+  // Inspects a BigQuery Table
+  public static void inspectBigQueryTableWithSampling(
+      String projectId, String topicId, String subscriptionId)
       throws ExecutionException, InterruptedException, IOException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
-      // Specify the GCS file to be inspected and sampling configuration
-      CloudStorageOptions cloudStorageOptions =
-          CloudStorageOptions.newBuilder()
-              .setFileSet(FileSet.newBuilder().setUrl(gcsUri))
-              .setBytesLimitPerFile(200)
-              .addFileTypes(FileType.TEXT_FILE)
-              .setFilesLimitPercent(90)
+      // Specify the BigQuery table to be inspected.
+      BigQueryTable tableReference =
+          BigQueryTable.newBuilder()
+              .setProjectId("bigquery-public-data")
+              .setDatasetId("usa_names")
+              .setTableId("usa_1910_current")
+              .build();
+
+      BigQueryOptions bigQueryOptions =
+          BigQueryOptions.newBuilder()
+              .setTableReference(tableReference)
+              .setRowsLimit(1000)
               .setSampleMethod(SampleMethod.RANDOM_START)
+              .addIdentifyingFields(FieldId.newBuilder().setName("name"))
               .build();
 
       StorageConfig storageConfig =
-          StorageConfig.newBuilder().setCloudStorageOptions(cloudStorageOptions).build();
+          StorageConfig.newBuilder().setBigQueryOptions(bigQueryOptions).build();
 
       // Specify the type of info the inspection will look for.
       // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types
@@ -87,9 +91,7 @@ public class InspectGcsFileWithSampling {
       InspectConfig inspectConfig =
           InspectConfig.newBuilder()
               .addInfoTypes(infoType)
-              .setExcludeInfoTypes(true)
               .setIncludeQuote(true)
-              .setMinLikelihood(Likelihood.POSSIBLE)
               .build();
 
       // Specify the action that is triggered when the job completes.
@@ -171,4 +173,4 @@ public class InspectGcsFileWithSampling {
     }
   }
 }
-// [END dlp_inspect_gcs_with_sampling]
+// [END dlp_inspect_bigquery_with_sampling]

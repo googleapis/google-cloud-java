@@ -225,7 +225,7 @@ public class InspectTests {
     assertThat(output, containsString("example.com"));
     assertThat(output, not(containsString("example.org")));
   }
-  
+
   @Test
   public void testInspectTable() {
     Table tableToInspect = Table.newBuilder()
@@ -367,6 +367,16 @@ public class InspectTests {
   public void testInspectBigQueryTable() throws Exception {
     InspectBigQueryTable
         .inspectBigQueryTable(PROJECT_ID, DATASET_ID, TABLE_ID, topicName.getTopic(),
+            subscriptionName.getSubscription());
+
+    String output = bout.toString();
+    assertThat(output, containsString("Job status: DONE"));
+  }
+
+  @Test
+  public void testInspectBigQueryTableWithSampling() throws Exception {
+    InspectBigQueryTableWithSampling
+        .inspectBigQueryTableWithSampling(PROJECT_ID, topicName.getTopic(),
             subscriptionName.getSubscription());
 
     String output = bout.toString();
