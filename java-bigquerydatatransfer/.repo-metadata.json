@@ -5,7 +5,7 @@
   "client_documentation": "https://googleapis.dev/java/google-cloud-bigquerydatatransfer/latest",
   "api_description": "transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559654",
-  "release_level": "beta",
+  "release_level": "ga",
   "language": "java",
   "repo": "googleapis/java-bigquerydatatransfer",
   "repo_short": "java-bigquerydatatransfer",
