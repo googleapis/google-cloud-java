@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.133.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.3...v0.133.4) (2020-06-11)
+
+
+### Bug Fixes
+
+* make awaitTermination and shutdown protected, since we already have close() method, it is confusing to have 3 shutdown methods ([#330](https://www.github.com/googleapis/java-bigquerystorage/issues/330)) ([8856288](https://www.github.com/googleapis/java-bigquerystorage/commit/88562883051fa1d856818d4ff47fcc020e0452de))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.116.2 ([#334](https://www.github.com/googleapis/java-bigquerystorage/issues/334)) ([a611756](https://www.github.com/googleapis/java-bigquerystorage/commit/a611756faea308c7e6714d8eecdb6a295ccb3e6a))
+
 ### [0.133.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.2...v0.133.3) (2020-06-04)
 
 
