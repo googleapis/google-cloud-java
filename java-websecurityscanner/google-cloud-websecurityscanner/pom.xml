@@ -44,11 +44,15 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-websecurityscanner-v1beta</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
+      <artifactId>proto-google-cloud-websecurityscanner-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -92,6 +96,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-websecurityscanner-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->

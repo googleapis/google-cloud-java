@@ -19,7 +19,7 @@ import synthtool.languages.java as java
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
 service = 'websecurityscanner'
-versions = ['v1alpha', 'v1beta']
+versions = ['v1alpha', 'v1beta', 'v1']
 
 for version in versions:
   library = java.bazel_library(

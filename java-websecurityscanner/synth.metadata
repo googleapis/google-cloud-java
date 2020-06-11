@@ -3,31 +3,39 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-websecurityscanner.git",
-        "sha": "4462f1b47e5357251155e69c3ada4dd6daf4e0b0"
+        "remote": "git@github.com:googleapis/java-websecurityscanner.git",
+        "sha": "558cedf68d6e2eee8c36451460894ca3a5b0ccb6"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
-        "internalRef": "313460921"
+        "sha": "cf1a64d9aa88c0b9ed1d19ed6db30e67538b010d",
+        "internalRef": "315984872"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c4e37010d74071851ff24121f522e802231ac86e",
-        "internalRef": "313460921"
+        "sha": "cf1a64d9aa88c0b9ed1d19ed6db30e67538b010d",
+        "internalRef": "315984872"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "cf1a64d9aa88c0b9ed1d19ed6db30e67538b010d",
+        "internalRef": "315984872"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "987270824bd26f6a8c716d5e2022057b8ae7b26e"
+        "sha": "a0ee80e0492a03b9b2bfefb5cca7eaf17bf10438"
       }
     }
   ],
@@ -46,6 +54,15 @@
         "source": "googleapis",
         "apiName": "websecurityscanner",
         "apiVersion": "v1beta",
+        "language": "java",
+        "generator": "bazel"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "websecurityscanner",
+        "apiVersion": "v1",
         "language": "java",
         "generator": "bazel"
       }

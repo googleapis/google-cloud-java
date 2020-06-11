@@ -82,13 +82,18 @@
     <dependencies>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
+        <version>0.81.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1beta</artifactId>
         <version>0.81.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.81.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
+        <artifactId>proto-google-cloud-websecurityscanner-v1</artifactId>
+        <version>0.81.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -99,6 +104,11 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
         <version>0.81.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-websecurityscanner-v1</artifactId>
+        <version>0.81.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -203,10 +213,12 @@
   </build>
 
   <modules>
-    <module>proto-google-cloud-websecurityscanner-v1beta</module>
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
+    <module>proto-google-cloud-websecurityscanner-v1beta</module>
+    <module>proto-google-cloud-websecurityscanner-v1</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
     <module>grpc-google-cloud-websecurityscanner-v1beta</module>
+    <module>grpc-google-cloud-websecurityscanner-v1</module>
     <module>google-cloud-websecurityscanner</module>
     <module>google-cloud-websecurityscanner-bom</module>
   </modules>
