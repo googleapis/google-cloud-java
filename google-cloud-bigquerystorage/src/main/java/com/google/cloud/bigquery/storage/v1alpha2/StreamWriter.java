@@ -447,7 +447,7 @@ public class StreamWriter implements AutoCloseable {
         LOG.warning("Ignore " + t.toString() + " since error has already been set");
         return;
       } else {
-        LOG.fine("Setting " + t.toString() + " on response");
+        LOG.info("Setting " + t.toString() + " on response");
       }
       for (AppendRequestAndFutureResponse request : inflightRequests) {
         request.appendResult.setException(t);
@@ -852,25 +852,29 @@ public class StreamWriter implements AutoCloseable {
                   Math.min(
                       streamWriter.getRetrySettings().getInitialRetryDelay().toMillis(),
                       Duration.ofSeconds(7).toMillis()));
+              LOG.info("Resending requests on transient error:" + streamWriter.currentRetries);
               streamWriter.writeBatch(inflightBatch);
               synchronized (streamWriter.currentRetries) {
                 streamWriter.currentRetries++;
               }
             } else {
+              inflightBatch.onFailure(t);
               synchronized (streamWriter.currentRetries) {
                 streamWriter.currentRetries = 0;
               }
-              inflightBatch.onFailure(t);
             }
           } catch (IOException | InterruptedException e) {
-            streamWriter.currentRetries = 0;
+            LOG.info("Got exception while retrying.");
             inflightBatch.onFailure(e);
+            synchronized (streamWriter.currentRetries) {
+              streamWriter.currentRetries = 0;
+            }
           }
         } else {
+          inflightBatch.onFailure(t);
           synchronized (streamWriter.currentRetries) {
             streamWriter.currentRetries = 0;
           }
-          inflightBatch.onFailure(t);
           try {
             if (!streamWriter.shutdown.get()) {
               // Establish a new connection.
