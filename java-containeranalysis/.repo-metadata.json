@@ -4,7 +4,7 @@
   "product_documentation": "https://cloud.google.com/container-registry/docs/container-analysis",
   "client_documentation": "https://googleapis.dev/java/google-cloud-containeranalysis/latest/",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
-  "release_level": "beta",
+  "release_level": "ga",
   "language": "java",
   "repo": "googleapis/java-containeranalysis",
   "repo_short": "java-containeranalysis",
