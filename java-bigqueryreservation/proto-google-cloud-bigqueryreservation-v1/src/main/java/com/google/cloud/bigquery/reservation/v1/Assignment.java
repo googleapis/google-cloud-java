@@ -259,6 +259,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -418,6 +422,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -466,6 +474,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -489,6 +498,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -515,6 +525,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The assignee.
    */
+  @java.lang.Override
   public java.lang.String getAssignee() {
     java.lang.Object ref = assignee_;
     if (ref instanceof java.lang.String) {
@@ -538,6 +549,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for assignee.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getAssigneeBytes() {
     java.lang.Object ref = assignee_;
     if (ref instanceof java.lang.String) {
@@ -563,6 +575,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for jobType.
    */
+  @java.lang.Override
   public int getJobTypeValue() {
     return jobType_;
   }
@@ -577,6 +590,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The jobType.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.Assignment.JobType getJobType() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.reservation.v1.Assignment.JobType result =
@@ -601,6 +615,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -617,6 +632,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.Assignment.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.reservation.v1.Assignment.State result =
@@ -1233,6 +1249,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for jobType.
      */
+    @java.lang.Override
     public int getJobTypeValue() {
       return jobType_;
     }
@@ -1249,6 +1266,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setJobTypeValue(int value) {
+
       jobType_ = value;
       onChanged();
       return this;
@@ -1264,6 +1282,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The jobType.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.reservation.v1.Assignment.JobType getJobType() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.reservation.v1.Assignment.JobType result =
@@ -1325,6 +1344,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1343,6 +1363,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1360,6 +1381,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.reservation.v1.Assignment.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.reservation.v1.Assignment.State result =

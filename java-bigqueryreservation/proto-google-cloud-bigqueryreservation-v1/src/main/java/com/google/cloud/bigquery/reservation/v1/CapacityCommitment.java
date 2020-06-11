@@ -362,6 +362,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -544,6 +548,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
 
@@ -592,6 +600,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -615,6 +624,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -640,6 +650,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The slotCount.
    */
+  @java.lang.Override
   public long getSlotCount() {
     return slotCount_;
   }
@@ -657,6 +668,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for plan.
    */
+  @java.lang.Override
   public int getPlanValue() {
     return plan_;
   }
@@ -671,6 +683,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The plan.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan getPlan() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan result =
@@ -695,6 +708,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for state.
    */
+  @java.lang.Override
   public int getStateValue() {
     return state_;
   }
@@ -711,6 +725,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The state.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitment.State getState() {
     @SuppressWarnings("deprecation")
     com.google.cloud.bigquery.reservation.v1.CapacityCommitment.State result =
@@ -736,6 +751,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the commitmentEndTime field is set.
    */
+  @java.lang.Override
   public boolean hasCommitmentEndTime() {
     return commitmentEndTime_ != null;
   }
@@ -753,6 +769,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The commitmentEndTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCommitmentEndTime() {
     return commitmentEndTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -770,6 +787,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * .google.protobuf.Timestamp commitment_end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCommitmentEndTimeOrBuilder() {
     return getCommitmentEndTime();
   }
@@ -788,6 +806,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return Whether the failureStatus field is set.
    */
+  @java.lang.Override
   public boolean hasFailureStatus() {
     return failureStatus_ != null;
   }
@@ -803,6 +822,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The failureStatus.
    */
+  @java.lang.Override
   public com.google.rpc.Status getFailureStatus() {
     return failureStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : failureStatus_;
   }
@@ -816,6 +836,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <code>.google.rpc.Status failure_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.rpc.StatusOrBuilder getFailureStatusOrBuilder() {
     return getFailureStatus();
   }
@@ -836,6 +857,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The enum numeric value on the wire for renewalPlan.
    */
+  @java.lang.Override
   public int getRenewalPlanValue() {
     return renewalPlan_;
   }
@@ -853,6 +875,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    * @return The renewalPlan.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan
       getRenewalPlan() {
     @SuppressWarnings("deprecation")
@@ -1445,6 +1468,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * @return The slotCount.
      */
+    @java.lang.Override
     public long getSlotCount() {
       return slotCount_;
     }
@@ -1497,6 +1521,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for plan.
      */
+    @java.lang.Override
     public int getPlanValue() {
       return plan_;
     }
@@ -1514,6 +1539,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setPlanValue(int value) {
+
       plan_ = value;
       onChanged();
       return this;
@@ -1530,6 +1556,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * @return The plan.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan getPlan() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan result =
@@ -1594,6 +1621,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for state.
      */
+    @java.lang.Override
     public int getStateValue() {
       return state_;
     }
@@ -1612,6 +1640,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
+
       state_ = value;
       onChanged();
       return this;
@@ -1629,6 +1658,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * @return The state.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment.State getState() {
       @SuppressWarnings("deprecation")
       com.google.cloud.bigquery.reservation.v1.CapacityCommitment.State result =
@@ -2093,6 +2123,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * @return The enum numeric value on the wire for renewalPlan.
      */
+    @java.lang.Override
     public int getRenewalPlanValue() {
       return renewalPlan_;
     }
@@ -2113,6 +2144,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setRenewalPlanValue(int value) {
+
       renewalPlan_ = value;
       onChanged();
       return this;
@@ -2132,6 +2164,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      * @return The renewalPlan.
      */
+    @java.lang.Override
     public com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan
         getRenewalPlan() {
       @SuppressWarnings("deprecation")

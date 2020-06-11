@@ -135,6 +135,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -158,6 +159,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -190,6 +192,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The slotCapacity.
    */
+  @java.lang.Override
   public long getSlotCapacity() {
     return slotCapacity_;
   }
@@ -209,6 +212,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The ignoreIdleSlots.
    */
+  @java.lang.Override
   public boolean getIgnoreIdleSlots() {
     return ignoreIdleSlots_;
   }
@@ -691,6 +695,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The slotCapacity.
      */
+    @java.lang.Override
     public long getSlotCapacity() {
       return slotCapacity_;
     }
@@ -758,6 +763,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The ignoreIdleSlots.
      */
+    @java.lang.Override
     public boolean getIgnoreIdleSlots() {
       return ignoreIdleSlots_;
     }

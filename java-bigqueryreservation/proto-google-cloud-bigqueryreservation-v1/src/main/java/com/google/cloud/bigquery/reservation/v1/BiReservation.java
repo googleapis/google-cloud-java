@@ -146,6 +146,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +171,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +198,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return Whether the updateTime field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -211,6 +214,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The updateTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -224,6 +228,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -241,6 +246,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
    *
    * @return The size.
    */
+  @java.lang.Override
   public long getSize() {
     return size_;
   }
@@ -936,6 +942,7 @@ public final class BiReservation extends com.google.protobuf.GeneratedMessageV3
      *
      * @return The size.
      */
+    @java.lang.Override
     public long getSize() {
       return size_;
     }

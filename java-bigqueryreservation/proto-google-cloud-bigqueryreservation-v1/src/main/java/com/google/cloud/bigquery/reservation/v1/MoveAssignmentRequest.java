@@ -142,6 +142,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +169,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    *
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -190,10 +192,11 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    *   `projects/myotherproject/locations/US/reservations/team2-prod`
    * </pre>
    *
-   * <code>string destination_id = 3;</code>
+   * <code>string destination_id = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The destinationId.
    */
+  @java.lang.Override
   public java.lang.String getDestinationId() {
     java.lang.Object ref = destinationId_;
     if (ref instanceof java.lang.String) {
@@ -213,10 +216,11 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
    *   `projects/myotherproject/locations/US/reservations/team2-prod`
    * </pre>
    *
-   * <code>string destination_id = 3;</code>
+   * <code>string destination_id = 3 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for destinationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getDestinationIdBytes() {
     java.lang.Object ref = destinationId_;
     if (ref instanceof java.lang.String) {
@@ -708,7 +712,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
-     * <code>string destination_id = 3;</code>
+     * <code>string destination_id = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The destinationId.
      */
@@ -731,7 +735,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
-     * <code>string destination_id = 3;</code>
+     * <code>string destination_id = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for destinationId.
      */
@@ -754,7 +758,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
-     * <code>string destination_id = 3;</code>
+     * <code>string destination_id = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The destinationId to set.
      * @return This builder for chaining.
@@ -776,7 +780,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
-     * <code>string destination_id = 3;</code>
+     * <code>string destination_id = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -794,7 +798,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
      *   `projects/myotherproject/locations/US/reservations/team2-prod`
      * </pre>
      *
-     * <code>string destination_id = 3;</code>
+     * <code>string destination_id = 3 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for destinationId to set.
      * @return This builder for chaining.

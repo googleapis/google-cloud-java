@@ -151,6 +151,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    *
    * @return Whether the first field is set.
    */
+  @java.lang.Override
   public boolean hasFirst() {
     return first_ != null;
   }
@@ -165,6 +166,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    *
    * @return The first.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitment getFirst() {
     return first_ == null
         ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
@@ -179,6 +181,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    *
    * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment first = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder getFirstOrBuilder() {
     return getFirst();
   }
@@ -196,6 +199,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    *
    * @return Whether the second field is set.
    */
+  @java.lang.Override
   public boolean hasSecond() {
     return second_ != null;
   }
@@ -210,6 +214,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    *
    * @return The second.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitment getSecond() {
     return second_ == null
         ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
@@ -224,6 +229,7 @@ public final class SplitCapacityCommitmentResponse extends com.google.protobuf.G
    *
    * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment second = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder getSecondOrBuilder() {
     return getSecond();
   }

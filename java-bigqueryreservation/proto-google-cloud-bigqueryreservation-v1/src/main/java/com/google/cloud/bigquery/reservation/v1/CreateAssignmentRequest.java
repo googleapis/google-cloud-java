@@ -147,6 +147,7 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -172,6 +173,7 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -197,6 +199,7 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    * @return Whether the assignment field is set.
    */
+  @java.lang.Override
   public boolean hasAssignment() {
     return assignment_ != null;
   }
@@ -211,6 +214,7 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    * @return The assignment.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.Assignment getAssignment() {
     return assignment_ == null
         ? com.google.cloud.bigquery.reservation.v1.Assignment.getDefaultInstance()
@@ -225,6 +229,7 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    * <code>.google.cloud.bigquery.reservation.v1.Assignment assignment = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.AssignmentOrBuilder getAssignmentOrBuilder() {
     return getAssignment();
   }

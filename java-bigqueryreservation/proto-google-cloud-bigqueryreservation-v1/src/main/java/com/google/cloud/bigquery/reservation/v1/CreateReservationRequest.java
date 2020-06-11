@@ -153,6 +153,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +179,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +206,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * @return The reservationId.
    */
+  @java.lang.Override
   public java.lang.String getReservationId() {
     java.lang.Object ref = reservationId_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +230,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * @return The bytes for reservationId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getReservationIdBytes() {
     java.lang.Object ref = reservationId_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +256,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * @return Whether the reservation field is set.
    */
+  @java.lang.Override
   public boolean hasReservation() {
     return reservation_ != null;
   }
@@ -266,6 +271,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * @return The reservation.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.Reservation getReservation() {
     return reservation_ == null
         ? com.google.cloud.bigquery.reservation.v1.Reservation.getDefaultInstance()
@@ -280,6 +286,7 @@ public final class CreateReservationRequest extends com.google.protobuf.Generate
    *
    * <code>.google.cloud.bigquery.reservation.v1.Reservation reservation = 3;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.ReservationOrBuilder getReservationOrBuilder() {
     return getReservation();
   }

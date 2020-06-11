@@ -141,6 +141,7 @@ public final class ListReservationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.bigquery.reservation.v1.Reservation reservations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.reservation.v1.Reservation>
       getReservationsList() {
     return reservations_;
@@ -154,6 +155,7 @@ public final class ListReservationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.bigquery.reservation.v1.Reservation reservations = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.google.cloud.bigquery.reservation.v1.ReservationOrBuilder>
       getReservationsOrBuilderList() {
     return reservations_;
@@ -167,6 +169,7 @@ public final class ListReservationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.bigquery.reservation.v1.Reservation reservations = 1;</code>
    */
+  @java.lang.Override
   public int getReservationsCount() {
     return reservations_.size();
   }
@@ -179,6 +182,7 @@ public final class ListReservationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.bigquery.reservation.v1.Reservation reservations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.Reservation getReservations(int index) {
     return reservations_.get(index);
   }
@@ -191,6 +195,7 @@ public final class ListReservationsResponse extends com.google.protobuf.Generate
    *
    * <code>repeated .google.cloud.bigquery.reservation.v1.Reservation reservations = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.ReservationOrBuilder getReservationsOrBuilder(
       int index) {
     return reservations_.get(index);
@@ -210,6 +215,7 @@ public final class ListReservationsResponse extends com.google.protobuf.Generate
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +239,7 @@ public final class ListReservationsResponse extends com.google.protobuf.Generate
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

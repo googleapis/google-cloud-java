@@ -2010,7 +2010,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String query = "";
    *   for (Assignment element : reservationServiceClient.searchAssignments(parent, query).iterateAll()) {
    *     // doThingsWith(element);
@@ -2026,8 +2026,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `assignee=organizations/456`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchAssignmentsPagedResponse searchAssignments(
-      ReservationName parent, String query) {
+  public final SearchAssignmentsPagedResponse searchAssignments(LocationName parent, String query) {
     SearchAssignmentsRequest request =
         SearchAssignmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2063,7 +2062,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String query = "";
    *   for (Assignment element : reservationServiceClient.searchAssignments(parent.toString(), query).iterateAll()) {
    *     // doThingsWith(element);
@@ -2112,7 +2111,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   SearchAssignmentsRequest request = SearchAssignmentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -2156,7 +2155,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   SearchAssignmentsRequest request = SearchAssignmentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -2200,7 +2199,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   SearchAssignmentsRequest request = SearchAssignmentsRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
@@ -2236,7 +2235,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * <pre><code>
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   String destinationId = "";
+   *   ReservationName destinationId = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
    *   Assignment response = reservationServiceClient.moveAssignment(name, destinationId);
    * }
    * </code></pre>
@@ -2247,11 +2246,11 @@ public class ReservationServiceClient implements BackgroundResource {
    *     `projects/myotherproject/locations/US/reservations/team2-prod`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Assignment moveAssignment(AssignmentName name, String destinationId) {
+  public final Assignment moveAssignment(AssignmentName name, ReservationName destinationId) {
     MoveAssignmentRequest request =
         MoveAssignmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
-            .setDestinationId(destinationId)
+            .setDestinationId(destinationId == null ? null : destinationId.toString())
             .build();
     return moveAssignment(request);
   }
@@ -2268,8 +2267,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <pre><code>
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   AssignmentName name = AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-   *   String destinationId = "";
-   *   Assignment response = reservationServiceClient.moveAssignment(name.toString(), destinationId);
+   *   ReservationName destinationId = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+   *   Assignment response = reservationServiceClient.moveAssignment(name.toString(), destinationId.toString());
    * }
    * </code></pre>
    *

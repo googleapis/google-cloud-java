@@ -146,6 +146,7 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
    * repeated .google.cloud.bigquery.reservation.v1.CapacityCommitment capacity_commitments = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
       getCapacityCommitmentsList() {
     return capacityCommitments_;
@@ -161,6 +162,7 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
    * repeated .google.cloud.bigquery.reservation.v1.CapacityCommitment capacity_commitments = 1;
    * </code>
    */
+  @java.lang.Override
   public java.util.List<
           ? extends com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder>
       getCapacityCommitmentsOrBuilderList() {
@@ -177,6 +179,7 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
    * repeated .google.cloud.bigquery.reservation.v1.CapacityCommitment capacity_commitments = 1;
    * </code>
    */
+  @java.lang.Override
   public int getCapacityCommitmentsCount() {
     return capacityCommitments_.size();
   }
@@ -191,6 +194,7 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
    * repeated .google.cloud.bigquery.reservation.v1.CapacityCommitment capacity_commitments = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitments(
       int index) {
     return capacityCommitments_.get(index);
@@ -206,6 +210,7 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
    * repeated .google.cloud.bigquery.reservation.v1.CapacityCommitment capacity_commitments = 1;
    * </code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder
       getCapacityCommitmentsOrBuilder(int index) {
     return capacityCommitments_.get(index);
@@ -225,6 +230,7 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
    *
    * @return The nextPageToken.
    */
+  @java.lang.Override
   public java.lang.String getNextPageToken() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
@@ -248,6 +254,7 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
    *
    * @return The bytes for nextPageToken.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {

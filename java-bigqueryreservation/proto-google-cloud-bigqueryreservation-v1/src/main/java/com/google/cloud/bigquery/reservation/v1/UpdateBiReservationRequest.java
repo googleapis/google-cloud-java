@@ -147,6 +147,7 @@ public final class UpdateBiReservationRequest extends com.google.protobuf.Genera
    *
    * @return Whether the biReservation field is set.
    */
+  @java.lang.Override
   public boolean hasBiReservation() {
     return biReservation_ != null;
   }
@@ -161,6 +162,7 @@ public final class UpdateBiReservationRequest extends com.google.protobuf.Genera
    *
    * @return The biReservation.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.BiReservation getBiReservation() {
     return biReservation_ == null
         ? com.google.cloud.bigquery.reservation.v1.BiReservation.getDefaultInstance()
@@ -175,6 +177,7 @@ public final class UpdateBiReservationRequest extends com.google.protobuf.Genera
    *
    * <code>.google.cloud.bigquery.reservation.v1.BiReservation bi_reservation = 1;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.BiReservationOrBuilder
       getBiReservationOrBuilder() {
     return getBiReservation();
@@ -193,6 +196,7 @@ public final class UpdateBiReservationRequest extends com.google.protobuf.Genera
    *
    * @return Whether the updateMask field is set.
    */
+  @java.lang.Override
   public boolean hasUpdateMask() {
     return updateMask_ != null;
   }
@@ -207,6 +211,7 @@ public final class UpdateBiReservationRequest extends com.google.protobuf.Genera
    *
    * @return The updateMask.
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
@@ -219,6 +224,7 @@ public final class UpdateBiReservationRequest extends com.google.protobuf.Genera
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
   }

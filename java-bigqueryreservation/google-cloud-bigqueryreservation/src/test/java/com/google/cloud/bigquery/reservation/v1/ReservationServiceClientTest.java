@@ -780,7 +780,7 @@ public class ReservationServiceClientTest {
             .build();
     mockReservationService.addResponse(expectedResponse);
 
-    ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     String query = "query107944136";
 
     SearchAssignmentsPagedResponse pagedListResponse = client.searchAssignments(parent, query);
@@ -793,7 +793,7 @@ public class ReservationServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     SearchAssignmentsRequest actualRequest = (SearchAssignmentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ReservationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertEquals(query, actualRequest.getQuery());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -808,7 +808,7 @@ public class ReservationServiceClientTest {
     mockReservationService.addException(exception);
 
     try {
-      ReservationName parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       String query = "query107944136";
 
       client.searchAssignments(parent, query);
@@ -830,7 +830,7 @@ public class ReservationServiceClientTest {
 
     AssignmentName name =
         AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-    String destinationId = "destinationId912984812";
+    ReservationName destinationId = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
 
     Assignment actualResponse = client.moveAssignment(name, destinationId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -840,7 +840,7 @@ public class ReservationServiceClientTest {
     MoveAssignmentRequest actualRequest = (MoveAssignmentRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, AssignmentName.parse(actualRequest.getName()));
-    Assert.assertEquals(destinationId, actualRequest.getDestinationId());
+    Assert.assertEquals(destinationId, ReservationName.parse(actualRequest.getDestinationId()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -856,7 +856,8 @@ public class ReservationServiceClientTest {
     try {
       AssignmentName name =
           AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
-      String destinationId = "destinationId912984812";
+      ReservationName destinationId =
+          ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]");
 
       client.moveAssignment(name, destinationId);
       Assert.fail("No exception raised");

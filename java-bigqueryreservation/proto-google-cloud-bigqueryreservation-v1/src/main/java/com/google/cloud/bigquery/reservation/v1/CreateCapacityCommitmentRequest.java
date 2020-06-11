@@ -151,6 +151,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * @return The parent.
    */
+  @java.lang.Override
   public java.lang.String getParent() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -176,6 +177,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * @return The bytes for parent.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
@@ -201,6 +203,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * @return Whether the capacityCommitment field is set.
    */
+  @java.lang.Override
   public boolean hasCapacityCommitment() {
     return capacityCommitment_ != null;
   }
@@ -215,6 +218,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * @return The capacityCommitment.
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitment() {
     return capacityCommitment_ == null
         ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance()
@@ -229,6 +233,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * <code>.google.cloud.bigquery.reservation.v1.CapacityCommitment capacity_commitment = 2;</code>
    */
+  @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.CapacityCommitmentOrBuilder
       getCapacityCommitmentOrBuilder() {
     return getCapacityCommitment();
@@ -248,6 +253,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * @return The enforceSingleAdminProjectPerOrg.
    */
+  @java.lang.Override
   public boolean getEnforceSingleAdminProjectPerOrg() {
     return enforceSingleAdminProjectPerOrg_;
   }
@@ -966,6 +972,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * @return The enforceSingleAdminProjectPerOrg.
      */
+    @java.lang.Override
     public boolean getEnforceSingleAdminProjectPerOrg() {
       return enforceSingleAdminProjectPerOrg_;
     }
