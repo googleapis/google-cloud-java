@@ -42,8 +42,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-secretmanager</artifactId>
     </dependency>
-
-     <!-- [START_EXCLUDE] -->
+    <!-- [START_EXCLUDE] -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
