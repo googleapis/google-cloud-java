@@ -71,7 +71,7 @@
   </licenses>
 
   <properties>
-    <autovalue.version>1.7.2</autovalue.version>
+    <autovalue.version>1.7.3</autovalue.version>
   </properties>
 
   <dependencyManagement>
