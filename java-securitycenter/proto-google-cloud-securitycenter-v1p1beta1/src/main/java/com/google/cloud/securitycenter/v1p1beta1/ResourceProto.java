@@ -50,7 +50,7 @@ public final class ResourceProto {
           + "p1beta1B\rResourceProtoP\001ZSgoogle.golang."
           + "org/genproto/googleapis/cloud/securityce"
           + "nter/v1p1beta1;securitycenter\252\002%Google.C"
-          + "loud.SecurityCenter.V1p1Beta1\312\002%Google\\C"
+          + "loud.SecurityCenter.V1P1Beta1\312\002%Google\\C"
           + "loud\\SecurityCenter\\V1p1beta1\352\002(Google::"
           + "Cloud::SecurityCenter::V1p1beta1b\006proto3"
     };
