@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-securitycenter/compare/v0.122.0...v1.0.0) (2020-06-12)
+
+
+### Features
+
+* promote to GA ([#166](https://www.github.com/googleapis/java-securitycenter/issues/166)) ([8ce6f89](https://www.github.com/googleapis/java-securitycenter/commit/8ce6f892400cb4a4fdc5d7f9fcd2b8b7c3a157aa))
+
+
+### Dependencies
+
+* update core dependencies to v1.57.0 ([#169](https://www.github.com/googleapis/java-securitycenter/issues/169)) ([2ea4381](https://www.github.com/googleapis/java-securitycenter/commit/2ea4381b98c5b49bd6f634294c811e2ba670dee3))
+
 ## [0.122.0](https://www.github.com/googleapis/java-securitycenter/compare/v0.121.0...v0.122.0) (2020-06-11)
 
 
