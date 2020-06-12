@@ -312,12 +312,13 @@ public final class BigtableInstanceAdminProto {
           + "googleapis.com/auth/cloud-bigtable.admin"
           + ".cluster,https://www.googleapis.com/auth"
           + "/cloud-platform,https://www.googleapis.c"
-          + "om/auth/cloud-platform.read-onlyB\275\001\n\034com"
+          + "om/auth/cloud-platform.read-onlyB\342\001\n\034com"
           + ".google.bigtable.admin.v2B\032BigtableInsta"
           + "nceAdminProtoP\001Z=google.golang.org/genpr"
           + "oto/googleapis/bigtable/admin/v2;admin\252\002"
           + "\036Google.Cloud.Bigtable.Admin.V2\312\002\036Google"
-          + "\\Cloud\\Bigtable\\Admin\\V2b\006proto3"
+          + "\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google::Cloud"
+          + "::Bigtable::Admin::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

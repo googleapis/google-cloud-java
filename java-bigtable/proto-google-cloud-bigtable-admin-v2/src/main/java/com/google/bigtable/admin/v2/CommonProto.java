@@ -47,12 +47,13 @@ public final class CommonProto {
           + "\030\002 \001(\0132\032.google.protobuf.Timestamp\022,\n\010en"
           + "d_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
           + "*=\n\013StorageType\022\034\n\030STORAGE_TYPE_UNSPECIF"
-          + "IED\020\000\022\007\n\003SSD\020\001\022\007\n\003HDD\020\002B\256\001\n\034com.google.b"
+          + "IED\020\000\022\007\n\003SSD\020\001\022\007\n\003HDD\020\002B\323\001\n\034com.google.b"
           + "igtable.admin.v2B\013CommonProtoP\001Z=google."
           + "golang.org/genproto/googleapis/bigtable/"
           + "admin/v2;admin\252\002\036Google.Cloud.Bigtable.A"
           + "dmin.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2"
-          + "b\006proto3"
+          + "\352\002\"Google::Cloud::Bigtable::Admin::V2b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -182,11 +182,12 @@ public final class DataProto {
           + "tation\"\200\001\n\023ReadModifyWriteRule\022\023\n\013family"
           + "_name\030\001 \001(\t\022\030\n\020column_qualifier\030\002 \001(\014\022\026\n"
           + "\014append_value\030\003 \001(\014H\000\022\032\n\020increment_amoun"
-          + "t\030\004 \001(\003H\000B\006\n\004ruleB\227\001\n\026com.google.bigtabl"
+          + "t\030\004 \001(\003H\000B\006\n\004ruleB\265\001\n\026com.google.bigtabl"
           + "e.v2B\tDataProtoP\001Z:google.golang.org/gen"
           + "proto/googleapis/bigtable/v2;bigtable\252\002\030"
           + "Google.Cloud.Bigtable.V2\312\002\030Google\\Cloud\\"
-          + "Bigtable\\V2b\006proto3"
+          + "Bigtable\\V2\352\002\033Google::Cloud::Bigtable::V"
+          + "2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

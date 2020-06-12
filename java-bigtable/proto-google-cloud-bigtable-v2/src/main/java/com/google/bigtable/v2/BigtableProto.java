@@ -198,13 +198,14 @@ public final class BigtableProto {
           + ".com/auth/cloud-bigtable.data.readonly,h"
           + "ttps://www.googleapis.com/auth/cloud-pla"
           + "tform,https://www.googleapis.com/auth/cl"
-          + "oud-platform.read-onlyB\365\001\n\026com.google.bi"
+          + "oud-platform.read-onlyB\223\002\n\026com.google.bi"
           + "gtable.v2B\rBigtableProtoP\001Z:google.golan"
           + "g.org/genproto/googleapis/bigtable/v2;bi"
           + "gtable\252\002\030Google.Cloud.Bigtable.V2\312\002\030Goog"
-          + "le\\Cloud\\Bigtable\\V2\352AW\n\035bigtable.google"
-          + "apis.com/Table\0226projects/{project}/insta"
-          + "nces/{instance}/tables/{table}b\006proto3"
+          + "le\\Cloud\\Bigtable\\V2\352\002\033Google::Cloud::Bi"
+          + "gtable::V2\352AW\n\035bigtable.googleapis.com/T"
+          + "able\0226projects/{project}/instances/{inst"
+          + "ance}/tables/{table}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

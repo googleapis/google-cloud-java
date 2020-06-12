@@ -99,11 +99,12 @@ public final class InstanceProto {
           + "\001(\010:j\352Ag\n\"bigtable.googleapis.com/AppPro"
           + "file\022Aprojects/{project}/instances/{inst"
           + "ance}/appProfiles/{app_profile}B\020\n\016routi"
-          + "ng_policyB\260\001\n\034com.google.bigtable.admin."
+          + "ng_policyB\325\001\n\034com.google.bigtable.admin."
           + "v2B\rInstanceProtoP\001Z=google.golang.org/g"
           + "enproto/googleapis/bigtable/admin/v2;adm"
           + "in\252\002\036Google.Cloud.Bigtable.Admin.V2\312\002\036Go"
-          + "ogle\\Cloud\\Bigtable\\Admin\\V2b\006proto3"
+          + "ogle\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google::C"
+          + "loud::Bigtable::Admin::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

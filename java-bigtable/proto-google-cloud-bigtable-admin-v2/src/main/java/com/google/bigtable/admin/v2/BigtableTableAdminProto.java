@@ -391,12 +391,13 @@ public final class BigtableTableAdminProto {
           + "oud-bigtable.admin.table,https://www.goo"
           + "gleapis.com/auth/cloud-platform,https://"
           + "www.googleapis.com/auth/cloud-platform.r"
-          + "ead-onlyB\272\001\n\034com.google.bigtable.admin.v"
+          + "ead-onlyB\337\001\n\034com.google.bigtable.admin.v"
           + "2B\027BigtableTableAdminProtoP\001Z=google.gol"
           + "ang.org/genproto/googleapis/bigtable/adm"
           + "in/v2;admin\252\002\036Google.Cloud.Bigtable.Admi"
-          + "n.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2b\006p"
-          + "roto3"
+          + "n.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\""
+          + "Google::Cloud::Bigtable::Admin::V2b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

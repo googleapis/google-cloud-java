@@ -157,12 +157,13 @@ public final class TableProto {
           + "\003\0221\n\010end_time\030\003 \001(\0132\032.google.protobuf.Ti"
           + "mestampB\003\340A\003\022\031\n\014source_table\030\004 \001(\tB\003\340A\003*"
           + "D\n\021RestoreSourceType\022#\n\037RESTORE_SOURCE_T"
-          + "YPE_UNSPECIFIED\020\000\022\n\n\006BACKUP\020\001B\255\001\n\034com.go"
+          + "YPE_UNSPECIFIED\020\000\022\n\n\006BACKUP\020\001B\322\001\n\034com.go"
           + "ogle.bigtable.admin.v2B\nTableProtoP\001Z=go"
           + "ogle.golang.org/genproto/googleapis/bigt"
           + "able/admin/v2;admin\252\002\036Google.Cloud.Bigta"
           + "ble.Admin.V2\312\002\036Google\\Cloud\\Bigtable\\Adm"
-          + "in\\V2b\006proto3"
+          + "in\\V2\352\002\"Google::Cloud::Bigtable::Admin::"
+          + "V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
