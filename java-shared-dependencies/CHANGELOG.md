@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.7.0...v0.8.0) (2020-06-12)
+
+
+### Features
+
+* mark javax annotations scope as provided ([#70](https://www.github.com/googleapis/java-shared-dependencies/issues/70)) ([7bc7057](https://www.github.com/googleapis/java-shared-dependencies/commit/7bc70579a01ab761b52f8eef3d0a184b5eec26ae))
+
+
+### Dependencies
+
+* update core dependencies to v1.93.6 ([#74](https://www.github.com/googleapis/java-shared-dependencies/issues/74)) ([791639e](https://www.github.com/googleapis/java-shared-dependencies/commit/791639e805b2dcaf9b8e2c04a0428f74c029f94f))
+* update dependency com.google.api:api-common to v1.9.2 ([#63](https://www.github.com/googleapis/java-shared-dependencies/issues/63)) ([ee92a0e](https://www.github.com/googleapis/java-shared-dependencies/commit/ee92a0eb45595fa229cd6fa745f9f3cfa74bb65c))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#68](https://www.github.com/googleapis/java-shared-dependencies/issues/68)) ([ccf2310](https://www.github.com/googleapis/java-shared-dependencies/commit/ccf23106d29871855511cba0d4e704e4186347f5))
+* update gax to v1.57.0 ([#73](https://www.github.com/googleapis/java-shared-dependencies/issues/73)) ([b0ae1eb](https://www.github.com/googleapis/java-shared-dependencies/commit/b0ae1ebc7a6d4ca90ee50e3a827fcbcea06cfcf1))
+
 ## [0.7.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.6.0...v0.7.0) (2020-05-28)
 
 
