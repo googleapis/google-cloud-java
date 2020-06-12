@@ -153,6 +153,94 @@ public class OsLoginServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getLoginProfileTest() {
+    String name2 = "name2-1052831874";
+    LoginProfile expectedResponse = LoginProfile.newBuilder().setName(name2).build();
+    mockOsLoginService.addResponse(expectedResponse);
+
+    UserName name = UserName.of("[USER]");
+
+    LoginProfile actualResponse = client.getLoginProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLoginProfileRequest actualRequest = (GetLoginProfileRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, UserName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getLoginProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockOsLoginService.addException(exception);
+
+    try {
+      UserName name = UserName.of("[USER]");
+
+      client.getLoginProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getSshPublicKeyTest() {
+    String key = "key106079";
+    long expirationTimeUsec = 2058878882L;
+    String fingerprint = "fingerprint-1375934236";
+    com.google.cloud.oslogin.common.FingerprintName name2 =
+        com.google.cloud.oslogin.common.FingerprintName.of("[USER]", "[FINGERPRINT]");
+    SshPublicKey expectedResponse =
+        SshPublicKey.newBuilder()
+            .setKey(key)
+            .setExpirationTimeUsec(expirationTimeUsec)
+            .setFingerprint(fingerprint)
+            .setName(name2.toString())
+            .build();
+    mockOsLoginService.addResponse(expectedResponse);
+
+    FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+
+    SshPublicKey actualResponse = client.getSshPublicKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSshPublicKeyRequest actualRequest = (GetSshPublicKeyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, FingerprintName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getSshPublicKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockOsLoginService.addException(exception);
+
+    try {
+      FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+
+      client.getSshPublicKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void importSshPublicKeyTest() {
     ImportSshPublicKeyResponse expectedResponse = ImportSshPublicKeyResponse.newBuilder().build();
     mockOsLoginService.addResponse(expectedResponse);
@@ -338,94 +426,6 @@ public class OsLoginServiceClientTest {
       FieldMask updateMask = FieldMask.newBuilder().build();
 
       client.updateSshPublicKey(name, sshPublicKey, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getLoginProfileTest() {
-    String name2 = "name2-1052831874";
-    LoginProfile expectedResponse = LoginProfile.newBuilder().setName(name2).build();
-    mockOsLoginService.addResponse(expectedResponse);
-
-    UserName name = UserName.of("[USER]");
-
-    LoginProfile actualResponse = client.getLoginProfile(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetLoginProfileRequest actualRequest = (GetLoginProfileRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, UserName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getLoginProfileExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockOsLoginService.addException(exception);
-
-    try {
-      UserName name = UserName.of("[USER]");
-
-      client.getLoginProfile(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getSshPublicKeyTest() {
-    String key = "key106079";
-    long expirationTimeUsec = 2058878882L;
-    String fingerprint = "fingerprint-1375934236";
-    com.google.cloud.oslogin.common.FingerprintName name2 =
-        com.google.cloud.oslogin.common.FingerprintName.of("[USER]", "[FINGERPRINT]");
-    SshPublicKey expectedResponse =
-        SshPublicKey.newBuilder()
-            .setKey(key)
-            .setExpirationTimeUsec(expirationTimeUsec)
-            .setFingerprint(fingerprint)
-            .setName(name2.toString())
-            .build();
-    mockOsLoginService.addResponse(expectedResponse);
-
-    FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
-
-    SshPublicKey actualResponse = client.getSshPublicKey(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetSshPublicKeyRequest actualRequest = (GetSshPublicKeyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, FingerprintName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getSshPublicKeyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockOsLoginService.addException(exception);
-
-    try {
-      FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
-
-      client.getSshPublicKey(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

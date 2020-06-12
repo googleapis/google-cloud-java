@@ -76,6 +76,16 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
     return ((OsLoginServiceStubSettings) getStubSettings()).deleteSshPublicKeySettings();
   }
 
+  /** Returns the object with the settings used for calls to getLoginProfile. */
+  public UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings() {
+    return ((OsLoginServiceStubSettings) getStubSettings()).getLoginProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSshPublicKey. */
+  public UnaryCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeySettings() {
+    return ((OsLoginServiceStubSettings) getStubSettings()).getSshPublicKeySettings();
+  }
+
   /** Returns the object with the settings used for calls to importSshPublicKey. */
   public UnaryCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeySettings() {
@@ -85,16 +95,6 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
   /** Returns the object with the settings used for calls to updateSshPublicKey. */
   public UnaryCallSettings<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeySettings() {
     return ((OsLoginServiceStubSettings) getStubSettings()).updateSshPublicKeySettings();
-  }
-
-  /** Returns the object with the settings used for calls to getLoginProfile. */
-  public UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings() {
-    return ((OsLoginServiceStubSettings) getStubSettings()).getLoginProfileSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getSshPublicKey. */
-  public UnaryCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeySettings() {
-    return ((OsLoginServiceStubSettings) getStubSettings()).getSshPublicKeySettings();
   }
 
   public static final OsLoginServiceSettings create(OsLoginServiceStubSettings stub)
@@ -206,18 +206,6 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
       return getStubSettingsBuilder().deleteSshPublicKeySettings();
     }
 
-    /** Returns the builder for the settings used for calls to importSshPublicKey. */
-    public UnaryCallSettings.Builder<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
-        importSshPublicKeySettings() {
-      return getStubSettingsBuilder().importSshPublicKeySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateSshPublicKey. */
-    public UnaryCallSettings.Builder<UpdateSshPublicKeyRequest, SshPublicKey>
-        updateSshPublicKeySettings() {
-      return getStubSettingsBuilder().updateSshPublicKeySettings();
-    }
-
     /** Returns the builder for the settings used for calls to getLoginProfile. */
     public UnaryCallSettings.Builder<GetLoginProfileRequest, LoginProfile>
         getLoginProfileSettings() {
@@ -228,6 +216,18 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
     public UnaryCallSettings.Builder<GetSshPublicKeyRequest, SshPublicKey>
         getSshPublicKeySettings() {
       return getStubSettingsBuilder().getSshPublicKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importSshPublicKey. */
+    public UnaryCallSettings.Builder<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
+        importSshPublicKeySettings() {
+      return getStubSettingsBuilder().importSshPublicKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSshPublicKey. */
+    public UnaryCallSettings.Builder<UpdateSshPublicKeyRequest, SshPublicKey>
+        updateSshPublicKeySettings() {
+      return getStubSettingsBuilder().updateSshPublicKeySettings();
     }
 
     @Override

@@ -48,6 +48,14 @@ public abstract class OsLoginServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteSshPublicKeyCallable()");
   }
 
+  public UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLoginProfileCallable()");
+  }
+
+  public UnaryCallable<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSshPublicKeyCallable()");
+  }
+
   public UnaryCallable<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: importSshPublicKeyCallable()");
@@ -55,14 +63,6 @@ public abstract class OsLoginServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSshPublicKeyCallable()");
-  }
-
-  public UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable() {
-    throw new UnsupportedOperationException("Not implemented: getLoginProfileCallable()");
-  }
-
-  public UnaryCallable<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getSshPublicKeyCallable()");
   }
 
   @Override

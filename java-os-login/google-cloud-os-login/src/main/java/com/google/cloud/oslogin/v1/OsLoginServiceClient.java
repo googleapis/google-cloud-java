@@ -342,6 +342,190 @@ public class OsLoginServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Retrieves the profile information used for logging in to a virtual machine on Google Compute
+   * Engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UserName name = UserName.of("[USER]");
+   *   LoginProfile response = osLoginServiceClient.getLoginProfile(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The unique ID for the user in format `users/{user}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LoginProfile getLoginProfile(UserName name) {
+    GetLoginProfileRequest request =
+        GetLoginProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getLoginProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the profile information used for logging in to a virtual machine on Google Compute
+   * Engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UserName name = UserName.of("[USER]");
+   *   LoginProfile response = osLoginServiceClient.getLoginProfile(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The unique ID for the user in format `users/{user}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LoginProfile getLoginProfile(String name) {
+    GetLoginProfileRequest request = GetLoginProfileRequest.newBuilder().setName(name).build();
+    return getLoginProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the profile information used for logging in to a virtual machine on Google Compute
+   * Engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UserName name = UserName.of("[USER]");
+   *   GetLoginProfileRequest request = GetLoginProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   LoginProfile response = osLoginServiceClient.getLoginProfile(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LoginProfile getLoginProfile(GetLoginProfileRequest request) {
+    return getLoginProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the profile information used for logging in to a virtual machine on Google Compute
+   * Engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UserName name = UserName.of("[USER]");
+   *   GetLoginProfileRequest request = GetLoginProfileRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;LoginProfile&gt; future = osLoginServiceClient.getLoginProfileCallable().futureCall(request);
+   *   // Do something
+   *   LoginProfile response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable() {
+    return stub.getLoginProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves an SSH public key.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+   *   SshPublicKey response = osLoginServiceClient.getSshPublicKey(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The fingerprint of the public key to retrieve. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
+   *     `users/{user}/sshPublicKeys/{fingerprint}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SshPublicKey getSshPublicKey(FingerprintName name) {
+    GetSshPublicKeyRequest request =
+        GetSshPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSshPublicKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves an SSH public key.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+   *   SshPublicKey response = osLoginServiceClient.getSshPublicKey(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The fingerprint of the public key to retrieve. Public keys are identified
+   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
+   *     `users/{user}/sshPublicKeys/{fingerprint}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SshPublicKey getSshPublicKey(String name) {
+    GetSshPublicKeyRequest request = GetSshPublicKeyRequest.newBuilder().setName(name).build();
+    return getSshPublicKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves an SSH public key.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+   *   GetSshPublicKeyRequest request = GetSshPublicKeyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   SshPublicKey response = osLoginServiceClient.getSshPublicKey(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SshPublicKey getSshPublicKey(GetSshPublicKeyRequest request) {
+    return getSshPublicKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves an SSH public key.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+   *   GetSshPublicKeyRequest request = GetSshPublicKeyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;SshPublicKey&gt; future = osLoginServiceClient.getSshPublicKeyCallable().futureCall(request);
+   *   // Do something
+   *   SshPublicKey response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyCallable() {
+    return stub.getSshPublicKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Adds an SSH public key and returns the profile information. Default POSIX account information
    * is set when no username and UID exist as part of the login profile.
    *
@@ -684,190 +868,6 @@ public class OsLoginServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeyCallable() {
     return stub.updateSshPublicKeyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the profile information used for logging in to a virtual machine on Google Compute
-   * Engine.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   UserName name = UserName.of("[USER]");
-   *   LoginProfile response = osLoginServiceClient.getLoginProfile(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The unique ID for the user in format `users/{user}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LoginProfile getLoginProfile(UserName name) {
-    GetLoginProfileRequest request =
-        GetLoginProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getLoginProfile(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the profile information used for logging in to a virtual machine on Google Compute
-   * Engine.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   UserName name = UserName.of("[USER]");
-   *   LoginProfile response = osLoginServiceClient.getLoginProfile(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The unique ID for the user in format `users/{user}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LoginProfile getLoginProfile(String name) {
-    GetLoginProfileRequest request = GetLoginProfileRequest.newBuilder().setName(name).build();
-    return getLoginProfile(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the profile information used for logging in to a virtual machine on Google Compute
-   * Engine.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   UserName name = UserName.of("[USER]");
-   *   GetLoginProfileRequest request = GetLoginProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   LoginProfile response = osLoginServiceClient.getLoginProfile(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final LoginProfile getLoginProfile(GetLoginProfileRequest request) {
-    return getLoginProfileCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves the profile information used for logging in to a virtual machine on Google Compute
-   * Engine.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   UserName name = UserName.of("[USER]");
-   *   GetLoginProfileRequest request = GetLoginProfileRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;LoginProfile&gt; future = osLoginServiceClient.getLoginProfileCallable().futureCall(request);
-   *   // Do something
-   *   LoginProfile response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable() {
-    return stub.getLoginProfileCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves an SSH public key.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
-   *   SshPublicKey response = osLoginServiceClient.getSshPublicKey(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The fingerprint of the public key to retrieve. Public keys are identified
-   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
-   *     `users/{user}/sshPublicKeys/{fingerprint}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SshPublicKey getSshPublicKey(FingerprintName name) {
-    GetSshPublicKeyRequest request =
-        GetSshPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getSshPublicKey(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves an SSH public key.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
-   *   SshPublicKey response = osLoginServiceClient.getSshPublicKey(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The fingerprint of the public key to retrieve. Public keys are identified
-   *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
-   *     `users/{user}/sshPublicKeys/{fingerprint}`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SshPublicKey getSshPublicKey(String name) {
-    GetSshPublicKeyRequest request = GetSshPublicKeyRequest.newBuilder().setName(name).build();
-    return getSshPublicKey(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves an SSH public key.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
-   *   GetSshPublicKeyRequest request = GetSshPublicKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   SshPublicKey response = osLoginServiceClient.getSshPublicKey(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SshPublicKey getSshPublicKey(GetSshPublicKeyRequest request) {
-    return getSshPublicKeyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Retrieves an SSH public key.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
-   *   GetSshPublicKeyRequest request = GetSshPublicKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;SshPublicKey&gt; future = osLoginServiceClient.getSshPublicKeyCallable().futureCall(request);
-   *   // Do something
-   *   SshPublicKey response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyCallable() {
-    return stub.getSshPublicKeyCallable();
   }
 
   @Override
