@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.127.3...v1.0.0) (2020-06-11)
+
+
+### Features
+
+* promote to GA ([#196](https://www.github.com/googleapis/java-bigquerydatatransfer/issues/196)) ([bc1d9e2](https://www.github.com/googleapis/java-bigquerydatatransfer/commit/bc1d9e24fd4287262139dc963c0d989a32666da9))
+
 ### [0.127.3](https://www.github.com/googleapis/java-bigquerydatatransfer/compare/v0.127.2...v0.127.3) (2020-06-09)
 
 
