@@ -201,6 +201,17 @@ public class DeIdentificationTests {
   }
 
   @Test
+  public void testDeIdentifyWithInfoType() throws IOException {
+    DeIdentifyWithInfoType.deIdentifyWithInfoType(
+        PROJECT_ID,
+        "My email is test@example.com");
+
+    String output = bout.toString();
+    assertThat(output, containsString("Text after redaction: "
+        + "My email is [EMAIL_ADDRESS]"));
+  }
+
+  @Test
   public void testDeIdentifyWithSimpleWordList() throws IOException {
     DeIdentifyWithSimpleWordList.deidentifyWithSimpleWordList(
         PROJECT_ID, "Patient was seen in RM-YELLOW then transferred to rm green.");
