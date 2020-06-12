@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.93.6](https://www.github.com/googleapis/java-core/compare/v1.93.5...v1.93.6) (2020-06-12)
+
+
+### Dependencies
+
+* update dependency com.google.api:api-common to v1.9.1 ([#221](https://www.github.com/googleapis/java-core/issues/221)) ([4df33f0](https://www.github.com/googleapis/java-core/commit/4df33f0da02855161562e80a9d50e52dc21f4693))
+* update dependency com.google.api:api-common to v1.9.2 ([#229](https://www.github.com/googleapis/java-core/issues/229)) ([e8c1aa2](https://www.github.com/googleapis/java-core/commit/e8c1aa2ff9c1eaa4030faa86b403a77fc6602bdb))
+* update dependency com.google.api:gax-bom to v1.57.0 ([#236](https://www.github.com/googleapis/java-core/issues/236)) ([3d7d2a6](https://www.github.com/googleapis/java-core/commit/3d7d2a69ea95d7cd93f1175e0cc7f051fd591ad8))
+* update dependency com.google.protobuf:protobuf-bom to v3.12.2 ([#220](https://www.github.com/googleapis/java-core/issues/220)) ([815569d](https://www.github.com/googleapis/java-core/commit/815569d7274cccd12110062e72dc8774f3b1d3de))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#233](https://www.github.com/googleapis/java-core/issues/233)) ([b41c34f](https://www.github.com/googleapis/java-core/commit/b41c34f28a2cddddafbb872bbd0100a934972042))
+
 ### [1.93.5](https://www.github.com/googleapis/java-core/compare/v1.93.4...v1.93.5) (2020-05-26)
 
 
