@@ -56,16 +56,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getKeyRing to 30 seconds:
+ * <p>For example, to set the total timeout of createImportJob to 30 seconds:
  *
  * <pre>
  * <code>
  * KeyManagementServiceSettings.Builder keyManagementServiceSettingsBuilder =
  *     KeyManagementServiceSettings.newBuilder();
  * keyManagementServiceSettingsBuilder
- *     .getKeyRingSettings()
+ *     .createImportJobSettings()
  *     .setRetrySettings(
- *         keyManagementServiceSettingsBuilder.getKeyRingSettings().getRetrySettings().toBuilder()
+ *         keyManagementServiceSettingsBuilder.createImportJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * KeyManagementServiceSettings keyManagementServiceSettings = keyManagementServiceSettingsBuilder.build();
@@ -75,17 +75,36 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class KeyManagementServiceSettings extends ClientSettings<KeyManagementServiceSettings> {
+  /** Returns the object with the settings used for calls to createImportJob. */
+  public UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).createImportJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCryptoKey. */
+  public UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).createCryptoKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listKeyRings. */
   public PagedCallSettings<ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
       listKeyRingsSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).listKeyRingsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listImportJobs. */
-  public PagedCallSettings<
-          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
-      listImportJobsSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).listImportJobsSettings();
   }
 
   /** Returns the object with the settings used for calls to listCryptoKeys. */
@@ -104,14 +123,16 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).listCryptoKeyVersionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to listImportJobs. */
+  public PagedCallSettings<
+          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+      listImportJobsSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).listImportJobsSettings();
+  }
+
   /** Returns the object with the settings used for calls to getKeyRing. */
   public UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).getKeyRingSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getImportJob. */
-  public UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).getImportJobSettings();
   }
 
   /** Returns the object with the settings used for calls to getCryptoKey. */
@@ -125,19 +146,19 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).getCryptoKeyVersionSettings();
   }
 
+  /** Returns the object with the settings used for calls to getPublicKey. */
+  public UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).getPublicKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getImportJob. */
+  public UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).getImportJobSettings();
+  }
+
   /** Returns the object with the settings used for calls to createKeyRing. */
   public UnaryCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).createKeyRingSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createImportJob. */
-  public UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).createImportJobSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createCryptoKey. */
-  public UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).createCryptoKeySettings();
   }
 
   /** Returns the object with the settings used for calls to createCryptoKeyVersion. */
@@ -173,6 +194,17 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).decryptSettings();
   }
 
+  /** Returns the object with the settings used for calls to asymmetricSign. */
+  public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricSignSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asymmetricDecrypt. */
+  public UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricDecryptSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateCryptoKeyPrimaryVersion. */
   public UnaryCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
       updateCryptoKeyPrimaryVersionSettings() {
@@ -190,38 +222,6 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   public UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).restoreCryptoKeyVersionSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getPublicKey. */
-  public UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).getPublicKeySettings();
-  }
-
-  /** Returns the object with the settings used for calls to asymmetricDecrypt. */
-  public UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-      asymmetricDecryptSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricDecryptSettings();
-  }
-
-  /** Returns the object with the settings used for calls to asymmetricSign. */
-  public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricSignSettings();
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).setIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).getIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return ((KeyManagementServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final KeyManagementServiceSettings create(KeyManagementServiceStubSettings stub)
@@ -322,18 +322,37 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to createImportJob. */
+    public UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob> createImportJobSettings() {
+      return getStubSettingsBuilder().createImportJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCryptoKey. */
+    public UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
+      return getStubSettingsBuilder().createCryptoKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listKeyRings. */
     public PagedCallSettings.Builder<
             ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
         listKeyRingsSettings() {
       return getStubSettingsBuilder().listKeyRingsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listImportJobs. */
-    public PagedCallSettings.Builder<
-            ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
-        listImportJobsSettings() {
-      return getStubSettingsBuilder().listImportJobsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listCryptoKeys. */
@@ -352,14 +371,16 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return getStubSettingsBuilder().listCryptoKeyVersionsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listImportJobs. */
+    public PagedCallSettings.Builder<
+            ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+        listImportJobsSettings() {
+      return getStubSettingsBuilder().listImportJobsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getKeyRing. */
     public UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
       return getStubSettingsBuilder().getKeyRingSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getImportJob. */
-    public UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings() {
-      return getStubSettingsBuilder().getImportJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to getCryptoKey. */
@@ -373,19 +394,19 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return getStubSettingsBuilder().getCryptoKeyVersionSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getPublicKey. */
+    public UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+      return getStubSettingsBuilder().getPublicKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getImportJob. */
+    public UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings() {
+      return getStubSettingsBuilder().getImportJobSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createKeyRing. */
     public UnaryCallSettings.Builder<CreateKeyRingRequest, KeyRing> createKeyRingSettings() {
       return getStubSettingsBuilder().createKeyRingSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createImportJob. */
-    public UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob> createImportJobSettings() {
-      return getStubSettingsBuilder().createImportJobSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createCryptoKey. */
-    public UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
-      return getStubSettingsBuilder().createCryptoKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to createCryptoKeyVersion. */
@@ -421,6 +442,18 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return getStubSettingsBuilder().decryptSettings();
     }
 
+    /** Returns the builder for the settings used for calls to asymmetricSign. */
+    public UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignSettings() {
+      return getStubSettingsBuilder().asymmetricSignSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asymmetricDecrypt. */
+    public UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptSettings() {
+      return getStubSettingsBuilder().asymmetricDecryptSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateCryptoKeyPrimaryVersion. */
     public UnaryCallSettings.Builder<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
         updateCryptoKeyPrimaryVersionSettings() {
@@ -437,39 +470,6 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionSettings() {
       return getStubSettingsBuilder().restoreCryptoKeyVersionSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getPublicKey. */
-    public UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
-      return getStubSettingsBuilder().getPublicKeySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to asymmetricDecrypt. */
-    public UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-        asymmetricDecryptSettings() {
-      return getStubSettingsBuilder().asymmetricDecryptSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to asymmetricSign. */
-    public UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
-        asymmetricSignSettings() {
-      return getStubSettingsBuilder().asymmetricSignSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return getStubSettingsBuilder().setIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getStubSettingsBuilder().getIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

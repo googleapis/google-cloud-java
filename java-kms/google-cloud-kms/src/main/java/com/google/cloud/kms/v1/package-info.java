@@ -38,8 +38,15 @@
  * <pre>
  * <code>
  * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
- *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
- *   KeyRing response = keyManagementServiceClient.getKeyRing(name);
+ *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+ *   String importJobId = "my-import-job";
+ *   ImportJob.ImportMethod importMethod = ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256;
+ *   ProtectionLevel protectionLevel = ProtectionLevel.HSM;
+ *   ImportJob importJob = ImportJob.newBuilder()
+ *     .setImportMethod(importMethod)
+ *     .setProtectionLevel(protectionLevel)
+ *     .build();
+ *   ImportJob response = keyManagementServiceClient.createImportJob(parent, importJobId, importJob);
  * }
  * </code>
  * </pre>

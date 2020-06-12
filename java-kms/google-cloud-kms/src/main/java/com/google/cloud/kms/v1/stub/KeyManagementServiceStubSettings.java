@@ -107,16 +107,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getKeyRing to 30 seconds:
+ * <p>For example, to set the total timeout of createImportJob to 30 seconds:
  *
  * <pre>
  * <code>
  * KeyManagementServiceStubSettings.Builder keyManagementServiceSettingsBuilder =
  *     KeyManagementServiceStubSettings.newBuilder();
  * keyManagementServiceSettingsBuilder
- *     .getKeyRingSettings()
+ *     .createImportJobSettings()
  *     .setRetrySettings(
- *         keyManagementServiceSettingsBuilder.getKeyRingSettings().getRetrySettings().toBuilder()
+ *         keyManagementServiceSettingsBuilder.createImportJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * KeyManagementServiceStubSettings keyManagementServiceSettings = keyManagementServiceSettingsBuilder.build();
@@ -134,12 +134,15 @@ public class KeyManagementServiceStubSettings
           .add("https://www.googleapis.com/auth/cloudkms")
           .build();
 
+  private final UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings;
+  private final UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
   private final PagedCallSettings<
           ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
       listKeyRingsSettings;
-  private final PagedCallSettings<
-          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
-      listImportJobsSettings;
   private final PagedCallSettings<
           ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
       listCryptoKeysSettings;
@@ -148,14 +151,16 @@ public class KeyManagementServiceStubSettings
           ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings;
+  private final PagedCallSettings<
+          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+      listImportJobsSettings;
   private final UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings;
-  private final UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings;
   private final UnaryCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings;
   private final UnaryCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
       getCryptoKeyVersionSettings;
+  private final UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings;
+  private final UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings;
   private final UnaryCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingSettings;
-  private final UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings;
-  private final UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings;
   private final UnaryCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
       createCryptoKeyVersionSettings;
   private final UnaryCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -165,33 +170,47 @@ public class KeyManagementServiceStubSettings
       updateCryptoKeyVersionSettings;
   private final UnaryCallSettings<EncryptRequest, EncryptResponse> encryptSettings;
   private final UnaryCallSettings<DecryptRequest, DecryptResponse> decryptSettings;
+  private final UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
+      asymmetricSignSettings;
+  private final UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptSettings;
   private final UnaryCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
       updateCryptoKeyPrimaryVersionSettings;
   private final UnaryCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
       destroyCryptoKeyVersionSettings;
   private final UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionSettings;
-  private final UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings;
-  private final UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-      asymmetricDecryptSettings;
-  private final UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
-      asymmetricSignSettings;
-  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
+
+  /** Returns the object with the settings used for calls to createImportJob. */
+  public UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings() {
+    return createImportJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCryptoKey. */
+  public UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
+    return createCryptoKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
 
   /** Returns the object with the settings used for calls to listKeyRings. */
   public PagedCallSettings<ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
       listKeyRingsSettings() {
     return listKeyRingsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listImportJobs. */
-  public PagedCallSettings<
-          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
-      listImportJobsSettings() {
-    return listImportJobsSettings;
   }
 
   /** Returns the object with the settings used for calls to listCryptoKeys. */
@@ -210,14 +229,16 @@ public class KeyManagementServiceStubSettings
     return listCryptoKeyVersionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listImportJobs. */
+  public PagedCallSettings<
+          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+      listImportJobsSettings() {
+    return listImportJobsSettings;
+  }
+
   /** Returns the object with the settings used for calls to getKeyRing. */
   public UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
     return getKeyRingSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getImportJob. */
-  public UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings() {
-    return getImportJobSettings;
   }
 
   /** Returns the object with the settings used for calls to getCryptoKey. */
@@ -231,19 +252,19 @@ public class KeyManagementServiceStubSettings
     return getCryptoKeyVersionSettings;
   }
 
+  /** Returns the object with the settings used for calls to getPublicKey. */
+  public UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+    return getPublicKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getImportJob. */
+  public UnaryCallSettings<GetImportJobRequest, ImportJob> getImportJobSettings() {
+    return getImportJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to createKeyRing. */
   public UnaryCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingSettings() {
     return createKeyRingSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createImportJob. */
-  public UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings() {
-    return createImportJobSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createCryptoKey. */
-  public UnaryCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
-    return createCryptoKeySettings;
   }
 
   /** Returns the object with the settings used for calls to createCryptoKeyVersion. */
@@ -279,6 +300,17 @@ public class KeyManagementServiceStubSettings
     return decryptSettings;
   }
 
+  /** Returns the object with the settings used for calls to asymmetricSign. */
+  public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
+    return asymmetricSignSettings;
+  }
+
+  /** Returns the object with the settings used for calls to asymmetricDecrypt. */
+  public UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptSettings() {
+    return asymmetricDecryptSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateCryptoKeyPrimaryVersion. */
   public UnaryCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
       updateCryptoKeyPrimaryVersionSettings() {
@@ -295,38 +327,6 @@ public class KeyManagementServiceStubSettings
   public UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionSettings() {
     return restoreCryptoKeyVersionSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getPublicKey. */
-  public UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
-    return getPublicKeySettings;
-  }
-
-  /** Returns the object with the settings used for calls to asymmetricDecrypt. */
-  public UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-      asymmetricDecryptSettings() {
-    return asymmetricDecryptSettings;
-  }
-
-  /** Returns the object with the settings used for calls to asymmetricSign. */
-  public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
-    return asymmetricSignSettings;
-  }
-
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return setIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -398,33 +398,33 @@ public class KeyManagementServiceStubSettings
   protected KeyManagementServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    listKeyRingsSettings = settingsBuilder.listKeyRingsSettings().build();
-    listImportJobsSettings = settingsBuilder.listImportJobsSettings().build();
-    listCryptoKeysSettings = settingsBuilder.listCryptoKeysSettings().build();
-    listCryptoKeyVersionsSettings = settingsBuilder.listCryptoKeyVersionsSettings().build();
-    getKeyRingSettings = settingsBuilder.getKeyRingSettings().build();
-    getImportJobSettings = settingsBuilder.getImportJobSettings().build();
-    getCryptoKeySettings = settingsBuilder.getCryptoKeySettings().build();
-    getCryptoKeyVersionSettings = settingsBuilder.getCryptoKeyVersionSettings().build();
-    createKeyRingSettings = settingsBuilder.createKeyRingSettings().build();
     createImportJobSettings = settingsBuilder.createImportJobSettings().build();
     createCryptoKeySettings = settingsBuilder.createCryptoKeySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    listKeyRingsSettings = settingsBuilder.listKeyRingsSettings().build();
+    listCryptoKeysSettings = settingsBuilder.listCryptoKeysSettings().build();
+    listCryptoKeyVersionsSettings = settingsBuilder.listCryptoKeyVersionsSettings().build();
+    listImportJobsSettings = settingsBuilder.listImportJobsSettings().build();
+    getKeyRingSettings = settingsBuilder.getKeyRingSettings().build();
+    getCryptoKeySettings = settingsBuilder.getCryptoKeySettings().build();
+    getCryptoKeyVersionSettings = settingsBuilder.getCryptoKeyVersionSettings().build();
+    getPublicKeySettings = settingsBuilder.getPublicKeySettings().build();
+    getImportJobSettings = settingsBuilder.getImportJobSettings().build();
+    createKeyRingSettings = settingsBuilder.createKeyRingSettings().build();
     createCryptoKeyVersionSettings = settingsBuilder.createCryptoKeyVersionSettings().build();
     importCryptoKeyVersionSettings = settingsBuilder.importCryptoKeyVersionSettings().build();
     updateCryptoKeySettings = settingsBuilder.updateCryptoKeySettings().build();
     updateCryptoKeyVersionSettings = settingsBuilder.updateCryptoKeyVersionSettings().build();
     encryptSettings = settingsBuilder.encryptSettings().build();
     decryptSettings = settingsBuilder.decryptSettings().build();
+    asymmetricSignSettings = settingsBuilder.asymmetricSignSettings().build();
+    asymmetricDecryptSettings = settingsBuilder.asymmetricDecryptSettings().build();
     updateCryptoKeyPrimaryVersionSettings =
         settingsBuilder.updateCryptoKeyPrimaryVersionSettings().build();
     destroyCryptoKeyVersionSettings = settingsBuilder.destroyCryptoKeyVersionSettings().build();
     restoreCryptoKeyVersionSettings = settingsBuilder.restoreCryptoKeyVersionSettings().build();
-    getPublicKeySettings = settingsBuilder.getPublicKeySettings().build();
-    asymmetricDecryptSettings = settingsBuilder.asymmetricDecryptSettings().build();
-    asymmetricSignSettings = settingsBuilder.asymmetricSignSettings().build();
-    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   private static final PagedListDescriptor<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing>
@@ -460,43 +460,6 @@ public class KeyManagementServiceStubSettings
               return payload.getKeyRingsList() != null
                   ? payload.getKeyRingsList()
                   : ImmutableList.<KeyRing>of();
-            }
-          };
-
-  private static final PagedListDescriptor<ListImportJobsRequest, ListImportJobsResponse, ImportJob>
-      LIST_IMPORT_JOBS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListImportJobsRequest, ListImportJobsResponse, ImportJob>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListImportJobsRequest injectToken(ListImportJobsRequest payload, String token) {
-              return ListImportJobsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListImportJobsRequest injectPageSize(
-                ListImportJobsRequest payload, int pageSize) {
-              return ListImportJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListImportJobsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListImportJobsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ImportJob> extractResources(ListImportJobsResponse payload) {
-              return payload.getImportJobsList() != null
-                  ? payload.getImportJobsList()
-                  : ImmutableList.<ImportJob>of();
             }
           };
 
@@ -578,6 +541,43 @@ public class KeyManagementServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListImportJobsRequest, ListImportJobsResponse, ImportJob>
+      LIST_IMPORT_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListImportJobsRequest, ListImportJobsResponse, ImportJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListImportJobsRequest injectToken(ListImportJobsRequest payload, String token) {
+              return ListImportJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListImportJobsRequest injectPageSize(
+                ListImportJobsRequest payload, int pageSize) {
+              return ListImportJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListImportJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListImportJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ImportJob> extractResources(ListImportJobsResponse payload) {
+              return payload.getImportJobsList() != null
+                  ? payload.getImportJobsList()
+                  : ImmutableList.<ImportJob>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
       LIST_KEY_RINGS_PAGE_STR_FACT =
@@ -592,23 +592,6 @@ public class KeyManagementServiceStubSettings
               PageContext<ListKeyRingsRequest, ListKeyRingsResponse, KeyRing> pageContext =
                   PageContext.create(callable, LIST_KEY_RINGS_PAGE_STR_DESC, request, context);
               return ListKeyRingsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
-      LIST_IMPORT_JOBS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>() {
-            @Override
-            public ApiFuture<ListImportJobsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> callable,
-                ListImportJobsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListImportJobsResponse> futureResponse) {
-              PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> pageContext =
-                  PageContext.create(callable, LIST_IMPORT_JOBS_PAGE_STR_DESC, request, context);
-              return ListImportJobsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -653,17 +636,39 @@ public class KeyManagementServiceStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+      LIST_IMPORT_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListImportJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> callable,
+                ListImportJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListImportJobsResponse> futureResponse) {
+              PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> pageContext =
+                  PageContext.create(callable, LIST_IMPORT_JOBS_PAGE_STR_DESC, request, context);
+              return ListImportJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for KeyManagementServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<KeyManagementServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
+    private final UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob>
+        createImportJobSettings;
+    private final UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey>
+        createCryptoKeySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private final PagedCallSettings.Builder<
             ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
         listKeyRingsSettings;
-    private final PagedCallSettings.Builder<
-            ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
-        listImportJobsSettings;
     private final PagedCallSettings.Builder<
             ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
         listCryptoKeysSettings;
@@ -672,16 +677,16 @@ public class KeyManagementServiceStubSettings
             ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings;
+    private final PagedCallSettings.Builder<
+            ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+        listImportJobsSettings;
     private final UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings;
-    private final UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings;
     private final UnaryCallSettings.Builder<GetCryptoKeyRequest, CryptoKey> getCryptoKeySettings;
     private final UnaryCallSettings.Builder<GetCryptoKeyVersionRequest, CryptoKeyVersion>
         getCryptoKeyVersionSettings;
+    private final UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings;
+    private final UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings;
     private final UnaryCallSettings.Builder<CreateKeyRingRequest, KeyRing> createKeyRingSettings;
-    private final UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob>
-        createImportJobSettings;
-    private final UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey>
-        createCryptoKeySettings;
     private final UnaryCallSettings.Builder<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -692,21 +697,16 @@ public class KeyManagementServiceStubSettings
         updateCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<EncryptRequest, EncryptResponse> encryptSettings;
     private final UnaryCallSettings.Builder<DecryptRequest, DecryptResponse> decryptSettings;
+    private final UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignSettings;
+    private final UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptSettings;
     private final UnaryCallSettings.Builder<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
         updateCryptoKeyPrimaryVersionSettings;
     private final UnaryCallSettings.Builder<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
         destroyCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionSettings;
-    private final UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings;
-    private final UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-        asymmetricDecryptSettings;
-    private final UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
-        asymmetricSignSettings;
-    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -715,19 +715,15 @@ public class KeyManagementServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retryable",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
-                  StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.UNAVAILABLE,
+                  StatusCode.Code.DEADLINE_EXCEEDED)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("non_retryable", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -741,12 +737,22 @@ public class KeyManagementServiceStubSettings
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -757,28 +763,36 @@ public class KeyManagementServiceStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      listKeyRingsSettings = PagedCallSettings.newBuilder(LIST_KEY_RINGS_PAGE_STR_FACT);
+      createImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      listImportJobsSettings = PagedCallSettings.newBuilder(LIST_IMPORT_JOBS_PAGE_STR_FACT);
+      createCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listKeyRingsSettings = PagedCallSettings.newBuilder(LIST_KEY_RINGS_PAGE_STR_FACT);
 
       listCryptoKeysSettings = PagedCallSettings.newBuilder(LIST_CRYPTO_KEYS_PAGE_STR_FACT);
 
       listCryptoKeyVersionsSettings =
           PagedCallSettings.newBuilder(LIST_CRYPTO_KEY_VERSIONS_PAGE_STR_FACT);
 
-      getKeyRingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listImportJobsSettings = PagedCallSettings.newBuilder(LIST_IMPORT_JOBS_PAGE_STR_FACT);
 
-      getImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getKeyRingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       createKeyRingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      createImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      createCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       createCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -792,52 +806,44 @@ public class KeyManagementServiceStubSettings
 
       decryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      asymmetricSignSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      asymmetricDecryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateCryptoKeyPrimaryVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       destroyCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       restoreCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
-      getPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      asymmetricDecryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      asymmetricSignSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listKeyRingsSettings,
-              listImportJobsSettings,
-              listCryptoKeysSettings,
-              listCryptoKeyVersionsSettings,
-              getKeyRingSettings,
-              getImportJobSettings,
-              getCryptoKeySettings,
-              getCryptoKeyVersionSettings,
-              createKeyRingSettings,
               createImportJobSettings,
               createCryptoKeySettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings,
+              listKeyRingsSettings,
+              listCryptoKeysSettings,
+              listCryptoKeyVersionsSettings,
+              listImportJobsSettings,
+              getKeyRingSettings,
+              getCryptoKeySettings,
+              getCryptoKeyVersionSettings,
+              getPublicKeySettings,
+              getImportJobSettings,
+              createKeyRingSettings,
               createCryptoKeyVersionSettings,
               importCryptoKeyVersionSettings,
               updateCryptoKeySettings,
               updateCryptoKeyVersionSettings,
               encryptSettings,
               decryptSettings,
+              asymmetricSignSettings,
+              asymmetricDecryptSettings,
               updateCryptoKeyPrimaryVersionSettings,
               destroyCryptoKeyVersionSettings,
-              restoreCryptoKeyVersionSettings,
-              getPublicKeySettings,
-              asymmetricDecryptSettings,
-              asymmetricSignSettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              restoreCryptoKeyVersionSettings);
 
       initDefaults(this);
     }
@@ -854,134 +860,134 @@ public class KeyManagementServiceStubSettings
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .listKeyRingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listImportJobsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listCryptoKeysSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .listCryptoKeyVersionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getKeyRingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getImportJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getCryptoKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getCryptoKeyVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createKeyRingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
           .createImportJobSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .createCryptoKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .createCryptoKeyVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .importCryptoKeyVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateCryptoKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateCryptoKeyVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .encryptSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .decryptSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .updateCryptoKeyPrimaryVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .destroyCryptoKeyVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .restoreCryptoKeyVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .getPublicKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .asymmetricDecryptSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      builder
-          .asymmetricSignSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retryable"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listKeyRingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listCryptoKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listCryptoKeyVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listImportJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getKeyRingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getCryptoKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getPublicKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getImportJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createKeyRingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .createCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .importCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateCryptoKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .encryptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .decryptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .asymmetricSignSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .asymmetricDecryptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateCryptoKeyPrimaryVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .destroyCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .restoreCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       return builder;
     }
@@ -989,62 +995,62 @@ public class KeyManagementServiceStubSettings
     protected Builder(KeyManagementServiceStubSettings settings) {
       super(settings);
 
-      listKeyRingsSettings = settings.listKeyRingsSettings.toBuilder();
-      listImportJobsSettings = settings.listImportJobsSettings.toBuilder();
-      listCryptoKeysSettings = settings.listCryptoKeysSettings.toBuilder();
-      listCryptoKeyVersionsSettings = settings.listCryptoKeyVersionsSettings.toBuilder();
-      getKeyRingSettings = settings.getKeyRingSettings.toBuilder();
-      getImportJobSettings = settings.getImportJobSettings.toBuilder();
-      getCryptoKeySettings = settings.getCryptoKeySettings.toBuilder();
-      getCryptoKeyVersionSettings = settings.getCryptoKeyVersionSettings.toBuilder();
-      createKeyRingSettings = settings.createKeyRingSettings.toBuilder();
       createImportJobSettings = settings.createImportJobSettings.toBuilder();
       createCryptoKeySettings = settings.createCryptoKeySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      listKeyRingsSettings = settings.listKeyRingsSettings.toBuilder();
+      listCryptoKeysSettings = settings.listCryptoKeysSettings.toBuilder();
+      listCryptoKeyVersionsSettings = settings.listCryptoKeyVersionsSettings.toBuilder();
+      listImportJobsSettings = settings.listImportJobsSettings.toBuilder();
+      getKeyRingSettings = settings.getKeyRingSettings.toBuilder();
+      getCryptoKeySettings = settings.getCryptoKeySettings.toBuilder();
+      getCryptoKeyVersionSettings = settings.getCryptoKeyVersionSettings.toBuilder();
+      getPublicKeySettings = settings.getPublicKeySettings.toBuilder();
+      getImportJobSettings = settings.getImportJobSettings.toBuilder();
+      createKeyRingSettings = settings.createKeyRingSettings.toBuilder();
       createCryptoKeyVersionSettings = settings.createCryptoKeyVersionSettings.toBuilder();
       importCryptoKeyVersionSettings = settings.importCryptoKeyVersionSettings.toBuilder();
       updateCryptoKeySettings = settings.updateCryptoKeySettings.toBuilder();
       updateCryptoKeyVersionSettings = settings.updateCryptoKeyVersionSettings.toBuilder();
       encryptSettings = settings.encryptSettings.toBuilder();
       decryptSettings = settings.decryptSettings.toBuilder();
+      asymmetricSignSettings = settings.asymmetricSignSettings.toBuilder();
+      asymmetricDecryptSettings = settings.asymmetricDecryptSettings.toBuilder();
       updateCryptoKeyPrimaryVersionSettings =
           settings.updateCryptoKeyPrimaryVersionSettings.toBuilder();
       destroyCryptoKeyVersionSettings = settings.destroyCryptoKeyVersionSettings.toBuilder();
       restoreCryptoKeyVersionSettings = settings.restoreCryptoKeyVersionSettings.toBuilder();
-      getPublicKeySettings = settings.getPublicKeySettings.toBuilder();
-      asymmetricDecryptSettings = settings.asymmetricDecryptSettings.toBuilder();
-      asymmetricSignSettings = settings.asymmetricSignSettings.toBuilder();
-      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listKeyRingsSettings,
-              listImportJobsSettings,
-              listCryptoKeysSettings,
-              listCryptoKeyVersionsSettings,
-              getKeyRingSettings,
-              getImportJobSettings,
-              getCryptoKeySettings,
-              getCryptoKeyVersionSettings,
-              createKeyRingSettings,
               createImportJobSettings,
               createCryptoKeySettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings,
+              listKeyRingsSettings,
+              listCryptoKeysSettings,
+              listCryptoKeyVersionsSettings,
+              listImportJobsSettings,
+              getKeyRingSettings,
+              getCryptoKeySettings,
+              getCryptoKeyVersionSettings,
+              getPublicKeySettings,
+              getImportJobSettings,
+              createKeyRingSettings,
               createCryptoKeyVersionSettings,
               importCryptoKeyVersionSettings,
               updateCryptoKeySettings,
               updateCryptoKeyVersionSettings,
               encryptSettings,
               decryptSettings,
+              asymmetricSignSettings,
+              asymmetricDecryptSettings,
               updateCryptoKeyPrimaryVersionSettings,
               destroyCryptoKeyVersionSettings,
-              restoreCryptoKeyVersionSettings,
-              getPublicKeySettings,
-              asymmetricDecryptSettings,
-              asymmetricSignSettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              restoreCryptoKeyVersionSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1063,18 +1069,37 @@ public class KeyManagementServiceStubSettings
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to createImportJob. */
+    public UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob> createImportJobSettings() {
+      return createImportJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCryptoKey. */
+    public UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
+      return createCryptoKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listKeyRings. */
     public PagedCallSettings.Builder<
             ListKeyRingsRequest, ListKeyRingsResponse, ListKeyRingsPagedResponse>
         listKeyRingsSettings() {
       return listKeyRingsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listImportJobs. */
-    public PagedCallSettings.Builder<
-            ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
-        listImportJobsSettings() {
-      return listImportJobsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listCryptoKeys. */
@@ -1093,14 +1118,16 @@ public class KeyManagementServiceStubSettings
       return listCryptoKeyVersionsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listImportJobs. */
+    public PagedCallSettings.Builder<
+            ListImportJobsRequest, ListImportJobsResponse, ListImportJobsPagedResponse>
+        listImportJobsSettings() {
+      return listImportJobsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getKeyRing. */
     public UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings() {
       return getKeyRingSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getImportJob. */
-    public UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings() {
-      return getImportJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to getCryptoKey. */
@@ -1114,19 +1141,19 @@ public class KeyManagementServiceStubSettings
       return getCryptoKeyVersionSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getPublicKey. */
+    public UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+      return getPublicKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getImportJob. */
+    public UnaryCallSettings.Builder<GetImportJobRequest, ImportJob> getImportJobSettings() {
+      return getImportJobSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createKeyRing. */
     public UnaryCallSettings.Builder<CreateKeyRingRequest, KeyRing> createKeyRingSettings() {
       return createKeyRingSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createImportJob. */
-    public UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob> createImportJobSettings() {
-      return createImportJobSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createCryptoKey. */
-    public UnaryCallSettings.Builder<CreateCryptoKeyRequest, CryptoKey> createCryptoKeySettings() {
-      return createCryptoKeySettings;
     }
 
     /** Returns the builder for the settings used for calls to createCryptoKeyVersion. */
@@ -1162,6 +1189,18 @@ public class KeyManagementServiceStubSettings
       return decryptSettings;
     }
 
+    /** Returns the builder for the settings used for calls to asymmetricSign. */
+    public UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignSettings() {
+      return asymmetricSignSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asymmetricDecrypt. */
+    public UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptSettings() {
+      return asymmetricDecryptSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateCryptoKeyPrimaryVersion. */
     public UnaryCallSettings.Builder<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
         updateCryptoKeyPrimaryVersionSettings() {
@@ -1178,39 +1217,6 @@ public class KeyManagementServiceStubSettings
     public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionSettings() {
       return restoreCryptoKeyVersionSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getPublicKey. */
-    public UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
-      return getPublicKeySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to asymmetricDecrypt. */
-    public UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-        asymmetricDecryptSettings() {
-      return asymmetricDecryptSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to asymmetricSign. */
-    public UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
-        asymmetricSignSettings() {
-      return asymmetricSignSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return setIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
     }
 
     @Override

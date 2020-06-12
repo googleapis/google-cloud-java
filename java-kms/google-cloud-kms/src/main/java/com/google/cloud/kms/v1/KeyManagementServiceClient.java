@@ -61,8 +61,15 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
- *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
- *   KeyRing response = keyManagementServiceClient.getKeyRing(name);
+ *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+ *   String importJobId = "my-import-job";
+ *   ImportJob.ImportMethod importMethod = ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256;
+ *   ProtectionLevel protectionLevel = ProtectionLevel.HSM;
+ *   ImportJob importJob = ImportJob.newBuilder()
+ *     .setImportMethod(importMethod)
+ *     .setProtectionLevel(protectionLevel)
+ *     .build();
+ *   ImportJob response = keyManagementServiceClient.createImportJob(parent, importJobId, importJob);
  * }
  * </code>
  * </pre>
@@ -170,1028 +177,6 @@ public class KeyManagementServiceClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public KeyManagementServiceStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (KeyRing element : keyManagementServiceClient.listKeyRings(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the location associated with the
-   *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListKeyRingsPagedResponse listKeyRings(LocationName parent) {
-    ListKeyRingsRequest request =
-        ListKeyRingsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listKeyRings(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (KeyRing element : keyManagementServiceClient.listKeyRings(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the location associated with the
-   *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListKeyRingsPagedResponse listKeyRings(String parent) {
-    ListKeyRingsRequest request = ListKeyRingsRequest.newBuilder().setParent(parent).build();
-    return listKeyRings(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListKeyRingsRequest request = ListKeyRingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (KeyRing element : keyManagementServiceClient.listKeyRings(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListKeyRingsPagedResponse listKeyRings(ListKeyRingsRequest request) {
-    return listKeyRingsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListKeyRingsRequest request = ListKeyRingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListKeyRingsPagedResponse&gt; future = keyManagementServiceClient.listKeyRingsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (KeyRing element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListKeyRingsRequest, ListKeyRingsPagedResponse>
-      listKeyRingsPagedCallable() {
-    return stub.listKeyRingsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListKeyRingsRequest request = ListKeyRingsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListKeyRingsResponse response = keyManagementServiceClient.listKeyRingsCallable().call(request);
-   *     for (KeyRing element : response.getKeyRingsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListKeyRingsRequest, ListKeyRingsResponse> listKeyRingsCallable() {
-    return stub.listKeyRingsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
-   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListImportJobsPagedResponse listImportJobs(KeyRingName parent) {
-    ListImportJobsRequest request =
-        ListImportJobsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listImportJobs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
-   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListImportJobsPagedResponse listImportJobs(String parent) {
-    ListImportJobsRequest request = ListImportJobsRequest.newBuilder().setParent(parent).build();
-    return listImportJobs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListImportJobsPagedResponse listImportJobs(ListImportJobsRequest request) {
-    return listImportJobsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListImportJobsPagedResponse&gt; future = keyManagementServiceClient.listImportJobsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ImportJob element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
-      listImportJobsPagedCallable() {
-    return stub.listImportJobsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListImportJobsResponse response = keyManagementServiceClient.listImportJobsCallable().call(request);
-   *     for (ImportJob element : response.getImportJobsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListImportJobsRequest, ListImportJobsResponse>
-      listImportJobsCallable() {
-    return stub.listImportJobsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   for (CryptoKey element : keyManagementServiceClient.listCryptoKeys(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
-   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListCryptoKeysPagedResponse listCryptoKeys(KeyRingName parent) {
-    ListCryptoKeysRequest request =
-        ListCryptoKeysRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listCryptoKeys(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   for (CryptoKey element : keyManagementServiceClient.listCryptoKeys(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
-   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListCryptoKeysPagedResponse listCryptoKeys(String parent) {
-    ListCryptoKeysRequest request = ListCryptoKeysRequest.newBuilder().setParent(parent).build();
-    return listCryptoKeys(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   ListCryptoKeysRequest request = ListCryptoKeysRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (CryptoKey element : keyManagementServiceClient.listCryptoKeys(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListCryptoKeysPagedResponse listCryptoKeys(ListCryptoKeysRequest request) {
-    return listCryptoKeysPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   ListCryptoKeysRequest request = ListCryptoKeysRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListCryptoKeysPagedResponse&gt; future = keyManagementServiceClient.listCryptoKeysPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (CryptoKey element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysPagedResponse>
-      listCryptoKeysPagedCallable() {
-    return stub.listCryptoKeysPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   ListCryptoKeysRequest request = ListCryptoKeysRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListCryptoKeysResponse response = keyManagementServiceClient.listCryptoKeysCallable().call(request);
-   *     for (CryptoKey element : response.getCryptoKeysList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysResponse>
-      listCryptoKeysCallable() {
-    return stub.listCryptoKeysCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   for (CryptoKeyVersion element : keyManagementServiceClient.listCryptoKeyVersions(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;/cryptoKeys/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListCryptoKeyVersionsPagedResponse listCryptoKeyVersions(CryptoKeyName parent) {
-    ListCryptoKeyVersionsRequest request =
-        ListCryptoKeyVersionsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listCryptoKeyVersions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   for (CryptoKeyVersion element : keyManagementServiceClient.listCryptoKeyVersions(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
-   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;/cryptoKeys/&#42;`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListCryptoKeyVersionsPagedResponse listCryptoKeyVersions(String parent) {
-    ListCryptoKeyVersionsRequest request =
-        ListCryptoKeyVersionsRequest.newBuilder().setParent(parent).build();
-    return listCryptoKeyVersions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   ListCryptoKeyVersionsRequest request = ListCryptoKeyVersionsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (CryptoKeyVersion element : keyManagementServiceClient.listCryptoKeyVersions(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListCryptoKeyVersionsPagedResponse listCryptoKeyVersions(
-      ListCryptoKeyVersionsRequest request) {
-    return listCryptoKeyVersionsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   ListCryptoKeyVersionsRequest request = ListCryptoKeyVersionsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListCryptoKeyVersionsPagedResponse&gt; future = keyManagementServiceClient.listCryptoKeyVersionsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (CryptoKeyVersion element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsPagedResponse>
-      listCryptoKeyVersionsPagedCallable() {
-    return stub.listCryptoKeyVersionsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   ListCryptoKeyVersionsRequest request = ListCryptoKeyVersionsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListCryptoKeyVersionsResponse response = keyManagementServiceClient.listCryptoKeyVersionsCallable().call(request);
-   *     for (CryptoKeyVersion element : response.getCryptoKeyVersionsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
-      listCryptoKeyVersionsCallable() {
-    return stub.listCryptoKeyVersionsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   KeyRing response = keyManagementServiceClient.getKeyRing(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
-   *     [KeyRing][google.cloud.kms.v1.KeyRing] to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final KeyRing getKeyRing(KeyRingName name) {
-    GetKeyRingRequest request =
-        GetKeyRingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getKeyRing(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   KeyRing response = keyManagementServiceClient.getKeyRing(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
-   *     [KeyRing][google.cloud.kms.v1.KeyRing] to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final KeyRing getKeyRing(String name) {
-    GetKeyRingRequest request = GetKeyRingRequest.newBuilder().setName(name).build();
-    return getKeyRing(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   GetKeyRingRequest request = GetKeyRingRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   KeyRing response = keyManagementServiceClient.getKeyRing(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final KeyRing getKeyRing(GetKeyRingRequest request) {
-    return getKeyRingCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   GetKeyRingRequest request = GetKeyRingRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;KeyRing&gt; future = keyManagementServiceClient.getKeyRingCallable().futureCall(request);
-   *   // Do something
-   *   KeyRing response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
-    return stub.getKeyRingCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
-   *   ImportJob response = keyManagementServiceClient.getImportJob(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
-   *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ImportJob getImportJob(ImportJobName name) {
-    GetImportJobRequest request =
-        GetImportJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getImportJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
-   *   ImportJob response = keyManagementServiceClient.getImportJob(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
-   *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ImportJob getImportJob(String name) {
-    GetImportJobRequest request = GetImportJobRequest.newBuilder().setName(name).build();
-    return getImportJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
-   *   GetImportJobRequest request = GetImportJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ImportJob response = keyManagementServiceClient.getImportJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ImportJob getImportJob(GetImportJobRequest request) {
-    return getImportJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
-   *   GetImportJobRequest request = GetImportJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ImportJob&gt; future = keyManagementServiceClient.getImportJobCallable().futureCall(request);
-   *   // Do something
-   *   ImportJob response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable() {
-    return stub.getImportJobCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
-   * [primary][google.cloud.kms.v1.CryptoKey.primary]
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   CryptoKey response = keyManagementServiceClient.getCryptoKey(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
-   *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKey getCryptoKey(CryptoKeyName name) {
-    GetCryptoKeyRequest request =
-        GetCryptoKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getCryptoKey(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
-   * [primary][google.cloud.kms.v1.CryptoKey.primary]
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   CryptoKey response = keyManagementServiceClient.getCryptoKey(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
-   *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKey getCryptoKey(String name) {
-    GetCryptoKeyRequest request = GetCryptoKeyRequest.newBuilder().setName(name).build();
-    return getCryptoKey(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
-   * [primary][google.cloud.kms.v1.CryptoKey.primary]
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   GetCryptoKeyRequest request = GetCryptoKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   CryptoKey response = keyManagementServiceClient.getCryptoKey(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKey getCryptoKey(GetCryptoKeyRequest request) {
-    return getCryptoKeyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
-   * [primary][google.cloud.kms.v1.CryptoKey.primary]
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   GetCryptoKeyRequest request = GetCryptoKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;CryptoKey&gt; future = keyManagementServiceClient.getCryptoKeyCallable().futureCall(request);
-   *   // Do something
-   *   CryptoKey response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetCryptoKeyRequest, CryptoKey> getCryptoKeyCallable() {
-    return stub.getCryptoKeyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   CryptoKeyVersion response = keyManagementServiceClient.getCryptoKeyVersion(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKeyVersion getCryptoKeyVersion(CryptoKeyVersionName name) {
-    GetCryptoKeyVersionRequest request =
-        GetCryptoKeyVersionRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getCryptoKeyVersion(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   CryptoKeyVersion response = keyManagementServiceClient.getCryptoKeyVersion(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKeyVersion getCryptoKeyVersion(String name) {
-    GetCryptoKeyVersionRequest request =
-        GetCryptoKeyVersionRequest.newBuilder().setName(name).build();
-    return getCryptoKeyVersion(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   GetCryptoKeyVersionRequest request = GetCryptoKeyVersionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   CryptoKeyVersion response = keyManagementServiceClient.getCryptoKeyVersion(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CryptoKeyVersion getCryptoKeyVersion(GetCryptoKeyVersionRequest request) {
-    return getCryptoKeyVersionCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   GetCryptoKeyVersionRequest request = GetCryptoKeyVersionRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;CryptoKeyVersion&gt; future = keyManagementServiceClient.getCryptoKeyVersionCallable().futureCall(request);
-   *   // Do something
-   *   CryptoKeyVersion response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetCryptoKeyVersionRequest, CryptoKeyVersion>
-      getCryptoKeyVersionCallable() {
-    return stub.getCryptoKeyVersionCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String keyRingId = "";
-   *   KeyRing keyRing = KeyRing.newBuilder().build();
-   *   KeyRing response = keyManagementServiceClient.createKeyRing(parent, keyRingId, keyRing);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the location associated with the
-   *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
-   * @param keyRingId Required. It must be unique within a location and match the regular expression
-   *     `[a-zA-Z0-9_-]{1,63}`
-   * @param keyRing Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final KeyRing createKeyRing(LocationName parent, String keyRingId, KeyRing keyRing) {
-    CreateKeyRingRequest request =
-        CreateKeyRingRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setKeyRingId(keyRingId)
-            .setKeyRing(keyRing)
-            .build();
-    return createKeyRing(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String keyRingId = "";
-   *   KeyRing keyRing = KeyRing.newBuilder().build();
-   *   KeyRing response = keyManagementServiceClient.createKeyRing(parent.toString(), keyRingId, keyRing);
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The resource name of the location associated with the
-   *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
-   * @param keyRingId Required. It must be unique within a location and match the regular expression
-   *     `[a-zA-Z0-9_-]{1,63}`
-   * @param keyRing Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final KeyRing createKeyRing(String parent, String keyRingId, KeyRing keyRing) {
-    CreateKeyRingRequest request =
-        CreateKeyRingRequest.newBuilder()
-            .setParent(parent)
-            .setKeyRingId(keyRingId)
-            .setKeyRing(keyRing)
-            .build();
-    return createKeyRing(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String keyRingId = "";
-   *   KeyRing keyRing = KeyRing.newBuilder().build();
-   *   CreateKeyRingRequest request = CreateKeyRingRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setKeyRingId(keyRingId)
-   *     .setKeyRing(keyRing)
-   *     .build();
-   *   KeyRing response = keyManagementServiceClient.createKeyRing(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final KeyRing createKeyRing(CreateKeyRingRequest request) {
-    return createKeyRingCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String keyRingId = "";
-   *   KeyRing keyRing = KeyRing.newBuilder().build();
-   *   CreateKeyRingRequest request = CreateKeyRingRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setKeyRingId(keyRingId)
-   *     .setKeyRing(keyRing)
-   *     .build();
-   *   ApiFuture&lt;KeyRing&gt; future = keyManagementServiceClient.createKeyRingCallable().futureCall(request);
-   *   // Do something
-   *   KeyRing response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable() {
-    return stub.createKeyRingCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1538,6 +523,1472 @@ public class KeyManagementServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable() {
     return stub.createCryptoKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setPolicy(policy)
+   *     .build();
+   *   Policy response = keyManagementServiceClient.setIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // ADDED BY SYNTH
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = keyManagementServiceClient.setIamPolicy(resource, policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(KeyName resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // ADDED BY SYNTH
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = keyManagementServiceClient.setIamPolicy(resource.toString(), policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(String resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setPolicy(policy)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = keyManagementServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = keyManagementServiceClient.getIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // ADDED BY SYNTH
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   Policy response = keyManagementServiceClient.getIamPolicy(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(KeyName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // ADDED BY SYNTH
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   Policy response = keyManagementServiceClient.getIamPolicy(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = keyManagementServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   *
+   * <p>Note: This operation is designed to be used for building permission-aware UIs and
+   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // ADDED BY SYNTH
+  /**
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   *
+   * <p>Note: This operation is designed to be used for building permission-aware UIs and
+   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(resource, permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      KeyName resource, List<String> permissions) {
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // ADDED BY SYNTH
+  /**
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   *
+   * <p>Note: This operation is designed to be used for building permission-aware UIs and
+   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(resource.toString(), permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      String resource, List<String> permissions) {
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource)
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   *
+   * <p>Note: This operation is designed to be used for building permission-aware UIs and
+   * command-line tools, not for authorization checking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = keyManagementServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (KeyRing element : keyManagementServiceClient.listKeyRings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the location associated with the
+   *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKeyRingsPagedResponse listKeyRings(LocationName parent) {
+    ListKeyRingsRequest request =
+        ListKeyRingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listKeyRings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (KeyRing element : keyManagementServiceClient.listKeyRings(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the location associated with the
+   *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKeyRingsPagedResponse listKeyRings(String parent) {
+    ListKeyRingsRequest request = ListKeyRingsRequest.newBuilder().setParent(parent).build();
+    return listKeyRings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListKeyRingsRequest request = ListKeyRingsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (KeyRing element : keyManagementServiceClient.listKeyRings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKeyRingsPagedResponse listKeyRings(ListKeyRingsRequest request) {
+    return listKeyRingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListKeyRingsRequest request = ListKeyRingsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListKeyRingsPagedResponse&gt; future = keyManagementServiceClient.listKeyRingsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (KeyRing element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListKeyRingsRequest, ListKeyRingsPagedResponse>
+      listKeyRingsPagedCallable() {
+    return stub.listKeyRingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListKeyRingsRequest request = ListKeyRingsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListKeyRingsResponse response = keyManagementServiceClient.listKeyRingsCallable().call(request);
+   *     for (KeyRing element : response.getKeyRingsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListKeyRingsRequest, ListKeyRingsResponse> listKeyRingsCallable() {
+    return stub.listKeyRingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   for (CryptoKey element : keyManagementServiceClient.listCryptoKeys(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
+   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCryptoKeysPagedResponse listCryptoKeys(KeyRingName parent) {
+    ListCryptoKeysRequest request =
+        ListCryptoKeysRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCryptoKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   for (CryptoKey element : keyManagementServiceClient.listCryptoKeys(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
+   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCryptoKeysPagedResponse listCryptoKeys(String parent) {
+    ListCryptoKeysRequest request = ListCryptoKeysRequest.newBuilder().setParent(parent).build();
+    return listCryptoKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListCryptoKeysRequest request = ListCryptoKeysRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (CryptoKey element : keyManagementServiceClient.listCryptoKeys(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCryptoKeysPagedResponse listCryptoKeys(ListCryptoKeysRequest request) {
+    return listCryptoKeysPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListCryptoKeysRequest request = ListCryptoKeysRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListCryptoKeysPagedResponse&gt; future = keyManagementServiceClient.listCryptoKeysPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (CryptoKey element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysPagedResponse>
+      listCryptoKeysPagedCallable() {
+    return stub.listCryptoKeysPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListCryptoKeysRequest request = ListCryptoKeysRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListCryptoKeysResponse response = keyManagementServiceClient.listCryptoKeysCallable().call(request);
+   *     for (CryptoKey element : response.getCryptoKeysList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysResponse>
+      listCryptoKeysCallable() {
+    return stub.listCryptoKeysCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   for (CryptoKeyVersion element : keyManagementServiceClient.listCryptoKeyVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
+   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;/cryptoKeys/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCryptoKeyVersionsPagedResponse listCryptoKeyVersions(CryptoKeyName parent) {
+    ListCryptoKeyVersionsRequest request =
+        ListCryptoKeyVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCryptoKeyVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   for (CryptoKeyVersion element : keyManagementServiceClient.listCryptoKeyVersions(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to
+   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;/cryptoKeys/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCryptoKeyVersionsPagedResponse listCryptoKeyVersions(String parent) {
+    ListCryptoKeyVersionsRequest request =
+        ListCryptoKeyVersionsRequest.newBuilder().setParent(parent).build();
+    return listCryptoKeyVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   ListCryptoKeyVersionsRequest request = ListCryptoKeyVersionsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (CryptoKeyVersion element : keyManagementServiceClient.listCryptoKeyVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCryptoKeyVersionsPagedResponse listCryptoKeyVersions(
+      ListCryptoKeyVersionsRequest request) {
+    return listCryptoKeyVersionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   ListCryptoKeyVersionsRequest request = ListCryptoKeyVersionsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListCryptoKeyVersionsPagedResponse&gt; future = keyManagementServiceClient.listCryptoKeyVersionsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (CryptoKeyVersion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsPagedResponse>
+      listCryptoKeyVersionsPagedCallable() {
+    return stub.listCryptoKeyVersionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName parent = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   ListCryptoKeyVersionsRequest request = ListCryptoKeyVersionsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListCryptoKeyVersionsResponse response = keyManagementServiceClient.listCryptoKeyVersionsCallable().call(request);
+   *     for (CryptoKeyVersion element : response.getCryptoKeyVersionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
+      listCryptoKeyVersionsCallable() {
+    return stub.listCryptoKeyVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
+   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImportJobsPagedResponse listImportJobs(KeyRingName parent) {
+    ListImportJobsRequest request =
+        ListImportJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listImportJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(parent.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the [KeyRing][google.cloud.kms.v1.KeyRing] to
+   *     list, in the format `projects/&#42;/locations/&#42;/keyRings/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImportJobsPagedResponse listImportJobs(String parent) {
+    ListImportJobsRequest request = ListImportJobsRequest.newBuilder().setParent(parent).build();
+    return listImportJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (ImportJob element : keyManagementServiceClient.listImportJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListImportJobsPagedResponse listImportJobs(ListImportJobsRequest request) {
+    return listImportJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListImportJobsPagedResponse&gt; future = keyManagementServiceClient.listImportJobsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (ImportJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
+      listImportJobsPagedCallable() {
+    return stub.listImportJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   ListImportJobsRequest request = ListImportJobsRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListImportJobsResponse response = keyManagementServiceClient.listImportJobsCallable().call(request);
+   *     for (ImportJob element : response.getImportJobsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListImportJobsRequest, ListImportJobsResponse>
+      listImportJobsCallable() {
+    return stub.listImportJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   KeyRing response = keyManagementServiceClient.getKeyRing(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+   *     [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyRing getKeyRing(KeyRingName name) {
+    GetKeyRingRequest request =
+        GetKeyRingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getKeyRing(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   KeyRing response = keyManagementServiceClient.getKeyRing(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.KeyRing.name] of the
+   *     [KeyRing][google.cloud.kms.v1.KeyRing] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyRing getKeyRing(String name) {
+    GetKeyRingRequest request = GetKeyRingRequest.newBuilder().setName(name).build();
+    return getKeyRing(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   GetKeyRingRequest request = GetKeyRingRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   KeyRing response = keyManagementServiceClient.getKeyRing(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyRing getKeyRing(GetKeyRingRequest request) {
+    return getKeyRingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+   *   GetKeyRingRequest request = GetKeyRingRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;KeyRing&gt; future = keyManagementServiceClient.getKeyRingCallable().futureCall(request);
+   *   // Do something
+   *   KeyRing response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
+    return stub.getKeyRingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
+   * [primary][google.cloud.kms.v1.CryptoKey.primary]
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   CryptoKey response = keyManagementServiceClient.getCryptoKey(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKey getCryptoKey(CryptoKeyName name) {
+    GetCryptoKeyRequest request =
+        GetCryptoKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getCryptoKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
+   * [primary][google.cloud.kms.v1.CryptoKey.primary]
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   CryptoKey response = keyManagementServiceClient.getCryptoKey(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   *     [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKey getCryptoKey(String name) {
+    GetCryptoKeyRequest request = GetCryptoKeyRequest.newBuilder().setName(name).build();
+    return getCryptoKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
+   * [primary][google.cloud.kms.v1.CryptoKey.primary]
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   GetCryptoKeyRequest request = GetCryptoKeyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   CryptoKey response = keyManagementServiceClient.getCryptoKey(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKey getCryptoKey(GetCryptoKeyRequest request) {
+    return getCryptoKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as well as its
+   * [primary][google.cloud.kms.v1.CryptoKey.primary]
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+   *   GetCryptoKeyRequest request = GetCryptoKeyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;CryptoKey&gt; future = keyManagementServiceClient.getCryptoKeyCallable().futureCall(request);
+   *   // Do something
+   *   CryptoKey response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetCryptoKeyRequest, CryptoKey> getCryptoKeyCallable() {
+    return stub.getCryptoKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   CryptoKeyVersion response = keyManagementServiceClient.getCryptoKeyVersion(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion getCryptoKeyVersion(CryptoKeyVersionName name) {
+    GetCryptoKeyVersionRequest request =
+        GetCryptoKeyVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCryptoKeyVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   CryptoKeyVersion response = keyManagementServiceClient.getCryptoKeyVersion(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion getCryptoKeyVersion(String name) {
+    GetCryptoKeyVersionRequest request =
+        GetCryptoKeyVersionRequest.newBuilder().setName(name).build();
+    return getCryptoKeyVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   GetCryptoKeyVersionRequest request = GetCryptoKeyVersionRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   CryptoKeyVersion response = keyManagementServiceClient.getCryptoKeyVersion(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion getCryptoKeyVersion(GetCryptoKeyVersionRequest request) {
+    return getCryptoKeyVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   GetCryptoKeyVersionRequest request = GetCryptoKeyVersionRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;CryptoKeyVersion&gt; future = keyManagementServiceClient.getCryptoKeyVersionCallable().futureCall(request);
+   *   // Do something
+   *   CryptoKeyVersion response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetCryptoKeyVersionRequest, CryptoKeyVersion>
+      getCryptoKeyVersionCallable() {
+    return stub.getCryptoKeyVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   PublicKey response = keyManagementServiceClient.getPublicKey(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublicKey getPublicKey(CryptoKeyVersionName name) {
+    GetPublicKeyRequest request =
+        GetPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPublicKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   PublicKey response = keyManagementServiceClient.getPublicKey(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublicKey getPublicKey(String name) {
+    GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder().setName(name).build();
+    return getPublicKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   PublicKey response = keyManagementServiceClient.getPublicKey(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublicKey getPublicKey(GetPublicKeyRequest request) {
+    return getPublicKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
+   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
+   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;PublicKey&gt; future = keyManagementServiceClient.getPublicKeyCallable().futureCall(request);
+   *   // Do something
+   *   PublicKey response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
+    return stub.getPublicKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+   *   ImportJob response = keyManagementServiceClient.getImportJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+   *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob getImportJob(ImportJobName name) {
+    GetImportJobRequest request =
+        GetImportJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getImportJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+   *   ImportJob response = keyManagementServiceClient.getImportJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.ImportJob.name] of the
+   *     [ImportJob][google.cloud.kms.v1.ImportJob] to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob getImportJob(String name) {
+    GetImportJobRequest request = GetImportJobRequest.newBuilder().setName(name).build();
+    return getImportJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+   *   GetImportJobRequest request = GetImportJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ImportJob response = keyManagementServiceClient.getImportJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ImportJob getImportJob(GetImportJobRequest request) {
+    return getImportJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+   *   GetImportJobRequest request = GetImportJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;ImportJob&gt; future = keyManagementServiceClient.getImportJobCallable().futureCall(request);
+   *   // Do something
+   *   ImportJob response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable() {
+    return stub.getImportJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String keyRingId = "";
+   *   KeyRing keyRing = KeyRing.newBuilder().build();
+   *   KeyRing response = keyManagementServiceClient.createKeyRing(parent, keyRingId, keyRing);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the location associated with the
+   *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
+   * @param keyRingId Required. It must be unique within a location and match the regular expression
+   *     `[a-zA-Z0-9_-]{1,63}`
+   * @param keyRing Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyRing createKeyRing(LocationName parent, String keyRingId, KeyRing keyRing) {
+    CreateKeyRingRequest request =
+        CreateKeyRingRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setKeyRingId(keyRingId)
+            .setKeyRing(keyRing)
+            .build();
+    return createKeyRing(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String keyRingId = "";
+   *   KeyRing keyRing = KeyRing.newBuilder().build();
+   *   KeyRing response = keyManagementServiceClient.createKeyRing(parent.toString(), keyRingId, keyRing);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name of the location associated with the
+   *     [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;/locations/&#42;`.
+   * @param keyRingId Required. It must be unique within a location and match the regular expression
+   *     `[a-zA-Z0-9_-]{1,63}`
+   * @param keyRing Required. A [KeyRing][google.cloud.kms.v1.KeyRing] with initial field values.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyRing createKeyRing(String parent, String keyRingId, KeyRing keyRing) {
+    CreateKeyRingRequest request =
+        CreateKeyRingRequest.newBuilder()
+            .setParent(parent)
+            .setKeyRingId(keyRingId)
+            .setKeyRing(keyRing)
+            .build();
+    return createKeyRing(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String keyRingId = "";
+   *   KeyRing keyRing = KeyRing.newBuilder().build();
+   *   CreateKeyRingRequest request = CreateKeyRingRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setKeyRingId(keyRingId)
+   *     .setKeyRing(keyRing)
+   *     .build();
+   *   KeyRing response = keyManagementServiceClient.createKeyRing(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final KeyRing createKeyRing(CreateKeyRingRequest request) {
+    return createKeyRingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Create a new [KeyRing][google.cloud.kms.v1.KeyRing] in a given Project and Location.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String keyRingId = "";
+   *   KeyRing keyRing = KeyRing.newBuilder().build();
+   *   CreateKeyRingRequest request = CreateKeyRingRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setKeyRingId(keyRingId)
+   *     .setKeyRing(keyRing)
+   *     .build();
+   *   ApiFuture&lt;KeyRing&gt; future = keyManagementServiceClient.createKeyRingCallable().futureCall(request);
+   *   // Do something
+   *   KeyRing response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable() {
+    return stub.createKeyRingCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2202,6 +2653,243 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
+   * signature that can be verified with the public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   Digest digest = Digest.newBuilder().build();
+   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(name, digest);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+   * @param digest Required. The digest of the data to sign. The digest must be produced with the
+   *     same digest algorithm as specified by the key version's
+   *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricSignResponse asymmetricSign(CryptoKeyVersionName name, Digest digest) {
+    AsymmetricSignRequest request =
+        AsymmetricSignRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDigest(digest)
+            .build();
+    return asymmetricSign(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
+   * signature that can be verified with the public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   Digest digest = Digest.newBuilder().build();
+   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(name.toString(), digest);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+   * @param digest Required. The digest of the data to sign. The digest must be produced with the
+   *     same digest algorithm as specified by the key version's
+   *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricSignResponse asymmetricSign(String name, Digest digest) {
+    AsymmetricSignRequest request =
+        AsymmetricSignRequest.newBuilder().setName(name).setDigest(digest).build();
+    return asymmetricSign(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
+   * signature that can be verified with the public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   Digest digest = Digest.newBuilder().build();
+   *   AsymmetricSignRequest request = AsymmetricSignRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDigest(digest)
+   *     .build();
+   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricSignResponse asymmetricSign(AsymmetricSignRequest request) {
+    return asymmetricSignCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
+   * signature that can be verified with the public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   Digest digest = Digest.newBuilder().build();
+   *   AsymmetricSignRequest request = AsymmetricSignRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setDigest(digest)
+   *     .build();
+   *   ApiFuture&lt;AsymmetricSignResponse&gt; future = keyManagementServiceClient.asymmetricSignCallable().futureCall(request);
+   *   // Do something
+   *   AsymmetricSignResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse>
+      asymmetricSignCallable() {
+    return stub.asymmetricSignCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ByteString ciphertext = ByteString.copyFromUtf8("");
+   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(name, ciphertext);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for decryption.
+   * @param ciphertext Required. The data encrypted with the named
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public key using OAEP.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricDecryptResponse asymmetricDecrypt(
+      CryptoKeyVersionName name, ByteString ciphertext) {
+    AsymmetricDecryptRequest request =
+        AsymmetricDecryptRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setCiphertext(ciphertext)
+            .build();
+    return asymmetricDecrypt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ByteString ciphertext = ByteString.copyFromUtf8("");
+   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(name.toString(), ciphertext);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for decryption.
+   * @param ciphertext Required. The data encrypted with the named
+   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public key using OAEP.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricDecryptResponse asymmetricDecrypt(String name, ByteString ciphertext) {
+    AsymmetricDecryptRequest request =
+        AsymmetricDecryptRequest.newBuilder().setName(name).setCiphertext(ciphertext).build();
+    return asymmetricDecrypt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ByteString ciphertext = ByteString.copyFromUtf8("");
+   *   AsymmetricDecryptRequest request = AsymmetricDecryptRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setCiphertext(ciphertext)
+   *     .build();
+   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AsymmetricDecryptResponse asymmetricDecrypt(AsymmetricDecryptRequest request) {
+    return asymmetricDecryptCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ByteString ciphertext = ByteString.copyFromUtf8("");
+   *   AsymmetricDecryptRequest request = AsymmetricDecryptRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setCiphertext(ciphertext)
+   *     .build();
+   *   ApiFuture&lt;AsymmetricDecryptResponse&gt; future = keyManagementServiceClient.asymmetricDecryptCallable().futureCall(request);
+   *   // Do something
+   *   AsymmetricDecryptResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptCallable() {
+    return stub.asymmetricDecryptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Update the version of a [CryptoKey][google.cloud.kms.v1.CryptoKey] that will be used in
    * [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
    *
@@ -2590,687 +3278,6 @@ public class KeyManagementServiceClient implements BackgroundResource {
     return stub.restoreCryptoKeyVersionCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
-   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   PublicKey response = keyManagementServiceClient.getPublicKey(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final PublicKey getPublicKey(CryptoKeyVersionName name) {
-    GetPublicKeyRequest request =
-        GetPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getPublicKey(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
-   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   PublicKey response = keyManagementServiceClient.getPublicKey(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final PublicKey getPublicKey(String name) {
-    GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder().setName(name).build();
-    return getPublicKey(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
-   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   PublicKey response = keyManagementServiceClient.getPublicKey(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final PublicKey getPublicKey(GetPublicKeyRequest request) {
-    return getPublicKeyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns the public key for the given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
-   * The [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] must be
-   * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN] or
-   * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   GetPublicKeyRequest request = GetPublicKeyRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;PublicKey&gt; future = keyManagementServiceClient.getPublicKeyCallable().futureCall(request);
-   *   // Do something
-   *   PublicKey response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
-    return stub.getPublicKeyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Decrypts data that was encrypted with a public key retrieved from
-   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   ByteString ciphertext = ByteString.copyFromUtf8("");
-   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(name, ciphertext);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for decryption.
-   * @param ciphertext Required. The data encrypted with the named
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public key using OAEP.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AsymmetricDecryptResponse asymmetricDecrypt(
-      CryptoKeyVersionName name, ByteString ciphertext) {
-    AsymmetricDecryptRequest request =
-        AsymmetricDecryptRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setCiphertext(ciphertext)
-            .build();
-    return asymmetricDecrypt(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Decrypts data that was encrypted with a public key retrieved from
-   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   ByteString ciphertext = ByteString.copyFromUtf8("");
-   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(name.toString(), ciphertext);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for decryption.
-   * @param ciphertext Required. The data encrypted with the named
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public key using OAEP.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AsymmetricDecryptResponse asymmetricDecrypt(String name, ByteString ciphertext) {
-    AsymmetricDecryptRequest request =
-        AsymmetricDecryptRequest.newBuilder().setName(name).setCiphertext(ciphertext).build();
-    return asymmetricDecrypt(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Decrypts data that was encrypted with a public key retrieved from
-   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   ByteString ciphertext = ByteString.copyFromUtf8("");
-   *   AsymmetricDecryptRequest request = AsymmetricDecryptRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setCiphertext(ciphertext)
-   *     .build();
-   *   AsymmetricDecryptResponse response = keyManagementServiceClient.asymmetricDecrypt(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AsymmetricDecryptResponse asymmetricDecrypt(AsymmetricDecryptRequest request) {
-    return asymmetricDecryptCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Decrypts data that was encrypted with a public key retrieved from
-   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_DECRYPT.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   ByteString ciphertext = ByteString.copyFromUtf8("");
-   *   AsymmetricDecryptRequest request = AsymmetricDecryptRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setCiphertext(ciphertext)
-   *     .build();
-   *   ApiFuture&lt;AsymmetricDecryptResponse&gt; future = keyManagementServiceClient.asymmetricDecryptCallable().futureCall(request);
-   *   // Do something
-   *   AsymmetricDecryptResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-      asymmetricDecryptCallable() {
-    return stub.asymmetricDecryptCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
-   * signature that can be verified with the public key retrieved from
-   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   Digest digest = Digest.newBuilder().build();
-   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(name, digest);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
-   * @param digest Required. The digest of the data to sign. The digest must be produced with the
-   *     same digest algorithm as specified by the key version's
-   *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AsymmetricSignResponse asymmetricSign(CryptoKeyVersionName name, Digest digest) {
-    AsymmetricSignRequest request =
-        AsymmetricSignRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setDigest(digest)
-            .build();
-    return asymmetricSign(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
-   * signature that can be verified with the public key retrieved from
-   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   Digest digest = Digest.newBuilder().build();
-   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(name.toString(), digest);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the
-   *     [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
-   * @param digest Required. The digest of the data to sign. The digest must be produced with the
-   *     same digest algorithm as specified by the key version's
-   *     [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AsymmetricSignResponse asymmetricSign(String name, Digest digest) {
-    AsymmetricSignRequest request =
-        AsymmetricSignRequest.newBuilder().setName(name).setDigest(digest).build();
-    return asymmetricSign(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
-   * signature that can be verified with the public key retrieved from
-   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   Digest digest = Digest.newBuilder().build();
-   *   AsymmetricSignRequest request = AsymmetricSignRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setDigest(digest)
-   *     .build();
-   *   AsymmetricSignResponse response = keyManagementServiceClient.asymmetricSign(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AsymmetricSignResponse asymmetricSign(AsymmetricSignRequest request) {
-    return asymmetricSignCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
-   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] ASYMMETRIC_SIGN, producing a
-   * signature that can be verified with the public key retrieved from
-   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   CryptoKeyVersionName name = CryptoKeyVersionName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-   *   Digest digest = Digest.newBuilder().build();
-   *   AsymmetricSignRequest request = AsymmetricSignRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setDigest(digest)
-   *     .build();
-   *   ApiFuture&lt;AsymmetricSignResponse&gt; future = keyManagementServiceClient.asymmetricSignCallable().futureCall(request);
-   *   // Do something
-   *   AsymmetricSignResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse>
-      asymmetricSignCallable() {
-    return stub.asymmetricSignCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
-   *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .setPolicy(policy)
-   *     .build();
-   *   Policy response = keyManagementServiceClient.setIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy setIamPolicy(SetIamPolicyRequest request) {
-    return setIamPolicyCallable().call(request);
-  }
-
-  // ADDED BY SYNTH
-  /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
-   *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = keyManagementServiceClient.setIamPolicy(resource, policy);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being specified. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
-   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
-   *     Platform services (such as Projects) might reject them.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy setIamPolicy(KeyName resource, Policy policy) {
-    SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .setPolicy(policy)
-            .build();
-    return setIamPolicy(request);
-  }
-
-  // ADDED BY SYNTH
-  /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
-   *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = keyManagementServiceClient.setIamPolicy(resource.toString(), policy);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being specified. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
-   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
-   *     Platform services (such as Projects) might reject them.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy setIamPolicy(String resource, Policy policy) {
-    SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
-    return setIamPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sets the access control policy on the specified resource. Replaces any existing policy.
-   *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .setPolicy(policy)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = keyManagementServiceClient.setIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   Policy response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    return stub.setIamPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   Policy response = keyManagementServiceClient.getIamPolicy(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(GetIamPolicyRequest request) {
-    return getIamPolicyCallable().call(request);
-  }
-
-  // ADDED BY SYNTH
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   Policy response = keyManagementServiceClient.getIamPolicy(resource);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(KeyName resource) {
-    GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .build();
-    return getIamPolicy(request);
-  }
-
-  // ADDED BY SYNTH
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   Policy response = keyManagementServiceClient.getIamPolicy(resource.toString());
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Policy getIamPolicy(String resource) {
-    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
-    return getIamPolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the resource exists
-   * and does not have a policy set.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = keyManagementServiceClient.getIamPolicyCallable().futureCall(request);
-   *   // Do something
-   *   Policy response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    return stub.getIamPolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
-   *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
-    return testIamPermissionsCallable().call(request);
-  }
-
-  // ADDED BY SYNTH
-  /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
-   *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(resource, permissions);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
-   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(
-      KeyName resource, List<String> permissions) {
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .addAllPermissions(permissions)
-            .build();
-    return testIamPermissions(request);
-  }
-
-  // ADDED BY SYNTH
-  /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
-   *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(resource.toString(), permissions);
-   * }
-   * </code></pre>
-   *
-   * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
-   *     operation documentation for the appropriate value for this field.
-   * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
-   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final TestIamPermissionsResponse testIamPermissions(
-      String resource, List<String> permissions) {
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(resource)
-            .addAllPermissions(permissions)
-            .build();
-    return testIamPermissions(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
-   *
-   * <p>Note: This operation is designed to be used for building permission-aware UIs and
-   * command-line tools, not for authorization checking. This operation may "fail open" without
-   * warning.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
-   *   ResourceName resource = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = keyManagementServiceClient.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
-   *   TestIamPermissionsResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    return stub.testIamPermissionsCallable();
-  }
-
   @Override
   public final void close() {
     stub.close();
@@ -3378,87 +3385,6 @@ public class KeyManagementServiceClient implements BackgroundResource {
     protected ListKeyRingsFixedSizeCollection createCollection(
         List<ListKeyRingsPage> pages, int collectionSize) {
       return new ListKeyRingsFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
-  public static class ListImportJobsPagedResponse
-      extends AbstractPagedListResponse<
-          ListImportJobsRequest,
-          ListImportJobsResponse,
-          ImportJob,
-          ListImportJobsPage,
-          ListImportJobsFixedSizeCollection> {
-
-    public static ApiFuture<ListImportJobsPagedResponse> createAsync(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
-        ApiFuture<ListImportJobsResponse> futureResponse) {
-      ApiFuture<ListImportJobsPage> futurePage =
-          ListImportJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListImportJobsPage, ListImportJobsPagedResponse>() {
-            @Override
-            public ListImportJobsPagedResponse apply(ListImportJobsPage input) {
-              return new ListImportJobsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
-    }
-
-    private ListImportJobsPagedResponse(ListImportJobsPage page) {
-      super(page, ListImportJobsFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListImportJobsPage
-      extends AbstractPage<
-          ListImportJobsRequest, ListImportJobsResponse, ImportJob, ListImportJobsPage> {
-
-    private ListImportJobsPage(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
-        ListImportJobsResponse response) {
-      super(context, response);
-    }
-
-    private static ListImportJobsPage createEmptyPage() {
-      return new ListImportJobsPage(null, null);
-    }
-
-    @Override
-    protected ListImportJobsPage createPage(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
-        ListImportJobsResponse response) {
-      return new ListImportJobsPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListImportJobsPage> createPageAsync(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
-        ApiFuture<ListImportJobsResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListImportJobsFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListImportJobsRequest,
-          ListImportJobsResponse,
-          ImportJob,
-          ListImportJobsPage,
-          ListImportJobsFixedSizeCollection> {
-
-    private ListImportJobsFixedSizeCollection(List<ListImportJobsPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListImportJobsFixedSizeCollection createEmptyCollection() {
-      return new ListImportJobsFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListImportJobsFixedSizeCollection createCollection(
-        List<ListImportJobsPage> pages, int collectionSize) {
-      return new ListImportJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -3629,6 +3555,87 @@ public class KeyManagementServiceClient implements BackgroundResource {
     protected ListCryptoKeyVersionsFixedSizeCollection createCollection(
         List<ListCryptoKeyVersionsPage> pages, int collectionSize) {
       return new ListCryptoKeyVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListImportJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListImportJobsRequest,
+          ListImportJobsResponse,
+          ImportJob,
+          ListImportJobsPage,
+          ListImportJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListImportJobsPagedResponse> createAsync(
+        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        ApiFuture<ListImportJobsResponse> futureResponse) {
+      ApiFuture<ListImportJobsPage> futurePage =
+          ListImportJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListImportJobsPage, ListImportJobsPagedResponse>() {
+            @Override
+            public ListImportJobsPagedResponse apply(ListImportJobsPage input) {
+              return new ListImportJobsPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListImportJobsPagedResponse(ListImportJobsPage page) {
+      super(page, ListImportJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListImportJobsPage
+      extends AbstractPage<
+          ListImportJobsRequest, ListImportJobsResponse, ImportJob, ListImportJobsPage> {
+
+    private ListImportJobsPage(
+        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        ListImportJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListImportJobsPage createEmptyPage() {
+      return new ListImportJobsPage(null, null);
+    }
+
+    @Override
+    protected ListImportJobsPage createPage(
+        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        ListImportJobsResponse response) {
+      return new ListImportJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListImportJobsPage> createPageAsync(
+        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        ApiFuture<ListImportJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListImportJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListImportJobsRequest,
+          ListImportJobsResponse,
+          ImportJob,
+          ListImportJobsPage,
+          ListImportJobsFixedSizeCollection> {
+
+    private ListImportJobsFixedSizeCollection(List<ListImportJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListImportJobsFixedSizeCollection createEmptyCollection() {
+      return new ListImportJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListImportJobsFixedSizeCollection createCollection(
+        List<ListImportJobsPage> pages, int collectionSize) {
+      return new ListImportJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

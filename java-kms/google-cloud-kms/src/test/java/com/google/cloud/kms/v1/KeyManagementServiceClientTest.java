@@ -97,425 +97,6 @@ public class KeyManagementServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listKeyRingsTest() {
-    String nextPageToken = "";
-    int totalSize = 705419236;
-    KeyRing keyRingsElement = KeyRing.newBuilder().build();
-    List<KeyRing> keyRings = Arrays.asList(keyRingsElement);
-    ListKeyRingsResponse expectedResponse =
-        ListKeyRingsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .setTotalSize(totalSize)
-            .addAllKeyRings(keyRings)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
-    ListKeyRingsPagedResponse pagedListResponse = client.listKeyRings(parent);
-
-    List<KeyRing> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getKeyRingsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListKeyRingsRequest actualRequest = (ListKeyRingsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listKeyRingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
-      client.listKeyRings(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listImportJobsTest() {
-    String nextPageToken = "";
-    int totalSize = 705419236;
-    ImportJob importJobsElement = ImportJob.newBuilder().build();
-    List<ImportJob> importJobs = Arrays.asList(importJobsElement);
-    ListImportJobsResponse expectedResponse =
-        ListImportJobsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .setTotalSize(totalSize)
-            .addAllImportJobs(importJobs)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-
-    ListImportJobsPagedResponse pagedListResponse = client.listImportJobs(parent);
-
-    List<ImportJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getImportJobsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListImportJobsRequest actualRequest = (ListImportJobsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, KeyRingName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listImportJobsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-
-      client.listImportJobs(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listCryptoKeysTest() {
-    String nextPageToken = "";
-    int totalSize = 705419236;
-    CryptoKey cryptoKeysElement = CryptoKey.newBuilder().build();
-    List<CryptoKey> cryptoKeys = Arrays.asList(cryptoKeysElement);
-    ListCryptoKeysResponse expectedResponse =
-        ListCryptoKeysResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .setTotalSize(totalSize)
-            .addAllCryptoKeys(cryptoKeys)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-
-    ListCryptoKeysPagedResponse pagedListResponse = client.listCryptoKeys(parent);
-
-    List<CryptoKey> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getCryptoKeysList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListCryptoKeysRequest actualRequest = (ListCryptoKeysRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, KeyRingName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listCryptoKeysExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-
-      client.listCryptoKeys(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listCryptoKeyVersionsTest() {
-    String nextPageToken = "";
-    int totalSize = 705419236;
-    CryptoKeyVersion cryptoKeyVersionsElement = CryptoKeyVersion.newBuilder().build();
-    List<CryptoKeyVersion> cryptoKeyVersions = Arrays.asList(cryptoKeyVersionsElement);
-    ListCryptoKeyVersionsResponse expectedResponse =
-        ListCryptoKeyVersionsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .setTotalSize(totalSize)
-            .addAllCryptoKeyVersions(cryptoKeyVersions)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyName parent =
-        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-
-    ListCryptoKeyVersionsPagedResponse pagedListResponse = client.listCryptoKeyVersions(parent);
-
-    List<CryptoKeyVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getCryptoKeyVersionsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListCryptoKeyVersionsRequest actualRequest =
-        (ListCryptoKeyVersionsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, CryptoKeyName.parse(actualRequest.getParent()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listCryptoKeyVersionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyName parent =
-          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-
-      client.listCryptoKeyVersions(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getKeyRingTest() {
-    KeyRingName name2 = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-    KeyRing expectedResponse = KeyRing.newBuilder().setName(name2.toString()).build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-
-    KeyRing actualResponse = client.getKeyRing(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetKeyRingRequest actualRequest = (GetKeyRingRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, KeyRingName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getKeyRingExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-
-      client.getKeyRing(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getImportJobTest() {
-    ImportJobName name2 = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
-    ImportJob expectedResponse = ImportJob.newBuilder().setName(name2.toString()).build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
-
-    ImportJob actualResponse = client.getImportJob(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetImportJobRequest actualRequest = (GetImportJobRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ImportJobName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getImportJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      ImportJobName name =
-          ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
-
-      client.getImportJob(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getCryptoKeyTest() {
-    CryptoKeyName name2 = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-    CryptoKey expectedResponse = CryptoKey.newBuilder().setName(name2.toString()).build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-
-    CryptoKey actualResponse = client.getCryptoKey(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetCryptoKeyRequest actualRequest = (GetCryptoKeyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CryptoKeyName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getCryptoKeyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyName name =
-          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-
-      client.getCryptoKey(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getCryptoKeyVersionTest() {
-    CryptoKeyVersionName name2 =
-        CryptoKeyVersionName.of(
-            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-    String importJob = "importJob2125587491";
-    String importFailureReason = "importFailureReason-494073229";
-    CryptoKeyVersion expectedResponse =
-        CryptoKeyVersion.newBuilder()
-            .setName(name2.toString())
-            .setImportJob(importJob)
-            .setImportFailureReason(importFailureReason)
-            .build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyVersionName name =
-        CryptoKeyVersionName.of(
-            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-
-    CryptoKeyVersion actualResponse = client.getCryptoKeyVersion(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetCryptoKeyVersionRequest actualRequest = (GetCryptoKeyVersionRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getCryptoKeyVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyVersionName name =
-          CryptoKeyVersionName.of(
-              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-
-      client.getCryptoKeyVersion(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createKeyRingTest() {
-    KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
-    KeyRing expectedResponse = KeyRing.newBuilder().setName(name.toString()).build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-    String keyRingId = "keyRingId-2056646742";
-    KeyRing keyRing = KeyRing.newBuilder().build();
-
-    KeyRing actualResponse = client.createKeyRing(parent, keyRingId, keyRing);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateKeyRingRequest actualRequest = (CreateKeyRingRequest) actualRequests.get(0);
-
-    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
-    Assert.assertEquals(keyRingId, actualRequest.getKeyRingId());
-    Assert.assertEquals(keyRing, actualRequest.getKeyRing());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void createKeyRingExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      String keyRingId = "keyRingId-2056646742";
-      KeyRing keyRing = KeyRing.newBuilder().build();
-
-      client.createKeyRing(parent, keyRingId, keyRing);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createImportJobTest() {
     ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
     ImportJob expectedResponse = ImportJob.newBuilder().setName(name.toString()).build();
@@ -630,6 +211,619 @@ public class KeyManagementServiceClientTest {
               .build();
 
       client.createCryptoKey(parent, cryptoKeyId, cryptoKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyTest() {
+    int version = 351608024;
+    ByteString etag = ByteString.copyFromUtf8("21");
+    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    ResourceName resource =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+    Policy policy = Policy.newBuilder().build();
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
+    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      ResourceName resource =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      Policy policy = Policy.newBuilder().build();
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(resource.toString())
+              .setPolicy(policy)
+              .build();
+
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyTest() {
+    int version = 351608024;
+    ByteString etag = ByteString.copyFromUtf8("21");
+    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    ResourceName resource =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      ResourceName resource =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
+
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsTest() {
+    TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    ResourceName resource =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+    List<String> permissions = new ArrayList<>();
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource.toString())
+            .addAllPermissions(permissions)
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
+    Assert.assertEquals(permissions, actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      ResourceName resource =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+      List<String> permissions = new ArrayList<>();
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(resource.toString())
+              .addAllPermissions(permissions)
+              .build();
+
+      client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listKeyRingsTest() {
+    String nextPageToken = "";
+    int totalSize = 705419236;
+    KeyRing keyRingsElement = KeyRing.newBuilder().build();
+    List<KeyRing> keyRings = Arrays.asList(keyRingsElement);
+    ListKeyRingsResponse expectedResponse =
+        ListKeyRingsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setTotalSize(totalSize)
+            .addAllKeyRings(keyRings)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListKeyRingsPagedResponse pagedListResponse = client.listKeyRings(parent);
+
+    List<KeyRing> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKeyRingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListKeyRingsRequest actualRequest = (ListKeyRingsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listKeyRingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+      client.listKeyRings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listCryptoKeysTest() {
+    String nextPageToken = "";
+    int totalSize = 705419236;
+    CryptoKey cryptoKeysElement = CryptoKey.newBuilder().build();
+    List<CryptoKey> cryptoKeys = Arrays.asList(cryptoKeysElement);
+    ListCryptoKeysResponse expectedResponse =
+        ListCryptoKeysResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setTotalSize(totalSize)
+            .addAllCryptoKeys(cryptoKeys)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+
+    ListCryptoKeysPagedResponse pagedListResponse = client.listCryptoKeys(parent);
+
+    List<CryptoKey> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCryptoKeysList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCryptoKeysRequest actualRequest = (ListCryptoKeysRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, KeyRingName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listCryptoKeysExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+
+      client.listCryptoKeys(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listCryptoKeyVersionsTest() {
+    String nextPageToken = "";
+    int totalSize = 705419236;
+    CryptoKeyVersion cryptoKeyVersionsElement = CryptoKeyVersion.newBuilder().build();
+    List<CryptoKeyVersion> cryptoKeyVersions = Arrays.asList(cryptoKeyVersionsElement);
+    ListCryptoKeyVersionsResponse expectedResponse =
+        ListCryptoKeyVersionsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setTotalSize(totalSize)
+            .addAllCryptoKeyVersions(cryptoKeyVersions)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyName parent =
+        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+
+    ListCryptoKeyVersionsPagedResponse pagedListResponse = client.listCryptoKeyVersions(parent);
+
+    List<CryptoKeyVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCryptoKeyVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCryptoKeyVersionsRequest actualRequest =
+        (ListCryptoKeyVersionsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, CryptoKeyName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listCryptoKeyVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyName parent =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+
+      client.listCryptoKeyVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listImportJobsTest() {
+    String nextPageToken = "";
+    int totalSize = 705419236;
+    ImportJob importJobsElement = ImportJob.newBuilder().build();
+    List<ImportJob> importJobs = Arrays.asList(importJobsElement);
+    ListImportJobsResponse expectedResponse =
+        ListImportJobsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .setTotalSize(totalSize)
+            .addAllImportJobs(importJobs)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+
+    ListImportJobsPagedResponse pagedListResponse = client.listImportJobs(parent);
+
+    List<ImportJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImportJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListImportJobsRequest actualRequest = (ListImportJobsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, KeyRingName.parse(actualRequest.getParent()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listImportJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      KeyRingName parent = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+
+      client.listImportJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getKeyRingTest() {
+    KeyRingName name2 = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+    KeyRing expectedResponse = KeyRing.newBuilder().setName(name2.toString()).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+
+    KeyRing actualResponse = client.getKeyRing(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetKeyRingRequest actualRequest = (GetKeyRingRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, KeyRingName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getKeyRingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+
+      client.getKeyRing(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getCryptoKeyTest() {
+    CryptoKeyName name2 = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+    CryptoKey expectedResponse = CryptoKey.newBuilder().setName(name2.toString()).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyName name = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+
+    CryptoKey actualResponse = client.getCryptoKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCryptoKeyRequest actualRequest = (GetCryptoKeyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CryptoKeyName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getCryptoKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyName name =
+          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
+
+      client.getCryptoKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getCryptoKeyVersionTest() {
+    CryptoKeyVersionName name2 =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    String importJob = "importJob2125587491";
+    String importFailureReason = "importFailureReason-494073229";
+    CryptoKeyVersion expectedResponse =
+        CryptoKeyVersion.newBuilder()
+            .setName(name2.toString())
+            .setImportJob(importJob)
+            .setImportFailureReason(importFailureReason)
+            .build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+
+    CryptoKeyVersion actualResponse = client.getCryptoKeyVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCryptoKeyVersionRequest actualRequest = (GetCryptoKeyVersionRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getCryptoKeyVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+
+      client.getCryptoKeyVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getPublicKeyTest() {
+    String pem = "pem110872";
+    PublicKey expectedResponse = PublicKey.newBuilder().setPem(pem).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+
+    PublicKey actualResponse = client.getPublicKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPublicKeyRequest actualRequest = (GetPublicKeyRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getPublicKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+
+      client.getPublicKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getImportJobTest() {
+    ImportJobName name2 = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+    ImportJob expectedResponse = ImportJob.newBuilder().setName(name2.toString()).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    ImportJobName name = ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+
+    ImportJob actualResponse = client.getImportJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetImportJobRequest actualRequest = (GetImportJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ImportJobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getImportJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      ImportJobName name =
+          ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
+
+      client.getImportJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createKeyRingTest() {
+    KeyRingName name = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+    KeyRing expectedResponse = KeyRing.newBuilder().setName(name.toString()).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String keyRingId = "keyRingId-2056646742";
+    KeyRing keyRing = KeyRing.newBuilder().build();
+
+    KeyRing actualResponse = client.createKeyRing(parent, keyRingId, keyRing);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateKeyRingRequest actualRequest = (CreateKeyRingRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
+    Assert.assertEquals(keyRingId, actualRequest.getKeyRingId());
+    Assert.assertEquals(keyRing, actualRequest.getKeyRing());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void createKeyRingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String keyRingId = "keyRingId-2056646742";
+      KeyRing keyRing = KeyRing.newBuilder().build();
+
+      client.createKeyRing(parent, keyRingId, keyRing);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -944,6 +1138,100 @@ public class KeyManagementServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void asymmetricSignTest() {
+    ByteString signature = ByteString.copyFromUtf8("106");
+    AsymmetricSignResponse expectedResponse =
+        AsymmetricSignResponse.newBuilder().setSignature(signature).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    Digest digest = Digest.newBuilder().build();
+
+    AsymmetricSignResponse actualResponse = client.asymmetricSign(name, digest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsymmetricSignRequest actualRequest = (AsymmetricSignRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(digest, actualRequest.getDigest());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asymmetricSignExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      Digest digest = Digest.newBuilder().build();
+
+      client.asymmetricSign(name, digest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asymmetricDecryptTest() {
+    ByteString plaintext = ByteString.copyFromUtf8("-9");
+    AsymmetricDecryptResponse expectedResponse =
+        AsymmetricDecryptResponse.newBuilder().setPlaintext(plaintext).build();
+    mockKeyManagementService.addResponse(expectedResponse);
+
+    CryptoKeyVersionName name =
+        CryptoKeyVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+    ByteString ciphertext = ByteString.copyFromUtf8("-72");
+
+    AsymmetricDecryptResponse actualResponse = client.asymmetricDecrypt(name, ciphertext);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsymmetricDecryptRequest actualRequest = (AsymmetricDecryptRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
+    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void asymmetricDecryptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockKeyManagementService.addException(exception);
+
+    try {
+      CryptoKeyVersionName name =
+          CryptoKeyVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+      ByteString ciphertext = ByteString.copyFromUtf8("-72");
+
+      client.asymmetricDecrypt(name, ciphertext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void updateCryptoKeyPrimaryVersionTest() {
     CryptoKeyName name2 = CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
     CryptoKey expectedResponse = CryptoKey.newBuilder().setName(name2.toString()).build();
@@ -1086,294 +1374,6 @@ public class KeyManagementServiceClientTest {
               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
 
       client.restoreCryptoKeyVersion(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getPublicKeyTest() {
-    String pem = "pem110872";
-    PublicKey expectedResponse = PublicKey.newBuilder().setPem(pem).build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyVersionName name =
-        CryptoKeyVersionName.of(
-            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-
-    PublicKey actualResponse = client.getPublicKey(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetPublicKeyRequest actualRequest = (GetPublicKeyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getPublicKeyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyVersionName name =
-          CryptoKeyVersionName.of(
-              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-
-      client.getPublicKey(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void asymmetricDecryptTest() {
-    ByteString plaintext = ByteString.copyFromUtf8("-9");
-    AsymmetricDecryptResponse expectedResponse =
-        AsymmetricDecryptResponse.newBuilder().setPlaintext(plaintext).build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyVersionName name =
-        CryptoKeyVersionName.of(
-            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-    ByteString ciphertext = ByteString.copyFromUtf8("-72");
-
-    AsymmetricDecryptResponse actualResponse = client.asymmetricDecrypt(name, ciphertext);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    AsymmetricDecryptRequest actualRequest = (AsymmetricDecryptRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
-    Assert.assertEquals(ciphertext, actualRequest.getCiphertext());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void asymmetricDecryptExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyVersionName name =
-          CryptoKeyVersionName.of(
-              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-      ByteString ciphertext = ByteString.copyFromUtf8("-72");
-
-      client.asymmetricDecrypt(name, ciphertext);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void asymmetricSignTest() {
-    ByteString signature = ByteString.copyFromUtf8("106");
-    AsymmetricSignResponse expectedResponse =
-        AsymmetricSignResponse.newBuilder().setSignature(signature).build();
-    mockKeyManagementService.addResponse(expectedResponse);
-
-    CryptoKeyVersionName name =
-        CryptoKeyVersionName.of(
-            "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-    Digest digest = Digest.newBuilder().build();
-
-    AsymmetricSignResponse actualResponse = client.asymmetricSign(name, digest);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockKeyManagementService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    AsymmetricSignRequest actualRequest = (AsymmetricSignRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CryptoKeyVersionName.parse(actualRequest.getName()));
-    Assert.assertEquals(digest, actualRequest.getDigest());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void asymmetricSignExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockKeyManagementService.addException(exception);
-
-    try {
-      CryptoKeyVersionName name =
-          CryptoKeyVersionName.of(
-              "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
-      Digest digest = Digest.newBuilder().build();
-
-      client.asymmetricSign(name, digest);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void setIamPolicyTest() {
-    int version = 351608024;
-    ByteString etag = ByteString.copyFromUtf8("21");
-    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    mockIAMPolicy.addResponse(expectedResponse);
-
-    ResourceName resource =
-        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-    Policy policy = Policy.newBuilder().build();
-    SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
-
-    Policy actualResponse = client.setIamPolicy(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
-    Assert.assertEquals(policy, actualRequest.getPolicy());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void setIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
-
-    try {
-      ResourceName resource =
-          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-      Policy policy = Policy.newBuilder().build();
-      SetIamPolicyRequest request =
-          SetIamPolicyRequest.newBuilder()
-              .setResource(resource.toString())
-              .setPolicy(policy)
-              .build();
-
-      client.setIamPolicy(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getIamPolicyTest() {
-    int version = 351608024;
-    ByteString etag = ByteString.copyFromUtf8("21");
-    Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    mockIAMPolicy.addResponse(expectedResponse);
-
-    ResourceName resource =
-        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-    GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
-
-    Policy actualResponse = client.getIamPolicy(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
-
-    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void getIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
-
-    try {
-      ResourceName resource =
-          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-      GetIamPolicyRequest request =
-          GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
-
-      client.getIamPolicy(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void testIamPermissionsTest() {
-    TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
-    mockIAMPolicy.addResponse(expectedResponse);
-
-    ResourceName resource =
-        CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-    List<String> permissions = new ArrayList<>();
-    TestIamPermissionsRequest request =
-        TestIamPermissionsRequest.newBuilder()
-            .setResource(resource.toString())
-            .addAllPermissions(permissions)
-            .build();
-
-    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
-
-    Assert.assertEquals(Objects.toString(resource), Objects.toString(actualRequest.getResource()));
-    Assert.assertEquals(permissions, actualRequest.getPermissionsList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void testIamPermissionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
-
-    try {
-      ResourceName resource =
-          CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]");
-      List<String> permissions = new ArrayList<>();
-      TestIamPermissionsRequest request =
-          TestIamPermissionsRequest.newBuilder()
-              .setResource(resource.toString())
-              .addAllPermissions(permissions)
-              .build();
-
-      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

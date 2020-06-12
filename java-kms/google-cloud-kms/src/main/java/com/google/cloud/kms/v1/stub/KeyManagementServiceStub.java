@@ -76,21 +76,33 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class KeyManagementServiceStub implements BackgroundResource {
 
+  public UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createImportJobCallable()");
+  }
+
+  public UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCryptoKeyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
   public UnaryCallable<ListKeyRingsRequest, ListKeyRingsPagedResponse> listKeyRingsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listKeyRingsPagedCallable()");
   }
 
   public UnaryCallable<ListKeyRingsRequest, ListKeyRingsResponse> listKeyRingsCallable() {
     throw new UnsupportedOperationException("Not implemented: listKeyRingsCallable()");
-  }
-
-  public UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
-      listImportJobsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listImportJobsPagedCallable()");
-  }
-
-  public UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> listImportJobsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listImportJobsCallable()");
   }
 
   public UnaryCallable<ListCryptoKeysRequest, ListCryptoKeysPagedResponse>
@@ -113,12 +125,17 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listCryptoKeyVersionsCallable()");
   }
 
-  public UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
-    throw new UnsupportedOperationException("Not implemented: getKeyRingCallable()");
+  public UnaryCallable<ListImportJobsRequest, ListImportJobsPagedResponse>
+      listImportJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listImportJobsPagedCallable()");
   }
 
-  public UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable() {
-    throw new UnsupportedOperationException("Not implemented: getImportJobCallable()");
+  public UnaryCallable<ListImportJobsRequest, ListImportJobsResponse> listImportJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listImportJobsCallable()");
+  }
+
+  public UnaryCallable<GetKeyRingRequest, KeyRing> getKeyRingCallable() {
+    throw new UnsupportedOperationException("Not implemented: getKeyRingCallable()");
   }
 
   public UnaryCallable<GetCryptoKeyRequest, CryptoKey> getCryptoKeyCallable() {
@@ -129,16 +146,16 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getCryptoKeyVersionCallable()");
   }
 
+  public UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPublicKeyCallable()");
+  }
+
+  public UnaryCallable<GetImportJobRequest, ImportJob> getImportJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getImportJobCallable()");
+  }
+
   public UnaryCallable<CreateKeyRingRequest, KeyRing> createKeyRingCallable() {
     throw new UnsupportedOperationException("Not implemented: createKeyRingCallable()");
-  }
-
-  public UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable() {
-    throw new UnsupportedOperationException("Not implemented: createImportJobCallable()");
-  }
-
-  public UnaryCallable<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyCallable() {
-    throw new UnsupportedOperationException("Not implemented: createCryptoKeyCallable()");
   }
 
   public UnaryCallable<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -168,6 +185,15 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: decryptCallable()");
   }
 
+  public UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable() {
+    throw new UnsupportedOperationException("Not implemented: asymmetricSignCallable()");
+  }
+
+  public UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptCallable() {
+    throw new UnsupportedOperationException("Not implemented: asymmetricDecryptCallable()");
+  }
+
   public UnaryCallable<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
       updateCryptoKeyPrimaryVersionCallable() {
     throw new UnsupportedOperationException(
@@ -182,32 +208,6 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
   public UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreCryptoKeyVersionCallable()");
-  }
-
-  public UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getPublicKeyCallable()");
-  }
-
-  public UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
-      asymmetricDecryptCallable() {
-    throw new UnsupportedOperationException("Not implemented: asymmetricDecryptCallable()");
-  }
-
-  public UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable() {
-    throw new UnsupportedOperationException("Not implemented: asymmetricSignCallable()");
-  }
-
-  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
-  }
-
-  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
-  }
-
-  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsCallable() {
-    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override
