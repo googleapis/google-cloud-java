@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-recommender/compare/v0.4.1...v1.0.0) (2020-06-12)
+
+
+### Features
+
+* promote to GA ([#195](https://www.github.com/googleapis/java-recommender/issues/195)) ([502fa5b](https://www.github.com/googleapis/java-recommender/commit/502fa5bf3bae27b368e7408009b509a6560fec1a))
+
+
+### Dependencies
+
+* update core dependencies to v1.93.5 ([#180](https://www.github.com/googleapis/java-recommender/issues/180)) ([18da74d](https://www.github.com/googleapis/java-recommender/commit/18da74d7b4ffdc2288736063724885b8e0d49d60))
+* update dependency com.google.api:api-common to v1.9.1 ([#179](https://www.github.com/googleapis/java-recommender/issues/179)) ([f8600d6](https://www.github.com/googleapis/java-recommender/commit/f8600d6f6386b00df2bccf3f87d7fa27bd1ed0c7))
+* update dependency com.google.api:api-common to v1.9.2 ([#186](https://www.github.com/googleapis/java-recommender/issues/186)) ([5428278](https://www.github.com/googleapis/java-recommender/commit/54282781477cd05960f97a73d3c87326cb491aad))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#167](https://www.github.com/googleapis/java-recommender/issues/167)) ([0d96f48](https://www.github.com/googleapis/java-recommender/commit/0d96f484a10cd7d4ca3abda2c4f7597dc2b6506a))
+* update dependency com.google.guava:guava-bom to v29 ([#144](https://www.github.com/googleapis/java-recommender/issues/144)) ([e3a5cb0](https://www.github.com/googleapis/java-recommender/commit/e3a5cb09fcbdf5ba94605cff15b245b1e3f1893c))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#171](https://www.github.com/googleapis/java-recommender/issues/171)) ([c7d0d01](https://www.github.com/googleapis/java-recommender/commit/c7d0d012d2bb0a5b813eded06fd7bedf3f5fd4c6))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#177](https://www.github.com/googleapis/java-recommender/issues/177)) ([fcd3e71](https://www.github.com/googleapis/java-recommender/commit/fcd3e71044259fd791611c29d74fbf54ca206f53))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#158](https://www.github.com/googleapis/java-recommender/issues/158)) ([3773f70](https://www.github.com/googleapis/java-recommender/commit/3773f70a8dcd23a24d3d5150b17e785d59a193e6))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#190](https://www.github.com/googleapis/java-recommender/issues/190)) ([e5c3a0e](https://www.github.com/googleapis/java-recommender/commit/e5c3a0ebacc498d83771fb0185e858657483fefd))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#163](https://www.github.com/googleapis/java-recommender/issues/163)) ([128a364](https://www.github.com/googleapis/java-recommender/commit/128a3645bfa4387875aaac9a6fb6568e442e69e6))
+* update gax to v1.57.0 ([#198](https://www.github.com/googleapis/java-recommender/issues/198)) ([61fc882](https://www.github.com/googleapis/java-recommender/commit/61fc882cc753224e2250af91d17e929a85027a51))
+
 ### [0.4.1](https://www.github.com/googleapis/java-recommender/compare/v0.4.0...v0.4.1) (2020-04-07)
 
 
