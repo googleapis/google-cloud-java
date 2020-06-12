@@ -48,8 +48,7 @@ import java.util.concurrent.TimeoutException;
 
 public class InspectGcsFileWithSampling {
 
-  public static void inspectGcsFileWithSampling()
-      throws InterruptedException, ExecutionException, IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String gcsUri = "gs://" + "your-bucket-name" + "/path/to/your/file.txt";

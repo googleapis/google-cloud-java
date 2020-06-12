@@ -24,7 +24,7 @@ import com.google.privacy.dlp.v2.DlpJobName;
 import java.io.IOException;
 
 public class JobsDelete {
-  public static void deleteJobs() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String jobId = "your-job-id";

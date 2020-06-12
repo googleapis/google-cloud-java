@@ -41,7 +41,7 @@ import java.io.IOException;
 
 public class ReIdentifyWithFpe {
 
-  public static void reIdentifyWithFpe() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToReIdentify = "My SSN is SSN_TOKEN(9):731997681";

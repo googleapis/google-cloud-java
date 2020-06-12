@@ -25,7 +25,7 @@ import com.google.privacy.dlp.v2.LocationName;
 import java.io.IOException;
 
 class TriggersList {
-  public static void listTriggers() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     listTriggers(projectId);

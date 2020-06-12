@@ -42,7 +42,7 @@ import java.util.List;
 
 public class InspectStringWithoutOverlap {
 
-  public static void inspectStringWithoutOverlap() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToInspect = "example.com is a domain, james@example.org is an email.";

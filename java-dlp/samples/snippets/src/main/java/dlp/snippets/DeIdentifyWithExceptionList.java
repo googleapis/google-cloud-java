@@ -37,7 +37,7 @@ import java.io.IOException;
 
 public class DeIdentifyWithExceptionList {
 
-  public static void deIdentifyWithExceptionList() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToDeIdentify = "jack@example.org accessed customer record of user5@example.com";

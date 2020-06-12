@@ -46,8 +46,7 @@ import java.util.concurrent.TimeoutException;
 
 class RiskAnalysisNumericalStats {
 
-  public static void numericalStatsAnalysis()
-      throws InterruptedException, ExecutionException, IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String datasetId = "your-bigquery-dataset-id";

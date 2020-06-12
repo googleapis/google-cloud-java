@@ -41,7 +41,7 @@ import java.io.IOException;
 
 public class InspectWithHotwordRules {
 
-  public static void inspectWithHotwordRules() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToInspect = "Patient's MRN 444-5-22222 and just a number 333-2-33333";

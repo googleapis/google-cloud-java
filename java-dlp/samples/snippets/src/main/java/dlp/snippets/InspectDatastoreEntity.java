@@ -49,8 +49,7 @@ import java.util.stream.Stream;
 
 public class InspectDatastoreEntity {
 
-  public static void insepctDatastoreEntity()
-      throws InterruptedException, ExecutionException, IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String datastoreNamespace = "your-datastore-namespace";

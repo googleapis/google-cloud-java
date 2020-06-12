@@ -41,7 +41,7 @@ import java.io.IOException;
 
 public class ReIdentifyTextWithFpe {
 
-  public static void reIdentifyTextWithFpe() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToReIdentify = "My phone number is PHONE_TOKEN(10):9617256398";

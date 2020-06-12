@@ -35,7 +35,7 @@ import com.google.privacy.dlp.v2.Value;
 
 public class DeIdentifyWithReplacement {
 
-  public static void deIdentifyWithReplacement() {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToInspect =

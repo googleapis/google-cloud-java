@@ -47,7 +47,7 @@ import java.util.stream.Collectors;
 
 public class DeIdentifyWithDateShift {
 
-  public static void deIdentifyWithDateShift() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     Path inputCsvFile = Paths.get("path/to/your/input/file.csv");

@@ -37,7 +37,7 @@ import java.io.IOException;
 
 public class DeIdentifyWithSimpleWordList {
 
-  public static void deIdentifyWithSimpleWordList() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToDeIdentify = "Patient was seen in RM-YELLOW then transferred to rm green.";

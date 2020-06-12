@@ -24,7 +24,8 @@ import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import java.io.IOException;
 
 public class JobsGet {
-  public static void getJobs() throws IOException {
+
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String jobId = "your-job-id";

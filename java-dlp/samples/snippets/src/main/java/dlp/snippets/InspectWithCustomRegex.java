@@ -36,7 +36,7 @@ import java.io.IOException;
 
 public class InspectWithCustomRegex {
 
-  public static void inspectWithCustomRegex() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToInspect = "Patients MRN 444-5-22222";

@@ -36,7 +36,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class JobsCreate {
-  public static void createJobs() throws IOException {
+
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String gcsPath = "gs://" + "your-bucket-name" + "path/to/file.txt";

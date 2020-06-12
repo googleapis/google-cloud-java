@@ -41,7 +41,7 @@ import java.io.IOException;
 
 public class InspectStringCustomOmitOverlap {
 
-  public static void inspectStringCustomOmitOverlap() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToInspect = "Name: Jane Doe. Name: Larry Page.";

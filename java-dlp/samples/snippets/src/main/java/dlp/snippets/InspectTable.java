@@ -40,7 +40,7 @@ import java.util.List;
 
 public class InspectTable {
 
-  public static void inspectTable() {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     Table tableToInspect = Table.newBuilder()

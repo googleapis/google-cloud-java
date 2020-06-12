@@ -47,8 +47,7 @@ import java.util.concurrent.TimeoutException;
 
 public class InspectBigQueryTableWithSampling {
 
-  public static void inspectBigQueryTableWithSampling()
-      throws InterruptedException, ExecutionException, IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String topicId = "your-pubsub-topic-id";

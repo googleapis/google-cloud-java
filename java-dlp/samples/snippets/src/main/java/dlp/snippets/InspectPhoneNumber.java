@@ -31,7 +31,7 @@ import java.io.IOException;
 
 public class InspectPhoneNumber {
 
-  public static void inspectString() throws IOException {
+  public static void main(String[] args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
     String textToInspect = "My name is Gary and my email is gary@example.com";
