@@ -234,19 +234,70 @@ Credentials in the following locations (in order):
 
 To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/master/TROUBLESHOOTING.md).
 
-## Using a proxy
+## Configuring a Proxy
 
-Clients in this repository use either HTTP or gRPC for the transport layer.
-The README of each client documents the transport layer the client uses.
+### HTTP Clients
 
-For HTTP clients, a proxy can be configured by using `http.proxyHost` and
+For HTTP clients, a proxy can be configured by using `http.proxyHost`, `https.proxyHost`, and
 related system properties as documented by
 [Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html).
+
+### gRPC Clients
 
 For gRPC clients, a proxy can be configured by using the
 `GRPC_PROXY_EXP` environment variable as documented by
 the gRPC [release notes](https://github.com/grpc/grpc-java/releases/tag/v1.0.3).
 Please note that gRPC proxy support is currently experimental.
+
+For a more custom proxy, you will need supply a `ProxyDetector` to the `ManagedChannelBuilder`:
+
+```java
+import com.google.api.core.ApiFunction;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.cloud.tasks.v2.CloudTasksClient;
+import com.google.cloud.tasks.v2.CloudTasksSettings;
+import com.google.cloud.tasks.v2.stub.CloudTasksStubSettings;
+import io.grpc.HttpConnectProxiedSocketAddress;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.ProxiedSocketAddress;
+import io.grpc.ProxyDetector;
+
+import javax.annotation.Nullable;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+
+public CloudTasksClient getService() throws IOException {
+  TransportChannelProvider transportChannelProvider =
+      CloudTasksStubSettings.defaultGrpcTransportProviderBuilder()
+          .setChannelConfigurator(
+              new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                @Override
+                public ManagedChannelBuilder apply(ManagedChannelBuilder managedChannelBuilder) {
+                  return managedChannelBuilder.proxyDetector(
+                      new ProxyDetector() {
+                        @Nullable
+                        @Override
+                        public ProxiedSocketAddress proxyFor(SocketAddress socketAddress)
+                            throws IOException {
+                          return HttpConnectProxiedSocketAddress.newBuilder()
+                              .setUsername(PROXY_USERNAME)
+                              .setPassword(PROXY_PASSWORD)
+                              .setProxyAddress(new InetSocketAddress(PROXY_HOST, PROXY_PORT))
+                              .setTargetAddress((InetSocketAddress) socketAddress)
+                              .build();
+                        }
+                      });
+                }
+              })
+          .build();
+  CloudTasksSettings cloudTasksSettings =
+      CloudTasksSettings.newBuilder()
+          .setTransportChannelProvider(transportChannelProvider)
+          .build();
+  return CloudTasksClient.create(cloudTasksSettings);
+}
+```
 
 ## Java Versions
 
