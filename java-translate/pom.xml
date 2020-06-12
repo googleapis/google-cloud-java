@@ -70,7 +70,7 @@
     <google.http-client.version>1.35.0</google.http-client.version>
     <gax.version>1.56.0</gax.version>
     <grpc.version>1.30.0</grpc.version>
-    <protobuf.version>3.12.1</protobuf.version>
+    <protobuf.version>3.12.2</protobuf.version>
     <junit.version>4.13</junit.version>
     <easymock.version>3.6</easymock.version>
     <guava.version>29.0-android</guava.version>
