@@ -30,7 +30,7 @@ import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.Likelihood;
-import com.google.privacy.dlp.v2.ProjectName;
+import com.google.privacy.dlp.v2.LocationName;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 
@@ -51,9 +51,6 @@ public class InspectWithCustomRegex {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (DlpServiceClient dlp = DlpServiceClient.create()) {
-      // Specify the project used for request.
-      ProjectName project = ProjectName.of(projectId);
-
       // Specify the type and content to be inspected.
       ByteContentItem byteItem =
           ByteContentItem.newBuilder()
@@ -84,8 +81,7 @@ public class InspectWithCustomRegex {
       // Construct the Inspect request to be sent by the client.
       InspectContentRequest request =
           InspectContentRequest.newBuilder()
-              .setParent(project.toString())
-              .setItem(item)
+              .setParent(LocationName.of(projectId, "global").toString()).setItem(item)
               .setInspectConfig(config)
               .build();
 
