@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.8.1](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.8.0...v0.8.1) (2020-06-13)
+
+
+### Reverts
+
+* Revert "feat: mark javax annotations scope as provided (#70)" (#75) ([d2f23ec](https://www.github.com/googleapis/java-shared-dependencies/commit/d2f23ecae56a1ec07b1217f0fca5347dd0f0406b)), closes [#70](https://www.github.com/googleapis/java-shared-dependencies/issues/70) [#75](https://www.github.com/googleapis/java-shared-dependencies/issues/75)
+
 ## [0.8.0](https://www.github.com/googleapis/java-shared-dependencies/compare/v0.7.0...v0.8.0) (2020-06-12)
 
 
