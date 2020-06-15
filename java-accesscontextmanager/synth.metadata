@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-accesscontextmanager.git",
-        "sha": "37186ff8b8faee56cc4394553e24e12486638013"
+        "sha": "02d530301d8866deafecb773492c16193077bdf7"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "987270824bd26f6a8c716d5e2022057b8ae7b26e"
+        "sha": "6d3eed67a45fd58f9c7bfa173c32e4fd4fed058f"
       }
     }
   ],
