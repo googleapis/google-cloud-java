@@ -122,12 +122,13 @@ public final class TraceProto {
           + "e.googleapis.com\322A\212\001https://www.googleap"
           + "is.com/auth/cloud-platform,https://www.g"
           + "oogleapis.com/auth/trace.append,https://"
-          + "www.googleapis.com/auth/trace.readonlyB\252"
+          + "www.googleapis.com/auth/trace.readonlyB\305"
           + "\001\n!com.google.devtools.cloudtrace.v1B\nTr"
           + "aceProtoP\001ZGgoogle.golang.org/genproto/g"
           + "oogleapis/devtools/cloudtrace/v1;cloudtr"
           + "ace\252\002\025Google.Cloud.Trace.V1\312\002\025Google\\Clo"
-          + "ud\\Trace\\V1b\006proto3"
+          + "ud\\Trace\\V1\352\002\030Google::Cloud::Trace::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

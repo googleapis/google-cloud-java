@@ -62,11 +62,12 @@ public final class TracingProto {
           + "ns/*}:\001*\032z\312A\031cloudtrace.googleapis.com\322A"
           + "[https://www.googleapis.com/auth/cloud-p"
           + "latform,https://www.googleapis.com/auth/"
-          + "trace.appendB\254\001\n!com.google.devtools.clo"
+          + "trace.appendB\307\001\n!com.google.devtools.clo"
           + "udtrace.v2B\014TracingProtoP\001ZGgoogle.golan"
           + "g.org/genproto/googleapis/devtools/cloud"
           + "trace/v2;cloudtrace\252\002\025Google.Cloud.Trace"
-          + ".V2\312\002\025Google\\Cloud\\Trace\\V2b\006proto3"
+          + ".V2\312\002\025Google\\Cloud\\Trace\\V2\352\002\030Google::Cl"
+          + "oud::Trace::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
