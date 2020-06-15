@@ -214,11 +214,12 @@ public final class DatastoreProto {
           + "ds:\001*\332A\017project_id,keys\032v\312A\030datastore.go"
           + "ogleapis.com\322AXhttps://www.googleapis.co"
           + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/datastoreB\241\001\n\027com.google.d"
+          + "apis.com/auth/datastoreB\300\001\n\027com.google.d"
           + "atastore.v1B\016DatastoreProtoP\001Z<google.go"
           + "lang.org/genproto/googleapis/datastore/v"
           + "1;datastore\252\002\031Google.Cloud.Datastore.V1\312"
-          + "\002\031Google\\Cloud\\Datastore\\V1b\006proto3"
+          + "\002\031Google\\Cloud\\Datastore\\V1\352\002\034Google::Cl"
+          + "oud::Datastore::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

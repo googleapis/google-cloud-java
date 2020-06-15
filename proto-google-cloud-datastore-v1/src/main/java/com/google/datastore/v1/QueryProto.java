@@ -153,11 +153,12 @@ public final class QueryProto {
           + "\022!\n\035MORE_RESULTS_TYPE_UNSPECIFIED\020\000\022\020\n\014N"
           + "OT_FINISHED\020\001\022\034\n\030MORE_RESULTS_AFTER_LIMI"
           + "T\020\002\022\035\n\031MORE_RESULTS_AFTER_CURSOR\020\004\022\023\n\017NO"
-          + "_MORE_RESULTS\020\003B\235\001\n\027com.google.datastore"
+          + "_MORE_RESULTS\020\003B\274\001\n\027com.google.datastore"
           + ".v1B\nQueryProtoP\001Z<google.golang.org/gen"
           + "proto/googleapis/datastore/v1;datastore\252"
           + "\002\031Google.Cloud.Datastore.V1\312\002\031Google\\Clo"
-          + "ud\\Datastore\\V1b\006proto3"
+          + "ud\\Datastore\\V1\352\002\034Google::Cloud::Datasto"
+          + "re::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
