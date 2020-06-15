@@ -52,8 +52,8 @@ public class SubscriberIT {
 
   private static final String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String _suffix = UUID.randomUUID().toString();
-  private static final String topicId = "publisher-test-topic-" + _suffix;
-  private static final String subscriptionId = "publisher-test-subscription-" + _suffix;
+  private static final String topicId = "subscriber-test-topic-" + _suffix;
+  private static final String subscriptionId = "subscriber-test-subscription-" + _suffix;
   private static final TopicName topicName = TopicName.of(projectId, topicId);
   private static final ProjectSubscriptionName subscriptionName =
       ProjectSubscriptionName.of(projectId, subscriptionId);

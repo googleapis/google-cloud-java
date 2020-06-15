@@ -23,6 +23,7 @@ import com.google.pubsub.v1.DeadLetterPolicy;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.Subscription;
+import java.io.IOException;
 
 public class CreateSubscriptionWithDeadLetterPolicyExample {
 
@@ -44,7 +45,7 @@ public class CreateSubscriptionWithDeadLetterPolicyExample {
 
   public static void createSubscriptionWithDeadLetterPolicyExample(
       String projectId, String subscriptionId, String topicId, String deadLetterTopicId)
-      throws Exception {
+      throws IOException {
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
 
       ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
