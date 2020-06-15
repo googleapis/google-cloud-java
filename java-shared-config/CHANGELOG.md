@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.8.1](https://www.github.com/googleapis/java-shared-config/compare/v0.8.0...v0.8.1) (2020-06-15)
+
+
+### Bug Fixes
+
+* bump flatten plugin version to fix missing version in profile section issue ([#159](https://www.github.com/googleapis/java-shared-config/issues/159)) ([5b34939](https://www.github.com/googleapis/java-shared-config/commit/5b349399a590b589718b7049f66c82ee38742372))
+
 ## [0.8.0](https://www.github.com/googleapis/java-shared-config/compare/v0.7.0...v0.8.0) (2020-06-10)
 
 
