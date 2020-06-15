@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.1.2...v0.2.0) (2020-06-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* The C# namespace option will break anyone currently generating C# libraries for this API.
+
+* fix!:Provide C# namespace option for consistent capitalization. (#58) ([f3a9337](https://www.github.com/googleapis/java-bigqueryreservation/commit/f3a93375b933410e9ba4584da3334fc735c44c69)), closes [#58](https://www.github.com/googleapis/java-bigqueryreservation/issues/58)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.7.0 ([#38](https://www.github.com/googleapis/java-bigqueryreservation/issues/38)) ([b856c4d](https://www.github.com/googleapis/java-bigqueryreservation/commit/b856c4dca3577c6b261b88b52c229e985c46062a))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.1 ([#57](https://www.github.com/googleapis/java-bigqueryreservation/issues/57)) ([762c688](https://www.github.com/googleapis/java-bigqueryreservation/commit/762c68890c311865d1664f51611aa7476d191d3d))
+
 ### [0.1.2](https://www.github.com/googleapis/java-bigqueryreservation/compare/v0.1.1...v0.1.2) (2020-05-27)
 
 
