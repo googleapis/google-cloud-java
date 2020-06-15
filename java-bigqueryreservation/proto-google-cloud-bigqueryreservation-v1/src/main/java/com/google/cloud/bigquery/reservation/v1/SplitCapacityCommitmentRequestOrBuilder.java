@@ -28,7 +28,7 @@ public interface SplitCapacityCommitmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name e.g.,:
-   *   projects/myproject/locations/US/capacityCommitments/123
+   *  `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface SplitCapacityCommitmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name e.g.,:
-   *   projects/myproject/locations/US/capacityCommitments/123
+   *  `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>

@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
+ * The request for [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.GetReservationRequest}
@@ -331,8 +330,7 @@ public final class GetReservationRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
+   * The request for [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1.ReservationService.GetReservation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.GetReservationRequest}

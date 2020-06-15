@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
+ * The request for [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest}
@@ -135,7 +134,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Parent resource that identifies admin project and location e.g.,
-   * projects/myproject/locations/us
+   *  `projects/myproject/locations/us`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -159,7 +158,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Parent resource that identifies admin project and location e.g.,
-   * projects/myproject/locations/us
+   *  `projects/myproject/locations/us`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -188,6 +187,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
    * Ids of capacity commitments to merge.
    * These capacity commitments must exist under admin project and location
    * specified in the parent.
+   * ID is the last portion of capacity commitment name e.g., 'abc' for
+   * projects/myproject/locations/US/capacityCommitments/abc
    * </pre>
    *
    * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -204,6 +205,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
    * Ids of capacity commitments to merge.
    * These capacity commitments must exist under admin project and location
    * specified in the parent.
+   * ID is the last portion of capacity commitment name e.g., 'abc' for
+   * projects/myproject/locations/US/capacityCommitments/abc
    * </pre>
    *
    * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -220,6 +223,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
    * Ids of capacity commitments to merge.
    * These capacity commitments must exist under admin project and location
    * specified in the parent.
+   * ID is the last portion of capacity commitment name e.g., 'abc' for
+   * projects/myproject/locations/US/capacityCommitments/abc
    * </pre>
    *
    * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -237,6 +242,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
    * Ids of capacity commitments to merge.
    * These capacity commitments must exist under admin project and location
    * specified in the parent.
+   * ID is the last portion of capacity commitment name e.g., 'abc' for
+   * projects/myproject/locations/US/capacityCommitments/abc
    * </pre>
    *
    * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -431,8 +438,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
+   * The request for [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1.ReservationService.MergeCapacityCommitments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest}
@@ -623,7 +629,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Parent resource that identifies admin project and location e.g.,
-     * projects/myproject/locations/us
+     *  `projects/myproject/locations/us`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -646,7 +652,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Parent resource that identifies admin project and location e.g.,
-     * projects/myproject/locations/us
+     *  `projects/myproject/locations/us`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -669,7 +675,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Parent resource that identifies admin project and location e.g.,
-     * projects/myproject/locations/us
+     *  `projects/myproject/locations/us`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -691,7 +697,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Parent resource that identifies admin project and location e.g.,
-     * projects/myproject/locations/us
+     *  `projects/myproject/locations/us`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -709,7 +715,7 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Parent resource that identifies admin project and location e.g.,
-     * projects/myproject/locations/us
+     *  `projects/myproject/locations/us`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -745,6 +751,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -761,6 +769,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -777,6 +787,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -794,6 +806,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -811,6 +825,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -835,6 +851,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -858,6 +876,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -878,6 +898,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -897,6 +919,8 @@ public final class MergeCapacityCommitmentsRequest extends com.google.protobuf.G
      * Ids of capacity commitments to merge.
      * These capacity commitments must exist under admin project and location
      * specified in the parent.
+     * ID is the last portion of capacity commitment name e.g., 'abc' for
+     * projects/myproject/locations/US/capacityCommitments/abc
      * </pre>
      *
      * <code>repeated string capacity_commitment_ids = 2;</code>

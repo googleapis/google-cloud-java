@@ -28,7 +28,7 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    *
    * <pre>
    * Parent resource that identifies admin project and location e.g.,
-   * projects/myproject/locations/us
+   *  `projects/myproject/locations/us`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -41,7 +41,7 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    *
    * <pre>
    * Parent resource that identifies admin project and location e.g.,
-   * projects/myproject/locations/us
+   *  `projects/myproject/locations/us`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -57,6 +57,8 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * Ids of capacity commitments to merge.
    * These capacity commitments must exist under admin project and location
    * specified in the parent.
+   * ID is the last portion of capacity commitment name e.g., 'abc' for
+   * projects/myproject/locations/US/capacityCommitments/abc
    * </pre>
    *
    * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -71,6 +73,8 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * Ids of capacity commitments to merge.
    * These capacity commitments must exist under admin project and location
    * specified in the parent.
+   * ID is the last portion of capacity commitment name e.g., 'abc' for
+   * projects/myproject/locations/US/capacityCommitments/abc
    * </pre>
    *
    * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -85,6 +89,8 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * Ids of capacity commitments to merge.
    * These capacity commitments must exist under admin project and location
    * specified in the parent.
+   * ID is the last portion of capacity commitment name e.g., 'abc' for
+   * projects/myproject/locations/US/capacityCommitments/abc
    * </pre>
    *
    * <code>repeated string capacity_commitment_ids = 2;</code>
@@ -100,6 +106,8 @@ public interface MergeCapacityCommitmentsRequestOrBuilder
    * Ids of capacity commitments to merge.
    * These capacity commitments must exist under admin project and location
    * specified in the parent.
+   * ID is the last portion of capacity commitment name e.g., 'abc' for
+   * projects/myproject/locations/US/capacityCommitments/abc
    * </pre>
    *
    * <code>repeated string capacity_commitment_ids = 2;</code>

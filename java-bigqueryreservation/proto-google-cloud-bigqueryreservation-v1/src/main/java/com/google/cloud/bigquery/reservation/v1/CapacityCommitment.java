@@ -741,8 +741,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+   * capacity commitments.
    * </pre>
    *
    * <code>
@@ -759,8 +759,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+   * capacity commitments.
    * </pre>
    *
    * <code>
@@ -779,8 +779,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable
-   * only for ACTIVE capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+   * capacity commitments.
    * </pre>
    *
    * <code>
@@ -1721,8 +1721,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>
@@ -1738,8 +1738,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>
@@ -1761,8 +1761,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>
@@ -1786,8 +1786,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>
@@ -1808,8 +1808,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>
@@ -1837,8 +1837,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>
@@ -1860,8 +1860,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>
@@ -1877,8 +1877,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>
@@ -1898,8 +1898,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable
-     * only for ACTIVE capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+     * capacity commitments.
      * </pre>
      *
      * <code>

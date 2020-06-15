@@ -28,7 +28,7 @@ public interface CreateCapacityCommitmentRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the parent reservation. E.g.,
-   *    projects/myproject/locations/US
+   *    `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateCapacityCommitmentRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the parent reservation. E.g.,
-   *    projects/myproject/locations/US
+   *    `projects/myproject/locations/US`
    * </pre>
    *
    * <code>

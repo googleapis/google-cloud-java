@@ -28,7 +28,7 @@ public interface GetCapacityCommitmentRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the capacity commitment to retrieve. E.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   *    `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetCapacityCommitmentRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the capacity commitment to retrieve. E.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   *    `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>

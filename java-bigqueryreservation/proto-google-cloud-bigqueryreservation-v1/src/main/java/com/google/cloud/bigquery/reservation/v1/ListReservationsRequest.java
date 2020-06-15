@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
+ * The request for [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.ListReservationsRequest}
@@ -132,7 +131,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The parent resource name containing project and location, e.g.:
-   *   "projects/myproject/locations/US"
+   *   `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -158,7 +157,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The parent resource name containing project and location, e.g.:
-   *   "projects/myproject/locations/US"
+   *   `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -429,8 +428,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
+   * The request for [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.ListReservationsRequest}
@@ -608,7 +606,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource name containing project and location, e.g.:
-     *   "projects/myproject/locations/US"
+     *   `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -633,7 +631,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource name containing project and location, e.g.:
-     *   "projects/myproject/locations/US"
+     *   `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -658,7 +656,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource name containing project and location, e.g.:
-     *   "projects/myproject/locations/US"
+     *   `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -682,7 +680,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource name containing project and location, e.g.:
-     *   "projects/myproject/locations/US"
+     *   `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -702,7 +700,7 @@ public final class ListReservationsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource name containing project and location, e.g.:
-     *   "projects/myproject/locations/US"
+     *   `projects/myproject/locations/US`
      * </pre>
      *
      * <code>

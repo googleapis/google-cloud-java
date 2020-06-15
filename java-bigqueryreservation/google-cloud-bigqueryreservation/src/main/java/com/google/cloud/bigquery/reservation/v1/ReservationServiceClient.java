@@ -279,7 +279,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. Resource name of the capacity commitment to delete. E.g.,
-   *     projects/myproject/locations/US/capacityCommitments/123
+   *     `projects/myproject/locations/US/capacityCommitments/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCapacityCommitment(CapacityCommitmentName name) {
@@ -305,7 +305,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. Resource name of the capacity commitment to delete. E.g.,
-   *     projects/myproject/locations/US/capacityCommitments/123
+   *     `projects/myproject/locations/US/capacityCommitments/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCapacityCommitment(String name) {
@@ -621,7 +621,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The parent resource name containing project and location, e.g.:
-   *     "projects/myproject/locations/US"
+   *     `projects/myproject/locations/US`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListReservationsPagedResponse listReservations(LocationName parent) {
@@ -648,7 +648,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The parent resource name containing project and location, e.g.:
-   *     "projects/myproject/locations/US"
+   *     `projects/myproject/locations/US`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListReservationsPagedResponse listReservations(String parent) {
@@ -910,7 +910,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. Resource name of the parent reservation. E.g.,
-   *     projects/myproject/locations/US
+   *     `projects/myproject/locations/US`
    * @param capacityCommitment Content of the capacity commitment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -939,7 +939,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. Resource name of the parent reservation. E.g.,
-   *     projects/myproject/locations/US
+   *     `projects/myproject/locations/US`
    * @param capacityCommitment Content of the capacity commitment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1016,7 +1016,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. Resource name of the parent reservation. E.g.,
-   *     projects/myproject/locations/US
+   *     `projects/myproject/locations/US`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCapacityCommitmentsPagedResponse listCapacityCommitments(LocationName parent) {
@@ -1043,7 +1043,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. Resource name of the parent reservation. E.g.,
-   *     projects/myproject/locations/US
+   *     `projects/myproject/locations/US`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCapacityCommitmentsPagedResponse listCapacityCommitments(String parent) {
@@ -1149,7 +1149,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. Resource name of the capacity commitment to retrieve. E.g.,
-   *     projects/myproject/locations/US/capacityCommitments/123
+   *     `projects/myproject/locations/US/capacityCommitments/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment getCapacityCommitment(CapacityCommitmentName name) {
@@ -1174,7 +1174,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. Resource name of the capacity commitment to retrieve. E.g.,
-   *     projects/myproject/locations/US/capacityCommitments/123
+   *     `projects/myproject/locations/US/capacityCommitments/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment getCapacityCommitment(String name) {
@@ -1337,7 +1337,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The resource name e.g.,:
-   *     projects/myproject/locations/US/capacityCommitments/123
+   *     `projects/myproject/locations/US/capacityCommitments/123`
    * @param slotCount Number of slots in the capacity commitment after the split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1372,7 +1372,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param name Required. The resource name e.g.,:
-   *     projects/myproject/locations/US/capacityCommitments/123
+   *     `projects/myproject/locations/US/capacityCommitments/123`
    * @param slotCount Number of slots in the capacity commitment after the split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1463,9 +1463,11 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Parent resource that identifies admin project and location e.g.,
-   *     projects/myproject/locations/us
+   *     `projects/myproject/locations/us`
    * @param capacityCommitmentIds Ids of capacity commitments to merge. These capacity commitments
-   *     must exist under admin project and location specified in the parent.
+   *     must exist under admin project and location specified in the parent. ID is the last portion
+   *     of capacity commitment name e.g., 'abc' for
+   *     projects/myproject/locations/US/capacityCommitments/abc
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment mergeCapacityCommitments(
@@ -1499,9 +1501,11 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Parent resource that identifies admin project and location e.g.,
-   *     projects/myproject/locations/us
+   *     `projects/myproject/locations/us`
    * @param capacityCommitmentIds Ids of capacity commitments to merge. These capacity commitments
-   *     must exist under admin project and location specified in the parent.
+   *     must exist under admin project and location specified in the parent. ID is the last portion
+   *     of capacity commitment name e.g., 'abc' for
+   *     projects/myproject/locations/US/capacityCommitments/abc
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CapacityCommitment mergeCapacityCommitments(
@@ -2019,7 +2023,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The resource name of the admin project(containing project and
-   *     location), e.g.: "projects/myproject/locations/US".
+   *     location), e.g.: `projects/myproject/locations/US`.
    * @param query Please specify resource name as assignee in the query.
    *     <p>Examples:
    *     <p>&#42; `assignee=projects/myproject` &#42; `assignee=folders/123` &#42;
@@ -2071,7 +2075,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * </code></pre>
    *
    * @param parent Required. The resource name of the admin project(containing project and
-   *     location), e.g.: "projects/myproject/locations/US".
+   *     location), e.g.: `projects/myproject/locations/US`.
    * @param query Please specify resource name as assignee in the query.
    *     <p>Examples:
    *     <p>&#42; `assignee=projects/myproject` &#42; `assignee=folders/123` &#42;

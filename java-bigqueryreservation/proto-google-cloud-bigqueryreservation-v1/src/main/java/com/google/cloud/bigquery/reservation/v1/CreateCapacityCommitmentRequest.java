@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.CreateCapacityCommitment].
+ * The request for [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.CreateCapacityCommitment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest}
@@ -142,7 +141,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the parent reservation. E.g.,
-   *    projects/myproject/locations/US
+   *    `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -168,7 +167,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the parent reservation. E.g.,
-   *    projects/myproject/locations/US
+   *    `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -452,8 +451,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.CreateCapacityCommitment].
+   * The request for [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.CreateCapacityCommitment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest}
@@ -644,7 +642,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the parent reservation. E.g.,
-     *    projects/myproject/locations/US
+     *    `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -669,7 +667,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the parent reservation. E.g.,
-     *    projects/myproject/locations/US
+     *    `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -694,7 +692,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the parent reservation. E.g.,
-     *    projects/myproject/locations/US
+     *    `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -718,7 +716,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the parent reservation. E.g.,
-     *    projects/myproject/locations/US
+     *    `projects/myproject/locations/US`
      * </pre>
      *
      * <code>
@@ -738,7 +736,7 @@ public final class CreateCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the parent reservation. E.g.,
-     *    projects/myproject/locations/US
+     *    `projects/myproject/locations/US`
      * </pre>
      *
      * <code>

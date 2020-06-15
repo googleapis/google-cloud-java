@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteAssignment].
+ * The request for [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteAssignment].
  * Note: "bigquery.reservationAssignments.delete" permission is required on the
  * related assignee.
  * </pre>
@@ -333,8 +332,7 @@ public final class DeleteAssignmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteAssignment].
+   * The request for [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteAssignment].
    * Note: "bigquery.reservationAssignments.delete" permission is required on the
    * related assignee.
    * </pre>

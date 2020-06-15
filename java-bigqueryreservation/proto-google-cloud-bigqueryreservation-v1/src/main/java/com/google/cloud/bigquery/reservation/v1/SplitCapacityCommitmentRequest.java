@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
+ * The request for [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest}
@@ -125,7 +124,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The resource name e.g.,:
-   *   projects/myproject/locations/US/capacityCommitments/123
+   *  `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>
@@ -151,7 +150,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The resource name e.g.,:
-   *   projects/myproject/locations/US/capacityCommitments/123
+   *  `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>
@@ -365,8 +364,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
+   * The request for [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.SplitCapacityCommitment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest}
@@ -543,7 +541,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The resource name e.g.,:
-     *   projects/myproject/locations/US/capacityCommitments/123
+     *  `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -568,7 +566,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The resource name e.g.,:
-     *   projects/myproject/locations/US/capacityCommitments/123
+     *  `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -593,7 +591,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The resource name e.g.,:
-     *   projects/myproject/locations/US/capacityCommitments/123
+     *  `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -617,7 +615,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The resource name e.g.,:
-     *   projects/myproject/locations/US/capacityCommitments/123
+     *  `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -637,7 +635,7 @@ public final class SplitCapacityCommitmentRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The resource name e.g.,:
-     *   projects/myproject/locations/US/capacityCommitments/123
+     *  `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>

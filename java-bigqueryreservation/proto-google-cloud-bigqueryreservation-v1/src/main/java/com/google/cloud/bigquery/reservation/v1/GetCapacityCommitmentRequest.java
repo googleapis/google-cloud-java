@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
+ * The request for [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest}
@@ -119,7 +118,7 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. Resource name of the capacity commitment to retrieve. E.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   *    `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>
@@ -145,7 +144,7 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. Resource name of the capacity commitment to retrieve. E.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   *    `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>
@@ -332,8 +331,7 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
+   * The request for [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest}
@@ -501,7 +499,7 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Resource name of the capacity commitment to retrieve. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -526,7 +524,7 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Resource name of the capacity commitment to retrieve. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -551,7 +549,7 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Resource name of the capacity commitment to retrieve. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -575,7 +573,7 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Resource name of the capacity commitment to retrieve. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -595,7 +593,7 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Resource name of the capacity commitment to retrieve. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>

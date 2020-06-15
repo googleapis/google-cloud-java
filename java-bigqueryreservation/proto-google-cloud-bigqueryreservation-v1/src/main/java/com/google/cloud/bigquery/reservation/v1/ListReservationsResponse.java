@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The response for
- * [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
+ * The response for [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.ListReservationsResponse}
@@ -428,8 +427,7 @@ public final class ListReservationsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The response for
-   * [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
+   * The response for [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1.ReservationService.ListReservations].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.ListReservationsResponse}

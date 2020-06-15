@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
+ * The request for [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest}
@@ -120,7 +119,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the capacity commitment to delete. E.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   *    `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>
@@ -146,7 +145,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. Resource name of the capacity commitment to delete. E.g.,
-   *    projects/myproject/locations/US/capacityCommitments/123
+   *    `projects/myproject/locations/US/capacityCommitments/123`
    * </pre>
    *
    * <code>
@@ -334,8 +333,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
+   * The request for [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.DeleteCapacityCommitment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest}
@@ -506,7 +504,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the capacity commitment to delete. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -531,7 +529,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the capacity commitment to delete. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -556,7 +554,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the capacity commitment to delete. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -580,7 +578,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the capacity commitment to delete. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>
@@ -600,7 +598,7 @@ public final class DeleteCapacityCommitmentRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. Resource name of the capacity commitment to delete. E.g.,
-     *    projects/myproject/locations/US/capacityCommitments/123
+     *    `projects/myproject/locations/US/capacityCommitments/123`
      * </pre>
      *
      * <code>

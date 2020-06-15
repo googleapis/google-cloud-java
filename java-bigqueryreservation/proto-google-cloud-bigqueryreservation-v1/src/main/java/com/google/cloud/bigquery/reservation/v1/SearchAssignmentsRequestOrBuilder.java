@@ -27,9 +27,9 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the admin project(containing project and
-   * location), e.g.:
-   *   "projects/myproject/locations/US".
+   * Required. The resource name of the admin project(containing project and location),
+   * e.g.:
+   *   `projects/myproject/locations/US`.
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface SearchAssignmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the admin project(containing project and
-   * location), e.g.:
-   *   "projects/myproject/locations/US".
+   * Required. The resource name of the admin project(containing project and location),
+   * e.g.:
+   *   `projects/myproject/locations/US`.
    * </pre>
    *
    * <code>

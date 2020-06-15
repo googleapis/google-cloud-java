@@ -28,7 +28,7 @@ public interface ListReservationsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name containing project and location, e.g.:
-   *   "projects/myproject/locations/US"
+   *   `projects/myproject/locations/US`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListReservationsRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name containing project and location, e.g.:
-   *   "projects/myproject/locations/US"
+   *   `projects/myproject/locations/US`
    * </pre>
    *
    * <code>

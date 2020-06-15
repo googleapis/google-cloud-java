@@ -22,8 +22,7 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for
- * [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1.ReservationService.UpdateReservation].
+ * The request for [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1.ReservationService.UpdateReservation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.UpdateReservationRequest}
@@ -413,8 +412,7 @@ public final class UpdateReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request for
-   * [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1.ReservationService.UpdateReservation].
+   * The request for [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1.ReservationService.UpdateReservation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.UpdateReservationRequest}
