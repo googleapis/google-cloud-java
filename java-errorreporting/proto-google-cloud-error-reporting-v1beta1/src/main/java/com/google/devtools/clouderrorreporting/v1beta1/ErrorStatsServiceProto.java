@@ -172,13 +172,14 @@ public final class ErrorStatsServiceProto {
           + "ject_name=projects/*}/events\332A\014project_n"
           + "ame\032V\312A\"clouderrorreporting.googleapis.c"
           + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformB\372\001\n/com.google.devtools.clou"
+          + "ud-platformB\243\002\n/com.google.devtools.clou"
           + "derrorreporting.v1beta1B\026ErrorStatsServi"
           + "ceProtoP\001Z^google.golang.org/genproto/go"
           + "ogleapis/devtools/clouderrorreporting/v1"
           + "beta1;clouderrorreporting\370\001\001\252\002#Google.Cl"
           + "oud.ErrorReporting.V1Beta1\312\002#Google\\Clou"
-          + "d\\ErrorReporting\\V1beta1b\006proto3"
+          + "d\\ErrorReporting\\V1beta1\352\002&Google::Cloud"
+          + "::ErrorReporting::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

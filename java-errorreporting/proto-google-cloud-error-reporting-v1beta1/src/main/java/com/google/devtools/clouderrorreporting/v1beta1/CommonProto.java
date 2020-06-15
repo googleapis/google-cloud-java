@@ -93,13 +93,14 @@ public final class CommonProto {
           + "eferrer\030\004 \001(\t\022\034\n\024response_status_code\030\005 "
           + "\001(\005\022\021\n\tremote_ip\030\006 \001(\t\"O\n\016SourceLocation"
           + "\022\021\n\tfile_path\030\001 \001(\t\022\023\n\013line_number\030\002 \001(\005"
-          + "\022\025\n\rfunction_name\030\004 \001(\tB\357\001\n/com.google.d"
+          + "\022\025\n\rfunction_name\030\004 \001(\tB\230\002\n/com.google.d"
           + "evtools.clouderrorreporting.v1beta1B\013Com"
           + "monProtoP\001Z^google.golang.org/genproto/g"
           + "oogleapis/devtools/clouderrorreporting/v"
           + "1beta1;clouderrorreporting\370\001\001\252\002#Google.C"
           + "loud.ErrorReporting.V1Beta1\312\002#Google\\Clo"
-          + "ud\\ErrorReporting\\V1beta1b\006proto3"
+          + "ud\\ErrorReporting\\V1beta1\352\002&Google::Clou"
+          + "d::ErrorReporting::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

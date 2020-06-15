@@ -77,13 +77,14 @@ public final class ReportErrorsServiceProto {
           + "/events:report:\005event\332A\022project_name,eve"
           + "nt\032V\312A\"clouderrorreporting.googleapis.co"
           + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\374\001\n/com.google.devtools.cloud"
+          + "d-platformB\245\002\n/com.google.devtools.cloud"
           + "errorreporting.v1beta1B\030ReportErrorsServ"
           + "iceProtoP\001Z^google.golang.org/genproto/g"
           + "oogleapis/devtools/clouderrorreporting/v"
           + "1beta1;clouderrorreporting\370\001\001\252\002#Google.C"
           + "loud.ErrorReporting.V1Beta1\312\002#Google\\Clo"
-          + "ud\\ErrorReporting\\V1beta1b\006proto3"
+          + "ud\\ErrorReporting\\V1beta1\352\002&Google::Clou"
+          + "d::ErrorReporting::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

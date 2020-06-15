@@ -68,14 +68,15 @@ public final class ErrorGroupServiceProto {
           + "\202\323\344\223\0022\032)/v1beta1/{group.name=projects/*/"
           + "groups/*}:\005group\332A\005group\032V\312A\"clouderrorr"
           + "eporting.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\372\001\n/com"
+          + "ogleapis.com/auth/cloud-platformB\243\002\n/com"
           + ".google.devtools.clouderrorreporting.v1b"
           + "eta1B\026ErrorGroupServiceProtoP\001Z^google.g"
           + "olang.org/genproto/googleapis/devtools/c"
           + "louderrorreporting/v1beta1;clouderrorrep"
           + "orting\370\001\001\252\002#Google.Cloud.ErrorReporting."
           + "V1Beta1\312\002#Google\\Cloud\\ErrorReporting\\V1"
-          + "beta1b\006proto3"
+          + "beta1\352\002&Google::Cloud::ErrorReporting::V"
+          + "1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
