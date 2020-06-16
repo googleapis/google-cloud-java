@@ -96,45 +96,6 @@ public class CatalogServiceClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteCatalogItemTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockCatalogService.addResponse(expectedResponse);
-
-    CatalogItemPathName name =
-        CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-
-    client.deleteCatalogItem(name);
-
-    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteCatalogItemRequest actualRequest = (DeleteCatalogItemRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, CatalogItemPathName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteCatalogItemExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCatalogService.addException(exception);
-
-    try {
-      CatalogItemPathName name =
-          CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-
-      client.deleteCatalogItem(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void importCatalogItemsTest() throws Exception {
     ImportCatalogItemsResponse expectedResponse = ImportCatalogItemsResponse.newBuilder().build();
     Operation resultOperation =
@@ -397,6 +358,45 @@ public class CatalogServiceClientTest {
       FieldMask updateMask = FieldMask.newBuilder().build();
 
       client.updateCatalogItem(name, catalogItem, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteCatalogItemTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    CatalogItemPathName name =
+        CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+
+    client.deleteCatalogItem(name);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCatalogItemRequest actualRequest = (DeleteCatalogItemRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, CatalogItemPathName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteCatalogItemExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      CatalogItemPathName name =
+          CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+
+      client.deleteCatalogItem(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

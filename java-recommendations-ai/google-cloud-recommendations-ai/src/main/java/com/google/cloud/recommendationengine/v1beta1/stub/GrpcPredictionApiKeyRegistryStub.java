@@ -49,17 +49,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistryStub {
 
-  private static final MethodDescriptor<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationMethodDescriptor =
-          MethodDescriptor.<DeletePredictionApiKeyRegistrationRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry/DeletePredictionApiKeyRegistration")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(
-                      DeletePredictionApiKeyRegistrationRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<
           CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationMethodDescriptor =
@@ -90,11 +79,20 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                   ProtoUtils.marshaller(
                       ListPredictionApiKeyRegistrationsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationMethodDescriptor =
+          MethodDescriptor.<DeletePredictionApiKeyRegistrationRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry/DeletePredictionApiKeyRegistration")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeletePredictionApiKeyRegistrationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
-  private final UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationCallable;
   private final UnaryCallable<
           CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationCallable;
@@ -104,6 +102,8 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
   private final UnaryCallable<
           ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsPagedResponse>
       listPredictionApiKeyRegistrationsPagedCallable;
+  private final UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -147,21 +147,6 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
       throws IOException {
     this.callableFactory = callableFactory;
 
-    GrpcCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
-        deletePredictionApiKeyRegistrationTransportSettings =
-            GrpcCallSettings.<DeletePredictionApiKeyRegistrationRequest, Empty>newBuilder()
-                .setMethodDescriptor(deletePredictionApiKeyRegistrationMethodDescriptor)
-                .setParamsExtractor(
-                    new RequestParamsExtractor<DeletePredictionApiKeyRegistrationRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeletePredictionApiKeyRegistrationRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
-                    })
-                .build();
     GrpcCallSettings<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
         createPredictionApiKeyRegistrationTransportSettings =
             GrpcCallSettings
@@ -198,12 +183,22 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
                       }
                     })
                 .build();
+    GrpcCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
+        deletePredictionApiKeyRegistrationTransportSettings =
+            GrpcCallSettings.<DeletePredictionApiKeyRegistrationRequest, Empty>newBuilder()
+                .setMethodDescriptor(deletePredictionApiKeyRegistrationMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<DeletePredictionApiKeyRegistrationRequest>() {
+                      @Override
+                      public Map<String, String> extract(
+                          DeletePredictionApiKeyRegistrationRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
-    this.deletePredictionApiKeyRegistrationCallable =
-        callableFactory.createUnaryCallable(
-            deletePredictionApiKeyRegistrationTransportSettings,
-            settings.deletePredictionApiKeyRegistrationSettings(),
-            clientContext);
     this.createPredictionApiKeyRegistrationCallable =
         callableFactory.createUnaryCallable(
             createPredictionApiKeyRegistrationTransportSettings,
@@ -219,13 +214,13 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
             listPredictionApiKeyRegistrationsTransportSettings,
             settings.listPredictionApiKeyRegistrationsSettings(),
             clientContext);
+    this.deletePredictionApiKeyRegistrationCallable =
+        callableFactory.createUnaryCallable(
+            deletePredictionApiKeyRegistrationTransportSettings,
+            settings.deletePredictionApiKeyRegistrationSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
-  }
-
-  public UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationCallable() {
-    return deletePredictionApiKeyRegistrationCallable;
   }
 
   public UnaryCallable<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
@@ -243,6 +238,11 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
           ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
       listPredictionApiKeyRegistrationsCallable() {
     return listPredictionApiKeyRegistrationsCallable;
+  }
+
+  public UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationCallable() {
+    return deletePredictionApiKeyRegistrationCallable;
   }
 
   @Override

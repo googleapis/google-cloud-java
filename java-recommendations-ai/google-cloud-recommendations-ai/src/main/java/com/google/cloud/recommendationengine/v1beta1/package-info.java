@@ -28,8 +28,9 @@
  * <pre>
  * <code>
  * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
- *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
- *   catalogServiceClient.deleteCatalogItem(name);
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
+ *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
  * }
  * </code>
  * </pre>
@@ -46,8 +47,9 @@
  * <pre>
  * <code>
  * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
- *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
- *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name);
+ *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+ *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
+ *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(parent, predictionApiKeyRegistration);
  * }
  * </code>
  * </pre>

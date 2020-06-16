@@ -49,8 +49,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
- *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
- *   catalogServiceClient.deleteCatalogItem(name);
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
+ *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
  * }
  * </code>
  * </pre>
@@ -170,98 +171,6 @@ public class CatalogServiceClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   catalogServiceClient.deleteCatalogItem(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Full resource name of catalog item, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCatalogItem(CatalogItemPathName name) {
-    DeleteCatalogItemRequest request =
-        DeleteCatalogItemRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteCatalogItem(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   catalogServiceClient.deleteCatalogItem(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Full resource name of catalog item, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCatalogItem(String name) {
-    DeleteCatalogItemRequest request = DeleteCatalogItemRequest.newBuilder().setName(name).build();
-    deleteCatalogItem(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   DeleteCatalogItemRequest request = DeleteCatalogItemRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   catalogServiceClient.deleteCatalogItem(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteCatalogItem(DeleteCatalogItemRequest request) {
-    deleteCatalogItemCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a catalog item.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
-   *   DeleteCatalogItemRequest request = DeleteCatalogItemRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = catalogServiceClient.deleteCatalogItemCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
-    return stub.deleteCatalogItemCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -890,6 +799,98 @@ public class CatalogServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemCallable() {
     return stub.updateCatalogItemCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a catalog item.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+   *   catalogServiceClient.deleteCatalogItem(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Full resource name of catalog item, such as
+   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCatalogItem(CatalogItemPathName name) {
+    DeleteCatalogItemRequest request =
+        DeleteCatalogItemRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteCatalogItem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a catalog item.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+   *   catalogServiceClient.deleteCatalogItem(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Full resource name of catalog item, such as
+   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCatalogItem(String name) {
+    DeleteCatalogItemRequest request = DeleteCatalogItemRequest.newBuilder().setName(name).build();
+    deleteCatalogItem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a catalog item.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+   *   DeleteCatalogItemRequest request = DeleteCatalogItemRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   catalogServiceClient.deleteCatalogItem(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCatalogItem(DeleteCatalogItemRequest request) {
+    deleteCatalogItemCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a catalog item.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogItemPathName name = CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+   *   DeleteCatalogItemRequest request = DeleteCatalogItemRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = catalogServiceClient.deleteCatalogItemCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
+    return stub.deleteCatalogItemCallable();
   }
 
   @Override

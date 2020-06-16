@@ -52,16 +52,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteCatalogItem to 30 seconds:
+ * <p>For example, to set the total timeout of createCatalogItem to 30 seconds:
  *
  * <pre>
  * <code>
  * CatalogServiceSettings.Builder catalogServiceSettingsBuilder =
  *     CatalogServiceSettings.newBuilder();
  * catalogServiceSettingsBuilder
- *     .deleteCatalogItemSettings()
+ *     .createCatalogItemSettings()
  *     .setRetrySettings(
- *         catalogServiceSettingsBuilder.deleteCatalogItemSettings().getRetrySettings().toBuilder()
+ *         catalogServiceSettingsBuilder.createCatalogItemSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CatalogServiceSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
@@ -71,11 +71,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class CatalogServiceSettings extends ClientSettings<CatalogServiceSettings> {
-  /** Returns the object with the settings used for calls to deleteCatalogItem. */
-  public UnaryCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
-    return ((CatalogServiceStubSettings) getStubSettings()).deleteCatalogItemSettings();
-  }
-
   /** Returns the object with the settings used for calls to importCatalogItems. */
   public UnaryCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).importCatalogItemsSettings();
@@ -110,6 +105,11 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   /** Returns the object with the settings used for calls to updateCatalogItem. */
   public UnaryCallSettings<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemSettings() {
     return ((CatalogServiceStubSettings) getStubSettings()).updateCatalogItemSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCatalogItem. */
+  public UnaryCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).deleteCatalogItemSettings();
   }
 
   public static final CatalogServiceSettings create(CatalogServiceStubSettings stub)
@@ -209,11 +209,6 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteCatalogItem. */
-    public UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
-      return getStubSettingsBuilder().deleteCatalogItemSettings();
-    }
-
     /** Returns the builder for the settings used for calls to importCatalogItems. */
     public UnaryCallSettings.Builder<ImportCatalogItemsRequest, Operation>
         importCatalogItemsSettings() {
@@ -251,6 +246,11 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     public UnaryCallSettings.Builder<UpdateCatalogItemRequest, CatalogItem>
         updateCatalogItemSettings() {
       return getStubSettingsBuilder().updateCatalogItemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCatalogItem. */
+    public UnaryCallSettings.Builder<DeleteCatalogItemRequest, Empty> deleteCatalogItemSettings() {
+      return getStubSettingsBuilder().deleteCatalogItemSettings();
     }
 
     @Override

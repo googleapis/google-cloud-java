@@ -57,16 +57,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcCatalogServiceStub extends CatalogServiceStub {
 
-  private static final MethodDescriptor<DeleteCatalogItemRequest, Empty>
-      deleteCatalogItemMethodDescriptor =
-          MethodDescriptor.<DeleteCatalogItemRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.recommendationengine.v1beta1.CatalogService/DeleteCatalogItem")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteCatalogItemRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ImportCatalogItemsRequest, Operation>
       importCatalogItemsMethodDescriptor =
           MethodDescriptor.<ImportCatalogItemsRequest, Operation>newBuilder()
@@ -118,11 +108,20 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(UpdateCatalogItemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CatalogItem.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteCatalogItemRequest, Empty>
+      deleteCatalogItemMethodDescriptor =
+          MethodDescriptor.<DeleteCatalogItemRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommendationengine.v1beta1.CatalogService/DeleteCatalogItem")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCatalogItemRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable;
   private final UnaryCallable<ImportCatalogItemsRequest, Operation> importCatalogItemsCallable;
   private final OperationCallable<
           ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
@@ -134,6 +133,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   private final UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsPagedResponse>
       listCatalogItemsPagedCallable;
   private final UnaryCallable<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemCallable;
+  private final UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -177,19 +177,6 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemTransportSettings =
-        GrpcCallSettings.<DeleteCatalogItemRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteCatalogItemMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteCatalogItemRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteCatalogItemRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ImportCatalogItemsRequest, Operation> importCatalogItemsTransportSettings =
         GrpcCallSettings.<ImportCatalogItemsRequest, Operation>newBuilder()
             .setMethodDescriptor(importCatalogItemsMethodDescriptor)
@@ -256,12 +243,20 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteCatalogItemRequest, Empty> deleteCatalogItemTransportSettings =
+        GrpcCallSettings.<DeleteCatalogItemRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCatalogItemMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteCatalogItemRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteCatalogItemRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
 
-    this.deleteCatalogItemCallable =
-        callableFactory.createUnaryCallable(
-            deleteCatalogItemTransportSettings,
-            settings.deleteCatalogItemSettings(),
-            clientContext);
     this.importCatalogItemsCallable =
         callableFactory.createUnaryCallable(
             importCatalogItemsTransportSettings,
@@ -292,6 +287,11 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             updateCatalogItemTransportSettings,
             settings.updateCatalogItemSettings(),
             clientContext);
+    this.deleteCatalogItemCallable =
+        callableFactory.createUnaryCallable(
+            deleteCatalogItemTransportSettings,
+            settings.deleteCatalogItemSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -299,10 +299,6 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
-    return deleteCatalogItemCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
@@ -335,6 +331,10 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
 
   public UnaryCallable<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemCallable() {
     return updateCatalogItemCallable;
+  }
+
+  public UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
+    return deleteCatalogItemCallable;
   }
 
   @Override

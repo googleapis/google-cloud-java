@@ -47,8 +47,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
- *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
- *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name);
+ *   EventStoreName parent = EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+ *   PredictionApiKeyRegistration predictionApiKeyRegistration = PredictionApiKeyRegistration.newBuilder().build();
+ *   PredictionApiKeyRegistration response = predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(parent, predictionApiKeyRegistration);
  * }
  * </code>
  * </pre>
@@ -158,101 +159,6 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PredictionApiKeyRegistryStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Unregister an apiKey from using for predict method.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
-   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The API key to unregister including full resource path.
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deletePredictionApiKeyRegistration(PredictionApiKeyRegistrationName name) {
-    DeletePredictionApiKeyRegistrationRequest request =
-        DeletePredictionApiKeyRegistrationRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deletePredictionApiKeyRegistration(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Unregister an apiKey from using for predict method.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
-   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The API key to unregister including full resource path.
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deletePredictionApiKeyRegistration(String name) {
-    DeletePredictionApiKeyRegistrationRequest request =
-        DeletePredictionApiKeyRegistrationRequest.newBuilder().setName(name).build();
-    deletePredictionApiKeyRegistration(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Unregister an apiKey from using for predict method.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
-   *   DeletePredictionApiKeyRegistrationRequest request = DeletePredictionApiKeyRegistrationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deletePredictionApiKeyRegistration(
-      DeletePredictionApiKeyRegistrationRequest request) {
-    deletePredictionApiKeyRegistrationCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Unregister an apiKey from using for predict method.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
-   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
-   *   DeletePredictionApiKeyRegistrationRequest request = DeletePredictionApiKeyRegistrationRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = predictionApiKeyRegistryClient.deletePredictionApiKeyRegistrationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
-      deletePredictionApiKeyRegistrationCallable() {
-    return stub.deletePredictionApiKeyRegistrationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -502,6 +408,101 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
           ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
       listPredictionApiKeyRegistrationsCallable() {
     return stub.listPredictionApiKeyRegistrationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Unregister an apiKey from using for predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The API key to unregister including full resource path.
+   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePredictionApiKeyRegistration(PredictionApiKeyRegistrationName name) {
+    DeletePredictionApiKeyRegistrationRequest request =
+        DeletePredictionApiKeyRegistrationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deletePredictionApiKeyRegistration(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Unregister an apiKey from using for predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The API key to unregister including full resource path.
+   *     "projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/&lt;YOUR_API_KEY&gt;"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePredictionApiKeyRegistration(String name) {
+    DeletePredictionApiKeyRegistrationRequest request =
+        DeletePredictionApiKeyRegistrationRequest.newBuilder().setName(name).build();
+    deletePredictionApiKeyRegistration(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Unregister an apiKey from using for predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+   *   DeletePredictionApiKeyRegistrationRequest request = DeletePredictionApiKeyRegistrationRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   predictionApiKeyRegistryClient.deletePredictionApiKeyRegistration(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deletePredictionApiKeyRegistration(
+      DeletePredictionApiKeyRegistrationRequest request) {
+    deletePredictionApiKeyRegistrationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Unregister an apiKey from using for predict method.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient = PredictionApiKeyRegistryClient.create()) {
+   *   PredictionApiKeyRegistrationName name = PredictionApiKeyRegistrationName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PREDICTION_API_KEY_REGISTRATION]");
+   *   DeletePredictionApiKeyRegistrationRequest request = DeletePredictionApiKeyRegistrationRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = predictionApiKeyRegistryClient.deletePredictionApiKeyRegistrationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
+      deletePredictionApiKeyRegistrationCallable() {
+    return stub.deletePredictionApiKeyRegistrationCallable();
   }
 
   @Override
