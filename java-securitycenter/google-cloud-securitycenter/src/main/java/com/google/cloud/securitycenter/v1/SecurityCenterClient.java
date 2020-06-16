@@ -2302,7 +2302,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a notification config.
+   * Updates a notification config. The following update fields are allowed: description,
+   * pubsub_topic, streaming_config.filter
    *
    * <p>Sample code:
    *
@@ -2326,7 +2327,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a notification config.
+   * Updates a notification config. The following update fields are allowed: description,
+   * pubsub_topic, streaming_config.filter
    *
    * <p>Sample code:
    *
@@ -2355,7 +2357,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a notification config.
+   * Updates a notification config. The following update fields are allowed: description,
+   * pubsub_topic, streaming_config.filter
    *
    * <p>Sample code:
    *
@@ -2379,7 +2382,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates a notification config.
+   * Updates a notification config. The following update fields are allowed: description,
+   * pubsub_topic, streaming_config.filter
    *
    * <p>Sample code:
    *

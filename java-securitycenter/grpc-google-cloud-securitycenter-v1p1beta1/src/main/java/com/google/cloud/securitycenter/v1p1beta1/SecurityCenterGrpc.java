@@ -1456,7 +1456,8 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Updates a notification config.
+     * Updates a notification config. The following update
+     * fields are allowed: description, pubsub_topic, streaming_config.filter
      * </pre>
      */
     public void updateNotificationConfig(
@@ -2021,7 +2022,8 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Updates a notification config.
+     * Updates a notification config. The following update
+     * fields are allowed: description, pubsub_topic, streaming_config.filter
      * </pre>
      */
     public void updateNotificationConfig(
@@ -2355,7 +2357,8 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Updates a notification config.
+     * Updates a notification config. The following update
+     * fields are allowed: description, pubsub_topic, streaming_config.filter
      * </pre>
      */
     public com.google.cloud.securitycenter.v1p1beta1.NotificationConfig updateNotificationConfig(
@@ -2706,7 +2709,8 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Updates a notification config.
+     * Updates a notification config. The following update
+     * fields are allowed: description, pubsub_topic, streaming_config.filter
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
