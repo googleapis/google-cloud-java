@@ -24,7 +24,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminSettings;
-import com.google.pubsub.v1.ProjectTopicName;
+import com.google.pubsub.v1.TopicName;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
@@ -37,6 +37,7 @@ import java.io.IOException;
 public class UsePubSubEmulatorSnippet {
 
   public static void main(String... args) throws IOException {
+    // [START pubsub_use_emulator]
     // [START use_pubsub_emulator]
     String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
     ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext().build();
@@ -54,7 +55,7 @@ public class UsePubSubEmulatorSnippet {
                   .setCredentialsProvider(credentialsProvider)
                   .build());
 
-      ProjectTopicName topicName = ProjectTopicName.of("my-project-id", "my-topic-id");
+      TopicName topicName = TopicName.of("my-project-id", "my-topic-id");
       // Set the channel and credentials provider when creating a `Publisher`.
       // Similarly for Subscriber
       Publisher publisher =
@@ -66,5 +67,6 @@ public class UsePubSubEmulatorSnippet {
       channel.shutdown();
     }
     // [END use_pubsub_emulator]
+    // [END pubsub_use_emulator]
   }
 }
