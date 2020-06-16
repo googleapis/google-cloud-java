@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.117.0](https://www.github.com/googleapis/java-websecurityscanner/compare/v0.116.3...v0.117.0) (2020-06-16)
+
+
+### Features
+
+* **v1:** add v1 client ([#154](https://www.github.com/googleapis/java-websecurityscanner/issues/154)) ([36a3086](https://www.github.com/googleapis/java-websecurityscanner/commit/36a3086b24a232ed0cdca2978c8f582149a402c7))
+
+
+### Bug Fixes
+
+* restore GAPIC v2 retry configs ([#134](https://www.github.com/googleapis/java-websecurityscanner/issues/134)) ([2bb7717](https://www.github.com/googleapis/java-websecurityscanner/commit/2bb7717a3544d39a317cca23c7da65e3595a7ae3))
+
+
+### Dependencies
+
+* update core dependencies to v1.57.0 ([#156](https://www.github.com/googleapis/java-websecurityscanner/issues/156)) ([98abf96](https://www.github.com/googleapis/java-websecurityscanner/commit/98abf96adc8f1b5f4643b39b3b60c07b7fda82ee))
+* update dependency com.google.api:api-common to v1.9.1 ([#139](https://www.github.com/googleapis/java-websecurityscanner/issues/139)) ([86a1d68](https://www.github.com/googleapis/java-websecurityscanner/commit/86a1d68f96bed45c566c3c929302af369a8d3c75))
+* update dependency com.google.api:api-common to v1.9.2 ([#145](https://www.github.com/googleapis/java-websecurityscanner/issues/145)) ([95a6cad](https://www.github.com/googleapis/java-websecurityscanner/commit/95a6cad03c90a27bda02edcdec648512b95783e1))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#128](https://www.github.com/googleapis/java-websecurityscanner/issues/128)) ([ee875e8](https://www.github.com/googleapis/java-websecurityscanner/commit/ee875e848549a791c2e112e3a24a08365300b7ca))
+* update dependency com.google.guava:guava-bom to v29 ([#106](https://www.github.com/googleapis/java-websecurityscanner/issues/106)) ([59b7d90](https://www.github.com/googleapis/java-websecurityscanner/commit/59b7d90af3a1f7a03cccbf507e6972fdc41970bb))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#132](https://www.github.com/googleapis/java-websecurityscanner/issues/132)) ([27549c9](https://www.github.com/googleapis/java-websecurityscanner/commit/27549c9d906dafd700ce439fe54c3ee246be3bfe))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#137](https://www.github.com/googleapis/java-websecurityscanner/issues/137)) ([965c65d](https://www.github.com/googleapis/java-websecurityscanner/commit/965c65dfb7888a408136ef3548a55570a917f806))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#118](https://www.github.com/googleapis/java-websecurityscanner/issues/118)) ([b6aef72](https://www.github.com/googleapis/java-websecurityscanner/commit/b6aef72aa651fa37cd20aafd6d5bbe54b7d4308a))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#149](https://www.github.com/googleapis/java-websecurityscanner/issues/149)) ([ad993e7](https://www.github.com/googleapis/java-websecurityscanner/commit/ad993e71b538db2fe9370bb72a900eb99d055353))
+* update dependency joda-time:joda-time to v2.10.6 ([#123](https://www.github.com/googleapis/java-websecurityscanner/issues/123)) ([adb0645](https://www.github.com/googleapis/java-websecurityscanner/commit/adb064543ed116bb72cc3cfbd1e2c85d535db36d))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#124](https://www.github.com/googleapis/java-websecurityscanner/issues/124)) ([5b7d5a8](https://www.github.com/googleapis/java-websecurityscanner/commit/5b7d5a81a303b8aa57e04945da7ae2c6a9f4056d))
+
 ### [0.116.3](https://www.github.com/googleapis/java-websecurityscanner/compare/v0.116.2...v0.116.3) (2020-04-06)
 
 
