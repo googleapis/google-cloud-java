@@ -89,53 +89,7 @@ If the service is not listed, [google-api-java-client][google-api-java-client-se
 
 *When building Java applications, preference should be given to the libraries listed in the table.*
 
-## Quickstart
 
-To call any of the supported Google Cloud Services simply add a corresponding client library 
-artifact as a dependency to your project. The following instructions use `google-cloud-storage` 
-as an example (specific instructions can be found in the README of each client).
-
-If you are using Maven, add this to your pom.xml file:
-
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>3.4.0</version>
-      <type>pom</type>
-      <scope>import</scope>
-     </dependency>
-   </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-storage</artifactId>
-  </dependency>
-  ...
-```
-
-[//]: # ({x-version-update-start:google-cloud-storage:released})
-If you are using Gradle, add this to your dependencies
-```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.102.0'
-```
-If you are using SBT, add this to your dependencies
-```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.102.0"
-```
-[//]: # ({x-version-update-end})
-
-If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins:
-* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforIntelliJ)
-* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
-
-Besides adding client libraries, the plugins provide additional functionality, such as service account key management. Refer to the documentation for each plugin for more details.
-
-These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
 
 ## Specifying a Project ID
 
@@ -179,21 +133,30 @@ see the project's [README](https://github.com/google/google-auth-library-java/bl
 and [javadoc](http://googleapis.dev/java/google-auth-library/latest/) for more
 details.
 
-To access Google Cloud services, you first need to ensure that the necessary Google Cloud APIs are
-enabled for your project. To do this, follow the instructions on the
-[authentication document](https://github.com/googleapis/google-cloud-common/blob/master/authentication/readme.md#authentication)
-shared by all the Google Cloud language libraries.
+### Google Cloud Platform environment
 
-Next, choose a method for authenticating API requests from within your project:
+When using Google Cloud libraries from a Google Cloud Platform environment such as Compute Engine, 
+Kubernetes Engine, or App Engine, no additional authentication steps are necessary.
 
-1. When using `google-cloud` libraries from within Compute/App Engine, no additional authentication
-steps are necessary. For example:
+For example:
+
 ```java
 Storage storage = StorageOptions.getDefaultInstance().getService();
 ```
-2. When using `google-cloud` libraries elsewhere, there are several options:
-  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).
-  After downloading that key, you must do one of the following:
+
+or:
+
+```java
+CloudTasksClient cloudTasksClient = CloudTasksClient.create();
+```
+
+### Other environments
+
+#### Using a service account (recommended)
+
+1. [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).
+
+2. After downloading that key, you must do one of the following:
     * Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key.
     For example:
     ```bash
@@ -207,18 +170,37 @@ Storage storage = StorageOptions.getDefaultInstance().getService();
         .build()
         .getService();
     ```
-  * If running locally for development/testing, you can use the
-  [Google Cloud SDK](https://cloud.google.com/sdk/). Create Application Default Credentials with
-  `gcloud auth application-default login`, and then `google-cloud` will automatically detect such
-  credentials.
-  * If you already have an OAuth2 access token, you can use it to authenticate (notice that in this
-  case, the access token will not be automatically refreshed):
-  ```java
-  Storage storage = StorageOptions.newBuilder()
-      .setCredentials(GoogleCredentials.create(new AccessToken(accessToken, expirationTime)))
-      .build()
-      .getService();
-  ```
+
+#### Local development/testing
+
+If running locally for development/testing, you can use the [Google Cloud SDK](https://cloud.google.com/sdk/).
+Create Application Default Credentials with `gcloud auth application-default login`, and then 
+`google-cloud` will automatically detect such credentials.
+
+#### Existing OAuth2 access token
+
+If you already have an OAuth2 access token, you can use it to authenticate (notice that in this case, the
+access token will not be automatically refreshed):
+
+```java
+Credentials credentials = GoogleCredentials.create(new AccessToken(accessToken, expirationTime));
+Storage storage = StorageOptions.newBuilder()
+    .setCredentials(credentials)
+    .build()
+    .getService();
+```
+
+or:
+
+```java
+Credentials credentials = GoogleCredentials.create(new AccessToken(accessToken, expirationTime));
+CloudTasksSettings cloudTasksSettings = CloudTasksSettings.newBuilder()
+    .setCredentialProvider(FixedCredentialsProvider.create(credentials))
+    .build();
+CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
+```
+
+### Application Default Credentials
 
 If no credentials are provided, `google-cloud` will attempt to detect them from the environment
 using `GoogleCredentials.getApplicationDefault()` which will search for Application Default
@@ -388,6 +370,19 @@ a higher priority.
 Libraries defined at an Alpha quality level are still a work-in-progress and
 are more likely to get backwards-incompatible updates. Additionally, it's possible for Alpha
 libraries to get deprecated and deleted before ever being promoted to Beta or GA.
+
+## IDE Plugins
+
+If you're using IntelliJ or Eclipse, you can add client libraries to your project using these IDE plugins:
+* [Cloud Tools for IntelliJ](https://cloud.google.com/tools/intellij/docs/client-libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforIntelliJ)
+* [Cloud Tools for Eclipse](https://cloud.google.com/eclipse/docs/libraries?utm_source=github&utm_medium=google-cloud-java&utm_campaign=ToolsforEclipse)
+
+Besides adding client libraries, the plugins provide additional functionality, such as service account
+key management. Refer to the documentation for each plugin for more details.
+
+These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible
+(including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7
+runtime. However, Datastore, Storage, and Bigquery should work.
 
 ## Contributing
 
