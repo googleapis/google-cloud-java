@@ -38,6 +38,7 @@ public class UsePubSubEmulatorSnippet {
 
   public static void main(String... args) throws IOException {
     // [START pubsub_use_emulator]
+    // [START use_pubsub_emulator]
     String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
     ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext().build();
     try {
@@ -65,6 +66,7 @@ public class UsePubSubEmulatorSnippet {
     } finally {
       channel.shutdown();
     }
+    // [END use_pubsub_emulator]
     // [END pubsub_use_emulator]
   }
 }
