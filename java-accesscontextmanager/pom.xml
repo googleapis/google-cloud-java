@@ -63,22 +63,17 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-identity-accesscontextmanager-parent</site.installationModule>
-    <google.common-protos.version>1.18.0</google.common-protos.version>
-    <protobuf.version>3.12.2</protobuf.version>
     <junit.version>4.13</junit.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-java</artifactId>
-        <version>${protobuf.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-common-protos</artifactId>
-        <version>${google.common-protos.version}</version>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>0.8.1</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
 
       <dependency>

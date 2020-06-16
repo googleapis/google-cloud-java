@@ -27,4 +27,13 @@
       <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>
