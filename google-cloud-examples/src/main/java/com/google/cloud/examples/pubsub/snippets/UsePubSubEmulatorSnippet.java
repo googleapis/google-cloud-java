@@ -24,7 +24,6 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminSettings;
-import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.TopicName;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
