@@ -44,3 +44,5 @@ api_key
 *.pyc
 artman-genfiles
 venv
+
+.flattened-pom.xml
