@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.104.0](https://www.github.com/googleapis/java-datastore/compare/v1.103.0...v1.104.0) (2020-06-17)
+
+
+### Features
+
+* add opencensus tracing/stats support for Datastore RPC operations ([#130](https://www.github.com/googleapis/java-datastore/issues/130)) ([5aee52f](https://www.github.com/googleapis/java-datastore/commit/5aee52f5013d6780e523e0c6d7d00a1826b83b9b))
+* add support to customize gcloud command of LocalDatastoreHelper ([#137](https://www.github.com/googleapis/java-datastore/issues/137)) ([976d979](https://www.github.com/googleapis/java-datastore/commit/976d9791572117dc703d8d7d6963bdd6603ecd63))
+
+
+### Bug Fixes
+
+* fix version number in changelog to correctly reflect what was released to maven central ([#145](https://www.github.com/googleapis/java-datastore/issues/145)) ([c509a2a](https://www.github.com/googleapis/java-datastore/commit/c509a2a4229f864edef8681677d73f3c7be1101f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.0 ([#161](https://www.github.com/googleapis/java-datastore/issues/161)) ([39c8d72](https://www.github.com/googleapis/java-datastore/commit/39c8d723b318d08ca494b71167eaa80b1df6423d))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.1 ([#163](https://www.github.com/googleapis/java-datastore/issues/163)) ([7bfa07e](https://www.github.com/googleapis/java-datastore/commit/7bfa07eb3a7cf84fcf3e19f6a33914162fa28499))
+
 ## [1.103.0](https://www.github.com/googleapis/java-datastore/compare/v1.102.4...v1.103.0) (2020-06-02)
 
 
