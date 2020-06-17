@@ -46,28 +46,35 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * <a href="https://logback.qos.ch/">Logback</a> appender for StackDriver Cloud Logging.
+ * <a href="https://logback.qos.ch/">Logback</a> appender for Google Cloud Logging.
  *
- * <p>Appender configuration in logback.xml:
+ * <p>Appender configuration in <code>logback.xml</code>:
  *
- * <ul>
- *   <li>&lt;appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender"&gt;
- *   <li>&lt;log&gt;application.log&lt;/log&gt; (Optional, defaults to "java.log" : Stackdriver log
- *       name)
- *   <li>&lt;level&gt;ERROR&lt;/level&gt; (Optional, defaults to "INFO" : logs at or above this
- *       level)
- *   <li>&lt;flushLevel&gt;WARNING&lt;/flushLevel&gt; (Optional, defaults to "ERROR")
- *   <li>&lt;resourceType&gt;&lt;/resourceType&gt; (Optional, auto detects on App Engine Flex,
- *       Standard, GCE and GKE, defaults to "global". See <a
- *       href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported resource
- *       types</a>
- *   <li>&lt;credentialsFile&gt;/path/to/credentials/file&lt;/credentialsFile&gt; (Optional,
- *       defaults to the default credentials of the environment)
- *   <li>(Optional) add custom labels to log entries using {@link LoggingEnhancer} classes.
- *   <li>&lt;enhancer&gt;com.example.enhancer1&lt;/enhancer&gt;
- *   <li>&lt;enhancer&gt;com.example.enhancer2&lt;/enhancer&gt;
- *   <li>&lt;/appender&gt;
- * </ul>
+ * <pre>
+ *    &lt;appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender"&gt;
+ *         &lt;!-- Optional: filter logs at and above this level --&gt;
+ *         &lt;filter class="ch.qos.logback.classic.filter.ThresholdFilter"&gt;
+ *             &lt;level&gt;INFO&lt;/level&gt;
+ *         &lt;/filter&gt;
+ *
+ *         &lt;!-- Optional: defaults to "java.log" --&gt;
+ *         &lt;log&gt;application.log&lt;/log&gt;
+ *
+ *         &lt;!-- Optional: defaults to "ERROR" --&gt;
+ *         &lt;flushLevel&gt;WARNING&lt;/flushLevel&gt;
+ *
+ *         &lt;!-- Optional: auto detects on App Engine Flex, Standard, GCE and GKE, defaults to "global". See <a
+ *         href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported resource types</a> --&gt;
+ *         &lt;resourceType&gt;&lt;/resourceType&gt;
+ *
+ *         &lt;!-- Optional: defaults to the default credentials of the environment --&gt;
+ *         &lt;credentialsFile&gt;/path/to/credentials/file&lt;/credentialsFile&gt;
+ *
+ *         &lt;!-- Optional: add custom labels to log entries using {@link LoggingEnhancer} classes --&gt;
+ *         &lt;enhancer&gt;com.example.enhancers.TestLoggingEnhancer&lt/enhancer&gt;
+ *         &lt;enhancer&gt;com.example.enhancers.AnotherEnhancer&lt/enhancer&gt;
+ *     &lt;/appender&gt;
+ * </pre>
  */
 public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
@@ -89,8 +96,8 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private String log;
   private String resourceType;
   private String credentialsFile;
-  private Set<String> enhancerClassNames = new HashSet<>();
-  private Set<String> loggingEventEnhancerClassNames = new HashSet<>();
+  private final Set<String> enhancerClassNames = new HashSet<>();
+  private final Set<String> loggingEventEnhancerClassNames = new HashSet<>();
 
   /**
    * Batched logging requests get immediately flushed for logs at or above this level.
