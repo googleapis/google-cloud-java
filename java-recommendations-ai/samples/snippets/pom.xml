@@ -24,7 +24,6 @@
   </properties>
 
 
-  <!-- [START recommendationengine_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -41,8 +40,8 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recommendations-ai</artifactId>
+      <version>0.2.0</version>
     </dependency>
-    <!-- [END recommendationengine_install_with_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
