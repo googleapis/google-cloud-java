@@ -155,10 +155,10 @@ class RiskAnalysisKMap {
       // Wait for job completion semi-synchronously
       // For long jobs, consider using a truly asynchronous execution model such as Cloud Functions
       try {
-        done.get(1, TimeUnit.MINUTES);
-        Thread.sleep(500); // Wait for the job to become available
+        done.get(15, TimeUnit.MINUTES);
       } catch (TimeoutException e) {
-        System.out.println("Unable to verify job completion.");
+        System.out.println("Job was not completed after 15 minutes.");
+        return;
       } finally {
         subscriber.stopAsync();
         subscriber.awaitTerminated();

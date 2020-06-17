@@ -129,7 +129,8 @@ public class InspectGcsFileWithSampling {
       Subscriber subscriber = Subscriber.newBuilder(subscriptionName, messageHandler).build();
       subscriber.startAsync();
 
-      // Wait for the original job to complete
+      // Wait for job completion semi-synchronously
+      // For long jobs, consider using a truly asynchronous execution model such as Cloud Functions
       try {
         done.get(15, TimeUnit.MINUTES);
       } catch (TimeoutException e) {
