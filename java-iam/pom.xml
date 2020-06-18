@@ -63,38 +63,16 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-iam-parent</site.installationModule>
-    <google.common-protos.version>1.18.0</google.common-protos.version>
-    <protobuf.version>3.12.2</protobuf.version>
-    <junit.version>4.13</junit.version>
-    <grpc.version>1.30.0</grpc.version>
-    <guava.version>29.0-android</guava.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-bom</artifactId>
-        <version>${protobuf.version}</version>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>0.8.1</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.grpc</groupId>
-        <artifactId>grpc-bom</artifactId>
-        <version>${grpc.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-common-protos</artifactId>
-        <version>${google.common-protos.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -105,7 +83,7 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>${junit.version}</version>
+        <version>4.13</version>
         <scope>test</scope>
       </dependency>
     </dependencies>
@@ -179,7 +157,7 @@
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
             <link>https://googleapis.dev/java/google-auth-library/latest/</link>
             <link>https://googleapis.dev/java/gax/latest/</link>
-            <link>https://googleapis.github.io/api-common-java/${google.api-common.version}/apidocs/</link>
+            <link>https://googleapis.github.io/api-common-java/</link>
           </links>
         </configuration>
       </plugin>
