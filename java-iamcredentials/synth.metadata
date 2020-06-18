@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-iamcredentials.git",
-        "sha": "6678c3fe512ee409c87792cb52fe152400249572"
+        "sha": "b99221b17b17537c81175bc2b877e8bb91840760"
       }
     },
     {
