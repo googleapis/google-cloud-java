@@ -118,7 +118,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The name of the Pub/Sub topic to publish to.
-   * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+   * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -142,7 +142,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The name of the Pub/Sub topic to publish to.
-   * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+   * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -484,7 +484,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the Pub/Sub topic to publish to.
-     * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+     * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -507,7 +507,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the Pub/Sub topic to publish to.
-     * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+     * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -530,7 +530,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the Pub/Sub topic to publish to.
-     * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+     * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -552,7 +552,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the Pub/Sub topic to publish to.
-     * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+     * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
      * <code>string topic = 1;</code>
@@ -570,7 +570,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The name of the Pub/Sub topic to publish to.
-     * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+     * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
      * </pre>
      *
      * <code>string topic = 1;</code>

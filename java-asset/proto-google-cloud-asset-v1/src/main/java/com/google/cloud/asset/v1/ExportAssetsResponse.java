@@ -190,7 +190,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output configuration indicating where the results were output to.
-   * All results are in JSON format.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -206,7 +205,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output configuration indicating where the results were output to.
-   * All results are in JSON format.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -224,7 +222,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output configuration indicating where the results were output to.
-   * All results are in JSON format.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -784,7 +781,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -799,7 +795,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -820,7 +815,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -843,7 +837,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -863,7 +856,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -890,7 +882,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -911,7 +902,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -926,7 +916,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>
@@ -945,7 +934,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output configuration indicating where the results were output to.
-     * All results are in JSON format.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputConfig output_config = 2;</code>

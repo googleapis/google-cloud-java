@@ -109,7 +109,7 @@ public interface ExportAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For example:
+   * A list of asset types of which to take a snapshot for. Example:
    * "compute.googleapis.com/Disk". If specified, only matching assets will be
    * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -125,7 +125,7 @@ public interface ExportAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For example:
+   * A list of asset types of which to take a snapshot for. Example:
    * "compute.googleapis.com/Disk". If specified, only matching assets will be
    * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -141,7 +141,7 @@ public interface ExportAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For example:
+   * A list of asset types of which to take a snapshot for. Example:
    * "compute.googleapis.com/Disk". If specified, only matching assets will be
    * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -158,7 +158,7 @@ public interface ExportAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For example:
+   * A list of asset types of which to take a snapshot for. Example:
    * "compute.googleapis.com/Disk". If specified, only matching assets will be
    * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -204,7 +204,7 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * Required. Output configuration indicating where the results will be output
-   * to. All results will be in newline delimited JSON format.
+   * to.
    * </pre>
    *
    * <code>
@@ -219,7 +219,7 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * Required. Output configuration indicating where the results will be output
-   * to. All results will be in newline delimited JSON format.
+   * to.
    * </pre>
    *
    * <code>
@@ -234,7 +234,7 @@ public interface ExportAssetsRequestOrBuilder
    *
    * <pre>
    * Required. Output configuration indicating where the results will be output
-   * to. All results will be in newline delimited JSON format.
+   * to.
    * </pre>
    *
    * <code>

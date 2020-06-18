@@ -28,7 +28,7 @@ public interface PubsubDestinationOrBuilder
    *
    * <pre>
    * The name of the Pub/Sub topic to publish to.
-   * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+   * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
    * </pre>
    *
    * <code>string topic = 1;</code>
@@ -41,7 +41,7 @@ public interface PubsubDestinationOrBuilder
    *
    * <pre>
    * The name of the Pub/Sub topic to publish to.
-   * For example: `projects/PROJECT_ID/topics/TOPIC_ID`.
+   * Example: `projects/PROJECT_ID/topics/TOPIC_ID`.
    * </pre>
    *
    * <code>string topic = 1;</code>

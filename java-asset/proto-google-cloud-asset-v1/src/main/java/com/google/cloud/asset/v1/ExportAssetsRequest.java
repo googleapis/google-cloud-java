@@ -288,7 +288,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For example:
+   * A list of asset types of which to take a snapshot for. Example:
    * "compute.googleapis.com/Disk". If specified, only matching assets will be
    * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -306,7 +306,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For example:
+   * A list of asset types of which to take a snapshot for. Example:
    * "compute.googleapis.com/Disk". If specified, only matching assets will be
    * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -324,7 +324,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For example:
+   * A list of asset types of which to take a snapshot for. Example:
    * "compute.googleapis.com/Disk". If specified, only matching assets will be
    * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -343,7 +343,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For example:
+   * A list of asset types of which to take a snapshot for. Example:
    * "compute.googleapis.com/Disk". If specified, only matching assets will be
    * returned. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -404,7 +404,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Output configuration indicating where the results will be output
-   * to. All results will be in newline delimited JSON format.
+   * to.
    * </pre>
    *
    * <code>
@@ -422,7 +422,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Output configuration indicating where the results will be output
-   * to. All results will be in newline delimited JSON format.
+   * to.
    * </pre>
    *
    * <code>
@@ -442,7 +442,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Output configuration indicating where the results will be output
-   * to. All results will be in newline delimited JSON format.
+   * to.
    * </pre>
    *
    * <code>
@@ -1238,7 +1238,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1256,7 +1256,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1274,7 +1274,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1293,7 +1293,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1312,7 +1312,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1338,7 +1338,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1363,7 +1363,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1385,7 +1385,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1406,7 +1406,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For example:
+     * A list of asset types of which to take a snapshot for. Example:
      * "compute.googleapis.com/Disk". If specified, only matching assets will be
      * returned. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1536,7 +1536,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>
@@ -1553,7 +1553,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>
@@ -1576,7 +1576,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>
@@ -1601,7 +1601,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>
@@ -1623,7 +1623,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>
@@ -1652,7 +1652,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>
@@ -1675,7 +1675,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>
@@ -1692,7 +1692,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>
@@ -1713,7 +1713,7 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Output configuration indicating where the results will be output
-     * to. All results will be in newline delimited JSON format.
+     * to.
      * </pre>
      *
      * <code>

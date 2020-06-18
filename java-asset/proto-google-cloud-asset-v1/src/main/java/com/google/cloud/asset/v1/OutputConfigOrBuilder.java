@@ -63,9 +63,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Destination on BigQuery. The output table stores the fields in asset
-   * proto as columns in BigQuery. The resource/iam_policy field is converted
-   * to a record with each field to a column, except metadata to a single JSON
-   * string.
+   * proto as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
@@ -78,9 +76,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Destination on BigQuery. The output table stores the fields in asset
-   * proto as columns in BigQuery. The resource/iam_policy field is converted
-   * to a record with each field to a column, except metadata to a single JSON
-   * string.
+   * proto as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
@@ -93,9 +89,7 @@ public interface OutputConfigOrBuilder
    *
    * <pre>
    * Destination on BigQuery. The output table stores the fields in asset
-   * proto as columns in BigQuery. The resource/iam_policy field is converted
-   * to a record with each field to a column, except metadata to a single JSON
-   * string.
+   * proto as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>

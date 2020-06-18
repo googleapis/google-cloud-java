@@ -27,7 +27,45 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The full name of the asset. For example:
+   * The last update timestamp of an asset. update_time is updated when
+   * create/update/delete operation is performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The last update timestamp of an asset. update_time is updated when
+   * create/update/delete operation is performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The last update timestamp of an asset. update_time is updated when
+   * create/update/delete operation is performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full name of the asset. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -43,7 +81,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The full name of the asset. For example:
+   * The full name of the asset. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -60,7 +98,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The type of the asset. For example: `compute.googleapis.com/Disk`
+   * The type of the asset. Example: `compute.googleapis.com/Disk`
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -75,7 +113,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * The type of the asset. For example: `compute.googleapis.com/Disk`
+   * The type of the asset. Example: `compute.googleapis.com/Disk`
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -249,48 +287,115 @@ public interface AssetOrBuilder
   com.google.cloud.orgpolicy.v1.PolicyOrBuilder getOrgPolicyOrBuilder(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
    *
    * @return Whether the accessPolicy field is set.
    */
   boolean hasAccessPolicy();
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
    *
    * @return The accessPolicy.
    */
   com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy();
-  /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+   */
   com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder getAccessPolicyOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
    *
    * @return Whether the accessLevel field is set.
    */
   boolean hasAccessLevel();
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
    *
    * @return The accessLevel.
    */
   com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel();
-  /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+   */
   com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder getAccessLevelOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
    *
    * @return Whether the servicePerimeter field is set.
    */
   boolean hasServicePerimeter();
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
    *
    * @return The servicePerimeter.
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter();
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder
@@ -306,7 +411,7 @@ public interface AssetOrBuilder
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
-   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -324,7 +429,7 @@ public interface AssetOrBuilder
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
-   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -342,7 +447,7 @@ public interface AssetOrBuilder
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
-   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -361,7 +466,7 @@ public interface AssetOrBuilder
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
-   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>

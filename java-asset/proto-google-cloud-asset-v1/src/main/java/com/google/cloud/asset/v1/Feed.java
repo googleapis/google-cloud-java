@@ -128,6 +128,20 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 50:
+            {
+              com.google.type.Expr.Builder subBuilder = null;
+              if (condition_ != null) {
+                subBuilder = condition_.toBuilder();
+              }
+              condition_ = input.readMessage(com.google.type.Expr.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(condition_);
+                condition_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -234,8 +248,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
-   * example:
+   * specified asset_names or asset_types are exported to the feed.
+   * Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -255,8 +269,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
-   * example:
+   * specified asset_names or asset_types are exported to the feed.
+   * Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -276,8 +290,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
-   * example:
+   * specified asset_names or asset_types are exported to the feed.
+   * Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -298,8 +312,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
-   * example:
+   * specified asset_names or asset_types are exported to the feed.
+   * Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -323,8 +337,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
-   * For example: `"compute.googleapis.com/Disk"`
+   * specified asset_names or asset_types are exported to the feed.
+   * Example: `"compute.googleapis.com/Disk"`
    * See [this
    * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for a list of all supported asset types.
@@ -343,8 +357,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
-   * For example: `"compute.googleapis.com/Disk"`
+   * specified asset_names or asset_types are exported to the feed.
+   * Example: `"compute.googleapis.com/Disk"`
    * See [this
    * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for a list of all supported asset types.
@@ -363,8 +377,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
-   * For example: `"compute.googleapis.com/Disk"`
+   * specified asset_names or asset_types are exported to the feed.
+   * Example: `"compute.googleapis.com/Disk"`
    * See [this
    * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for a list of all supported asset types.
@@ -384,8 +398,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
-   * For example: `"compute.googleapis.com/Disk"`
+   * specified asset_names or asset_types are exported to the feed.
+   * Example: `"compute.googleapis.com/Disk"`
    * See [this
    * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for a list of all supported asset types.
@@ -495,6 +509,73 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     return getFeedOutputConfig();
   }
 
+  public static final int CONDITION_FIELD_NUMBER = 6;
+  private com.google.type.Expr condition_;
+  /**
+   *
+   *
+   * <pre>
+   * A condition which determines whether an asset update should be published.
+   * If specified, an asset will be returned only when the expression evaluates
+   * to true.
+   * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+   * (https://github.com/google/cel-spec) on a TemporalAsset with name
+   * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * optional.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 6;</code>
+   *
+   * @return Whether the condition field is set.
+   */
+  @java.lang.Override
+  public boolean hasCondition() {
+    return condition_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A condition which determines whether an asset update should be published.
+   * If specified, an asset will be returned only when the expression evaluates
+   * to true.
+   * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+   * (https://github.com/google/cel-spec) on a TemporalAsset with name
+   * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * optional.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 6;</code>
+   *
+   * @return The condition.
+   */
+  @java.lang.Override
+  public com.google.type.Expr getCondition() {
+    return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A condition which determines whether an asset update should be published.
+   * If specified, an asset will be returned only when the expression evaluates
+   * to true.
+   * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+   * (https://github.com/google/cel-spec) on a TemporalAsset with name
+   * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * optional.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.type.ExprOrBuilder getConditionOrBuilder() {
+    return getCondition();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -524,6 +605,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     }
     if (feedOutputConfig_ != null) {
       output.writeMessage(5, getFeedOutputConfig());
+    }
+    if (condition_ != null) {
+      output.writeMessage(6, getCondition());
     }
     unknownFields.writeTo(output);
   }
@@ -560,6 +644,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     if (feedOutputConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFeedOutputConfig());
     }
+    if (condition_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCondition());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -582,6 +669,10 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     if (hasFeedOutputConfig() != other.hasFeedOutputConfig()) return false;
     if (hasFeedOutputConfig()) {
       if (!getFeedOutputConfig().equals(other.getFeedOutputConfig())) return false;
+    }
+    if (hasCondition() != other.hasCondition()) return false;
+    if (hasCondition()) {
+      if (!getCondition().equals(other.getCondition())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -609,6 +700,10 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     if (hasFeedOutputConfig()) {
       hash = (37 * hash) + FEED_OUTPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getFeedOutputConfig().hashCode();
+    }
+    if (hasCondition()) {
+      hash = (37 * hash) + CONDITION_FIELD_NUMBER;
+      hash = (53 * hash) + getCondition().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -771,6 +866,12 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         feedOutputConfig_ = null;
         feedOutputConfigBuilder_ = null;
       }
+      if (conditionBuilder_ == null) {
+        condition_ = null;
+      } else {
+        condition_ = null;
+        conditionBuilder_ = null;
+      }
       return this;
     }
 
@@ -814,6 +915,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         result.feedOutputConfig_ = feedOutputConfig_;
       } else {
         result.feedOutputConfig_ = feedOutputConfigBuilder_.build();
+      }
+      if (conditionBuilder_ == null) {
+        result.condition_ = condition_;
+      } else {
+        result.condition_ = conditionBuilder_.build();
       }
       onBuilt();
       return result;
@@ -893,6 +999,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasFeedOutputConfig()) {
         mergeFeedOutputConfig(other.getFeedOutputConfig());
+      }
+      if (other.hasCondition()) {
+        mergeCondition(other.getCondition());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1071,8 +1180,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1092,8 +1201,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1113,8 +1222,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1135,8 +1244,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1157,8 +1266,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1186,8 +1295,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1214,8 +1323,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1239,8 +1348,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1263,8 +1372,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of the full names of the assets to receive updates. You must specify
      * either or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed. For
-     * example:
+     * specified asset_names or asset_types are exported to the feed.
+     * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Resource
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1302,8 +1411,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1322,8 +1431,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1342,8 +1451,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1363,8 +1472,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1384,8 +1493,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1412,8 +1521,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1439,8 +1548,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1463,8 +1572,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1486,8 +1595,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A list of types of the assets to receive updates. You must specify either
      * or both of asset_names and asset_types. Only asset updates matching
-     * specified asset_names and asset_types are exported to the feed.
-     * For example: `"compute.googleapis.com/Disk"`
+     * specified asset_names or asset_types are exported to the feed.
+     * Example: `"compute.googleapis.com/Disk"`
      * See [this
      * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for a list of all supported asset types.
@@ -1816,6 +1925,241 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         feedOutputConfig_ = null;
       }
       return feedOutputConfigBuilder_;
+    }
+
+    private com.google.type.Expr condition_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
+        conditionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     *
+     * @return Whether the condition field is set.
+     */
+    public boolean hasCondition() {
+      return conditionBuilder_ != null || condition_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     *
+     * @return The condition.
+     */
+    public com.google.type.Expr getCondition() {
+      if (conditionBuilder_ == null) {
+        return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
+      } else {
+        return conditionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     */
+    public Builder setCondition(com.google.type.Expr value) {
+      if (conditionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        condition_ = value;
+        onChanged();
+      } else {
+        conditionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     */
+    public Builder setCondition(com.google.type.Expr.Builder builderForValue) {
+      if (conditionBuilder_ == null) {
+        condition_ = builderForValue.build();
+        onChanged();
+      } else {
+        conditionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     */
+    public Builder mergeCondition(com.google.type.Expr value) {
+      if (conditionBuilder_ == null) {
+        if (condition_ != null) {
+          condition_ = com.google.type.Expr.newBuilder(condition_).mergeFrom(value).buildPartial();
+        } else {
+          condition_ = value;
+        }
+        onChanged();
+      } else {
+        conditionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     */
+    public Builder clearCondition() {
+      if (conditionBuilder_ == null) {
+        condition_ = null;
+        onChanged();
+      } else {
+        condition_ = null;
+        conditionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     */
+    public com.google.type.Expr.Builder getConditionBuilder() {
+
+      onChanged();
+      return getConditionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     */
+    public com.google.type.ExprOrBuilder getConditionOrBuilder() {
+      if (conditionBuilder_ != null) {
+        return conditionBuilder_.getMessageOrBuilder();
+      } else {
+        return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition which determines whether an asset update should be published.
+     * If specified, an asset will be returned only when the expression evaluates
+     * to true.
+     * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+     * (https://github.com/google/cel-spec) on a TemporalAsset with name
+     * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+     * == true") will only publish Asset deletions. Other fields in `Expr` are
+     * optional.
+     * </pre>
+     *
+     * <code>.google.type.Expr condition = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
+        getConditionFieldBuilder() {
+      if (conditionBuilder_ == null) {
+        conditionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>(
+                getCondition(), getParentForChildren(), isClean());
+        condition_ = null;
+      }
+      return conditionBuilder_;
     }
 
     @java.lang.Override

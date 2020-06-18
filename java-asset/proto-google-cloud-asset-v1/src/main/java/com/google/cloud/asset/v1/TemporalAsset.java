@@ -38,7 +38,9 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private TemporalAsset() {}
+  private TemporalAsset() {
+    priorAssetState_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -105,6 +107,28 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              priorAssetState_ = rawValue;
+              break;
+            }
+          case 42:
+            {
+              com.google.cloud.asset.v1.Asset.Builder subBuilder = null;
+              if (priorAsset_ != null) {
+                subBuilder = priorAsset_.toBuilder();
+              }
+              priorAsset_ =
+                  input.readMessage(com.google.cloud.asset.v1.Asset.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(priorAsset_);
+                priorAsset_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,6 +161,209 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.asset.v1.TemporalAsset.class,
             com.google.cloud.asset.v1.TemporalAsset.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * State of prior asset.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.asset.v1.TemporalAsset.PriorAssetState}
+   */
+  public enum PriorAssetState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * prior_asset is not applicable for the current asset.
+     * </pre>
+     *
+     * <code>PRIOR_ASSET_STATE_UNSPECIFIED = 0;</code>
+     */
+    PRIOR_ASSET_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * prior_asset is populated correctly.
+     * </pre>
+     *
+     * <code>PRESENT = 1;</code>
+     */
+    PRESENT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Failed to set prior_asset.
+     * </pre>
+     *
+     * <code>INVALID = 2;</code>
+     */
+    INVALID(2),
+    /**
+     *
+     *
+     * <pre>
+     * Current asset is the first known state.
+     * </pre>
+     *
+     * <code>DOES_NOT_EXIST = 3;</code>
+     */
+    DOES_NOT_EXIST(3),
+    /**
+     *
+     *
+     * <pre>
+     * prior_asset is a deletion.
+     * </pre>
+     *
+     * <code>DELETED = 4;</code>
+     */
+    DELETED(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * prior_asset is not applicable for the current asset.
+     * </pre>
+     *
+     * <code>PRIOR_ASSET_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PRIOR_ASSET_STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * prior_asset is populated correctly.
+     * </pre>
+     *
+     * <code>PRESENT = 1;</code>
+     */
+    public static final int PRESENT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Failed to set prior_asset.
+     * </pre>
+     *
+     * <code>INVALID = 2;</code>
+     */
+    public static final int INVALID_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Current asset is the first known state.
+     * </pre>
+     *
+     * <code>DOES_NOT_EXIST = 3;</code>
+     */
+    public static final int DOES_NOT_EXIST_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * prior_asset is a deletion.
+     * </pre>
+     *
+     * <code>DELETED = 4;</code>
+     */
+    public static final int DELETED_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PriorAssetState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PriorAssetState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PRIOR_ASSET_STATE_UNSPECIFIED;
+        case 1:
+          return PRESENT;
+        case 2:
+          return INVALID;
+        case 3:
+          return DOES_NOT_EXIST;
+        case 4:
+          return DELETED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PriorAssetState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PriorAssetState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PriorAssetState>() {
+              public PriorAssetState findValueByNumber(int number) {
+                return PriorAssetState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.asset.v1.TemporalAsset.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PriorAssetState[] VALUES = values();
+
+    public static PriorAssetState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PriorAssetState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.asset.v1.TemporalAsset.PriorAssetState)
   }
 
   public static final int WINDOW_FIELD_NUMBER = 1;
@@ -249,6 +476,93 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     return getAsset();
   }
 
+  public static final int PRIOR_ASSET_STATE_FIELD_NUMBER = 4;
+  private int priorAssetState_;
+  /**
+   *
+   *
+   * <pre>
+   * State of prior_asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+   *
+   * @return The enum numeric value on the wire for priorAssetState.
+   */
+  @java.lang.Override
+  public int getPriorAssetStateValue() {
+    return priorAssetState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * State of prior_asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+   *
+   * @return The priorAssetState.
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.TemporalAsset.PriorAssetState getPriorAssetState() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.asset.v1.TemporalAsset.PriorAssetState result =
+        com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.valueOf(priorAssetState_);
+    return result == null
+        ? com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int PRIOR_ASSET_FIELD_NUMBER = 5;
+  private com.google.cloud.asset.v1.Asset priorAsset_;
+  /**
+   *
+   *
+   * <pre>
+   * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+   * Currently this is only set for responses in Real-Time Feed.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+   *
+   * @return Whether the priorAsset field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriorAsset() {
+    return priorAsset_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+   * Currently this is only set for responses in Real-Time Feed.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+   *
+   * @return The priorAsset.
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.Asset getPriorAsset() {
+    return priorAsset_ == null ? com.google.cloud.asset.v1.Asset.getDefaultInstance() : priorAsset_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+   * Currently this is only set for responses in Real-Time Feed.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.AssetOrBuilder getPriorAssetOrBuilder() {
+    return getPriorAsset();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -272,6 +586,14 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     if (asset_ != null) {
       output.writeMessage(3, getAsset());
     }
+    if (priorAssetState_
+        != com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.PRIOR_ASSET_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, priorAssetState_);
+    }
+    if (priorAsset_ != null) {
+      output.writeMessage(5, getPriorAsset());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -289,6 +611,14 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     }
     if (asset_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAsset());
+    }
+    if (priorAssetState_
+        != com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.PRIOR_ASSET_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, priorAssetState_);
+    }
+    if (priorAsset_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPriorAsset());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -314,6 +644,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     if (hasAsset()) {
       if (!getAsset().equals(other.getAsset())) return false;
     }
+    if (priorAssetState_ != other.priorAssetState_) return false;
+    if (hasPriorAsset() != other.hasPriorAsset()) return false;
+    if (hasPriorAsset()) {
+      if (!getPriorAsset().equals(other.getPriorAsset())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -334,6 +669,12 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     if (hasAsset()) {
       hash = (37 * hash) + ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getAsset().hashCode();
+    }
+    hash = (37 * hash) + PRIOR_ASSET_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + priorAssetState_;
+    if (hasPriorAsset()) {
+      hash = (37 * hash) + PRIOR_ASSET_FIELD_NUMBER;
+      hash = (53 * hash) + getPriorAsset().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -495,6 +836,14 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         asset_ = null;
         assetBuilder_ = null;
       }
+      priorAssetState_ = 0;
+
+      if (priorAssetBuilder_ == null) {
+        priorAsset_ = null;
+      } else {
+        priorAsset_ = null;
+        priorAssetBuilder_ = null;
+      }
       return this;
     }
 
@@ -532,6 +881,12 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         result.asset_ = asset_;
       } else {
         result.asset_ = assetBuilder_.build();
+      }
+      result.priorAssetState_ = priorAssetState_;
+      if (priorAssetBuilder_ == null) {
+        result.priorAsset_ = priorAsset_;
+      } else {
+        result.priorAsset_ = priorAssetBuilder_.build();
       }
       onBuilt();
       return result;
@@ -590,6 +945,12 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAsset()) {
         mergeAsset(other.getAsset());
+      }
+      if (other.priorAssetState_ != 0) {
+        setPriorAssetStateValue(other.getPriorAssetStateValue());
+      }
+      if (other.hasPriorAsset()) {
+        mergePriorAsset(other.getPriorAsset());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1034,6 +1395,294 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         asset_ = null;
       }
       return assetBuilder_;
+    }
+
+    private int priorAssetState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * State of prior_asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+     *
+     * @return The enum numeric value on the wire for priorAssetState.
+     */
+    @java.lang.Override
+    public int getPriorAssetStateValue() {
+      return priorAssetState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of prior_asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for priorAssetState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriorAssetStateValue(int value) {
+
+      priorAssetState_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of prior_asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+     *
+     * @return The priorAssetState.
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.TemporalAsset.PriorAssetState getPriorAssetState() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.asset.v1.TemporalAsset.PriorAssetState result =
+          com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.valueOf(priorAssetState_);
+      return result == null
+          ? com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of prior_asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+     *
+     * @param value The priorAssetState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriorAssetState(
+        com.google.cloud.asset.v1.TemporalAsset.PriorAssetState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      priorAssetState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * State of prior_asset.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPriorAssetState() {
+
+      priorAssetState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.asset.v1.Asset priorAsset_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.Asset,
+            com.google.cloud.asset.v1.Asset.Builder,
+            com.google.cloud.asset.v1.AssetOrBuilder>
+        priorAssetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     *
+     * @return Whether the priorAsset field is set.
+     */
+    public boolean hasPriorAsset() {
+      return priorAssetBuilder_ != null || priorAsset_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     *
+     * @return The priorAsset.
+     */
+    public com.google.cloud.asset.v1.Asset getPriorAsset() {
+      if (priorAssetBuilder_ == null) {
+        return priorAsset_ == null
+            ? com.google.cloud.asset.v1.Asset.getDefaultInstance()
+            : priorAsset_;
+      } else {
+        return priorAssetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     */
+    public Builder setPriorAsset(com.google.cloud.asset.v1.Asset value) {
+      if (priorAssetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        priorAsset_ = value;
+        onChanged();
+      } else {
+        priorAssetBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     */
+    public Builder setPriorAsset(com.google.cloud.asset.v1.Asset.Builder builderForValue) {
+      if (priorAssetBuilder_ == null) {
+        priorAsset_ = builderForValue.build();
+        onChanged();
+      } else {
+        priorAssetBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     */
+    public Builder mergePriorAsset(com.google.cloud.asset.v1.Asset value) {
+      if (priorAssetBuilder_ == null) {
+        if (priorAsset_ != null) {
+          priorAsset_ =
+              com.google.cloud.asset.v1.Asset.newBuilder(priorAsset_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          priorAsset_ = value;
+        }
+        onChanged();
+      } else {
+        priorAssetBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     */
+    public Builder clearPriorAsset() {
+      if (priorAssetBuilder_ == null) {
+        priorAsset_ = null;
+        onChanged();
+      } else {
+        priorAsset_ = null;
+        priorAssetBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     */
+    public com.google.cloud.asset.v1.Asset.Builder getPriorAssetBuilder() {
+
+      onChanged();
+      return getPriorAssetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     */
+    public com.google.cloud.asset.v1.AssetOrBuilder getPriorAssetOrBuilder() {
+      if (priorAssetBuilder_ != null) {
+        return priorAssetBuilder_.getMessageOrBuilder();
+      } else {
+        return priorAsset_ == null
+            ? com.google.cloud.asset.v1.Asset.getDefaultInstance()
+            : priorAsset_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+     * Currently this is only set for responses in Real-Time Feed.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.Asset,
+            com.google.cloud.asset.v1.Asset.Builder,
+            com.google.cloud.asset.v1.AssetOrBuilder>
+        getPriorAssetFieldBuilder() {
+      if (priorAssetBuilder_ == null) {
+        priorAssetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1.Asset,
+                com.google.cloud.asset.v1.Asset.Builder,
+                com.google.cloud.asset.v1.AssetOrBuilder>(
+                getPriorAsset(), getParentForChildren(), isClean());
+        priorAsset_ = null;
+      }
+      return priorAssetBuilder_;
     }
 
     @java.lang.Override

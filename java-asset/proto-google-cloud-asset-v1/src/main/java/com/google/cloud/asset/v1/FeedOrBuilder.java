@@ -64,8 +64,8 @@ public interface FeedOrBuilder
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
-   * example:
+   * specified asset_names or asset_types are exported to the feed.
+   * Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -83,8 +83,8 @@ public interface FeedOrBuilder
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
-   * example:
+   * specified asset_names or asset_types are exported to the feed.
+   * Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -102,8 +102,8 @@ public interface FeedOrBuilder
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
-   * example:
+   * specified asset_names or asset_types are exported to the feed.
+   * Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -122,8 +122,8 @@ public interface FeedOrBuilder
    * <pre>
    * A list of the full names of the assets to receive updates. You must specify
    * either or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed. For
-   * example:
+   * specified asset_names or asset_types are exported to the feed.
+   * Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
    * See [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -143,8 +143,8 @@ public interface FeedOrBuilder
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
-   * For example: `"compute.googleapis.com/Disk"`
+   * specified asset_names or asset_types are exported to the feed.
+   * Example: `"compute.googleapis.com/Disk"`
    * See [this
    * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for a list of all supported asset types.
@@ -161,8 +161,8 @@ public interface FeedOrBuilder
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
-   * For example: `"compute.googleapis.com/Disk"`
+   * specified asset_names or asset_types are exported to the feed.
+   * Example: `"compute.googleapis.com/Disk"`
    * See [this
    * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for a list of all supported asset types.
@@ -179,8 +179,8 @@ public interface FeedOrBuilder
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
-   * For example: `"compute.googleapis.com/Disk"`
+   * specified asset_names or asset_types are exported to the feed.
+   * Example: `"compute.googleapis.com/Disk"`
    * See [this
    * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for a list of all supported asset types.
@@ -198,8 +198,8 @@ public interface FeedOrBuilder
    * <pre>
    * A list of types of the assets to receive updates. You must specify either
    * or both of asset_names and asset_types. Only asset updates matching
-   * specified asset_names and asset_types are exported to the feed.
-   * For example: `"compute.googleapis.com/Disk"`
+   * specified asset_names or asset_types are exported to the feed.
+   * Example: `"compute.googleapis.com/Disk"`
    * See [this
    * topic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for a list of all supported asset types.
@@ -282,4 +282,60 @@ public interface FeedOrBuilder
    * </code>
    */
   com.google.cloud.asset.v1.FeedOutputConfigOrBuilder getFeedOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A condition which determines whether an asset update should be published.
+   * If specified, an asset will be returned only when the expression evaluates
+   * to true.
+   * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+   * (https://github.com/google/cel-spec) on a TemporalAsset with name
+   * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * optional.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 6;</code>
+   *
+   * @return Whether the condition field is set.
+   */
+  boolean hasCondition();
+  /**
+   *
+   *
+   * <pre>
+   * A condition which determines whether an asset update should be published.
+   * If specified, an asset will be returned only when the expression evaluates
+   * to true.
+   * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+   * (https://github.com/google/cel-spec) on a TemporalAsset with name
+   * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * optional.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 6;</code>
+   *
+   * @return The condition.
+   */
+  com.google.type.Expr getCondition();
+  /**
+   *
+   *
+   * <pre>
+   * A condition which determines whether an asset update should be published.
+   * If specified, an asset will be returned only when the expression evaluates
+   * to true.
+   * When set, `expression` field in the `Expr` must be a valid [CEL expression]
+   * (https://github.com/google/cel-spec) on a TemporalAsset with name
+   * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
+   * == true") will only publish Asset deletions. Other fields in `Expr` are
+   * optional.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 6;</code>
+   */
+  com.google.type.ExprOrBuilder getConditionOrBuilder();
 }

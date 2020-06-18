@@ -105,4 +105,67 @@ public interface TemporalAssetOrBuilder
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
    */
   com.google.cloud.asset.v1.AssetOrBuilder getAssetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * State of prior_asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+   *
+   * @return The enum numeric value on the wire for priorAssetState.
+   */
+  int getPriorAssetStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * State of prior_asset.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.TemporalAsset.PriorAssetState prior_asset_state = 4;</code>
+   *
+   * @return The priorAssetState.
+   */
+  com.google.cloud.asset.v1.TemporalAsset.PriorAssetState getPriorAssetState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+   * Currently this is only set for responses in Real-Time Feed.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+   *
+   * @return Whether the priorAsset field is set.
+   */
+  boolean hasPriorAsset();
+  /**
+   *
+   *
+   * <pre>
+   * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+   * Currently this is only set for responses in Real-Time Feed.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+   *
+   * @return The priorAsset.
+   */
+  com.google.cloud.asset.v1.Asset getPriorAsset();
+  /**
+   *
+   *
+   * <pre>
+   * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
+   * Currently this is only set for responses in Real-Time Feed.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
+   */
+  com.google.cloud.asset.v1.AssetOrBuilder getPriorAssetOrBuilder();
 }

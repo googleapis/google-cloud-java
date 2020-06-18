@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A BigQuery destination.
+ * A BigQuery destination for exporting assets to.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.BigQueryDestination}
@@ -434,7 +434,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A BigQuery destination.
+   * A BigQuery destination for exporting assets to.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.BigQueryDestination}

@@ -26,7 +26,10 @@ package com.google.cloud.asset.v1;
  * [resource
  * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
  * a resource outside the Google Cloud resource hierarchy (such as Google
- * Kubernetes Engine clusters and objects), or a Cloud IAM policy.
+ * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+ * See [Supported asset
+ * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+ * for more information.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.Asset}
@@ -207,6 +210,21 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               ancestors_.add(s);
               break;
             }
+          case 90:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -296,13 +314,62 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return AccessContextPolicyCase.forNumber(accessContextPolicyCase_);
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The last update timestamp of an asset. update_time is updated when
+   * create/update/delete operation is performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The last update timestamp of an asset. update_time is updated when
+   * create/update/delete operation is performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The last update timestamp of an asset. update_time is updated when
+   * create/update/delete operation is performed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
    *
    *
    * <pre>
-   * The full name of the asset. For example:
+   * The full name of the asset. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -329,7 +396,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the asset. For example:
+   * The full name of the asset. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
    * See [Resource
    * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -359,7 +426,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the asset. For example: `compute.googleapis.com/Disk`
+   * The type of the asset. Example: `compute.googleapis.com/Disk`
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -385,7 +452,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the asset. For example: `compute.googleapis.com/Disk`
+   * The type of the asset. Example: `compute.googleapis.com/Disk`
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -610,6 +677,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCESS_POLICY_FIELD_NUMBER = 7;
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
    *
    * @return Whether the accessPolicy field is set.
@@ -619,6 +693,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return accessContextPolicyCase_ == 7;
   }
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
    *
    * @return The accessPolicy.
@@ -630,7 +711,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
   }
-  /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access policy user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+   */
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder
       getAccessPolicyOrBuilder() {
@@ -642,6 +732,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCESS_LEVEL_FIELD_NUMBER = 8;
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
    *
    * @return Whether the accessLevel field is set.
@@ -651,6 +748,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return accessContextPolicyCase_ == 8;
   }
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
    *
    * @return The accessLevel.
@@ -662,7 +766,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
   }
-  /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [access level user
+   * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+   * </pre>
+   *
+   * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+   */
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder
       getAccessLevelOrBuilder() {
@@ -674,6 +787,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVICE_PERIMETER_FIELD_NUMBER = 9;
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
    *
    * @return Whether the servicePerimeter field is set.
@@ -683,6 +803,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return accessContextPolicyCase_ == 9;
   }
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
    *
    * @return The servicePerimeter.
@@ -695,6 +822,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return com.google.identity.accesscontextmanager.v1.ServicePerimeter.getDefaultInstance();
   }
   /**
+   *
+   *
+   * <pre>
+   * Please also refer to the [service perimeter user
+   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+   * </pre>
+   *
    * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
    */
   @java.lang.Override
@@ -718,7 +852,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
-   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -738,7 +872,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
-   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -758,7 +892,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
-   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -779,7 +913,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * with the closest ancestor in the hierarchy and ends at root. If the asset
    * is a project, folder, or organization, the ancestry path starts from the
    * asset itself.
-   * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+   * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
    * </pre>
    *
    * <code>repeated string ancestors = 10;</code>
@@ -835,6 +969,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < ancestors_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, ancestors_.getRaw(i));
     }
+    if (updateTime_ != null) {
+      output.writeMessage(11, getUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -883,6 +1020,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAncestorsList().size();
     }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -898,6 +1038,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.asset.v1.Asset other = (com.google.cloud.asset.v1.Asset) obj;
 
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!getName().equals(other.getName())) return false;
     if (!getAssetType().equals(other.getAssetType())) return false;
     if (hasResource() != other.hasResource()) return false;
@@ -935,6 +1079,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + ASSET_TYPE_FIELD_NUMBER;
@@ -1078,7 +1226,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * a resource outside the Google Cloud resource hierarchy (such as Google
-   * Kubernetes Engine clusters and objects), or a Cloud IAM policy.
+   * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+   * See [Supported asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
+   * for more information.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.Asset}
@@ -1120,6 +1271,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       name_ = "";
 
       assetType_ = "";
@@ -1173,6 +1330,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.Asset buildPartial() {
       com.google.cloud.asset.v1.Asset result = new com.google.cloud.asset.v1.Asset(this);
       int from_bitField0_ = bitField0_;
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       result.name_ = name_;
       result.assetType_ = assetType_;
       if (resourceBuilder_ == null) {
@@ -1270,6 +1432,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.asset.v1.Asset other) {
       if (other == com.google.cloud.asset.v1.Asset.getDefaultInstance()) return this;
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -1387,12 +1552,204 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The last update timestamp of an asset. update_time is updated when
+     * create/update/delete operation is performed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
      *
      * <pre>
-     * The full name of the asset. For example:
+     * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1418,7 +1775,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example:
+     * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1444,7 +1801,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example:
+     * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1469,7 +1826,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example:
+     * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1490,7 +1847,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example:
+     * The full name of the asset. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`
      * See [Resource
      * names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -1518,7 +1875,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the asset. For example: `compute.googleapis.com/Disk`
+     * The type of the asset. Example: `compute.googleapis.com/Disk`
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -1543,7 +1900,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the asset. For example: `compute.googleapis.com/Disk`
+     * The type of the asset. Example: `compute.googleapis.com/Disk`
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -1568,7 +1925,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the asset. For example: `compute.googleapis.com/Disk`
+     * The type of the asset. Example: `compute.googleapis.com/Disk`
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -1592,7 +1949,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the asset. For example: `compute.googleapis.com/Disk`
+     * The type of the asset. Example: `compute.googleapis.com/Disk`
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -1612,7 +1969,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the asset. For example: `compute.googleapis.com/Disk`
+     * The type of the asset. Example: `compute.googleapis.com/Disk`
      * See [Supported asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
      * for more information.
@@ -2478,6 +2835,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder>
         accessPolicyBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
      *
      * @return Whether the accessPolicy field is set.
@@ -2487,6 +2851,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return accessContextPolicyCase_ == 7;
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
      *
      * @return The accessPolicy.
@@ -2505,7 +2876,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
       }
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     */
     public Builder setAccessPolicy(com.google.identity.accesscontextmanager.v1.AccessPolicy value) {
       if (accessPolicyBuilder_ == null) {
         if (value == null) {
@@ -2519,7 +2899,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       accessContextPolicyCase_ = 7;
       return this;
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     */
     public Builder setAccessPolicy(
         com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder builderForValue) {
       if (accessPolicyBuilder_ == null) {
@@ -2531,7 +2920,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       accessContextPolicyCase_ = 7;
       return this;
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     */
     public Builder mergeAccessPolicy(
         com.google.identity.accesscontextmanager.v1.AccessPolicy value) {
       if (accessPolicyBuilder_ == null) {
@@ -2557,7 +2955,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       accessContextPolicyCase_ = 7;
       return this;
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     */
     public Builder clearAccessPolicy() {
       if (accessPolicyBuilder_ == null) {
         if (accessContextPolicyCase_ == 7) {
@@ -2574,12 +2981,30 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     */
     public com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder
         getAccessPolicyBuilder() {
       return getAccessPolicyFieldBuilder().getBuilder();
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     */
     @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder
         getAccessPolicyOrBuilder() {
@@ -2592,7 +3017,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance();
       }
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access policy user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-policies).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessPolicy access_policy = 7;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.identity.accesscontextmanager.v1.AccessPolicy,
             com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder,
@@ -2625,6 +3059,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder>
         accessLevelBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
      *
      * @return Whether the accessLevel field is set.
@@ -2634,6 +3075,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return accessContextPolicyCase_ == 8;
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
      *
      * @return The accessLevel.
@@ -2652,7 +3100,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
       }
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     */
     public Builder setAccessLevel(com.google.identity.accesscontextmanager.v1.AccessLevel value) {
       if (accessLevelBuilder_ == null) {
         if (value == null) {
@@ -2666,7 +3123,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       accessContextPolicyCase_ = 8;
       return this;
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     */
     public Builder setAccessLevel(
         com.google.identity.accesscontextmanager.v1.AccessLevel.Builder builderForValue) {
       if (accessLevelBuilder_ == null) {
@@ -2678,7 +3144,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       accessContextPolicyCase_ = 8;
       return this;
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     */
     public Builder mergeAccessLevel(com.google.identity.accesscontextmanager.v1.AccessLevel value) {
       if (accessLevelBuilder_ == null) {
         if (accessContextPolicyCase_ == 8
@@ -2703,7 +3178,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       accessContextPolicyCase_ = 8;
       return this;
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     */
     public Builder clearAccessLevel() {
       if (accessLevelBuilder_ == null) {
         if (accessContextPolicyCase_ == 8) {
@@ -2720,11 +3204,29 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     */
     public com.google.identity.accesscontextmanager.v1.AccessLevel.Builder getAccessLevelBuilder() {
       return getAccessLevelFieldBuilder().getBuilder();
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     */
     @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder
         getAccessLevelOrBuilder() {
@@ -2737,7 +3239,16 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return com.google.identity.accesscontextmanager.v1.AccessLevel.getDefaultInstance();
       }
     }
-    /** <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [access level user
+     * guide](https://cloud.google.com/access-context-manager/docs/overview#access-levels).
+     * </pre>
+     *
+     * <code>.google.identity.accesscontextmanager.v1.AccessLevel access_level = 8;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.identity.accesscontextmanager.v1.AccessLevel,
             com.google.identity.accesscontextmanager.v1.AccessLevel.Builder,
@@ -2770,6 +3281,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.identity.accesscontextmanager.v1.ServicePerimeterOrBuilder>
         servicePerimeterBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      *
      * @return Whether the servicePerimeter field is set.
@@ -2779,6 +3297,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return accessContextPolicyCase_ == 9;
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      *
      * @return The servicePerimeter.
@@ -2799,6 +3324,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      */
     public Builder setServicePerimeter(
@@ -2816,6 +3348,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      */
     public Builder setServicePerimeter(
@@ -2830,6 +3369,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      */
     public Builder mergeServicePerimeter(
@@ -2859,6 +3405,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      */
     public Builder clearServicePerimeter() {
@@ -2878,6 +3431,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      */
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder
@@ -2885,6 +3445,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return getServicePerimeterFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      */
     @java.lang.Override
@@ -2901,6 +3468,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Please also refer to the [service perimeter user
+     * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
+     * </pre>
+     *
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeter service_perimeter = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2948,7 +3522,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -2968,7 +3542,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -2988,7 +3562,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -3009,7 +3583,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -3030,7 +3604,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -3058,7 +3632,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -3085,7 +3659,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -3109,7 +3683,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
@@ -3132,7 +3706,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * with the closest ancestor in the hierarchy and ends at root. If the asset
      * is a project, folder, or organization, the ancestry path starts from the
      * asset itself.
-     * For example: `["projects/123456789", "folders/5432", "organizations/1234"]`
+     * Example: `["projects/123456789", "folders/5432", "organizations/1234"]`
      * </pre>
      *
      * <code>repeated string ancestors = 10;</code>
