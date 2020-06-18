@@ -18,6 +18,7 @@ package com.google.cloud.examples.securitycenter.snippets;
 
 // [START scc_update_notification_config]
 import com.google.cloud.securitycenter.v1.NotificationConfig;
+import com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -48,9 +49,13 @@ final class UpdateNotificationConfigSnippets {
             .setName(notificationConfigName)
             .setDescription("updated description")
             .setPubsubTopic(pubsubTopic)
+            .setStreamingConfig(StreamingConfig.newBuilder().setFilter("state = \"ACTIVE\""))
             .build();
     FieldMask fieldMask =
-        FieldMask.newBuilder().addPaths("description").addPaths("pubsub_topic").build();
+        FieldMask.newBuilder()
+          .addPaths("description")
+          .addPaths("pubsub_topic")
+          .addPaths("streaming_config.filter").build();
 
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       NotificationConfig updatedConfig = client.updateNotificationConfig(configToUpdate, fieldMask);
