@@ -223,7 +223,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data.
+   * contain non-empty data. This can be used to filter messages on the
+   * subscription.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -246,7 +247,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data.
+   * contain non-empty data. This can be used to filter messages on the
+   * subscription.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -260,7 +262,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data.
+   * contain non-empty data. This can be used to filter messages on the
+   * subscription.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -279,7 +282,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Attributes for this message. If this field is empty, the message must
-   * contain non-empty data.
+   * contain non-empty data. This can be used to filter messages on the
+   * subscription.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -982,7 +986,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data.
+     * contain non-empty data. This can be used to filter messages on the
+     * subscription.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1005,7 +1010,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data.
+     * contain non-empty data. This can be used to filter messages on the
+     * subscription.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1019,7 +1025,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data.
+     * contain non-empty data. This can be used to filter messages on the
+     * subscription.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1038,7 +1045,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data.
+     * contain non-empty data. This can be used to filter messages on the
+     * subscription.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1064,7 +1072,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data.
+     * contain non-empty data. This can be used to filter messages on the
+     * subscription.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1086,7 +1095,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data.
+     * contain non-empty data. This can be used to filter messages on the
+     * subscription.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
@@ -1106,7 +1116,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for this message. If this field is empty, the message must
-     * contain non-empty data.
+     * contain non-empty data. This can be used to filter messages on the
+     * subscription.
      * </pre>
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>

@@ -362,7 +362,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+   * An expression written in the Pub/Sub [filter
+   * language](https://cloud.google.com/pubsub/docs/filtering). If non-empty,
    * then only `PubsubMessage`s whose `attributes` field matches the filter are
    * delivered on this subscription. If empty, then no messages are filtered
    * out.
@@ -377,7 +378,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+   * An expression written in the Pub/Sub [filter
+   * language](https://cloud.google.com/pubsub/docs/filtering). If non-empty,
    * then only `PubsubMessage`s whose `attributes` field matches the filter are
    * delivered on this subscription. If empty, then no messages are filtered
    * out.
