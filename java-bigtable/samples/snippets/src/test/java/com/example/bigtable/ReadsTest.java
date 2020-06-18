@@ -52,7 +52,9 @@ public class ReadsTest {
 
   private static String requireEnv(String varName) {
     String value = System.getenv(varName);
-    assertNotNull(String.format("Environment variable '%s' is required to perform these tests.", varName), value);
+    assertNotNull(
+        String.format("Environment variable '%s' is required to perform these tests.", varName),
+        value);
     return value;
   }
 
