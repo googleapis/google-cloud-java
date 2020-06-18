@@ -16,14 +16,12 @@
 
 package dlp.snippets;
 
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.StringContains.containsString;
-import static org.junit.Assert.assertNotNull;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.common.collect.ImmutableList;
 import com.google.privacy.dlp.v2.FieldId;
 import com.google.privacy.dlp.v2.Table;
 import com.google.privacy.dlp.v2.Table.Row;
@@ -31,32 +29,22 @@ import com.google.privacy.dlp.v2.Value;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.TopicName;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class InspectTests {
+public class InspectTests extends TestBase {
 
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String GCS_PATH = System.getenv("GCS_PATH");
-  private static final String TOPIC_ID = System.getenv("PUB_SUB_TOPIC");
-  private static final String SUBSCRIPTION_ID = System.getenv("PUB_SUB_SUBSCRIPTION");
-  private static final String DATASET_ID = System.getenv("BIGQUERY_DATASET");
-  private static final String TABLE_ID = System.getenv("BIGQUERY_TABLE");
   // TODO: Update as ENV_VARs
   private static final String datastoreNamespace = "";
   private static final String datastoreKind = "dlp";
   private static final String DOCUMENT_INPUT_FILE = "src/test/resources/sensitive-data-image.jpg";
 
-  private ByteArrayOutputStream bout;
   private UUID testRunUuid = UUID.randomUUID();
   private TopicName topicName = TopicName.of(
       PROJECT_ID,
@@ -64,27 +52,16 @@ public class InspectTests {
   private ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(
       PROJECT_ID,
       String.format("%s-%s", SUBSCRIPTION_ID, testRunUuid.toString()));
-  private PrintStream originalOut = System.out;
 
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        String.format("Environment variable '%s' must be set to perform these tests.", varName),
-        System.getenv(varName));
-  }
-
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
-    requireEnvVar("GCS_PATH");
-    requireEnvVar("PUB_SUB_TOPIC");
-    requireEnvVar("PUB_SUB_SUBSCRIPTION");
-    requireEnvVar("BIGQUERY_DATASET");
-    requireEnvVar("BIGQUERY_TABLE");
+  @Override
+  protected ImmutableList<String> requiredEnvVars() {
+    return ImmutableList
+        .of("GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT", "GCS_PATH", "PUB_SUB_TOPIC",
+            "PUB_SUB_SUBSCRIPTION", "BIGQUERY_DATASET", "BIGQUERY_TABLE");
   }
 
   @Before
-  public void setUp() throws Exception {
+  public void before() throws Exception {
     // Create a new topic
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.createTopic(topicName);
@@ -95,19 +72,11 @@ public class InspectTests {
       subscriptionAdminClient
           .createSubscription(subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
     }
-
-    // Capture stdout
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
   }
 
 
   @After
-  public void tearDown() throws Exception {
-    // Restore stdout
-    System.setOut(originalOut);
-    bout.reset();
-
+  public void after() throws Exception {
     // Delete the test topic
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       topicAdminClient.deleteTopic(topicName);
@@ -132,7 +101,7 @@ public class InspectTests {
     InspectString.inspectString(PROJECT_ID, "My phone number is (415) 555-0890");
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
+    assertThat(output).contains("Info type: PHONE_NUMBER");
   }
 
   @Test
@@ -140,7 +109,7 @@ public class InspectTests {
     InspectString.inspectString(PROJECT_ID, "I'm Gary and my email is gary@example.com");
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+    assertThat(output).contains("Info type: EMAIL_ADDRESS");
   }
 
   @Test
@@ -149,7 +118,7 @@ public class InspectTests {
         PROJECT_ID, "Patients MRN 444-5-22222", "[1-9]{3}-[1-9]{1}-[1-9]{5}");
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: C_MRN"));
+    assertThat(output).contains("Info type: C_MRN");
   }
 
   @Test
@@ -159,8 +128,8 @@ public class InspectTests {
         Arrays.asList("example@example.com"));
 
     String output = bout.toString();
-    assertThat(output, containsString("gary@example.com"));
-    assertThat(output, not(containsString("example@example.com")));
+    assertThat(output).contains("gary@example.com");
+    assertThat(output).doesNotContain("example@example.com");
   }
 
   @Test
@@ -170,8 +139,8 @@ public class InspectTests {
         Arrays.asList("TEST"));
 
     String output = bout.toString();
-    assertThat(output, containsString("gary@example.com"));
-    assertThat(output, not(containsString("TEST@example.com")));
+    assertThat(output).contains("gary@example.com");
+    assertThat(output).doesNotContain("TEST@example.com");
   }
 
   @Test
@@ -181,8 +150,8 @@ public class InspectTests {
         ".+@example.com");
 
     String output = bout.toString();
-    assertThat(output, containsString("bob@example.org"));
-    assertThat(output, not(containsString("gary@example.com")));
+    assertThat(output).contains("bob@example.org");
+    assertThat(output).doesNotContain("gary@example.com");
   }
 
   @Test
@@ -193,8 +162,8 @@ public class InspectTests {
         Arrays.asList("Jimmy"));
 
     String output = bout.toString();
-    assertThat(output, containsString("Doe, John"));
-    assertThat(output, not(containsString("Example, Jimmy")));
+    assertThat(output).contains("Doe, John");
+    assertThat(output).doesNotContain("Example, Jimmy");
   }
 
   @Test
@@ -203,8 +172,8 @@ public class InspectTests {
         "Name: Jane Doe. Name: Larry Page.");
 
     String output = bout.toString();
-    assertThat(output, containsString("Jane Doe"));
-    assertThat(output, not(containsString("Larry Page")));
+    assertThat(output).contains("Jane Doe");
+    assertThat(output).doesNotContain("Larry Page");
   }
 
   @Test
@@ -212,8 +181,8 @@ public class InspectTests {
     InspectStringOmitOverlap.inspectStringOmitOverlap(PROJECT_ID, "james@example.com");
 
     String output = bout.toString();
-    assertThat(output, containsString("EMAIL_ADDRESS"));
-    assertThat(output, not(containsString("PERSON_NAME")));
+    assertThat(output).contains("EMAIL_ADDRESS");
+    assertThat(output).doesNotContain("PERSON_NAME");
   }
 
   @Test
@@ -222,8 +191,8 @@ public class InspectTests {
         "example.com is a domain, james@example.org is an email.");
 
     String output = bout.toString();
-    assertThat(output, containsString("example.com"));
-    assertThat(output, not(containsString("example.org")));
+    assertThat(output).contains("example.com");
+    assertThat(output).doesNotContain("example.org");
   }
 
   @Test
@@ -238,7 +207,7 @@ public class InspectTests {
     InspectTable.inspectTable(PROJECT_ID, tableToInspect);
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
+    assertThat(output).contains("Info type: PHONE_NUMBER");
   }
 
   @Test
@@ -247,7 +216,7 @@ public class InspectTests {
         "patient name: John Doe", "patient");
 
     String output = bout.toString();
-    assertThat(output, containsString("John Doe"));
+    assertThat(output).contains("John Doe");
   }
 
   @Test
@@ -256,7 +225,7 @@ public class InspectTests {
         "name: John Doe", "patient");
 
     String output = bout.toString();
-    assertThat(output, not(containsString("John Doe")));
+    assertThat(output).doesNotContain("John Doe");
   }
 
   @Test
@@ -265,7 +234,7 @@ public class InspectTests {
         "patient: Jane Doe");
 
     String output = bout.toString();
-    assertThat(output, containsString("VERY_LIKELY"));
+    assertThat(output).contains("VERY_LIKELY");
   }
 
   @Test
@@ -274,7 +243,7 @@ public class InspectTests {
         "doctor: Jane Doe");
 
     String output = bout.toString();
-    assertThat(output, containsString("Findings: 0"));
+    assertThat(output).contains("Findings: 0");
   }
 
   @Test
@@ -283,7 +252,7 @@ public class InspectTests {
         "patient: Quasimodo");
 
     String output = bout.toString();
-    assertThat(output, containsString("Findings: 0"));
+    assertThat(output).contains("Findings: 0");
   }
 
   @Test
@@ -292,15 +261,15 @@ public class InspectTests {
         "name of patient: REDACTED");
 
     String output = bout.toString();
-    assertThat(output, containsString("Findings: 0"));
+    assertThat(output).contains("Findings: 0");
   }
 
   @Test
   public void textInspectTestFile() throws Exception {
     InspectTextFile.inspectTextFile(PROJECT_ID, "src/test/resources/test.txt");
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
-    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+    assertThat(output).contains("Info type: PHONE_NUMBER");
+    assertThat(output).contains("Info type: EMAIL_ADDRESS");
   }
 
   @Test
@@ -308,8 +277,8 @@ public class InspectTests {
     InspectImageFile.inspectImageFile(PROJECT_ID, "src/test/resources/test.png");
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
-    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
+    assertThat(output).contains("Info type: PHONE_NUMBER");
+    assertThat(output).contains("Info type: EMAIL_ADDRESS");
   }
 
   @Test
@@ -317,9 +286,9 @@ public class InspectTests {
     InspectImageFileAllInfoTypes.inspectImageFileAllInfoTypes(PROJECT_ID, DOCUMENT_INPUT_FILE);
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
-    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
-    assertThat(output, containsString("Info type: DATE"));
+    assertThat(output).contains("Info type: PHONE_NUMBER");
+    assertThat(output).contains("Info type: EMAIL_ADDRESS");
+    assertThat(output).contains("Info type: DATE");
   }
 
   @Test
@@ -328,9 +297,9 @@ public class InspectTests {
         PROJECT_ID, DOCUMENT_INPUT_FILE);
 
     String output = bout.toString();
-    assertThat(output, containsString("Info type: PHONE_NUMBER"));
-    assertThat(output, containsString("Info type: EMAIL_ADDRESS"));
-    assertThat(output, not(containsString("Info type: DATE")));
+    assertThat(output).contains("Info type: PHONE_NUMBER");
+    assertThat(output).contains("Info type: EMAIL_ADDRESS");
+    assertThat(output).doesNotContain("Info type: DATE");
   }
 
   @Test
@@ -340,7 +309,7 @@ public class InspectTests {
             subscriptionName.getSubscription());
 
     String output = bout.toString();
-    assertThat(output, containsString("Job status: DONE"));
+    assertThat(output).contains("Job status: DONE");
   }
 
   @Test
@@ -350,7 +319,7 @@ public class InspectTests {
             subscriptionName.getSubscription());
 
     String output = bout.toString();
-    assertThat(output, containsString("Job status: DONE"));
+    assertThat(output).contains("Job status: DONE");
   }
 
   @Test
@@ -360,7 +329,7 @@ public class InspectTests {
             subscriptionName.getSubscription());
 
     String output = bout.toString();
-    assertThat(output, containsString("Job status: DONE"));
+    assertThat(output).contains("Job status: DONE");
   }
 
   @Test
@@ -370,7 +339,7 @@ public class InspectTests {
             subscriptionName.getSubscription());
 
     String output = bout.toString();
-    assertThat(output, containsString("Job status: DONE"));
+    assertThat(output).contains("Job status: DONE");
   }
 
   @Test
@@ -380,7 +349,7 @@ public class InspectTests {
             subscriptionName.getSubscription());
 
     String output = bout.toString();
-    assertThat(output, containsString("Job status: DONE"));
+    assertThat(output).contains("Job status: DONE");
   }
 
   @Test
@@ -392,7 +361,7 @@ public class InspectTests {
         "(?i)(mrn|medical)(?-i)");
 
     String output = bout.toString();
-    assertThat(output, containsString("Findings: 2"));
-    assertThat(output, containsString("Info type: C_MRN"));
+    assertThat(output).contains("Findings: 2");
+    assertThat(output).contains("Info type: C_MRN");
   }
 }

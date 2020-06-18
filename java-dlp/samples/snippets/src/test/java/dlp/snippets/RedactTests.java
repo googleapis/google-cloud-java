@@ -16,60 +16,34 @@
 
 package dlp.snippets;
 
-import static junit.framework.TestCase.assertNotNull;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.StringContains.containsString;
+import static com.google.common.truth.Truth.assertThat;
 
-import java.io.ByteArrayOutputStream;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class RedactTests {
+public class RedactTests extends TestBase {
 
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String SIMPLE_INPUT_FILE = "src/test/resources/test.png";
   private static final String SIMPLE_OUTPUT_FILE = "redacted.png";
   private static final String DOCUMENT_INPUT_FILE =
       "src/test/resources/sensitive-data-image.jpg";
   private static final String DOCUMENT_OUTPUT_FILE =
       "sensitive-data-image-redacted.jpg";
-  private ByteArrayOutputStream bout;
 
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        String.format("Environment variable '%s' must be set to perform these tests.", varName),
-        System.getenv(varName));
-  }
-
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
-  }
-
-  @Before
-  public void beforeTest() {
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
+  @Override
+  protected ImmutableList<String> requiredEnvVars() {
+    return ImmutableList.of("GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT");
   }
 
   @After
-  public void tearDown() {
-    System.setOut(null);
-    bout.reset();
-  }
-
-  @After
-  public void cleanUp() throws IOException {
+  public void after() throws IOException {
     Files.deleteIfExists(Paths.get(SIMPLE_OUTPUT_FILE));
     Files.deleteIfExists(Paths.get(DOCUMENT_OUTPUT_FILE));
   }
@@ -79,7 +53,7 @@ public class RedactTests {
     RedactImageFile.redactImageFile(PROJECT_ID, SIMPLE_INPUT_FILE, SIMPLE_OUTPUT_FILE);
 
     String output = bout.toString();
-    assertThat(output, containsString("Redacted image written"));
+    assertThat(output).contains("Redacted image written");
   }
 
   @Test
@@ -88,7 +62,7 @@ public class RedactTests {
         DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
-    assertThat(output, containsString("Redacted image written"));
+    assertThat(output).contains("Redacted image written");
   }
 
   @Test
@@ -97,7 +71,7 @@ public class RedactTests {
         DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
-    assertThat(output, containsString("Redacted image written"));
+    assertThat(output).contains("Redacted image written");
   }
 
   @Test
@@ -106,7 +80,7 @@ public class RedactTests {
         DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
-    assertThat(output, containsString("Redacted image written"));
+    assertThat(output).contains("Redacted image written");
   }
 
   @Test
@@ -115,6 +89,6 @@ public class RedactTests {
         DOCUMENT_OUTPUT_FILE);
 
     String output = bout.toString();
-    assertThat(output, containsString("Redacted image written"));
+    assertThat(output).contains("Redacted image written");
   }
 }

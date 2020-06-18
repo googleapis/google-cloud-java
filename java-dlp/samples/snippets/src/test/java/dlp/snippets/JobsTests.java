@@ -16,10 +16,10 @@
 
 package dlp.snippets;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.dlp.v2.DlpServiceClient;
+import com.google.common.collect.ImmutableList;
 import com.google.privacy.dlp.v2.CloudStorageOptions;
 import com.google.privacy.dlp.v2.CloudStorageOptions.FileSet;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -29,30 +29,18 @@ import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectJobConfig;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.StorageConfig;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.UUID;
-import org.hamcrest.CoreMatchers;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class JobsTests {
+public class JobsTests extends TestBase {
 
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String GCS_PATH = System.getenv("GCS_PATH");
-
-  private ByteArrayOutputStream bout;
-
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        String.format("Environment variable '%s' must be set to perform these tests.", varName),
-        System.getenv(varName));
+  @Override
+  protected ImmutableList<String> requiredEnvVars() {
+    return ImmutableList.of("GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT", "GCS_PATH");
   }
 
   private static DlpJob createJob(String jobId) throws IOException {
@@ -80,31 +68,12 @@ public class JobsTests {
     }
   }
 
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
-    requireEnvVar("GCS_PATH");
-  }
-
-  @Before
-  public void setUp() {
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
-  }
-
-  @After
-  public void tearDown() {
-    System.setOut(null);
-    bout.reset();
-  }
-
   @Test
   public void testCreateJobs() throws Exception {
     // Call createJobs to create a Dlp job from project id and gcs path.
     JobsCreate.createJobs(PROJECT_ID, GCS_PATH);
     String output = bout.toString();
-    assertThat(output, CoreMatchers.containsString("Job created successfully:"));
+    assertThat(output).contains("Job created successfully:");
 
     // Delete the created Dlp Job
     String dlpJobName = output.split("Job created successfully: ")[1].split("\n")[0];
@@ -124,7 +93,7 @@ public class JobsTests {
     // Get the job with the specified ID
     JobsGet.getJobs(PROJECT_ID, "i-" + jobId);
     String output = bout.toString();
-    assertThat(output, CoreMatchers.containsString("Job got successfully."));
+    assertThat(output).contains("Job got successfully.");
 
     // Delete the created Dlp Job
     String dlpJobName = createdDlpJob.getName();
@@ -142,7 +111,7 @@ public class JobsTests {
     String output = bout.toString();
 
     // Check that the output contains a list of jobs, or is empty
-    assertThat(output, CoreMatchers.containsString("DLP jobs found:"));
+    assertThat(output).contains("DLP jobs found:");
   }
 
   @Test
@@ -154,6 +123,6 @@ public class JobsTests {
     // Delete the job with the specified ID
     JobsDelete.deleteJobs(PROJECT_ID, "i-" + jobId);
     String output = bout.toString();
-    assertThat(output, CoreMatchers.containsString("Job deleted successfully."));
+    assertThat(output).contains("Job deleted successfully.");
   }
 }

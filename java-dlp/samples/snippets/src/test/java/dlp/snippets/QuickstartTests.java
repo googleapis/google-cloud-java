@@ -16,48 +16,20 @@
 
 package dlp.snippets;
 
-import static junit.framework.TestCase.assertNotNull;
-import static org.hamcrest.core.StringContains.containsString;
-import static org.junit.Assert.assertThat;
+import static com.google.common.truth.Truth.assertThat;
 
-import java.io.ByteArrayOutputStream;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
-import java.io.PrintStream;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class QuickstartTests {
+public class QuickstartTests extends TestBase {
 
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private ByteArrayOutputStream bout;
-
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        String.format("Environment variable '%s' must be set to perform these tests.", varName),
-        System.getenv(varName));
-  }
-
-  @BeforeClass
-  public static void checkRequirements() {
-    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
-  }
-
-  @Before
-  public void beforeTest() {
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
-  }
-
-  @After
-  public void tearDown() {
-    System.setOut(null);
-    bout.reset();
+  @Override
+  protected ImmutableList<String> requiredEnvVars() {
+    return ImmutableList.of("GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT");
   }
 
   @Test
@@ -65,6 +37,6 @@ public class QuickstartTests {
     QuickStart.quickstart(PROJECT_ID);
 
     String output = bout.toString();
-    assertThat(output, containsString("Inspect of text complete"));
+    assertThat(output).contains("Inspect of text complete");
   }
 }

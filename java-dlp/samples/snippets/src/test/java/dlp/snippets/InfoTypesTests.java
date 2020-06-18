@@ -16,51 +16,26 @@
 
 package dlp.snippets;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
+import static com.google.common.truth.Truth.assertThat;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import org.hamcrest.CoreMatchers;
-import org.junit.After;
-import org.junit.Before;
+import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class InfoTypesTests {
+public class InfoTypesTests extends TestBase {
 
-  private ByteArrayOutputStream bout;
-
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        String.format("Environment variable '%s' must be set to perform these tests.", varName),
-        System.getenv(varName));
-  }
-
-  @Before
-  public void checkRequirements() {
-    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-  }
-
-  @Before
-  public void setUp() {
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
-  }
-
-  @After
-  public void tearDown() {
-    System.setOut(null);
-    bout.reset();
+  @Override
+  protected ImmutableList<String> requiredEnvVars() {
+    return ImmutableList.of("GOOGLE_APPLICATION_CREDENTIALS");
   }
 
   @Test
   public void testListInfoTypes() throws Exception {
     InfoTypesList.listInfoTypes();
     String output = bout.toString();
-    assertThat(output, CoreMatchers.containsString("Name"));
-    assertThat(output, CoreMatchers.containsString("Display name"));
+    assertThat(output).contains("Name");
+    assertThat(output).contains("Display name");
   }
 }

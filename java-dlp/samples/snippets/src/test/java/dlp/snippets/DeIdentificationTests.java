@@ -16,61 +16,30 @@
 
 package dlp.snippets;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.StringContains.containsString;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
+import com.google.common.collect.ImmutableList;
 import com.google.privacy.dlp.v2.FieldId;
 import com.google.privacy.dlp.v2.Table;
 import com.google.privacy.dlp.v2.Table.Row;
 import com.google.privacy.dlp.v2.Value;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class DeIdentificationTests {
+public class DeIdentificationTests extends TestBase {
 
-  private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  // TODO: Update as ENV_VARs
-  private static final String bucketName = PROJECT_ID + "/dlp";
-  private ByteArrayOutputStream bout;
-  private String wrappedKey = System.getenv("DLP_DEID_WRAPPED_KEY");
-  private String kmsKeyName = System.getenv("DLP_DEID_KEY_NAME");
-
-  private static void requireEnvVar(String varName) {
-    assertNotNull(
-        String.format("Environment variable '%s' must be set to perform these tests.", varName),
-        System.getenv(varName));
-  }
-
-  @Before
-  public void checkRequirements() {
-    requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
-    requireEnvVar("DLP_DEID_WRAPPED_KEY");
-    requireEnvVar("DLP_DEID_KEY_NAME");
-  }
-
-  @Before
-  public void captureOut() {
-    bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
-  }
-
-  @After
-  public void releaseOut() {
-    System.setOut(null);
-    bout.reset();
+  @Override
+  protected ImmutableList<String> requiredEnvVars() {
+    return ImmutableList
+        .of("GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT", "DLP_DEID_WRAPPED_KEY",
+            "DLP_DEID_KEY_NAME");
   }
 
   @Test
@@ -78,7 +47,7 @@ public class DeIdentificationTests {
     DeIdentifyWithMasking.deIdentifyWithMasking(PROJECT_ID, "My SSN is 372819127");
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after masking:"));
+    assertThat(output).contains("Text after masking:");
   }
 
   @Test
@@ -86,7 +55,7 @@ public class DeIdentificationTests {
     DeIdentifyWithFpe.deIdentifyWithFpe(PROJECT_ID, "My SSN is 372819127", kmsKeyName, wrappedKey);
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after format-preserving encryption:"));
+    assertThat(output).contains("Text after format-preserving encryption:");
   }
 
   @Test
@@ -95,7 +64,7 @@ public class DeIdentificationTests {
         PROJECT_ID, "My SSN is SSN_TOKEN(9):731997681", kmsKeyName, wrappedKey);
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after re-identification:"));
+    assertThat(output).contains("Text after re-identification:");
   }
 
   @Test
@@ -104,7 +73,7 @@ public class DeIdentificationTests {
         PROJECT_ID, "My phone number is 4359916732", kmsKeyName, wrappedKey);
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after format-preserving encryption: "));
+    assertThat(output).contains("Text after format-preserving encryption: ");
   }
 
   @Test
@@ -116,7 +85,7 @@ public class DeIdentificationTests {
         wrappedKey);
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after re-identification: "));
+    assertThat(output).contains("Text after re-identification: ");
   }
 
   @Test
@@ -146,7 +115,7 @@ public class DeIdentificationTests {
         PROJECT_ID, tableToDeIdentify, kmsKeyName, wrappedKey);
 
     String output = bout.toString();
-    assertThat(output, containsString("Table after format-preserving encryption:"));
+    assertThat(output).contains("Table after format-preserving encryption:");
   }
 
   @Test
@@ -161,7 +130,7 @@ public class DeIdentificationTests {
         PROJECT_ID, tableToReIdentify, kmsKeyName, wrappedKey);
 
     String output = bout.toString();
-    assertThat(output, containsString("Table after re-identification:"));
+    assertThat(output).contains("Table after re-identification:");
   }
 
   @Test
@@ -211,8 +180,8 @@ public class DeIdentificationTests {
     Table table = DeIdentifyTableBucketing.deIdentifyTableBucketing(PROJECT_ID, tableToDeIdentify);
 
     String output = bout.toString();
-    assertThat(output, containsString("Table after de-identification:"));
-    assertEquals(expectedTable, table);
+    assertThat(output).contains("Table after de-identification:");
+    assertThat(table).isEqualTo(expectedTable);
   }
 
   @Test
@@ -263,8 +232,8 @@ public class DeIdentificationTests {
         PROJECT_ID, tableToDeIdentify);
 
     String output = bout.toString();
-    assertThat(output, containsString("Table after de-identification:"));
-    assertEquals(expectedTable, table);
+    assertThat(output).contains("Table after de-identification:");
+    assertThat(table).isEqualTo(expectedTable);
   }
 
   @Test
@@ -326,8 +295,8 @@ public class DeIdentificationTests {
     Table table = DeIdentifyTableInfoTypes.deIdentifyTableInfoTypes(PROJECT_ID, tableToDeIdentify);
 
     String output = bout.toString();
-    assertThat(output, containsString("Table after de-identification:"));
-    assertEquals(expectedTable, table);
+    assertThat(output).contains("Table after de-identification:");
+    assertThat(table).isEqualTo(expectedTable);
   }
 
   @Test
@@ -373,8 +342,8 @@ public class DeIdentificationTests {
         PROJECT_ID, tableToDeIdentify);
 
     String output = bout.toString();
-    assertThat(output, containsString("Table after de-identification:"));
-    assertEquals(expectedTable, table);
+    assertThat(output).contains("Table after de-identification:");
+    assertThat(table).isEqualTo(expectedTable);
   }
 
   @Test
@@ -437,20 +406,20 @@ public class DeIdentificationTests {
         PROJECT_ID, tableToDeIdentify);
 
     String output = bout.toString();
-    assertThat(output, containsString("Table after de-identification:"));
-    assertEquals(expectedTable, table);
+    assertThat(output).contains("Table after de-identification:");
+    assertThat(table).isEqualTo(expectedTable);
   }
 
   @Test
   public void testDeIdentifyWithDateShift() throws IOException {
     Path inputFile = Paths.get("src/test/resources/dates.csv");
-    assertThat("Input file must exist", inputFile.toFile().exists());
+    assertWithMessage("Input file must exist").that(inputFile.toFile().exists()).isTrue();
     Path outputFile = Paths.get("src/test/resources/results.csv");
-    assertThat("Output file must be writeable", inputFile.toFile().canWrite());
+    assertWithMessage("Output file must be writeable").that(inputFile.toFile().canWrite()).isTrue();
     DeIdentifyWithDateShift.deIdentifyWithDateShift(PROJECT_ID, inputFile, outputFile);
 
     String output = bout.toString();
-    assertThat(output, containsString("Content written to file: "));
+    assertThat(output).contains("Content written to file: ");
 
     // Clean up test output
     Files.delete(outputFile);
@@ -463,8 +432,8 @@ public class DeIdentificationTests {
         "My name is Alicia Abernathy, and my email address is aabernathy@example.com.");
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after redaction: "
-        + "My name is Alicia Abernathy, and my email address is ."));
+    assertThat(output).contains("Text after redaction: "
+        + "My name is Alicia Abernathy, and my email address is .");
   }
 
   @Test
@@ -474,8 +443,8 @@ public class DeIdentificationTests {
         "My name is Alicia Abernathy, and my email address is aabernathy@example.com.");
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after redaction: "
-        + "My name is Alicia Abernathy, and my email address is [email-address]."));
+    assertThat(output).contains("Text after redaction: "
+        + "My name is Alicia Abernathy, and my email address is [email-address].");
   }
 
   @Test
@@ -485,8 +454,8 @@ public class DeIdentificationTests {
         "My email is test@example.com");
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after redaction: "
-        + "My email is [EMAIL_ADDRESS]"));
+    assertThat(output).contains("Text after redaction: "
+        + "My email is [EMAIL_ADDRESS]");
   }
 
   @Test
@@ -495,7 +464,7 @@ public class DeIdentificationTests {
         PROJECT_ID, "Patient was seen in RM-YELLOW then transferred to rm green.");
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after replace with infotype config: "));
+    assertThat(output).contains("Text after replace with infotype config: ");
   }
 
   @Test
@@ -504,6 +473,6 @@ public class DeIdentificationTests {
         PROJECT_ID, "jack@example.org accessed customer record of user5@example.com");
 
     String output = bout.toString();
-    assertThat(output, containsString("Text after replace with infotype config: "));
+    assertThat(output).contains("Text after replace with infotype config: ");
   }
 }
