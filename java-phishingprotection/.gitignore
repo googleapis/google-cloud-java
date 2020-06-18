@@ -30,3 +30,5 @@ docs/
 
 # Python utilities
 *.pyc
+
+.flattened-pom.xml
