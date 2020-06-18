@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.134.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.4...v0.134.0) (2020-06-18)
+
+
+### Features
+
+* Added schema compatibility check functionality (SchemaCompact.java) ([#339](https://www.github.com/googleapis/java-bigquerystorage/issues/339)) ([bc2d8cc](https://www.github.com/googleapis/java-bigquerystorage/commit/bc2d8cc82adeeddb21aeb9845e0883d369101513))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.1 ([#346](https://www.github.com/googleapis/java-bigquerystorage/issues/346)) ([9db4c47](https://www.github.com/googleapis/java-bigquerystorage/commit/9db4c475118b03b323b4dc502ec0634692e9dea3))
+
 ### [0.133.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v0.133.3...v0.133.4) (2020-06-11)
 
 
