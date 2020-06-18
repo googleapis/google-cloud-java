@@ -81,43 +81,6 @@ public class CloudSchedulerClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteJobTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockCloudScheduler.addResponse(expectedResponse);
-
-    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-
-    client.deleteJob(name);
-
-    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteJobExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockCloudScheduler.addException(exception);
-
-    try {
-      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-
-      client.deleteJob(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listJobsTest() {
     String nextPageToken = "";
     Job jobsElement = Job.newBuilder().build();
@@ -305,6 +268,43 @@ public class CloudSchedulerClientTest {
       FieldMask updateMask = FieldMask.newBuilder().build();
 
       client.updateJob(job, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteJobTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockCloudScheduler.addResponse(expectedResponse);
+
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    client.deleteJob(name);
+
+    List<AbstractMessage> actualRequests = mockCloudScheduler.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockCloudScheduler.addException(exception);
+
+    try {
+      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+      client.deleteJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

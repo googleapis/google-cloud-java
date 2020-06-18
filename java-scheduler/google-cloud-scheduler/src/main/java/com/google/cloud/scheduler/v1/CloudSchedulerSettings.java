@@ -50,16 +50,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteJob to 30 seconds:
+ * <p>For example, to set the total timeout of getJob to 30 seconds:
  *
  * <pre>
  * <code>
  * CloudSchedulerSettings.Builder cloudSchedulerSettingsBuilder =
  *     CloudSchedulerSettings.newBuilder();
  * cloudSchedulerSettingsBuilder
- *     .deleteJobSettings()
+ *     .getJobSettings()
  *     .setRetrySettings(
- *         cloudSchedulerSettingsBuilder.deleteJobSettings().getRetrySettings().toBuilder()
+ *         cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudSchedulerSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();
@@ -69,11 +69,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSettings> {
-  /** Returns the object with the settings used for calls to deleteJob. */
-  public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
-    return ((CloudSchedulerStubSettings) getStubSettings()).deleteJobSettings();
-  }
-
   /** Returns the object with the settings used for calls to listJobs. */
   public PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings() {
@@ -93,6 +88,11 @@ public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSetting
   /** Returns the object with the settings used for calls to updateJob. */
   public UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings() {
     return ((CloudSchedulerStubSettings) getStubSettings()).updateJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteJob. */
+  public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
+    return ((CloudSchedulerStubSettings) getStubSettings()).deleteJobSettings();
   }
 
   /** Returns the object with the settings used for calls to pauseJob. */
@@ -207,11 +207,6 @@ public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSetting
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to deleteJob. */
-    public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
-      return getStubSettingsBuilder().deleteJobSettings();
-    }
-
     /** Returns the builder for the settings used for calls to listJobs. */
     public PagedCallSettings.Builder<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
         listJobsSettings() {
@@ -231,6 +226,11 @@ public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSetting
     /** Returns the builder for the settings used for calls to updateJob. */
     public UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings() {
       return getStubSettingsBuilder().updateJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteJob. */
+    public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
+      return getStubSettingsBuilder().deleteJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to pauseJob. */

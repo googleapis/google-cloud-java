@@ -47,7 +47,7 @@ import javax.annotation.Generated;
  * <code>
  * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
  *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
- *   cloudSchedulerClient.deleteJob(name);
+ *   Job response = cloudSchedulerClient.getJob(name);
  * }
  * </code>
  * </pre>
@@ -154,96 +154,6 @@ public class CloudSchedulerClient implements BackgroundResource {
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudSchedulerStub getStub() {
     return stub;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   cloudSchedulerClient.deleteJob(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The job name. For example:
-   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(JobName name) {
-    DeleteJobRequest request =
-        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   cloudSchedulerClient.deleteJob(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The job name. For example:
-   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(String name) {
-    DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
-    deleteJob(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   cloudSchedulerClient.deleteJob(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteJob(DeleteJobRequest request) {
-    deleteJobCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes a job.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = cloudSchedulerClient.deleteJobCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
-    return stub.deleteJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -672,6 +582,96 @@ public class CloudSchedulerClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     return stub.updateJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   cloudSchedulerClient.deleteJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(JobName name) {
+    DeleteJobRequest request =
+        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   cloudSchedulerClient.deleteJob(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The job name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(String name) {
+    DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   cloudSchedulerClient.deleteJob(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(DeleteJobRequest request) {
+    deleteJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = cloudSchedulerClient.deleteJobCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
+    return stub.deleteJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
