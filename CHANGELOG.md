@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.116.4](https://www.github.com/googleapis/java-bigquery/compare/v1.116.3...v1.116.4) (2020-06-18)
+
+
+### Documentation
+
+* **samples:** add create and delete model ([#462](https://www.github.com/googleapis/java-bigquery/issues/462)) ([df6479f](https://www.github.com/googleapis/java-bigquery/commit/df6479f2243193e692313790cbb1720d0279d47a))
+* **samples:** add create range partition table ([#458](https://www.github.com/googleapis/java-bigquery/issues/458)) ([68140d5](https://www.github.com/googleapis/java-bigquery/commit/68140d5e463304253a5cc28e6dae9cc73d1bf8d1))
+* **samples:** add query ([#463](https://www.github.com/googleapis/java-bigquery/issues/463)) ([e5db01c](https://www.github.com/googleapis/java-bigquery/commit/e5db01cac9309d0d2da819276d69af017c367929))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20200603-1.30.9 ([#447](https://www.github.com/googleapis/java-bigquery/issues/447)) ([f53559e](https://www.github.com/googleapis/java-bigquery/commit/f53559e376ff8ebcca7440b977c02feb9b52a64b))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.8.1 ([#448](https://www.github.com/googleapis/java-bigquery/issues/448)) ([8af668e](https://www.github.com/googleapis/java-bigquery/commit/8af668e2b5e9028cabe70740ea1baa624d35b7c0))
+* update dependency com.google.cloud:google-cloud-storage to v1.109.1 ([#453](https://www.github.com/googleapis/java-bigquery/issues/453)) ([01dd6be](https://www.github.com/googleapis/java-bigquery/commit/01dd6be4f8894d11124f6e68545aa3b3b3ee14d8))
+
 ### [1.116.2](https://www.github.com/googleapis/java-bigquery/compare/v1.116.1...v1.116.2) (2020-06-09)
 
 
