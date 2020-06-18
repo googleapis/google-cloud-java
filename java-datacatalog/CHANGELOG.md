@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.36.0...v1.0.0) (2020-06-17)
+
+
+### Features
+
+* promote to GA ([#220](https://www.github.com/googleapis/java-datacatalog/issues/220)) ([00acf49](https://www.github.com/googleapis/java-datacatalog/commit/00acf4942960706da565205e8f031c6972baae7f))
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#223](https://www.github.com/googleapis/java-datacatalog/issues/223)) ([35380ff](https://www.github.com/googleapis/java-datacatalog/commit/35380ffa70afdbcf33b1ad606d9e05be865c33a0))
+* **deps:** use google-cloud-shared-dependencies and flatten-maven-plugin ([#215](https://www.github.com/googleapis/java-datacatalog/issues/215)) ([0b9096a](https://www.github.com/googleapis/java-datacatalog/commit/0b9096a5fae4974b587816bdd295b2a01a58e3e4))
+
+
+### Dependencies
+
+* update core dependencies ([#213](https://www.github.com/googleapis/java-datacatalog/issues/213)) ([ac1cf8c](https://www.github.com/googleapis/java-datacatalog/commit/ac1cf8c64e899aaa2b3800d5e6f09a82ed5c9065))
+
 ## [0.36.0](https://www.github.com/googleapis/java-datacatalog/compare/v0.35.0...v0.36.0) (2020-06-11)
 
 
