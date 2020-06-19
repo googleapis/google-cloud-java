@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/googleapis/java-webrisk/compare/v0.33.3...v1.0.0) (2020-06-18)
+
+
+### Features
+
+* promote to GA ([#185](https://www.github.com/googleapis/java-webrisk/issues/185)) ([710f6f5](https://www.github.com/googleapis/java-webrisk/commit/710f6f593f61b434daf9f03d7579758e378eda9c))
+
+
+### Dependencies
+
+* update core dependencies to v1.57.0 ([#178](https://www.github.com/googleapis/java-webrisk/issues/178)) ([e48e567](https://www.github.com/googleapis/java-webrisk/commit/e48e567726f943db9b35cedbb21ba51dbd4b96a2))
+* update dependency com.google.api:api-common to v1.9.1 ([#162](https://www.github.com/googleapis/java-webrisk/issues/162)) ([996b81e](https://www.github.com/googleapis/java-webrisk/commit/996b81e97f222fa65c8b60db67ef534b9baec4eb))
+* update dependency com.google.api:api-common to v1.9.2 ([#169](https://www.github.com/googleapis/java-webrisk/issues/169)) ([950f130](https://www.github.com/googleapis/java-webrisk/commit/950f130367b6b846825f8bca616680dbf94aea27))
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#151](https://www.github.com/googleapis/java-webrisk/issues/151)) ([75cb038](https://www.github.com/googleapis/java-webrisk/commit/75cb03804378e9938a45e2ab32691df7692b877e))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#156](https://www.github.com/googleapis/java-webrisk/issues/156)) ([67c5c7c](https://www.github.com/googleapis/java-webrisk/commit/67c5c7c665b6f6f9fca6f6ebafc62718686ca110))
+* update dependency com.google.protobuf:protobuf-java to v3.12.2 ([#160](https://www.github.com/googleapis/java-webrisk/issues/160)) ([9abd16f](https://www.github.com/googleapis/java-webrisk/commit/9abd16f290059aa6dfaad60a75b261e1501c3ba7))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#139](https://www.github.com/googleapis/java-webrisk/issues/139)) ([2e186a8](https://www.github.com/googleapis/java-webrisk/commit/2e186a86d5bae102e721a07e5b981ef06d55a557))
+* update dependency io.grpc:grpc-bom to v1.30.0 ([#173](https://www.github.com/googleapis/java-webrisk/issues/173)) ([29775cf](https://www.github.com/googleapis/java-webrisk/commit/29775cfca9ac21aa9b7304ed2cbb896a67a9e05e))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#144](https://www.github.com/googleapis/java-webrisk/issues/144)) ([13ae6ac](https://www.github.com/googleapis/java-webrisk/commit/13ae6acc634f6a3121b346bcd4fe8ceb59bca7f6))
+
 ### [0.33.3](https://www.github.com/googleapis/java-webrisk/compare/v0.33.2...v0.33.3) (2020-04-20)
 
 
