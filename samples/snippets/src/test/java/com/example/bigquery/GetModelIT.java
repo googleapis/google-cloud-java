@@ -21,32 +21,59 @@ import static junit.framework.TestCase.assertNotNull;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class GetModelIT {
+
+  private String modelName;
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
-  private static final String BIGQUERY_DATASET_NAME = System.getenv("BIGQUERY_DATASET_NAME");
-  private static final String BIGQUERY_MODEL_NAME = System.getenv("BIGQUERY_MODEL_NAME");
+  private static final String BIGQUERY_DATASET_NAME = requireEnvVar("BIGQUERY_DATASET_NAME");
 
-  private static void requireEnvVar(String varName) {
+  private static String requireEnvVar(String varName) {
+    String value = System.getenv(varName);
     assertNotNull(
         "Environment variable " + varName + " is required to perform these tests.",
         System.getenv(varName));
+    return value;
   }
 
   @BeforeClass
   public static void checkRequirements() {
     requireEnvVar("BIGQUERY_DATASET_NAME");
-    requireEnvVar("BIGQUERY_MODEL_NAME");
   }
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
+    bout = new ByteArrayOutputStream();
+    out = new PrintStream(bout);
+    System.setOut(out);
+
+    // Create a new model to be deleted
+    modelName = "MY_MODEL_NAME_TEST_" + UUID.randomUUID().toString().substring(0, 8);
+    String sql =
+        "CREATE MODEL `"
+            + BIGQUERY_DATASET_NAME
+            + "."
+            + modelName
+            + "`"
+            + "OPTIONS ( "
+            + "model_type='linear_reg', "
+            + "max_iteration=1, "
+            + "learn_rate=0.4, "
+            + "learn_rate_strategy='constant' "
+            + ") AS ( "
+            + "	SELECT 'a' AS f1, 2.0 AS label "
+            + "UNION ALL "
+            + "SELECT 'b' AS f1, 3.8 AS label "
+            + ")";
+    CreateModel.createModel(sql);
+
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -54,12 +81,14 @@ public class GetModelIT {
 
   @After
   public void tearDown() {
+    // Clean up
+    DeleteModel.deleteModel(BIGQUERY_DATASET_NAME, modelName);
     System.setOut(null);
   }
 
   @Test
-  public void getModel() {
-    GetModel.getModel(BIGQUERY_DATASET_NAME, BIGQUERY_MODEL_NAME);
+  public void testGetModel() {
+    GetModel.getModel(BIGQUERY_DATASET_NAME, modelName);
     assertThat(bout.toString()).contains("Successfully retrieved model");
   }
 }
