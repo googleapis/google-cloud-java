@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-os-config/compare/v0.1.0...v0.2.0) (2020-06-19)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#61](https://www.github.com/googleapis/java-os-config/issues/61)) ([53568d6](https://www.github.com/googleapis/java-os-config/commit/53568d6a3cf37a858fb406fb15377c083cd86742))
+
+
+### Bug Fixes
+
+* migrate osconfig & agentendpoint to grpc_service_config ([#55](https://www.github.com/googleapis/java-os-config/issues/55)) ([4430f49](https://www.github.com/googleapis/java-os-config/commit/4430f492ef6d93b42b45774a23162f4637638d89))
+
 ## 0.1.0 (2020-05-05)
 
 
