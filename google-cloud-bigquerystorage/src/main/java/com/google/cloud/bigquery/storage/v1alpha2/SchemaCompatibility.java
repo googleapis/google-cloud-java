@@ -41,9 +41,9 @@ import java.util.regex.Pattern;
  * <p>The implementation as of now is not complete, which measn, if this check passed, there is
  * still a possbility of writing will fail.
  */
-public class SchemaCompact {
+public class SchemaCompatibility {
   private BigQuery bigquery;
-  private static SchemaCompact compact;
+  private static SchemaCompatibility compact;
   private static String tablePatternString = "projects/([^/]+)/datasets/([^/]+)/tables/([^/]+)";
   private static Pattern tablePattern = Pattern.compile(tablePatternString);
   private static final int NestingLimit = 15;
@@ -70,33 +70,33 @@ public class SchemaCompact {
                   Descriptors.FieldDescriptor.Type.GROUP,
                   Descriptors.FieldDescriptor.Type.ENUM)));
 
-  private SchemaCompact(BigQuery bigquery) {
-    // TODO: Add functionality that allows SchemaCompact to build schemas.
+  private SchemaCompatibility(BigQuery bigquery) {
+    // TODO: Add functionality that allows SchemaCompatibility to build schemas.
     this.bigquery = bigquery;
   }
 
   /**
-   * Gets a singleton {code SchemaCompact} object.
+   * Gets a singleton {code SchemaCompatibility} object.
    *
    * @return
    */
-  public static SchemaCompact getInstance() {
+  public static SchemaCompatibility getInstance() {
     if (compact == null) {
       RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
-      compact = new SchemaCompact(bigqueryHelper.getOptions().getService());
+      compact = new SchemaCompatibility(bigqueryHelper.getOptions().getService());
     }
     return compact;
   }
 
   /**
-   * Gets a {code SchemaCompact} object with custom BigQuery stub.
+   * Gets a {code SchemaCompatibility} object with custom BigQuery stub.
    *
    * @param bigquery
    * @return
    */
   @VisibleForTesting
-  public static SchemaCompact getInstance(BigQuery bigquery) {
-    return new SchemaCompact(bigquery);
+  public static SchemaCompatibility getInstance(BigQuery bigquery) {
+    return new SchemaCompatibility(bigquery);
   }
 
   private TableId getTableId(String tableName) {

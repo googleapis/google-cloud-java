@@ -53,7 +53,7 @@ public class DirectWriterTest {
   private BigQueryWriteClient client;
   private LocalChannelProvider channelProvider;
 
-  @Mock private static SchemaCompact schemaCheck;
+  @Mock private static SchemaCompatibility schemaCheck;
 
   @BeforeClass
   public static void startStaticServer() {

@@ -47,9 +47,9 @@ public class WriterCache {
   private static final int MAX_WRITERS_PER_TABLE = 2;
 
   private final BigQueryWriteClient stub;
-  private final SchemaCompact compact;
+  private final SchemaCompatibility compact;
 
-  private WriterCache(BigQueryWriteClient stub, int maxTableEntry, SchemaCompact compact) {
+  private WriterCache(BigQueryWriteClient stub, int maxTableEntry, SchemaCompatibility compact) {
     this.stub = stub;
     this.compact = compact;
     writerCache =
@@ -71,7 +71,7 @@ public class WriterCache {
     if (instance == null) {
       BigQueryWriteSettings stubSettings = BigQueryWriteSettings.newBuilder().build();
       BigQueryWriteClient stub = BigQueryWriteClient.create(stubSettings);
-      instance = new WriterCache(stub, MAX_TABLE_ENTRY, SchemaCompact.getInstance());
+      instance = new WriterCache(stub, MAX_TABLE_ENTRY, SchemaCompatibility.getInstance());
     }
     return instance;
   }
@@ -79,7 +79,7 @@ public class WriterCache {
   /** Returns a cache with custom stub used by test. */
   @VisibleForTesting
   public static WriterCache getTestInstance(
-      BigQueryWriteClient stub, int maxTableEntry, SchemaCompact compact) {
+      BigQueryWriteClient stub, int maxTableEntry, SchemaCompatibility compact) {
     return new WriterCache(stub, maxTableEntry, compact);
   }
 

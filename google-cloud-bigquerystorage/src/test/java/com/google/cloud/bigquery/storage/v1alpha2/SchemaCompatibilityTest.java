@@ -39,7 +39,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 @RunWith(JUnit4.class)
-public class SchemaCompactTest {
+public class SchemaCompatibilityTest {
   @Mock private BigQuery mockBigquery;
   @Mock private Table mockBigqueryTable;
   Descriptors.Descriptor[] type_descriptors = {
@@ -102,7 +102,7 @@ public class SchemaCompactTest {
             Field.newBuilder("Foo", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     compact.check("projects/p/datasets/d/tables/t", FooType.getDescriptor(), false);
     verify(mockBigquery, times(1)).getTable(any(TableId.class));
     verify(mockBigqueryTable, times(1)).getDefinition();
@@ -111,7 +111,7 @@ public class SchemaCompactTest {
   @Test
   public void testBadTableName() throws Exception {
     try {
-      SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+      SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
       compact.check("blah", FooType.getDescriptor(), false);
       fail("should fail");
     } catch (IllegalArgumentException expected) {
@@ -121,7 +121,7 @@ public class SchemaCompactTest {
 
   @Test
   public void testSupportedTypes() {
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     for (Descriptors.FieldDescriptor field : SupportedTypes.getDescriptor().getFields()) {
       assertTrue(compact.isSupportedType(field));
     }
@@ -138,7 +138,7 @@ public class SchemaCompactTest {
             Field.newBuilder("map_value", LegacySQLTypeName.INTEGER)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     Descriptors.Descriptor testMap = NonSupportedMap.getDescriptor();
     String protoName = testMap.getName() + ".map_value";
     try {
@@ -167,7 +167,7 @@ public class SchemaCompactTest {
             Field.newBuilder("nesting_value", LegacySQLTypeName.RECORD, BQSupportedNestingLvl2)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     Descriptors.Descriptor testNesting = SupportedNestingLvl1.getDescriptor();
     try {
       compact.check("projects/p/datasets/d/tables/t", testNesting, false);
@@ -195,7 +195,7 @@ public class SchemaCompactTest {
             Field.newBuilder("nesting_value2", LegacySQLTypeName.RECORD, BQSupportedNestingLvl2)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     Descriptors.Descriptor testNesting = SupportedNestingStacked.getDescriptor();
     try {
       compact.check("projects/p/datasets/d/tables/t", testNesting, false);
@@ -232,7 +232,7 @@ public class SchemaCompactTest {
                     "nesting_value", LegacySQLTypeName.RECORD, BQNonSupportedNestingRecursive)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     Descriptors.Descriptor testNesting = NonSupportedNestingContainsRecursive.getDescriptor();
     try {
       compact.check("projects/p/datasets/d/tables/t", testNesting, false);
@@ -317,7 +317,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test1", LegacySQLTypeName.RECORD, NonSupportedNestingLvl1)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     Descriptors.Descriptor testNesting = NonSupportedNestingLvl0.getDescriptor();
     try {
       compact.check("projects/p/datasets/d/tables/t", testNesting, false);
@@ -337,7 +337,7 @@ public class SchemaCompactTest {
   public void testProtoMoreFields() {
     Schema customSchema = Schema.of(Field.of("int32_value", LegacySQLTypeName.INTEGER));
     customizeSchema(customSchema);
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
 
     try {
       compact.check("projects/p/datasets/d/tables/t", SupportedTypes.getDescriptor(), false);
@@ -364,7 +364,7 @@ public class SchemaCompactTest {
             Field.newBuilder("repeated_mode", LegacySQLTypeName.INTEGER)
                 .setMode(Field.Mode.REPEATED)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     compact.check("projects/p/datasets/d/tables/t", ProtoRepeatedBQRepeated.getDescriptor(), false);
     try {
       compact.check(
@@ -402,7 +402,7 @@ public class SchemaCompactTest {
             Field.newBuilder("required_mode", LegacySQLTypeName.INTEGER)
                 .setMode(Field.Mode.REQUIRED)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     compact.check("projects/p/datasets/d/tables/t", ProtoRequiredBQRequired.getDescriptor(), false);
 
     try {
@@ -450,7 +450,7 @@ public class SchemaCompactTest {
             Field.newBuilder("optional_mode", LegacySQLTypeName.INTEGER)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     compact.check("projects/p/datasets/d/tables/t", ProtoOptionalBQOptional.getDescriptor(), false);
     compact.check("projects/p/datasets/d/tables/t", ProtoRequiredBQOptional.getDescriptor(), false);
 
@@ -477,7 +477,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.BOOLEAN)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(
             Arrays.asList(
@@ -518,7 +518,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.BYTES)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(Arrays.asList(BytesType.getDescriptor()));
 
@@ -549,7 +549,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.DATE)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(
             Arrays.asList(
@@ -585,7 +585,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.DATETIME)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(Arrays.asList(Int64Type.getDescriptor(), SFixed64Type.getDescriptor()));
 
@@ -616,7 +616,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.FLOAT)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(Arrays.asList(FloatType.getDescriptor(), DoubleType.getDescriptor()));
 
@@ -647,7 +647,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.GEOGRAPHY)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(Arrays.asList(BytesType.getDescriptor()));
 
@@ -678,7 +678,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.INTEGER)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(
             Arrays.asList(
@@ -717,7 +717,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.NUMERIC)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(
             Arrays.asList(
@@ -762,7 +762,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.RECORD, nestedMessage)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(Arrays.asList(MessageType.getDescriptor(), GroupType.getDescriptor()));
 
@@ -801,7 +801,7 @@ public class SchemaCompactTest {
             Field.newBuilder("mismatchlvl0", LegacySQLTypeName.RECORD, nestedMessage0)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     try {
       compact.check("projects/p/datasets/d/tables/t", MessageTypeMismatch.getDescriptor(), false);
       fail("Should fail: Proto schema type should not match BQ String.");
@@ -831,7 +831,7 @@ public class SchemaCompactTest {
             Field.newBuilder("mismatchlvl0", LegacySQLTypeName.RECORD, nestedMessage0)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     compact.check("projects/p/datasets/d/tables/t", MessageTypeMismatch.getDescriptor(), false);
     verify(mockBigquery, times(1)).getTable(any(TableId.class));
     verify(mockBigqueryTable, times(1)).getDefinition();
@@ -844,7 +844,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(Arrays.asList(StringType.getDescriptor(), EnumType.getDescriptor()));
 
@@ -875,7 +875,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.TIME)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(Arrays.asList(Int64Type.getDescriptor(), SFixed64Type.getDescriptor()));
 
@@ -906,7 +906,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_field_type", LegacySQLTypeName.TIMESTAMP)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     HashSet<Descriptors.Descriptor> compatible =
         new HashSet<>(
             Arrays.asList(
@@ -948,7 +948,7 @@ public class SchemaCompactTest {
             Field.newBuilder("test_toplevel_mismatch", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     try {
       compact.check("projects/p/datasets/d/tables/t", StringType.getDescriptor(), false);
     } catch (IllegalArgumentException expected) {
@@ -977,7 +977,7 @@ public class SchemaCompactTest {
             Field.newBuilder("match", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     compact.check("projects/p/datasets/d/tables/t", TopLevelMatch.getDescriptor(), false);
     verify(mockBigquery, times(1)).getTable(any(TableId.class));
     verify(mockBigqueryTable, times(1)).getDefinition();
@@ -990,7 +990,7 @@ public class SchemaCompactTest {
             Field.newBuilder("string_value", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     compact.check(
         "projects/p/datasets/d/tables/t", AllowUnknownUnsupportedFields.getDescriptor(), true);
     verify(mockBigquery, times(1)).getTable(any(TableId.class));
@@ -1004,7 +1004,7 @@ public class SchemaCompactTest {
             Field.newBuilder("tEsT_fIeLd_TyPe", LegacySQLTypeName.STRING)
                 .setMode(Field.Mode.NULLABLE)
                 .build()));
-    SchemaCompact compact = SchemaCompact.getInstance(mockBigquery);
+    SchemaCompatibility compact = SchemaCompatibility.getInstance(mockBigquery);
     compact.check("projects/p/datasets/d/tables/t", StringType.getDescriptor(), true);
     verify(mockBigquery, times(1)).getTable(any(TableId.class));
     verify(mockBigqueryTable, times(1)).getDefinition();

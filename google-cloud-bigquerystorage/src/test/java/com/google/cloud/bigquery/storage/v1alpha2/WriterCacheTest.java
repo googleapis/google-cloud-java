@@ -59,7 +59,7 @@ public class WriterCacheTest {
 
   private static MockBigQueryWrite mockBigQueryWrite;
   private static MockServiceHelper serviceHelper;
-  @Mock private static SchemaCompact mockSchemaCheck;
+  @Mock private static SchemaCompatibility mockSchemaCheck;
   private BigQueryWriteClient client;
   private LocalChannelProvider channelProvider;
 
