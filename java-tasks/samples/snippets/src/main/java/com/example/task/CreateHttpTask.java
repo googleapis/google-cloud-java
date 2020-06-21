@@ -23,19 +23,22 @@ import com.google.cloud.tasks.v2.HttpRequest;
 import com.google.cloud.tasks.v2.QueueName;
 import com.google.cloud.tasks.v2.Task;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
 import java.nio.charset.Charset;
 
 public class CreateHttpTask {
-  /**
-   * Create a task with a HTTP target using the Cloud Tasks client.
-   *
-   * @param projectId the Id of the project.
-   * @param queueId the name of your Queue.
-   * @param locationId the GCP region of your queue.
-   * @throws Exception on Cloud Tasks Client errors.
-   */
+
+  public static void main(String[] args) throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String locationId = "us-central1";
+    String queueId = "my-queue";
+    createTask(projectId, locationId, queueId);
+  }
+
+  // Create a task with a HTTP target using the Cloud Tasks client.
   public static void createTask(String projectId, String locationId, String queueId)
-      throws Exception {
+      throws IOException {
 
     // Instantiates a client.
     try (CloudTasksClient client = CloudTasksClient.create()) {

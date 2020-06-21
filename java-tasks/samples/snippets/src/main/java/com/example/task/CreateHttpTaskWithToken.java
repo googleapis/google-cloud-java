@@ -24,21 +24,25 @@ import com.google.cloud.tasks.v2.OidcToken;
 import com.google.cloud.tasks.v2.QueueName;
 import com.google.cloud.tasks.v2.Task;
 import com.google.protobuf.ByteString;
+import java.io.IOException;
 import java.nio.charset.Charset;
 
 public class CreateHttpTaskWithToken {
-  /**
-   * Create a task with a HTTP target and authorization token using the Cloud Tasks client.
-   *
-   * @param projectId the Id of the project.
-   * @param queueId the name of your Queue.
-   * @param locationId the GCP region of your queue.
-   * @param serviceAccountEmail your Cloud IAM service account
-   * @throws Exception on Cloud Tasks Client errors.
-   */
+
+  public static void main(String[] args) throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String locationId = "us-central1";
+    String queueId = "my-queue";
+    String serviceAccountEmail = 
+        "java-docs-samples-testing@java-docs-samples-testing.iam.gserviceaccount.com";
+    createTask(projectId, locationId, queueId, serviceAccountEmail);
+  }
+
+  // Create a task with a HTTP target and authorization token using the Cloud Tasks client.
   public static void createTask(
       String projectId, String locationId, String queueId, String serviceAccountEmail)
-      throws Exception {
+      throws IOException {
 
     // Instantiates a client.
     try (CloudTasksClient client = CloudTasksClient.create()) {
