@@ -4,31 +4,31 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-websecurityscanner.git",
-        "sha": "940240d908a405738003da38dfce9e7e6c011d4a"
+        "sha": "e3871d022e448a2847f292d7123e7504cc2f7112"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "cf1a64d9aa88c0b9ed1d19ed6db30e67538b010d",
-        "internalRef": "315984872"
+        "sha": "5ffdbc377d89713274cfdb2e631f1db7a2fd1219",
+        "internalRef": "317362697"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "cf1a64d9aa88c0b9ed1d19ed6db30e67538b010d",
-        "internalRef": "315984872"
+        "sha": "5ffdbc377d89713274cfdb2e631f1db7a2fd1219",
+        "internalRef": "317362697"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "cf1a64d9aa88c0b9ed1d19ed6db30e67538b010d",
-        "internalRef": "315984872"
+        "sha": "5ffdbc377d89713274cfdb2e631f1db7a2fd1219",
+        "internalRef": "317362697"
       }
     },
     {

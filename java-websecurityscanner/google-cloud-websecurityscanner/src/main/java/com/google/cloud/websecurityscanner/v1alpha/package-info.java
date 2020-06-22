@@ -30,8 +30,9 @@
  * <pre>
  * <code>
  * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
- *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
- *   webSecurityScannerClient.deleteScanConfig(name);
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
+ *   ScanConfig response = webSecurityScannerClient.createScanConfig(parent, scanConfig);
  * }
  * </code>
  * </pre>

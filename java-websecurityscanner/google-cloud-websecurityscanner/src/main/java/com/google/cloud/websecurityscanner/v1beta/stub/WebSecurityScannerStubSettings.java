@@ -90,16 +90,16 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteScanConfig to 30 seconds:
+ * <p>For example, to set the total timeout of createScanConfig to 30 seconds:
  *
  * <pre>
  * <code>
  * WebSecurityScannerStubSettings.Builder webSecurityScannerSettingsBuilder =
  *     WebSecurityScannerStubSettings.newBuilder();
  * webSecurityScannerSettingsBuilder
- *     .deleteScanConfigSettings()
+ *     .createScanConfigSettings()
  *     .setRetrySettings(
- *         webSecurityScannerSettingsBuilder.deleteScanConfigSettings().getRetrySettings().toBuilder()
+ *         webSecurityScannerSettingsBuilder.createScanConfigSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * WebSecurityScannerStubSettings webSecurityScannerSettings = webSecurityScannerSettingsBuilder.build();
@@ -113,8 +113,8 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final UnaryCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigSettings;
   private final UnaryCallSettings<CreateScanConfigRequest, ScanConfig> createScanConfigSettings;
+  private final UnaryCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigSettings;
   private final UnaryCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigSettings;
   private final PagedCallSettings<
           ListScanConfigsRequest, ListScanConfigsResponse, ListScanConfigsPagedResponse>
@@ -136,14 +136,14 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
   private final UnaryCallSettings<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
       listFindingTypeStatsSettings;
 
-  /** Returns the object with the settings used for calls to deleteScanConfig. */
-  public UnaryCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigSettings() {
-    return deleteScanConfigSettings;
-  }
-
   /** Returns the object with the settings used for calls to createScanConfig. */
   public UnaryCallSettings<CreateScanConfigRequest, ScanConfig> createScanConfigSettings() {
     return createScanConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteScanConfig. */
+  public UnaryCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigSettings() {
+    return deleteScanConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to getScanConfig. */
@@ -277,8 +277,8 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
   protected WebSecurityScannerStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    deleteScanConfigSettings = settingsBuilder.deleteScanConfigSettings().build();
     createScanConfigSettings = settingsBuilder.createScanConfigSettings().build();
+    deleteScanConfigSettings = settingsBuilder.deleteScanConfigSettings().build();
     getScanConfigSettings = settingsBuilder.getScanConfigSettings().build();
     listScanConfigsSettings = settingsBuilder.listScanConfigsSettings().build();
     updateScanConfigSettings = settingsBuilder.updateScanConfigSettings().build();
@@ -515,10 +515,10 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
       extends StubSettings.Builder<WebSecurityScannerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
-    private final UnaryCallSettings.Builder<DeleteScanConfigRequest, Empty>
-        deleteScanConfigSettings;
     private final UnaryCallSettings.Builder<CreateScanConfigRequest, ScanConfig>
         createScanConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteScanConfigRequest, Empty>
+        deleteScanConfigSettings;
     private final UnaryCallSettings.Builder<GetScanConfigRequest, ScanConfig> getScanConfigSettings;
     private final PagedCallSettings.Builder<
             ListScanConfigsRequest, ListScanConfigsResponse, ListScanConfigsPagedResponse>
@@ -549,11 +549,13 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "idempotent",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -567,12 +569,22 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(20000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(20000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("default", settings);
+      definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -583,9 +595,9 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      deleteScanConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createScanConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteScanConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getScanConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -611,8 +623,8 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteScanConfigSettings,
               createScanConfigSettings,
+              deleteScanConfigSettings,
               getScanConfigSettings,
               listScanConfigsSettings,
               updateScanConfigSettings,
@@ -640,69 +652,69 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
     private static Builder initDefaults(Builder builder) {
 
       builder
-          .deleteScanConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .createScanConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-          .createScanConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .deleteScanConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getScanConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listScanConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .updateScanConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .startScanRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getScanRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listScanRunsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .stopScanRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listCrawledUrlsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getFindingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listFindingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .listFindingTypeStatsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       return builder;
     }
@@ -710,8 +722,8 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
     protected Builder(WebSecurityScannerStubSettings settings) {
       super(settings);
 
-      deleteScanConfigSettings = settings.deleteScanConfigSettings.toBuilder();
       createScanConfigSettings = settings.createScanConfigSettings.toBuilder();
+      deleteScanConfigSettings = settings.deleteScanConfigSettings.toBuilder();
       getScanConfigSettings = settings.getScanConfigSettings.toBuilder();
       listScanConfigsSettings = settings.listScanConfigsSettings.toBuilder();
       updateScanConfigSettings = settings.updateScanConfigSettings.toBuilder();
@@ -726,8 +738,8 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteScanConfigSettings,
               createScanConfigSettings,
+              deleteScanConfigSettings,
               getScanConfigSettings,
               listScanConfigsSettings,
               updateScanConfigSettings,
@@ -757,15 +769,15 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to deleteScanConfig. */
-    public UnaryCallSettings.Builder<DeleteScanConfigRequest, Empty> deleteScanConfigSettings() {
-      return deleteScanConfigSettings;
-    }
-
     /** Returns the builder for the settings used for calls to createScanConfig. */
     public UnaryCallSettings.Builder<CreateScanConfigRequest, ScanConfig>
         createScanConfigSettings() {
       return createScanConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteScanConfig. */
+    public UnaryCallSettings.Builder<DeleteScanConfigRequest, Empty> deleteScanConfigSettings() {
+      return deleteScanConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to getScanConfig. */

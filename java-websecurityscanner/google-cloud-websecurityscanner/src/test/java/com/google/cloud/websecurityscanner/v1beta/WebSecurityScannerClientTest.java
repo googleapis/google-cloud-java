@@ -84,43 +84,6 @@ public class WebSecurityScannerClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteScanConfigTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockWebSecurityScanner.addResponse(expectedResponse);
-
-    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-
-    client.deleteScanConfig(name);
-
-    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteScanConfigRequest actualRequest = (DeleteScanConfigRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteScanConfigExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockWebSecurityScanner.addException(exception);
-
-    try {
-      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-
-      client.deleteScanConfig(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void createScanConfigTest() {
     ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
     String displayName = "displayName1615086568";
@@ -162,6 +125,43 @@ public class WebSecurityScannerClientTest {
       ScanConfig scanConfig = ScanConfig.newBuilder().build();
 
       client.createScanConfig(parent, scanConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteScanConfigTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockWebSecurityScanner.addResponse(expectedResponse);
+
+    ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+
+    client.deleteScanConfig(name);
+
+    List<AbstractMessage> actualRequests = mockWebSecurityScanner.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteScanConfigRequest actualRequest = (DeleteScanConfigRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ScanConfigName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteScanConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockWebSecurityScanner.addException(exception);
+
+    try {
+      ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+
+      client.deleteScanConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
