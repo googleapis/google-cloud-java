@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-asset/compare/v1.3.0...v1.4.0) (2020-06-22)
+
+
+### Features
+
+* **deps:** adopt flatten plugin and google-cloud-shared-dependencies ([#220](https://www.github.com/googleapis/java-asset/issues/220)) ([504f871](https://www.github.com/googleapis/java-asset/commit/504f871bbf7fc847eeab37eaa9c1836e2a3af994))
+* **v1:** add condition to Feed ([#226](https://www.github.com/googleapis/java-asset/issues/226)) ([f14bd11](https://www.github.com/googleapis/java-asset/commit/f14bd119c952bd38bf03fd25a98e8bc4641b84fe))
+
 ## [1.3.0](https://www.github.com/googleapis/java-asset/compare/v1.2.0...v1.3.0) (2020-06-11)
 
 
