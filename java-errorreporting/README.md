@@ -32,6 +32,25 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-errorreporting</artifactId>
   </dependency>
+  <!-- BEGIN_EXCLUDE -->
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-core</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>com.google.truth</groupId>
+    <artifactId>truth</artifactId>
+    <version>1.0.1</version>
+    <scope>test</scope>
+  </dependency>
+  <!-- END_EXCLUDE -->
+</dependencies>
 
 ```
 
@@ -87,6 +106,16 @@ use this Stackdriver Error Reporting Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-errorreporting/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Quick Start | [source code](https://github.com/googleapis/java-errorreporting/blob/master/samples/snippets/src/main/java/com/example/errorreporting/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-errorreporting&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/errorreporting/QuickStart.java) |
 
 
 
