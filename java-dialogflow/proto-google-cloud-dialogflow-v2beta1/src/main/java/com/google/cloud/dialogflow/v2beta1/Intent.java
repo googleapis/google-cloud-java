@@ -32070,8 +32070,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Carousel Rich Business Messaging (RBM) rich card.
      * Rich cards allow you to respond to users with more vivid content, e.g.
      * with media and suggestions.
-     * For more details about RBM rich cards, please see:
-     * https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
      * If you want to show a single card with more control over the layout,
      * please use [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard] instead.
      * </pre>
@@ -32665,8 +32663,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Carousel Rich Business Messaging (RBM) rich card.
        * Rich cards allow you to respond to users with more vivid content, e.g.
        * with media and suggestions.
-       * For more details about RBM rich cards, please see:
-       * https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
        * If you want to show a single card with more control over the layout,
        * please use [RbmStandaloneCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmStandaloneCard] instead.
        * </pre>
@@ -33589,8 +33585,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Standalone Rich Business Messaging (RBM) rich card.
      * Rich cards allow you to respond to users with more vivid content, e.g.
      * with media and suggestions.
-     * For more details about RBM rich cards, please see:
-     * https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
      * You can group multiple rich cards into one using [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard] but
      * carousel cards will give you less control over the card layout.
      * </pre>
@@ -34394,8 +34388,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Standalone Rich Business Messaging (RBM) rich card.
        * Rich cards allow you to respond to users with more vivid content, e.g.
        * with media and suggestions.
-       * For more details about RBM rich cards, please see:
-       * https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send#rich-cards
        * You can group multiple rich cards into one using [RbmCarouselCard][google.cloud.dialogflow.v2beta1.Intent.Message.RbmCarouselCard] but
        * carousel cards will give you less control over the card layout.
        * </pre>
@@ -35449,7 +35441,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required for cards with vertical orientation. The height of the media
-         * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+         * within a rich card with a vertical layout.
          * For a standalone card with horizontal layout, height is not
          * customizable, and this field is ignored.
          * </pre>
@@ -35466,7 +35458,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required for cards with vertical orientation. The height of the media
-         * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+         * within a rich card with a vertical layout.
          * For a standalone card with horizontal layout, height is not
          * customizable, and this field is ignored.
          * </pre>
@@ -35910,7 +35902,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required for cards with vertical orientation. The height of the media
-         * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+         * within a rich card with a vertical layout.
          * For a standalone card with horizontal layout, height is not
          * customizable, and this field is ignored.
          * </pre>
@@ -35930,7 +35922,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required for cards with vertical orientation. The height of the media
-         * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+         * within a rich card with a vertical layout.
          * For a standalone card with horizontal layout, height is not
          * customizable, and this field is ignored.
          * </pre>
@@ -36611,7 +36603,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Required for cards with vertical orientation. The height of the media
-           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * within a rich card with a vertical layout.
            * For a standalone card with horizontal layout, height is not
            * customizable, and this field is ignored.
            * </pre>
@@ -36631,7 +36623,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Required for cards with vertical orientation. The height of the media
-           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * within a rich card with a vertical layout.
            * For a standalone card with horizontal layout, height is not
            * customizable, and this field is ignored.
            * </pre>
@@ -36654,7 +36646,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Required for cards with vertical orientation. The height of the media
-           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * within a rich card with a vertical layout.
            * For a standalone card with horizontal layout, height is not
            * customizable, and this field is ignored.
            * </pre>
@@ -36683,7 +36675,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Required for cards with vertical orientation. The height of the media
-           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * within a rich card with a vertical layout.
            * For a standalone card with horizontal layout, height is not
            * customizable, and this field is ignored.
            * </pre>
@@ -36711,7 +36703,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
            *
            * <pre>
            * Required for cards with vertical orientation. The height of the media
-           * within a rich card with a vertical layout. (https://goo.gl/NeFCjz).
+           * within a rich card with a vertical layout.
            * For a standalone card with horizontal layout, height is not
            * customizable, and this field is ignored.
            * </pre>
@@ -40982,7 +40974,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Opens the user's default dialer app with the specified phone number
-       * but does not dial automatically (https://goo.gl/ergbB2).
+       * but does not dial automatically.
        * </pre>
        *
        * Protobuf type {@code
@@ -41329,7 +41321,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Opens the user's default dialer app with the specified phone number
-         * but does not dial automatically (https://goo.gl/ergbB2).
+         * but does not dial automatically.
          * </pre>
          *
          * Protobuf type {@code
@@ -41734,7 +41726,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Opens the user's default web browser app to the specified uri
-       * (https://goo.gl/6GLJD2). If the user has an app installed that is
+       * If the user has an app installed that is
        * registered as the default handler for the URL, then this app will be
        * opened instead, and its icon will be used in the suggested action UI.
        * </pre>
@@ -42078,7 +42070,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Opens the user's default web browser app to the specified uri
-         * (https://goo.gl/6GLJD2). If the user has an app installed that is
+         * If the user has an app installed that is
          * registered as the default handler for the URL, then this app will be
          * opened instead, and its icon will be used in the suggested action UI.
          * </pre>
@@ -42444,7 +42436,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Opens the device's location chooser so the user can pick a location
-       * to send back to the agent (https://goo.gl/GXotJW).
+       * to send back to the agent.
        * </pre>
        *
        * Protobuf type {@code
@@ -42719,7 +42711,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Opens the device's location chooser so the user can pick a location
-         * to send back to the agent (https://goo.gl/GXotJW).
+         * to send back to the agent.
          * </pre>
          *
          * Protobuf type {@code
