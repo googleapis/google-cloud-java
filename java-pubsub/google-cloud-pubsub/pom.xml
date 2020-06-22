@@ -85,7 +85,6 @@
     <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value-annotations</artifactId>
-      <version>${autovalue.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -163,10 +162,15 @@
             <path>
               <groupId>com.google.auto.value</groupId>
               <artifactId>auto-value</artifactId>
-              <version>${autovalue.version}</version>
+              <version>${auto-value-annotation.version}</version>
             </path>
           </annotationProcessorPaths>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
@@ -181,7 +185,6 @@
         <dependency>
           <groupId>javax.annotation</groupId>
           <artifactId>javax.annotation-api</artifactId>
-          <version>${javax.annotations.version}</version>
         </dependency>
       </dependencies>
     </profile>

@@ -40,3 +40,5 @@ api_key
 # Python utilities
 *.pyc
 artman-genfiles
+
+.flattened-pom.xml
