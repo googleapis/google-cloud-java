@@ -84,44 +84,6 @@ public class ImageAnnotatorClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void batchAnnotateImagesTest() {
-    BatchAnnotateImagesResponse expectedResponse = BatchAnnotateImagesResponse.newBuilder().build();
-    mockImageAnnotator.addResponse(expectedResponse);
-
-    List<AnnotateImageRequest> requests = new ArrayList<>();
-
-    BatchAnnotateImagesResponse actualResponse = client.batchAnnotateImages(requests);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockImageAnnotator.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    BatchAnnotateImagesRequest actualRequest = (BatchAnnotateImagesRequest) actualRequests.get(0);
-
-    Assert.assertEquals(requests, actualRequest.getRequestsList());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void batchAnnotateImagesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockImageAnnotator.addException(exception);
-
-    try {
-      List<AnnotateImageRequest> requests = new ArrayList<>();
-
-      client.batchAnnotateImages(requests);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void batchAnnotateFilesTest() {
     BatchAnnotateFilesResponse expectedResponse = BatchAnnotateFilesResponse.newBuilder().build();
     mockImageAnnotator.addResponse(expectedResponse);
@@ -256,6 +218,44 @@ public class ImageAnnotatorClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchAnnotateImagesTest() {
+    BatchAnnotateImagesResponse expectedResponse = BatchAnnotateImagesResponse.newBuilder().build();
+    mockImageAnnotator.addResponse(expectedResponse);
+
+    List<AnnotateImageRequest> requests = new ArrayList<>();
+
+    BatchAnnotateImagesResponse actualResponse = client.batchAnnotateImages(requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockImageAnnotator.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchAnnotateImagesRequest actualRequest = (BatchAnnotateImagesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchAnnotateImagesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockImageAnnotator.addException(exception);
+
+    try {
+      List<AnnotateImageRequest> requests = new ArrayList<>();
+
+      client.batchAnnotateImages(requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
     }
   }
 }

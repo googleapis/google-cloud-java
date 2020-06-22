@@ -166,75 +166,6 @@ public class ImageAnnotatorClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Run image detection and annotation for a batch of images.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
-   * }
-   * </code></pre>
-   *
-   * @param requests Required. Individual image annotation requests for this batch.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchAnnotateImagesResponse batchAnnotateImages(
-      List<AnnotateImageRequest> requests) {
-    BatchAnnotateImagesRequest request =
-        BatchAnnotateImagesRequest.newBuilder().addAllRequests(requests).build();
-    return batchAnnotateImages(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Run image detection and annotation for a batch of images.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
-   *     .addAllRequests(requests)
-   *     .build();
-   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchAnnotateImagesResponse batchAnnotateImages(BatchAnnotateImagesRequest request) {
-    return batchAnnotateImagesCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Run image detection and annotation for a batch of images.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
-   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
-   *     .addAllRequests(requests)
-   *     .build();
-   *   ApiFuture&lt;BatchAnnotateImagesResponse&gt; future = imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
-   *   // Do something
-   *   BatchAnnotateImagesResponse response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
-      batchAnnotateImagesCallable() {
-    return stub.batchAnnotateImagesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
    * Run async image detection and annotation for a list of generic files (e.g. PDF) which may
    * contain multiple pages and multiple images per page. Progress and results can be retrieved
    * through the `google.longrunning.Operations` interface. `Operation.metadata` contains
@@ -346,6 +277,75 @@ public class ImageAnnotatorClient implements BackgroundResource {
   public final UnaryCallable<AsyncBatchAnnotateFilesRequest, Operation>
       asyncBatchAnnotateFilesCallable() {
     return stub.asyncBatchAnnotateFilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run image detection and annotation for a batch of images.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
+   * }
+   * </code></pre>
+   *
+   * @param requests Required. Individual image annotation requests for this batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchAnnotateImagesResponse batchAnnotateImages(
+      List<AnnotateImageRequest> requests) {
+    BatchAnnotateImagesRequest request =
+        BatchAnnotateImagesRequest.newBuilder().addAllRequests(requests).build();
+    return batchAnnotateImages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run image detection and annotation for a batch of images.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .build();
+   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchAnnotateImagesResponse batchAnnotateImages(BatchAnnotateImagesRequest request) {
+    return batchAnnotateImagesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Run image detection and annotation for a batch of images.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
+   *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
+   *     .addAllRequests(requests)
+   *     .build();
+   *   ApiFuture&lt;BatchAnnotateImagesResponse&gt; future = imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
+   *   // Do something
+   *   BatchAnnotateImagesResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+      batchAnnotateImagesCallable() {
+    return stub.batchAnnotateImagesCallable();
   }
 
   @Override

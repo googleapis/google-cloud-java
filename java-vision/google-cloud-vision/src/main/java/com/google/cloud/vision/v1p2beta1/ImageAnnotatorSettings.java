@@ -66,12 +66,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSettings> {
-  /** Returns the object with the settings used for calls to batchAnnotateImages. */
-  public UnaryCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
-      batchAnnotateImagesSettings() {
-    return ((ImageAnnotatorStubSettings) getStubSettings()).batchAnnotateImagesSettings();
-  }
-
   /** Returns the object with the settings used for calls to asyncBatchAnnotateFiles. */
   public UnaryCallSettings<AsyncBatchAnnotateFilesRequest, Operation>
       asyncBatchAnnotateFilesSettings() {
@@ -86,6 +80,12 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
       asyncBatchAnnotateFilesOperationSettings() {
     return ((ImageAnnotatorStubSettings) getStubSettings())
         .asyncBatchAnnotateFilesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchAnnotateImages. */
+  public UnaryCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+      batchAnnotateImagesSettings() {
+    return ((ImageAnnotatorStubSettings) getStubSettings()).batchAnnotateImagesSettings();
   }
 
   public static final ImageAnnotatorSettings create(ImageAnnotatorStubSettings stub)
@@ -185,12 +185,6 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to batchAnnotateImages. */
-    public UnaryCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
-        batchAnnotateImagesSettings() {
-      return getStubSettingsBuilder().batchAnnotateImagesSettings();
-    }
-
     /** Returns the builder for the settings used for calls to asyncBatchAnnotateFiles. */
     public UnaryCallSettings.Builder<AsyncBatchAnnotateFilesRequest, Operation>
         asyncBatchAnnotateFilesSettings() {
@@ -204,6 +198,12 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
             AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
         asyncBatchAnnotateFilesOperationSettings() {
       return getStubSettingsBuilder().asyncBatchAnnotateFilesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchAnnotateImages. */
+    public UnaryCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+        batchAnnotateImagesSettings() {
+      return getStubSettingsBuilder().batchAnnotateImagesSettings();
     }
 
     @Override

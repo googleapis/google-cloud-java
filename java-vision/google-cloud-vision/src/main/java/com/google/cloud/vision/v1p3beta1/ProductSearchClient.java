@@ -63,8 +63,10 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
- *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
- *   productSearchClient.deleteProductSet(name);
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   ProductSet productSet = ProductSet.newBuilder().build();
+ *   String productSetId = "";
+ *   ProductSet response = productSearchClient.createProductSet(parent, productSet, productSetId);
  * }
  * </code>
  * </pre>
@@ -184,377 +186,6 @@ public class ProductSearchClient implements BackgroundResource {
       "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a ProductSet. All Products and ReferenceImages in the ProductSet will be
-   * deleted.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   productSearchClient.deleteProductSet(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the ProductSet to delete.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProductSet(ProductSetName name) {
-    DeleteProductSetRequest request =
-        DeleteProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteProductSet(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a ProductSet. All Products and ReferenceImages in the ProductSet will be
-   * deleted.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   productSearchClient.deleteProductSet(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of the ProductSet to delete.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProductSet(String name) {
-    DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder().setName(name).build();
-    deleteProductSet(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a ProductSet. All Products and ReferenceImages in the ProductSet will be
-   * deleted.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteProductSet(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProductSet(DeleteProductSetRequest request) {
-    deleteProductSetCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a ProductSet. All Products and ReferenceImages in the ProductSet will be
-   * deleted.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductSetCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
-    return stub.deleteProductSetCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a product and its reference images.
-   *
-   * <p>Metadata of the product and all its images will be deleted right away, but search queries
-   * against ProductSets containing the product may still work until all related caches are
-   * refreshed.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the product does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.deleteProduct(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of product to delete.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProduct(ProductName name) {
-    DeleteProductRequest request =
-        DeleteProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteProduct(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a product and its reference images.
-   *
-   * <p>Metadata of the product and all its images will be deleted right away, but search queries
-   * against ProductSets containing the product may still work until all related caches are
-   * refreshed.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the product does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   productSearchClient.deleteProduct(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. Resource name of product to delete.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProduct(String name) {
-    DeleteProductRequest request = DeleteProductRequest.newBuilder().setName(name).build();
-    deleteProduct(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a product and its reference images.
-   *
-   * <p>Metadata of the product and all its images will be deleted right away, but search queries
-   * against ProductSets containing the product may still work until all related caches are
-   * refreshed.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the product does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteProduct(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteProduct(DeleteProductRequest request) {
-    deleteProductCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a product and its reference images.
-   *
-   * <p>Metadata of the product and all its images will be deleted right away, but search queries
-   * against ProductSets containing the product may still work until all related caches are
-   * refreshed.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the product does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
-    return stub.deleteProductCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a reference image.
-   *
-   * <p>The image metadata will be deleted right away, but search queries against ProductSets
-   * containing the image may still work until all related caches are refreshed.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the reference image does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   productSearchClient.deleteReferenceImage(name);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the reference image to delete.
-   *     <p>Format is:
-   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReferenceImage(ReferenceImageName name) {
-    DeleteReferenceImageRequest request =
-        DeleteReferenceImageRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteReferenceImage(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a reference image.
-   *
-   * <p>The image metadata will be deleted right away, but search queries against ProductSets
-   * containing the image may still work until all related caches are refreshed.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the reference image does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   productSearchClient.deleteReferenceImage(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The resource name of the reference image to delete.
-   *     <p>Format is:
-   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReferenceImage(String name) {
-    DeleteReferenceImageRequest request =
-        DeleteReferenceImageRequest.newBuilder().setName(name).build();
-    deleteReferenceImage(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a reference image.
-   *
-   * <p>The image metadata will be deleted right away, but search queries against ProductSets
-   * containing the image may still work until all related caches are refreshed.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the reference image does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   productSearchClient.deleteReferenceImage(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteReferenceImage(DeleteReferenceImageRequest request) {
-    deleteReferenceImageCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Permanently deletes a reference image.
-   *
-   * <p>The image metadata will be deleted right away, but search queries against ProductSets
-   * containing the image may still work until all related caches are refreshed.
-   *
-   * <p>The actual image files are not deleted from Google Cloud Storage.
-   *
-   * <p>Possible errors:
-   *
-   * <p>&#42; Returns NOT_FOUND if the reference image does not exist.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
-   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteReferenceImageCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
-    return stub.deleteReferenceImageCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1237,6 +868,124 @@ public class ProductSearchClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Permanently deletes a ProductSet. All Products and ReferenceImages in the ProductSet will be
+   * deleted.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+   *   productSearchClient.deleteProductSet(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the ProductSet to delete.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProductSet(ProductSetName name) {
+    DeleteProductSetRequest request =
+        DeleteProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteProductSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a ProductSet. All Products and ReferenceImages in the ProductSet will be
+   * deleted.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+   *   productSearchClient.deleteProductSet(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of the ProductSet to delete.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProductSet(String name) {
+    DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder().setName(name).build();
+    deleteProductSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a ProductSet. All Products and ReferenceImages in the ProductSet will be
+   * deleted.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   productSearchClient.deleteProductSet(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProductSet(DeleteProductSetRequest request) {
+    deleteProductSetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a ProductSet. All Products and ReferenceImages in the ProductSet will be
+   * deleted.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the ProductSet does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+   *   DeleteProductSetRequest request = DeleteProductSetRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductSetCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
+    return stub.deleteProductSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates and returns a new product resource.
    *
    * <p>Possible errors:
@@ -1744,6 +1493,128 @@ public class ProductSearchClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Permanently deletes a product and its reference images.
+   *
+   * <p>Metadata of the product and all its images will be deleted right away, but search queries
+   * against ProductSets containing the product may still work until all related caches are
+   * refreshed.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the product does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   productSearchClient.deleteProduct(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of product to delete.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProduct(ProductName name) {
+    DeleteProductRequest request =
+        DeleteProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteProduct(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a product and its reference images.
+   *
+   * <p>Metadata of the product and all its images will be deleted right away, but search queries
+   * against ProductSets containing the product may still work until all related caches are
+   * refreshed.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the product does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   productSearchClient.deleteProduct(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Resource name of product to delete.
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProduct(String name) {
+    DeleteProductRequest request = DeleteProductRequest.newBuilder().setName(name).build();
+    deleteProduct(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a product and its reference images.
+   *
+   * <p>Metadata of the product and all its images will be deleted right away, but search queries
+   * against ProductSets containing the product may still work until all related caches are
+   * refreshed.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the product does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   productSearchClient.deleteProduct(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteProduct(DeleteProductRequest request) {
+    deleteProductCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a product and its reference images.
+   *
+   * <p>Metadata of the product and all its images will be deleted right away, but search queries
+   * against ProductSets containing the product may still work until all related caches are
+   * refreshed.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the product does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+   *   DeleteProductRequest request = DeleteProductRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteProductCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
+    return stub.deleteProductCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates and returns a new ReferenceImage resource.
    *
    * <p>The `bounding_poly` field is optional. If `bounding_poly` is not specified, the system will
@@ -1926,6 +1797,137 @@ public class ProductSearchClient implements BackgroundResource {
   public final UnaryCallable<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageCallable() {
     return stub.createReferenceImageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a reference image.
+   *
+   * <p>The image metadata will be deleted right away, but search queries against ProductSets
+   * containing the image may still work until all related caches are refreshed.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the reference image does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+   *   productSearchClient.deleteReferenceImage(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the reference image to delete.
+   *     <p>Format is:
+   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReferenceImage(ReferenceImageName name) {
+    DeleteReferenceImageRequest request =
+        DeleteReferenceImageRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteReferenceImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a reference image.
+   *
+   * <p>The image metadata will be deleted right away, but search queries against ProductSets
+   * containing the image may still work until all related caches are refreshed.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the reference image does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+   *   productSearchClient.deleteReferenceImage(name.toString());
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the reference image to delete.
+   *     <p>Format is:
+   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReferenceImage(String name) {
+    DeleteReferenceImageRequest request =
+        DeleteReferenceImageRequest.newBuilder().setName(name).build();
+    deleteReferenceImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a reference image.
+   *
+   * <p>The image metadata will be deleted right away, but search queries against ProductSets
+   * containing the image may still work until all related caches are refreshed.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the reference image does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   productSearchClient.deleteReferenceImage(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReferenceImage(DeleteReferenceImageRequest request) {
+    deleteReferenceImageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Permanently deletes a reference image.
+   *
+   * <p>The image metadata will be deleted right away, but search queries against ProductSets
+   * containing the image may still work until all related caches are refreshed.
+   *
+   * <p>The actual image files are not deleted from Google Cloud Storage.
+   *
+   * <p>Possible errors:
+   *
+   * <p>&#42; Returns NOT_FOUND if the reference image does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+   *   ReferenceImageName name = ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+   *   DeleteReferenceImageRequest request = DeleteReferenceImageRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = productSearchClient.deleteReferenceImageCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
+    return stub.deleteReferenceImageCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

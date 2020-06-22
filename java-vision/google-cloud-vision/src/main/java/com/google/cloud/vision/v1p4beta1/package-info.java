@@ -42,8 +42,10 @@
  * <pre>
  * <code>
  * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
- *   ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
- *   productSearchClient.deleteProductSet(name);
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   ProductSet productSet = ProductSet.newBuilder().build();
+ *   String productSetId = "";
+ *   ProductSet response = productSearchClient.createProductSet(parent, productSet, productSetId);
  * }
  * </code>
  * </pre>

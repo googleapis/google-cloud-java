@@ -72,6 +72,28 @@ public abstract class ProductSearchStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importProductSetsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: importProductSetsCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeProductsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeProductsCallable()");
+  }
+
   public UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable() {
     throw new UnsupportedOperationException("Not implemented: createProductSetCallable()");
   }
@@ -162,28 +184,6 @@ public abstract class ProductSearchStub implements BackgroundResource {
   public UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
       listProductsInProductSetCallable() {
     throw new UnsupportedOperationException("Not implemented: listProductsInProductSetCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: importProductSetsOperationCallable()");
-  }
-
-  public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
-    throw new UnsupportedOperationException("Not implemented: importProductSetsCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
-      purgeProductsOperationCallable() {
-    throw new UnsupportedOperationException("Not implemented: purgeProductsOperationCallable()");
-  }
-
-  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
-    throw new UnsupportedOperationException("Not implemented: purgeProductsCallable()");
   }
 
   @Override

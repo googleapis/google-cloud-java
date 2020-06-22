@@ -78,6 +78,24 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcProductSearchStub extends ProductSearchStub {
 
+  private static final MethodDescriptor<ImportProductSetsRequest, Operation>
+      importProductSetsMethodDescriptor =
+          MethodDescriptor.<ImportProductSetsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1.ProductSearch/ImportProductSets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportProductSetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<PurgeProductsRequest, Operation>
+      purgeProductsMethodDescriptor =
+          MethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1.ProductSearch/PurgeProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<CreateProductSetRequest, ProductSet>
       createProductSetMethodDescriptor =
           MethodDescriptor.<CreateProductSetRequest, ProductSet>newBuilder()
@@ -232,28 +250,17 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsInProductSetResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ImportProductSetsRequest, Operation>
-      importProductSetsMethodDescriptor =
-          MethodDescriptor.<ImportProductSetsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.vision.v1.ProductSearch/ImportProductSets")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ImportProductSetsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<PurgeProductsRequest, Operation>
-      purgeProductsMethodDescriptor =
-          MethodDescriptor.<PurgeProductsRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.vision.v1.ProductSearch/PurgeProducts")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(PurgeProductsRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
+  private final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable;
+  private final OperationCallable<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationCallable;
+  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
+  private final OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable;
   private final UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable;
   private final UnaryCallable<ListProductSetsRequest, ListProductSetsResponse>
       listProductSetsCallable;
@@ -285,13 +292,6 @@ public class GrpcProductSearchStub extends ProductSearchStub {
   private final UnaryCallable<
           ListProductsInProductSetRequest, ListProductsInProductSetPagedResponse>
       listProductsInProductSetPagedCallable;
-  private final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable;
-  private final OperationCallable<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationCallable;
-  private final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable;
-  private final OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
-      purgeProductsOperationCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -333,6 +333,32 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
+        GrpcCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
+            .setMethodDescriptor(importProductSetsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ImportProductSetsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ImportProductSetsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
+        GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeProductsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PurgeProductsRequest>() {
+                  @Override
+                  public Map<String, String> extract(PurgeProductsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateProductSetRequest, ProductSet> createProductSetTransportSettings =
         GrpcCallSettings.<CreateProductSetRequest, ProductSet>newBuilder()
             .setMethodDescriptor(createProductSetMethodDescriptor)
@@ -562,33 +588,27 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       }
                     })
                 .build();
-    GrpcCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
-        GrpcCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
-            .setMethodDescriptor(importProductSetsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ImportProductSetsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportProductSetsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
-        GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
-            .setMethodDescriptor(purgeProductsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<PurgeProductsRequest>() {
-                  @Override
-                  public Map<String, String> extract(PurgeProductsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
 
+    this.importProductSetsCallable =
+        callableFactory.createUnaryCallable(
+            importProductSetsTransportSettings,
+            settings.importProductSetsSettings(),
+            clientContext);
+    this.importProductSetsOperationCallable =
+        callableFactory.createOperationCallable(
+            importProductSetsTransportSettings,
+            settings.importProductSetsOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.purgeProductsCallable =
+        callableFactory.createUnaryCallable(
+            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
+    this.purgeProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeProductsTransportSettings,
+            settings.purgeProductsOperationSettings(),
+            clientContext,
+            this.operationsStub);
     this.createProductSetCallable =
         callableFactory.createUnaryCallable(
             createProductSetTransportSettings, settings.createProductSetSettings(), clientContext);
@@ -670,26 +690,6 @@ public class GrpcProductSearchStub extends ProductSearchStub {
             listProductsInProductSetTransportSettings,
             settings.listProductsInProductSetSettings(),
             clientContext);
-    this.importProductSetsCallable =
-        callableFactory.createUnaryCallable(
-            importProductSetsTransportSettings,
-            settings.importProductSetsSettings(),
-            clientContext);
-    this.importProductSetsOperationCallable =
-        callableFactory.createOperationCallable(
-            importProductSetsTransportSettings,
-            settings.importProductSetsOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.purgeProductsCallable =
-        callableFactory.createUnaryCallable(
-            purgeProductsTransportSettings, settings.purgeProductsSettings(), clientContext);
-    this.purgeProductsOperationCallable =
-        callableFactory.createOperationCallable(
-            purgeProductsTransportSettings,
-            settings.purgeProductsOperationSettings(),
-            clientContext,
-            this.operationsStub);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -697,6 +697,27 @@ public class GrpcProductSearchStub extends ProductSearchStub {
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationCallable() {
+    return importProductSetsOperationCallable;
+  }
+
+  public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
+    return importProductSetsCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationCallable() {
+    return purgeProductsOperationCallable;
+  }
+
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return purgeProductsCallable;
   }
 
   public UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable() {
@@ -787,27 +808,6 @@ public class GrpcProductSearchStub extends ProductSearchStub {
   public UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
       listProductsInProductSetCallable() {
     return listProductsInProductSetCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationCallable() {
-    return importProductSetsOperationCallable;
-  }
-
-  public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
-    return importProductSetsCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
-      purgeProductsOperationCallable() {
-    return purgeProductsOperationCallable;
-  }
-
-  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
-    return purgeProductsCallable;
   }
 
   @Override

@@ -77,31 +77,6 @@ import javax.annotation.Generated;
 @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public class GrpcProductSearchStub extends ProductSearchStub {
 
-  private static final MethodDescriptor<DeleteProductSetRequest, Empty>
-      deleteProductSetMethodDescriptor =
-          MethodDescriptor.<DeleteProductSetRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.vision.v1p3beta1.ProductSearch/DeleteProductSet")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteProductSetRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<DeleteProductRequest, Empty> deleteProductMethodDescriptor =
-      MethodDescriptor.<DeleteProductRequest, Empty>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.cloud.vision.v1p3beta1.ProductSearch/DeleteProduct")
-          .setRequestMarshaller(ProtoUtils.marshaller(DeleteProductRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<DeleteReferenceImageRequest, Empty>
-      deleteReferenceImageMethodDescriptor =
-          MethodDescriptor.<DeleteReferenceImageRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.vision.v1p3beta1.ProductSearch/DeleteReferenceImage")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteReferenceImageRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ImportProductSetsRequest, Operation>
       importProductSetsMethodDescriptor =
           MethodDescriptor.<ImportProductSetsRequest, Operation>newBuilder()
@@ -148,6 +123,15 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(UpdateProductSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductSet.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteProductSetRequest, Empty>
+      deleteProductSetMethodDescriptor =
+          MethodDescriptor.<DeleteProductSetRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1p3beta1.ProductSearch/DeleteProductSet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteProductSetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<CreateProductRequest, Product>
       createProductMethodDescriptor =
           MethodDescriptor.<CreateProductRequest, Product>newBuilder()
@@ -182,6 +166,13 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   ProtoUtils.marshaller(UpdateProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<DeleteProductRequest, Empty> deleteProductMethodDescriptor =
+      MethodDescriptor.<DeleteProductRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.vision.v1p3beta1.ProductSearch/DeleteProduct")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteProductRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
   private static final MethodDescriptor<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageMethodDescriptor =
           MethodDescriptor.<CreateReferenceImageRequest, ReferenceImage>newBuilder()
@@ -190,6 +181,15 @@ public class GrpcProductSearchStub extends ProductSearchStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReferenceImageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReferenceImage.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteReferenceImageRequest, Empty>
+      deleteReferenceImageMethodDescriptor =
+          MethodDescriptor.<DeleteReferenceImageRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vision.v1p3beta1.ProductSearch/DeleteReferenceImage")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteReferenceImageRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
   private static final MethodDescriptor<ListReferenceImagesRequest, ListReferenceImagesResponse>
       listReferenceImagesMethodDescriptor =
@@ -247,9 +247,6 @@ public class GrpcProductSearchStub extends ProductSearchStub {
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
 
-  private final UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable;
-  private final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable;
-  private final UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable;
   private final UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable;
   private final OperationCallable<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
@@ -261,14 +258,17 @@ public class GrpcProductSearchStub extends ProductSearchStub {
       listProductSetsPagedCallable;
   private final UnaryCallable<GetProductSetRequest, ProductSet> getProductSetCallable;
   private final UnaryCallable<UpdateProductSetRequest, ProductSet> updateProductSetCallable;
+  private final UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable;
   private final UnaryCallable<CreateProductRequest, Product> createProductCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable;
   private final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
       listProductsPagedCallable;
   private final UnaryCallable<GetProductRequest, Product> getProductCallable;
   private final UnaryCallable<UpdateProductRequest, Product> updateProductCallable;
+  private final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable;
   private final UnaryCallable<CreateReferenceImageRequest, ReferenceImage>
       createReferenceImageCallable;
+  private final UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable;
   private final UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesResponse>
       listReferenceImagesCallable;
   private final UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesPagedResponse>
@@ -323,45 +323,6 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<DeleteProductSetRequest, Empty> deleteProductSetTransportSettings =
-        GrpcCallSettings.<DeleteProductSetRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteProductSetMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteProductSetRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteProductSetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteProductRequest, Empty> deleteProductTransportSettings =
-        GrpcCallSettings.<DeleteProductRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteProductMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteProductRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteProductRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageTransportSettings =
-        GrpcCallSettings.<DeleteReferenceImageRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteReferenceImageMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<DeleteReferenceImageRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteReferenceImageRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
-                })
-            .build();
     GrpcCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
         GrpcCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
             .setMethodDescriptor(importProductSetsMethodDescriptor)
@@ -429,6 +390,19 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteProductSetRequest, Empty> deleteProductSetTransportSettings =
+        GrpcCallSettings.<DeleteProductSetRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteProductSetMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteProductSetRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteProductSetRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateProductRequest, Product> createProductTransportSettings =
         GrpcCallSettings.<CreateProductRequest, Product>newBuilder()
             .setMethodDescriptor(createProductMethodDescriptor)
@@ -481,6 +455,19 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteProductRequest, Empty> deleteProductTransportSettings =
+        GrpcCallSettings.<DeleteProductRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteProductMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteProductRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteProductRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageTransportSettings =
             GrpcCallSettings.<CreateReferenceImageRequest, ReferenceImage>newBuilder()
@@ -495,6 +482,19 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageTransportSettings =
+        GrpcCallSettings.<DeleteReferenceImageRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteReferenceImageMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteReferenceImageRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteReferenceImageRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<ListReferenceImagesRequest, ListReferenceImagesResponse>
         listReferenceImagesTransportSettings =
             GrpcCallSettings.<ListReferenceImagesRequest, ListReferenceImagesResponse>newBuilder()
@@ -566,17 +566,6 @@ public class GrpcProductSearchStub extends ProductSearchStub {
                     })
                 .build();
 
-    this.deleteProductSetCallable =
-        callableFactory.createUnaryCallable(
-            deleteProductSetTransportSettings, settings.deleteProductSetSettings(), clientContext);
-    this.deleteProductCallable =
-        callableFactory.createUnaryCallable(
-            deleteProductTransportSettings, settings.deleteProductSettings(), clientContext);
-    this.deleteReferenceImageCallable =
-        callableFactory.createUnaryCallable(
-            deleteReferenceImageTransportSettings,
-            settings.deleteReferenceImageSettings(),
-            clientContext);
     this.importProductSetsCallable =
         callableFactory.createUnaryCallable(
             importProductSetsTransportSettings,
@@ -603,6 +592,9 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     this.updateProductSetCallable =
         callableFactory.createUnaryCallable(
             updateProductSetTransportSettings, settings.updateProductSetSettings(), clientContext);
+    this.deleteProductSetCallable =
+        callableFactory.createUnaryCallable(
+            deleteProductSetTransportSettings, settings.deleteProductSetSettings(), clientContext);
     this.createProductCallable =
         callableFactory.createUnaryCallable(
             createProductTransportSettings, settings.createProductSettings(), clientContext);
@@ -618,10 +610,18 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     this.updateProductCallable =
         callableFactory.createUnaryCallable(
             updateProductTransportSettings, settings.updateProductSettings(), clientContext);
+    this.deleteProductCallable =
+        callableFactory.createUnaryCallable(
+            deleteProductTransportSettings, settings.deleteProductSettings(), clientContext);
     this.createReferenceImageCallable =
         callableFactory.createUnaryCallable(
             createReferenceImageTransportSettings,
             settings.createReferenceImageSettings(),
+            clientContext);
+    this.deleteReferenceImageCallable =
+        callableFactory.createUnaryCallable(
+            deleteReferenceImageTransportSettings,
+            settings.deleteReferenceImageSettings(),
             clientContext);
     this.listReferenceImagesCallable =
         callableFactory.createUnaryCallable(
@@ -667,18 +667,6 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     return operationsStub;
   }
 
-  public UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
-    return deleteProductSetCallable;
-  }
-
-  public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
-    return deleteProductCallable;
-  }
-
-  public UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
-    return deleteReferenceImageCallable;
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
@@ -711,6 +699,10 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     return updateProductSetCallable;
   }
 
+  public UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
+    return deleteProductSetCallable;
+  }
+
   public UnaryCallable<CreateProductRequest, Product> createProductCallable() {
     return createProductCallable;
   }
@@ -731,8 +723,16 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     return updateProductCallable;
   }
 
+  public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
+    return deleteProductCallable;
+  }
+
   public UnaryCallable<CreateReferenceImageRequest, ReferenceImage> createReferenceImageCallable() {
     return createReferenceImageCallable;
+  }
+
+  public UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
+    return deleteReferenceImageCallable;
   }
 
   public UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesPagedResponse>

@@ -91,119 +91,6 @@ public class ProductSearchClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void deleteProductSetTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockProductSearch.addResponse(expectedResponse);
-
-    ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-
-    client.deleteProductSet(name);
-
-    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteProductSetRequest actualRequest = (DeleteProductSetRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ProductSetName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteProductSetExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockProductSearch.addException(exception);
-
-    try {
-      ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
-
-      client.deleteProductSet(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteProductTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockProductSearch.addResponse(expectedResponse);
-
-    ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-
-    client.deleteProduct(name);
-
-    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteProductRequest actualRequest = (DeleteProductRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ProductName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteProductExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockProductSearch.addException(exception);
-
-    try {
-      ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
-
-      client.deleteProduct(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteReferenceImageTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockProductSearch.addResponse(expectedResponse);
-
-    ReferenceImageName name =
-        ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-
-    client.deleteReferenceImage(name);
-
-    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteReferenceImageRequest actualRequest = (DeleteReferenceImageRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, ReferenceImageName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteReferenceImageExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockProductSearch.addException(exception);
-
-    try {
-      ReferenceImageName name =
-          ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
-
-      client.deleteReferenceImage(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void importProductSetsTest() throws Exception {
     ImportProductSetsResponse expectedResponse = ImportProductSetsResponse.newBuilder().build();
     Operation resultOperation =
@@ -434,6 +321,43 @@ public class ProductSearchClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteProductSetTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockProductSearch.addResponse(expectedResponse);
+
+    ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+
+    client.deleteProductSet(name);
+
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteProductSetRequest actualRequest = (DeleteProductSetRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ProductSetName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteProductSetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockProductSearch.addException(exception);
+
+    try {
+      ProductSetName name = ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]");
+
+      client.deleteProductSet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createProductTest() {
     ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
     String displayName = "displayName1615086568";
@@ -635,6 +559,43 @@ public class ProductSearchClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteProductTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockProductSearch.addResponse(expectedResponse);
+
+    ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+
+    client.deleteProduct(name);
+
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteProductRequest actualRequest = (DeleteProductRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ProductName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteProductExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockProductSearch.addException(exception);
+
+    try {
+      ProductName name = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
+
+      client.deleteProduct(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createReferenceImageTest() {
     ReferenceImageName name =
         ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
@@ -676,6 +637,45 @@ public class ProductSearchClientTest {
       String referenceImageId = "referenceImageId1946713331";
 
       client.createReferenceImage(parent, referenceImage, referenceImageId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteReferenceImageTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockProductSearch.addResponse(expectedResponse);
+
+    ReferenceImageName name =
+        ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+
+    client.deleteReferenceImage(name);
+
+    List<AbstractMessage> actualRequests = mockProductSearch.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteReferenceImageRequest actualRequest = (DeleteReferenceImageRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, ReferenceImageName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteReferenceImageExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockProductSearch.addException(exception);
+
+    try {
+      ReferenceImageName name =
+          ReferenceImageName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]", "[REFERENCE_IMAGE]");
+
+      client.deleteReferenceImage(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

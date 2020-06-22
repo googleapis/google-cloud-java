@@ -47,16 +47,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of batchAnnotateImages to 30 seconds:
+ * <p>For example, to set the total timeout of batchAnnotateFiles to 30 seconds:
  *
  * <pre>
  * <code>
  * ImageAnnotatorSettings.Builder imageAnnotatorSettingsBuilder =
  *     ImageAnnotatorSettings.newBuilder();
  * imageAnnotatorSettingsBuilder
- *     .batchAnnotateImagesSettings()
+ *     .batchAnnotateFilesSettings()
  *     .setRetrySettings(
- *         imageAnnotatorSettingsBuilder.batchAnnotateImagesSettings().getRetrySettings().toBuilder()
+ *         imageAnnotatorSettingsBuilder.batchAnnotateFilesSettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ImageAnnotatorSettings imageAnnotatorSettings = imageAnnotatorSettingsBuilder.build();
@@ -65,12 +65,6 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSettings> {
-  /** Returns the object with the settings used for calls to batchAnnotateImages. */
-  public UnaryCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
-      batchAnnotateImagesSettings() {
-    return ((ImageAnnotatorStubSettings) getStubSettings()).batchAnnotateImagesSettings();
-  }
-
   /** Returns the object with the settings used for calls to batchAnnotateFiles. */
   public UnaryCallSettings<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
       batchAnnotateFilesSettings() {
@@ -107,6 +101,12 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
       asyncBatchAnnotateFilesOperationSettings() {
     return ((ImageAnnotatorStubSettings) getStubSettings())
         .asyncBatchAnnotateFilesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchAnnotateImages. */
+  public UnaryCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+      batchAnnotateImagesSettings() {
+    return ((ImageAnnotatorStubSettings) getStubSettings()).batchAnnotateImagesSettings();
   }
 
   public static final ImageAnnotatorSettings create(ImageAnnotatorStubSettings stub)
@@ -206,12 +206,6 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to batchAnnotateImages. */
-    public UnaryCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
-        batchAnnotateImagesSettings() {
-      return getStubSettingsBuilder().batchAnnotateImagesSettings();
-    }
-
     /** Returns the builder for the settings used for calls to batchAnnotateFiles. */
     public UnaryCallSettings.Builder<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
         batchAnnotateFilesSettings() {
@@ -246,6 +240,12 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
             AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
         asyncBatchAnnotateFilesOperationSettings() {
       return getStubSettingsBuilder().asyncBatchAnnotateFilesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchAnnotateImages. */
+    public UnaryCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+        batchAnnotateImagesSettings() {
+      return getStubSettingsBuilder().batchAnnotateImagesSettings();
     }
 
     @Override

@@ -71,18 +71,6 @@ public abstract class ProductSearchStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteProductSetCallable()");
-  }
-
-  public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteProductCallable()");
-  }
-
-  public UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteReferenceImageCallable()");
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
@@ -116,6 +104,10 @@ public abstract class ProductSearchStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateProductSetCallable()");
   }
 
+  public UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteProductSetCallable()");
+  }
+
   public UnaryCallable<CreateProductRequest, Product> createProductCallable() {
     throw new UnsupportedOperationException("Not implemented: createProductCallable()");
   }
@@ -136,8 +128,16 @@ public abstract class ProductSearchStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateProductCallable()");
   }
 
+  public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteProductCallable()");
+  }
+
   public UnaryCallable<CreateReferenceImageRequest, ReferenceImage> createReferenceImageCallable() {
     throw new UnsupportedOperationException("Not implemented: createReferenceImageCallable()");
+  }
+
+  public UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteReferenceImageCallable()");
   }
 
   public UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesPagedResponse>

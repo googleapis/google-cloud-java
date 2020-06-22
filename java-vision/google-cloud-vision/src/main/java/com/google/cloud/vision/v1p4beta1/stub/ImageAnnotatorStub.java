@@ -47,16 +47,6 @@ public abstract class ImageAnnotatorStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
-      batchAnnotateImagesCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchAnnotateImagesCallable()");
-  }
-
-  public UnaryCallable<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
-      batchAnnotateFilesCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchAnnotateFilesCallable()");
-  }
-
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<
           AsyncBatchAnnotateImagesRequest, AsyncBatchAnnotateImagesResponse, OperationMetadata>
@@ -81,6 +71,16 @@ public abstract class ImageAnnotatorStub implements BackgroundResource {
   public UnaryCallable<AsyncBatchAnnotateFilesRequest, Operation>
       asyncBatchAnnotateFilesCallable() {
     throw new UnsupportedOperationException("Not implemented: asyncBatchAnnotateFilesCallable()");
+  }
+
+  public UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+      batchAnnotateImagesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchAnnotateImagesCallable()");
+  }
+
+  public UnaryCallable<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
+      batchAnnotateFilesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchAnnotateFilesCallable()");
   }
 
   @Override

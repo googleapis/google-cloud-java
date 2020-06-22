@@ -72,6 +72,33 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 public class ProductSearchSettings extends ClientSettings<ProductSearchSettings> {
+  /** Returns the object with the settings used for calls to importProductSets. */
+  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importProductSets. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<
+          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+      importProductSetsOperationSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
+      purgeProductsOperationSettings() {
+    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createProductSet. */
   public UnaryCallSettings<CreateProductSetRequest, ProductSet> createProductSetSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).createProductSetSettings();
@@ -166,33 +193,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
           ListProductsInProductSetPagedResponse>
       listProductsInProductSetSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).listProductsInProductSetSettings();
-  }
-
-  /** Returns the object with the settings used for calls to importProductSets. */
-  public UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to importProductSets. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<
-          ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-      importProductSetsOperationSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).importProductSetsOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to purgeProducts. */
-  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to purgeProducts. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
-  public OperationCallSettings<PurgeProductsRequest, Empty, BatchOperationMetadata>
-      purgeProductsOperationSettings() {
-    return ((ProductSearchStubSettings) getStubSettings()).purgeProductsOperationSettings();
   }
 
   public static final ProductSearchSettings create(ProductSearchStubSettings stub)
@@ -290,6 +290,34 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
+        importProductSetsSettings() {
+      return getStubSettingsBuilder().importProductSetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importProductSets. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
+        importProductSetsOperationSettings() {
+      return getStubSettingsBuilder().importProductSetsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
+      return getStubSettingsBuilder().purgeProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
+        purgeProductsOperationSettings() {
+      return getStubSettingsBuilder().purgeProductsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createProductSet. */
@@ -394,34 +422,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings() {
       return getStubSettingsBuilder().listProductsInProductSetSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    public UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
-        importProductSetsSettings() {
-      return getStubSettingsBuilder().importProductSetsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to importProductSets. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
-        importProductSetsOperationSettings() {
-      return getStubSettingsBuilder().importProductSetsOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to purgeProducts. */
-    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
-      return getStubSettingsBuilder().purgeProductsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to purgeProducts. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
-        purgeProductsOperationSettings() {
-      return getStubSettingsBuilder().purgeProductsOperationSettings();
     }
 
     @Override
