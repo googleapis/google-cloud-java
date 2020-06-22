@@ -71,17 +71,6 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
-  /** Returns the object with the settings used for calls to listInstances. */
-  public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
-      listInstancesSettings() {
-    return ((CloudRedisStubSettings) getStubSettings()).listInstancesSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getInstance. */
-  public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
-    return ((CloudRedisStubSettings) getStubSettings()).getInstanceSettings();
-  }
-
   /** Returns the object with the settings used for calls to createInstance. */
   public UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings() {
     return ((CloudRedisStubSettings) getStubSettings()).createInstanceSettings();
@@ -158,6 +147,17 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
   public OperationCallSettings<DeleteInstanceRequest, Empty, Any>
       deleteInstanceOperationSettings() {
     return ((CloudRedisStubSettings) getStubSettings()).deleteInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listInstances. */
+  public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
+      listInstancesSettings() {
+    return ((CloudRedisStubSettings) getStubSettings()).listInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getInstance. */
+  public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
+    return ((CloudRedisStubSettings) getStubSettings()).getInstanceSettings();
   }
 
   /** Returns the object with the settings used for calls to upgradeInstance. */
@@ -269,18 +269,6 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to listInstances. */
-    public PagedCallSettings.Builder<
-            ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
-        listInstancesSettings() {
-      return getStubSettingsBuilder().listInstancesSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getInstance. */
-    public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
-      return getStubSettingsBuilder().getInstanceSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createInstance. */
     public UnaryCallSettings.Builder<CreateInstanceRequest, Operation> createInstanceSettings() {
       return getStubSettingsBuilder().createInstanceSettings();
@@ -358,6 +346,18 @@ public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, Any>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listInstances. */
+    public PagedCallSettings.Builder<
+            ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
+        listInstancesSettings() {
+      return getStubSettingsBuilder().listInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getInstance. */
+    public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
+      return getStubSettingsBuilder().getInstanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to upgradeInstance. */
